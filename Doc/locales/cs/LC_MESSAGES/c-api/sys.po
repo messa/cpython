@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -336,85 +336,34 @@ msgstr ""
 
 #: ../../c-api/sys.rst:281
 msgid ""
-"Get the attribute *name* of the :mod:`sys` module. Return a :term:`strong"
-" reference`. Raise :exc:`RuntimeError` and return ``NULL`` if it does not"
-" exist or if the :mod:`sys` module cannot be found."
+"Return the object *name* from the :mod:`sys` module or ``NULL`` if it "
+"does not exist, without setting an exception."
 msgstr ""
 
 #: ../../c-api/sys.rst:286
-msgid ""
-"If the non-existing object should not be treated as a failure, you can "
-"use :c:func:`PySys_GetOptionalAttr` instead."
-msgstr ""
-
-#: ../../c-api/sys.rst:293
-msgid ""
-"This is the same as :c:func:`PySys_GetAttr`, but *name* is specified as a"
-" :c:expr:`const char*` UTF-8 encoded bytes string, rather than a "
-":c:expr:`PyObject*`."
-msgstr ""
-
-#: ../../c-api/sys.rst:297
-msgid ""
-"If the non-existing object should not be treated as a failure, you can "
-"use :c:func:`PySys_GetOptionalAttrString` instead."
-msgstr ""
-
-#: ../../c-api/sys.rst:304
-msgid ""
-"Variant of :c:func:`PySys_GetAttr` which doesn't raise exception if the "
-"object does not exist."
-msgstr ""
-
-#: ../../c-api/sys.rst:307
-msgid ""
-"Set *\\*result* to a new :term:`strong reference` to the object and "
-"return ``1`` if the object exists."
-msgstr ""
-
-#: ../../c-api/sys.rst:309
-msgid ""
-"Set *\\*result* to ``NULL`` and return ``0`` without setting an exception"
-" if the object does not exist."
-msgstr ""
-
-#: ../../c-api/sys.rst:311
-msgid ""
-"Set an exception, set *\\*result* to ``NULL``, and return ``-1``, if an "
-"error occurred."
-msgstr ""
-
-#: ../../c-api/sys.rst:318
-msgid ""
-"This is the same as :c:func:`PySys_GetOptionalAttr`, but *name* is "
-"specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather "
-"than a :c:expr:`PyObject*`."
-msgstr ""
-
-#: ../../c-api/sys.rst:326
-msgid ""
-"Similar to :c:func:`PySys_GetAttrString`, but return a :term:`borrowed "
-"reference` and return ``NULL`` *without* setting exception on failure."
-msgstr ""
-
-#: ../../c-api/sys.rst:329
-msgid "Preserves exception that was set before the call."
-msgstr ""
-
-#: ../../c-api/sys.rst:333
 msgid ""
 "Set *name* in the :mod:`sys` module to *v* unless *v* is ``NULL``, in "
 "which case *name* is deleted from the sys module. Returns ``0`` on "
 "success, ``-1`` on error."
 msgstr ""
 
-#: ../../c-api/sys.rst:339
+#: ../../c-api/sys.rst:292
+msgid ""
+"Reset :data:`sys.warnoptions` to an empty list. This function may be "
+"called prior to :c:func:`Py_Initialize`."
+msgstr ""
+
+#: ../../c-api/sys.rst:295
+msgid "Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
+msgstr ""
+
+#: ../../c-api/sys.rst:300
 msgid ""
 "Write the output string described by *format* to :data:`sys.stdout`.  No "
 "exceptions are raised, even if truncation occurs (see below)."
 msgstr ""
 
-#: ../../c-api/sys.rst:342
+#: ../../c-api/sys.rst:303
 #, python-format
 msgid ""
 "*format* should limit the total size of the formatted output string to "
@@ -426,49 +375,49 @@ msgid ""
 "print hundreds of digits for very large numbers."
 msgstr ""
 
-#: ../../c-api/sys.rst:350
+#: ../../c-api/sys.rst:311
 msgid ""
 "If a problem occurs, or :data:`sys.stdout` is unset, the formatted "
 "message is written to the real (C level) *stdout*."
 msgstr ""
 
-#: ../../c-api/sys.rst:355
+#: ../../c-api/sys.rst:316
 msgid ""
 "As :c:func:`PySys_WriteStdout`, but write to :data:`sys.stderr` or "
 "*stderr* instead."
 msgstr ""
 
-#: ../../c-api/sys.rst:360
+#: ../../c-api/sys.rst:321
 msgid ""
 "Function similar to PySys_WriteStdout() but format the message using "
 ":c:func:`PyUnicode_FromFormatV` and don't truncate the message to an "
 "arbitrary length."
 msgstr ""
 
-#: ../../c-api/sys.rst:368
+#: ../../c-api/sys.rst:329
 msgid ""
 "As :c:func:`PySys_FormatStdout`, but write to :data:`sys.stderr` or "
 "*stderr* instead."
 msgstr ""
 
-#: ../../c-api/sys.rst:375
+#: ../../c-api/sys.rst:336
 msgid ""
 "Return the current dictionary of :option:`-X` options, similarly to "
 ":data:`sys._xoptions`.  On error, ``NULL`` is returned and an exception "
 "is set."
 msgstr ""
 
-#: ../../c-api/sys.rst:384
+#: ../../c-api/sys.rst:345
 msgid ""
 "Raise an auditing event with any active hooks. Return zero for success "
 "and non-zero with an exception set on failure."
 msgstr ""
 
-#: ../../c-api/sys.rst:387
+#: ../../c-api/sys.rst:348
 msgid "The *event* string argument must not be *NULL*."
 msgstr ""
 
-#: ../../c-api/sys.rst:389
+#: ../../c-api/sys.rst:350
 msgid ""
 "If any hooks have been added, *format* and other arguments will be used "
 "to construct a tuple to pass. Apart from ``N``, the same format "
@@ -476,42 +425,42 @@ msgid ""
 " value is not a tuple, it will be added into a single-element tuple."
 msgstr ""
 
-#: ../../c-api/sys.rst:394
+#: ../../c-api/sys.rst:355
 msgid ""
 "The ``N`` format option must not be used. It consumes a reference, but "
 "since there is no way to know whether arguments to this function will be "
 "consumed, using it may cause reference leaks."
 msgstr ""
 
-#: ../../c-api/sys.rst:398
+#: ../../c-api/sys.rst:359
 msgid ""
 "Note that ``#`` format characters should always be treated as "
 ":c:type:`Py_ssize_t`, regardless of whether ``PY_SSIZE_T_CLEAN`` was "
 "defined."
 msgstr ""
 
-#: ../../c-api/sys.rst:401
+#: ../../c-api/sys.rst:362
 msgid ":func:`sys.audit` performs the same function from Python code."
 msgstr ""
 
-#: ../../c-api/sys.rst:403
+#: ../../c-api/sys.rst:364
 msgid "See also :c:func:`PySys_AuditTuple`."
 msgstr ""
 
-#: ../../c-api/sys.rst:409
+#: ../../c-api/sys.rst:370
 msgid ""
 "Require :c:type:`Py_ssize_t` for ``#`` format characters. Previously, an "
 "unavoidable deprecation warning was raised."
 msgstr ""
 
-#: ../../c-api/sys.rst:415
+#: ../../c-api/sys.rst:376
 msgid ""
 "Similar to :c:func:`PySys_Audit`, but pass arguments as a Python object. "
 "*args* must be a :class:`tuple`. To pass no arguments, *args* can be "
 "*NULL*."
 msgstr ""
 
-#: ../../c-api/sys.rst:423
+#: ../../c-api/sys.rst:384
 msgid ""
 "Append the callable *hook* to the list of active auditing hooks. Return "
 "zero on success and non-zero on failure. If the runtime has been "
@@ -519,14 +468,14 @@ msgid ""
 "are called for all interpreters created by the runtime."
 msgstr ""
 
-#: ../../c-api/sys.rst:429
+#: ../../c-api/sys.rst:390
 msgid ""
 "The *userData* pointer is passed into the hook function. Since hook "
 "functions may be called from different runtimes, this pointer should not "
 "refer directly to Python state."
 msgstr ""
 
-#: ../../c-api/sys.rst:433
+#: ../../c-api/sys.rst:394
 msgid ""
 "This function is safe to call before :c:func:`Py_Initialize`. When called"
 " after runtime initialization, existing audit hooks are notified and may "
@@ -534,13 +483,13 @@ msgid ""
 ":class:`Exception` (other errors will not be silenced)."
 msgstr ""
 
-#: ../../c-api/sys.rst:438
+#: ../../c-api/sys.rst:399
 msgid ""
 "The hook function is always called with an :term:`attached thread state` "
 "by the Python interpreter that raised the event."
 msgstr ""
 
-#: ../../c-api/sys.rst:441
+#: ../../c-api/sys.rst:402
 msgid ""
 "See :pep:`578` for a detailed description of auditing.  Functions in the "
 "runtime and standard library that raise events are listed in the "
@@ -548,7 +497,7 @@ msgid ""
 "documentation."
 msgstr ""
 
-#: ../../c-api/sys.rst:446 ../../c-api/sys.rst:448
+#: ../../c-api/sys.rst:407 ../../c-api/sys.rst:409
 msgid ""
 "If the interpreter is initialized, this function raises an auditing event"
 " ``sys.addaudithook`` with no arguments. If any existing hooks raise an "
@@ -557,7 +506,7 @@ msgid ""
 "their hook has been added unless they control all existing hooks."
 msgstr ""
 
-#: ../../c-api/sys.rst:457
+#: ../../c-api/sys.rst:418
 msgid ""
 "The type of the hook function. *event* is the C string event argument "
 "passed to :c:func:`PySys_Audit` or :c:func:`PySys_AuditTuple`. *args* is "
@@ -565,11 +514,11 @@ msgid ""
 "passed to PySys_AddAuditHook()."
 msgstr ""
 
-#: ../../c-api/sys.rst:469
+#: ../../c-api/sys.rst:430
 msgid "Process Control"
 msgstr ""
 
-#: ../../c-api/sys.rst:476
+#: ../../c-api/sys.rst:437
 msgid ""
 "Print a fatal error message and kill the process.  No cleanup is "
 "performed. This function should only be invoked when a condition is "
@@ -579,18 +528,18 @@ msgid ""
 "called which will attempt to produce a :file:`core` file."
 msgstr ""
 
-#: ../../c-api/sys.rst:483
+#: ../../c-api/sys.rst:444
 msgid ""
 "The ``Py_FatalError()`` function is replaced with a macro which logs "
 "automatically the name of the current function, unless the "
 "``Py_LIMITED_API`` macro is defined."
 msgstr ""
 
-#: ../../c-api/sys.rst:487
+#: ../../c-api/sys.rst:448
 msgid "Log the function name automatically."
 msgstr ""
 
-#: ../../c-api/sys.rst:497
+#: ../../c-api/sys.rst:458
 msgid ""
 "Exit the current process.  This calls :c:func:`Py_FinalizeEx` and then "
 "calls the standard C library function ``exit(status)``.  If "
@@ -598,11 +547,11 @@ msgid ""
 "120."
 msgstr ""
 
-#: ../../c-api/sys.rst:501
+#: ../../c-api/sys.rst:462
 msgid "Errors from finalization no longer ignored."
 msgstr ""
 
-#: ../../c-api/sys.rst:511
+#: ../../c-api/sys.rst:472
 msgid ""
 "Register a cleanup function to be called by :c:func:`Py_FinalizeEx`.  The"
 " cleanup function will be called with no arguments and should return no "
@@ -614,7 +563,7 @@ msgid ""
 "function, no Python APIs should be called by *func*."
 msgstr ""
 
-#: ../../c-api/sys.rst:521
+#: ../../c-api/sys.rst:482
 msgid ":c:func:`PyUnstable_AtExit` for passing a ``void *data`` argument."
 msgstr ""
 
@@ -622,19 +571,91 @@ msgstr ""
 msgid "USE_STACKCHECK (C macro)"
 msgstr ""
 
-#: ../../c-api/sys.rst:474
+#: ../../c-api/sys.rst:435
 msgid "abort (C function)"
 msgstr ""
 
-#: ../../c-api/sys.rst:493 ../../c-api/sys.rst:507
+#: ../../c-api/sys.rst:454 ../../c-api/sys.rst:468
 msgid "Py_FinalizeEx (C function)"
 msgstr ""
 
-#: ../../c-api/sys.rst:493
+#: ../../c-api/sys.rst:454
 msgid "exit (C function)"
 msgstr ""
 
-#: ../../c-api/sys.rst:507
+#: ../../c-api/sys.rst:468
 msgid "cleanup functions"
 msgstr ""
+
+#~ msgid ""
+#~ "Get the attribute *name* of the "
+#~ ":mod:`sys` module. Return a :term:`strong "
+#~ "reference`. Raise :exc:`RuntimeError` and "
+#~ "return ``NULL`` if it does not "
+#~ "exist or if the :mod:`sys` module "
+#~ "cannot be found."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the non-existing object should "
+#~ "not be treated as a failure, you"
+#~ " can use :c:func:`PySys_GetOptionalAttr` instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is the same as "
+#~ ":c:func:`PySys_GetAttr`, but *name* is "
+#~ "specified as a :c:expr:`const char*` "
+#~ "UTF-8 encoded bytes string, rather than"
+#~ " a :c:expr:`PyObject*`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the non-existing object should "
+#~ "not be treated as a failure, you"
+#~ " can use :c:func:`PySys_GetOptionalAttrString` "
+#~ "instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Variant of :c:func:`PySys_GetAttr` which "
+#~ "doesn't raise exception if the object"
+#~ " does not exist."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set *\\*result* to a new :term:`strong"
+#~ " reference` to the object and return"
+#~ " ``1`` if the object exists."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set *\\*result* to ``NULL`` and return"
+#~ " ``0`` without setting an exception "
+#~ "if the object does not exist."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set an exception, set *\\*result* to "
+#~ "``NULL``, and return ``-1``, if an "
+#~ "error occurred."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is the same as "
+#~ ":c:func:`PySys_GetOptionalAttr`, but *name* is "
+#~ "specified as a :c:expr:`const char*` "
+#~ "UTF-8 encoded bytes string, rather than"
+#~ " a :c:expr:`PyObject*`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Similar to :c:func:`PySys_GetAttrString`, but "
+#~ "return a :term:`borrowed reference` and "
+#~ "return ``NULL`` *without* setting exception"
+#~ " on failure."
+#~ msgstr ""
+
+#~ msgid "Preserves exception that was set before the call."
+#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -958,17 +958,11 @@ msgid ""
 ":ref:`python_2.3_mro`."
 msgstr ""
 
-#: ../../tutorial/classes.rst:666
-msgid ""
-"In some cases multiple inheritance is not allowed; see :ref:`multiple-"
-"inheritance` for details."
-msgstr ""
-
-#: ../../tutorial/classes.rst:673
+#: ../../tutorial/classes.rst:670
 msgid "Private Variables"
 msgstr "Privátní proměnné"
 
-#: ../../tutorial/classes.rst:675
+#: ../../tutorial/classes.rst:672
 msgid ""
 "\"Private\" instance variables that cannot be accessed except from inside"
 " an object don't exist in Python.  However, there is a convention that is"
@@ -978,7 +972,7 @@ msgid ""
 "implementation detail and subject to change without notice."
 msgstr ""
 
-#: ../../tutorial/classes.rst:685
+#: ../../tutorial/classes.rst:682
 msgid ""
 "Since there is a valid use-case for class-private members (namely to "
 "avoid name clashes of names with names defined by subclasses), there is "
@@ -991,19 +985,19 @@ msgid ""
 " definition of a class."
 msgstr ""
 
-#: ../../tutorial/classes.rst:696
+#: ../../tutorial/classes.rst:693
 msgid ""
 "The :ref:`private name mangling specifications <private-name-mangling>` "
 "for details and special cases."
 msgstr ""
 
-#: ../../tutorial/classes.rst:699
+#: ../../tutorial/classes.rst:696
 msgid ""
 "Name mangling is helpful for letting subclasses override methods without "
 "breaking intraclass method calls.  For example::"
 msgstr ""
 
-#: ../../tutorial/classes.rst:702
+#: ../../tutorial/classes.rst:699
 msgid ""
 "class Mapping:\n"
 "    def __init__(self, iterable):\n"
@@ -1025,7 +1019,7 @@ msgid ""
 "            self.items_list.append(item)"
 msgstr ""
 
-#: ../../tutorial/classes.rst:721
+#: ../../tutorial/classes.rst:718
 msgid ""
 "The above example would work even if ``MappingSubclass`` were to "
 "introduce a ``__update`` identifier since it is replaced with "
@@ -1034,7 +1028,7 @@ msgid ""
 "respectively."
 msgstr ""
 
-#: ../../tutorial/classes.rst:726
+#: ../../tutorial/classes.rst:723
 msgid ""
 "Note that the mangling rules are designed mostly to avoid accidents; it "
 "still is possible to access or modify a variable that is considered "
@@ -1042,7 +1036,7 @@ msgid ""
 "the debugger."
 msgstr ""
 
-#: ../../tutorial/classes.rst:730
+#: ../../tutorial/classes.rst:727
 msgid ""
 "Notice that code passed to ``exec()`` or ``eval()`` does not consider the"
 " classname of the invoking class to be the current class; this is similar"
@@ -1052,18 +1046,18 @@ msgid ""
 " well as when referencing ``__dict__`` directly."
 msgstr ""
 
-#: ../../tutorial/classes.rst:741
+#: ../../tutorial/classes.rst:738
 msgid "Odds and Ends"
 msgstr "Různé"
 
-#: ../../tutorial/classes.rst:743
+#: ../../tutorial/classes.rst:740
 msgid ""
 "Sometimes it is useful to have a data type similar to the Pascal "
 "\"record\" or C \"struct\", bundling together a few named data items. The"
 " idiomatic approach is to use :mod:`dataclasses` for this purpose::"
 msgstr ""
 
-#: ../../tutorial/classes.rst:747
+#: ../../tutorial/classes.rst:744
 msgid ""
 "from dataclasses import dataclass\n"
 "\n"
@@ -1074,7 +1068,7 @@ msgid ""
 "    salary: int"
 msgstr ""
 
-#: ../../tutorial/classes.rst:757
+#: ../../tutorial/classes.rst:754
 msgid ""
 ">>> john = Employee('john', 'computer lab', 1000)\n"
 ">>> john.dept\n"
@@ -1083,7 +1077,7 @@ msgid ""
 "1000"
 msgstr ""
 
-#: ../../tutorial/classes.rst:763
+#: ../../tutorial/classes.rst:760
 msgid ""
 "A piece of Python code that expects a particular abstract data type can "
 "often be passed a class that emulates the methods of that data type "
@@ -1093,7 +1087,7 @@ msgid ""
 "the data from a string buffer instead, and pass it as an argument."
 msgstr ""
 
-#: ../../tutorial/classes.rst:775
+#: ../../tutorial/classes.rst:772
 msgid ""
 ":ref:`Instance method objects <instance-methods>` have attributes, too: "
 ":attr:`m.__self__ <method.__self__>` is the instance object with the "
@@ -1101,17 +1095,17 @@ msgid ""
 ":ref:`function object <user-defined-funcs>` corresponding to the method."
 msgstr ""
 
-#: ../../tutorial/classes.rst:785
+#: ../../tutorial/classes.rst:782
 msgid "Iterators"
 msgstr "Iterátory"
 
-#: ../../tutorial/classes.rst:787
+#: ../../tutorial/classes.rst:784
 msgid ""
 "By now you have probably noticed that most container objects can be "
 "looped over using a :keyword:`for` statement::"
 msgstr ""
 
-#: ../../tutorial/classes.rst:790
+#: ../../tutorial/classes.rst:787
 #, python-brace-format
 msgid ""
 "for element in [1, 2, 3]:\n"
@@ -1126,7 +1120,7 @@ msgid ""
 "    print(line, end='')"
 msgstr ""
 
-#: ../../tutorial/classes.rst:801
+#: ../../tutorial/classes.rst:798
 msgid ""
 "This style of access is clear, concise, and convenient.  The use of "
 "iterators pervades and unifies Python.  Behind the scenes, the "
@@ -1140,7 +1134,7 @@ msgid ""
 "works::"
 msgstr ""
 
-#: ../../tutorial/classes.rst:810
+#: ../../tutorial/classes.rst:807
 msgid ""
 ">>> s = 'abc'\n"
 ">>> it = iter(s)\n"
@@ -1159,7 +1153,7 @@ msgid ""
 "StopIteration"
 msgstr ""
 
-#: ../../tutorial/classes.rst:826
+#: ../../tutorial/classes.rst:823
 msgid ""
 "Having seen the mechanics behind the iterator protocol, it is easy to add"
 " iterator behavior to your classes.  Define an "
@@ -1168,7 +1162,7 @@ msgid ""
 ":meth:`!__next__`, then :meth:`!__iter__` can just return ``self``::"
 msgstr ""
 
-#: ../../tutorial/classes.rst:831
+#: ../../tutorial/classes.rst:828
 msgid ""
 "class Reverse:\n"
 "    \"\"\"Iterator for looping over a sequence backwards.\"\"\"\n"
@@ -1186,7 +1180,7 @@ msgid ""
 "        return self.data[self.index]"
 msgstr ""
 
-#: ../../tutorial/classes.rst:848
+#: ../../tutorial/classes.rst:845
 msgid ""
 ">>> rev = Reverse('spam')\n"
 ">>> iter(rev)\n"
@@ -1200,11 +1194,11 @@ msgid ""
 "s"
 msgstr ""
 
-#: ../../tutorial/classes.rst:863
+#: ../../tutorial/classes.rst:860
 msgid "Generators"
 msgstr "Generátory"
 
-#: ../../tutorial/classes.rst:865
+#: ../../tutorial/classes.rst:862
 msgid ""
 ":term:`Generators <generator>` are a simple and powerful tool for "
 "creating iterators.  They are written like regular functions but use the "
@@ -1214,14 +1208,14 @@ msgid ""
 "An example shows that generators can be trivially easy to create::"
 msgstr ""
 
-#: ../../tutorial/classes.rst:872
+#: ../../tutorial/classes.rst:869
 msgid ""
 "def reverse(data):\n"
 "    for index in range(len(data)-1, -1, -1):\n"
 "        yield data[index]"
 msgstr ""
 
-#: ../../tutorial/classes.rst:878
+#: ../../tutorial/classes.rst:875
 msgid ""
 ">>> for char in reverse('golf'):\n"
 "...     print(char)\n"
@@ -1232,7 +1226,7 @@ msgid ""
 "g"
 msgstr ""
 
-#: ../../tutorial/classes.rst:886
+#: ../../tutorial/classes.rst:883
 msgid ""
 "Anything that can be done with generators can also be done with class-"
 "based iterators as described in the previous section.  What makes "
@@ -1240,7 +1234,7 @@ msgid ""
 ":meth:`~generator.__next__` methods are created automatically."
 msgstr ""
 
-#: ../../tutorial/classes.rst:891
+#: ../../tutorial/classes.rst:888
 msgid ""
 "Another key feature is that the local variables and execution state are "
 "automatically saved between calls.  This made the function easier to "
@@ -1248,7 +1242,7 @@ msgid ""
 "``self.index`` and ``self.data``."
 msgstr ""
 
-#: ../../tutorial/classes.rst:896
+#: ../../tutorial/classes.rst:893
 msgid ""
 "In addition to automatic method creation and saving program state, when "
 "generators terminate, they automatically raise :exc:`StopIteration`. In "
@@ -1256,11 +1250,11 @@ msgid ""
 " effort than writing a regular function."
 msgstr ""
 
-#: ../../tutorial/classes.rst:905
+#: ../../tutorial/classes.rst:902
 msgid "Generator Expressions"
 msgstr "Generátorové výrazy"
 
-#: ../../tutorial/classes.rst:907
+#: ../../tutorial/classes.rst:904
 msgid ""
 "Some simple generators can be coded succinctly as expressions using a "
 "syntax similar to list comprehensions but with parentheses instead of "
@@ -1271,11 +1265,11 @@ msgid ""
 "comprehensions."
 msgstr ""
 
-#: ../../tutorial/classes.rst:914
+#: ../../tutorial/classes.rst:911
 msgid "Examples::"
 msgstr "Příklady::"
 
-#: ../../tutorial/classes.rst:916
+#: ../../tutorial/classes.rst:913
 msgid ""
 ">>> sum(i*i for i in range(10))                 # sum of squares\n"
 "285\n"
@@ -1295,11 +1289,11 @@ msgid ""
 "['f', 'l', 'o', 'g']"
 msgstr ""
 
-#: ../../tutorial/classes.rst:935
+#: ../../tutorial/classes.rst:932
 msgid "Footnotes"
 msgstr "Poznámky pod čarou"
 
-#: ../../tutorial/classes.rst:936
+#: ../../tutorial/classes.rst:933
 msgid ""
 "Except for one thing.  Module objects have a secret read-only attribute "
 "called :attr:`~object.__dict__` which returns the dictionary used to "
@@ -1317,11 +1311,17 @@ msgstr ""
 msgid "method"
 msgstr ""
 
-#: ../../tutorial/classes.rst:682
+#: ../../tutorial/classes.rst:679
 msgid "name"
 msgstr ""
 
-#: ../../tutorial/classes.rst:682
+#: ../../tutorial/classes.rst:679
 msgid "mangling"
 msgstr ""
+
+#~ msgid ""
+#~ "In some cases multiple inheritance is"
+#~ " not allowed; see :ref:`multiple-"
+#~ "inheritance` for details."
+#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -208,15 +208,11 @@ msgstr ""
 msgid "``PyFunction_EVENT_MODIFY_KWDEFAULTS``"
 msgstr ""
 
-#: ../../c-api/function.rst:187
-msgid "``PyFunction_PYFUNC_EVENT_MODIFY_QUALNAME``"
-msgstr ""
-
-#: ../../c-api/function.rst:193
+#: ../../c-api/function.rst:190
 msgid "Type of a function watcher callback function."
 msgstr ""
 
-#: ../../c-api/function.rst:195
+#: ../../c-api/function.rst:192
 msgid ""
 "If *event* is ``PyFunction_EVENT_CREATE`` or ``PyFunction_EVENT_DESTROY``"
 " then *new_value* will be ``NULL``. Otherwise, *new_value* will hold a "
@@ -224,13 +220,13 @@ msgid ""
 " *func* for the attribute that is being modified."
 msgstr ""
 
-#: ../../c-api/function.rst:200
+#: ../../c-api/function.rst:197
 msgid ""
 "The callback may inspect but must not modify *func*; doing so could have "
 "unpredictable effects, including infinite recursion."
 msgstr ""
 
-#: ../../c-api/function.rst:203
+#: ../../c-api/function.rst:200
 msgid ""
 "If *event* is ``PyFunction_EVENT_CREATE``, then the callback is invoked "
 "after *func* has been fully initialized. Otherwise, the callback is "
@@ -242,23 +238,23 @@ msgid ""
 "does not change the semantics of the Python code being executed."
 msgstr ""
 
-#: ../../c-api/function.rst:212
+#: ../../c-api/function.rst:209
 msgid ""
-"If *event* is ``PyFunction_EVENT_DESTROY``, taking a reference in the "
+"If *event* is ``PyFunction_EVENT_DESTROY``,  Taking a reference in the "
 "callback to the about-to-be-destroyed function will resurrect it, "
 "preventing it from being freed at this time. When the resurrected object "
 "is destroyed later, any watcher callbacks active at that time will be "
 "called again."
 msgstr ""
 
-#: ../../c-api/function.rst:217
+#: ../../c-api/function.rst:214
 msgid ""
 "If the callback sets an exception, it must return ``-1``; this exception "
 "will be printed as an unraisable exception using "
 ":c:func:`PyErr_WriteUnraisable`. Otherwise it should return ``0``."
 msgstr ""
 
-#: ../../c-api/function.rst:221
+#: ../../c-api/function.rst:218
 msgid ""
 "There may already be a pending exception set on entry to the callback. In"
 " this case, the callback should return ``0`` with the same exception "
@@ -278,4 +274,19 @@ msgstr ""
 #: ../../c-api/function.rst:20
 msgid "MethodType (in module types)"
 msgstr ""
+
+#~ msgid "``PyFunction_PYFUNC_EVENT_MODIFY_QUALNAME``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If *event* is ``PyFunction_EVENT_DESTROY``, "
+#~ "taking a reference in the callback "
+#~ "to the about-to-be-destroyed "
+#~ "function will resurrect it, preventing "
+#~ "it from being freed at this time."
+#~ " When the resurrected object is "
+#~ "destroyed later, any watcher callbacks "
+#~ "active at that time will be called"
+#~ " again."
+#~ msgstr ""
 

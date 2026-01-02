@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -103,10 +103,10 @@ msgstr ""
 #: ../../library/os.path.rst:263 ../../library/os.path.rst:273
 #: ../../library/os.path.rst:292 ../../library/os.path.rst:312
 #: ../../library/os.path.rst:398 ../../library/os.path.rst:418
-#: ../../library/os.path.rst:460 ../../library/os.path.rst:496
-#: ../../library/os.path.rst:512 ../../library/os.path.rst:523
-#: ../../library/os.path.rst:550 ../../library/os.path.rst:575
-#: ../../library/os.path.rst:639
+#: ../../library/os.path.rst:458 ../../library/os.path.rst:487
+#: ../../library/os.path.rst:503 ../../library/os.path.rst:514
+#: ../../library/os.path.rst:541 ../../library/os.path.rst:566
+#: ../../library/os.path.rst:630
 msgid "Accepts a :term:`path-like object`."
 msgstr ""
 
@@ -494,11 +494,10 @@ msgid ""
 "If *strict* is ``True``, the first error encountered when evaluating the "
 "path is re-raised. In particular, :exc:`FileNotFoundError` is raised if "
 "*path* does not exist, or another :exc:`OSError` if it is otherwise "
-"inaccessible. If *strict* is :data:`ALL_BUT_LAST`, the last component of "
-"the path is allowed to be missing, but all other errors are raised."
+"inaccessible."
 msgstr ""
 
-#: ../../library/os.path.rst:447
+#: ../../library/os.path.rst:445
 msgid ""
 "If *strict* is :py:data:`os.path.ALLOW_MISSING`, errors other than "
 ":exc:`FileNotFoundError` are re-raised (as with ``strict=True``). Thus, "
@@ -506,38 +505,38 @@ msgid ""
 " and some of its parent directories may be missing."
 msgstr ""
 
-#: ../../library/os.path.rst:453
+#: ../../library/os.path.rst:451
 msgid ""
 "This function emulates the operating system's procedure for making a path"
 " canonical, which differs slightly between Windows and UNIX with respect "
 "to how links and subsequent path components interact."
 msgstr ""
 
-#: ../../library/os.path.rst:457
+#: ../../library/os.path.rst:455
 msgid ""
 "Operating system APIs make paths canonical as needed, so it's not "
 "normally necessary to call this function."
 msgstr ""
 
-#: ../../library/os.path.rst:463
+#: ../../library/os.path.rst:461
 msgid "Symbolic links and junctions are now resolved on Windows."
 msgstr ""
 
-#: ../../library/os.path.rst:466
+#: ../../library/os.path.rst:464
 msgid "The *strict* parameter was added."
 msgstr ""
 
-#: ../../library/os.path.rst:469
+#: ../../library/os.path.rst:467
 msgid ""
-"The :data:`ALL_BUT_LAST` and :data:`ALLOW_MISSING` values for the "
-"*strict* parameter was added."
+"The :py:data:`~os.path.ALLOW_MISSING` value for the *strict* parameter "
+"was added."
 msgstr ""
 
-#: ../../library/os.path.rst:475 ../../library/os.path.rst:481
+#: ../../library/os.path.rst:473
 msgid "Special value used for the *strict* argument in :func:`realpath`."
 msgstr ""
 
-#: ../../library/os.path.rst:488
+#: ../../library/os.path.rst:479
 msgid ""
 "Return a relative filepath to *path* either from the current directory or"
 " from an optional *start* directory.  This is a path computation:  the "
@@ -546,33 +545,33 @@ msgid ""
 "*start* are on different drives."
 msgstr ""
 
-#: ../../library/os.path.rst:494
+#: ../../library/os.path.rst:485
 msgid "*start* defaults to :data:`os.curdir`."
 msgstr ""
 
-#: ../../library/os.path.rst:502
+#: ../../library/os.path.rst:493
 msgid ""
 "Return ``True`` if both pathname arguments refer to the same file or "
 "directory. This is determined by the device number and i-node number and "
 "raises an exception if an :func:`os.stat` call on either pathname fails."
 msgstr ""
 
-#: ../../library/os.path.rst:506 ../../library/os.path.rst:520
-#: ../../library/os.path.rst:534
+#: ../../library/os.path.rst:497 ../../library/os.path.rst:511
+#: ../../library/os.path.rst:525
 msgid "Added Windows support."
 msgstr ""
 
-#: ../../library/os.path.rst:509
+#: ../../library/os.path.rst:500
 msgid "Windows now uses the same implementation as all other platforms."
 msgstr ""
 
-#: ../../library/os.path.rst:518
+#: ../../library/os.path.rst:509
 msgid ""
 "Return ``True`` if the file descriptors *fp1* and *fp2* refer to the same"
 " file."
 msgstr ""
 
-#: ../../library/os.path.rst:529
+#: ../../library/os.path.rst:520
 msgid ""
 "Return ``True`` if the stat tuples *stat1* and *stat2* refer to the same "
 "file. These structures may have been returned by :func:`os.fstat`, "
@@ -580,7 +579,7 @@ msgid ""
 "underlying comparison used by :func:`samefile` and :func:`sameopenfile`."
 msgstr ""
 
-#: ../../library/os.path.rst:540
+#: ../../library/os.path.rst:531
 msgid ""
 "Split the pathname *path* into a pair, ``(head, tail)`` where *tail* is "
 "the last pathname component and *head* is everything leading up to that."
@@ -593,7 +592,7 @@ msgid ""
 "functions :func:`join`, :func:`dirname` and :func:`basename`."
 msgstr ""
 
-#: ../../library/os.path.rst:556
+#: ../../library/os.path.rst:547
 msgid ""
 "Split the pathname *path* into a pair ``(drive, tail)`` where *drive* is "
 "either a mount point or the empty string.  On systems which do not use "
@@ -601,35 +600,35 @@ msgid ""
 "cases, ``drive + tail`` will be the same as *path*."
 msgstr ""
 
-#: ../../library/os.path.rst:561
+#: ../../library/os.path.rst:552
 msgid "On Windows, splits a pathname into drive/UNC sharepoint and relative path."
 msgstr ""
 
-#: ../../library/os.path.rst:563
+#: ../../library/os.path.rst:554
 msgid ""
 "If the path contains a drive letter, drive will contain everything up to "
 "and including the colon::"
 msgstr ""
 
-#: ../../library/os.path.rst:566
+#: ../../library/os.path.rst:557
 msgid ""
 ">>> splitdrive(\"c:/dir\")\n"
 "(\"c:\", \"/dir\")"
 msgstr ""
 
-#: ../../library/os.path.rst:569
+#: ../../library/os.path.rst:560
 msgid ""
 "If the path contains a UNC path, drive will contain the host name and "
 "share::"
 msgstr ""
 
-#: ../../library/os.path.rst:572
+#: ../../library/os.path.rst:563
 msgid ""
 ">>> splitdrive(\"//host/computer/dir\")\n"
 "(\"//host/computer\", \"/dir\")"
 msgstr ""
 
-#: ../../library/os.path.rst:581
+#: ../../library/os.path.rst:572
 msgid ""
 "Split the pathname *path* into a 3-item tuple ``(drive, root, tail)`` "
 "where *drive* is a device name or mount point, *root* is a string of "
@@ -638,7 +637,7 @@ msgid ""
 "tail`` will be the same as *path*."
 msgstr ""
 
-#: ../../library/os.path.rst:587
+#: ../../library/os.path.rst:578
 msgid ""
 "On POSIX systems, *drive* is always empty. The *root* may be empty (if "
 "*path* is relative), a single forward slash (if *path* is absolute), or "
@@ -648,7 +647,7 @@ msgid ""
 " For example::"
 msgstr ""
 
-#: ../../library/os.path.rst:593
+#: ../../library/os.path.rst:584
 msgid ""
 ">>> splitroot('/home/sam')\n"
 "('', '/', 'home/sam')\n"
@@ -658,14 +657,14 @@ msgid ""
 "('', '/', '//home/sam')"
 msgstr ""
 
-#: ../../library/os.path.rst:600
+#: ../../library/os.path.rst:591
 msgid ""
 "On Windows, *drive* may be empty, a drive-letter name, a UNC share, or a "
 "device name. The *root* may be empty, a forward slash, or a backward "
 "slash. For example::"
 msgstr ""
 
-#: ../../library/os.path.rst:604
+#: ../../library/os.path.rst:595
 msgid ""
 ">>> splitroot('C:/Users/Sam')\n"
 "('C:', '/', 'Users/Sam')\n"
@@ -673,31 +672,31 @@ msgid ""
 "('//Server/Share', '/', 'Users/Sam')"
 msgstr ""
 
-#: ../../library/os.path.rst:614
+#: ../../library/os.path.rst:605
 msgid ""
 "Split the pathname *path* into a pair ``(root, ext)``  such that ``root +"
 " ext == path``, and the extension, *ext*, is empty or begins with a "
 "period and contains at most one period."
 msgstr ""
 
-#: ../../library/os.path.rst:618
+#: ../../library/os.path.rst:609
 msgid "If the path contains no extension, *ext* will be ``''``::"
 msgstr ""
 
-#: ../../library/os.path.rst:620
+#: ../../library/os.path.rst:611
 msgid ""
 ">>> splitext('bar')\n"
 "('bar', '')"
 msgstr ""
 
-#: ../../library/os.path.rst:623
+#: ../../library/os.path.rst:614
 msgid ""
 "If the path contains an extension, then *ext* will be set to this "
 "extension, including the leading period. Note that previous periods will "
 "be ignored::"
 msgstr ""
 
-#: ../../library/os.path.rst:626
+#: ../../library/os.path.rst:617
 msgid ""
 ">>> splitext('foo.bar.exe')\n"
 "('foo.bar', '.exe')\n"
@@ -705,13 +704,13 @@ msgid ""
 "('/foo/bar', '.exe')"
 msgstr ""
 
-#: ../../library/os.path.rst:631
+#: ../../library/os.path.rst:622
 msgid ""
 "Leading periods of the last component of the path are considered to be "
 "part of the root::"
 msgstr ""
 
-#: ../../library/os.path.rst:634
+#: ../../library/os.path.rst:625
 msgid ""
 ">>> splitext('.cshrc')\n"
 "('.cshrc', '')\n"
@@ -719,7 +718,7 @@ msgid ""
 "('/foo/....jpg', '')"
 msgstr ""
 
-#: ../../library/os.path.rst:645
+#: ../../library/os.path.rst:636
 msgid ""
 "``True`` if arbitrary Unicode strings can be used as file names (within "
 "limitations imposed by the file system)."
@@ -764,4 +763,24 @@ msgstr ""
 #: ../../library/os.path.rst:185
 msgid "environment variables expansion (Windows)"
 msgstr ""
+
+#~ msgid ""
+#~ "If *strict* is ``True``, the first "
+#~ "error encountered when evaluating the "
+#~ "path is re-raised. In particular, "
+#~ ":exc:`FileNotFoundError` is raised if *path*"
+#~ " does not exist, or another "
+#~ ":exc:`OSError` if it is otherwise "
+#~ "inaccessible. If *strict* is "
+#~ ":data:`ALL_BUT_LAST`, the last component of"
+#~ " the path is allowed to be "
+#~ "missing, but all other errors are "
+#~ "raised."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The :data:`ALL_BUT_LAST` and :data:`ALLOW_MISSING`"
+#~ " values for the *strict* parameter "
+#~ "was added."
+#~ msgstr ""
 

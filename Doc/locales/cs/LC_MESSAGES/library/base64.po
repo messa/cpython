@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -345,7 +345,7 @@ msgid ""
 "git-style binary diffs) and return the encoded :class:`bytes`."
 msgstr ""
 
-#: ../../library/base64.rst:255 ../../library/base64.rst:276
+#: ../../library/base64.rst:255
 msgid ""
 "If *pad* is true, the input is padded with ``b'\\0'`` so its length is a "
 "multiple of 4 bytes before encoding."
@@ -366,21 +366,17 @@ msgid ""
 msgstr ""
 
 #: ../../library/base64.rst:281
-msgid "The *pad* parameter was added."
-msgstr ""
-
-#: ../../library/base64.rst:287
 msgid ""
 "Decode the Z85-encoded :term:`bytes-like object` or ASCII string *s* and "
 "return the decoded :class:`bytes`.  See `Z85  specification "
 "<https://rfc.zeromq.org/spec/32/>`_ for more information."
 msgstr ""
 
-#: ../../library/base64.rst:297
+#: ../../library/base64.rst:291
 msgid "Legacy Interface"
 msgstr ""
 
-#: ../../library/base64.rst:301
+#: ../../library/base64.rst:295
 msgid ""
 "Decode the contents of the binary *input* file and write the resulting "
 "binary data to the *output* file. *input* and *output* must be "
@@ -388,13 +384,13 @@ msgid ""
 "``input.readline()`` returns an empty bytes object."
 msgstr ""
 
-#: ../../library/base64.rst:309
+#: ../../library/base64.rst:303
 msgid ""
 "Decode the :term:`bytes-like object` *s*, which must contain one or more "
 "lines of base64 encoded data, and return the decoded :class:`bytes`."
 msgstr ""
 
-#: ../../library/base64.rst:317
+#: ../../library/base64.rst:311
 msgid ""
 "Encode the contents of the binary *input* file and write the resulting "
 "base64 encoded data to the *output* file. *input* and *output* must be "
@@ -405,7 +401,7 @@ msgid ""
 ":rfc:`2045` (MIME)."
 msgstr ""
 
-#: ../../library/base64.rst:327
+#: ../../library/base64.rst:321
 msgid ""
 "Encode the :term:`bytes-like object` *s*, which can contain arbitrary "
 "binary data, and return :class:`bytes` containing the base64-encoded "
@@ -414,37 +410,37 @@ msgid ""
 "(MIME)."
 msgstr ""
 
-#: ../../library/base64.rst:335
+#: ../../library/base64.rst:329
 msgid "An example usage of the module:"
 msgstr ""
 
-#: ../../library/base64.rst:348
+#: ../../library/base64.rst:342
 msgid "Security Considerations"
 msgstr ""
 
-#: ../../library/base64.rst:350
+#: ../../library/base64.rst:344
 msgid ""
 "A new security considerations section was added to :rfc:`4648` (section "
 "12); it's recommended to review the security section for any code "
 "deployed to production."
 msgstr ""
 
-#: ../../library/base64.rst:355
+#: ../../library/base64.rst:349
 msgid "Module :mod:`binascii`"
 msgstr ""
 
-#: ../../library/base64.rst:356
+#: ../../library/base64.rst:350
 msgid "Support module containing ASCII-to-binary and binary-to-ASCII conversions."
 msgstr ""
 
-#: ../../library/base64.rst:358
+#: ../../library/base64.rst:352
 msgid ""
 ":rfc:`1521` - MIME (Multipurpose Internet Mail Extensions) Part One: "
 "Mechanisms for Specifying and Describing the Format of Internet Message "
 "Bodies"
 msgstr ""
 
-#: ../../library/base64.rst:359
+#: ../../library/base64.rst:353
 msgid ""
 "Section 5.2, \"Base64 Content-Transfer-Encoding,\" provides the "
 "definition of the base64 encoding."
@@ -465,4 +461,7 @@ msgstr ""
 #: ../../library/base64.rst:10
 msgid "base64 encoding"
 msgstr ""
+
+#~ msgid "The *pad* parameter was added."
+#~ msgstr ""
 

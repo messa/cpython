@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -341,7 +341,7 @@ msgid ""
 "years of security fixes."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:208 ../../whatsnew/3.13.rst:2047
+#: ../../whatsnew/3.13.rst:208 ../../whatsnew/3.13.rst:2044
 msgid "New Features"
 msgstr ""
 
@@ -2725,7 +2725,6 @@ msgid ""
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.15.rst:16
-#: ../../deprecations/pending-removal-in-3.19.rst:4
 #: ../../whatsnew/3.13.rst:1849
 msgid ":mod:`ctypes`:"
 msgstr ""
@@ -2796,11 +2795,11 @@ msgstr ""
 
 #: ../../whatsnew/3.13.rst:1888
 msgid ""
-"Deprecate :class:`!CGIHTTPRequestHandler`, to be removed in Python 3.15. "
-"Process-based CGI HTTP servers have been out of favor for a very long "
-"time. This code was outdated, unmaintained, and rarely used. It has a "
-"high potential for both security and functionality bugs. (Contributed by "
-"Gregory P. Smith in :gh:`109096`.)"
+"Deprecate :class:`~http.server.CGIHTTPRequestHandler`, to be removed in "
+"Python 3.15. Process-based CGI HTTP servers have been out of favor for a "
+"very long time. This code was outdated, unmaintained, and rarely used. It"
+" has a high potential for both security and functionality bugs. "
+"(Contributed by Gregory P. Smith in :gh:`109096`.)"
 msgstr ""
 
 #: ../../whatsnew/3.13.rst:1895
@@ -2835,26 +2834,26 @@ msgid ""
 "of Python. (Contributed by Serhiy Storchaka in :gh:`56166`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:36
+#: ../../deprecations/pending-removal-in-3.15.rst:46
 #: ../../whatsnew/3.13.rst:1916
 msgid ":mod:`pathlib`:"
 msgstr ""
 
 #: ../../whatsnew/3.13.rst:1918
 msgid ""
-"Deprecate :meth:`!.PurePath.is_reserved`, to be removed in Python 3.15. "
+"Deprecate :meth:`.PurePath.is_reserved`, to be removed in Python 3.15. "
 "Use :func:`os.path.isreserved` to detect reserved paths on Windows. "
 "(Contributed by Barney Gale in :gh:`88569`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:42
+#: ../../deprecations/pending-removal-in-3.15.rst:52
 #: ../../whatsnew/3.13.rst:1923
 msgid ":mod:`platform`:"
 msgstr ""
 
 #: ../../whatsnew/3.13.rst:1925
 msgid ""
-"Deprecate :func:`!platform.java_ver`, to be removed in Python 3.15. This "
+"Deprecate :func:`~platform.java_ver`, to be removed in Python 3.15. This "
 "function is only useful for Jython support, has a confusing API, and is "
 "largely untested. (Contributed by Nikita Sobolev in :gh:`116349`.)"
 msgstr ""
@@ -2937,8 +2936,8 @@ msgid ""
 "Katriel in :gh:`112332`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:70
-#: ../../deprecations/pending-removal-in-3.17.rst:32
+#: ../../deprecations/pending-removal-in-3.15.rst:80
+#: ../../deprecations/pending-removal-in-3.17.rst:26
 #: ../../whatsnew/3.13.rst:1977
 msgid ":mod:`typing`:"
 msgstr ""
@@ -2968,8 +2967,8 @@ msgstr ""
 
 #: ../../whatsnew/3.13.rst:1996
 msgid ""
-"Deprecate the :func:`!typing.no_type_check_decorator` decorator function,"
-" to be removed in Python 3.15. After eight years in the :mod:`typing` "
+"Deprecate the :func:`typing.no_type_check_decorator` decorator function, "
+"to be removed in Python 3.15. After eight years in the :mod:`typing` "
 "module, it has yet to be supported by any major type checker. "
 "(Contributed by Alex Waygood in :gh:`106309`.)"
 msgstr ""
@@ -2983,17 +2982,17 @@ msgid ""
 "instead. (Contributed by Michael The in :gh:`107116`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:92
+#: ../../deprecations/pending-removal-in-3.15.rst:100
 #: ../../whatsnew/3.13.rst:2010
 msgid ":mod:`wave`:"
 msgstr ""
 
 #: ../../whatsnew/3.13.rst:2012
 msgid ""
-"Deprecate the ``getmark()``, ``setmark()`` and ``getmarkers()`` methods "
-"of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, to"
-" be removed in Python 3.15. (Contributed by Victor Stinner in "
-":gh:`105096`.)"
+"Deprecate the :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and "
+":meth:`~wave.Wave_read.getmarkers` methods of the "
+":class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, to be "
+"removed in Python 3.15. (Contributed by Victor Stinner in :gh:`105096`.)"
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.14.rst:2
@@ -3189,10 +3188,10 @@ msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.15.rst:6
 msgid ""
-"Setting ``__cached__`` on a module while failing to set "
+"Setting :attr:`~module.__cached__` on a module while failing to set "
 ":attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is "
-"deprecated. In Python 3.15, ``__cached__`` will cease to be set or take "
-"into consideration by the import system or standard library. "
+"deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or "
+"take into consideration by the import system or standard library. "
 "(:gh:`97879`)"
 msgstr ""
 
@@ -3213,9 +3212,10 @@ msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.15.rst:23
 msgid ""
-"The obsolete and rarely used :class:`!CGIHTTPRequestHandler` has been "
-"deprecated since Python 3.13. No direct replacement exists. *Anything* is"
-" better than CGI to interface a web server with a request handler."
+"The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` "
+"has been deprecated since Python 3.13. No direct replacement exists. "
+"*Anything* is better than CGI to interface a web server with a request "
+"handler."
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.15.rst:29
@@ -3233,35 +3233,49 @@ msgstr ""
 msgid "``load_module()`` method: use ``exec_module()`` instead."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:38
-msgid ""
-":meth:`!.PurePath.is_reserved` has been deprecated since Python 3.13. Use"
-" :func:`os.path.isreserved` to detect reserved paths on Windows."
+#: ../../deprecations/pending-removal-in-3.15.rst:36
+msgid ":class:`locale`:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:44
+#: ../../deprecations/pending-removal-in-3.15.rst:38
 msgid ""
-":func:`!platform.java_ver` has been deprecated since Python 3.13. This "
+"The :func:`~locale.getdefaultlocale` function has been deprecated since "
+"Python 3.11. Its removal was originally planned for Python 3.13 "
+"(:gh:`90817`), but has been postponed to Python 3.15. Use "
+":func:`~locale.getlocale`, :func:`~locale.setlocale`, and "
+":func:`~locale.getencoding` instead. (Contributed by Hugo van Kemenade in"
+" :gh:`111187`.)"
+msgstr ""
+
+#: ../../deprecations/pending-removal-in-3.15.rst:48
+msgid ""
+":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use "
+":func:`os.path.isreserved` to detect reserved paths on Windows."
+msgstr ""
+
+#: ../../deprecations/pending-removal-in-3.15.rst:54
+msgid ""
+":func:`~platform.java_ver` has been deprecated since Python 3.13. This "
 "function is only useful for Jython support, has a confusing API, and is "
 "largely untested."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:48
+#: ../../deprecations/pending-removal-in-3.15.rst:58
 #: ../../deprecations/pending-removal-in-3.16.rst:96
 msgid ":mod:`sysconfig`:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:50
+#: ../../deprecations/pending-removal-in-3.15.rst:60
 msgid ""
 "The *check_home* argument of :func:`sysconfig.is_python_build` has been "
 "deprecated since Python 3.12."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:53
+#: ../../deprecations/pending-removal-in-3.15.rst:63
 msgid ":mod:`threading`:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:55
+#: ../../deprecations/pending-removal-in-3.15.rst:65
 msgid ""
 ":func:`~threading.RLock` will take no arguments in Python 3.15. Passing "
 "any arguments has been deprecated since Python 3.14, as the  Python "
@@ -3269,11 +3283,11 @@ msgid ""
 "number of positional or keyword arguments, ignoring every argument."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:61
+#: ../../deprecations/pending-removal-in-3.15.rst:71
 msgid ":mod:`types`:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:63
+#: ../../deprecations/pending-removal-in-3.15.rst:73
 msgid ""
 ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was "
 "deprecated in :pep:`626` since 3.10 and was planned to be removed in "
@@ -3281,7 +3295,7 @@ msgid ""
 "removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:72
+#: ../../deprecations/pending-removal-in-3.15.rst:82
 msgid ""
 "The undocumented keyword argument syntax for creating "
 ":class:`~typing.NamedTuple` classes (for example, ``Point = "
@@ -3289,7 +3303,7 @@ msgid ""
 "3.13. Use the class-based syntax or the functional syntax instead."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:78
+#: ../../deprecations/pending-removal-in-3.15.rst:88
 #, python-brace-format
 msgid ""
 "When using the functional syntax of :class:`~typing.TypedDict`\\s, "
@@ -3300,33 +3314,30 @@ msgid ""
 "TypedDict with zero field."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:85
+#: ../../deprecations/pending-removal-in-3.15.rst:95
 msgid ""
-"The :func:`!typing.no_type_check_decorator` decorator function has been "
+"The :func:`typing.no_type_check_decorator` decorator function has been "
 "deprecated since Python 3.13. After eight years in the :mod:`typing` "
 "module, it has yet to be supported by any major type checker."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:90
-msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.15.rst:94
+#: ../../deprecations/pending-removal-in-3.15.rst:102
 msgid ""
-"The ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of the "
+"The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and "
+":meth:`~wave.Wave_read.getmarkers` methods of the "
 ":class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been "
 "deprecated since Python 3.13."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:98
+#: ../../deprecations/pending-removal-in-3.15.rst:107
 msgid ":mod:`zipimport`:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.15.rst:100
+#: ../../deprecations/pending-removal-in-3.15.rst:109
 msgid ""
-":meth:`!zipimport.zipimporter.load_module` has been deprecated since "
+":meth:`~zipimport.zipimporter.load_module` has been deprecated since "
 "Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. "
-"(:gh:`125746`.)"
+"(Contributed by Jiahao Li in :gh:`125746`.)"
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.16.rst:2
@@ -3512,7 +3523,7 @@ msgid ""
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.17.rst:8
-#: ../../deprecations/pending-removal-in-3.17.rst:42
+#: ../../deprecations/pending-removal-in-3.17.rst:36
 msgid ""
 "Use ``isinstance(obj, collections.abc.Buffer)`` to test if ``obj`` "
 "implements the :ref:`buffer protocol <bufferobjects>` at runtime. For use"
@@ -3522,7 +3533,7 @@ msgid ""
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.17.rst:14
-#: ../../deprecations/pending-removal-in-3.17.rst:48
+#: ../../deprecations/pending-removal-in-3.17.rst:42
 msgid ""
 ":class:`!ByteString` was originally intended to be an abstract class that"
 " would serve as a supertype of both :class:`bytes` and "
@@ -3534,24 +3545,13 @@ msgid ""
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.17.rst:22
-#: ../../deprecations/pending-removal-in-3.17.rst:56
+#: ../../deprecations/pending-removal-in-3.17.rst:50
 msgid ""
 "See :pep:`PEP 688 <688#current-options>` for more details. (Contributed "
 "by Shantanu Jain in :gh:`91896`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.17.rst:26
-msgid ":mod:`encodings`:"
-msgstr ""
-
 #: ../../deprecations/pending-removal-in-3.17.rst:28
-msgid ""
-"Passing non-ascii *encoding* names to "
-":func:`encodings.normalize_encoding` is deprecated and scheduled for "
-"removal in Python 3.17. (Contributed by Stan Ulbrych in :gh:`136702`)"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.17.rst:34
 msgid ""
 "Before Python 3.14, old-style unions were implemented using the private "
 "class ``typing._UnionGenericAlias``. This class is no longer needed for "
@@ -3562,155 +3562,10 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-3.17.rst:39
+#: ../../deprecations/pending-removal-in-3.17.rst:33
 msgid ""
 ":class:`typing.ByteString`, deprecated since Python 3.9, is scheduled for"
 " removal in Python 3.17."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.19.rst:2
-msgid "Pending removal in Python 3.19"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.19.rst:6
-msgid ""
-"Implicitly switching to the MSVC-compatible struct layout by setting "
-":attr:`~ctypes.Structure._pack_` but not "
-":attr:`~ctypes.Structure._layout_` on non-Windows platforms."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.19.rst:10
-msgid ":mod:`hashlib`:"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.19.rst:12
-msgid ""
-"In hash function constructors such as :func:`~hashlib.new` or the direct "
-"hash-named constructors such as :func:`~hashlib.md5` and "
-":func:`~hashlib.sha256`, their optional initial data parameter could also"
-" be passed a keyword argument named ``data=`` or ``string=`` in various "
-":mod:`!hashlib` implementations."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.19.rst:18
-msgid ""
-"Support for the ``string`` keyword argument name is now deprecated and "
-"slated for removal in Python 3.19."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.19.rst:21
-msgid ""
-"Before Python 3.13, the ``string`` keyword parameter was not correctly "
-"supported depending on the backend implementation of hash functions. "
-"Prefer passing the initial data as a positional argument for maximum "
-"backwards compatibility."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:2
-msgid "Pending removal in Python 3.20"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:4
-msgid ""
-"The ``__version__``, ``version`` and ``VERSION`` attributes have been "
-"deprecated in these standard library modules and will be removed in "
-"Python 3.20. Use :py:data:`sys.version_info` instead."
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:8
-msgid ":mod:`argparse`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:9
-msgid ":mod:`csv`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:10
-msgid ":mod:`ctypes`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:11
-msgid ":mod:`!ctypes.macholib`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:12
-msgid ":mod:`decimal` (use :data:`decimal.SPEC_VERSION` instead)"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:13
-msgid ":mod:`http.server`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:14
-msgid ":mod:`imaplib`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:15
-msgid ":mod:`ipaddress`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:16
-msgid ":mod:`json`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:17
-msgid ":mod:`logging` (``__date__`` also deprecated)"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:18
-msgid ":mod:`optparse`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:19
-msgid ":mod:`pickle`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:20
-msgid ":mod:`platform`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:21
-msgid ":mod:`re`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:22
-msgid ":mod:`socketserver`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:23
-msgid ":mod:`tabnanny`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:24
-msgid ":mod:`tkinter.font`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:25
-msgid ":mod:`tkinter.ttk`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:26
-msgid ":mod:`wsgiref.simple_server`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:27
-msgid ":mod:`xml.etree.ElementTree`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:28
-msgid ":mod:`!xml.sax.expatreader`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:29
-msgid ":mod:`xml.sax.handler`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:30
-msgid ":mod:`zlib`"
-msgstr ""
-
-#: ../../deprecations/pending-removal-in-3.20.rst:32
-msgid "(Contributed by Hugo van Kemenade and Stan Ulbrych in :gh:`76007`.)"
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:2
@@ -3867,9 +3722,7 @@ msgid ""
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-future.rst:79
-msgid ""
-":mod:`os`: Calling :func:`os.register_at_fork` in a multi-threaded "
-"process."
+msgid ":mod:`os`: Calling :func:`os.register_at_fork` in multi-threaded process."
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-future.rst:81
@@ -3889,104 +3742,108 @@ msgid ""
 msgstr ""
 
 #: ../../deprecations/pending-removal-in-future.rst:91
+msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
+msgstr ""
+
+#: ../../deprecations/pending-removal-in-future.rst:93
 msgid ""
 ":mod:`shutil`: :func:`~shutil.rmtree`'s *onerror* parameter is deprecated"
 " in Python 3.12; use the *onexc* parameter instead."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:94
+#: ../../deprecations/pending-removal-in-future.rst:96
 msgid ":mod:`ssl` options and protocols:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:96
+#: ../../deprecations/pending-removal-in-future.rst:98
 msgid ":class:`ssl.SSLContext` without protocol argument is deprecated."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:97
+#: ../../deprecations/pending-removal-in-future.rst:99
 msgid ""
 ":class:`ssl.SSLContext`: :meth:`~ssl.SSLContext.set_npn_protocols` and "
 ":meth:`!selected_npn_protocol` are deprecated: use ALPN instead."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:100
+#: ../../deprecations/pending-removal-in-future.rst:102
 msgid "``ssl.OP_NO_SSL*`` options"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:101
+#: ../../deprecations/pending-removal-in-future.rst:103
 msgid "``ssl.OP_NO_TLS*`` options"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:102
+#: ../../deprecations/pending-removal-in-future.rst:104
 msgid "``ssl.PROTOCOL_SSLv3``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:103
+#: ../../deprecations/pending-removal-in-future.rst:105
 msgid "``ssl.PROTOCOL_TLS``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:104
+#: ../../deprecations/pending-removal-in-future.rst:106
 msgid "``ssl.PROTOCOL_TLSv1``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:105
+#: ../../deprecations/pending-removal-in-future.rst:107
 msgid "``ssl.PROTOCOL_TLSv1_1``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:106
+#: ../../deprecations/pending-removal-in-future.rst:108
 msgid "``ssl.PROTOCOL_TLSv1_2``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:107
+#: ../../deprecations/pending-removal-in-future.rst:109
 msgid "``ssl.TLSVersion.SSLv3``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:108
+#: ../../deprecations/pending-removal-in-future.rst:110
 msgid "``ssl.TLSVersion.TLSv1``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:109
+#: ../../deprecations/pending-removal-in-future.rst:111
 msgid "``ssl.TLSVersion.TLSv1_1``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:111
+#: ../../deprecations/pending-removal-in-future.rst:113
 msgid ":mod:`threading` methods:"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:113
+#: ../../deprecations/pending-removal-in-future.rst:115
 msgid ""
 ":meth:`!threading.Condition.notifyAll`: use "
 ":meth:`~threading.Condition.notify_all`."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:114
+#: ../../deprecations/pending-removal-in-future.rst:116
 msgid ":meth:`!threading.Event.isSet`: use :meth:`~threading.Event.is_set`."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:115
+#: ../../deprecations/pending-removal-in-future.rst:117
 msgid ""
 ":meth:`!threading.Thread.isDaemon`, :meth:`threading.Thread.setDaemon`: "
 "use :attr:`threading.Thread.daemon` attribute."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:117
+#: ../../deprecations/pending-removal-in-future.rst:119
 msgid ""
 ":meth:`!threading.Thread.getName`, :meth:`threading.Thread.setName`: use "
 ":attr:`threading.Thread.name` attribute."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:119
+#: ../../deprecations/pending-removal-in-future.rst:121
 msgid ":meth:`!threading.currentThread`: use :meth:`threading.current_thread`."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:120
+#: ../../deprecations/pending-removal-in-future.rst:122
 msgid ":meth:`!threading.activeCount`: use :meth:`threading.active_count`."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:122
+#: ../../deprecations/pending-removal-in-future.rst:124
 msgid ":class:`typing.Text` (:gh:`92332`)."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:124
+#: ../../deprecations/pending-removal-in-future.rst:126
 msgid ""
 "The internal class ``typing._UnionGenericAlias`` is no longer used to "
 "implement :class:`typing.Union`. To preserve compatibility with users "
@@ -3994,69 +3851,69 @@ msgid ""
 "least Python 3.17. (Contributed by Jelle Zijlstra in :gh:`105499`.)"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:129
+#: ../../deprecations/pending-removal-in-future.rst:131
 msgid ""
 ":class:`unittest.IsolatedAsyncioTestCase`: it is deprecated to return a "
 "value that is not ``None`` from a test case."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:132
+#: ../../deprecations/pending-removal-in-future.rst:134
 msgid ""
 ":mod:`urllib.parse` deprecated functions: :func:`~urllib.parse.urlparse` "
 "instead"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:134
+#: ../../deprecations/pending-removal-in-future.rst:136
 msgid "``splitattr()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:135
+#: ../../deprecations/pending-removal-in-future.rst:137
 msgid "``splithost()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:136
+#: ../../deprecations/pending-removal-in-future.rst:138
 msgid "``splitnport()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:137
+#: ../../deprecations/pending-removal-in-future.rst:139
 msgid "``splitpasswd()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:138
+#: ../../deprecations/pending-removal-in-future.rst:140
 msgid "``splitport()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:139
+#: ../../deprecations/pending-removal-in-future.rst:141
 msgid "``splitquery()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:140
+#: ../../deprecations/pending-removal-in-future.rst:142
 msgid "``splittag()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:141
+#: ../../deprecations/pending-removal-in-future.rst:143
 msgid "``splittype()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:142
+#: ../../deprecations/pending-removal-in-future.rst:144
 msgid "``splituser()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:143
+#: ../../deprecations/pending-removal-in-future.rst:145
 msgid "``splitvalue()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:144
+#: ../../deprecations/pending-removal-in-future.rst:146
 msgid "``to_bytes()``"
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:146
+#: ../../deprecations/pending-removal-in-future.rst:148
 msgid ""
 ":mod:`wsgiref`: ``SimpleHandler.stdout.write()`` should not do partial "
 "writes."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:149
+#: ../../deprecations/pending-removal-in-future.rst:151
 msgid ""
 ":mod:`xml.etree.ElementTree`: Testing the truth value of an "
 ":class:`~xml.etree.ElementTree.Element` is deprecated. In a future "
@@ -4064,17 +3921,17 @@ msgid ""
 "``elem is not None`` tests instead."
 msgstr ""
 
-#: ../../deprecations/pending-removal-in-future.rst:154
+#: ../../deprecations/pending-removal-in-future.rst:156
 msgid ""
 ":func:`sys._clear_type_cache` is deprecated: use "
 ":func:`sys._clear_internal_caches` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2034
+#: ../../whatsnew/3.13.rst:2031
 msgid "CPython Bytecode Changes"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2036
+#: ../../whatsnew/3.13.rst:2033
 msgid ""
 "The oparg of :opcode:`YIELD_VALUE` is now ``1`` if the yield is part of a"
 " yield-from or await, and ``0`` otherwise. The oparg of :opcode:`RESUME` "
@@ -4083,97 +3940,97 @@ msgid ""
 " :gh:`111354`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2044
+#: ../../whatsnew/3.13.rst:2041
 msgid "C API Changes"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2049
+#: ../../whatsnew/3.13.rst:2046
 msgid ""
 "Add the :ref:`PyMonitoring C API <c-api-monitoring>` for generating "
 ":pep:`669` monitoring events:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2052
+#: ../../whatsnew/3.13.rst:2049
 msgid ":c:type:`PyMonitoringState`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2053
+#: ../../whatsnew/3.13.rst:2050
 msgid ":c:func:`PyMonitoring_FirePyStartEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2054
+#: ../../whatsnew/3.13.rst:2051
 msgid ":c:func:`PyMonitoring_FirePyResumeEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2055
+#: ../../whatsnew/3.13.rst:2052
 msgid ":c:func:`PyMonitoring_FirePyReturnEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2056
+#: ../../whatsnew/3.13.rst:2053
 msgid ":c:func:`PyMonitoring_FirePyYieldEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2057
+#: ../../whatsnew/3.13.rst:2054
 msgid ":c:func:`PyMonitoring_FireCallEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2058
+#: ../../whatsnew/3.13.rst:2055
 msgid ":c:func:`PyMonitoring_FireLineEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2059
+#: ../../whatsnew/3.13.rst:2056
 msgid ":c:func:`PyMonitoring_FireJumpEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2060
+#: ../../whatsnew/3.13.rst:2057
 msgid "``PyMonitoring_FireBranchEvent``"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2061
+#: ../../whatsnew/3.13.rst:2058
 msgid ":c:func:`PyMonitoring_FireCReturnEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2062
+#: ../../whatsnew/3.13.rst:2059
 msgid ":c:func:`PyMonitoring_FirePyThrowEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2063
+#: ../../whatsnew/3.13.rst:2060
 msgid ":c:func:`PyMonitoring_FireRaiseEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2064
+#: ../../whatsnew/3.13.rst:2061
 msgid ":c:func:`PyMonitoring_FireCRaiseEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2065
+#: ../../whatsnew/3.13.rst:2062
 msgid ":c:func:`PyMonitoring_FireReraiseEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2066
+#: ../../whatsnew/3.13.rst:2063
 msgid ":c:func:`PyMonitoring_FireExceptionHandledEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2067
+#: ../../whatsnew/3.13.rst:2064
 msgid ":c:func:`PyMonitoring_FirePyUnwindEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2068
+#: ../../whatsnew/3.13.rst:2065
 msgid ":c:func:`PyMonitoring_FireStopIterationEvent`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2069
+#: ../../whatsnew/3.13.rst:2066
 msgid ":c:func:`PyMonitoring_EnterScope`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2070
+#: ../../whatsnew/3.13.rst:2067
 msgid ":c:func:`PyMonitoring_ExitScope`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2072
+#: ../../whatsnew/3.13.rst:2069
 msgid "(Contributed by Irit Katriel in :gh:`111997`)."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2074
+#: ../../whatsnew/3.13.rst:2071
 msgid ""
 "Add :c:type:`PyMutex`, a lightweight mutex that occupies a single byte, "
 "and the new :c:func:`PyMutex_Lock` and :c:func:`PyMutex_Unlock` "
@@ -4182,53 +4039,53 @@ msgid ""
 "Gross in :gh:`108724`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2080
+#: ../../whatsnew/3.13.rst:2077
 msgid ""
 "Add the :ref:`PyTime C API <c-api-time>` to provide access to system "
 "clocks:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2082
+#: ../../whatsnew/3.13.rst:2079
 msgid ":c:type:`PyTime_t`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2083
+#: ../../whatsnew/3.13.rst:2080
 msgid ":c:var:`PyTime_MIN` and :c:var:`PyTime_MAX`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2084
+#: ../../whatsnew/3.13.rst:2081
 msgid ":c:func:`PyTime_AsSecondsDouble`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2085
+#: ../../whatsnew/3.13.rst:2082
 msgid ":c:func:`PyTime_Monotonic`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2086
+#: ../../whatsnew/3.13.rst:2083
 msgid ":c:func:`PyTime_MonotonicRaw`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2087
+#: ../../whatsnew/3.13.rst:2084
 msgid ":c:func:`PyTime_PerfCounter`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2088
+#: ../../whatsnew/3.13.rst:2085
 msgid ":c:func:`PyTime_PerfCounterRaw`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2089
+#: ../../whatsnew/3.13.rst:2086
 msgid ":c:func:`PyTime_Time`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2090
+#: ../../whatsnew/3.13.rst:2087
 msgid ":c:func:`PyTime_TimeRaw`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2092
+#: ../../whatsnew/3.13.rst:2089
 msgid "(Contributed by Victor Stinner and Petr Viktorin in :gh:`110850`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2094
+#: ../../whatsnew/3.13.rst:2091
 msgid ""
 "Add the :c:func:`PyDict_ContainsString` function with the same behavior "
 "as :c:func:`PyDict_Contains`, but *key* is specified as a :c:expr:`const "
@@ -4236,7 +4093,7 @@ msgid ""
 "(Contributed by Victor Stinner in :gh:`108314`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2100
+#: ../../whatsnew/3.13.rst:2097
 msgid ""
 "Add the :c:func:`PyDict_GetItemRef` and :c:func:`PyDict_GetItemStringRef`"
 " functions, which behave similarly to :c:func:`PyDict_GetItemWithError`, "
@@ -4246,7 +4103,7 @@ msgid ""
 "Stinner in :gh:`106004`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2108
+#: ../../whatsnew/3.13.rst:2105
 msgid ""
 "Add the :c:func:`PyDict_SetDefaultRef` function, which behaves similarly "
 "to :c:func:`PyDict_SetDefault`, but returns a :term:`strong reference` "
@@ -4255,7 +4112,7 @@ msgid ""
 "the dictionary. (Contributed by Sam Gross in :gh:`112066`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2116
+#: ../../whatsnew/3.13.rst:2113
 msgid ""
 "Add the :c:func:`PyDict_Pop` and :c:func:`PyDict_PopString` functions to "
 "remove a key from a dictionary and optionally return the removed value. "
@@ -4264,7 +4121,7 @@ msgid ""
 "Stefan Behnel and Victor Stinner in :gh:`111262`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2123
+#: ../../whatsnew/3.13.rst:2120
 msgid ""
 "Add the :c:func:`PyMapping_GetOptionalItem` and "
 ":c:func:`PyMapping_GetOptionalItemString` functions as alternatives to "
@@ -4275,7 +4132,7 @@ msgid ""
 "failure. (Contributed by Serhiy Storchaka in :gh:`106307`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2133
+#: ../../whatsnew/3.13.rst:2130
 msgid ""
 "Add the :c:func:`PyObject_GetOptionalAttr` and "
 ":c:func:`PyObject_GetOptionalAttrString` functions as alternatives to  "
@@ -4286,37 +4143,37 @@ msgid ""
 " failure. (Contributed by Serhiy Storchaka in :gh:`106521`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2143
+#: ../../whatsnew/3.13.rst:2140
 msgid ""
 "Add the :c:func:`PyErr_FormatUnraisable` function as an extension to "
 ":c:func:`PyErr_WriteUnraisable` that allows customizing the warning "
 "message. (Contributed by Serhiy Storchaka in :gh:`108082`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2148
+#: ../../whatsnew/3.13.rst:2145
 msgid ""
 "Add new functions that return a :term:`strong reference` instead of a "
 ":term:`borrowed reference` for frame locals, globals, and builtins, as "
 "part of :ref:`PEP 667 <whatsnew313-locals-semantics>`:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2152
+#: ../../whatsnew/3.13.rst:2149
 msgid ":c:func:`PyEval_GetFrameBuiltins` replaces :c:func:`PyEval_GetBuiltins`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2153
+#: ../../whatsnew/3.13.rst:2150
 msgid ":c:func:`PyEval_GetFrameGlobals` replaces :c:func:`PyEval_GetGlobals`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2154
+#: ../../whatsnew/3.13.rst:2151
 msgid ":c:func:`PyEval_GetFrameLocals` replaces :c:func:`PyEval_GetLocals`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2156
+#: ../../whatsnew/3.13.rst:2153
 msgid "(Contributed by Mark Shannon and Tian Gao in :gh:`74929`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2158
+#: ../../whatsnew/3.13.rst:2155
 msgid ""
 "Add the :c:func:`Py_GetConstant` and :c:func:`Py_GetConstantBorrowed` "
 "functions to get :term:`strong <strong reference>` or :term:`borrowed "
@@ -4325,7 +4182,7 @@ msgid ""
 "constant zero. (Contributed by Victor  Stinner in :gh:`115754`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2165
+#: ../../whatsnew/3.13.rst:2162
 msgid ""
 "Add the :c:func:`PyImport_AddModuleRef` function as a replacement for "
 ":c:func:`PyImport_AddModule` that returns a :term:`strong reference` "
@@ -4333,14 +4190,14 @@ msgid ""
 "in :gh:`105922`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2170
+#: ../../whatsnew/3.13.rst:2167
 msgid ""
 "Add the :c:func:`Py_IsFinalizing` function to check whether the main "
 "Python interpreter is :term:`shutting down <interpreter shutdown>`. "
 "(Contributed by Victor Stinner in :gh:`108014`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2175
+#: ../../whatsnew/3.13.rst:2172
 msgid ""
 "Add the :c:func:`PyList_GetItemRef` function as a replacement for "
 ":c:func:`PyList_GetItem` that returns a :term:`strong reference` instead "
@@ -4348,14 +4205,14 @@ msgid ""
 ":gh:`114329`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2180
+#: ../../whatsnew/3.13.rst:2177
 msgid ""
 "Add the :c:func:`PyList_Extend` and :c:func:`PyList_Clear` functions, "
 "mirroring the Python :meth:`list.extend` and :meth:`list.clear` methods. "
 "(Contributed by Victor Stinner in :gh:`111138`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2184
+#: ../../whatsnew/3.13.rst:2181
 msgid ""
 "Add the :c:func:`PyLong_AsInt` function. It behaves similarly to "
 ":c:func:`PyLong_AsLong`, but stores the result in a C :c:expr:`int` "
@@ -4363,7 +4220,7 @@ msgid ""
 ":gh:`108014`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2189
+#: ../../whatsnew/3.13.rst:2186
 msgid ""
 "Add the :c:func:`PyLong_AsNativeBytes`, :c:func:`PyLong_FromNativeBytes`,"
 " and :c:func:`PyLong_FromUnsignedNativeBytes` functions to simplify "
@@ -4371,7 +4228,7 @@ msgid ""
 "(Contributed by Steve Dower in :gh:`111140`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2195
+#: ../../whatsnew/3.13.rst:2192
 msgid ""
 "Add :c:func:`PyModule_Add` function, which is similar to "
 ":c:func:`PyModule_AddObjectRef` and :c:func:`PyModule_AddObject`, but "
@@ -4379,20 +4236,20 @@ msgid ""
 "in :gh:`86493`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2200
+#: ../../whatsnew/3.13.rst:2197
 msgid ""
 "Add the :c:func:`PyObject_GenericHash` function that implements the "
 "default hashing function of a Python object. (Contributed by Serhiy "
 "Storchaka in :gh:`113024`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2204
+#: ../../whatsnew/3.13.rst:2201
 msgid ""
 "Add the :c:func:`Py_HashPointer` function to hash a raw pointer. "
 "(Contributed by Victor Stinner in :gh:`111545`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2207
+#: ../../whatsnew/3.13.rst:2204
 msgid ""
 "Add the :c:func:`PyObject_VisitManagedDict` and "
 ":c:func:`PyObject_ClearManagedDict` functions. which must be called by "
@@ -4402,7 +4259,7 @@ msgid ""
 "(Contributed by Victor Stinner in :gh:`107073`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2215
+#: ../../whatsnew/3.13.rst:2212
 msgid ""
 "Add the :c:func:`PyRefTracer_SetTracer` and "
 ":c:func:`PyRefTracer_GetTracer` functions, which enable tracking object "
@@ -4410,14 +4267,14 @@ msgid ""
 "module does. (Contributed by Pablo Galindo in :gh:`93502`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2221
+#: ../../whatsnew/3.13.rst:2218
 msgid ""
 "Add the :c:func:`PySys_AuditTuple` function as an alternative to "
 ":c:func:`PySys_Audit` that takes event arguments as a Python "
 ":class:`tuple` object. (Contributed by Victor Stinner in :gh:`85283`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2226
+#: ../../whatsnew/3.13.rst:2223
 msgid ""
 "Add the :c:func:`PyThreadState_GetUnchecked()` function as an alternative"
 " to :c:func:`PyThreadState_Get()` that doesn't kill the process with a "
@@ -4425,7 +4282,7 @@ msgid ""
 "the result is ``NULL``. (Contributed by Victor Stinner in :gh:`108867`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2232
+#: ../../whatsnew/3.13.rst:2229
 msgid ""
 "Add the :c:func:`PyType_GetFullyQualifiedName` function to get the type's"
 " fully qualified name. The module name is prepended if "
@@ -4434,14 +4291,14 @@ msgid ""
 ":gh:`111696`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2238
+#: ../../whatsnew/3.13.rst:2235
 msgid ""
 "Add the :c:func:`PyType_GetModuleName` function to get the type's module "
 "name. This is equivalent to getting the :attr:`type.__module__` "
 "attribute. (Contributed by Eric Snow and Victor Stinner in :gh:`111696`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2243
+#: ../../whatsnew/3.13.rst:2240
 msgid ""
 "Add the :c:func:`PyUnicode_EqualToUTF8AndSize` and "
 ":c:func:`PyUnicode_EqualToUTF8` functions to compare a Unicode object "
@@ -4450,53 +4307,53 @@ msgid ""
 "(Contributed by Serhiy Storchaka in :gh:`110289`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2250
+#: ../../whatsnew/3.13.rst:2247
 msgid ""
 "Add the :c:func:`PyWeakref_GetRef` function as an alternative to  "
-":c:func:`!PyWeakref_GetObject` that returns a :term:`strong reference` or"
-" ``NULL`` if the referent is no longer live. (Contributed by Victor "
+":c:func:`PyWeakref_GetObject` that returns a :term:`strong reference` or "
+"``NULL`` if the referent is no longer live. (Contributed by Victor "
 "Stinner in :gh:`105927`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2256
+#: ../../whatsnew/3.13.rst:2253
 msgid "Add fixed variants of functions which silently ignore errors:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2258
+#: ../../whatsnew/3.13.rst:2255
 msgid ":c:func:`PyObject_HasAttrWithError` replaces :c:func:`PyObject_HasAttr`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2259
+#: ../../whatsnew/3.13.rst:2256
 msgid ""
 ":c:func:`PyObject_HasAttrStringWithError` replaces "
 ":c:func:`PyObject_HasAttrString`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2261
+#: ../../whatsnew/3.13.rst:2258
 msgid ":c:func:`PyMapping_HasKeyWithError` replaces :c:func:`PyMapping_HasKey`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2262
+#: ../../whatsnew/3.13.rst:2259
 msgid ""
 ":c:func:`PyMapping_HasKeyStringWithError` replaces "
 ":c:func:`PyMapping_HasKeyString`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2265
+#: ../../whatsnew/3.13.rst:2262
 msgid ""
 "The new functions return ``-1`` for errors and the standard ``1`` for "
 "true and ``0`` for false."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2268
+#: ../../whatsnew/3.13.rst:2265
 msgid "(Contributed by Serhiy Storchaka in :gh:`108511`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2272
+#: ../../whatsnew/3.13.rst:2269
 msgid "Changed C APIs"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2274
+#: ../../whatsnew/3.13.rst:2271
 msgid ""
 "The *keywords* parameter of :c:func:`PyArg_ParseTupleAndKeywords` and "
 ":c:func:`PyArg_VaParseTupleAndKeywords` now has type :c:expr:`char * "
@@ -4509,20 +4366,20 @@ msgid ""
 " Serhiy Storchaka in :gh:`65210`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2286
+#: ../../whatsnew/3.13.rst:2283
 msgid ""
 ":c:func:`PyArg_ParseTupleAndKeywords` now supports non-ASCII keyword "
 "parameter names. (Contributed by Serhiy Storchaka in :gh:`110815`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2290
+#: ../../whatsnew/3.13.rst:2287
 msgid ""
 "The :c:func:`!PyCode_GetFirstFree` function is now unstable API and is "
 "now named :c:func:`PyUnstable_Code_GetFirstFree`. (Contributed by Bogdan "
 "Romanyuk in :gh:`115781`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2294
+#: ../../whatsnew/3.13.rst:2291
 msgid ""
 "The :c:func:`PyDict_GetItem`, :c:func:`PyDict_GetItemString`, "
 ":c:func:`PyMapping_HasKey`, :c:func:`PyMapping_HasKeyString`, "
@@ -4534,35 +4391,35 @@ msgid ""
 ":gh:`106672`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2303
+#: ../../whatsnew/3.13.rst:2300
 msgid ""
 "Add support for the ``%T``, ``%#T``, ``%N`` and ``%#N`` formats to "
 ":c:func:`PyUnicode_FromFormat`:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2306
+#: ../../whatsnew/3.13.rst:2303
 msgid "``%T``: Get the fully qualified name of an object type"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2307
+#: ../../whatsnew/3.13.rst:2304
 msgid "``%#T``: As above, but use a colon as the separator"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2308
+#: ../../whatsnew/3.13.rst:2305
 msgid "``%N``: Get the fully qualified name of a type"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2309
+#: ../../whatsnew/3.13.rst:2306
 msgid "``%#N``: As above, but use a colon as the separator"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2311
+#: ../../whatsnew/3.13.rst:2308
 msgid ""
 "See :pep:`737` for more information. (Contributed by Victor Stinner in "
 ":gh:`111696`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2314
+#: ../../whatsnew/3.13.rst:2311
 msgid ""
 "You no longer have to define the ``PY_SSIZE_T_CLEAN`` macro before "
 "including :file:`Python.h` when using ``#`` formats in :ref:`format codes"
@@ -4571,7 +4428,7 @@ msgid ""
 "in :gh:`104922`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2320
+#: ../../whatsnew/3.13.rst:2317
 msgid ""
 "If Python is built in :ref:`debug mode <debug-build>` or :option:`with "
 "assertions <--with-assertions>`, :c:func:`PyTuple_SET_ITEM` and "
@@ -4579,60 +4436,60 @@ msgid ""
 " (Contributed by Victor Stinner in :gh:`106168`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2328
+#: ../../whatsnew/3.13.rst:2325
 msgid "Limited C API Changes"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2330
+#: ../../whatsnew/3.13.rst:2327
 msgid "The following functions are now included in the Limited C API:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2332
+#: ../../whatsnew/3.13.rst:2329
 msgid ":c:func:`PyMem_RawMalloc`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2333
+#: ../../whatsnew/3.13.rst:2330
 msgid ":c:func:`PyMem_RawCalloc`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2334
+#: ../../whatsnew/3.13.rst:2331
 msgid ":c:func:`PyMem_RawRealloc`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2335
+#: ../../whatsnew/3.13.rst:2332
 msgid ":c:func:`PyMem_RawFree`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2336
+#: ../../whatsnew/3.13.rst:2333
 msgid ":c:func:`PySys_Audit`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2337
+#: ../../whatsnew/3.13.rst:2334
 msgid ":c:func:`PySys_AuditTuple`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2338
+#: ../../whatsnew/3.13.rst:2335
 msgid ":c:func:`PyType_GetModuleByDef`"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2340
+#: ../../whatsnew/3.13.rst:2337
 msgid ""
 "(Contributed by Victor Stinner in :gh:`85283`, :gh:`85283`, and "
 ":gh:`116936`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2342
+#: ../../whatsnew/3.13.rst:2339
 msgid ""
 "Python built with :option:`--with-trace-refs` (tracing references) now "
 "supports the :ref:`Limited API <limited-c-api>`. (Contributed by Victor "
 "Stinner in :gh:`108634`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2348
+#: ../../whatsnew/3.13.rst:2345
 msgid "Removed C APIs"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2350
+#: ../../whatsnew/3.13.rst:2347
 msgid ""
 "Remove several functions, macros, variables, etc with names prefixed by "
 "``_Py`` or ``_PY`` (which are considered private). If your project is "
@@ -4643,13 +4500,13 @@ msgid ""
 ":gh:`106320`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2358
+#: ../../whatsnew/3.13.rst:2355
 msgid ""
 "Remove old buffer protocols deprecated in Python 3.0. Use "
 ":ref:`bufferobjects` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2361
+#: ../../whatsnew/3.13.rst:2358
 msgid ""
 ":c:func:`!PyObject_CheckReadBuffer`: Use :c:func:`PyObject_CheckBuffer` "
 "to test whether the object supports the buffer protocol. Note that "
@@ -4658,13 +4515,13 @@ msgid ""
 "actually readable, see the next example of :c:func:`PyObject_GetBuffer`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2369
+#: ../../whatsnew/3.13.rst:2366
 msgid ""
 ":c:func:`!PyObject_AsCharBuffer`, :c:func:`!PyObject_AsReadBuffer`: Use "
 ":c:func:`PyObject_GetBuffer` and :c:func:`PyBuffer_Release` instead:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2372
+#: ../../whatsnew/3.13.rst:2369
 #, python-brace-format
 msgid ""
 "Py_buffer view;\n"
@@ -4676,13 +4533,13 @@ msgid ""
 "PyBuffer_Release(&view);"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2382
+#: ../../whatsnew/3.13.rst:2379
 msgid ""
 ":c:func:`!PyObject_AsWriteBuffer`: Use :c:func:`PyObject_GetBuffer` and "
 ":c:func:`PyBuffer_Release` instead:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2385
+#: ../../whatsnew/3.13.rst:2382
 #, python-brace-format
 msgid ""
 "Py_buffer view;\n"
@@ -4693,21 +4550,21 @@ msgid ""
 "PyBuffer_Release(&view);"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2394
+#: ../../whatsnew/3.13.rst:2391
 msgid "(Contributed by Inada Naoki in :gh:`85275`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2396
+#: ../../whatsnew/3.13.rst:2393
 msgid "Remove various functions deprecated in Python 3.9:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2398
+#: ../../whatsnew/3.13.rst:2395
 msgid ""
 ":c:func:`!PyEval_CallObject`, :c:func:`!PyEval_CallObjectWithKeywords`: "
 "Use :c:func:`PyObject_CallNoArgs` or :c:func:`PyObject_Call` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2403
+#: ../../whatsnew/3.13.rst:2400
 msgid ""
 "In :c:func:`PyObject_Call`, positional arguments must be a :class:`tuple`"
 " and must not be ``NULL``, and keyword arguments must be a :class:`dict` "
@@ -4718,110 +4575,110 @@ msgid ""
 "using :c:func:`PyTuple_New(0) <PyTuple_New>`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2413
+#: ../../whatsnew/3.13.rst:2410
 msgid ""
 ":c:func:`!PyEval_CallFunction`: Use :c:func:`PyObject_CallFunction` "
 "instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2415
+#: ../../whatsnew/3.13.rst:2412
 msgid ":c:func:`!PyEval_CallMethod`: Use :c:func:`PyObject_CallMethod` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2417
+#: ../../whatsnew/3.13.rst:2414
 msgid ":c:func:`!PyCFunction_Call`: Use :c:func:`PyObject_Call` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2420
+#: ../../whatsnew/3.13.rst:2417
 msgid "(Contributed by Victor Stinner in :gh:`105107`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2422
+#: ../../whatsnew/3.13.rst:2419
 msgid ""
 "Remove the following old functions to configure the Python "
 "initialization, deprecated in Python 3.11:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2425
+#: ../../whatsnew/3.13.rst:2422
 msgid ""
 ":c:func:`!PySys_AddWarnOptionUnicode`: Use "
 ":c:member:`PyConfig.warnoptions` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2427
+#: ../../whatsnew/3.13.rst:2424
 msgid ""
 ":c:func:`!PySys_AddWarnOption`: Use :c:member:`PyConfig.warnoptions` "
 "instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2429
+#: ../../whatsnew/3.13.rst:2426
 msgid ":c:func:`!PySys_AddXOption`: Use :c:member:`PyConfig.xoptions` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2431
+#: ../../whatsnew/3.13.rst:2428
 msgid ""
 ":c:func:`!PySys_HasWarnOptions`: Use :c:member:`PyConfig.xoptions` "
 "instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2433
+#: ../../whatsnew/3.13.rst:2430
 msgid ""
 ":c:func:`!PySys_SetPath`: Set :c:member:`PyConfig.module_search_paths` "
 "instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2435
+#: ../../whatsnew/3.13.rst:2432
 msgid ""
 ":c:func:`!Py_SetPath`: Set :c:member:`PyConfig.module_search_paths` "
 "instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2437
+#: ../../whatsnew/3.13.rst:2434
 msgid ""
 ":c:func:`!Py_SetStandardStreamEncoding`: Set "
 ":c:member:`PyConfig.stdio_encoding` instead, and set also maybe "
 ":c:member:`PyConfig.legacy_windows_stdio` (on Windows)."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2440
+#: ../../whatsnew/3.13.rst:2437
 msgid ""
 ":c:func:`!_Py_SetProgramFullPath`: Set :c:member:`PyConfig.executable` "
 "instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2443
+#: ../../whatsnew/3.13.rst:2440
 msgid ""
 "Use the new :c:type:`PyConfig` API of the :ref:`Python Initialization "
 "Configuration <init-config>` instead (:pep:`587`), added to Python 3.8. "
 "(Contributed by Victor Stinner in :gh:`105145`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2447
+#: ../../whatsnew/3.13.rst:2444
 msgid ""
 "Remove :c:func:`!PyEval_AcquireLock` and :c:func:`!PyEval_ReleaseLock` "
 "functions, deprecated in Python 3.2. They didn't update the current "
 "thread state. They can be replaced with:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2452
+#: ../../whatsnew/3.13.rst:2449
 msgid ":c:func:`PyEval_SaveThread` and :c:func:`PyEval_RestoreThread`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2453
+#: ../../whatsnew/3.13.rst:2450
 msgid ""
 "low-level :c:func:`PyEval_AcquireThread` and "
 ":c:func:`PyEval_RestoreThread`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2454
+#: ../../whatsnew/3.13.rst:2451
 msgid "or :c:func:`PyGILState_Ensure` and :c:func:`PyGILState_Release`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2456
+#: ../../whatsnew/3.13.rst:2453
 msgid "(Contributed by Victor Stinner in :gh:`105182`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2458
+#: ../../whatsnew/3.13.rst:2455
 msgid ""
 "Remove the :c:func:`!PyEval_ThreadsInitialized` function, deprecated in "
 "Python 3.9. Since Python 3.7, :c:func:`!Py_Initialize` always creates the"
@@ -4830,7 +4687,7 @@ msgid ""
 "(Contributed by Victor Stinner in :gh:`105182`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2465
+#: ../../whatsnew/3.13.rst:2462
 msgid ""
 "Remove the :c:func:`!_PyInterpreterState_Get` alias to "
 ":c:func:`PyInterpreterState_Get()` which was kept for backward "
@@ -4839,26 +4696,26 @@ msgid ""
 "(Contributed by Victor Stinner in :gh:`106320`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2472
+#: ../../whatsnew/3.13.rst:2469
 msgid ""
 "Remove the private :c:func:`!_PyObject_FastCall` function: use "
 ":c:func:`!PyObject_Vectorcall` which is available since Python 3.8 "
 "(:pep:`590`). (Contributed by Victor Stinner in :gh:`106023`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2477
+#: ../../whatsnew/3.13.rst:2474
 msgid ""
 "Remove the ``cpython/pytime.h`` header file, which only contained private"
 " functions. (Contributed by Victor Stinner in :gh:`106316`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2481
+#: ../../whatsnew/3.13.rst:2478
 msgid ""
 "Remove the undocumented ``PY_TIMEOUT_MAX`` constant from the limited C "
 "API. (Contributed by Victor Stinner in :gh:`110014`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2484
+#: ../../whatsnew/3.13.rst:2481
 msgid ""
 "Remove the old trashcan macros ``Py_TRASHCAN_SAFE_BEGIN`` and "
 "``Py_TRASHCAN_SAFE_END``. Replace both with the new macros "
@@ -4866,52 +4723,52 @@ msgid ""
 "Katriel in :gh:`105111`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2491
+#: ../../whatsnew/3.13.rst:2488
 msgid "Deprecated C APIs"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2493
+#: ../../whatsnew/3.13.rst:2490
 msgid "Deprecate old Python initialization functions:"
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:62
-#: ../../whatsnew/3.13.rst:2495
+#: ../../whatsnew/3.13.rst:2492
 msgid ""
-":c:func:`!PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and "
+":c:func:`PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and "
 ":data:`!warnings.filters` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2497
-msgid ":c:func:`!Py_GetExecPrefix`: Get :data:`sys.exec_prefix` instead."
+#: ../../whatsnew/3.13.rst:2494
+msgid ":c:func:`Py_GetExecPrefix`: Get :data:`sys.exec_prefix` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2499
-msgid ":c:func:`!Py_GetPath`: Get :data:`sys.path` instead."
+#: ../../whatsnew/3.13.rst:2496
+msgid ":c:func:`Py_GetPath`: Get :data:`sys.path` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2501
-msgid ":c:func:`!Py_GetPrefix`: Get :data:`sys.prefix` instead."
+#: ../../whatsnew/3.13.rst:2498
+msgid ":c:func:`Py_GetPrefix`: Get :data:`sys.prefix` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2503
-msgid ":c:func:`!Py_GetProgramFullPath`: Get :data:`sys.executable` instead."
+#: ../../whatsnew/3.13.rst:2500
+msgid ":c:func:`Py_GetProgramFullPath`: Get :data:`sys.executable` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2505
-msgid ":c:func:`!Py_GetProgramName`: Get :data:`sys.executable` instead."
+#: ../../whatsnew/3.13.rst:2502
+msgid ":c:func:`Py_GetProgramName`: Get :data:`sys.executable` instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2507
+#: ../../whatsnew/3.13.rst:2504
 msgid ""
-":c:func:`!Py_GetPythonHome`: Get :c:member:`PyConfig.home` or the "
+":c:func:`Py_GetPythonHome`: Get :c:member:`PyConfig.home` or the "
 ":envvar:`PYTHONHOME` environment variable instead."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2511
+#: ../../whatsnew/3.13.rst:2508
 msgid "(Contributed by Victor Stinner in :gh:`105145`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2513
+#: ../../whatsnew/3.13.rst:2510
 msgid ""
 ":term:`Soft deprecate <soft deprecated>` the "
 ":c:func:`PyEval_GetBuiltins`, :c:func:`PyEval_GetGlobals`, and "
@@ -4919,14 +4776,14 @@ msgid ""
 "reference`. (Soft deprecated as part of :pep:`667`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2519
+#: ../../whatsnew/3.13.rst:2516
 msgid ""
-"Deprecate the :c:func:`!PyImport_ImportModuleNoBlock` function, which is "
+"Deprecate the :c:func:`PyImport_ImportModuleNoBlock` function, which is "
 "just an alias to :c:func:`PyImport_ImportModule` since Python 3.3. "
 "(Contributed by Victor Stinner in :gh:`105396`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2523
+#: ../../whatsnew/3.13.rst:2520
 msgid ""
 ":term:`Soft deprecate <soft deprecated>` the :c:func:`PyModule_AddObject`"
 " function. It should be replaced with :c:func:`PyModule_Add` or "
@@ -4934,7 +4791,7 @@ msgid ""
 ":gh:`86493`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2529
+#: ../../whatsnew/3.13.rst:2526
 msgid ""
 "Deprecate the old ``Py_UNICODE`` and ``PY_UNICODE_TYPE`` types and the "
 ":c:macro:`!Py_UNICODE_WIDE` define. Use the :c:type:`wchar_t` type "
@@ -4943,11 +4800,11 @@ msgid ""
 "by Victor Stinner in :gh:`105156`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2536
+#: ../../whatsnew/3.13.rst:2533
 msgid ""
-"Deprecate the :c:func:`!PyWeakref_GetObject` and "
-":c:func:`!PyWeakref_GET_OBJECT` functions, which return a :term:`borrowed"
-" reference`. Replace them with the new :c:func:`PyWeakref_GetRef` "
+"Deprecate the :c:func:`PyWeakref_GetObject` and "
+":c:func:`PyWeakref_GET_OBJECT` functions, which return a :term:`borrowed "
+"reference`. Replace them with the new :c:func:`PyWeakref_GetRef` "
 "function, which returns a :term:`strong reference`. The `pythoncapi-"
 "compat project`_ can be used to get :c:func:`PyWeakref_GetRef` on Python "
 "3.12 and older. (Contributed by Victor Stinner in :gh:`105927`.)"
@@ -4967,13 +4824,13 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:4
 msgid ""
-"The :c:func:`!PyImport_ImportModuleNoBlock`: Use "
+"The :c:func:`PyImport_ImportModuleNoBlock`: Use "
 ":c:func:`PyImport_ImportModule` instead."
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:6
 msgid ""
-":c:func:`!PyWeakref_GetObject` and :c:func:`!PyWeakref_GET_OBJECT`: Use "
+":c:func:`PyWeakref_GetObject` and :c:func:`PyWeakref_GET_OBJECT`: Use "
 ":c:func:`PyWeakref_GetRef` instead. The `pythoncapi-compat project "
 "<https://github.com/python/pythoncapi-compat/>`__ can be used to get "
 ":c:func:`PyWeakref_GetRef` on Python 3.12 and older."
@@ -5017,13 +4874,13 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:24
 msgid ""
-":c:func:`!Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\")"
-" <PyConfig_Get>` (:data:`sys.path`) instead."
+":c:func:`Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") "
+"<PyConfig_Get>` (:data:`sys.path`) instead."
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:27
 msgid ""
-":c:func:`!Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") "
+":c:func:`Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") "
 "<PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use "
 ":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if"
 " :ref:`virtual environments <venv-def>` need to be handled."
@@ -5031,7 +4888,7 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:32
 msgid ""
-":c:func:`!Py_GetExecPrefix`: Use "
+":c:func:`Py_GetExecPrefix`: Use "
 ":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
 "(:data:`sys.base_exec_prefix`) instead. Use "
 ":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
@@ -5041,20 +4898,20 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:38
 msgid ""
-":c:func:`!Py_GetProgramFullPath`: Use "
+":c:func:`Py_GetProgramFullPath`: Use "
 ":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
 "(:data:`sys.executable`) instead."
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:41
 msgid ""
-":c:func:`!Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") "
+":c:func:`Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:44
 msgid ""
-":c:func:`!Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") "
+":c:func:`Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") "
 "<PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ""
 
@@ -5457,11 +5314,11 @@ msgstr ""
 msgid ":c:func:`PyThread_ReInitTLS`: Unneeded since Python 3.7."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2560
+#: ../../whatsnew/3.13.rst:2557
 msgid "Build Changes"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2562
+#: ../../whatsnew/3.13.rst:2559
 msgid ""
 "``arm64-apple-ios`` and ``arm64-apple-ios-simulator`` are both now "
 ":pep:`11` tier 3 platforms. (:ref:`PEP 730 <whatsnew313-platform-"
@@ -5469,7 +5326,7 @@ msgid ""
 "in :gh:`114099`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2567
+#: ../../whatsnew/3.13.rst:2564
 msgid ""
 "``aarch64-linux-android`` and ``x86_64-linux-android`` are both now "
 ":pep:`11` tier 3 platforms. (:ref:`PEP 738 <whatsnew313-platform-"
@@ -5477,38 +5334,38 @@ msgid ""
 ":gh:`116622`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2572
+#: ../../whatsnew/3.13.rst:2569
 msgid ""
 "``wasm32-wasi`` is now a :pep:`11` tier 2 platform. (Contributed by Brett"
 " Cannon in :gh:`115192`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2575
+#: ../../whatsnew/3.13.rst:2572
 msgid ""
 "``wasm32-emscripten`` is no longer a :pep:`11` supported platform. "
 "(Contributed by Brett Cannon in :gh:`115192`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2578
+#: ../../whatsnew/3.13.rst:2575
 msgid ""
 "Building CPython now requires a compiler with support for the C11 atomic "
 "library, GCC built-in atomic functions, or MSVC interlocked intrinsics."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2581
+#: ../../whatsnew/3.13.rst:2578
 msgid ""
 "Autoconf 2.71 and aclocal 1.16.5 are now required to regenerate the "
 ":file:`configure` script. (Contributed by Christian Heimes in :gh:`89886`"
 " and by Victor Stinner in :gh:`112090`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2585
+#: ../../whatsnew/3.13.rst:2582
 msgid ""
 "SQLite 3.15.2 or newer is required to build the :mod:`sqlite3` extension "
 "module. (Contributed by Erlend Aasland in :gh:`105875`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2589
+#: ../../whatsnew/3.13.rst:2586
 msgid ""
 "CPython now bundles the `mimalloc library`_ by default. It is licensed "
 "under the MIT license; see :ref:`mimalloc license <mimalloc-license>`. "
@@ -5516,14 +5373,14 @@ msgid ""
 "(Contributed by Dino Viehland in :gh:`109914`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2597
+#: ../../whatsnew/3.13.rst:2594
 msgid ""
 "The :file:`configure` option :option:`--with-system-libmpdec` now "
 "defaults to ``yes``. The bundled copy of ``libmpdec`` will be removed in "
 "Python 3.16."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2601
+#: ../../whatsnew/3.13.rst:2598
 msgid ""
 "Python built with :file:`configure` :option:`--with-trace-refs` (tracing "
 "references) is now ABI compatible with the Python release build and "
@@ -5531,14 +5388,14 @@ msgid ""
 ":gh:`108634`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2606
+#: ../../whatsnew/3.13.rst:2603
 msgid ""
 "On POSIX systems, the pkg-config (``.pc``) filenames now include the ABI "
 "flags.  For example, the free-threaded build generates "
 "``python-3.13t.pc`` and the debug build generates ``python-3.13d.pc``."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2610
+#: ../../whatsnew/3.13.rst:2607
 msgid ""
 "The ``errno``, ``fcntl``, ``grp``, ``md5``, ``pwd``, ``resource``, "
 "``termios``, ``winsound``, ``_ctypes_test``, "
@@ -5548,27 +5405,27 @@ msgid ""
 " (Contributed by Victor Stinner in :gh:`85283`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2619
+#: ../../whatsnew/3.13.rst:2616
 msgid "Porting to Python 3.13"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2621
+#: ../../whatsnew/3.13.rst:2618
 msgid ""
 "This section lists previously described changes and other bugfixes that "
 "may require changes to your code."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2625
+#: ../../whatsnew/3.13.rst:2622
 msgid "Changes in the Python API"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2629
+#: ../../whatsnew/3.13.rst:2626
 msgid ""
 ":ref:`PEP 667 <whatsnew313-locals-semantics>` introduces several changes "
 "to the semantics of :func:`locals` and :attr:`f_locals <frame.f_locals>`:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2632
+#: ../../whatsnew/3.13.rst:2629
 msgid ""
 "Calling :func:`locals` in an :term:`optimized scope` now produces an "
 "independent snapshot on each call, and hence no longer implicitly updates"
@@ -5580,7 +5437,7 @@ msgid ""
 " an optimized scope. (Changed as part of :pep:`667`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2641
+#: ../../whatsnew/3.13.rst:2638
 msgid ""
 "Calling :func:`locals` from a comprehension at module or class scope "
 "(including via ``exec`` or ``eval``) once more behaves as if the "
@@ -5590,7 +5447,7 @@ msgid ""
 " scope when implementing :pep:`709`. (Changed as part of :pep:`667`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2648
+#: ../../whatsnew/3.13.rst:2645
 msgid ""
 "Accessing :attr:`FrameType.f_locals <frame.f_locals>` in an "
 ":term:`optimized scope` now returns a write-through proxy rather than a "
@@ -5599,7 +5456,7 @@ msgid ""
 "``.copy()`` method. (Changed as part of :pep:`667`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2654
+#: ../../whatsnew/3.13.rst:2651
 msgid ""
 ":class:`functools.partial` now emits a :exc:`FutureWarning` when used as "
 "a method. The behavior will change in future Python versions. Wrap it in "
@@ -5607,7 +5464,7 @@ msgid ""
 "(Contributed by Serhiy Storchaka in :gh:`121027`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2660
+#: ../../whatsnew/3.13.rst:2657
 msgid ""
 "An :exc:`OSError` is now raised by :func:`getpass.getuser` for any "
 "failure to retrieve a username, instead of :exc:`ImportError` on non-Unix"
@@ -5615,7 +5472,7 @@ msgid ""
 "database is empty."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2665
+#: ../../whatsnew/3.13.rst:2662
 msgid ""
 "The value of the :attr:`!mode` attribute of :class:`gzip.GzipFile` is now"
 " a string (``'rb'`` or ``'wb'``) instead of an integer (``1`` or ``2``). "
@@ -5624,13 +5481,13 @@ msgid ""
 "``'r'``. (Contributed by Serhiy Storchaka in :gh:`115961`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2671
+#: ../../whatsnew/3.13.rst:2668
 msgid ""
 ":class:`mailbox.Maildir` now ignores files with a leading dot (``.``). "
 "(Contributed by Zackery Spytz in :gh:`65559`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2674
+#: ../../whatsnew/3.13.rst:2671
 msgid ""
 ":meth:`pathlib.Path.glob` and :meth:`~pathlib.Path.rglob` now return both"
 " files and directories if a pattern that ends with \"``**``\" is given, "
@@ -5638,7 +5495,7 @@ msgid ""
 "behavior and only match directories."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2679
+#: ../../whatsnew/3.13.rst:2676
 msgid ""
 "The :mod:`threading` module now expects the :mod:`!_thread` module to "
 "have an :func:`!_is_main_interpreter` function. This function takes no "
@@ -5646,18 +5503,18 @@ msgid ""
 "interpreter."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2684
+#: ../../whatsnew/3.13.rst:2681
 msgid ""
 "Any library or application that provides a custom :mod:`!_thread` module "
 "must provide :func:`!_is_main_interpreter`, just like the module's other "
 "\"private\" attributes. (:gh:`112826`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2691
+#: ../../whatsnew/3.13.rst:2688
 msgid "Changes in the C API"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2693
+#: ../../whatsnew/3.13.rst:2690
 msgid ""
 "``Python.h`` no longer includes the ``<ieeefp.h>`` standard header. It "
 "was included for the :c:func:`!finite` function which is now provided by "
@@ -5666,7 +5523,7 @@ msgid ""
 "in :gh:`108765`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2699
+#: ../../whatsnew/3.13.rst:2696
 msgid ""
 "``Python.h`` no longer includes these standard header files: "
 "``<time.h>``, ``<sys/select.h>`` and ``<sys/time.h>``. If needed, they "
@@ -5677,7 +5534,7 @@ msgid ""
 "functions. (Contributed by Victor Stinner in :gh:`108765`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2707
+#: ../../whatsnew/3.13.rst:2704
 msgid ""
 "On Windows, ``Python.h`` no longer includes the ``<stddef.h>`` standard "
 "header file. If needed, it should now be included explicitly. For "
@@ -5687,7 +5544,7 @@ msgid ""
 "defined on Windows. (Contributed by Victor Stinner in :gh:`108765`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2714
+#: ../../whatsnew/3.13.rst:2711
 msgid ""
 "If the :c:macro:`Py_LIMITED_API` macro is defined, "
 ":c:macro:`!Py_BUILD_CORE`, :c:macro:`!Py_BUILD_CORE_BUILTIN` and "
@@ -5695,18 +5552,18 @@ msgid ""
 "``<Python.h>``. (Contributed by Victor Stinner in :gh:`85283`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2719
+#: ../../whatsnew/3.13.rst:2716
 msgid ""
 "The old trashcan macros ``Py_TRASHCAN_SAFE_BEGIN`` and "
 "``Py_TRASHCAN_SAFE_END`` were removed. They should be replaced by the new"
 " macros ``Py_TRASHCAN_BEGIN`` and ``Py_TRASHCAN_END``."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2723
+#: ../../whatsnew/3.13.rst:2720
 msgid "A ``tp_dealloc`` function that has the old macros, such as::"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2725
+#: ../../whatsnew/3.13.rst:2722
 #, python-brace-format
 msgid ""
 "static void\n"
@@ -5719,11 +5576,11 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2734
+#: ../../whatsnew/3.13.rst:2731
 msgid "should migrate to the new macros as follows::"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2736
+#: ../../whatsnew/3.13.rst:2733
 #, python-brace-format
 msgid ""
 "static void\n"
@@ -5736,7 +5593,7 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2745
+#: ../../whatsnew/3.13.rst:2742
 msgid ""
 "Note that ``Py_TRASHCAN_BEGIN`` has a second argument which should be the"
 " deallocation function it is in. The new macros were added in Python 3.8 "
@@ -5744,13 +5601,13 @@ msgid ""
 "Katriel in :gh:`105111`.)"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2752
+#: ../../whatsnew/3.13.rst:2749
 msgid ""
 ":ref:`PEP 667 <whatsnew313-locals-semantics>` introduces several changes "
 "to frame-related functions:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2755
+#: ../../whatsnew/3.13.rst:2752
 msgid ""
 "The effects of mutating the dictionary returned from "
 ":c:func:`PyEval_GetLocals` in an :term:`optimized scope` have changed. "
@@ -5765,7 +5622,7 @@ msgid ""
 "used, so refer to the deprecation notice on the function for details."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2768
+#: ../../whatsnew/3.13.rst:2765
 msgid ""
 "Calling :c:func:`PyFrame_GetLocals` in an :term:`optimized scope` now "
 "returns a write-through proxy rather than a snapshot that gets updated at"
@@ -5774,7 +5631,7 @@ msgid ""
 ":c:func:`PyEval_GetFrameLocals` API."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2775
+#: ../../whatsnew/3.13.rst:2772
 msgid ""
 ":c:func:`!PyFrame_FastToLocals` and "
 ":c:func:`!PyFrame_FastToLocalsWithError` no longer have any effect. "
@@ -5782,118 +5639,118 @@ msgid ""
 ":c:func:`PyFrame_GetLocals` was first introduced."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2780
+#: ../../whatsnew/3.13.rst:2777
 msgid ""
 ":c:func:`!PyFrame_LocalsToFast` no longer has any effect. Calling this "
 "function is redundant now that :c:func:`PyFrame_GetLocals` returns a "
 "write-through proxy for :term:`optimized scopes <optimized scope>`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2784
+#: ../../whatsnew/3.13.rst:2781
 msgid ""
 "Python 3.13 removed many private functions. Some of them can be replaced "
 "using these alternatives:"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2787
+#: ../../whatsnew/3.13.rst:2784
 msgid "``_PyDict_Pop()``: :c:func:`PyDict_Pop` or :c:func:`PyDict_PopString`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2788
+#: ../../whatsnew/3.13.rst:2785
 msgid "``_PyDict_GetItemWithError()``: :c:func:`PyDict_GetItemRef`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2789
+#: ../../whatsnew/3.13.rst:2786
 msgid "``_PyErr_WriteUnraisableMsg()``:  :c:func:`PyErr_FormatUnraisable`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2790
+#: ../../whatsnew/3.13.rst:2787
 msgid ""
 "``_PyEval_SetTrace()``: :c:func:`PyEval_SetTrace` or "
 ":c:func:`PyEval_SetTraceAllThreads`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2791
+#: ../../whatsnew/3.13.rst:2788
 msgid "``_PyList_Extend()``: :c:func:`PyList_Extend`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2792
+#: ../../whatsnew/3.13.rst:2789
 msgid "``_PyLong_AsInt()``: :c:func:`PyLong_AsInt`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2793
+#: ../../whatsnew/3.13.rst:2790
 msgid "``_PyMem_RawStrdup()``: ``strdup()``;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2794
+#: ../../whatsnew/3.13.rst:2791
 msgid "``_PyMem_Strdup()``: ``strdup()``;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2795
+#: ../../whatsnew/3.13.rst:2792
 msgid "``_PyObject_ClearManagedDict()``: :c:func:`PyObject_ClearManagedDict`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2796
+#: ../../whatsnew/3.13.rst:2793
 msgid "``_PyObject_VisitManagedDict()``: :c:func:`PyObject_VisitManagedDict`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2797
+#: ../../whatsnew/3.13.rst:2794
 msgid "``_PyThreadState_UncheckedGet()``: :c:func:`PyThreadState_GetUnchecked()`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2798
+#: ../../whatsnew/3.13.rst:2795
 msgid "``_PyTime_AsSecondsDouble()``: :c:func:`PyTime_AsSecondsDouble`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2799
+#: ../../whatsnew/3.13.rst:2796
 msgid ""
 "``_PyTime_GetMonotonicClock()``: :c:func:`PyTime_Monotonic` or "
 ":c:func:`PyTime_MonotonicRaw`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2800
+#: ../../whatsnew/3.13.rst:2797
 msgid ""
 "``_PyTime_GetPerfCounter()``: :c:func:`PyTime_PerfCounter` or "
 ":c:func:`PyTime_PerfCounterRaw`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2801
+#: ../../whatsnew/3.13.rst:2798
 msgid ""
 "``_PyTime_GetSystemClock()``: :c:func:`PyTime_Time` or "
 ":c:func:`PyTime_TimeRaw`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2802
+#: ../../whatsnew/3.13.rst:2799
 msgid "``_PyTime_MAX``: :c:var:`PyTime_MAX`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2803
+#: ../../whatsnew/3.13.rst:2800
 msgid "``_PyTime_MIN``: :c:var:`PyTime_MIN`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2804
+#: ../../whatsnew/3.13.rst:2801
 msgid "``_PyTime_t``: :c:type:`PyTime_t`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2805
+#: ../../whatsnew/3.13.rst:2802
 msgid "``_Py_HashPointer()``: :c:func:`Py_HashPointer`;"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2806
+#: ../../whatsnew/3.13.rst:2803
 msgid "``_Py_IsFinalizing()``: :c:func:`Py_IsFinalizing`."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2808
+#: ../../whatsnew/3.13.rst:2805
 msgid ""
 "The `pythoncapi-compat project`_ can be used to get most of these new "
 "functions on Python 3.12 and older."
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2812
+#: ../../whatsnew/3.13.rst:2809
 msgid "Regression Test Changes"
 msgstr ""
 
-#: ../../whatsnew/3.13.rst:2814
+#: ../../whatsnew/3.13.rst:2811
 msgid ""
 "Python built with :file:`configure` :option:`--with-pydebug` now supports"
 " a :option:`-X presite=package.module <-X>` command-line option. If used,"
@@ -5901,4 +5758,367 @@ msgid ""
 "the interpreter, before ``site.py`` is executed. (Contributed by Łukasz "
 "Langa in :gh:`110769`.)"
 msgstr ""
+
+#~ msgid ""
+#~ "Deprecate :class:`!CGIHTTPRequestHandler`, to be "
+#~ "removed in Python 3.15. Process-based"
+#~ " CGI HTTP servers have been out "
+#~ "of favor for a very long time. "
+#~ "This code was outdated, unmaintained, "
+#~ "and rarely used. It has a high "
+#~ "potential for both security and "
+#~ "functionality bugs. (Contributed by Gregory"
+#~ " P. Smith in :gh:`109096`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deprecate :meth:`!.PurePath.is_reserved`, to be "
+#~ "removed in Python 3.15. Use "
+#~ ":func:`os.path.isreserved` to detect reserved "
+#~ "paths on Windows. (Contributed by Barney"
+#~ " Gale in :gh:`88569`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deprecate :func:`!platform.java_ver`, to be "
+#~ "removed in Python 3.15. This function"
+#~ " is only useful for Jython support,"
+#~ " has a confusing API, and is "
+#~ "largely untested. (Contributed by Nikita "
+#~ "Sobolev in :gh:`116349`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deprecate the :func:`!typing.no_type_check_decorator` "
+#~ "decorator function, to be removed in "
+#~ "Python 3.15. After eight years in "
+#~ "the :mod:`typing` module, it has yet "
+#~ "to be supported by any major type"
+#~ " checker. (Contributed by Alex Waygood "
+#~ "in :gh:`106309`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deprecate the ``getmark()``, ``setmark()`` and"
+#~ " ``getmarkers()`` methods of the "
+#~ ":class:`~wave.Wave_read` and :class:`~wave.Wave_write` "
+#~ "classes, to be removed in Python "
+#~ "3.15. (Contributed by Victor Stinner in"
+#~ " :gh:`105096`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Setting ``__cached__`` on a module while"
+#~ " failing to set :attr:`__spec__.cached "
+#~ "<importlib.machinery.ModuleSpec.cached>` is deprecated."
+#~ " In Python 3.15, ``__cached__`` will "
+#~ "cease to be set or take into "
+#~ "consideration by the import system or"
+#~ " standard library. (:gh:`97879`)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The obsolete and rarely used "
+#~ ":class:`!CGIHTTPRequestHandler` has been deprecated"
+#~ " since Python 3.13. No direct "
+#~ "replacement exists. *Anything* is better "
+#~ "than CGI to interface a web server"
+#~ " with a request handler."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":meth:`!.PurePath.is_reserved` has been deprecated"
+#~ " since Python 3.13. Use "
+#~ ":func:`os.path.isreserved` to detect reserved "
+#~ "paths on Windows."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":func:`!platform.java_ver` has been deprecated "
+#~ "since Python 3.13. This function is "
+#~ "only useful for Jython support, has "
+#~ "a confusing API, and is largely "
+#~ "untested."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The :func:`!typing.no_type_check_decorator` decorator "
+#~ "function has been deprecated since "
+#~ "Python 3.13. After eight years in "
+#~ "the :mod:`typing` module, it has yet "
+#~ "to be supported by any major type"
+#~ " checker."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``getmark()``, ``setmark()`` and "
+#~ "``getmarkers()`` methods of the "
+#~ ":class:`~wave.Wave_read` and :class:`~wave.Wave_write` "
+#~ "classes have been deprecated since "
+#~ "Python 3.13."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":meth:`!zipimport.zipimporter.load_module` has been "
+#~ "deprecated since Python 3.10. Use "
+#~ ":meth:`~zipimport.zipimporter.exec_module` instead. "
+#~ "(:gh:`125746`.)"
+#~ msgstr ""
+
+#~ msgid ":mod:`encodings`:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Passing non-ascii *encoding* names to"
+#~ " :func:`encodings.normalize_encoding` is deprecated "
+#~ "and scheduled for removal in Python "
+#~ "3.17. (Contributed by Stan Ulbrych in"
+#~ " :gh:`136702`)"
+#~ msgstr ""
+
+#~ msgid "Pending removal in Python 3.19"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Implicitly switching to the MSVC-"
+#~ "compatible struct layout by setting "
+#~ ":attr:`~ctypes.Structure._pack_` but not "
+#~ ":attr:`~ctypes.Structure._layout_` on non-Windows"
+#~ " platforms."
+#~ msgstr ""
+
+#~ msgid ":mod:`hashlib`:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In hash function constructors such as"
+#~ " :func:`~hashlib.new` or the direct "
+#~ "hash-named constructors such as "
+#~ ":func:`~hashlib.md5` and :func:`~hashlib.sha256`, "
+#~ "their optional initial data parameter "
+#~ "could also be passed a keyword "
+#~ "argument named ``data=`` or ``string=`` "
+#~ "in various :mod:`!hashlib` implementations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Support for the ``string`` keyword "
+#~ "argument name is now deprecated and "
+#~ "slated for removal in Python 3.19."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before Python 3.13, the ``string`` "
+#~ "keyword parameter was not correctly "
+#~ "supported depending on the backend "
+#~ "implementation of hash functions. Prefer "
+#~ "passing the initial data as a "
+#~ "positional argument for maximum backwards "
+#~ "compatibility."
+#~ msgstr ""
+
+#~ msgid "Pending removal in Python 3.20"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``__version__``, ``version`` and "
+#~ "``VERSION`` attributes have been deprecated"
+#~ " in these standard library modules "
+#~ "and will be removed in Python "
+#~ "3.20. Use :py:data:`sys.version_info` instead."
+#~ msgstr ""
+
+#~ msgid ":mod:`argparse`"
+#~ msgstr ""
+
+#~ msgid ":mod:`csv`"
+#~ msgstr ""
+
+#~ msgid ":mod:`ctypes`"
+#~ msgstr ""
+
+#~ msgid ":mod:`!ctypes.macholib`"
+#~ msgstr ""
+
+#~ msgid ":mod:`decimal` (use :data:`decimal.SPEC_VERSION` instead)"
+#~ msgstr ""
+
+#~ msgid ":mod:`http.server`"
+#~ msgstr ""
+
+#~ msgid ":mod:`imaplib`"
+#~ msgstr ""
+
+#~ msgid ":mod:`ipaddress`"
+#~ msgstr ""
+
+#~ msgid ":mod:`json`"
+#~ msgstr ""
+
+#~ msgid ":mod:`logging` (``__date__`` also deprecated)"
+#~ msgstr ""
+
+#~ msgid ":mod:`optparse`"
+#~ msgstr ""
+
+#~ msgid ":mod:`pickle`"
+#~ msgstr ""
+
+#~ msgid ":mod:`platform`"
+#~ msgstr ""
+
+#~ msgid ":mod:`re`"
+#~ msgstr ""
+
+#~ msgid ":mod:`socketserver`"
+#~ msgstr ""
+
+#~ msgid ":mod:`tabnanny`"
+#~ msgstr ""
+
+#~ msgid ":mod:`tkinter.font`"
+#~ msgstr ""
+
+#~ msgid ":mod:`tkinter.ttk`"
+#~ msgstr ""
+
+#~ msgid ":mod:`wsgiref.simple_server`"
+#~ msgstr ""
+
+#~ msgid ":mod:`xml.etree.ElementTree`"
+#~ msgstr ""
+
+#~ msgid ":mod:`!xml.sax.expatreader`"
+#~ msgstr ""
+
+#~ msgid ":mod:`xml.sax.handler`"
+#~ msgstr ""
+
+#~ msgid ":mod:`zlib`"
+#~ msgstr ""
+
+#~ msgid "(Contributed by Hugo van Kemenade and Stan Ulbrych in :gh:`76007`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":mod:`os`: Calling :func:`os.register_at_fork` in"
+#~ " a multi-threaded process."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Add the :c:func:`PyWeakref_GetRef` function as"
+#~ " an alternative to  "
+#~ ":c:func:`!PyWeakref_GetObject` that returns a "
+#~ ":term:`strong reference` or ``NULL`` if "
+#~ "the referent is no longer live. "
+#~ "(Contributed by Victor Stinner in "
+#~ ":gh:`105927`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!PySys_ResetWarnOptions`: Clear "
+#~ ":data:`sys.warnoptions` and :data:`!warnings.filters` "
+#~ "instead."
+#~ msgstr ""
+
+#~ msgid ":c:func:`!Py_GetExecPrefix`: Get :data:`sys.exec_prefix` instead."
+#~ msgstr ""
+
+#~ msgid ":c:func:`!Py_GetPath`: Get :data:`sys.path` instead."
+#~ msgstr ""
+
+#~ msgid ":c:func:`!Py_GetPrefix`: Get :data:`sys.prefix` instead."
+#~ msgstr ""
+
+#~ msgid ":c:func:`!Py_GetProgramFullPath`: Get :data:`sys.executable` instead."
+#~ msgstr ""
+
+#~ msgid ":c:func:`!Py_GetProgramName`: Get :data:`sys.executable` instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetPythonHome`: Get :c:member:`PyConfig.home`"
+#~ " or the :envvar:`PYTHONHOME` environment "
+#~ "variable instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deprecate the :c:func:`!PyImport_ImportModuleNoBlock` "
+#~ "function, which is just an alias "
+#~ "to :c:func:`PyImport_ImportModule` since Python "
+#~ "3.3. (Contributed by Victor Stinner in"
+#~ " :gh:`105396`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deprecate the :c:func:`!PyWeakref_GetObject` and "
+#~ ":c:func:`!PyWeakref_GET_OBJECT` functions, which "
+#~ "return a :term:`borrowed reference`. Replace"
+#~ " them with the new "
+#~ ":c:func:`PyWeakref_GetRef` function, which returns"
+#~ " a :term:`strong reference`. The "
+#~ "`pythoncapi-compat project`_ can be used"
+#~ " to get :c:func:`PyWeakref_GetRef` on "
+#~ "Python 3.12 and older. (Contributed by"
+#~ " Victor Stinner in :gh:`105927`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The :c:func:`!PyImport_ImportModuleNoBlock`: Use "
+#~ ":c:func:`PyImport_ImportModule` instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!PyWeakref_GetObject` and "
+#~ ":c:func:`!PyWeakref_GET_OBJECT`: Use "
+#~ ":c:func:`PyWeakref_GetRef` instead. The "
+#~ "`pythoncapi-compat project <https://github.com/python"
+#~ "/pythoncapi-compat/>`__ can be used to "
+#~ "get :c:func:`PyWeakref_GetRef` on Python 3.12"
+#~ " and older."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetPath`: Use "
+#~ ":c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>`"
+#~ " (:data:`sys.path`) instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetPrefix`: Use "
+#~ ":c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` "
+#~ "(:data:`sys.base_prefix`) instead. Use "
+#~ ":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` "
+#~ "(:data:`sys.prefix`) if :ref:`virtual environments"
+#~ " <venv-def>` need to be handled."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetExecPrefix`: Use "
+#~ ":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
+#~ "(:data:`sys.base_exec_prefix`) instead. Use "
+#~ ":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
+#~ "(:data:`sys.exec_prefix`) if :ref:`virtual "
+#~ "environments <venv-def>` need to be "
+#~ "handled."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetProgramFullPath`: Use "
+#~ ":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
+#~ "(:data:`sys.executable`) instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetProgramName`: Use "
+#~ ":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
+#~ "(:data:`sys.executable`) instead."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":c:func:`!Py_GetPythonHome`: Use "
+#~ ":c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` or "
+#~ "the :envvar:`PYTHONHOME` environment variable "
+#~ "instead."
+#~ msgstr ""
 

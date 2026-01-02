@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -1230,17 +1230,17 @@ msgid ""
 msgstr ""
 
 #: ../../library/unittest.rst:848 ../../library/unittest.rst:984
-#: ../../library/unittest.rst:1205 ../../library/unittest.rst:1375
+#: ../../library/unittest.rst:1198 ../../library/unittest.rst:1368
 msgid "Method"
 msgstr ""
 
 #: ../../library/unittest.rst:848 ../../library/unittest.rst:984
-#: ../../library/unittest.rst:1205
+#: ../../library/unittest.rst:1198
 msgid "Checks that"
 msgstr ""
 
 #: ../../library/unittest.rst:848 ../../library/unittest.rst:984
-#: ../../library/unittest.rst:1205 ../../library/unittest.rst:1375
+#: ../../library/unittest.rst:1198 ../../library/unittest.rst:1368
 msgid "New in"
 msgstr ""
 
@@ -1287,12 +1287,12 @@ msgstr ""
 #: ../../library/unittest.rst:862 ../../library/unittest.rst:865
 #: ../../library/unittest.rst:868 ../../library/unittest.rst:871
 #: ../../library/unittest.rst:874 ../../library/unittest.rst:877
-#: ../../library/unittest.rst:989 ../../library/unittest.rst:1213
-#: ../../library/unittest.rst:1216 ../../library/unittest.rst:1219
-#: ../../library/unittest.rst:1222 ../../library/unittest.rst:1225
-#: ../../library/unittest.rst:1377 ../../library/unittest.rst:1380
-#: ../../library/unittest.rst:1383 ../../library/unittest.rst:1386
-#: ../../library/unittest.rst:1389 ../../library/unittest.rst:1392
+#: ../../library/unittest.rst:989 ../../library/unittest.rst:1206
+#: ../../library/unittest.rst:1209 ../../library/unittest.rst:1212
+#: ../../library/unittest.rst:1215 ../../library/unittest.rst:1218
+#: ../../library/unittest.rst:1370 ../../library/unittest.rst:1373
+#: ../../library/unittest.rst:1376 ../../library/unittest.rst:1379
+#: ../../library/unittest.rst:1382 ../../library/unittest.rst:1385
 msgid "3.1"
 msgstr ""
 
@@ -1346,7 +1346,7 @@ msgstr ""
 
 #: ../../library/unittest.rst:880 ../../library/unittest.rst:883
 #: ../../library/unittest.rst:992 ../../library/unittest.rst:995
-#: ../../library/unittest.rst:1228 ../../library/unittest.rst:1231
+#: ../../library/unittest.rst:1221 ../../library/unittest.rst:1224
 msgid "3.2"
 msgstr ""
 
@@ -1367,9 +1367,9 @@ msgid "``issubclass(a, b)``"
 msgstr ""
 
 #: ../../library/unittest.rst:886 ../../library/unittest.rst:889
-#: ../../library/unittest.rst:1235 ../../library/unittest.rst:1238
-#: ../../library/unittest.rst:1241 ../../library/unittest.rst:1244
-#: ../../library/unittest.rst:1247 ../../library/unittest.rst:1250
+#: ../../library/unittest.rst:1228 ../../library/unittest.rst:1231
+#: ../../library/unittest.rst:1234 ../../library/unittest.rst:1237
+#: ../../library/unittest.rst:1240 ../../library/unittest.rst:1243
 msgid "3.14"
 msgstr ""
 
@@ -1710,7 +1710,7 @@ msgid ""
 "propagating descendent logger."
 msgstr ""
 
-#: ../../library/unittest.rst:1145 ../../library/unittest.rst:1193
+#: ../../library/unittest.rst:1145 ../../library/unittest.rst:1186
 msgid ""
 "If given, *level* should be either a numeric logging level or its string "
 "equivalent (for example either ``\"ERROR\"`` or :const:`logging.ERROR`)."
@@ -1718,40 +1718,32 @@ msgid ""
 msgstr ""
 
 #: ../../library/unittest.rst:1149
-#, python-format
-msgid ""
-"If given, *formatter* should be a :class:`logging.Formatter` object. The "
-"default is a formatter with format string "
-"``\"%(levelname)s:%(name)s:%(message)s\"``"
-msgstr ""
-
-#: ../../library/unittest.rst:1153
 msgid ""
 "The test passes if at least one message emitted inside the ``with`` block"
 " matches the *logger* and *level* conditions, otherwise it fails."
 msgstr ""
 
-#: ../../library/unittest.rst:1156
+#: ../../library/unittest.rst:1152
 msgid ""
 "The object returned by the context manager is a recording helper which "
 "keeps tracks of the matching log messages.  It has two attributes:"
 msgstr ""
 
-#: ../../library/unittest.rst:1162
+#: ../../library/unittest.rst:1158
 msgid "A list of :class:`logging.LogRecord` objects of the matching log messages."
 msgstr ""
 
-#: ../../library/unittest.rst:1167
+#: ../../library/unittest.rst:1163
 msgid ""
 "A list of :class:`str` objects with the formatted output of matching "
 "messages."
 msgstr ""
 
-#: ../../library/unittest.rst:1170
+#: ../../library/unittest.rst:1166
 msgid "Example::"
 msgstr ""
 
-#: ../../library/unittest.rst:1172
+#: ../../library/unittest.rst:1168
 msgid ""
 "with self.assertLogs('foo', level='INFO') as cm:\n"
 "    logging.getLogger('foo').info('first message')\n"
@@ -1760,158 +1752,154 @@ msgid ""
 "                             'ERROR:foo.bar:second message'])"
 msgstr ""
 
-#: ../../library/unittest.rst:1180
-msgid "Now accepts a *formatter* to control how messages are formatted."
-msgstr ""
-
-#: ../../library/unittest.rst:1185
+#: ../../library/unittest.rst:1178
 msgid ""
 "A context manager to test that no messages are logged on the *logger* or "
 "one of its children, with at least the given *level*."
 msgstr ""
 
-#: ../../library/unittest.rst:1189
+#: ../../library/unittest.rst:1182
 msgid ""
 "If given, *logger* should be a :class:`logging.Logger` object or a "
 ":class:`str` giving the name of a logger.  The default is the root "
 "logger, which will catch all messages."
 msgstr ""
 
-#: ../../library/unittest.rst:1197
+#: ../../library/unittest.rst:1190
 msgid ""
 "Unlike :meth:`assertLogs`, nothing will be returned by the context "
 "manager."
 msgstr ""
 
-#: ../../library/unittest.rst:1202
+#: ../../library/unittest.rst:1195
 msgid ""
 "There are also other methods used to perform more specific checks, such "
 "as:"
 msgstr ""
 
-#: ../../library/unittest.rst:1207
+#: ../../library/unittest.rst:1200
 msgid ":meth:`assertAlmostEqual(a, b) <TestCase.assertAlmostEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1207
+#: ../../library/unittest.rst:1200
 msgid "``round(a-b, 7) == 0``"
 msgstr ""
 
-#: ../../library/unittest.rst:1210
+#: ../../library/unittest.rst:1203
 msgid ":meth:`assertNotAlmostEqual(a, b) <TestCase.assertNotAlmostEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1210
+#: ../../library/unittest.rst:1203
 msgid "``round(a-b, 7) != 0``"
 msgstr ""
 
-#: ../../library/unittest.rst:1213
+#: ../../library/unittest.rst:1206
 msgid ":meth:`assertGreater(a, b) <TestCase.assertGreater>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1213
+#: ../../library/unittest.rst:1206
 msgid "``a > b``"
 msgstr ""
 
-#: ../../library/unittest.rst:1216
+#: ../../library/unittest.rst:1209
 msgid ":meth:`assertGreaterEqual(a, b) <TestCase.assertGreaterEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1216
+#: ../../library/unittest.rst:1209
 msgid "``a >= b``"
 msgstr ""
 
-#: ../../library/unittest.rst:1219
+#: ../../library/unittest.rst:1212
 msgid ":meth:`assertLess(a, b) <TestCase.assertLess>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1219
+#: ../../library/unittest.rst:1212
 msgid "``a < b``"
 msgstr ""
 
-#: ../../library/unittest.rst:1222
+#: ../../library/unittest.rst:1215
 msgid ":meth:`assertLessEqual(a, b) <TestCase.assertLessEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1222
+#: ../../library/unittest.rst:1215
 msgid "``a <= b``"
 msgstr ""
 
-#: ../../library/unittest.rst:1225
+#: ../../library/unittest.rst:1218
 msgid ":meth:`assertRegex(s, r) <TestCase.assertRegex>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1225
+#: ../../library/unittest.rst:1218
 msgid "``r.search(s)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1228
+#: ../../library/unittest.rst:1221
 msgid ":meth:`assertNotRegex(s, r) <TestCase.assertNotRegex>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1228
+#: ../../library/unittest.rst:1221
 msgid "``not r.search(s)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1231
+#: ../../library/unittest.rst:1224
 msgid ":meth:`assertCountEqual(a, b) <TestCase.assertCountEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1231
+#: ../../library/unittest.rst:1224
 msgid ""
 "*a* and *b* have the same elements in the same number, regardless of "
 "their order."
 msgstr ""
 
-#: ../../library/unittest.rst:1235
+#: ../../library/unittest.rst:1228
 msgid ":meth:`assertStartsWith(a, b) <TestCase.assertStartsWith>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1235
+#: ../../library/unittest.rst:1228
 msgid "``a.startswith(b)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1238
+#: ../../library/unittest.rst:1231
 msgid ":meth:`assertNotStartsWith(a, b) <TestCase.assertNotStartsWith>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1238
+#: ../../library/unittest.rst:1231
 msgid "``not a.startswith(b)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1241
+#: ../../library/unittest.rst:1234
 msgid ":meth:`assertEndsWith(a, b) <TestCase.assertEndsWith>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1241
+#: ../../library/unittest.rst:1234
 msgid "``a.endswith(b)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1244
+#: ../../library/unittest.rst:1237
 msgid ":meth:`assertNotEndsWith(a, b) <TestCase.assertNotEndsWith>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1244
+#: ../../library/unittest.rst:1237
 msgid "``not a.endswith(b)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1247
+#: ../../library/unittest.rst:1240
 msgid ":meth:`assertHasAttr(a, b) <TestCase.assertHasAttr>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1247
+#: ../../library/unittest.rst:1240
 msgid "``hastattr(a, b)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1250
+#: ../../library/unittest.rst:1243
 msgid ":meth:`assertNotHasAttr(a, b) <TestCase.assertNotHasAttr>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1250
+#: ../../library/unittest.rst:1243
 msgid "``not hastattr(a, b)``"
 msgstr ""
 
-#: ../../library/unittest.rst:1258
+#: ../../library/unittest.rst:1251
 msgid ""
 "Test that *first* and *second* are approximately (or not approximately) "
 "equal by computing the difference, rounding to the given number of "
@@ -1920,36 +1908,36 @@ msgid ""
 "like the :func:`round` function) and not *significant digits*."
 msgstr ""
 
-#: ../../library/unittest.rst:1264
+#: ../../library/unittest.rst:1257
 msgid ""
 "If *delta* is supplied instead of *places* then the difference between "
 "*first* and *second* must be less or equal to (or greater than) *delta*."
 msgstr ""
 
-#: ../../library/unittest.rst:1267
+#: ../../library/unittest.rst:1260
 msgid "Supplying both *delta* and *places* raises a :exc:`TypeError`."
 msgstr ""
 
-#: ../../library/unittest.rst:1269
+#: ../../library/unittest.rst:1262
 msgid ""
 ":meth:`assertAlmostEqual` automatically considers almost equal objects "
 "that compare equal.  :meth:`assertNotAlmostEqual` automatically fails if "
 "the objects compare equal.  Added the *delta* keyword argument."
 msgstr ""
 
-#: ../../library/unittest.rst:1280
+#: ../../library/unittest.rst:1273
 msgid ""
 "Test that *first* is respectively >, >=, < or <= than *second* depending "
 "on the method name.  If not, the test will fail::"
 msgstr ""
 
-#: ../../library/unittest.rst:1283
+#: ../../library/unittest.rst:1276
 msgid ""
 ">>> self.assertGreaterEqual(3, 4)\n"
 "AssertionError: \"3\" unexpectedly not greater than or equal to \"4\""
 msgstr ""
 
-#: ../../library/unittest.rst:1292
+#: ../../library/unittest.rst:1285
 msgid ""
 "Test that a *regex* search matches (or does not match) *text*.  In case "
 "of failure, the error message will include the pattern and the *text* (or"
@@ -1958,28 +1946,28 @@ msgid ""
 "expression suitable for use by :func:`re.search`."
 msgstr ""
 
-#: ../../library/unittest.rst:1298
+#: ../../library/unittest.rst:1291
 msgid "Added under the name ``assertRegexpMatches``."
 msgstr ""
 
-#: ../../library/unittest.rst:1300
+#: ../../library/unittest.rst:1293
 msgid ""
 "The method ``assertRegexpMatches()`` has been renamed to "
 ":meth:`.assertRegex`."
 msgstr ""
 
-#: ../../library/unittest.rst:1303
+#: ../../library/unittest.rst:1296
 msgid ":meth:`.assertNotRegex`."
 msgstr ""
 
-#: ../../library/unittest.rst:1309
+#: ../../library/unittest.rst:1302
 msgid ""
 "Test that sequence *first* contains the same elements as *second*, "
 "regardless of their order. When they don't, an error message listing the "
 "differences between the sequences will be generated."
 msgstr ""
 
-#: ../../library/unittest.rst:1313
+#: ../../library/unittest.rst:1306
 msgid ""
 "Duplicate elements are *not* ignored when comparing *first* and *second*."
 " It verifies whether each element has the same count in both sequences. "
@@ -1988,23 +1976,23 @@ msgid ""
 "as well."
 msgstr ""
 
-#: ../../library/unittest.rst:1325
+#: ../../library/unittest.rst:1318
 msgid ""
 "Test that the Unicode or byte string *s* starts (or does not start) with "
 "a *prefix*. *prefix* can also be a tuple of strings to try."
 msgstr ""
 
-#: ../../library/unittest.rst:1335
+#: ../../library/unittest.rst:1328
 msgid ""
 "Test that the Unicode or byte string *s* ends (or does not end) with a "
 "*suffix*. *suffix* can also be a tuple of strings to try."
 msgstr ""
 
-#: ../../library/unittest.rst:1345
+#: ../../library/unittest.rst:1338
 msgid "Test that the object *obj* has (or has not) an attribute *name*."
 msgstr ""
 
-#: ../../library/unittest.rst:1352
+#: ../../library/unittest.rst:1345
 msgid ""
 "The :meth:`assertEqual` method dispatches the equality check for objects "
 "of the same type to different type-specific methods.  These methods are "
@@ -2012,7 +2000,7 @@ msgid ""
 "possible to register new methods using :meth:`addTypeEqualityFunc`:"
 msgstr ""
 
-#: ../../library/unittest.rst:1359
+#: ../../library/unittest.rst:1352
 msgid ""
 "Registers a type-specific method called by :meth:`assertEqual` to check "
 "if two objects of exactly the same *typeobj* (not subclasses) compare "
@@ -2024,66 +2012,66 @@ msgid ""
 "in the error message."
 msgstr ""
 
-#: ../../library/unittest.rst:1370
+#: ../../library/unittest.rst:1363
 msgid ""
 "The list of type-specific methods automatically used by "
 ":meth:`~TestCase.assertEqual` are summarized in the following table.  "
 "Note that it's usually not necessary to invoke these methods directly."
 msgstr ""
 
-#: ../../library/unittest.rst:1375
+#: ../../library/unittest.rst:1368
 msgid "Used to compare"
 msgstr ""
 
-#: ../../library/unittest.rst:1377
+#: ../../library/unittest.rst:1370
 msgid ":meth:`assertMultiLineEqual(a, b) <TestCase.assertMultiLineEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1377
+#: ../../library/unittest.rst:1370
 msgid "strings"
 msgstr ""
 
-#: ../../library/unittest.rst:1380
+#: ../../library/unittest.rst:1373
 msgid ":meth:`assertSequenceEqual(a, b) <TestCase.assertSequenceEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1380
+#: ../../library/unittest.rst:1373
 msgid "sequences"
 msgstr ""
 
-#: ../../library/unittest.rst:1383
+#: ../../library/unittest.rst:1376
 msgid ":meth:`assertListEqual(a, b) <TestCase.assertListEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1383
+#: ../../library/unittest.rst:1376
 msgid "lists"
 msgstr ""
 
-#: ../../library/unittest.rst:1386
+#: ../../library/unittest.rst:1379
 msgid ":meth:`assertTupleEqual(a, b) <TestCase.assertTupleEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1386
+#: ../../library/unittest.rst:1379
 msgid "tuples"
 msgstr ""
 
-#: ../../library/unittest.rst:1389
+#: ../../library/unittest.rst:1382
 msgid ":meth:`assertSetEqual(a, b) <TestCase.assertSetEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1389
+#: ../../library/unittest.rst:1382
 msgid "sets or frozensets"
 msgstr ""
 
-#: ../../library/unittest.rst:1392
+#: ../../library/unittest.rst:1385
 msgid ":meth:`assertDictEqual(a, b) <TestCase.assertDictEqual>`"
 msgstr ""
 
-#: ../../library/unittest.rst:1392
+#: ../../library/unittest.rst:1385
 msgid "dicts"
 msgstr ""
 
-#: ../../library/unittest.rst:1400
+#: ../../library/unittest.rst:1393
 msgid ""
 "Test that the multiline string *first* is equal to the string *second*. "
 "When not equal a diff of the two strings highlighting the differences "
@@ -2091,7 +2079,7 @@ msgid ""
 "when comparing strings with :meth:`assertEqual`."
 msgstr ""
 
-#: ../../library/unittest.rst:1410
+#: ../../library/unittest.rst:1403
 msgid ""
 "Tests that two sequences are equal.  If a *seq_type* is supplied, both "
 "*first* and *second* must be instances of *seq_type* or a failure will be"
@@ -2099,13 +2087,13 @@ msgid ""
 "that shows the difference between the two."
 msgstr ""
 
-#: ../../library/unittest.rst:1415
+#: ../../library/unittest.rst:1408
 msgid ""
 "This method is not called directly by :meth:`assertEqual`, but it's used "
 "to implement :meth:`assertListEqual` and :meth:`assertTupleEqual`."
 msgstr ""
 
-#: ../../library/unittest.rst:1425
+#: ../../library/unittest.rst:1418
 msgid ""
 "Tests that two lists or tuples are equal.  If not, an error message is "
 "constructed that shows only the differences between the two.  An error is"
@@ -2114,20 +2102,20 @@ msgid ""
 ":meth:`assertEqual`."
 msgstr ""
 
-#: ../../library/unittest.rst:1436
+#: ../../library/unittest.rst:1429
 msgid ""
 "Tests that two sets are equal.  If not, an error message is constructed "
 "that lists the differences between the sets.  This method is used by "
 "default when comparing sets or frozensets with :meth:`assertEqual`."
 msgstr ""
 
-#: ../../library/unittest.rst:1440
+#: ../../library/unittest.rst:1433
 msgid ""
 "Fails if either of *first* or *second* does not have a "
 ":meth:`~frozenset.difference` method."
 msgstr ""
 
-#: ../../library/unittest.rst:1448
+#: ../../library/unittest.rst:1441
 msgid ""
 "Test that two dictionaries are equal.  If not, an error message is "
 "constructed that shows the differences in the dictionaries. This method "
@@ -2135,19 +2123,19 @@ msgid ""
 ":meth:`assertEqual`."
 msgstr ""
 
-#: ../../library/unittest.rst:1459
+#: ../../library/unittest.rst:1452
 msgid ""
 "Finally the :class:`TestCase` provides the following methods and "
 "attributes:"
 msgstr ""
 
-#: ../../library/unittest.rst:1464
+#: ../../library/unittest.rst:1457
 msgid ""
 "Signals a test failure unconditionally, with *msg* or ``None`` for the "
 "error message."
 msgstr ""
 
-#: ../../library/unittest.rst:1470
+#: ../../library/unittest.rst:1463
 msgid ""
 "This class attribute gives the exception raised by the test method.  If a"
 " test framework needs to use a specialized exception, possibly to carry "
@@ -2156,7 +2144,7 @@ msgid ""
 " :exc:`AssertionError`."
 msgstr ""
 
-#: ../../library/unittest.rst:1479
+#: ../../library/unittest.rst:1472
 msgid ""
 "This class attribute determines what happens when a custom failure "
 "message is passed as the msg argument to an assertXYY call that fails. "
@@ -2165,18 +2153,18 @@ msgid ""
 "``False``, the custom message replaces the standard message."
 msgstr ""
 
-#: ../../library/unittest.rst:1485
+#: ../../library/unittest.rst:1478
 msgid ""
 "The class setting can be overridden in individual test methods by "
 "assigning an instance attribute, self.longMessage, to ``True`` or "
 "``False`` before calling the assert methods."
 msgstr ""
 
-#: ../../library/unittest.rst:1489
+#: ../../library/unittest.rst:1482
 msgid "The class setting gets reset before each test call."
 msgstr ""
 
-#: ../../library/unittest.rst:1496
+#: ../../library/unittest.rst:1489
 msgid ""
 "This attribute controls the maximum length of diffs output by assert "
 "methods that report diffs on failure. It defaults to 80*8 characters. "
@@ -2185,52 +2173,52 @@ msgid ""
 ":meth:`assertDictEqual` and :meth:`assertMultiLineEqual`."
 msgstr ""
 
-#: ../../library/unittest.rst:1503
+#: ../../library/unittest.rst:1496
 msgid ""
 "Setting ``maxDiff`` to ``None`` means that there is no maximum length of "
 "diffs."
 msgstr ""
 
-#: ../../library/unittest.rst:1509
+#: ../../library/unittest.rst:1502
 msgid ""
 "Testing frameworks can use the following methods to collect information "
 "on the test:"
 msgstr ""
 
-#: ../../library/unittest.rst:1515
+#: ../../library/unittest.rst:1508
 msgid ""
 "Return the number of tests represented by this test object.  For "
 ":class:`TestCase` instances, this will always be ``1``."
 msgstr ""
 
-#: ../../library/unittest.rst:1521
+#: ../../library/unittest.rst:1514
 msgid ""
 "Return an instance of the test result class that should be used for this "
 "test case class (if no other result instance is provided to the "
 ":meth:`run` method)."
 msgstr ""
 
-#: ../../library/unittest.rst:1525
+#: ../../library/unittest.rst:1518
 msgid ""
 "For :class:`TestCase` instances, this will always be an instance of "
 ":class:`TestResult`; subclasses of :class:`TestCase` should override this"
 " as necessary."
 msgstr ""
 
-#: ../../library/unittest.rst:1532
+#: ../../library/unittest.rst:1525
 msgid ""
 "Return a string identifying the specific test case.  This is usually the "
 "full name of the test method, including the module and class name."
 msgstr ""
 
-#: ../../library/unittest.rst:1538
+#: ../../library/unittest.rst:1531
 msgid ""
 "Returns a description of the test, or ``None`` if no description has been"
 " provided.  The default implementation of this method returns the first "
 "line of the test method's docstring, if available, or ``None``."
 msgstr ""
 
-#: ../../library/unittest.rst:1543
+#: ../../library/unittest.rst:1536
 msgid ""
 "In 3.1 this was changed to add the test name to the short description "
 "even in the presence of a docstring.  This caused compatibility issues "
@@ -2238,7 +2226,7 @@ msgid ""
 ":class:`TextTestResult` in Python 3.2."
 msgstr ""
 
-#: ../../library/unittest.rst:1552
+#: ../../library/unittest.rst:1545
 msgid ""
 "Add a function to be called after :meth:`tearDown` to cleanup resources "
 "used during the test. Functions will be called in reverse order to the "
@@ -2247,13 +2235,13 @@ msgid ""
 ":meth:`addCleanup` when they are added."
 msgstr ""
 
-#: ../../library/unittest.rst:1558
+#: ../../library/unittest.rst:1551
 msgid ""
 "If :meth:`setUp` fails, meaning that :meth:`tearDown` is not called, then"
 " any cleanup functions added will still be called."
 msgstr ""
 
-#: ../../library/unittest.rst:1566
+#: ../../library/unittest.rst:1559
 msgid ""
 "Enter the supplied :term:`context manager`.  If successful, also add its "
 ":meth:`~object.__exit__` method as a cleanup function by "
@@ -2261,26 +2249,26 @@ msgid ""
 " method."
 msgstr ""
 
-#: ../../library/unittest.rst:1576
+#: ../../library/unittest.rst:1569
 msgid ""
 "This method is called unconditionally after :meth:`tearDown`, or after "
 ":meth:`setUp` if :meth:`setUp` raises an exception."
 msgstr ""
 
-#: ../../library/unittest.rst:1579
+#: ../../library/unittest.rst:1572
 msgid ""
 "It is responsible for calling all the cleanup functions added by "
 ":meth:`addCleanup`. If you need cleanup functions to be called *prior* to"
 " :meth:`tearDown` then you can call :meth:`doCleanups` yourself."
 msgstr ""
 
-#: ../../library/unittest.rst:1584
+#: ../../library/unittest.rst:1577
 msgid ""
 ":meth:`doCleanups` pops methods off the stack of cleanup functions one at"
 " a time, so it can be called at any time."
 msgstr ""
 
-#: ../../library/unittest.rst:1592
+#: ../../library/unittest.rst:1585
 msgid ""
 "Add a function to be called after :meth:`tearDownClass` to cleanup "
 "resources used during the test class. Functions will be called in reverse"
@@ -2289,13 +2277,13 @@ msgid ""
 ":meth:`addClassCleanup` when they are added."
 msgstr ""
 
-#: ../../library/unittest.rst:1598
+#: ../../library/unittest.rst:1591
 msgid ""
 "If :meth:`setUpClass` fails, meaning that :meth:`tearDownClass` is not "
 "called, then any cleanup functions added will still be called."
 msgstr ""
 
-#: ../../library/unittest.rst:1606
+#: ../../library/unittest.rst:1599
 msgid ""
 "Enter the supplied :term:`context manager`.  If successful, also add its "
 ":meth:`~object.__exit__` method as a cleanup function by "
@@ -2303,13 +2291,13 @@ msgid ""
 ":meth:`~object.__enter__` method."
 msgstr ""
 
-#: ../../library/unittest.rst:1616
+#: ../../library/unittest.rst:1609
 msgid ""
 "This method is called unconditionally after :meth:`tearDownClass`, or "
 "after :meth:`setUpClass` if :meth:`setUpClass` raises an exception."
 msgstr ""
 
-#: ../../library/unittest.rst:1619
+#: ../../library/unittest.rst:1612
 msgid ""
 "It is responsible for calling all the cleanup functions added by "
 ":meth:`addClassCleanup`. If you need cleanup functions to be called "
@@ -2317,26 +2305,26 @@ msgid ""
 ":meth:`doClassCleanups` yourself."
 msgstr ""
 
-#: ../../library/unittest.rst:1624
+#: ../../library/unittest.rst:1617
 msgid ""
 ":meth:`doClassCleanups` pops methods off the stack of cleanup functions "
 "one at a time, so it can be called at any time."
 msgstr ""
 
-#: ../../library/unittest.rst:1632
+#: ../../library/unittest.rst:1625
 msgid ""
 "This class provides an API similar to :class:`TestCase` and also accepts "
 "coroutines as test functions."
 msgstr ""
 
-#: ../../library/unittest.rst:1639
+#: ../../library/unittest.rst:1632
 msgid ""
 "The *loop_factory* passed to :class:`asyncio.Runner`. Override in "
 "subclasses with :class:`asyncio.EventLoop` to avoid using the asyncio "
 "policy system."
 msgstr ""
 
-#: ../../library/unittest.rst:1648
+#: ../../library/unittest.rst:1641
 msgid ""
 "Method called to prepare the test fixture. This is called after "
 ":meth:`TestCase.setUp`. This is called immediately before calling the "
@@ -2345,7 +2333,7 @@ msgid ""
 " test failure. The default implementation does nothing."
 msgstr ""
 
-#: ../../library/unittest.rst:1657
+#: ../../library/unittest.rst:1650
 msgid ""
 "Method called immediately after the test method has been called and the "
 "result recorded.  This is called before :meth:`~TestCase.tearDown`. This "
@@ -2359,11 +2347,11 @@ msgid ""
 "method. The default implementation does nothing."
 msgstr ""
 
-#: ../../library/unittest.rst:1669
+#: ../../library/unittest.rst:1662
 msgid "This method accepts a coroutine that can be used as a cleanup function."
 msgstr ""
 
-#: ../../library/unittest.rst:1674
+#: ../../library/unittest.rst:1667
 msgid ""
 "Enter the supplied :term:`asynchronous context manager`.  If successful, "
 "also add its :meth:`~object.__aexit__` method as a cleanup function by "
@@ -2371,7 +2359,7 @@ msgid ""
 ":meth:`~object.__aenter__` method."
 msgstr ""
 
-#: ../../library/unittest.rst:1684
+#: ../../library/unittest.rst:1677
 msgid ""
 "Sets up a new event loop to run the test, collecting the result into the "
 ":class:`TestResult` object passed as *result*.  If *result* is omitted or"
@@ -2381,11 +2369,11 @@ msgid ""
 " in the event loop are cancelled."
 msgstr ""
 
-#: ../../library/unittest.rst:1692
+#: ../../library/unittest.rst:1685
 msgid "An example illustrating the order::"
 msgstr ""
 
-#: ../../library/unittest.rst:1694
+#: ../../library/unittest.rst:1687
 msgid ""
 "from unittest import IsolatedAsyncioTestCase\n"
 "\n"
@@ -2423,14 +2411,14 @@ msgid ""
 "    unittest.main()"
 msgstr ""
 
-#: ../../library/unittest.rst:1728
+#: ../../library/unittest.rst:1721
 msgid ""
 "After running the test, ``events`` would contain ``[\"setUp\", "
 "\"asyncSetUp\", \"test_response\", \"asyncTearDown\", \"tearDown\", "
 "\"cleanup\"]``."
 msgstr ""
 
-#: ../../library/unittest.rst:1733
+#: ../../library/unittest.rst:1726
 msgid ""
 "This class implements the portion of the :class:`TestCase` interface "
 "which allows the test runner to drive the test, but does not provide the "
@@ -2439,11 +2427,11 @@ msgid ""
 "integrated into a :mod:`unittest`-based test framework."
 msgstr ""
 
-#: ../../library/unittest.rst:1743
+#: ../../library/unittest.rst:1736
 msgid "Grouping tests"
 msgstr ""
 
-#: ../../library/unittest.rst:1747
+#: ../../library/unittest.rst:1740
 msgid ""
 "This class represents an aggregation of individual test cases and test "
 "suites. The class presents the interface needed by the test runner to "
@@ -2452,7 +2440,7 @@ msgid ""
 "individually."
 msgstr ""
 
-#: ../../library/unittest.rst:1752
+#: ../../library/unittest.rst:1745
 msgid ""
 "If *tests* is given, it must be an iterable of individual test cases or "
 "other test suites that will be used to build the suite initially. "
@@ -2460,7 +2448,7 @@ msgid ""
 "collection later on."
 msgstr ""
 
-#: ../../library/unittest.rst:1756
+#: ../../library/unittest.rst:1749
 msgid ""
 ":class:`TestSuite` objects behave much like :class:`TestCase` objects, "
 "except they do not actually implement a test.  Instead, they are used to "
@@ -2469,27 +2457,27 @@ msgid ""
 "instances:"
 msgstr ""
 
-#: ../../library/unittest.rst:1764
+#: ../../library/unittest.rst:1757
 msgid "Add a :class:`TestCase` or :class:`TestSuite` to the suite."
 msgstr ""
 
-#: ../../library/unittest.rst:1769
+#: ../../library/unittest.rst:1762
 msgid ""
 "Add all the tests from an iterable of :class:`TestCase` and "
 ":class:`TestSuite` instances to this test suite."
 msgstr ""
 
-#: ../../library/unittest.rst:1772
+#: ../../library/unittest.rst:1765
 msgid ""
 "This is equivalent to iterating over *tests*, calling :meth:`addTest` for"
 " each element."
 msgstr ""
 
-#: ../../library/unittest.rst:1775
+#: ../../library/unittest.rst:1768
 msgid ":class:`TestSuite` shares the following methods with :class:`TestCase`:"
 msgstr ""
 
-#: ../../library/unittest.rst:1780
+#: ../../library/unittest.rst:1773
 msgid ""
 "Run the tests associated with this suite, collecting the result into the "
 "test result object passed as *result*.  Note that unlike "
@@ -2497,20 +2485,20 @@ msgid ""
 " be passed in."
 msgstr ""
 
-#: ../../library/unittest.rst:1788
+#: ../../library/unittest.rst:1781
 msgid ""
 "Run the tests associated with this suite without collecting the result. "
 "This allows exceptions raised by the test to be propagated to the caller "
 "and can be used to support running tests under a debugger."
 msgstr ""
 
-#: ../../library/unittest.rst:1795
+#: ../../library/unittest.rst:1788
 msgid ""
 "Return the number of tests represented by this test object, including all"
 " individual tests and sub-suites."
 msgstr ""
 
-#: ../../library/unittest.rst:1801
+#: ../../library/unittest.rst:1794
 msgid ""
 "Tests grouped by a :class:`TestSuite` are always accessed by iteration. "
 "Subclasses can lazily provide tests by overriding :meth:`!__iter__`. Note"
@@ -2523,32 +2511,32 @@ msgid ""
 " test references."
 msgstr ""
 
-#: ../../library/unittest.rst:1811
+#: ../../library/unittest.rst:1804
 msgid ""
 "In earlier versions the :class:`TestSuite` accessed tests directly rather"
 " than through iteration, so overriding :meth:`!__iter__` wasn't "
 "sufficient for providing tests."
 msgstr ""
 
-#: ../../library/unittest.rst:1816
+#: ../../library/unittest.rst:1809
 msgid ""
 "In earlier versions the :class:`TestSuite` held references to each "
 ":class:`TestCase` after :meth:`TestSuite.run`. Subclasses can restore "
 "that behavior by overriding :meth:`!TestSuite._removeTestAtIndex`."
 msgstr ""
 
-#: ../../library/unittest.rst:1821
+#: ../../library/unittest.rst:1814
 msgid ""
 "In the typical usage of a :class:`TestSuite` object, the :meth:`run` "
 "method is invoked by a :class:`!TestRunner` rather than by the end-user "
 "test harness."
 msgstr ""
 
-#: ../../library/unittest.rst:1826
+#: ../../library/unittest.rst:1819
 msgid "Loading and running tests"
 msgstr ""
 
-#: ../../library/unittest.rst:1830
+#: ../../library/unittest.rst:1823
 msgid ""
 "The :class:`TestLoader` class is used to create test suites from classes "
 "and modules.  Normally, there is no need to create an instance of this "
@@ -2557,11 +2545,11 @@ msgid ""
 "however, allows customization of some configurable properties."
 msgstr ""
 
-#: ../../library/unittest.rst:1836
+#: ../../library/unittest.rst:1829
 msgid ":class:`TestLoader` objects have the following attributes:"
 msgstr ""
 
-#: ../../library/unittest.rst:1841
+#: ../../library/unittest.rst:1834
 msgid ""
 "A list of the non-fatal errors encountered while loading tests. Not reset"
 " by the loader at any point. Fatal errors are signalled by the relevant "
@@ -2570,17 +2558,17 @@ msgid ""
 "run."
 msgstr ""
 
-#: ../../library/unittest.rst:1850
+#: ../../library/unittest.rst:1843
 msgid ":class:`TestLoader` objects have the following methods:"
 msgstr ""
 
-#: ../../library/unittest.rst:1855
+#: ../../library/unittest.rst:1848
 msgid ""
 "Return a suite of all test cases contained in the :class:`TestCase`\\ "
 "-derived :class:`!testCaseClass`."
 msgstr ""
 
-#: ../../library/unittest.rst:1858
+#: ../../library/unittest.rst:1851
 msgid ""
 "A test case instance is created for each method named by "
 ":meth:`getTestCaseNames`. By default these are the method names beginning"
@@ -2589,7 +2577,7 @@ msgid ""
 " that method instead."
 msgstr ""
 
-#: ../../library/unittest.rst:1867
+#: ../../library/unittest.rst:1860
 msgid ""
 "Return a suite of all test cases contained in the given module. This "
 "method searches *module* for classes derived from :class:`TestCase` and "
@@ -2597,7 +2585,7 @@ msgid ""
 "class."
 msgstr ""
 
-#: ../../library/unittest.rst:1874
+#: ../../library/unittest.rst:1867
 msgid ""
 "While using a hierarchy of :class:`TestCase`\\ -derived classes can be "
 "convenient in sharing fixtures and helper functions, defining test "
@@ -2606,7 +2594,7 @@ msgid ""
 "when the fixtures are different and defined in subclasses."
 msgstr ""
 
-#: ../../library/unittest.rst:1880
+#: ../../library/unittest.rst:1873
 msgid ""
 "If a module provides a ``load_tests`` function it will be called to load "
 "the tests. This allows modules to customize test loading. This is the "
@@ -2614,25 +2602,25 @@ msgid ""
 "argument to ``load_tests``."
 msgstr ""
 
-#: ../../library/unittest.rst:1885
+#: ../../library/unittest.rst:1878
 msgid "Support for ``load_tests`` added."
 msgstr ""
 
-#: ../../library/unittest.rst:1888
+#: ../../library/unittest.rst:1881
 msgid "Support for a keyword-only argument *pattern* has been added."
 msgstr ""
 
-#: ../../library/unittest.rst:1891
+#: ../../library/unittest.rst:1884
 msgid ""
 "The undocumented and unofficial *use_load_tests* parameter has been "
 "removed."
 msgstr ""
 
-#: ../../library/unittest.rst:1898
+#: ../../library/unittest.rst:1891
 msgid "Return a suite of all test cases given a string specifier."
 msgstr ""
 
-#: ../../library/unittest.rst:1900
+#: ../../library/unittest.rst:1893
 msgid ""
 "The specifier *name* is a \"dotted name\" that may resolve either to a "
 "module, a test case class, a test method within a test case class, a "
@@ -2643,7 +2631,7 @@ msgid ""
 "class\", rather than \"a callable object\"."
 msgstr ""
 
-#: ../../library/unittest.rst:1908
+#: ../../library/unittest.rst:1901
 msgid ""
 "For example, if you have a module :mod:`!SampleTests` containing a "
 ":class:`TestCase`\\ -derived class :class:`!SampleTestCase` with three "
@@ -2657,11 +2645,11 @@ msgid ""
 "effect."
 msgstr ""
 
-#: ../../library/unittest.rst:1918
+#: ../../library/unittest.rst:1911
 msgid "The method optionally resolves *name* relative to the given *module*."
 msgstr ""
 
-#: ../../library/unittest.rst:1920
+#: ../../library/unittest.rst:1913
 msgid ""
 "If an :exc:`ImportError` or :exc:`AttributeError` occurs while traversing"
 " *name* then a synthetic test that raises that error when run will be "
@@ -2669,20 +2657,20 @@ msgid ""
 "self.errors."
 msgstr ""
 
-#: ../../library/unittest.rst:1929
+#: ../../library/unittest.rst:1922
 msgid ""
 "Similar to :meth:`loadTestsFromName`, but takes a sequence of names "
 "rather than a single name.  The return value is a test suite which "
 "supports all the tests defined for each name."
 msgstr ""
 
-#: ../../library/unittest.rst:1936
+#: ../../library/unittest.rst:1929
 msgid ""
 "Return a sorted sequence of method names found within *testCaseClass*; "
 "this should be a subclass of :class:`TestCase`."
 msgstr ""
 
-#: ../../library/unittest.rst:1942
+#: ../../library/unittest.rst:1935
 msgid ""
 "Find all the test modules by recursing into subdirectories from the "
 "specified start directory, and return a TestSuite object containing them."
@@ -2691,14 +2679,14 @@ msgid ""
 "Python identifiers) will be loaded."
 msgstr ""
 
-#: ../../library/unittest.rst:1948
+#: ../../library/unittest.rst:1941
 msgid ""
 "All test modules must be importable from the top level of the project. If"
 " the start directory is not the top level directory then *top_level_dir* "
 "must be specified separately."
 msgstr ""
 
-#: ../../library/unittest.rst:1952
+#: ../../library/unittest.rst:1945
 msgid ""
 "If importing a module fails, for example due to a syntax error, then this"
 " will be recorded as a single error and discovery will continue.  If the "
@@ -2706,7 +2694,7 @@ msgid ""
 "recorded as a skip instead of an error."
 msgstr ""
 
-#: ../../library/unittest.rst:1957
+#: ../../library/unittest.rst:1950
 msgid ""
 "If a package (a directory containing a file named :file:`__init__.py`) is"
 " found, the package will be checked for a ``load_tests`` function. If "
@@ -2716,111 +2704,111 @@ msgid ""
 "function itself calls ``loader.discover``."
 msgstr ""
 
-#: ../../library/unittest.rst:1965
+#: ../../library/unittest.rst:1958
 msgid ""
 "If ``load_tests`` exists then discovery does *not* recurse into the "
 "package, ``load_tests`` is responsible for loading all tests in the "
 "package."
 msgstr ""
 
-#: ../../library/unittest.rst:1969
+#: ../../library/unittest.rst:1962
 msgid ""
 "The pattern is deliberately not stored as a loader attribute so that "
 "packages can continue discovery themselves."
 msgstr ""
 
-#: ../../library/unittest.rst:1972
+#: ../../library/unittest.rst:1965
 msgid ""
 "*top_level_dir* is stored internally, and used as a default to any nested"
 " calls to ``discover()``. That is, if a package's ``load_tests`` calls "
 "``loader.discover()``, it does not need to pass this argument."
 msgstr ""
 
-#: ../../library/unittest.rst:1976
+#: ../../library/unittest.rst:1969
 msgid "*start_dir* can be a dotted module name as well as a directory."
 msgstr ""
 
-#: ../../library/unittest.rst:1980
+#: ../../library/unittest.rst:1973
 msgid ""
 "Modules that raise :exc:`SkipTest` on import are recorded as skips, not "
 "errors."
 msgstr ""
 
-#: ../../library/unittest.rst:1984
+#: ../../library/unittest.rst:1977
 msgid "*start_dir* can be a :term:`namespace packages <namespace package>`."
 msgstr ""
 
-#: ../../library/unittest.rst:1986
+#: ../../library/unittest.rst:1979
 msgid ""
 "Paths are sorted before being imported so that execution order is the "
 "same even if the underlying file system's ordering is not dependent on "
 "file name."
 msgstr ""
 
-#: ../../library/unittest.rst:1990
+#: ../../library/unittest.rst:1983
 msgid ""
 "Found packages are now checked for ``load_tests`` regardless of whether "
 "their path matches *pattern*, because it is impossible for a package name"
 " to match the default pattern."
 msgstr ""
 
-#: ../../library/unittest.rst:1995
+#: ../../library/unittest.rst:1988
 msgid ""
 "*start_dir* can not be a :term:`namespace packages <namespace package>`. "
 "It has been broken since Python 3.7, and Python 3.11 officially removes "
 "it."
 msgstr ""
 
-#: ../../library/unittest.rst:1999
+#: ../../library/unittest.rst:1992
 msgid "*top_level_dir* is only stored for the duration of *discover* call."
 msgstr ""
 
-#: ../../library/unittest.rst:2002
+#: ../../library/unittest.rst:1995
 msgid "*start_dir* can once again be a :term:`namespace package`."
 msgstr ""
 
-#: ../../library/unittest.rst:2005
+#: ../../library/unittest.rst:1998
 msgid ""
 "The following attributes of a :class:`TestLoader` can be configured "
 "either by subclassing or assignment on an instance:"
 msgstr ""
 
-#: ../../library/unittest.rst:2011
+#: ../../library/unittest.rst:2004
 msgid ""
 "String giving the prefix of method names which will be interpreted as "
 "test methods.  The default value is ``'test'``."
 msgstr ""
 
-#: ../../library/unittest.rst:2014
+#: ../../library/unittest.rst:2007
 msgid ""
 "This affects :meth:`getTestCaseNames` and all the ``loadTestsFrom*`` "
 "methods."
 msgstr ""
 
-#: ../../library/unittest.rst:2020
+#: ../../library/unittest.rst:2013
 msgid ""
 "Function to be used to compare method names when sorting them in "
 ":meth:`getTestCaseNames` and all the ``loadTestsFrom*`` methods."
 msgstr ""
 
-#: ../../library/unittest.rst:2026
+#: ../../library/unittest.rst:2019
 msgid ""
 "Callable object that constructs a test suite from a list of tests. No "
 "methods on the resulting object are needed.  The default value is the "
 ":class:`TestSuite` class."
 msgstr ""
 
-#: ../../library/unittest.rst:2030 ../../library/unittest.rst:2043
+#: ../../library/unittest.rst:2023 ../../library/unittest.rst:2036
 msgid "This affects all the ``loadTestsFrom*`` methods."
 msgstr ""
 
-#: ../../library/unittest.rst:2034
+#: ../../library/unittest.rst:2027
 msgid ""
 "List of Unix shell-style wildcard test name patterns that test methods "
 "have to match to be included in test suites (see ``-k`` option)."
 msgstr ""
 
-#: ../../library/unittest.rst:2037
+#: ../../library/unittest.rst:2030
 msgid ""
 "If this attribute is not ``None`` (the default), all test methods to be "
 "included in test suites must match one of the patterns in this list. Note"
@@ -2829,13 +2817,13 @@ msgid ""
 "will have to be converted using ``*`` wildcards."
 msgstr ""
 
-#: ../../library/unittest.rst:2050
+#: ../../library/unittest.rst:2043
 msgid ""
 "This class is used to compile information about which tests have "
 "succeeded and which have failed."
 msgstr ""
 
-#: ../../library/unittest.rst:2053
+#: ../../library/unittest.rst:2046
 msgid ""
 "A :class:`TestResult` object stores the results of a set of tests.  The "
 ":class:`TestCase` and :class:`TestSuite` classes ensure that results are "
@@ -2843,7 +2831,7 @@ msgid ""
 "outcome of tests."
 msgstr ""
 
-#: ../../library/unittest.rst:2058
+#: ../../library/unittest.rst:2051
 msgid ""
 "Testing frameworks built on top of :mod:`unittest` may want access to the"
 " :class:`TestResult` object generated by running a set of tests for "
@@ -2851,20 +2839,20 @@ msgid ""
 ":meth:`!TestRunner.run` method for this purpose."
 msgstr ""
 
-#: ../../library/unittest.rst:2063
+#: ../../library/unittest.rst:2056
 msgid ""
 ":class:`TestResult` instances have the following attributes that will be "
 "of interest when inspecting the results of running a set of tests:"
 msgstr ""
 
-#: ../../library/unittest.rst:2069
+#: ../../library/unittest.rst:2062
 msgid ""
 "A list containing 2-tuples of :class:`TestCase` instances and strings "
 "holding formatted tracebacks. Each tuple represents a test which raised "
 "an unexpected exception."
 msgstr ""
 
-#: ../../library/unittest.rst:2075
+#: ../../library/unittest.rst:2068
 msgid ""
 "A list containing 2-tuples of :class:`TestCase` instances and strings "
 "holding formatted tracebacks. Each tuple represents a test where a "
@@ -2872,40 +2860,40 @@ msgid ""
 "<assert-methods>`."
 msgstr ""
 
-#: ../../library/unittest.rst:2081
+#: ../../library/unittest.rst:2074
 msgid ""
 "A list containing 2-tuples of :class:`TestCase` instances and strings "
 "holding the reason for skipping the test."
 msgstr ""
 
-#: ../../library/unittest.rst:2088
+#: ../../library/unittest.rst:2081
 msgid ""
 "A list containing 2-tuples of :class:`TestCase` instances and strings "
 "holding formatted tracebacks.  Each tuple represents an expected failure "
 "or error of the test case."
 msgstr ""
 
-#: ../../library/unittest.rst:2094
+#: ../../library/unittest.rst:2087
 msgid ""
 "A list containing :class:`TestCase` instances that were marked as "
 "expected failures, but succeeded."
 msgstr ""
 
-#: ../../library/unittest.rst:2099
+#: ../../library/unittest.rst:2092
 msgid ""
 "A list containing 2-tuples of test case names and floats representing the"
 " elapsed time of each test which was run."
 msgstr ""
 
-#: ../../library/unittest.rst:2106
+#: ../../library/unittest.rst:2099
 msgid "Set to ``True`` when the execution of tests should stop by :meth:`stop`."
 msgstr ""
 
-#: ../../library/unittest.rst:2110
+#: ../../library/unittest.rst:2103
 msgid "The total number of tests run so far."
 msgstr ""
 
-#: ../../library/unittest.rst:2114
+#: ../../library/unittest.rst:2107
 msgid ""
 "If set to true, ``sys.stdout`` and ``sys.stderr`` will be buffered in "
 "between :meth:`startTest` and :meth:`stopTest` being called. Collected "
@@ -2914,29 +2902,29 @@ msgid ""
 "to the failure / error message."
 msgstr ""
 
-#: ../../library/unittest.rst:2123
+#: ../../library/unittest.rst:2116
 msgid ""
 "If set to true :meth:`stop` will be called on the first failure or error,"
 " halting the test run."
 msgstr ""
 
-#: ../../library/unittest.rst:2130
+#: ../../library/unittest.rst:2123
 msgid "If set to true then local variables will be shown in tracebacks."
 msgstr ""
 
-#: ../../library/unittest.rst:2136
+#: ../../library/unittest.rst:2129
 msgid ""
 "Return ``True`` if all tests run so far have passed, otherwise returns "
 "``False``."
 msgstr ""
 
-#: ../../library/unittest.rst:2139
+#: ../../library/unittest.rst:2132
 msgid ""
 "Returns ``False`` if there were any :attr:`unexpectedSuccesses` from "
 "tests marked with the :func:`expectedFailure` decorator."
 msgstr ""
 
-#: ../../library/unittest.rst:2145
+#: ../../library/unittest.rst:2138
 msgid ""
 "This method can be called to signal that the set of tests being run "
 "should be aborted by setting the :attr:`shouldStop` attribute to "
@@ -2944,7 +2932,7 @@ msgid ""
 "return without running any additional tests."
 msgstr ""
 
-#: ../../library/unittest.rst:2150
+#: ../../library/unittest.rst:2143
 msgid ""
 "For example, this feature is used by the :class:`TextTestRunner` class to"
 " stop the test framework when the user signals an interrupt from the "
@@ -2952,7 +2940,7 @@ msgid ""
 "implementations can use this in a similar manner."
 msgstr ""
 
-#: ../../library/unittest.rst:2155
+#: ../../library/unittest.rst:2148
 msgid ""
 "The following methods of the :class:`TestResult` class are used to "
 "maintain the internal data structures, and may be extended in subclasses "
@@ -2961,141 +2949,141 @@ msgid ""
 "are being run."
 msgstr ""
 
-#: ../../library/unittest.rst:2163
+#: ../../library/unittest.rst:2156
 msgid "Called when the test case *test* is about to be run."
 msgstr ""
 
-#: ../../library/unittest.rst:2167
+#: ../../library/unittest.rst:2160
 msgid ""
 "Called after the test case *test* has been executed, regardless of the "
 "outcome."
 msgstr ""
 
-#: ../../library/unittest.rst:2172
+#: ../../library/unittest.rst:2165
 msgid "Called once before any tests are executed."
 msgstr ""
 
-#: ../../library/unittest.rst:2179
+#: ../../library/unittest.rst:2172
 msgid "Called once after all tests are executed."
 msgstr ""
 
-#: ../../library/unittest.rst:2186
+#: ../../library/unittest.rst:2179
 msgid ""
 "Called when the test case *test* raises an unexpected exception. *err* is"
 " a tuple of the form returned by :func:`sys.exc_info`: ``(type, value, "
 "traceback)``."
 msgstr ""
 
-#: ../../library/unittest.rst:2190
+#: ../../library/unittest.rst:2183
 msgid ""
 "The default implementation appends a tuple ``(test, formatted_err)`` to "
 "the instance's :attr:`errors` attribute, where *formatted_err* is a "
 "formatted traceback derived from *err*."
 msgstr ""
 
-#: ../../library/unittest.rst:2197
+#: ../../library/unittest.rst:2190
 msgid ""
 "Called when the test case *test* signals a failure. *err* is a tuple of "
 "the form returned by :func:`sys.exc_info`: ``(type, value, traceback)``."
 msgstr ""
 
-#: ../../library/unittest.rst:2200
+#: ../../library/unittest.rst:2193
 msgid ""
 "The default implementation appends a tuple ``(test, formatted_err)`` to "
 "the instance's :attr:`failures` attribute, where *formatted_err* is a "
 "formatted traceback derived from *err*."
 msgstr ""
 
-#: ../../library/unittest.rst:2207
+#: ../../library/unittest.rst:2200
 msgid "Called when the test case *test* succeeds."
 msgstr ""
 
-#: ../../library/unittest.rst:2209
+#: ../../library/unittest.rst:2202
 msgid "The default implementation does nothing."
 msgstr ""
 
-#: ../../library/unittest.rst:2214
+#: ../../library/unittest.rst:2207
 msgid ""
 "Called when the test case *test* is skipped.  *reason* is the reason the "
 "test gave for skipping."
 msgstr ""
 
-#: ../../library/unittest.rst:2217
+#: ../../library/unittest.rst:2210
 msgid ""
 "The default implementation appends a tuple ``(test, reason)`` to the "
 "instance's :attr:`skipped` attribute."
 msgstr ""
 
-#: ../../library/unittest.rst:2223
+#: ../../library/unittest.rst:2216
 msgid ""
 "Called when the test case *test* fails or errors, but was marked with the"
 " :func:`expectedFailure` decorator."
 msgstr ""
 
-#: ../../library/unittest.rst:2226
+#: ../../library/unittest.rst:2219
 msgid ""
 "The default implementation appends a tuple ``(test, formatted_err)`` to "
 "the instance's :attr:`expectedFailures` attribute, where *formatted_err* "
 "is a formatted traceback derived from *err*."
 msgstr ""
 
-#: ../../library/unittest.rst:2233
+#: ../../library/unittest.rst:2226
 msgid ""
 "Called when the test case *test* was marked with the "
 ":func:`expectedFailure` decorator, but succeeded."
 msgstr ""
 
-#: ../../library/unittest.rst:2236
+#: ../../library/unittest.rst:2229
 msgid ""
 "The default implementation appends the test to the instance's "
 ":attr:`unexpectedSuccesses` attribute."
 msgstr ""
 
-#: ../../library/unittest.rst:2242
+#: ../../library/unittest.rst:2235
 msgid ""
 "Called when a subtest finishes.  *test* is the test case corresponding to"
 " the test method.  *subtest* is a custom :class:`TestCase` instance "
 "describing the subtest."
 msgstr ""
 
-#: ../../library/unittest.rst:2246
+#: ../../library/unittest.rst:2239
 msgid ""
 "If *outcome* is :const:`None`, the subtest succeeded.  Otherwise, it "
 "failed with an exception where *outcome* is a tuple of the form returned "
 "by :func:`sys.exc_info`: ``(type, value, traceback)``."
 msgstr ""
 
-#: ../../library/unittest.rst:2250
+#: ../../library/unittest.rst:2243
 msgid ""
 "The default implementation does nothing when the outcome is a success, "
 "and records subtest failures as normal failures."
 msgstr ""
 
-#: ../../library/unittest.rst:2257
+#: ../../library/unittest.rst:2250
 msgid ""
 "Called when the test case finishes.  *elapsed* is the time represented in"
 " seconds, and it includes the execution of cleanup functions."
 msgstr ""
 
-#: ../../library/unittest.rst:2264
+#: ../../library/unittest.rst:2257
 msgid ""
 "A concrete implementation of :class:`TestResult` used by the "
 ":class:`TextTestRunner`. Subclasses should accept ``**kwargs`` to ensure "
 "compatibility as the interface changes."
 msgstr ""
 
-#: ../../library/unittest.rst:2270
+#: ../../library/unittest.rst:2263
 msgid "Added the *durations* keyword parameter."
 msgstr ""
 
-#: ../../library/unittest.rst:2275
+#: ../../library/unittest.rst:2268
 msgid ""
 "Instance of the :class:`TestLoader` class intended to be shared.  If no "
 "customization of the :class:`TestLoader` is needed, this instance can be "
 "used instead of repeatedly creating new instances."
 msgstr ""
 
-#: ../../library/unittest.rst:2284
+#: ../../library/unittest.rst:2277
 msgid ""
 "A basic test runner implementation that outputs results to a stream. If "
 "*stream* is ``None``, the default, :data:`sys.stderr` is used as the "
@@ -3106,7 +3094,7 @@ msgid ""
 "features are added to unittest."
 msgstr ""
 
-#: ../../library/unittest.rst:2291
+#: ../../library/unittest.rst:2284
 msgid ""
 "By default this runner shows :exc:`DeprecationWarning`, "
 ":exc:`PendingDeprecationWarning`, :exc:`ResourceWarning` and "
@@ -3116,32 +3104,32 @@ msgid ""
 "warnings>`) and leaving *warnings* to ``None``."
 msgstr ""
 
-#: ../../library/unittest.rst:2299
+#: ../../library/unittest.rst:2292
 msgid "Added the *warnings* parameter."
 msgstr ""
 
-#: ../../library/unittest.rst:2302
+#: ../../library/unittest.rst:2295
 msgid ""
 "The default stream is set to :data:`sys.stderr` at instantiation time "
 "rather than import time."
 msgstr ""
 
-#: ../../library/unittest.rst:2306
+#: ../../library/unittest.rst:2299
 msgid "Added the *tb_locals* parameter."
 msgstr ""
 
-#: ../../library/unittest.rst:2309
+#: ../../library/unittest.rst:2302
 msgid "Added the *durations* parameter."
 msgstr ""
 
-#: ../../library/unittest.rst:2314
+#: ../../library/unittest.rst:2307
 msgid ""
 "This method returns the instance of ``TestResult`` used by :meth:`run`. "
 "It is not intended to be called directly, but can be overridden in "
 "subclasses to provide a custom ``TestResult``."
 msgstr ""
 
-#: ../../library/unittest.rst:2318
+#: ../../library/unittest.rst:2311
 msgid ""
 "``_makeResult()`` instantiates the class or callable passed in the "
 "``TextTestRunner`` constructor as the ``resultclass`` argument. It "
@@ -3149,11 +3137,11 @@ msgid ""
 "The result class is instantiated with the following arguments::"
 msgstr ""
 
-#: ../../library/unittest.rst:2323
+#: ../../library/unittest.rst:2316
 msgid "stream, descriptions, verbosity"
 msgstr ""
 
-#: ../../library/unittest.rst:2327
+#: ../../library/unittest.rst:2320
 msgid ""
 "This method is the main public interface to the ``TextTestRunner``. This "
 "method takes a :class:`TestSuite` or :class:`TestCase` instance. A "
@@ -3161,7 +3149,7 @@ msgid ""
 "test(s) are run and the results printed to stdout."
 msgstr ""
 
-#: ../../library/unittest.rst:2338
+#: ../../library/unittest.rst:2331
 msgid ""
 "A command-line program that loads a set of tests from *module* and runs "
 "them; this is primarily for making test modules conveniently executable. "
@@ -3169,25 +3157,25 @@ msgid ""
 "the end of a test script::"
 msgstr ""
 
-#: ../../library/unittest.rst:2343
+#: ../../library/unittest.rst:2336
 msgid ""
 "if __name__ == '__main__':\n"
 "    unittest.main()"
 msgstr ""
 
-#: ../../library/unittest.rst:2346
+#: ../../library/unittest.rst:2339
 msgid ""
 "You can run tests with more detailed information by passing in the "
 "verbosity argument::"
 msgstr ""
 
-#: ../../library/unittest.rst:2349
+#: ../../library/unittest.rst:2342
 msgid ""
 "if __name__ == '__main__':\n"
 "    unittest.main(verbosity=2)"
 msgstr ""
 
-#: ../../library/unittest.rst:2352
+#: ../../library/unittest.rst:2345
 msgid ""
 "The *defaultTest* argument is either the name of a single test or an "
 "iterable of test names to run if no test names are specified via *argv*."
@@ -3195,14 +3183,14 @@ msgid ""
 " all tests found in *module* are run."
 msgstr ""
 
-#: ../../library/unittest.rst:2357
+#: ../../library/unittest.rst:2350
 msgid ""
 "The *argv* argument can be a list of options passed to the program, with "
 "the first element being the program name.  If not specified or ``None``, "
 "the values of :data:`sys.argv` are used."
 msgstr ""
 
-#: ../../library/unittest.rst:2361
+#: ../../library/unittest.rst:2354
 msgid ""
 "The *testRunner* argument can either be a test runner class or an already"
 " created instance of it. By default ``main`` calls :func:`sys.exit` with "
@@ -3210,32 +3198,32 @@ msgid ""
 "exit code of 5 indicates that no tests were run or skipped."
 msgstr ""
 
-#: ../../library/unittest.rst:2366
+#: ../../library/unittest.rst:2359
 msgid ""
 "The *testLoader* argument has to be a :class:`TestLoader` instance, and "
 "defaults to :data:`defaultTestLoader`."
 msgstr ""
 
-#: ../../library/unittest.rst:2369
+#: ../../library/unittest.rst:2362
 msgid ""
 "``main`` supports being used from the interactive interpreter by passing "
 "in the argument ``exit=False``. This displays the result on standard "
 "output without calling :func:`sys.exit`::"
 msgstr ""
 
-#: ../../library/unittest.rst:2373
+#: ../../library/unittest.rst:2366
 msgid ""
 ">>> from unittest import main\n"
 ">>> main(module='test_module', exit=False)"
 msgstr ""
 
-#: ../../library/unittest.rst:2376
+#: ../../library/unittest.rst:2369
 msgid ""
 "The *failfast*, *catchbreak* and *buffer* parameters have the same effect"
 " as the same-name `command-line options`_."
 msgstr ""
 
-#: ../../library/unittest.rst:2379
+#: ../../library/unittest.rst:2372
 msgid ""
 "The *warnings* argument specifies the :ref:`warning filter <warning-"
 "filter>` that should be used while running the tests.  If it's not "
@@ -3244,60 +3232,60 @@ msgid ""
 "otherwise it will be set to ``'default'``."
 msgstr ""
 
-#: ../../library/unittest.rst:2385
+#: ../../library/unittest.rst:2378
 msgid ""
 "Calling ``main`` returns an object with the ``result`` attribute that "
 "contains the result of the tests run as a :class:`unittest.TestResult`."
 msgstr ""
 
-#: ../../library/unittest.rst:2388
+#: ../../library/unittest.rst:2381
 msgid "The *exit* parameter was added."
 msgstr ""
 
-#: ../../library/unittest.rst:2391
+#: ../../library/unittest.rst:2384
 msgid ""
 "The *verbosity*, *failfast*, *catchbreak*, *buffer* and *warnings* "
 "parameters were added."
 msgstr ""
 
-#: ../../library/unittest.rst:2395
+#: ../../library/unittest.rst:2388
 msgid ""
 "The *defaultTest* parameter was changed to also accept an iterable of "
 "test names."
 msgstr ""
 
-#: ../../library/unittest.rst:2403
+#: ../../library/unittest.rst:2396
 msgid "load_tests Protocol"
 msgstr ""
 
-#: ../../library/unittest.rst:2407
+#: ../../library/unittest.rst:2400
 msgid ""
 "Modules or packages can customize how tests are loaded from them during "
 "normal test runs or test discovery by implementing a function called "
 "``load_tests``."
 msgstr ""
 
-#: ../../library/unittest.rst:2410
+#: ../../library/unittest.rst:2403
 msgid ""
 "If a test module defines ``load_tests`` it will be called by "
 ":meth:`TestLoader.loadTestsFromModule` with the following arguments::"
 msgstr ""
 
-#: ../../library/unittest.rst:2413 ../../library/unittest.rst:2445
+#: ../../library/unittest.rst:2406 ../../library/unittest.rst:2438
 msgid "load_tests(loader, standard_tests, pattern)"
 msgstr ""
 
-#: ../../library/unittest.rst:2415
+#: ../../library/unittest.rst:2408
 msgid ""
 "where *pattern* is passed straight through from ``loadTestsFromModule``."
 "  It defaults to ``None``."
 msgstr ""
 
-#: ../../library/unittest.rst:2418
+#: ../../library/unittest.rst:2411
 msgid "It should return a :class:`TestSuite`."
 msgstr ""
 
-#: ../../library/unittest.rst:2420
+#: ../../library/unittest.rst:2413
 msgid ""
 "*loader* is the instance of :class:`TestLoader` doing the loading. "
 "*standard_tests* are the tests that would be loaded by default from the "
@@ -3306,13 +3294,13 @@ msgid ""
 "packages as part of test discovery."
 msgstr ""
 
-#: ../../library/unittest.rst:2426
+#: ../../library/unittest.rst:2419
 msgid ""
 "A typical ``load_tests`` function that loads tests from a specific set of"
 " :class:`TestCase` classes may look like::"
 msgstr ""
 
-#: ../../library/unittest.rst:2429
+#: ../../library/unittest.rst:2422
 msgid ""
 "test_cases = (TestCase1, TestCase2, TestCase3)\n"
 "\n"
@@ -3324,7 +3312,7 @@ msgid ""
 "    return suite"
 msgstr ""
 
-#: ../../library/unittest.rst:2438
+#: ../../library/unittest.rst:2431
 msgid ""
 "If discovery is started in a directory containing a package, either from "
 "the command line or by calling :meth:`TestLoader.discover`, then the "
@@ -3335,21 +3323,21 @@ msgid ""
 "the following arguments::"
 msgstr ""
 
-#: ../../library/unittest.rst:2447
+#: ../../library/unittest.rst:2440
 msgid ""
 "This should return a :class:`TestSuite` representing all the tests from "
 "the package. (``standard_tests`` will only contain tests collected from "
 ":file:`__init__.py`.)"
 msgstr ""
 
-#: ../../library/unittest.rst:2451
+#: ../../library/unittest.rst:2444
 msgid ""
 "Because the pattern is passed into ``load_tests`` the package is free to "
 "continue (and potentially modify) test discovery. A 'do nothing' "
 "``load_tests`` function for a test package would look like::"
 msgstr ""
 
-#: ../../library/unittest.rst:2455
+#: ../../library/unittest.rst:2448
 msgid ""
 "def load_tests(loader, standard_tests, pattern):\n"
 "    # top level directory cached on loader instance\n"
@@ -3359,17 +3347,17 @@ msgid ""
 "    return standard_tests"
 msgstr ""
 
-#: ../../library/unittest.rst:2462
+#: ../../library/unittest.rst:2455
 msgid ""
 "Discovery no longer checks package names for matching *pattern* due to "
 "the impossibility of package names matching the default pattern."
 msgstr ""
 
-#: ../../library/unittest.rst:2469
+#: ../../library/unittest.rst:2462
 msgid "Class and Module Fixtures"
 msgstr ""
 
-#: ../../library/unittest.rst:2471
+#: ../../library/unittest.rst:2464
 msgid ""
 "Class and module level fixtures are implemented in :class:`TestSuite`. "
 "When the test suite encounters a test from a new class then "
@@ -3377,27 +3365,27 @@ msgid ""
 " is called, followed by :meth:`~TestCase.setUpClass` from the new class."
 msgstr ""
 
-#: ../../library/unittest.rst:2476
+#: ../../library/unittest.rst:2469
 msgid ""
 "Similarly if a test is from a different module from the previous test "
 "then ``tearDownModule`` from the previous module is run, followed by "
 "``setUpModule`` from the new module."
 msgstr ""
 
-#: ../../library/unittest.rst:2480
+#: ../../library/unittest.rst:2473
 msgid ""
 "After all the tests have run the final ``tearDownClass`` and "
 "``tearDownModule`` are run."
 msgstr ""
 
-#: ../../library/unittest.rst:2483
+#: ../../library/unittest.rst:2476
 msgid ""
 "Note that shared fixtures do not play well with [potential] features like"
 " test parallelization and they break test isolation. They should be used "
 "with care."
 msgstr ""
 
-#: ../../library/unittest.rst:2486
+#: ../../library/unittest.rst:2479
 msgid ""
 "The default ordering of tests created by the unittest test loaders is to "
 "group all tests from the same modules and classes together. This will "
@@ -3408,14 +3396,14 @@ msgid ""
 "run."
 msgstr ""
 
-#: ../../library/unittest.rst:2493
+#: ../../library/unittest.rst:2486
 msgid ""
 "Shared fixtures are not intended to work with suites with non-standard "
 "ordering. A ``BaseTestSuite`` still exists for frameworks that don't want"
 " to support shared fixtures."
 msgstr ""
 
-#: ../../library/unittest.rst:2497
+#: ../../library/unittest.rst:2490
 msgid ""
 "If there are any exceptions raised during one of the shared fixture "
 "functions the test is reported as an error. Because there is no "
@@ -3425,15 +3413,15 @@ msgid ""
 "doesn't matter, but if you are a framework author it may be relevant."
 msgstr ""
 
-#: ../../library/unittest.rst:2506
+#: ../../library/unittest.rst:2499
 msgid "setUpClass and tearDownClass"
 msgstr ""
 
-#: ../../library/unittest.rst:2508
+#: ../../library/unittest.rst:2501
 msgid "These must be implemented as class methods::"
 msgstr ""
 
-#: ../../library/unittest.rst:2510
+#: ../../library/unittest.rst:2503
 msgid ""
 "import unittest\n"
 "\n"
@@ -3447,14 +3435,14 @@ msgid ""
 "        cls._connection.destroy()"
 msgstr ""
 
-#: ../../library/unittest.rst:2521
+#: ../../library/unittest.rst:2514
 msgid ""
 "If you want the ``setUpClass`` and ``tearDownClass`` on base classes "
 "called then you must call up to them yourself. The implementations in "
 ":class:`TestCase` are empty."
 msgstr ""
 
-#: ../../library/unittest.rst:2525
+#: ../../library/unittest.rst:2518
 msgid ""
 "If an exception is raised during a ``setUpClass`` then the tests in the "
 "class are not run and the ``tearDownClass`` is not run. Skipped classes "
@@ -3463,15 +3451,15 @@ msgid ""
 "been skipped instead of as an error."
 msgstr ""
 
-#: ../../library/unittest.rst:2533
+#: ../../library/unittest.rst:2526
 msgid "setUpModule and tearDownModule"
 msgstr ""
 
-#: ../../library/unittest.rst:2539
+#: ../../library/unittest.rst:2532
 msgid "These should be implemented as functions::"
 msgstr ""
 
-#: ../../library/unittest.rst:2541
+#: ../../library/unittest.rst:2534
 msgid ""
 "def setUpModule():\n"
 "    createConnection()\n"
@@ -3480,7 +3468,7 @@ msgid ""
 "    closeConnection()"
 msgstr ""
 
-#: ../../library/unittest.rst:2547
+#: ../../library/unittest.rst:2540
 msgid ""
 "If an exception is raised in a ``setUpModule`` then none of the tests in "
 "the module will be run and the ``tearDownModule`` will not be run. If the"
@@ -3488,13 +3476,13 @@ msgid ""
 "reported as having been skipped instead of as an error."
 msgstr ""
 
-#: ../../library/unittest.rst:2552
+#: ../../library/unittest.rst:2545
 msgid ""
 "To add cleanup code that must be run even in the case of an exception, "
 "use ``addModuleCleanup``:"
 msgstr ""
 
-#: ../../library/unittest.rst:2558
+#: ../../library/unittest.rst:2551
 msgid ""
 "Add a function to be called after :func:`tearDownModule` to cleanup "
 "resources used during the test class. Functions will be called in reverse"
@@ -3503,13 +3491,13 @@ msgid ""
 ":meth:`addModuleCleanup` when they are added."
 msgstr ""
 
-#: ../../library/unittest.rst:2564
+#: ../../library/unittest.rst:2557
 msgid ""
 "If :meth:`setUpModule` fails, meaning that :func:`tearDownModule` is not "
 "called, then any cleanup functions added will still be called."
 msgstr ""
 
-#: ../../library/unittest.rst:2572
+#: ../../library/unittest.rst:2565
 msgid ""
 "Enter the supplied :term:`context manager`.  If successful, also add its "
 ":meth:`~object.__exit__` method as a cleanup function by "
@@ -3517,13 +3505,13 @@ msgid ""
 ":meth:`~object.__enter__` method."
 msgstr ""
 
-#: ../../library/unittest.rst:2582
+#: ../../library/unittest.rst:2575
 msgid ""
 "This function is called unconditionally after :func:`tearDownModule`, or "
 "after :func:`setUpModule` if :func:`setUpModule` raises an exception."
 msgstr ""
 
-#: ../../library/unittest.rst:2585
+#: ../../library/unittest.rst:2578
 msgid ""
 "It is responsible for calling all the cleanup functions added by "
 ":func:`addModuleCleanup`. If you need cleanup functions to be called "
@@ -3531,17 +3519,17 @@ msgid ""
 ":func:`doModuleCleanups` yourself."
 msgstr ""
 
-#: ../../library/unittest.rst:2590
+#: ../../library/unittest.rst:2583
 msgid ""
 ":func:`doModuleCleanups` pops methods off the stack of cleanup functions "
 "one at a time, so it can be called at any time."
 msgstr ""
 
-#: ../../library/unittest.rst:2597
+#: ../../library/unittest.rst:2590
 msgid "Signal Handling"
 msgstr ""
 
-#: ../../library/unittest.rst:2601
+#: ../../library/unittest.rst:2594
 msgid ""
 "The :option:`-c/--catch <unittest -c>` command-line option to unittest, "
 "along with the ``catchbreak`` parameter to :func:`unittest.main`, provide"
@@ -3552,7 +3540,7 @@ msgid ""
 "usual way."
 msgstr ""
 
-#: ../../library/unittest.rst:2608
+#: ../../library/unittest.rst:2601
 msgid ""
 "The control-c handling signal handler attempts to remain compatible with "
 "code or tests that install their own :const:`signal.SIGINT` handler. If "
@@ -3565,27 +3553,27 @@ msgid ""
 "used."
 msgstr ""
 
-#: ../../library/unittest.rst:2617
+#: ../../library/unittest.rst:2610
 msgid ""
 "There are a few utility functions for framework authors to enable "
 "control-c handling functionality within test frameworks."
 msgstr ""
 
-#: ../../library/unittest.rst:2622
+#: ../../library/unittest.rst:2615
 msgid ""
 "Install the control-c handler. When a :const:`signal.SIGINT` is received "
 "(usually in response to the user pressing control-c) all registered "
 "results have :meth:`~TestResult.stop` called."
 msgstr ""
 
-#: ../../library/unittest.rst:2629
+#: ../../library/unittest.rst:2622
 msgid ""
 "Register a :class:`TestResult` object for control-c handling. Registering"
 " a result stores a weak reference to it, so it doesn't prevent the result"
 " from being garbage collected."
 msgstr ""
 
-#: ../../library/unittest.rst:2633
+#: ../../library/unittest.rst:2626
 msgid ""
 "Registering a :class:`TestResult` object has no side-effects if control-c"
 " handling is not enabled, so test frameworks can unconditionally register"
@@ -3593,14 +3581,14 @@ msgid ""
 "enabled."
 msgstr ""
 
-#: ../../library/unittest.rst:2640
+#: ../../library/unittest.rst:2633
 msgid ""
 "Remove a registered result. Once a result has been removed then "
 ":meth:`~TestResult.stop` will no longer be called on that result object "
 "in response to a control-c."
 msgstr ""
 
-#: ../../library/unittest.rst:2647
+#: ../../library/unittest.rst:2640
 msgid ""
 "When called without arguments this function removes the control-c handler"
 " if it has been installed. This function can also be used as a test "
@@ -3608,10 +3596,20 @@ msgid ""
 "executed::"
 msgstr ""
 
-#: ../../library/unittest.rst:2651
+#: ../../library/unittest.rst:2644
 msgid ""
 "@unittest.removeHandler\n"
 "def test_signal_handling(self):\n"
 "    ..."
 msgstr ""
+
+#~ msgid ""
+#~ "If given, *formatter* should be a "
+#~ ":class:`logging.Formatter` object. The default "
+#~ "is a formatter with format string "
+#~ "``\"%(levelname)s:%(name)s:%(message)s\"``"
+#~ msgstr ""
+
+#~ msgid "Now accepts a *formatter* to control how messages are formatted."
+#~ msgstr ""
 

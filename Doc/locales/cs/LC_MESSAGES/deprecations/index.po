@@ -1,17 +1,18 @@
-# Translations template for PROJECT.
+# Czech translations for Python.
 # Copyright (C) 2026 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
+# This file is distributed under the same license as the Python project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: 2026-01-02 19:30+0100\n"
 "Last-Translator: \n"
 "Language: cs\n"
 "Language-Team: Czech <python-doc-cs@python.cz>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,17 +33,18 @@ msgid "The import system:"
 msgstr "Importní systém:"
 
 #: ../../deprecations/pending-removal-in-3.15.rst:6
+#, fuzzy
 msgid ""
-"Setting ``__cached__`` on a module while failing to set "
+"Setting :attr:`~module.__cached__` on a module while failing to set "
 ":attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is "
-"deprecated. In Python 3.15, ``__cached__`` will cease to be set or take "
-"into consideration by the import system or standard library. "
+"deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or "
+"take into consideration by the import system or standard library. "
 "(:gh:`97879`)"
 msgstr ""
 "Nastavení ``__cached__`` na modulu bez současného nastavení "
 ":attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` je "
-"zastaralé. V Pythonu 3.15 přestane být ``__cached__`` nastavován nebo brán "
-"v úvahu importním systémem nebo standardní knihovnou. (:gh:`97879`)"
+"zastaralé. V Pythonu 3.15 přestane být ``__cached__`` nastavován nebo "
+"brán v úvahu importním systémem nebo standardní knihovnou. (:gh:`97879`)"
 
 #: ../../deprecations/pending-removal-in-3.15.rst:11
 msgid ""
@@ -54,8 +56,9 @@ msgid ""
 msgstr ""
 "Nastavení :attr:`~module.__package__` na modulu bez současného nastavení "
 ":attr:`__spec__.parent <importlib.machinery.ModuleSpec.parent>` je "
-"zastaralé. V Pythonu 3.15 přestane být :attr:`!__package__` nastavován nebo "
-"brán v úvahu importním systémem nebo standardní knihovnou. (:gh:`97879`)"
+"zastaralé. V Pythonu 3.15 přestane být :attr:`!__package__` nastavován "
+"nebo brán v úvahu importním systémem nebo standardní knihovnou. "
+"(:gh:`97879`)"
 
 #: ../../deprecations/pending-removal-in-3.15.rst:16
 #: ../../deprecations/pending-removal-in-3.19.rst:4
@@ -67,30 +70,32 @@ msgid ""
 "The undocumented :func:`!ctypes.SetPointerType` function has been "
 "deprecated since Python 3.13."
 msgstr ""
-"Nedokumentovaná funkce :func:`!ctypes.SetPointerType` je zastaralá "
-"od Pythonu 3.13."
+"Nedokumentovaná funkce :func:`!ctypes.SetPointerType` je zastaralá od "
+"Pythonu 3.13."
 
 #: ../../deprecations/pending-removal-in-3.15.rst:21
 msgid ":mod:`http.server`:"
 msgstr ":mod:`http.server`:"
 
 #: ../../deprecations/pending-removal-in-3.15.rst:23
+#, fuzzy
 msgid ""
-"The obsolete and rarely used :class:`!CGIHTTPRequestHandler` has been "
-"deprecated since Python 3.13. No direct replacement exists. *Anything* is"
-" better than CGI to interface a web server with a request handler."
+"The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` "
+"has been deprecated since Python 3.13. No direct replacement exists. "
+"*Anything* is better than CGI to interface a web server with a request "
+"handler."
 msgstr ""
 "Zastaralá a zřídka používaná třída :class:`!CGIHTTPRequestHandler` je "
-"zastaralá od Pythonu 3.13. Přímá náhrada neexistuje. *Cokoli* je lepší než "
-"CGI pro propojení webového serveru s obslužnou rutinou požadavků."
+"zastaralá od Pythonu 3.13. Přímá náhrada neexistuje. *Cokoli* je lepší "
+"než CGI pro propojení webového serveru s obslužnou rutinou požadavků."
 
 #: ../../deprecations/pending-removal-in-3.15.rst:29
 msgid ""
 "The :option:`!--cgi` flag to the :program:`python -m http.server` "
 "command-line interface has been deprecated since Python 3.13."
 msgstr ""
-"Přepínač :option:`!--cgi` pro příkazový řádek :program:`python -m http.server` "
-"je zastaralý od Pythonu 3.13."
+"Přepínač :option:`!--cgi` pro příkazový řádek :program:`python -m "
+"http.server` je zastaralý od Pythonu 3.13."
 
 #: ../../deprecations/pending-removal-in-3.15.rst:32
 #: ../../deprecations/pending-removal-in-future.rst:63
@@ -102,49 +107,66 @@ msgid "``load_module()`` method: use ``exec_module()`` instead."
 msgstr "Metoda ``load_module()``: použijte místo ní ``exec_module()``."
 
 #: ../../deprecations/pending-removal-in-3.15.rst:36
-msgid ":mod:`pathlib`:"
-msgstr ":mod:`pathlib`:"
+msgid ":class:`locale`:"
+msgstr ""
 
 #: ../../deprecations/pending-removal-in-3.15.rst:38
 msgid ""
-":meth:`!.PurePath.is_reserved` has been deprecated since Python 3.13. Use"
-" :func:`os.path.isreserved` to detect reserved paths on Windows."
+"The :func:`~locale.getdefaultlocale` function has been deprecated since "
+"Python 3.11. Its removal was originally planned for Python 3.13 "
+"(:gh:`90817`), but has been postponed to Python 3.15. Use "
+":func:`~locale.getlocale`, :func:`~locale.setlocale`, and "
+":func:`~locale.getencoding` instead. (Contributed by Hugo van Kemenade in"
+" :gh:`111187`.)"
+msgstr ""
+
+#: ../../deprecations/pending-removal-in-3.15.rst:46
+msgid ":mod:`pathlib`:"
+msgstr ":mod:`pathlib`:"
+
+#: ../../deprecations/pending-removal-in-3.15.rst:48
+#, fuzzy
+msgid ""
+":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use "
+":func:`os.path.isreserved` to detect reserved paths on Windows."
 msgstr ""
 "Metoda :meth:`!.PurePath.is_reserved` je zastaralá od Pythonu 3.13. Pro "
-"detekci rezervovaných cest ve Windows použijte :func:`os.path.isreserved`."
+"detekci rezervovaných cest ve Windows použijte "
+":func:`os.path.isreserved`."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:42
+#: ../../deprecations/pending-removal-in-3.15.rst:52
 msgid ":mod:`platform`:"
 msgstr ":mod:`platform`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:44
+#: ../../deprecations/pending-removal-in-3.15.rst:54
+#, fuzzy
 msgid ""
-":func:`!platform.java_ver` has been deprecated since Python 3.13. This "
+":func:`~platform.java_ver` has been deprecated since Python 3.13. This "
 "function is only useful for Jython support, has a confusing API, and is "
 "largely untested."
 msgstr ""
-"Funkce :func:`!platform.java_ver` je zastaralá od Pythonu 3.13. Tato funkce "
-"je užitečná pouze pro podporu Jythonu, má matoucí API a je z velké části "
-"netestovaná."
+"Funkce :func:`!platform.java_ver` je zastaralá od Pythonu 3.13. Tato "
+"funkce je užitečná pouze pro podporu Jythonu, má matoucí API a je z velké"
+" části netestovaná."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:48
+#: ../../deprecations/pending-removal-in-3.15.rst:58
 #: ../../deprecations/pending-removal-in-3.16.rst:96
 msgid ":mod:`sysconfig`:"
 msgstr ":mod:`sysconfig`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:50
+#: ../../deprecations/pending-removal-in-3.15.rst:60
 msgid ""
 "The *check_home* argument of :func:`sysconfig.is_python_build` has been "
 "deprecated since Python 3.12."
 msgstr ""
-"Argument *check_home* funkce :func:`sysconfig.is_python_build` je zastaralý "
-"od Pythonu 3.12."
+"Argument *check_home* funkce :func:`sysconfig.is_python_build` je "
+"zastaralý od Pythonu 3.12."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:53
+#: ../../deprecations/pending-removal-in-3.15.rst:63
 msgid ":mod:`threading`:"
 msgstr ":mod:`threading`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:55
+#: ../../deprecations/pending-removal-in-3.15.rst:65
 msgid ""
 ":func:`~threading.RLock` will take no arguments in Python 3.15. Passing "
 "any arguments has been deprecated since Python 3.14, as the  Python "
@@ -153,14 +175,15 @@ msgid ""
 msgstr ""
 ":func:`~threading.RLock` nebude v Pythonu 3.15 přijímat žádné argumenty. "
 "Předávání jakýchkoli argumentů je zastaralé od Pythonu 3.14, protože "
-"pythonová verze nepovoluje žádné argumenty, ale verze v C umožňuje libovolný "
-"počet pozičních nebo klíčových argumentů, přičemž všechny ignoruje."
+"pythonová verze nepovoluje žádné argumenty, ale verze v C umožňuje "
+"libovolný počet pozičních nebo klíčových argumentů, přičemž všechny "
+"ignoruje."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:61
+#: ../../deprecations/pending-removal-in-3.15.rst:71
 msgid ":mod:`types`:"
 msgstr ":mod:`types`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:63
+#: ../../deprecations/pending-removal-in-3.15.rst:73
 msgid ""
 ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was "
 "deprecated in :pep:`626` since 3.10 and was planned to be removed in "
@@ -169,16 +192,16 @@ msgid ""
 msgstr ""
 ":class:`types.CodeType`: Přístup k :attr:`~codeobject.co_lnotab` byl "
 "označen jako zastaralý v :pep:`626` od verze 3.10 a bylo plánováno jeho "
-"odstranění ve verzi 3.12, ale správné :exc:`DeprecationWarning` dostal až "
-"ve verzi 3.12. Může být odstraněn ve verzi 3.15. (Přispěl Nikita Sobolev "
-"v :gh:`101866`.)"
+"odstranění ve verzi 3.12, ale správné :exc:`DeprecationWarning` dostal až"
+" ve verzi 3.12. Může být odstraněn ve verzi 3.15. (Přispěl Nikita Sobolev"
+" v :gh:`101866`.)"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:70
-#: ../../deprecations/pending-removal-in-3.17.rst:32
+#: ../../deprecations/pending-removal-in-3.15.rst:80
+#: ../../deprecations/pending-removal-in-3.17.rst:26
 msgid ":mod:`typing`:"
 msgstr ":mod:`typing`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:72
+#: ../../deprecations/pending-removal-in-3.15.rst:82
 msgid ""
 "The undocumented keyword argument syntax for creating "
 ":class:`~typing.NamedTuple` classes (for example, ``Point = "
@@ -190,7 +213,7 @@ msgstr ""
 "x=int, y=int)``) je zastaralá od Pythonu 3.13. Použijte místo ní syntaxi "
 "založenou na třídách nebo funkcionální syntaxi."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:78
+#: ../../deprecations/pending-removal-in-3.15.rst:88
 #, python-brace-format
 msgid ""
 "When using the functional syntax of :class:`~typing.TypedDict`\\s, "
@@ -206,27 +229,26 @@ msgstr ""
 "3.13. Pro vytvoření TypedDict bez polí použijte ``class TD(TypedDict): "
 "pass`` nebo ``TD = TypedDict(\"TD\", {})``."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:85
+#: ../../deprecations/pending-removal-in-3.15.rst:95
+#, fuzzy
 msgid ""
-"The :func:`!typing.no_type_check_decorator` decorator function has been "
+"The :func:`typing.no_type_check_decorator` decorator function has been "
 "deprecated since Python 3.13. After eight years in the :mod:`typing` "
 "module, it has yet to be supported by any major type checker."
 msgstr ""
-"Dekorátor :func:`!typing.no_type_check_decorator` je zastaralý od Pythonu "
-"3.13. Po osmi letech v modulu :mod:`typing` stále není podporován žádným "
-"významným nástrojem pro kontrolu typů."
+"Dekorátor :func:`!typing.no_type_check_decorator` je zastaralý od Pythonu"
+" 3.13. Po osmi letech v modulu :mod:`typing` stále není podporován žádným"
+" významným nástrojem pro kontrolu typů."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:90
-msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
-msgstr "Moduly :mod:`!sre_compile`, :mod:`!sre_constants` a :mod:`!sre_parse`."
-
-#: ../../deprecations/pending-removal-in-3.15.rst:92
+#: ../../deprecations/pending-removal-in-3.15.rst:100
 msgid ":mod:`wave`:"
 msgstr ":mod:`wave`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:94
+#: ../../deprecations/pending-removal-in-3.15.rst:102
+#, fuzzy
 msgid ""
-"The ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of the "
+"The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and "
+":meth:`~wave.Wave_read.getmarkers` methods of the "
 ":class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been "
 "deprecated since Python 3.13."
 msgstr ""
@@ -234,18 +256,19 @@ msgstr ""
 ":class:`~wave.Wave_read` a :class:`~wave.Wave_write` jsou zastaralé od "
 "Pythonu 3.13."
 
-#: ../../deprecations/pending-removal-in-3.15.rst:98
+#: ../../deprecations/pending-removal-in-3.15.rst:107
 msgid ":mod:`zipimport`:"
 msgstr ":mod:`zipimport`:"
 
-#: ../../deprecations/pending-removal-in-3.15.rst:100
+#: ../../deprecations/pending-removal-in-3.15.rst:109
+#, fuzzy
 msgid ""
-":meth:`!zipimport.zipimporter.load_module` has been deprecated since "
+":meth:`~zipimport.zipimporter.load_module` has been deprecated since "
 "Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. "
-"(:gh:`125746`.)"
+"(Contributed by Jiahao Li in :gh:`125746`.)"
 msgstr ""
-"Metoda :meth:`!zipimport.zipimporter.load_module` je zastaralá od Pythonu "
-"3.10. Použijte místo ní :meth:`~zipimport.zipimporter.exec_module`. "
+"Metoda :meth:`!zipimport.zipimporter.load_module` je zastaralá od Pythonu"
+" 3.10. Použijte místo ní :meth:`~zipimport.zipimporter.exec_module`. "
 "(:gh:`125746`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:2
@@ -261,8 +284,8 @@ msgid ""
 msgstr ""
 "Nastavení :attr:`~module.__loader__` na modulu bez současného nastavení "
 ":attr:`__spec__.loader <importlib.machinery.ModuleSpec.loader>` je "
-"zastaralé. V Pythonu 3.16 přestane být :attr:`!__loader__` nastavován nebo "
-"brán v úvahu importním systémem nebo standardní knihovnou."
+"zastaralé. V Pythonu 3.16 přestane být :attr:`!__loader__` nastavován "
+"nebo brán v úvahu importním systémem nebo standardní knihovnou."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:11
 msgid ":mod:`array`:"
@@ -274,9 +297,9 @@ msgid ""
 "documentation since Python 3.3 and at runtime since Python 3.13. Use the "
 "``'w'`` format code (:c:type:`Py_UCS4`) for Unicode characters instead."
 msgstr ""
-"Formátovací kód ``'u'`` (:c:type:`wchar_t`) je zastaralý v dokumentaci od "
-"Pythonu 3.3 a za běhu od Pythonu 3.13. Pro znaky Unicode použijte místo něj "
-"formátovací kód ``'w'`` (:c:type:`Py_UCS4`)."
+"Formátovací kód ``'u'`` (:c:type:`wchar_t`) je zastaralý v dokumentaci od"
+" Pythonu 3.3 a za běhu od Pythonu 3.13. Pro znaky Unicode použijte místo "
+"něj formátovací kód ``'w'`` (:c:type:`Py_UCS4`)."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:19
 msgid ":mod:`asyncio`:"
@@ -288,17 +311,18 @@ msgid ""
 " Python 3.16; use :func:`inspect.iscoroutinefunction` instead. "
 "(Contributed by Jiahao Li and Kumar Aditya in :gh:`122875`.)"
 msgstr ""
-"Funkce :func:`!asyncio.iscoroutinefunction` je zastaralá a bude odstraněna "
-"v Pythonu 3.16; použijte místo ní :func:`inspect.iscoroutinefunction`. "
-"(Přispěli Jiahao Li a Kumar Aditya v :gh:`122875`.)"
+"Funkce :func:`!asyncio.iscoroutinefunction` je zastaralá a bude "
+"odstraněna v Pythonu 3.16; použijte místo ní "
+":func:`inspect.iscoroutinefunction`. (Přispěli Jiahao Li a Kumar Aditya v"
+" :gh:`122875`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:26
 msgid ""
 ":mod:`asyncio` policy system is deprecated and will be removed in Python "
 "3.16. In particular, the following classes and functions are deprecated:"
 msgstr ""
-"Systém politik :mod:`asyncio` je zastaralý a bude odstraněn v Pythonu 3.16. "
-"Konkrétně jsou zastaralé následující třídy a funkce:"
+"Systém politik :mod:`asyncio` je zastaralý a bude odstraněn v Pythonu "
+"3.16. Konkrétně jsou zastaralé následující třídy a funkce:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:29
 msgid ":class:`asyncio.AbstractEventLoopPolicy`"
@@ -329,8 +353,9 @@ msgid ""
 "Users should use :func:`asyncio.run` or :class:`asyncio.Runner` with "
 "*loop_factory* to use the desired event loop implementation."
 msgstr ""
-"Uživatelé by měli použít :func:`asyncio.run` nebo :class:`asyncio.Runner` "
-"s parametrem *loop_factory* pro použití požadované implementace smyčky událostí."
+"Uživatelé by měli použít :func:`asyncio.run` nebo :class:`asyncio.Runner`"
+" s parametrem *loop_factory* pro použití požadované implementace smyčky "
+"událostí."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:39
 msgid "For example, to use :class:`asyncio.SelectorEventLoop` on Windows::"
@@ -372,9 +397,9 @@ msgid ""
 msgstr ""
 "Bitová inverze na booleovských typech, ``~True`` nebo ``~False``, je "
 "zastaralá od Pythonu 3.12, protože produkuje překvapivé a neintuitivní "
-"výsledky (``-2`` a ``-1``). Pro logickou negaci booleovské hodnoty použijte "
-"``not x``. Ve vzácném případě, kdy potřebujete bitovou inverzi základního "
-"celého čísla, převeďte explicitně na ``int`` (``~int(x)``)."
+"výsledky (``-2`` a ``-1``). Pro logickou negaci booleovské hodnoty "
+"použijte ``not x``. Ve vzácném případě, kdy potřebujete bitovou inverzi "
+"základního celého čísla, převeďte explicitně na ``int`` (``~int(x)``)."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:59
 msgid ":mod:`functools`:"
@@ -400,9 +425,10 @@ msgid ""
 " the *stream* argument instead. (Contributed by Mariusz Felisiak in "
 ":gh:`115032`.)"
 msgstr ""
-"Podpora vlastních obslužných rutin logování s argumentem *strm* je zastaralá "
-"a její odstranění je plánováno v Pythonu 3.16. Definujte obslužné rutiny "
-"s argumentem *stream*. (Přispěl Mariusz Felisiak v :gh:`115032`.)"
+"Podpora vlastních obslužných rutin logování s argumentem *strm* je "
+"zastaralá a její odstranění je plánováno v Pythonu 3.16. Definujte "
+"obslužné rutiny s argumentem *stream*. (Přispěl Mariusz Felisiak v "
+":gh:`115032`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:70
 msgid ":mod:`mimetypes`:"
@@ -442,8 +468,8 @@ msgid ""
 "The :meth:`Class.get_methods <symtable.Class.get_methods>` method has "
 "been deprecated since Python 3.14."
 msgstr ""
-"Metoda :meth:`Class.get_methods <symtable.Class.get_methods>` je zastaralá "
-"od Pythonu 3.14."
+"Metoda :meth:`Class.get_methods <symtable.Class.get_methods>` je "
+"zastaralá od Pythonu 3.14."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:90
 msgid ":mod:`sys`:"
@@ -455,8 +481,8 @@ msgid ""
 "deprecated since Python 3.13. Use the "
 ":envvar:`PYTHONLEGACYWINDOWSFSENCODING` environment variable instead."
 msgstr ""
-"Funkce :func:`~sys._enablelegacywindowsfsencoding` je zastaralá od Pythonu "
-"3.13. Použijte místo ní proměnnou prostředí "
+"Funkce :func:`~sys._enablelegacywindowsfsencoding` je zastaralá od "
+"Pythonu 3.13. Použijte místo ní proměnnou prostředí "
 ":envvar:`PYTHONLEGACYWINDOWSFSENCODING`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:98
@@ -465,8 +491,9 @@ msgid ""
 "since Python 3.14. Use the ``vars`` argument of "
 ":func:`sysconfig.get_paths` instead."
 msgstr ""
-"Funkce :func:`!sysconfig.expand_makefile_vars` je zastaralá od Pythonu 3.14. "
-"Použijte místo ní argument ``vars`` funkce :func:`sysconfig.get_paths`."
+"Funkce :func:`!sysconfig.expand_makefile_vars` je zastaralá od Pythonu "
+"3.14. Použijte místo ní argument ``vars`` funkce "
+":func:`sysconfig.get_paths`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:102
 msgid ":mod:`tarfile`:"
@@ -477,8 +504,8 @@ msgid ""
 "The undocumented and unused :attr:`!TarFile.tarfile` attribute has been "
 "deprecated since Python 3.13."
 msgstr ""
-"Nedokumentovaný a nepoužívaný atribut :attr:`!TarFile.tarfile` je zastaralý "
-"od Pythonu 3.13."
+"Nedokumentovaný a nepoužívaný atribut :attr:`!TarFile.tarfile` je "
+"zastaralý od Pythonu 3.13."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:2
 msgid "Pending removal in Python 3.17"
@@ -493,10 +520,11 @@ msgid ""
 ":class:`collections.abc.ByteString` is scheduled for removal in Python "
 "3.17."
 msgstr ""
-"Odstranění :class:`collections.abc.ByteString` je plánováno v Pythonu 3.17."
+"Odstranění :class:`collections.abc.ByteString` je plánováno v Pythonu "
+"3.17."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:8
-#: ../../deprecations/pending-removal-in-3.17.rst:42
+#: ../../deprecations/pending-removal-in-3.17.rst:36
 msgid ""
 "Use ``isinstance(obj, collections.abc.Buffer)`` to test if ``obj`` "
 "implements the :ref:`buffer protocol <bufferobjects>` at runtime. For use"
@@ -504,14 +532,14 @@ msgid ""
 "union that explicitly specifies the types your code supports (e.g., "
 "``bytes | bytearray | memoryview``)."
 msgstr ""
-"Pro testování, zda ``obj`` implementuje :ref:`buffer protocol <bufferobjects>` "
-"za běhu, použijte ``isinstance(obj, collections.abc.Buffer)``. Pro typové "
-"anotace použijte buď :class:`~collections.abc.Buffer`, nebo unii, která "
-"explicitně specifikuje typy podporované vaším kódem (např. "
-"``bytes | bytearray | memoryview``)."
+"Pro testování, zda ``obj`` implementuje :ref:`buffer protocol "
+"<bufferobjects>` za běhu, použijte ``isinstance(obj, "
+"collections.abc.Buffer)``. Pro typové anotace použijte buď "
+":class:`~collections.abc.Buffer`, nebo unii, která explicitně specifikuje"
+" typy podporované vaším kódem (např. ``bytes | bytearray | memoryview``)."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:14
-#: ../../deprecations/pending-removal-in-3.17.rst:48
+#: ../../deprecations/pending-removal-in-3.17.rst:42
 msgid ""
 ":class:`!ByteString` was originally intended to be an abstract class that"
 " would serve as a supertype of both :class:`bytes` and "
@@ -521,37 +549,24 @@ msgid ""
 " as :class:`memoryview` were also never understood as subtypes of "
 ":class:`!ByteString` (either at runtime or by static type checkers)."
 msgstr ""
-":class:`!ByteString` byl původně zamýšlen jako abstraktní třída, která by "
-"sloužila jako nadtyp pro :class:`bytes` i :class:`bytearray`. Protože však "
-"toto ABC nikdy nemělo žádné metody, vědomí, že objekt byl instancí "
-":class:`!ByteString`, ve skutečnosti nikdy neříkalo nic užitečného o objektu. "
-"Jiné běžné typy bufferů jako :class:`memoryview` také nikdy nebyly chápány "
-"jako podtypy :class:`!ByteString` (ani za běhu, ani statickými kontrolory typů)."
+":class:`!ByteString` byl původně zamýšlen jako abstraktní třída, která by"
+" sloužila jako nadtyp pro :class:`bytes` i :class:`bytearray`. Protože "
+"však toto ABC nikdy nemělo žádné metody, vědomí, že objekt byl instancí "
+":class:`!ByteString`, ve skutečnosti nikdy neříkalo nic užitečného o "
+"objektu. Jiné běžné typy bufferů jako :class:`memoryview` také nikdy "
+"nebyly chápány jako podtypy :class:`!ByteString` (ani za běhu, ani "
+"statickými kontrolory typů)."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:22
-#: ../../deprecations/pending-removal-in-3.17.rst:56
+#: ../../deprecations/pending-removal-in-3.17.rst:50
 msgid ""
 "See :pep:`PEP 688 <688#current-options>` for more details. (Contributed "
 "by Shantanu Jain in :gh:`91896`.)"
 msgstr ""
-"Více informací naleznete v :pep:`PEP 688 <688#current-options>`. "
-"(Přispěl Shantanu Jain v :gh:`91896`.)"
-
-#: ../../deprecations/pending-removal-in-3.17.rst:26
-msgid ":mod:`encodings`:"
-msgstr ":mod:`encodings`:"
+"Více informací naleznete v :pep:`PEP 688 <688#current-options>`. (Přispěl"
+" Shantanu Jain v :gh:`91896`.)"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:28
-msgid ""
-"Passing non-ascii *encoding* names to "
-":func:`encodings.normalize_encoding` is deprecated and scheduled for "
-"removal in Python 3.17. (Contributed by Stan Ulbrych in :gh:`136702`)"
-msgstr ""
-"Předávání ne-ASCII názvů *encoding* do :func:`encodings.normalize_encoding` "
-"je zastaralé a jeho odstranění je plánováno v Pythonu 3.17. "
-"(Přispěl Stan Ulbrych v :gh:`136702`.)"
-
-#: ../../deprecations/pending-removal-in-3.17.rst:34
 msgid ""
 "Before Python 3.14, old-style unions were implemented using the private "
 "class ``typing._UnionGenericAlias``. This class is no longer needed for "
@@ -561,14 +576,15 @@ msgid ""
 ":func:`typing.get_args` instead of relying on private implementation "
 "details."
 msgstr ""
-"Před Pythonem 3.14 byly unie ve starém stylu implementovány pomocí privátní "
-"třídy ``typing._UnionGenericAlias``. Tato třída již není potřebná pro "
-"implementaci, ale byla zachována pro zpětnou kompatibilitu s plánovaným "
-"odstraněním v Pythonu 3.17. Uživatelé by měli používat dokumentované "
-"pomocníky pro introspekci jako :func:`typing.get_origin` a "
-":func:`typing.get_args` místo spoléhání na privátní implementační detaily."
+"Před Pythonem 3.14 byly unie ve starém stylu implementovány pomocí "
+"privátní třídy ``typing._UnionGenericAlias``. Tato třída již není "
+"potřebná pro implementaci, ale byla zachována pro zpětnou kompatibilitu s"
+" plánovaným odstraněním v Pythonu 3.17. Uživatelé by měli používat "
+"dokumentované pomocníky pro introspekci jako :func:`typing.get_origin` a "
+":func:`typing.get_args` místo spoléhání na privátní implementační "
+"detaily."
 
-#: ../../deprecations/pending-removal-in-3.17.rst:39
+#: ../../deprecations/pending-removal-in-3.17.rst:33
 msgid ""
 ":class:`typing.ByteString`, deprecated since Python 3.9, is scheduled for"
 " removal in Python 3.17."
@@ -586,158 +602,9 @@ msgid ""
 ":attr:`~ctypes.Structure._pack_` but not "
 ":attr:`~ctypes.Structure._layout_` on non-Windows platforms."
 msgstr ""
-"Implicitní přepnutí na rozložení struktury kompatibilní s MSVC nastavením "
-":attr:`~ctypes.Structure._pack_` bez současného nastavení "
+"Implicitní přepnutí na rozložení struktury kompatibilní s MSVC nastavením"
+" :attr:`~ctypes.Structure._pack_` bez současného nastavení "
 ":attr:`~ctypes.Structure._layout_` na ne-Windows platformách."
-
-#: ../../deprecations/pending-removal-in-3.19.rst:10
-msgid ":mod:`hashlib`:"
-msgstr ":mod:`hashlib`:"
-
-#: ../../deprecations/pending-removal-in-3.19.rst:12
-msgid ""
-"In hash function constructors such as :func:`~hashlib.new` or the direct "
-"hash-named constructors such as :func:`~hashlib.md5` and "
-":func:`~hashlib.sha256`, their optional initial data parameter could also"
-" be passed a keyword argument named ``data=`` or ``string=`` in various "
-":mod:`!hashlib` implementations."
-msgstr ""
-"V konstruktorech hashovacích funkcí jako :func:`~hashlib.new` nebo přímých "
-"konstruktorech pojmenovaných podle hashe jako :func:`~hashlib.md5` a "
-":func:`~hashlib.sha256` bylo možné volitelný parametr počátečních dat "
-"předávat také jako klíčový argument s názvem ``data=`` nebo ``string=`` "
-"v různých implementacích :mod:`!hashlib`."
-
-#: ../../deprecations/pending-removal-in-3.19.rst:18
-msgid ""
-"Support for the ``string`` keyword argument name is now deprecated and "
-"slated for removal in Python 3.19."
-msgstr ""
-"Podpora názvu klíčového argumentu ``string`` je nyní zastaralá a její "
-"odstranění je plánováno v Pythonu 3.19."
-
-#: ../../deprecations/pending-removal-in-3.19.rst:21
-msgid ""
-"Before Python 3.13, the ``string`` keyword parameter was not correctly "
-"supported depending on the backend implementation of hash functions. "
-"Prefer passing the initial data as a positional argument for maximum "
-"backwards compatibility."
-msgstr ""
-"Před Pythonem 3.13 nebyl klíčový parametr ``string`` správně podporován "
-"v závislosti na backendové implementaci hashovacích funkcí. Pro maximální "
-"zpětnou kompatibilitu upřednostňujte předávání počátečních dat jako "
-"pozičního argumentu."
-
-#: ../../deprecations/c-api-pending-removal-in-3.20.rst:2
-#: ../../deprecations/pending-removal-in-3.20.rst:2
-msgid "Pending removal in Python 3.20"
-msgstr "Čeká na odstranění v Pythonu 3.20"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:4
-msgid ""
-"The ``__version__``, ``version`` and ``VERSION`` attributes have been "
-"deprecated in these standard library modules and will be removed in "
-"Python 3.20. Use :py:data:`sys.version_info` instead."
-msgstr ""
-"Atributy ``__version__``, ``version`` a ``VERSION`` jsou v těchto modulech "
-"standardní knihovny zastaralé a budou odstraněny v Pythonu 3.20. Použijte "
-"místo nich :py:data:`sys.version_info`."
-
-#: ../../deprecations/pending-removal-in-3.20.rst:8
-msgid ":mod:`argparse`"
-msgstr ":mod:`argparse`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:9
-msgid ":mod:`csv`"
-msgstr ":mod:`csv`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:10
-msgid ":mod:`ctypes`"
-msgstr ":mod:`ctypes`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:11
-msgid ":mod:`!ctypes.macholib`"
-msgstr ":mod:`!ctypes.macholib`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:12
-msgid ":mod:`decimal` (use :data:`decimal.SPEC_VERSION` instead)"
-msgstr ":mod:`decimal` (použijte místo toho :data:`decimal.SPEC_VERSION`)"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:13
-msgid ":mod:`http.server`"
-msgstr ":mod:`http.server`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:14
-msgid ":mod:`imaplib`"
-msgstr ":mod:`imaplib`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:15
-msgid ":mod:`ipaddress`"
-msgstr ":mod:`ipaddress`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:16
-msgid ":mod:`json`"
-msgstr ":mod:`json`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:17
-msgid ":mod:`logging` (``__date__`` also deprecated)"
-msgstr ":mod:`logging` (``__date__`` je také zastaralé)"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:18
-msgid ":mod:`optparse`"
-msgstr ":mod:`optparse`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:19
-msgid ":mod:`pickle`"
-msgstr ":mod:`pickle`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:20
-msgid ":mod:`platform`"
-msgstr ":mod:`platform`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:21
-msgid ":mod:`re`"
-msgstr ":mod:`re`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:22
-msgid ":mod:`socketserver`"
-msgstr ":mod:`socketserver`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:23
-msgid ":mod:`tabnanny`"
-msgstr ":mod:`tabnanny`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:24
-msgid ":mod:`tkinter.font`"
-msgstr ":mod:`tkinter.font`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:25
-msgid ":mod:`tkinter.ttk`"
-msgstr ":mod:`tkinter.ttk`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:26
-msgid ":mod:`wsgiref.simple_server`"
-msgstr ":mod:`wsgiref.simple_server`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:27
-msgid ":mod:`xml.etree.ElementTree`"
-msgstr ":mod:`xml.etree.ElementTree`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:28
-msgid ":mod:`!xml.sax.expatreader`"
-msgstr ":mod:`!xml.sax.expatreader`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:29
-msgid ":mod:`xml.sax.handler`"
-msgstr ":mod:`xml.sax.handler`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:30
-msgid ":mod:`zlib`"
-msgstr ":mod:`zlib`"
-
-#: ../../deprecations/pending-removal-in-3.20.rst:32
-msgid "(Contributed by Hugo van Kemenade and Stan Ulbrych in :gh:`76007`.)"
-msgstr "(Přispěli Hugo van Kemenade a Stan Ulbrych v :gh:`76007`.)"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:2
 #: ../../deprecations/pending-removal-in-future.rst:2
@@ -749,8 +616,8 @@ msgid ""
 "The following APIs will be removed in the future, although there is "
 "currently no date scheduled for their removal."
 msgstr ""
-"Následující API budou v budoucnu odstraněna, i když datum jejich odstranění "
-"zatím není stanoveno."
+"Následující API budou v budoucnu odstraněna, i když datum jejich "
+"odstranění zatím není stanoveno."
 
 #: ../../deprecations/pending-removal-in-future.rst:7
 msgid ":mod:`argparse`:"
@@ -761,8 +628,8 @@ msgid ""
 "Nesting argument groups and nesting mutually exclusive groups are "
 "deprecated."
 msgstr ""
-"Vnořování skupin argumentů a vnořování vzájemně se vylučujících skupin "
-"je zastaralé."
+"Vnořování skupin argumentů a vnořování vzájemně se vylučujících skupin je"
+" zastaralé."
 
 #: ../../deprecations/pending-removal-in-future.rst:11
 msgid ""
@@ -782,9 +649,9 @@ msgid ""
 "signature is deprecated: use ``throw(exc)`` and ``athrow(exc)`` instead, "
 "the single argument signature."
 msgstr ""
-"Generátory: Signatura ``throw(type, exc, tb)`` a ``athrow(type, exc, tb)`` "
-"je zastaralá: použijte místo ní ``throw(exc)`` a ``athrow(exc)``, signaturu "
-"s jedním argumentem."
+"Generátory: Signatura ``throw(type, exc, tb)`` a ``athrow(type, exc, "
+"tb)`` je zastaralá: použijte místo ní ``throw(exc)`` a ``athrow(exc)``, "
+"signaturu s jedním argumentem."
 
 #: ../../deprecations/pending-removal-in-future.rst:21
 msgid ""
@@ -803,8 +670,9 @@ msgstr ""
 "lze interpretovat jako ``[0x1 for x in y]`` nebo ``[0x1f or x in y]``). "
 "Syntaktické varování je vyvoláno, pokud je číselný literál bezprostředně "
 "následován jedním z klíčových slov :keyword:`and`, :keyword:`else`, "
-":keyword:`for`, :keyword:`if`, :keyword:`in`, :keyword:`is` a :keyword:`or`. "
-"V budoucí verzi to bude změněno na syntaktickou chybu. (:gh:`87999`)"
+":keyword:`for`, :keyword:`if`, :keyword:`in`, :keyword:`is` a "
+":keyword:`or`. V budoucí verzi to bude změněno na syntaktickou chybu. "
+"(:gh:`87999`)"
 
 #: ../../deprecations/pending-removal-in-future.rst:29
 msgid ""
@@ -812,8 +680,9 @@ msgid ""
 "type: these methods will be required to return an instance of a strict "
 "subclass of :class:`int`."
 msgstr ""
-"Podpora metod ``__index__()`` a ``__int__()`` vracejících jiný typ než int: "
-"tyto metody budou muset vracet instanci striktní podtřídy :class:`int`."
+"Podpora metod ``__index__()`` a ``__int__()`` vracejících jiný typ než "
+"int: tyto metody budou muset vracet instanci striktní podtřídy "
+":class:`int`."
 
 #: ../../deprecations/pending-removal-in-future.rst:32
 msgid ""
@@ -821,8 +690,8 @@ msgid ""
 ":class:`float`: these methods will be required to return an instance of "
 ":class:`float`."
 msgstr ""
-"Podpora metody ``__float__()`` vracející striktní podtřídu :class:`float`: "
-"tyto metody budou muset vracet instanci :class:`float`."
+"Podpora metody ``__float__()`` vracející striktní podtřídu "
+":class:`float`: tyto metody budou muset vracet instanci :class:`float`."
 
 #: ../../deprecations/pending-removal-in-future.rst:35
 msgid ""
@@ -830,8 +699,9 @@ msgid ""
 ":class:`complex`: these methods will be required to return an instance of"
 " :class:`complex`."
 msgstr ""
-"Podpora metody ``__complex__()`` vracející striktní podtřídu :class:`complex`: "
-"tyto metody budou muset vracet instanci :class:`complex`."
+"Podpora metody ``__complex__()`` vracející striktní podtřídu "
+":class:`complex`: tyto metody budou muset vracet instanci "
+":class:`complex`."
 
 #: ../../deprecations/pending-removal-in-future.rst:38
 msgid "Delegation of ``int()`` to ``__trunc__()`` method."
@@ -844,9 +714,10 @@ msgid ""
 "as a single positional argument. (Contributed by Serhiy Storchaka in "
 ":gh:`109218`.)"
 msgstr ""
-"Předávání komplexního čísla jako argumentu *real* nebo *imag* v konstruktoru "
-":func:`complex` je nyní zastaralé; mělo by být předáváno pouze jako jeden "
-"poziční argument. (Přispěl Serhiy Storchaka v :gh:`109218`.)"
+"Předávání komplexního čísla jako argumentu *real* nebo *imag* v "
+"konstruktoru :func:`complex` je nyní zastaralé; mělo by být předáváno "
+"pouze jako jeden poziční argument. (Přispěl Serhiy Storchaka v "
+":gh:`109218`.)"
 
 #: ../../deprecations/pending-removal-in-future.rst:44
 msgid ""
@@ -904,8 +775,9 @@ msgid ""
 ":func:`~importlib.util.cache_from_source` *debug_override* parameter is "
 "deprecated: use the *optimization* parameter instead."
 msgstr ""
-"Parametr *debug_override* funkce :func:`~importlib.util.cache_from_source` "
-"je zastaralý: použijte místo něj parametr *optimization*."
+"Parametr *debug_override* funkce "
+":func:`~importlib.util.cache_from_source` je zastaralý: použijte místo "
+"něj parametr *optimization*."
 
 #: ../../deprecations/pending-removal-in-future.rst:68
 msgid ":mod:`importlib.metadata`:"
@@ -936,11 +808,9 @@ msgstr ""
 "použijte místo toho BytesIO a binární režim."
 
 #: ../../deprecations/pending-removal-in-future.rst:79
-msgid ""
-":mod:`os`: Calling :func:`os.register_at_fork` in a multi-threaded "
-"process."
-msgstr ""
-":mod:`os`: Volání :func:`os.register_at_fork` ve vícevláknovém procesu."
+#, fuzzy
+msgid ":mod:`os`: Calling :func:`os.register_at_fork` in multi-threaded process."
+msgstr ":mod:`os`: Volání :func:`os.register_at_fork` ve vícevláknovém procesu."
 
 #: ../../deprecations/pending-removal-in-future.rst:81
 msgid ""
@@ -959,29 +829,33 @@ msgid ""
 "letters and digits and underscore. (Contributed by Serhiy Storchaka in "
 ":gh:`91760`.)"
 msgstr ""
-":mod:`re`: Nyní se aplikují přísnější pravidla pro číselné odkazy na skupiny "
-"a názvy skupin v regulárních výrazech. Jako číselný odkaz je nyní přijímána "
-"pouze sekvence ASCII číslic. Název skupiny v bytových vzorech a náhradních "
-"řetězcích nyní může obsahovat pouze ASCII písmena, číslice a podtržítko. "
-"(Přispěl Serhiy Storchaka v :gh:`91760`.)"
+":mod:`re`: Nyní se aplikují přísnější pravidla pro číselné odkazy na "
+"skupiny a názvy skupin v regulárních výrazech. Jako číselný odkaz je nyní"
+" přijímána pouze sekvence ASCII číslic. Název skupiny v bytových vzorech "
+"a náhradních řetězcích nyní může obsahovat pouze ASCII písmena, číslice a"
+" podtržítko. (Přispěl Serhiy Storchaka v :gh:`91760`.)"
 
 #: ../../deprecations/pending-removal-in-future.rst:91
+msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
+msgstr "Moduly :mod:`!sre_compile`, :mod:`!sre_constants` a :mod:`!sre_parse`."
+
+#: ../../deprecations/pending-removal-in-future.rst:93
 msgid ""
 ":mod:`shutil`: :func:`~shutil.rmtree`'s *onerror* parameter is deprecated"
 " in Python 3.12; use the *onexc* parameter instead."
 msgstr ""
-":mod:`shutil`: Parametr *onerror* funkce :func:`~shutil.rmtree` je zastaralý "
-"od Pythonu 3.12; použijte místo něj parametr *onexc*."
+":mod:`shutil`: Parametr *onerror* funkce :func:`~shutil.rmtree` je "
+"zastaralý od Pythonu 3.12; použijte místo něj parametr *onexc*."
 
-#: ../../deprecations/pending-removal-in-future.rst:94
+#: ../../deprecations/pending-removal-in-future.rst:96
 msgid ":mod:`ssl` options and protocols:"
 msgstr "Možnosti a protokoly :mod:`ssl`:"
 
-#: ../../deprecations/pending-removal-in-future.rst:96
+#: ../../deprecations/pending-removal-in-future.rst:98
 msgid ":class:`ssl.SSLContext` without protocol argument is deprecated."
 msgstr ":class:`ssl.SSLContext` bez argumentu protocol je zastaralý."
 
-#: ../../deprecations/pending-removal-in-future.rst:97
+#: ../../deprecations/pending-removal-in-future.rst:99
 msgid ""
 ":class:`ssl.SSLContext`: :meth:`~ssl.SSLContext.set_npn_protocols` and "
 ":meth:`!selected_npn_protocol` are deprecated: use ALPN instead."
@@ -989,51 +863,51 @@ msgstr ""
 ":class:`ssl.SSLContext`: :meth:`~ssl.SSLContext.set_npn_protocols` a "
 ":meth:`!selected_npn_protocol` jsou zastaralé: použijte místo nich ALPN."
 
-#: ../../deprecations/pending-removal-in-future.rst:100
+#: ../../deprecations/pending-removal-in-future.rst:102
 msgid "``ssl.OP_NO_SSL*`` options"
 msgstr "Možnosti ``ssl.OP_NO_SSL*``"
 
-#: ../../deprecations/pending-removal-in-future.rst:101
+#: ../../deprecations/pending-removal-in-future.rst:103
 msgid "``ssl.OP_NO_TLS*`` options"
 msgstr "Možnosti ``ssl.OP_NO_TLS*``"
 
-#: ../../deprecations/pending-removal-in-future.rst:102
+#: ../../deprecations/pending-removal-in-future.rst:104
 msgid "``ssl.PROTOCOL_SSLv3``"
 msgstr "``ssl.PROTOCOL_SSLv3``"
 
-#: ../../deprecations/pending-removal-in-future.rst:103
+#: ../../deprecations/pending-removal-in-future.rst:105
 msgid "``ssl.PROTOCOL_TLS``"
 msgstr "``ssl.PROTOCOL_TLS``"
 
-#: ../../deprecations/pending-removal-in-future.rst:104
+#: ../../deprecations/pending-removal-in-future.rst:106
 msgid "``ssl.PROTOCOL_TLSv1``"
 msgstr "``ssl.PROTOCOL_TLSv1``"
 
-#: ../../deprecations/pending-removal-in-future.rst:105
+#: ../../deprecations/pending-removal-in-future.rst:107
 msgid "``ssl.PROTOCOL_TLSv1_1``"
 msgstr "``ssl.PROTOCOL_TLSv1_1``"
 
-#: ../../deprecations/pending-removal-in-future.rst:106
+#: ../../deprecations/pending-removal-in-future.rst:108
 msgid "``ssl.PROTOCOL_TLSv1_2``"
 msgstr "``ssl.PROTOCOL_TLSv1_2``"
 
-#: ../../deprecations/pending-removal-in-future.rst:107
+#: ../../deprecations/pending-removal-in-future.rst:109
 msgid "``ssl.TLSVersion.SSLv3``"
 msgstr "``ssl.TLSVersion.SSLv3``"
 
-#: ../../deprecations/pending-removal-in-future.rst:108
+#: ../../deprecations/pending-removal-in-future.rst:110
 msgid "``ssl.TLSVersion.TLSv1``"
 msgstr "``ssl.TLSVersion.TLSv1``"
 
-#: ../../deprecations/pending-removal-in-future.rst:109
+#: ../../deprecations/pending-removal-in-future.rst:111
 msgid "``ssl.TLSVersion.TLSv1_1``"
 msgstr "``ssl.TLSVersion.TLSv1_1``"
 
-#: ../../deprecations/pending-removal-in-future.rst:111
+#: ../../deprecations/pending-removal-in-future.rst:113
 msgid ":mod:`threading` methods:"
 msgstr "Metody :mod:`threading`:"
 
-#: ../../deprecations/pending-removal-in-future.rst:113
+#: ../../deprecations/pending-removal-in-future.rst:115
 msgid ""
 ":meth:`!threading.Condition.notifyAll`: use "
 ":meth:`~threading.Condition.notify_all`."
@@ -1041,11 +915,11 @@ msgstr ""
 ":meth:`!threading.Condition.notifyAll`: použijte "
 ":meth:`~threading.Condition.notify_all`."
 
-#: ../../deprecations/pending-removal-in-future.rst:114
+#: ../../deprecations/pending-removal-in-future.rst:116
 msgid ":meth:`!threading.Event.isSet`: use :meth:`~threading.Event.is_set`."
 msgstr ":meth:`!threading.Event.isSet`: použijte :meth:`~threading.Event.is_set`."
 
-#: ../../deprecations/pending-removal-in-future.rst:115
+#: ../../deprecations/pending-removal-in-future.rst:117
 msgid ""
 ":meth:`!threading.Thread.isDaemon`, :meth:`threading.Thread.setDaemon`: "
 "use :attr:`threading.Thread.daemon` attribute."
@@ -1053,7 +927,7 @@ msgstr ""
 ":meth:`!threading.Thread.isDaemon`, :meth:`threading.Thread.setDaemon`: "
 "použijte atribut :attr:`threading.Thread.daemon`."
 
-#: ../../deprecations/pending-removal-in-future.rst:117
+#: ../../deprecations/pending-removal-in-future.rst:119
 msgid ""
 ":meth:`!threading.Thread.getName`, :meth:`threading.Thread.setName`: use "
 ":attr:`threading.Thread.name` attribute."
@@ -1061,19 +935,21 @@ msgstr ""
 ":meth:`!threading.Thread.getName`, :meth:`threading.Thread.setName`: "
 "použijte atribut :attr:`threading.Thread.name`."
 
-#: ../../deprecations/pending-removal-in-future.rst:119
+#: ../../deprecations/pending-removal-in-future.rst:121
 msgid ":meth:`!threading.currentThread`: use :meth:`threading.current_thread`."
-msgstr ":meth:`!threading.currentThread`: použijte :meth:`threading.current_thread`."
+msgstr ""
+":meth:`!threading.currentThread`: použijte "
+":meth:`threading.current_thread`."
 
-#: ../../deprecations/pending-removal-in-future.rst:120
+#: ../../deprecations/pending-removal-in-future.rst:122
 msgid ":meth:`!threading.activeCount`: use :meth:`threading.active_count`."
 msgstr ":meth:`!threading.activeCount`: použijte :meth:`threading.active_count`."
 
-#: ../../deprecations/pending-removal-in-future.rst:122
+#: ../../deprecations/pending-removal-in-future.rst:124
 msgid ":class:`typing.Text` (:gh:`92332`)."
 msgstr ":class:`typing.Text` (:gh:`92332`)."
 
-#: ../../deprecations/pending-removal-in-future.rst:124
+#: ../../deprecations/pending-removal-in-future.rst:126
 msgid ""
 "The internal class ``typing._UnionGenericAlias`` is no longer used to "
 "implement :class:`typing.Union`. To preserve compatibility with users "
@@ -1081,19 +957,20 @@ msgid ""
 "least Python 3.17. (Contributed by Jelle Zijlstra in :gh:`105499`.)"
 msgstr ""
 "Interní třída ``typing._UnionGenericAlias`` již není používána pro "
-"implementaci :class:`typing.Union`. Pro zachování kompatibility s uživateli "
-"používajícími tuto privátní třídu bude poskytována kompatibilní vrstva "
-"minimálně do Pythonu 3.17. (Přispěl Jelle Zijlstra v :gh:`105499`.)"
+"implementaci :class:`typing.Union`. Pro zachování kompatibility s "
+"uživateli používajícími tuto privátní třídu bude poskytována kompatibilní"
+" vrstva minimálně do Pythonu 3.17. (Přispěl Jelle Zijlstra v "
+":gh:`105499`.)"
 
-#: ../../deprecations/pending-removal-in-future.rst:129
+#: ../../deprecations/pending-removal-in-future.rst:131
 msgid ""
 ":class:`unittest.IsolatedAsyncioTestCase`: it is deprecated to return a "
 "value that is not ``None`` from a test case."
 msgstr ""
-":class:`unittest.IsolatedAsyncioTestCase`: vracení hodnoty jiné než ``None`` "
-"z testovacího případu je zastaralé."
+":class:`unittest.IsolatedAsyncioTestCase`: vracení hodnoty jiné než "
+"``None`` z testovacího případu je zastaralé."
 
-#: ../../deprecations/pending-removal-in-future.rst:132
+#: ../../deprecations/pending-removal-in-future.rst:134
 msgid ""
 ":mod:`urllib.parse` deprecated functions: :func:`~urllib.parse.urlparse` "
 "instead"
@@ -1101,51 +978,51 @@ msgstr ""
 "Zastaralé funkce :mod:`urllib.parse`: použijte místo nich "
 ":func:`~urllib.parse.urlparse`"
 
-#: ../../deprecations/pending-removal-in-future.rst:134
+#: ../../deprecations/pending-removal-in-future.rst:136
 msgid "``splitattr()``"
 msgstr "``splitattr()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:135
+#: ../../deprecations/pending-removal-in-future.rst:137
 msgid "``splithost()``"
 msgstr "``splithost()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:136
+#: ../../deprecations/pending-removal-in-future.rst:138
 msgid "``splitnport()``"
 msgstr "``splitnport()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:137
+#: ../../deprecations/pending-removal-in-future.rst:139
 msgid "``splitpasswd()``"
 msgstr "``splitpasswd()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:138
+#: ../../deprecations/pending-removal-in-future.rst:140
 msgid "``splitport()``"
 msgstr "``splitport()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:139
+#: ../../deprecations/pending-removal-in-future.rst:141
 msgid "``splitquery()``"
 msgstr "``splitquery()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:140
+#: ../../deprecations/pending-removal-in-future.rst:142
 msgid "``splittag()``"
 msgstr "``splittag()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:141
+#: ../../deprecations/pending-removal-in-future.rst:143
 msgid "``splittype()``"
 msgstr "``splittype()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:142
+#: ../../deprecations/pending-removal-in-future.rst:144
 msgid "``splituser()``"
 msgstr "``splituser()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:143
+#: ../../deprecations/pending-removal-in-future.rst:145
 msgid "``splitvalue()``"
 msgstr "``splitvalue()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:144
+#: ../../deprecations/pending-removal-in-future.rst:146
 msgid "``to_bytes()``"
 msgstr "``to_bytes()``"
 
-#: ../../deprecations/pending-removal-in-future.rst:146
+#: ../../deprecations/pending-removal-in-future.rst:148
 msgid ""
 ":mod:`wsgiref`: ``SimpleHandler.stdout.write()`` should not do partial "
 "writes."
@@ -1153,7 +1030,7 @@ msgstr ""
 ":mod:`wsgiref`: ``SimpleHandler.stdout.write()`` by neměl provádět "
 "částečné zápisy."
 
-#: ../../deprecations/pending-removal-in-future.rst:149
+#: ../../deprecations/pending-removal-in-future.rst:151
 msgid ""
 ":mod:`xml.etree.ElementTree`: Testing the truth value of an "
 ":class:`~xml.etree.ElementTree.Element` is deprecated. In a future "
@@ -1161,11 +1038,11 @@ msgid ""
 "``elem is not None`` tests instead."
 msgstr ""
 ":mod:`xml.etree.ElementTree`: Testování pravdivostní hodnoty "
-":class:`~xml.etree.ElementTree.Element` je zastaralé. V budoucí verzi bude "
-"vždy vracet ``True``. Upřednostňujte explicitní testy ``len(elem)`` nebo "
-"``elem is not None``."
+":class:`~xml.etree.ElementTree.Element` je zastaralé. V budoucí verzi "
+"bude vždy vracet ``True``. Upřednostňujte explicitní testy ``len(elem)`` "
+"nebo ``elem is not None``."
 
-#: ../../deprecations/pending-removal-in-future.rst:154
+#: ../../deprecations/pending-removal-in-future.rst:156
 msgid ""
 ":func:`sys._clear_type_cache` is deprecated: use "
 ":func:`sys._clear_internal_caches` instead."
@@ -1173,37 +1050,39 @@ msgstr ""
 ":func:`sys._clear_type_cache` je zastaralá: použijte místo ní "
 ":func:`sys._clear_internal_caches`."
 
-#: ../../deprecations/index.rst:17
+#: ../../deprecations/index.rst:15
 msgid "C API deprecations"
 msgstr "Zastaralé funkce C API"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:4
+#, fuzzy
 msgid ""
-"The :c:func:`!PyImport_ImportModuleNoBlock`: Use "
+"The :c:func:`PyImport_ImportModuleNoBlock`: Use "
 ":c:func:`PyImport_ImportModule` instead."
 msgstr ""
 ":c:func:`!PyImport_ImportModuleNoBlock`: Použijte místo ní "
 ":c:func:`PyImport_ImportModule`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:6
+#, fuzzy
 msgid ""
-":c:func:`!PyWeakref_GetObject` and :c:func:`!PyWeakref_GET_OBJECT`: Use "
+":c:func:`PyWeakref_GetObject` and :c:func:`PyWeakref_GET_OBJECT`: Use "
 ":c:func:`PyWeakref_GetRef` instead. The `pythoncapi-compat project "
 "<https://github.com/python/pythoncapi-compat/>`__ can be used to get "
 ":c:func:`PyWeakref_GetRef` on Python 3.12 and older."
 msgstr ""
-":c:func:`!PyWeakref_GetObject` a :c:func:`!PyWeakref_GET_OBJECT`: Použijte "
-"místo nich :c:func:`PyWeakref_GetRef`. Projekt `pythoncapi-compat "
-"<https://github.com/python/pythoncapi-compat/>`__ lze použít pro získání "
-":c:func:`PyWeakref_GetRef` v Pythonu 3.12 a starším."
+":c:func:`!PyWeakref_GetObject` a :c:func:`!PyWeakref_GET_OBJECT`: "
+"Použijte místo nich :c:func:`PyWeakref_GetRef`. Projekt `pythoncapi-"
+"compat <https://github.com/python/pythoncapi-compat/>`__ lze použít pro "
+"získání :c:func:`PyWeakref_GetRef` v Pythonu 3.12 a starším."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:10
 msgid ""
 ":c:type:`Py_UNICODE` type and the :c:macro:`!Py_UNICODE_WIDE` macro: Use "
 ":c:type:`wchar_t` instead."
 msgstr ""
-"Typ :c:type:`Py_UNICODE` a makro :c:macro:`!Py_UNICODE_WIDE`: Použijte místo "
-"nich :c:type:`wchar_t`."
+"Typ :c:type:`Py_UNICODE` a makro :c:macro:`!Py_UNICODE_WIDE`: Použijte "
+"místo nich :c:type:`wchar_t`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:12
 msgid ""
@@ -1220,8 +1099,8 @@ msgid ""
 "type other than :class:`str`, such as :class:`bytes`."
 msgstr ""
 ":c:func:`!PyUnicode_AsDecodedUnicode`: Použijte místo ní "
-":c:func:`PyCodec_Decode`; Poznámka: některé kodeky (například \"base64\") "
-"mohou vracet jiný typ než :class:`str`, například :class:`bytes`."
+":c:func:`PyCodec_Decode`; Poznámka: některé kodeky (například \"base64\")"
+" mohou vracet jiný typ než :class:`str`, například :class:`bytes`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:17
 msgid ""
@@ -1238,38 +1117,41 @@ msgid ""
 "type other than :class:`bytes`, such as :class:`str`."
 msgstr ""
 ":c:func:`!PyUnicode_AsEncodedUnicode`: Použijte místo ní "
-":c:func:`PyCodec_Encode`; Poznámka: některé kodeky (například \"base64\") "
-"mohou vracet jiný typ než :class:`bytes`, například :class:`str`."
+":c:func:`PyCodec_Encode`; Poznámka: některé kodeky (například \"base64\")"
+" mohou vracet jiný typ než :class:`bytes`, například :class:`str`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:22
 msgid "Python initialization functions, deprecated in Python 3.13:"
 msgstr "Funkce pro inicializaci Pythonu, zastaralé od Pythonu 3.13:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:24
+#, fuzzy
 msgid ""
-":c:func:`!Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\")"
-" <PyConfig_Get>` (:data:`sys.path`) instead."
+":c:func:`Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") "
+"<PyConfig_Get>` (:data:`sys.path`) instead."
 msgstr ""
 ":c:func:`!Py_GetPath`: Použijte místo ní "
 ":c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` "
 "(:data:`sys.path`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:27
+#, fuzzy
 msgid ""
-":c:func:`!Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") "
+":c:func:`Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") "
 "<PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use "
 ":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if"
 " :ref:`virtual environments <venv-def>` need to be handled."
 msgstr ""
 ":c:func:`!Py_GetPrefix`: Použijte místo ní "
 ":c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` "
-"(:data:`sys.base_prefix`). Použijte "
-":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`), "
-"pokud je potřeba pracovat s :ref:`virtuálními prostředími <venv-def>`."
+"(:data:`sys.base_prefix`). Použijte :c:func:`PyConfig_Get(\"prefix\") "
+"<PyConfig_Get>` (:data:`sys.prefix`), pokud je potřeba pracovat s "
+":ref:`virtuálními prostředími <venv-def>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:32
+#, fuzzy
 msgid ""
-":c:func:`!Py_GetExecPrefix`: Use "
+":c:func:`Py_GetExecPrefix`: Use "
 ":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
 "(:data:`sys.base_exec_prefix`) instead. Use "
 ":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
@@ -1280,12 +1162,13 @@ msgstr ""
 ":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
 "(:data:`sys.base_exec_prefix`). Použijte "
 ":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
-"(:data:`sys.exec_prefix`), pokud je potřeba pracovat s "
-":ref:`virtuálními prostředími <venv-def>`."
+"(:data:`sys.exec_prefix`), pokud je potřeba pracovat s :ref:`virtuálními "
+"prostředími <venv-def>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:38
+#, fuzzy
 msgid ""
-":c:func:`!Py_GetProgramFullPath`: Use "
+":c:func:`Py_GetProgramFullPath`: Use "
 ":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
 "(:data:`sys.executable`) instead."
 msgstr ""
@@ -1294,8 +1177,9 @@ msgstr ""
 "(:data:`sys.executable`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:41
+#, fuzzy
 msgid ""
-":c:func:`!Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") "
+":c:func:`Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
 ":c:func:`!Py_GetProgramName`: Použijte místo ní "
@@ -1303,8 +1187,9 @@ msgstr ""
 "(:data:`sys.executable`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:44
+#, fuzzy
 msgid ""
-":c:func:`!Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") "
+":c:func:`Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") "
 "<PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ""
 ":c:func:`!Py_GetPythonHome`: Použijte místo ní "
@@ -1317,8 +1202,9 @@ msgid ""
 "compat/>`__ can be used to get :c:func:`PyConfig_Get` on Python 3.13 and "
 "older."
 msgstr ""
-"Projekt `pythoncapi-compat <https://github.com/python/pythoncapi-compat/>`__ "
-"lze použít pro získání :c:func:`PyConfig_Get` v Pythonu 3.13 a starším."
+"Projekt `pythoncapi-compat <https://github.com/python/pythoncapi-"
+"compat/>`__ lze použít pro získání :c:func:`PyConfig_Get` v Pythonu 3.13 "
+"a starším."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:52
 msgid "Functions to configure Python's initialization, deprecated in Python 3.11:"
@@ -1326,7 +1212,9 @@ msgstr "Funkce pro konfiguraci inicializace Pythonu, zastaralé od Pythonu 3.11:
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:54
 msgid ":c:func:`!PySys_SetArgvEx()`: Set :c:member:`PyConfig.argv` instead."
-msgstr ":c:func:`!PySys_SetArgvEx()`: Nastavte místo toho :c:member:`PyConfig.argv`."
+msgstr ""
+":c:func:`!PySys_SetArgvEx()`: Nastavte místo toho "
+":c:member:`PyConfig.argv`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:56
 msgid ":c:func:`!PySys_SetArgv()`: Set :c:member:`PyConfig.argv` instead."
@@ -1342,23 +1230,26 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:60
 msgid ":c:func:`!Py_SetPythonHome()`: Set :c:member:`PyConfig.home` instead."
-msgstr ":c:func:`!Py_SetPythonHome()`: Nastavte místo toho :c:member:`PyConfig.home`."
+msgstr ""
+":c:func:`!Py_SetPythonHome()`: Nastavte místo toho "
+":c:member:`PyConfig.home`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:62
+#, fuzzy
 msgid ""
-":c:func:`!PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and "
+":c:func:`PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and "
 ":data:`!warnings.filters` instead."
 msgstr ""
-":c:func:`!PySys_ResetWarnOptions`: Vymažte místo toho :data:`sys.warnoptions` "
-"a :data:`!warnings.filters`."
+":c:func:`!PySys_ResetWarnOptions`: Vymažte místo toho "
+":data:`sys.warnoptions` a :data:`!warnings.filters`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:65
 msgid ""
 "The :c:func:`Py_InitializeFromConfig` API should be used with "
 ":c:type:`PyConfig` instead."
 msgstr ""
-"Místo toho by mělo být použito API :c:func:`Py_InitializeFromConfig` "
-"s :c:type:`PyConfig`."
+"Místo toho by mělo být použito API :c:func:`Py_InitializeFromConfig` s "
+":c:type:`PyConfig`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:68
 msgid "Global configuration variables:"
@@ -1369,16 +1260,17 @@ msgid ""
 ":c:var:`Py_DebugFlag`: Use :c:member:`PyConfig.parser_debug` or "
 ":c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_DebugFlag`: Použijte místo toho :c:member:`PyConfig.parser_debug` "
-"nebo :c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>`."
+":c:var:`Py_DebugFlag`: Použijte místo toho "
+":c:member:`PyConfig.parser_debug` nebo "
+":c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:73
 msgid ""
 ":c:var:`Py_VerboseFlag`: Use :c:member:`PyConfig.verbose` or "
 ":c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_VerboseFlag`: Použijte místo toho :c:member:`PyConfig.verbose` "
-"nebo :c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>`."
+":c:var:`Py_VerboseFlag`: Použijte místo toho :c:member:`PyConfig.verbose`"
+" nebo :c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:76
 msgid ""
@@ -1393,48 +1285,53 @@ msgid ""
 ":c:var:`Py_InteractiveFlag`: Use :c:member:`PyConfig.interactive` or "
 ":c:func:`PyConfig_Get(\"interactive\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_InteractiveFlag`: Použijte místo toho :c:member:`PyConfig.interactive` "
-"nebo :c:func:`PyConfig_Get(\"interactive\") <PyConfig_Get>`."
+":c:var:`Py_InteractiveFlag`: Použijte místo toho "
+":c:member:`PyConfig.interactive` nebo "
+":c:func:`PyConfig_Get(\"interactive\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:82
 msgid ""
 ":c:var:`Py_InspectFlag`: Use :c:member:`PyConfig.inspect` or "
 ":c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_InspectFlag`: Použijte místo toho :c:member:`PyConfig.inspect` "
-"nebo :c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>`."
+":c:var:`Py_InspectFlag`: Použijte místo toho :c:member:`PyConfig.inspect`"
+" nebo :c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:85
 msgid ""
 ":c:var:`Py_OptimizeFlag`: Use :c:member:`PyConfig.optimization_level` or "
 ":c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_OptimizeFlag`: Použijte místo toho :c:member:`PyConfig.optimization_level` "
-"nebo :c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>`."
+":c:var:`Py_OptimizeFlag`: Použijte místo toho "
+":c:member:`PyConfig.optimization_level` nebo "
+":c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:88
 msgid ""
 ":c:var:`Py_NoSiteFlag`: Use :c:member:`PyConfig.site_import` or "
 ":c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_NoSiteFlag`: Použijte místo toho :c:member:`PyConfig.site_import` "
-"nebo :c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>`."
+":c:var:`Py_NoSiteFlag`: Použijte místo toho "
+":c:member:`PyConfig.site_import` nebo "
+":c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:91
 msgid ""
 ":c:var:`Py_BytesWarningFlag`: Use :c:member:`PyConfig.bytes_warning` or "
 ":c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_BytesWarningFlag`: Použijte místo toho :c:member:`PyConfig.bytes_warning` "
-"nebo :c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>`."
+":c:var:`Py_BytesWarningFlag`: Použijte místo toho "
+":c:member:`PyConfig.bytes_warning` nebo "
+":c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:94
 msgid ""
 ":c:var:`Py_FrozenFlag`: Use :c:member:`PyConfig.pathconfig_warnings` or "
 ":c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_FrozenFlag`: Použijte místo toho :c:member:`PyConfig.pathconfig_warnings` "
-"nebo :c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>`."
+":c:var:`Py_FrozenFlag`: Použijte místo toho "
+":c:member:`PyConfig.pathconfig_warnings` nebo "
+":c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:97
 msgid ""
@@ -1471,8 +1368,9 @@ msgid ""
 ":c:var:`Py_UnbufferedStdioFlag`: Use :c:member:`PyConfig.buffered_stdio` "
 "or :c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_UnbufferedStdioFlag`: Použijte místo toho :c:member:`PyConfig.buffered_stdio` "
-"nebo :c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>`."
+":c:var:`Py_UnbufferedStdioFlag`: Použijte místo toho "
+":c:member:`PyConfig.buffered_stdio` nebo "
+":c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:109
 msgid ""
@@ -1489,8 +1387,9 @@ msgid ""
 ":c:var:`Py_IsolatedFlag`: Use :c:member:`PyConfig.isolated` or "
 ":c:func:`PyConfig_Get(\"isolated\") <PyConfig_Get>` instead."
 msgstr ""
-":c:var:`Py_IsolatedFlag`: Použijte místo toho :c:member:`PyConfig.isolated` "
-"nebo :c:func:`PyConfig_Get(\"isolated\") <PyConfig_Get>`."
+":c:var:`Py_IsolatedFlag`: Použijte místo toho "
+":c:member:`PyConfig.isolated` nebo :c:func:`PyConfig_Get(\"isolated\") "
+"<PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:116
 msgid ""
@@ -1541,8 +1440,9 @@ msgid ""
 ":c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>` instead. (see "
 ":c:func:`Py_PreInitialize`)"
 msgstr ""
-":c:var:`!Py_UTF8Mode`: Použijte místo toho :c:member:`PyPreConfig.utf8_mode` "
-"nebo :c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>`. (viz "
+":c:var:`!Py_UTF8Mode`: Použijte místo toho "
+":c:member:`PyPreConfig.utf8_mode` nebo "
+":c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>`. (viz "
 ":c:func:`Py_PreInitialize`)"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:133
@@ -1551,9 +1451,9 @@ msgid ""
 ":c:type:`PyConfig` to set these options. Or :c:func:`PyConfig_Get` can be"
 " used to get these options at runtime."
 msgstr ""
-"Pro nastavení těchto voleb by mělo být použito API :c:func:`Py_InitializeFromConfig` "
-"s :c:type:`PyConfig`. Nebo lze použít :c:func:`PyConfig_Get` pro získání "
-"těchto voleb za běhu."
+"Pro nastavení těchto voleb by mělo být použito API "
+":c:func:`Py_InitializeFromConfig` s :c:type:`PyConfig`. Nebo lze použít "
+":c:func:`PyConfig_Get` pro získání těchto voleb za běhu."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:2
 msgid "Pending removal in Python 3.18"
@@ -1564,8 +1464,8 @@ msgid ""
 "The following private functions are deprecated and planned for removal in"
 " Python 3.18:"
 msgstr ""
-"Následující privátní funkce jsou zastaralé a jejich odstranění je plánováno "
-"v Pythonu 3.18:"
+"Následující privátní funkce jsou zastaralé a jejich odstranění je "
+"plánováno v Pythonu 3.18:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:7
 msgid ":c:func:`!_PyBytes_Join`: use :c:func:`PyBytes_Join`."
@@ -1719,39 +1619,9 @@ msgid ""
 "compat/>`__ can be used to get these new public functions on Python 3.13 "
 "and older. (Contributed by Victor Stinner in :gh:`128863`.)"
 msgstr ""
-"Projekt `pythoncapi-compat <https://github.com/python/pythoncapi-compat/>`__ "
-"lze použít pro získání těchto nových veřejných funkcí v Pythonu 3.13 a "
-"starším. (Přispěl Victor Stinner v :gh:`128863`.)"
-
-#: ../../deprecations/c-api-pending-removal-in-3.20.rst:4
-msgid ""
-":c:func:`!_PyObject_CallMethodId`, :c:func:`!_PyObject_GetAttrId` and "
-":c:func:`!_PyUnicode_FromId` are deprecated since 3.15 and will be "
-"removed in 3.20. Instead, use :c:func:`PyUnicode_InternFromString()` and "
-"cache the result in the module state, then call "
-":c:func:`PyObject_CallMethod` or :c:func:`PyObject_GetAttr`. (Contributed"
-" by Victor Stinner in :gh:`141049`.)"
-msgstr ""
-":c:func:`!_PyObject_CallMethodId`, :c:func:`!_PyObject_GetAttrId` a "
-":c:func:`!_PyUnicode_FromId` jsou zastaralé od verze 3.15 a budou odstraněny "
-"ve verzi 3.20. Místo toho použijte :c:func:`PyUnicode_InternFromString()` a "
-"výsledek uložte do stavu modulu, poté volejte :c:func:`PyObject_CallMethod` "
-"nebo :c:func:`PyObject_GetAttr`. (Přispěl Victor Stinner v :gh:`141049`.)"
-
-#: ../../deprecations/c-api-pending-removal-in-3.20.rst:11
-msgid ""
-"The ``cval`` field in :c:type:`PyComplexObject` (:gh:`128813`). Use "
-":c:func:`PyComplex_AsCComplex` and :c:func:`PyComplex_FromCComplex` to "
-"convert a Python complex number to/from the C :c:type:`Py_complex` "
-"representation."
-msgstr ""
-"Pole ``cval`` v :c:type:`PyComplexObject` (:gh:`128813`). Použijte "
-":c:func:`PyComplex_AsCComplex` a :c:func:`PyComplex_FromCComplex` pro převod "
-"komplexního čísla Pythonu na/z C reprezentace :c:type:`Py_complex`."
-
-#: ../../deprecations/c-api-pending-removal-in-3.20.rst:16
-msgid "Macros :c:macro:`!Py_MATH_PIl` and :c:macro:`!Py_MATH_El`."
-msgstr "Makra :c:macro:`!Py_MATH_PIl` a :c:macro:`!Py_MATH_El`."
+"Projekt `pythoncapi-compat <https://github.com/python/pythoncapi-"
+"compat/>`__ lze použít pro získání těchto nových veřejných funkcí v "
+"Pythonu 3.13 a starším. (Přispěl Victor Stinner v :gh:`128863`.)"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:4
 msgid ""
@@ -1767,7 +1637,9 @@ msgstr ":c:macro:`Py_TPFLAGS_HAVE_FINALIZE`: Nepotřebné od Pythonu 3.8."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:9
 msgid ":c:func:`PyErr_Fetch`: Use :c:func:`PyErr_GetRaisedException` instead."
-msgstr ":c:func:`PyErr_Fetch`: Použijte místo ní :c:func:`PyErr_GetRaisedException`."
+msgstr ""
+":c:func:`PyErr_Fetch`: Použijte místo ní "
+":c:func:`PyErr_GetRaisedException`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:11
 msgid ""
@@ -1779,7 +1651,9 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:13
 msgid ":c:func:`PyErr_Restore`: Use :c:func:`PyErr_SetRaisedException` instead."
-msgstr ":c:func:`PyErr_Restore`: Použijte místo ní :c:func:`PyErr_SetRaisedException`."
+msgstr ""
+":c:func:`PyErr_Restore`: Použijte místo ní "
+":c:func:`PyErr_SetRaisedException`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:15
 msgid ""
@@ -1791,15 +1665,17 @@ msgstr ""
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:17
 msgid ":c:func:`PyOS_AfterFork`: Use :c:func:`PyOS_AfterFork_Child` instead."
-msgstr ":c:func:`PyOS_AfterFork`: Použijte místo ní :c:func:`PyOS_AfterFork_Child`."
+msgstr ""
+":c:func:`PyOS_AfterFork`: Použijte místo ní "
+":c:func:`PyOS_AfterFork_Child`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:19
 msgid ""
 ":c:func:`PySlice_GetIndicesEx`: Use :c:func:`PySlice_Unpack` and "
 ":c:func:`PySlice_AdjustIndices` instead."
 msgstr ""
-":c:func:`PySlice_GetIndicesEx`: Použijte místo ní :c:func:`PySlice_Unpack` a "
-":c:func:`PySlice_AdjustIndices`."
+":c:func:`PySlice_GetIndicesEx`: Použijte místo ní "
+":c:func:`PySlice_Unpack` a :c:func:`PySlice_AdjustIndices`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:21
 msgid ":c:func:`PyUnicode_READY`: Unneeded since Python 3.12"
@@ -1807,7 +1683,9 @@ msgstr ":c:func:`PyUnicode_READY`: Nepotřebné od Pythonu 3.12"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:23
 msgid ":c:func:`!PyErr_Display`: Use :c:func:`PyErr_DisplayException` instead."
-msgstr ":c:func:`!PyErr_Display`: Použijte místo ní :c:func:`PyErr_DisplayException`."
+msgstr ""
+":c:func:`!PyErr_Display`: Použijte místo ní "
+":c:func:`PyErr_DisplayException`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:25
 msgid ""
@@ -1831,19 +1709,27 @@ msgstr "Thread Local Storage (TLS) API:"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:31
 msgid ":c:func:`PyThread_create_key`: Use :c:func:`PyThread_tss_alloc` instead."
-msgstr ":c:func:`PyThread_create_key`: Použijte místo ní :c:func:`PyThread_tss_alloc`."
+msgstr ""
+":c:func:`PyThread_create_key`: Použijte místo ní "
+":c:func:`PyThread_tss_alloc`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:33
 msgid ":c:func:`PyThread_delete_key`: Use :c:func:`PyThread_tss_free` instead."
-msgstr ":c:func:`PyThread_delete_key`: Použijte místo ní :c:func:`PyThread_tss_free`."
+msgstr ""
+":c:func:`PyThread_delete_key`: Použijte místo ní "
+":c:func:`PyThread_tss_free`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:35
 msgid ":c:func:`PyThread_set_key_value`: Use :c:func:`PyThread_tss_set` instead."
-msgstr ":c:func:`PyThread_set_key_value`: Použijte místo ní :c:func:`PyThread_tss_set`."
+msgstr ""
+":c:func:`PyThread_set_key_value`: Použijte místo ní "
+":c:func:`PyThread_tss_set`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:37
 msgid ":c:func:`PyThread_get_key_value`: Use :c:func:`PyThread_tss_get` instead."
-msgstr ":c:func:`PyThread_get_key_value`: Použijte místo ní :c:func:`PyThread_tss_get`."
+msgstr ""
+":c:func:`PyThread_get_key_value`: Použijte místo ní "
+":c:func:`PyThread_tss_get`."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:39
 msgid ""
@@ -1856,4 +1742,195 @@ msgstr ""
 #: ../../deprecations/c-api-pending-removal-in-future.rst:41
 msgid ":c:func:`PyThread_ReInitTLS`: Unneeded since Python 3.7."
 msgstr ":c:func:`PyThread_ReInitTLS`: Nepotřebné od Pythonu 3.7."
+
+#~ msgid ":mod:`encodings`:"
+#~ msgstr ":mod:`encodings`:"
+
+#~ msgid ""
+#~ "Passing non-ascii *encoding* names to"
+#~ " :func:`encodings.normalize_encoding` is deprecated "
+#~ "and scheduled for removal in Python "
+#~ "3.17. (Contributed by Stan Ulbrych in"
+#~ " :gh:`136702`)"
+#~ msgstr ""
+#~ "Předávání ne-ASCII názvů *encoding* do"
+#~ " :func:`encodings.normalize_encoding` je zastaralé "
+#~ "a jeho odstranění je plánováno v "
+#~ "Pythonu 3.17. (Přispěl Stan Ulbrych v"
+#~ " :gh:`136702`.)"
+
+#~ msgid ":mod:`hashlib`:"
+#~ msgstr ":mod:`hashlib`:"
+
+#~ msgid ""
+#~ "In hash function constructors such as"
+#~ " :func:`~hashlib.new` or the direct "
+#~ "hash-named constructors such as "
+#~ ":func:`~hashlib.md5` and :func:`~hashlib.sha256`, "
+#~ "their optional initial data parameter "
+#~ "could also be passed a keyword "
+#~ "argument named ``data=`` or ``string=`` "
+#~ "in various :mod:`!hashlib` implementations."
+#~ msgstr ""
+#~ "V konstruktorech hashovacích funkcí jako "
+#~ ":func:`~hashlib.new` nebo přímých konstruktorech "
+#~ "pojmenovaných podle hashe jako "
+#~ ":func:`~hashlib.md5` a :func:`~hashlib.sha256` bylo"
+#~ " možné volitelný parametr počátečních dat"
+#~ " předávat také jako klíčový argument "
+#~ "s názvem ``data=`` nebo ``string=`` v"
+#~ " různých implementacích :mod:`!hashlib`."
+
+#~ msgid ""
+#~ "Support for the ``string`` keyword "
+#~ "argument name is now deprecated and "
+#~ "slated for removal in Python 3.19."
+#~ msgstr ""
+#~ "Podpora názvu klíčového argumentu ``string``"
+#~ " je nyní zastaralá a její odstranění"
+#~ " je plánováno v Pythonu 3.19."
+
+#~ msgid ""
+#~ "Before Python 3.13, the ``string`` "
+#~ "keyword parameter was not correctly "
+#~ "supported depending on the backend "
+#~ "implementation of hash functions. Prefer "
+#~ "passing the initial data as a "
+#~ "positional argument for maximum backwards "
+#~ "compatibility."
+#~ msgstr ""
+#~ "Před Pythonem 3.13 nebyl klíčový "
+#~ "parametr ``string`` správně podporován v "
+#~ "závislosti na backendové implementaci "
+#~ "hashovacích funkcí. Pro maximální zpětnou "
+#~ "kompatibilitu upřednostňujte předávání počátečních"
+#~ " dat jako pozičního argumentu."
+
+#~ msgid "Pending removal in Python 3.20"
+#~ msgstr "Čeká na odstranění v Pythonu 3.20"
+
+#~ msgid ""
+#~ "The ``__version__``, ``version`` and "
+#~ "``VERSION`` attributes have been deprecated"
+#~ " in these standard library modules "
+#~ "and will be removed in Python "
+#~ "3.20. Use :py:data:`sys.version_info` instead."
+#~ msgstr ""
+#~ "Atributy ``__version__``, ``version`` a "
+#~ "``VERSION`` jsou v těchto modulech "
+#~ "standardní knihovny zastaralé a budou "
+#~ "odstraněny v Pythonu 3.20. Použijte "
+#~ "místo nich :py:data:`sys.version_info`."
+
+#~ msgid ":mod:`argparse`"
+#~ msgstr ":mod:`argparse`"
+
+#~ msgid ":mod:`csv`"
+#~ msgstr ":mod:`csv`"
+
+#~ msgid ":mod:`ctypes`"
+#~ msgstr ":mod:`ctypes`"
+
+#~ msgid ":mod:`!ctypes.macholib`"
+#~ msgstr ":mod:`!ctypes.macholib`"
+
+#~ msgid ":mod:`decimal` (use :data:`decimal.SPEC_VERSION` instead)"
+#~ msgstr ":mod:`decimal` (použijte místo toho :data:`decimal.SPEC_VERSION`)"
+
+#~ msgid ":mod:`http.server`"
+#~ msgstr ":mod:`http.server`"
+
+#~ msgid ":mod:`imaplib`"
+#~ msgstr ":mod:`imaplib`"
+
+#~ msgid ":mod:`ipaddress`"
+#~ msgstr ":mod:`ipaddress`"
+
+#~ msgid ":mod:`json`"
+#~ msgstr ":mod:`json`"
+
+#~ msgid ":mod:`logging` (``__date__`` also deprecated)"
+#~ msgstr ":mod:`logging` (``__date__`` je také zastaralé)"
+
+#~ msgid ":mod:`optparse`"
+#~ msgstr ":mod:`optparse`"
+
+#~ msgid ":mod:`pickle`"
+#~ msgstr ":mod:`pickle`"
+
+#~ msgid ":mod:`platform`"
+#~ msgstr ":mod:`platform`"
+
+#~ msgid ":mod:`re`"
+#~ msgstr ":mod:`re`"
+
+#~ msgid ":mod:`socketserver`"
+#~ msgstr ":mod:`socketserver`"
+
+#~ msgid ":mod:`tabnanny`"
+#~ msgstr ":mod:`tabnanny`"
+
+#~ msgid ":mod:`tkinter.font`"
+#~ msgstr ":mod:`tkinter.font`"
+
+#~ msgid ":mod:`tkinter.ttk`"
+#~ msgstr ":mod:`tkinter.ttk`"
+
+#~ msgid ":mod:`wsgiref.simple_server`"
+#~ msgstr ":mod:`wsgiref.simple_server`"
+
+#~ msgid ":mod:`xml.etree.ElementTree`"
+#~ msgstr ":mod:`xml.etree.ElementTree`"
+
+#~ msgid ":mod:`!xml.sax.expatreader`"
+#~ msgstr ":mod:`!xml.sax.expatreader`"
+
+#~ msgid ":mod:`xml.sax.handler`"
+#~ msgstr ":mod:`xml.sax.handler`"
+
+#~ msgid ":mod:`zlib`"
+#~ msgstr ":mod:`zlib`"
+
+#~ msgid "(Contributed by Hugo van Kemenade and Stan Ulbrych in :gh:`76007`.)"
+#~ msgstr "(Přispěli Hugo van Kemenade a Stan Ulbrych v :gh:`76007`.)"
+
+#~ msgid ""
+#~ ":c:func:`!_PyObject_CallMethodId`, "
+#~ ":c:func:`!_PyObject_GetAttrId` and "
+#~ ":c:func:`!_PyUnicode_FromId` are deprecated since"
+#~ " 3.15 and will be removed in "
+#~ "3.20. Instead, use "
+#~ ":c:func:`PyUnicode_InternFromString()` and cache the"
+#~ " result in the module state, then "
+#~ "call :c:func:`PyObject_CallMethod` or "
+#~ ":c:func:`PyObject_GetAttr`. (Contributed by Victor"
+#~ " Stinner in :gh:`141049`.)"
+#~ msgstr ""
+#~ ":c:func:`!_PyObject_CallMethodId`, "
+#~ ":c:func:`!_PyObject_GetAttrId` a "
+#~ ":c:func:`!_PyUnicode_FromId` jsou zastaralé od "
+#~ "verze 3.15 a budou odstraněny ve "
+#~ "verzi 3.20. Místo toho použijte "
+#~ ":c:func:`PyUnicode_InternFromString()` a výsledek "
+#~ "uložte do stavu modulu, poté volejte "
+#~ ":c:func:`PyObject_CallMethod` nebo "
+#~ ":c:func:`PyObject_GetAttr`. (Přispěl Victor Stinner"
+#~ " v :gh:`141049`.)"
+
+#~ msgid ""
+#~ "The ``cval`` field in "
+#~ ":c:type:`PyComplexObject` (:gh:`128813`). Use "
+#~ ":c:func:`PyComplex_AsCComplex` and "
+#~ ":c:func:`PyComplex_FromCComplex` to convert a "
+#~ "Python complex number to/from the C "
+#~ ":c:type:`Py_complex` representation."
+#~ msgstr ""
+#~ "Pole ``cval`` v :c:type:`PyComplexObject` "
+#~ "(:gh:`128813`). Použijte :c:func:`PyComplex_AsCComplex`"
+#~ " a :c:func:`PyComplex_FromCComplex` pro převod"
+#~ " komplexního čísla Pythonu na/z C "
+#~ "reprezentace :c:type:`Py_complex`."
+
+#~ msgid "Macros :c:macro:`!Py_MATH_PIl` and :c:macro:`!Py_MATH_El`."
+#~ msgstr "Makra :c:macro:`!Py_MATH_PIl` a :c:macro:`!Py_MATH_El`."
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -75,7 +75,7 @@ msgid ""
 ":class:`SequenceMatcher`."
 msgstr ""
 
-#: ../../library/difflib.rst:55 ../../library/difflib.rst:394
+#: ../../library/difflib.rst:55 ../../library/difflib.rst:386
 msgid "Added the *autojunk* parameter."
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-#: ../../library/difflib.rst:69 ../../library/difflib.rst:504
+#: ../../library/difflib.rst:69 ../../library/difflib.rst:496
 msgid "Meaning"
 msgstr ""
 
@@ -268,7 +268,7 @@ msgid ""
 "specified, the strings default to blanks."
 msgstr ""
 
-#: ../../library/difflib.rst:194 ../../library/difflib.rst:324
+#: ../../library/difflib.rst:194 ../../library/difflib.rst:320
 msgid "See :ref:`difflib-interface` for a more detailed example."
 msgstr ""
 
@@ -371,13 +371,6 @@ msgstr ""
 
 #: ../../library/difflib.rst:300
 msgid ""
-"Set *color* to ``True`` to enable output in color, similar to "
-":program:`git diff --color`. Even if enabled, it can be :ref:`controlled "
-"using environment variables <using-on-controlling-color>`."
-msgstr ""
-
-#: ../../library/difflib.rst:304
-msgid ""
 "The unified diff format normally has a header for filenames and "
 "modification times.  Any or all of these may be specified using strings "
 "for *fromfile*, *tofile*, *fromfiledate*, and *tofiledate*.  The "
@@ -385,11 +378,7 @@ msgid ""
 "specified, the strings default to blanks."
 msgstr ""
 
-#: ../../library/difflib.rst:326
-msgid "Added the *color* parameter."
-msgstr ""
-
-#: ../../library/difflib.rst:332
+#: ../../library/difflib.rst:324
 msgid ""
 "Compare *a* and *b* (lists of bytes objects) using *dfunc*; yield a "
 "sequence of delta lines (also bytes) in the format returned by *dfunc*. "
@@ -397,7 +386,7 @@ msgid ""
 ":func:`context_diff`."
 msgstr ""
 
-#: ../../library/difflib.rst:337
+#: ../../library/difflib.rst:329
 msgid ""
 "Allows you to compare data with unknown or inconsistent encoding. All "
 "inputs except *n* must be bytes objects, not str. Works by losslessly "
@@ -407,7 +396,7 @@ msgid ""
 "receive have the same unknown/inconsistent encodings as *a* and *b*."
 msgstr ""
 
-#: ../../library/difflib.rst:348
+#: ../../library/difflib.rst:340
 msgid ""
 "Return ``True`` for ignorable lines.  The line *line* is ignorable if "
 "*line* is blank or contains a single ``'#'``, otherwise it is not "
@@ -415,34 +404,34 @@ msgid ""
 "in older versions."
 msgstr ""
 
-#: ../../library/difflib.rst:355
+#: ../../library/difflib.rst:347
 msgid ""
 "Return ``True`` for ignorable characters.  The character *ch* is "
 "ignorable if *ch* is a space or tab, otherwise it is not ignorable.  Used"
 " as a default for parameter *charjunk* in :func:`ndiff`."
 msgstr ""
 
-#: ../../library/difflib.rst:362
+#: ../../library/difflib.rst:354
 msgid ""
 "`Pattern Matching: The Gestalt Approach "
 "<https://jacobfilipp.com/DrDobbs/articles/DDJ/1988/8807/8807c/8807c.htm>`_"
 msgstr ""
 
-#: ../../library/difflib.rst:363
+#: ../../library/difflib.rst:355
 msgid ""
 "Discussion of a similar algorithm by John W. Ratcliff and D. E. Metzener."
 " This was published in Dr. Dobb's Journal in July, 1988."
 msgstr ""
 
-#: ../../library/difflib.rst:370
+#: ../../library/difflib.rst:362
 msgid "SequenceMatcher Objects"
 msgstr ""
 
-#: ../../library/difflib.rst:372
+#: ../../library/difflib.rst:364
 msgid "The :class:`SequenceMatcher` class has this constructor:"
 msgstr ""
 
-#: ../../library/difflib.rst:377
+#: ../../library/difflib.rst:369
 msgid ""
 "Optional argument *isjunk* must be ``None`` (the default) or a one-"
 "argument function that takes a sequence element and returns true if and "
@@ -451,30 +440,30 @@ msgid ""
 "words, no elements are ignored. For example, pass::"
 msgstr ""
 
-#: ../../library/difflib.rst:383
+#: ../../library/difflib.rst:375
 msgid "lambda x: x in \" \\t\""
 msgstr ""
 
-#: ../../library/difflib.rst:385
+#: ../../library/difflib.rst:377
 msgid ""
 "if you're comparing lines as sequences of characters, and don't want to "
 "synch up on blanks or hard tabs."
 msgstr ""
 
-#: ../../library/difflib.rst:388
+#: ../../library/difflib.rst:380
 msgid ""
 "The optional arguments *a* and *b* are sequences to be compared; both "
 "default to empty strings.  The elements of both sequences must be "
 ":term:`hashable`."
 msgstr ""
 
-#: ../../library/difflib.rst:391
+#: ../../library/difflib.rst:383
 msgid ""
 "The optional argument *autojunk* can be used to disable the automatic "
 "junk heuristic."
 msgstr ""
 
-#: ../../library/difflib.rst:397
+#: ../../library/difflib.rst:389
 msgid ""
 "SequenceMatcher objects get three data attributes: *bjunk* is the set of "
 "elements of *b* for which *isjunk* is ``True``; *bpopular* is the set of "
@@ -484,19 +473,19 @@ msgid ""
 "reset with :meth:`set_seqs` or :meth:`set_seq2`."
 msgstr ""
 
-#: ../../library/difflib.rst:404
+#: ../../library/difflib.rst:396
 msgid "The *bjunk* and *bpopular* attributes."
 msgstr ""
 
-#: ../../library/difflib.rst:407
+#: ../../library/difflib.rst:399
 msgid ":class:`SequenceMatcher` objects have the following methods:"
 msgstr ""
 
-#: ../../library/difflib.rst:411
+#: ../../library/difflib.rst:403
 msgid "Set the two sequences to be compared."
 msgstr ""
 
-#: ../../library/difflib.rst:413
+#: ../../library/difflib.rst:405
 msgid ""
 ":class:`SequenceMatcher` computes and caches detailed information about "
 "the second sequence, so if you want to compare one sequence against many "
@@ -505,23 +494,23 @@ msgid ""
 "sequences."
 msgstr ""
 
-#: ../../library/difflib.rst:421
+#: ../../library/difflib.rst:413
 msgid ""
 "Set the first sequence to be compared.  The second sequence to be "
 "compared is not changed."
 msgstr ""
 
-#: ../../library/difflib.rst:427
+#: ../../library/difflib.rst:419
 msgid ""
 "Set the second sequence to be compared.  The first sequence to be "
 "compared is not changed."
 msgstr ""
 
-#: ../../library/difflib.rst:433
+#: ../../library/difflib.rst:425
 msgid "Find longest matching block in ``a[alo:ahi]`` and ``b[blo:bhi]``."
 msgstr ""
 
-#: ../../library/difflib.rst:435
+#: ../../library/difflib.rst:427
 msgid ""
 "If *isjunk* was omitted or ``None``, :meth:`find_longest_match` returns "
 "``(i, j, k)`` such that ``a[i:i+k]`` is equal to ``b[j:j+k]``, where "
@@ -533,7 +522,7 @@ msgid ""
 "*a*, return the one that starts earliest in *b*."
 msgstr ""
 
-#: ../../library/difflib.rst:448
+#: ../../library/difflib.rst:440
 msgid ""
 "If *isjunk* was provided, first the longest matching block is determined "
 "as above, but with the additional restriction that no junk element "
@@ -543,7 +532,7 @@ msgid ""
 "interesting match."
 msgstr ""
 
-#: ../../library/difflib.rst:455
+#: ../../library/difflib.rst:447
 msgid ""
 "Here's the same example as before, but considering blanks to be junk. "
 "That prevents ``' abcd'`` from matching the ``' abcd'`` at the tail end "
@@ -551,26 +540,26 @@ msgid ""
 "and matches the leftmost ``'abcd'`` in the second sequence:"
 msgstr ""
 
-#: ../../library/difflib.rst:464
+#: ../../library/difflib.rst:456
 msgid "If no blocks match, this returns ``(alo, blo, 0)``."
 msgstr ""
 
-#: ../../library/difflib.rst:466
+#: ../../library/difflib.rst:458
 msgid "This method returns a :term:`named tuple` ``Match(a, b, size)``."
 msgstr ""
 
-#: ../../library/difflib.rst:468
+#: ../../library/difflib.rst:460
 msgid "Added default arguments."
 msgstr ""
 
-#: ../../library/difflib.rst:474
+#: ../../library/difflib.rst:466
 msgid ""
 "Return list of triples describing non-overlapping matching subsequences. "
 "Each triple is of the form ``(i, j, n)``, and means that ``a[i:i+n] == "
 "b[j:j+n]``.  The triples are monotonically increasing in *i* and *j*."
 msgstr ""
 
-#: ../../library/difflib.rst:479
+#: ../../library/difflib.rst:471
 msgid ""
 "The last triple is a dummy, and has the value ``(len(a), len(b), 0)``.  "
 "It is the only triple with ``n == 0``.  If ``(i, j, n)`` and ``(i', j', "
@@ -579,7 +568,7 @@ msgid ""
 "adjacent triples always describe non-adjacent equal blocks."
 msgstr ""
 
-#: ../../library/difflib.rst:487
+#: ../../library/difflib.rst:479
 msgid ""
 ">>> s = SequenceMatcher(None, \"abxcd\", \"abcd\")\n"
 ">>> s.get_matching_blocks()\n"
@@ -587,7 +576,7 @@ msgid ""
 "size=0)]"
 msgstr ""
 
-#: ../../library/difflib.rst:496
+#: ../../library/difflib.rst:488
 msgid ""
 "Return list of 5-tuples describing how to turn *a* into *b*. Each tuple "
 "is of the form ``(tag, i1, i2, j1, j2)``.  The first tuple has ``i1 == j1"
@@ -595,53 +584,53 @@ msgid ""
 "preceding tuple, and, likewise, *j1* equal to the previous *j2*."
 msgstr ""
 
-#: ../../library/difflib.rst:501
+#: ../../library/difflib.rst:493
 msgid "The *tag* values are strings, with these meanings:"
 msgstr ""
 
-#: ../../library/difflib.rst:504
+#: ../../library/difflib.rst:496
 msgid "Value"
 msgstr ""
 
-#: ../../library/difflib.rst:506
+#: ../../library/difflib.rst:498
 msgid "``'replace'``"
 msgstr ""
 
-#: ../../library/difflib.rst:506
+#: ../../library/difflib.rst:498
 msgid "``a[i1:i2]`` should be replaced by ``b[j1:j2]``."
 msgstr ""
 
-#: ../../library/difflib.rst:509
+#: ../../library/difflib.rst:501
 msgid "``'delete'``"
 msgstr ""
 
-#: ../../library/difflib.rst:509
+#: ../../library/difflib.rst:501
 msgid "``a[i1:i2]`` should be deleted.  Note that ``j1 == j2`` in this case."
 msgstr ""
 
-#: ../../library/difflib.rst:512
+#: ../../library/difflib.rst:504
 msgid "``'insert'``"
 msgstr ""
 
-#: ../../library/difflib.rst:512
+#: ../../library/difflib.rst:504
 msgid ""
 "``b[j1:j2]`` should be inserted at ``a[i1:i1]``. Note that ``i1 == i2`` "
 "in this case."
 msgstr ""
 
-#: ../../library/difflib.rst:516
+#: ../../library/difflib.rst:508
 msgid "``'equal'``"
 msgstr ""
 
-#: ../../library/difflib.rst:516
+#: ../../library/difflib.rst:508
 msgid "``a[i1:i2] == b[j1:j2]`` (the sub-sequences are equal)."
 msgstr ""
 
-#: ../../library/difflib.rst:520
+#: ../../library/difflib.rst:512
 msgid "For example::"
 msgstr ""
 
-#: ../../library/difflib.rst:522
+#: ../../library/difflib.rst:514
 #, python-brace-format
 msgid ""
 ">>> a = \"qabxcd\"\n"
@@ -657,35 +646,35 @@ msgid ""
 "insert    a[6:6] --> b[5:6]       '' --> 'f'"
 msgstr ""
 
-#: ../../library/difflib.rst:537
+#: ../../library/difflib.rst:529
 msgid "Return a :term:`generator` of groups with up to *n* lines of context."
 msgstr ""
 
-#: ../../library/difflib.rst:539
+#: ../../library/difflib.rst:531
 msgid ""
 "Starting with the groups returned by :meth:`get_opcodes`, this method "
 "splits out smaller change clusters and eliminates intervening ranges "
 "which have no changes."
 msgstr ""
 
-#: ../../library/difflib.rst:543
+#: ../../library/difflib.rst:535
 msgid "The groups are returned in the same format as :meth:`get_opcodes`."
 msgstr ""
 
-#: ../../library/difflib.rst:548
+#: ../../library/difflib.rst:540
 msgid ""
 "Return a measure of the sequences' similarity as a float in the range [0,"
 " 1]."
 msgstr ""
 
-#: ../../library/difflib.rst:551
+#: ../../library/difflib.rst:543
 msgid ""
 "Where T is the total number of elements in both sequences, and M is the "
 "number of matches, this is 2.0\\*M / T. Note that this is ``1.0`` if the "
 "sequences are identical, and ``0.0`` if they have nothing in common."
 msgstr ""
 
-#: ../../library/difflib.rst:555
+#: ../../library/difflib.rst:547
 msgid ""
 "This is expensive to compute if :meth:`get_matching_blocks` or "
 ":meth:`get_opcodes` hasn't already been called, in which case you may "
@@ -693,13 +682,13 @@ msgid ""
 "an upper bound."
 msgstr ""
 
-#: ../../library/difflib.rst:562
+#: ../../library/difflib.rst:554
 msgid ""
 "Caution: The result of a :meth:`ratio` call may depend on the order of "
 "the arguments. For instance::"
 msgstr ""
 
-#: ../../library/difflib.rst:565
+#: ../../library/difflib.rst:557
 msgid ""
 ">>> SequenceMatcher(None, 'tide', 'diet').ratio()\n"
 "0.25\n"
@@ -707,15 +696,15 @@ msgid ""
 "0.5"
 msgstr ""
 
-#: ../../library/difflib.rst:573
+#: ../../library/difflib.rst:565
 msgid "Return an upper bound on :meth:`ratio` relatively quickly."
 msgstr ""
 
-#: ../../library/difflib.rst:578
+#: ../../library/difflib.rst:570
 msgid "Return an upper bound on :meth:`ratio` very quickly."
 msgstr ""
 
-#: ../../library/difflib.rst:581
+#: ../../library/difflib.rst:573
 msgid ""
 "The three methods that return the ratio of matching to total characters "
 "can give different results due to differing levels of approximation, "
@@ -724,15 +713,15 @@ msgid ""
 " :meth:`~SequenceMatcher.ratio`:"
 msgstr ""
 
-#: ../../library/difflib.rst:598
+#: ../../library/difflib.rst:590
 msgid "SequenceMatcher Examples"
 msgstr ""
 
-#: ../../library/difflib.rst:600
+#: ../../library/difflib.rst:592
 msgid "This example compares two strings, considering blanks to be \"junk\":"
 msgstr ""
 
-#: ../../library/difflib.rst:606
+#: ../../library/difflib.rst:598
 msgid ""
 ":meth:`~SequenceMatcher.ratio` returns a float in [0, 1], measuring the "
 "similarity of the sequences.  As a rule of thumb, a "
@@ -740,13 +729,13 @@ msgid ""
 "close matches:"
 msgstr ""
 
-#: ../../library/difflib.rst:613
+#: ../../library/difflib.rst:605
 msgid ""
 "If you're only interested in where the sequences match, "
 ":meth:`~SequenceMatcher.get_matching_blocks` is handy:"
 msgstr ""
 
-#: ../../library/difflib.rst:622
+#: ../../library/difflib.rst:614
 msgid ""
 "Note that the last tuple returned by "
 ":meth:`~SequenceMatcher.get_matching_blocks` is always a dummy, "
@@ -754,31 +743,31 @@ msgid ""
 "tuple element (number of elements matched) is ``0``."
 msgstr ""
 
-#: ../../library/difflib.rst:626
+#: ../../library/difflib.rst:618
 msgid ""
 "If you want to know how to change the first sequence into the second, use"
 " :meth:`~SequenceMatcher.get_opcodes`:"
 msgstr ""
 
-#: ../../library/difflib.rst:637
+#: ../../library/difflib.rst:629
 msgid ""
 "The :func:`get_close_matches` function in this module which shows how "
 "simple code building on :class:`SequenceMatcher` can be used to do useful"
 " work."
 msgstr ""
 
-#: ../../library/difflib.rst:641
+#: ../../library/difflib.rst:633
 msgid ""
 "`Simple version control recipe "
 "<https://code.activestate.com/recipes/576729-simple-version-control/>`_ "
 "for a small application built with :class:`SequenceMatcher`."
 msgstr ""
 
-#: ../../library/difflib.rst:649
+#: ../../library/difflib.rst:641
 msgid "Differ Objects"
 msgstr ""
 
-#: ../../library/difflib.rst:651
+#: ../../library/difflib.rst:643
 msgid ""
 "Note that :class:`Differ`\\ -generated deltas make no claim to be "
 "**minimal** diffs. To the contrary, minimal diffs are often counter-"
@@ -788,31 +777,31 @@ msgid ""
 "longer diff."
 msgstr ""
 
-#: ../../library/difflib.rst:657
+#: ../../library/difflib.rst:649
 msgid "The :class:`Differ` class has this constructor:"
 msgstr ""
 
-#: ../../library/difflib.rst:663
+#: ../../library/difflib.rst:655
 msgid ""
 "Optional keyword parameters *linejunk* and *charjunk* are for filter "
 "functions (or ``None``):"
 msgstr ""
 
-#: ../../library/difflib.rst:666
+#: ../../library/difflib.rst:658
 msgid ""
 "*linejunk*: A function that accepts a single string argument, and returns"
 " true if the string is junk.  The default is ``None``, meaning that no "
 "line is considered junk."
 msgstr ""
 
-#: ../../library/difflib.rst:670
+#: ../../library/difflib.rst:662
 msgid ""
 "*charjunk*: A function that accepts a single character argument (a string"
 " of length 1), and returns true if the character is junk. The default is "
 "``None``, meaning that no character is considered junk."
 msgstr ""
 
-#: ../../library/difflib.rst:674
+#: ../../library/difflib.rst:666
 msgid ""
 "These junk-filtering functions speed up matching to find differences and "
 "do not cause any differing lines or characters to be ignored.  Read the "
@@ -820,17 +809,17 @@ msgid ""
 "*isjunk* parameter for an explanation."
 msgstr ""
 
-#: ../../library/difflib.rst:680
+#: ../../library/difflib.rst:672
 msgid ":class:`Differ` objects are used (deltas generated) via a single method:"
 msgstr ""
 
-#: ../../library/difflib.rst:685
+#: ../../library/difflib.rst:677
 msgid ""
 "Compare two sequences of lines, and generate the delta (a sequence of "
 "lines)."
 msgstr ""
 
-#: ../../library/difflib.rst:687
+#: ../../library/difflib.rst:679
 msgid ""
 "Each sequence must contain individual single-line strings ending with "
 "newlines.  Such sequences can be obtained from the "
@@ -840,11 +829,11 @@ msgid ""
 " object."
 msgstr ""
 
-#: ../../library/difflib.rst:698
+#: ../../library/difflib.rst:690
 msgid "Differ Example"
 msgstr ""
 
-#: ../../library/difflib.rst:700
+#: ../../library/difflib.rst:692
 msgid ""
 "This example compares two texts. First we set up the texts, sequences of "
 "individual single-line strings ending with newlines (such sequences can "
@@ -852,38 +841,38 @@ msgid ""
 "like objects):"
 msgstr ""
 
-#: ../../library/difflib.rst:719
+#: ../../library/difflib.rst:711
 msgid "Next we instantiate a Differ object:"
 msgstr ""
 
-#: ../../library/difflib.rst:723
+#: ../../library/difflib.rst:715
 msgid ""
 "Note that when instantiating a :class:`Differ` object we may pass "
 "functions to filter out line and character \"junk.\"  See the "
 ":meth:`Differ` constructor for details."
 msgstr ""
 
-#: ../../library/difflib.rst:727
+#: ../../library/difflib.rst:719
 msgid "Finally, we compare the two:"
 msgstr ""
 
-#: ../../library/difflib.rst:731
+#: ../../library/difflib.rst:723
 msgid "``result`` is a list of strings, so let's pretty-print it:"
 msgstr ""
 
-#: ../../library/difflib.rst:746
+#: ../../library/difflib.rst:738
 msgid "As a single multi-line string it looks like this:"
 msgstr ""
 
-#: ../../library/difflib.rst:765
+#: ../../library/difflib.rst:757
 msgid "A command-line interface to difflib"
 msgstr ""
 
-#: ../../library/difflib.rst:767
+#: ../../library/difflib.rst:759
 msgid "This example shows how to use difflib to create a ``diff``-like utility."
 msgstr ""
 
-#: ../../library/difflib.rst:769
+#: ../../library/difflib.rst:761
 msgid ""
 "\"\"\" Command line interface to difflib.py providing diffs in four "
 "formats:\n"
@@ -951,15 +940,15 @@ msgid ""
 "    main()\n"
 msgstr ""
 
-#: ../../library/difflib.rst:772
+#: ../../library/difflib.rst:764
 msgid "ndiff example"
 msgstr ""
 
-#: ../../library/difflib.rst:774
+#: ../../library/difflib.rst:766
 msgid "This example shows how to use :func:`difflib.ndiff`."
 msgstr ""
 
-#: ../../library/difflib.rst:776
+#: ../../library/difflib.rst:768
 msgid ""
 "\"\"\"ndiff [-q] file1 file2\n"
 "    or\n"
@@ -1078,4 +1067,16 @@ msgid ""
 "if __name__ == '__main__':\n"
 "    main(sys.argv[1:])\n"
 msgstr ""
+
+#~ msgid ""
+#~ "Set *color* to ``True`` to enable "
+#~ "output in color, similar to "
+#~ ":program:`git diff --color`. Even if "
+#~ "enabled, it can be :ref:`controlled "
+#~ "using environment variables <using-on-"
+#~ "controlling-color>`."
+#~ msgstr ""
+
+#~ msgid "Added the *color* parameter."
+#~ msgstr ""
 

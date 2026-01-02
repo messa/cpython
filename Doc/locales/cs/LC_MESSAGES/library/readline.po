@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
@@ -290,18 +290,11 @@ msgid ""
 "compiled for a version of the library that supports it."
 msgstr ""
 
-#: ../../library/readline.rst:251
-msgid ""
-"Get the current pre-input hook function, or ``None`` if no pre-input hook"
-" function has been set.  This function only exists if Python was compiled"
-" for a version of the library that supports it."
-msgstr ""
-
-#: ../../library/readline.rst:261
+#: ../../library/readline.rst:252
 msgid "Completion"
 msgstr ""
 
-#: ../../library/readline.rst:263
+#: ../../library/readline.rst:254
 msgid ""
 "The following functions relate to implementing a custom word completion "
 "function.  This is typically operated by the Tab key, and can suggest and"
@@ -312,7 +305,7 @@ msgid ""
 "set."
 msgstr ""
 
-#: ../../library/readline.rst:273
+#: ../../library/readline.rst:264
 msgid ""
 "Set or remove the completer function.  If *function* is specified, it "
 "will be used as the new completer function; if omitted or ``None``, any "
@@ -322,7 +315,7 @@ msgid ""
 "next possible completion starting with *text*."
 msgstr ""
 
-#: ../../library/readline.rst:280
+#: ../../library/readline.rst:271
 msgid ""
 "The installed completer function is invoked by the *entry_func* callback "
 "passed to :c:func:`!rl_completion_matches` in the underlying library. The"
@@ -331,20 +324,20 @@ msgid ""
 "library."
 msgstr ""
 
-#: ../../library/readline.rst:289
+#: ../../library/readline.rst:280
 msgid ""
 "Get the completer function, or ``None`` if no completer function has been"
 " set."
 msgstr ""
 
-#: ../../library/readline.rst:294
+#: ../../library/readline.rst:285
 msgid ""
 "Get the type of completion being attempted.  This returns the "
 ":c:data:`!rl_completion_type` variable in the underlying library as an "
 "integer."
 msgstr ""
 
-#: ../../library/readline.rst:302
+#: ../../library/readline.rst:293
 msgid ""
 "Get the beginning or ending index of the completion scope. These indexes "
 "are the *start* and *end* arguments passed to the "
@@ -354,7 +347,7 @@ msgid ""
 "to behave differently than libreadline."
 msgstr ""
 
-#: ../../library/readline.rst:313
+#: ../../library/readline.rst:304
 msgid ""
 "Set or get the word delimiters for completion.  These determine the start"
 " of the word to be considered for completion (the completion scope). "
@@ -362,7 +355,7 @@ msgid ""
 "variable in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:321
+#: ../../library/readline.rst:312
 msgid ""
 "Set or remove the completion display function.  If *function* is "
 "specified, it will be used as the new completion display function; if "
@@ -374,11 +367,11 @@ msgid ""
 "time matches need to be displayed."
 msgstr ""
 
-#: ../../library/readline.rst:334
+#: ../../library/readline.rst:325
 msgid "Example"
 msgstr ""
 
-#: ../../library/readline.rst:336
+#: ../../library/readline.rst:327
 msgid ""
 "The following example demonstrates how to use the :mod:`readline` "
 "module's history reading and writing functions to automatically load and "
@@ -388,7 +381,7 @@ msgid ""
 " ::"
 msgstr ""
 
-#: ../../library/readline.rst:342
+#: ../../library/readline.rst:333
 msgid ""
 "import atexit\n"
 "import os\n"
@@ -405,20 +398,20 @@ msgid ""
 "atexit.register(readline.write_history_file, histfile)"
 msgstr ""
 
-#: ../../library/readline.rst:356
+#: ../../library/readline.rst:347
 msgid ""
 "This code is actually automatically run when Python is run in "
 ":ref:`interactive mode <tut-interactive>` (see :ref:`rlcompleter-"
 "config`)."
 msgstr ""
 
-#: ../../library/readline.rst:359
+#: ../../library/readline.rst:350
 msgid ""
 "The following example achieves the same goal but supports concurrent "
 "interactive sessions, by only appending the new history. ::"
 msgstr ""
 
-#: ../../library/readline.rst:362
+#: ../../library/readline.rst:353
 msgid ""
 "import atexit\n"
 "import os\n"
@@ -439,13 +432,13 @@ msgid ""
 "atexit.register(save, h_len, histfile)"
 msgstr ""
 
-#: ../../library/readline.rst:380
+#: ../../library/readline.rst:371
 msgid ""
 "The following example extends the :class:`code.InteractiveConsole` class "
 "to support history save/restore. ::"
 msgstr ""
 
-#: ../../library/readline.rst:383
+#: ../../library/readline.rst:374
 msgid ""
 "import atexit\n"
 "import code\n"
@@ -471,4 +464,13 @@ msgid ""
 "        readline.set_history_length(1000)\n"
 "        readline.write_history_file(histfile)"
 msgstr ""
+
+#~ msgid ""
+#~ "Get the current pre-input hook "
+#~ "function, or ``None`` if no pre-"
+#~ "input hook function has been set.  "
+#~ "This function only exists if Python "
+#~ "was compiled for a version of the"
+#~ " library that supports it."
+#~ msgstr ""
 
