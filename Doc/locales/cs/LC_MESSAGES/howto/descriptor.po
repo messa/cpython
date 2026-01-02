@@ -169,6 +169,10 @@ msgid ""
 "descriptor instance, recognized by its ``__get__`` method. Calling that "
 "method returns ``10``."
 msgstr ""
+"Při vyhledávání atributu ``a.x`` najde tečkový operátor ``'x': 5`` ve "
+"slovníku třídy. Při vyhledávání ``a.y`` najde tečkový operátor instanci "
+"deskriptoru, rozpoznanou podle jeho metody ``__get__``. Volání této "
+"metody vrací ``10``."
 
 #: ../../howto/descriptor.rst:78
 msgid ""
@@ -176,6 +180,8 @@ msgid ""
 "or the instance dictionary.  Instead, the value ``10`` is computed on "
 "demand."
 msgstr ""
+"Všimněte si, že hodnota ``10`` není uložena ani ve slovníku třídy, ani "
+"ve slovníku instance. Místo toho je hodnota ``10`` vypočítána na vyžádání."
 
 #: ../../howto/descriptor.rst:81
 msgid ""
@@ -183,20 +189,23 @@ msgid ""
 "useful. For retrieving constants, normal attribute lookup would be "
 "better."
 msgstr ""
+"Tento příklad ukazuje, jak jednoduchý deskriptor funguje, ale není příliš "
+"užitečný. Pro získávání konstant by bylo lepší běžné vyhledávání atributů."
 
 #: ../../howto/descriptor.rst:84
 msgid "In the next section, we'll create something more useful, a dynamic lookup."
-msgstr ""
+msgstr "V další části vytvoříme něco užitečnějšího – dynamické vyhledávání."
 
 #: ../../howto/descriptor.rst:88
 msgid "Dynamic lookups"
-msgstr ""
+msgstr "Dynamické vyhledávání"
 
 #: ../../howto/descriptor.rst:90
 msgid ""
 "Interesting descriptors typically run computations instead of returning "
 "constants:"
 msgstr ""
+"Zajímavé deskriptory typicky provádějí výpočty místo vracení konstant:"
 
 #: ../../howto/descriptor.rst:93
 msgid ""
@@ -220,6 +229,8 @@ msgid ""
 "An interactive session shows that the lookup is dynamic — it computes "
 "different, updated answers each time::"
 msgstr ""
+"Interaktivní relace ukazuje, že vyhledávání je dynamické – pokaždé "
+"vypočítá jiné, aktualizované odpovědi::"
 
 #: ../../howto/descriptor.rst:112
 msgid ""
@@ -246,10 +257,16 @@ msgid ""
 "*obj* parameter that lets the :meth:`~object.__get__` method learn the "
 "target directory.  The *objtype* parameter is the class *Directory*."
 msgstr ""
+"Kromě ukázky toho, jak mohou deskriptory provádět výpočty, tento příklad "
+"také odhaluje účel parametrů metody :meth:`~object.__get__`. Parametr "
+"*self* je *size*, instance třídy *DirectorySize*. Parametr *obj* je buď "
+"*g*, nebo *s*, instance třídy *Directory*. Právě parametr *obj* umožňuje "
+"metodě :meth:`~object.__get__` zjistit cílový adresář. Parametr *objtype* "
+"je třída *Directory*."
 
 #: ../../howto/descriptor.rst:131
 msgid "Managed attributes"
-msgstr ""
+msgstr "Spravované atributy"
 
 #: ../../howto/descriptor.rst:133
 msgid ""
@@ -260,6 +277,11 @@ msgid ""
 ":meth:`~object.__set__` methods are triggered when the public attribute "
 "is accessed."
 msgstr ""
+"Populárním využitím deskriptorů je správa přístupu k datům instance. "
+"Deskriptor je přiřazen k veřejnému atributu ve slovníku třídy, zatímco "
+"skutečná data jsou uložena jako soukromý atribut ve slovníku instance. "
+"Metody :meth:`~object.__get__` a :meth:`~object.__set__` deskriptoru jsou "
+"spuštěny při přístupu k veřejnému atributu."
 
 #: ../../howto/descriptor.rst:139
 msgid ""
@@ -267,6 +289,9 @@ msgid ""
 " private attribute.  When the public attribute is accessed, the "
 "descriptor logs the lookup or update:"
 msgstr ""
+"V následujícím příkladu je *age* veřejný atribut a *_age* je soukromý "
+"atribut. Při přístupu k veřejnému atributu deskriptor zaznamenává "
+"vyhledávání nebo aktualizaci:"
 
 #: ../../howto/descriptor.rst:143
 #, python-format
@@ -304,6 +329,8 @@ msgid ""
 "An interactive session shows that all access to the managed attribute "
 "*age* is logged, but that the regular attribute *name* is not logged:"
 msgstr ""
+"Interaktivní relace ukazuje, že veškerý přístup ke spravovanému atributu "
+"*age* je zaznamenáván, ale běžný atribut *name* zaznamenáván není:"
 
 #: ../../howto/descriptor.rst:181
 #, python-brace-format
@@ -344,16 +371,22 @@ msgid ""
 "can only have one logged attribute and that its name is unchangeable.  In"
 " the next example, we'll fix that problem."
 msgstr ""
+"Jedním z hlavních problémů tohoto příkladu je, že soukromý název *_age* "
+"je napevno zapsán ve třídě *LoggedAgeAccess*. To znamená, že každá "
+"instance může mít pouze jeden zaznamenávaný atribut a jeho název nelze "
+"změnit. V dalším příkladu tento problém vyřešíme."
 
 #: ../../howto/descriptor.rst:213
 msgid "Customized names"
-msgstr ""
+msgstr "Přizpůsobené názvy"
 
 #: ../../howto/descriptor.rst:215
 msgid ""
 "When a class uses descriptors, it can inform each descriptor about which "
 "variable name was used."
 msgstr ""
+"Když třída používá deskriptory, může každému deskriptoru sdělit, jaký "
+"název proměnné byl použit."
 
 #: ../../howto/descriptor.rst:218
 msgid ""
@@ -363,6 +396,11 @@ msgid ""
 "field names can be recorded, giving each descriptor its own *public_name*"
 " and *private_name*:"
 msgstr ""
+"V tomto příkladu má třída :class:`!Person` dvě instance deskriptorů, "
+"*name* a *age*. Když je třída :class:`!Person` definována, zavolá "
+":meth:`~object.__set_name__` v *LoggedAccess*, aby mohly být zaznamenány "
+"názvy polí, čímž každý deskriptor získá svůj vlastní *public_name* "
+"a *private_name*:"
 
 #: ../../howto/descriptor.rst:223
 #, python-format
@@ -406,6 +444,9 @@ msgid ""
 "Here we call :func:`vars` to look up the descriptor without triggering "
 "it:"
 msgstr ""
+"Interaktivní relace ukazuje, že třída :class:`!Person` zavolala "
+":meth:`~object.__set_name__`, aby byly zaznamenány názvy polí. Zde "
+"voláme :func:`vars`, abychom vyhledali deskriptor bez jeho aktivace:"
 
 #: ../../howto/descriptor.rst:260
 #, python-brace-format
@@ -418,7 +459,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:267
 msgid "The new class now logs access to both *name* and *age*:"
-msgstr ""
+msgstr "Nová třída nyní zaznamenává přístup k oběma atributům *name* a *age*:"
 
 #: ../../howto/descriptor.rst:275
 msgid ""
@@ -432,7 +473,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:284
 msgid "The two *Person* instances contain only the private names:"
-msgstr ""
+msgstr "Obě instance třídy *Person* obsahují pouze soukromé názvy:"
 
 #: ../../howto/descriptor.rst:286
 #, python-brace-format
@@ -445,7 +486,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:295
 msgid "Closing thoughts"
-msgstr ""
+msgstr "Závěrečné myšlenky"
 
 #: ../../howto/descriptor.rst:297
 msgid ""
@@ -453,6 +494,9 @@ msgid ""
 ":meth:`~object.__get__`, :meth:`~object.__set__`, or "
 ":meth:`~object.__delete__`."
 msgstr ""
+":term:`Deskriptor <descriptor>` je název pro jakýkoli objekt, který "
+"definuje :meth:`~object.__get__`, :meth:`~object.__set__` nebo "
+":meth:`~object.__delete__`."
 
 #: ../../howto/descriptor.rst:300
 msgid ""
@@ -462,6 +506,11 @@ msgid ""
 "to.  (This method, if present, is called even if the class is not a "
 "descriptor.)"
 msgstr ""
+"Volitelně mohou mít deskriptory metodu :meth:`~object.__set_name__`. Ta "
+"se používá pouze v případech, kdy deskriptor potřebuje znát buď třídu, ve "
+"které byl vytvořen, nebo název proměnné třídy, ke které byl přiřazen. "
+"(Tato metoda, pokud existuje, je volána i v případě, že třída není "
+"deskriptorem.)"
 
 #: ../../howto/descriptor.rst:305
 msgid ""
@@ -470,12 +519,18 @@ msgid ""
 "``vars(some_class)[descriptor_name]``, the descriptor instance is "
 "returned without invoking it."
 msgstr ""
+"Deskriptory jsou vyvolávány tečkovým operátorem během vyhledávání "
+"atributů. Pokud je deskriptor přístupný nepřímo pomocí "
+"``vars(some_class)[descriptor_name]``, je vrácena instance deskriptoru "
+"bez jeho vyvolání."
 
 #: ../../howto/descriptor.rst:309
 msgid ""
 "Descriptors only work when used as class variables.  When put in "
 "instances, they have no effect."
 msgstr ""
+"Deskriptory fungují pouze při použití jako proměnné třídy. Při umístění "
+"do instancí nemají žádný efekt."
 
 #: ../../howto/descriptor.rst:312
 msgid ""
@@ -483,6 +538,9 @@ msgid ""
 " stored in class variables to control what happens during attribute "
 "lookup."
 msgstr ""
+"Hlavní motivací pro deskriptory je poskytnout háček umožňující objektům "
+"uloženým v proměnných třídy kontrolovat, co se děje během vyhledávání "
+"atributů."
 
 #: ../../howto/descriptor.rst:315
 msgid ""
@@ -490,6 +548,9 @@ msgid ""
 "Descriptors invert that relationship and allow the data being looked-up "
 "to have a say in the matter."
 msgstr ""
+"Tradičně volající třída kontroluje, co se děje během vyhledávání. "
+"Deskriptory tento vztah obracejí a umožňují vyhledávaným datům mít slovo "
+"v této věci."
 
 #: ../../howto/descriptor.rst:319
 msgid ""
@@ -498,20 +559,26 @@ msgid ""
 ":func:`staticmethod`, :func:`property`, and "
 ":func:`functools.cached_property` are all implemented as descriptors."
 msgstr ""
+"Deskriptory se používají v celém jazyce. Takto se funkce mění na vázané "
+"metody. Běžné nástroje jako :func:`classmethod`, :func:`staticmethod`, "
+":func:`property` a :func:`functools.cached_property` jsou všechny "
+"implementovány jako deskriptory."
 
 #: ../../howto/descriptor.rst:326
 msgid "Complete Practical Example"
-msgstr ""
+msgstr "Kompletní praktický příklad"
 
 #: ../../howto/descriptor.rst:328
 msgid ""
 "In this example, we create a practical and powerful tool for locating "
 "notoriously hard to find data corruption bugs."
 msgstr ""
+"V tomto příkladu vytvoříme praktický a výkonný nástroj pro lokalizaci "
+"notoricky těžko odhalitelných chyb poškození dat."
 
 #: ../../howto/descriptor.rst:333
 msgid "Validator class"
-msgstr ""
+msgstr "Třída Validator"
 
 #: ../../howto/descriptor.rst:335
 msgid ""
@@ -520,12 +587,18 @@ msgid ""
 "range restrictions.  If those restrictions aren't met, it raises an "
 "exception to prevent data corruption at its source."
 msgstr ""
+"Validátor je deskriptor pro správu přístupu k atributům. Před uložením "
+"jakýchkoli dat ověřuje, že nová hodnota splňuje různá typová a rozsahová "
+"omezení. Pokud tato omezení nejsou splněna, vyvolá výjimku, aby zabránil "
+"poškození dat u zdroje."
 
 #: ../../howto/descriptor.rst:340
 msgid ""
 "This :class:`!Validator` class is both an :term:`abstract base class` and"
 " a managed attribute descriptor:"
 msgstr ""
+"Tato třída :class:`!Validator` je jak :term:`abstraktní bázovou třídou "
+"<abstract base class>`, tak deskriptorem spravovaných atributů:"
 
 #: ../../howto/descriptor.rst:343
 msgid ""
@@ -553,20 +626,23 @@ msgid ""
 "Custom validators need to inherit from :class:`!Validator` and must "
 "supply a :meth:`!validate` method to test various restrictions as needed."
 msgstr ""
+"Vlastní validátory musí dědit z :class:`!Validator` a musí poskytovat "
+"metodu :meth:`!validate` pro testování různých omezení podle potřeby."
 
 #: ../../howto/descriptor.rst:368
 msgid "Custom validators"
-msgstr ""
+msgstr "Vlastní validátory"
 
 #: ../../howto/descriptor.rst:370
 msgid "Here are three practical data validation utilities:"
-msgstr ""
+msgstr "Zde jsou tři praktické nástroje pro validaci dat:"
 
 #: ../../howto/descriptor.rst:372
 msgid ""
 ":class:`!OneOf` verifies that a value is one of a restricted set of "
 "options."
 msgstr ""
+":class:`!OneOf` ověřuje, že hodnota je jednou z omezeného souboru možností."
 
 #: ../../howto/descriptor.rst:374
 msgid ""
@@ -574,6 +650,9 @@ msgid ""
 ":class:`float`.  Optionally, it verifies that a value is between a given "
 "minimum or maximum."
 msgstr ""
+":class:`!Number` ověřuje, že hodnota je buď :class:`int`, nebo "
+":class:`float`. Volitelně ověřuje, že hodnota je mezi daným minimem "
+"a maximem."
 
 #: ../../howto/descriptor.rst:378
 msgid ""
@@ -582,6 +661,10 @@ msgid ""
 "defined `predicate "
 "<https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)>`_ as well."
 msgstr ""
+":class:`!String` ověřuje, že hodnota je :class:`str`. Volitelně validuje "
+"danou minimální nebo maximální délku. Může také validovat uživatelem "
+"definovaný `predikát "
+"<https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)>`_."
 
 #: ../../howto/descriptor.rst:383
 #, python-brace-format
@@ -644,11 +727,11 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:439
 msgid "Practical application"
-msgstr ""
+msgstr "Praktické použití"
 
 #: ../../howto/descriptor.rst:441
 msgid "Here's how the data validators can be used in a real class:"
-msgstr ""
+msgstr "Zde je ukázka, jak lze validátory dat použít ve skutečné třídě:"
 
 #: ../../howto/descriptor.rst:443
 msgid ""
@@ -666,7 +749,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:456
 msgid "The descriptors prevent invalid instances from being created:"
-msgstr ""
+msgstr "Deskriptory zabraňují vytváření neplatných instancí:"
 
 #: ../../howto/descriptor.rst:458
 #, python-brace-format
@@ -699,17 +782,19 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:484
 msgid "Technical Tutorial"
-msgstr ""
+msgstr "Technický tutoriál"
 
 #: ../../howto/descriptor.rst:486
 msgid ""
 "What follows is a more technical tutorial for the mechanics and details "
 "of how descriptors work."
 msgstr ""
+"Následuje techničtější tutoriál o mechanismech a detailech fungování "
+"deskriptorů."
 
 #: ../../howto/descriptor.rst:491
 msgid "Abstract"
-msgstr ""
+msgstr "Abstrakt"
 
 #: ../../howto/descriptor.rst:493
 msgid ""
@@ -717,16 +802,21 @@ msgid ""
 "are called.  Provides an example showing how object relational mappings "
 "work."
 msgstr ""
+"Definuje deskriptory, shrnuje protokol a ukazuje, jak jsou deskriptory "
+"volány. Poskytuje příklad ukazující, jak funguje objektově-relační "
+"mapování."
 
 #: ../../howto/descriptor.rst:496
 msgid ""
 "Learning about descriptors not only provides access to a larger toolset, "
 "it creates a deeper understanding of how Python works."
 msgstr ""
+"Studium deskriptorů nejen poskytuje přístup k větší sadě nástrojů, ale "
+"také vytváří hlubší porozumění tomu, jak Python funguje."
 
 #: ../../howto/descriptor.rst:501
 msgid "Definition and introduction"
-msgstr ""
+msgstr "Definice a úvod"
 
 #: ../../howto/descriptor.rst:503
 msgid ""
@@ -736,6 +826,11 @@ msgid ""
 ":meth:`~object.__delete__`.  If any of those methods are defined for an "
 "attribute, it is said to be a :term:`descriptor`."
 msgstr ""
+"Obecně je deskriptor hodnota atributu, která má jednu z metod protokolu "
+"deskriptorů. Těmito metodami jsou :meth:`~object.__get__`, "
+":meth:`~object.__set__` a :meth:`~object.__delete__`. Pokud je pro "
+"atribut definována kterákoli z těchto metod, říká se, že je to "
+":term:`deskriptor <descriptor>`."
 
 #: ../../howto/descriptor.rst:508
 msgid ""
@@ -748,6 +843,14 @@ msgid ""
 "and invoke the descriptor method instead. Where this occurs in the "
 "precedence chain depends on which descriptor methods were defined."
 msgstr ""
+"Výchozí chování pro přístup k atributům je získání, nastavení nebo "
+"smazání atributu ze slovníku objektu. Například ``a.x`` má řetězec "
+"vyhledávání začínající ``a.__dict__['x']``, pak ``type(a).__dict__['x']`` "
+"a pokračující přes pořadí rozlišení metod ``type(a)``. Pokud je "
+"vyhledaná hodnota objektem definujícím jednu z metod deskriptoru, pak "
+"Python může přepsat výchozí chování a místo toho vyvolat metodu "
+"deskriptoru. Kde se to v řetězci priority děje, závisí na tom, které "
+"metody deskriptoru byly definovány."
 
 #: ../../howto/descriptor.rst:517
 msgid ""
@@ -757,22 +860,27 @@ msgid ""
 "simplify the underlying C code and offer a flexible set of new tools for "
 "everyday Python programs."
 msgstr ""
+"Deskriptory jsou výkonný, univerzální protokol. Jsou mechanismem za "
+"vlastnostmi (properties), metodami, statickými metodami, třídními "
+"metodami a :func:`super`. Používají se v celém samotném Pythonu. "
+"Deskriptory zjednodušují podkladový kód v C a nabízejí flexibilní sadu "
+"nových nástrojů pro každodenní Python programy."
 
 #: ../../howto/descriptor.rst:525
 msgid "Descriptor protocol"
-msgstr ""
+msgstr "Protokol deskriptorů"
 
 #: ../../howto/descriptor.rst:527
 msgid "``descr.__get__(self, obj, type=None)``"
-msgstr ""
+msgstr "``descr.__get__(self, obj, type=None)``"
 
 #: ../../howto/descriptor.rst:529
 msgid "``descr.__set__(self, obj, value)``"
-msgstr ""
+msgstr "``descr.__set__(self, obj, value)``"
 
 #: ../../howto/descriptor.rst:531
 msgid "``descr.__delete__(self, obj)``"
-msgstr ""
+msgstr "``descr.__delete__(self, obj)``"
 
 #: ../../howto/descriptor.rst:533
 msgid ""
@@ -780,6 +888,8 @@ msgid ""
 " considered a descriptor and can override default behavior upon being "
 "looked up as an attribute."
 msgstr ""
+"To je vše. Definujte kteroukoli z těchto metod a objekt je považován za "
+"deskriptor a může přepsat výchozí chování při vyhledávání jako atribut."
 
 #: ../../howto/descriptor.rst:537
 msgid ""
@@ -789,6 +899,11 @@ msgid ""
 "descriptors (they are often used for methods but other uses are "
 "possible)."
 msgstr ""
+"Pokud objekt definuje :meth:`~object.__set__` nebo "
+":meth:`~object.__delete__`, je považován za datový deskriptor. "
+"Deskriptory, které definují pouze :meth:`~object.__get__`, se nazývají "
+"nedatové deskriptory (často se používají pro metody, ale jsou možná "
+"i jiná použití)."
 
 #: ../../howto/descriptor.rst:542
 msgid ""
@@ -799,6 +914,11 @@ msgid ""
 "with the same name as a non-data descriptor, the dictionary entry takes "
 "precedence."
 msgstr ""
+"Datové a nedatové deskriptory se liší ve způsobu, jakým se počítají "
+"přepsání vzhledem k položkám ve slovníku instance. Pokud má slovník "
+"instance položku se stejným názvem jako datový deskriptor, datový "
+"deskriptor má přednost. Pokud má slovník instance položku se stejným "
+"názvem jako nedatový deskriptor, položka slovníku má přednost."
 
 #: ../../howto/descriptor.rst:548
 msgid ""
@@ -808,22 +928,30 @@ msgid ""
 "method with an exception raising placeholder is enough to make it a data "
 "descriptor."
 msgstr ""
+"Pro vytvoření datového deskriptoru pouze pro čtení definujte jak "
+":meth:`~object.__get__`, tak :meth:`~object.__set__`, přičemž "
+":meth:`~object.__set__` při volání vyvolá :exc:`AttributeError`. "
+"Definování metody :meth:`~object.__set__` s zástupnou funkcí vyvolávající "
+"výjimku stačí k tomu, aby se stal datovým deskriptorem."
 
 #: ../../howto/descriptor.rst:555
 msgid "Overview of descriptor invocation"
-msgstr ""
+msgstr "Přehled vyvolávání deskriptorů"
 
 #: ../../howto/descriptor.rst:557
 msgid ""
 "A descriptor can be called directly with ``desc.__get__(obj)`` or "
 "``desc.__get__(None, cls)``."
 msgstr ""
+"Deskriptor může být volán přímo pomocí ``desc.__get__(obj)`` nebo "
+"``desc.__get__(None, cls)``."
 
 #: ../../howto/descriptor.rst:560
 msgid ""
 "But it is more common for a descriptor to be invoked automatically from "
 "attribute access."
 msgstr ""
+"Běžnější je však automatické vyvolání deskriptoru při přístupu k atributu."
 
 #: ../../howto/descriptor.rst:563
 msgid ""
@@ -832,16 +960,22 @@ msgid ""
 "instance :attr:`~object.__dict__`, its :meth:`~object.__get__` method is "
 "invoked according to the precedence rules listed below."
 msgstr ""
+"Výraz ``obj.x`` vyhledává atribut ``x`` v řetězci jmenných prostorů pro "
+"``obj``. Pokud vyhledávání najde deskriptor mimo instanční "
+":attr:`~object.__dict__`, jeho metoda :meth:`~object.__get__` je vyvolána "
+"podle pravidel priority uvedených níže."
 
 #: ../../howto/descriptor.rst:568
 msgid ""
 "The details of invocation depend on whether ``obj`` is an object, class, "
 "or instance of super."
 msgstr ""
+"Detaily vyvolání závisí na tom, zda je ``obj`` objekt, třída nebo "
+"instance super."
 
 #: ../../howto/descriptor.rst:573
 msgid "Invocation from an instance"
-msgstr ""
+msgstr "Vyvolání z instance"
 
 #: ../../howto/descriptor.rst:575
 msgid ""
@@ -850,18 +984,26 @@ msgid ""
 "non-data descriptors, then class variables, and lastly "
 ":meth:`~object.__getattr__` if it is provided."
 msgstr ""
+"Vyhledávání instance prochází řetězec jmenných prostorů a dává datovým "
+"deskriptorům nejvyšší prioritu, následují instanční proměnné, pak "
+"nedatové deskriptory, pak třídní proměnné a nakonec "
+":meth:`~object.__getattr__`, pokud je poskytnut."
 
 #: ../../howto/descriptor.rst:580
 msgid ""
 "If a descriptor is found for ``a.x``, then it is invoked with: "
 "``desc.__get__(a, type(a))``."
 msgstr ""
+"Pokud je pro ``a.x`` nalezen deskriptor, je vyvolán pomocí: "
+"``desc.__get__(a, type(a))``."
 
 #: ../../howto/descriptor.rst:583
 msgid ""
 "The logic for a dotted lookup is in :meth:`object.__getattribute__`.  "
 "Here is a pure Python equivalent:"
 msgstr ""
+"Logika tečkového vyhledávání je v :meth:`object.__getattribute__`. Zde je "
+"ekvivalent v čistém Pythonu:"
 
 #: ../../howto/descriptor.rst:586
 msgid ""
@@ -902,6 +1044,10 @@ msgid ""
 "``super().__getattribute__`` will bypass :meth:`~object.__getattr__` "
 "entirely."
 msgstr ""
+"Všimněte si, že v kódu :meth:`~object.__getattribute__` není háček "
+":meth:`~object.__getattr__`. Proto volání :meth:`~object.__getattribute__` "
+"přímo nebo pomocí ``super().__getattribute__`` zcela obejde "
+":meth:`~object.__getattr__`."
 
 #: ../../howto/descriptor.rst:726
 msgid ""
@@ -910,6 +1056,10 @@ msgid ""
 ":meth:`~object.__getattribute__` raises an :exc:`AttributeError`.  Their "
 "logic is encapsulated in a helper function:"
 msgstr ""
+"Místo toho jsou tečkový operátor a funkce :func:`getattr` zodpovědné za "
+"vyvolání :meth:`~object.__getattr__` kdykoli :meth:`~object.__getattribute__` "
+"vyvolá :exc:`AttributeError`. Jejich logika je zapouzdřena v pomocné "
+"funkci:"
 
 #: ../../howto/descriptor.rst:731
 msgid ""
@@ -925,7 +1075,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:776
 msgid "Invocation from a class"
-msgstr ""
+msgstr "Vyvolání z třídy"
 
 #: ../../howto/descriptor.rst:778
 msgid ""
@@ -934,20 +1084,27 @@ msgid ""
 ":meth:`!object.__getattribute__` but the instance dictionary lookup is "
 "replaced by a search through the class's :term:`method resolution order`."
 msgstr ""
+"Logika tečkového vyhledávání jako ``A.x`` je v "
+":meth:`!type.__getattribute__`. Kroky jsou podobné jako u "
+":meth:`!object.__getattribute__`, ale vyhledávání ve slovníku instance je "
+"nahrazeno vyhledáváním přes :term:`pořadí rozlišení metod <method "
+"resolution order>` třídy."
 
 #: ../../howto/descriptor.rst:783
 msgid "If a descriptor is found, it is invoked with ``desc.__get__(None, A)``."
-msgstr ""
+msgstr "Pokud je nalezen deskriptor, je vyvolán pomocí ``desc.__get__(None, A)``."
 
 #: ../../howto/descriptor.rst:785
 msgid ""
 "The full C implementation can be found in :c:func:`!type_getattro` and "
 ":c:func:`!_PyType_Lookup` in :source:`Objects/typeobject.c`."
 msgstr ""
+"Úplnou implementaci v C lze nalézt v :c:func:`!type_getattro` a "
+":c:func:`!_PyType_Lookup` v :source:`Objects/typeobject.c`."
 
 #: ../../howto/descriptor.rst:790
 msgid "Invocation from super"
-msgstr ""
+msgstr "Vyvolání z super"
 
 #: ../../howto/descriptor.rst:792
 msgid ""
@@ -955,6 +1112,8 @@ msgid ""
 ":meth:`~object.__getattribute__` method for object returned by "
 ":func:`super`."
 msgstr ""
+"Logika tečkového vyhledávání super je v metodě "
+":meth:`~object.__getattribute__` objektu vráceného funkcí :func:`super`."
 
 #: ../../howto/descriptor.rst:795
 msgid ""
@@ -963,6 +1122,10 @@ msgid ""
 "``A`` and then returns ``B.__dict__['m'].__get__(obj, A)``.  If not a "
 "descriptor, ``m`` is returned unchanged."
 msgstr ""
+"Tečkové vyhledávání jako ``super(A, obj).m`` prohledává "
+"``obj.__class__.__mro__`` pro bázovou třídu ``B`` bezprostředně následující "
+"za ``A`` a pak vrací ``B.__dict__['m'].__get__(obj, A)``. Pokud nejde "
+"o deskriptor, ``m`` je vráceno beze změny."
 
 #: ../../howto/descriptor.rst:800
 msgid ""
@@ -971,10 +1134,14 @@ msgid ""
 " `Guido's Tutorial "
 "<https://www.python.org/download/releases/2.2.3/descrintro/#cooperation>`_."
 msgstr ""
+"Úplnou implementaci v C lze nalézt v :c:func:`!super_getattro` v "
+":source:`Objects/typeobject.c`. Ekvivalent v čistém Pythonu lze nalézt v "
+"`Guidově tutoriálu "
+"<https://www.python.org/download/releases/2.2.3/descrintro/#cooperation>`_."
 
 #: ../../howto/descriptor.rst:807
 msgid "Summary of invocation logic"
-msgstr ""
+msgstr "Shrnutí logiky vyvolávání"
 
 #: ../../howto/descriptor.rst:809
 msgid ""
@@ -982,26 +1149,33 @@ msgid ""
 ":meth:`~object.__getattribute__` methods for :class:`object`, "
 ":class:`type`, and :func:`super`."
 msgstr ""
+"Mechanismus deskriptorů je zabudován do metod "
+":meth:`~object.__getattribute__` pro :class:`object`, :class:`type` "
+"a :func:`super`."
 
 #: ../../howto/descriptor.rst:812
 msgid "The important points to remember are:"
-msgstr ""
+msgstr "Důležité body k zapamatování jsou:"
 
 #: ../../howto/descriptor.rst:814
 msgid "Descriptors are invoked by the :meth:`~object.__getattribute__` method."
-msgstr ""
+msgstr "Deskriptory jsou vyvolávány metodou :meth:`~object.__getattribute__`."
 
 #: ../../howto/descriptor.rst:816
 msgid ""
 "Classes inherit this machinery from :class:`object`, :class:`type`, or "
 ":func:`super`."
 msgstr ""
+"Třídy dědí tento mechanismus z :class:`object`, :class:`type` nebo "
+":func:`super`."
 
 #: ../../howto/descriptor.rst:819
 msgid ""
 "Overriding :meth:`~object.__getattribute__` prevents automatic descriptor"
 " calls because all the descriptor logic is in that method."
 msgstr ""
+"Přepsání :meth:`~object.__getattribute__` zabraňuje automatickému volání "
+"deskriptorů, protože veškerá logika deskriptorů je v této metodě."
 
 #: ../../howto/descriptor.rst:822
 msgid ""
@@ -1010,18 +1184,21 @@ msgid ""
 "instance and may include the class.  The second puts in ``None`` for the "
 "instance and always includes the class."
 msgstr ""
+":meth:`!object.__getattribute__` a :meth:`!type.__getattribute__` volají "
+":meth:`~object.__get__` odlišně. První zahrnuje instanci a může zahrnovat "
+"třídu. Druhá předává ``None`` pro instanci a vždy zahrnuje třídu."
 
 #: ../../howto/descriptor.rst:827
 msgid "Data descriptors always override instance dictionaries."
-msgstr ""
+msgstr "Datové deskriptory vždy přepisují slovníky instancí."
 
 #: ../../howto/descriptor.rst:829
 msgid "Non-data descriptors may be overridden by instance dictionaries."
-msgstr ""
+msgstr "Nedatové deskriptory mohou být přepsány slovníky instancí."
 
 #: ../../howto/descriptor.rst:833
 msgid "Automatic name notification"
-msgstr ""
+msgstr "Automatická notifikace názvu"
 
 #: ../../howto/descriptor.rst:835
 msgid ""
@@ -1033,12 +1210,20 @@ msgid ""
 "descriptor is used, and the *name* is the class variable the descriptor "
 "was assigned to."
 msgstr ""
+"Někdy je žádoucí, aby deskriptor věděl, k jakému názvu proměnné třídy byl "
+"přiřazen. Při vytvoření nové třídy metatřída :class:`type` prochází "
+"slovník nové třídy. Pokud jsou některé položky deskriptory a pokud "
+"definují :meth:`~object.__set_name__`, tato metoda je volána se dvěma "
+"argumenty. *owner* je třída, kde je deskriptor použit, a *name* je "
+"proměnná třídy, ke které byl deskriptor přiřazen."
 
 #: ../../howto/descriptor.rst:842
 msgid ""
 "The implementation details are in :c:func:`!type_new` and "
 ":c:func:`!set_names` in :source:`Objects/typeobject.c`."
 msgstr ""
+"Detaily implementace jsou v :c:func:`!type_new` a :c:func:`!set_names` v "
+":source:`Objects/typeobject.c`."
 
 #: ../../howto/descriptor.rst:845
 msgid ""
@@ -1047,10 +1232,13 @@ msgid ""
 "the class afterwards, :meth:`~object.__set_name__` will need to be called"
 " manually."
 msgstr ""
+"Protože je logika aktualizace v :meth:`!type.__new__`, notifikace probíhají "
+"pouze v době vytvoření třídy. Pokud jsou deskriptory přidány do třídy "
+"později, :meth:`~object.__set_name__` bude třeba zavolat ručně."
 
 #: ../../howto/descriptor.rst:851
 msgid "ORM example"
-msgstr ""
+msgstr "Příklad ORM"
 
 #: ../../howto/descriptor.rst:853
 #, python-format
@@ -1059,6 +1247,9 @@ msgid ""
 "could be used to implement an `object relational mapping "
 "<https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping>`_."
 msgstr ""
+"Následující kód je zjednodušená kostra ukazující, jak by datové deskriptory "
+"mohly být použity k implementaci `objektově-relačního mapování "
+"<https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping>`_."
 
 #: ../../howto/descriptor.rst:857
 msgid ""
@@ -1066,6 +1257,9 @@ msgid ""
 "The Python instances only hold keys to the database's tables.  "
 "Descriptors take care of lookups or updates:"
 msgstr ""
+"Základní myšlenkou je, že data jsou uložena v externí databázi. Instance "
+"Pythonu drží pouze klíče k tabulkám databáze. Deskriptory se starají "
+"o vyhledávání nebo aktualizace:"
 
 #: ../../howto/descriptor.rst:861
 #, python-brace-format
@@ -1092,6 +1286,9 @@ msgid ""
 "<https://en.wikipedia.org/wiki/Database_model>`_ that describe the schema"
 " for each table in a database:"
 msgstr ""
+"Třídu :class:`!Field` můžeme použít k definování `modelů "
+"<https://en.wikipedia.org/wiki/Database_model>`_, které popisují schéma "
+"pro každou tabulku v databázi:"
 
 #: ../../howto/descriptor.rst:880
 msgid ""
@@ -1117,7 +1314,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:901
 msgid "To use the models, first connect to the database::"
-msgstr ""
+msgstr "Pro použití modelů se nejprve připojte k databázi::"
 
 #: ../../howto/descriptor.rst:903
 msgid ""
@@ -1130,6 +1327,8 @@ msgid ""
 "An interactive session shows how data is retrieved from the database and "
 "how it can be updated:"
 msgstr ""
+"Interaktivní relace ukazuje, jak jsou data získávána z databáze a jak "
+"mohou být aktualizována:"
 
 #: ../../howto/descriptor.rst:934
 #, python-brace-format
@@ -1150,7 +1349,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:955
 msgid "Pure Python Equivalents"
-msgstr ""
+msgstr "Ekvivalenty v čistém Pythonu"
 
 #: ../../howto/descriptor.rst:957
 msgid ""
@@ -1159,10 +1358,14 @@ msgid ""
 "built-in tools. Properties, bound methods, static methods, class methods,"
 " and \\_\\_slots\\_\\_ are all based on the descriptor protocol."
 msgstr ""
+"Protokol deskriptorů je jednoduchý a nabízí vzrušující možnosti. Několik "
+"případů použití je tak běžných, že byly předbaleny do vestavěných nástrojů. "
+"Vlastnosti (properties), vázané metody, statické metody, třídní metody "
+"a \\_\\_slots\\_\\_ jsou všechny založeny na protokolu deskriptorů."
 
 #: ../../howto/descriptor.rst:964
 msgid "Properties"
-msgstr ""
+msgstr "Vlastnosti (Properties)"
 
 #: ../../howto/descriptor.rst:966
 msgid ""
@@ -1170,14 +1373,16 @@ msgid ""
 "that triggers a function call upon access to an attribute.  Its signature"
 " is::"
 msgstr ""
+"Volání :func:`property` je stručný způsob, jak vytvořit datový deskriptor, "
+"který spustí volání funkce při přístupu k atributu. Jeho signatura je::"
 
 #: ../../howto/descriptor.rst:969
 msgid "property(fget=None, fset=None, fdel=None, doc=None) -> property"
-msgstr ""
+msgstr "property(fget=None, fset=None, fdel=None, doc=None) -> property"
 
 #: ../../howto/descriptor.rst:971
 msgid "The documentation shows a typical use to define a managed attribute ``x``:"
-msgstr ""
+msgstr "Dokumentace ukazuje typické použití pro definování spravovaného atributu ``x``:"
 
 #: ../../howto/descriptor.rst:973
 msgid ""
@@ -1194,6 +1399,9 @@ msgid ""
 "protocol, here is a pure Python equivalent that implements most of the "
 "core functionality:"
 msgstr ""
+"Abychom viděli, jak je :func:`property` implementována z hlediska protokolu "
+"deskriptorů, zde je ekvivalent v čistém Pythonu, který implementuje většinu "
+"základní funkcionality:"
 
 #: ../../howto/descriptor.rst:998
 msgid ""
@@ -1244,6 +1452,8 @@ msgid ""
 "attribute access and then subsequent changes require the intervention of "
 "a method."
 msgstr ""
+"Vestavěná funkce :func:`property` pomáhá kdykoli uživatelské rozhraní "
+"poskytlo přístup k atributu a následné změny vyžadují zásah metody."
 
 #: ../../howto/descriptor.rst:1126
 msgid ""
@@ -1254,6 +1464,11 @@ msgid ""
 "attribute directly.  The solution is to wrap access to the value "
 "attribute in a property data descriptor:"
 msgstr ""
+"Například třída tabulkového procesoru může poskytnout přístup k hodnotě "
+"buňky přes ``Cell('b10').value``. Následná vylepšení programu vyžadují "
+"přepočítání buňky při každém přístupu; programátor však nechce ovlivnit "
+"existující klientský kód přistupující k atributu přímo. Řešením je "
+"zabalit přístup k atributu value do datového deskriptoru property:"
 
 #: ../../howto/descriptor.rst:1132
 msgid ""
@@ -1272,16 +1487,21 @@ msgid ""
 "Either the built-in :func:`property` or our :func:`!Property` equivalent "
 "would work in this example."
 msgstr ""
+"V tomto příkladu by fungovala jak vestavěná :func:`property`, tak náš "
+"ekvivalent :func:`!Property`."
 
 #: ../../howto/descriptor.rst:1148
 msgid "Functions and methods"
-msgstr ""
+msgstr "Funkce a metody"
 
 #: ../../howto/descriptor.rst:1150
 msgid ""
 "Python's object oriented features are built upon a function based "
 "environment. Using non-data descriptors, the two are merged seamlessly."
 msgstr ""
+"Objektově orientované vlastnosti Pythonu jsou postaveny na prostředí "
+"založeném na funkcích. Pomocí nedatových deskriptorů jsou oba přístupy "
+"hladce sloučeny."
 
 #: ../../howto/descriptor.rst:1153
 msgid ""
@@ -1291,12 +1511,19 @@ msgid ""
 "instance is called *self* but could be called *this* or any other "
 "variable name."
 msgstr ""
+"Funkce uložené ve slovnících tříd jsou při vyvolání přeměněny na metody. "
+"Metody se od běžných funkcí liší pouze tím, že instance objektu je "
+"přidána před ostatní argumenty. Konvencí je, že instance se nazývá "
+"*self*, ale mohla by se nazývat *this* nebo jakýmkoli jiným názvem "
+"proměnné."
 
 #: ../../howto/descriptor.rst:1158
 msgid ""
 "Methods can be created manually with :class:`types.MethodType` which is "
 "roughly equivalent to:"
 msgstr ""
+"Metody mohou být vytvořeny ručně pomocí :class:`types.MethodType`, což je "
+"zhruba ekvivalentní:"
 
 #: ../../howto/descriptor.rst:1161
 msgid ""
@@ -1335,6 +1562,10 @@ msgid ""
 "bound methods during dotted lookup from an instance.  Here's how it "
 "works:"
 msgstr ""
+"Pro podporu automatického vytváření metod funkce zahrnují metodu "
+":meth:`~object.__get__` pro vázání metod během přístupu k atributům. To "
+"znamená, že funkce jsou nedatové deskriptory, které při tečkovém "
+"vyhledávání z instance vracejí vázané metody. Zde je, jak to funguje:"
 
 #: ../../howto/descriptor.rst:1194
 msgid ""
@@ -1353,6 +1584,8 @@ msgid ""
 "Running the following class in the interpreter shows how the function "
 "descriptor works in practice:"
 msgstr ""
+"Spuštění následující třídy v interpretu ukazuje, jak deskriptor funkce "
+"funguje v praxi:"
 
 #: ../../howto/descriptor.rst:1208
 msgid ""
@@ -1369,6 +1602,8 @@ msgid ""
 "The function has a :term:`qualified name` attribute to support "
 "introspection:"
 msgstr ""
+"Funkce má atribut :term:`kvalifikovaný název <qualified name>` pro "
+"podporu introspekce:"
 
 #: ../../howto/descriptor.rst:1228
 msgid ""
@@ -1382,6 +1617,8 @@ msgid ""
 ":meth:`~object.__get__`.  Instead, it just returns the underlying "
 "function object::"
 msgstr ""
+"Přístup k funkci přes slovník třídy nevyvolá :meth:`~object.__get__`. "
+"Místo toho pouze vrátí podkladový objekt funkce::"
 
 #: ../../howto/descriptor.rst:1236
 msgid ""
@@ -1394,6 +1631,8 @@ msgid ""
 "Dotted access from a class calls :meth:`~object.__get__` which just "
 "returns the underlying function unchanged::"
 msgstr ""
+"Tečkový přístup z třídy volá :meth:`~object.__get__`, který pouze vrátí "
+"podkladovou funkci beze změny::"
 
 #: ../../howto/descriptor.rst:1242
 msgid ""
@@ -1407,6 +1646,9 @@ msgid ""
 "The dotted lookup calls :meth:`~object.__get__` which returns a bound "
 "method object::"
 msgstr ""
+"Zajímavé chování nastává během tečkového přístupu z instance. Tečkové "
+"vyhledávání volá :meth:`~object.__get__`, který vrací objekt vázané "
+"metody::"
 
 #: ../../howto/descriptor.rst:1248
 msgid ""
@@ -1420,6 +1662,7 @@ msgid ""
 "Internally, the bound method stores the underlying function and the bound"
 " instance::"
 msgstr ""
+"Interně vázaná metoda ukládá podkladovou funkci a vázanou instanci::"
 
 #: ../../howto/descriptor.rst:1255
 msgid ""
@@ -1435,16 +1678,20 @@ msgid ""
 "If you have ever wondered where *self* comes from in regular methods or "
 "where *cls* comes from in class methods, this is it!"
 msgstr ""
+"Pokud jste se někdy ptali, odkud pochází *self* v běžných metodách nebo "
+"odkud pochází *cls* v třídních metodách, toto je odpověď!"
 
 #: ../../howto/descriptor.rst:1266
 msgid "Kinds of methods"
-msgstr ""
+msgstr "Druhy metod"
 
 #: ../../howto/descriptor.rst:1268
 msgid ""
 "Non-data descriptors provide a simple mechanism for variations on the "
 "usual patterns of binding functions into methods."
 msgstr ""
+"Nedatové deskriptory poskytují jednoduchý mechanismus pro variace "
+"obvyklých vzorů vázání funkcí do metod."
 
 #: ../../howto/descriptor.rst:1271
 msgid ""
@@ -1453,54 +1700,58 @@ msgid ""
 "descriptor transforms an ``obj.f(*args)`` call into ``f(obj, *args)``.  "
 "Calling ``cls.f(*args)`` becomes ``f(*args)``."
 msgstr ""
+"Shrnutí: funkce mají metodu :meth:`~object.__get__`, takže mohou být "
+"převedeny na metodu při přístupu jako atributy. Nedatový deskriptor "
+"transformuje volání ``obj.f(*args)`` na ``f(obj, *args)``. Volání "
+"``cls.f(*args)`` se stává ``f(*args)``."
 
 #: ../../howto/descriptor.rst:1276
 msgid "This chart summarizes the binding and its two most useful variants:"
-msgstr ""
+msgstr "Tato tabulka shrnuje vázání a jeho dvě nejužitečnější varianty:"
 
 #: ../../howto/descriptor.rst:1279
 msgid "Transformation"
-msgstr ""
+msgstr "Transformace"
 
 #: ../../howto/descriptor.rst:1279
 msgid "Called from an object"
-msgstr ""
+msgstr "Voláno z objektu"
 
 #: ../../howto/descriptor.rst:1279
 msgid "Called from a class"
-msgstr ""
+msgstr "Voláno z třídy"
 
 #: ../../howto/descriptor.rst:1282
 msgid "function"
-msgstr ""
+msgstr "funkce"
 
 #: ../../howto/descriptor.rst:1282
 msgid "f(obj, \\*args)"
-msgstr ""
+msgstr "f(obj, \\*args)"
 
 #: ../../howto/descriptor.rst:1282 ../../howto/descriptor.rst:1284
 msgid "f(\\*args)"
-msgstr ""
+msgstr "f(\\*args)"
 
 #: ../../howto/descriptor.rst:1284
 msgid "staticmethod"
-msgstr ""
+msgstr "staticmethod"
 
 #: ../../howto/descriptor.rst:1286
 msgid "classmethod"
-msgstr ""
+msgstr "classmethod"
 
 #: ../../howto/descriptor.rst:1286
 msgid "f(type(obj), \\*args)"
-msgstr ""
+msgstr "f(type(obj), \\*args)"
 
 #: ../../howto/descriptor.rst:1286
 msgid "f(cls, \\*args)"
-msgstr ""
+msgstr "f(cls, \\*args)"
 
 #: ../../howto/descriptor.rst:1291
 msgid "Static methods"
-msgstr ""
+msgstr "Statické metody"
 
 #: ../../howto/descriptor.rst:1293
 msgid ""
@@ -1510,12 +1761,19 @@ msgid ""
 "\"f\")``. As a result, the function becomes identically accessible from "
 "either an object or a class."
 msgstr ""
+"Statické metody vracejí podkladovou funkci beze změn. Volání ``c.f`` "
+"nebo ``C.f`` je ekvivalentní přímému vyhledání do "
+"``object.__getattribute__(c, \"f\")`` nebo ``object.__getattribute__(C, "
+"\"f\")``. V důsledku toho je funkce identicky přístupná jak z objektu, "
+"tak z třídy."
 
 #: ../../howto/descriptor.rst:1299
 msgid ""
 "Good candidates for static methods are methods that do not reference the "
 "``self`` variable."
 msgstr ""
+"Vhodnými kandidáty pro statické metody jsou metody, které neodkazují na "
+"proměnnou ``self``."
 
 #: ../../howto/descriptor.rst:1302
 msgid ""
@@ -1529,12 +1787,22 @@ msgid ""
 "object or the class:  ``s.erf(1.5) --> 0.9332`` or ``Sample.erf(1.5) --> "
 "0.9332``."
 msgstr ""
+"Například statistický balíček může obsahovat kontejnerovou třídu pro "
+"experimentální data. Třída poskytuje běžné metody pro výpočet průměru, "
+"mediánu a další popisné statistiky, které závisí na datech. Mohou však "
+"existovat užitečné funkce, které jsou koncepčně související, ale "
+"nezávisí na datech. Například ``erf(x)`` je užitečná konverzní rutina, "
+"která se vyskytuje ve statistické práci, ale přímo nezávisí na konkrétním "
+"datasetu. Může být volána buď z objektu, nebo z třídy: ``s.erf(1.5) --> "
+"0.9332`` nebo ``Sample.erf(1.5) --> 0.9332``."
 
 #: ../../howto/descriptor.rst:1311
 msgid ""
 "Since static methods return the underlying function with no changes, the "
 "example calls are unexciting:"
 msgstr ""
+"Protože statické metody vracejí podkladovou funkci beze změn, ukázková "
+"volání jsou nezajímavá:"
 
 #: ../../howto/descriptor.rst:1314
 msgid ""
@@ -1557,6 +1825,8 @@ msgid ""
 "Using the non-data descriptor protocol, a pure Python version of "
 ":func:`staticmethod` would look like this:"
 msgstr ""
+"Při použití protokolu nedatových deskriptorů by verze :func:`staticmethod` "
+"v čistém Pythonu vypadala takto:"
 
 #: ../../howto/descriptor.rst:1331
 msgid ""
@@ -1588,10 +1858,15 @@ msgid ""
 "wrapped function, including :attr:`~function.__name__`, "
 ":attr:`~function.__qualname__`, and :attr:`~function.__doc__`."
 msgstr ""
+"Volání :func:`functools.update_wrapper` přidává atribut ``__wrapped__``, "
+"který odkazuje na podkladovou funkci. Také přenáší atributy potřebné "
+"k tomu, aby obal vypadal jako obalená funkce, včetně "
+":attr:`~function.__name__`, :attr:`~function.__qualname__` a "
+":attr:`~function.__doc__`."
 
 #: ../../howto/descriptor.rst:1421
 msgid "Class methods"
-msgstr ""
+msgstr "Třídní metody"
 
 #: ../../howto/descriptor.rst:1423
 msgid ""
@@ -1599,6 +1874,9 @@ msgid ""
 "argument list before calling the function.  This format is the same for "
 "whether the caller is an object or a class:"
 msgstr ""
+"Na rozdíl od statických metod třídní metody přidávají odkaz na třídu "
+"před seznam argumentů před voláním funkce. Tento formát je stejný bez "
+"ohledu na to, zda je volající objekt nebo třída:"
 
 #: ../../howto/descriptor.rst:1427
 msgid ""
@@ -1624,6 +1902,11 @@ msgid ""
 "example, the classmethod :func:`dict.fromkeys` creates a new dictionary "
 "from a list of keys.  The pure Python equivalent is:"
 msgstr ""
+"Toto chování je užitečné kdykoli metoda potřebuje pouze odkaz na třídu "
+"a nespoléhá na data uložená v konkrétní instanci. Jedno z využití "
+"třídních metod je vytváření alternativních konstruktorů tříd. Například "
+"třídní metoda :func:`dict.fromkeys` vytváří nový slovník ze seznamu "
+"klíčů. Ekvivalent v čistém Pythonu je:"
 
 #: ../../howto/descriptor.rst:1447
 msgid ""
@@ -1639,7 +1922,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:1458
 msgid "Now a new dictionary of unique keys can be constructed like this:"
-msgstr ""
+msgstr "Nyní lze nový slovník unikátních klíčů vytvořit takto:"
 
 #: ../../howto/descriptor.rst:1460
 #, python-brace-format
@@ -1656,6 +1939,8 @@ msgid ""
 "Using the non-data descriptor protocol, a pure Python version of "
 ":func:`classmethod` would look like this:"
 msgstr ""
+"Při použití protokolu nedatových deskriptorů by verze :func:`classmethod` "
+"v čistém Pythonu vypadala takto:"
 
 #: ../../howto/descriptor.rst:1471
 msgid ""
@@ -1683,10 +1968,15 @@ msgid ""
 ":attr:`~function.__qualname__`, :attr:`~function.__doc__`, and "
 ":attr:`~function.__annotations__`."
 msgstr ""
+"Volání :func:`functools.update_wrapper` v ``ClassMethod`` přidává "
+"atribut ``__wrapped__``, který odkazuje na podkladovou funkci. Také "
+"přenáší atributy potřebné k tomu, aby obal vypadal jako obalená funkce: "
+":attr:`~function.__name__`, :attr:`~function.__qualname__`, "
+":attr:`~function.__doc__` a :attr:`~function.__annotations__`."
 
 #: ../../howto/descriptor.rst:1542
 msgid "Member objects and __slots__"
-msgstr ""
+msgstr "Objekty členů a __slots__"
 
 #: ../../howto/descriptor.rst:1544
 msgid ""
@@ -1694,6 +1984,8 @@ msgid ""
 "with a fixed-length array of slot values.  From a user point of view that"
 " has several effects:"
 msgstr ""
+"Když třída definuje ``__slots__``, nahradí slovníky instancí polem "
+"hodnot slotů s pevnou délkou. Z pohledu uživatele to má několik efektů:"
 
 #: ../../howto/descriptor.rst:1548
 msgid ""
@@ -1701,6 +1993,9 @@ msgid ""
 "assignments.  Only attribute names specified in ``__slots__`` are "
 "allowed:"
 msgstr ""
+"1. Poskytuje okamžitou detekci chyb způsobených překlepem v přiřazení "
+"atributů. Povoleny jsou pouze názvy atributů specifikované v "
+"``__slots__``:"
 
 #: ../../howto/descriptor.rst:1551
 msgid ""
@@ -1722,6 +2017,8 @@ msgid ""
 "2. Helps create immutable objects where descriptors manage access to "
 "private attributes stored in ``__slots__``:"
 msgstr ""
+"2. Pomáhá vytvářet neměnné objekty, kde deskriptory spravují přístup k "
+"soukromým atributům uloženým v ``__slots__``:"
 
 #: ../../howto/descriptor.rst:1567
 msgid ""
@@ -1766,6 +2063,10 @@ msgid ""
 "<https://en.wikipedia.org/wiki/Flyweight_pattern>`_ likely only matters "
 "when a large number of instances are going to be created."
 msgstr ""
+"3. Šetří paměť. V 64bitovém sestavení Linuxu instance se dvěma atributy "
+"zabírá 48 bajtů s ``__slots__`` a 152 bajtů bez. Tento `návrhový vzor "
+"flyweight <https://en.wikipedia.org/wiki/Flyweight_pattern>`_ je "
+"pravděpodobně důležitý pouze při vytváření velkého počtu instancí."
 
 #: ../../howto/descriptor.rst:1604
 #, python-format
@@ -1773,12 +2074,16 @@ msgid ""
 "4. Improves speed.  Reading instance variables is 35% faster with "
 "``__slots__`` (as measured with Python 3.10 on an Apple M1 processor)."
 msgstr ""
+"4. Zlepšuje rychlost. Čtení instančních proměnných je o 35% rychlejší s "
+"``__slots__`` (měřeno s Pythonem 3.10 na procesoru Apple M1)."
 
 #: ../../howto/descriptor.rst:1607
 msgid ""
 "5. Blocks tools like :func:`functools.cached_property` which require an "
 "instance dictionary to function correctly:"
 msgstr ""
+"5. Blokuje nástroje jako :func:`functools.cached_property`, které "
+"vyžadují slovník instance pro správné fungování:"
 
 #: ../../howto/descriptor.rst:1610
 msgid ""
@@ -1812,6 +2117,12 @@ msgid ""
 " a private ``_slotvalues`` list.  Reads and writes to that private "
 "structure are managed by member descriptors:"
 msgstr ""
+"Není možné vytvořit přesnou náhradu ``__slots__`` v čistém Pythonu, "
+"protože to vyžaduje přímý přístup ke strukturám C a kontrolu nad "
+"alokací paměti objektů. Můžeme však vytvořit většinou věrnou simulaci, "
+"kde je skutečná C struktura pro sloty emulována soukromým seznamem "
+"``_slotvalues``. Čtení a zápisy do této soukromé struktury jsou "
+"spravovány členskými deskriptory:"
 
 #: ../../howto/descriptor.rst:1636
 #, python-brace-format
@@ -1858,6 +2169,8 @@ msgid ""
 "The :meth:`!type.__new__` method takes care of adding member objects to "
 "class variables:"
 msgstr ""
+"Metoda :meth:`!type.__new__` se stará o přidání objektů členů do "
+"proměnných třídy:"
 
 #: ../../howto/descriptor.rst:1677
 msgid ""
@@ -1879,6 +2192,8 @@ msgid ""
 "have slots instead of an instance dictionary.  Here is a rough simulation"
 " in pure Python:"
 msgstr ""
+"Metoda :meth:`object.__new__` se stará o vytváření instancí, které mají "
+"sloty místo slovníku instance. Zde je hrubá simulace v čistém Pythonu:"
 
 #: ../../howto/descriptor.rst:1694
 #, python-brace-format
@@ -1918,6 +2233,8 @@ msgid ""
 "To use the simulation in a real class, just inherit from :class:`!Object`"
 " and set the :term:`metaclass` to :class:`Type`:"
 msgstr ""
+"Pro použití simulace ve skutečné třídě stačí dědit z :class:`!Object` "
+"a nastavit :term:`metatřídu <metaclass>` na :class:`Type`:"
 
 #: ../../howto/descriptor.rst:1728
 msgid ""
@@ -1933,7 +2250,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:1739
 msgid "At this point, the metaclass has loaded member objects for *x* and *y*::"
-msgstr ""
+msgstr "V tomto bodě metatřída načetla objekty členů pro *x* a *y*::"
 
 #: ../../howto/descriptor.rst:1741
 #, python-brace-format
@@ -1953,6 +2270,8 @@ msgid ""
 "When instances are created, they have a ``slot_values`` list where the "
 "attributes are stored:"
 msgstr ""
+"Při vytváření instancí mají seznam ``slot_values``, kde jsou uloženy "
+"atributy:"
 
 #: ../../howto/descriptor.rst:1763
 #, python-brace-format
@@ -1967,7 +2286,7 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:1772
 msgid "Misspelled or unassigned attributes will raise an exception:"
-msgstr ""
+msgstr "Překlepnuté nebo nepřiřazené atributy vyvolají výjimku:"
 
 #: ../../howto/descriptor.rst:1774
 msgid ""
