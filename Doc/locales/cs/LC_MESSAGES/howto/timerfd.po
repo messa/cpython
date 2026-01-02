@@ -21,29 +21,31 @@ msgstr ""
 
 #: ../../howto/timerfd.rst:5
 msgid "timer file descriptor HOWTO"
-msgstr ""
+msgstr "Souborový deskriptor časovače – HOWTO"
 
 #: ../../howto/timerfd.rst
 msgid "Release"
-msgstr ""
+msgstr "Vydání"
 
 #: ../../howto/timerfd.rst:7
 msgid "1.13"
-msgstr ""
+msgstr "1.13"
 
 #: ../../howto/timerfd.rst:9
 msgid "This HOWTO discusses Python's support for the linux timer file descriptor."
-msgstr ""
+msgstr "Tento HOWTO popisuje podporu Pythonu pro linuxový souborový deskriptor časovače."
 
 #: ../../howto/timerfd.rst:13
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../howto/timerfd.rst:15
 msgid ""
 "The following example shows how to use a timer file descriptor to execute"
 " a function twice a second:"
 msgstr ""
+"Následující příklad ukazuje, jak použít souborový deskriptor časovače ke "
+"spuštění funkce dvakrát za sekundu:"
 
 #: ../../howto/timerfd.rst:18
 msgid ""
@@ -74,12 +76,18 @@ msgid ""
 " descriptors allow specifying initial expiration and interval in integer "
 "nanoseconds with ``_ns`` variants of the functions."
 msgstr ""
+"Aby se předešlo ztrátě přesnosti způsobené typem :class:`float`, souborové "
+"deskriptory časovače umožňují zadat počáteční expiraci a interval v celých "
+"nanosekundách pomocí variant funkcí s příponou ``_ns``."
 
 #: ../../howto/timerfd.rst:44
 msgid ""
 "This example shows how :func:`~select.epoll` can be used with timer file "
 "descriptors to wait until the file descriptor is ready for reading:"
 msgstr ""
+"Tento příklad ukazuje, jak lze :func:`~select.epoll` použít se souborovými "
+"deskriptory časovače k čekání, dokud nebude souborový deskriptor připraven "
+"ke čtení:"
 
 #: ../../howto/timerfd.rst:47
 #, python-brace-format
@@ -206,6 +214,9 @@ msgid ""
 "This example shows how :func:`~select.select` can be used with timer file"
 " descriptors to wait until the file descriptor is ready for reading:"
 msgstr ""
+"Tento příklad ukazuje, jak lze :func:`~select.select` použít se souborovými "
+"deskriptory časovače k čekání, dokud nebude souborový deskriptor připraven "
+"ke čtení:"
 
 #: ../../howto/timerfd.rst:156
 #, python-brace-format

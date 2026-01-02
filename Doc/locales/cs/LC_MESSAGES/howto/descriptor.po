@@ -21,37 +21,39 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:5
 msgid "Descriptor Guide"
-msgstr ""
+msgstr "Průvodce deskriptory"
 
 #: ../../howto/descriptor.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/descriptor.rst:7
 msgid "Raymond Hettinger"
-msgstr ""
+msgstr "Raymond Hettinger"
 
 #: ../../howto/descriptor.rst
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: ../../howto/descriptor.rst:8
 msgid "<python at rcn dot com>"
-msgstr ""
+msgstr "<python at rcn dot com>"
 
 #: ../../howto/descriptor.rst:11
 msgid "Contents"
-msgstr ""
+msgstr "Obsah"
 
 #: ../../howto/descriptor.rst:13
 msgid ""
 ":term:`Descriptors <descriptor>` let objects customize attribute lookup, "
 "storage, and deletion."
 msgstr ""
+":term:`Deskriptory <descriptor>` umožňují objektům přizpůsobit vyhledávání, "
+"ukládání a mazání atributů."
 
 #: ../../howto/descriptor.rst:16
 msgid "This guide has four major sections:"
-msgstr ""
+msgstr "Tento průvodce má čtyři hlavní části:"
 
 #: ../../howto/descriptor.rst:18
 msgid ""
@@ -59,12 +61,17 @@ msgid ""
 "examples, adding one feature at a time.  Start here if you're new to "
 "descriptors."
 msgstr ""
+"„Úvod" poskytuje základní přehled, postupuje pozvolna od jednoduchých "
+"příkladů a přidává jednu funkci za druhou. Začněte zde, pokud jste "
+"s deskriptory noví."
 
 #: ../../howto/descriptor.rst:21
 msgid ""
 "The second section shows a complete, practical descriptor example.  If "
 "you already know the basics, start there."
 msgstr ""
+"Druhá část ukazuje kompletní praktický příklad deskriptoru. Pokud již "
+"znáte základy, začněte tam."
 
 #: ../../howto/descriptor.rst:24
 msgid ""
@@ -72,6 +79,9 @@ msgid ""
 "detailed mechanics of how descriptors work.  Most people don't need this "
 "level of detail."
 msgstr ""
+"Třetí část poskytuje techničtější tutoriál, který se zabývá podrobnými "
+"mechanismy fungování deskriptorů. Většina lidí tuto úroveň detailů "
+"nepotřebuje."
 
 #: ../../howto/descriptor.rst:28
 msgid ""
@@ -81,26 +91,35 @@ msgid ""
 ":func:`classmethod`, :func:`staticmethod`, :func:`property`, and "
 ":term:`__slots__`."
 msgstr ""
+"Poslední část obsahuje ekvivalenty v čistém Pythonu pro vestavěné "
+"deskriptory napsané v C. Přečtěte si ji, pokud vás zajímá, jak se funkce "
+"mění na vázané metody nebo implementace běžných nástrojů jako "
+":func:`classmethod`, :func:`staticmethod`, :func:`property` a "
+":term:`__slots__`."
 
 #: ../../howto/descriptor.rst:36
 msgid "Primer"
-msgstr ""
+msgstr "Úvod"
 
 #: ../../howto/descriptor.rst:38
 msgid ""
 "In this primer, we start with the most basic possible example and then "
 "we'll add new capabilities one by one."
 msgstr ""
+"V tomto úvodu začneme nejzákladnějším možným příkladem a pak budeme "
+"přidávat nové schopnosti jednu po druhé."
 
 #: ../../howto/descriptor.rst:43
 msgid "Simple example: A descriptor that returns a constant"
-msgstr ""
+msgstr "Jednoduchý příklad: Deskriptor, který vrací konstantu"
 
 #: ../../howto/descriptor.rst:45
 msgid ""
 "The :class:`!Ten` class is a descriptor whose :meth:`~object.__get__` "
 "method always returns the constant ``10``:"
 msgstr ""
+"Třída :class:`!Ten` je deskriptor, jehož metoda :meth:`~object.__get__` "
+"vždy vrací konstantu ``10``:"
 
 #: ../../howto/descriptor.rst:48
 msgid ""
@@ -114,6 +133,7 @@ msgid ""
 "To use the descriptor, it must be stored as a class variable in another "
 "class:"
 msgstr ""
+"Pro použití deskriptoru musí být uložen jako proměnná třídy v jiné třídě:"
 
 #: ../../howto/descriptor.rst:56
 msgid ""
@@ -121,12 +141,17 @@ msgid ""
 "    x = 5                       # Regular class attribute\n"
 "    y = Ten()                   # Descriptor instance"
 msgstr ""
+"class A:\n"
+"    x = 5                       # Regular class attribute\n"
+"    y = Ten()                   # Descriptor instance"
 
 #: ../../howto/descriptor.rst:62
 msgid ""
 "An interactive session shows the difference between normal attribute "
 "lookup and descriptor lookup:"
 msgstr ""
+"Interaktivní relace ukazuje rozdíl mezi běžným vyhledáváním atributů a "
+"vyhledáváním deskriptorů:"
 
 #: ../../howto/descriptor.rst:65
 msgid ""

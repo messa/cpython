@@ -21,37 +21,39 @@ msgstr ""
 
 #: ../../howto/argparse-optparse.rst:8
 msgid "Migrating ``optparse`` code to ``argparse``"
-msgstr ""
+msgstr "Migrace kódu z ``optparse`` na ``argparse``"
 
 #: ../../howto/argparse-optparse.rst:10
 msgid ""
 "The :mod:`argparse` module offers several higher level features not "
 "natively provided by the :mod:`optparse` module, including:"
 msgstr ""
+"Modul :mod:`argparse` nabízí několik pokročilých funkcí, které modul "
+":mod:`optparse` nativně neposkytuje, včetně:"
 
 #: ../../howto/argparse-optparse.rst:13
 msgid "Handling positional arguments."
-msgstr ""
+msgstr "Zpracování pozičních argumentů."
 
 #: ../../howto/argparse-optparse.rst:14
 msgid "Supporting subcommands."
-msgstr ""
+msgstr "Podpora podpříkazů."
 
 #: ../../howto/argparse-optparse.rst:15
 msgid "Allowing alternative option prefixes like ``+`` and ``/``."
-msgstr ""
+msgstr "Povolení alternativních prefixů voleb jako ``+`` a ``/``."
 
 #: ../../howto/argparse-optparse.rst:16
 msgid "Handling zero-or-more and one-or-more style arguments."
-msgstr ""
+msgstr "Zpracování argumentů typu „nula nebo více" a „jeden nebo více"."
 
 #: ../../howto/argparse-optparse.rst:17
 msgid "Producing more informative usage messages."
-msgstr ""
+msgstr "Vytváření informativnějších zpráv o použití."
 
 #: ../../howto/argparse-optparse.rst:18
 msgid "Providing a much simpler interface for custom ``type`` and ``action``."
-msgstr ""
+msgstr "Poskytování mnohem jednoduššího rozhraní pro vlastní ``type`` a ``action``."
 
 #: ../../howto/argparse-optparse.rst:20
 msgid ""
@@ -63,6 +65,12 @@ msgid ""
 " interface mean that the API has diverged from that of ``optparse`` over "
 "time."
 msgstr ""
+"Původně se modul :mod:`argparse` snažil zachovat kompatibilitu s "
+":mod:`optparse`. Zásadní návrhové rozdíly mezi podporou deklarativního "
+"zpracování voleb příkazového řádku (přičemž zpracování pozičních argumentů "
+"bylo ponecháno na kódu aplikace) a podporou jak pojmenovaných voleb, tak "
+"pozičních argumentů v deklarativním rozhraní však vedly k tomu, že se API "
+"časem od ``optparse`` odchýlilo."
 
 #: ../../howto/argparse-optparse.rst:27
 msgid ""
@@ -70,6 +78,9 @@ msgid ""
 " currently using :mod:`optparse` and are happy with the way it works can "
 "just continue to use ``optparse``."
 msgstr ""
+"Jak je popsáno v :ref:`choosing-an-argument-parser`, aplikace, které "
+"aktuálně používají :mod:`optparse` a jsou spokojené se způsobem jeho "
+"fungování, mohou jednoduše pokračovat v používání ``optparse``."
 
 #: ../../howto/argparse-optparse.rst:31
 msgid ""
@@ -77,18 +88,25 @@ msgid ""
 "the list of intrinsic behavioural differences described in that section "
 "before deciding whether or not migration is desirable."
 msgstr ""
+"Vývojáři aplikací, kteří zvažují migraci, by si před rozhodnutím, zda je "
+"migrace žádoucí, měli také projít seznam vnitřních rozdílů v chování "
+"popsaný v této sekci."
 
 #: ../../howto/argparse-optparse.rst:35
 msgid ""
 "For applications that do choose to migrate from :mod:`optparse` to "
 ":mod:`argparse`, the following suggestions should be helpful:"
 msgstr ""
+"Pro aplikace, které se rozhodnou migrovat z :mod:`optparse` na "
+":mod:`argparse`, by měly být užitečné následující doporučení:"
 
 #: ../../howto/argparse-optparse.rst:38
 msgid ""
 "Replace all :meth:`optparse.OptionParser.add_option` calls with "
 ":meth:`ArgumentParser.add_argument` calls."
 msgstr ""
+"Nahraďte všechna volání :meth:`optparse.OptionParser.add_option` voláními "
+":meth:`ArgumentParser.add_argument`."
 
 #: ../../howto/argparse-optparse.rst:41
 msgid ""
@@ -98,6 +116,11 @@ msgid ""
 "Keep in mind that what was previously called ``options``, now in the "
 ":mod:`argparse` context is called ``args``."
 msgstr ""
+"Nahraďte ``(options, args) = parser.parse_args()`` za ``args = "
+"parser.parse_args()`` a přidejte další volání "
+":meth:`ArgumentParser.add_argument` pro poziční argumenty. Mějte na paměti, "
+"že to, co se dříve nazývalo ``options``, se nyní v kontextu :mod:`argparse` "
+"nazývá ``args``."
 
 #: ../../howto/argparse-optparse.rst:46
 msgid ""
@@ -105,18 +128,25 @@ msgid ""
 ":meth:`~ArgumentParser.parse_intermixed_args` instead of "
 ":meth:`~ArgumentParser.parse_args`."
 msgstr ""
+"Nahraďte :meth:`optparse.OptionParser.disable_interspersed_args` použitím "
+":meth:`~ArgumentParser.parse_intermixed_args` místo "
+":meth:`~ArgumentParser.parse_args`."
 
 #: ../../howto/argparse-optparse.rst:50
 msgid ""
 "Replace callback actions and the ``callback_*`` keyword arguments with "
 "``type`` or ``action`` arguments."
 msgstr ""
+"Nahraďte akce s callbacky a argumenty ``callback_*`` argumenty ``type`` "
+"nebo ``action``."
 
 #: ../../howto/argparse-optparse.rst:53
 msgid ""
 "Replace string names for ``type`` keyword arguments with the "
 "corresponding type objects (e.g. int, float, complex, etc)."
 msgstr ""
+"Nahraďte řetězcové názvy pro argumenty ``type`` odpovídajícími typovými "
+"objekty (např. int, float, complex atd.)."
 
 #: ../../howto/argparse-optparse.rst:56
 msgid ""
@@ -124,6 +154,9 @@ msgid ""
 ":exc:`optparse.OptionError` and :exc:`optparse.OptionValueError` with "
 ":exc:`ArgumentError`."
 msgstr ""
+"Nahraďte :class:`optparse.Values` za :class:`Namespace` a "
+":exc:`optparse.OptionError` a :exc:`optparse.OptionValueError` za "
+":exc:`ArgumentError`."
 
 #: ../../howto/argparse-optparse.rst:60
 #, python-format
@@ -132,6 +165,9 @@ msgid ""
 " with the standard Python syntax to use dictionaries to format strings, "
 "that is, ``%(default)s`` and ``%(prog)s``."
 msgstr ""
+"Nahraďte řetězce s implicitními argumenty jako ``%default`` nebo ``%prog`` "
+"standardní syntaxí Pythonu pro formátování řetězců pomocí slovníků, tedy "
+"``%(default)s`` a ``%(prog)s``."
 
 #: ../../howto/argparse-optparse.rst:64
 msgid ""
@@ -139,4 +175,6 @@ msgid ""
 "``parser.add_argument('--version', action='version', version='<the "
 "version>')``."
 msgstr ""
+"Nahraďte argument ``version`` konstruktoru OptionParser voláním "
+"``parser.add_argument('--version', action='version', version='<verze>')``."
 

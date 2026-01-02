@@ -21,19 +21,19 @@ msgstr ""
 
 #: ../../howto/annotations.rst:5
 msgid "Annotations Best Practices"
-msgstr ""
+msgstr "Osvědčené postupy pro anotace"
 
 #: ../../howto/annotations.rst
 msgid "author"
-msgstr ""
+msgstr "autor"
 
 #: ../../howto/annotations.rst:7
 msgid "Larry Hastings"
-msgstr ""
+msgstr "Larry Hastings"
 
 #: ../../howto/annotations.rst:-1
 msgid "Abstract"
-msgstr ""
+msgstr "Abstrakt"
 
 #: ../../howto/annotations.rst:11
 msgid ""
@@ -42,6 +42,10 @@ msgid ""
 "``__annotations__`` on Python objects, we encourage you to follow the "
 "guidelines described below."
 msgstr ""
+"Tento dokument je navržen tak, aby shrnoval osvědčené postupy pro práci "
+"se slovníky anotací. Pokud píšete kód v Pythonu, který zkoumá "
+"``__annotations__`` na objektech Pythonu, doporučujeme vám dodržovat "
+"níže popsané pokyny."
 
 #: ../../howto/annotations.rst:16
 msgid ""
@@ -51,6 +55,11 @@ msgid ""
 "versions 3.9 and older, other best practices for ``__annotations__`` that"
 " apply to any Python version, and quirks of ``__annotations__``."
 msgstr ""
+"Dokument je rozdělen do čtyř částí: osvědčené postupy pro přístup k "
+"anotacím objektu v Pythonu verze 3.10 a novějších, osvědčené postupy pro "
+"přístup k anotacím objektu v Pythonu verze 3.9 a starších, další "
+"osvědčené postupy pro ``__annotations__`` platné pro jakoukoli verzi "
+"Pythonu a zvláštnosti ``__annotations__``."
 
 #: ../../howto/annotations.rst:26
 msgid ""
@@ -59,10 +68,14 @@ msgid ""
 "information on how to use \"type hints\" in your code, please see the "
 ":mod:`typing` module."
 msgstr ""
+"Všimněte si, že tento dokument je konkrétně o práci s "
+"``__annotations__``, nikoli o použití anotací *pro* něco. Pokud hledáte "
+"informace o tom, jak používat „typové nápovědy" ve svém kódu, podívejte "
+"se na modul :mod:`typing`."
 
 #: ../../howto/annotations.rst:33
 msgid "Accessing The Annotations Dict Of An Object In Python 3.10 And Newer"
-msgstr ""
+msgstr "Přístup ke slovníku anotací objektu v Pythonu 3.10 a novějších"
 
 #: ../../howto/annotations.rst:35
 msgid ""
@@ -72,6 +85,11 @@ msgid ""
 "dict of any object that supports annotations.  This function can also "
 "\"un-stringize\" stringized annotations for you."
 msgstr ""
+"Python 3.10 přidává do standardní knihovny novou funkci: "
+":func:`inspect.get_annotations`. V Pythonu verzí 3.10 až 3.13 je volání "
+"této funkce osvědčeným postupem pro přístup ke slovníku anotací "
+"jakéhokoli objektu, který podporuje anotace. Tato funkce také může "
+"za vás „odřetězcovat" zřetězcované anotace."
 
 #: ../../howto/annotations.rst:42
 msgid ""
@@ -80,6 +98,9 @@ msgid ""
 ":func:`annotationlib.get_annotations` function, which supersedes "
 ":func:`inspect.get_annotations`."
 msgstr ""
+"V Pythonu 3.14 je nový modul :mod:`annotationlib` s funkcionalitou pro "
+"práci s anotacemi. To zahrnuje funkci :func:`annotationlib.get_annotations`, "
+"která nahrazuje :func:`inspect.get_annotations`."
 
 #: ../../howto/annotations.rst:47
 msgid ""
@@ -91,6 +112,14 @@ msgid ""
 "examining is one of these three *specific* objects, you may simply use "
 "``o.__annotations__`` to get at the object's annotations dict."
 msgstr ""
+"Pokud z nějakého důvodu :func:`inspect.get_annotations` není vhodná pro "
+"váš případ použití, můžete přistupovat k datovému členu "
+"``__annotations__`` ručně. Osvědčený postup se v Pythonu 3.10 také "
+"změnil: od Pythonu 3.10 je zaručeno, že ``o.__annotations__`` bude "
+"*vždy* fungovat na funkcích, třídách a modulech Pythonu. Pokud jste si "
+"jisti, že objekt, který zkoumáte, je jeden z těchto tří *konkrétních* "
+"objektů, můžete jednoduše použít ``o.__annotations__`` k získání "
+"slovníku anotací objektu."
 
 #: ../../howto/annotations.rst:57
 msgid ""
@@ -101,6 +130,12 @@ msgid ""
 ":func:`getattr` with three arguments, for example ``getattr(o, "
 "'__annotations__', None)``."
 msgstr ""
+"Jiné typy volatelných objektů – například volatelné objekty vytvořené "
+"pomocí :func:`functools.partial` – však nemusí mít definován atribut "
+"``__annotations__``. Při přístupu k ``__annotations__`` u potenciálně "
+"neznámého objektu je v Pythonu verzí 3.10 a novějších osvědčeným "
+"postupem volat :func:`getattr` se třemi argumenty, například "
+"``getattr(o, '__annotations__', None)``."
 
 #: ../../howto/annotations.rst:65
 msgid ""
@@ -109,10 +144,14 @@ msgid ""
 " the parent's ``__annotations__``. In Python 3.10 and newer, the child "
 "class's annotations will be an empty dict instead."
 msgstr ""
+"Před Pythonem 3.10 přístup k ``__annotations__`` na třídě, která "
+"nedefinuje žádné anotace, ale má rodičovskou třídu s anotacemi, vracel "
+"``__annotations__`` rodiče. V Pythonu 3.10 a novějších budou anotace "
+"odvozené třídy místo toho prázdným slovníkem."
 
 #: ../../howto/annotations.rst:73
 msgid "Accessing The Annotations Dict Of An Object In Python 3.9 And Older"
-msgstr ""
+msgstr "Přístup ke slovníku anotací objektu v Pythonu 3.9 a starších"
 
 #: ../../howto/annotations.rst:75
 msgid ""
@@ -121,6 +160,9 @@ msgid ""
 "flaw in these older versions of Python, specifically to do with class "
 "annotations."
 msgstr ""
+"V Pythonu 3.9 a starších je přístup ke slovníku anotací objektu mnohem "
+"složitější než v novějších verzích. Problémem je chyba v návrhu těchto "
+"starších verzí Pythonu, konkrétně související s anotacemi tříd."
 
 #: ../../howto/annotations.rst:80
 msgid ""
@@ -130,6 +172,11 @@ msgid ""
 "should use three-argument :func:`getattr` to access the object's "
 "``__annotations__`` attribute."
 msgstr ""
+"Osvědčený postup pro přístup ke slovníku anotací jiných objektů – "
+"funkcí, jiných volatelných objektů a modulů – je stejný jako osvědčený "
+"postup pro 3.10, za předpokladu, že nevoláte "
+":func:`inspect.get_annotations`: měli byste použít :func:`getattr` se "
+"třemi argumenty pro přístup k atributu ``__annotations__`` objektu."
 
 #: ../../howto/annotations.rst:87
 msgid ""
@@ -139,6 +186,11 @@ msgid ""
 "``__annotations__`` attribute of a class may inadvertently return the "
 "annotations dict of a *base class.* As an example::"
 msgstr ""
+"Bohužel toto není osvědčený postup pro třídy. Problém je v tom, že "
+"protože ``__annotations__`` je u tříd nepovinný a protože třídy mohou "
+"dědit atributy od svých základních tříd, přístup k atributu "
+"``__annotations__`` třídy může neúmyslně vrátit slovník anotací "
+"*základní třídy*. Příklad::"
 
 #: ../../howto/annotations.rst:94
 msgid ""
@@ -151,10 +203,18 @@ msgid ""
 "\n"
 "print(Derived.__annotations__)"
 msgstr ""
+"class Base:\n"
+"    a: int = 3\n"
+"    b: str = 'abc'\n"
+"\n"
+"class Derived(Base):\n"
+"    pass\n"
+"\n"
+"print(Derived.__annotations__)"
 
 #: ../../howto/annotations.rst:103
 msgid "This will print the annotations dict from ``Base``, not ``Derived``."
-msgstr ""
+msgstr "Toto vypíše slovník anotací z ``Base``, nikoli z ``Derived``."
 
 #: ../../howto/annotations.rst:106
 msgid ""
@@ -166,6 +226,12 @@ msgid ""
 "annotations defined, best practice is to call the :meth:`~dict.get` "
 "method on the class dict."
 msgstr ""
+"Váš kód bude muset mít samostatnou větev, pokud je zkoumaný objekt "
+"třída (``isinstance(o, type)``). V takovém případě se osvědčený postup "
+"spoléhá na implementační detail Pythonu 3.9 a starších: pokud má třída "
+"definované anotace, jsou uloženy ve slovníku :attr:`~type.__dict__` "
+"třídy. Protože třída může, ale nemusí mít definované anotace, osvědčeným "
+"postupem je volat metodu :meth:`~dict.get` na slovníku třídy."
 
 #: ../../howto/annotations.rst:114
 msgid ""
@@ -173,6 +239,8 @@ msgid ""
 " ``__annotations__`` attribute on an arbitrary object in Python 3.9 and "
 "before::"
 msgstr ""
+"Pro shrnutí zde je ukázkový kód, který bezpečně přistupuje k atributu "
+"``__annotations__`` na libovolném objektu v Pythonu 3.9 a starších::"
 
 #: ../../howto/annotations.rst:118
 msgid ""
@@ -181,6 +249,10 @@ msgid ""
 "else:\n"
 "    ann = getattr(o, '__annotations__', None)"
 msgstr ""
+"if isinstance(o, type):\n"
+"    ann = o.__dict__.get('__annotations__', None)\n"
+"else:\n"
+"    ann = getattr(o, '__annotations__', None)"
 
 #: ../../howto/annotations.rst:123
 msgid ""
@@ -188,6 +260,9 @@ msgid ""
 "``None``.  You're encouraged to double-check the type of ``ann`` using "
 ":func:`isinstance` before further examination."
 msgstr ""
+"Po spuštění tohoto kódu by ``ann`` měl být buď slovník, nebo ``None``. "
+"Doporučuje se před dalším zkoumáním zkontrolovat typ ``ann`` pomocí "
+":func:`isinstance`."
 
 #: ../../howto/annotations.rst:128
 msgid ""
@@ -195,10 +270,13 @@ msgid ""
 ":attr:`~type.__dict__` attribute, so for extra safety you may also wish "
 "to use :func:`getattr` to access :attr:`!__dict__`."
 msgstr ""
+"Všimněte si, že některé exotické nebo nesprávně vytvořené typové objekty "
+"nemusí mít atribut :attr:`~type.__dict__`, takže pro větší bezpečnost "
+"možná budete chtít použít :func:`getattr` pro přístup k :attr:`!__dict__`."
 
 #: ../../howto/annotations.rst:134
 msgid "Manually Un-Stringizing Stringized Annotations"
-msgstr ""
+msgstr "Ruční odřetězcování zřetězcovaných anotací"
 
 #: ../../howto/annotations.rst:136
 msgid ""
@@ -207,6 +285,10 @@ msgid ""
 " really is best to call :func:`inspect.get_annotations` to do this work "
 "for you."
 msgstr ""
+"V situacích, kdy některé anotace mohou být „zřetězcované" a vy chcete "
+"vyhodnotit tyto řetězce, aby vytvořily hodnoty Pythonu, které "
+"reprezentují, je opravdu nejlepší volat :func:`inspect.get_annotations`, "
+"aby tuto práci udělala za vás."
 
 #: ../../howto/annotations.rst:142
 msgid ""
@@ -216,18 +298,27 @@ msgid ""
 ":func:`inspect.get_annotations` in the current Python version and follow "
 "a similar approach."
 msgstr ""
+"Pokud používáte Python 3.9 nebo starší, nebo pokud z nějakého důvodu "
+"nemůžete použít :func:`inspect.get_annotations`, budete muset "
+"duplikovat její logiku. Doporučuje se prozkoumat implementaci "
+":func:`inspect.get_annotations` v aktuální verzi Pythonu a postupovat "
+"podobně."
 
 #: ../../howto/annotations.rst:148
 msgid ""
 "In a nutshell, if you wish to evaluate a stringized annotation on an "
 "arbitrary object ``o``:"
 msgstr ""
+"Stručně řečeno, pokud chcete vyhodnotit zřetězcovanou anotaci na "
+"libovolném objektu ``o``:"
 
 #: ../../howto/annotations.rst:151
 msgid ""
 "If ``o`` is a module, use ``o.__dict__`` as the ``globals`` when calling "
 ":func:`eval`."
 msgstr ""
+"Pokud je ``o`` modul, použijte ``o.__dict__`` jako ``globals`` při "
+"volání :func:`eval`."
 
 #: ../../howto/annotations.rst:153
 msgid ""
@@ -235,6 +326,9 @@ msgid ""
 "``globals``, and ``dict(vars(o))`` as the ``locals``, when calling "
 ":func:`eval`."
 msgstr ""
+"Pokud je ``o`` třída, použijte ``sys.modules[o.__module__].__dict__`` "
+"jako ``globals`` a ``dict(vars(o))`` jako ``locals`` při volání "
+":func:`eval`."
 
 #: ../../howto/annotations.rst:156
 msgid ""
@@ -243,12 +337,20 @@ msgid ""
 " it by accessing either ``o.__wrapped__`` or ``o.func`` as appropriate, "
 "until you have found the root unwrapped function."
 msgstr ""
+"Pokud je ``o`` obalený volatelný objekt pomocí "
+":func:`functools.update_wrapper`, :func:`functools.wraps` nebo "
+":func:`functools.partial`, iterativně jej rozbalte přístupem k "
+"``o.__wrapped__`` nebo ``o.func`` podle potřeby, dokud nenajdete "
+"kořenovou rozbalenou funkci."
 
 #: ../../howto/annotations.rst:160
 msgid ""
 "If ``o`` is a callable (but not a class), use :attr:`o.__globals__ "
 "<function.__globals__>` as the globals when calling :func:`eval`."
 msgstr ""
+"Pokud je ``o`` volatelný objekt (ale ne třída), použijte "
+":attr:`o.__globals__ <function.__globals__>` jako globals při volání "
+":func:`eval`."
 
 #: ../../howto/annotations.rst:164
 msgid ""
@@ -258,18 +360,28 @@ msgid ""
 "use cases for type hints that require annotating with string values that "
 "specifically *can't* be evaluated.  For example:"
 msgstr ""
+"Ne všechny řetězcové hodnoty použité jako anotace však mohou být úspěšně "
+"převedeny na hodnoty Pythonu pomocí :func:`eval`. Řetězcové hodnoty "
+"teoreticky mohou obsahovat jakýkoli platný řetězec a v praxi existují "
+"platné případy použití pro typové nápovědy, které vyžadují anotaci "
+"řetězcovými hodnotami, které konkrétně *nemohou* být vyhodnoceny. "
+"Například:"
 
 #: ../../howto/annotations.rst:171
 msgid ""
 ":pep:`604` union types using ``|``, before support for this was added to "
 "Python 3.10."
 msgstr ""
+"Sjednocené typy :pep:`604` používající ``|``, před přidáním podpory v "
+"Pythonu 3.10."
 
 #: ../../howto/annotations.rst:173
 msgid ""
 "Definitions that aren't needed at runtime, only imported when "
 ":const:`typing.TYPE_CHECKING` is true."
 msgstr ""
+"Definice, které nejsou potřeba za běhu, importované pouze když je "
+":const:`typing.TYPE_CHECKING` pravdivá."
 
 #: ../../howto/annotations.rst:176
 msgid ""
@@ -278,22 +390,30 @@ msgid ""
 "annotations, it's recommended to only attempt to evaluate string values "
 "when explicitly requested to by the caller."
 msgstr ""
+"Pokud se :func:`eval` pokusí vyhodnotit takové hodnoty, selže a vyvolá "
+"výjimku. Při navrhování API knihovny, která pracuje s anotacemi, se "
+"proto doporučuje pokoušet se vyhodnocovat řetězcové hodnoty pouze tehdy, "
+"když o to volající explicitně požádá."
 
 #: ../../howto/annotations.rst:184
 msgid "Best Practices For ``__annotations__`` In Any Python Version"
-msgstr ""
+msgstr "Osvědčené postupy pro ``__annotations__`` v jakékoli verzi Pythonu"
 
 #: ../../howto/annotations.rst:186
 msgid ""
 "You should avoid assigning to the ``__annotations__`` member of objects "
 "directly.  Let Python manage setting ``__annotations__``."
 msgstr ""
+"Měli byste se vyhnout přímému přiřazování do členu ``__annotations__`` "
+"objektů. Nechte Python spravovat nastavování ``__annotations__``."
 
 #: ../../howto/annotations.rst:189
 msgid ""
 "If you do assign directly to the ``__annotations__`` member of an object,"
 " you should always set it to a ``dict`` object."
 msgstr ""
+"Pokud přiřazujete přímo do členu ``__annotations__`` objektu, měli byste "
+"jej vždy nastavit na objekt ``dict``."
 
 #: ../../howto/annotations.rst:192
 msgid ""
@@ -301,6 +421,10 @@ msgid ""
 "Instead, use :func:`annotationlib.get_annotations` (Python 3.14+) or "
 ":func:`inspect.get_annotations` (Python 3.10+)."
 msgstr ""
+"Měli byste se vyhnout přímému přístupu k ``__annotations__`` na "
+"jakémkoli objektu. Místo toho použijte "
+":func:`annotationlib.get_annotations` (Python 3.14+) nebo "
+":func:`inspect.get_annotations` (Python 3.10+)."
 
 #: ../../howto/annotations.rst:196
 msgid ""
@@ -308,18 +432,20 @@ msgid ""
 "you should ensure that it's a dictionary before attempting to examine its"
 " contents."
 msgstr ""
+"Pokud přímo přistupujete k členu ``__annotations__`` objektu, měli byste "
+"se před zkoumáním jeho obsahu ujistit, že je to slovník."
 
 #: ../../howto/annotations.rst:200
 msgid "You should avoid modifying ``__annotations__`` dicts."
-msgstr ""
+msgstr "Měli byste se vyhnout modifikování slovníků ``__annotations__``."
 
 #: ../../howto/annotations.rst:202
 msgid "You should avoid deleting the ``__annotations__`` attribute of an object."
-msgstr ""
+msgstr "Měli byste se vyhnout mazání atributu ``__annotations__`` objektu."
 
 #: ../../howto/annotations.rst:207
 msgid "``__annotations__`` Quirks"
-msgstr ""
+msgstr "Zvláštnosti ``__annotations__``"
 
 #: ../../howto/annotations.rst:209
 msgid ""
@@ -332,12 +458,22 @@ msgid ""
 "dict will throw an ``AttributeError``; using ``del fn.__annotations__`` "
 "twice in a row is guaranteed to always throw an ``AttributeError``."
 msgstr ""
+"Ve všech verzích Pythonu 3 objekty funkcí líně vytvářejí slovník anotací, "
+"pokud na daném objektu nejsou definovány žádné anotace. Atribut "
+"``__annotations__`` můžete smazat pomocí ``del fn.__annotations__``, ale "
+"pokud pak přistoupíte k ``fn.__annotations__``, objekt vytvoří nový "
+"prázdný slovník, který uloží a vrátí jako své anotace. Smazání anotací "
+"na funkci před tím, než líně vytvořila svůj slovník anotací, vyvolá "
+"``AttributeError``; použití ``del fn.__annotations__`` dvakrát za sebou "
+"je zaručeno, že vždy vyvolá ``AttributeError``."
 
 #: ../../howto/annotations.rst:219
 msgid ""
 "Everything in the above paragraph also applies to class and module "
 "objects in Python 3.10 and newer."
 msgstr ""
+"Vše v předchozím odstavci platí také pro objekty tříd a modulů v Pythonu "
+"3.10 a novějších."
 
 #: ../../howto/annotations.rst:222
 msgid ""
@@ -349,6 +485,12 @@ msgid ""
 "permit setting ``__annotations__`` to any Python value, and will retain "
 "whatever value is set."
 msgstr ""
+"Ve všech verzích Pythonu 3 můžete nastavit ``__annotations__`` na objektu "
+"funkce na ``None``. Následný přístup k anotacím tohoto objektu pomocí "
+"``fn.__annotations__`` však líně vytvoří prázdný slovník podle prvního "
+"odstavce této sekce. Toto *neplatí* pro moduly a třídy v žádné verzi "
+"Pythonu; tyto objekty umožňují nastavit ``__annotations__`` na jakoukoli "
+"hodnotu Pythonu a zachovají jakoukoli nastavenou hodnotu."
 
 #: ../../howto/annotations.rst:230
 msgid ""
@@ -357,6 +499,10 @@ msgid ""
 "string will itself be quoted.  In effect the annotation is quoted "
 "*twice.*  For example::"
 msgstr ""
+"Pokud Python zřetězcuje vaše anotace za vás (pomocí ``from __future__ "
+"import annotations``) a zadáte řetězec jako anotaci, řetězec bude sám "
+"v uvozovkách. Ve skutečnosti je anotace v uvozovkách *dvakrát*. "
+"Například::"
 
 #: ../../howto/annotations.rst:236
 msgid ""
@@ -365,6 +511,10 @@ msgid ""
 "\n"
 "print(foo.__annotations__)"
 msgstr ""
+"from __future__ import annotations\n"
+"def foo(a: \"str\"): pass\n"
+"\n"
+"print(foo.__annotations__)"
 
 #: ../../howto/annotations.rst:241
 #, python-brace-format
@@ -372,6 +522,9 @@ msgid ""
 "This prints ``{'a': \"'str'\"}``.  This shouldn't really be considered a "
 "\"quirk\"; it's mentioned here simply because it might be surprising."
 msgstr ""
+"Toto vypíše ``{'a': \"'str'\"}``. Toto by nemělo být považováno za "
+"„zvláštnost"; je to zde zmíněno jednoduše proto, že to může být "
+"překvapivé."
 
 #: ../../howto/annotations.rst:244
 msgid ""
@@ -384,6 +537,15 @@ msgid ""
 "class's :attr:`~type.__dict__` (for example, "
 "``cls.__dict__.get('__annotations__', None)``)."
 msgstr ""
+"Pokud používáte třídu s vlastní metatřídou a přistupujete k "
+"``__annotations__`` na třídě, můžete pozorovat neočekávané chování; viz "
+":pep:`749 <749#pep749-metaclasses>` pro některé příklady. Těmto "
+"zvláštnostem se můžete vyhnout použitím "
+":func:`annotationlib.get_annotations` v Pythonu 3.14+ nebo "
+":func:`inspect.get_annotations` v Pythonu 3.10+. V dřívějších verzích "
+"Pythonu se můžete těmto chybám vyhnout přístupem k anotacím ze slovníku "
+":attr:`~type.__dict__` třídy (například "
+"``cls.__dict__.get('__annotations__', None)``)."
 
 #: ../../howto/annotations.rst:253
 msgid ""
@@ -393,4 +555,8 @@ msgid ""
 ":func:`type` to access its class (for example, "
 "``annotationlib.get_annotations(type(myinstance))`` on Python 3.14+)."
 msgstr ""
-
+"V některých verzích Pythonu mohou instance tříd mít atribut "
+"``__annotations__``. Toto však není podporovaná funkcionalita. Pokud "
+"potřebujete anotace instance, můžete použít :func:`type` pro přístup k "
+"její třídě (například "
+"``annotationlib.get_annotations(type(myinstance))`` v Pythonu 3.14+)."

@@ -21,15 +21,15 @@ msgstr ""
 
 #: ../../howto/sorting.rst:4
 msgid "Sorting Techniques"
-msgstr ""
+msgstr "Techniky třídění"
 
 #: ../../howto/sorting.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/sorting.rst:6
 msgid "Andrew Dalke and Raymond Hettinger"
-msgstr ""
+msgstr "Andrew Dalke and Raymond Hettinger"
 
 #: ../../howto/sorting.rst:9
 msgid ""
@@ -37,28 +37,36 @@ msgid ""
 "list in-place.  There is also a :func:`sorted` built-in function that "
 "builds a new sorted list from an iterable."
 msgstr ""
+"Pythonové seznamy mají vestavěnou metodu :meth:`list.sort`, která upravuje "
+"seznam přímo na místě. Existuje také vestavěná funkce :func:`sorted`, která "
+"vytvoří nový setříděný seznam z iterovatelného objektu."
 
 #: ../../howto/sorting.rst:13
 msgid ""
 "In this document, we explore the various techniques for sorting data "
 "using Python."
 msgstr ""
+"V tomto dokumentu prozkoumáme různé techniky třídění dat pomocí Pythonu."
 
 #: ../../howto/sorting.rst:17
 msgid "Sorting Basics"
-msgstr ""
+msgstr "Základy třídění"
 
 #: ../../howto/sorting.rst:19
 msgid ""
 "A simple ascending sort is very easy: just call the :func:`sorted` "
 "function. It returns a new sorted list:"
 msgstr ""
+"Jednoduché vzestupné třídění je velmi snadné: stačí zavolat funkci :func:`sorted`. "
+"Vrátí nový setříděný seznam:"
 
 #: ../../howto/sorting.rst:22
 msgid ""
 ">>> sorted([5, 2, 3, 1, 4])\n"
 "[1, 2, 3, 4, 5]"
 msgstr ""
+">>> sorted([5, 2, 3, 1, 4])\n"
+"[1, 2, 3, 4, 5]"
 
 #: ../../howto/sorting.rst:27
 msgid ""
@@ -67,6 +75,9 @@ msgid ""
 "convenient than :func:`sorted` - but if you don't need the original list,"
 " it's slightly more efficient."
 msgstr ""
+"Můžete také použít metodu :meth:`list.sort`. Upravuje seznam přímo na místě "
+"(a vrací ``None``, aby se předešlo záměně). Obvykle je méně pohodlná než "
+":func:`sorted` - ale pokud nepotřebujete původní seznam, je mírně efektivnější."
 
 #: ../../howto/sorting.rst:32
 msgid ""
@@ -75,12 +86,18 @@ msgid ""
 ">>> a\n"
 "[1, 2, 3, 4, 5]"
 msgstr ""
+">>> a = [5, 2, 3, 1, 4]\n"
+">>> a.sort()\n"
+">>> a\n"
+"[1, 2, 3, 4, 5]"
 
 #: ../../howto/sorting.rst:39
 msgid ""
 "Another difference is that the :meth:`list.sort` method is only defined "
 "for lists. In contrast, the :func:`sorted` function accepts any iterable."
 msgstr ""
+"Dalším rozdílem je, že metoda :meth:`list.sort` je definována pouze pro "
+"seznamy. Naproti tomu funkce :func:`sorted` přijímá jakýkoliv iterovatelný objekt."
 
 #: ../../howto/sorting.rst:42
 #, python-brace-format
@@ -88,10 +105,12 @@ msgid ""
 ">>> sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})\n"
 "[1, 2, 3, 4, 5]"
 msgstr ""
+">>> sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})\n"
+"[1, 2, 3, 4, 5]"
 
 #: ../../howto/sorting.rst:48
 msgid "Key Functions"
-msgstr ""
+msgstr "Klíčové funkce"
 
 #: ../../howto/sorting.rst:50
 msgid ""
@@ -101,12 +120,18 @@ msgid ""
 "other callable) to be called on each list element prior to making "
 "comparisons."
 msgstr ""
+"Metoda :meth:`list.sort` a funkce :func:`sorted`, :func:`min`, :func:`max`, "
+":func:`heapq.nsmallest` a :func:`heapq.nlargest` mají parametr *key* pro "
+"specifikaci funkce (nebo jiného volatelného objektu), která se zavolá na "
+"každý prvek seznamu před provedením porovnání."
 
 #: ../../howto/sorting.rst:56
 msgid ""
 "For example, here's a case-insensitive string comparison using "
 ":meth:`str.casefold`:"
 msgstr ""
+"Například zde je porovnání řetězců bez rozlišování velikosti písmen pomocí "
+":meth:`str.casefold`:"
 
 #: ../../howto/sorting.rst:59
 msgid ""
@@ -114,6 +139,9 @@ msgid ""
 "key=str.casefold)\n"
 "['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']"
 msgstr ""
+">>> sorted(\"This is a test string from Andrew\".split(), "
+"key=str.casefold)\n"
+"['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']"
 
 #: ../../howto/sorting.rst:64
 msgid ""
@@ -122,12 +150,18 @@ msgid ""
 "purposes. This technique is fast because the key function is called "
 "exactly once for each input record."
 msgstr ""
+"Hodnota parametru *key* by měla být funkce (nebo jiný volatelný objekt), "
+"která přijímá jeden argument a vrací klíč pro účely třídění. Tato technika "
+"je rychlá, protože klíčová funkce je zavolána přesně jednou pro každý "
+"vstupní záznam."
 
 #: ../../howto/sorting.rst:69
 msgid ""
 "A common pattern is to sort complex objects using some of the object's "
 "indices as keys. For example:"
 msgstr ""
+"Běžným vzorem je třídit složité objekty pomocí některých indexů objektu "
+"jako klíčů. Například:"
 
 #: ../../howto/sorting.rst:72
 msgid ""
@@ -140,10 +174,18 @@ msgid ""
 "age\n"
 "[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 msgstr ""
+">>> student_tuples = [\n"
+"...     ('john', 'A', 15),\n"
+"...     ('jane', 'B', 12),\n"
+"...     ('dave', 'B', 10),\n"
+"... ]\n"
+">>> sorted(student_tuples, key=lambda student: student[2])   # sort by "
+"age\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 
 #: ../../howto/sorting.rst:82
 msgid "The same technique works for objects with named attributes. For example:"
-msgstr ""
+msgstr "Stejná technika funguje pro objekty s pojmenovanými atributy. Například:"
 
 #: ../../howto/sorting.rst:84
 msgid ""
@@ -164,6 +206,22 @@ msgid ""
 "age\n"
 "[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 msgstr ""
+">>> class Student:\n"
+"...     def __init__(self, name, grade, age):\n"
+"...         self.name = name\n"
+"...         self.grade = grade\n"
+"...         self.age = age\n"
+"...     def __repr__(self):\n"
+"...         return repr((self.name, self.grade, self.age))\n"
+"\n"
+">>> student_objects = [\n"
+"...     Student('john', 'A', 15),\n"
+"...     Student('jane', 'B', 12),\n"
+"...     Student('dave', 'B', 10),\n"
+"... ]\n"
+">>> sorted(student_objects, key=lambda student: student.age)   # sort by "
+"age\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 
 #: ../../howto/sorting.rst:102
 msgid ""
@@ -171,10 +229,13 @@ msgid ""
 "above, or they can be instances of :class:`~dataclasses.dataclass` or a "
 ":term:`named tuple`."
 msgstr ""
+"Objekty s pojmenovanými atributy lze vytvořit běžnou třídou, jak je ukázáno "
+"výše, nebo mohou být instancemi :class:`~dataclasses.dataclass` nebo "
+":term:`named tuple`."
 
 #: ../../howto/sorting.rst:107
 msgid "Operator Module Functions and Partial Function Evaluation"
-msgstr ""
+msgstr "Funkce modulu operator a částečné vyhodnocení funkce"
 
 #: ../../howto/sorting.rst:109
 msgid ""
@@ -184,10 +245,14 @@ msgid ""
 ":func:`~operator.attrgetter`, and a :func:`~operator.methodcaller` "
 "function."
 msgstr ""
+"Vzory :term:`key function` uvedené výše jsou velmi běžné, takže Python "
+"poskytuje pomocné funkce, které usnadňují a urychlují přístupové funkce. "
+"Modul :mod:`operator` má funkce :func:`~operator.itemgetter`, "
+":func:`~operator.attrgetter` a :func:`~operator.methodcaller`."
 
 #: ../../howto/sorting.rst:114
 msgid "Using those functions, the above examples become simpler and faster:"
-msgstr ""
+msgstr "Použitím těchto funkcí se výše uvedené příklady stanou jednodušší a rychlejší:"
 
 #: ../../howto/sorting.rst:116
 msgid ""
@@ -199,12 +264,21 @@ msgid ""
 ">>> sorted(student_objects, key=attrgetter('age'))\n"
 "[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 msgstr ""
+">>> from operator import itemgetter, attrgetter\n"
+"\n"
+">>> sorted(student_tuples, key=itemgetter(2))\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]\n"
+"\n"
+">>> sorted(student_objects, key=attrgetter('age'))\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 
 #: ../../howto/sorting.rst:126
 msgid ""
 "The operator module functions allow multiple levels of sorting. For "
 "example, to sort by *grade* then by *age*:"
 msgstr ""
+"Funkce modulu operator umožňují víceúrovňové třídění. Například pro třídění "
+"podle *známky* a pak podle *věku*:"
 
 #: ../../howto/sorting.rst:129
 msgid ""
@@ -214,6 +288,11 @@ msgid ""
 ">>> sorted(student_objects, key=attrgetter('grade', 'age'))\n"
 "[('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]"
 msgstr ""
+">>> sorted(student_tuples, key=itemgetter(1,2))\n"
+"[('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]\n"
+"\n"
+">>> sorted(student_objects, key=attrgetter('grade', 'age'))\n"
+"[('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]"
 
 #: ../../howto/sorting.rst:137
 msgid ""
@@ -222,6 +301,10 @@ msgid ""
 " <https://en.wikipedia.org/wiki/Arity>`_ of a multi-argument function "
 "making it suitable for use as a key-function."
 msgstr ""
+"Modul :mod:`functools` poskytuje další užitečný nástroj pro vytváření "
+"klíčových funkcí. Funkce :func:`~functools.partial` může snížit `aritu "
+"<https://en.wikipedia.org/wiki/Arity>`_ víceargumentové funkce a učinit ji "
+"vhodnou pro použití jako klíčovou funkci."
 
 #: ../../howto/sorting.rst:142
 msgid ""
@@ -236,10 +319,20 @@ msgid ""
 ">>> sorted(names, key=partial(normalize, 'NFC'))\n"
 "['Abe', 'Eloise', 'Nubia', 'Núñez', 'Zeke', 'Zoë', 'Åbjørn', 'Élana']"
 msgstr ""
+">>> from functools import partial\n"
+">>> from unicodedata import normalize\n"
+"\n"
+">>> names = 'Zoë Åbjørn Núñez Élana Zeke Abe Nubia Eloise'.split()\n"
+"\n"
+">>> sorted(names, key=partial(normalize, 'NFD'))\n"
+"['Abe', 'Åbjørn', 'Eloise', 'Élana', 'Nubia', 'Núñez', 'Zeke', 'Zoë']\n"
+"\n"
+">>> sorted(names, key=partial(normalize, 'NFC'))\n"
+"['Abe', 'Eloise', 'Nubia', 'Núñez', 'Zeke', 'Zoë', 'Åbjørn', 'Élana']"
 
 #: ../../howto/sorting.rst:156
 msgid "Ascending and Descending"
-msgstr ""
+msgstr "Vzestupně a sestupně"
 
 #: ../../howto/sorting.rst:158
 msgid ""
@@ -247,6 +340,9 @@ msgid ""
 "with a boolean value. This is used to flag descending sorts. For example,"
 " to get the student data in reverse *age* order:"
 msgstr ""
+"Jak :meth:`list.sort`, tak :func:`sorted` přijímají parametr *reverse* s "
+"booleovskou hodnotou. Ten se používá k označení sestupného třídění. Například "
+"pro získání studentských dat v obráceném pořadí podle *věku*:"
 
 #: ../../howto/sorting.rst:162
 msgid ""
@@ -256,10 +352,15 @@ msgid ""
 ">>> sorted(student_objects, key=attrgetter('age'), reverse=True)\n"
 "[('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]"
 msgstr ""
+">>> sorted(student_tuples, key=itemgetter(2), reverse=True)\n"
+"[('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]\n"
+"\n"
+">>> sorted(student_objects, key=attrgetter('age'), reverse=True)\n"
+"[('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]"
 
 #: ../../howto/sorting.rst:171
 msgid "Sort Stability and Complex Sorts"
-msgstr ""
+msgstr "Stabilita třídění a složitá třídění"
 
 #: ../../howto/sorting.rst:173
 msgid ""
@@ -268,6 +369,9 @@ msgid ""
 "means that when multiple records have the same key, their original order "
 "is preserved."
 msgstr ""
+"Třídění je zaručeně `stabilní "
+"<https://en.wikipedia.org/wiki/Sorting_algorithm#Stability>`_\\. To znamená, "
+"že když mají více záznamů stejný klíč, jejich původní pořadí je zachováno."
 
 #: ../../howto/sorting.rst:177
 msgid ""
@@ -275,12 +379,17 @@ msgid ""
 ">>> sorted(data, key=itemgetter(0))\n"
 "[('blue', 1), ('blue', 2), ('red', 1), ('red', 2)]"
 msgstr ""
+">>> data = [('red', 1), ('blue', 1), ('red', 2), ('blue', 2)]\n"
+">>> sorted(data, key=itemgetter(0))\n"
+"[('blue', 1), ('blue', 2), ('red', 1), ('red', 2)]"
 
 #: ../../howto/sorting.rst:183
 msgid ""
 "Notice how the two records for *blue* retain their original order so that"
 " ``('blue', 1)`` is guaranteed to precede ``('blue', 2)``."
 msgstr ""
+"Všimněte si, jak dva záznamy pro *blue* si zachovávají své původní pořadí, "
+"takže ``('blue', 1)`` je zaručeně před ``('blue', 2)``."
 
 #: ../../howto/sorting.rst:186
 msgid ""
@@ -289,6 +398,10 @@ msgid ""
 "*grade* and then ascending *age*, do the *age* sort first and then sort "
 "again using *grade*:"
 msgstr ""
+"Tato skvělá vlastnost vám umožňuje vytvářet složitá třídění v sérii kroků "
+"třídění. Například pro třídění studentských dat sestupně podle *známky* a "
+"pak vzestupně podle *věku*, nejprve setřiďte podle *věku* a pak znovu "
+"setřiďte podle *známky*:"
 
 #: ../../howto/sorting.rst:190
 msgid ""
@@ -298,12 +411,19 @@ msgid ""
 "primary key, descending\n"
 "[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 msgstr ""
+">>> s = sorted(student_objects, key=attrgetter('age'))     # sort on "
+"secondary key\n"
+">>> sorted(s, key=attrgetter('grade'), reverse=True)       # now sort on "
+"primary key, descending\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 
 #: ../../howto/sorting.rst:196
 msgid ""
 "This can be abstracted out into a wrapper function that can take a list "
 "and tuples of field and order to sort them on multiple passes."
 msgstr ""
+"Toto lze abstrahovat do obálkové funkce, která může přijmout seznam a "
+"n-tice polí a pořadí pro třídění ve více průchodech."
 
 #: ../../howto/sorting.rst:199
 msgid ""
@@ -315,6 +435,13 @@ msgid ""
 ">>> multisort(list(student_objects), (('grade', True), ('age', False)))\n"
 "[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 msgstr ""
+">>> def multisort(xs, specs):\n"
+"...     for key, reverse in reversed(specs):\n"
+"...         xs.sort(key=attrgetter(key), reverse=reverse)\n"
+"...     return xs\n"
+"\n"
+">>> multisort(list(student_objects), (('grade', True), ('age', False)))\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 
 #: ../../howto/sorting.rst:209
 msgid ""
@@ -322,34 +449,41 @@ msgid ""
 "Python does multiple sorts efficiently because it can take advantage of "
 "any ordering already present in a dataset."
 msgstr ""
+"Algoritmus `Timsort <https://en.wikipedia.org/wiki/Timsort>`_ používaný v "
+"Pythonu provádí vícenásobná třídění efektivně, protože může využít jakékoliv "
+"uspořádání již přítomné v datové sadě."
 
 #: ../../howto/sorting.rst:214
 msgid "Decorate-Sort-Undecorate"
-msgstr ""
+msgstr "Decorate-Sort-Undecorate"
 
 #: ../../howto/sorting.rst:216
 msgid "This idiom is called Decorate-Sort-Undecorate after its three steps:"
-msgstr ""
+msgstr "Tento idiom se nazývá Decorate-Sort-Undecorate podle svých tří kroků:"
 
 #: ../../howto/sorting.rst:218
 msgid ""
 "First, the initial list is decorated with new values that control the "
 "sort order."
 msgstr ""
+"Nejprve je počáteční seznam ozdoben novými hodnotami, které řídí pořadí "
+"třídění."
 
 #: ../../howto/sorting.rst:220
 msgid "Second, the decorated list is sorted."
-msgstr ""
+msgstr "Zadruhé, ozdobený seznam je setříděn."
 
 #: ../../howto/sorting.rst:222
 msgid ""
 "Finally, the decorations are removed, creating a list that contains only "
 "the initial values in the new order."
 msgstr ""
+"Nakonec jsou ozdoby odstraněny, čímž vznikne seznam, který obsahuje pouze "
+"počáteční hodnoty v novém pořadí."
 
 #: ../../howto/sorting.rst:225
 msgid "For example, to sort the student data by *grade* using the DSU approach:"
-msgstr ""
+msgstr "Například pro třídění studentských dat podle *známky* pomocí přístupu DSU:"
 
 #: ../../howto/sorting.rst:227
 msgid ""
@@ -360,6 +494,12 @@ msgid ""
 "undecorate\n"
 "[('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]"
 msgstr ""
+">>> decorated = [(student.grade, i, student) for i, student in "
+"enumerate(student_objects)]\n"
+">>> decorated.sort()\n"
+">>> [student for grade, i, student in decorated]               # "
+"undecorate\n"
+"[('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]"
 
 #: ../../howto/sorting.rst:234
 msgid ""
@@ -367,18 +507,25 @@ msgid ""
 " items are compared; if they are the same then the second items are "
 "compared, and so on."
 msgstr ""
+"Tento idiom funguje, protože n-tice jsou porovnávány lexikograficky; nejprve "
+"jsou porovnány první položky; pokud jsou stejné, pak jsou porovnány druhé "
+"položky, a tak dále."
 
 #: ../../howto/sorting.rst:238
 msgid ""
 "It is not strictly necessary in all cases to include the index *i* in the"
 " decorated list, but including it gives two benefits:"
 msgstr ""
+"Není striktně nutné ve všech případech zahrnout index *i* do ozdobeného "
+"seznamu, ale jeho zahrnutí přináší dvě výhody:"
 
 #: ../../howto/sorting.rst:241
 msgid ""
 "The sort is stable -- if two items have the same key, their order will be"
 " preserved in the sorted list."
 msgstr ""
+"Třídění je stabilní -- pokud mají dvě položky stejný klíč, jejich pořadí "
+"bude zachováno v setříděném seznamu."
 
 #: ../../howto/sorting.rst:244
 msgid ""
@@ -387,6 +534,9 @@ msgid ""
 "So for example the original list could contain complex numbers which "
 "cannot be sorted directly."
 msgstr ""
+"Původní položky nemusí být porovnatelné, protože pořadí ozdobených n-tic bude "
+"určeno maximálně prvními dvěma položkami. Takže například původní seznam mohl "
+"obsahovat komplexní čísla, která nelze přímo třídit."
 
 #: ../../howto/sorting.rst:249
 msgid ""
@@ -394,22 +544,29 @@ msgid ""
 "<https://en.wikipedia.org/wiki/Schwartzian_transform>`_\\, after Randal "
 "L. Schwartz, who popularized it among Perl programmers."
 msgstr ""
+"Jiný název pro tento idiom je `Schwartzian transform "
+"<https://en.wikipedia.org/wiki/Schwartzian_transform>`_\\, podle Randala "
+"L. Schwartze, který jej zpopularizoval mezi programátory Perlu."
 
 #: ../../howto/sorting.rst:253
 msgid ""
 "Now that Python sorting provides key-functions, this technique is not "
 "often needed."
 msgstr ""
+"Nyní, když třídění v Pythonu poskytuje klíčové funkce, tato technika není "
+"často potřebná."
 
 #: ../../howto/sorting.rst:256
 msgid "Comparison Functions"
-msgstr ""
+msgstr "Porovnávací funkce"
 
 #: ../../howto/sorting.rst:258
 msgid ""
 "Unlike key functions that return an absolute value for sorting, a "
 "comparison function computes the relative ordering for two inputs."
 msgstr ""
+"Na rozdíl od klíčových funkcí, které vracejí absolutní hodnotu pro třídění, "
+"porovnávací funkce vypočítává relativní pořadí dvou vstupů."
 
 #: ../../howto/sorting.rst:261
 msgid ""
@@ -420,6 +577,11 @@ msgid ""
 "return a negative value for less-than, zero if the inputs are equal, or a"
 " positive value for greater-than."
 msgstr ""
+"Například `rovnoramenné váhy "
+"<https://upload.wikimedia.org/wikipedia/commons/1/17/Balance_à_tabac_1850.JPG>`_ "
+"porovnávají dva vzorky a dávají relativní pořadí: lehčí, stejný nebo těžší. "
+"Stejně tak porovnávací funkce jako ``cmp(a, b)`` vrátí zápornou hodnotu pro "
+"menší než, nulu pokud jsou vstupy stejné, nebo kladnou hodnotu pro větší než."
 
 #: ../../howto/sorting.rst:268
 msgid ""
@@ -428,6 +590,9 @@ msgid ""
 " functions as part of their API.  For example, :func:`locale.strcoll` is "
 "a comparison function."
 msgstr ""
+"Je běžné narazit na porovnávací funkce při překladu algoritmů z jiných jazyků. "
+"Také některé knihovny poskytují porovnávací funkce jako součást svého API. "
+"Například :func:`locale.strcoll` je porovnávací funkce."
 
 #: ../../howto/sorting.rst:272
 msgid ""
@@ -435,24 +600,28 @@ msgid ""
 ":class:`functools.cmp_to_key` to wrap the comparison function to make it "
 "usable as a key function::"
 msgstr ""
+"Pro tyto situace Python poskytuje :class:`functools.cmp_to_key` pro zabalení "
+"porovnávací funkce, aby ji bylo možné použít jako klíčovou funkci::"
 
 #: ../../howto/sorting.rst:276
 msgid "sorted(words, key=cmp_to_key(strcoll))  # locale-aware sort order"
-msgstr ""
+msgstr "sorted(words, key=cmp_to_key(strcoll))  # locale-aware sort order"
 
 #: ../../howto/sorting.rst:279
 msgid "Strategies For Unorderable Types and Values"
-msgstr ""
+msgstr "Strategie pro neuspořádatelné typy a hodnoty"
 
 #: ../../howto/sorting.rst:281
 msgid ""
 "A number of type and value issues can arise when sorting. Here are some "
 "strategies that can help:"
 msgstr ""
+"Při třídění může nastat řada problémů s typy a hodnotami. Zde je několik "
+"strategií, které mohou pomoci:"
 
 #: ../../howto/sorting.rst:284
 msgid "Convert non-comparable input types to strings prior to sorting:"
-msgstr ""
+msgstr "Převeďte nesrovnatelné vstupní typy na řetězce před tříděním:"
 
 #: ../../howto/sorting.rst:286
 msgid ""
@@ -460,16 +629,21 @@ msgid ""
 ">>> sorted(map(str, data))\n"
 "['10', '11', 'twelve']"
 msgstr ""
+">>> data = ['twelve', '11', 10]\n"
+">>> sorted(map(str, data))\n"
+"['10', '11', 'twelve']"
 
 #: ../../howto/sorting.rst:292
 msgid ""
 "This is needed because most cross-type comparisons raise a "
 ":exc:`TypeError`."
 msgstr ""
+"To je potřeba, protože většina mezidruhových porovnání vyvolá "
+":exc:`TypeError`."
 
 #: ../../howto/sorting.rst:295
 msgid "Remove special values prior to sorting:"
-msgstr ""
+msgstr "Odeberte speciální hodnoty před tříděním:"
 
 #: ../../howto/sorting.rst:297
 msgid ""
@@ -479,6 +653,11 @@ msgid ""
 ">>> sorted(filterfalse(isnan, data))\n"
 "[1.1, 2.2, 3.3]"
 msgstr ""
+">>> from math import isnan\n"
+">>> from itertools import filterfalse\n"
+">>> data = [3.3, float('nan'), 1.1, 2.2]\n"
+">>> sorted(filterfalse(isnan, data))\n"
+"[1.1, 2.2, 3.3]"
 
 #: ../../howto/sorting.rst:305
 msgid ""
@@ -486,10 +665,13 @@ msgid ""
 "<https://en.wikipedia.org/wiki/IEEE_754>`_ specifies that, \"Every NaN "
 "shall compare unordered with everything, including itself.\""
 msgstr ""
+"To je potřeba, protože `standard IEEE-754 "
+"<https://en.wikipedia.org/wiki/IEEE_754>`_ specifikuje, že \"Každé NaN "
+"bude porovnáno jako neuspořádané se vším, včetně sebe sama.\""
 
 #: ../../howto/sorting.rst:309
 msgid "Likewise, ``None`` can be stripped from datasets as well:"
-msgstr ""
+msgstr "Podobně lze z datových sad odstranit i ``None``:"
 
 #: ../../howto/sorting.rst:311
 msgid ""
@@ -497,14 +679,17 @@ msgid ""
 ">>> sorted(x for x in data if x is not None)\n"
 "[1.1, 2.2, 3.3]"
 msgstr ""
+">>> data = [3.3, None, 1.1, 2.2]\n"
+">>> sorted(x for x in data if x is not None)\n"
+"[1.1, 2.2, 3.3]"
 
 #: ../../howto/sorting.rst:317
 msgid "This is needed because ``None`` is not comparable to other types."
-msgstr ""
+msgstr "To je potřeba, protože ``None`` nelze porovnávat s jinými typy."
 
 #: ../../howto/sorting.rst:319
 msgid "Convert mapping types into sorted item lists before sorting:"
-msgstr ""
+msgstr "Převeďte mapovací typy na setříděné seznamy položek před tříděním:"
 
 #: ../../howto/sorting.rst:321
 #, python-brace-format
@@ -513,14 +698,17 @@ msgid ""
 ">>> sorted(data, key=lambda d: sorted(d.items()))\n"
 "[{'a': 1}, {'b': 2}]"
 msgstr ""
+">>> data = [{'a': 1}, {'b': 2}]\n"
+">>> sorted(data, key=lambda d: sorted(d.items()))\n"
+"[{'a': 1}, {'b': 2}]"
 
 #: ../../howto/sorting.rst:327
 msgid "This is needed because dict-to-dict comparisons raise a :exc:`TypeError`."
-msgstr ""
+msgstr "To je potřeba, protože porovnání slovník-slovník vyvolá :exc:`TypeError`."
 
 #: ../../howto/sorting.rst:330
 msgid "Convert set types into sorted lists before sorting:"
-msgstr ""
+msgstr "Převeďte typy množin na setříděné seznamy před tříděním:"
 
 #: ../../howto/sorting.rst:332
 #, python-brace-format
@@ -529,6 +717,9 @@ msgid ""
 ">>> sorted(map(sorted, data))\n"
 "[['a', 'b', 'c'], ['b', 'c', 'd']]"
 msgstr ""
+">>> data = [{'a', 'b', 'c'}, {'b', 'c', 'd'}]\n"
+">>> sorted(map(sorted, data))\n"
+"[['a', 'b', 'c'], ['b', 'c', 'd']]"
 
 #: ../../howto/sorting.rst:338
 #, python-brace-format
@@ -537,10 +728,13 @@ msgid ""
 "deterministic order.  For example, ``list({'a', 'b'})`` may produce "
 "either ``['a', 'b']`` or ``['b', 'a']``."
 msgstr ""
+"To je potřeba, protože prvky obsažené v typech množin nemají deterministické "
+"pořadí. Například ``list({'a', 'b'})`` může vytvořit buď ``['a', 'b']`` nebo "
+"``['b', 'a']``."
 
 #: ../../howto/sorting.rst:343
 msgid "Odds and Ends"
-msgstr ""
+msgstr "Různé drobnosti"
 
 #: ../../howto/sorting.rst:345
 msgid ""
@@ -549,6 +743,10 @@ msgid ""
 "because \"alphabetical\" sort orderings can vary across cultures even if "
 "the underlying alphabet is the same."
 msgstr ""
+"Pro třídění s ohledem na národní prostředí použijte :func:`locale.strxfrm` "
+"pro klíčovou funkci nebo :func:`locale.strcoll` pro porovnávací funkci. To "
+"je nutné, protože \"abecední\" pořadí třídění se může lišit napříč kulturami, "
+"i když je základní abeceda stejná."
 
 #: ../../howto/sorting.rst:350
 msgid ""
@@ -557,6 +755,9 @@ msgid ""
 "can be simulated without the parameter by using the builtin "
 ":func:`reversed` function twice:"
 msgstr ""
+"Parametr *reverse* stále udržuje stabilitu třídění (takže záznamy se stejnými "
+"klíči si zachovávají původní pořadí). Zajímavé je, že tento efekt lze "
+"simulovat bez parametru dvojím použitím vestavěné funkce :func:`reversed`:"
 
 #: ../../howto/sorting.rst:355
 msgid ""
@@ -568,6 +769,13 @@ msgid ""
 ">>> standard_way\n"
 "[('red', 1), ('red', 2), ('blue', 1), ('blue', 2)]"
 msgstr ""
+">>> data = [('red', 1), ('blue', 1), ('red', 2), ('blue', 2)]\n"
+">>> standard_way = sorted(data, key=itemgetter(0), reverse=True)\n"
+">>> double_reversed = list(reversed(sorted(reversed(data), "
+"key=itemgetter(0))))\n"
+">>> assert standard_way == double_reversed\n"
+">>> standard_way\n"
+"[('red', 1), ('red', 2), ('blue', 1), ('blue', 2)]"
 
 #: ../../howto/sorting.rst:364
 msgid ""
@@ -575,6 +783,9 @@ msgid ""
 "So, it is easy to add a standard sort order to a class by defining an "
 ":meth:`~object.__lt__` method:"
 msgstr ""
+"Rutiny třídění používají ``<`` při porovnávání dvou objektů. Takže je snadné "
+"přidat standardní pořadí třídění do třídy definováním metody "
+":meth:`~object.__lt__`:"
 
 #: ../../howto/sorting.rst:368
 msgid ""
@@ -582,6 +793,9 @@ msgid ""
 ">>> sorted(student_objects)\n"
 "[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 msgstr ""
+">>> Student.__lt__ = lambda self, other: self.age < other.age\n"
+">>> sorted(student_objects)\n"
+"[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]"
 
 #: ../../howto/sorting.rst:374
 msgid ""
@@ -592,6 +806,11 @@ msgid ""
 ":func:`~functools.total_ordering` decorator is provided to make that task"
 " easier."
 msgstr ""
+"Nicméně si všimněte, že ``<`` se může vrátit k použití :meth:`~object.__gt__`, "
+"pokud :meth:`~object.__lt__` není implementována (viz :func:`object.__lt__` "
+"pro podrobnosti o mechanice). Aby se předešlo překvapením, :pep:`8` doporučuje "
+"implementovat všech šest porovnávacích metod. Dekorátor "
+":func:`~functools.total_ordering` je poskytován, aby tento úkol usnadnil."
 
 #: ../../howto/sorting.rst:381
 msgid ""
@@ -600,6 +819,10 @@ msgid ""
 "student grades are stored in a dictionary, they can be used to sort a "
 "separate list of student names:"
 msgstr ""
+"Klíčové funkce nemusí záviset přímo na objektech, které jsou tříděny. Klíčová "
+"funkce může také přistupovat k externím zdrojům. Pokud jsou například studentské "
+"známky uloženy ve slovníku, mohou být použity k třídění samostatného seznamu "
+"jmen studentů:"
 
 #: ../../howto/sorting.rst:386
 #, python-brace-format
@@ -609,10 +832,14 @@ msgid ""
 ">>> sorted(students, key=newgrades.__getitem__)\n"
 "['jane', 'dave', 'john']"
 msgstr ""
+">>> students = ['dave', 'john', 'jane']\n"
+">>> newgrades = {'john': 'F', 'jane':'A', 'dave': 'C'}\n"
+">>> sorted(students, key=newgrades.__getitem__)\n"
+"['jane', 'dave', 'john']"
 
 #: ../../howto/sorting.rst:394
 msgid "Partial Sorts"
-msgstr ""
+msgstr "Částečná třídění"
 
 #: ../../howto/sorting.rst:396
 msgid ""
@@ -620,6 +847,9 @@ msgid ""
 "standard library provides several tools that do less work than a full "
 "sort:"
 msgstr ""
+"Některé aplikace vyžadují, aby byla uspořádána pouze část dat. Standardní "
+"knihovna poskytuje několik nástrojů, které dělají méně práce než úplné "
+"třídění:"
 
 #: ../../howto/sorting.rst:399
 msgid ""
@@ -627,6 +857,8 @@ msgid ""
 "respectively.  These functions make a single pass over the input data and"
 " require almost no auxiliary memory."
 msgstr ""
+":func:`min` a :func:`max` vracejí nejmenší a největší hodnoty. Tyto funkce "
+"projdou vstupní data jediným průchodem a vyžadují téměř žádnou pomocnou paměť."
 
 #: ../../howto/sorting.rst:403
 msgid ""
@@ -636,6 +868,11 @@ msgid ""
 "values of *n* that are small relative to the number of inputs, these "
 "functions make far fewer comparisons than a full sort."
 msgstr ""
+":func:`heapq.nsmallest` a :func:`heapq.nlargest` vracejí *n* nejmenších a "
+"největších hodnot. Tyto funkce projdou data jediným průchodem, přičemž v "
+"paměti udržují pouze *n* prvků najednou. Pro hodnoty *n*, které jsou malé "
+"vzhledem k počtu vstupů, tyto funkce provádějí daleko méně porovnání než "
+"úplné třídění."
 
 #: ../../howto/sorting.rst:409
 msgid ""
@@ -644,4 +881,7 @@ msgid ""
 "position ``0``.  These functions are suitable for implementing priority "
 "queues which are commonly used for task scheduling."
 msgstr ""
-
+":func:`heapq.heappush` a :func:`heapq.heappop` vytvářejí a udržují částečně "
+"setříděné uspořádání dat, které udržuje nejmenší prvek na pozici ``0``. Tyto "
+"funkce jsou vhodné pro implementaci prioritních front, které se běžně používají "
+"pro plánování úloh."

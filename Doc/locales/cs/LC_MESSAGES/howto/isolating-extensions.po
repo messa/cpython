@@ -1,9 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python Documentation - Isolating Extension Modules
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# Translated by AI, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
@@ -21,11 +20,11 @@ msgstr ""
 
 #: ../../howto/isolating-extensions.rst:7
 msgid "Isolating Extension Modules"
-msgstr ""
+msgstr "Izolace rozšiřujících modulů"
 
 #: ../../howto/isolating-extensions.rst:-1
 msgid "Abstract"
-msgstr ""
+msgstr "Abstrakt"
 
 #: ../../howto/isolating-extensions.rst:11
 msgid ""
@@ -34,6 +33,10 @@ msgid ""
 "describes problems of such per-process state and shows a safer way: per-"
 "module state."
 msgstr ""
+"Tradičně byl stav patřící k rozšiřujícím modulům Pythonu udržován v C "
+"``static`` proměnných, které mají rozsah platnosti na úrovni celého procesu. "
+"Tento dokument popisuje problémy takového stavu na úrovni procesu a ukazuje "
+"bezpečnější způsob: stav na úrovni modulu."
 
 #: ../../howto/isolating-extensions.rst:16
 msgid ""
@@ -42,10 +45,14 @@ msgid ""
 "potentially switching from static types to heap types, and—perhaps most "
 "importantly—accessing per-module state from code."
 msgstr ""
+"Dokument také popisuje, jak přejít na stav na úrovni modulu, kde je to "
+"možné. Tento přechod zahrnuje alokaci prostoru pro tento stav, případně "
+"přechod ze statických typů na heap typy a—možná nejdůležitěji—přístup ke "
+"stavu na úrovni modulu z kódu."
 
 #: ../../howto/isolating-extensions.rst:23
 msgid "Who should read this"
-msgstr ""
+msgstr "Pro koho je tento dokument určen"
 
 #: ../../howto/isolating-extensions.rst:25
 msgid ""
@@ -53,10 +60,13 @@ msgid ""
 "extensions who would like to make that extension safer to use in "
 "applications where Python itself is used as a library."
 msgstr ""
+"Tato příručka je napsána pro správce rozšíření :ref:`C-API <c-api-index>`, "
+"kteří by chtěli učinit rozšíření bezpečnější pro použití v aplikacích, kde "
+"je Python sám používán jako knihovna."
 
 #: ../../howto/isolating-extensions.rst:31
 msgid "Background"
-msgstr ""
+msgstr "Pozadí"
 
 #: ../../howto/isolating-extensions.rst:33
 msgid ""
@@ -64,24 +74,32 @@ msgid ""
 "configuration (e.g. the import path) and runtime state (e.g. the set of "
 "imported modules)."
 msgstr ""
+"*Interpreter* je kontext, ve kterém běží kód Pythonu. Obsahuje konfiguraci "
+"(např. cestu pro import) a běhový stav (např. sadu importovaných modulů)."
 
 #: ../../howto/isolating-extensions.rst:37
 msgid ""
 "Python supports running multiple interpreters in one process. There are "
 "two cases to think about—users may run interpreters:"
 msgstr ""
+"Python podporuje spouštění více interpreterů v jednom procesu. Je třeba "
+"uvažovat dva případy—uživatelé mohou spouštět interpretery:"
 
 #: ../../howto/isolating-extensions.rst:40
 msgid ""
 "in sequence, with several "
 ":c:func:`Py_InitializeEx`/:c:func:`Py_FinalizeEx` cycles, and"
 msgstr ""
+"sekvenčně, s několika cykly "
+":c:func:`Py_InitializeEx`/:c:func:`Py_FinalizeEx`, a"
 
 #: ../../howto/isolating-extensions.rst:42
 msgid ""
 "in parallel, managing \"sub-interpreters\" using "
 ":c:func:`Py_NewInterpreter`/:c:func:`Py_EndInterpreter`."
 msgstr ""
+"paralelně, spravováním \"sub-interpreterů\" pomocí "
+":c:func:`Py_NewInterpreter`/:c:func:`Py_EndInterpreter`."
 
 #: ../../howto/isolating-extensions.rst:45
 msgid ""
@@ -90,6 +108,10 @@ msgid ""
 "about the application that uses them, which include assuming a process-"
 "wide \"main Python interpreter\"."
 msgstr ""
+"Oba případy (a jejich kombinace) by byly nejužitečnější při vkládání Pythonu "
+"do knihovny. Knihovny by obecně neměly dělat předpoklady o aplikaci, která "
+"je používá, což zahrnuje předpoklad o \"hlavním Python interpreteru\" na "
+"úrovni procesu."
 
 #: ../../howto/isolating-extensions.rst:50
 msgid ""
@@ -101,6 +123,13 @@ msgid ""
 "very easy to introduce edge cases that lead to crashes when a module is "
 "loaded in more than one interpreter in the same process."
 msgstr ""
+"Historicky rozšiřující moduly Pythonu tento případ použití neřeší dobře. "
+"Mnoho rozšiřujících modulů (a dokonce některé moduly stdlib) používá "
+"*globální stav na úrovni procesu*, protože C ``static`` proměnné jsou velmi "
+"jednoduché na použití. Data, která by měla být specifická pro interpreter, "
+"tak končí sdílená mezi interpretery. Pokud není vývojář rozšíření opatrný, "
+"je velmi snadné zavést okrajové případy, které vedou k pádům, když je modul "
+"načten ve více než jednom interpreteru ve stejném procesu."
 
 #: ../../howto/isolating-extensions.rst:58
 msgid ""
@@ -108,10 +137,13 @@ msgid ""
 "authors tend to not keep multiple interpreters in mind when developing, "
 "and it is currently cumbersome to test the behavior."
 msgstr ""
+"Bohužel *stav na úrovni interpreteru* není snadné dosáhnout. Autoři rozšíření "
+"mají tendenci při vývoji nemyslet na více interpreterů a je aktuálně obtížné "
+"testovat chování."
 
 #: ../../howto/isolating-extensions.rst:63
 msgid "Enter Per-Module State"
-msgstr ""
+msgstr "Příchod stavu na úrovni modulu"
 
 #: ../../howto/isolating-extensions.rst:65
 msgid ""
@@ -122,6 +154,12 @@ msgid ""
 " isolation, multiple module objects corresponding to a single extension "
 "can even be loaded in a single interpreter."
 msgstr ""
+"Namísto zaměření na stav na úrovni interpreteru se C API Pythonu vyvíjí "
+"tak, aby lépe podporovalo podrobnější *stav na úrovni modulu*. To znamená, "
+"že data na úrovni C by měla být připojena k *objektu modulu*. Každý "
+"interpreter vytvoří svůj vlastní objekt modulu, který uchovává data odděleně. "
+"Pro testování izolace může být v jednom interpreteru dokonce načteno více "
+"objektů modulů odpovídajících jednomu rozšíření."
 
 #: ../../howto/isolating-extensions.rst:72
 msgid ""
@@ -131,6 +169,11 @@ msgid ""
 " is just like any other :c:expr:`PyObject *`; there are no \"on "
 "interpreter shutdown\" hooks to think—or forget—about."
 msgstr ""
+"Stav na úrovni modulu poskytuje snadný způsob, jak přemýšlet o životnosti "
+"a vlastnictví zdrojů: rozšiřující modul se inicializuje, když je vytvořen "
+"objekt modulu, a uklidí se, když je uvolněn. V tomto ohledu je modul stejný "
+"jako jakýkoliv jiný :c:expr:`PyObject *`; nejsou žádné hooky \"při vypnutí "
+"interpreteru\", o kterých by bylo třeba přemýšlet—nebo na které zapomenout."
 
 #: ../../howto/isolating-extensions.rst:78
 msgid ""
@@ -140,10 +183,15 @@ msgid ""
 " as exceptional cases: if you need them, you should give them additional "
 "care and testing. (Note that this guide does not cover them.)"
 msgstr ""
+"Všimněte si, že existují případy použití pro různé druhy \"globálních\" "
+"stavů: stav na úrovni procesu, interpreteru, vlákna nebo úlohy. Se stavem "
+"na úrovni modulu jako výchozím jsou tyto stále možné, ale měli byste s nimi "
+"zacházet jako s výjimečnými případy: pokud je potřebujete, měli byste jim "
+"věnovat dodatečnou péči a testování. (Tato příručka se jimi nezabývá.)"
 
 #: ../../howto/isolating-extensions.rst:87
 msgid "Isolated Module Objects"
-msgstr ""
+msgstr "Izolované objekty modulů"
 
 #: ../../howto/isolating-extensions.rst:89
 msgid ""
@@ -151,6 +199,9 @@ msgid ""
 " several module objects can be created from a single shared library. For "
 "example:"
 msgstr ""
+"Klíčovým bodem, který je třeba mít na paměti při vývoji rozšiřujícího modulu, "
+"je, že z jediné sdílené knihovny může být vytvořeno několik objektů modulů. "
+"Například:"
 
 #: ../../howto/isolating-extensions.rst:93
 msgid ""
@@ -162,6 +213,13 @@ msgid ""
 ">>> old_binascii == binascii\n"
 "False"
 msgstr ""
+">>> import sys\n"
+">>> import binascii\n"
+">>> old_binascii = binascii\n"
+">>> del sys.modules['binascii']\n"
+">>> import binascii  # create a new module object\n"
+">>> old_binascii == binascii\n"
+"False"
 
 #: ../../howto/isolating-extensions.rst:103
 msgid ""
@@ -172,6 +230,12 @@ msgid ""
 "thumb, exceptions are possible (see `Managing Global State`_), but they "
 "will need more thought and attention to edge cases."
 msgstr ""
+"Jako obecné pravidlo by tyto dva moduly měly být zcela nezávislé. Všechny "
+"objekty a stavy specifické pro modul by měly být zapouzdřeny uvnitř objektu "
+"modulu, neměly by být sdíleny s jinými objekty modulů a měly by být uklideny, "
+"když je objekt modulu dealokován. Protože toto je pouze obecné pravidlo, "
+"výjimky jsou možné (viz `Managing Global State`_), ale budou vyžadovat více "
+"úvah a pozornosti k okrajovým případům."
 
 #: ../../howto/isolating-extensions.rst:111
 msgid ""
@@ -179,10 +243,13 @@ msgid ""
 "modules make it easier to set clear expectations and guidelines that work"
 " across a variety of use cases."
 msgstr ""
+"Zatímco některé moduly by mohly mít méně přísná omezení, izolované moduly "
+"usnadňují stanovení jasných očekávání a pokynů, které fungují v různých "
+"případech použití."
 
 #: ../../howto/isolating-extensions.rst:117
 msgid "Surprising Edge Cases"
-msgstr ""
+msgstr "Překvapivé okrajové případy"
 
 #: ../../howto/isolating-extensions.rst:119
 msgid ""
@@ -193,6 +260,11 @@ msgid ""
 "``binascii.Error`` are separate objects. In the following code, the "
 "exception is *not* caught:"
 msgstr ""
+"Všimněte si, že izolované moduly vytvářejí některé překvapivé okrajové "
+"případy. Především každý objekt modulu typicky nesdílí své třídy a výjimky "
+"s jinými podobnými moduly. V návaznosti na `příklad výše <Isolated Module "
+"Objects_>`__ si všimněte, že ``old_binascii.Error`` a ``binascii.Error`` "
+"jsou odlišné objekty. V následujícím kódu výjimka *není* zachycena:"
 
 #: ../../howto/isolating-extensions.rst:126
 msgid ""
@@ -207,12 +279,24 @@ msgid ""
 "  File \"<stdin>\", line 2, in <module>\n"
 "binascii.Error: Non-hexadecimal digit found"
 msgstr ""
+">>> old_binascii.Error == binascii.Error\n"
+"False\n"
+">>> try:\n"
+"...     old_binascii.unhexlify(b'qwertyuiop')\n"
+"... except binascii.Error:\n"
+"...     print('boo')\n"
+"...\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 2, in <module>\n"
+"binascii.Error: Non-hexadecimal digit found"
 
 #: ../../howto/isolating-extensions.rst:139
 msgid ""
 "This is expected. Notice that pure-Python modules behave the same way: it"
 " is a part of how Python works."
 msgstr ""
+"To je očekávané. Všimněte si, že čisté Python moduly se chovají stejně: "
+"je to součást toho, jak Python funguje."
 
 #: ../../howto/isolating-extensions.rst:142
 msgid ""
@@ -220,14 +304,16 @@ msgid ""
 "hacks behave intuitively. Mutating ``sys.modules`` \"manually\" counts as"
 " a hack."
 msgstr ""
+"Cílem je učinit rozšiřující moduly bezpečné na úrovni C, ne učinit hacky "
+"intuitivními. Ruční modifikace ``sys.modules`` se počítá jako hack."
 
 #: ../../howto/isolating-extensions.rst:148
 msgid "Making Modules Safe with Multiple Interpreters"
-msgstr ""
+msgstr "Bezpečné moduly s více interpretery"
 
 #: ../../howto/isolating-extensions.rst:152
 msgid "Managing Global State"
-msgstr ""
+msgstr "Správa globálního stavu"
 
 #: ../../howto/isolating-extensions.rst:154
 msgid ""
@@ -235,14 +321,16 @@ msgid ""
 "that module, but to the entire process (or something else \"more global\""
 " than a module). For example:"
 msgstr ""
+"Někdy stav spojený s Python modulem není specifický pro tento modul, ale "
+"pro celý proces (nebo něco \"globálnějšího\" než modul). Například:"
 
 #: ../../howto/isolating-extensions.rst:158
 msgid "The ``readline`` module manages *the* terminal."
-msgstr ""
+msgstr "Modul ``readline`` spravuje *ten* terminál."
 
 #: ../../howto/isolating-extensions.rst:159
 msgid "A module running on a circuit board wants to control *the* on-board LED."
-msgstr ""
+msgstr "Modul běžící na desce plošného spoje chce ovládat *tu* palubní LED."
 
 #: ../../howto/isolating-extensions.rst:162
 msgid ""
@@ -252,6 +340,11 @@ msgid ""
 "other libraries, whether for Python or other languages). If that is not "
 "possible, consider explicit locking."
 msgstr ""
+"V těchto případech by Python modul měl poskytovat *přístup* ke globálnímu "
+"stavu, spíše než ho *vlastnit*. Pokud je to možné, napište modul tak, aby "
+"jeho více kopií mohlo přistupovat ke stavu nezávisle (spolu s jinými "
+"knihovnami, ať už pro Python nebo jiné jazyky). Pokud to není možné, "
+"zvažte explicitní zamykání."
 
 #: ../../howto/isolating-extensions.rst:168
 msgid ""
@@ -260,10 +353,14 @@ msgid ""
 " being loaded more than once per process—see :ref:`isolating-extensions-"
 "optout`."
 msgstr ""
+"Pokud je nutné použít globální stav na úrovni procesu, nejjednodušším "
+"způsobem, jak se vyhnout problémům s více interpretery, je explicitně "
+"zabránit načtení modulu více než jednou na proces—viz :ref:`isolating-"
+"extensions-optout`."
 
 #: ../../howto/isolating-extensions.rst:175
 msgid "Managing Per-Module State"
-msgstr ""
+msgstr "Správa stavu na úrovni modulu"
 
 #: ../../howto/isolating-extensions.rst:177
 msgid ""
@@ -271,6 +368,9 @@ msgid ""
 "initialization <multi-phase-initialization>`. This signals that your "
 "module supports multiple interpreters correctly."
 msgstr ""
+"Pro použití stavu na úrovni modulu použijte :ref:`vícefázovou inicializaci "
+"rozšiřujícího modulu <multi-phase-initialization>`. To signalizuje, že váš "
+"modul správně podporuje více interpreterů."
 
 #: ../../howto/isolating-extensions.rst:181
 msgid ""
@@ -282,6 +382,13 @@ msgid ""
 "and settings (e.g. ``csv``'s :py:data:`~csv.field_size_limit`) which the "
 "C code needs to function."
 msgstr ""
+"Nastavte ``PyModuleDef.m_size`` na kladné číslo pro požadavek tolika bajtů "
+"úložiště lokálního k modulu. Obvykle bude nastaveno na velikost nějaké "
+"``struct`` specifické pro modul, která může uložit veškerý stav modulu na "
+"úrovni C. Konkrétně je to místo, kam byste měli umístit ukazatele na třídy "
+"(včetně výjimek, ale kromě statických typů) a nastavení (např. "
+":py:data:`~csv.field_size_limit` v ``csv``), které kód C potřebuje pro "
+"fungování."
 
 #: ../../howto/isolating-extensions.rst:190
 msgid ""
@@ -290,12 +397,18 @@ msgid ""
 " usually means error- and type-checking at the C level, which is easy to "
 "get wrong and hard to test sufficiently."
 msgstr ""
+"Další možností je ukládat stav do ``__dict__`` modulu, ale musíte se vyhnout "
+"pádům, když uživatelé modifikují ``__dict__`` z Python kódu. To obvykle "
+"znamená kontrolu chyb a typů na úrovni C, což je snadné udělat špatně a "
+"těžké dostatečně otestovat."
 
 #: ../../howto/isolating-extensions.rst:195
 msgid ""
 "However, if module state is not needed in C code, storing it in "
 "``__dict__`` only is a good idea."
 msgstr ""
+"Nicméně, pokud stav modulu není potřeba v kódu C, uložení pouze do "
+"``__dict__`` je dobrý nápad."
 
 #: ../../howto/isolating-extensions.rst:198
 msgid ""
@@ -306,6 +419,11 @@ msgid ""
 "will require some work and make the code longer; this is the price for "
 "modules which can be unloaded cleanly."
 msgstr ""
+"Pokud stav modulu obsahuje ukazatele ``PyObject``, objekt modulu musí "
+"držet reference na tyto objekty a implementovat hooky na úrovni modulu "
+"``m_traverse``, ``m_clear`` a ``m_free``. Tyto fungují jako ``tp_traverse``, "
+"``tp_clear`` a ``tp_free`` třídy. Jejich přidání bude vyžadovat nějakou práci "
+"a prodlouží kód; to je cena za moduly, které mohou být čistě uvolněny."
 
 #: ../../howto/isolating-extensions.rst:205
 msgid ""
@@ -314,10 +432,14 @@ msgid ""
 "<https://github.com/python/cpython/blob/master/Modules/xxlimited.c>`__; "
 "example module initialization shown at the bottom of the file."
 msgstr ""
+"Příklad modulu se stavem na úrovni modulu je aktuálně dostupný jako "
+"`xxlimited "
+"<https://github.com/python/cpython/blob/master/Modules/xxlimited.c>`__; "
+"příklad inicializace modulu je zobrazen na konci souboru."
 
 #: ../../howto/isolating-extensions.rst:213
 msgid "Opt-Out: Limiting to One Module Object per Process"
-msgstr ""
+msgstr "Odhlášení: Omezení na jeden objekt modulu na proces"
 
 #: ../../howto/isolating-extensions.rst:215
 msgid ""
@@ -326,6 +448,10 @@ msgid ""
 "module, you can explicitly make your module loadable only once per "
 "process. For example::"
 msgstr ""
+"Nezáporná hodnota ``PyModuleDef.m_size`` signalizuje, že modul správně "
+"podporuje více interpreterů. Pokud to ještě není případ vašeho modulu, "
+"můžete explicitně učinit váš modul načitatelným pouze jednou na proces. "
+"Například::"
 
 #: ../../howto/isolating-extensions.rst:220
 msgid ""
@@ -351,6 +477,27 @@ msgid ""
 "    // ... rest of initialization\n"
 "}"
 msgstr ""
+"// A process-wide flag\n"
+"static int loaded = 0;\n"
+"\n"
+"// Mutex to provide thread safety (only needed for free-threaded Python)\n"
+"static PyMutex modinit_mutex = {0};\n"
+"\n"
+"static int\n"
+"exec_module(PyObject* module)\n"
+"{\n"
+"    PyMutex_Lock(&modinit_mutex);\n"
+"    if (loaded) {\n"
+"        PyMutex_Unlock(&modinit_mutex);\n"
+"        PyErr_SetString(PyExc_ImportError,\n"
+"                        \"cannot load module more than once per "
+"process\");\n"
+"        return -1;\n"
+"    }\n"
+"    loaded = 1;\n"
+"    PyMutex_Unlock(&modinit_mutex);\n"
+"    // ... rest of initialization\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:242
 msgid ""
@@ -361,10 +508,16 @@ msgid ""
 "Python runtime shutdown (:c:func:`Py_FinalizeEx`) and re-initialization "
 "(:c:func:`Py_Initialize`)."
 msgstr ""
+"Pokud funkce :c:member:`PyModuleDef.m_clear` vašeho modulu je schopna "
+"připravit se na budoucí re-inicializaci, měla by vymazat příznak ``loaded``. "
+"V tomto případě váš modul nebude podporovat existenci více instancí "
+"*souběžně*, ale bude například podporovat načtení po vypnutí běhového "
+"prostředí Pythonu (:c:func:`Py_FinalizeEx`) a re-inicializaci "
+"(:c:func:`Py_Initialize`)."
 
 #: ../../howto/isolating-extensions.rst:251
 msgid "Module State Access from Functions"
-msgstr ""
+msgstr "Přístup ke stavu modulu z funkcí"
 
 #: ../../howto/isolating-extensions.rst:253
 msgid ""
@@ -372,6 +525,9 @@ msgid ""
 "Functions get the module object as their first argument; for extracting "
 "the state, you can use ``PyModule_GetState``::"
 msgstr ""
+"Přístup ke stavu z funkcí na úrovni modulu je přímočarý. Funkce dostanou "
+"objekt modulu jako první argument; pro extrakci stavu můžete použít "
+"``PyModule_GetState``::"
 
 #: ../../howto/isolating-extensions.rst:257
 msgid ""
@@ -385,6 +541,15 @@ msgid ""
 "    // ... rest of logic\n"
 "}"
 msgstr ""
+"static PyObject *\n"
+"func(PyObject *module, PyObject *args)\n"
+"{\n"
+"    my_struct *state = (my_struct*)PyModule_GetState(module);\n"
+"    if (state == NULL) {\n"
+"        return NULL;\n"
+"    }\n"
+"    // ... rest of logic\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:268
 msgid ""
@@ -392,10 +557,14 @@ msgid ""
 " there is no module state, i.e. ``PyModuleDef.m_size`` was zero. In your "
 "own module, you're in control of ``m_size``, so this is easy to prevent."
 msgstr ""
+"``PyModule_GetState`` může vrátit ``NULL`` bez nastavení výjimky, pokud "
+"není žádný stav modulu, tj. ``PyModuleDef.m_size`` byla nula. Ve vašem "
+"vlastním modulu máte kontrolu nad ``m_size``, takže je snadné tomu "
+"zabránit."
 
 #: ../../howto/isolating-extensions.rst:275
 msgid "Heap Types"
-msgstr ""
+msgstr "Heap typy"
 
 #: ../../howto/isolating-extensions.rst:277
 msgid ""
@@ -403,6 +572,9 @@ msgid ""
 "PyTypeObject`` structures defined directly in code and initialized using "
 "``PyType_Ready()``."
 msgstr ""
+"Tradičně jsou typy definované v kódu C *statické*; to znamená, že jsou to "
+"``static PyTypeObject`` struktury definované přímo v kódu a inicializované "
+"pomocí ``PyType_Ready()``."
 
 #: ../../howto/isolating-extensions.rst:281
 msgid ""
@@ -411,6 +583,10 @@ msgid ""
 " access. To limit the possible issues, static types are immutable at the "
 "Python level: for example, you can't set ``str.myattribute = 123``."
 msgstr ""
+"Takové typy jsou nutně sdíleny napříč procesem. Jejich sdílení mezi objekty "
+"modulů vyžaduje věnovat pozornost jakémukoliv stavu, který vlastní nebo "
+"k němu přistupují. Pro omezení možných problémů jsou statické typy neměnné "
+"na úrovni Pythonu: například nemůžete nastavit ``str.myattribute = 123``."
 
 #: ../../howto/isolating-extensions.rst:287
 msgid ""
@@ -421,6 +597,12 @@ msgid ""
 "any Python objects across interpreters implicitly depends on CPython's "
 "current, process-wide GIL."
 msgstr ""
+"Sdílení skutečně neměnných objektů mezi interpretery je v pořádku, pokud "
+"neposkytují přístup k měnitelným objektům. Nicméně v CPythonu má každý "
+"Python objekt měnitelný implementační detail: počet referencí. Změny počtu "
+"referencí jsou chráněny GIL. Proto kód, který sdílí jakékoliv Python objekty "
+"napříč interpretery, implicitně závisí na aktuálním, proces-globálním GIL "
+"CPythonu."
 
 #: ../../howto/isolating-extensions.rst:294
 msgid ""
@@ -430,14 +612,19 @@ msgid ""
 "*heap type* for short. These correspond more closely to classes created "
 "by Python's ``class`` statement."
 msgstr ""
+"Protože jsou neměnné a proces-globální, statické typy nemohou přistupovat "
+"k \"jejich\" stavu modulu. Pokud jakákoliv metoda takového typu vyžaduje "
+"přístup ke stavu modulu, typ musí být převeden na *heap-alokovaný typ*, "
+"nebo zkráceně *heap typ*. Tyto odpovídají těsněji třídám vytvořeným "
+"příkazem ``class`` v Pythonu."
 
 #: ../../howto/isolating-extensions.rst:301
 msgid "For new modules, using heap types by default is a good rule of thumb."
-msgstr ""
+msgstr "Pro nové moduly je použití heap typů jako výchozích dobrým pravidlem."
 
 #: ../../howto/isolating-extensions.rst:305
 msgid "Changing Static Types to Heap Types"
-msgstr ""
+msgstr "Změna statických typů na heap typy"
 
 #: ../../howto/isolating-extensions.rst:307
 msgid ""
@@ -448,18 +635,29 @@ msgid ""
 "unintentionally change a few details (e.g. pickleability or inherited "
 "slots). Always test the details that are important to you."
 msgstr ""
+"Statické typy mohou být převedeny na heap typy, ale uvědomte si, že API heap "
+"typů nebylo navrženo pro \"bezeztrátovou\" konverzi ze statických typů—tedy "
+"vytvoření typu, který funguje přesně jako daný statický typ. Takže při "
+"přepisování definice třídy v novém API pravděpodobně neúmyslně změníte "
+"několik detailů (např. možnost serializace nebo zděděné sloty). Vždy testujte "
+"detaily, které jsou pro vás důležité."
 
 #: ../../howto/isolating-extensions.rst:316
 msgid ""
 "Watch out for the following two points in particular (but note that this "
 "is not a comprehensive list):"
 msgstr ""
+"Věnujte pozornost zejména následujícím dvěma bodům (ale uvědomte si, že "
+"to není vyčerpávající seznam):"
 
 #: ../../howto/isolating-extensions.rst:319
 msgid ""
 "Unlike static types, heap type objects are mutable by default. Use the "
 ":c:macro:`Py_TPFLAGS_IMMUTABLETYPE` flag to prevent mutability."
 msgstr ""
+"Na rozdíl od statických typů jsou objekty heap typů ve výchozím nastavení "
+"měnitelné. Pro zabránění měnitelnosti použijte příznak "
+":c:macro:`Py_TPFLAGS_IMMUTABLETYPE`."
 
 #: ../../howto/isolating-extensions.rst:321
 msgid ""
@@ -467,10 +665,13 @@ msgid ""
 " become possible to instantiate them from Python code. You can prevent "
 "this with the :c:macro:`Py_TPFLAGS_DISALLOW_INSTANTIATION` flag."
 msgstr ""
+"Heap typy dědí :c:member:`~PyTypeObject.tp_new` ve výchozím nastavení, "
+"takže se může stát možným je vytvářet instanci z Python kódu. Můžete tomu "
+"zabránit příznakem :c:macro:`Py_TPFLAGS_DISALLOW_INSTANTIATION`."
 
 #: ../../howto/isolating-extensions.rst:327
 msgid "Defining Heap Types"
-msgstr ""
+msgstr "Definice heap typů"
 
 #: ../../howto/isolating-extensions.rst:329
 msgid ""
@@ -478,6 +679,9 @@ msgid ""
 " a description or \"blueprint\" of a class, and calling "
 ":c:func:`PyType_FromModuleAndSpec` to construct a new class object."
 msgstr ""
+"Heap typy mohou být vytvořeny vyplněním struktury :c:struct:`PyType_Spec`, "
+"popisu nebo \"plánu\" třídy, a zavoláním :c:func:`PyType_FromModuleAndSpec` "
+"pro vytvoření nového objektu třídy."
 
 #: ../../howto/isolating-extensions.rst:334
 msgid ""
@@ -485,6 +689,9 @@ msgid ""
 "types, but :c:func:`PyType_FromModuleAndSpec` associates the module with "
 "the class, allowing access to the module state from methods."
 msgstr ""
+"Jiné funkce, jako :c:func:`PyType_FromSpec`, mohou také vytvářet heap typy, "
+"ale :c:func:`PyType_FromModuleAndSpec` spojuje modul s třídou, což umožňuje "
+"přístup ke stavu modulu z metod."
 
 #: ../../howto/isolating-extensions.rst:338
 msgid ""
@@ -492,10 +699,12 @@ msgid ""
 " access from C) and the module's ``__dict__`` (for access from Python "
 "code)."
 msgstr ""
+"Třída by obecně měla být uložena v *obou* stavu modulu (pro bezpečný přístup "
+"z C) a v ``__dict__`` modulu (pro přístup z Python kódu)."
 
 #: ../../howto/isolating-extensions.rst:344
 msgid "Garbage-Collection Protocol"
-msgstr ""
+msgstr "Protokol garbage collection"
 
 #: ../../howto/isolating-extensions.rst:346
 msgid ""
@@ -503,28 +712,37 @@ msgid ""
 " the type isn't destroyed before all its instances are, but may result in"
 " reference cycles that need to be broken by the garbage collector."
 msgstr ""
+"Instance heap typů drží referenci na svůj typ. To zajišťuje, že typ není "
+"zničen před všemi svými instancemi, ale může vést k referenčním cyklům, "
+"které musí být přerušeny garbage collectorem."
 
 #: ../../howto/isolating-extensions.rst:351
 msgid ""
 "To avoid memory leaks, instances of heap types must implement the garbage"
 " collection protocol. That is, heap types should:"
 msgstr ""
+"Pro vyhnoutí se únikům paměti musí instance heap typů implementovat protokol "
+"garbage collection. To znamená, že heap typy by měly:"
 
 #: ../../howto/isolating-extensions.rst:355
 msgid "Have the :c:macro:`Py_TPFLAGS_HAVE_GC` flag."
-msgstr ""
+msgstr "Mít příznak :c:macro:`Py_TPFLAGS_HAVE_GC`."
 
 #: ../../howto/isolating-extensions.rst:356
 msgid ""
 "Define a traverse function using :c:data:`Py_tp_traverse`, which visits "
 "the type (e.g. using ``Py_VISIT(Py_TYPE(self))``)."
 msgstr ""
+"Definovat traverse funkci pomocí :c:data:`Py_tp_traverse`, která navštíví "
+"typ (např. pomocí ``Py_VISIT(Py_TYPE(self))``)."
 
 #: ../../howto/isolating-extensions.rst:359
 msgid ""
 "Please refer to the documentation of :c:macro:`Py_TPFLAGS_HAVE_GC` and "
 ":c:member:`~PyTypeObject.tp_traverse` for additional considerations."
 msgstr ""
+"Pro další úvahy viz dokumentaci k :c:macro:`Py_TPFLAGS_HAVE_GC` a "
+":c:member:`~PyTypeObject.tp_traverse`."
 
 #: ../../howto/isolating-extensions.rst:363
 msgid ""
@@ -532,10 +750,13 @@ msgid ""
 "awkward to use in its current state. The following sections will guide "
 "you through common issues."
 msgstr ""
+"API pro definici heap typů rostlo organicky, což ho činí poněkud nepraktickým "
+"k použití v jeho současném stavu. Následující sekce vás provedou běžnými "
+"problémy."
 
 #: ../../howto/isolating-extensions.rst:369
 msgid "``tp_traverse`` in Python 3.8 and lower"
-msgstr ""
+msgstr "``tp_traverse`` v Pythonu 3.8 a nižším"
 
 #: ../../howto/isolating-extensions.rst:371
 msgid ""
@@ -543,6 +764,9 @@ msgid ""
 "Python 3.9. If you support Python 3.8 and lower, the traverse function "
 "must *not* visit the type, so it must be more complicated::"
 msgstr ""
+"Požadavek navštívit typ z ``tp_traverse`` byl přidán v Pythonu 3.9. Pokud "
+"podporujete Python 3.8 a nižší, traverse funkce *nesmí* navštívit typ, "
+"takže musí být složitější::"
 
 #: ../../howto/isolating-extensions.rst:375
 msgid ""
@@ -554,26 +778,37 @@ msgid ""
 "    return 0;\n"
 "}"
 msgstr ""
+"static int my_traverse(PyObject *self, visitproc visit, void *arg)\n"
+"{\n"
+"    if (Py_Version >= 0x03090000) {\n"
+"        Py_VISIT(Py_TYPE(self));\n"
+"    }\n"
+"    return 0;\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:383
 msgid ""
 "Unfortunately, :c:data:`Py_Version` was only added in Python 3.11. As a "
 "replacement, use:"
 msgstr ""
+"Bohužel :c:data:`Py_Version` byla přidána až v Pythonu 3.11. Jako náhradu "
+"použijte:"
 
 #: ../../howto/isolating-extensions.rst:386
 msgid ":c:macro:`PY_VERSION_HEX`, if not using the stable ABI, or"
-msgstr ""
+msgstr ":c:macro:`PY_VERSION_HEX`, pokud nepoužíváte stabilní ABI, nebo"
 
 #: ../../howto/isolating-extensions.rst:387
 msgid ""
 ":py:data:`sys.version_info` (via :c:func:`PySys_GetObject` and "
 ":c:func:`PyArg_ParseTuple`)."
 msgstr ""
+":py:data:`sys.version_info` (přes :c:func:`PySys_GetObject` a "
+":c:func:`PyArg_ParseTuple`)."
 
 #: ../../howto/isolating-extensions.rst:392
 msgid "Delegating ``tp_traverse``"
-msgstr ""
+msgstr "Delegování ``tp_traverse``"
 
 #: ../../howto/isolating-extensions.rst:394
 msgid ""
@@ -582,18 +817,22 @@ msgid ""
 "type), ensure that ``Py_TYPE(self)`` is visited only once. Note that only"
 " heap type are expected to visit the type in ``tp_traverse``."
 msgstr ""
+"Pokud vaše traverse funkce deleguje na :c:member:`~PyTypeObject.tp_traverse` "
+"své základní třídy (nebo jiného typu), zajistěte, že ``Py_TYPE(self)`` je "
+"navštíveno pouze jednou. Všimněte si, že pouze heap typy se očekává, že "
+"navštíví typ v ``tp_traverse``."
 
 #: ../../howto/isolating-extensions.rst:399
 msgid "For example, if your traverse function includes::"
-msgstr ""
+msgstr "Například, pokud vaše traverse funkce obsahuje::"
 
 #: ../../howto/isolating-extensions.rst:401
 msgid "base->tp_traverse(self, visit, arg)"
-msgstr ""
+msgstr "base->tp_traverse(self, visit, arg)"
 
 #: ../../howto/isolating-extensions.rst:403
 msgid "...and ``base`` may be a static type, then it should also include::"
-msgstr ""
+msgstr "...a ``base`` může být statický typ, pak by měla také obsahovat::"
 
 #: ../../howto/isolating-extensions.rst:405
 msgid ""
@@ -605,30 +844,41 @@ msgid ""
 "    }\n"
 "}"
 msgstr ""
+"if (base->tp_flags & Py_TPFLAGS_HEAPTYPE) {\n"
+"    // a heap type's tp_traverse already visited Py_TYPE(self)\n"
+"} else {\n"
+"    if (Py_Version >= 0x03090000) {\n"
+"        Py_VISIT(Py_TYPE(self));\n"
+"    }\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:413
 msgid ""
 "It is not necessary to handle the type's reference count in "
 ":c:member:`~PyTypeObject.tp_new` and :c:member:`~PyTypeObject.tp_clear`."
 msgstr ""
+"Není nutné zpracovávat počet referencí typu v :c:member:`~PyTypeObject.tp_new` "
+"a :c:member:`~PyTypeObject.tp_clear`."
 
 #: ../../howto/isolating-extensions.rst:418
 msgid "Defining ``tp_dealloc``"
-msgstr ""
+msgstr "Definice ``tp_dealloc``"
 
 #: ../../howto/isolating-extensions.rst:420
 msgid ""
 "If your type has a custom :c:member:`~PyTypeObject.tp_dealloc` function, "
 "it needs to:"
 msgstr ""
+"Pokud váš typ má vlastní funkci :c:member:`~PyTypeObject.tp_dealloc`, "
+"musí:"
 
 #: ../../howto/isolating-extensions.rst:423
 msgid "call :c:func:`PyObject_GC_UnTrack` before any fields are invalidated, and"
-msgstr ""
+msgstr "zavolat :c:func:`PyObject_GC_UnTrack` předtím, než jsou zneplatněna jakákoliv pole, a"
 
 #: ../../howto/isolating-extensions.rst:424
 msgid "decrement the reference count of the type."
-msgstr ""
+msgstr "snížit počet referencí typu."
 
 #: ../../howto/isolating-extensions.rst:426
 msgid ""
@@ -636,6 +886,8 @@ msgid ""
 "needs to be decremented *after* the instance is deallocated. For "
 "example::"
 msgstr ""
+"Pro udržení typu platným během volání ``tp_free`` musí být počet referencí "
+"typu snížen *po* dealokaci instance. Například::"
 
 #: ../../howto/isolating-extensions.rst:429
 #, python-brace-format
@@ -649,56 +901,74 @@ msgid ""
 "    Py_DECREF(type);\n"
 "}"
 msgstr ""
+"static void my_dealloc(PyObject *self)\n"
+"{\n"
+"    PyObject_GC_UnTrack(self);\n"
+"    ...\n"
+"    PyTypeObject *type = Py_TYPE(self);\n"
+"    type->tp_free(self);\n"
+"    Py_DECREF(type);\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:438
 msgid ""
 "The default ``tp_dealloc`` function does this, so if your type does *not*"
 " override ``tp_dealloc`` you don't need to add it."
 msgstr ""
+"Výchozí funkce ``tp_dealloc`` toto dělá, takže pokud váš typ *nepřepisuje* "
+"``tp_dealloc``, nemusíte to přidávat."
 
 #: ../../howto/isolating-extensions.rst:444
 msgid "Not overriding ``tp_free``"
-msgstr ""
+msgstr "Nepřepisování ``tp_free``"
 
 #: ../../howto/isolating-extensions.rst:446
 msgid ""
 "The :c:member:`~PyTypeObject.tp_free` slot of a heap type must be set to "
 ":c:func:`PyObject_GC_Del`. This is the default; do not override it."
 msgstr ""
+"Slot :c:member:`~PyTypeObject.tp_free` heap typu musí být nastaven na "
+":c:func:`PyObject_GC_Del`. To je výchozí; nepřepisujte to."
 
 #: ../../howto/isolating-extensions.rst:452
 msgid "Avoiding ``PyObject_New``"
-msgstr ""
+msgstr "Vyhýbání se ``PyObject_New``"
 
 #: ../../howto/isolating-extensions.rst:454
 msgid "GC-tracked objects need to be allocated using GC-aware functions."
-msgstr ""
+msgstr "Objekty sledované GC musí být alokovány pomocí funkcí s podporou GC."
 
 #: ../../howto/isolating-extensions.rst:456
 msgid "If you use :c:func:`PyObject_New` or :c:func:`PyObject_NewVar`:"
-msgstr ""
+msgstr "Pokud používáte :c:func:`PyObject_New` nebo :c:func:`PyObject_NewVar`:"
 
 #: ../../howto/isolating-extensions.rst:458
 msgid ""
 "Get and call type's :c:member:`~PyTypeObject.tp_alloc` slot, if possible."
 " That is, replace ``TYPE *o = PyObject_New(TYPE, typeobj)`` with::"
 msgstr ""
+"Pokud je to možné, získejte a zavolejte slot :c:member:`~PyTypeObject.tp_alloc` "
+"typu. To znamená, nahraďte ``TYPE *o = PyObject_New(TYPE, typeobj)`` s::"
 
 #: ../../howto/isolating-extensions.rst:461
 msgid "TYPE *o = typeobj->tp_alloc(typeobj, 0);"
-msgstr ""
+msgstr "TYPE *o = typeobj->tp_alloc(typeobj, 0);"
 
 #: ../../howto/isolating-extensions.rst:463
 msgid ""
 "Replace ``o = PyObject_NewVar(TYPE, typeobj, size)`` with the same, but "
 "use size instead of the 0."
 msgstr ""
+"Nahraďte ``o = PyObject_NewVar(TYPE, typeobj, size)`` stejným, ale použijte "
+"size místo 0."
 
 #: ../../howto/isolating-extensions.rst:466
 msgid ""
 "If the above is not possible (e.g. inside a custom ``tp_alloc``), call "
 ":c:func:`PyObject_GC_New` or :c:func:`PyObject_GC_NewVar`::"
 msgstr ""
+"Pokud výše uvedené není možné (např. uvnitř vlastního ``tp_alloc``), zavolejte "
+":c:func:`PyObject_GC_New` nebo :c:func:`PyObject_GC_NewVar`::"
 
 #: ../../howto/isolating-extensions.rst:469
 msgid ""
@@ -706,10 +976,13 @@ msgid ""
 "\n"
 "TYPE *o = PyObject_GC_NewVar(TYPE, typeobj, size);"
 msgstr ""
+"TYPE *o = PyObject_GC_New(TYPE, typeobj);\n"
+"\n"
+"TYPE *o = PyObject_GC_NewVar(TYPE, typeobj, size);"
 
 #: ../../howto/isolating-extensions.rst:475
 msgid "Module State Access from Classes"
-msgstr ""
+msgstr "Přístup ke stavu modulu z tříd"
 
 #: ../../howto/isolating-extensions.rst:477
 msgid ""
@@ -718,12 +991,17 @@ msgid ""
 ":c:func:`PyType_GetModule` to get the associated module, and then "
 ":c:func:`PyModule_GetState` to get the module's state."
 msgstr ""
+"Pokud máte objekt typu definovaný pomocí :c:func:`PyType_FromModuleAndSpec`, "
+"můžete zavolat :c:func:`PyType_GetModule` pro získání přidruženého modulu a "
+"pak :c:func:`PyModule_GetState` pro získání stavu modulu."
 
 #: ../../howto/isolating-extensions.rst:481
 msgid ""
 "To save a some tedious error-handling boilerplate code, you can combine "
 "these two steps with :c:func:`PyType_GetModuleState`, resulting in::"
 msgstr ""
+"Pro ušetření nudného šablonového kódu pro zpracování chyb můžete kombinovat "
+"tyto dva kroky s :c:func:`PyType_GetModuleState`, což vede k::"
 
 #: ../../howto/isolating-extensions.rst:484
 #, python-brace-format
@@ -733,10 +1011,14 @@ msgid ""
 "    return NULL;\n"
 "}"
 msgstr ""
+"my_struct *state = (my_struct*)PyType_GetModuleState(type);\n"
+"if (state == NULL) {\n"
+"    return NULL;\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:491
 msgid "Module State Access from Regular Methods"
-msgstr ""
+msgstr "Přístup ke stavu modulu z běžných metod"
 
 #: ../../howto/isolating-extensions.rst:493
 msgid ""
@@ -745,6 +1027,9 @@ msgid ""
 "get the state, you need to first get the *defining class*, and then get "
 "the module state from it."
 msgstr ""
+"Přístup ke stavu na úrovni modulu z metod třídy je poněkud složitější, ale "
+"je možný díky API zavedenému v Pythonu 3.9. Pro získání stavu musíte nejprve "
+"získat *definiční třídu* a pak z ní získat stav modulu."
 
 #: ../../howto/isolating-extensions.rst:498
 msgid ""
@@ -752,6 +1037,9 @@ msgid ""
 "that method's \"defining class\" for short. The defining class can have a"
 " reference to the module it is part of."
 msgstr ""
+"Největší překážkou je získání *třídy, ve které byla metoda definována*, "
+"nebo zkráceně \"definiční třída\" této metody. Definiční třída může mít "
+"referenci na modul, jehož je součástí."
 
 #: ../../howto/isolating-extensions.rst:502
 msgid ""
@@ -759,6 +1047,9 @@ msgid ""
 "is called on a *subclass* of your type, ``Py_TYPE(self)`` will refer to "
 "that subclass, which may be defined in different module than yours."
 msgstr ""
+"Nezaměňujte definiční třídu s ``Py_TYPE(self)``. Pokud je metoda volána na "
+"*podtřídě* vašeho typu, ``Py_TYPE(self)`` bude odkazovat na tuto podtřídu, "
+"která může být definována v jiném modulu než vašem."
 
 #: ../../howto/isolating-extensions.rst:507
 msgid ""
@@ -766,6 +1057,8 @@ msgid ""
 "``Base.get_defining_class`` returns ``Base`` even if ``type(self) == "
 "Sub``:"
 msgstr ""
+"Následující Python kód může ilustrovat koncept. ``Base.get_defining_class`` "
+"vrací ``Base`` i když ``type(self) == Sub``:"
 
 #: ../../howto/isolating-extensions.rst:511
 msgid ""
@@ -779,6 +1072,15 @@ msgid ""
 "class Sub(Base):\n"
 "    pass"
 msgstr ""
+"class Base:\n"
+"    def get_type_of_self(self):\n"
+"        return type(self)\n"
+"\n"
+"    def get_defining_class(self):\n"
+"        return __class__\n"
+"\n"
+"class Sub(Base):\n"
+"    pass"
 
 #: ../../howto/isolating-extensions.rst:523
 msgid ""
@@ -787,6 +1089,10 @@ msgid ""
 "METH_FASTCALL-METH_KEYWORDS>` :c:type:`calling convention <PyMethodDef>` "
 "and the corresponding :c:type:`PyCMethod` signature::"
 msgstr ""
+"Pro to, aby metoda získala svou \"definiční třídu\", musí použít "
+":ref:`METH_METHOD | METH_FASTCALL | METH_KEYWORDS <METH_METHOD-"
+"METH_FASTCALL-METH_KEYWORDS>` :c:type:`konvenci volání <PyMethodDef>` "
+"a odpovídající signaturu :c:type:`PyCMethod`::"
 
 #: ../../howto/isolating-extensions.rst:528
 msgid ""
@@ -797,16 +1103,24 @@ msgid ""
 "    Py_ssize_t nargs,             // length of \"args\"\n"
 "    PyObject *kwnames)            // NULL, or dict of keyword arguments"
 msgstr ""
+"PyObject *PyCMethod(\n"
+"    PyObject *self,               // object the method was called on\n"
+"    PyTypeObject *defining_class, // defining class\n"
+"    PyObject *const *args,        // C array of arguments\n"
+"    Py_ssize_t nargs,             // length of \"args\"\n"
+"    PyObject *kwnames)            // NULL, or dict of keyword arguments"
 
 #: ../../howto/isolating-extensions.rst:535
 msgid ""
 "Once you have the defining class, call :c:func:`PyType_GetModuleState` to"
 " get the state of its associated module."
 msgstr ""
+"Jakmile máte definiční třídu, zavolejte :c:func:`PyType_GetModuleState` "
+"pro získání stavu jejího přidruženého modulu."
 
 #: ../../howto/isolating-extensions.rst:538
 msgid "For example::"
-msgstr ""
+msgstr "Například::"
 
 #: ../../howto/isolating-extensions.rst:540
 msgid ""
@@ -835,14 +1149,38 @@ msgid ""
 "    {NULL},\n"
 "}"
 msgstr ""
+"static PyObject *\n"
+"example_method(PyObject *self,\n"
+"        PyTypeObject *defining_class,\n"
+"        PyObject *const *args,\n"
+"        Py_ssize_t nargs,\n"
+"        PyObject *kwnames)\n"
+"{\n"
+"    my_struct *state = (my_struct*)PyType_GetModuleState(defining_class);"
+"\n"
+"    if (state == NULL) {\n"
+"        return NULL;\n"
+"    }\n"
+"    ... // rest of logic\n"
+"}\n"
+"\n"
+"PyDoc_STRVAR(example_method_doc, \"...\");\n"
+"\n"
+"static PyMethodDef my_methods[] = {\n"
+"    {\"example_method\",\n"
+"      (PyCFunction)(void(*)(void))example_method,\n"
+"      METH_METHOD|METH_FASTCALL|METH_KEYWORDS,\n"
+"      example_method_doc}\n"
+"    {NULL},\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:566
 msgid "Module State Access from Slot Methods, Getters and Setters"
-msgstr ""
+msgstr "Přístup ke stavu modulu ze slot metod, getterů a setterů"
 
 #: ../../howto/isolating-extensions.rst:570
 msgid "This is new in Python 3.11."
-msgstr ""
+msgstr "Toto je nové v Pythonu 3.11."
 
 #: ../../howto/isolating-extensions.rst:578
 msgid ""
@@ -853,6 +1191,12 @@ msgid ""
 ":c:type:`PyCMethod`. The same goes for getters and setters defined with "
 ":c:type:`PyGetSetDef`."
 msgstr ""
+"Slot metody—rychlé C ekvivalenty speciálních metod, jako je "
+":c:member:`~PyNumberMethods.nb_add` pro :py:attr:`~object.__add__` nebo "
+":c:member:`~PyTypeObject.tp_new` pro inicializaci—mají velmi jednoduché "
+"API, které neumožňuje předání definiční třídy, na rozdíl od "
+":c:type:`PyCMethod`. Totéž platí pro gettery a settery definované pomocí "
+":c:type:`PyGetSetDef`."
 
 #: ../../howto/isolating-extensions.rst:585
 msgid ""
@@ -861,6 +1205,9 @@ msgid ""
 "definition. Once you have the module, call :c:func:`PyModule_GetState` to"
 " get the state::"
 msgstr ""
+"Pro přístup ke stavu modulu v těchto případech použijte funkci "
+":c:func:`PyType_GetModuleByDef` a předejte definici modulu. Jakmile máte "
+"modul, zavolejte :c:func:`PyModule_GetState` pro získání stavu::"
 
 #: ../../howto/isolating-extensions.rst:590
 #, python-brace-format
@@ -871,6 +1218,11 @@ msgid ""
 "    return NULL;\n"
 "}"
 msgstr ""
+"PyObject *module = PyType_GetModuleByDef(Py_TYPE(self), &module_def);\n"
+"my_struct *state = (my_struct*)PyModule_GetState(module);\n"
+"if (state == NULL) {\n"
+"    return NULL;\n"
+"}"
 
 #: ../../howto/isolating-extensions.rst:596
 msgid ""
@@ -878,6 +1230,9 @@ msgid ""
 "resolution order` (i.e. all superclasses) for the first superclass that "
 "has a corresponding module."
 msgstr ""
+":c:func:`!PyType_GetModuleByDef` funguje tak, že prohledává :term:`pořadí "
+"rozlišení metod <method resolution order>` (tj. všechny nadtřídy) pro první "
+"nadtřídu, která má odpovídající modul."
 
 #: ../../howto/isolating-extensions.rst:602
 msgid ""
@@ -887,10 +1242,14 @@ msgid ""
 "always return a module with the same definition, ensuring a compatible C "
 "memory layout."
 msgstr ""
+"Ve velmi exotických případech (dědičné řetězce pokrývající více modulů "
+"vytvořených ze stejné definice) nemusí :c:func:`!PyType_GetModuleByDef` "
+"vrátit modul skutečné definiční třídy. Nicméně vždy vrátí modul se stejnou "
+"definicí, čímž zajistí kompatibilní rozložení paměti C."
 
 #: ../../howto/isolating-extensions.rst:610
 msgid "Lifetime of the Module State"
-msgstr ""
+msgstr "Životnost stavu modulu"
 
 #: ../../howto/isolating-extensions.rst:612
 msgid ""
@@ -898,6 +1257,9 @@ msgid ""
 " each pointer to (a part of) the module state, you must hold a reference "
 "to the module object."
 msgstr ""
+"Když je objekt modulu garbage-collectován, jeho stav modulu je uvolněn. "
+"Pro každý ukazatel na (část) stavu modulu musíte držet referenci na objekt "
+"modulu."
 
 #: ../../howto/isolating-extensions.rst:616
 msgid ""
@@ -907,14 +1269,18 @@ msgid ""
 "you reference module state from other places, such as callbacks for "
 "external libraries."
 msgstr ""
+"Obvykle to není problém, protože typy vytvořené pomocí "
+":c:func:`PyType_FromModuleAndSpec` a jejich instance drží referenci na "
+"modul. Nicméně musíte být opatrní s počítáním referencí, když odkazujete "
+"na stav modulu z jiných míst, jako jsou callbacky pro externí knihovny."
 
 #: ../../howto/isolating-extensions.rst:625
 msgid "Open Issues"
-msgstr ""
+msgstr "Otevřené problémy"
 
 #: ../../howto/isolating-extensions.rst:627
 msgid "Several issues around per-module state and heap types are still open."
-msgstr ""
+msgstr "Několik problémů kolem stavu na úrovni modulu a heap typů je stále otevřených."
 
 #: ../../howto/isolating-extensions.rst:629
 msgid ""
@@ -922,10 +1288,12 @@ msgid ""
 "forum under c-api tag <https://discuss.python.org/c/core-"
 "dev/c-api/30>`__."
 msgstr ""
+"Diskuse o zlepšení situace se nejlépe vedou na `diskusním fóru pod tagem "
+"c-api <https://discuss.python.org/c/core-dev/c-api/30>`__."
 
 #: ../../howto/isolating-extensions.rst:633
 msgid "Per-Class Scope"
-msgstr ""
+msgstr "Rozsah na úrovni třídy"
 
 #: ../../howto/isolating-extensions.rst:635
 msgid ""
@@ -934,10 +1302,14 @@ msgid ""
 "(which may change in the future—perhaps, ironically, to allow a proper "
 "solution for per-class scope)."
 msgstr ""
+"V současnosti (k Pythonu 3.11) není možné připojit stav k jednotlivým "
+"*typům* bez spoléhání se na implementační detaily CPythonu (které se mohou "
+"v budoucnu změnit—možná, ironicky, aby umožnily správné řešení pro rozsah "
+"na úrovni třídy)."
 
 #: ../../howto/isolating-extensions.rst:642
 msgid "Lossless Conversion to Heap Types"
-msgstr ""
+msgstr "Bezeztrátová konverze na heap typy"
 
 #: ../../howto/isolating-extensions.rst:644
 msgid ""
@@ -945,4 +1317,6 @@ msgid ""
 "static types; that is, creating a type that works exactly like a given "
 "static type."
 msgstr ""
+"API heap typů nebylo navrženo pro \"bezeztrátovou\" konverzi ze statických "
+"typů; tedy vytvoření typu, který funguje přesně jako daný statický typ."
 

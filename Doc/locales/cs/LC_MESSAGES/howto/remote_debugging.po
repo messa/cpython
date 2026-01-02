@@ -21,23 +21,27 @@ msgstr ""
 
 #: ../../howto/remote_debugging.rst:4
 msgid "Remote debugging attachment protocol"
-msgstr ""
+msgstr "Protokol pro připojení vzdáleného ladění"
 
 #: ../../howto/remote_debugging.rst:6
 msgid ""
 "This protocol enables external tools to attach to a running CPython "
 "process and execute Python code remotely."
 msgstr ""
+"Tento protokol umožňuje externím nástrojům připojit se k běžícímu procesu "
+"CPython a vzdáleně vykonávat Python kód."
 
 #: ../../howto/remote_debugging.rst:9
 msgid ""
 "Most platforms require elevated privileges to attach to another Python "
 "process."
 msgstr ""
+"Většina platforem vyžaduje zvýšená oprávnění pro připojení k jinému Python "
+"procesu."
 
 #: ../../howto/remote_debugging.rst:14
 msgid "Permission requirements"
-msgstr ""
+msgstr "Požadavky na oprávnění"
 
 #: ../../howto/remote_debugging.rst:16
 msgid ""
@@ -45,10 +49,13 @@ msgid ""
 "elevated privileges on most platforms. The specific requirements and "
 "troubleshooting steps depend on your operating system:"
 msgstr ""
+"Připojení k běžícímu Python procesu pro vzdálené ladění vyžaduje na většině "
+"platforem zvýšená oprávnění. Konkrétní požadavky a kroky řešení problémů "
+"závisí na vašem operačním systému:"
 
 #: ../../howto/remote_debugging.rst:21
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../howto/remote_debugging.rst:22
 msgid ""
@@ -58,38 +65,47 @@ msgid ""
 " is running with set-user-ID or set-group-ID. Security modules like Yama "
 "may further restrict tracing."
 msgstr ""
+"Trasovací proces musí mít oprávnění ``CAP_SYS_PTRACE`` nebo ekvivalentní "
+"privilegia. Můžete trasovat pouze procesy, které vlastníte a kterým můžete "
+"posílat signály. Trasování může selhat, pokud je proces již trasován, nebo "
+"pokud běží s nastaveným set-user-ID nebo set-group-ID. Bezpečnostní moduly "
+"jako Yama mohou trasování dále omezovat."
 
 #: ../../howto/remote_debugging.rst:28
 msgid "To temporarily relax ptrace restrictions (until reboot), run:"
-msgstr ""
+msgstr "Pro dočasné uvolnění omezení ptrace (do restartu) spusťte:"
 
 #: ../../howto/remote_debugging.rst:30
 msgid "``echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope``"
-msgstr ""
+msgstr "``echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope``"
 
 #: ../../howto/remote_debugging.rst:34
 msgid ""
 "Disabling ``ptrace_scope`` reduces system hardening and should only be "
 "done in trusted environments."
 msgstr ""
+"Vypnutí ``ptrace_scope`` snižuje zabezpečení systému a mělo by být "
+"provedeno pouze v důvěryhodných prostředích."
 
 #: ../../howto/remote_debugging.rst:37
 msgid ""
 "If running inside a container, use ``--cap-add=SYS_PTRACE`` or "
 "``--privileged``, and run as root if needed."
 msgstr ""
+"Pokud běžíte uvnitř kontejneru, použijte ``--cap-add=SYS_PTRACE`` nebo "
+"``--privileged`` a v případě potřeby spouštějte jako root."
 
 #: ../../howto/remote_debugging.rst:40
 msgid "Try re-running the command with elevated privileges:"
-msgstr ""
+msgstr "Zkuste znovu spustit příkaz se zvýšenými oprávněními:"
 
 #: ../../howto/remote_debugging.rst:42
 msgid "``sudo -E !!``"
-msgstr ""
+msgstr "``sudo -E !!``"
 
 #: ../../howto/remote_debugging.rst:46
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../howto/remote_debugging.rst:47
 msgid ""
@@ -97,6 +113,9 @@ msgid ""
 "tool with elevated privileges. This can be done by using ``sudo`` or "
 "running as root."
 msgstr ""
+"Pro připojení k jinému procesu typicky potřebujete spustit váš ladicí "
+"nástroj se zvýšenými oprávněními. To lze provést pomocí ``sudo`` nebo "
+"spuštěním jako root."
 
 #: ../../howto/remote_debugging.rst:51
 msgid ""
@@ -104,10 +123,13 @@ msgid ""
 "unless the debugger is run with root privileges due to system security "
 "restrictions."
 msgstr ""
+"Dokonce i při připojování k procesům, které vlastníte, může macOS "
+"blokovat ladění, pokud není debugger spuštěn s root oprávněními kvůli "
+"bezpečnostním omezením systému."
 
 #: ../../howto/remote_debugging.rst:56
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../howto/remote_debugging.rst:57
 msgid ""
@@ -115,52 +137,60 @@ msgid ""
 " with administrative privileges. Start the command prompt or terminal as "
 "Administrator."
 msgstr ""
+"Pro připojení k jinému procesu obvykle potřebujete spustit váš ladicí "
+"nástroj s administrátorskými oprávněními. Spusťte příkazový řádek nebo "
+"terminál jako Administrátor."
 
 #: ../../howto/remote_debugging.rst:61
 msgid ""
 "Some processes may still be inaccessible even with Administrator rights, "
 "unless you have the ``SeDebugPrivilege`` privilege enabled."
 msgstr ""
+"Některé procesy mohou být stále nepřístupné i s administrátorskými právy, "
+"pokud nemáte povoleno oprávnění ``SeDebugPrivilege``."
 
 #: ../../howto/remote_debugging.rst:64
 msgid "To resolve file or folder access issues, adjust the security permissions:"
-msgstr ""
+msgstr "Pro vyřešení problémů s přístupem k souborům nebo složkám upravte bezpečnostní oprávnění:"
 
 #: ../../howto/remote_debugging.rst:66
 msgid "Right-click the file or folder and select **Properties**."
-msgstr ""
+msgstr "Klikněte pravým tlačítkem na soubor nebo složku a vyberte **Vlastnosti**."
 
 #: ../../howto/remote_debugging.rst:67
 msgid "Go to the **Security** tab to view users and groups with access."
-msgstr ""
+msgstr "Přejděte na záložku **Zabezpečení** pro zobrazení uživatelů a skupin s přístupem."
 
 #: ../../howto/remote_debugging.rst:68
 msgid "Click **Edit** to modify permissions."
-msgstr ""
+msgstr "Klikněte na **Upravit** pro změnu oprávnění."
 
 #: ../../howto/remote_debugging.rst:69
 msgid "Select your user account."
-msgstr ""
+msgstr "Vyberte váš uživatelský účet."
 
 #: ../../howto/remote_debugging.rst:70
 msgid "In **Permissions**, check **Read** or **Full control** as needed."
-msgstr ""
+msgstr "V **Oprávnění** zaškrtněte **Číst** nebo **Úplné řízení** podle potřeby."
 
 #: ../../howto/remote_debugging.rst:71
 msgid "Click **Apply**, then **OK** to confirm."
-msgstr ""
+msgstr "Klikněte na **Použít**, poté na **OK** pro potvrzení."
 
 #: ../../howto/remote_debugging.rst:76
 msgid ""
 "Ensure you've satisfied all :ref:`permission-requirements` before "
 "proceeding."
 msgstr ""
+"Před pokračováním se ujistěte, že jste splnili všechny :ref:`permission-requirements`."
 
 #: ../../howto/remote_debugging.rst:78
 msgid ""
 "This section describes the low-level protocol that enables external tools"
 " to inject and execute a Python script within a running CPython process."
 msgstr ""
+"Tato sekce popisuje nízkoúrovňový protokol, který umožňuje externím "
+"nástrojům vložit a vykonat Python skript uvnitř běžícího procesu CPython."
 
 #: ../../howto/remote_debugging.rst:81
 msgid ""
@@ -173,6 +203,13 @@ msgid ""
 "independent reimplementation of the protocol, regardless of programming "
 "language."
 msgstr ""
+"Tento mechanismus tvoří základ funkce :func:`sys.remote_exec`, která "
+"instruuje vzdálený Python proces k vykonání ``.py`` souboru. Tato sekce "
+"však nedokumentuje použití této funkce. Místo toho poskytuje podrobné "
+"vysvětlení základního protokolu, který jako vstup přijímá ``pid`` cílového "
+"Python procesu a cestu k Python zdrojovému souboru, který má být vykonán. "
+"Tyto informace podporují nezávislou reimplementaci protokolu, bez ohledu na "
+"programovací jazyk."
 
 #: ../../howto/remote_debugging.rst:91
 msgid ""
@@ -180,6 +217,9 @@ msgid ""
 "a safe evaluation point. As a result, execution may be delayed depending "
 "on the runtime state of the target process."
 msgstr ""
+"Vykonání vloženého skriptu závisí na tom, zda interpret dosáhne bezpečného "
+"bodu vyhodnocení. V důsledku toho může být vykonání zpožděno v závislosti "
+"na běhovém stavu cílového procesu."
 
 #: ../../howto/remote_debugging.rst:95
 msgid ""
@@ -188,6 +228,9 @@ msgid ""
 "approach enables remote execution capabilities without modifying the "
 "behavior or structure of the running Python application."
 msgstr ""
+"Jakmile je skript vložen, je vykonán interpretem uvnitř cílového procesu "
+"při dalším dosažení bezpečného bodu vyhodnocení. Tento přístup umožňuje "
+"vzdálené vykonávání bez změny chování nebo struktury běžící Python aplikace."
 
 #: ../../howto/remote_debugging.rst:100
 msgid ""
@@ -197,10 +240,15 @@ msgid ""
 "Platform-specific variations are noted where applicable, and example "
 "implementations are included to clarify each operation."
 msgstr ""
+"Následující sekce poskytují krok za krokem popis protokolu, včetně technik "
+"pro nalezení struktur interpretu v paměti, bezpečný přístup k interním "
+"polím a spouštění vykonávání kódu. Jsou uvedeny specifické variace pro "
+"jednotlivé platformy, kde je to použitelné, a jsou zahrnuty ukázkové "
+"implementace pro objasnění každé operace."
 
 #: ../../howto/remote_debugging.rst:107
 msgid "Locating the PyRuntime structure"
-msgstr ""
+msgstr "Nalezení struktury PyRuntime"
 
 #: ../../howto/remote_debugging.rst:109
 msgid ""
@@ -210,80 +258,105 @@ msgid ""
 "systems, and ``__DATA,__PyRuntime`` is used on macOS. Tools can find the "
 "offset of this structure by examining the binary on disk."
 msgstr ""
+"CPython umísťuje strukturu ``PyRuntime`` do vyhrazené binární sekce, aby "
+"pomohl externím nástrojům najít ji za běhu. Název a formát této sekce se "
+"liší podle platformy. Například ``.PyRuntime`` se používá v ELF systémech "
+"a ``__DATA,__PyRuntime`` se používá na macOS. Nástroje mohou najít offset "
+"této struktury prozkoumáním binárního souboru na disku."
 
 #: ../../howto/remote_debugging.rst:115
 msgid ""
-"The ``PyRuntime`` structure contains CPython’s global interpreter state "
+"The ``PyRuntime`` structure contains CPython's global interpreter state "
 "and provides access to other internal data, including the list of "
 "interpreters, thread states, and debugger support fields."
 msgstr ""
+"Struktura ``PyRuntime`` obsahuje globální stav interpretu CPython a "
+"poskytuje přístup k dalším interním datům, včetně seznamu interpretů, "
+"stavů vláken a polí pro podporu debuggeru."
 
 #: ../../howto/remote_debugging.rst:119
 msgid ""
 "To work with a remote Python process, a debugger must first find the "
 "memory address of the ``PyRuntime`` structure in the target process. This"
-" address can’t be hardcoded or calculated from a symbol name, because it "
+" address can't be hardcoded or calculated from a symbol name, because it "
 "depends on where the operating system loaded the binary."
 msgstr ""
+"Pro práci se vzdáleným Python procesem musí debugger nejprve najít paměťovou "
+"adresu struktury ``PyRuntime`` v cílovém procesu. Tato adresa nemůže být "
+"napevno zakódována ani vypočítána z názvu symbolu, protože závisí na tom, "
+"kam operační systém načetl binární soubor."
 
 #: ../../howto/remote_debugging.rst:124
 msgid ""
 "The method for finding ``PyRuntime`` depends on the platform, but the "
 "steps are the same in general:"
 msgstr ""
+"Metoda pro nalezení ``PyRuntime`` závisí na platformě, ale kroky jsou "
+"obecně stejné:"
 
 #: ../../howto/remote_debugging.rst:127
 msgid ""
 "Find the base address where the Python binary or shared library was "
 "loaded in the target process."
 msgstr ""
+"Najděte základní adresu, kde byl Python binární soubor nebo sdílená knihovna "
+"načteny v cílovém procesu."
 
 #: ../../howto/remote_debugging.rst:129
 msgid "Use the on-disk binary to locate the offset of the ``.PyRuntime`` section."
-msgstr ""
+msgstr "Použijte binární soubor na disku k nalezení offsetu sekce ``.PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:130
 msgid ""
 "Add the section offset to the base address to compute the address in "
 "memory."
 msgstr ""
+"Přičtěte offset sekce k základní adrese pro výpočet adresy v paměti."
 
 #: ../../howto/remote_debugging.rst:132
 msgid ""
 "The sections below explain how to do this on each supported platform and "
 "include example code."
 msgstr ""
+"Následující sekce vysvětlují, jak to provést na každé podporované platformě, "
+"a zahrnují ukázkový kód."
 
 #: ../../howto/remote_debugging.rst:136
 msgid "Linux (ELF)"
-msgstr ""
+msgstr "Linux (ELF)"
 
 #: ../../howto/remote_debugging.rst:137
 msgid "To find the ``PyRuntime`` structure on Linux:"
-msgstr ""
+msgstr "Pro nalezení struktury ``PyRuntime`` na Linuxu:"
 
 #: ../../howto/remote_debugging.rst:139
 msgid ""
-"Read the process’s memory map (for example, ``/proc/<pid>/maps``) to find"
+"Read the process's memory map (for example, ``/proc/<pid>/maps``) to find"
 " the address where the Python executable or ``libpython`` was loaded."
 msgstr ""
+"Přečtěte si mapu paměti procesu (například ``/proc/<pid>/maps``), abyste "
+"našli adresu, kde byl načten Python spustitelný soubor nebo ``libpython``."
 
 #: ../../howto/remote_debugging.rst:141
 msgid ""
 "Parse the ELF section headers in the binary to get the offset of the "
 "``.PyRuntime`` section."
 msgstr ""
+"Parsujte ELF hlavičky sekcí v binárním souboru pro získání offsetu sekce "
+"``.PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:143
 msgid ""
 "Add that offset to the base address from step 1 to get the memory address"
 " of ``PyRuntime``."
 msgstr ""
+"Přičtěte tento offset k základní adrese z kroku 1 pro získání paměťové "
+"adresy ``PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:146 ../../howto/remote_debugging.rst:208
 #: ../../howto/remote_debugging.rst:278 ../../howto/remote_debugging.rst:547
 msgid "The following is an example implementation::"
-msgstr ""
+msgstr "Následuje ukázková implementace::"
 
 #: ../../howto/remote_debugging.rst:148
 msgid ""
@@ -307,6 +380,25 @@ msgid ""
 "    # Step 4: Compute PyRuntime address in memory\n"
 "    return base_address + section_offset"
 msgstr ""
+"def find_py_runtime_linux(pid: int) -> int:\n"
+"    # Step 1: Try to find the Python executable in memory\n"
+"    binary_path, base_address = find_mapped_binary(\n"
+"        pid, name_contains=\"python\"\n"
+"    )\n"
+"\n"
+"    # Step 2: Fallback to shared library if executable is not found\n"
+"    if binary_path is None:\n"
+"        binary_path, base_address = find_mapped_binary(\n"
+"            pid, name_contains=\"libpython\"\n"
+"        )\n"
+"\n"
+"    # Step 3: Parse ELF headers to get .PyRuntime section offset\n"
+"    section_offset = parse_elf_section_offset(\n"
+"        binary_path, \".PyRuntime\"\n"
+"    )\n"
+"\n"
+"    # Step 4: Compute PyRuntime address in memory\n"
+"    return base_address + section_offset"
 
 #: ../../howto/remote_debugging.rst:169
 msgid ""
@@ -322,6 +414,16 @@ msgid ""
 "requires multiple context switches between the tracer and tracee "
 "processes."
 msgstr ""
+"V systémech Linux existují dva hlavní přístupy ke čtení paměti z jiného "
+"procesu. První je prostřednictvím souborového systému ``/proc``, konkrétně "
+"čtením z ``/proc/[pid]/mem``, které poskytuje přímý přístup k paměti "
+"procesu. To vyžaduje odpovídající oprávnění - buď být stejný uživatel jako "
+"cílový proces, nebo mít root přístup. Druhý přístup je použití systémového "
+"volání ``process_vm_readv()``, které poskytuje efektivnější způsob kopírování "
+"paměti mezi procesy. Zatímco operace ``PTRACE_PEEKTEXT`` z ptrace může být "
+"také použita ke čtení paměti, je výrazně pomalejší, protože čte pouze jedno "
+"slovo najednou a vyžaduje více přepnutí kontextu mezi trasovacím a "
+"trasovaným procesem."
 
 #: ../../howto/remote_debugging.rst:180
 msgid ""
@@ -335,20 +437,30 @@ msgid ""
 "exists in the file, which can be used to calculate its runtime address "
 "when the binary is loaded into memory."
 msgstr ""
+"Pro parsování ELF sekcí proces zahrnuje čtení a interpretaci struktur "
+"formátu ELF souboru z binárního souboru na disku. ELF hlavička obsahuje "
+"ukazatel na tabulku hlaviček sekcí. Každá hlavička sekce obsahuje metadata "
+"o sekci včetně jejího názvu (uloženého v samostatné tabulce řetězců), "
+"offsetu a velikosti. Pro nalezení konkrétní sekce jako .PyRuntime musíte "
+"projít tyto hlavičky a porovnat název sekce. Hlavička sekce pak poskytuje "
+"offset, kde tato sekce existuje v souboru, což může být použito k výpočtu "
+"její běhové adresy, když je binární soubor načten do paměti."
 
 #: ../../howto/remote_debugging.rst:189
 msgid ""
 "You can read more about the ELF file format in the `ELF specification "
 "<https://en.wikipedia.org/wiki/Executable_and_Linkable_Format>`_."
 msgstr ""
+"Více o formátu ELF souboru si můžete přečíst ve `specifikaci ELF "
+"<https://en.wikipedia.org/wiki/Executable_and_Linkable_Format>`_."
 
 #: ../../howto/remote_debugging.rst:194
 msgid "macOS (Mach-O)"
-msgstr ""
+msgstr "macOS (Mach-O)"
 
 #: ../../howto/remote_debugging.rst:195
 msgid "To find the ``PyRuntime`` structure on macOS:"
-msgstr ""
+msgstr "Pro nalezení struktury ``PyRuntime`` na macOS:"
 
 #: ../../howto/remote_debugging.rst:197
 msgid ""
@@ -356,12 +468,17 @@ msgid ""
 "target process. This handle is needed to read memory using APIs like "
 "``mach_vm_read_overwrite`` and ``mach_vm_region``."
 msgstr ""
+"Zavolejte ``task_for_pid()`` pro získání ``mach_port_t`` task portu pro "
+"cílový proces. Tento handle je potřebný pro čtení paměti pomocí API jako "
+"``mach_vm_read_overwrite`` a ``mach_vm_region``."
 
 #: ../../howto/remote_debugging.rst:200
 msgid ""
 "Scan the memory regions to find the one containing the Python executable "
 "or ``libpython``."
 msgstr ""
+"Proskenujte paměťové oblasti pro nalezení té, která obsahuje Python "
+"spustitelný soubor nebo ``libpython``."
 
 #: ../../howto/remote_debugging.rst:202
 msgid ""
@@ -371,6 +488,11 @@ msgid ""
 " symbol appears as ``_PyRuntime`` in the symbol table, but the section "
 "name is not affected."
 msgstr ""
+"Načtěte binární soubor z disku a parsujte Mach-O hlavičky pro nalezení "
+"sekce s názvem ``PyRuntime`` v segmentu ``__DATA``. Na macOS jsou názvy "
+"symbolů automaticky prefixovány podtržítkem, takže symbol ``PyRuntime`` "
+"se objevuje jako ``_PyRuntime`` v tabulce symbolů, ale název sekce není "
+"ovlivněn."
 
 #: ../../howto/remote_debugging.rst:210
 msgid ""
@@ -398,6 +520,29 @@ msgid ""
 "    # Step 5: Compute the PyRuntime address in memory\n"
 "    return base_address + section_offset"
 msgstr ""
+"def find_py_runtime_macos(pid: int) -> int:\n"
+"    # Step 1: Get access to the process's memory\n"
+"    handle = get_memory_access_handle(pid)\n"
+"\n"
+"    # Step 2: Try to find the Python executable in memory\n"
+"    binary_path, base_address = find_mapped_binary(\n"
+"        handle, name_contains=\"python\"\n"
+"    )\n"
+"\n"
+"    # Step 3: Fallback to libpython if the executable is not found\n"
+"    if binary_path is None:\n"
+"        binary_path, base_address = find_mapped_binary(\n"
+"            handle, name_contains=\"libpython\"\n"
+"        )\n"
+"\n"
+"    # Step 4: Parse Mach-O headers to get __DATA,__PyRuntime section "
+"offset\n"
+"    section_offset = parse_macho_section_offset(\n"
+"        binary_path, \"__DATA\", \"__PyRuntime\"\n"
+"    )\n"
+"\n"
+"    # Step 5: Compute the PyRuntime address in memory\n"
+"    return base_address + section_offset"
 
 #: ../../howto/remote_debugging.rst:233
 msgid ""
@@ -407,6 +552,11 @@ msgid ""
 " target process's memory space. This handle enables memory operations "
 "through APIs like ``mach_vm_read_overwrite()``."
 msgstr ""
+"Na macOS vyžaduje přístup k paměti jiného procesu použití specifických API "
+"a formátů souborů Mach-O. První krok je získání ``task_port`` handle přes "
+"``task_for_pid()``, které poskytuje přístup k paměťovému prostoru cílového "
+"procesu. Tento handle umožňuje paměťové operace prostřednictvím API jako "
+"``mach_vm_read_overwrite()``."
 
 #: ../../howto/remote_debugging.rst:239
 msgid ""
@@ -416,6 +566,11 @@ msgid ""
 "Python binary or library is found, its Mach-O headers need to be parsed "
 "to locate the ``PyRuntime`` structure."
 msgstr ""
+"Paměť procesu může být prozkoumána pomocí ``mach_vm_region()`` pro skenování "
+"virtuálního paměťového prostoru, zatímco ``proc_regionfilename()`` pomáhá "
+"identifikovat, které binární soubory jsou načteny v každé paměťové oblasti. "
+"Když je nalezen Python binární soubor nebo knihovna, její Mach-O hlavičky "
+"musí být parsovány pro nalezení struktury ``PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:244
 msgid ""
@@ -427,6 +582,13 @@ msgid ""
 "final address is computed by combining the base address with the "
 "appropriate section offsets from the Mach-O headers."
 msgstr ""
+"Formát Mach-O organizuje kód a data do segmentů a sekcí. Struktura "
+"``PyRuntime`` se nachází v sekci s názvem ``__PyRuntime`` uvnitř segmentu "
+"``__DATA``. Skutečný výpočet běhové adresy zahrnuje nalezení segmentu "
+"``__TEXT``, který slouží jako základní adresa binárního souboru, a poté "
+"nalezení segmentu ``__DATA`` obsahujícího naši cílovou sekci. Finální "
+"adresa je vypočítána kombinací základní adresy s příslušnými offsety sekcí "
+"z Mach-O hlaviček."
 
 #: ../../howto/remote_debugging.rst:252
 msgid ""
@@ -434,14 +596,17 @@ msgid ""
 "elevated privileges - either root access or special security entitlements"
 " granted to the debugging process."
 msgstr ""
+"Všimněte si, že přístup k paměti jiného procesu na macOS typicky vyžaduje "
+"zvýšená oprávnění - buď root přístup, nebo speciální bezpečnostní oprávnění "
+"udělená ladicímu procesu."
 
 #: ../../howto/remote_debugging.rst:258
 msgid "Windows (PE)"
-msgstr ""
+msgstr "Windows (PE)"
 
 #: ../../howto/remote_debugging.rst:259
 msgid "To find the ``PyRuntime`` structure on Windows:"
-msgstr ""
+msgstr "Pro nalezení struktury ``PyRuntime`` na Windows:"
 
 #: ../../howto/remote_debugging.rst:261
 msgid ""
@@ -453,6 +618,13 @@ msgid ""
 "tlhelp32-module32first>`_, and `Module32Next <https://learn.microsoft.com"
 "/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-module32next>`_."
 msgstr ""
+"Použijte ToolHelp API k enumeraci všech modulů načtených v cílovém procesu. "
+"To se provádí pomocí funkcí jako `CreateToolhelp32Snapshot "
+"<https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-"
+"tlhelp32-createtoolhelp32snapshot>`_, `Module32First "
+"<https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-"
+"tlhelp32-module32first>`_ a `Module32Next <https://learn.microsoft.com"
+"/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-module32next>`_."
 
 #: ../../howto/remote_debugging.rst:268
 #, python-brace-format
@@ -461,6 +633,9 @@ msgid ""
 ":file:`python{XY}.dll`, where ``X`` and ``Y`` are the major and minor "
 "version numbers of the Python version, and record its base address."
 msgstr ""
+"Identifikujte modul odpovídající :file:`python.exe` nebo "
+":file:`python{XY}.dll`, kde ``X`` a ``Y`` jsou hlavní a vedlejší čísla "
+"verze Python, a zaznamenejte jeho základní adresu."
 
 #: ../../howto/remote_debugging.rst:271
 msgid ""
@@ -469,12 +644,17 @@ msgid ""
 "name ``PyRuntime`` is truncated. This section contains the ``PyRuntime`` "
 "structure."
 msgstr ""
+"Nalezněte sekci ``PyRuntim``. Kvůli 8-znakovému limitu formátu PE pro názvy "
+"sekcí (definovanému jako ``IMAGE_SIZEOF_SHORT_NAME``) je původní název "
+"``PyRuntime`` zkrácen. Tato sekce obsahuje strukturu ``PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:275
 msgid ""
-"Retrieve the section’s relative virtual address (RVA) and add it to the "
+"Retrieve the section's relative virtual address (RVA) and add it to the "
 "base address of the module."
 msgstr ""
+"Získejte relativní virtuální adresu (RVA) sekce a přičtěte ji k základní "
+"adrese modulu."
 
 #: ../../howto/remote_debugging.rst:280
 msgid ""
@@ -500,6 +680,27 @@ msgid ""
 "    # Step 4: Compute PyRuntime address in memory\n"
 "    return base_address + section_rva"
 msgstr ""
+"def find_py_runtime_windows(pid: int) -> int:\n"
+"    # Step 1: Try to find the Python executable in memory\n"
+"    binary_path, base_address = find_loaded_module(\n"
+"        pid, name_contains=\"python\"\n"
+"    )\n"
+"\n"
+"    # Step 2: Fallback to shared pythonXY.dll if the executable is not\n"
+"    # found\n"
+"    if binary_path is None:\n"
+"        binary_path, base_address = find_loaded_module(\n"
+"            pid, name_contains=\"python3\"\n"
+"        )\n"
+"\n"
+"    # Step 3: Parse PE section headers to get the RVA of the PyRuntime\n"
+"    # section. The section name appears as \"PyRuntim\" due to the\n"
+"    # 8-character limit defined by the PE format "
+"(IMAGE_SIZEOF_SHORT_NAME).\n"
+"    section_rva = parse_pe_section_offset(binary_path, \"PyRuntim\")\n"
+"\n"
+"    # Step 4: Compute PyRuntime address in memory\n"
+"    return base_address + section_rva"
 
 #: ../../howto/remote_debugging.rst:302
 msgid ""
@@ -510,6 +711,11 @@ msgid ""
 "process's memory space, enabling memory operations through "
 "``ReadProcessMemory()``."
 msgstr ""
+"Na Windows vyžaduje přístup k paměti jiného procesu použití Windows API "
+"funkcí jako ``CreateToolhelp32Snapshot()`` a ``Module32First()/Module32Next()`` "
+"k enumeraci načtených modulů. Funkce ``OpenProcess()`` poskytuje handle pro "
+"přístup k paměťovému prostoru cílového procesu, umožňující paměťové operace "
+"prostřednictvím ``ReadProcessMemory()``."
 
 #: ../../howto/remote_debugging.rst:308
 msgid ""
@@ -517,6 +723,9 @@ msgid ""
 "the Python binary or DLL. When found, its PE headers need to be parsed to"
 " locate the ``PyRuntime`` structure."
 msgstr ""
+"Paměť procesu může být prozkoumána enumerací načtených modulů pro nalezení "
+"Python binárního souboru nebo DLL. Když je nalezen, jeho PE hlavičky musí "
+"být parsovány pro nalezení struktury ``PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:312
 msgid ""
@@ -528,6 +737,12 @@ msgid ""
 "final address is computed by combining the base address with the "
 "section's virtual address from the PE section headers."
 msgstr ""
+"Formát PE organizuje kód a data do sekcí. Struktura ``PyRuntime`` se "
+"nachází v sekci s názvem \"PyRuntim\" (zkráceno z \"PyRuntime\" kvůli "
+"8-znakovému limitu PE). Skutečný výpočet běhové adresy zahrnuje nalezení "
+"základní adresy modulu z položky modulu, poté nalezení naší cílové sekce v "
+"PE hlavičkách. Finální adresa je vypočítána kombinací základní adresy s "
+"virtuální adresou sekce z PE hlaviček sekcí."
 
 #: ../../howto/remote_debugging.rst:319
 msgid ""
@@ -535,10 +750,13 @@ msgid ""
 "requires appropriate privileges - either administrative access or the "
 "``SeDebugPrivilege`` privilege granted to the debugging process."
 msgstr ""
+"Všimněte si, že přístup k paměti jiného procesu na Windows typicky vyžaduje "
+"odpovídající oprávnění - buď administrátorský přístup, nebo oprávnění "
+"``SeDebugPrivilege`` udělené ladicímu procesu."
 
 #: ../../howto/remote_debugging.rst:325
 msgid "Reading _Py_DebugOffsets"
-msgstr ""
+msgstr "Čtení _Py_DebugOffsets"
 
 #: ../../howto/remote_debugging.rst:327
 msgid ""
@@ -546,6 +764,8 @@ msgid ""
 "next step is to read the ``_Py_DebugOffsets`` structure located at the "
 "beginning of the ``PyRuntime`` block."
 msgstr ""
+"Jakmile je určena adresa struktury ``PyRuntime``, dalším krokem je přečíst "
+"strukturu ``_Py_DebugOffsets`` umístěnou na začátku bloku ``PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:331
 msgid ""
@@ -554,34 +774,45 @@ msgid ""
 "between CPython versions and must be checked before use to ensure they "
 "are compatible."
 msgstr ""
+"Tato struktura poskytuje offsety polí specifické pro verzi, které jsou "
+"potřebné k bezpečnému čtení paměti interpretu a stavu vlákna. Tyto offsety "
+"se liší mezi verzemi CPython a musí být před použitím zkontrolovány, aby "
+"bylo zajištěno, že jsou kompatibilní."
 
 #: ../../howto/remote_debugging.rst:335
 msgid "To read and check the debug offsets, follow these steps:"
-msgstr ""
+msgstr "Pro čtení a kontrolu debug offsetů postupujte takto:"
 
 #: ../../howto/remote_debugging.rst:337
 msgid ""
 "Read memory from the target process starting at the ``PyRuntime`` "
 "address, covering the same number of bytes as the ``_Py_DebugOffsets`` "
 "structure. This structure is located at the very start of the "
-"``PyRuntime`` memory block. Its layout is defined in CPython’s internal "
+"``PyRuntime`` memory block. Its layout is defined in CPython's internal "
 "headers and stays the same within a given minor version, but may change "
 "in major versions."
 msgstr ""
+"Přečtěte paměť z cílového procesu začínající na adrese ``PyRuntime``, "
+"pokrývající stejný počet bajtů jako struktura ``_Py_DebugOffsets``. Tato "
+"struktura se nachází úplně na začátku paměťového bloku ``PyRuntime``. Její "
+"uspořádání je definováno v interních hlavičkách CPython a zůstává stejné v "
+"rámci dané vedlejší verze, ale může se změnit ve hlavních verzích."
 
 #: ../../howto/remote_debugging.rst:343
 msgid "Check that the structure contains valid data:"
-msgstr ""
+msgstr "Zkontrolujte, že struktura obsahuje platná data:"
 
 #: ../../howto/remote_debugging.rst:345
 msgid "The ``cookie`` field must match the expected debug marker."
-msgstr ""
+msgstr "Pole ``cookie`` musí odpovídat očekávanému debug markeru."
 
 #: ../../howto/remote_debugging.rst:346
 msgid ""
 "The ``version`` field must match the version of the Python interpreter "
 "used by the debugger."
 msgstr ""
+"Pole ``version`` musí odpovídat verzi Python interpretu používaného "
+"debuggerem."
 
 #: ../../howto/remote_debugging.rst:348
 msgid ""
@@ -589,12 +820,16 @@ msgid ""
 "version (for example, an alpha, beta, or release candidate), the versions"
 " must match exactly."
 msgstr ""
+"Pokud debugger nebo cílový proces používá předběžnou verzi (například alfa, "
+"beta nebo release candidate), verze musí přesně odpovídat."
 
 #: ../../howto/remote_debugging.rst:351
 msgid ""
 "The ``free_threaded`` field must have the same value in both the debugger"
 " and the target process."
 msgstr ""
+"Pole ``free_threaded`` musí mít stejnou hodnotu v debuggeru i v cílovém "
+"procesu."
 
 #: ../../howto/remote_debugging.rst:354
 msgid ""
@@ -602,12 +837,17 @@ msgid ""
 "fields in memory. If any check fails, the debugger should stop the "
 "operation to avoid reading memory in the wrong format."
 msgstr ""
+"Pokud je struktura platná, offsety, které obsahuje, mohou být použity k "
+"nalezení polí v paměti. Pokud jakákoli kontrola selže, debugger by měl "
+"zastavit operaci, aby se vyhnul čtení paměti ve špatném formátu."
 
 #: ../../howto/remote_debugging.rst:358
 msgid ""
 "The following is an example implementation that reads and checks "
 "``_Py_DebugOffsets``::"
 msgstr ""
+"Následuje ukázková implementace, která čte a kontroluje "
+"``_Py_DebugOffsets``::"
 
 #: ../../howto/remote_debugging.rst:361
 msgid ""
@@ -634,10 +874,32 @@ msgid ""
 "\n"
 "    return debug_offsets"
 msgstr ""
+"def read_debug_offsets(pid: int, py_runtime_addr: int) -> DebugOffsets:\n"
+"    # Step 1: Read memory from the target process at the PyRuntime "
+"address\n"
+"    data = read_process_memory(\n"
+"        pid, address=py_runtime_addr, size=DEBUG_OFFSETS_SIZE\n"
+"    )\n"
+"\n"
+"    # Step 2: Deserialize the raw bytes into a _Py_DebugOffsets structure"
+"\n"
+"    debug_offsets = parse_debug_offsets(data)\n"
+"\n"
+"    # Step 3: Validate the contents of the structure\n"
+"    if debug_offsets.cookie != EXPECTED_COOKIE:\n"
+"        raise RuntimeError(\"Invalid or missing debug cookie\")\n"
+"    if debug_offsets.version != LOCAL_PYTHON_VERSION:\n"
+"        raise RuntimeError(\n"
+"            \"Mismatch between caller and target Python versions\"\n"
+"        )\n"
+"    if debug_offsets.free_threaded != LOCAL_FREE_THREADED:\n"
+"        raise RuntimeError(\"Mismatch in free-threaded configuration\")\n"
+"\n"
+"    return debug_offsets"
 
 #: ../../howto/remote_debugging.rst:386
 msgid "**Process suspension recommended**"
-msgstr ""
+msgstr "**Doporučeno pozastavení procesu**"
 
 #: ../../howto/remote_debugging.rst:388
 msgid ""
@@ -648,6 +910,12 @@ msgid ""
 "creating or destroying threads—during normal execution. This can result "
 "in invalid memory reads or writes."
 msgstr ""
+"Aby se předešlo race conditions a zajistila konzistence paměti, je důrazně "
+"doporučeno pozastavit cílový proces před provedením jakýchkoli operací, "
+"které čtou nebo zapisují interní stav interpretu. Python runtime může "
+"souběžně měnit datové struktury interpretu - jako je vytváření nebo ničení "
+"vláken - během normálního vykonávání. To může vést k neplatným čtením nebo "
+"zápisům paměti."
 
 #: ../../howto/remote_debugging.rst:395
 msgid ""
@@ -655,6 +923,9 @@ msgid ""
 "``ptrace`` or by sending a ``SIGSTOP`` signal. Execution should only be "
 "resumed after debugger-side memory operations are complete."
 msgstr ""
+"Debugger může pozastavit vykonávání připojením k procesu pomocí ``ptrace`` "
+"nebo odesláním signálu ``SIGSTOP``. Vykonávání by mělo být obnoveno pouze "
+"po dokončení paměťových operací na straně debuggeru."
 
 #: ../../howto/remote_debugging.rst:401
 msgid ""
@@ -664,10 +935,15 @@ msgid ""
 "For most debugger implementations, suspending the process remains the "
 "safest and most robust approach."
 msgstr ""
+"Některé nástroje, jako jsou profiler nebo debuggery založené na vzorkování, "
+"mohou pracovat s běžícím procesem bez pozastavení. V takových případech musí "
+"být nástroje explicitně navrženy tak, aby zvládaly částečně aktualizovanou "
+"nebo nekonzistentní paměť. Pro většinu implementací debuggerů zůstává "
+"pozastavení procesu nejbezpečnějším a nejrobustnějším přístupem."
 
 #: ../../howto/remote_debugging.rst:409
 msgid "Locating the interpreter and thread state"
-msgstr ""
+msgstr "Nalezení stavu interpretu a vlákna"
 
 #: ../../howto/remote_debugging.rst:411
 msgid ""
@@ -678,15 +954,25 @@ msgid ""
 "which is embedded in a ``PyThreadState`` object. These fields are "
 "modified by the debugger to request execution of injected scripts."
 msgstr ""
+"Než může být kód vložen a vykonán ve vzdáleném Python procesu, debugger "
+"musí vybrat vlákno, ve kterém bude naplánováno vykonávání. To je nezbytné, "
+"protože řídicí pole používaná pro provedení vzdáleného vložení kódu jsou "
+"umístěna ve struktuře ``_PyRemoteDebuggerSupport``, která je vložena v "
+"objektu ``PyThreadState``. Tato pole jsou modifikována debuggerem pro "
+"vyžádání vykonání vložených skriptů."
 
 #: ../../howto/remote_debugging.rst:418
 msgid ""
 "The ``PyThreadState`` structure represents a thread running inside a "
-"Python interpreter.  It maintains the thread’s evaluation context and "
+"Python interpreter.  It maintains the thread's evaluation context and "
 "contains the fields required for debugger coordination.  Locating a valid"
 " ``PyThreadState`` is therefore a key prerequisite for triggering "
 "execution remotely."
 msgstr ""
+"Struktura ``PyThreadState`` reprezentuje vlákno běžící uvnitř Python "
+"interpretu. Udržuje vyhodnocovací kontext vlákna a obsahuje pole požadovaná "
+"pro koordinaci debuggeru. Nalezení platného ``PyThreadState`` je proto "
+"klíčovým předpokladem pro spuštění vzdáleného vykonávání."
 
 #: ../../howto/remote_debugging.rst:423
 msgid ""
@@ -696,10 +982,15 @@ msgid ""
 " locate both the interpreter and the associated thread state structures "
 "in memory."
 msgstr ""
+"Vlákno je typicky vybráno na základě jeho role nebo ID. Ve většině případů "
+"se používá hlavní vlákno, ale některé nástroje mohou cílit na konkrétní "
+"vlákno podle jeho nativního thread ID. Jakmile je cílové vlákno vybráno, "
+"debugger musí najít jak interpret, tak související struktury stavu vlákna "
+"v paměti."
 
 #: ../../howto/remote_debugging.rst:428
 msgid "The relevant internal structures are defined as follows:"
-msgstr ""
+msgstr "Příslušné interní struktury jsou definovány následovně:"
 
 #: ../../howto/remote_debugging.rst:430
 msgid ""
@@ -709,16 +1000,22 @@ msgid ""
 "use a single interpreter, CPython supports multiple interpreters in the "
 "same process."
 msgstr ""
+"``PyInterpreterState`` reprezentuje izolovanou instanci Python interpretu. "
+"Každý interpret udržuje svou vlastní sadu importovaných modulů, vestavěný "
+"stav a seznam stavů vláken. Ačkoli většina Python aplikací používá jediný "
+"interpret, CPython podporuje více interpretů ve stejném procesu."
 
 #: ../../howto/remote_debugging.rst:435
 msgid ""
 "``PyThreadState`` represents a thread running within an interpreter. It "
 "contains execution state and the control fields used by the debugger."
 msgstr ""
+"``PyThreadState`` reprezentuje vlákno běžící uvnitř interpretu. Obsahuje "
+"stav vykonávání a řídicí pole používaná debuggerem."
 
 #: ../../howto/remote_debugging.rst:438
 msgid "To locate a thread:"
-msgstr ""
+msgstr "Pro nalezení vlákna:"
 
 #: ../../howto/remote_debugging.rst:440
 msgid ""
@@ -726,6 +1023,9 @@ msgid ""
 "of the first interpreter in the ``PyRuntime`` structure. This is the "
 "entry point to the linked list of active interpreters."
 msgstr ""
+"Použijte offset ``runtime_state.interpreters_head`` pro získání adresy "
+"prvního interpretu ve struktuře ``PyRuntime``. To je vstupní bod do "
+"propojeného seznamu aktivních interpretů."
 
 #: ../../howto/remote_debugging.rst:444
 msgid ""
@@ -733,6 +1033,9 @@ msgid ""
 "thread state associated with the selected interpreter. This is typically "
 "the most reliable thread to target."
 msgstr ""
+"Použijte offset ``interpreter_state.threads_main`` pro přístup k hlavnímu "
+"stavu vlákna spojenému s vybraným interpretem. To je typicky nejspolehlivější "
+"vlákno k cílení."
 
 #: ../../howto/remote_debugging.rst:448
 msgid ""
@@ -741,6 +1044,10 @@ msgid ""
 "structure contains a ``native_thread_id`` field, which may be compared to"
 " a target thread ID to find a specific thread."
 msgstr ""
+"Volitelně použijte offset ``interpreter_state.threads_head`` pro iteraci "
+"propojeným seznamem všech stavů vláken. Každá struktura ``PyThreadState`` "
+"obsahuje pole ``native_thread_id``, které může být porovnáno s cílovým "
+"thread ID pro nalezení konkrétního vlákna."
 
 #: ../../howto/remote_debugging.rst:453
 msgid ""
@@ -748,12 +1055,16 @@ msgid ""
 " later steps of the protocol, such as writing debugger control fields and"
 " scheduling execution."
 msgstr ""
+"Jakmile je nalezen platný ``PyThreadState``, jeho adresa může být použita "
+"v pozdějších krocích protokolu, jako je zápis řídicích polí debuggeru a "
+"plánování vykonávání."
 
 #: ../../howto/remote_debugging.rst:457
 msgid ""
 "The following is an example implementation that locates the main thread "
 "state::"
 msgstr ""
+"Následuje ukázková implementace, která nalezne stav hlavního vlákna::"
 
 #: ../../howto/remote_debugging.rst:459
 msgid ""
@@ -779,12 +1090,35 @@ msgid ""
 "\n"
 "    return thread_state_addr"
 msgstr ""
+"def find_main_thread_state(\n"
+"    pid: int, py_runtime_addr: int, debug_offsets: DebugOffsets,\n"
+") -> int:\n"
+"    # Step 1: Read interpreters_head from PyRuntime\n"
+"    interp_head_ptr = (\n"
+"        py_runtime_addr + debug_offsets.runtime_state.interpreters_head\n"
+"    )\n"
+"    interp_addr = read_pointer(pid, interp_head_ptr)\n"
+"    if interp_addr == 0:\n"
+"        raise RuntimeError(\"No interpreter found in the target "
+"process\")\n"
+"\n"
+"    # Step 2: Read the threads_main pointer from the interpreter\n"
+"    threads_main_ptr = (\n"
+"        interp_addr + debug_offsets.interpreter_state.threads_main\n"
+"    )\n"
+"    thread_state_addr = read_pointer(pid, threads_main_ptr)\n"
+"    if thread_state_addr == 0:\n"
+"        raise RuntimeError(\"Main thread state is not available\")\n"
+"\n"
+"    return thread_state_addr"
 
 #: ../../howto/remote_debugging.rst:480
 msgid ""
 "The following example demonstrates how to locate a thread by its native "
 "thread ID::"
 msgstr ""
+"Následující příklad demonstruje, jak najít vlákno podle jeho nativního "
+"thread ID::"
 
 #: ../../howto/remote_debugging.rst:483
 msgid ""
@@ -814,6 +1148,31 @@ msgid ""
 "\n"
 "    raise RuntimeError(\"Thread with the given ID was not found\")"
 msgstr ""
+"def find_thread_by_id(\n"
+"    pid: int,\n"
+"    interp_addr: int,\n"
+"    debug_offsets: DebugOffsets,\n"
+"    target_tid: int,\n"
+") -> int:\n"
+"    # Start at threads_head and walk the linked list\n"
+"    thread_ptr = read_pointer(\n"
+"        pid,\n"
+"        interp_addr + debug_offsets.interpreter_state.threads_head\n"
+"    )\n"
+"\n"
+"    while thread_ptr:\n"
+"        native_tid_ptr = (\n"
+"            thread_ptr + debug_offsets.thread_state.native_thread_id\n"
+"        )\n"
+"        native_tid = read_int(pid, native_tid_ptr)\n"
+"        if native_tid == target_tid:\n"
+"            return thread_ptr\n"
+"        thread_ptr = read_pointer(\n"
+"            pid,\n"
+"            thread_ptr + debug_offsets.thread_state.next\n"
+"        )\n"
+"\n"
+"    raise RuntimeError(\"Thread with the given ID was not found\")"
 
 #: ../../howto/remote_debugging.rst:510
 msgid ""
@@ -821,10 +1180,12 @@ msgid ""
 " modifying its control fields and scheduling execution, as described in "
 "the next section."
 msgstr ""
+"Jakmile je nalezen platný stav vlákna, debugger může pokračovat v úpravě "
+"jeho řídicích polí a plánování vykonávání, jak je popsáno v další sekci."
 
 #: ../../howto/remote_debugging.rst:515
 msgid "Writing control information"
-msgstr ""
+msgstr "Zápis řídicích informací"
 
 #: ../../howto/remote_debugging.rst:517
 msgid ""
@@ -834,6 +1195,11 @@ msgid ""
 " by the interpreter, and when set correctly, they trigger the execution "
 "of remote code at a safe point in the evaluation loop."
 msgstr ""
+"Jakmile je identifikována platná struktura ``PyThreadState``, debugger může "
+"upravit řídicí pole v ní pro naplánování vykonání specifikovaného Python "
+"skriptu. Tato řídicí pole jsou periodicky kontrolována interpretem a když "
+"jsou správně nastavena, spouštějí vykonání vzdáleného kódu v bezpečném bodě "
+"vyhodnocovací smyčky."
 
 #: ../../howto/remote_debugging.rst:523
 msgid ""
@@ -842,6 +1208,9 @@ msgid ""
 "locations of its fields are defined by the ``_Py_DebugOffsets`` structure"
 " and include the following:"
 msgstr ""
+"Každý ``PyThreadState`` obsahuje strukturu ``_PyRemoteDebuggerSupport`` "
+"používanou pro komunikaci mezi debuggerem a interpretem. Umístění jejích "
+"polí jsou definována strukturou ``_Py_DebugOffsets`` a zahrnují následující:"
 
 #: ../../howto/remote_debugging.rst:528
 msgid ""
@@ -849,12 +1218,17 @@ msgid ""
 " a Python source file (``.py``).  This file must be accessible and "
 "readable by the target process when execution is triggered."
 msgstr ""
+"``debugger_script_path``: Buffer pevné velikosti, který obsahuje úplnou "
+"cestu k Python zdrojovému souboru (``.py``). Tento soubor musí být přístupný "
+"a čitelný cílovým procesem, když je spuštěno vykonávání."
 
 #: ../../howto/remote_debugging.rst:532
 msgid ""
 "``debugger_pending_call``: An integer flag. Setting this to ``1`` tells "
 "the interpreter that a script is ready to be executed."
 msgstr ""
+"``debugger_pending_call``: Celočíselný příznak. Nastavení na ``1`` říká "
+"interpretu, že skript je připraven k vykonání."
 
 #: ../../howto/remote_debugging.rst:535
 msgid ""
@@ -862,18 +1236,21 @@ msgid ""
 "Setting bit 5 (``_PY_EVAL_PLEASE_STOP_BIT``, value ``1U << 5``) in this "
 "field causes the interpreter to pause and check for debugger activity."
 msgstr ""
+"``eval_breaker``: Pole kontrolované interpretem během vykonávání. Nastavení "
+"bitu 5 (``_PY_EVAL_PLEASE_STOP_BIT``, hodnota ``1U << 5``) v tomto poli "
+"způsobí, že interpret se pozastaví a zkontroluje aktivitu debuggeru."
 
 #: ../../howto/remote_debugging.rst:539
 msgid "To complete the injection, the debugger must perform the following steps:"
-msgstr ""
+msgstr "Pro dokončení vložení musí debugger provést následující kroky:"
 
 #: ../../howto/remote_debugging.rst:541
 msgid "Write the full script path into the ``debugger_script_path`` buffer."
-msgstr ""
+msgstr "Zapište úplnou cestu ke skriptu do bufferu ``debugger_script_path``."
 
 #: ../../howto/remote_debugging.rst:542
 msgid "Set ``debugger_pending_call`` to ``1``."
-msgstr ""
+msgstr "Nastavte ``debugger_pending_call`` na ``1``."
 
 #: ../../howto/remote_debugging.rst:543
 msgid ""
@@ -881,6 +1258,9 @@ msgid ""
 "(``_PY_EVAL_PLEASE_STOP_BIT``), and write the updated value back. This "
 "signals the interpreter to check for debugger activity."
 msgstr ""
+"Přečtěte aktuální hodnotu ``eval_breaker``, nastavte bit 5 "
+"(``_PY_EVAL_PLEASE_STOP_BIT``) a zapište aktualizovanou hodnotu zpět. To "
+"signalizuje interpretu, aby zkontroloval aktivitu debuggeru."
 
 #: ../../howto/remote_debugging.rst:549
 msgid ""
@@ -920,6 +1300,41 @@ msgid ""
 "    breaker |= (1 << 5)\n"
 "    write_int(pid, eval_breaker_ptr, breaker)"
 msgstr ""
+"def inject_script(\n"
+"    pid: int,\n"
+"    thread_state_addr: int,\n"
+"    debug_offsets: DebugOffsets,\n"
+"    script_path: str\n"
+") -> None:\n"
+"    # Compute the base offset of _PyRemoteDebuggerSupport\n"
+"    support_base = (\n"
+"        thread_state_addr +\n"
+"        debug_offsets.debugger_support.remote_debugger_support\n"
+"    )\n"
+"\n"
+"    # Step 1: Write the script path into debugger_script_path\n"
+"    script_path_ptr = (\n"
+"        support_base +\n"
+"        debug_offsets.debugger_support.debugger_script_path\n"
+"    )\n"
+"    write_string(pid, script_path_ptr, script_path)\n"
+"\n"
+"    # Step 2: Set debugger_pending_call to 1\n"
+"    pending_ptr = (\n"
+"        support_base +\n"
+"        debug_offsets.debugger_support.debugger_pending_call\n"
+"    )\n"
+"    write_int(pid, pending_ptr, 1)\n"
+"\n"
+"    # Step 3: Set _PY_EVAL_PLEASE_STOP_BIT (bit 5, value 1 << 5) in\n"
+"    # eval_breaker\n"
+"    eval_breaker_ptr = (\n"
+"        thread_state_addr +\n"
+"        debug_offsets.debugger_support.eval_breaker\n"
+"    )\n"
+"    breaker = read_int(pid, eval_breaker_ptr)\n"
+"    breaker |= (1 << 5)\n"
+"    write_int(pid, eval_breaker_ptr, breaker)"
 
 #: ../../howto/remote_debugging.rst:586
 msgid ""
@@ -927,12 +1342,17 @@ msgid ""
 " suspended).  The interpreter will process the request at the next safe "
 "evaluation point, load the script from disk, and execute it."
 msgstr ""
+"Jakmile jsou tato pole nastavena, debugger může obnovit proces (pokud byl "
+"pozastaven). Interpret zpracuje požadavek v dalším bezpečném bodě "
+"vyhodnocení, načte skript z disku a vykoná jej."
 
 #: ../../howto/remote_debugging.rst:590
 msgid ""
 "It is the responsibility of the debugger to ensure that the script file "
 "remains present and accessible to the target process during execution."
 msgstr ""
+"Je odpovědností debuggeru zajistit, aby soubor se skriptem zůstal přítomen "
+"a přístupný cílovému procesu během vykonávání."
 
 #: ../../howto/remote_debugging.rst:595
 msgid ""
@@ -944,44 +1364,52 @@ msgid ""
 "before removing the script. Once such an effect is observed, it is safe "
 "to assume the file is no longer needed."
 msgstr ""
+"Vykonávání skriptu je asynchronní. Soubor se skriptem nemůže být smazán "
+"ihned po vložení. Debugger by měl počkat, dokud vložený skript nevytvoří "
+"pozorovatelný efekt, než soubor odstraní. Tento efekt závisí na tom, k čemu "
+"je skript navržen. Například debugger může čekat, dokud se vzdálený proces "
+"nepřipojí zpět k socketu, než skript odstraní. Jakmile je takový efekt "
+"pozorován, je bezpečné předpokládat, že soubor již není potřeba."
 
 #: ../../howto/remote_debugging.rst:604
 msgid "Summary"
-msgstr ""
+msgstr "Shrnutí"
 
 #: ../../howto/remote_debugging.rst:606
 msgid "To inject and execute a Python script in a remote process:"
-msgstr ""
+msgstr "Pro vložení a vykonání Python skriptu ve vzdáleném procesu:"
 
 #: ../../howto/remote_debugging.rst:608
-msgid "Locate the ``PyRuntime`` structure in the target process’s memory."
-msgstr ""
+msgid "Locate the ``PyRuntime`` structure in the target process's memory."
+msgstr "Najděte strukturu ``PyRuntime`` v paměti cílového procesu."
 
 #: ../../howto/remote_debugging.rst:609
 msgid ""
 "Read and validate the ``_Py_DebugOffsets`` structure at the beginning of "
 "``PyRuntime``."
 msgstr ""
+"Přečtěte a validujte strukturu ``_Py_DebugOffsets`` na začátku ``PyRuntime``."
 
 #: ../../howto/remote_debugging.rst:611
 msgid "Use the offsets to locate a valid ``PyThreadState``."
-msgstr ""
+msgstr "Použijte offsety k nalezení platného ``PyThreadState``."
 
 #: ../../howto/remote_debugging.rst:612
 msgid "Write the path to a Python script into ``debugger_script_path``."
-msgstr ""
+msgstr "Zapište cestu k Python skriptu do ``debugger_script_path``."
 
 #: ../../howto/remote_debugging.rst:613
 msgid "Set the ``debugger_pending_call`` flag to ``1``."
-msgstr ""
+msgstr "Nastavte příznak ``debugger_pending_call`` na ``1``."
 
 #: ../../howto/remote_debugging.rst:614
 msgid "Set ``_PY_EVAL_PLEASE_STOP_BIT`` in the ``eval_breaker`` field."
-msgstr ""
+msgstr "Nastavte ``_PY_EVAL_PLEASE_STOP_BIT`` v poli ``eval_breaker``."
 
 #: ../../howto/remote_debugging.rst:615
 msgid ""
 "Resume the process (if suspended). The script will execute at the next "
 "safe evaluation point."
 msgstr ""
-
+"Obnovte proces (pokud byl pozastaven). Skript se vykoná v dalším bezpečném "
+"bodě vyhodnocení."

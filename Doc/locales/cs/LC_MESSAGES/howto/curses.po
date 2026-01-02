@@ -21,37 +21,39 @@ msgstr ""
 
 #: ../../howto/curses.rst:5
 msgid "Curses Programming with Python"
-msgstr ""
+msgstr "Programování s Curses v Pythonu"
 
 #: ../../howto/curses.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/curses.rst:9
 msgid "A.M. Kuchling, Eric S. Raymond"
-msgstr ""
+msgstr "A.M. Kuchling, Eric S. Raymond"
 
 #: ../../howto/curses.rst
 msgid "Release"
-msgstr ""
+msgstr "Vydání"
 
 #: ../../howto/curses.rst:10
 msgid "2.04"
-msgstr ""
+msgstr "2.04"
 
 #: ../../howto/curses.rst:-1
 msgid "Abstract"
-msgstr ""
+msgstr "Abstrakt"
 
 #: ../../howto/curses.rst:15
 msgid ""
 "This document describes how to use the :mod:`curses` extension module to "
 "control text-mode displays."
 msgstr ""
+"Tento dokument popisuje, jak používat rozšiřující modul :mod:`curses` pro "
+"ovládání textových displejů."
 
 #: ../../howto/curses.rst:20
 msgid "What is curses?"
-msgstr ""
+msgstr "Co je curses?"
 
 #: ../../howto/curses.rst:22
 msgid ""
@@ -63,6 +65,13 @@ msgid ""
 "screen, and erasing areas.  Different terminals use widely differing "
 "codes, and often have their own minor quirks."
 msgstr ""
+"Knihovna curses poskytuje nezávislé na terminálu vykreslování obrazovky a "
+"zpracování klávesnice pro textové terminály; takové terminály zahrnují "
+"VT100, linuxovou konzoli a simulované terminály poskytované různými programy. "
+"Zobrazovací terminály podporují různé řídící kódy pro provádění běžných "
+"operací, jako je přesouvání kurzoru, rolování obrazovky a mazání oblastí. "
+"Různé terminály používají značně odlišné kódy a často mají své vlastní menší "
+"zvláštnosti."
 
 #: ../../howto/curses.rst:30
 msgid ""
@@ -74,6 +83,12 @@ msgid ""
 "kernel configurators that may have to run before any graphical support is"
 " available."
 msgstr ""
+"Ve světě grafických displejů se někdo může ptát \"proč se vůbec obtěžovat\"? "
+"Je pravda, že znakové displeje jsou zastaralá technologie, ale existují niky, "
+"ve kterých je schopnost dělat s nimi pokročilé věci stále cenná. Jednou z nich "
+"jsou malé nebo vestavěné Unixy, které nespouštějí X server. Další jsou nástroje "
+"jako instalátory OS a konfigurátory jádra, které mohou běžet předtím, než je "
+"dostupná jakákoli grafická podpora."
 
 #: ../../howto/curses.rst:38
 msgid ""
@@ -86,6 +101,13 @@ msgid ""
 "interface concepts such as buttons, checkboxes, or dialogs; if you need "
 "such features, consider a user interface library such as :pypi:`Urwid`."
 msgstr ""
+"Knihovna curses poskytuje poměrně základní funkcionalitu, nabízející programátorovi "
+"abstrakci displeje obsahujícího více nepřekrývajících se textových oken. Obsah "
+"okna lze měnit různými způsoby---přidáváním textu, jeho mazáním, změnou vzhledu---a "
+"knihovna curses zjistí, jaké řídící kódy je třeba poslat terminálu pro vytvoření "
+"správného výstupu. curses neposkytuje mnoho konceptů uživatelského rozhraní, jako "
+"jsou tlačítka, zaškrtávací políčka nebo dialogy; pokud potřebujete takové funkce, "
+"zvažte knihovnu uživatelského rozhraní, jako je :pypi:`Urwid`."
 
 #: ../../howto/curses.rst:48
 msgid ""
@@ -99,16 +121,26 @@ msgid ""
 " available.  The older versions of curses carried by some proprietary "
 "Unixes may not support everything, though."
 msgstr ""
+"Knihovna curses byla původně napsána pro BSD Unix; pozdější verze System V "
+"Unixu od AT&T přidaly mnoho vylepšení a nových funkcí. BSD curses již není "
+"udržována, byla nahrazena ncurses, což je open-source implementace rozhraní "
+"AT&T. Pokud používáte open-source Unix, jako je Linux nebo FreeBSD, váš systém "
+"téměř jistě používá ncurses. Protože většina současných komerčních verzí Unixu "
+"je založena na kódu System V, všechny zde popsané funkce budou pravděpodobně "
+"dostupné. Starší verze curses obsažené v některých proprietárních Unixech však "
+"nemusí podporovat vše."
 
 #: ../../howto/curses.rst:58
 msgid ""
 "The Windows version of Python doesn't include the :mod:`curses` module.  "
 "A ported version called :pypi:`UniCurses` is available."
 msgstr ""
+"Verze Pythonu pro Windows neobsahuje modul :mod:`curses`. Je dostupná "
+"portovaná verze nazvaná :pypi:`UniCurses`."
 
 #: ../../howto/curses.rst:63
 msgid "The Python curses module"
-msgstr ""
+msgstr "Modul curses v Pythonu"
 
 #: ../../howto/curses.rst:65
 msgid ""
@@ -120,6 +152,12 @@ msgid ""
 " :c:func:`!mvwaddstr` into a single :meth:`~curses.window.addstr` method."
 "  You'll see this covered in more detail later."
 msgstr ""
+"Modul Pythonu je poměrně jednoduchý wrapper nad C funkcemi poskytovanými "
+"curses; pokud jste již obeznámeni s programováním curses v C, je opravdu "
+"snadné tento znalost přenést do Pythonu. Největší rozdíl je v tom, že rozhraní "
+"Pythonu zjednodušuje věci sloučením různých C funkcí jako :c:func:`!addstr`, "
+":c:func:`!mvaddstr` a :c:func:`!mvwaddstr` do jedné metody "
+":meth:`~curses.window.addstr`. Toto bude podrobněji pokryto později."
 
 #: ../../howto/curses.rst:73
 msgid ""
@@ -128,10 +166,14 @@ msgid ""
 "for that, see the Python library guide's section on ncurses, and the C "
 "manual pages for ncurses.  It will, however, give you the basic ideas."
 msgstr ""
+"Tento návod je úvodem do psaní textových programů s curses a Pythonem. "
+"Nesnaží se být úplným průvodcem API curses; pro to se podívejte na sekci "
+"o ncurses v průvodci knihovnou Pythonu a na manuálové stránky C pro ncurses. "
+"Nicméně vám poskytne základní myšlenky."
 
 #: ../../howto/curses.rst:80
 msgid "Starting and ending a curses application"
-msgstr ""
+msgstr "Spuštění a ukončení aplikace curses"
 
 #: ../../howto/curses.rst:82
 msgid ""
@@ -142,12 +184,20 @@ msgid ""
 "returns a window object representing the entire screen; this is usually "
 "called ``stdscr`` after the name of the corresponding C variable. ::"
 msgstr ""
+"Před provedením čehokoli musí být curses inicializována. To se provede "
+"zavoláním funkce :func:`~curses.initscr`, která určí typ terminálu, odešle "
+"veškeré potřebné inicializační kódy terminálu a vytvoří různé interní datové "
+"struktury. Pokud je úspěšná, :func:`!initscr` vrací objekt okna reprezentující "
+"celou obrazovku; ten se obvykle nazývá ``stdscr`` podle názvu odpovídající C "
+"proměnné. ::"
 
 #: ../../howto/curses.rst:90
 msgid ""
 "import curses\n"
 "stdscr = curses.initscr()"
 msgstr ""
+"import curses\n"
+"stdscr = curses.initscr()"
 
 #: ../../howto/curses.rst:93
 msgid ""
@@ -156,10 +206,13 @@ msgid ""
 "certain circumstances.  This requires calling the :func:`~curses.noecho` "
 "function. ::"
 msgstr ""
+"Obvykle aplikace curses vypínají automatické vypisování kláves na obrazovku, "
+"aby bylo možné číst klávesy a zobrazovat je pouze za určitých okolností. "
+"To vyžaduje zavolání funkce :func:`~curses.noecho`. ::"
 
 #: ../../howto/curses.rst:98
 msgid "curses.noecho()"
-msgstr ""
+msgstr "curses.noecho()"
 
 #: ../../howto/curses.rst:100
 msgid ""
@@ -167,10 +220,13 @@ msgid ""
 "requiring the Enter key to be pressed; this is called cbreak mode, as "
 "opposed to the usual buffered input mode. ::"
 msgstr ""
+"Aplikace také běžně potřebují reagovat na klávesy okamžitě, bez nutnosti "
+"stisknout klávesu Enter; to se nazývá režim cbreak, na rozdíl od obvyklého "
+"bufferovaného vstupního režimu. ::"
 
 #: ../../howto/curses.rst:104
 msgid "curses.cbreak()"
-msgstr ""
+msgstr "curses.cbreak()"
 
 #: ../../howto/curses.rst:106
 msgid ""
@@ -181,16 +237,24 @@ msgid ""
 "value such as :const:`curses.KEY_LEFT`.  To get curses to do the job, "
 "you'll have to enable keypad mode. ::"
 msgstr ""
+"Terminály obvykle vracejí speciální klávesy, jako jsou kurzorové klávesy nebo "
+"navigační klávesy jako Page Up a Home, jako vícebajtovou escape sekvenci. "
+"I když byste mohli napsat svou aplikaci tak, aby očekávala takové sekvence a "
+"zpracovávala je odpovídajícím způsobem, curses to může udělat za vás a vrátit "
+"speciální hodnotu jako :const:`curses.KEY_LEFT`. Abyste nechali curses udělat "
+"tuto práci, musíte povolit režim klávesnice. ::"
 
 #: ../../howto/curses.rst:113
 msgid "stdscr.keypad(True)"
-msgstr ""
+msgstr "stdscr.keypad(True)"
 
 #: ../../howto/curses.rst:115
 msgid ""
 "Terminating a curses application is much easier than starting one. You'll"
 " need to call::"
 msgstr ""
+"Ukončení aplikace curses je mnohem jednodušší než její spuštění. Budete "
+"muset zavolat::"
 
 #: ../../howto/curses.rst:118
 msgid ""
@@ -198,6 +262,9 @@ msgid ""
 "stdscr.keypad(False)\n"
 "curses.echo()"
 msgstr ""
+"curses.nocbreak()\n"
+"stdscr.keypad(False)\n"
+"curses.echo()"
 
 #: ../../howto/curses.rst:122
 msgid ""
@@ -205,10 +272,13 @@ msgid ""
 ":func:`~curses.endwin` function to restore the terminal to its original "
 "operating mode. ::"
 msgstr ""
+"pro vrácení nastavení terminálu zpět. Poté zavolejte funkci "
+":func:`~curses.endwin` pro obnovení terminálu do jeho původního "
+"provozního režimu. ::"
 
 #: ../../howto/curses.rst:126
 msgid "curses.endwin()"
-msgstr ""
+msgstr "curses.endwin()"
 
 #: ../../howto/curses.rst:128
 msgid ""
@@ -219,6 +289,11 @@ msgid ""
 "echoed to the screen when you type them, for example, which makes using "
 "the shell difficult."
 msgstr ""
+"Běžným problémem při ladění aplikace curses je rozházet terminál, když "
+"aplikace skončí bez obnovení terminálu do jeho předchozího stavu. V Pythonu "
+"se to běžně stává, když váš kód má chybu a vyvolá nezachycenou výjimku. "
+"Klávesy se již například při psaní nevypisují na obrazovku, což ztěžuje "
+"používání shellu."
 
 #: ../../howto/curses.rst:134
 msgid ""
@@ -226,6 +301,8 @@ msgid ""
 "easier by importing the :func:`curses.wrapper` function and using it like"
 " this::"
 msgstr ""
+"V Pythonu se můžete těmto komplikacím vyhnout a usnadnit ladění importováním "
+"funkce :func:`curses.wrapper` a jejím použitím takto::"
 
 #: ../../howto/curses.rst:137
 #, python-brace-format
@@ -246,6 +323,21 @@ msgid ""
 "\n"
 "wrapper(main)"
 msgstr ""
+"from curses import wrapper\n"
+"\n"
+"def main(stdscr):\n"
+"    # Clear screen\n"
+"    stdscr.clear()\n"
+"\n"
+"    # This raises ZeroDivisionError when i == 10.\n"
+"    for i in range(0, 11):\n"
+"        v = i-10\n"
+"        stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))\n"
+"\n"
+"        stdscr.refresh()\n"
+"        stdscr.getkey()\n"
+"\n"
+"wrapper(main)"
 
 #: ../../howto/curses.rst:153
 msgid ""
@@ -259,10 +351,18 @@ msgid ""
 "your terminal won't be left in a funny state on exception and you'll be "
 "able to read the exception's message and traceback."
 msgstr ""
+"Funkce :func:`~curses.wrapper` přijímá volatelný objekt a provádí výše popsané "
+"inicializace, také inicializuje barvy, pokud je barevná podpora přítomna. "
+":func:`!wrapper` poté spustí váš poskytnutý volatelný objekt. Jakmile se "
+"volatelný objekt vrátí, :func:`!wrapper` obnoví původní stav terminálu. "
+"Volatelný objekt je volán uvnitř :keyword:`try`...\\ :keyword:`except`, který "
+"zachytává výjimky, obnovuje stav terminálu a poté znovu vyvolává výjimku. "
+"Proto váš terminál nezůstane v podivném stavu při výjimce a budete moci přečíst "
+"zprávu výjimky a traceback."
 
 #: ../../howto/curses.rst:167
 msgid "Windows and Pads"
-msgstr ""
+msgstr "Okna a Pady"
 
 #: ../../howto/curses.rst:169
 msgid ""
@@ -270,6 +370,9 @@ msgid ""
 "a rectangular area of the screen, and supports methods to display text, "
 "erase it, allow the user to input strings, and so forth."
 msgstr ""
+"Okna jsou základní abstrakcí v curses. Objekt okna reprezentuje pravoúhlou "
+"oblast obrazovky a podporuje metody pro zobrazení textu, jeho mazání, "
+"umožnění uživateli zadávat řetězce a tak dále."
 
 #: ../../howto/curses.rst:173
 msgid ""
@@ -280,6 +383,11 @@ msgid ""
 ":func:`~curses.newwin` function creates a new window of a given size, "
 "returning the new window object. ::"
 msgstr ""
+"Objekt ``stdscr`` vrácený funkcí :func:`~curses.initscr` je objekt okna, "
+"který pokrývá celou obrazovku. Mnoho programů může potřebovat pouze toto "
+"jediné okno, ale možná budete chtít rozdělit obrazovku na menší okna, "
+"abyste je mohli překreslovat nebo mazat samostatně. Funkce :func:`~curses.newwin` "
+"vytváří nové okno dané velikosti a vrací nový objekt okna. ::"
 
 #: ../../howto/curses.rst:180
 msgid ""
@@ -287,6 +395,9 @@ msgid ""
 "height = 5; width = 40\n"
 "win = curses.newwin(height, width, begin_y, begin_x)"
 msgstr ""
+"begin_x = 20; begin_y = 7\n"
+"height = 5; width = 40\n"
+"win = curses.newwin(height, width, begin_y, begin_x)"
 
 #: ../../howto/curses.rst:184
 msgid ""
@@ -298,6 +409,12 @@ msgid ""
 "curses since it was first written, and it's too late to change things "
 "now."
 msgstr ""
+"Všimněte si, že souřadnicový systém používaný v curses je neobvyklý. "
+"Souřadnice jsou vždy předávány v pořadí *y,x* a levý horní roh okna je "
+"souřadnice (0,0). To porušuje normální konvenci pro zpracování souřadnic, "
+"kde souřadnice *x* přichází první. To je nešťastný rozdíl oproti většině "
+"jiných počítačových aplikací, ale je součástí curses od doby, kdy byla "
+"poprvé napsána, a je příliš pozdě na změnu věcí."
 
 #: ../../howto/curses.rst:192
 msgid ""
@@ -306,6 +423,10 @@ msgid ""
 "and *x* sizes.  Legal coordinates will then extend from ``(0,0)`` to "
 "``(curses.LINES - 1, curses.COLS - 1)``."
 msgstr ""
+"Vaše aplikace může určit velikost obrazovky pomocí proměnných "
+":data:`curses.LINES` a :data:`curses.COLS` pro získání velikostí *y* a *x*. "
+"Platné souřadnice se pak budou pohybovat od ``(0,0)`` do "
+"``(curses.LINES - 1, curses.COLS - 1)``."
 
 #: ../../howto/curses.rst:197
 msgid ""
@@ -314,6 +435,9 @@ msgid ""
 ":meth:`~curses.window.refresh` method of window objects to update the "
 "screen."
 msgstr ""
+"Když zavoláte metodu pro zobrazení nebo mazání textu, efekt se okamžitě "
+"nezobrazí na displeji. Místo toho musíte zavolat metodu "
+":meth:`~curses.window.refresh` objektů oken pro aktualizaci obrazovky."
 
 #: ../../howto/curses.rst:202
 msgid ""
@@ -325,6 +449,12 @@ msgid ""
 "text in a window and then clears the window, there's no need to send the "
 "original text because they're never visible."
 msgstr ""
+"To je proto, že curses byla původně napsána s ohledem na pomalá 300-baudová "
+"terminálová připojení; u těchto terminálů bylo minimalizování času potřebného "
+"k překreslení obrazovky velmi důležité. Místo toho curses akumuluje změny "
+"obrazovky a zobrazuje je nejefektivnějším způsobem, když zavoláte "
+":meth:`!refresh`. Například, pokud váš program zobrazí nějaký text v okně a "
+"poté okno vyčistí, není třeba posílat původní text, protože nikdy není viditelný."
 
 #: ../../howto/curses.rst:211
 msgid ""
@@ -336,6 +466,12 @@ msgid ""
 "calling :meth:`!stdscr.refresh` or the :meth:`!refresh` method of some "
 "other relevant window."
 msgstr ""
+"V praxi explicitní sdělování curses, aby překreslila okno, příliš nekomplikuje "
+"programování s curses. Většina programů se vrhne do vířivé aktivity a poté se "
+"pozastaví čekáním na stisk klávesy nebo nějakou jinou akci ze strany uživatele. "
+"Vše, co musíte udělat, je ujistit se, že obrazovka byla překreslena před "
+"pozastavením čekání na vstup uživatele, prvním zavoláním :meth:`!stdscr.refresh` "
+"nebo metody :meth:`!refresh` nějakého jiného relevantního okna."
 
 #: ../../howto/curses.rst:219
 msgid ""
@@ -345,6 +481,10 @@ msgid ""
 "pad requires giving the coordinates of the on-screen area where a "
 "subsection of the pad will be displayed.  ::"
 msgstr ""
+"Pad je speciální případ okna; může být větší než skutečná zobrazovací "
+"obrazovka a zobrazuje se pouze část padu najednou. Vytvoření padu vyžaduje "
+"výšku a šířku padu, zatímco obnovení padu vyžaduje zadání souřadnic oblasti "
+"na obrazovce, kde bude zobrazena podsekce padu.  ::"
 
 #: ../../howto/curses.rst:225
 msgid ""
@@ -363,6 +503,20 @@ msgid ""
 "#          : filled with pad content.\n"
 "pad.refresh( 0,0, 5,5, 20,75)"
 msgstr ""
+"pad = curses.newpad(100, 100)\n"
+"# These loops fill the pad with letters; addch() is\n"
+"# explained in the next section\n"
+"for y in range(0, 99):\n"
+"    for x in range(0, 99):\n"
+"        pad.addch(y,x, ord('a') + (x*x+y*y) % 26)\n"
+"\n"
+"# Displays a section of the pad in the middle of the screen.\n"
+"# (0,0) : coordinate of upper-left corner of pad area to display.\n"
+"# (5,5) : coordinate of upper-left corner of window area to be filled\n"
+"#         with pad content.\n"
+"# (20, 75) : coordinate of lower-right corner of window area to be\n"
+"#          : filled with pad content.\n"
+"pad.refresh( 0,0, 5,5, 20,75)"
 
 #: ../../howto/curses.rst:240
 msgid ""
@@ -372,6 +526,10 @@ msgid ""
 "pad.  Beyond that difference, pads are exactly like ordinary windows and "
 "support the same methods."
 msgstr ""
+"Volání :meth:`!refresh` zobrazí část padu v obdélníku sahajícím od souřadnice "
+"(5,5) do souřadnice (20,75) na obrazovce; levý horní roh zobrazené části je "
+"souřadnice (0,0) na padu. Kromě tohoto rozdílu jsou pady přesně jako běžná "
+"okna a podporují stejné metody."
 
 #: ../../howto/curses.rst:246
 msgid ""
@@ -380,6 +538,9 @@ msgid ""
 "part of the screen gets updated.  :meth:`!refresh` actually does two "
 "things:"
 msgstr ""
+"Pokud máte na obrazovce více oken a padů, existuje efektivnější způsob, jak "
+"aktualizovat obrazovku a předejít otravnému blikání obrazovky při aktualizaci "
+"každé části obrazovky. :meth:`!refresh` ve skutečnosti dělá dvě věci:"
 
 #: ../../howto/curses.rst:251
 msgid ""
@@ -387,6 +548,8 @@ msgid ""
 "update an underlying data structure representing the desired state of the"
 " screen."
 msgstr ""
+"Volá metodu :meth:`~curses.window.noutrefresh` každého okna pro aktualizaci "
+"podkladové datové struktury reprezentující požadovaný stav obrazovky."
 
 #: ../../howto/curses.rst:254
 msgid ""
@@ -394,6 +557,8 @@ msgid ""
 "physical screen to match the desired state recorded in the data "
 "structure."
 msgstr ""
+"Volá funkci :func:`~curses.doupdate` pro změnu fyzické obrazovky tak, aby "
+"odpovídala požadovanému stavu zaznamenanému v datové struktuře."
 
 #: ../../howto/curses.rst:257
 msgid ""
@@ -401,10 +566,12 @@ msgid ""
 "update the data structure, and then call :func:`!doupdate` to update the "
 "screen."
 msgstr ""
+"Místo toho můžete zavolat :meth:`!noutrefresh` na několik oken pro aktualizaci "
+"datové struktury a poté zavolat :func:`!doupdate` pro aktualizaci obrazovky."
 
 #: ../../howto/curses.rst:263
 msgid "Displaying Text"
-msgstr ""
+msgstr "Zobrazování textu"
 
 #: ../../howto/curses.rst:265
 msgid ""
@@ -417,6 +584,13 @@ msgid ""
 " using ``stdscr`` by default. :c:func:`!mvwaddstr` allows specifying both"
 " a window and a coordinate."
 msgstr ""
+"Z pohledu C programátora může curses někdy vypadat jako zakroucený labyrint "
+"funkcí, všechny jemně odlišné. Například :c:func:`!addstr` zobrazí řetězec na "
+"aktuální pozici kurzoru v okně ``stdscr``, zatímco :c:func:`!mvaddstr` se "
+"nejprve přesune na danou souřadnici y,x před zobrazením řetězce. "
+":c:func:`!waddstr` je stejná jako :c:func:`!addstr`, ale umožňuje zadat okno "
+"k použití místo použití ``stdscr`` ve výchozím nastavení. :c:func:`!mvwaddstr` "
+"umožňuje zadat jak okno, tak souřadnici."
 
 #: ../../howto/curses.rst:274
 msgid ""
@@ -425,50 +599,57 @@ msgid ""
 ":meth:`~curses.window.addstr` accept multiple argument forms.  Usually "
 "there are four different forms."
 msgstr ""
+"Naštěstí rozhraní Pythonu skrývá všechny tyto detaily. ``stdscr`` je objekt "
+"okna jako každý jiný a metody jako :meth:`~curses.window.addstr` přijímají "
+"více forem argumentů. Obvykle existují čtyři různé formy."
 
 #: ../../howto/curses.rst:280
 msgid "Form"
-msgstr ""
+msgstr "Forma"
 
 #: ../../howto/curses.rst:280 ../../howto/curses.rst:348
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: ../../howto/curses.rst:282
 msgid "*str* or *ch*"
-msgstr ""
+msgstr "*str* nebo *ch*"
 
 #: ../../howto/curses.rst:282
 msgid "Display the string *str* or character *ch* at the current position"
-msgstr ""
+msgstr "Zobrazí řetězec *str* nebo znak *ch* na aktuální pozici"
 
 #: ../../howto/curses.rst:285
 msgid "*str* or *ch*, *attr*"
-msgstr ""
+msgstr "*str* nebo *ch*, *attr*"
 
 #: ../../howto/curses.rst:285
 msgid ""
 "Display the string *str* or character *ch*, using attribute *attr* at the"
 " current position"
 msgstr ""
+"Zobrazí řetězec *str* nebo znak *ch* s použitím atributu *attr* na aktuální "
+"pozici"
 
 #: ../../howto/curses.rst:289
 msgid "*y*, *x*, *str* or *ch*"
-msgstr ""
+msgstr "*y*, *x*, *str* nebo *ch*"
 
 #: ../../howto/curses.rst:289
 msgid "Move to position *y,x* within the window, and display *str* or *ch*"
-msgstr ""
+msgstr "Přesune se na pozici *y,x* v okně a zobrazí *str* nebo *ch*"
 
 #: ../../howto/curses.rst:292
 msgid "*y*, *x*, *str* or *ch*, *attr*"
-msgstr ""
+msgstr "*y*, *x*, *str* nebo *ch*, *attr*"
 
 #: ../../howto/curses.rst:292
 msgid ""
 "Move to position *y,x* within the window, and display *str* or *ch*, "
 "using attribute *attr*"
 msgstr ""
+"Přesune se na pozici *y,x* v okně a zobrazí *str* nebo *ch* s použitím "
+"atributu *attr*"
 
 #: ../../howto/curses.rst:296
 msgid ""
@@ -476,6 +657,9 @@ msgid ""
 "underline, reverse code, or in color.  They'll be explained in more "
 "detail in the next subsection."
 msgstr ""
+"Atributy umožňují zobrazování textu ve zvýrazněných formách, jako je tučné "
+"písmo, podtržení, inverzní kód nebo v barvě. Budou vysvětleny podrobněji v "
+"další podsekci."
 
 #: ../../howto/curses.rst:301
 msgid ""
@@ -485,12 +669,19 @@ msgid ""
 "value of the window's :attr:`~window.encoding` attribute; this defaults "
 "to the default system encoding as returned by :func:`locale.getencoding`."
 msgstr ""
+"Metoda :meth:`~curses.window.addstr` přijímá Python řetězec nebo bytestring "
+"jako hodnotu k zobrazení. Obsah bytestrings je poslán terminálu tak, jak je. "
+"Řetězce jsou kódovány na bajty pomocí hodnoty atributu :attr:`~window.encoding` "
+"okna; ve výchozím nastavení je to výchozí systémové kódování vrácené funkcí "
+":func:`locale.getencoding`."
 
 #: ../../howto/curses.rst:307
 msgid ""
 "The :meth:`~curses.window.addch` methods take a character, which can be "
 "either a string of length 1, a bytestring of length 1, or an integer."
 msgstr ""
+"Metody :meth:`~curses.window.addch` přijímají znak, který může být buď "
+"řetězec délky 1, bytestring délky 1 nebo celé číslo."
 
 #: ../../howto/curses.rst:310
 msgid ""
@@ -500,6 +691,10 @@ msgid ""
 "(handy for drawing borders).  You can also use the appropriate Unicode "
 "character."
 msgstr ""
+"Konstanty jsou poskytnuty pro rozšiřující znaky; tyto konstanty jsou celá "
+"čísla větší než 255. Například :const:`ACS_PLMINUS` je symbol +/- a "
+":const:`ACS_ULCORNER` je levý horní roh rámečku (užitečné pro kreslení "
+"ohraničení). Můžete také použít příslušný Unicode znak."
 
 #: ../../howto/curses.rst:316
 msgid ""
@@ -511,6 +706,12 @@ msgid ""
 "positioned in some location where it won't be distracting; it can be "
 "confusing to have the cursor blinking at some apparently random location."
 msgstr ""
+"Okna si pamatují, kde byl kurzor ponechán po poslední operaci, takže pokud "
+"vynecháte souřadnice *y,x*, řetězec nebo znak bude zobrazen tam, kde skončila "
+"poslední operace. Můžete také přesunout kurzor metodou ``move(y,x)``. Protože "
+"některé terminály vždy zobrazují blikající kurzor, můžete chtít zajistit, aby "
+"byl kurzor umístěn na nějakém místě, kde nebude rušivý; může být matoucí mít "
+"kurzor blikající na zdánlivě náhodném místě."
 
 #: ../../howto/curses.rst:324
 msgid ""
@@ -521,10 +722,16 @@ msgid ""
 "will attempt to suppress the flashing cursor, and you won't need to worry"
 " about leaving it in odd locations."
 msgstr ""
+"Pokud vaše aplikace vůbec nepotřebuje blikající kurzor, můžete zavolat "
+"``curs_set(False)`` pro jeho zneviditelnění. Pro kompatibilitu se staršími "
+"verzemi curses existuje funkce ``leaveok(bool)``, která je synonymem pro "
+":func:`~curses.curs_set`. Když je *bool* true, knihovna curses se pokusí "
+"potlačit blikající kurzor a nebudete se muset starat o jeho ponechání na "
+"podivných místech."
 
 #: ../../howto/curses.rst:333
 msgid "Attributes and Color"
-msgstr ""
+msgstr "Atributy a barvy"
 
 #: ../../howto/curses.rst:335
 msgid ""
@@ -533,6 +740,10 @@ msgid ""
 "may need to highlight certain words.  curses supports this by allowing "
 "you to specify an attribute for each cell on the screen."
 msgstr ""
+"Znaky mohou být zobrazeny různými způsoby. Stavové řádky v textové aplikaci "
+"jsou běžně zobrazeny v inverzním videu nebo prohlížeč textu může potřebovat "
+"zvýraznit určitá slova. curses to podporuje tím, že vám umožňuje zadat atribut "
+"pro každou buňku na obrazovce."
 
 #: ../../howto/curses.rst:340
 msgid ""
@@ -543,64 +754,71 @@ msgid ""
 "ability of the terminal being used, so it's safest to stick to the most "
 "commonly available attributes, listed here."
 msgstr ""
+"Atribut je celé číslo, každý bit reprezentuje jiný atribut. Můžete se pokusit "
+"zobrazit text s více nastavenými bity atributů, ale curses nezaručuje, že "
+"všechny možné kombinace jsou dostupné nebo že jsou všechny vizuálně odlišné. "
+"To závisí na schopnostech používaného terminálu, takže je nejbezpečnější "
+"držet se nejčastěji dostupných atributů, které jsou zde uvedeny."
 
 #: ../../howto/curses.rst:348
 msgid "Attribute"
-msgstr ""
+msgstr "Atribut"
 
 #: ../../howto/curses.rst:350
 msgid ":const:`A_BLINK`"
-msgstr ""
+msgstr ":const:`A_BLINK`"
 
 #: ../../howto/curses.rst:350
 msgid "Blinking text"
-msgstr ""
+msgstr "Blikající text"
 
 #: ../../howto/curses.rst:352
 msgid ":const:`A_BOLD`"
-msgstr ""
+msgstr ":const:`A_BOLD`"
 
 #: ../../howto/curses.rst:352
 msgid "Extra bright or bold text"
-msgstr ""
+msgstr "Velmi jasný nebo tučný text"
 
 #: ../../howto/curses.rst:354
 msgid ":const:`A_DIM`"
-msgstr ""
+msgstr ":const:`A_DIM`"
 
 #: ../../howto/curses.rst:354
 msgid "Half bright text"
-msgstr ""
+msgstr "Polovičně jasný text"
 
 #: ../../howto/curses.rst:356
 msgid ":const:`A_REVERSE`"
-msgstr ""
+msgstr ":const:`A_REVERSE`"
 
 #: ../../howto/curses.rst:356
 msgid "Reverse-video text"
-msgstr ""
+msgstr "Inverzní text"
 
 #: ../../howto/curses.rst:358
 msgid ":const:`A_STANDOUT`"
-msgstr ""
+msgstr ":const:`A_STANDOUT`"
 
 #: ../../howto/curses.rst:358
 msgid "The best highlighting mode available"
-msgstr ""
+msgstr "Nejlepší dostupný režim zvýraznění"
 
 #: ../../howto/curses.rst:360
 msgid ":const:`A_UNDERLINE`"
-msgstr ""
+msgstr ":const:`A_UNDERLINE`"
 
 #: ../../howto/curses.rst:360
 msgid "Underlined text"
-msgstr ""
+msgstr "Podtržený text"
 
 #: ../../howto/curses.rst:363
 msgid ""
 "So, to display a reverse-video status line on the top line of the screen,"
 " you could code::"
 msgstr ""
+"Takže pro zobrazení stavového řádku v inverzním videu na horním řádku "
+"obrazovky byste mohli napsat::"
 
 #: ../../howto/curses.rst:366
 msgid ""
@@ -608,6 +826,9 @@ msgid ""
 "              curses.A_REVERSE)\n"
 "stdscr.refresh()"
 msgstr ""
+"stdscr.addstr(0, 0, \"Current mode: Typing mode\",\n"
+"              curses.A_REVERSE)\n"
+"stdscr.refresh()"
 
 #: ../../howto/curses.rst:370
 msgid ""
@@ -615,6 +836,9 @@ msgid ""
 "it. The most common such terminal is probably the Linux console, followed"
 " by color xterms."
 msgstr ""
+"Knihovna curses také podporuje barvu na těch terminálech, které ji poskytují. "
+"Nejběžnějším takovým terminálem je pravděpodobně linuxová konzole, následovaná "
+"barevnými xtermy."
 
 #: ../../howto/curses.rst:374
 msgid ""
@@ -627,6 +851,13 @@ msgid ""
 "'colour'.  If you're used to the British spelling, you'll have to resign "
 "yourself to misspelling it for the sake of these functions.)"
 msgstr ""
+"Pro použití barvy musíte zavolat funkci :func:`~curses.start_color` brzy po "
+"zavolání :func:`~curses.initscr`, abyste inicializovali výchozí sadu barev "
+"(funkce :func:`curses.wrapper` to dělá automaticky). Jakmile je to hotovo, "
+"funkce :func:`~curses.has_colors` vrací TRUE, pokud používaný terminál může "
+"skutečně zobrazit barvu. (Poznámka: curses používá americkou variantu 'color' "
+"místo kanadské/britské varianty 'colour'. Pokud jste zvyklí na britskou variantu, "
+"budete se muset smířit s jejím špatným pravopisem kvůli těmto funkcím.)"
 
 #: ../../howto/curses.rst:384
 msgid ""
@@ -637,16 +868,23 @@ msgid ""
 " attributes such as :const:`A_REVERSE`, but again, such combinations are "
 "not guaranteed to work on all terminals."
 msgstr ""
+"Knihovna curses udržuje konečný počet barevných párů obsahujících barvu "
+"popředí (nebo textu) a barvu pozadí. Můžete získat hodnotu atributu odpovídající "
+"barevnému páru pomocí funkce :func:`~curses.color_pair`; ta může být bitově "
+"OR-ována s jinými atributy jako :const:`A_REVERSE`, ale opět takové kombinace "
+"nejsou zaručeny fungovat na všech terminálech."
 
 #: ../../howto/curses.rst:391
 msgid "An example, which displays a line of text using color pair 1::"
-msgstr ""
+msgstr "Příklad, který zobrazí řádek textu pomocí barevného páru 1::"
 
 #: ../../howto/curses.rst:393
 msgid ""
 "stdscr.addstr(\"Pretty text\", curses.color_pair(1))\n"
 "stdscr.refresh()"
 msgstr ""
+"stdscr.addstr(\"Pretty text\", curses.color_pair(1))\n"
+"stdscr.refresh()"
 
 #: ../../howto/curses.rst:396
 msgid ""
@@ -655,6 +893,10 @@ msgid ""
 "color pair *n*, to foreground color f and background color b.  Color pair"
 " 0 is hard-wired to white on black, and cannot be changed."
 msgstr ""
+"Jak jsem již řekl, barevný pár sestává z barvy popředí a pozadí. Funkce "
+"``init_pair(n, f, b)`` mění definici barevného páru *n* na barvu popředí f a "
+"barvu pozadí b. Barevný pár 0 je pevně nastaven na bílou na černé a nelze jej "
+"změnit."
 
 #: ../../howto/curses.rst:401
 msgid ""
@@ -664,16 +906,23 @@ msgid ""
 "module defines named constants for each of these colors: "
 ":const:`curses.COLOR_BLACK`, :const:`curses.COLOR_RED`, and so forth."
 msgstr ""
+"Barvy jsou číslovány a :func:`start_color` inicializuje 8 základních barev, "
+"když aktivuje barevný režim. Jsou to: 0:černá, 1:červená, 2:zelená, 3:žlutá, "
+"4:modrá, 5:purpurová, 6:azurová a 7:bílá. Modul :mod:`curses` definuje pojmenované "
+"konstanty pro každou z těchto barev: :const:`curses.COLOR_BLACK`, "
+":const:`curses.COLOR_RED` a tak dále."
 
 #: ../../howto/curses.rst:407
 msgid ""
 "Let's put all this together. To change color 1 to red text on a white "
 "background, you would call::"
 msgstr ""
+"Dáme to celé dohromady. Pro změnu barvy 1 na červený text na bílém pozadí "
+"byste zavolali::"
 
 #: ../../howto/curses.rst:410
 msgid "curses.init_pair(1, curses.COLOR_RED, curses.COLOR_WHITE)"
-msgstr ""
+msgstr "curses.init_pair(1, curses.COLOR_RED, curses.COLOR_WHITE)"
 
 #: ../../howto/curses.rst:412
 msgid ""
@@ -681,10 +930,12 @@ msgid ""
 " pair will change to the new colors.  You can also display new text in "
 "this color with::"
 msgstr ""
+"Když změníte barevný pár, jakýkoli text již zobrazený pomocí tohoto barevného "
+"páru se změní na nové barvy. Můžete také zobrazit nový text v této barvě pomocí::"
 
 #: ../../howto/curses.rst:416
 msgid "stdscr.addstr(0,0, \"RED ALERT!\", curses.color_pair(1))"
-msgstr ""
+msgstr "stdscr.addstr(0,0, \"RED ALERT!\", curses.color_pair(1))"
 
 #: ../../howto/curses.rst:418
 msgid ""
@@ -697,10 +948,18 @@ msgid ""
 "capability is there.  If you're lucky enough to have such a talented "
 "terminal, consult your system's man pages for more information."
 msgstr ""
+"Velmi pokročilé terminály mohou změnit definice skutečných barev na danou RGB "
+"hodnotu. To vám umožňuje změnit barvu 1, která je obvykle červená, na purpurovou "
+"nebo modrou nebo jakoukoli jinou barvu, kterou chcete. Bohužel linuxová konzole "
+"toto nepodporuje, takže to nemohu vyzkoušet a nemohu poskytnout žádné příklady. "
+"Můžete zkontrolovat, zda váš terminál to dokáže, zavoláním :func:`~curses.can_change_color`, "
+"která vrací ``True``, pokud je tato schopnost k dispozici. Pokud máte to štěstí "
+"mít takový talentovaný terminál, konzultujte manuálové stránky vašeho systému "
+"pro více informací."
 
 #: ../../howto/curses.rst:429
 msgid "User Input"
-msgstr ""
+msgstr "Vstup uživatele"
 
 #: ../../howto/curses.rst:431
 msgid ""
@@ -708,10 +967,13 @@ msgid ""
 ":mod:`curses` module adds a basic text-input widget.  (Other libraries "
 "such as :pypi:`Urwid` have more extensive collections of widgets.)"
 msgstr ""
+"C knihovna curses nabízí pouze velmi jednoduché vstupní mechanismy. Modul "
+":mod:`curses` v Pythonu přidává základní widget pro textový vstup. (Jiné "
+"knihovny jako :pypi:`Urwid` mají rozsáhlejší kolekce widgetů.)"
 
 #: ../../howto/curses.rst:435
 msgid "There are two methods for getting input from a window:"
-msgstr ""
+msgstr "Existují dvě metody pro získání vstupu z okna:"
 
 #: ../../howto/curses.rst:437
 msgid ""
@@ -720,6 +982,9 @@ msgid ""
 "called earlier.  You can optionally specify a coordinate to which the "
 "cursor should be moved before pausing."
 msgstr ""
+":meth:`~curses.window.getch` obnoví obrazovku a poté čeká, až uživatel stiskne "
+"klávesu, zobrazí klávesu, pokud byla dříve zavolána :func:`~curses.echo`. Můžete "
+"volitelně zadat souřadnici, na kterou by měl být kurzor přesunut před pozastavením."
 
 #: ../../howto/curses.rst:442
 msgid ""
@@ -728,6 +993,10 @@ msgid ""
 "strings, and special keys such as function keys return longer strings "
 "containing a key name such as ``KEY_UP`` or ``^G``."
 msgstr ""
+":meth:`~curses.window.getkey` dělá totéž, ale převádí celé číslo na řetězec. "
+"Jednotlivé znaky jsou vráceny jako jednoznakové řetězce a speciální klávesy "
+"jako funkční klávesy vracejí delší řetězce obsahující název klávesy jako "
+"``KEY_UP`` nebo ``^G``."
 
 #: ../../howto/curses.rst:447
 msgid ""
@@ -741,6 +1010,13 @@ msgid ""
 "specified delay (measured in tenths of a second), curses raises an "
 "exception."
 msgstr ""
+"Je možné nečekat na uživatele pomocí metody okna :meth:`~curses.window.nodelay`. "
+"Po ``nodelay(True)`` se :meth:`!getch` a :meth:`!getkey` pro okno stanou "
+"neblokujícími. Pro signalizaci, že není připraven žádný vstup, :meth:`!getch` "
+"vrací ``curses.ERR`` (hodnota -1) a :meth:`!getkey` vyvolává výjimku. Existuje "
+"také funkce :func:`~curses.halfdelay`, kterou lze použít pro (v podstatě) nastavení "
+"časovače na každé :meth:`!getch`; pokud není vstup k dispozici během určeného "
+"zpoždění (měřeno v desetinách sekundy), curses vyvolá výjimku."
 
 #: ../../howto/curses.rst:457
 msgid ""
@@ -752,6 +1028,12 @@ msgid ""
 ":const:`curses.KEY_LEFT`.  The main loop of your program may look "
 "something like this::"
 msgstr ""
+"Metoda :meth:`!getch` vrací celé číslo; pokud je mezi 0 a 255, reprezentuje "
+"ASCII kód stisknuté klávesy. Hodnoty větší než 255 jsou speciální klávesy jako "
+"Page Up, Home nebo kurzorové klávesy. Můžete porovnat vrácenou hodnotu s "
+"konstantami jako :const:`curses.KEY_PPAGE`, :const:`curses.KEY_HOME` nebo "
+":const:`curses.KEY_LEFT`. Hlavní smyčka vašeho programu může vypadat přibližně "
+"takto::"
 
 #: ../../howto/curses.rst:464
 msgid ""
@@ -764,6 +1046,14 @@ msgid ""
 "    elif c == curses.KEY_HOME:\n"
 "        x = y = 0"
 msgstr ""
+"while True:\n"
+"    c = stdscr.getch()\n"
+"    if c == ord('p'):\n"
+"        PrintDocument()\n"
+"    elif c == ord('q'):\n"
+"        break  # Exit the while loop\n"
+"    elif c == curses.KEY_HOME:\n"
+"        x = y = 0"
 
 #: ../../howto/curses.rst:473
 msgid ""
@@ -775,6 +1065,12 @@ msgid ""
 ":func:`curses.ascii.ctrl` returns the control character corresponding to "
 "its argument."
 msgstr ""
+"Modul :mod:`curses.ascii` poskytuje funkce příslušnosti ke třídě ASCII, které "
+"přijímají buď celé číslo nebo jednoznakové řetězcové argumenty; ty mohou být "
+"užitečné při psaní čitelnějších testů pro takové smyčky. Také poskytuje "
+"konverzní funkce, které přijímají buď celé číslo nebo jednoznakové řetězcové "
+"argumenty a vracejí stejný typ. Například :func:`curses.ascii.ctrl` vrací "
+"řídící znak odpovídající jeho argumentu."
 
 #: ../../howto/curses.rst:480
 msgid ""
@@ -784,6 +1080,10 @@ msgid ""
 "backspace key and the Enter key, which terminates the string.  It can "
 "optionally be limited to a fixed number of characters. ::"
 msgstr ""
+"Existuje také metoda pro získání celého řetězce, :meth:`~curses.window.getstr`. "
+"Nepoužívá se příliš často, protože její funkcionalita je dost omezená; jediné "
+"dostupné editační klávesy jsou klávesa backspace a klávesa Enter, která řetězec "
+"ukončí. Může být volitelně omezena na pevný počet znaků. ::"
 
 #: ../../howto/curses.rst:486
 msgid ""
@@ -792,6 +1092,10 @@ msgid ""
 "# Get a 15-character string, with the cursor on the top line\n"
 "s = stdscr.getstr(0,0, 15)"
 msgstr ""
+"curses.echo()            # Enable echoing of characters\n"
+"\n"
+"# Get a 15-character string, with the cursor on the top line\n"
+"s = stdscr.getstr(0,0, 15)"
 
 #: ../../howto/curses.rst:491
 msgid ""
@@ -801,6 +1105,10 @@ msgid ""
 "validation and gathering the edit results either with or without trailing"
 " spaces.  Here's an example::"
 msgstr ""
+"Modul :mod:`curses.textpad` poskytuje textové pole, které podporuje sadu "
+"klávesových vazeb podobných Emacsu. Různé metody třídy "
+":class:`~curses.textpad.Textbox` podporují editaci s validací vstupu a shromažďování "
+"výsledků editace buď s koncovými mezerami nebo bez nich. Zde je příklad::"
 
 #: ../../howto/curses.rst:497
 msgid ""
@@ -822,14 +1130,31 @@ msgid ""
 "    # Get resulting contents\n"
 "    message = box.gather()"
 msgstr ""
+"import curses\n"
+"from curses.textpad import Textbox, rectangle\n"
+"\n"
+"def main(stdscr):\n"
+"    stdscr.addstr(0, 0, \"Enter IM message: (hit Ctrl-G to send)\")\n"
+"\n"
+"    editwin = curses.newwin(5,30, 2,1)\n"
+"    rectangle(stdscr, 1,0, 1+5+1, 1+30+1)\n"
+"    stdscr.refresh()\n"
+"\n"
+"    box = Textbox(editwin)\n"
+"\n"
+"    # Let the user edit until Ctrl-G is struck.\n"
+"    box.edit()\n"
+"\n"
+"    # Get resulting contents\n"
+"    message = box.gather()"
 
 #: ../../howto/curses.rst:515
 msgid "See the library documentation on :mod:`curses.textpad` for more details."
-msgstr ""
+msgstr "Viz dokumentaci knihovny o :mod:`curses.textpad` pro více podrobností."
 
 #: ../../howto/curses.rst:519
 msgid "For More Information"
-msgstr ""
+msgstr "Pro více informací"
 
 #: ../../howto/curses.rst:521
 msgid ""
@@ -838,6 +1163,10 @@ msgid ""
 "but the Python library page for the :mod:`curses` module is now "
 "reasonably complete.  You should browse it next."
 msgstr ""
+"Tento návod nepokrývá některá pokročilá témata, jako je čtení obsahu obrazovky "
+"nebo zachycování událostí myši z instance xtermu, ale stránka knihovny Pythonu "
+"pro modul :mod:`curses` je nyní rozumně úplná. Měli byste ji prozkoumat jako "
+"další."
 
 #: ../../howto/curses.rst:526
 msgid ""
@@ -847,6 +1176,11 @@ msgid ""
 "any quirks, and provide complete lists of all the functions, attributes, "
 "and :ref:`ACS_\\* <curses-acs-codes>` characters available to you."
 msgstr ""
+"Pokud máte pochybnosti o podrobném chování funkcí curses, konzultujte manuálové "
+"stránky pro vaši implementaci curses, ať už je to ncurses nebo proprietární "
+"dodavatele Unixu. Manuálové stránky budou dokumentovat všechny zvláštnosti a "
+"poskytnou úplné seznamy všech funkcí, atributů a znaků :ref:`ACS_\\* <curses-acs-codes>` "
+"dostupných pro vás."
 
 #: ../../howto/curses.rst:533
 msgid ""
@@ -858,20 +1192,28 @@ msgid ""
 "<https://devguide.python.org/>`_ to learn more about submitting patches "
 "to Python."
 msgstr ""
+"Protože API curses je tak velké, některé funkce nejsou podporovány v rozhraní "
+"Pythonu. Často to není proto, že by byly obtížné k implementaci, ale proto, že "
+"je zatím nikdo nepotřeboval. Také Python zatím nepodporuje knihovnu menu spojenou "
+"s ncurses. Patche přidávající podporu pro tyto funkce by byly vítány; viz "
+"`průvodce vývojářem Pythonu <https://devguide.python.org/>`_ pro více informací "
+"o odesílání patchů do Pythonu."
 
 #: ../../howto/curses.rst:541
 msgid ""
 "`Writing Programs with NCURSES <https://invisible-island.net/ncurses"
 "/ncurses-intro.html>`_: a lengthy tutorial for C programmers."
 msgstr ""
+"`Writing Programs with NCURSES <https://invisible-island.net/ncurses"
+"/ncurses-intro.html>`_: obsáhlý tutoriál pro C programátory."
 
 #: ../../howto/curses.rst:543
 msgid "`The ncurses man page <https://linux.die.net/man/3/ncurses>`_"
-msgstr ""
+msgstr "`Manuálová stránka ncurses <https://linux.die.net/man/3/ncurses>`_"
 
 #: ../../howto/curses.rst:544
 msgid "`The ncurses FAQ <https://invisible-island.net/ncurses/ncurses.faq.html>`_"
-msgstr ""
+msgstr "`Často kladené otázky ncurses <https://invisible-island.net/ncurses/ncurses.faq.html>`_"
 
 #: ../../howto/curses.rst:545
 msgid ""
@@ -879,6 +1221,9 @@ msgid ""
 "<https://www.youtube.com/watch?v=eN1eZtjLEnU>`_: video of a PyCon 2013 "
 "talk on controlling terminals using curses or Urwid."
 msgstr ""
+"`\"Use curses... don't swear\" "
+"<https://www.youtube.com/watch?v=eN1eZtjLEnU>`_: video přednášky z PyCon 2013 "
+"o ovládání terminálů pomocí curses nebo Urwid."
 
 #: ../../howto/curses.rst:547
 msgid ""
@@ -886,4 +1231,6 @@ msgid ""
 "/console-applications-with-urwid>`_: video of a PyCon CA 2012 talk "
 "demonstrating some applications written using Urwid."
 msgstr ""
-
+"`\"Console Applications with Urwid\" <https://pyvideo.org/video/1568"
+"/console-applications-with-urwid>`_: video přednášky z PyCon CA 2012 "
+"demonstrující některé aplikace napsané pomocí Urwid."
