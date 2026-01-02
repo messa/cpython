@@ -1,18 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python documentation
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-01-02 17:30+0000\n"
+"Last-Translator: Demo <demo@example.com>\n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
+"Language-Team: Czech <cs@li.org>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:5
 msgid "An Informal Introduction to Python"
-msgstr ""
+msgstr "Neformální úvod do Pythonu"
 
 #: ../../tutorial/introduction.rst:7
 msgid ""
@@ -33,6 +32,12 @@ msgid ""
 "example means you must type a blank line; this is used to end a multi-"
 "line command."
 msgstr ""
+"V následujících příkladech se vstup a výstup rozlišují přítomností nebo "
+"nepřítomností výzvy (:term:`>>>` a :term:`...`): pro zopakování příkladu "
+"musíte napsat vše za výzvou, když se výzva objeví; řádky, které nezačínají "
+"výzvou, jsou výstupem z interpreteru. Všimněte si, že sekundární výzva na "
+"samostatném řádku v příkladu znamená, že musíte napsat prázdný řádek; "
+"to se používá k ukončení víceřádkového příkazu."
 
 #: ../../tutorial/introduction.rst:16
 msgid ""
@@ -40,6 +45,9 @@ msgid ""
 "when hovering over or tapping a code example), which strips prompts and "
 "omits output, to copy and paste the input lines into your interpreter."
 msgstr ""
+"Můžete použít tlačítko \"Kopírovat\" (objeví se v pravém horním rohu "
+"při najetí myší nebo klepnutí na ukázku kódu), které odstraní výzvy a "
+"vynechá výstup, k zkopírování a vložení vstupních řádků do vašeho interpreteru."
 
 #: ../../tutorial/introduction.rst:22
 msgid ""
@@ -52,10 +60,17 @@ msgid ""
 "are not interpreted by Python, they may be omitted when typing in "
 "examples."
 msgstr ""
+"Mnoho příkladů v této příručce, dokonce i ty zadané v interaktivní "
+"výzvě, obsahuje komentáře. Komentáře v Pythonu začínají znakem mřížky "
+"``#`` a pokračují až do konce fyzického řádku. Komentář se může objevit "
+"na začátku řádku nebo za mezerou či kódem, ale ne uvnitř řetězcového "
+"literálu. Znak mřížky uvnitř řetězcového literálu je jen znak mřížky. "
+"Protože komentáře slouží k objasnění kódu a Python je neinterpretuje, "
+"mohou být při psaní příkladů vynechány."
 
 #: ../../tutorial/introduction.rst:30
 msgid "Some examples::"
-msgstr ""
+msgstr "Několik příkladů::"
 
 #: ../../tutorial/introduction.rst:32
 msgid ""
@@ -67,17 +82,19 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:41
 msgid "Using Python as a Calculator"
-msgstr ""
+msgstr "Použití Pythonu jako kalkulačky"
 
 #: ../../tutorial/introduction.rst:43
 msgid ""
 "Let's try some simple Python commands.  Start the interpreter and wait "
 "for the primary prompt, ``>>>``.  (It shouldn't take long.)"
 msgstr ""
+"Zkusme několik jednoduchých příkazů Pythonu. Spusťte interpreter a počkejte "
+"na hlavní výzvu ``>>>``. (Nemělo by to trvat dlouho.)"
 
 #: ../../tutorial/introduction.rst:50
 msgid "Numbers"
-msgstr ""
+msgstr "Čísla"
 
 #: ../../tutorial/introduction.rst:52
 msgid ""
@@ -87,6 +104,10 @@ msgid ""
 "to perform arithmetic; parentheses (``()``) can be used for grouping. For"
 " example::"
 msgstr ""
+"Interpreter funguje jako jednoduchá kalkulačka: můžete do něj zadat výraz "
+"a on vypíše hodnotu. Syntaxe výrazů je přímočará: operátory ``+``, ``-``, "
+"``*`` a ``/`` lze použít k provádění aritmetiky; závorky (``()``) lze "
+"použít pro seskupování. Například::"
 
 #: ../../tutorial/introduction.rst:58
 msgid ""
@@ -107,6 +128,9 @@ msgid ""
 ":class:`float`.  We will see more about numeric types later in the "
 "tutorial."
 msgstr ""
+"Celá čísla (např. ``2``, ``4``, ``20``) mají typ :class:`int`, "
+"čísla s desetinnou částí (např. ``5.0``, ``1.6``) mají typ "
+":class:`float`. Více o číselných typech uvidíme později v tutoriálu."
 
 #: ../../tutorial/introduction.rst:71
 msgid ""
@@ -114,6 +138,9 @@ msgid ""
 "and get an integer result you can use the ``//`` operator; to calculate "
 "the remainder you can use ``%``::"
 msgstr ""
+"Dělení (``/``) vždy vrací float. Pro :term:`celočíselné dělení <floor division>` "
+"a získání celočíselného výsledku můžete použít operátor ``//``; pro výpočet "
+"zbytku můžete použít ``%``::"
 
 #: ../../tutorial/introduction.rst:75
 #, python-format
@@ -134,6 +161,7 @@ msgid ""
 "With Python, it is possible to use the ``**`` operator to calculate "
 "powers [#]_::"
 msgstr ""
+"V Pythonu je možné použít operátor ``**`` pro výpočet mocnin [#]_::"
 
 #: ../../tutorial/introduction.rst:87
 msgid ""
@@ -148,6 +176,8 @@ msgid ""
 "The equal sign (``=``) is used to assign a value to a variable. "
 "Afterwards, no result is displayed before the next interactive prompt::"
 msgstr ""
+"Znaménko rovnosti (``=``) se používá k přiřazení hodnoty proměnné. "
+"Poté se před další interaktivní výzvou nezobrazí žádný výsledek::"
 
 #: ../../tutorial/introduction.rst:95
 msgid ""
@@ -162,6 +192,8 @@ msgid ""
 "If a variable is not \"defined\" (assigned a value), trying to use it "
 "will give you an error::"
 msgstr ""
+"Pokud proměnná není \"definována\" (nemá přiřazenou hodnotu), pokus o její "
+"použití vám dá chybu::"
 
 #: ../../tutorial/introduction.rst:103
 msgid ""
@@ -176,6 +208,8 @@ msgid ""
 "There is full support for floating point; operators with mixed type "
 "operands convert the integer operand to floating point::"
 msgstr ""
+"Existuje plná podpora pro čísla s plovoucí desetinnou čárkou; operátory "
+"se smíšenými typy operandů převádějí celočíselný operand na plovoucí::"
 
 #: ../../tutorial/introduction.rst:111
 msgid ""
@@ -189,6 +223,9 @@ msgid ""
 "variable ``_``.  This means that when you are using Python as a desk "
 "calculator, it is somewhat easier to continue calculations, for example::"
 msgstr ""
+"V interaktivním režimu je poslední vypsaný výraz přiřazen do proměnné "
+"``_``. To znamená, že když používáte Python jako stolní kalkulačku, "
+"je poněkud snazší pokračovat ve výpočtech, například::"
 
 #: ../../tutorial/introduction.rst:118
 msgid ""
@@ -209,6 +246,10 @@ msgid ""
 " variable with the same name masking the built-in variable with its magic"
 " behavior."
 msgstr ""
+"Tato proměnná by měla být uživatelem považována za pouze pro čtení. "
+"Nepřiřazujte jí explicitně hodnotu --- vytvořili byste nezávislou lokální "
+"proměnnou se stejným názvem, která by zastínila vestavěnou proměnnou "
+"s jejím magickým chováním."
 
 #: ../../tutorial/introduction.rst:131
 msgid ""
@@ -218,10 +259,14 @@ msgid ""
 ":ref:`complex numbers <typesnumeric>`, and uses the ``j`` or ``J`` suffix"
 " to indicate the imaginary part (e.g. ``3+5j``)."
 msgstr ""
+"Kromě :class:`int` a :class:`float` Python podporuje další typy čísel, "
+"jako jsou :class:`~decimal.Decimal` a :class:`~fractions.Fraction`. "
+"Python má také vestavěnou podporu pro :ref:`komplexní čísla <typesnumeric>` "
+"a používá příponu ``j`` nebo ``J`` k označení imaginární části (např. ``3+5j``)."
 
 #: ../../tutorial/introduction.rst:141
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: ../../tutorial/introduction.rst:143
 msgid ""
@@ -231,6 +276,12 @@ msgid ""
 "back.``\", etc. \"``Yay! :)``\". They can be enclosed in single quotes "
 "(``'...'``) or double quotes (``\"...\"``) with the same result [#]_."
 msgstr ""
+"Python umí pracovat s textem (reprezentovaným typem :class:`str`, tzv. "
+"\"řetězce\") stejně jako s čísly. To zahrnuje znaky \"``!``\", "
+"slova \"``rabbit``\", jména \"``Paris``\", věty \"``Got your "
+"back.``\" atd. \"``Yay! :)``\". Mohou být uzavřeny v jednoduchých "
+"uvozovkách (``'...'``) nebo dvojitých uvozovkách (``\"...\"``) "
+"se stejným výsledkem [#]_."
 
 #: ../../tutorial/introduction.rst:149
 msgid ""
@@ -247,6 +298,8 @@ msgid ""
 "To quote a quote, we need to \"escape\" it, by preceding it with ``\\``. "
 "Alternatively, we can use the other type of quotation marks::"
 msgstr ""
+"Pro zapsání uvozovky ji musíme \"escapovat\" tak, že před ni dáme ``\\``. "
+"Alternativně můžeme použít druhý typ uvozovek::"
 
 #: ../../tutorial/introduction.rst:161
 msgid ""
@@ -269,6 +322,9 @@ msgid ""
 "by omitting the enclosing quotes and by printing escaped and special "
 "characters::"
 msgstr ""
+"V Python shellu může definice řetězce a výstupní řetězec vypadat odlišně. "
+"Funkce :func:`print` produkuje čitelnější výstup tím, že vynechá "
+"obklopující uvozovky a vypíše escapované a speciální znaky::"
 
 #: ../../tutorial/introduction.rst:176
 msgid ""
@@ -287,6 +343,9 @@ msgid ""
 "special characters, you can use *raw strings* by adding an ``r`` before "
 "the first quote::"
 msgstr ""
+"Pokud nechcete, aby znaky uvozené ``\\`` byly interpretovány jako "
+"speciální znaky, můžete použít *raw řetězce* přidáním ``r`` před "
+"první uvozovku::"
 
 #: ../../tutorial/introduction.rst:187
 msgid ""
@@ -303,6 +362,9 @@ msgid ""
 " odd number of ``\\`` characters; see :ref:`the FAQ entry <faq-"
 "programming-raw-string-backslash>` for more information and workarounds."
 msgstr ""
+"Raw řetězce mají jeden jemný aspekt: raw řetězec nesmí končit lichým "
+"počtem znaků ``\\``; viz :ref:`záznam v FAQ <faq-programming-raw-string-backslash>` "
+"pro více informací a řešení."
 
 #: ../../tutorial/introduction.rst:198
 msgid ""
@@ -312,6 +374,11 @@ msgid ""
 "by adding a ``\\`` at the end of the line.  In the following example, the"
 " initial newline is not included::"
 msgstr ""
+"Řetězcové literály mohou zabírat více řádků. Jedním způsobem je použití "
+"trojitých uvozovek: ``\"\"\"...\"\"\"`` nebo ``'''...'''``. Znaky konce "
+"řádku jsou automaticky zahrnuty do řetězce, ale je možné tomu zabránit "
+"přidáním ``\\`` na konec řádku. V následujícím příkladu není "
+"počáteční nový řádek zahrnut::"
 
 #: ../../tutorial/introduction.rst:204
 msgid ""
@@ -332,6 +399,8 @@ msgid ""
 "Strings can be concatenated (glued together) with the ``+`` operator, and"
 " repeated with ``*``::"
 msgstr ""
+"Řetězce lze spojovat (slepit dohromady) operátorem ``+`` a opakovat "
+"pomocí ``*``::"
 
 #: ../../tutorial/introduction.rst:218
 msgid ""
@@ -345,6 +414,8 @@ msgid ""
 "Two or more *string literals* (i.e. the ones enclosed between quotes) "
 "next to each other are automatically concatenated. ::"
 msgstr ""
+"Dva nebo více *řetězcových literálů* (tj. ty uzavřené v uvozovkách) "
+"vedle sebe jsou automaticky spojeny. ::"
 
 #: ../../tutorial/introduction.rst:225
 msgid ""
@@ -354,7 +425,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:228
 msgid "This feature is particularly useful when you want to break long strings::"
-msgstr ""
+msgstr "Tato funkce je zvláště užitečná, když chcete rozdělit dlouhé řetězce::"
 
 #: ../../tutorial/introduction.rst:230
 msgid ""
@@ -369,6 +440,7 @@ msgid ""
 "This only works with two literals though, not with variables or "
 "expressions::"
 msgstr ""
+"Toto však funguje pouze se dvěma literály, ne s proměnnými nebo výrazy::"
 
 #: ../../tutorial/introduction.rst:237
 msgid ""
@@ -390,6 +462,7 @@ msgid ""
 "If you want to concatenate variables or a variable and a literal, use "
 "``+``::"
 msgstr ""
+"Pokud chcete spojit proměnné nebo proměnnou a literál, použijte ``+``::"
 
 #: ../../tutorial/introduction.rst:251
 msgid ""
@@ -403,6 +476,8 @@ msgid ""
 "index 0. There is no separate character type; a character is simply a "
 "string of size one::"
 msgstr ""
+"Řetězce lze *indexovat*, přičemž první znak má index 0. Neexistuje "
+"samostatný typ pro znak; znak je jednoduše řetězec o velikosti jedna::"
 
 #: ../../tutorial/introduction.rst:258
 msgid ""
@@ -415,7 +490,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:264
 msgid "Indices may also be negative numbers, to start counting from the right::"
-msgstr ""
+msgstr "Indexy mohou být také záporná čísla, pro počítání zprava::"
 
 #: ../../tutorial/introduction.rst:266
 msgid ""
@@ -429,7 +504,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:273
 msgid "Note that since -0 is the same as 0, negative indices start from -1."
-msgstr ""
+msgstr "Všimněte si, že protože -0 je totéž co 0, záporné indexy začínají od -1."
 
 #: ../../tutorial/introduction.rst:275
 msgid ""
@@ -437,6 +512,8 @@ msgid ""
 "used to obtain individual characters, *slicing* allows you to obtain a "
 "substring::"
 msgstr ""
+"Kromě indexování je podporováno také *řezání* (slicing). Zatímco indexování "
+"se používá k získání jednotlivých znaků, *řezání* umožňuje získat podřetězec::"
 
 #: ../../tutorial/introduction.rst:278
 msgid ""
@@ -452,6 +529,9 @@ msgid ""
 "zero, an omitted second index defaults to the size of the string being "
 "sliced. ::"
 msgstr ""
+"Indexy řezů mají užitečné výchozí hodnoty; vynechaný první index má "
+"výchozí hodnotu nula, vynechaný druhý index má výchozí hodnotu velikost "
+"řezaného řetězce. ::"
 
 #: ../../tutorial/introduction.rst:286
 msgid ""
@@ -468,6 +548,8 @@ msgid ""
 "Note how the start is always included, and the end always excluded.  This"
 " makes sure that ``s[:i] + s[i:]`` is always equal to ``s``::"
 msgstr ""
+"Všimněte si, že začátek je vždy zahrnut a konec vždy vyloučen. To zajišťuje, "
+"že ``s[:i] + s[i:]`` se vždy rovná ``s``::"
 
 #: ../../tutorial/introduction.rst:296
 msgid ""
@@ -484,6 +566,10 @@ msgid ""
 "numbered 0. Then the right edge of the last character of a string of *n* "
 "characters has index *n*, for example::"
 msgstr ""
+"Jeden způsob, jak si zapamatovat, jak řezy fungují, je představit si indexy "
+"jako ukazující *mezi* znaky, přičemž levý okraj prvního znaku má číslo 0. "
+"Pak pravý okraj posledního znaku řetězce o *n* znacích má index *n*, "
+"například::"
 
 #: ../../tutorial/introduction.rst:306
 msgid ""
@@ -501,6 +587,9 @@ msgid ""
 "slice from *i* to *j* consists of all characters between the edges "
 "labeled *i* and *j*, respectively."
 msgstr ""
+"První řada čísel udává pozici indexů 0...6 v řetězci; druhá řada udává "
+"odpovídající záporné indexy. Řez od *i* do *j* se skládá ze všech znaků "
+"mezi hranami označenými *i* a *j*."
 
 #: ../../tutorial/introduction.rst:317
 msgid ""
@@ -508,10 +597,12 @@ msgid ""
 "indices, if both are within bounds.  For example, the length of "
 "``word[1:3]`` is 2."
 msgstr ""
+"Pro nezáporné indexy je délka řezu rozdílem indexů, pokud jsou oba "
+"v mezích. Například délka ``word[1:3]`` je 2."
 
 #: ../../tutorial/introduction.rst:321
 msgid "Attempting to use an index that is too large will result in an error::"
-msgstr ""
+msgstr "Pokus o použití příliš velkého indexu způsobí chybu::"
 
 #: ../../tutorial/introduction.rst:323
 msgid ""
@@ -526,6 +617,7 @@ msgid ""
 "However, out of range slice indexes are handled gracefully when used for "
 "slicing::"
 msgstr ""
+"Avšak indexy řezů mimo rozsah jsou při řezání zpracovány elegantně::"
 
 #: ../../tutorial/introduction.rst:331
 msgid ""
@@ -541,6 +633,8 @@ msgid ""
 "Therefore, assigning to an indexed position in the string results in an "
 "error::"
 msgstr ""
+"Pythonové řetězce nelze měnit --- jsou :term:`neměnné <immutable>`. "
+"Proto přiřazení na indexovanou pozici v řetězci způsobí chybu::"
 
 #: ../../tutorial/introduction.rst:339
 msgid ""
@@ -556,7 +650,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:348
 msgid "If you need a different string, you should create a new one::"
-msgstr ""
+msgstr "Pokud potřebujete jiný řetězec, měli byste vytvořit nový::"
 
 #: ../../tutorial/introduction.rst:350
 msgid ""
@@ -568,7 +662,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:355
 msgid "The built-in function :func:`len` returns the length of a string::"
-msgstr ""
+msgstr "Vestavěná funkce :func:`len` vrací délku řetězce::"
 
 #: ../../tutorial/introduction.rst:357
 msgid ""
@@ -579,53 +673,59 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:364
 msgid ":ref:`textseq`"
-msgstr ""
+msgstr ":ref:`textseq`"
 
 #: ../../tutorial/introduction.rst:365
 msgid ""
 "Strings are examples of *sequence types*, and support the common "
 "operations supported by such types."
 msgstr ""
+"Řetězce jsou příkladem *sekvenčních typů* a podporují běžné operace "
+"podporované těmito typy."
 
 #: ../../tutorial/introduction.rst:368
 msgid ":ref:`string-methods`"
-msgstr ""
+msgstr ":ref:`string-methods`"
 
 #: ../../tutorial/introduction.rst:369
 msgid ""
 "Strings support a large number of methods for basic transformations and "
 "searching."
 msgstr ""
+"Řetězce podporují velké množství metod pro základní transformace a "
+"vyhledávání."
 
 #: ../../tutorial/introduction.rst:372
 msgid ":ref:`f-strings`"
-msgstr ""
+msgstr ":ref:`f-strings`"
 
 #: ../../tutorial/introduction.rst:373
 msgid "String literals that have embedded expressions."
-msgstr ""
+msgstr "Řetězcové literály s vloženými výrazy."
 
 #: ../../tutorial/introduction.rst:375
 msgid ":ref:`formatstrings`"
-msgstr ""
+msgstr ":ref:`formatstrings`"
 
 #: ../../tutorial/introduction.rst:376
 msgid "Information about string formatting with :meth:`str.format`."
-msgstr ""
+msgstr "Informace o formátování řetězců pomocí :meth:`str.format`."
 
 #: ../../tutorial/introduction.rst:378
 msgid ":ref:`old-string-formatting`"
-msgstr ""
+msgstr ":ref:`old-string-formatting`"
 
 #: ../../tutorial/introduction.rst:379
 msgid ""
 "The old formatting operations invoked when strings are the left operand "
 "of the ``%`` operator are described in more detail here."
 msgstr ""
+"Staré formátovací operace vyvolané, když jsou řetězce levým operandem "
+"operátoru ``%``, jsou zde popsány podrobněji."
 
 #: ../../tutorial/introduction.rst:386
 msgid "Lists"
-msgstr ""
+msgstr "Seznamy"
 
 #: ../../tutorial/introduction.rst:388
 msgid ""
@@ -635,6 +735,11 @@ msgid ""
 "might contain items of different types, but usually the items all have "
 "the same type. ::"
 msgstr ""
+"Python zná řadu *složených* datových typů, používaných ke seskupování "
+"jiných hodnot. Nejuniverzálnější je *seznam* (list), který lze zapsat jako "
+"seznam hodnot (položek) oddělených čárkami v hranatých závorkách. Seznamy "
+"mohou obsahovat položky různých typů, ale obvykle mají všechny položky "
+"stejný typ. ::"
 
 #: ../../tutorial/introduction.rst:393
 msgid ""
@@ -648,6 +753,8 @@ msgid ""
 "Like strings (and all other built-in :term:`sequence` types), lists can "
 "be indexed and sliced::"
 msgstr ""
+"Stejně jako řetězce (a všechny ostatní vestavěné :term:`sekvenční <sequence>` "
+"typy) lze seznamy indexovat a řezat::"
 
 #: ../../tutorial/introduction.rst:400
 msgid ""
@@ -661,7 +768,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:407
 msgid "Lists also support operations like concatenation::"
-msgstr ""
+msgstr "Seznamy také podporují operace jako spojování::"
 
 #: ../../tutorial/introduction.rst:409
 msgid ""
@@ -674,6 +781,8 @@ msgid ""
 "Unlike strings, which are :term:`immutable`, lists are a :term:`mutable` "
 "type, i.e. it is possible to change their content::"
 msgstr ""
+"Na rozdíl od řetězců, které jsou :term:`neměnné <immutable>`, jsou seznamy "
+":term:`měnitelný <mutable>` typ, tj. je možné měnit jejich obsah::"
 
 #: ../../tutorial/introduction.rst:415
 msgid ""
@@ -690,6 +799,8 @@ msgid ""
 "You can also add new items at the end of the list, by using the "
 ":meth:`list.append` *method* (we will see more about methods later)::"
 msgstr ""
+"Můžete také přidávat nové položky na konec seznamu pomocí *metody* "
+":meth:`list.append` (více o metodách uvidíme později)::"
 
 #: ../../tutorial/introduction.rst:425
 msgid ""
@@ -706,6 +817,10 @@ msgid ""
 "make to the list through one variable will be seen through all other "
 "variables that refer to it.::"
 msgstr ""
+"Jednoduché přiřazení v Pythonu nikdy nekopíruje data. Když přiřadíte "
+"seznam proměnné, proměnná odkazuje na *existující seznam*. Jakékoli změny, "
+"které provedete v seznamu přes jednu proměnnou, budou viditelné přes "
+"všechny ostatní proměnné, které na něj odkazují.::"
 
 #: ../../tutorial/introduction.rst:435
 msgid ""
@@ -724,6 +839,9 @@ msgid ""
 "  This means that the following slice returns a :ref:`shallow copy "
 "<shallow_vs_deep_copy>` of the list::"
 msgstr ""
+"Všechny operace řezání vrací nový seznam obsahující požadované prvky. "
+"To znamená, že následující řez vrací :ref:`mělkou kopii <shallow_vs_deep_copy>` "
+"seznamu::"
 
 #: ../../tutorial/introduction.rst:447
 msgid ""
@@ -740,6 +858,8 @@ msgid ""
 "Assignment to slices is also possible, and this can even change the size "
 "of the list or clear it entirely::"
 msgstr ""
+"Přiřazení do řezů je také možné a to může dokonce změnit velikost "
+"seznamu nebo ho zcela vymazat::"
 
 #: ../../tutorial/introduction.rst:457
 msgid ""
@@ -762,7 +882,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:473
 msgid "The built-in function :func:`len` also applies to lists::"
-msgstr ""
+msgstr "Vestavěná funkce :func:`len` se vztahuje také na seznamy::"
 
 #: ../../tutorial/introduction.rst:475
 msgid ""
@@ -776,6 +896,8 @@ msgid ""
 "It is possible to nest lists (create lists containing other lists), for "
 "example::"
 msgstr ""
+"Je možné vnořovat seznamy (vytvářet seznamy obsahující jiné seznamy), "
+"například::"
 
 #: ../../tutorial/introduction.rst:482
 msgid ""
@@ -792,7 +914,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:495
 msgid "First Steps Towards Programming"
-msgstr ""
+msgstr "První kroky k programování"
 
 #: ../../tutorial/introduction.rst:497
 msgid ""
@@ -801,6 +923,10 @@ msgid ""
 "the `Fibonacci series "
 "<https://en.wikipedia.org/wiki/Fibonacci_sequence>`_ as follows::"
 msgstr ""
+"Samozřejmě můžeme Python použít pro složitější úkoly než sčítání dvou "
+"a dvou. Například můžeme napsat počáteční podposloupnost "
+"`Fibonacciho řady <https://cs.wikipedia.org/wiki/Fibonacciho_posloupnost>`_ "
+"následovně::"
 
 #: ../../tutorial/introduction.rst:502
 msgid ""
@@ -822,7 +948,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:517
 msgid "This example introduces several new features."
-msgstr ""
+msgstr "Tento příklad představuje několik nových vlastností."
 
 #: ../../tutorial/introduction.rst:519
 msgid ""
@@ -832,6 +958,11 @@ msgid ""
 "are all evaluated first before any of the assignments take place.  The "
 "right-hand side expressions are evaluated  from the left to the right."
 msgstr ""
+"První řádek obsahuje *vícenásobné přiřazení*: proměnné ``a`` a ``b`` "
+"současně dostanou nové hodnoty 0 a 1. Na posledním řádku je toto použito "
+"znovu, což demonstruje, že výrazy na pravé straně jsou všechny vyhodnoceny "
+"nejprve, než dojde k jakémukoli přiřazení. Výrazy na pravé straně jsou "
+"vyhodnoceny zleva doprava."
 
 #: ../../tutorial/introduction.rst:525
 msgid ""
@@ -845,6 +976,14 @@ msgid ""
 "(less than or equal to), ``>=`` (greater than or equal to) and ``!=`` "
 "(not equal to)."
 msgstr ""
+"Cyklus :keyword:`while` se provádí, dokud je podmínka (zde: ``a < 10``) "
+"pravdivá. V Pythonu, stejně jako v C, je jakákoli nenulová celočíselná "
+"hodnota pravdivá; nula je nepravdivá. Podmínkou může být také řetězec "
+"nebo seznam, ve skutečnosti jakákoli sekvence; cokoli s nenulovou délkou "
+"je pravdivé, prázdné sekvence jsou nepravdivé. Test použitý v příkladu "
+"je jednoduché porovnání. Standardní porovnávací operátory se zapisují "
+"stejně jako v C: ``<`` (menší než), ``>`` (větší než), ``==`` (rovná se), "
+"``<=`` (menší nebo rovno), ``>=`` (větší nebo rovno) a ``!=`` (nerovná se)."
 
 #: ../../tutorial/introduction.rst:534
 msgid ""
@@ -857,6 +996,14 @@ msgid ""
 " (since the parser cannot guess when you have typed the last line).  Note"
 " that each line within a basic block must be indented by the same amount."
 msgstr ""
+"*Tělo* cyklu je *odsazené*: odsazení je způsob, jakým Python seskupuje "
+"příkazy. V interaktivní výzvě musíte pro každý odsazený řádek napsat "
+"tabulátor nebo mezeru/y. V praxi budete připravovat složitější vstup "
+"pro Python v textovém editoru; všechny slušné textové editory mají "
+"funkci automatického odsazení. Když je složený příkaz zadán interaktivně, "
+"musí za ním následovat prázdný řádek označující dokončení (protože parser "
+"nemůže uhodnout, kdy jste napsali poslední řádek). Všimněte si, že každý "
+"řádek v základním bloku musí být odsazen o stejnou hodnotu."
 
 #: ../../tutorial/introduction.rst:543
 msgid ""
@@ -867,6 +1014,12 @@ msgid ""
 "without quotes, and a space is inserted between items, so you can format "
 "things nicely, like this::"
 msgstr ""
+"Funkce :func:`print` vypíše hodnotu argumentu/argumentů, které jí jsou "
+"předány. Liší se od pouhého napsání výrazu, který chcete vypsat (jak jsme "
+"dělali dříve v příkladech s kalkulačkou) způsobem, jakým zpracovává více "
+"argumentů, čísla s plovoucí desetinnou čárkou a řetězce. Řetězce se tisknou "
+"bez uvozovek a mezi položky se vkládá mezera, takže můžete věci hezky "
+"formátovat, takto::"
 
 #: ../../tutorial/introduction.rst:550
 msgid ""
@@ -880,6 +1033,8 @@ msgid ""
 "The keyword argument *end* can be used to avoid the newline after the "
 "output, or end the output with a different string::"
 msgstr ""
+"Klíčový argument *end* lze použít k vynechání nového řádku za výstupem "
+"nebo k ukončení výstupu jiným řetězcem::"
 
 #: ../../tutorial/introduction.rst:557
 msgid ""
@@ -893,7 +1048,7 @@ msgstr ""
 
 #: ../../tutorial/introduction.rst:566
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../tutorial/introduction.rst:567
 msgid ""
@@ -901,6 +1056,9 @@ msgid ""
 "interpreted as ``-(3**2)`` and thus result in ``-9``.  To avoid this and "
 "get ``9``, you can use ``(-3)**2``."
 msgstr ""
+"Protože ``**`` má vyšší prioritu než ``-``, ``-3**2`` bude interpretováno "
+"jako ``-(3**2)`` a tedy výsledek bude ``-9``. Abyste tomu předešli a "
+"získali ``9``, můžete použít ``(-3)**2``."
 
 #: ../../tutorial/introduction.rst:571
 msgid ""
@@ -909,12 +1067,15 @@ msgid ""
 " only difference between the two is that within single quotes you don't "
 "need to escape ``\"`` (but you have to escape ``\\'``) and vice versa."
 msgstr ""
+"Na rozdíl od jiných jazyků mají speciální znaky jako ``\\n`` stejný význam "
+"jak v jednoduchých (``'...'``), tak v dvojitých (``\"...\"``) uvozovkách. "
+"Jediný rozdíl mezi nimi je, že v jednoduchých uvozovkách nemusíte escapovat "
+"``\"`` (ale musíte escapovat ``\\'``) a naopak."
 
 #: ../../tutorial/introduction.rst:20
 msgid "# (hash)"
-msgstr ""
+msgstr "# (mřížka)"
 
 #: ../../tutorial/introduction.rst:20
 msgid "comment"
-msgstr ""
-
+msgstr "komentář"

@@ -1,18 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python documentation - Tutorial Interpreter
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-01-02 18:00+0100\n"
+"Last-Translator: \n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
+"Language-Team: Czech <python-doc-cs@python.cz>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,11 +19,11 @@ msgstr ""
 
 #: ../../tutorial/interpreter.rst:5
 msgid "Using the Python Interpreter"
-msgstr ""
+msgstr "Používání interpretu Pythonu"
 
 #: ../../tutorial/interpreter.rst:11
 msgid "Invoking the Interpreter"
-msgstr ""
+msgstr "Spuštění interpretu"
 
 #: ../../tutorial/interpreter.rst:13
 msgid ""
@@ -34,10 +32,14 @@ msgid ""
 "available; putting :file:`/usr/local/bin` in your Unix shell's search "
 "path makes it possible to start it by typing the command:"
 msgstr ""
+"Interpret Pythonu je obvykle nainstalován jako "
+"|usr_local_bin_python_x_dot_y_literal| na počítačích, kde je k dispozici; "
+"přidáním :file:`/usr/local/bin` do vyhledávací cesty vašeho unixového "
+"shellu je možné ho spustit zadáním příkazu:"
 
 #: ../../tutorial/interpreter.rst:17
 msgid "python3.15"
-msgstr ""
+msgstr "python3.15"
 
 #: ../../tutorial/interpreter.rst:21
 msgid ""
@@ -46,6 +48,10 @@ msgid ""
 "check with your local Python guru or system administrator.  (E.g., "
 ":file:`/usr/local/python` is a popular alternative location.)"
 msgstr ""
+"do shellu. [#]_ Jelikož volba adresáře, kde se interpret nachází, je "
+"volbou instalace, jsou možná i jiná umístění; zeptejte se svého místního "
+"Python guru nebo správce systému. (Např. :file:`/usr/local/python` je "
+"oblíbená alternativní lokace.)"
 
 #: ../../tutorial/interpreter.rst:26
 msgid ""
@@ -55,6 +61,11 @@ msgid ""
 "<launcher>` installed, you can use the :file:`py` command. See :ref"
 ":`setting-envvars` for other ways to launch Python."
 msgstr ""
+"Na počítačích s Windows, kde jste nainstalovali Python z "
+":ref:`Microsoft Store <windows-store>`, bude k dispozici příkaz "
+"|python_x_dot_y_literal|. Pokud máte nainstalovaný :ref:`spouštěč py.exe "
+"<launcher>`, můžete použít příkaz :file:`py`. Další způsoby spuštění "
+"Pythonu naleznete v :ref:`setting-envvars`."
 
 #: ../../tutorial/interpreter.rst:31
 msgid ""
@@ -63,6 +74,10 @@ msgid ""
 " to exit with a zero exit status.  If that doesn't work, you can exit the"
 " interpreter by typing the following command: ``quit()``."
 msgstr ""
+"Zadání znaku konce souboru (:kbd:`Control-D` na Unixu, :kbd:`Control-Z` "
+"na Windows) na hlavní výzvě způsobí ukončení interpretu s nulovým "
+"návratovým kódem. Pokud to nefunguje, můžete interpret ukončit zadáním "
+"následujícího příkazu: ``quit()``."
 
 #: ../../tutorial/interpreter.rst:36
 msgid ""
@@ -77,6 +92,16 @@ msgid ""
 "you'll only be able to use backspace to remove characters from the "
 "current line."
 msgstr ""
+"Funkce interpretu pro editaci řádků zahrnují interaktivní editaci, "
+"nahrazování z historie a doplňování kódu na systémech, které podporují "
+"knihovnu `GNU Readline <https://tiswww.case.edu/php/chet/readline/rltop.html>`_. "
+"Nejrychlejší způsob, jak zjistit, zda je podporována editace příkazové "
+"řádky, je stisknout :kbd:`Control-P` na první výzvě Pythonu, kterou "
+"dostanete. Pokud to pípne, máte k dispozici editaci příkazové řádky; "
+"úvod do kláves naleznete v příloze :ref:`tut-interacting`. Pokud se zdá, "
+"že se nic neděje, nebo pokud se vypíše ``^P``, editace příkazové řádky "
+"není k dispozici; budete moci použít pouze backspace k mazání znaků z "
+"aktuálního řádku."
 
 #: ../../tutorial/interpreter.rst:46
 msgid ""
@@ -85,6 +110,10 @@ msgid ""
 "interactively; when called with a file name argument or with a file as "
 "standard input, it reads and executes a *script* from that file."
 msgstr ""
+"Interpret funguje podobně jako unixový shell: když je volán se standardním "
+"vstupem připojeným k zařízení tty, čte a vykonává příkazy interaktivně; "
+"když je volán s argumentem názvu souboru nebo se souborem jako standardním "
+"vstupem, čte a vykonává *skript* z tohoto souboru."
 
 #: ../../tutorial/interpreter.rst:51
 msgid ""
@@ -94,6 +123,11 @@ msgid ""
 "spaces or other characters that are special to the shell, it is usually "
 "advised to quote *command* in its entirety."
 msgstr ""
+"Druhý způsob spuštění interpretu je ``python -c command [arg] ...``, "
+"který vykoná příkaz(y) v *command*, analogicky k volbě :option:`-c` "
+"shellu. Jelikož příkazy Pythonu často obsahují mezery nebo jiné znaky, "
+"které jsou pro shell speciální, obvykle se doporučuje celý *command* "
+"uzavřít do uvozovek."
 
 #: ../../tutorial/interpreter.rst:57
 msgid ""
@@ -101,6 +135,9 @@ msgid ""
 "using ``python -m module [arg] ...``, which executes the source file for "
 "*module* as if you had spelled out its full name on the command line."
 msgstr ""
+"Některé moduly Pythonu jsou užitečné i jako skripty. Ty lze vyvolat "
+"pomocí ``python -m module [arg] ...``, což spustí zdrojový soubor "
+"*modulu*, jako byste na příkazové řádce zadali jeho plný název."
 
 #: ../../tutorial/interpreter.rst:61
 msgid ""
@@ -108,14 +145,17 @@ msgid ""
 "script and enter interactive mode afterwards.  This can be done by "
 "passing :option:`-i` before the script."
 msgstr ""
+"Při použití souboru se skriptem je někdy užitečné mít možnost spustit "
+"skript a poté přejít do interaktivního režimu. To lze provést předáním "
+":option:`-i` před skriptem."
 
 #: ../../tutorial/interpreter.rst:65
 msgid "All command line options are described in :ref:`using-on-general`."
-msgstr ""
+msgstr "Všechny volby příkazové řádky jsou popsány v :ref:`using-on-general`."
 
 #: ../../tutorial/interpreter.rst:71
 msgid "Argument Passing"
-msgstr ""
+msgstr "Předávání argumentů"
 
 #: ../../tutorial/interpreter.rst:73
 msgid ""
@@ -132,10 +172,22 @@ msgid ""
 "consumed  by the Python interpreter's option processing but left in "
 "``sys.argv`` for  the command or module to handle."
 msgstr ""
+"Když je interpretu znám název skriptu a další argumenty za ním, jsou "
+"převedeny na seznam řetězců a přiřazeny do proměnné ``argv`` v modulu "
+"``sys``. K tomuto seznamu můžete přistupovat provedením ``import sys``. "
+"Délka seznamu je alespoň jedna; když není zadán žádný skript ani "
+"argumenty, ``sys.argv[0]`` je prázdný řetězec. Když je název skriptu "
+"zadán jako ``'-'`` (což znamená standardní vstup), ``sys.argv[0]`` je "
+"nastaven na ``'-'``. Při použití :option:`-c` *command* je ``sys.argv[0]`` "
+"nastaven na ``'-c'``. Při použití :option:`-m` *module* je ``sys.argv[0]`` "
+"nastaven na plný název nalezeného modulu. Volby nalezené za :option:`-c` "
+"*command* nebo :option:`-m` *module* nejsou zpracovány zpracováním voleb "
+"interpretu Pythonu, ale jsou ponechány v ``sys.argv`` pro zpracování "
+"příkazem nebo modulem."
 
 #: ../../tutorial/interpreter.rst:89
 msgid "Interactive Mode"
-msgstr ""
+msgstr "Interaktivní režim"
 
 #: ../../tutorial/interpreter.rst:91
 msgid ""
@@ -147,6 +199,12 @@ msgid ""
 "its version number and a copyright notice before printing the first "
 "prompt:"
 msgstr ""
+"Když jsou příkazy čteny z tty, říká se, že interpret je v *interaktivním "
+"režimu*. V tomto režimu vyzývá k zadání dalšího příkazu *hlavní výzvou*, "
+"obvykle třemi znaky větší než (``>>>``); pro pokračovací řádky vyzývá "
+"*sekundární výzvou*, standardně třemi tečkami (``...``). Interpret "
+"před vypsáním první výzvy vypíše uvítací zprávu s číslem verze a "
+"oznámením o autorských právech:"
 
 #: ../../tutorial/interpreter.rst:98
 msgid ""
@@ -157,12 +215,20 @@ msgid ""
 "information.\n"
 ">>>"
 msgstr ""
+"$ python3.15\n"
+"Python 3.15 (default, May 7 2025, 15:46:04)\n"
+"[GCC 10.2.0] on linux\n"
+"Type \"help\", \"copyright\", \"credits\" or \"license\" for more "
+"information.\n"
+">>>"
 
 #: ../../tutorial/interpreter.rst:108
 msgid ""
 "Continuation lines are needed when entering a multi-line construct. As an"
 " example, take a look at this :keyword:`if` statement::"
 msgstr ""
+"Pokračovací řádky jsou potřeba při zadávání víceřádkových konstrukcí. "
+"Jako příklad se podívejte na tento příkaz :keyword:`if`::"
 
 #: ../../tutorial/interpreter.rst:111
 msgid ""
@@ -172,18 +238,23 @@ msgid ""
 "...\n"
 "Be careful not to fall off!"
 msgstr ""
+">>> the_world_is_flat = True\n"
+">>> if the_world_is_flat:\n"
+"...     print(\"Be careful not to fall off!\")\n"
+"...\n"
+"Be careful not to fall off!"
 
 #: ../../tutorial/interpreter.rst:118
 msgid "For more on interactive mode, see :ref:`tut-interac`."
-msgstr ""
+msgstr "Více o interaktivním režimu naleznete v :ref:`tut-interac`."
 
 #: ../../tutorial/interpreter.rst:124
 msgid "The Interpreter and Its Environment"
-msgstr ""
+msgstr "Interpret a jeho prostředí"
 
 #: ../../tutorial/interpreter.rst:130
 msgid "Source Code Encoding"
-msgstr ""
+msgstr "Kódování zdrojového kódu"
 
 #: ../../tutorial/interpreter.rst:132
 msgid ""
@@ -195,6 +266,14 @@ msgid ""
 "characters properly, your editor must recognize that the file is UTF-8, "
 "and it must use a font that supports all the characters in the file."
 msgstr ""
+"Ve výchozím nastavení jsou zdrojové soubory Pythonu považovány za "
+"kódované v UTF-8. V tomto kódování lze v řetězcových literálech, "
+"identifikátorech a komentářích současně používat znaky většiny světových "
+"jazyků --- i když standardní knihovna používá pro identifikátory pouze "
+"znaky ASCII, což je konvence, kterou by měl dodržovat každý přenositelný "
+"kód. Pro správné zobrazení všech těchto znaků musí váš editor rozpoznat, "
+"že soubor je v UTF-8, a musí používat písmo, které podporuje všechny "
+"znaky v souboru."
 
 #: ../../tutorial/interpreter.rst:140
 msgid ""
@@ -202,24 +281,28 @@ msgid ""
 " should be added as the *first* line of the file.  The syntax is as "
 "follows::"
 msgstr ""
+"Pro deklaraci jiného kódování než výchozího by měl být jako *první* "
+"řádek souboru přidán speciální komentář. Syntaxe je následující::"
 
 #: ../../tutorial/interpreter.rst:143
 msgid "# -*- coding: encoding -*-"
-msgstr ""
+msgstr "# -*- coding: encoding -*-"
 
 #: ../../tutorial/interpreter.rst:145
 msgid "where *encoding* is one of the valid :mod:`codecs` supported by Python."
-msgstr ""
+msgstr "kde *encoding* je jedno z platných kódování podporovaných modulem :mod:`codecs` Pythonu."
 
 #: ../../tutorial/interpreter.rst:147
 msgid ""
 "For example, to declare that Windows-1252 encoding is to be used, the "
 "first line of your source code file should be::"
 msgstr ""
+"Například pro deklaraci použití kódování Windows-1252 by první řádek "
+"vašeho zdrojového souboru měl být::"
 
 #: ../../tutorial/interpreter.rst:150
 msgid "# -*- coding: cp1252 -*-"
-msgstr ""
+msgstr "# -*- coding: cp1252 -*-"
 
 #: ../../tutorial/interpreter.rst:152
 msgid ""
@@ -228,16 +311,21 @@ msgid ""
 "encoding declaration should be added as the second line of the file.  For"
 " example::"
 msgstr ""
+"Jednou výjimkou z pravidla *prvního řádku* je, když zdrojový kód začíná "
+":ref:`unixovým „shebang“ řádkem <tut-scripts>`. V tomto případě by "
+"deklarace kódování měla být přidána jako druhý řádek souboru. Například::"
 
 #: ../../tutorial/interpreter.rst:156
 msgid ""
 "#!/usr/bin/env python3\n"
 "# -*- coding: cp1252 -*-"
 msgstr ""
+"#!/usr/bin/env python3\n"
+"# -*- coding: cp1252 -*-"
 
 #: ../../tutorial/interpreter.rst:160
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../tutorial/interpreter.rst:161
 msgid ""
@@ -245,4 +333,6 @@ msgid ""
 "executable named ``python``, so that it does not conflict with a "
 "simultaneously installed Python 2.x executable."
 msgstr ""
-
+"Na Unixu není interpret Pythonu 3.x ve výchozím nastavení nainstalován "
+"se spustitelným souborem pojmenovaným ``python``, aby nedocházelo ke "
+"konfliktu se současně nainstalovaným spustitelným souborem Pythonu 2.x."

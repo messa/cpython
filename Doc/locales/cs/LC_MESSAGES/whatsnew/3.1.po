@@ -1,18 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python documentation - What's New in Python 3.1
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-01-02 18:00+0100\n"
+"Last-Translator: \n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
+"Language-Team: Czech <python-doc-cs@python.cz>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,25 +19,27 @@ msgstr ""
 
 #: ../../whatsnew/3.1.rst:3
 msgid "What's New In Python 3.1"
-msgstr ""
+msgstr "Co je nového v Pythonu 3.1"
 
 #: ../../whatsnew/3.1.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../whatsnew/3.1.rst:5
 msgid "Raymond Hettinger"
-msgstr ""
+msgstr "Raymond Hettinger"
 
 #: ../../whatsnew/3.1.rst:49
 msgid ""
 "This article explains the new features in Python 3.1, compared to 3.0. "
 "Python 3.1 was released on June 27, 2009."
 msgstr ""
+"Tento článek vysvětluje nové funkce v Pythonu 3.1 ve srovnání s verzí 3.0. "
+"Python 3.1 byl vydán 27. června 2009."
 
 #: ../../whatsnew/3.1.rst:54
 msgid "PEP 372: Ordered Dictionaries"
-msgstr ""
+msgstr "PEP 372: Uspořádané slovníky"
 
 #: ../../whatsnew/3.1.rst:56
 msgid ""
@@ -49,6 +49,11 @@ msgid ""
 "inserted.  Based on the experiences from those implementations, a new "
 ":class:`collections.OrderedDict` class has been introduced."
 msgstr ""
+"Běžné slovníky v Pythonu iterují přes páry klíč/hodnota v libovolném "
+"pořadí. V průběhu let řada autorů napsala alternativní implementace, "
+"které si pamatují pořadí, v jakém byly klíče původně vloženy. Na základě "
+"zkušeností z těchto implementací byla zavedena nová třída "
+":class:`collections.OrderedDict`."
 
 #: ../../whatsnew/3.1.rst:62
 msgid ""
@@ -58,6 +63,11 @@ msgid ""
 "entry, the original insertion position is left unchanged.  Deleting an "
 "entry and reinserting it will move it to the end."
 msgstr ""
+"API třídy OrderedDict je v podstatě stejné jako u běžných slovníků, ale "
+"bude iterovat přes klíče a hodnoty v zaručeném pořadí v závislosti na tom, "
+"kdy byl klíč poprvé vložen. Pokud nová položka přepíše existující položku, "
+"původní pozice vložení zůstane nezměněna. Smazání položky a její opětovné "
+"vložení ji přesune na konec."
 
 #: ../../whatsnew/3.1.rst:68
 msgid ""
@@ -71,22 +81,34 @@ msgid ""
 "allow OrderedDicts to be built by the decoder. Support was also added for"
 " third-party tools like `PyYAML <https://pyyaml.org/>`_."
 msgstr ""
+"Standardní knihovna nyní podporuje použití uspořádaných slovníků v několika "
+"modulech. Modul :mod:`configparser` je používá ve výchozím nastavení. To "
+"umožňuje číst konfigurační soubory, upravovat je a pak je zapisovat zpět "
+"v jejich původním pořadí. Metoda *_asdict()* pro :func:`collections.namedtuple` "
+"nyní vrací uspořádaný slovník s hodnotami v stejném pořadí jako indexy "
+"podkladové n-tice. Modul :mod:`json` je rozšiřován o *object_pairs_hook*, "
+"který umožňuje dekodéru vytvářet OrderedDict. Byla také přidána podpora "
+"pro nástroje třetích stran jako `PyYAML <https://pyyaml.org/>`_."
 
 #: ../../whatsnew/3.1.rst:79
 msgid ":pep:`372` - Ordered Dictionaries"
-msgstr ""
+msgstr ":pep:`372` - Uspořádané slovníky"
 
 #: ../../whatsnew/3.1.rst:80
 msgid ""
 "PEP written by Armin Ronacher and Raymond Hettinger.  Implementation "
 "written by Raymond Hettinger."
 msgstr ""
+"PEP napsal Armin Ronacher a Raymond Hettinger. Implementaci napsal "
+"Raymond Hettinger."
 
 #: ../../whatsnew/3.1.rst:83
 msgid ""
 "Since an ordered dictionary remembers its insertion order, it can be used"
 " in conjunction with sorting to make a sorted dictionary::"
 msgstr ""
+"Protože si uspořádaný slovník pamatuje pořadí vkládání, lze ho použít "
+"v kombinaci s řazením k vytvoření seřazeného slovníku::"
 
 #: ../../whatsnew/3.1.rst:86
 #, python-brace-format
@@ -106,6 +128,20 @@ msgid ""
 ">>> OrderedDict(sorted(d.items(), key=lambda t: len(t[0])))\n"
 "OrderedDict([('pear', 1), ('apple', 4), ('orange', 2), ('banana', 3)])"
 msgstr ""
+">>> # běžný neseřazený slovník\n"
+">>> d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}\n"
+"\n"
+">>> # slovník seřazený podle klíče\n"
+">>> OrderedDict(sorted(d.items(), key=lambda t: t[0]))\n"
+"OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])\n"
+"\n"
+">>> # slovník seřazený podle hodnoty\n"
+">>> OrderedDict(sorted(d.items(), key=lambda t: t[1]))\n"
+"OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])\n"
+"\n"
+">>> # slovník seřazený podle délky řetězce klíče\n"
+">>> OrderedDict(sorted(d.items(), key=lambda t: len(t[0])))\n"
+"OrderedDict([('pear', 1), ('apple', 4), ('orange', 2), ('banana', 3)])"
 
 #: ../../whatsnew/3.1.rst:101
 msgid ""
@@ -113,10 +149,13 @@ msgid ""
 "deleted.  But when new keys are added, the keys are appended to the end "
 "and the sort is not maintained."
 msgstr ""
+"Nové seřazené slovníky zachovávají své pořadí řazení, když jsou položky "
+"smazány. Ale když jsou přidány nové klíče, jsou připojeny na konec a "
+"řazení není zachováno."
 
 #: ../../whatsnew/3.1.rst:107
 msgid "PEP 378: Format Specifier for Thousands Separator"
-msgstr ""
+msgstr "PEP 378: Specifikátor formátu pro oddělovač tisíců"
 
 #: ../../whatsnew/3.1.rst:109
 msgid ""
@@ -126,6 +165,10 @@ msgid ""
 "humanize a program's output, improving its professional appearance and "
 "readability::"
 msgstr ""
+"Vestavěná funkce :func:`format` a metoda :meth:`str.format` používají "
+"minijazyk, který nyní obsahuje jednoduchý způsob formátování čísla s "
+"oddělovačem tisíců bez ohledu na lokalizaci. To poskytuje způsob, jak "
+"zlepšit čitelnost výstupu programu a jeho profesionální vzhled::"
 
 #: ../../whatsnew/3.1.rst:114
 msgid ""
@@ -138,12 +181,22 @@ msgid ""
 ">>> format(Decimal('1234567.89'), ',f')\n"
 "'1,234,567.89'"
 msgstr ""
+">>> format(1234567, ',d')\n"
+"'1,234,567'\n"
+">>> format(1234567.89, ',.2f')\n"
+"'1,234,567.89'\n"
+">>> format(12345.6 + 8901234.12j, ',f')\n"
+"'12,345.600000+8,901,234.120000j'\n"
+">>> format(Decimal('1234567.89'), ',f')\n"
+"'1,234,567.89'"
 
 #: ../../whatsnew/3.1.rst:123
 msgid ""
 "The supported types are :class:`int`, :class:`float`, :class:`complex` "
 "and :class:`decimal.Decimal`."
 msgstr ""
+"Podporované typy jsou :class:`int`, :class:`float`, :class:`complex` "
+"a :class:`decimal.Decimal`."
 
 #: ../../whatsnew/3.1.rst:126
 msgid ""
@@ -152,24 +205,29 @@ msgid ""
 "should use the existing *n* format specifier which already has some "
 "support for thousands separators."
 msgstr ""
+"Probíhají diskuse o tom, jak specifikovat alternativní oddělovače jako "
+"tečky, mezery, apostrofy nebo podtržítka. Aplikace zohledňující lokalizaci "
+"by měly používat existující specifikátor formátu *n*, který již má určitou "
+"podporu pro oddělovače tisíců."
 
 #: ../../whatsnew/3.1.rst:133
 msgid ":pep:`378` - Format Specifier for Thousands Separator"
-msgstr ""
+msgstr ":pep:`378` - Specifikátor formátu pro oddělovač tisíců"
 
 #: ../../whatsnew/3.1.rst:134
 msgid ""
 "PEP written by Raymond Hettinger and implemented by Eric Smith and Mark "
 "Dickinson."
 msgstr ""
+"PEP napsal Raymond Hettinger a implementovali Eric Smith a Mark Dickinson."
 
 #: ../../whatsnew/3.1.rst:139
 msgid "Other Language Changes"
-msgstr ""
+msgstr "Další změny jazyka"
 
 #: ../../whatsnew/3.1.rst:141
 msgid "Some smaller changes made to the core Python language are:"
-msgstr ""
+msgstr "Některé menší změny provedené v jádře jazyka Python jsou:"
 
 #: ../../whatsnew/3.1.rst:143
 msgid ""
@@ -179,12 +237,19 @@ msgid ""
 "sys.path.  (Suggestion and initial patch by Andy Chu; revised patch by "
 "Phillip J. Eby and Nick Coghlan; :issue:`1739468`.)"
 msgstr ""
+"Adresáře a zip archivy obsahující soubor :file:`__main__.py` lze nyní "
+"spouštět přímo předáním jejich názvu interpretu. Adresář/zipfile je "
+"automaticky vložen jako první položka v sys.path. (Návrh a počáteční "
+"patch od Andyho Chu; revidovaný patch od Phillipa J. Ebyho a Nicka "
+"Coghlana; :issue:`1739468`.)"
 
 #: ../../whatsnew/3.1.rst:149
 msgid ""
 "The :func:`int` type gained a ``bit_length`` method that returns the "
 "number of bits necessary to represent its argument in binary::"
 msgstr ""
+"Typ :func:`int` získal metodu ``bit_length``, která vrací počet bitů "
+"potřebných k reprezentaci argumentu v binární podobě::"
 
 #: ../../whatsnew/3.1.rst:152
 msgid ""
@@ -199,16 +264,28 @@ msgid ""
 ">>> (n+1).bit_length()\n"
 "124"
 msgstr ""
+">>> n = 37\n"
+">>> bin(37)\n"
+"'0b100101'\n"
+">>> n.bit_length()\n"
+"6\n"
+">>> n = 2**123-1\n"
+">>> n.bit_length()\n"
+"123\n"
+">>> (n+1).bit_length()\n"
+"124"
 
 #: ../../whatsnew/3.1.rst:163
 msgid ""
 "(Contributed by Fredrik Johansson, Victor Stinner, Raymond Hettinger, and"
 " Mark Dickinson; :issue:`3439`.)"
 msgstr ""
+"(Přispěli Fredrik Johansson, Victor Stinner, Raymond Hettinger a "
+"Mark Dickinson; :issue:`3439`.)"
 
 #: ../../whatsnew/3.1.rst:166
 msgid "The fields in :func:`format` strings can now be automatically numbered::"
-msgstr ""
+msgstr "Pole v řetězcích :func:`format` nyní mohou být automaticky číslována::"
 
 #: ../../whatsnew/3.1.rst:169
 #, python-brace-format
@@ -216,6 +293,8 @@ msgid ""
 ">>> 'Sir {} of {}'.format('Gallahad', 'Camelot')\n"
 "'Sir Gallahad of Camelot'"
 msgstr ""
+">>> 'Sir {} of {}'.format('Gallahad', 'Camelot')\n"
+"'Sir Gallahad of Camelot'"
 
 #: ../../whatsnew/3.1.rst:172
 #, python-brace-format
@@ -223,10 +302,11 @@ msgid ""
 "Formerly, the string would have required numbered fields such as: ``'Sir "
 "{0} of {1}'``."
 msgstr ""
+"Dříve by řetězec vyžadoval číslovaná pole jako: ``'Sir {0} of {1}'``."
 
 #: ../../whatsnew/3.1.rst:175
 msgid "(Contributed by Eric Smith; :issue:`5237`.)"
-msgstr ""
+msgstr "(Přispěl Eric Smith; :issue:`5237`.)"
 
 #: ../../whatsnew/3.1.rst:177
 msgid ""
@@ -238,16 +318,24 @@ msgid ""
 "**maketrans** and **translate** methods with intermediate translation "
 "tables of the appropriate type."
 msgstr ""
+"Funkce :func:`!string.maketrans` je zastaralá a je nahrazena novými "
+"statickými metodami :meth:`bytes.maketrans` a :meth:`bytearray.maketrans`. "
+"Tato změna řeší zmatky ohledně toho, které typy byly podporovány modulem "
+":mod:`string`. Nyní mají :class:`str`, :class:`bytes` a :class:`bytearray` "
+"každý své vlastní metody **maketrans** a **translate** s mezilehlými "
+"překladovými tabulkami příslušného typu."
 
 #: ../../whatsnew/3.1.rst:184
 msgid "(Contributed by Georg Brandl; :issue:`5675`.)"
-msgstr ""
+msgstr "(Přispěl Georg Brandl; :issue:`5675`.)"
 
 #: ../../whatsnew/3.1.rst:186
 msgid ""
 "The syntax of the :keyword:`with` statement now allows multiple context "
 "managers in a single statement::"
 msgstr ""
+"Syntaxe příkazu :keyword:`with` nyní umožňuje více kontextových manažerů "
+"v jednom příkazu::"
 
 #: ../../whatsnew/3.1.rst:189
 msgid ""
@@ -256,34 +344,46 @@ msgid ""
 "...         if '<critical>' in line:\n"
 "...             outfile.write(line)"
 msgstr ""
+">>> with open('mylog.txt') as infile, open('a.out', 'w') as outfile:\n"
+"...     for line in infile:\n"
+"...         if '<critical>' in line:\n"
+"...             outfile.write(line)"
 
 #: ../../whatsnew/3.1.rst:194
 msgid ""
 "With the new syntax, the :func:`!contextlib.nested` function is no longer"
 " needed and is now deprecated."
 msgstr ""
+"S novou syntaxí již není funkce :func:`!contextlib.nested` potřeba a je "
+"nyní zastaralá."
 
 #: ../../whatsnew/3.1.rst:197
 msgid ""
 "(Contributed by Georg Brandl and Mattias Brändström; `appspot issue 53094"
 " <https://codereview.appspot.com/53094>`_.)"
 msgstr ""
+"(Přispěli Georg Brandl a Mattias Brändström; `appspot issue 53094 "
+"<https://codereview.appspot.com/53094>`_.)"
 
 #: ../../whatsnew/3.1.rst:200
 msgid ""
 "``round(x, n)`` now returns an integer if *x* is an integer. Previously "
 "it returned a float::"
 msgstr ""
+"``round(x, n)`` nyní vrací celé číslo, pokud je *x* celé číslo. Dříve "
+"vracela float::"
 
 #: ../../whatsnew/3.1.rst:203
 msgid ""
 ">>> round(1123, -2)\n"
 "1100"
 msgstr ""
+">>> round(1123, -2)\n"
+"1100"
 
 #: ../../whatsnew/3.1.rst:206
 msgid "(Contributed by Mark Dickinson; :issue:`4707`.)"
-msgstr ""
+msgstr "(Přispěl Mark Dickinson; :issue:`4707`.)"
 
 #: ../../whatsnew/3.1.rst:208
 msgid ""
@@ -291,6 +391,10 @@ msgid ""
 "point representation that doesn't change its value.  This should help "
 "mitigate some of the confusion surrounding binary floating-point numbers."
 msgstr ""
+"Python nyní používá algoritmus Davida Gaye pro nalezení nejkratší "
+"reprezentace čísla s plovoucí desetinnou čárkou, která nezmění jeho hodnotu. "
+"To by mělo pomoci zmírnit některé zmatky kolem binárních čísel s plovoucí "
+"desetinnou čárkou."
 
 #: ../../whatsnew/3.1.rst:213
 msgid ""
@@ -302,6 +406,13 @@ msgid ""
 "That nearest value was and still is used in subsequent floating-point "
 "calculations."
 msgstr ""
+"Význam je snadno vidět na čísle jako ``1.1``, které nemá přesný ekvivalent "
+"v binárních číslech s plovoucí desetinnou čárkou. Protože neexistuje přesný "
+"ekvivalent, výraz jako ``float('1.1')`` se vyhodnotí na nejbližší "
+"reprezentovatelnou hodnotu, která je ``0x1.199999999999ap+0`` v hexadecimálním "
+"tvaru nebo ``1.100000000000000088817841970012523233890533447265625`` v "
+"desítkovém. Tato nejbližší hodnota byla a stále je používána v následných "
+"výpočtech s plovoucí desetinnou čárkou."
 
 #: ../../whatsnew/3.1.rst:221
 msgid ""
@@ -314,6 +425,13 @@ msgid ""
 "confusing (mistaking intrinsic limitations of binary floating-point "
 "representation as being a problem with Python itself)."
 msgstr ""
+"Nové je to, jak se číslo zobrazuje. Dříve Python používal jednoduchý "
+"přístup. Hodnota ``repr(1.1)`` byla vypočtena jako ``format(1.1, '.17g')``, "
+"což dalo ``'1.1000000000000001'``. Výhodou použití 17 číslic bylo, že se "
+"spoléhalo na záruky IEEE-754, aby se zajistilo, že ``eval(repr(1.1))`` "
+"bude přesně odpovídat původní hodnotě. Nevýhodou je, že mnoho lidí "
+"shledávalo výstup matoucím (zaměňovali vnitřní omezení binární reprezentace "
+"s plovoucí desetinnou čárkou za problém samotného Pythonu)."
 
 #: ../../whatsnew/3.1.rst:230
 msgid ""
@@ -322,6 +440,9 @@ msgid ""
 " get stored with the same underlying float value) and returns the "
 "shortest representation."
 msgstr ""
+"Nový algoritmus pro ``repr(1.1)`` je chytřejší a vrací ``'1.1'``. Efektivně "
+"prohledává všechny ekvivalentní řetězcové reprezentace (ty, které se ukládají "
+"se stejnou podkladovou hodnotou float) a vrací nejkratší reprezentaci."
 
 #: ../../whatsnew/3.1.rst:235
 msgid ""
@@ -330,6 +451,9 @@ msgid ""
 "that ``1.1 + 2.2 != 3.3`` even though the representations may suggest "
 "otherwise."
 msgstr ""
+"Nový algoritmus má tendenci vydávat čistší reprezentace, když je to možné, "
+"ale nemění podkladové hodnoty. Takže stále platí, že ``1.1 + 2.2 != 3.3``, "
+"i když reprezentace mohou naznačovat opak."
 
 #: ../../whatsnew/3.1.rst:239
 msgid ""
@@ -338,20 +462,26 @@ msgid ""
 "algorithm will continue to be used.  Also, the text pickle protocols "
 "assure cross-platform portability by using the old algorithm."
 msgstr ""
+"Nový algoritmus závisí na určitých vlastnostech podkladové implementace "
+"s plovoucí desetinnou čárkou. Pokud požadované vlastnosti nejsou nalezeny, "
+"bude se nadále používat starý algoritmus. Také textové pickle protokoly "
+"zajišťují přenositelnost mezi platformami použitím starého algoritmu."
 
 #: ../../whatsnew/3.1.rst:244
 msgid "(Contributed by Eric Smith and Mark Dickinson; :issue:`1580`)"
-msgstr ""
+msgstr "(Přispěli Eric Smith a Mark Dickinson; :issue:`1580`)"
 
 #: ../../whatsnew/3.1.rst:247
 msgid "New, Improved, and Deprecated Modules"
-msgstr ""
+msgstr "Nové, vylepšené a zastaralé moduly"
 
 #: ../../whatsnew/3.1.rst:249
 msgid ""
 "Added a :class:`collections.Counter` class to support convenient counting"
 " of unique items in a sequence or iterable::"
 msgstr ""
+"Přidána třída :class:`collections.Counter` pro pohodlné počítání "
+"jedinečných položek v sekvenci nebo iterovatelném objektu::"
 
 #: ../../whatsnew/3.1.rst:252
 #, python-brace-format
@@ -359,10 +489,12 @@ msgid ""
 ">>> Counter(['red', 'blue', 'red', 'green', 'blue', 'blue'])\n"
 "Counter({'blue': 3, 'red': 2, 'green': 1})"
 msgstr ""
+">>> Counter(['red', 'blue', 'red', 'green', 'blue', 'blue'])\n"
+"Counter({'blue': 3, 'red': 2, 'green': 1})"
 
 #: ../../whatsnew/3.1.rst:255
 msgid "(Contributed by Raymond Hettinger; :issue:`1696199`.)"
-msgstr ""
+msgstr "(Přispěl Raymond Hettinger; :issue:`1696199`.)"
 
 #: ../../whatsnew/3.1.rst:257
 msgid ""
@@ -371,16 +503,21 @@ msgid ""
 "code implementing a widget's behavior from the code implementing its "
 "appearance."
 msgstr ""
+"Přidán nový modul :mod:`tkinter.ttk` pro přístup k sadě tématických widgetů "
+"Tk. Základní myšlenkou ttk je co nejvíce oddělit kód implementující chování "
+"widgetu od kódu implementujícího jeho vzhled."
 
 #: ../../whatsnew/3.1.rst:261
 msgid "(Contributed by Guilherme Polo; :issue:`2983`.)"
-msgstr ""
+msgstr "(Přispěl Guilherme Polo; :issue:`2983`.)"
 
 #: ../../whatsnew/3.1.rst:263
 msgid ""
 "The :class:`gzip.GzipFile` and :class:`bz2.BZ2File` classes now support "
 "the context management protocol::"
 msgstr ""
+"Třídy :class:`gzip.GzipFile` a :class:`bz2.BZ2File` nyní podporují "
+"protokol správy kontextu::"
 
 #: ../../whatsnew/3.1.rst:266
 msgid ""
@@ -388,10 +525,13 @@ msgid ""
 ">>> with gzip.GzipFile(filename, \"wb\") as f:\n"
 "...     f.write(b\"xxx\")"
 msgstr ""
+">>> # Automaticky zavřít soubor po zápisu\n"
+">>> with gzip.GzipFile(filename, \"wb\") as f:\n"
+"...     f.write(b\"xxx\")"
 
 #: ../../whatsnew/3.1.rst:270
 msgid "(Contributed by Antoine Pitrou.)"
-msgstr ""
+msgstr "(Přispěl Antoine Pitrou.)"
 
 #: ../../whatsnew/3.1.rst:272
 msgid ""
@@ -399,12 +539,17 @@ msgid ""
 "object from a binary :class:`float`.  The conversion is exact but can "
 "sometimes be surprising::"
 msgstr ""
+"Modul :mod:`decimal` nyní podporuje metody pro vytvoření objektu decimal "
+"z binárního :class:`float`. Převod je přesný, ale někdy může být "
+"překvapivý::"
 
 #: ../../whatsnew/3.1.rst:276
 msgid ""
 ">>> Decimal.from_float(1.1)\n"
 "Decimal('1.100000000000000088817841970012523233890533447265625')"
 msgstr ""
+">>> Decimal.from_float(1.1)\n"
+"Decimal('1.100000000000000088817841970012523233890533447265625')"
 
 #: ../../whatsnew/3.1.rst:279
 msgid ""
@@ -412,10 +557,13 @@ msgid ""
 " *1.1*.  The fraction has many digits because *1.1* cannot be exactly "
 "represented in binary."
 msgstr ""
+"Dlouhý desetinný výsledek ukazuje skutečný binární zlomek uložený pro "
+"*1.1*. Zlomek má mnoho číslic, protože *1.1* nelze přesně reprezentovat "
+"v binární podobě."
 
 #: ../../whatsnew/3.1.rst:283
 msgid "(Contributed by Raymond Hettinger and Mark Dickinson.)"
-msgstr ""
+msgstr "(Přispěli Raymond Hettinger a Mark Dickinson.)"
 
 #: ../../whatsnew/3.1.rst:285
 msgid ""
@@ -427,6 +575,13 @@ msgid ""
 " optional *step* argument and can accept any type of counting sequence "
 "including :class:`fractions.Fraction` and :class:`decimal.Decimal`::"
 msgstr ""
+"Modul :mod:`itertools` získal dvě nové funkce. Funkce "
+":func:`itertools.combinations_with_replacement` je jednou ze čtyř pro "
+"generování kombinatoriky včetně permutací a kartézských součinů. Funkce "
+":func:`itertools.compress` napodobuje svůj protějšek z APL. Také existující "
+"funkce :func:`itertools.count` má nyní volitelný argument *step* a může "
+"přijímat jakýkoli typ počítací sekvence včetně :class:`fractions.Fraction` "
+"a :class:`decimal.Decimal`::"
 
 #: ../../whatsnew/3.1.rst:294
 msgid ""
@@ -440,10 +595,19 @@ msgid ""
 ">>> [next(c), next(c), next(c), next(c)]\n"
 "[Fraction(1, 2), Fraction(2, 3), Fraction(5, 6), Fraction(1, 1)]"
 msgstr ""
+">>> [p+q for p,q in combinations_with_replacement('LOVE', 2)]\n"
+"['LL', 'LO', 'LV', 'LE', 'OO', 'OV', 'OE', 'VV', 'VE', 'EE']\n"
+"\n"
+">>> list(compress(data=range(10), selectors=[0,0,1,1,0,1,0,1,0,0]))\n"
+"[2, 3, 5, 7]\n"
+"\n"
+">>> c = count(start=Fraction(1,2), step=Fraction(1,6))\n"
+">>> [next(c), next(c), next(c), next(c)]\n"
+"[Fraction(1, 2), Fraction(2, 3), Fraction(5, 6), Fraction(1, 1)]"
 
 #: ../../whatsnew/3.1.rst:304
 msgid "(Contributed by Raymond Hettinger.)"
-msgstr ""
+msgstr "(Přispěl Raymond Hettinger.)"
 
 #: ../../whatsnew/3.1.rst:306
 msgid ""
@@ -453,6 +617,11 @@ msgid ""
 "being created by an external source such as a CSV header, SQL field list,"
 " or user input::"
 msgstr ""
+":func:`collections.namedtuple` nyní podporuje klíčový argument *rename*, "
+"který umožňuje automaticky převádět neplatné názvy polí na poziční názvy "
+"ve formě _0, _1 atd. To je užitečné, když jsou názvy polí vytvářeny "
+"externím zdrojem, jako je hlavička CSV, seznam polí SQL nebo uživatelský "
+"vstup::"
 
 #: ../../whatsnew/3.1.rst:312
 msgid ""
@@ -467,20 +636,32 @@ msgid ""
 " UserQuery(region='North', dept='Accounting', _2=37),\n"
 " UserQuery(region='West', dept='Sales', _2=419)]"
 msgstr ""
+">>> query = input()\n"
+"SELECT region, dept, count(*) FROM main GROUPBY region, dept\n"
+"\n"
+">>> cursor.execute(query)\n"
+">>> query_fields = [desc[0] for desc in cursor.description]\n"
+">>> UserQuery = namedtuple('UserQuery', query_fields, rename=True)\n"
+">>> pprint.pprint([UserQuery(*row) for row in cursor])\n"
+"[UserQuery(region='South', dept='Shipping', _2=185),\n"
+" UserQuery(region='North', dept='Accounting', _2=37),\n"
+" UserQuery(region='West', dept='Sales', _2=419)]"
 
 #: ../../whatsnew/3.1.rst:323
 msgid "(Contributed by Raymond Hettinger; :issue:`1818`.)"
-msgstr ""
+msgstr "(Přispěl Raymond Hettinger; :issue:`1818`.)"
 
 #: ../../whatsnew/3.1.rst:325
 msgid ""
 "The :func:`re.sub`, :func:`re.subn` and :func:`re.split` functions now "
 "accept a flags parameter."
 msgstr ""
+"Funkce :func:`re.sub`, :func:`re.subn` a :func:`re.split` nyní přijímají "
+"parametr flags."
 
 #: ../../whatsnew/3.1.rst:328
 msgid "(Contributed by Gregory Smith.)"
-msgstr ""
+msgstr "(Přispěl Gregory Smith.)"
 
 #: ../../whatsnew/3.1.rst:330
 msgid ""
@@ -490,16 +671,22 @@ msgid ""
 "handler will suppress spurious warnings such as \"No handlers could be "
 "found for logger foo\"::"
 msgstr ""
+"Modul :mod:`logging` nyní implementuje jednoduchou třídu "
+":class:`logging.NullHandler` pro aplikace, které nepoužívají logování, "
+"ale volají kód knihovny, který logování používá. Nastavení null handleru "
+"potlačí falešná varování jako „No handlers could be found for logger foo"::"
 
 #: ../../whatsnew/3.1.rst:335
 msgid ""
 ">>> h = logging.NullHandler()\n"
 ">>> logging.getLogger(\"foo\").addHandler(h)"
 msgstr ""
+">>> h = logging.NullHandler()\n"
+">>> logging.getLogger(\"foo\").addHandler(h)"
 
 #: ../../whatsnew/3.1.rst:338
 msgid "(Contributed by Vinay Sajip; :issue:`4384`)."
-msgstr ""
+msgstr "(Přispěl Vinay Sajip; :issue:`4384`.)"
 
 #: ../../whatsnew/3.1.rst:340
 msgid ""
@@ -507,40 +694,49 @@ msgid ""
 " supports the execution of packages by looking for and executing a "
 "``__main__`` submodule when a package name is supplied."
 msgstr ""
+"Modul :mod:`runpy`, který podporuje přepínač příkazového řádku ``-m``, "
+"nyní podporuje spouštění balíčků hledáním a spouštěním submodulu "
+"``__main__``, když je zadán název balíčku."
 
 #: ../../whatsnew/3.1.rst:344
 msgid "(Contributed by Andi Vajda; :issue:`4195`.)"
-msgstr ""
+msgstr "(Přispěl Andi Vajda; :issue:`4195`.)"
 
 #: ../../whatsnew/3.1.rst:346
 msgid ""
 "The :mod:`pdb` module can now access and display source code loaded via "
 ":mod:`zipimport` (or any other conformant :pep:`302` loader)."
 msgstr ""
+"Modul :mod:`pdb` nyní může přistupovat a zobrazovat zdrojový kód načtený "
+"přes :mod:`zipimport` (nebo jakýkoli jiný vyhovující loader :pep:`302`)."
 
 #: ../../whatsnew/3.1.rst:349
 msgid "(Contributed by Alexander Belopolsky; :issue:`4201`.)"
-msgstr ""
+msgstr "(Přispěl Alexander Belopolsky; :issue:`4201`.)"
 
 #: ../../whatsnew/3.1.rst:351
 msgid ":class:`functools.partial` objects can now be pickled."
-msgstr ""
+msgstr "Objekty :class:`functools.partial` nyní lze serializovat pomocí pickle."
 
 #: ../../whatsnew/3.1.rst:353
 msgid ""
 "(Suggested by Antoine Pitrou and Jesse Noller.  Implemented by Jack "
 "Diederich; :issue:`5228`.)"
 msgstr ""
+"(Navrhli Antoine Pitrou a Jesse Noller. Implementoval Jack Diederich; "
+":issue:`5228`.)"
 
 #: ../../whatsnew/3.1.rst:356
 msgid ""
 "Add :mod:`pydoc` help topics for symbols so that ``help('@')`` works as "
 "expected in the interactive environment."
 msgstr ""
+"Přidána témata nápovědy :mod:`pydoc` pro symboly, takže ``help('@')`` "
+"funguje podle očekávání v interaktivním prostředí."
 
 #: ../../whatsnew/3.1.rst:359
 msgid "(Contributed by David Laban; :issue:`4739`.)"
-msgstr ""
+msgstr "(Přispěl David Laban; :issue:`4739`.)"
 
 #: ../../whatsnew/3.1.rst:361
 msgid ""
@@ -549,6 +745,10 @@ msgid ""
 "a test that is known to be broken, but shouldn't be counted as a failure "
 "on a TestResult::"
 msgstr ""
+"Modul :mod:`unittest` nyní podporuje přeskakování jednotlivých testů nebo "
+"tříd testů. A podporuje označení testu jako očekávaného selhání - testu, "
+"o kterém je známo, že je nefunkční, ale neměl by být počítán jako selhání "
+"v TestResult::"
 
 #: ../../whatsnew/3.1.rst:366
 msgid ""
@@ -563,12 +763,24 @@ msgid ""
 "    def test_gimzo_without_required_library(self):\n"
 "        ..."
 msgstr ""
+"class TestGizmo(unittest.TestCase):\n"
+"\n"
+"    @unittest.skipUnless(sys.platform.startswith(\"win\"), \"requires "
+"Windows\")\n"
+"    def test_gizmo_on_windows(self):\n"
+"        ...\n"
+"\n"
+"    @unittest.expectedFailure\n"
+"    def test_gimzo_without_required_library(self):\n"
+"        ..."
 
 #: ../../whatsnew/3.1.rst:376
 msgid ""
 "Also, tests for exceptions have been builtout to work with context "
 "managers using the :keyword:`with` statement::"
 msgstr ""
+"Také testy pro výjimky byly rozšířeny, aby fungovaly s kontextovými "
+"manažery pomocí příkazu :keyword:`with`::"
 
 #: ../../whatsnew/3.1.rst:379
 msgid ""
@@ -576,6 +788,9 @@ msgid ""
 "    with self.assertRaises(ZeroDivisionError):\n"
 "        x / 0"
 msgstr ""
+"def test_division_by_zero(self):\n"
+"    with self.assertRaises(ZeroDivisionError):\n"
+"        x / 0"
 
 #: ../../whatsnew/3.1.rst:383
 msgid ""
@@ -590,10 +805,20 @@ msgid ""
 ":meth:`~unittest.TestCase.assertIsNone`, and "
 ":meth:`~unittest.TestCase.assertIsNotNone`."
 msgstr ""
+"Kromě toho bylo přidáno několik nových asertačních metod včetně "
+":meth:`~unittest.TestCase.assertSetEqual`, "
+":meth:`~unittest.TestCase.assertDictEqual`, "
+":meth:`!assertDictContainsSubset`, "
+":meth:`~unittest.TestCase.assertListEqual`, "
+":meth:`~unittest.TestCase.assertTupleEqual`, "
+":meth:`~unittest.TestCase.assertSequenceEqual`, "
+":meth:`assertRaisesRegexp() <unittest.TestCase.assertRaisesRegex>`, "
+":meth:`~unittest.TestCase.assertIsNone` a "
+":meth:`~unittest.TestCase.assertIsNotNone`."
 
 #: ../../whatsnew/3.1.rst:394
 msgid "(Contributed by Benjamin Peterson and Antoine Pitrou.)"
-msgstr ""
+msgstr "(Přispěli Benjamin Peterson a Antoine Pitrou.)"
 
 #: ../../whatsnew/3.1.rst:396
 msgid ""
@@ -601,10 +826,12 @@ msgid ""
 ":meth:`~io.IOBase.seek` method: :data:`~os.SEEK_SET`, "
 ":data:`~os.SEEK_CUR`, and :data:`~os.SEEK_END`."
 msgstr ""
+"Modul :mod:`io` má tři nové konstanty pro metodu :meth:`~io.IOBase.seek`: "
+":data:`~os.SEEK_SET`, :data:`~os.SEEK_CUR` a :data:`~os.SEEK_END`."
 
 #: ../../whatsnew/3.1.rst:399
 msgid "The :data:`sys.version_info` tuple is now a named tuple::"
-msgstr ""
+msgstr ":data:`sys.version_info` je nyní pojmenovaná n-tice::"
 
 #: ../../whatsnew/3.1.rst:401
 msgid ""
@@ -612,18 +839,21 @@ msgid ""
 "sys.version_info(major=3, minor=1, micro=0, releaselevel='alpha', "
 "serial=2)"
 msgstr ""
+">>> sys.version_info\n"
+"sys.version_info(major=3, minor=1, micro=0, releaselevel='alpha', "
+"serial=2)"
 
 #: ../../whatsnew/3.1.rst:404
 msgid "(Contributed by Ross Light; :issue:`4285`.)"
-msgstr ""
+msgstr "(Přispěl Ross Light; :issue:`4285`.)"
 
 #: ../../whatsnew/3.1.rst:406
 msgid "The :mod:`!nntplib` and :mod:`imaplib` modules now support IPv6."
-msgstr ""
+msgstr "Moduly :mod:`!nntplib` a :mod:`imaplib` nyní podporují IPv6."
 
 #: ../../whatsnew/3.1.rst:408
 msgid "(Contributed by Derek Morr; :issue:`1655` and :issue:`1664`.)"
-msgstr ""
+msgstr "(Přispěl Derek Morr; :issue:`1655` a :issue:`1664`.)"
 
 #: ../../whatsnew/3.1.rst:410
 msgid ""
@@ -637,6 +867,14 @@ msgid ""
 "both loading and dumping. This remapping is turned-on by default but can "
 "be disabled with the *fix_imports* option::"
 msgstr ""
+"Modul :mod:`pickle` byl upraven pro lepší interoperabilitu s Pythonem 2.x "
+"při použití protokolu 2 nebo nižšího. Reorganizace standardní knihovny "
+"změnila formální referenci pro mnoho objektů. Například ``__builtin__.set`` "
+"v Pythonu 2 se nazývá ``builtins.set`` v Pythonu 3. Tato změna "
+"komplikovala sdílení dat mezi různými verzemi Pythonu. Ale nyní, když je "
+"vybrán protokol 2 nebo nižší, bude pickler automaticky používat staré "
+"názvy z Pythonu 2 jak pro načítání, tak pro ukládání. Toto přemapování je "
+"ve výchozím nastavení zapnuto, ale lze ho vypnout volbou *fix_imports*::"
 
 #: ../../whatsnew/3.1.rst:420
 #, python-brace-format
@@ -647,6 +885,11 @@ msgid ""
 ">>> pickle.dumps(s, protocol=0, fix_imports=False)\n"
 "b'cbuiltins\\nset\\np0\\n((lp1\\nL1L\\naL2L\\naL3L\\natp2\\nRp3\\n.'"
 msgstr ""
+">>> s = {1, 2, 3}\n"
+">>> pickle.dumps(s, protocol=0)\n"
+"b'c__builtin__\\nset\\np0\\n((lp1\\nL1L\\naL2L\\naL3L\\natp2\\nRp3\\n.'\n"
+">>> pickle.dumps(s, protocol=0, fix_imports=False)\n"
+"b'cbuiltins\\nset\\np0\\n((lp1\\nL1L\\naL2L\\naL3L\\natp2\\nRp3\\n.'"
 
 #: ../../whatsnew/3.1.rst:426
 msgid ""
@@ -656,10 +899,15 @@ msgid ""
 "migrating data between Python 3.x implementations, as it doesn't attempt "
 "to remain compatible with Python 2.x."
 msgstr ""
+"Nešťastným, ale nevyhnutelným vedlejším efektem této změny je, že pickle "
+"protokolu 2 vytvořené Pythonem 3.1 nebudou čitelné v Pythonu 3.0. "
+"Nejnovější pickle protokol, protokol 3, by měl být použit při migraci dat "
+"mezi implementacemi Pythonu 3.x, protože se nesnaží zůstat kompatibilní "
+"s Pythonem 2.x."
 
 #: ../../whatsnew/3.1.rst:432
 msgid "(Contributed by Alexandre Vassalotti and Antoine Pitrou, :issue:`6137`.)"
-msgstr ""
+msgstr "(Přispěli Alexandre Vassalotti a Antoine Pitrou, :issue:`6137`.)"
 
 #: ../../whatsnew/3.1.rst:434
 msgid ""
@@ -669,18 +917,22 @@ msgid ""
 "represents a substantial step forward in documenting and defining the "
 "actions that take place during imports."
 msgstr ""
+"Byl přidán nový modul :mod:`importlib`. Poskytuje kompletní, přenositelnou, "
+"čistě pythonovou referenční implementaci příkazu :keyword:`import` a jeho "
+"protějšku, funkce :func:`__import__`. Představuje podstatný krok vpřed "
+"v dokumentování a definování akcí, které probíhají během importů."
 
 #: ../../whatsnew/3.1.rst:440
 msgid "(Contributed by Brett Cannon.)"
-msgstr ""
+msgstr "(Přispěl Brett Cannon.)"
 
 #: ../../whatsnew/3.1.rst:443
 msgid "Optimizations"
-msgstr ""
+msgstr "Optimalizace"
 
 #: ../../whatsnew/3.1.rst:445
 msgid "Major performance enhancements have been added:"
-msgstr ""
+msgstr "Byla přidána významná vylepšení výkonu:"
 
 #: ../../whatsnew/3.1.rst:447
 msgid ""
@@ -691,10 +943,15 @@ msgid ""
 " is still available for experimentation purposes through the ``_pyio`` "
 "module."
 msgstr ""
+"Nová I/O knihovna (jak je definována v :pep:`3116`) byla převážně napsána "
+"v Pythonu a rychle se ukázala jako problematické úzké hrdlo v Pythonu 3.0. "
+"V Pythonu 3.1 byla I/O knihovna zcela přepsána v C a je 2 až 20krát "
+"rychlejší v závislosti na konkrétním úkolu. Čistě pythonová verze je stále "
+"dostupná pro experimentální účely přes modul ``_pyio``."
 
 #: ../../whatsnew/3.1.rst:454
 msgid "(Contributed by Amaury Forgeot d'Arc and Antoine Pitrou.)"
-msgstr ""
+msgstr "(Přispěli Amaury Forgeot d'Arc a Antoine Pitrou.)"
 
 #: ../../whatsnew/3.1.rst:456
 msgid ""
@@ -703,10 +960,14 @@ msgid ""
 "size of collections and therefore the garbage collection overhead on "
 "long-running programs, depending on their particular use of datatypes."
 msgstr ""
+"Přidána heuristika, takže n-tice a slovníky obsahující pouze nesledovatelné "
+"objekty nejsou sledovány garbage collectorem. To může snížit velikost "
+"kolekcí a tedy režii garbage collection u dlouho běžících programů, "
+"v závislosti na jejich konkrétním použití datových typů."
 
 #: ../../whatsnew/3.1.rst:461
 msgid "(Contributed by Antoine Pitrou, :issue:`4688`.)"
-msgstr ""
+msgstr "(Přispěl Antoine Pitrou, :issue:`4688`.)"
 
 #: ../../whatsnew/3.1.rst:463
 msgid ""
@@ -715,20 +976,25 @@ msgid ""
 " is compiled with a new dispatch mechanism which gives speedups of up to "
 "20%, depending on the system, the compiler, and the benchmark."
 msgstr ""
+"Povolením konfigurační volby ``--with-computed-gotos`` na kompilátorech, "
+"které ji podporují (zejména: gcc, SunPro, icc), je vyhodnocovací smyčka "
+"bajtkódu kompilována s novým dispečerským mechanismem, který poskytuje "
+"zrychlení až o 20 %, v závislosti na systému, kompilátoru a benchmarku."
 
 #: ../../whatsnew/3.1.rst:469
 msgid ""
 "(Contributed by Antoine Pitrou along with a number of other participants,"
 " :issue:`4753`)."
 msgstr ""
+"(Přispěl Antoine Pitrou spolu s řadou dalších účastníků, :issue:`4753`.)"
 
 #: ../../whatsnew/3.1.rst:472
 msgid "The decoding of UTF-8, UTF-16 and LATIN-1 is now two to four times faster."
-msgstr ""
+msgstr "Dekódování UTF-8, UTF-16 a LATIN-1 je nyní dvakrát až čtyřikrát rychlejší."
 
 #: ../../whatsnew/3.1.rst:475
 msgid "(Contributed by Antoine Pitrou and Amaury Forgeot d'Arc, :issue:`4868`.)"
-msgstr ""
+msgstr "(Přispěli Antoine Pitrou a Amaury Forgeot d'Arc, :issue:`4868`.)"
 
 #: ../../whatsnew/3.1.rst:477
 msgid ""
@@ -738,44 +1004,55 @@ msgid ""
 " closely match the `JSON specification <https://json.org/>`_ which is "
 "defined in terms of Unicode."
 msgstr ""
+"Modul :mod:`json` má nyní rozšíření v C pro výrazné zlepšení výkonu. "
+"Kromě toho bylo API upraveno tak, že json pracuje pouze s :class:`str`, "
+"nikoli s :class:`bytes`. Tato změna činí modul blíže odpovídající "
+"`specifikaci JSON <https://json.org/>`_, která je definována z hlediska "
+"Unicode."
 
 #: ../../whatsnew/3.1.rst:483
 msgid ""
 "(Contributed by Bob Ippolito and converted to Py3.1 by Antoine Pitrou and"
 " Benjamin Peterson; :issue:`4136`.)"
 msgstr ""
+"(Přispěl Bob Ippolito a do Py3.1 převedli Antoine Pitrou a Benjamin "
+"Peterson; :issue:`4136`.)"
 
 #: ../../whatsnew/3.1.rst:486
 msgid ""
 "Unpickling now interns the attribute names of pickled objects.  This "
 "saves memory and allows pickles to be smaller."
 msgstr ""
+"Deserializace (unpickling) nyní internuje názvy atributů serializovaných "
+"objektů. To šetří paměť a umožňuje, aby pickle soubory byly menší."
 
 #: ../../whatsnew/3.1.rst:489
 msgid "(Contributed by Jake McGuire and Antoine Pitrou; :issue:`5084`.)"
-msgstr ""
+msgstr "(Přispěli Jake McGuire a Antoine Pitrou; :issue:`5084`.)"
 
 #: ../../whatsnew/3.1.rst:492
 msgid "IDLE"
-msgstr ""
+msgstr "IDLE"
 
 #: ../../whatsnew/3.1.rst:494
 msgid ""
 "IDLE's format menu now provides an option to strip trailing whitespace "
 "from a source file."
 msgstr ""
+"Menu formátu v IDLE nyní poskytuje možnost odstranit koncové mezery ze "
+"zdrojového souboru."
 
 #: ../../whatsnew/3.1.rst:497
 msgid "(Contributed by Roger D. Serwy; :issue:`5150`.)"
-msgstr ""
+msgstr "(Přispěl Roger D. Serwy; :issue:`5150`.)"
 
 #: ../../whatsnew/3.1.rst:500
 msgid "Build and C API Changes"
-msgstr ""
+msgstr "Změny v sestavení a C API"
 
 #: ../../whatsnew/3.1.rst:502
 msgid "Changes to Python's build process and to the C API include:"
-msgstr ""
+msgstr "Změny v procesu sestavení Pythonu a v C API zahrnují:"
 
 #: ../../whatsnew/3.1.rst:504
 msgid ""
@@ -788,6 +1065,14 @@ msgid ""
 "machines; on Unix, there's a new configure option ``--enable-big-digits``"
 " that can be used to override this default."
 msgstr ""
+"Celá čísla jsou nyní interně ukládána buď v základu ``2**15`` nebo v "
+"základu ``2**30``, přičemž základ je určen při sestavení. Dříve byla vždy "
+"ukládána v základu ``2**15``. Použití základu ``2**30`` poskytuje "
+"významná vylepšení výkonu na 64bitových strojích, ale výsledky benchmarků "
+"na 32bitových strojích jsou smíšené. Proto je výchozí nastavení používat "
+"základ ``2**30`` na 64bitových strojích a základ ``2**15`` na 32bitových "
+"strojích; na Unixu je nová konfigurační volba ``--enable-big-digits``, "
+"která může být použita k přepsání tohoto výchozího nastavení."
 
 #: ../../whatsnew/3.1.rst:513
 msgid ""
@@ -797,6 +1082,11 @@ msgid ""
 "internal format, giving the number of bits per digit and the size in "
 "bytes of the C type used to store each digit::"
 msgstr ""
+"Kromě vylepšení výkonu by tato změna měla být pro koncové uživatele "
+"neviditelná, s jednou výjimkou: pro účely testování a ladění je tu nový "
+":data:`sys.int_info`, který poskytuje informace o interním formátu, "
+"udávající počet bitů na číslici a velikost v bajtech typu C používaného "
+"k uložení každé číslice::"
 
 #: ../../whatsnew/3.1.rst:519
 msgid ""
@@ -804,28 +1094,33 @@ msgid ""
 ">>> sys.int_info\n"
 "sys.int_info(bits_per_digit=30, sizeof_digit=4)"
 msgstr ""
+">>> import sys\n"
+">>> sys.int_info\n"
+"sys.int_info(bits_per_digit=30, sizeof_digit=4)"
 
 #: ../../whatsnew/3.1.rst:523
 msgid "(Contributed by Mark Dickinson; :issue:`4258`.)"
-msgstr ""
+msgstr "(Přispěl Mark Dickinson; :issue:`4258`.)"
 
 #: ../../whatsnew/3.1.rst:525
 msgid ""
 "The :c:func:`PyLong_AsUnsignedLongLong()` function now handles a negative"
 " *pylong* by raising :exc:`OverflowError` instead of :exc:`TypeError`."
 msgstr ""
+"Funkce :c:func:`PyLong_AsUnsignedLongLong()` nyní zpracovává záporné "
+"*pylong* vyvoláním :exc:`OverflowError` místo :exc:`TypeError`."
 
 #: ../../whatsnew/3.1.rst:528
 msgid "(Contributed by Mark Dickinson and Lisandro Dalcrin; :issue:`5175`.)"
-msgstr ""
+msgstr "(Přispěli Mark Dickinson a Lisandro Dalcrin; :issue:`5175`.)"
 
 #: ../../whatsnew/3.1.rst:530
 msgid "Deprecated :c:func:`!PyNumber_Int`.  Use :c:func:`PyNumber_Long` instead."
-msgstr ""
+msgstr "Zastaralá funkce :c:func:`!PyNumber_Int`. Místo ní použijte :c:func:`PyNumber_Long`."
 
 #: ../../whatsnew/3.1.rst:532
 msgid "(Contributed by Mark Dickinson; :issue:`4910`.)"
-msgstr ""
+msgstr "(Přispěl Mark Dickinson; :issue:`4910`.)"
 
 #: ../../whatsnew/3.1.rst:534
 msgid ""
@@ -833,10 +1128,12 @@ msgid ""
 "deprecated functions :c:func:`!PyOS_ascii_strtod` and "
 ":c:func:`!PyOS_ascii_atof`."
 msgstr ""
+"Přidána nová funkce :c:func:`PyOS_string_to_double` nahrazující zastaralé "
+"funkce :c:func:`!PyOS_ascii_strtod` a :c:func:`!PyOS_ascii_atof`."
 
 #: ../../whatsnew/3.1.rst:537
 msgid "(Contributed by Mark Dickinson; :issue:`5914`.)"
-msgstr ""
+msgstr "(Přispěl Mark Dickinson; :issue:`5914`.)"
 
 #: ../../whatsnew/3.1.rst:539
 msgid ""
@@ -846,26 +1143,34 @@ msgid ""
 "signature for calling a destructor.  The old type had a problematic API "
 "and is now deprecated."
 msgstr ""
+"Přidán :c:type:`PyCapsule` jako náhrada za API :c:type:`!PyCObject`. "
+"Hlavní rozdíl je, že nový typ má dobře definované rozhraní pro předávání "
+"informací o typové bezpečnosti a méně komplikovanou signaturu pro volání "
+"destruktoru. Starý typ měl problematické API a je nyní zastaralý."
 
 #: ../../whatsnew/3.1.rst:545
 msgid "(Contributed by Larry Hastings; :issue:`5630`.)"
-msgstr ""
+msgstr "(Přispěl Larry Hastings; :issue:`5630`.)"
 
 #: ../../whatsnew/3.1.rst:548
 msgid "Porting to Python 3.1"
-msgstr ""
+msgstr "Portování na Python 3.1"
 
 #: ../../whatsnew/3.1.rst:550
 msgid ""
 "This section lists previously described changes and other bugfixes that "
 "may require changes to your code:"
 msgstr ""
+"Tato sekce uvádí dříve popsané změny a další opravy chyb, které mohou "
+"vyžadovat změny ve vašem kódu:"
 
 #: ../../whatsnew/3.1.rst:553
 msgid ""
 "The new floating-point string representations can break existing "
 "doctests. For example::"
 msgstr ""
+"Nové řetězcové reprezentace čísel s plovoucí desetinnou čárkou mohou "
+"narušit existující doctesty. Například::"
 
 #: ../../whatsnew/3.1.rst:556
 msgid ""
@@ -889,6 +1194,25 @@ msgid ""
 "    2.718281828459045\n"
 "**********************************************************************"
 msgstr ""
+"def e():\n"
+"    '''Compute the base of natural logarithms.\n"
+"\n"
+"    >>> e()\n"
+"    2.7182818284590451\n"
+"\n"
+"    '''\n"
+"    return sum(1/math.factorial(x) for x in reversed(range(30)))\n"
+"\n"
+"doctest.testmod()\n"
+"\n"
+"**********************************************************************\n"
+"Failed example:\n"
+"    e()\n"
+"Expected:\n"
+"    2.7182818284590451\n"
+"Got:\n"
+"    2.718281828459045\n"
+"**********************************************************************"
 
 #: ../../whatsnew/3.1.rst:576
 msgid ""
@@ -897,4 +1221,8 @@ msgid ""
 "to use protocol 3.  Another solution is to set the *fix_imports* option "
 "to ``False``. See the discussion above for more details."
 msgstr ""
-
+"Automatické přemapování názvů v modulu pickle pro protokol 2 nebo nižší "
+"může způsobit, že pickle soubory z Pythonu 3.1 nebudou čitelné v "
+"Pythonu 3.0. Jedním řešením je použít protokol 3. Dalším řešením je "
+"nastavit volbu *fix_imports* na ``False``. Více podrobností viz diskuse "
+"výše."

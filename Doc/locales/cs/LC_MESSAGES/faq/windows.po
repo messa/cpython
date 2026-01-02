@@ -1,18 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python documentation.
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-01-02 19:10+0100\n"
+"Last-Translator: \n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
+"Language-Team: Czech <python-doc-cs@python.cz>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,15 +19,15 @@ msgstr ""
 
 #: ../../faq/windows.rst:9
 msgid "Python on Windows FAQ"
-msgstr ""
+msgstr "FAQ o Pythonu na Windows"
 
 #: ../../faq/windows.rst:12
 msgid "Contents"
-msgstr ""
+msgstr "Obsah"
 
 #: ../../faq/windows.rst:22
 msgid "How do I run a Python program under Windows?"
-msgstr ""
+msgstr "Jak spustím program v Pythonu pod Windows?"
 
 #: ../../faq/windows.rst:24
 msgid ""
@@ -38,6 +36,9 @@ msgid ""
 "everything will seem obvious; otherwise, you might need a little more "
 "guidance."
 msgstr ""
+"Toto není nutně jednoduchá otázka. Pokud už jste obeznámeni se "
+"spouštěním programů z příkazové řádky Windows, pak vám vše bude připadat "
+"zřejmé; jinak možná budete potřebovat trochu více vedení."
 
 #: ../../faq/windows.rst:28
 msgid ""
@@ -48,20 +49,27 @@ msgid ""
 "have started such a window because you will see a Windows \"command "
 "prompt\", which usually looks like this:"
 msgstr ""
+"Pokud nepoužíváte nějaké integrované vývojové prostředí, budete nakonec "
+"*psát* příkazy Windows do toho, co se nazývá \"okno příkazového řádku\". "
+"Obvykle můžete takové okno vytvořit z vyhledávacího řádku vyhledáním "
+"``cmd``. Měli byste být schopni poznat, že jste takové okno spustili, "
+"protože uvidíte Windows \"příkazový řádek\", který obvykle vypadá takto:"
 
 #: ../../faq/windows.rst:35
 msgid "C:\\>"
-msgstr ""
+msgstr "C:\\>"
 
 #: ../../faq/windows.rst:39
 msgid ""
 "The letter may be different, and there might be other things after it, so"
 " you might just as easily see something like:"
 msgstr ""
+"Písmeno může být jiné a mohou tam být další věci za ním, takže stejně "
+"snadno můžete vidět něco jako:"
 
 #: ../../faq/windows.rst:42
 msgid "D:\\YourName\\Projects\\Python>"
-msgstr ""
+msgstr "D:\\VaseJmeno\\Projekty\\Python>"
 
 #: ../../faq/windows.rst:46
 msgid ""
@@ -69,6 +77,9 @@ msgid ""
 "recently done with it.  Once you have started such a window, you are well"
 " on the way to running Python programs."
 msgstr ""
+"v závislosti na tom, jak byl váš počítač nastaven a co jiného jste s ním "
+"nedávno dělali. Jakmile jste takové okno spustili, jste na dobré cestě ke "
+"spouštění programů v Pythonu."
 
 #: ../../faq/windows.rst:50
 msgid ""
@@ -78,6 +89,10 @@ msgid ""
 "to run your program. So, how do you arrange for the interpreter to handle"
 " your Python?"
 msgstr ""
+"Musíte si uvědomit, že vaše skripty v Pythonu musí být zpracovány jiným "
+"programem zvaným Python *interpret*. Interpret čte váš skript, kompiluje "
+"ho do bytekódu a poté vykonává bytekód pro spuštění vašeho programu. Jak "
+"tedy zajistíte, aby interpret zpracoval váš Python?"
 
 #: ../../faq/windows.rst:55
 msgid ""
@@ -86,14 +101,17 @@ msgid ""
 " command window, you should try entering the command ``py`` and hitting "
 "return:"
 msgstr ""
+"Nejprve se musíte ujistit, že vaše příkazové okno rozpoznává slovo "
+"\"py\" jako instrukci ke spuštění interpretu. Pokud jste otevřeli "
+"příkazové okno, měli byste zkusit zadat příkaz ``py`` a stisknout Enter:"
 
 #: ../../faq/windows.rst:60
 msgid "C:\\Users\\YourName> py"
-msgstr ""
+msgstr "C:\\Users\\VaseJmeno> py"
 
 #: ../../faq/windows.rst:64
 msgid "You should then see something like:"
-msgstr ""
+msgstr "Poté byste měli vidět něco jako:"
 
 #: ../../faq/windows.rst:66
 msgid ""
@@ -103,6 +121,11 @@ msgid ""
 "information.\n"
 ">>>"
 msgstr ""
+"Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit "
+"(Intel)] on win32\n"
+"Type \"help\", \"copyright\", \"credits\" or \"license\" for more "
+"information.\n"
+">>>"
 
 #: ../../faq/windows.rst:72
 msgid ""
@@ -112,6 +135,11 @@ msgid ""
 "features.  Check it by entering a few expressions of your choice and "
 "seeing the results:"
 msgstr ""
+"Spustili jste interpret v \"interaktivním režimu\". To znamená, že "
+"můžete interaktivně zadávat příkazy nebo výrazy Pythonu a nechat je "
+"vykonat nebo vyhodnotit, zatímco čekáte. To je jedna z nejsilnějších "
+"vlastností Pythonu. Vyzkoušejte to zadáním několika výrazů podle vašeho "
+"výběru a sledováním výsledků:"
 
 #: ../../faq/windows.rst:77
 msgid ""
@@ -120,6 +148,10 @@ msgid ""
 ">>> \"Hello\" * 3\n"
 "'HelloHelloHello'"
 msgstr ""
+">>> print(\"Hello\")\n"
+"Hello\n"
+">>> \"Hello\" * 3\n"
+"'HelloHelloHello'"
 
 #: ../../faq/windows.rst:84
 msgid ""
@@ -129,6 +161,11 @@ msgid ""
 "while you enter a :kbd:`Z`, then hit the \":kbd:`Enter`\" key to get back"
 " to your Windows command prompt."
 msgstr ""
+"Mnoho lidí používá interaktivní režim jako pohodlnou a přitom vysoce "
+"programovatelnou kalkulačku. Když chcete ukončit interaktivní relaci "
+"Pythonu, zavolejte funkci :func:`exit` nebo podržte klávesu :kbd:`Ctrl` "
+"a stiskněte :kbd:`Z`, poté stiskněte klávesu \":kbd:`Enter`\" pro návrat "
+"do příkazového řádku Windows."
 
 #: ../../faq/windows.rst:90
 msgid ""
@@ -140,6 +177,12 @@ msgid ""
 "\"python\" command in the window, and closes it when you terminate the "
 "interpreter."
 msgstr ""
+"Můžete také zjistit, že máte položku v nabídce Start jako "
+":menuselection:`Start --> Programy --> Python 3.x --> Python (command "
+"line)`, která vám zobrazí výzvu ``>>>`` v novém okně. Pokud ano, okno "
+"zmizí po zavolání funkce :func:`exit` nebo zadání znaku :kbd:`Ctrl-Z`; "
+"Windows spouští v okně jediný příkaz \"python\" a zavře ho, když "
+"ukončíte interpret."
 
 #: ../../faq/windows.rst:97
 msgid ""
@@ -149,26 +192,35 @@ msgid ""
 "your desktop and is named ``hello.py``, and your command prompt is nicely"
 " opened in your home directory so you're seeing something similar to::"
 msgstr ""
+"Nyní, když víme, že příkaz ``py`` je rozpoznán, můžete mu předat svůj "
+"skript Pythonu. Budete muset zadat buď absolutní, nebo relativní cestu "
+"ke skriptu Pythonu. Řekněme, že váš skript Pythonu je umístěn na ploše "
+"a jmenuje se ``hello.py`` a váš příkazový řádek je pěkně otevřen ve "
+"vašem domovském adresáři, takže vidíte něco podobného::"
 
 #: ../../faq/windows.rst:104
 msgid "C:\\Users\\YourName>"
-msgstr ""
+msgstr "C:\\Users\\VaseJmeno>"
 
 #: ../../faq/windows.rst:106
 msgid ""
 "So now you'll ask the ``py`` command to give your script to Python by "
 "typing ``py`` followed by your script path::"
 msgstr ""
+"Takže nyní požádáte příkaz ``py``, aby předal váš skript Pythonu, "
+"zadáním ``py`` následovaným cestou k vašemu skriptu::"
 
 #: ../../faq/windows.rst:110
 msgid ""
 "C:\\Users\\YourName> py Desktop\\hello.py\n"
 "hello"
 msgstr ""
+"C:\\Users\\VaseJmeno> py Desktop\\hello.py\n"
+"hello"
 
 #: ../../faq/windows.rst:114
 msgid "How do I make Python scripts executable?"
-msgstr ""
+msgstr "Jak udělám skripty Pythonu spustitelnými?"
 
 #: ../../faq/windows.rst:116
 msgid ""
@@ -180,10 +232,17 @@ msgid ""
 "to execute the script by simple typing 'foo' with no extension you need "
 "to add .py to the PATHEXT environment variable."
 msgstr ""
+"Ve Windows standardní instalátor Pythonu již přiřazuje příponu .py k "
+"typu souboru (Python.File) a dává tomuto typu souboru příkaz pro "
+"otevření, který spustí interpret (``D:\\Program "
+"Files\\Python\\python.exe \"%1\" %*``). To stačí k tomu, aby skripty "
+"byly spustitelné z příkazového řádku jako 'foo.py'. Pokud chcete mít "
+"možnost spustit skript pouhým zadáním 'foo' bez přípony, musíte přidat "
+".py do proměnné prostředí PATHEXT."
 
 #: ../../faq/windows.rst:124
 msgid "Why does Python sometimes take so long to start?"
-msgstr ""
+msgstr "Proč Pythonu někdy trvá tak dlouho, než se spustí?"
 
 #: ../../faq/windows.rst:126
 msgid ""
@@ -192,6 +251,10 @@ msgid ""
 "  This is made even more puzzling because Python will work fine on other "
 "Windows systems which appear to be configured identically."
 msgstr ""
+"Obvykle se Python na Windows spouští velmi rychle, ale občas jsou "
+"hlášení o chybách, že Python náhle začíná dlouho startovat. To je "
+"ještě více záhadné, protože Python bude fungovat dobře na jiných "
+"systémech Windows, které se zdají být nakonfigurovány identicky."
 
 #: ../../faq/windows.rst:131
 msgid ""
@@ -203,20 +266,30 @@ msgid ""
 "they are indeed configured identically. McAfee, when configured to scan "
 "all file system read activity, is a particular offender."
 msgstr ""
+"Problém může být způsoben špatnou konfigurací antivirového softwaru na "
+"problémovém stroji. U některých antivirových skenerů je známo, že "
+"způsobují zpoždění startu o dva řády, když je skener nakonfigurován "
+"ke sledování všech čtení ze souborového systému. Zkuste zkontrolovat "
+"konfiguraci antivirového softwaru na vašich systémech, abyste se "
+"ujistili, že jsou skutečně nakonfigurovány identicky. McAfee, když je "
+"nakonfigurován ke skenování veškeré aktivity čtení souborového systému, "
+"je obzvláště problematický."
 
 #: ../../faq/windows.rst:141
 msgid "How do I make an executable from a Python script?"
-msgstr ""
+msgstr "Jak vytvořím spustitelný soubor ze skriptu Pythonu?"
 
 #: ../../faq/windows.rst:143
 msgid ""
 "See :ref:`faq-create-standalone-binary` for a list of tools that can be "
 "used to make executables."
 msgstr ""
+"Viz :ref:`faq-create-standalone-binary` pro seznam nástrojů, které lze "
+"použít k vytvoření spustitelných souborů."
 
 #: ../../faq/windows.rst:148
 msgid "Is a ``*.pyd`` file the same as a DLL?"
-msgstr ""
+msgstr "Je soubor ``*.pyd`` totéž jako DLL?"
 
 #: ../../faq/windows.rst:150
 msgid ""
@@ -227,6 +300,13 @@ msgid ""
 "call ``PyInit_foo()`` to initialize it.  You do not link your .exe with "
 "foo.lib, as that would cause Windows to require the DLL to be present."
 msgstr ""
+"Ano, soubory .pyd jsou dll, ale existuje několik rozdílů. Pokud máte "
+"DLL s názvem ``foo.pyd``, pak musí mít funkci ``PyInit_foo()``. Poté "
+"můžete napsat v Pythonu \"import foo\" a Python bude hledat foo.pyd "
+"(stejně jako foo.py, foo.pyc) a pokud ho najde, pokusí se zavolat "
+"``PyInit_foo()`` pro jeho inicializaci. Svůj .exe nelinkujete s "
+"foo.lib, protože to by způsobilo, že Windows bude vyžadovat přítomnost "
+"DLL."
 
 #: ../../faq/windows.rst:157
 msgid ""
@@ -238,16 +318,24 @@ msgid ""
 "with ``__declspec(dllexport)``. In a .pyd, linkage is defined in a list "
 "of available functions."
 msgstr ""
+"Všimněte si, že cesta pro hledání foo.pyd je PYTHONPATH, ne stejná cesta, "
+"kterou Windows používá k hledání foo.dll. Také foo.pyd nemusí být "
+"přítomen pro spuštění vašeho programu, zatímco pokud jste svůj program "
+"slinkovali s dll, dll je vyžadováno. Samozřejmě foo.pyd je vyžadováno, "
+"pokud chcete napsat ``import foo``. V DLL je linkování deklarováno ve "
+"zdrojovém kódu pomocí ``__declspec(dllexport)``. V .pyd je linkování "
+"definováno v seznamu dostupných funkcí."
 
 #: ../../faq/windows.rst:166
 msgid "How can I embed Python into a Windows application?"
-msgstr ""
+msgstr "Jak mohu vložit Python do aplikace Windows?"
 
 #: ../../faq/windows.rst:168
 msgid ""
 "Embedding the Python interpreter in a Windows app can be summarized as "
 "follows:"
 msgstr ""
+"Vložení interpretu Pythonu do aplikace Windows lze shrnout následovně:"
 
 #: ../../faq/windows.rst:170
 #, python-brace-format
@@ -259,6 +347,12 @@ msgid ""
 "``C:\\Windows\\System``.  *NN* is the Python version, a number such as "
 "\"33\" for Python 3.3."
 msgstr ""
+"**Ne**budujte Python přímo do svého .exe souboru. Ve Windows musí být "
+"Python DLL, aby zvládl import modulů, které jsou samy DLL. (To je první "
+"klíčový nedokumentovaný fakt.) Místo toho linkujte na "
+":file:`python{NN}.dll`; ta je obvykle nainstalována v "
+"``C:\\Windows\\System``. *NN* je verze Pythonu, číslo jako \"33\" pro "
+"Python 3.3."
 
 #: ../../faq/windows.rst:176
 #, python-brace-format
@@ -269,6 +363,11 @@ msgid ""
 ":file:`python{NN}.lib` is the so-called \"import lib\" corresponding to "
 ":file:`python{NN}.dll`.  It merely defines symbols for the linker.)"
 msgstr ""
+"K Pythonu můžete linkovat dvěma různými způsoby. Linkování v době "
+"načítání znamená linkování proti :file:`python{NN}.lib`, zatímco "
+"linkování za běhu znamená linkování proti :file:`python{NN}.dll`. "
+"(Obecná poznámka: :file:`python{NN}.lib` je tzv. \"import lib\" "
+"odpovídající :file:`python{NN}.dll`. Pouze definuje symboly pro linker.)"
 
 #: ../../faq/windows.rst:182
 #, python-brace-format
@@ -281,6 +380,13 @@ msgid ""
 "using these pointers transparent to any C code that calls routines in "
 "Python's C API."
 msgstr ""
+"Linkování za běhu výrazně zjednodušuje možnosti linkování; vše se děje "
+"za běhu. Váš kód musí načíst :file:`python{NN}.dll` pomocí rutiny "
+"Windows ``LoadLibraryEx()``. Kód musí také používat přístupové rutiny a "
+"data v :file:`python{NN}.dll` (tedy C API Pythonu) pomocí ukazatelů "
+"získaných rutinou Windows ``GetProcAddress()``. Makra mohou učinit "
+"používání těchto ukazatelů transparentní pro jakýkoli C kód, který volá "
+"rutiny v C API Pythonu."
 
 #: ../../faq/windows.rst:191
 msgid ""
@@ -290,6 +396,11 @@ msgid ""
 "that you link *into* your .exe file (!)  You do **not** have to create a "
 "DLL file, and this also simplifies linking."
 msgstr ""
+"Pokud používáte SWIG, je snadné vytvořit \"rozšiřující modul\" Pythonu, "
+"který zpřístupní data a metody aplikace Pythonu. SWIG za vás zvládne "
+"téměř všechny nepříjemné detaily. Výsledkem je C kód, který linkujete "
+"*do* svého .exe souboru (!) **Ne**musíte vytvářet DLL soubor a to také "
+"zjednodušuje linkování."
 
 #: ../../faq/windows.rst:197
 msgid ""
@@ -300,6 +411,11 @@ msgid ""
 "initleoc().  This initializes a mostly hidden helper class used by the "
 "shadow class."
 msgstr ""
+"SWIG vytvoří init funkci (C funkci), jejíž název závisí na názvu "
+"rozšiřujícího modulu. Například pokud je název modulu leo, init funkce "
+"se bude jmenovat initleo(). Pokud používáte SWIG shadow třídy, jak "
+"byste měli, init funkce se bude jmenovat initleoc(). Ta inicializuje "
+"většinou skrytou pomocnou třídu používanou shadow třídou."
 
 #: ../../faq/windows.rst:203
 msgid ""
@@ -307,12 +423,17 @@ msgid ""
 "calling the initialization function is equivalent to importing the module"
 " into Python! (This is the second key undocumented fact.)"
 msgstr ""
+"Důvod, proč můžete linkovat C kód z kroku 2 do svého .exe souboru, je "
+"ten, že volání inicializační funkce je ekvivalentní importu modulu do "
+"Pythonu! (To je druhý klíčový nedokumentovaný fakt.)"
 
 #: ../../faq/windows.rst:207
 msgid ""
 "In short, you can use the following code to initialize the Python "
 "interpreter with your extension module."
 msgstr ""
+"Stručně řečeno, můžete použít následující kód k inicializaci interpretu "
+"Pythonu s vaším rozšiřujícím modulem."
 
 #: ../../faq/windows.rst:210
 msgid ""
@@ -322,6 +443,11 @@ msgid ""
 "initmyAppc();  // Initialize (import) the helper class.\n"
 "PyRun_SimpleString(\"import myApp\");  // Import the shadow class."
 msgstr ""
+"#include <Python.h>\n"
+"...\n"
+"Py_Initialize();  // Inicializace Pythonu.\n"
+"initmyAppc();  // Inicializace (import) pomocné třídy.\n"
+"PyRun_SimpleString(\"import myApp\");  // Import shadow třídy."
 
 #: ../../faq/windows.rst:218
 msgid ""
@@ -329,6 +455,8 @@ msgid ""
 "you use a compiler other than MSVC, the compiler used to build "
 "pythonNN.dll."
 msgstr ""
+"S C API Pythonu jsou dva problémy, které se projeví, pokud použijete "
+"jiný kompilátor než MSVC, kompilátor použitý k sestavení pythonNN.dll."
 
 #: ../../faq/windows.rst:221
 msgid ""
@@ -337,12 +465,18 @@ msgid ""
 "compiler's notion of a ``struct FILE`` will be different.  From an "
 "implementation standpoint these are very low level functions."
 msgstr ""
+"Problém 1: Takzvané funkce \"Very High Level\", které přijímají argumenty "
+"``FILE *``, nebudou fungovat v prostředí s více kompilátory, protože "
+"každý kompilátor má jinou představu o ``struct FILE``. Z hlediska "
+"implementace se jedná o velmi nízkoúrovňové funkce."
 
 #: ../../faq/windows.rst:226
 msgid ""
 "Problem 2: SWIG generates the following code when generating wrappers to "
 "void functions:"
 msgstr ""
+"Problém 2: SWIG generuje následující kód při generování wrapperů pro "
+"void funkce:"
 
 #: ../../faq/windows.rst:229
 msgid ""
@@ -350,6 +484,9 @@ msgid ""
 "_resultobj = Py_None;\n"
 "return _resultobj;"
 msgstr ""
+"Py_INCREF(Py_None);\n"
+"_resultobj = Py_None;\n"
+"return _resultobj;"
 
 #: ../../faq/windows.rst:235
 msgid ""
@@ -357,10 +494,13 @@ msgid ""
 "structure called _Py_NoneStruct inside pythonNN.dll.  Again, this code "
 "will fail in a mult-compiler environment.  Replace such code by:"
 msgstr ""
+"Bohužel, Py_None je makro, které se rozbalí na odkaz na komplexní datovou "
+"strukturu nazvanou _Py_NoneStruct uvnitř pythonNN.dll. Opět tento kód "
+"selže v prostředí s více kompilátory. Nahraďte takový kód tímto:"
 
 #: ../../faq/windows.rst:239
 msgid "return Py_BuildValue(\"\");"
-msgstr ""
+msgstr "return Py_BuildValue(\"\");"
 
 #: ../../faq/windows.rst:243
 msgid ""
@@ -368,6 +508,8 @@ msgid ""
 "automatically, though I have not been able to get this to work (I'm a "
 "complete SWIG newbie)."
 msgstr ""
+"Může být možné použít příkaz ``%typemap`` SWIGu k automatickému provedení "
+"změny, i když se mi to nepodařilo zprovoznit (jsem naprostý SWIG nováček)."
 
 #: ../../faq/windows.rst:247
 msgid ""
@@ -380,10 +522,18 @@ msgid ""
 "all you need is a Python object (defined in your extension module) that "
 "contains read() and write() methods."
 msgstr ""
+"Použití shell skriptu Pythonu k zobrazení okna interpretu Pythonu zevnitř "
+"vaší aplikace Windows není dobrý nápad; výsledné okno bude nezávislé na "
+"okenním systému vaší aplikace. Spíše byste vy (nebo třída wxPythonWindow) "
+"měli vytvořit \"nativní\" okno interpretu. Je snadné toto okno propojit "
+"s interpretem Pythonu. Můžete přesměrovat I/O Pythonu na _jakýkoli_ "
+"objekt, který podporuje read a write, takže vše, co potřebujete, je "
+"objekt Pythonu (definovaný ve vašem rozšiřujícím modulu), který obsahuje "
+"metody read() a write()."
 
 #: ../../faq/windows.rst:256
 msgid "How do I keep editors from inserting tabs into my Python source?"
-msgstr ""
+msgstr "Jak zabráním editorům vkládat tabulátory do mého zdrojového kódu Pythonu?"
 
 #: ../../faq/windows.rst:258
 msgid ""
@@ -391,6 +541,9 @@ msgid ""
 ":pep:`8`, recommends 4 spaces for distributed Python code; this is also "
 "the Emacs python-mode default."
 msgstr ""
+"FAQ nedoporučuje používat tabulátory a průvodce stylem Pythonu, "
+":pep:`8`, doporučuje 4 mezery pro distribuovaný kód Pythonu; to je také "
+"výchozí nastavení python-mode v Emacsu."
 
 #: ../../faq/windows.rst:262
 msgid ""
@@ -400,6 +553,11 @@ msgid ""
 "\"Default\" set \"Tab size\" and \"Indent size\" to 4, and select the "
 "\"Insert spaces\" radio button."
 msgstr ""
+"V jakémkoli editoru je míchání tabulátorů a mezer špatný nápad. MSVC se "
+"v tomto ohledu neliší a lze ho snadno nakonfigurovat na používání mezer: "
+"Jděte na :menuselection:`Tools --> Options --> Tabs` a pro typ souboru "
+"\"Default\" nastavte \"Tab size\" a \"Indent size\" na 4 a vyberte "
+"přepínač \"Insert spaces\"."
 
 #: ../../faq/windows.rst:267
 msgid ""
@@ -407,10 +565,14 @@ msgid ""
 "and spaces are causing problems in leading whitespace. You may also run "
 "the :mod:`tabnanny` module to check a directory tree in batch mode."
 msgstr ""
+"Python vyvolá :exc:`IndentationError` nebo :exc:`TabError`, pokud smíchané "
+"tabulátory a mezery způsobují problémy v úvodních bílých znacích. Můžete "
+"také spustit modul :mod:`tabnanny` pro kontrolu adresářového stromu v "
+"dávkovém režimu."
 
 #: ../../faq/windows.rst:274
 msgid "How do I check for a keypress without blocking?"
-msgstr ""
+msgstr "Jak zkontroluji stisk klávesy bez blokování?"
 
 #: ../../faq/windows.rst:276
 msgid ""
@@ -419,10 +581,14 @@ msgid ""
 "a keyboard hit is present, and ``getch()`` which gets one character "
 "without echoing it."
 msgstr ""
+"Použijte modul :mod:`msvcrt`. Toto je standardní rozšiřující modul "
+"specifický pro Windows. Definuje funkci ``kbhit()``, která kontroluje, "
+"zda je přítomen stisk klávesy, a ``getch()``, která získá jeden znak "
+"bez jeho vypsání."
 
 #: ../../faq/windows.rst:281
 msgid "How do I solve the missing api-ms-win-crt-runtime-l1-1-0.dll error?"
-msgstr ""
+msgstr "Jak vyřeším chybu chybějícího api-ms-win-crt-runtime-l1-1-0.dll?"
 
 #: ../../faq/windows.rst:283
 msgid ""
@@ -433,4 +599,8 @@ msgid ""
 "/en-us/help/3118401/>`_ for guidance on manually installing the C Runtime"
 " update."
 msgstr ""
-
+"K tomu může dojít u Pythonu 3.5 a novějších při použití Windows 8.1 nebo "
+"starších bez nainstalování všech aktualizací. Nejprve se ujistěte, že váš "
+"operační systém je podporován a je aktuální, a pokud to problém nevyřeší, "
+"navštivte `stránku podpory Microsoftu <https://support.microsoft.com"
+"/en-us/help/3118401/>`_ pro návod na ruční instalaci aktualizace C Runtime."

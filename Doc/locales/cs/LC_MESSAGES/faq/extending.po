@@ -1,18 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python documentation.
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-01-02 19:05+0100\n"
+"Last-Translator: \n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
+"Language-Team: Czech <python-doc-cs@python.cz>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,15 +19,15 @@ msgstr ""
 
 #: ../../faq/extending.rst:3
 msgid "Extending/Embedding FAQ"
-msgstr ""
+msgstr "FAQ o rozšiřování/vkládání"
 
 #: ../../faq/extending.rst:6
 msgid "Contents"
-msgstr ""
+msgstr "Obsah"
 
 #: ../../faq/extending.rst:16
 msgid "Can I create my own functions in C?"
-msgstr ""
+msgstr "Mohu vytvořit vlastní funkce v C?"
 
 #: ../../faq/extending.rst:18
 msgid ""
@@ -37,14 +35,19 @@ msgid ""
 "exceptions and even new types in C.  This is explained in the document "
 ":ref:`extending-index`."
 msgstr ""
+"Ano, můžete vytvářet vestavěné moduly obsahující funkce, proměnné, "
+"výjimky a dokonce i nové typy v C. To je vysvětleno v dokumentu "
+":ref:`extending-index`."
 
 #: ../../faq/extending.rst:22
 msgid "Most intermediate or advanced Python books will also cover this topic."
 msgstr ""
+"Většina středně pokročilých nebo pokročilých knih o Pythonu toto téma "
+"také pokrývá."
 
 #: ../../faq/extending.rst:26
 msgid "Can I create my own functions in C++?"
-msgstr ""
+msgstr "Mohu vytvořit vlastní funkce v C++?"
 
 #: ../../faq/extending.rst:28
 #, python-brace-format
@@ -55,10 +58,14 @@ msgid ""
 "interpreter.  Global or static C++ objects with constructors are probably"
 " not a good idea."
 msgstr ""
+"Ano, pomocí funkcí kompatibility s C dostupných v C++. Umístěte ``extern "
+"\"C\" { ... }`` kolem hlavičkových souborů Pythonu a před každou funkci, "
+"která bude volána interpretem Pythonu, vložte ``extern \"C\"``. Globální "
+"nebo statické C++ objekty s konstruktory pravděpodobně nejsou dobrý nápad."
 
 #: ../../faq/extending.rst:37
 msgid "Writing C is hard; are there any alternatives?"
-msgstr ""
+msgstr "Psaní C je obtížné; existují nějaké alternativy?"
 
 #: ../../faq/extending.rst:39
 msgid ""
@@ -67,10 +74,14 @@ msgid ""
 "tools <c-api-tools>` offer both simpler and more sophisticated approaches"
 " to creating C and C++ extensions for Python."
 msgstr ""
+"Existuje řada alternativ k psaní vlastních rozšíření v C, v závislosti "
+"na tom, co se snažíte udělat. :ref:`Doporučené nástroje třetích stran "
+"<c-api-tools>` nabízejí jak jednodušší, tak sofistikovanější přístupy "
+"k vytváření rozšíření v C a C++ pro Python."
 
 #: ../../faq/extending.rst:46
 msgid "How can I execute arbitrary Python statements from C?"
-msgstr ""
+msgstr "Jak mohu spustit libovolné příkazy Pythonu z C?"
 
 #: ../../faq/extending.rst:48
 msgid ""
@@ -81,10 +92,16 @@ msgid ""
 "control, use :c:func:`PyRun_String`; see the source for "
 ":c:func:`PyRun_SimpleString` in ``Python/pythonrun.c``."
 msgstr ""
+"Nejvyšší úrovňová funkce pro tento účel je :c:func:`PyRun_SimpleString`, "
+"která přijímá jeden řetězcový argument k vykonání v kontextu modulu "
+"``__main__`` a vrací ``0`` při úspěchu a ``-1`` když nastala výjimka "
+"(včetně :exc:`SyntaxError`). Pokud chcete větší kontrolu, použijte "
+":c:func:`PyRun_String`; viz zdrojový kód :c:func:`PyRun_SimpleString` "
+"v ``Python/pythonrun.c``."
 
 #: ../../faq/extending.rst:57
 msgid "How can I evaluate an arbitrary Python expression from C?"
-msgstr ""
+msgstr "Jak mohu vyhodnotit libovolný výraz Pythonu z C?"
 
 #: ../../faq/extending.rst:59
 msgid ""
@@ -92,10 +109,13 @@ msgid ""
 "the start symbol :c:data:`Py_eval_input`; it parses an expression, "
 "evaluates it and returns its value."
 msgstr ""
+"Zavolejte funkci :c:func:`PyRun_String` z předchozí otázky s počátečním "
+"symbolem :c:data:`Py_eval_input`; ta zparsuje výraz, vyhodnotí ho a vrátí "
+"jeho hodnotu."
 
 #: ../../faq/extending.rst:65
 msgid "How do I extract C values from a Python object?"
-msgstr ""
+msgstr "Jak extrahuji hodnoty C z objektu Pythonu?"
 
 #: ../../faq/extending.rst:67
 msgid ""
@@ -104,6 +124,10 @@ msgid ""
 "returns the item at a specified index.  Lists have similar functions, "
 ":c:func:`PyList_Size` and :c:func:`PyList_GetItem`."
 msgstr ""
+"To záleží na typu objektu. Pokud je to n-tice, :c:func:`PyTuple_Size` "
+"vrací její délku a :c:func:`PyTuple_GetItem` vrací prvek na zadaném "
+"indexu. Seznamy mají podobné funkce, :c:func:`PyList_Size` a "
+":c:func:`PyList_GetItem`."
 
 #: ../../faq/extending.rst:72
 msgid ""
@@ -112,6 +136,10 @@ msgid ""
 " length.  Note that Python bytes objects may contain null bytes so C's "
 ":c:func:`!strlen` should not be used."
 msgstr ""
+"Pro bytes :c:func:`PyBytes_Size` vrací délku a "
+":c:func:`PyBytes_AsStringAndSize` poskytuje ukazatel na hodnotu a délku. "
+"Všimněte si, že objekty bytes v Pythonu mohou obsahovat nulové bajty, "
+"takže by se neměla používat funkce :c:func:`!strlen` z C."
 
 #: ../../faq/extending.rst:77
 msgid ""
@@ -119,6 +147,9 @@ msgid ""
 "then use :c:func:`PyBytes_Check`, :c:func:`PyTuple_Check`, "
 ":c:func:`PyList_Check`, etc."
 msgstr ""
+"Pro testování typu objektu se nejprve ujistěte, že není ``NULL``, a poté "
+"použijte :c:func:`PyBytes_Check`, :c:func:`PyTuple_Check`, "
+":c:func:`PyList_Check` atd."
 
 #: ../../faq/extending.rst:80
 msgid ""
@@ -130,18 +161,25 @@ msgid ""
 " such as numbers (:c:func:`PyNumber_Index` et al.) and mappings in the "
 "PyMapping APIs."
 msgstr ""
+"Existuje také vysokoúrovňové API pro objekty Pythonu, které poskytuje "
+"tzv. 'abstraktní' rozhraní -- přečtěte si ``Include/abstract.h`` pro "
+"další podrobnosti. Umožňuje pracovat s jakýmkoli druhem sekvence Pythonu "
+"pomocí volání jako :c:func:`PySequence_Length`, "
+":c:func:`PySequence_GetItem` atd., stejně jako s mnoha dalšími užitečnými "
+"protokoly, jako jsou čísla (:c:func:`PyNumber_Index` a další) a mapování "
+"v API PyMapping."
 
 #: ../../faq/extending.rst:89
 msgid "How do I use Py_BuildValue() to create a tuple of arbitrary length?"
-msgstr ""
+msgstr "Jak použiji Py_BuildValue() k vytvoření n-tice libovolné délky?"
 
 #: ../../faq/extending.rst:91
 msgid "You can't.  Use :c:func:`PyTuple_Pack` instead."
-msgstr ""
+msgstr "Nemůžete. Použijte místo toho :c:func:`PyTuple_Pack`."
 
 #: ../../faq/extending.rst:95
 msgid "How do I call an object's method from C?"
-msgstr ""
+msgstr "Jak zavolám metodu objektu z C?"
 
 #: ../../faq/extending.rst:97
 msgid ""
@@ -150,6 +188,10 @@ msgid ""
 "of the method to call, a format string like that used with "
 ":c:func:`Py_BuildValue`, and the argument values::"
 msgstr ""
+"Funkce :c:func:`PyObject_CallMethod` může být použita k volání libovolné "
+"metody objektu. Parametry jsou objekt, název metody k volání, formátovací "
+"řetězec podobný tomu používanému s :c:func:`Py_BuildValue` a hodnoty "
+"argumentů::"
 
 #: ../../faq/extending.rst:102
 msgid ""
@@ -157,6 +199,9 @@ msgid ""
 "PyObject_CallMethod(PyObject *object, const char *method_name,\n"
 "                    const char *arg_format, ...);"
 msgstr ""
+"PyObject *\n"
+"PyObject_CallMethod(PyObject *object, const char *method_name,\n"
+"                    const char *arg_format, ...);"
 
 #: ../../faq/extending.rst:106
 msgid ""
@@ -164,12 +209,17 @@ msgid ""
 "defined. You are responsible for eventually :c:func:`Py_DECREF`\\ 'ing "
 "the return value."
 msgstr ""
+"Toto funguje pro jakýkoli objekt, který má metody -- ať už vestavěné "
+"nebo uživatelsky definované. Jste zodpovědní za případné volání "
+":c:func:`Py_DECREF` na návratovou hodnotu."
 
 #: ../../faq/extending.rst:109
 msgid ""
 "To call, e.g., a file object's \"seek\" method with arguments 10, 0 "
 "(assuming the file object pointer is \"f\")::"
 msgstr ""
+"Pro volání např. metody \"seek\" souborového objektu s argumenty 10, 0 "
+"(za předpokladu, že ukazatel na souborový objekt je \"f\")::"
 
 #: ../../faq/extending.rst:112
 #, python-brace-format
@@ -182,6 +232,13 @@ msgid ""
 "        Py_DECREF(res);\n"
 "}"
 msgstr ""
+"res = PyObject_CallMethod(f, \"seek\", \"(ii)\", 10, 0);\n"
+"if (res == NULL) {\n"
+"        ... nastala výjimka ...\n"
+"}\n"
+"else {\n"
+"        Py_DECREF(res);\n"
+"}"
 
 #: ../../faq/extending.rst:120
 msgid ""
@@ -190,12 +247,18 @@ msgid ""
 "the format, and to call a function with one argument, surround the "
 "argument in parentheses, e.g. \"(i)\"."
 msgstr ""
+"Všimněte si, že protože :c:func:`PyObject_CallObject` *vždy* očekává "
+"n-tici pro seznam argumentů, pro volání funkce bez argumentů předejte "
+"\"()\" jako formát a pro volání funkce s jedním argumentem obklopte "
+"argument závorkami, např. \"(i)\"."
 
 #: ../../faq/extending.rst:127
 msgid ""
 "How do I catch the output from PyErr_Print() (or anything that prints to "
 "stdout/stderr)?"
 msgstr ""
+"Jak zachytím výstup z PyErr_Print() (nebo čehokoli, co tiskne na "
+"stdout/stderr)?"
 
 #: ../../faq/extending.rst:129
 msgid ""
@@ -204,10 +267,14 @@ msgid ""
 "print_error, or just allow the standard traceback mechanism to work. "
 "Then, the output will go wherever your ``write()`` method sends it."
 msgstr ""
+"V kódu Pythonu definujte objekt, který podporuje metodu ``write()``. "
+"Přiřaďte tento objekt k :data:`sys.stdout` a :data:`sys.stderr`. Zavolejte "
+"print_error, nebo prostě nechte fungovat standardní mechanismus "
+"traceback. Výstup pak půjde tam, kam ho pošle vaše metoda ``write()``."
 
 #: ../../faq/extending.rst:134
 msgid "The easiest way to do this is to use the :class:`io.StringIO` class:"
-msgstr ""
+msgstr "Nejjednodušší způsob je použít třídu :class:`io.StringIO`:"
 
 #: ../../faq/extending.rst:136
 msgid ""
@@ -219,10 +286,17 @@ msgid ""
 "foo\n"
 "hello world!"
 msgstr ""
+">>> import io, sys\n"
+">>> sys.stdout = io.StringIO()\n"
+">>> print('foo')\n"
+">>> print('hello world!')\n"
+">>> sys.stderr.write(sys.stdout.getvalue())\n"
+"foo\n"
+"hello world!"
 
 #: ../../faq/extending.rst:146
 msgid "A custom object to do the same would look like this:"
-msgstr ""
+msgstr "Vlastní objekt pro totéž by vypadal takto:"
 
 #: ../../faq/extending.rst:148
 msgid ""
@@ -241,18 +315,32 @@ msgid ""
 "foo\n"
 "hello world!"
 msgstr ""
+">>> import io, sys\n"
+">>> class StdoutCatcher(io.TextIOBase):\n"
+"...     def __init__(self):\n"
+"...         self.data = []\n"
+"...     def write(self, stuff):\n"
+"...         self.data.append(stuff)\n"
+"...\n"
+">>> import sys\n"
+">>> sys.stdout = StdoutCatcher()\n"
+">>> print('foo')\n"
+">>> print('hello world!')\n"
+">>> sys.stderr.write(''.join(sys.stdout.data))\n"
+"foo\n"
+"hello world!"
 
 #: ../../faq/extending.rst:167
 msgid "How do I access a module written in Python from C?"
-msgstr ""
+msgstr "Jak přistupuji k modulu napsanému v Pythonu z C?"
 
 #: ../../faq/extending.rst:169
 msgid "You can get a pointer to the module object as follows::"
-msgstr ""
+msgstr "Ukazatel na objekt modulu můžete získat následovně::"
 
 #: ../../faq/extending.rst:171
 msgid "module = PyImport_ImportModule(\"<modulename>\");"
-msgstr ""
+msgstr "module = PyImport_ImportModule(\"<modulename>\");"
 
 #: ../../faq/extending.rst:173
 msgid ""
@@ -262,26 +350,35 @@ msgid ""
 "doesn't enter the module into any namespace -- it only ensures it has "
 "been initialized and is stored in :data:`sys.modules`."
 msgstr ""
+"Pokud modul ještě nebyl naimportován (tj. ještě není přítomen v "
+":data:`sys.modules`), toto ho inicializuje; jinak jednoduše vrátí hodnotu "
+"``sys.modules[\"<modulename>\"]``. Všimněte si, že to modul nevkládá do "
+"žádného jmenného prostoru -- pouze zajišťuje, že byl inicializován a je "
+"uložen v :data:`sys.modules`."
 
 #: ../../faq/extending.rst:179
 msgid ""
 "You can then access the module's attributes (i.e. any name defined in the"
 " module) as follows::"
 msgstr ""
+"K atributům modulu (tj. jakémukoli jménu definovanému v modulu) pak "
+"můžete přistupovat následovně::"
 
 #: ../../faq/extending.rst:182
 msgid "attr = PyObject_GetAttrString(module, \"<attrname>\");"
-msgstr ""
+msgstr "attr = PyObject_GetAttrString(module, \"<attrname>\");"
 
 #: ../../faq/extending.rst:184
 msgid ""
 "Calling :c:func:`PyObject_SetAttrString` to assign to variables in the "
 "module also works."
 msgstr ""
+"Volání :c:func:`PyObject_SetAttrString` pro přiřazení k proměnným v "
+"modulu také funguje."
 
 #: ../../faq/extending.rst:189
 msgid "How do I interface to C++ objects from Python?"
-msgstr ""
+msgstr "Jak propojím objekty C++ s Pythonem?"
 
 #: ../../faq/extending.rst:191
 msgid ""
@@ -292,14 +389,19 @@ msgid ""
 "building a new Python type around a C structure (pointer) type will also "
 "work for C++ objects."
 msgstr ""
+"V závislosti na vašich požadavcích existuje mnoho přístupů. Chcete-li to "
+"udělat ručně, začněte čtením :ref:`dokumentu \"Rozšiřování a vkládání\" "
+"<extending-index>`. Uvědomte si, že pro běhový systém Pythonu není velký "
+"rozdíl mezi C a C++ -- takže strategie vytvoření nového typu Pythonu "
+"kolem typu C struktury (ukazatele) bude fungovat i pro objekty C++."
 
 #: ../../faq/extending.rst:197
 msgid "For C++ libraries, see :ref:`c-wrapper-software`."
-msgstr ""
+msgstr "Pro knihovny C++ viz :ref:`c-wrapper-software`."
 
 #: ../../faq/extending.rst:201
 msgid "I added a module using the Setup file and the make fails; why?"
-msgstr ""
+msgstr "Přidal jsem modul pomocí souboru Setup a make selže; proč?"
 
 #: ../../faq/extending.rst:203
 msgid ""
@@ -307,28 +409,33 @@ msgid ""
 "process fails.  (Fixing this requires some ugly shell script hackery, and"
 " this bug is so minor that it doesn't seem worth the effort.)"
 msgstr ""
+"Setup musí končit novým řádkem, pokud tam nový řádek není, proces "
+"sestavení selže. (Oprava tohoto vyžaduje ošklivé hacky ve shell skriptu "
+"a tato chyba je tak malá, že to nestojí za námahu.)"
 
 #: ../../faq/extending.rst:209
 msgid "How do I debug an extension?"
-msgstr ""
+msgstr "Jak ladit rozšíření?"
 
 #: ../../faq/extending.rst:211
 msgid ""
 "When using GDB with dynamically loaded extensions, you can't set a "
 "breakpoint in your extension until your extension is loaded."
 msgstr ""
+"Při používání GDB s dynamicky načítanými rozšířeními nemůžete nastavit "
+"breakpoint ve vašem rozšíření, dokud není rozšíření načteno."
 
 #: ../../faq/extending.rst:214
 msgid "In your ``.gdbinit`` file (or interactively), add the command:"
-msgstr ""
+msgstr "Do souboru ``.gdbinit`` (nebo interaktivně) přidejte příkaz:"
 
 #: ../../faq/extending.rst:216
 msgid "br _PyImport_LoadDynamicModule"
-msgstr ""
+msgstr "br _PyImport_LoadDynamicModule"
 
 #: ../../faq/extending.rst:220
 msgid "Then, when you run GDB:"
-msgstr ""
+msgstr "Poté, když spustíte GDB:"
 
 #: ../../faq/extending.rst:222
 msgid ""
@@ -339,30 +446,42 @@ msgid ""
 "gdb) br myfunction.c:50\n"
 "gdb) continue"
 msgstr ""
+"$ gdb /local/bin/python\n"
+"gdb) run myscript.py\n"
+"gdb) continue # opakujte, dokud není rozšíření načteno\n"
+"gdb) finish   # aby bylo rozšíření načteno\n"
+"gdb) br myfunction.c:50\n"
+"gdb) continue"
 
 #: ../../faq/extending.rst:232
 msgid ""
 "I want to compile a Python module on my Linux system, but some files are "
 "missing. Why?"
 msgstr ""
+"Chci zkompilovat modul Pythonu na svém systému Linux, ale některé "
+"soubory chybí. Proč?"
 
 #: ../../faq/extending.rst:234
 msgid ""
 "Most packaged versions of Python omit some files required for compiling "
 "Python extensions."
 msgstr ""
+"Většina balíčkovaných verzí Pythonu vynechává některé soubory potřebné "
+"pro kompilaci rozšíření Pythonu."
 
 #: ../../faq/extending.rst:237
 msgid "For Red Hat, install the python3-devel RPM to get the necessary files."
 msgstr ""
+"Pro Red Hat nainstalujte RPM python3-devel, abyste získali potřebné "
+"soubory."
 
 #: ../../faq/extending.rst:239
 msgid "For Debian, run ``apt-get install python3-dev``."
-msgstr ""
+msgstr "Pro Debian spusťte ``apt-get install python3-dev``."
 
 #: ../../faq/extending.rst:242
 msgid "How do I tell \"incomplete input\" from \"invalid input\"?"
-msgstr ""
+msgstr "Jak rozliším \"neúplný vstup\" od \"neplatného vstupu\"?"
 
 #: ../../faq/extending.rst:244
 msgid ""
@@ -372,12 +491,19 @@ msgid ""
 " close your parentheses or triple string quotes), but it gives you a "
 "syntax error message immediately when the input is invalid."
 msgstr ""
+"Někdy chcete napodobit chování interaktivního interpretu Pythonu, kde "
+"vám dá pokračovací výzvu, když je vstup neúplný (např. zadali jste "
+"začátek příkazu \"if\" nebo jste neuzavřeli závorky nebo trojité uvozovky "
+"řetězce), ale okamžitě vám dá chybovou zprávu o syntaxi, když je vstup "
+"neplatný."
 
 #: ../../faq/extending.rst:250
 msgid ""
 "In Python you can use the :mod:`codeop` module, which approximates the "
 "parser's behavior sufficiently.  IDLE uses this, for example."
 msgstr ""
+"V Pythonu můžete použít modul :mod:`codeop`, který dostatečně aproximuje "
+"chování parseru. Používá to například IDLE."
 
 #: ../../faq/extending.rst:253
 msgid ""
@@ -388,10 +514,15 @@ msgid ""
 "function. See ``Modules/readline.c`` and ``Parser/myreadline.c`` for more"
 " hints."
 msgstr ""
+"Nejjednodušší způsob v C je zavolat :c:func:`PyRun_InteractiveLoop` "
+"(možná v samostatném vlákně) a nechat interpret Pythonu zpracovat vstup "
+"za vás. Můžete také nastavit :c:func:`PyOS_ReadlineFunctionPointer`, aby "
+"ukazoval na vaši vlastní vstupní funkci. Viz ``Modules/readline.c`` a "
+"``Parser/myreadline.c`` pro další tipy."
 
 #: ../../faq/extending.rst:260
 msgid "How do I find undefined g++ symbols __builtin_new or __pure_virtual?"
-msgstr ""
+msgstr "Jak najdu nedefinované symboly g++ __builtin_new nebo __pure_virtual?"
 
 #: ../../faq/extending.rst:262
 msgid ""
@@ -400,18 +531,26 @@ msgid ""
 "link your extension module using g++ (e.g., ``g++ -shared -o mymodule.so "
 "mymodule.o``)."
 msgstr ""
+"Pro dynamické načítání rozšiřujících modulů g++ musíte překompilovat "
+"Python, přelinkovat ho pomocí g++ (změňte LINKCC v Makefile modulů "
+"Pythonu) a linkovat váš rozšiřující modul pomocí g++ (např. ``g++ "
+"-shared -o mymodule.so mymodule.o``)."
 
 #: ../../faq/extending.rst:268
 msgid ""
 "Can I create an object class with some methods implemented in C and "
 "others in Python (e.g. through inheritance)?"
 msgstr ""
+"Mohu vytvořit třídu objektu s některými metodami implementovanými v C a "
+"jinými v Pythonu (např. prostřednictvím dědičnosti)?"
 
 #: ../../faq/extending.rst:270
 msgid ""
 "Yes, you can inherit from built-in classes such as :class:`int`, "
 ":class:`list`, :class:`dict`, etc."
 msgstr ""
+"Ano, můžete dědit z vestavěných tříd jako :class:`int`, :class:`list`, "
+":class:`dict` atd."
 
 #: ../../faq/extending.rst:273
 msgid ""
@@ -420,4 +559,7 @@ msgid ""
 " this from C++ (i.e. you can inherit from an extension class written in "
 "C++ using the BPL)."
 msgstr ""
-
+"Knihovna Boost Python Library (BPL, "
+"https://www.boost.org/libs/python/doc/index.html) poskytuje způsob, jak "
+"to udělat z C++ (tj. můžete dědit z rozšiřující třídy napsané v C++ "
+"pomocí BPL)."
