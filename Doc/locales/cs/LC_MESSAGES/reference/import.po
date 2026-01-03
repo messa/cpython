@@ -558,6 +558,11 @@ msgid ""
 "returning a spec, then a :exc:`ModuleNotFoundError` is raised.  Any other "
 "exceptions raised are simply propagated up, aborting the import process."
 msgstr ""
+"Pokud meta path finder ví, jak zpracovat pojmenovaný modul, vrátí objekt "
+"spec. Pokud nemůže zpracovat pojmenovaný modul, vrátí ``None``. Pokud "
+"zpracování :data:`sys.meta_path` dosáhne konce seznamu bez vrácení spec, je "
+"vyvolána :exc:`ModuleNotFoundError`. Jakékoli jiné výjimky jsou jednoduše "
+"propagovány nahoru, čímž se přeruší proces importu."
 
 #: ../../reference/import.rst:297
 msgid ""
@@ -572,6 +577,15 @@ msgid ""
 "existing module object that will be the target of loading later. The import "
 "system passes in a target module only during reload."
 msgstr ""
+"Metoda :meth:`~importlib.abc.MetaPathFinder.find_spec` meta path finderů je "
+"volána s dvěma nebo třemi argumenty. První je plně kvalifikované jméno "
+"importovaného modulu, například ``foo.bar.baz``. Druhý argument jsou záznamy"
+" cesty pro vyhledání modulu. U modulů na nejvyšší úrovni je druhý argument "
+"``None``, ale u submodulů nebo subbalíčků je druhý argument hodnotou "
+"atributu ``__path__`` balíčku rodiče. Pokud příslušný atribut ``__path__`` "
+"není dostupný, je vyvolána :exc:`ModuleNotFoundError`. Třetí argument je "
+"existující objekt modulu, který bude cílem pozdějšího načítání. Importní "
+"systém prosazuje cílový modul pouze během reloadu."
 
 #: ../../reference/import.rst:308
 msgid ""
@@ -585,6 +599,14 @@ msgid ""
 "traversal will call ``mpf.find_spec(\"foo.bar.baz\", foo.bar.__path__, "
 "None)``."
 msgstr ""
+"Meta path může být prochvázen několikrát pro jednu žádost o import. "
+"Například za předpokladu, že žádný z modulů nebyl již uložen do mezipaměti, "
+"import ``foo.bar.baz`` nejprve provede import na nejvyšší úrovni, volajícího"
+" ``mpf.find_spec(\"foo\", None, None)`` na každém meta path finderu "
+"(``mpf``). Poté, co je ``foo`` importován, ``foo.bar`` bude importován "
+"procházením meta path podruhé, volajícího ``mpf.find_spec(\"foo.bar\", "
+"foo.__path__, None)``. Jakmile je ``foo.bar`` importován, poslední průchod "
+"zavolá ``mpf.find_spec(\"foo.bar.baz\", foo.bar.__path__, None)``."
 
 #: ../../reference/import.rst:318
 msgid ""
@@ -592,6 +614,9 @@ msgid ""
 "always return ``None`` when anything other than ``None`` is passed as the "
 "second argument."
 msgstr ""
+"Některé meta path findery podporují pouze importy na nejvyšší úrovni. Tyto "
+"importéry vždy vrátí ``None``, když je jako druhý argument předáno cokoli "
+"jiného než ``None``."
 
 #: ../../reference/import.rst:322
 msgid ""
@@ -1492,6 +1517,11 @@ msgid ""
 " this path entry) and return ``None``, indicating that this :term:`meta path"
 " finder` could not find the module."
 msgstr ""
+"Pokud iterace :data:`sys.path_hooks` skončí bez vrácení :term:`path entry "
+"finder`, metoda :meth:`~importlib.machinery.PathFinder.find_spec` path based"
+" finderu uloží ``None`` do :data:`sys.path_importer_cache` (aby se uvedlo, "
+"že pro tuto cestu neexistuje finder) a vrátí ``None``, což naznačuje, že "
+"tento :term:`meta path finder` nemohl najít modul."
 
 #: ../../reference/import.rst:760
 msgid ""
@@ -1500,6 +1530,10 @@ msgid ""
 "used to ask the finder for a module spec, which is then used when loading "
 "the module."
 msgstr ""
+"Pokud je :term:`path entry finder` *vrácen* jedním z :term:`path entry hook`"
+" volatelných na :data:`sys.path_hooks`, pak se k dotazování finderu na spec "
+"modulu používá následující protokol, který se pak používá při načítání "
+"modulu."
 
 #: ../../reference/import.rst:765
 msgid ""
@@ -1512,10 +1546,18 @@ msgid ""
 ":meth:`importlib.machinery.PathFinder.find_spec` will be the actual current "
 "working directory and not the empty string."
 msgstr ""
+"Aktuální pracovní adresář -- označovaný prázdným řetězcem -- je zpracováván "
+"mírně odlišně od ostatních záznamů na :data:`sys.path`. Nejprve, pokud nelze"
+" určit aktuální pracovní adresář nebo je zjištěno, že neexistuje, žádná "
+"hodnota se neukládá do :data:`sys.path_importer_cache`. Zadruhé, hodnota "
+"aktuálního pracovního adresáře se vyhledává nově pro každý lookup modulu. "
+"Zatřetí, cesta použitá pro :data:`sys.path_importer_cache` a vrácená "
+":meth:`importlib.machinery.PathFinder.find_spec` bude skutečný aktuální "
+"pracovní adresář, nikoli prázdný řetězec."
 
 #: ../../reference/import.rst:775
 msgid "Path entry finder protocol"
-msgstr ""
+msgstr "Protokol path entry finder"
 
 #: ../../reference/import.rst:777
 msgid ""
@@ -1523,6 +1565,9 @@ msgid ""
 "contribute portions to namespace packages, path entry finders must implement"
 " the :meth:`~importlib.abc.PathEntryFinder.find_spec` method."
 msgstr ""
+"Aby bylo možné podporovat importy modulů a inicializovaných balíčků a také "
+"přispívat podíly do balíčků oboru názvů, musí path entry findery "
+"implementovat metodu :meth:`~importlib.abc.PathEntryFinder.find_spec`."
 
 #: ../../reference/import.rst:781
 msgid ""
@@ -1531,6 +1576,10 @@ msgid ""
 " module.  ``find_spec()`` returns a fully populated spec for the module. "
 "This spec will always have \"loader\" set (with one exception)."
 msgstr ""
+":meth:`~importlib.abc.PathEntryFinder.find_spec` bere dva argumenty: plně "
+"kvalifikované jméno importovaného modulu a (nepovinný) cílový modul. "
+"``find_spec()`` vrací plně vyplnený spec modulu. Tento spec bude mít vždy "
+"nastaveného \"loader\" (s jednou výjimkou)."
 
 #: ../../reference/import.rst:786
 msgid ""
@@ -1538,6 +1587,9 @@ msgid ""
 ":term:`portion`, the path entry finder sets ``submodule_search_locations`` "
 "to a list containing the portion."
 msgstr ""
+"Aby se import machinery avizovalo, že spec reprezentuje obor názvů "
+":term:`portion`, nastaví path entry finder ``submodule_search_locations`` na"
+" seznam obsahující podíl."
 
 #: ../../reference/import.rst:790
 msgid ""
@@ -1545,6 +1597,9 @@ msgid ""
 ":meth:`!find_loader` and :meth:`!find_module`, both of which are now "
 "deprecated, but will be used if ``find_spec()`` is not defined."
 msgstr ""
+":meth:`~importlib.abc.PathEntryFinder.find_spec` nahradila "
+":meth:`!find_loader` a :meth:`!find_module`, které jsou nyní zastaralé, ale "
+"budou použity, pokud není definován ``find_spec()``."
 
 #: ../../reference/import.rst:796
 msgid ""
@@ -1553,6 +1608,10 @@ msgid ""
 " backward compatibility.  However, if ``find_spec()`` is implemented on the "
 "path entry finder, the legacy methods are ignored."
 msgstr ""
+"Starší path entry findery mohou místo ``find_spec()`` implementovat jednu z "
+"těchto dvou zastaralých metod. Metody jsou stále respektovány pro "
+"kompatibilitu dozadu. Pokud je však na path entry finderu implementován "
+"``find_spec()``, jsou starší metody ignorovány."
 
 #: ../../reference/import.rst:801
 msgid ""
@@ -1560,6 +1619,9 @@ msgid ""
 "module being imported.  ``find_loader()`` returns a 2-tuple where the first "
 "item is the loader and the second item is a namespace :term:`portion`."
 msgstr ""
+":meth:`!find_loader` bere jeden argument, plně kvalifikované jméno "
+"importovaného modulu. ``find_loader()`` vrací 2-tici, kde první položka je "
+"loader a druhá položka je obor názvů :term:`portion`."
 
 #: ../../reference/import.rst:806
 msgid ""
@@ -1570,6 +1632,12 @@ msgid ""
 "(they are expected to record the appropriate path information from the "
 "initial call to the path hook)."
 msgstr ""
+"Pro zpětnou kompatibilitu s jinými implementacemi protokolu importu mnoho "
+"path entry finderů podporuje také stejnou, tradiční metodu "
+"``find_module()``, kterou podporují meta path findery. Nicméně metody "
+"``find_module()`` path entry finderu nikdy nejsou volány s argumentem "
+"``path`` (očekává se, že si zaznamenají příslušné informace o cestě z "
+"počátečního volání na path hook)."
 
 #: ../../reference/import.rst:813
 msgid ""
@@ -1579,20 +1647,27 @@ msgid ""
 "entry finder, the import system will always call ``find_loader()`` in "
 "preference to ``find_module()``."
 msgstr ""
+"Metoda ``find_module()`` na path entry finderech je zastaralá, protože "
+"neumožňuje path entry finderu přispívat podíly do balíčků oboru názvů. Pokud"
+" na path entry finderu existují jak ``find_loader()`` tak ``find_module()``,"
+" import systém bude vždy volat ``find_loader()`` v preferenci před "
+"``find_module()``."
 
 #: ../../reference/import.rst:819
 msgid ""
 "Calls to :meth:`!find_module` and :meth:`!find_loader` by the import system "
 "will raise :exc:`ImportWarning`."
 msgstr ""
+"Volání :meth:`!find_module` a :meth:`!find_loader` import systémem budou "
+"vyvolávat :exc:`ImportWarning`."
 
 #: ../../reference/import.rst:824
 msgid "``find_module()`` and ``find_loader()`` have been removed."
-msgstr ""
+msgstr "``find_module()`` a ``find_loader()`` byly odstraněny."
 
 #: ../../reference/import.rst:829
 msgid "Replacing the standard import system"
-msgstr ""
+msgstr "Nahrazení standardního importního systému"
 
 #: ../../reference/import.rst:831
 msgid ""
@@ -1600,6 +1675,9 @@ msgid ""
 "delete the default contents of :data:`sys.meta_path`, replacing them "
 "entirely with a custom meta path hook."
 msgstr ""
+"Nejspolehlivějším mechanismem pro nahrazení celého importního systému je "
+"smazání výchozího obsahu :data:`sys.meta_path` a jejich úplné nahrazení "
+"vlastním meta path hookem."
 
 #: ../../reference/import.rst:835
 msgid ""
@@ -1607,6 +1685,9 @@ msgid ""
 " affecting other APIs that access the import system, then replacing the "
 "builtin :func:`__import__` function may be sufficient."
 msgstr ""
+"Pokud je přijatelné pouze změnit chování příkazů importu bez ovlivnění "
+"dalších API, která přistupují do importního systému, pak by nahrazení "
+"vestavěné funkce :func:`__import__` mohlo stačit."
 
 #: ../../reference/import.rst:839
 msgid ""
@@ -1617,10 +1698,16 @@ msgid ""
 "``None``. The latter indicates that the meta path search should continue, "
 "while raising an exception terminates it immediately."
 msgstr ""
+"Pro selektivní prevenci importu některých modulů z hooku brzy na meta path "
+"(spíše než zákaz standardního importního systému zcela), stačí vyvolat "
+":exc:`ModuleNotFoundError` přímo z "
+":meth:`~importlib.abc.MetaPathFinder.find_spec` místo vrácení ``None``. "
+"Druhé jmenované naznačuje, že by mělo pokračovat hledání meta path, zatímco "
+"vyvolání výjimky jej okamžitě ukončí."
 
 #: ../../reference/import.rst:849
 msgid "Package Relative Imports"
-msgstr ""
+msgstr "Relativní importy balíčku"
 
 #: ../../reference/import.rst:851
 msgid ""
@@ -1630,6 +1717,11 @@ msgid ""
 "level per dot after the first. For example, given the following package "
 "layout::"
 msgstr ""
+"Relativní importy používají vedoucí tečky. Jedna vedoucí tečka naznačuje "
+"relativní import, počínaje aktuálním balíčkem. Dvě nebo více vedoucích teček"
+" naznačuje relativní import do rodiče (rodičů) aktuálního balíčku, jedna "
+"úroveň na tečku za první. Například vzhledem k následujícímu rozložení "
+"balíčku::"
 
 #: ../../reference/import.rst:856
 msgid ""
@@ -1644,12 +1736,24 @@ msgid ""
 "        moduleZ.py\n"
 "    moduleA.py"
 msgstr ""
+"balíček/\n"
+"    __init__.py\n"
+"    subpackage1/\n"
+"        __init__.py\n"
+"        moduleX.py\n"
+"        moduleY.py\n"
+"    subpackage2/\n"
+"        __init__.py\n"
+"        moduleZ.py\n"
+"    moduleA.py"
 
 #: ../../reference/import.rst:867
 msgid ""
 "In either ``subpackage1/moduleX.py`` or ``subpackage1/__init__.py``, the "
 "following are valid relative imports::"
 msgstr ""
+"V ``subpackage1/moduleX.py`` nebo ``subpackage1/__init__.py`` jsou "
+"následující platné relativní importy::"
 
 #: ../../reference/import.rst:870
 msgid ""
@@ -1660,6 +1764,12 @@ msgid ""
 "from ..subpackage2.moduleZ import eggs\n"
 "from ..moduleA import foo"
 msgstr ""
+"from .moduleY import spam\n"
+"from .moduleY import spam as ham\n"
+"from . import moduleY\n"
+"from ..subpackage1 import moduleY\n"
+"from ..subpackage2.moduleZ import eggs\n"
+"from ..moduleA import foo"
 
 #: ../../reference/import.rst:877
 msgid ""
@@ -1667,20 +1777,24 @@ msgid ""
 "syntax, but relative imports may only use the second form; the reason for "
 "this is that::"
 msgstr ""
+"Absolutní importy mohou používat syntaxi ``import <>`` nebo ``from <> import"
+" <>``, ale relativní importy mohou používat pouze druhý formulář; důvod je::"
 
 #: ../../reference/import.rst:881
 msgid "import XXX.YYY.ZZZ"
-msgstr ""
+msgstr "import XXX.YYY.ZZZ"
 
 #: ../../reference/import.rst:883
 msgid ""
 "should expose ``XXX.YYY.ZZZ`` as a usable expression, but .moduleY is not a "
 "valid expression."
 msgstr ""
+"měl by zveřejnit ``XXX.YYY.ZZZ`` jako použitelný výraz, ale .moduleY není "
+"platný výraz."
 
 #: ../../reference/import.rst:890
 msgid "Special considerations for __main__"
-msgstr ""
+msgstr "Zvláštní aspekty pro __main__"
 
 #: ../../reference/import.rst:892
 msgid ""
@@ -1692,16 +1806,25 @@ msgid ""
 "initialized depends on the flags and other options with which the "
 "interpreter is invoked."
 msgstr ""
+"Modul :mod:`__main__` je zvláštní případ vzhledem k importnímu systému "
+"Pythonu. Jak je poznamenáno :ref:`jinde <programs>`, modul ``__main__`` je "
+"přímo inicializován při spuštění interpretu, podobně jako :mod:`sys` a "
+":mod:`builtins`. Nicméně na rozdíl od těch dvou se striktně nejedná o "
+"vestavěný modul. Je to proto, že způsob, jakým je ``__main__`` "
+"inicializován, závisí na příznacích a dalších možnostech, se kterými je "
+"interpret vyvolán."
 
 #: ../../reference/import.rst:903
 msgid "__main__.__spec__"
-msgstr ""
+msgstr "__main__.__spec__"
 
 #: ../../reference/import.rst:905
 msgid ""
 "Depending on how :mod:`__main__` is initialized, ``__main__.__spec__`` gets "
 "set appropriately or to ``None``."
 msgstr ""
+"V závislosti na tom, jak je :mod:`__main__` inicializován, se "
+"``__main__.__spec__`` nastaví odpovídajícím způsobem nebo na ``None``."
 
 #: ../../reference/import.rst:908
 msgid ""
@@ -1710,6 +1833,10 @@ msgid ""
 " populated when the ``__main__`` module is loaded as part of executing a "
 "directory, zipfile or other :data:`sys.path` entry."
 msgstr ""
+"Když je Python spuštěn s možností :option:`-m`, ``__spec__`` se nastaví na "
+"spec modulu odpovídajícího modulu nebo balíčku. ``__spec__`` je také "
+"vyplněn, když je modul ``__main__`` načten jako součást spouštění adresáře, "
+"zipfile nebo jiného záznamu :data:`sys.path`."
 
 #: ../../reference/import.rst:913
 msgid ""
@@ -1717,22 +1844,25 @@ msgid ""
 "``__main__.__spec__`` is set to ``None``, as the code used to populate the "
 ":mod:`__main__` does not correspond directly with an importable module:"
 msgstr ""
+"V :ref:`zbývajících případech <using-on-interface-options>` je "
+"``__main__.__spec__`` nastaveno na ``None``, protože kód použitý k vyplnění "
+":mod:`__main__` neodpovídá přímo importovatelému modulu:"
 
 #: ../../reference/import.rst:917
 msgid "interactive prompt"
-msgstr ""
+msgstr "interaktivní výzva"
 
 #: ../../reference/import.rst:918
 msgid ":option:`-c` option"
-msgstr ""
+msgstr "možnost :option:`-c`"
 
 #: ../../reference/import.rst:919
 msgid "running from stdin"
-msgstr ""
+msgstr "spuštění ze standardního vstupu"
 
 #: ../../reference/import.rst:920
 msgid "running directly from a source or bytecode file"
-msgstr ""
+msgstr "přímé spuštění ze zdrojového souboru nebo souboru bytekódu"
 
 #: ../../reference/import.rst:922
 msgid ""
@@ -1741,6 +1871,10 @@ msgid ""
 " the :option:`-m` switch if valid module metadata is desired in "
 ":mod:`__main__`."
 msgstr ""
+"Poznamenejte si, že ``__main__.__spec__`` je vždy ``None`` v posledním "
+"případě, *i když* by soubor technicky mohl být importován přímo jako modul. "
+"Použijte přepínač :option:`-m`, pokud je požadována platná metadata modulu v"
+" :mod:`__main__`."
 
 #: ../../reference/import.rst:927
 msgid ""
@@ -1750,10 +1884,16 @@ msgid ""
 "__name__ == \"__main__\":`` checks only execute when the module is used to "
 "populate the ``__main__`` namespace, and not during normal import."
 msgstr ""
+"Poznamenejte si také, že i když ``__main__`` odpovídá importovatelému modulu"
+" a ``__main__.__spec__`` je odpovídajícím způsobem nastaveno, jsou stále "
+"považovány za *různé* moduly. Je to způsobeno tím, že bloky stražené "
+"kontrolami ``if __name__ == \"__main__\":`` se spouští pouze tehdy, když se "
+"modul používá k vyplnění oboru názvů ``__main__``, a ne během normálního "
+"importu."
 
 #: ../../reference/import.rst:935
 msgid "References"
-msgstr ""
+msgstr "Reference"
 
 #: ../../reference/import.rst:937
 msgid ""
@@ -1762,12 +1902,18 @@ msgid ""
 "<https://www.python.org/doc/essays/packages/>`_ is still available to read, "
 "although some details have changed since the writing of that document."
 msgstr ""
+"Importní mechanika se od prvních dnů Pythonu výrazně vyvíjela. Původní "
+"`specifikace balíčků <https://www.python.org/doc/essays/packages/>`_ je "
+"stále dostupná k přečtení, ačkoli se některé detaily od doby sepsání tohoto "
+"dokumentu změnily."
 
 #: ../../reference/import.rst:942
 msgid ""
 "The original specification for :data:`sys.meta_path` was :pep:`302`, with "
 "subsequent extension in :pep:`420`."
 msgstr ""
+"Původní specifikace :data:`sys.meta_path` byla :pep:`302`, s následným "
+"rozšířením v :pep:`420`."
 
 #: ../../reference/import.rst:945
 msgid ""
@@ -1775,12 +1921,17 @@ msgid ""
 "Python 3.3.  :pep:`420` also introduced the :meth:`!find_loader` protocol as"
 " an alternative to :meth:`!find_module`."
 msgstr ""
+":pep:`420` představila :term:`namespace packages <namespace package>` pro "
+"Python 3.3. :pep:`420` také představila protokol :meth:`!find_loader` jako "
+"alternativu k :meth:`!find_module`."
 
 #: ../../reference/import.rst:949
 msgid ""
 ":pep:`366` describes the addition of the ``__package__`` attribute for "
 "explicit relative imports in main modules."
 msgstr ""
+":pep:`366` popisuje přidání atributu ``__package__`` pro explicitní "
+"relativní importy v hlavních modulech."
 
 #: ../../reference/import.rst:952
 msgid ""
@@ -1788,10 +1939,13 @@ msgid ""
 "proposed ``__name__`` for semantics :pep:`366` would eventually specify for "
 "``__package__``."
 msgstr ""
+":pep:`328` představila absolutní a explicitní relativní importy a zpočátku "
+"navrhla ``__name__`` pro sémantiku, kterou by :pep:`366` nakonec "
+"specifikovat pro ``__package__``."
 
 #: ../../reference/import.rst:956
 msgid ":pep:`338` defines executing modules as scripts."
-msgstr ""
+msgstr ":pep:`338` definuje spouštění modulů jako skripty."
 
 #: ../../reference/import.rst:958
 msgid ""
@@ -1801,14 +1955,18 @@ msgid ""
 " of several APIs in the import system and also addition of new methods to "
 "finders and loaders."
 msgstr ""
+":pep:`451` přidává zapouzdření stavu importu per-modul v objektech spec. "
+"Také převádí největší část boilerplate povinností loadrů zpět do importní "
+"mechaniky. Tyto změny umožňují zastarání několika API v importním systému a "
+"také přidání nových metod do finderů a loaderů."
 
 #: ../../reference/import.rst:965
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../reference/import.rst:966
 msgid "See :class:`types.ModuleType`."
-msgstr ""
+msgstr "Viz :class:`types.ModuleType`."
 
 #: ../../reference/import.rst:968
 msgid ""
@@ -1818,99 +1976,104 @@ msgid ""
 " may replace itself in :data:`sys.modules`.  This is implementation-specific"
 " behavior that is not guaranteed to work in other Python implementations."
 msgstr ""
+"Implementace importlib se vyhýbá přímému použití vrácené hodnoty. Místo toho"
+" získá objekt modulu vyhledáním jména modulu v :data:`sys.modules`. Nepřímým"
+" důsledkem toho je, že importovaný modul může nahradit sám sebe v "
+":data:`sys.modules`. Jedná se o chování specifické pro implementaci, které "
+"není zaručeno, že bude fungovat v jiných implementacích Pythonu."
 
 #: ../../reference/import.rst:8
 msgid "import machinery"
-msgstr ""
+msgstr "importní mechanika"
 
 #: ../../reference/import.rst:64 ../../reference/import.rst:95
 #: ../../reference/import.rst:131
 msgid "package"
-msgstr ""
+msgstr "balíček"
 
 #: ../../reference/import.rst:95
 msgid "regular"
-msgstr ""
+msgstr "obyčejný"
 
 #: ../../reference/import.rst:131
 msgid "namespace"
-msgstr ""
+msgstr "obor názvů"
 
 #: ../../reference/import.rst:131
 msgid "portion"
-msgstr ""
+msgstr "podíl"
 
 #: ../../reference/import.rst:177
 msgid "sys.modules"
-msgstr ""
+msgstr "sys.modules"
 
 #: ../../reference/import.rst:212 ../../reference/import.rst:278
 msgid "finder"
-msgstr ""
+msgstr "finder"
 
 #: ../../reference/import.rst:212
 msgid "loader"
-msgstr ""
+msgstr "loader"
 
 #: ../../reference/import.rst:212
 msgid "module spec"
-msgstr ""
+msgstr "spec modulu"
 
 #: ../../reference/import.rst:251
 msgid "import hooks"
-msgstr ""
+msgstr "import hooks"
 
 #: ../../reference/import.rst:251
 msgid "meta hooks"
-msgstr ""
+msgstr "meta hooks"
 
 #: ../../reference/import.rst:251
 msgid "path hooks"
-msgstr ""
+msgstr "path hooks"
 
 #: ../../reference/import.rst:251
 msgid "hooks"
-msgstr ""
+msgstr "hooks"
 
 #: ../../reference/import.rst:251
 msgid "import"
-msgstr ""
+msgstr "import"
 
 #: ../../reference/import.rst:251
 msgid "meta"
-msgstr ""
+msgstr "meta"
 
 #: ../../reference/import.rst:251
 msgid "path"
-msgstr ""
+msgstr "path"
 
 #: ../../reference/import.rst:278
 msgid "sys.meta_path"
-msgstr ""
+msgstr "sys.meta_path"
 
 #: ../../reference/import.rst:278
 msgid "find_spec"
-msgstr ""
+msgstr "find_spec"
 
 #: ../../reference/import.rst:638
 msgid "path based finder"
-msgstr ""
+msgstr "path based finder"
 
 #: ../../reference/import.rst:687
 msgid "sys.path"
-msgstr ""
+msgstr "sys.path"
 
 #: ../../reference/import.rst:687
 msgid "sys.path_hooks"
-msgstr ""
+msgstr "sys.path_hooks"
 
 #: ../../reference/import.rst:687
 msgid "sys.path_importer_cache"
-msgstr ""
+msgstr "sys.path_importer_cache"
 
 #: ../../reference/import.rst:687
 msgid "PYTHONPATH"
-msgstr ""
+msgstr "PYTHONPATH"
 
 #~ msgid ""
 #~ "module = None\n"

@@ -11,166 +11,224 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../reference/compound_stmts.rst:5
 msgid "Compound statements"
-msgstr ""
+msgstr "Složené příkazy"
 
 #: ../../reference/compound_stmts.rst:9
 msgid ""
 "Compound statements contain (groups of) other statements; they affect or "
-"control the execution of those other statements in some way.  In general,"
-" compound statements span multiple lines, although in simple incarnations"
-" a whole compound statement may be contained in one line."
+"control the execution of those other statements in some way.  In general, "
+"compound statements span multiple lines, although in simple incarnations a "
+"whole compound statement may be contained in one line."
 msgstr ""
+"Složené příkazy obsahují (skupiny) dalších příkazů; ovlivňují nebo řídí "
+"jejich provádění nějakým způsobem. Složené příkazy se obecně rozprostírají "
+"přes více řádků, přestože v jednoduchých případech může být celý složený "
+"příkaz obsažen na jednom řádku."
 
 #: ../../reference/compound_stmts.rst:14
 msgid ""
-"The :keyword:`if`, :keyword:`while` and :keyword:`for` statements "
-"implement traditional control flow constructs.  :keyword:`try` specifies "
-"exception handlers and/or cleanup code for a group of statements, while "
-"the :keyword:`with` statement allows the execution of initialization and "
-"finalization code around a block of code.  Function and class definitions"
-" are also syntactically compound statements."
+"The :keyword:`if`, :keyword:`while` and :keyword:`for` statements implement "
+"traditional control flow constructs.  :keyword:`try` specifies exception "
+"handlers and/or cleanup code for a group of statements, while the "
+":keyword:`with` statement allows the execution of initialization and "
+"finalization code around a block of code.  Function and class definitions "
+"are also syntactically compound statements."
 msgstr ""
+"Příkazy :keyword:`if`, :keyword:`while` a :keyword:`for` implementují "
+"tradiční konstrukty řízení toku. :keyword:`try` určuje obslužné programy "
+"výjimek a/nebo čistící kód pro skupinu příkazů, zatímco příkaz "
+":keyword:`with` umožňuje provádění inicializačního a finalizačního kódu "
+"kolem bloku kódu. Definice funkcí a tříd jsou také syntakticky složenými "
+"příkazy."
 
 #: ../../reference/compound_stmts.rst:26
 msgid ""
-"A compound statement consists of one or more 'clauses.'  A clause "
-"consists of a header and a 'suite.'  The clause headers of a particular "
-"compound statement are all at the same indentation level. Each clause "
-"header begins with a uniquely identifying keyword and ends with a colon."
-"  A suite is a group of statements controlled by a clause.  A suite can "
-"be one or more semicolon-separated simple statements on the same line as "
-"the header, following the header's colon, or it can be one or more "
-"indented statements on subsequent lines.  Only the latter form of a suite"
-" can contain nested compound statements; the following is illegal, mostly"
-" because it wouldn't be clear to which :keyword:`if` clause a following "
-":keyword:`else` clause would belong::"
+"A compound statement consists of one or more 'clauses.'  A clause consists "
+"of a header and a 'suite.'  The clause headers of a particular compound "
+"statement are all at the same indentation level. Each clause header begins "
+"with a uniquely identifying keyword and ends with a colon.  A suite is a "
+"group of statements controlled by a clause.  A suite can be one or more "
+"semicolon-separated simple statements on the same line as the header, "
+"following the header's colon, or it can be one or more indented statements "
+"on subsequent lines.  Only the latter form of a suite can contain nested "
+"compound statements; the following is illegal, mostly because it wouldn't be"
+" clear to which :keyword:`if` clause a following :keyword:`else` clause "
+"would belong::"
 msgstr ""
+"Složený příkaz se skládá z jedné nebo více klauzulí. Klauzule se skládá z "
+"hlavičky a suite. Hlavičky klauzulí konkrétního složeného příkazu jsou "
+"všechny na stejné úrovni odsazení. Každá hlavička klauzule začíná jedinečně "
+"identifikujícím klíčovým slovem a končí dvojtečkou. Suite je skupina příkazů"
+" řízená klauzulí. Suite může být jeden nebo více jednoduchých příkazů "
+"oddělených středníkem na stejném řádku jako hlavička, za dvojtečkou "
+"hlavičky, nebo může být jeden nebo více odsazených příkazů na následujících "
+"řádcích. Pouze druhá forma suite může obsahovat vnořené složené příkazy; "
+"následující je nelegální, především proto, že by nebylo jasné, k jaké "
+"klauzuli :keyword:`if` by patřila následující klauzule :keyword:`else`::"
 
 #: ../../reference/compound_stmts.rst:37
 msgid "if test1: if test2: print(x)"
-msgstr ""
+msgstr "if test1: if test2: print(x)"
 
 #: ../../reference/compound_stmts.rst:39
 msgid ""
-"Also note that the semicolon binds tighter than the colon in this "
-"context, so that in the following example, either all or none of the "
-":func:`print` calls are executed::"
+"Also note that the semicolon binds tighter than the colon in this context, "
+"so that in the following example, either all or none of the :func:`print` "
+"calls are executed::"
 msgstr ""
+"Všimněte si také, že středník se váže těsněji než dvojtečka v tomto "
+"kontextu, takže v následujícím příkladu se buď provedou všechna volání "
+":func:`print`, nebo žádné::"
 
 #: ../../reference/compound_stmts.rst:43
 msgid "if x < y < z: print(x); print(y); print(z)"
-msgstr ""
+msgstr "if x < y < z: print(x); print(y); print(z)"
 
 #: ../../reference/compound_stmts.rst:45
 msgid "Summarizing:"
-msgstr ""
+msgstr "Shrnutí:"
 
 #: ../../reference/compound_stmts.rst:69
 msgid ""
 "Note that statements always end in a ``NEWLINE`` possibly followed by a "
-"``DEDENT``.  Also note that optional continuation clauses always begin "
-"with a keyword that cannot start a statement, thus there are no "
-"ambiguities (the 'dangling :keyword:`else`' problem is solved in Python "
-"by requiring nested :keyword:`if` statements to be indented)."
+"``DEDENT``.  Also note that optional continuation clauses always begin with "
+"a keyword that cannot start a statement, thus there are no ambiguities (the "
+"'dangling :keyword:`else`' problem is solved in Python by requiring nested "
+":keyword:`if` statements to be indented)."
 msgstr ""
+"Všimněte si, že příkazy vždy končí ``NEWLINE`` případně následovanou "
+"``DEDENT``. Všimněte si také, že volitelné pokračovací klauzule vždy "
+"začínají klíčovým slovem, které nemůže začít příkaz, takže nejsou žádné "
+"nejednoznačnosti (problém \"visícího :keyword:`else`\" je v Pythonu vyřešen "
+"tím, že se vyžaduje odsazení vnořených příkazů :keyword:`if`)."
 
 #: ../../reference/compound_stmts.rst:75
 msgid ""
-"The formatting of the grammar rules in the following sections places each"
-" clause on a separate line for clarity."
+"The formatting of the grammar rules in the following sections places each "
+"clause on a separate line for clarity."
 msgstr ""
+"Formátování pravidel gramatiky v následujících oddílech umisťuje každou "
+"klauzuli na samostatný řádek pro přehlednost."
 
 #: ../../reference/compound_stmts.rst:84
 msgid "The :keyword:`!if` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!if`"
 
 #: ../../reference/compound_stmts.rst:92
 msgid "The :keyword:`if` statement is used for conditional execution:"
-msgstr ""
+msgstr "Příkaz :keyword:`if` se používá pro podmíněné provedení:"
 
 #: ../../reference/compound_stmts.rst:99
 msgid ""
-"It selects exactly one of the suites by evaluating the expressions one by"
-" one until one is found to be true (see section :ref:`booleans` for the "
+"It selects exactly one of the suites by evaluating the expressions one by "
+"one until one is found to be true (see section :ref:`booleans` for the "
 "definition of true and false); then that suite is executed (and no other "
 "part of the :keyword:`if` statement is executed or evaluated).  If all "
-"expressions are false, the suite of the :keyword:`else` clause, if "
-"present, is executed."
+"expressions are false, the suite of the :keyword:`else` clause, if present, "
+"is executed."
 msgstr ""
+"Vybere právě jednu ze suite vyhodnocením výrazů jeden za druhým, dokud se "
+"nenajde jeden, který je pravdivý (viz část :ref:`booleans` pro definici "
+"pravdy a nepravdy); pak se ta suite provádí (a žádná jiná část příkazu "
+":keyword:`if` se neprovádí ani nevyhodnocuje). Pokud jsou všechny výrazy "
+"nepravdivé, suite klauzule :keyword:`else`, pokud je přítomna, se provédí."
 
 #: ../../reference/compound_stmts.rst:109
 msgid "The :keyword:`!while` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!while`"
 
 #: ../../reference/compound_stmts.rst:117
 msgid ""
-"The :keyword:`while` statement is used for repeated execution as long as "
-"an expression is true:"
+"The :keyword:`while` statement is used for repeated execution as long as an "
+"expression is true:"
 msgstr ""
+"Příkaz :keyword:`while` se používá pro opakované provádění, pokud je výraz "
+"pravdivý:"
 
 #: ../../reference/compound_stmts.rst:124
 msgid ""
-"This repeatedly tests the expression and, if it is true, executes the "
-"first suite; if the expression is false (which may be the first time it "
-"is tested) the suite of the :keyword:`!else` clause, if present, is "
-"executed and the loop terminates."
+"This repeatedly tests the expression and, if it is true, executes the first "
+"suite; if the expression is false (which may be the first time it is tested)"
+" the suite of the :keyword:`!else` clause, if present, is executed and the "
+"loop terminates."
 msgstr ""
+"Toto opakovaně testuje výraz a, pokud je pravdivý, provede první suite; "
+"pokud je výraz nepravdivý (což může být poprvné testo), suite klauzule "
+":keyword:`!else`, pokud je přítomna, se provédí a smyˇcka se ukončí."
 
 #: ../../reference/compound_stmts.rst:133
 msgid ""
-"A :keyword:`break` statement executed in the first suite terminates the "
-"loop without executing the :keyword:`!else` clause's suite.  A "
-":keyword:`continue` statement executed in the first suite skips the rest "
-"of the suite and goes back to testing the expression."
+"A :keyword:`break` statement executed in the first suite terminates the loop"
+" without executing the :keyword:`!else` clause's suite.  A "
+":keyword:`continue` statement executed in the first suite skips the rest of "
+"the suite and goes back to testing the expression."
 msgstr ""
+"Příkaz :keyword:`break` provedený v první suite ukončí smyˇcku bez provedení"
+" suite klauzule :keyword:`!else`. Příkaz :keyword:`continue` provedený v "
+"první suite přeskočí zbytek suite a vrátí se k testování výrazu."
 
 #: ../../reference/compound_stmts.rst:142
 msgid "The :keyword:`!for` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!for`"
 
 #: ../../reference/compound_stmts.rst:153
 msgid ""
 "The :keyword:`for` statement is used to iterate over the elements of a "
 "sequence (such as a string, tuple or list) or other iterable object:"
 msgstr ""
+"Příkaz :keyword:`for` se používá k iteraci prvků posloupnosti (jako je "
+"řetězec, tuple nebo seznam) nebo jiného iterabilního objektu:"
 
 #: ../../reference/compound_stmts.rst:160
 msgid ""
-"The :token:`~python-grammar:starred_expression_list` expression is "
-"evaluated once; it should yield an :term:`iterable` object. An "
-":term:`iterator` is created for that iterable. The first item provided by"
-" the iterator is then assigned to the target list using the standard "
-"rules for assignments (see :ref:`assignment`), and the suite is executed."
-" This repeats for each item provided by the iterator. When the iterator "
-"is exhausted, the suite in the :keyword:`!else` clause, if present, is "
-"executed, and the loop terminates."
+"The :token:`~python-grammar:starred_expression_list` expression is evaluated"
+" once; it should yield an :term:`iterable` object. An :term:`iterator` is "
+"created for that iterable. The first item provided by the iterator is then "
+"assigned to the target list using the standard rules for assignments (see "
+":ref:`assignment`), and the suite is executed. This repeats for each item "
+"provided by the iterator. When the iterator is exhausted, the suite in the "
+":keyword:`!else` clause, if present, is executed, and the loop terminates."
 msgstr ""
+"Výraz :token:`~python-grammar:starred_expression_list` se vyhodnotí jednou; "
+"měl by poskytovat objekt :term:`iterable`. Vytváří se :term:`iterator` pro "
+"tento iterable. První prvek poskytnutý iterátorem se pak přiřadí do cílového"
+" seznamu podle standardních pravidel pro přiřazení (viz :ref:`assignment`), "
+"a suite se provede. Toto se opakuje pro každý prvek poskytnutý iterátorem. "
+"Pokud je itérátor vyˇcerpán, suite v klauzuli :keyword:`!else`, pokud je "
+"přítomna, se provede a smyˇcka se ukončí."
 
 #: ../../reference/compound_stmts.rst:173
 msgid ""
-"A :keyword:`break` statement executed in the first suite terminates the "
-"loop without executing the :keyword:`!else` clause's suite.  A "
-":keyword:`continue` statement executed in the first suite skips the rest "
-"of the suite and continues with the next item, or with the "
-":keyword:`!else` clause if there is no next item."
+"A :keyword:`break` statement executed in the first suite terminates the loop"
+" without executing the :keyword:`!else` clause's suite.  A "
+":keyword:`continue` statement executed in the first suite skips the rest of "
+"the suite and continues with the next item, or with the :keyword:`!else` "
+"clause if there is no next item."
 msgstr ""
+"Příkaz :keyword:`break` provedený v první suite ukončí smyˇcku bez provedení"
+" suite klauzule :keyword:`!else`. Příkaz :keyword:`continue` provedený v "
+"první suite přeskočí zbytek suite a pokračuje s dalším prvkem, nebo s "
+"klauzulí :keyword:`!else`, pokud není další prvek."
 
 #: ../../reference/compound_stmts.rst:179
 msgid ""
 "The for-loop makes assignments to the variables in the target list. This "
-"overwrites all previous assignments to those variables including those "
-"made in the suite of the for-loop::"
+"overwrites all previous assignments to those variables including those made "
+"in the suite of the for-loop::"
 msgstr ""
+"For-smyˇcka přiřazuje hodnoty proměnným v cílovém seznamu. Toto přepísě "
+"všechna předcházející přiřazení těm proměnným, včetně těch ze suite "
+"smyˇcky::"
 
 #: ../../reference/compound_stmts.rst:183
 msgid ""
@@ -180,113 +238,162 @@ msgid ""
 "                      # because i will be overwritten with the next\n"
 "                      # index in the range"
 msgstr ""
+"for i in range(10):\n"
+"    print(i)\n"
+"    i = 5             # to nebude ovlivňovat for-smyˇcku\n"
+"                      # protože i bude přepsáno dalším\n"
+"                      # indexem v rozsahu"
 
 #: ../../reference/compound_stmts.rst:193
 msgid ""
-"Names in the target list are not deleted when the loop is finished, but "
-"if the sequence is empty, they will not have been assigned to at all by "
-"the loop.  Hint: the built-in type :func:`range` represents immutable "
-"arithmetic sequences of integers. For instance, iterating ``range(3)`` "
-"successively yields 0, 1, and then 2."
+"Names in the target list are not deleted when the loop is finished, but if "
+"the sequence is empty, they will not have been assigned to at all by the "
+"loop.  Hint: the built-in type :func:`range` represents immutable arithmetic"
+" sequences of integers. For instance, iterating ``range(3)`` successively "
+"yields 0, 1, and then 2."
 msgstr ""
+"Jména v cílovém seznamu se nezmažují po skončení smyˇcky, ale pokud je "
+"posloupnost prázdná, nebúdy jím vůbec přiřazena smyˇckou. Poznámka: "
+"vestavěný typ :func:`range` reprezentuje nemeněné aritmetické posloupnosti "
+"celých čísel. Například iterace ``range(3)`` postupně vydává 0, 1 a poté 2."
 
 #: ../../reference/compound_stmts.rst:198
 msgid "Starred elements are now allowed in the expression list."
-msgstr ""
+msgstr "Hvězdičkové prvky jsou nyní povoleny v seznamu výrazů."
 
 #: ../../reference/compound_stmts.rst:205
 msgid "The :keyword:`!try` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!try`"
 
 #: ../../reference/compound_stmts.rst:215
 msgid ""
-"The :keyword:`!try` statement specifies exception handlers and/or cleanup"
-" code for a group of statements:"
+"The :keyword:`!try` statement specifies exception handlers and/or cleanup "
+"code for a group of statements:"
 msgstr ""
+"Příkaz :keyword:`!try` určuje obslužné programy výjimek a/nebo čistící kód "
+"pro skupinu příkazů:"
 
 #: ../../reference/compound_stmts.rst:231
 msgid ""
 "Additional information on exceptions can be found in section "
-":ref:`exceptions`, and information on using the :keyword:`raise` "
-"statement to generate exceptions may be found in section :ref:`raise`."
+":ref:`exceptions`, and information on using the :keyword:`raise` statement "
+"to generate exceptions may be found in section :ref:`raise`."
 msgstr ""
+"Další informace o výjimkách naleznete v části :ref:`exceptions`, a informace"
+" o použití příkazu :keyword:`raise` k vytváření výjimek naleznete v části "
+":ref:`raise`."
 
 #: ../../reference/compound_stmts.rst:235
 msgid ""
 "Support for optionally dropping grouping parentheses when using multiple "
 "exception types. See :pep:`758`."
 msgstr ""
+"Podpora volitelného vynechání závork při použití více typů výjimek. Viz "
+":pep:`758`."
 
 #: ../../reference/compound_stmts.rst:241
 msgid ":keyword:`!except` clause"
-msgstr ""
+msgstr "Klauzule :keyword:`!except`"
 
 #: ../../reference/compound_stmts.rst:243
 msgid ""
 "The :keyword:`!except` clause(s) specify one or more exception handlers. "
-"When no exception occurs in the :keyword:`try` clause, no exception "
-"handler is executed. When an exception occurs in the :keyword:`!try` "
-"suite, a search for an exception handler is started. This search inspects"
-" the :keyword:`!except` clauses in turn until one is found that matches "
-"the exception. An expression-less :keyword:`!except` clause, if present, "
-"must be last; it matches any exception."
+"When no exception occurs in the :keyword:`try` clause, no exception handler "
+"is executed. When an exception occurs in the :keyword:`!try` suite, a search"
+" for an exception handler is started. This search inspects the "
+":keyword:`!except` clauses in turn until one is found that matches the "
+"exception. An expression-less :keyword:`!except` clause, if present, must be"
+" last; it matches any exception."
 msgstr ""
+"Klauzule :keyword:`!except` určují jednu nebo více obslužných programů "
+"výjimek. Pokud v klauzuli :keyword:`try` nedojde k výjimce, nespustí se "
+"žádný obslužný program výjimky. Pokud v suite :keyword:`!try` dojde k "
+"výjimce, spustí se vyhledávání obslužného programu. Toto vyhledávání "
+"průchodí klauzulemi :keyword:`!except` postupně, dokud se nenajde ta, která "
+"odpovídá výjimce. Klauzule :keyword:`!except` bez výrazu, pokud je přítomna,"
+" musí být poslední; odpovídá jakékoliv výjimce."
 
 #: ../../reference/compound_stmts.rst:251
 msgid ""
 "For an :keyword:`!except` clause with an expression, the expression must "
-"evaluate to an exception type or a tuple of exception types. Parentheses "
-"can be dropped if multiple exception types are provided and the ``as`` "
-"clause is not used. The raised exception matches an :keyword:`!except` "
-"clause whose expression evaluates to the class or a :term:`non-virtual "
-"base class <abstract base class>` of the exception object, or to a tuple "
-"that contains such a class."
+"evaluate to an exception type or a tuple of exception types. Parentheses can"
+" be dropped if multiple exception types are provided and the ``as`` clause "
+"is not used. The raised exception matches an :keyword:`!except` clause whose"
+" expression evaluates to the class or a :term:`non-virtual base class "
+"<abstract base class>` of the exception object, or to a tuple that contains "
+"such a class."
 msgstr ""
+"U klauzule :keyword:`!except` s výrazu musí se výraz vyhodnotit na typ "
+"výjimky nebo n-tici typů výjimek. Závorky lze vynechat, pokud jsou "
+"poskytnuty multiple typy výjimek a klauzule ``as`` se nepoužívá. Vyvolaná "
+"výjimka odpovídá klauzuli :keyword:`!except`, jejíž výraz se vyhodnocuje na "
+"třídu nebo :term:`non-virtual base class <abstract base class>` objektu "
+"výjimky, nebo na n-tici, která takovou třídu obsahuje."
 
 #: ../../reference/compound_stmts.rst:258
 msgid ""
 "If no :keyword:`!except` clause matches the exception, the search for an "
-"exception handler continues in the surrounding code and on the invocation"
-" stack.  [#]_"
+"exception handler continues in the surrounding code and on the invocation "
+"stack.  [#]_"
 msgstr ""
+"Pokud žádná klauzule :keyword:`!except` neodpovídá výjimce, vyhledávání "
+"obslužného programu pokračuje v okolo klícím kódu a v zásobníků vyvolání. "
+"[#]_"
 
 #: ../../reference/compound_stmts.rst:262
 msgid ""
-"If the evaluation of an expression in the header of an :keyword:`!except`"
-" clause raises an exception, the original search for a handler is "
-"canceled and a search starts for the new exception in the surrounding "
-"code and on the call stack (it is treated as if the entire :keyword:`try`"
-" statement raised the exception)."
+"If the evaluation of an expression in the header of an :keyword:`!except` "
+"clause raises an exception, the original search for a handler is canceled "
+"and a search starts for the new exception in the surrounding code and on the"
+" call stack (it is treated as if the entire :keyword:`try` statement raised "
+"the exception)."
 msgstr ""
+"Pokud vyhodnocení výrazu v hlavičce klauzule :keyword:`!except` vyvolá "
+"výjimku, zruší se původní vyhledávání obslužného programu a spustí se "
+"vyhledávání nové výjimky v okolo klícím kódu a v zásobníků vyvolání (je to "
+"zprácováno, jako by celý příkaz :keyword:`try` vyvolá výjimku)."
 
 #: ../../reference/compound_stmts.rst:270
 msgid ""
 "When a matching :keyword:`!except` clause is found, the exception is "
-"assigned to the target specified after the :keyword:`!as` keyword in that"
-" :keyword:`!except` clause, if present, and the :keyword:`!except` "
-"clause's suite is executed. All :keyword:`!except` clauses must have an "
-"executable block. When the end of this block is reached, execution "
-"continues normally after the entire :keyword:`try` statement. (This means"
-" that if two nested handlers exist for the same exception, and the "
-"exception occurs in the :keyword:`!try` clause of the inner handler, the "
-"outer handler will not handle the exception.)"
+"assigned to the target specified after the :keyword:`!as` keyword in that "
+":keyword:`!except` clause, if present, and the :keyword:`!except` clause's "
+"suite is executed. All :keyword:`!except` clauses must have an executable "
+"block. When the end of this block is reached, execution continues normally "
+"after the entire :keyword:`try` statement. (This means that if two nested "
+"handlers exist for the same exception, and the exception occurs in the "
+":keyword:`!try` clause of the inner handler, the outer handler will not "
+"handle the exception.)"
 msgstr ""
+"Pokud se najde srovnávající klauzule :keyword:`!except`, výjimka se přiřadí "
+"cíli uvedenému po klíčovém slově :keyword:`!as` v té klauzuli "
+":keyword:`!except`, pokud je přítomna, a suite klauzule :keyword:`!except` "
+"se provede. Všechny klauzule :keyword:`!except` musí mít spustitelný blok. "
+"Pokud je dosáhnut konec tohoto bloku, provedení pokračuje normálně po celém "
+"příkazu :keyword:`try`. (To znamená, že pokud existují dva vnořené obslužné "
+"programy pro stejnou výjimku a výjimka se vyskytuje v klauzuli "
+":keyword:`!try` vnitřního obslužného programu, vnitřní obslužný program "
+"výjimku neobslouží.)"
 
 #: ../../reference/compound_stmts.rst:281
 msgid ""
-"When an exception has been assigned using ``as target``, it is cleared at"
-" the end of the :keyword:`!except` clause.  This is as if ::"
+"When an exception has been assigned using ``as target``, it is cleared at "
+"the end of the :keyword:`!except` clause.  This is as if ::"
 msgstr ""
+"Pokud byla výjimka přiřazena pomocí ``as target``, je vúclearěna na konci "
+"klauzule :keyword:`!except`. Toto je jako ::"
 
 #: ../../reference/compound_stmts.rst:284
 msgid ""
 "except E as N:\n"
 "    foo"
 msgstr ""
+"except E as N:\n"
+"    foo"
 
 #: ../../reference/compound_stmts.rst:287
 msgid "was translated to ::"
-msgstr ""
+msgstr "byl přeložen na ::"
 
 #: ../../reference/compound_stmts.rst:289
 msgid ""
@@ -296,24 +403,39 @@ msgid ""
 "    finally:\n"
 "        del N"
 msgstr ""
+"except E as N:\n"
+"    try:\n"
+"        foo\n"
+"    finally:\n"
+"        del N"
 
 #: ../../reference/compound_stmts.rst:295
 msgid ""
-"This means the exception must be assigned to a different name to be able "
-"to refer to it after the :keyword:`!except` clause. Exceptions are "
-"cleared because with the traceback attached to them, they form a "
-"reference cycle with the stack frame, keeping all locals in that frame "
-"alive until the next garbage collection occurs."
+"This means the exception must be assigned to a different name to be able to "
+"refer to it after the :keyword:`!except` clause. Exceptions are cleared "
+"because with the traceback attached to them, they form a reference cycle "
+"with the stack frame, keeping all locals in that frame alive until the next "
+"garbage collection occurs."
 msgstr ""
+"To znamená, že výjimka musí být přiřazena jinému jménu, aby bylo možno na ni"
+" odkazovat po klauzuli :keyword:`!except`. Výjimky jsou váčlovány, protože "
+"se spojeným traceback, vytvářejí referencě cyklus se zásobníkem frame, který"
+" udržuje všechny lokální proměnné v tém frame naživu, dokud se neuskuteční "
+"další sběr odpadů."
 
 #: ../../reference/compound_stmts.rst:305
 msgid ""
-"Before an :keyword:`!except` clause's suite is executed, the exception is"
-" stored in the :mod:`sys` module, where it can be accessed from within "
-"the body of the :keyword:`!except` clause by calling "
-":func:`sys.exception`. When leaving an exception handler, the exception "
-"stored in the :mod:`sys` module is reset to its previous value::"
+"Before an :keyword:`!except` clause's suite is executed, the exception is "
+"stored in the :mod:`sys` module, where it can be accessed from within the "
+"body of the :keyword:`!except` clause by calling :func:`sys.exception`. When"
+" leaving an exception handler, the exception stored in the :mod:`sys` module"
+" is reset to its previous value::"
 msgstr ""
+"Před provedením suite klauzule :keyword:`!except` je výjimka uložena v "
+"modulu :mod:`sys`, kde k ní lze přistupovat z těla klauzule "
+":keyword:`!except` voláním :func:`sys.exception`. Opouštěním obslužného "
+"programu výjimky je výjimka uložená v modulu :mod:`sys` resetována na svou "
+"předchozí hodnotu::"
 
 #: ../../reference/compound_stmts.rst:311
 msgid ""
@@ -335,46 +457,85 @@ msgid ""
 ">>> print(sys.exception())\n"
 "None"
 msgstr ""
+">>> print(sys.exception())\n"
+"None\n"
+">>> try:\n"
+"...     raise TypeError\n"
+"... except:\n"
+"...     print(repr(sys.exception()))\n"
+"...     try:\n"
+"...          raise ValueError\n"
+"...     except:\n"
+"...         print(repr(sys.exception()))\n"
+"...     print(repr(sys.exception()))\n"
+"...\n"
+"TypeError()\n"
+"ValueError()\n"
+"TypeError()\n"
+">>> print(sys.exception())\n"
+"None"
 
 #: ../../reference/compound_stmts.rst:336
 msgid ":keyword:`!except*` clause"
-msgstr ""
+msgstr "Klauzule :keyword:`!except*`"
 
 #: ../../reference/compound_stmts.rst:338
 msgid ""
-"The :keyword:`!except*` clause(s) specify one or more handlers for groups"
-" of exceptions (:exc:`BaseExceptionGroup` instances). A :keyword:`try` "
-"statement can have either :keyword:`except` or :keyword:`!except*` "
-"clauses, but not both. The exception type for matching is mandatory in "
-"the case of :keyword:`!except*`, so ``except*:`` is a syntax error. The "
-"type is interpreted as in the case of :keyword:`!except`, but matching is"
-" performed on the exceptions contained in the group that is being "
-"handled. An :exc:`TypeError` is raised if a matching type is a subclass "
-"of :exc:`!BaseExceptionGroup`, because that would have ambiguous "
-"semantics."
+"The :keyword:`!except*` clause(s) specify one or more handlers for groups of"
+" exceptions (:exc:`BaseExceptionGroup` instances). A :keyword:`try` "
+"statement can have either :keyword:`except` or :keyword:`!except*` clauses, "
+"but not both. The exception type for matching is mandatory in the case of "
+":keyword:`!except*`, so ``except*:`` is a syntax error. The type is "
+"interpreted as in the case of :keyword:`!except`, but matching is performed "
+"on the exceptions contained in the group that is being handled. An "
+":exc:`TypeError` is raised if a matching type is a subclass of "
+":exc:`!BaseExceptionGroup`, because that would have ambiguous semantics."
 msgstr ""
+"Klauzule :keyword:`!except*` určují jednoho nebo více obslužné programy pro "
+"skupiny výjimek (instance :exc:`BaseExceptionGroup`). Příkaz :keyword:`try` "
+"může mít bud' klauzule :keyword:`except` nebo :keyword:`!except*`, ale ne "
+"obě. Typ výjimky pro shodu je povinný v případě :keyword:`!except*`, takže "
+"``except*:`` je chyba syntaxe. Typ je interpretován jako v případě "
+":keyword:`!except`, ale shoda se provádí na výjimkách obsaené ve skupině, "
+"která se zpracovává. Je vyvolána výjimka :exc:`TypeError`, pokud "
+"srovnávající typ je podmíněn typ :exc:`!BaseExceptionGroup`, protože by to "
+"mělo nejednoznačné sémantice."
 
 #: ../../reference/compound_stmts.rst:348
 msgid ""
-"When an exception group is raised in the try block, each "
-":keyword:`!except*` clause splits (see :meth:`~BaseExceptionGroup.split`)"
-" it into the subgroups of matching and non-matching exceptions. If the "
-"matching subgroup is not empty, it becomes the handled exception (the "
-"value returned from :func:`sys.exception`) and assigned to the target of "
-"the :keyword:`!except*` clause (if there is one). Then, the body of the "
-":keyword:`!except*` clause executes. If the non-matching subgroup is not "
-"empty, it is processed by the next :keyword:`!except*` in the same "
-"manner. This continues until all exceptions in the group have been "
-"matched, or the last :keyword:`!except*` clause has run."
+"When an exception group is raised in the try block, each :keyword:`!except*`"
+" clause splits (see :meth:`~BaseExceptionGroup.split`) it into the subgroups"
+" of matching and non-matching exceptions. If the matching subgroup is not "
+"empty, it becomes the handled exception (the value returned from "
+":func:`sys.exception`) and assigned to the target of the :keyword:`!except*`"
+" clause (if there is one). Then, the body of the :keyword:`!except*` clause "
+"executes. If the non-matching subgroup is not empty, it is processed by the "
+"next :keyword:`!except*` in the same manner. This continues until all "
+"exceptions in the group have been matched, or the last :keyword:`!except*` "
+"clause has run."
 msgstr ""
+"Pokud je skupina výjimek vyvolána v bloku try, každá klauzule "
+":keyword:`!except*` ji rozdvojit (viz :meth:`~BaseExceptionGroup.split`) na "
+"podskupiny srovnávajících a nesrovnávajících výjimek. Pokud srovnávající "
+"podskupina není prázdná, stane se zprácovanou výjimkou (hodnotou vrácenou z "
+":func:`sys.exception`) a přiřazena cíli klauzule :keyword:`!except*` (pokud "
+"existuje). Poté se provédí tělo klauzule :keyword:`!except*`. Pokud "
+"nesrovnávající podskupina není prázdná, je zpracována následujícím "
+":keyword:`!except*` stejným způsobem. To pokračuje, dokud nebúdy výmapovány "
+"všechny výjimky ve skupině, nebo dokáč poslední klauzule :keyword:`!except*`"
+" nevybehne."
 
 #: ../../reference/compound_stmts.rst:358
 msgid ""
 "After all :keyword:`!except*` clauses execute, the group of unhandled "
-"exceptions is merged with any exceptions that were raised or re-raised "
-"from within :keyword:`!except*` clauses. This merged exception group "
-"propagates on.::"
+"exceptions is merged with any exceptions that were raised or re-raised from "
+"within :keyword:`!except*` clauses. This merged exception group propagates "
+"on.::"
 msgstr ""
+"Poté, co se spustí všechny klauzule :keyword:`!except*`, skupina "
+"nezpracovaných výjimek se sloučí s jakýmikoli výjimkami, které byly vyvolány"
+" nebo znovu vyvolány z klauzulí :keyword:`!except*`. Tato sloučená skupina "
+"výjimek se šíří dále.::"
 
 #: ../../reference/compound_stmts.rst:362
 #, python-brace-format
@@ -398,15 +559,37 @@ msgid ""
 "    | ValueError: 1\n"
 "    +------------------------------------"
 msgstr ""
+">>> try:\n"
+"...     raise ExceptionGroup(\"eg\",\n"
+"...         [ValueError(1), TypeError(2), OSError(3), OSError(4)])\n"
+"... except* TypeError as e:\n"
+"...     print(f'caught {type(e)} with nested {e.exceptions}')\n"
+"... except* OSError as e:\n"
+"...     print(f'caught {type(e)} with nested {e.exceptions}')\n"
+"...\n"
+"caught <class 'ExceptionGroup'> with nested (TypeError(2),)\n"
+"caught <class 'ExceptionGroup'> with nested (OSError(3), OSError(4))\n"
+"  + Exception Group Traceback (most recent call last):\n"
+"  |   File \"<doctest default[0]>\", line 2, in <module>\n"
+"  |     raise ExceptionGroup(\"eg\",\n"
+"  |         [ValueError(1), TypeError(2), OSError(3), OSError(4)])\n"
+"  | ExceptionGroup: eg (1 sub-exception)\n"
+"  +-+---------------- 1 ----------------\n"
+"    | ValueError: 1\n"
+"    +------------------------------------"
 
 #: ../../reference/compound_stmts.rst:381
 msgid ""
-"If the exception raised from the :keyword:`try` block is not an exception"
-" group and its type matches one of the :keyword:`!except*` clauses, it is"
-" caught and wrapped by an exception group with an empty message string. "
-"This ensures that the type of the target ``e`` is consistently "
+"If the exception raised from the :keyword:`try` block is not an exception "
+"group and its type matches one of the :keyword:`!except*` clauses, it is "
+"caught and wrapped by an exception group with an empty message string. This "
+"ensures that the type of the target ``e`` is consistently "
 ":exc:`BaseExceptionGroup`::"
 msgstr ""
+"Pokud výjimka vyvolána z bloku :keyword:`try` není skupinou výjimek a její "
+"typ odpovídá jedné z klauzulí :keyword:`!except*`, je zachycena a obalena "
+"skupinou výjimek s prázdným řetězcem zprávy. To zajišťuje, že typ cíle ``e``"
+" je konzistentně :exc:`BaseExceptionGroup`::"
 
 #: ../../reference/compound_stmts.rst:386
 msgid ""
@@ -417,44 +600,67 @@ msgid ""
 "...\n"
 "ExceptionGroup('', (BlockingIOError(),))"
 msgstr ""
+">>> try:\n"
+"...     raise BlockingIOError\n"
+"... except* BlockingIOError as e:\n"
+"...     print(repr(e))\n"
+"...\n"
+"ExceptionGroup('', (BlockingIOError(),))"
 
 #: ../../reference/compound_stmts.rst:393
 msgid ""
-":keyword:`break`, :keyword:`continue` and :keyword:`return` cannot appear"
-" in an :keyword:`!except*` clause."
+":keyword:`break`, :keyword:`continue` and :keyword:`return` cannot appear in"
+" an :keyword:`!except*` clause."
 msgstr ""
+":keyword:`break`, :keyword:`continue` a :keyword:`return` se nemohou objevit"
+" v klauzuli :keyword:`!except*`."
 
 #: ../../reference/compound_stmts.rst:406
 msgid ":keyword:`!else` clause"
-msgstr ""
+msgstr "Klauzule :keyword:`!else`"
 
 #: ../../reference/compound_stmts.rst:408
 msgid ""
-"The optional :keyword:`!else` clause is executed if the control flow "
-"leaves the :keyword:`try` suite, no exception was raised, and no "
-":keyword:`return`, :keyword:`continue`, or :keyword:`break` statement was"
-" executed.  Exceptions in the :keyword:`!else` clause are not handled by "
-"the preceding :keyword:`except` clauses."
+"The optional :keyword:`!else` clause is executed if the control flow leaves "
+"the :keyword:`try` suite, no exception was raised, and no :keyword:`return`,"
+" :keyword:`continue`, or :keyword:`break` statement was executed.  "
+"Exceptions in the :keyword:`!else` clause are not handled by the preceding "
+":keyword:`except` clauses."
 msgstr ""
+"Volitelná klauzule :keyword:`!else` se provede, pokud tok řízení opustí "
+"suite :keyword:`try`, nebyla vyvolána žádná výjimka a nebyl sproveden příkaz"
+" :keyword:`return`, :keyword:`continue` ani :keyword:`break`. Výjimky v "
+"klauzuli :keyword:`!else` nejsou zpracovány předcházejícími klauzulemi "
+":keyword:`except`."
 
 #: ../../reference/compound_stmts.rst:420
 msgid ":keyword:`!finally` clause"
-msgstr ""
+msgstr "Klauzule :keyword:`!finally`"
 
 #: ../../reference/compound_stmts.rst:422
 msgid ""
-"If :keyword:`!finally` is present, it specifies a 'cleanup' handler.  The"
-" :keyword:`try` clause is executed, including any :keyword:`except` and "
-":keyword:`else <except_else>` clauses. If an exception occurs in any of "
-"the clauses and is not handled, the exception is temporarily saved. The "
-":keyword:`!finally` clause is executed.  If there is a saved exception it"
-" is re-raised at the end of the :keyword:`!finally` clause. If the "
-":keyword:`!finally` clause raises another exception, the saved exception "
-"is set as the context of the new exception. If the :keyword:`!finally` "
-"clause executes a :keyword:`return`, :keyword:`break` or "
-":keyword:`continue` statement, the saved exception is discarded. For "
-"example, this function returns 42."
+"If :keyword:`!finally` is present, it specifies a 'cleanup' handler.  The "
+":keyword:`try` clause is executed, including any :keyword:`except` and "
+":keyword:`else <except_else>` clauses. If an exception occurs in any of the "
+"clauses and is not handled, the exception is temporarily saved. The "
+":keyword:`!finally` clause is executed.  If there is a saved exception it is"
+" re-raised at the end of the :keyword:`!finally` clause. If the "
+":keyword:`!finally` clause raises another exception, the saved exception is "
+"set as the context of the new exception. If the :keyword:`!finally` clause "
+"executes a :keyword:`return`, :keyword:`break` or :keyword:`continue` "
+"statement, the saved exception is discarded. For example, this function "
+"returns 42."
 msgstr ""
+"Pokud je :keyword:`!finally` přítomna, určuje obslužný program "
+"\"\\u010dlstění\". Suite :keyword:`try` se provédí, včetně jakýchkoli "
+"klauzulí :keyword:`except` a :keyword:`else <except_else>`. Pokud v některé "
+"z klauzulí dojde k výjimce a není zpracována, výjimka se dočasně uloží. "
+"Suite :keyword:`!finally` se provédí. Pokud existuje uložená výjimka, bude "
+"zalómena na konci klauzule :keyword:`!finally`. Pokud klauzule "
+":keyword:`!finally` vyvolá jinou výjimku, uložená výjimka se nastaví jako "
+"kontekt nové výjimky. Pokud klauzule :keyword:`!finally` provede příkaz "
+":keyword:`return`, :keyword:`break` nebo :keyword:`continue`, uložená "
+"výjimka se zapřesměnuje. Například tato funkce vrátí 42."
 
 #: ../../reference/compound_stmts.rst:435
 msgid ""
@@ -464,29 +670,44 @@ msgid ""
 "    finally:\n"
 "        return 42"
 msgstr ""
+"def f():\n"
+"    try:\n"
+"        1/0\n"
+"    finally:\n"
+"        return 42"
 
 #: ../../reference/compound_stmts.rst:443
 msgid ""
-"The exception information is not available to the program during "
-"execution of the :keyword:`!finally` clause."
+"The exception information is not available to the program during execution "
+"of the :keyword:`!finally` clause."
 msgstr ""
+"Informace o výjimce nejsou přístupné programu během provedení klauzule "
+":keyword:`!finally`."
 
 #: ../../reference/compound_stmts.rst:451
 msgid ""
-"When a :keyword:`return`, :keyword:`break` or :keyword:`continue` "
-"statement is executed in the :keyword:`try` suite of a "
-":keyword:`!try`...\\ :keyword:`!finally` statement, the "
-":keyword:`!finally` clause is also executed 'on the way out.'"
+"When a :keyword:`return`, :keyword:`break` or :keyword:`continue` statement "
+"is executed in the :keyword:`try` suite of a :keyword:`!try`...\\ "
+":keyword:`!finally` statement, the :keyword:`!finally` clause is also "
+"executed 'on the way out.'"
 msgstr ""
+"Pokud je příkaz :keyword:`return`, :keyword:`break` nebo :keyword:`continue`"
+" proveden v suite :keyword:`try` příkazu :keyword:`!try`...\\ "
+":keyword:`!finally`, klauzule :keyword:`!finally` se také provede \"na cestě"
+" ven\"."
 
 #: ../../reference/compound_stmts.rst:455
 msgid ""
-"The return value of a function is determined by the last "
-":keyword:`return` statement executed.  Since the :keyword:`!finally` "
-"clause always executes, a :keyword:`!return` statement executed in the "
-":keyword:`!finally` clause will always be the last one executed. The "
-"following function returns 'finally'."
+"The return value of a function is determined by the last :keyword:`return` "
+"statement executed.  Since the :keyword:`!finally` clause always executes, a"
+" :keyword:`!return` statement executed in the :keyword:`!finally` clause "
+"will always be the last one executed. The following function returns "
+"'finally'."
 msgstr ""
+"Návratová hodnota funkce je určena posledním provedeným příkazem "
+":keyword:`return`. Vzhledem k tomu, že se klauzule :keyword:`!finally` vždy "
+"provede, příkaz :keyword:`!return` provedený v klauzuli :keyword:`!finally` "
+"bude vždy posledním, který se provede. Následující funkce vrátí 'finally'."
 
 #: ../../reference/compound_stmts.rst:460
 msgid ""
@@ -496,12 +717,19 @@ msgid ""
 "    finally:\n"
 "        return 'finally'"
 msgstr ""
+"def foo():\n"
+"    try:\n"
+"        return 'try'\n"
+"    finally:\n"
+"        return 'finally'"
 
 #: ../../reference/compound_stmts.rst:468
 msgid ""
 "Prior to Python 3.8, a :keyword:`continue` statement was illegal in the "
 ":keyword:`!finally` clause due to a problem with the implementation."
 msgstr ""
+"Před Pythonem 3.8 byl příkaz :keyword:`continue` v klauzuli "
+":keyword:`!finally` nelegelný kvůli problému s implementací."
 
 #: ../../reference/compound_stmts.rst:472
 msgid ""
@@ -509,104 +737,137 @@ msgid ""
 ":keyword:`break` or :keyword:`continue` appears in a :keyword:`!finally` "
 "block (see :pep:`765`)."
 msgstr ""
+"Kompilátor vyžaduje :exc:`SyntaxWarning`, pokud se :keyword:`return`, "
+":keyword:`break` nebo :keyword:`continue` objeví v bloku :keyword:`!finally`"
+" (viz :pep:`765`)."
 
 #: ../../reference/compound_stmts.rst:482
 msgid "The :keyword:`!with` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!with`"
 
 #: ../../reference/compound_stmts.rst:491
 msgid ""
-"The :keyword:`with` statement is used to wrap the execution of a block "
-"with methods defined by a context manager (see section :ref:`context-"
-"managers`). This allows common :keyword:`try`...\\ :keyword:`except`...\\"
-" :keyword:`finally` usage patterns to be encapsulated for convenient "
-"reuse."
+"The :keyword:`with` statement is used to wrap the execution of a block with "
+"methods defined by a context manager (see section :ref:`context-managers`). "
+"This allows common :keyword:`try`...\\ :keyword:`except`...\\ "
+":keyword:`finally` usage patterns to be encapsulated for convenient reuse."
 msgstr ""
+"Příkaz :keyword:`with` se používá k zabalení provádění bloku s metodami "
+"definovanými správcem kontextu (viz část :ref:`context-managers`). To "
+"umožňuje zapouzdlit obecné vzory použití :keyword:`try`...\\ "
+":keyword:`except`...\\ :keyword:`finally` pro pohodlné zpětné použití."
 
 #: ../../reference/compound_stmts.rst:501
 msgid ""
-"The execution of the :keyword:`with` statement with one \"item\" proceeds"
-" as follows:"
+"The execution of the :keyword:`with` statement with one \"item\" proceeds as"
+" follows:"
 msgstr ""
+"Provedení příkazu :keyword:`with` s jednou položkou probíhá následovně:"
 
 #: ../../reference/compound_stmts.rst:503
 msgid ""
 "The context expression (the expression given in the :token:`~python-"
 "grammar:with_item`) is evaluated to obtain a context manager."
 msgstr ""
+"Výraz kontextu (výraz daný v :token:`~python-grammar:with_item`) se "
+"vyhodnotí a získejí se správce kontextu."
 
 #: ../../reference/compound_stmts.rst:506
-msgid "The context manager's :meth:`~object.__enter__` is loaded for later use."
+msgid ""
+"The context manager's :meth:`~object.__enter__` is loaded for later use."
 msgstr ""
+"Metoda :meth:`~object.__enter__` správce kontextu se načte pro pozdější "
+"použití."
 
 #: ../../reference/compound_stmts.rst:508
-msgid "The context manager's :meth:`~object.__exit__` is loaded for later use."
+msgid ""
+"The context manager's :meth:`~object.__exit__` is loaded for later use."
 msgstr ""
+"Metoda :meth:`~object.__exit__` správce kontextu se načte pro pozdější "
+"použití."
 
 #: ../../reference/compound_stmts.rst:510
 msgid "The context manager's :meth:`~object.__enter__` method is invoked."
-msgstr ""
+msgstr "Metoda :meth:`~object.__enter__` správce kontextu se vyvolá."
 
 #: ../../reference/compound_stmts.rst:512
 msgid ""
-"If a target was included in the :keyword:`with` statement, the return "
-"value from :meth:`~object.__enter__` is assigned to it."
+"If a target was included in the :keyword:`with` statement, the return value "
+"from :meth:`~object.__enter__` is assigned to it."
 msgstr ""
+"Pokud byl cíl zahrčen v příkazu :keyword:`with`, návratová hodnota z "
+":meth:`~object.__enter__` mu je přiřazena."
 
 #: ../../reference/compound_stmts.rst:517
 msgid ""
 "The :keyword:`with` statement guarantees that if the "
 ":meth:`~object.__enter__` method returns without an error, then "
 ":meth:`~object.__exit__` will always be called. Thus, if an error occurs "
-"during the assignment to the target list, it will be treated the same as "
-"an error occurring within the suite would be. See step 7 below."
+"during the assignment to the target list, it will be treated the same as an "
+"error occurring within the suite would be. See step 7 below."
 msgstr ""
+"Příkaz :keyword:`with` garančuje, že pokud se metoda "
+":meth:`~object.__enter__` vrátí bez chyby, pak se :meth:`~object.__exit__` "
+"vždy volá. Pokud se vyskytne chyba během přiřazení do cílového seznamu, bude"
+" zpracována stejně jako chyba vyskytující se v suite. Viz krok 7 níže."
 
 #: ../../reference/compound_stmts.rst:523
 msgid "The suite is executed."
-msgstr ""
+msgstr "Suite se provede."
 
 #: ../../reference/compound_stmts.rst:525
 msgid ""
 "The context manager's :meth:`~object.__exit__` method is invoked.  If an "
-"exception caused the suite to be exited, its type, value, and traceback "
-"are passed as arguments to :meth:`~object.__exit__`. Otherwise, three "
+"exception caused the suite to be exited, its type, value, and traceback are "
+"passed as arguments to :meth:`~object.__exit__`. Otherwise, three "
 ":const:`None` arguments are supplied."
 msgstr ""
+"Metoda :meth:`~object.__exit__` správce kontextu se vyvolá. Pokud výjimka "
+"způsobila opustení suite, její typ, hodnota a traceback se předají jako "
+"argumenty :meth:`~object.__exit__`. V opačném případě se zadávají tři "
+"argumenty :const:`None`."
 
 #: ../../reference/compound_stmts.rst:530
 msgid ""
-"If the suite was exited due to an exception, and the return value from "
-"the :meth:`~object.__exit__` method was false, the exception is reraised."
-"  If the return value was true, the exception is suppressed, and "
-"execution continues with the statement following the :keyword:`with` "
-"statement."
+"If the suite was exited due to an exception, and the return value from the "
+":meth:`~object.__exit__` method was false, the exception is reraised.  If "
+"the return value was true, the exception is suppressed, and execution "
+"continues with the statement following the :keyword:`with` statement."
 msgstr ""
+"Pokud byla suite opustená kvůli výjimce a návratová hodnota metody "
+":meth:`~object.__exit__` byla nepravdivá, výjimka se znovu vyvolá. Pokud "
+"byla návratová hodnota pravdivá, výjimka se potlačí a provedení pokračuje "
+"příkazem následujícím příkazu :keyword:`with`."
 
 #: ../../reference/compound_stmts.rst:535
 msgid ""
-"If the suite was exited for any reason other than an exception, the "
-"return value from :meth:`~object.__exit__` is ignored, and execution "
-"proceeds at the normal location for the kind of exit that was taken."
+"If the suite was exited for any reason other than an exception, the return "
+"value from :meth:`~object.__exit__` is ignored, and execution proceeds at "
+"the normal location for the kind of exit that was taken."
 msgstr ""
+"Pokud byla suite opustená z jakékoliv jiného důvodu než výjimka, návratová "
+"hodnota :meth:`~object.__exit__` se ignoruje a provedení pokračuje na "
+"normálním místě pro druh opustení, které bylo provedeno."
 
 #: ../../reference/compound_stmts.rst:539
 #: ../../reference/compound_stmts.rst:1557
 #: ../../reference/compound_stmts.rst:1598
 msgid "The following code::"
-msgstr ""
+msgstr "Následující kód::"
 
 #: ../../reference/compound_stmts.rst:541
 msgid ""
 "with EXPRESSION as TARGET:\n"
 "    SUITE"
 msgstr ""
+"with EXPRESSION as TARGET:\n"
+"    SUITE"
 
 #: ../../reference/compound_stmts.rst:544
 #: ../../reference/compound_stmts.rst:569
 #: ../../reference/compound_stmts.rst:1603
 msgid "is semantically equivalent to::"
-msgstr ""
+msgstr "je sémanticky ekvivalentní::"
 
 #: ../../reference/compound_stmts.rst:546
 msgid ""
@@ -627,18 +888,38 @@ msgid ""
 "    if not hit_except:\n"
 "        exit(manager, None, None, None)"
 msgstr ""
+"manager = (EXPRESSION)\n"
+"enter = type(manager).__enter__\n"
+"exit = type(manager).__exit__\n"
+"value = enter(manager)\n"
+"hit_except = False\n"
+"\n"
+"try:\n"
+"    TARGET = value\n"
+"    SUITE\n"
+"except:\n"
+"    hit_except = True\n"
+"    if not exit(manager, *sys.exc_info()):\n"
+"        raise\n"
+"finally:\n"
+"    if not hit_except:\n"
+"        exit(manager, None, None, None)"
 
 #: ../../reference/compound_stmts.rst:563
 msgid ""
-"With more than one item, the context managers are processed as if "
-"multiple :keyword:`with` statements were nested::"
+"With more than one item, the context managers are processed as if multiple "
+":keyword:`with` statements were nested::"
 msgstr ""
+"S více než jednou položkou se správci kontextu zpracovávají, jako kdyby bylo"
+" vnořeno více příkazů :keyword:`with`::"
 
 #: ../../reference/compound_stmts.rst:566
 msgid ""
 "with A() as a, B() as b:\n"
 "    SUITE"
 msgstr ""
+"with A() as a, B() as b:\n"
+"    SUITE"
 
 #: ../../reference/compound_stmts.rst:571
 msgid ""
@@ -646,12 +927,17 @@ msgid ""
 "    with B() as b:\n"
 "        SUITE"
 msgstr ""
+"with A() as a:\n"
+"    with B() as b:\n"
+"        SUITE"
 
 #: ../../reference/compound_stmts.rst:575
 msgid ""
 "You can also write multi-item context managers in multiple lines if the "
 "items are surrounded by parentheses. For example::"
 msgstr ""
+"Můžete také napsat správce kontextu s více položkami na více řádcích, pokud "
+"jsou položky obklopeny závorkami. Například::"
 
 #: ../../reference/compound_stmts.rst:578
 msgid ""
@@ -661,140 +947,178 @@ msgid ""
 "):\n"
 "    SUITE"
 msgstr ""
+"with (\n"
+"    A() as a,\n"
+"    B() as b,\n"
+"):\n"
+"    SUITE"
 
 #: ../../reference/compound_stmts.rst:584
 msgid "Support for multiple context expressions."
-msgstr ""
+msgstr "Podpora pro více výrazů kontextu."
 
 #: ../../reference/compound_stmts.rst:587
 msgid ""
-"Support for using grouping parentheses to break the statement in multiple"
-" lines."
+"Support for using grouping parentheses to break the statement in multiple "
+"lines."
 msgstr ""
+"Podpora pro použití skupinových závorek k rozdělení příkazu na více řádků."
 
 #: ../../reference/compound_stmts.rst:592
 msgid ":pep:`343` - The \"with\" statement"
-msgstr ""
+msgstr ":pep:`343` - Příkaz \"with\""
 
 #: ../../reference/compound_stmts.rst:593
 msgid ""
-"The specification, background, and examples for the Python "
-":keyword:`with` statement."
-msgstr ""
+"The specification, background, and examples for the Python :keyword:`with` "
+"statement."
+msgstr "Specifikace, pozadí a příklady pro příkaz Python :keyword:`with`."
 
 #: ../../reference/compound_stmts.rst:600
 msgid "The :keyword:`!match` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!match`"
 
 #: ../../reference/compound_stmts.rst:614
 msgid "The match statement is used for pattern matching.  Syntax:"
-msgstr ""
+msgstr "Příkaz match se používá pro shodu vzorců. Syntax:"
 
 #: ../../reference/compound_stmts.rst:623
 msgid ""
 "This section uses single quotes to denote :ref:`soft keywords <soft-"
 "keywords>`."
 msgstr ""
+"Tato část používá jednoduché uvozovky k označení :ref:`soft keywords <soft-"
+"keywords>`."
 
 #: ../../reference/compound_stmts.rst:626
 msgid ""
-"Pattern matching takes a pattern as input (following ``case``) and a "
-"subject value (following ``match``).  The pattern (which may contain "
-"subpatterns) is matched against the subject value.  The outcomes are:"
+"Pattern matching takes a pattern as input (following ``case``) and a subject"
+" value (following ``match``).  The pattern (which may contain subpatterns) "
+"is matched against the subject value.  The outcomes are:"
 msgstr ""
+"Shoda vzorců vezme vzorek jako vstup (následující ``case``) a hodnotu "
+"subjektu (následující ``match``). Vzorek (který může obsahovat podvzorky) se"
+" matchuje proti hodnotě subjektu. Výsledky jsou:"
 
 #: ../../reference/compound_stmts.rst:630
 msgid "A match success or failure (also termed a pattern success or failure)."
 msgstr ""
+"Úspěch nebo neúspěch shody (také označováno jako úspěch nebo neúspěch "
+"vzorců)."
 
 #: ../../reference/compound_stmts.rst:632
 msgid ""
-"Possible binding of matched values to a name.  The prerequisites for this"
-" are further discussed below."
+"Possible binding of matched values to a name.  The prerequisites for this "
+"are further discussed below."
 msgstr ""
+"Možné připoutnéní matchovaných hodnot k jménu. Předpoklady pro toto jsou "
+"dále diskutovány."
 
 #: ../../reference/compound_stmts.rst:635
 msgid ""
 "The ``match`` and ``case`` keywords are :ref:`soft keywords <soft-"
 "keywords>`."
 msgstr ""
+"Klíčová slova ``match`` a ``case`` jsou :ref:`soft keywords <soft-"
+"keywords>`."
 
 #: ../../reference/compound_stmts.rst:639
 #: ../../reference/compound_stmts.rst:1196
 msgid ":pep:`634` -- Structural Pattern Matching: Specification"
-msgstr ""
+msgstr ":pep:`634` -- Strukturní shoda vzorců: Specifikace"
 
 #: ../../reference/compound_stmts.rst:640
 #: ../../reference/compound_stmts.rst:1197
 msgid ":pep:`636` -- Structural Pattern Matching: Tutorial"
-msgstr ""
+msgstr ":pep:`636` -- Strukturní shoda vzorců: Tutoál"
 
 #: ../../reference/compound_stmts.rst:644
 msgid "Overview"
-msgstr ""
+msgstr "Přehled"
 
 #: ../../reference/compound_stmts.rst:646
 msgid "Here's an overview of the logical flow of a match statement:"
-msgstr ""
+msgstr "Zde je přehled logického toku příkazu match:"
 
 #: ../../reference/compound_stmts.rst:649
 msgid ""
-"The subject expression ``subject_expr`` is evaluated and a resulting "
-"subject value obtained. If the subject expression contains a comma, a "
-"tuple is constructed using :ref:`the standard rules <typesseq-tuple>`."
+"The subject expression ``subject_expr`` is evaluated and a resulting subject"
+" value obtained. If the subject expression contains a comma, a tuple is "
+"constructed using :ref:`the standard rules <typesseq-tuple>`."
 msgstr ""
+"Výraz subjektu ``subject_expr`` se vyhodnotí a získá se výsledná hodnota "
+"subjektu. Pokud výraz subjektu obsahuje čárku, vytvoří se n-tice podle "
+":ref:`standardních pravidel <typesseq-tuple>`."
 
 #: ../../reference/compound_stmts.rst:653
 msgid ""
 "Each pattern in a ``case_block`` is attempted to match with the subject "
-"value. The specific rules for success or failure are described below. The"
-" match attempt can also bind some or all of the standalone names within "
-"the pattern. The precise pattern binding rules vary per pattern type and "
-"are specified below.  **Name bindings made during a successful pattern "
-"match outlive the executed block and can be used after the match "
-"statement**."
+"value. The specific rules for success or failure are described below. The "
+"match attempt can also bind some or all of the standalone names within the "
+"pattern. The precise pattern binding rules vary per pattern type and are "
+"specified below.  **Name bindings made during a successful pattern match "
+"outlive the executed block and can be used after the match statement**."
 msgstr ""
+"Každý vzorek v ``case_block`` se pokusí matchovat s hodnotou subjektu. "
+"Specifická pravidla pro úspěch nebo neúspěch jsou popsána níže. Pokus o "
+"match může také vyvázat některá nebo všechna samostatná jména v rámci "
+"vzorců. Přesná pravidla vazby vzorců se liší podle typu vzorců a jsou "
+"specifikována níže. **Vázání jmen během úspěšné shody vzorců přežije "
+"spustený blok a mohou se používat po příkazu match**."
 
 #: ../../reference/compound_stmts.rst:662
 msgid ""
-"During failed pattern matches, some subpatterns may succeed.  Do not rely"
-" on bindings being made for a failed match.  Conversely, do not rely on "
-"variables remaining unchanged after a failed match.  The exact behavior "
-"is dependent on implementation and may vary.  This is an intentional "
-"decision made to allow different implementations to add optimizations."
+"During failed pattern matches, some subpatterns may succeed.  Do not rely on"
+" bindings being made for a failed match.  Conversely, do not rely on "
+"variables remaining unchanged after a failed match.  The exact behavior is "
+"dependent on implementation and may vary.  This is an intentional decision "
+"made to allow different implementations to add optimizations."
 msgstr ""
+"Během neúspěšných shod vzorců mohou některé podvzorky uspokojit. Nespo "
+"léhajte na tom, že se važby uskutečňují pro neúspěšné shody. Naopak, "
+"nespolejte na tom, že proměnné zůstanout nezměněny ch po neúspěšné shodě. "
+"Přesné chování závisí na implementaci a může se lišit. Toto je úmýslné "
+"rozhodnutí učiněné tak, aby dovolilo různým implementacím přidat "
+"optimalizace."
 
 #: ../../reference/compound_stmts.rst:669
 msgid ""
-"If the pattern succeeds, the corresponding guard (if present) is "
-"evaluated. In this case all name bindings are guaranteed to have "
-"happened."
+"If the pattern succeeds, the corresponding guard (if present) is evaluated. "
+"In this case all name bindings are guaranteed to have happened."
 msgstr ""
+"Pokud vzorek uspokojit, vyhodnotí se odpovídající stáž (pokud je přítomna). "
+"V tomto případě jsou všechna vázání jmen zaručena, že k nim došlo."
 
 #: ../../reference/compound_stmts.rst:672
 msgid ""
 "If the guard evaluates as true or is missing, the ``block`` inside "
 "``case_block`` is executed."
 msgstr ""
+"Pokud stáž vyhodnotí jako pravdivá nebo chybí, provede se ``block`` uvnitř "
+"``case_block``."
 
 #: ../../reference/compound_stmts.rst:675
 msgid "Otherwise, the next ``case_block`` is attempted as described above."
 msgstr ""
+"V opačném případě se pokusí následující ``case_block``, jak je popsáno výše."
 
 #: ../../reference/compound_stmts.rst:677
 msgid "If there are no further case blocks, the match statement is completed."
-msgstr ""
+msgstr "Pokud nejsou další bloky case, příkaz match je dokončen."
 
 #: ../../reference/compound_stmts.rst:681
 msgid ""
-"Users should generally never rely on a pattern being evaluated.  "
-"Depending on implementation, the interpreter may cache values or use "
-"other optimizations which skip repeated evaluations."
+"Users should generally never rely on a pattern being evaluated.  Depending "
+"on implementation, the interpreter may cache values or use other "
+"optimizations which skip repeated evaluations."
 msgstr ""
+"Uživatelé by měli obecně nikdy nespolejat na tom, že se vzorek vyhodnocuje. "
+"V závislosti na implementaci má interpretátor může ukládat hodnoty nebo "
+"používat jiné optimalizace, které přeskočí opakované vyhodnocování."
 
 #: ../../reference/compound_stmts.rst:685
 msgid "A sample match statement::"
-msgstr ""
+msgstr "Ukázka příkazu match::"
 
 #: ../../reference/compound_stmts.rst:687
 #, python-brace-format
@@ -812,27 +1136,43 @@ msgid ""
 "...\n"
 "Case 3, y: 200"
 msgstr ""
+">>> flag = False\n"
+">>> match (100, 200):\n"
+"...    case (100, 300):  # Neshoda: 200 != 300\n"
+"...        print('Case 1')\n"
+"...    case (100, 200) if flag:  # Úspěšná shoda, ale stáž selhává\n"
+"...        print('Case 2')\n"
+"...    case (100, y):  # Matchuje a váže y na 200\n"
+"...        print(f'Case 3, y: {y}')\n"
+"...    case _:  # Vzorek se nepokouší\n"
+"...        print('Case 4, I match anything!')\n"
+"...\n"
+"Case 3, y: 200"
 
 #: ../../reference/compound_stmts.rst:701
 msgid ""
 "In this case, ``if flag`` is a guard.  Read more about that in the next "
 "section."
 msgstr ""
+"V tomto případě je ``if flag`` stáž. Přečtněte si více o tom v následující "
+"části."
 
 #: ../../reference/compound_stmts.rst:704
 msgid "Guards"
-msgstr ""
+msgstr "Stáže"
 
 #: ../../reference/compound_stmts.rst:711
 msgid ""
-"A ``guard`` (which is part of the ``case``) must succeed for code inside "
-"the ``case`` block to execute.  It takes the form: :keyword:`if` followed"
-" by an expression."
+"A ``guard`` (which is part of the ``case``) must succeed for code inside the"
+" ``case`` block to execute.  It takes the form: :keyword:`if` followed by an"
+" expression."
 msgstr ""
+"``Guard`` (která je částí ``case``) musí uspokojit, aby se kód uvnitř bloku "
+"``case`` spustil. Obsahuje formu: :keyword:`if` následováno výrazu."
 
 #: ../../reference/compound_stmts.rst:716
 msgid "The logical flow of a ``case`` block with a ``guard`` follows:"
-msgstr ""
+msgstr "Logický tok bloku ``case`` se ``guard`` následuje:"
 
 #: ../../reference/compound_stmts.rst:718
 msgid ""
@@ -840,295 +1180,368 @@ msgid ""
 "failed, the ``guard`` is not evaluated and the next ``case`` block is "
 "checked."
 msgstr ""
+"Zkontrolujte, že se vzorek v bloku ``case`` podařil. Pokud se vzorek "
+"nepovedl, ``guard`` se nevyhodnocuje a kontroluje se následující blok "
+"``case``."
 
 #: ../../reference/compound_stmts.rst:722
 msgid "If the pattern succeeded, evaluate the ``guard``."
-msgstr ""
+msgstr "Pokud se vzorek podařil, vyhodnoťte ``guard``."
 
 #: ../../reference/compound_stmts.rst:724
-msgid "If the ``guard`` condition evaluates as true, the case block is selected."
+msgid ""
+"If the ``guard`` condition evaluates as true, the case block is selected."
 msgstr ""
+"Pokud se podminka ``guard`` vyhodnotí jako pravdivá, vybere se blok case."
 
 #: ../../reference/compound_stmts.rst:727
 msgid ""
 "If the ``guard`` condition evaluates as false, the case block is not "
 "selected."
 msgstr ""
+"Pokud se podminka ``guard`` vyhodnotí jako nepravdivá, blok case se "
+"nevybere."
 
 #: ../../reference/compound_stmts.rst:730
 msgid ""
 "If the ``guard`` raises an exception during evaluation, the exception "
 "bubbles up."
 msgstr ""
+"Pokud ``guard`` vyvolá výjimku během vyhodnocování, výjimka se rozmří."
 
 #: ../../reference/compound_stmts.rst:733
 msgid ""
 "Guards are allowed to have side effects as they are expressions.  Guard "
 "evaluation must proceed from the first to the last case block, one at a "
-"time, skipping case blocks whose pattern(s) don't all succeed. (I.e., "
-"guard evaluation must happen in order.) Guard evaluation must stop once a"
-" case block is selected."
+"time, skipping case blocks whose pattern(s) don't all succeed. (I.e., guard "
+"evaluation must happen in order.) Guard evaluation must stop once a case "
+"block is selected."
 msgstr ""
+"Stáže mohou mít vedlejší činky, protože jsou výrazy. Vyhodnocování stáž musí"
+" probíhat od prvního po poslední blok case, jeden po druhém, přeskočím bloky"
+" case, jejichž vzorek(y) nejsou všechny úspěšné. (To znamená, že "
+"vyhodnocování stáž musí probíhat v pořadí.) Vyhodnocování stáž musí skončit,"
+" jakmile se vybere blok case."
 
 #: ../../reference/compound_stmts.rst:743
 msgid "Irrefutable Case Blocks"
-msgstr ""
+msgstr "Nezačínatelné bloky Case"
 
 #: ../../reference/compound_stmts.rst:747
 msgid ""
-"An irrefutable case block is a match-all case block.  A match statement "
-"may have at most one irrefutable case block, and it must be last."
+"An irrefutable case block is a match-all case block.  A match statement may "
+"have at most one irrefutable case block, and it must be last."
 msgstr ""
+"Nezačínatelný blok case je blok match-all. Příkaz match může mít nejvýše "
+"jeden nezačínatelný blok case a musí být poslední."
 
 #: ../../reference/compound_stmts.rst:750
 msgid ""
-"A case block is considered irrefutable if it has no guard and its pattern"
-" is irrefutable.  A pattern is considered irrefutable if we can prove "
-"from its syntax alone that it will always succeed.  Only the following "
-"patterns are irrefutable:"
+"A case block is considered irrefutable if it has no guard and its pattern is"
+" irrefutable.  A pattern is considered irrefutable if we can prove from its "
+"syntax alone that it will always succeed.  Only the following patterns are "
+"irrefutable:"
 msgstr ""
+"Blok case se považuje za nezačínatelný, pokud nemá stáž a jeho vzorek je "
+"nezačínatelný. Vzorek se považuje za nezačínatelný, pokud můžeme z jeho "
+"syntaxe samoté dokázat, že vždy uspokojit. Pouze následující vzorek jsou "
+"nezačínatelné:"
 
 #: ../../reference/compound_stmts.rst:755
 msgid ":ref:`as-patterns` whose left-hand side is irrefutable"
-msgstr ""
+msgstr ":ref:`as-patterns` jejichž levá strana je nezačínatelná"
 
 #: ../../reference/compound_stmts.rst:757
 msgid ":ref:`or-patterns` containing at least one irrefutable pattern"
-msgstr ""
+msgstr ":ref:`or-patterns` obsahující alespoň jeden nezačínatelný vzorek"
 
 #: ../../reference/compound_stmts.rst:759
 msgid ":ref:`capture-patterns`"
-msgstr ""
+msgstr ":ref:`capture-patterns`"
 
 #: ../../reference/compound_stmts.rst:761
 msgid ":ref:`wildcard-patterns`"
-msgstr ""
+msgstr ":ref:`wildcard-patterns`"
 
 #: ../../reference/compound_stmts.rst:763
 msgid "parenthesized irrefutable patterns"
-msgstr ""
+msgstr "vároze závork nénezačínatelné vzorek"
 
 #: ../../reference/compound_stmts.rst:767
 msgid "Patterns"
-msgstr ""
+msgstr "Vzorek"
 
 #: ../../reference/compound_stmts.rst:774
 msgid "This section uses grammar notations beyond standard EBNF:"
-msgstr ""
+msgstr "Tato část používá grmatické notace mimo standardní EBNF:"
 
 #: ../../reference/compound_stmts.rst:776
 msgid "the notation ``SEP.RULE+`` is shorthand for ``RULE (SEP RULE)*``"
-msgstr ""
+msgstr "znaení ``SEP.RULE+`` je zkráceným způsobem pro ``RULE (SEP RULE)*``"
 
 #: ../../reference/compound_stmts.rst:778
 msgid "the notation ``!RULE`` is shorthand for a negative lookahead assertion"
-msgstr ""
+msgstr "notace ``!RULE`` je zkrácenkou pro výrazu negativného lookahead"
 
 #: ../../reference/compound_stmts.rst:781
 msgid "The top-level syntax for ``patterns`` is:"
-msgstr ""
+msgstr "Syntaxe nejvysší úrovně pro ``patterns`` je:"
 
 #: ../../reference/compound_stmts.rst:795
 msgid ""
 "The descriptions below will include a description \"in simple terms\" of "
-"what a pattern does for illustration purposes (credits to Raymond "
-"Hettinger for a document that inspired most of the descriptions). Note "
-"that these descriptions are purely for illustration purposes and **may "
-"not** reflect the underlying implementation.  Furthermore, they do not "
-"cover all valid forms."
+"what a pattern does for illustration purposes (credits to Raymond Hettinger "
+"for a document that inspired most of the descriptions). Note that these "
+"descriptions are purely for illustration purposes and **may not** reflect "
+"the underlying implementation.  Furthermore, they do not cover all valid "
+"forms."
 msgstr ""
+"Popisy níže budou obsahovat popis \"jednoduchy mi slovy\" toho, co vzorek "
+"dělá pro ilustrační účely (vědy Ray Hetlingeru za dokument, který inspiroval"
+" většinu popisů). Poznámka, že tyto popisy jsou čistě pro ilustrační účely a"
+" **nemusí** odrážet podkladové implementace. Napříd, nejsou pokryty všemi "
+"platnými formami."
 
 #: ../../reference/compound_stmts.rst:805
 msgid "OR Patterns"
-msgstr ""
+msgstr "NEBO Vzorek"
 
 #: ../../reference/compound_stmts.rst:807
 msgid ""
 "An OR pattern is two or more patterns separated by vertical bars ``|``.  "
 "Syntax:"
 msgstr ""
+"Vzorek OR jsou dva nebo více vzorců oddělených svislým pruhem ``|``. Syntax:"
 
 #: ../../reference/compound_stmts.rst:813
 msgid ""
-"Only the final subpattern may be :ref:`irrefutable <irrefutable_case>`, "
-"and each subpattern must bind the same set of names to avoid ambiguity."
+"Only the final subpattern may be :ref:`irrefutable <irrefutable_case>`, and "
+"each subpattern must bind the same set of names to avoid ambiguity."
 msgstr ""
+"Pouze poslední podvzorek má být :ref:`nezačínatelný <irrefutable_case>` a "
+"každý podvzorek musí vazat stejné sady jmen, aby se vyhnul nejasnosti."
 
 #: ../../reference/compound_stmts.rst:816
 msgid ""
-"An OR pattern matches each of its subpatterns in turn to the subject "
-"value, until one succeeds.  The OR pattern is then considered successful."
-"  Otherwise, if none of the subpatterns succeed, the OR pattern fails."
+"An OR pattern matches each of its subpatterns in turn to the subject value, "
+"until one succeeds.  The OR pattern is then considered successful.  "
+"Otherwise, if none of the subpatterns succeed, the OR pattern fails."
 msgstr ""
+"Vzorek OR matchuje každý ze svých podvzorců postupně proti hodnotě subjektu,"
+" dokud jeden neuspokojit. Vzorek OR se pak považuje za úspěšný. V opačném "
+"případě, pokud žádný z podvzorců neuspokojit, vzorek OR selhává."
 
 #: ../../reference/compound_stmts.rst:820
 msgid ""
-"In simple terms, ``P1 | P2 | ...`` will try to match ``P1``, if it fails "
-"it will try to match ``P2``, succeeding immediately if any succeeds, "
-"failing otherwise."
+"In simple terms, ``P1 | P2 | ...`` will try to match ``P1``, if it fails it "
+"will try to match ``P2``, succeeding immediately if any succeeds, failing "
+"otherwise."
 msgstr ""
+"Jednoduchy mi slovy ``P1 | P2 | ...`` se pokusí matchovat ``P1``, pokud "
+"selhává, pokusí se matchovat ``P2``, ihned uspokojit, pokud něco uspokojit, "
+"jinak selhává."
 
 #: ../../reference/compound_stmts.rst:826
 msgid "AS Patterns"
-msgstr ""
+msgstr "JAKO Vzorek"
 
 #: ../../reference/compound_stmts.rst:828
 msgid ""
-"An AS pattern matches an OR pattern on the left of the :keyword:`as` "
-"keyword against a subject.  Syntax:"
+"An AS pattern matches an OR pattern on the left of the :keyword:`as` keyword"
+" against a subject.  Syntax:"
 msgstr ""
+"Vzorek AS matchuje vzorek OR vlevo klavesu :keyword:`as` proti subjektu. "
+"Syntax:"
 
 #: ../../reference/compound_stmts.rst:834
 msgid ""
-"If the OR pattern fails, the AS pattern fails.  Otherwise, the AS pattern"
-" binds the subject to the name on the right of the as keyword and "
-"succeeds. ``capture_pattern`` cannot be a ``_``."
+"If the OR pattern fails, the AS pattern fails.  Otherwise, the AS pattern "
+"binds the subject to the name on the right of the as keyword and succeeds. "
+"``capture_pattern`` cannot be a ``_``."
 msgstr ""
+"Pokud vzorek OR selhává, vzorek AS selhává. V opačném případě vzorek AS váže"
+" subjekt k jménu napravo od klavesu as a uspokojit. ``capture_pattern`` "
+"nemůže být ``_``."
 
 #: ../../reference/compound_stmts.rst:838
 msgid ""
-"In simple terms ``P as NAME`` will match with ``P``, and on success it "
-"will set ``NAME = <subject>``."
+"In simple terms ``P as NAME`` will match with ``P``, and on success it will "
+"set ``NAME = <subject>``."
 msgstr ""
+"Jednoduchy mi slovy ``P as NAME`` se pokusí matchovat s ``P`` a při úspěchu "
+"nastaví ``NAME = <subject>``."
 
 #: ../../reference/compound_stmts.rst:845
 msgid "Literal Patterns"
-msgstr ""
+msgstr "Literalní vzorek"
 
 #: ../../reference/compound_stmts.rst:847
 msgid ""
-"A literal pattern corresponds to most :ref:`literals <literals>` in "
-"Python.  Syntax:"
+"A literal pattern corresponds to most :ref:`literals <literals>` in Python."
+"  Syntax:"
 msgstr ""
+"Literalní vzorek odpovídá většině :ref:`literálů <literals>` v Pythonu. "
+"Syntax:"
 
 #: ../../reference/compound_stmts.rst:860
 msgid ""
 "The rule ``strings`` and the token ``NUMBER`` are defined in the "
 ":doc:`standard Python grammar <./grammar>`.  Triple-quoted strings are "
-"supported.  Raw strings and byte strings are supported.  :ref:`f-strings`"
-" and :ref:`t-strings` are not supported."
+"supported.  Raw strings and byte strings are supported.  :ref:`f-strings` "
+"and :ref:`t-strings` are not supported."
 msgstr ""
+"Pravidlo ``strings`` a token ``NUMBER`` jsou definovány v :doc:`standardní "
+"gramatice Python <./grammar>`. Trojíté citáty jsou podporovány. Surové "
+"řetězce a bajty jsou podporovány. :ref:`f-strings` a :ref:`t-strings` nejsou"
+" podporovány."
 
 #: ../../reference/compound_stmts.rst:865
 msgid ""
-"The forms ``signed_number '+' NUMBER`` and ``signed_number '-' NUMBER`` "
-"are for expressing :ref:`complex numbers <imaginary>`; they require a "
-"real number on the left and an imaginary number on the right. E.g. ``3 + "
-"4j``."
+"The forms ``signed_number '+' NUMBER`` and ``signed_number '-' NUMBER`` are "
+"for expressing :ref:`complex numbers <imaginary>`; they require a real "
+"number on the left and an imaginary number on the right. E.g. ``3 + 4j``."
 msgstr ""
+"Formy ``signed_number '+' NUMBER`` a ``signed_number '-' NUMBER`` jsou pro "
+"vyjádření :ref:`komplexních čísel <imaginary>`; vyžadují reálné číslo vlevo "
+"a imaginární číslo vpravo. Např. ``3 + 4j``."
 
 #: ../../reference/compound_stmts.rst:869
 msgid ""
-"In simple terms, ``LITERAL`` will succeed only if ``<subject> == "
-"LITERAL``. For the singletons ``None``, ``True`` and ``False``, the "
-":keyword:`is` operator is used."
+"In simple terms, ``LITERAL`` will succeed only if ``<subject> == LITERAL``. "
+"For the singletons ``None``, ``True`` and ``False``, the :keyword:`is` "
+"operator is used."
 msgstr ""
+"Jednoduchy mi slovy, ``LITERAL`` bude úspěšný pouze pokud ``<subject> == "
+"LITERAL``. Pro singletony ``None``, ``True`` a ``False`` se používá operátor"
+" :keyword:`is`."
 
 #: ../../reference/compound_stmts.rst:875
 msgid "Capture Patterns"
-msgstr ""
+msgstr "Zachycení vzorců"
 
 #: ../../reference/compound_stmts.rst:877
 msgid "A capture pattern binds the subject value to a name. Syntax:"
-msgstr ""
+msgstr "Vzorek pro zachycení váže hodnotu subjektu k jménu. Syntax:"
 
 #: ../../reference/compound_stmts.rst:883
 msgid ""
-"A single underscore ``_`` is not a capture pattern (this is what ``!'_'``"
-" expresses). It is instead treated as a :token:`~python-"
+"A single underscore ``_`` is not a capture pattern (this is what ``!'_'`` "
+"expresses). It is instead treated as a :token:`~python-"
 "grammar:wildcard_pattern`."
 msgstr ""
+"Jedna pomlčka ``_`` není vzorek pro zachycení (toto je co vyjadřuje "
+"``!'_'``). Zaměštěčuje se to jako :token:`~python-grammar:wildcard_pattern`."
 
 #: ../../reference/compound_stmts.rst:887
 msgid ""
-"In a given pattern, a given name can only be bound once.  E.g. ``case x, "
-"x: ...`` is invalid while ``case [x] | x: ...`` is allowed."
+"In a given pattern, a given name can only be bound once.  E.g. ``case x, x: "
+"...`` is invalid while ``case [x] | x: ...`` is allowed."
 msgstr ""
+"V daném vzorcí lze dané jméno vázat pouze jednou. Např. ``case x, x: ...`` "
+"je neplatný, zatímco ``case [x] | x: ...`` je povolen."
 
 #: ../../reference/compound_stmts.rst:890
 msgid ""
 "Capture patterns always succeed.  The binding follows scoping rules "
-"established by the assignment expression operator in :pep:`572`; the name"
-" becomes a local variable in the closest containing function scope unless"
-" there's an applicable :keyword:`global` or :keyword:`nonlocal` "
-"statement."
+"established by the assignment expression operator in :pep:`572`; the name "
+"becomes a local variable in the closest containing function scope unless "
+"there's an applicable :keyword:`global` or :keyword:`nonlocal` statement."
 msgstr ""
+"Vzorek pro zachycení vždy uspokojit. Vázání následuje pravidla rozsahu "
+"zahnřzáná operátorem výrazu přiřazení v :pep:`572`; jméno se stává lokální "
+"proměnné v nejblížě se obsahujícím rozsahu funkce, pokud nejsou platné "
+":keyword:`global` nebo :keyword:`nonlocal` příkazy."
 
 #: ../../reference/compound_stmts.rst:895
 msgid ""
 "In simple terms ``NAME`` will always succeed and it will set ``NAME = "
 "<subject>``."
 msgstr ""
+"Jednoduchy mi slovy ``NAME`` vždy uspokojit a nastaví ``NAME = <subject>``."
 
 #: ../../reference/compound_stmts.rst:900
 msgid "Wildcard Patterns"
-msgstr ""
+msgstr "Zástupné vzorek"
 
 #: ../../reference/compound_stmts.rst:902
 msgid ""
-"A wildcard pattern always succeeds (matches anything) and binds no name."
-"  Syntax:"
+"A wildcard pattern always succeeds (matches anything) and binds no name.  "
+"Syntax:"
 msgstr ""
+"Zástupný vzorek vždy uspokojit (matchuje cokoli) a váže žádné jméno. Syntax:"
 
 #: ../../reference/compound_stmts.rst:908
 msgid ""
-"``_`` is a :ref:`soft keyword <soft-keywords>` within any pattern, but "
-"only within patterns.  It is an identifier, as usual, even within "
-"``match`` subject expressions, ``guard``\\ s, and ``case`` blocks."
+"``_`` is a :ref:`soft keyword <soft-keywords>` within any pattern, but only "
+"within patterns.  It is an identifier, as usual, even within ``match`` "
+"subject expressions, ``guard``\\ s, and ``case`` blocks."
 msgstr ""
+"``_`` je :ref:`soft keyword <soft-keywords>` v rámci jakéhokoliv vzorců, ale"
+" pouze v rámci vzorců. Je to identifikátor, jak je bĞžné, i v rámci "
+"``match`` výrazů subjektu, ``guard``\\ s, a ``case`` bloků."
 
 #: ../../reference/compound_stmts.rst:912
 msgid "In simple terms, ``_`` will always succeed."
-msgstr ""
+msgstr "Jednoduchy mi slovy, ``_`` vždy uspokojit."
 
 #: ../../reference/compound_stmts.rst:917
 msgid "Value Patterns"
-msgstr ""
+msgstr "Vzorek hodnoty"
 
 #: ../../reference/compound_stmts.rst:919
 msgid "A value pattern represents a named value in Python. Syntax:"
-msgstr ""
+msgstr "Vzorek hodnoty představuje pojmenovanou hodnotu v Pythonu. Syntax:"
 
 #: ../../reference/compound_stmts.rst:927
 msgid ""
-"The dotted name in the pattern is looked up using standard Python "
-":ref:`name resolution rules <resolve_names>`.  The pattern succeeds if "
-"the value found compares equal to the subject value (using the ``==`` "
-"equality operator)."
+"The dotted name in the pattern is looked up using standard Python :ref:`name"
+" resolution rules <resolve_names>`.  The pattern succeeds if the value found"
+" compares equal to the subject value (using the ``==`` equality operator)."
 msgstr ""
+"Tečka v nzvu v vzorcí se vyhledává podle standardních Python :ref:`pravidel "
+"pro rozlišení jmen <resolve_names>`. Vzorek uspokojit, pokud se hodnota "
+"nalezená rovná s hodnotou subjektu (pomocí operátoru ``==`` rovnosti)."
 
 #: ../../reference/compound_stmts.rst:932
 msgid ""
 "In simple terms ``NAME1.NAME2`` will succeed only if ``<subject> == "
 "NAME1.NAME2``"
 msgstr ""
+"Jednoduchy mi slovy ``NAME1.NAME2`` bude úspěšný pouze pokud ``<subject> == "
+"NAME1.NAME2``"
 
 #: ../../reference/compound_stmts.rst:936
 msgid ""
 "If the same value occurs multiple times in the same match statement, the "
-"interpreter may cache the first value found and reuse it rather than "
-"repeat the same lookup.  This cache is strictly tied to a given execution"
-" of a given match statement."
+"interpreter may cache the first value found and reuse it rather than repeat "
+"the same lookup.  This cache is strictly tied to a given execution of a "
+"given match statement."
 msgstr ""
+"Pokud se stejna hodnota objevuje vicekrat v temze prikazu match, ma "
+"interpret má moznost pouzit cache prve nalezene hodnoty a zpetne ji pouzit "
+"nez opakovat stejne vyhledavani. Toto cache je prisne svazano s danym "
+"provedenm danem prikazu match."
 
 #: ../../reference/compound_stmts.rst:944
 msgid "Group Patterns"
-msgstr ""
+msgstr "Skupinove vzorek"
 
 #: ../../reference/compound_stmts.rst:946
 msgid ""
-"A group pattern allows users to add parentheses around patterns to "
-"emphasize the intended grouping.  Otherwise, it has no additional syntax."
-" Syntax:"
+"A group pattern allows users to add parentheses around patterns to emphasize"
+" the intended grouping.  Otherwise, it has no additional syntax. Syntax:"
 msgstr ""
+"Skupinovy vzorek umoznjuje uzivatelm pridat zavorky kolem vzorc, aby "
+"zduraznily zamleslene seskupeni. V opacnem pripade nema dalsi syntaxi. "
+"Syntax:"
 
 #: ../../reference/compound_stmts.rst:953
 msgid "In simple terms ``(P)`` has the same effect as ``P``."
-msgstr ""
+msgstr "Jednoduchy mi slovy (P) ma stejny ucinek jako P."
 
 #: ../../reference/compound_stmts.rst:958
 msgid "Sequence Patterns"
-msgstr ""
+msgstr "Vzorek posloupnosti"
 
 #: ../../reference/compound_stmts.rst:960
 msgid ""
@@ -1136,171 +1549,225 @@ msgid ""
 "sequence elements. The syntax is similar to the unpacking of a list or "
 "tuple."
 msgstr ""
+"Vzorek posloupnosti obsahuje nkolik podvzorc, ktere maji byt matchovany "
+"proti prvkm posloupnosti. Syntax je podobna rozbalovani seznamu nebo n-tice."
 
 #: ../../reference/compound_stmts.rst:971
 msgid ""
 "There is no difference if parentheses  or square brackets are used for "
 "sequence patterns (i.e. ``(...)`` vs ``[...]`` )."
 msgstr ""
+"Neni rozdil, pokud se pouziti zavorky nebo hraante zavorky pro vzorek "
+"posloupnosti (tj. (...) vs [...])."
 
 #: ../../reference/compound_stmts.rst:975
 msgid ""
-"A single pattern enclosed in parentheses without a trailing comma (e.g. "
-"``(3 | 4)``) is a :ref:`group pattern <group-patterns>`. While a single "
-"pattern enclosed in square brackets (e.g. ``[3 | 4]``) is still a "
-"sequence pattern."
+"A single pattern enclosed in parentheses without a trailing comma (e.g. ``(3"
+" | 4)``) is a :ref:`group pattern <group-patterns>`. While a single pattern "
+"enclosed in square brackets (e.g. ``[3 | 4]``) is still a sequence pattern."
 msgstr ""
+"Jeden vzorek zabalit v zavorkach bez zacinajici carky (napр. (3 | 4)) je "
+":ref:`skupinovy vzorek <group-patterns>`. Zatmco jeden vzorek zabalit v "
+"hranatnch zavorkach (napр. [3 | 4]) je stale vzorek posloupnosti."
 
 #: ../../reference/compound_stmts.rst:980
 msgid ""
 "At most one star subpattern may be in a sequence pattern.  The star "
-"subpattern may occur in any position. If no star subpattern is present, "
-"the sequence pattern is a fixed-length sequence pattern; otherwise it is "
-"a variable-length sequence pattern."
+"subpattern may occur in any position. If no star subpattern is present, the "
+"sequence pattern is a fixed-length sequence pattern; otherwise it is a "
+"variable-length sequence pattern."
 msgstr ""
+"V vzorcch posloupnosti ma byt nejvse jeden hvezdickovy podvzorek. "
+"Hvezdickovy podvzorek se muze objevit na jakemkoli miste. Pokud neni "
+"hvezdickovy podvzorek pritomen, je vzorek posloupnosti vzorek posloupnosti s"
+" fixni delkou; v opacnem pripade je to vzorek posloupnosti s variabilni "
+"delkou."
 
 #: ../../reference/compound_stmts.rst:985
 msgid ""
-"The following is the logical flow for matching a sequence pattern against"
-" a subject value:"
+"The following is the logical flow for matching a sequence pattern against a "
+"subject value:"
 msgstr ""
+"Následující je logický tok pro matchování vzorců posloupnosti proti hodnotě "
+"subjektu:"
 
 #: ../../reference/compound_stmts.rst:988
-msgid "If the subject value is not a sequence [#]_, the sequence pattern fails."
+msgid ""
+"If the subject value is not a sequence [#]_, the sequence pattern fails."
 msgstr ""
+"Pokud hodnota subjektu neni posloupnost [#]_, vzorek posloupnosti selha."
 
 #: ../../reference/compound_stmts.rst:991
 msgid ""
-"If the subject value is an instance of ``str``, ``bytes`` or "
-"``bytearray`` the sequence pattern fails."
+"If the subject value is an instance of ``str``, ``bytes`` or ``bytearray`` "
+"the sequence pattern fails."
 msgstr ""
+"Pokud je hodnota subjektu instanci str, bytes nebo bytearray, vzorek "
+"posloupnosti selha."
 
 #: ../../reference/compound_stmts.rst:994
 msgid ""
 "The subsequent steps depend on whether the sequence pattern is fixed or "
 "variable-length."
 msgstr ""
+"Nasledujici kroky zavisi na tom, zda je vzorek posloupnosti fixni nebo "
+"variabilni delky."
 
 #: ../../reference/compound_stmts.rst:997
 msgid "If the sequence pattern is fixed-length:"
-msgstr ""
+msgstr "Pokud je vzorek posloupnosti fixni delky:"
 
 #: ../../reference/compound_stmts.rst:999
 msgid ""
 "If the length of the subject sequence is not equal to the number of "
 "subpatterns, the sequence pattern fails"
 msgstr ""
+"Pokud se delka posloupnosti subjektu nerovna poctu podvzorc, vzorek "
+"posloupnosti selha"
 
 #: ../../reference/compound_stmts.rst:1002
 msgid ""
-"Subpatterns in the sequence pattern are matched to their corresponding "
-"items in the subject sequence from left to right.  Matching stops as soon"
-" as a subpattern fails.  If all subpatterns succeed in matching their "
+"Subpatterns in the sequence pattern are matched to their corresponding items"
+" in the subject sequence from left to right.  Matching stops as soon as a "
+"subpattern fails.  If all subpatterns succeed in matching their "
 "corresponding item, the sequence pattern succeeds."
 msgstr ""
+"Podvzorce v vzorc posloupnosti jsou matchovany na jejich odpovidajici prvky "
+"v posloupnosti subjektu zleva doprava. Matchovani se zastavi jakmile "
+"podvzorek selha. Pokud jsou vsechny podvzorce uspesne matchovany s jejich "
+"odpovidajicim prvkem, vzorek posloupnosti je uspesny."
 
 #: ../../reference/compound_stmts.rst:1007
 msgid "Otherwise, if the sequence pattern is variable-length:"
-msgstr ""
+msgstr "Jinak, pokud je vzorek posloupnosti variabilni delky:"
 
 #: ../../reference/compound_stmts.rst:1009
 msgid ""
-"If the length of the subject sequence is less than the number of non-star"
-" subpatterns, the sequence pattern fails."
+"If the length of the subject sequence is less than the number of non-star "
+"subpatterns, the sequence pattern fails."
 msgstr ""
+"Pokud je delka posloupnosti subjektu mensi nez pocet non-star podvzorc, "
+"vzorek posloupnosti selha."
 
 #: ../../reference/compound_stmts.rst:1012
 msgid ""
-"The leading non-star subpatterns are matched to their corresponding items"
-" as for fixed-length sequences."
+"The leading non-star subpatterns are matched to their corresponding items as"
+" for fixed-length sequences."
 msgstr ""
+"Vedouci non-star podvzorce jsou matchovany na jejich odpovidajici prvky jako"
+" pro posloupnosti fixni delky."
 
 #: ../../reference/compound_stmts.rst:1015
 msgid ""
-"If the previous step succeeds, the star subpattern matches a list formed "
-"of the remaining subject items, excluding the remaining items "
-"corresponding to non-star subpatterns following the star subpattern."
+"If the previous step succeeds, the star subpattern matches a list formed of "
+"the remaining subject items, excluding the remaining items corresponding to "
+"non-star subpatterns following the star subpattern."
 msgstr ""
+"Pokud je predchozi krok uspesny, hvezdickovy podvzorek matchuje seznam "
+"formovany z zbyvajicch prvku subjektu, vyjmeme zbyvajici prvky odpovidajici "
+"non-star podvzorc nasledujici hvezdickovy podvzorek."
 
 #: ../../reference/compound_stmts.rst:1019
 msgid ""
-"Remaining non-star subpatterns are matched to their corresponding subject"
-" items, as for a fixed-length sequence."
+"Remaining non-star subpatterns are matched to their corresponding subject "
+"items, as for a fixed-length sequence."
 msgstr ""
+"Zbyvajici non-star podvzorce jsou matchovany na jejich odpovidajici prvky "
+"subjektu, jako pro posloupnost fixni delky."
 
 #: ../../reference/compound_stmts.rst:1022
 msgid ""
-"The length of the subject sequence is obtained via :func:`len` (i.e. via "
-"the :meth:`~object.__len__` protocol). This length may be cached by the "
-"interpreter in a similar manner as :ref:`value patterns <value-"
-"patterns>`."
+"The length of the subject sequence is obtained via :func:`len` (i.e. via the"
+" :meth:`~object.__len__` protocol). This length may be cached by the "
+"interpreter in a similar manner as :ref:`value patterns <value-patterns>`."
 msgstr ""
+"Delka posloupnosti subjektu je ziskana pomoci :func:`len` (tj. pomoci "
+":meth:`~object.__len__` protokolu). Tato delka muze byt cached interpretrem "
+"podobnym zpusobem jako :ref:`value patterns <value-patterns>`."
 
 #: ../../reference/compound_stmts.rst:1028
 msgid ""
 "In simple terms ``[P1, P2, P3,`` ... ``, P<N>]`` matches only if all the "
 "following happens:"
 msgstr ""
+"Jednoduchy mi slovy [P1, P2, P3, ... , P<N>] matchuje pouze pokud se vse "
+"nasledujici deje:"
 
 #: ../../reference/compound_stmts.rst:1031
 msgid "check ``<subject>`` is a sequence"
-msgstr ""
+msgstr "kontrola <subject> je posloupnost"
 
 #: ../../reference/compound_stmts.rst:1032
 msgid "``len(subject) == <N>``"
-msgstr ""
+msgstr "len(subject) == <N>"
 
 #: ../../reference/compound_stmts.rst:1033
-msgid "``P1`` matches ``<subject>[0]`` (note that this match can also bind names)"
+msgid ""
+"``P1`` matches ``<subject>[0]`` (note that this match can also bind names)"
 msgstr ""
+"P1 matchuje <subject>[0] (poznamka, ze tato shoda muze take vazat jmena)"
 
 #: ../../reference/compound_stmts.rst:1034
-msgid "``P2`` matches ``<subject>[1]`` (note that this match can also bind names)"
+msgid ""
+"``P2`` matches ``<subject>[1]`` (note that this match can also bind names)"
 msgstr ""
+"P2 matchuje <subject>[1] (poznamka, ze tato shoda muze take vazat jmena)"
 
 #: ../../reference/compound_stmts.rst:1035
 msgid "... and so on for the corresponding pattern/element."
-msgstr ""
+msgstr "... a tak dale pro odpovidajici vzorek/prvek."
 
 #: ../../reference/compound_stmts.rst:1040
 msgid "Mapping Patterns"
-msgstr ""
+msgstr "Vzorek mapovani"
 
 #: ../../reference/compound_stmts.rst:1042
 msgid ""
-"A mapping pattern contains one or more key-value patterns.  The syntax is"
-" similar to the construction of a dictionary. Syntax:"
+"A mapping pattern contains one or more key-value patterns.  The syntax is "
+"similar to the construction of a dictionary. Syntax:"
 msgstr ""
+"Vzorek mapovani obsahuje jeden nebo vice klicovych dvojic. Syntax je podobna"
+" konstrukci slovniku. Syntax:"
 
 #: ../../reference/compound_stmts.rst:1053
 msgid ""
 "At most one double star pattern may be in a mapping pattern.  The double "
 "star pattern must be the last subpattern in the mapping pattern."
 msgstr ""
+"V vzorc mapovani muze byt nejvice jeden double star vzorek. Double star "
+"vzorek musi byt posledni podvzorek v vzorc mapovani."
 
 #: ../../reference/compound_stmts.rst:1056
 msgid ""
-"Duplicate keys in mapping patterns are disallowed. Duplicate literal keys"
-" will raise a :exc:`SyntaxError`. Two keys that otherwise have the same "
-"value will raise a :exc:`ValueError` at runtime."
+"Duplicate keys in mapping patterns are disallowed. Duplicate literal keys "
+"will raise a :exc:`SyntaxError`. Two keys that otherwise have the same value"
+" will raise a :exc:`ValueError` at runtime."
 msgstr ""
+"Duplikatni klice v vzorcch mapovani nejsou povoleny. Duplikatni literalni "
+"klice vyvolaji :exc:`SyntaxError`. Dva klice, ktere maji jinou hodnotu, "
+"vyvolaji :exc:`ValueError` za behu."
 
 #: ../../reference/compound_stmts.rst:1060
 msgid ""
-"The following is the logical flow for matching a mapping pattern against "
-"a subject value:"
+"The following is the logical flow for matching a mapping pattern against a "
+"subject value:"
 msgstr ""
+"Nasledujici je logicky tok pro matchovani vzorc mapovani proti hodnote "
+"subjektu:"
 
 #: ../../reference/compound_stmts.rst:1063
 msgid "If the subject value is not a mapping [#]_,the mapping pattern fails."
-msgstr ""
+msgstr "Pokud hodnota subjektu neni mapovani [#]_, vzorek mapovani selha."
 
 #: ../../reference/compound_stmts.rst:1065
 msgid ""
-"If every key given in the mapping pattern is present in the subject "
-"mapping, and the pattern for each key matches the corresponding item of "
-"the subject mapping, the mapping pattern succeeds."
+"If every key given in the mapping pattern is present in the subject mapping,"
+" and the pattern for each key matches the corresponding item of the subject "
+"mapping, the mapping pattern succeeds."
 msgstr ""
+"Pokud je kazddy klic dany v vzorc mapovani pritomen v mapovani subjektu a "
+"vzorek pro kazddy klic matchuje odpovidajici prvek mapovani subjektu, vzorek"
+" mapovani je uspesny."
 
 #: ../../reference/compound_stmts.rst:1069
 msgid ""
@@ -1308,14 +1775,22 @@ msgid ""
 "considered invalid. A :exc:`SyntaxError` is raised for duplicate literal "
 "values; or a :exc:`ValueError` for named keys of the same value."
 msgstr ""
+"Pokud jsou deteklovany duplikatni klice v vzorc mapovani, je vzorek "
+"povazovan za neplatny. :exc:`SyntaxError` je vyvolana pro duplikatni "
+"literalni hodnoty; nebo :exc:`ValueError` pro pojmenovane klice stejne "
+"hodnoty."
 
 #: ../../reference/compound_stmts.rst:1073
 msgid ""
 "Key-value pairs are matched using the two-argument form of the mapping "
-"subject's ``get()`` method.  Matched key-value pairs must already be "
-"present in the mapping, and not created on-the-fly via "
-":meth:`~object.__missing__` or :meth:`~object.__getitem__`."
+"subject's ``get()`` method.  Matched key-value pairs must already be present"
+" in the mapping, and not created on-the-fly via :meth:`~object.__missing__` "
+"or :meth:`~object.__getitem__`."
 msgstr ""
+"Klicove dvojice jsou matchovany pouzitim dvou-argumentove formy metody "
+"``get()`` mapovani subjektu. Matchovane klicove dvojice musi jiz byt "
+"pritomny v mapovani a nesmejí byt vytvoreny za letu pomoci "
+":meth:`~object.__missing__` nebo :meth:`~object.__getitem__`."
 
 #: ../../reference/compound_stmts.rst:1078
 #, python-brace-format
@@ -1323,99 +1798,121 @@ msgid ""
 "In simple terms ``{KEY1: P1, KEY2: P2, ... }`` matches only if all the "
 "following happens:"
 msgstr ""
+"Jednoduchy mi slovy {KEY1: P1, KEY2: P2, ... } matchuje pouze pokud se vse "
+"nasledujici deje:"
 
 #: ../../reference/compound_stmts.rst:1081
 msgid "check ``<subject>`` is a mapping"
-msgstr ""
+msgstr "kontrola <subject> je mapovani"
 
 #: ../../reference/compound_stmts.rst:1082
 msgid "``KEY1 in <subject>``"
-msgstr ""
+msgstr "KEY1 in <subject>"
 
 #: ../../reference/compound_stmts.rst:1083
 msgid "``P1`` matches ``<subject>[KEY1]``"
-msgstr ""
+msgstr "P1 matchuje <subject>[KEY1]"
 
 #: ../../reference/compound_stmts.rst:1084
 msgid "... and so on for the corresponding KEY/pattern pair."
-msgstr ""
+msgstr "... a tak dale pro odpovidajici KEY/vzorek dvojici."
 
 #: ../../reference/compound_stmts.rst:1090
 msgid "Class Patterns"
-msgstr ""
+msgstr "Vzorek tridy"
 
 #: ../../reference/compound_stmts.rst:1092
 msgid ""
-"A class pattern represents a class and its positional and keyword "
-"arguments (if any).  Syntax:"
+"A class pattern represents a class and its positional and keyword arguments "
+"(if any).  Syntax:"
 msgstr ""
+"Vzorek tridy reprezentuje tridu a jeji pozitonalni a klicova argumenty "
+"(pokud jsou). Syntax:"
 
 #: ../../reference/compound_stmts.rst:1103
 msgid "The same keyword should not be repeated in class patterns."
-msgstr ""
+msgstr "Stejny klicovy slovy by se nemel opakovat ve vzorcch trid."
 
 #: ../../reference/compound_stmts.rst:1105
 msgid ""
 "The following is the logical flow for matching a class pattern against a "
 "subject value:"
 msgstr ""
+"Nasledujici je logicky tok pro matchovani vzorc tridy proti hodnote "
+"subjektu:"
 
 #: ../../reference/compound_stmts.rst:1108
 msgid ""
-"If ``name_or_attr`` is not an instance of the builtin :class:`type` , "
-"raise :exc:`TypeError`."
+"If ``name_or_attr`` is not an instance of the builtin :class:`type` , raise "
+":exc:`TypeError`."
 msgstr ""
+"Pokud name_or_attr neni instanci vestavene :class:`type`, vyvolej "
+":exc:`TypeError`."
 
 #: ../../reference/compound_stmts.rst:1111
 msgid ""
 "If the subject value is not an instance of ``name_or_attr`` (tested via "
 ":func:`isinstance`), the class pattern fails."
 msgstr ""
+"Pokud hodnota subjektu neni instanci name_or_attr (testovano pomoci "
+":func:`isinstance`), vzorek tridy selha."
 
 #: ../../reference/compound_stmts.rst:1114
 msgid ""
-"If no pattern arguments are present, the pattern succeeds.  Otherwise, "
-"the subsequent steps depend on whether keyword or positional argument "
-"patterns are present."
+"If no pattern arguments are present, the pattern succeeds.  Otherwise, the "
+"subsequent steps depend on whether keyword or positional argument patterns "
+"are present."
 msgstr ""
+"Pokud nejsou pritomny zadne argumenty vzorc, vzorek je uspesny. Jinak, "
+"nasledujici kroky zavisi na tom, zda jsou pritomny klicove nebo pozitonalni "
+"argumenty vzorc."
 
 #: ../../reference/compound_stmts.rst:1118
 msgid ""
 "For a number of built-in types (specified below), a single positional "
-"subpattern is accepted which will match the entire subject; for these "
-"types keyword patterns also work as for other types."
+"subpattern is accepted which will match the entire subject; for these types "
+"keyword patterns also work as for other types."
 msgstr ""
+"Pro pocet vestavennych typu (specifikovany nize), je prijet jeden "
+"pozitonalni podvzorek, ktery matchuje cely subjekt; pro tyto typy klicove "
+"vzorek take pracuji jako pro jine typy."
 
 #: ../../reference/compound_stmts.rst:1122
 msgid ""
-"If only keyword patterns are present, they are processed as follows, one "
-"by one:"
+"If only keyword patterns are present, they are processed as follows, one by "
+"one:"
 msgstr ""
+"Pokud jsou pritomny pouze klicove vzorc, jsou zpracovany nasledovne, jeden "
+"po druh:"
 
 #: ../../reference/compound_stmts.rst:1125
 msgid "The keyword is looked up as an attribute on the subject."
-msgstr ""
+msgstr "Klic se vyhledava jako atribut na subjektu."
 
 #: ../../reference/compound_stmts.rst:1127
 msgid ""
-"If this raises an exception other than :exc:`AttributeError`, the "
-"exception bubbles up."
+"If this raises an exception other than :exc:`AttributeError`, the exception "
+"bubbles up."
 msgstr ""
+"Pokud to vyvola vyjimku jinou nez :exc:`AttributeError`, vyjimka se siri."
 
 #: ../../reference/compound_stmts.rst:1130
 msgid "If this raises :exc:`AttributeError`, the class pattern has failed."
-msgstr ""
+msgstr "Pokud to vyvola :exc:`AttributeError`, vzorek tridy selha."
 
 #: ../../reference/compound_stmts.rst:1132
 msgid ""
-"Else, the subpattern associated with the keyword pattern is matched "
-"against the subject's attribute value.  If this fails, the class pattern "
-"fails; if this succeeds, the match proceeds to the next keyword."
+"Else, the subpattern associated with the keyword pattern is matched against "
+"the subject's attribute value.  If this fails, the class pattern fails; if "
+"this succeeds, the match proceeds to the next keyword."
 msgstr ""
+"Jinak, podvzorek spojeny s klicovym vzorcem je matchovan proti hodnote "
+"atributu subjektu. Pokud se nepovede, vzorek tridy selha; pokud se povede, "
+"shoda pokracuje k dalsimu klici."
 
 #: ../../reference/compound_stmts.rst:1137
 msgid "If all keyword patterns succeed, the class pattern succeeds."
-msgstr ""
+msgstr "Pokud jsou vsechny klicove vzorc uspesne, vzorek tridy je uspesny."
 
 #: ../../reference/compound_stmts.rst:1139
 msgid ""
@@ -1423,172 +1920,205 @@ msgid ""
 "patterns using the :data:`~object.__match_args__` attribute on the class "
 "``name_or_attr`` before matching:"
 msgstr ""
+"Pokud jsou pritomny jakekoli pozitonalni vzorc, jsou konvertovany na klicove"
+" vzorc pouzitim atributu :data:`~object.__match_args__` na tride "
+"name_or_attr pred matchovanim:"
 
 #: ../../reference/compound_stmts.rst:1143
 msgid "The equivalent of ``getattr(cls, \"__match_args__\", ())`` is called."
-msgstr ""
+msgstr "Ekvivalent ``getattr(cls, \"__match_args__\", ())`` je zavolana."
 
 #: ../../reference/compound_stmts.rst:1145
 msgid "If this raises an exception, the exception bubbles up."
-msgstr ""
+msgstr "Pokud to vyvola vyjimku, vyjimka se siri."
 
 #: ../../reference/compound_stmts.rst:1147
 msgid ""
 "If the returned value is not a tuple, the conversion fails and "
 ":exc:`TypeError` is raised."
 msgstr ""
+"Pokud vracena hodnota neni n-tice, konverze se neuda a :exc:`TypeError` je "
+"vyvolana."
 
 #: ../../reference/compound_stmts.rst:1150
 msgid ""
 "If there are more positional patterns than ``len(cls.__match_args__)``, "
 ":exc:`TypeError` is raised."
 msgstr ""
+"Pokud je vice pozitonalnich vzorc nez ``len(cls.__match_args__)``, "
+":exc:`TypeError` je vyvolana."
 
 #: ../../reference/compound_stmts.rst:1153
 msgid ""
-"Otherwise, positional pattern ``i`` is converted to a keyword pattern "
-"using ``__match_args__[i]`` as the keyword.  ``__match_args__[i]`` must "
-"be a string; if not :exc:`TypeError` is raised."
+"Otherwise, positional pattern ``i`` is converted to a keyword pattern using "
+"``__match_args__[i]`` as the keyword.  ``__match_args__[i]`` must be a "
+"string; if not :exc:`TypeError` is raised."
 msgstr ""
+"Jinak, pozitonalni vzorek i je konvertovan na klicovy vzorek pouzitim "
+"``__match_args__[i]`` jako klic. ``__match_args__[i]`` musi byt retezec; "
+"pokud ne :exc:`TypeError` je vyvolana."
 
 #: ../../reference/compound_stmts.rst:1157
 msgid "If there are duplicate keywords, :exc:`TypeError` is raised."
-msgstr ""
+msgstr "Pokud jsou duplikatni klice, :exc:`TypeError` je vyvolana."
 
 #: ../../reference/compound_stmts.rst:1159
 msgid ":ref:`class-pattern-matching`"
-msgstr ""
+msgstr ":ref:`class-pattern-matching`"
 
 #: ../../reference/compound_stmts.rst:1161
 msgid ""
-"Once all positional patterns have been converted to keyword patterns, the"
-" match proceeds as if there were only keyword patterns."
+"Once all positional patterns have been converted to keyword patterns, the "
+"match proceeds as if there were only keyword patterns."
 msgstr ""
+"Jakmile jsou vsechny pozitonalni vzorc konvertovany na klicove vzorc, shoda "
+"pokracuje jako kdyby byly pouze klicove vzorc."
 
 #: ../../reference/compound_stmts.rst:1164
 msgid ""
-"For the following built-in types the handling of positional subpatterns "
-"is different:"
+"For the following built-in types the handling of positional subpatterns is "
+"different:"
 msgstr ""
+"Pro nasledujici vestavene typy je zachazeni s pozitonalnimi podvzorci "
+"odlisne:"
 
 #: ../../reference/compound_stmts.rst:1167
 msgid ":class:`bool`"
-msgstr ""
+msgstr ":class:`bool`"
 
 #: ../../reference/compound_stmts.rst:1168
 msgid ":class:`bytearray`"
-msgstr ""
+msgstr ":class:`bytearray`"
 
 #: ../../reference/compound_stmts.rst:1169
 msgid ":class:`bytes`"
-msgstr ""
+msgstr ":class:`bytes`"
 
 #: ../../reference/compound_stmts.rst:1170
 msgid ":class:`dict`"
-msgstr ""
+msgstr ":class:`dict`"
 
 #: ../../reference/compound_stmts.rst:1171
 msgid ":class:`float`"
-msgstr ""
+msgstr ":class:`float`"
 
 #: ../../reference/compound_stmts.rst:1172
 msgid ":class:`frozenset`"
-msgstr ""
+msgstr ":class:`frozenset`"
 
 #: ../../reference/compound_stmts.rst:1173
 msgid ":class:`int`"
-msgstr ""
+msgstr ":class:`int`"
 
 #: ../../reference/compound_stmts.rst:1174
 #: ../../reference/compound_stmts.rst:1932
 msgid ":class:`list`"
-msgstr ""
+msgstr ":class:`list`"
 
 #: ../../reference/compound_stmts.rst:1175
 msgid ":class:`set`"
-msgstr ""
+msgstr ":class:`set`"
 
 #: ../../reference/compound_stmts.rst:1176
 msgid ":class:`str`"
-msgstr ""
+msgstr ":class:`str`"
 
 #: ../../reference/compound_stmts.rst:1177
 #: ../../reference/compound_stmts.rst:1935
 msgid ":class:`tuple`"
-msgstr ""
+msgstr ":class:`tuple`"
 
 #: ../../reference/compound_stmts.rst:1179
 msgid ""
-"These classes accept a single positional argument, and the pattern there "
-"is matched against the whole object rather than an attribute. For example"
-" ``int(0|1)`` matches the value ``0``, but not the value ``0.0``."
+"These classes accept a single positional argument, and the pattern there is "
+"matched against the whole object rather than an attribute. For example "
+"``int(0|1)`` matches the value ``0``, but not the value ``0.0``."
 msgstr ""
+"Tyto tridy prijimaji jeden pozitonalni argument a vzorek tam je matchovan "
+"proti celem objektu spise nez proti atributu. Napr int(0|1) matchuje hodnotu"
+" 0, ale ne hodnotu 0.0."
 
 #: ../../reference/compound_stmts.rst:1183
 msgid ""
-"In simple terms ``CLS(P1, attr=P2)`` matches only if the following "
-"happens:"
+"In simple terms ``CLS(P1, attr=P2)`` matches only if the following happens:"
 msgstr ""
+"Jednoduchy mi slovy CLS(P1, attr=P2) matchuje pouze pokud se nasledujici "
+"deje:"
 
 #: ../../reference/compound_stmts.rst:1185
 msgid "``isinstance(<subject>, CLS)``"
-msgstr ""
+msgstr "isinstance(<subject>, CLS)"
 
 #: ../../reference/compound_stmts.rst:1186
 msgid "convert ``P1`` to a keyword pattern using ``CLS.__match_args__``"
-msgstr ""
+msgstr "konvertuj P1 na klicovy vzorek pouzitim CLS.__match_args__"
 
 #: ../../reference/compound_stmts.rst:1187
 msgid "For each keyword argument ``attr=P2``:"
-msgstr ""
+msgstr "Pro kazddy klicovy argument attr=P2:"
 
 #: ../../reference/compound_stmts.rst:1189
 msgid "``hasattr(<subject>, \"attr\")``"
-msgstr ""
+msgstr "hasattr(<subject>, \"attr\")"
 
 #: ../../reference/compound_stmts.rst:1190
 msgid "``P2`` matches ``<subject>.attr``"
-msgstr ""
+msgstr "P2 matchuje <subject>.attr"
 
 #: ../../reference/compound_stmts.rst:1192
 msgid "... and so on for the corresponding keyword argument/pattern pair."
-msgstr ""
+msgstr "... a tak dale pro odpovidajici klicovy argument/vzorek dvojici."
 
 #: ../../reference/compound_stmts.rst:1207
 msgid "Function definitions"
-msgstr ""
+msgstr "Definice funkci"
 
 #: ../../reference/compound_stmts.rst:1222
 msgid ""
-"A function definition defines a user-defined function object (see section"
-" :ref:`types`):"
+"A function definition defines a user-defined function object (see section "
+":ref:`types`):"
 msgstr ""
+"Definice funkce definuje uzivatelskou funkci objekt (viz sekce "
+":ref:`types`):"
 
 #: ../../reference/compound_stmts.rst:1244
 msgid ""
-"A function definition is an executable statement.  Its execution binds "
-"the function name in the current local namespace to a function object (a "
-"wrapper around the executable code for the function).  This function "
-"object contains a reference to the current global namespace as the global"
-" namespace to be used when the function is called."
+"A function definition is an executable statement.  Its execution binds the "
+"function name in the current local namespace to a function object (a wrapper"
+" around the executable code for the function).  This function object "
+"contains a reference to the current global namespace as the global namespace"
+" to be used when the function is called."
 msgstr ""
+"Definice funkce je spustitelny prikaz. Jeji provedeni vazani jmeno funkce v "
+"aktualni lokalni namespace na funkci objekt (obalu kolem spustitelneho kodu "
+"pro funkci). Tento funkci objekt obsahuje odkaz na aktualni globalni "
+"namespace jako globalni namespace, ktere se budou pouzivat, kdyz je funkce "
+"volana."
 
 #: ../../reference/compound_stmts.rst:1250
 msgid ""
 "The function definition does not execute the function body; this gets "
 "executed only when the function is called. [#]_"
 msgstr ""
+"Definice funkce neproves telo funkce; toto se vykonava pouze kdyz je funkce "
+"volana. [#]_"
 
 #: ../../reference/compound_stmts.rst:1256
 msgid ""
 "A function definition may be wrapped by one or more :term:`decorator` "
 "expressions. Decorator expressions are evaluated when the function is "
 "defined, in the scope that contains the function definition.  The result "
-"must be a callable, which is invoked with the function object as the only"
-" argument. The returned value is bound to the function name instead of "
-"the function object.  Multiple decorators are applied in nested fashion. "
-"For example, the following code ::"
+"must be a callable, which is invoked with the function object as the only "
+"argument. The returned value is bound to the function name instead of the "
+"function object.  Multiple decorators are applied in nested fashion. For "
+"example, the following code ::"
 msgstr ""
+"Definice funkce muze byt obalena jednim nebo vice :term:`decorator` vyrazy. "
+"Dekorator vyrazy se vyhodnocuji kdyz je funkce definovana, v oboru, ktere "
+"obsahuje definici funkce. Vysledek musi byt volatelna, ktera je vyvolana s "
+"funkci objektem jako jedine argumentem. Vracena hodnota je vazana na jmeno "
+"funkce miste funkci objektu. Vicesobne dekoratory jsou aplikovany vnorenym "
+"zpusobem. Napr. nasledujici kod ::"
 
 #: ../../reference/compound_stmts.rst:1263
 msgid ""
@@ -1596,23 +2126,28 @@ msgid ""
 "@f2\n"
 "def func(): pass"
 msgstr ""
+"@f1(arg)\n"
+"@f2\n"
+"def func(): pass"
 
 #: ../../reference/compound_stmts.rst:1267
 #: ../../reference/compound_stmts.rst:1456
 msgid "is roughly equivalent to ::"
-msgstr ""
+msgstr "je zhruba ekvivalentni ::"
 
 #: ../../reference/compound_stmts.rst:1269
 msgid ""
 "def func(): pass\n"
 "func = f1(arg)(f2(func))"
 msgstr ""
+"def func(): pass\n"
+"func = f1(arg)(f2(func))"
 
 #: ../../reference/compound_stmts.rst:1272
 msgid ""
 "except that the original function is not temporarily bound to the name "
 "``func``."
-msgstr ""
+msgstr "krome toho, ze puvodni funkce neni docasne vazana na jmeno func."
 
 #: ../../reference/compound_stmts.rst:1274
 msgid ""
@@ -1620,33 +2155,48 @@ msgid ""
 "grammar:assignment_expression`. Previously, the grammar was much more "
 "restrictive; see :pep:`614` for details."
 msgstr ""
+"Funkce mohou byt dekorovany jakymkoli platnym :token:`~python-"
+"grammar:assignment_expression`. Driv byl vykaz mnohem vice restrikivni; "
+"vizte :pep:`614` pro detaily."
 
 #: ../../reference/compound_stmts.rst:1279
 msgid ""
 "A list of :ref:`type parameters <type-params>` may be given in square "
 "brackets between the function's name and the opening parenthesis for its "
-"parameter list. This indicates to static type checkers that the function "
-"is generic. At runtime, the type parameters can be retrieved from the "
-"function's :attr:`~function.__type_params__` attribute. See :ref"
-":`generic-functions` for more."
+"parameter list. This indicates to static type checkers that the function is "
+"generic. At runtime, the type parameters can be retrieved from the "
+"function's :attr:`~function.__type_params__` attribute. See :ref:`generic-"
+"functions` for more."
 msgstr ""
+"Seznam :ref:`typu parametru <type-params>` muze byt dan v hranatnycch "
+"zavorkach mezi jmenem funkce a otviraci zavorkou pro jeji seznam parametru. "
+"To indikuje do statickyho kontroly typu, ze funkce je generovana. Pri "
+"bezinu, typove parametry mohou byt ziskany z "
+":attr:`~function.__type_params__` atributu funkce. Vizte :ref:`generic-"
+"functions` pro vice."
 
 #: ../../reference/compound_stmts.rst:1286
 #: ../../reference/compound_stmts.rst:1475
 msgid "Type parameter lists are new in Python 3.12."
-msgstr ""
+msgstr "Seznamy typu parametru jsou nove v Pythonu 3.12."
 
 #: ../../reference/compound_stmts.rst:1294
 msgid ""
-"When one or more :term:`parameters <parameter>` have the form *parameter*"
-" ``=`` *expression*, the function is said to have \"default parameter "
+"When one or more :term:`parameters <parameter>` have the form *parameter* "
+"``=`` *expression*, the function is said to have \"default parameter "
 "values.\"  For a parameter with a default value, the corresponding "
-":term:`argument` may be omitted from a call, in which case the "
-"parameter's default value is substituted.  If a parameter has a default "
-"value, all following parameters up until the \"``*``\" must also have a "
-"default value --- this is a syntactic restriction that is not expressed "
-"by the grammar."
+":term:`argument` may be omitted from a call, in which case the parameter's "
+"default value is substituted.  If a parameter has a default value, all "
+"following parameters up until the \"``*``\" must also have a default value "
+"--- this is a syntactic restriction that is not expressed by the grammar."
 msgstr ""
+"Kdyz jeden nebo vice :term:`parametru <parameter>` ma formu *parameter* "
+"``=`` *expression*, funkce se rekne, ze ma \"vychozi hodnoty parametru\". "
+"Pro parametr s vychozi hodnotou, odpovidajici :term:`argument` muze byt "
+"vynechan z volani, v cemz pripade se pouzije vychozi hodnota parametru. "
+"Pokud ma parametr vychozi hodnotu, vsichni nasledujici parametry az "
+"\"``*``\" musi take mit vychozi hodnotu --- toto je syntakticke omezeni, "
+"ktere neni vyjadrem gramatikou."
 
 #: ../../reference/compound_stmts.rst:1302
 msgid ""
@@ -1655,12 +2205,21 @@ msgid ""
 "evaluated once, when the function is defined, and that the same \"pre-"
 "computed\" value is used for each call.  This is especially important to "
 "understand when a default parameter value is a mutable object, such as a "
-"list or a dictionary: if the function modifies the object (e.g. by "
-"appending an item to a list), the default parameter value is in effect "
-"modified.  This is generally not what was intended.  A way around this is"
-" to use ``None`` as the default, and explicitly test for it in the body "
-"of the function, e.g.::"
+"list or a dictionary: if the function modifies the object (e.g. by appending"
+" an item to a list), the default parameter value is in effect modified.  "
+"This is generally not what was intended.  A way around this is to use "
+"``None`` as the default, and explicitly test for it in the body of the "
+"function, e.g.::"
 msgstr ""
+"**Vychozi hodnoty parametru jsou vyhodnocovany zleva doprava, kdyz je "
+"definice funkce vykonana.** To znamena, ze vyraz je vyhodnocen jednou, kdyz "
+"je funkce definovana a ze stejna \"pred-vypocitana\" hodnota se pouziva pro "
+"kazdde volani. Toto je zvlaste dulezite pochopit, kdyz je vychozi hodnota "
+"parametru menitelny objekt, jako je seznam nebo slovnik: pokud funkce "
+"modifikuje objekt (napr. pripojim prvek do seznamu), vychozi hodnota "
+"parametru je v podstate modifikovana. Toto obecne neni to, co bylo "
+"zamislenho. Zpusob, jak se kolem toho dostat je pouziti ``None`` jako "
+"vychozi a explicitne to otestovat v tele funkce, napr.::"
 
 #: ../../reference/compound_stmts.rst:1312
 msgid ""
@@ -1670,177 +2229,246 @@ msgid ""
 "    penguin.append(\"property of the zoo\")\n"
 "    return penguin"
 msgstr ""
+"def whats_on_the_telly(penguin=None):\n"
+"    if penguin is None:\n"
+"        penguin = []\n"
+"    penguin.append(\"property of the zoo\")\n"
+"    return penguin"
 
 #: ../../reference/compound_stmts.rst:1323
 msgid ""
 "Function call semantics are described in more detail in section "
 ":ref:`calls`. A function call always assigns values to all parameters "
 "mentioned in the parameter list, either from positional arguments, from "
-"keyword arguments, or from default values.  If the form "
-"\"``*identifier``\" is present, it is initialized to a tuple receiving "
-"any excess positional parameters, defaulting to the empty tuple. If the "
-"form \"``**identifier``\" is present, it is initialized to a new ordered "
-"mapping receiving any excess keyword arguments, defaulting to a new empty"
-" mapping of the same type.  Parameters after \"``*``\" or "
-"\"``*identifier``\" are keyword-only parameters and may only be passed by"
-" keyword arguments.  Parameters before \"``/``\" are positional-only "
-"parameters and may only be passed by positional arguments."
+"keyword arguments, or from default values.  If the form \"``*identifier``\" "
+"is present, it is initialized to a tuple receiving any excess positional "
+"parameters, defaulting to the empty tuple. If the form \"``**identifier``\" "
+"is present, it is initialized to a new ordered mapping receiving any excess "
+"keyword arguments, defaulting to a new empty mapping of the same type.  "
+"Parameters after \"``*``\" or \"``*identifier``\" are keyword-only "
+"parameters and may only be passed by keyword arguments.  Parameters before "
+"\"``/``\" are positional-only parameters and may only be passed by "
+"positional arguments."
 msgstr ""
+"Semantika volani funkce je podrobneji popsana v sekci :ref:`calls`. Volani "
+"funkce vzdy priradi hodnoty vsem parametrum vyjmenovanym v seznamu "
+"parametru, bud z pozitonalnich argumentu, z klicovych argumentu nebo z "
+"vychozich hodnot. Pokud je pritomna forma \"``*identifier``\", je "
+"inicializovana na tuple prijimajici jakekoli vistecne pozitonalni parametry,"
+" vychozi prazdne tuple. Pokud je pritomna forma \"``**identifier``\", je "
+"inicializovana na novy usporadany mapping prijimajici jakekoli vistecne "
+"klicove argumenty, vychozi prazdny mapping stejneho typu. Parametry za "
+"\"``*``\" nebo \"``*identifier``\" jsou pouze klicove parametry a mohou byt "
+"predan pouze klicovymi argumenty. Parametry pred \"``/``\" jsou pouze "
+"pozitonalne parametry a mohou byt predan pouze pozitonalnymi argumenty."
 
 #: ../../reference/compound_stmts.rst:1335
 msgid ""
-"The ``/`` function parameter syntax may be used to indicate positional-"
-"only parameters. See :pep:`570` for details."
+"The ``/`` function parameter syntax may be used to indicate positional-only "
+"parameters. See :pep:`570` for details."
 msgstr ""
+"Syntaxe ``/`` parametru funkce muze byt pouzita k indikaci pouze "
+"pozitonalnich parametru. Vizte :pep:`570` pro detaily."
 
 #: ../../reference/compound_stmts.rst:1344
 msgid ""
-"Parameters may have an :term:`annotation <function annotation>` of the "
-"form \"``: expression``\" following the parameter name.  Any parameter "
-"may have an annotation, even those of the form ``*identifier`` or "
-"``**identifier``. (As a special case, parameters of the form "
-"``*identifier`` may have an annotation \"``: *expression``\".) Functions "
-"may have \"return\" annotation of the form \"``-> expression``\" after "
-"the parameter list.  These annotations can be any valid Python "
-"expression.  The presence of annotations does not change the semantics of"
-" a function. See :ref:`annotations` for more information on annotations."
+"Parameters may have an :term:`annotation <function annotation>` of the form "
+"\"``: expression``\" following the parameter name.  Any parameter may have "
+"an annotation, even those of the form ``*identifier`` or ``**identifier``. "
+"(As a special case, parameters of the form ``*identifier`` may have an "
+"annotation \"``: *expression``\".) Functions may have \"return\" annotation "
+"of the form \"``-> expression``\" after the parameter list.  These "
+"annotations can be any valid Python expression.  The presence of annotations"
+" does not change the semantics of a function. See :ref:`annotations` for "
+"more information on annotations."
 msgstr ""
+"Parametry mohou mit :term:`anotace <function annotation>` formy \"``: "
+"expression``\" nasledujici jmeno parametru. Jakykoli parametr muze mit "
+"anotaci, dokonce i ty formy ``*identifier`` nebo ``**identifier``. (Jako "
+"specialni pripad, parametry formy ``*identifier`` mohou mit anotaci \"``: "
+"*expression``\".) Funkce mohou mit \"return\" anotaci formy \"``-> "
+"expression``\" za seznamem parametru. Tyto anotace mohou byt jakakoli platna"
+" Python vyrazu. Pritomnost anotaci nemeni semantiku funkce. Vizte "
+":ref:`annotations` pro vice informaci o anotacich."
 
 #: ../../reference/compound_stmts.rst:1352
 msgid ""
 "Parameters of the form \"``*identifier``\" may have an annotation \"``: "
 "*expression``\". See :pep:`646`."
 msgstr ""
+"Parametry formy \"``*identifier``\" mohou mit anotaci \"``: *expression``\"."
+" Vizte :pep:`646`."
 
 #: ../../reference/compound_stmts.rst:1358
 msgid ""
-"It is also possible to create anonymous functions (functions not bound to"
-" a name), for immediate use in expressions.  This uses lambda "
-"expressions, described in section :ref:`lambda`.  Note that the lambda "
-"expression is merely a shorthand for a simplified function definition; a "
-"function defined in a \":keyword:`def`\" statement can be passed around "
-"or assigned to another name just like a function defined by a lambda "
-"expression.  The \":keyword:`!def`\" form is actually more powerful since"
-" it allows the execution of multiple statements and annotations."
+"It is also possible to create anonymous functions (functions not bound to a "
+"name), for immediate use in expressions.  This uses lambda expressions, "
+"described in section :ref:`lambda`.  Note that the lambda expression is "
+"merely a shorthand for a simplified function definition; a function defined "
+"in a \":keyword:`def`\" statement can be passed around or assigned to "
+"another name just like a function defined by a lambda expression.  The "
+"\":keyword:`!def`\" form is actually more powerful since it allows the "
+"execution of multiple statements and annotations."
 msgstr ""
+"Je mozne take vytvorit anonymni funkce (funkce nevazane na jmeno), pro "
+"okamzite pouziti ve vyrazech. Toto pouziva lambda vyrazy, popsane v sekci "
+":ref:`lambda`. Poznamka, ze lambda vyraz je pouze zkratkou pro zjednodusou "
+"definici funkce; funkce definovana v \":keyword:`def`\" prikazu muze byt "
+"cestnena nebo priruzena jineho jmena stejne jako funkce definovana lambda "
+"vyrazu. \":keyword:`!def`\" forma je ve skutecnosti mocnejsi, nebot umoznuje"
+" provedeni vice prikazu a anotaci."
 
 #: ../../reference/compound_stmts.rst:1366
 msgid ""
 "**Programmer's note:** Functions are first-class objects.  A \"``def``\" "
 "statement executed inside a function definition defines a local function "
-"that can be returned or passed around.  Free variables used in the nested"
-" function can access the local variables of the function containing the "
-"def.  See section :ref:`naming` for details."
+"that can be returned or passed around.  Free variables used in the nested "
+"function can access the local variables of the function containing the def."
+"  See section :ref:`naming` for details."
 msgstr ""
+"**Poznamka programatora:** Funkce jsou prvni-tridy objekty. \"``def``\" "
+"prikaz vykonal uvnitr definice funkce definuje lokalni funkci, ktera muze "
+"byt vracena nebo poslan okolo. Volne promenne pouzite v vnorene funkci mohou"
+" pristoupit k lokalnim promennym funkce obsahujici def. Vizte sekce "
+":ref:`naming` pro detaily."
 
 #: ../../reference/compound_stmts.rst:1374
 msgid ":pep:`3107` - Function Annotations"
-msgstr ""
+msgstr ":pep:`3107` - Anotace funkce"
 
 #: ../../reference/compound_stmts.rst:1375
 msgid "The original specification for function annotations."
-msgstr ""
+msgstr "Puvodni specifikace pro anotace funkce."
 
 #: ../../reference/compound_stmts.rst:1377
 msgid ":pep:`484` - Type Hints"
-msgstr ""
+msgstr ":pep:`484` - Tipy typu"
 
 #: ../../reference/compound_stmts.rst:1378
 msgid "Definition of a standard meaning for annotations: type hints."
-msgstr ""
+msgstr "Definice standardniho vyznamuu pro anotace: tipy typu."
 
 #: ../../reference/compound_stmts.rst:1380
 msgid ":pep:`526` - Syntax for Variable Annotations"
-msgstr ""
+msgstr ":pep:`526` - Syntaxe pro anotace promenne"
 
 #: ../../reference/compound_stmts.rst:1381
 msgid ""
-"Ability to type hint variable declarations, including class variables and"
-" instance variables."
+"Ability to type hint variable declarations, including class variables and "
+"instance variables."
 msgstr ""
+"Schopnost cislit promenne deklarace, vcetne tridnich promennych a "
+"instancnich promennych."
 
 #: ../../reference/compound_stmts.rst:1384
 msgid ":pep:`563` - Postponed Evaluation of Annotations"
-msgstr ""
+msgstr ":pep:`563` - Odlozene vyhodnoceni anotaci"
 
 #: ../../reference/compound_stmts.rst:1385
 msgid ""
-"Support for forward references within annotations by preserving "
-"annotations in a string form at runtime instead of eager evaluation."
+"Support for forward references within annotations by preserving annotations "
+"in a string form at runtime instead of eager evaluation."
 msgstr ""
+"Podpora pro vperedi odkazy v anotacich zachovanim anotaci v retezci formu za"
+" behu miste pospiechaneho vyhodnoceni."
 
 #: ../../reference/compound_stmts.rst:1388
 msgid ":pep:`318` - Decorators for Functions and Methods"
-msgstr ""
+msgstr ":pep:`318` - Dekoratory pro funkce a metody"
 
 #: ../../reference/compound_stmts.rst:1389
 msgid ""
 "Function and method decorators were introduced. Class decorators were "
 "introduced in :pep:`3129`."
 msgstr ""
+"Dekoratory funkci a metod byly zavedeny. Dekoratory trid byly zavedeny v "
+":pep:`3129`."
 
 #: ../../reference/compound_stmts.rst:1395
 msgid "Class definitions"
-msgstr ""
+msgstr "Definice trid"
 
 #: ../../reference/compound_stmts.rst:1410
 msgid "A class definition defines a class object (see section :ref:`types`):"
-msgstr ""
+msgstr "Definice tridy definuje objekt tridy (viz sekce :ref:`types`):"
 
 #: ../../reference/compound_stmts.rst:1417
 msgid ""
-"A class definition is an executable statement.  The inheritance list "
-"usually gives a list of base classes (see :ref:`metaclasses` for more "
-"advanced uses), so each item in the list should evaluate to a class "
-"object which allows subclassing.  Classes without an inheritance list "
-"inherit, by default, from the base class :class:`object`; hence, ::"
+"A class definition is an executable statement.  The inheritance list usually"
+" gives a list of base classes (see :ref:`metaclasses` for more advanced "
+"uses), so each item in the list should evaluate to a class object which "
+"allows subclassing.  Classes without an inheritance list inherit, by "
+"default, from the base class :class:`object`; hence, ::"
 msgstr ""
+"Definice tridy je spustitelny prikaz. Seznam dedicnosti obykle da seznam "
+"zakladnich trid (vizte :ref:`metaclasses` pro pokrocilnejsi pouziti), tak ze"
+" kazda položkov v seznamu by mela vyhodnotit objekt tridy, ktery umoznuje "
+"podtridu. Tridy bez seznamu dedicnosti dedicnost, ve vychozim stavu, ze "
+"zakladni tridy :class:`object`; odtud, ::"
 
 #: ../../reference/compound_stmts.rst:1423
 msgid ""
 "class Foo:\n"
 "    pass"
 msgstr ""
+"class Foo:\n"
+"    pass"
 
 #: ../../reference/compound_stmts.rst:1426
 msgid "is equivalent to ::"
-msgstr ""
+msgstr "je ekvivalentni ::"
 
 #: ../../reference/compound_stmts.rst:1428
 msgid ""
 "class Foo(object):\n"
 "    pass"
 msgstr ""
+"class Foo(object):\n"
+"    pass"
 
 #: ../../reference/compound_stmts.rst:1431
 msgid ""
 "The class's suite is then executed in a new execution frame (see "
 ":ref:`naming`), using a newly created local namespace and the original "
-"global namespace. (Usually, the suite contains mostly function "
-"definitions.)  When the class's suite finishes execution, its execution "
-"frame is discarded but its local namespace is saved. [#]_ A class object "
-"is then created using the inheritance list for the base classes and the "
-"saved local namespace for the attribute dictionary.  The class name is "
-"bound to this class object in the original local namespace."
+"global namespace. (Usually, the suite contains mostly function definitions.)"
+"  When the class's suite finishes execution, its execution frame is "
+"discarded but its local namespace is saved. [#]_ A class object is then "
+"created using the inheritance list for the base classes and the saved local "
+"namespace for the attribute dictionary.  The class name is bound to this "
+"class object in the original local namespace."
 msgstr ""
+"Suite tridy je pak vykonana v novem vy|konavacim rame (vizte :ref:`naming`),"
+" pouzivajic nove vytvoreny lokalni namespace a puvodni globalni namespace. "
+"(Obvykle, suite obsahuje prevazne definice funkci.) Kdyz provedeni suite "
+"tridy skonci, jej|i provadeci ram je vyhozen ale jej|i lokalni namespace je "
+"ulozena. [#]_ Objekt tridy je pak vytvoren pouzitim seznamu dedicnosti pro "
+"zakladni tridy a ulozenym lokalnim namespace pro slovnik atributu. Jmeno "
+"tridy je vazano k tomuto objektu tridy v puvodnim lokalnim namespace."
 
 #: ../../reference/compound_stmts.rst:1440
 msgid ""
-"The order in which attributes are defined in the class body is preserved "
-"in the new class's :attr:`~type.__dict__`.  Note that this is reliable "
-"only right after the class is created and only for classes that were "
-"defined using the definition syntax."
+"The order in which attributes are defined in the class body is preserved in "
+"the new class's :attr:`~type.__dict__`.  Note that this is reliable only "
+"right after the class is created and only for classes that were defined "
+"using the definition syntax."
 msgstr ""
+"Poradi, ve kterem jsou atributy definovany v tele tridy je zachovano v "
+":attr:`~type.__dict__` nove tridy. Poznamka, ze to je spolehlive pouze hned "
+"po vytvoreni tridy a pouze pro tridy, ktere byly definovany pouzitim "
+"definice syntaxe."
 
 #: ../../reference/compound_stmts.rst:1445
 msgid ""
 "Class creation can be customized heavily using :ref:`metaclasses "
 "<metaclasses>`."
 msgstr ""
+"Vytvoreni tridy muze byt silne customize pouzitim :ref:`metaclasses "
+"<metaclasses>`."
 
 #: ../../reference/compound_stmts.rst:1450
 msgid "Classes can also be decorated: just like when decorating functions, ::"
 msgstr ""
+"Tridy mohou take byt dekorovany: stejne jako kdyz dekorujete funkce, ::"
 
 #: ../../reference/compound_stmts.rst:1452
 msgid ""
@@ -1848,18 +2476,25 @@ msgid ""
 "@f2\n"
 "class Foo: pass"
 msgstr ""
+"@f1(arg)\n"
+"@f2\n"
+"class Foo: pass"
 
 #: ../../reference/compound_stmts.rst:1458
 msgid ""
 "class Foo: pass\n"
 "Foo = f1(arg)(f2(Foo))"
 msgstr ""
+"class Foo: pass\n"
+"Foo = f1(arg)(f2(Foo))"
 
 #: ../../reference/compound_stmts.rst:1461
 msgid ""
 "The evaluation rules for the decorator expressions are the same as for "
 "function decorators.  The result is then bound to the class name."
 msgstr ""
+"Vyhodnocovaci pravidla pro dekorator vyrazy jsou stejne jako pro dekoratory "
+"funkci. Vysledek je pak vazany na jmeno tridy."
 
 #: ../../reference/compound_stmts.rst:1464
 msgid ""
@@ -1867,81 +2502,108 @@ msgid ""
 "grammar:assignment_expression`. Previously, the grammar was much more "
 "restrictive; see :pep:`614` for details."
 msgstr ""
+"Tridy mohou byt dekorovany s jakymkoli platnym :token:`~python-"
+"grammar:assignment_expression`. Driv byla gramatika mnohem vice restrikivni;"
+" vizte :pep:`614` pro detaily."
 
 #: ../../reference/compound_stmts.rst:1469
 msgid ""
 "A list of :ref:`type parameters <type-params>` may be given in square "
-"brackets immediately after the class's name. This indicates to static "
-"type checkers that the class is generic. At runtime, the type parameters "
-"can be retrieved from the class's :attr:`~type.__type_params__` "
-"attribute. See :ref:`generic-classes` for more."
+"brackets immediately after the class's name. This indicates to static type "
+"checkers that the class is generic. At runtime, the type parameters can be "
+"retrieved from the class's :attr:`~type.__type_params__` attribute. See "
+":ref:`generic-classes` for more."
 msgstr ""
+"Seznam :ref:`typu parametru <type-params>` muze byt dan v hranatnycch "
+"zavorkach bezprostredne po jmene tridy. To indikuje do statickyho typu "
+"kontrola, ze trida je generovana. Pri bezinu, typove parametry mohou byt "
+"ziskany z :attr:`~type.__type_params__` atributu tridy. Vizte :ref:`generic-"
+"classes` pro vice."
 
 #: ../../reference/compound_stmts.rst:1478
 msgid ""
-"**Programmer's note:** Variables defined in the class definition are "
-"class attributes; they are shared by instances.  Instance attributes can "
-"be set in a method with ``self.name = value``.  Both class and instance "
-"attributes are accessible through the notation \"``self.name``\", and an "
-"instance attribute hides a class attribute with the same name when "
-"accessed in this way.  Class attributes can be used as defaults for "
-"instance attributes, but using mutable values there can lead to "
-"unexpected results.  :ref:`Descriptors <descriptors>` can be used to "
-"create instance variables with different implementation details."
+"**Programmer's note:** Variables defined in the class definition are class "
+"attributes; they are shared by instances.  Instance attributes can be set in"
+" a method with ``self.name = value``.  Both class and instance attributes "
+"are accessible through the notation \"``self.name``\", and an instance "
+"attribute hides a class attribute with the same name when accessed in this "
+"way.  Class attributes can be used as defaults for instance attributes, but "
+"using mutable values there can lead to unexpected results.  "
+":ref:`Descriptors <descriptors>` can be used to create instance variables "
+"with different implementation details."
 msgstr ""
+"**Poznamka programatora:** Promenne definovane v definici tridy jsou "
+"atributy trid; jsou sdileny instancemi. Atributy instanci mohou byt "
+"nastaveny v metode s ``self.name = value``. Oba atributy trid a instanci "
+"jsou dostupne pres zapis \"``self.name``\" a atribut instance skryva atribut"
+" tridy se stejnym jmenem, kdyz je pristoupen tymto zpusobem. Atributy trid "
+"mohou byt pouzivany jako vychozi instance atributy, ale pouziti menitelnych "
+"hodnot tam muze vest na neocekovane vysledky. :ref:`Descriptory "
+"<descriptors>` mohou byt pouzivany k vytvoreni instancnich promennych s "
+"ruznymi detaily implementace."
 
 #: ../../reference/compound_stmts.rst:1490
 msgid ":pep:`3115` - Metaclasses in Python 3000"
-msgstr ""
+msgstr ":pep:`3115` - Metaclasses v Pythonu 3000"
 
 #: ../../reference/compound_stmts.rst:1491
 msgid ""
 "The proposal that changed the declaration of metaclasses to the current "
-"syntax, and the semantics for how classes with metaclasses are "
-"constructed."
+"syntax, and the semantics for how classes with metaclasses are constructed."
 msgstr ""
+"Navrh, ktery zmenil deklaraci metaclasses na soucasnou syntaxi a semantiku "
+"toho, jak jsou tridy s metaclasses vytvoreny."
 
 #: ../../reference/compound_stmts.rst:1495
 msgid ":pep:`3129` - Class Decorators"
-msgstr ""
+msgstr ":pep:`3129` - Dekoratory trid"
 
 #: ../../reference/compound_stmts.rst:1496
 msgid ""
-"The proposal that added class decorators.  Function and method decorators"
-" were introduced in :pep:`318`."
+"The proposal that added class decorators.  Function and method decorators "
+"were introduced in :pep:`318`."
 msgstr ""
+"Navrh, ktery pridal dekoratory trid. Dekoratory funkci a metod byly zavedeny"
+" v :pep:`318`."
 
 #: ../../reference/compound_stmts.rst:1503
 msgid "Coroutines"
-msgstr ""
+msgstr "Korutiny"
 
 #: ../../reference/compound_stmts.rst:1511
 msgid "Coroutine function definition"
-msgstr ""
+msgstr "Definice funkce korutiny"
 
 #: ../../reference/compound_stmts.rst:1521
 msgid ""
-"Execution of Python coroutines can be suspended and resumed at many "
-"points (see :term:`coroutine`). :keyword:`await` expressions, "
-":keyword:`async for` and :keyword:`async with` can only be used in the "
-"body of a coroutine function."
+"Execution of Python coroutines can be suspended and resumed at many points "
+"(see :term:`coroutine`). :keyword:`await` expressions, :keyword:`async for` "
+"and :keyword:`async with` can only be used in the body of a coroutine "
+"function."
 msgstr ""
+"Vykonani Python korutin muze byt pozastaveno a obnoveneo v mnoha bodech "
+"(vizte :term:`coroutine`). :keyword:`await` vyrazy, :keyword:`async for` a "
+":keyword:`async with` mohou byt pouzivany pouze v tele funkce korutiny."
 
 #: ../../reference/compound_stmts.rst:1525
 msgid ""
-"Functions defined with ``async def`` syntax are always coroutine "
-"functions, even if they do not contain ``await`` or ``async`` keywords."
+"Functions defined with ``async def`` syntax are always coroutine functions, "
+"even if they do not contain ``await`` or ``async`` keywords."
 msgstr ""
+"Funkce definovane se ``async def`` syntaxe jsou vzdy funkce korutiny, i kdyz"
+" neobsahuji ``await`` nebo ``async`` klicova slova."
 
 #: ../../reference/compound_stmts.rst:1528
 msgid ""
 "It is a :exc:`SyntaxError` to use a ``yield from`` expression inside the "
 "body of a coroutine function."
 msgstr ""
+"Je :exc:`SyntaxError` pouzit vyraz ``yield from`` uvnitr tela funkce "
+"korutiny."
 
 #: ../../reference/compound_stmts.rst:1531
 msgid "An example of a coroutine function::"
-msgstr ""
+msgstr "Priklad funkce korutiny::"
 
 #: ../../reference/compound_stmts.rst:1533
 msgid ""
@@ -1949,16 +2611,21 @@ msgid ""
 "    do_stuff()\n"
 "    await some_coroutine()"
 msgstr ""
+"async def func(param1, param2):\n"
+"    do_stuff()\n"
+"    await some_coroutine()"
 
 #: ../../reference/compound_stmts.rst:1537
 msgid ""
-"``await`` and ``async`` are now keywords; previously they were only "
-"treated as such inside the body of a coroutine function."
+"``await`` and ``async`` are now keywords; previously they were only treated "
+"as such inside the body of a coroutine function."
 msgstr ""
+"``await`` a ``async`` jsou nynni klicova slova; driv byla pouze zachazena "
+"jako takova uvnitr tela funkce korutiny."
 
 #: ../../reference/compound_stmts.rst:1545
 msgid "The :keyword:`!async for` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!async for`"
 
 #: ../../reference/compound_stmts.rst:1550
 msgid ""
@@ -1966,12 +2633,16 @@ msgid ""
 "directly returns an :term:`asynchronous iterator`, which can call "
 "asynchronous code in its ``__anext__`` method."
 msgstr ""
+"Asynchronni iterable poskytuje ``__aiter__`` metodu, ktera primo vraci "
+"asynchronni iterator, ktery muze volat asynchronni kod v jeho ``__anext__`` "
+"metode."
 
 #: ../../reference/compound_stmts.rst:1554
 msgid ""
-"The ``async for`` statement allows convenient iteration over asynchronous"
-" iterables."
+"The ``async for`` statement allows convenient iteration over asynchronous "
+"iterables."
 msgstr ""
+"Příkaz ``async for`` umoznuje pohodlnou iteraci pres asynchronni iterables."
 
 #: ../../reference/compound_stmts.rst:1559
 msgid ""
@@ -1980,10 +2651,14 @@ msgid ""
 "else:\n"
 "    SUITE2"
 msgstr ""
+"async for TARGET in ITER:\n"
+"    SUITE\n"
+"else:\n"
+"    SUITE2"
 
 #: ../../reference/compound_stmts.rst:1564
 msgid "Is semantically equivalent to::"
-msgstr ""
+msgstr "Je semanticky ekvivalentni::"
 
 #: ../../reference/compound_stmts.rst:1566
 msgid ""
@@ -2001,6 +2676,19 @@ msgid ""
 "else:\n"
 "    SUITE2"
 msgstr ""
+"iter = (ITER)\n"
+"iter = type(iter).__aiter__(iter)\n"
+"running = True\n"
+"\n"
+"while running:\n"
+"    try:\n"
+"        TARGET = await type(iter).__anext__(iter)\n"
+"    except StopAsyncIteration:\n"
+"        running = False\n"
+"    else:\n"
+"        SUITE\n"
+"else:\n"
+"    SUITE2"
 
 #: ../../reference/compound_stmts.rst:1580
 msgid ""
@@ -2020,8 +2708,8 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1595
 msgid ""
-"An :term:`asynchronous context manager` is a :term:`context manager` that"
-" is able to suspend execution in its *enter* and *exit* methods."
+"An :term:`asynchronous context manager` is a :term:`context manager` that is"
+" able to suspend execution in its *enter* and *exit* methods."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1600
@@ -2058,8 +2746,8 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1624
 msgid ""
-"It is a :exc:`SyntaxError` to use an ``async with`` statement outside the"
-" body of a coroutine function."
+"It is a :exc:`SyntaxError` to use an ``async with`` statement outside the "
+"body of a coroutine function."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1629
@@ -2068,8 +2756,8 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1630
 msgid ""
-"The proposal that made coroutines a proper standalone concept in Python, "
-"and added supporting syntax."
+"The proposal that made coroutines a proper standalone concept in Python, and"
+" added supporting syntax."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1636
@@ -2108,29 +2796,27 @@ msgstr ""
 #: ../../reference/compound_stmts.rst:1672
 msgid ""
 "Semantically, this indicates that the function, class, or type alias is "
-"generic over a type variable. This information is primarily used by "
-"static type checkers, and at runtime, generic objects behave much like "
-"their non-generic counterparts."
+"generic over a type variable. This information is primarily used by static "
+"type checkers, and at runtime, generic objects behave much like their non-"
+"generic counterparts."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1677
 msgid ""
-"Type parameters are declared in square brackets (``[]``) immediately "
-"after the name of the function, class, or type alias. The type parameters"
-" are accessible within the scope of the generic object, but not "
-"elsewhere. Thus, after a declaration ``def func[T](): pass``, the name "
-"``T`` is not available in the module scope. Below, the semantics of "
-"generic objects are described with more precision. The scope of type "
-"parameters is modeled with a special function (technically, an "
-":ref:`annotation scope <annotation-scopes>`) that wraps the creation of "
-"the generic object."
+"Type parameters are declared in square brackets (``[]``) immediately after "
+"the name of the function, class, or type alias. The type parameters are "
+"accessible within the scope of the generic object, but not elsewhere. Thus, "
+"after a declaration ``def func[T](): pass``, the name ``T`` is not available"
+" in the module scope. Below, the semantics of generic objects are described "
+"with more precision. The scope of type parameters is modeled with a special "
+"function (technically, an :ref:`annotation scope <annotation-scopes>`) that "
+"wraps the creation of the generic object."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1686
 msgid ""
 "Generic functions, classes, and type aliases have a "
-":attr:`~definition.__type_params__` attribute listing their type "
-"parameters."
+":attr:`~definition.__type_params__` attribute listing their type parameters."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1689
@@ -2152,52 +2838,49 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1696
 msgid ""
-":data:`typing.ParamSpec`, introduced by a name prefixed with two "
-"asterisks (e.g., ``**P``). Semantically, this stands for the parameters "
-"of a callable."
+":data:`typing.ParamSpec`, introduced by a name prefixed with two asterisks "
+"(e.g., ``**P``). Semantically, this stands for the parameters of a callable."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1699
 msgid ""
-":data:`typing.TypeVar` declarations can define *bounds* and *constraints*"
-" with a colon (``:``) followed by an expression. A single expression "
-"after the colon indicates a bound (e.g. ``T: int``). Semantically, this "
-"means that the :data:`!typing.TypeVar` can only represent types that are "
-"a subtype of this bound. A parenthesized tuple of expressions after the "
-"colon indicates a set of constraints (e.g. ``T: (str, bytes)``). Each "
-"member of the tuple should be a type (again, this is not enforced at "
-"runtime). Constrained type variables can only take on one of the types in"
-" the list of constraints."
+":data:`typing.TypeVar` declarations can define *bounds* and *constraints* "
+"with a colon (``:``) followed by an expression. A single expression after "
+"the colon indicates a bound (e.g. ``T: int``). Semantically, this means that"
+" the :data:`!typing.TypeVar` can only represent types that are a subtype of "
+"this bound. A parenthesized tuple of expressions after the colon indicates a"
+" set of constraints (e.g. ``T: (str, bytes)``). Each member of the tuple "
+"should be a type (again, this is not enforced at runtime). Constrained type "
+"variables can only take on one of the types in the list of constraints."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1708
 msgid ""
 "For :data:`!typing.TypeVar`\\ s declared using the type parameter list "
-"syntax, the bound and constraints are not evaluated when the generic "
-"object is created, but only when the value is explicitly accessed through"
-" the attributes ``__bound__`` and ``__constraints__``. To accomplish "
-"this, the bounds or constraints are evaluated in a separate "
-":ref:`annotation scope <annotation-scopes>`."
+"syntax, the bound and constraints are not evaluated when the generic object "
+"is created, but only when the value is explicitly accessed through the "
+"attributes ``__bound__`` and ``__constraints__``. To accomplish this, the "
+"bounds or constraints are evaluated in a separate :ref:`annotation scope "
+"<annotation-scopes>`."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1714
 msgid ""
-":data:`typing.TypeVarTuple`\\ s and :data:`typing.ParamSpec`\\ s cannot "
-"have bounds or constraints."
+":data:`typing.TypeVarTuple`\\ s and :data:`typing.ParamSpec`\\ s cannot have"
+" bounds or constraints."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1717
 msgid ""
-"All three flavors of type parameters can also have a *default value*, "
-"which is used when the type parameter is not explicitly provided. This is"
-" added by appending a single equals sign (``=``) followed by an "
-"expression. Like the bounds and constraints of type variables, the "
-"default value is not evaluated when the object is created, but only when "
-"the type parameter's ``__default__`` attribute is accessed. To this end, "
-"the default value is evaluated in a separate :ref:`annotation scope "
-"<annotation-scopes>`. If no default value is specified for a type "
-"parameter, the ``__default__`` attribute is set to the special sentinel "
-"object :data:`typing.NoDefault`."
+"All three flavors of type parameters can also have a *default value*, which "
+"is used when the type parameter is not explicitly provided. This is added by"
+" appending a single equals sign (``=``) followed by an expression. Like the "
+"bounds and constraints of type variables, the default value is not evaluated"
+" when the object is created, but only when the type parameter's "
+"``__default__`` attribute is accessed. To this end, the default value is "
+"evaluated in a separate :ref:`annotation scope <annotation-scopes>`. If no "
+"default value is specified for a type parameter, the ``__default__`` "
+"attribute is set to the special sentinel object :data:`typing.NoDefault`."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1727
@@ -2263,21 +2946,20 @@ msgstr ""
 #: ../../reference/compound_stmts.rst:1768
 msgid ""
 "The annotations of generic functions are evaluated within the annotation "
-"scope used for declaring the type parameters, but the function's defaults"
-" and decorators are not."
+"scope used for declaring the type parameters, but the function's defaults "
+"and decorators are not."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1772
 msgid ""
-"The following example illustrates the scoping rules for these cases, as "
-"well as for additional flavors of type parameters::"
+"The following example illustrates the scoping rules for these cases, as well"
+" as for additional flavors of type parameters::"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1775
 msgid ""
 "@decorator\n"
-"def func[T: int, *Ts, **P](*args: *Ts, arg: Callable[P, T] = "
-"some_default):\n"
+"def func[T: int, *Ts, **P](*args: *Ts, arg: Callable[P, T] = some_default):\n"
 "    ..."
 msgstr ""
 
@@ -2348,9 +3030,9 @@ msgstr ""
 #: ../../reference/compound_stmts.rst:1827
 msgid ""
 "Generic classes implicitly inherit from :data:`typing.Generic`. The base "
-"classes and keyword arguments of generic classes are evaluated within the"
-" type scope for the type parameters, and decorators are evaluated outside"
-" that scope. This is illustrated by this example::"
+"classes and keyword arguments of generic classes are evaluated within the "
+"type scope for the type parameters, and decorators are evaluated outside "
+"that scope. This is illustrated by this example::"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1833
@@ -2390,8 +3072,8 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1855
 msgid ""
-"Except for the :ref:`lazy evaluation <lazy-evaluation>` of the value, "
-"this is equivalent to::"
+"Except for the :ref:`lazy evaluation <lazy-evaluation>` of the value, this "
+"is equivalent to::"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1858
@@ -2402,15 +3084,14 @@ msgid ""
 "    annotation-def VALUE_OF_ListOrSet():\n"
 "        return list[T] | set[T]\n"
 "    # In reality, the value is lazily evaluated\n"
-"    return typing.TypeAliasType(\"ListOrSet\", VALUE_OF_ListOrSet(), "
-"type_params=(T,))\n"
+"    return typing.TypeAliasType(\"ListOrSet\", VALUE_OF_ListOrSet(), type_params=(T,))\n"
 "ListOrSet = TYPE_PARAMS_OF_ListOrSet()"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1867
 msgid ""
-"Here, ``annotation-def`` (not a real keyword) indicates an "
-":ref:`annotation scope <annotation-scopes>`. The capitalized names like "
+"Here, ``annotation-def`` (not a real keyword) indicates an :ref:`annotation "
+"scope <annotation-scopes>`. The capitalized names like "
 "``TYPE_PARAMS_OF_ListOrSet`` are not actually bound at runtime."
 msgstr ""
 
@@ -2445,22 +3126,21 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1889
 msgid ""
-"Annotations are conventionally used for :term:`type hints <type hint>`, "
-"but this is not enforced by the language, and in general annotations may "
-"contain arbitrary expressions. The presence of annotations does not "
-"change the runtime semantics of the code, except if some mechanism is "
-"used that introspects and uses the annotations (such as "
-":mod:`dataclasses` or :func:`functools.singledispatch`)."
+"Annotations are conventionally used for :term:`type hints <type hint>`, but "
+"this is not enforced by the language, and in general annotations may contain"
+" arbitrary expressions. The presence of annotations does not change the "
+"runtime semantics of the code, except if some mechanism is used that "
+"introspects and uses the annotations (such as :mod:`dataclasses` or "
+":func:`functools.singledispatch`)."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1895
 msgid ""
-"By default, annotations are lazily evaluated in an :ref:`annotation scope"
-" <annotation-scopes>`. This means that they are not evaluated when the "
-"code containing the annotation is evaluated. Instead, the interpreter "
-"saves information that can be used to evaluate the annotation later if "
-"requested. The :mod:`annotationlib` module provides tools for evaluating "
-"annotations."
+"By default, annotations are lazily evaluated in an :ref:`annotation scope "
+"<annotation-scopes>`. This means that they are not evaluated when the code "
+"containing the annotation is evaluated. Instead, the interpreter saves "
+"information that can be used to evaluate the annotation later if requested. "
+"The :mod:`annotationlib` module provides tools for evaluating annotations."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1900
@@ -2480,11 +3160,11 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1908
 msgid ""
-"This future statement will be deprecated and removed in a future version "
-"of Python, but not before Python 3.13 reaches its end of life (see "
-":pep:`749`). When it is used, introspection tools like "
-":func:`annotationlib.get_annotations` and :func:`typing.get_type_hints` "
-"are less likely to be able to resolve annotations at runtime."
+"This future statement will be deprecated and removed in a future version of "
+"Python, but not before Python 3.13 reaches its end of life (see :pep:`749`)."
+" When it is used, introspection tools like "
+":func:`annotationlib.get_annotations` and :func:`typing.get_type_hints` are "
+"less likely to be able to resolve annotations at runtime."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1916
@@ -2494,8 +3174,8 @@ msgstr ""
 #: ../../reference/compound_stmts.rst:1917
 msgid ""
 "The exception is propagated to the invocation stack unless there is a "
-":keyword:`finally` clause which happens to raise another exception. That "
-"new exception causes the old one to be lost."
+":keyword:`finally` clause which happens to raise another exception. That new"
+" exception causes the old one to be lost."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1921
@@ -2508,14 +3188,13 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1924
 msgid ""
-"a Python class that has been registered as "
-":class:`collections.abc.Sequence`"
+"a Python class that has been registered as :class:`collections.abc.Sequence`"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1925
 msgid ""
-"a builtin class that has its (CPython) :c:macro:`Py_TPFLAGS_SEQUENCE` bit"
-" set"
+"a builtin class that has its (CPython) :c:macro:`Py_TPFLAGS_SEQUENCE` bit "
+"set"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1926
@@ -2545,8 +3224,8 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1937
 msgid ""
-"Subject values of type ``str``, ``bytes``, and ``bytearray`` do not match"
-" sequence patterns."
+"Subject values of type ``str``, ``bytes``, and ``bytearray`` do not match "
+"sequence patterns."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1940
@@ -2559,14 +3238,12 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1943
 msgid ""
-"a Python class that has been registered as "
-":class:`collections.abc.Mapping`"
+"a Python class that has been registered as :class:`collections.abc.Mapping`"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1944
 msgid ""
-"a builtin class that has its (CPython) :c:macro:`Py_TPFLAGS_MAPPING` bit "
-"set"
+"a builtin class that has its (CPython) :c:macro:`Py_TPFLAGS_MAPPING` bit set"
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1947
@@ -2577,16 +3254,16 @@ msgstr ""
 
 #: ../../reference/compound_stmts.rst:1950
 msgid ""
-"A string literal appearing as the first statement in the function body is"
-" transformed into the function's :attr:`~function.__doc__` attribute and "
+"A string literal appearing as the first statement in the function body is "
+"transformed into the function's :attr:`~function.__doc__` attribute and "
 "therefore the function's :term:`docstring`."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:1954
 msgid ""
 "A string literal appearing as the first statement in the class body is "
-"transformed into the namespace's :attr:`~type.__doc__` item and therefore"
-" the class's :term:`docstring`."
+"transformed into the namespace's :attr:`~type.__doc__` item and therefore "
+"the class's :term:`docstring`."
 msgstr ""
 
 #: ../../reference/compound_stmts.rst:7
@@ -2643,11 +3320,13 @@ msgstr ""
 msgid "else"
 msgstr ""
 
-#: ../../reference/compound_stmts.rst:86 ../../reference/compound_stmts.rst:602
+#: ../../reference/compound_stmts.rst:86
+#: ../../reference/compound_stmts.rst:602
 msgid "if"
 msgstr ""
 
-#: ../../reference/compound_stmts.rst:86 ../../reference/compound_stmts.rst:111
+#: ../../reference/compound_stmts.rst:86
+#: ../../reference/compound_stmts.rst:111
 #: ../../reference/compound_stmts.rst:144
 #: ../../reference/compound_stmts.rst:207
 #: ../../reference/compound_stmts.rst:330
@@ -2663,7 +3342,8 @@ msgstr ""
 msgid "elif"
 msgstr ""
 
-#: ../../reference/compound_stmts.rst:86 ../../reference/compound_stmts.rst:111
+#: ../../reference/compound_stmts.rst:86
+#: ../../reference/compound_stmts.rst:111
 #: ../../reference/compound_stmts.rst:144
 #: ../../reference/compound_stmts.rst:207
 #: ../../reference/compound_stmts.rst:484
@@ -2674,7 +3354,8 @@ msgstr ""
 msgid ": (colon)"
 msgstr ""
 
-#: ../../reference/compound_stmts.rst:86 ../../reference/compound_stmts.rst:111
+#: ../../reference/compound_stmts.rst:86
+#: ../../reference/compound_stmts.rst:111
 #: ../../reference/compound_stmts.rst:144
 #: ../../reference/compound_stmts.rst:207
 #: ../../reference/compound_stmts.rst:484
@@ -2994,8 +3675,7 @@ msgid "type parameters"
 msgstr ""
 
 #~ msgid ""
-#~ "There may be one or more base "
-#~ "classes; see :ref:`multiple-inheritance` below"
+#~ "There may be one or more base classes; see :ref:`multiple-inheritance` below"
 #~ " for more information."
 #~ msgstr ""
 
@@ -3003,14 +3683,10 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Python classes may have multiple base"
-#~ " classes, a technique known as "
-#~ "*multiple inheritance*.  The base classes "
-#~ "are specified in the class definition"
-#~ " by listing them in parentheses after"
-#~ " the class name, separated by commas."
-#~ " For example, the following class "
-#~ "definition:"
+#~ "Python classes may have multiple base classes, a technique known as "
+#~ "*multiple inheritance*.  The base classes are specified in the class "
+#~ "definition by listing them in parentheses after the class name, separated by"
+#~ " commas. For example, the following class definition:"
 #~ msgstr ""
 
 #~ msgid ""
@@ -3023,33 +3699,23 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The :term:`method resolution order` (MRO) "
-#~ "is the order in which base classes"
-#~ " are searched when looking up an "
-#~ "attribute on a class. See "
-#~ ":ref:`python_2.3_mro` for a description of "
-#~ "how Python determines the MRO for "
-#~ "a class."
+#~ "The :term:`method resolution order` (MRO) is the order in which base classes"
+#~ " are searched when looking up an attribute on a class. See "
+#~ ":ref:`python_2.3_mro` for a description of how Python determines the MRO for"
+#~ " a class."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Multiple inheritance is not always "
-#~ "allowed. Attempting to define a class"
-#~ " with multiple inheritance will raise "
-#~ "an error if one of the bases "
-#~ "does not allow subclassing, if a "
-#~ "consistent MRO cannot be created, if "
-#~ "no valid metaclass can be determined,"
-#~ " or if there is an instance "
-#~ "layout conflict. We'll discuss each of"
-#~ " these in turn."
+#~ "Multiple inheritance is not always allowed. Attempting to define a class "
+#~ "with multiple inheritance will raise an error if one of the bases does not "
+#~ "allow subclassing, if a consistent MRO cannot be created, if no valid "
+#~ "metaclass can be determined, or if there is an instance layout conflict. "
+#~ "We'll discuss each of these in turn."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "First, all base classes must allow "
-#~ "subclassing. While most classes allow "
-#~ "subclassing, some built-in classes do"
-#~ " not, such as :class:`bool`:"
+#~ "First, all base classes must allow subclassing. While most classes allow "
+#~ "subclassing, some built-in classes do not, such as :class:`bool`:"
 #~ msgstr ""
 
 #~ msgid ""
@@ -3061,16 +3727,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "In the resolved MRO of a class,"
-#~ " the class's bases appear in the "
-#~ "order they were specified in the "
-#~ "class's bases list. Additionally, the "
-#~ "MRO always lists a child class "
-#~ "before any of its bases. A class"
-#~ " definition will fail if it is "
-#~ "impossible to resolve a consistent MRO"
-#~ " that satisfies these rules from the"
-#~ " list of bases provided:"
+#~ "In the resolved MRO of a class, the class's bases appear in the order they "
+#~ "were specified in the class's bases list. Additionally, the MRO always lists"
+#~ " a child class before any of its bases. A class definition will fail if it "
+#~ "is impossible to resolve a consistent MRO that satisfies these rules from "
+#~ "the list of bases provided:"
 #~ msgstr ""
 
 #~ msgid ""
@@ -3079,76 +3740,47 @@ msgstr ""
 #~ ">>> class Grandchild(Base, Child): pass  # TypeError\n"
 #~ "Traceback (most recent call last):\n"
 #~ "   ...\n"
-#~ "TypeError: Cannot create a consistent "
-#~ "method resolution order (MRO) for bases"
-#~ " Base, Child"
+#~ "TypeError: Cannot create a consistent method resolution order (MRO) for bases Base, Child"
 #~ msgstr ""
 
 #~ msgid ""
-#~ "In the MRO of ``Grandchild``, ``Base``"
-#~ " must appear before ``Child`` because "
-#~ "it is first in the base class "
-#~ "list, but it must also appear "
-#~ "after ``Child`` because it is a "
-#~ "parent of ``Child``. This is a "
-#~ "contradiction, so the class cannot be"
-#~ " defined."
+#~ "In the MRO of ``Grandchild``, ``Base`` must appear before ``Child`` because "
+#~ "it is first in the base class list, but it must also appear after ``Child`` "
+#~ "because it is a parent of ``Child``. This is a contradiction, so the class "
+#~ "cannot be defined."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "If some of the bases have a "
-#~ "custom :term:`metaclass`, the metaclass of "
-#~ "the resulting class is chosen among "
-#~ "the metaclasses of the bases and "
-#~ "the explicitly specified metaclass of "
-#~ "the child class. It must be a "
-#~ "metaclass that is a subclass of "
-#~ "all other candidate metaclasses. If no"
-#~ " such metaclass exists among the "
-#~ "candidates, the class cannot be created,"
-#~ " as explained in :ref:`metaclass-"
-#~ "determination`."
+#~ "If some of the bases have a custom :term:`metaclass`, the metaclass of the "
+#~ "resulting class is chosen among the metaclasses of the bases and the "
+#~ "explicitly specified metaclass of the child class. It must be a metaclass "
+#~ "that is a subclass of all other candidate metaclasses. If no such metaclass "
+#~ "exists among the candidates, the class cannot be created, as explained in "
+#~ ":ref:`metaclass-determination`."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Finally, the instance layouts of the "
-#~ "bases must be compatible. This means "
-#~ "that it must be possible to "
-#~ "compute a *solid base* for the "
-#~ "class. Exactly which classes are solid"
-#~ " bases depends on the Python "
-#~ "implementation."
+#~ "Finally, the instance layouts of the bases must be compatible. This means "
+#~ "that it must be possible to compute a *solid base* for the class. Exactly "
+#~ "which classes are solid bases depends on the Python implementation."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "In CPython, a class is a solid "
-#~ "base if it has a nonempty "
-#~ ":attr:`~object.__slots__` definition. Many but "
-#~ "not all classes defined in C are"
-#~ " also solid bases, including most "
-#~ "builtins (such as :class:`int` or "
-#~ ":class:`BaseException`) but excluding most "
-#~ "concrete :class:`Exception` classes. Generally, "
-#~ "a C class is a solid base if"
-#~ " its underlying struct is different "
-#~ "in size from its base class."
+#~ "In CPython, a class is a solid base if it has a nonempty "
+#~ ":attr:`~object.__slots__` definition. Many but not all classes defined in C "
+#~ "are also solid bases, including most builtins (such as :class:`int` or "
+#~ ":class:`BaseException`) but excluding most concrete :class:`Exception` "
+#~ "classes. Generally, a C class is a solid base if its underlying struct is "
+#~ "different in size from its base class."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Every class has a solid base. "
-#~ ":class:`object`, the base class, has "
-#~ "itself as its solid base. If there"
-#~ " is a single base, the child "
-#~ "class's solid base is that class "
-#~ "if it is a solid base, or "
-#~ "else the base class's solid base. "
-#~ "If there are multiple bases, we "
-#~ "first find the solid base for each"
-#~ " base class to produce a list "
-#~ "of candidate solid bases. If there "
-#~ "is a unique solid base that is "
-#~ "a subclass of all others, then "
-#~ "that class is the solid base. "
+#~ "Every class has a solid base. :class:`object`, the base class, has itself as"
+#~ " its solid base. If there is a single base, the child class's solid base is "
+#~ "that class if it is a solid base, or else the base class's solid base. If "
+#~ "there are multiple bases, we first find the solid base for each base class "
+#~ "to produce a list of candidate solid bases. If there is a unique solid base "
+#~ "that is a subclass of all others, then that class is the solid base. "
 #~ "Otherwise, class creation fails."
 #~ msgstr ""
 
@@ -3168,25 +3800,18 @@ msgstr ""
 #~ ">>> class C1:  # solid base is `object`\n"
 #~ "...    pass\n"
 #~ ">>>\n"
-#~ ">>> # OK: solid bases are `Solid1`"
-#~ " and `object`, and `Solid1` is a "
-#~ "subclass of `object`.\n"
+#~ ">>> # OK: solid bases are `Solid1` and `object`, and `Solid1` is a subclass of `object`.\n"
 #~ ">>> class C2(Solid1, C1):  # solid base is `Solid1`\n"
 #~ "...    pass\n"
 #~ ">>>\n"
-#~ ">>> # OK: solid bases are "
-#~ "`SolidChild` and `Solid1`, and `SolidChild`"
-#~ " is a subclass of `Solid1`.\n"
+#~ ">>> # OK: solid bases are `SolidChild` and `Solid1`, and `SolidChild` is a subclass of `Solid1`.\n"
 #~ ">>> class C3(SolidChild, Solid1):  # solid base is `SolidChild`\n"
 #~ "...    pass\n"
 #~ ">>>\n"
-#~ ">>> # Error: solid bases are "
-#~ "`Solid1` and `Solid2`, but neither is"
-#~ " a subclass of the other.\n"
+#~ ">>> # Error: solid bases are `Solid1` and `Solid2`, but neither is a subclass of the other.\n"
 #~ ">>> class C4(Solid1, Solid2):  # error: no single solid base\n"
 #~ "...    pass\n"
 #~ "Traceback (most recent call last):\n"
 #~ "  ...\n"
 #~ "TypeError: multiple bases have instance lay-out conflict"
 #~ msgstr ""
-
