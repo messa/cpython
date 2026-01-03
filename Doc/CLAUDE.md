@@ -42,6 +42,8 @@ For automated translation using Claude, use the `po-translator` agent:
 
 Or ask Claude to "use po-translator to translate some entries".
 
+**Parallel agents**: When running multiple po-translator agents in parallel, each agent should work on a different file to avoid duplicate work. Specify the file explicitly for each agent, e.g., "translate tutorial/classes.po" and "translate tutorial/modules.po".
+
 The agent uses MCP server (`scripts/po_mcp_server.py`) with two tools:
 - `get_entries_to_translate` - fetches untranslated entries with context
 - `submit_translations` - applies translations with validation

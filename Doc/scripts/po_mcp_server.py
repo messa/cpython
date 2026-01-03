@@ -14,15 +14,15 @@ Possible future improvements:
   subprocess.run) to avoid blocking the event loop
 """
 
-import asyncio
-import json
-import logging
+from asyncio import run as asyncio_run
+from json import dumps as json_dumps
+from logging import getLogger, Formatter, StreamHandler, DEBUG, WARNING
 from logging.handlers import WatchedFileHandler
 from pathlib import Path
 from subprocess import run, TimeoutExpired
 from typing import Any
 
-import polib
+from polib import pofile, POEntry
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import TextContent, Tool
@@ -45,19 +45,19 @@ if not str(LOCALE_DIR).startswith(str(_DOC_DIR)):
 _LOG_FILE = _SCRIPT_DIR / "po_mcp_server.log"
 _LOG_FORMAT = "%(asctime)s [%(process)d] %(name)s %(levelname)5s: %(message)s"
 
-logger = logging.getLogger("po_mcp_server")
-logger.setLevel(logging.DEBUG)
+logger = getLogger("po_mcp_server")
+logger.setLevel(DEBUG)
 
 # File handler - DEBUG level
 _file_handler = WatchedFileHandler(_LOG_FILE, encoding="utf-8")
-_file_handler.setLevel(logging.DEBUG)
-_file_handler.setFormatter(logging.Formatter(_LOG_FORMAT))
+_file_handler.setLevel(DEBUG)
+_file_handler.setFormatter(Formatter(_LOG_FORMAT))
 logger.addHandler(_file_handler)
 
 # Stderr handler - WARNING+ only (to avoid breaking MCP protocol)
-_stderr_handler = logging.StreamHandler()
-_stderr_handler.setLevel(logging.WARNING)
-_stderr_handler.setFormatter(logging.Formatter(_LOG_FORMAT))
+_stderr_handler = StreamHandler()
+_stderr_handler.setLevel(WARNING)
+_stderr_handler.setFormatter(Formatter(_LOG_FORMAT))
 logger.addHandler(_stderr_handler)
 
 logger.info("MCP server starting, LOCALE_DIR=%s", LOCALE_DIR)
@@ -69,11 +69,19 @@ def get_all_po_files() -> list[Path]:
 
 
 def get_untranslated_stats() -> list[dict]:
-    """Get stats about untranslated entries in all .po files."""
+    """
+    Get stats about untranslated entries in all .po files.
+
+    Returns:
+        List of dicts sorted by untranslated count (smallest first), each with:
+        - file: relative path to .po file
+        - untranslated: number of untranslated entries
+        - total: total number of entries
+    """
     stats = []
     for po_path in get_all_po_files():
         try:
-            po = polib.pofile(str(po_path))
+            po = pofile(str(po_path))
             untranslated = len(po.untranslated_entries())
             if untranslated > 0:
                 relative = po_path.relative_to(LOCALE_DIR)
@@ -154,8 +162,19 @@ def validate_po_path(po_file: str) -> Path:
     return candidate
 
 
-def format_entry_context(entry: polib.POEntry) -> dict:
-    """Format a PO entry with full context for translation."""
+def format_entry_context(entry: POEntry) -> dict:
+    """
+    Format a PO entry with full context for translation.
+
+    Returns a dict with:
+    - msgid: original text (always present)
+    - msgid_plural: plural form (if present)
+    - context: msgctxt value (if present)
+    - references: list of "file:line" source references (up to 3)
+    - translator_comment: translator notes (if present)
+    - extracted_comment: comments from source code (if present)
+    - flags: list of flags like "python-format", "fuzzy" (if present)
+    """
     result = {
         "msgid": entry.msgid,
     }
@@ -301,12 +320,20 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
         logger.warning("Unknown tool requested: %s", name)
         return [TextContent(
             type="text",
-            text=json.dumps({"error": f"Unknown tool: {name}"})
+            text=json_dumps({"error": f"Unknown tool: {name}"})
         )]
 
 
 async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
-    """Handle get_entries_to_translate tool call."""
+    """
+    Handle get_entries_to_translate tool call.
+
+    Arguments:
+        file: path to .po file (optional, auto-selects if not provided)
+        count: number of entries to return (default 5, max 50)
+
+    Returns JSON with entries array and file stats.
+    """
     file_arg = arguments.get("file")
     count = min(arguments.get("count", 5), MAX_ENTRIES_COUNT)
     logger.debug("get_entries: file=%s, count=%d", file_arg, count)
@@ -318,7 +345,7 @@ async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
             logger.info("All files are fully translated!")
             return [TextContent(
                 type="text",
-                text=json.dumps({
+                text=json_dumps({
                     "success": True,
                     "message": "All files are fully translated!",
                     "entries": [],
@@ -334,7 +361,7 @@ async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
     except PathSecurityError as e:
         return [TextContent(
             type="text",
-            text=json.dumps({
+            text=json_dumps({
                 "success": False,
                 "error": str(e),
             })
@@ -342,11 +369,11 @@ async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
 
     # Load .po file
     try:
-        po = polib.pofile(str(po_path))
+        po = pofile(str(po_path))
     except Exception as e:
         return [TextContent(
             type="text",
-            text=json.dumps({
+            text=json_dumps({
                 "success": False,
                 "error": f"Failed to parse .po file: {e}",
             })
@@ -376,11 +403,20 @@ async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
         "get_entries: returned %d entries from %s (remaining: %d)",
         len(formatted_entries), relative_path, len(untranslated) - len(formatted_entries)
     )
-    return [TextContent(type="text", text=json.dumps(result, ensure_ascii=False, indent=2))]
+    return [TextContent(type="text", text=json_dumps(result, ensure_ascii=False, indent=2))]
 
 
 async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextContent]:
-    """Handle submit_translations tool call."""
+    """
+    Handle submit_translations tool call.
+
+    Arguments:
+        file: path to .po file (required)
+        translations: list of {msgid, msgstr} dicts
+        overwrite: if False, skip already translated entries (default True)
+
+    Applies translations, runs msgfmt validation, returns results.
+    """
     file_arg = arguments.get("file")
     translations = arguments.get("translations", [])
     overwrite = arguments.get("overwrite", True)
@@ -389,7 +425,7 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
     if not file_arg:
         return [TextContent(
             type="text",
-            text=json.dumps({
+            text=json_dumps({
                 "success": False,
                 "error": "File parameter is required",
             })
@@ -398,7 +434,7 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
     if not translations:
         return [TextContent(
             type="text",
-            text=json.dumps({
+            text=json_dumps({
                 "success": False,
                 "error": "No translations provided",
             })
@@ -410,7 +446,7 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
     except PathSecurityError as e:
         return [TextContent(
             type="text",
-            text=json.dumps({
+            text=json_dumps({
                 "success": False,
                 "error": str(e),
             })
@@ -418,11 +454,11 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
 
     # Load .po file
     try:
-        po = polib.pofile(str(po_path))
+        po = pofile(str(po_path))
     except Exception as e:
         return [TextContent(
             type="text",
-            text=json.dumps({
+            text=json_dumps({
                 "success": False,
                 "error": f"Failed to parse .po file: {e}",
             })
@@ -501,7 +537,7 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
             "already_translated": already_translated if already_translated else None,
         }
 
-    return [TextContent(type="text", text=json.dumps(result, ensure_ascii=False, indent=2))]
+    return [TextContent(type="text", text=json_dumps(result, ensure_ascii=False, indent=2))]
 
 
 async def main():
@@ -511,4 +547,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio_run(main())
