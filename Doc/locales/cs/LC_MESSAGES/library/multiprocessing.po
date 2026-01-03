@@ -21,25 +21,27 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2
 msgid ":mod:`!multiprocessing` --- Process-based parallelism"
-msgstr ""
+msgstr ":mod:`!multiprocessing` --- Paralelismus založený na procesech"
 
 #: ../../library/multiprocessing.rst:7
 msgid "**Source code:** :source:`Lib/multiprocessing/`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/multiprocessing/`"
 
 #: ../../includes/wasm-mobile-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-mobile-notavail.rst:5
 msgid ""
 "This module is not supported on :ref:`mobile platforms <mobile-"
 "availability>` or :ref:`WebAssembly platforms <wasm-availability>`."
 msgstr ""
+"Tento modul není podporován na :ref:`mobilních platformách <mobile-"
+"availability>` ani na :ref:`platformách WebAssembly <wasm-availability>`."
 
 #: ../../library/multiprocessing.rst:14
 msgid "Introduction"
-msgstr ""
+msgstr "Úvod"
 
 #: ../../library/multiprocessing.rst:16
 msgid ""
@@ -52,6 +54,12 @@ msgid ""
 "leverage multiple processors on a given machine.  It runs on both POSIX "
 "and Windows."
 msgstr ""
+":mod:`multiprocessing` je balíček podporující vytváření procesů pomocí "
+"API podobného modulu :mod:`threading`. Balíček :mod:`multiprocessing` "
+"nabízí lokální i vzdálenou konkurenci a efektivně obchází :term:`Global "
+"Interpreter Lock <global interpreter lock>` použitím subprocesů místo "
+"vláken. Díky tomu modul :mod:`multiprocessing` umožňuje programátorovi "
+"plně využít více procesorů na daném stroji. Běží na POSIX i Windows."
 
 #: ../../library/multiprocessing.rst:25
 msgid ""
@@ -64,6 +72,13 @@ msgid ""
 "that module.  This basic example of data parallelism using "
 ":class:`~multiprocessing.pool.Pool`, ::"
 msgstr ""
+"Modul :mod:`multiprocessing` také zavádí objekt "
+":class:`~multiprocessing.pool.Pool`, který nabízí pohodlný způsob "
+"paralelizace provádění funkce napříč více vstupními hodnotami a "
+"distribuuje vstupní data mezi procesy (datový paralelismus). Následující "
+"příklad demonstruje běžnou praxi definování takových funkcí v modulu, "
+"aby je mohly podřízené procesy úspěšně importovat. Tento základní "
+"příklad datového paralelismu používající :class:`~multiprocessing.pool.Pool`, ::"
 
 #: ../../library/multiprocessing.rst:33
 msgid ""
@@ -79,7 +94,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:42
 msgid "will print to standard output ::"
-msgstr ""
+msgstr "vypíše na standardní výstup ::"
 
 #: ../../library/multiprocessing.rst:44
 msgid "[1, 4, 9]"
@@ -92,6 +107,10 @@ msgid ""
 ":meth:`terminate <Process.terminate>`, :meth:`interrupt "
 "<Process.interrupt>` or :meth:`kill <Process.kill>` a running process."
 msgstr ""
+"Modul :mod:`multiprocessing` také zavádí API, která nemají obdoby v "
+"modulu :mod:`threading`, jako například možnost :meth:`ukončit "
+"<Process.terminate>`, :meth:`přerušit <Process.interrupt>` nebo "
+":meth:`zabít <Process.kill>` běžící proces."
 
 #: ../../library/multiprocessing.rst:53
 msgid ""
@@ -103,10 +122,16 @@ msgid ""
 "to the underlying process pool to be separated from waiting for the "
 "results."
 msgstr ""
+":class:`concurrent.futures.ProcessPoolExecutor` nabízí rozhraní vyšší "
+"úrovně pro odesílání úloh do procesu na pozadí bez blokování provádění "
+"volajícího procesu. Ve srovnání s přímým použitím rozhraní "
+":class:`~multiprocessing.pool.Pool` API :mod:`concurrent.futures` "
+"snadněji umožňuje oddělit odesílání práce do fondu procesů od čekání na "
+"výsledky."
 
 #: ../../library/multiprocessing.rst:62
 msgid "The :class:`Process` class"
-msgstr ""
+msgstr "Třída :class:`Process`"
 
 #: ../../library/multiprocessing.rst:64
 msgid ""
@@ -115,6 +140,10 @@ msgid ""
 "method.  :class:`Process` follows the API of :class:`threading.Thread`.  "
 "A trivial example of a multiprocess program is ::"
 msgstr ""
+"V modulu :mod:`multiprocessing` se procesy vytvářejí vytvořením objektu "
+":class:`Process` a následným zavoláním jeho metody :meth:`~Process.start`. "
+":class:`Process` sleduje API třídy :class:`threading.Thread`. Triviální "
+"příklad víceprocesového programu je ::"
 
 #: ../../library/multiprocessing.rst:69
 msgid ""
@@ -131,7 +160,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:79
 msgid "To show the individual process IDs involved, here is an expanded example::"
-msgstr ""
+msgstr "Pro zobrazení konkrétních ID procesů je zde rozšířený příklad::"
 
 #: ../../library/multiprocessing.rst:81
 msgid ""
@@ -160,6 +189,8 @@ msgid ""
 "For an explanation of why the ``if __name__ == '__main__'`` part is "
 "necessary, see :ref:`multiprocessing-programming`."
 msgstr ""
+"Vysvětlení, proč je část ``if __name__ == '__main__'`` nezbytná, "
+"naleznete v :ref:`multiprocessing-programming`."
 
 #: ../../library/multiprocessing.rst:103
 msgid ""
@@ -168,16 +199,22 @@ msgid ""
 "into a REPL it could lead to an :exc:`AttributeError` in the child "
 "process trying to locate the *f* function in the ``__main__`` module."
 msgstr ""
+"Argumenty pro :class:`Process` obvykle musí být rozbalitelné z pickle "
+"v rámci podřízeného procesu. Pokud byste výše uvedený příklad zkusili "
+"napsat přímo do REPL, mohlo by to vést k :exc:`AttributeError` v "
+"podřízeném procesu při pokusu najít funkci *f* v modulu ``__main__``."
 
 #: ../../library/multiprocessing.rst:112
 msgid "Contexts and start methods"
-msgstr ""
+msgstr "Kontexty a metody spuštění"
 
 #: ../../library/multiprocessing.rst:114
 msgid ""
 "Depending on the platform, :mod:`multiprocessing` supports three ways to "
 "start a process.  These *start methods* are"
 msgstr ""
+"V závislosti na platformě :mod:`multiprocessing` podporuje tři způsoby "
+"spuštění procesu. Těmito *metodami spuštění* jsou"
 
 #: ../../library/multiprocessing.rst:119
 msgid "*spawn*"
@@ -192,12 +229,19 @@ msgid ""
 "Starting a process using this method is rather slow compared to using "
 "*fork* or *forkserver*."
 msgstr ""
+"Rodičovský proces spustí nový proces interpreteru Python. Podřízený "
+"proces zdědí pouze ty prostředky, které jsou nutné ke spuštění metody "
+":meth:`~Process.run` objektu procesu. Konkrétně nepotřebné deskriptory "
+"souborů a popisovače z rodičovského procesu nebudou zděděny. Spuštění "
+"procesu touto metodou je poměrně pomalé ve srovnání s použitím *fork* "
+"nebo *forkserver*."
 
 #: ../../library/multiprocessing.rst:127
 msgid ""
 "Available on POSIX and Windows platforms.  The default on Windows and "
 "macOS."
 msgstr ""
+"Dostupné na platformách POSIX a Windows. Výchozí na Windows a macOS."
 
 #: ../../library/multiprocessing.rst:131
 msgid "*fork*"
@@ -211,10 +255,14 @@ msgid ""
 "process.  Note that safely forking a multithreaded process is "
 "problematic."
 msgstr ""
+"Rodičovský proces použije :func:`os.fork` k rozdvojení interpreteru Python. "
+"Podřízený proces je při svém spuštění v podstatě identický s rodičovským "
+"procesem. Všechny prostředky rodiče jsou zděděny podřízeným procesem. "
+"Pamatujte, že bezpečné forkování vícevláknového procesu je problematické."
 
 #: ../../library/multiprocessing.rst:138
 msgid "Available on POSIX systems."
-msgstr ""
+msgstr "Dostupné na systémech POSIX."
 
 #: ../../library/multiprocessing.rst:140
 msgid ""
@@ -222,6 +270,9 @@ msgid ""
 "requires *fork* must explicitly specify that via :func:`get_context` or "
 ":func:`set_start_method`."
 msgstr ""
+"Toto již není výchozí metoda spuštění na žádné platformě. Kód, který "
+"vyžaduje *fork*, to musí explicitně specifikovat pomocí :func:`get_context` "
+"nebo :func:`set_start_method`."
 
 #: ../../library/multiprocessing.rst:145
 msgid ""
@@ -230,6 +281,10 @@ msgid ""
 "raise a :exc:`DeprecationWarning`. Use a different start method. See the "
 ":func:`os.fork` documentation for further explanation."
 msgstr ""
+"Pokud Python dokáže detekovat, že váš proces má více vláken, funkce "
+":func:`os.fork`, kterou tato metoda spuštění interně volá, vyvolá "
+":exc:`DeprecationWarning`. Použijte jinou metodu spuštění. Další "
+"vysvětlení naleznete v dokumentaci :func:`os.fork`."
 
 #: ../../library/multiprocessing.rst:153
 msgid "*forkserver*"
@@ -245,16 +300,24 @@ msgid ""
 "it is generally safe for it to use :func:`os.fork`. No unnecessary "
 "resources are inherited."
 msgstr ""
+"Když program spustí a vybere metodu spuštění *forkserver*, vytvoří se "
+"serverový proces. Od té doby, kdykoli je potřeba nový proces, rodičovský "
+"proces se připojí k serveru a požádá ho, aby rozdvojil nový proces. Proces "
+"fork serveru je jednovláknový, pokud systémové knihovny nebo předem načtené "
+"importy nevytvoří vlákna jako vedlejší efekt, takže je pro něj obecně "
+"bezpečné používat :func:`os.fork`. Nepotřebné prostředky se nedědí."
 
 #: ../../library/multiprocessing.rst:162
 msgid ""
 "Available on POSIX platforms which support passing file descriptors over "
 "Unix pipes such as Linux.  The default on those."
 msgstr ""
+"Dostupné na platformách POSIX, které podporují předávání deskriptorů souborů "
+"přes roury Unix, jako je Linux. Výchozí na těchto platformách."
 
 #: ../../library/multiprocessing.rst:165
 msgid "This became the default start method on POSIX platforms."
-msgstr ""
+msgstr "Toto se stalo výchozí metodou spuštění na platformách POSIX."
 
 #: ../../library/multiprocessing.rst:168
 msgid ""
@@ -262,6 +325,9 @@ msgid ""
 "POSIX platforms. Child processes no longer inherit all of the parents "
 "inheritable handles on Windows."
 msgstr ""
+"*spawn* přidán na všech platformách POSIX a *forkserver* přidán pro některé "
+"platformy POSIX. Podřízené procesy již nedědí všechny dědičné popisovače "
+"rodičů na Windows."
 
 #: ../../library/multiprocessing.rst:176
 msgid ""
@@ -270,6 +336,10 @@ msgid ""
 "subprocess as macOS system libraries may start threads. See "
 ":issue:`33725`."
 msgstr ""
+"Na macOS je nyní *spawn* výchozí metoda spuštění. Metoda spuštění *fork* "
+"by měla být považována za nebezpečnou, protože může vést k pádům "
+"subprocesu, jelikož systémové knihovny macOS mohou spouštět vlákna. Viz "
+":issue:`33725`."
 
 #: ../../library/multiprocessing.rst:182
 msgid ""
@@ -277,6 +347,9 @@ msgid ""
 "*forkserver* to retain the performance but avoid common multithreaded "
 "process incompatibilities. See :gh:`84559`."
 msgstr ""
+"Na platformách POSIX byla výchozí metoda spuštění změněna z *fork* na "
+"*forkserver*, aby se zachoval výkon, ale předešlo se běžným nekompatibilitám "
+"s vícevláknovými procesy. Viz :gh:`84559`."
 
 #: ../../library/multiprocessing.rst:187
 msgid ""
@@ -293,12 +366,25 @@ msgid ""
 "number of named semaphores, and shared memory segments occupy some space "
 "in the main memory.)"
 msgstr ""
+"Na POSIX použití metod spuštění *spawn* nebo *forkserver* také spustí "
+"proces *sledování prostředků*, který sleduje odpojené pojmenované systémové "
+"prostředky (jako jsou pojmenované semafory nebo objekty "
+":class:`~multiprocessing.shared_memory.SharedMemory`) vytvořené procesy "
+"programu. Když všechny procesy skončí, sledovač prostředků odpojí všechny "
+"zbývající sledované objekty. Obvykle by žádné být neměly, ale pokud byl "
+"proces zabit signálem, může dojít k \"úniku\" některých prostředků. "
+"(Ani uniklé semafory, ani segmenty sdílené paměti nebudou automaticky "
+"odpojeny až do příštího restartu. To je problematické pro oba objekty, "
+"protože systém povoluje pouze omezený počet pojmenovaných semaforů a "
+"segmenty sdílené paměti zabírají určitý prostor v hlavní paměti.)"
 
 #: ../../library/multiprocessing.rst:200
 msgid ""
 "To select a start method you use the :func:`set_start_method` in the ``if"
 " __name__ == '__main__'`` clause of the main module.  For example::"
 msgstr ""
+"Pro výběr metody spuštění použijete :func:`set_start_method` v klauzuli "
+"``if __name__ == '__main__'`` hlavního modulu. Například::"
 
 #: ../../library/multiprocessing.rst:204
 msgid ""
@@ -318,7 +404,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:217
 msgid ":func:`set_start_method` should not be used more than once in the program."
-msgstr ""
+msgstr ":func:`set_start_method` by neměl být v programu použit více než jednou."
 
 #: ../../library/multiprocessing.rst:220
 msgid ""
@@ -326,6 +412,9 @@ msgid ""
 "object.  Context objects have the same API as the multiprocessing module,"
 " and allow one to use multiple start methods in the same program. ::"
 msgstr ""
+"Alternativně můžete použít :func:`get_context` k získání objektu kontextu. "
+"Objekty kontextu mají stejné API jako modul multiprocessing a umožňují "
+"použít více metod spuštění v jednom programu. ::"
 
 #: ../../library/multiprocessing.rst:225
 msgid ""
@@ -350,6 +439,10 @@ msgid ""
 "the *fork* context cannot be passed to processes started using the "
 "*spawn* or *forkserver* start methods."
 msgstr ""
+"Pamatujte, že objekty související s jedním kontextem nemusí být kompatibilní "
+"s procesy pro jiný kontext. Konkrétně zámky vytvořené pomocí kontextu *fork* "
+"nemohou být předány procesům spuštěným pomocí metod spuštění *spawn* nebo "
+"*forkserver*."
 
 #: ../../library/multiprocessing.rst:243
 msgid ""
@@ -360,6 +453,12 @@ msgid ""
 "incompatibilities with the rest of the library user's application.  "
 "Always document if your library requires a specific start method."
 msgstr ""
+"Knihovny používající :mod:`multiprocessing` nebo "
+":class:`~concurrent.futures.ProcessPoolExecutor` by měly být navrženy tak, "
+"aby umožnily svým uživatelům poskytnout vlastní kontext multiprocessingu. "
+"Použití vlastního specifického kontextu v knihovně může vést k "
+"nekompatibilitám se zbytkem aplikace uživatele knihovny. Vždy dokumentujte, "
+"pokud vaše knihovna vyžaduje specifickou metodu spuštění."
 
 #: ../../library/multiprocessing.rst:252
 msgid ""
@@ -368,26 +467,32 @@ msgid ""
 "like **PyInstaller** and **cx_Freeze**) on POSIX systems. The ``'fork'`` "
 "start method may work if code does not use threads."
 msgstr ""
+"Metody spuštění ``'spawn'`` a ``'forkserver'`` obecně nelze použít se "
+"\"zmraženými\" spustitelnými soubory (tj. binárními soubory vytvořenými "
+"balíčky jako **PyInstaller** a **cx_Freeze**) na systémech POSIX. Metoda "
+"spuštění ``'fork'`` může fungovat, pokud kód nepoužívá vlákna."
 
 #: ../../library/multiprocessing.rst:259
 msgid "Exchanging objects between processes"
-msgstr ""
+msgstr "Výměna objektů mezi procesy"
 
 #: ../../library/multiprocessing.rst:261
 msgid ""
 ":mod:`multiprocessing` supports two types of communication channel "
 "between processes:"
 msgstr ""
+":mod:`multiprocessing` podporuje dva typy komunikačních kanálů mezi procesy:"
 
 #: ../../library/multiprocessing.rst:264
 msgid "**Queues**"
-msgstr ""
+msgstr "**Fronty**"
 
 #: ../../library/multiprocessing.rst:266
 msgid ""
 "The :class:`Queue` class is a near clone of :class:`queue.Queue`.  For "
 "example::"
 msgstr ""
+"Třída :class:`Queue` je téměř klonem :class:`queue.Queue`. Například::"
 
 #: ../../library/multiprocessing.rst:269
 msgid ""
@@ -409,16 +514,20 @@ msgid ""
 "Queues are thread and process safe. Any object put into a "
 ":mod:`~multiprocessing` queue will be serialized."
 msgstr ""
+"Fronty jsou bezpečné pro vlákna i procesy. Jakýkoli objekt vložený do "
+"fronty :mod:`~multiprocessing` bude serializován."
 
 #: ../../library/multiprocessing.rst:284
 msgid "**Pipes**"
-msgstr ""
+msgstr "**Roury**"
 
 #: ../../library/multiprocessing.rst:286
 msgid ""
 "The :func:`Pipe` function returns a pair of connection objects connected "
 "by a pipe which by default is duplex (two-way).  For example::"
 msgstr ""
+"Funkce :func:`Pipe` vrací dvojici objektů spojení propojených rourou, která "
+"je ve výchozím nastavení duplexní (obousměrná). Například::"
 
 #: ../../library/multiprocessing.rst:289
 msgid ""
@@ -446,16 +555,24 @@ msgid ""
 "there is no risk of corruption from processes using different ends of the"
 " pipe at the same time."
 msgstr ""
+"Dva objekty spojení vrácené funkcí :func:`Pipe` představují dva konce "
+"roury. Každý objekt spojení má metody :meth:`~Connection.send` a "
+":meth:`~Connection.recv` (mimo jiné). Pamatujte, že data v rouře mohou "
+"být poškozena, pokud se dva procesy (nebo vlákna) pokusí číst nebo "
+"zapisovat do *stejného* konce roury současně. Samozřejmě nehrozí žádné "
+"riziko poškození dat od procesů používajících různé konce roury současně."
 
 #: ../../library/multiprocessing.rst:310
 msgid ""
 "The :meth:`~Connection.send` method serializes the object and "
 ":meth:`~Connection.recv` re-creates the object."
 msgstr ""
+"Metoda :meth:`~Connection.send` serializuje objekt a :meth:`~Connection.recv` "
+"objekt znovu vytvoří."
 
 #: ../../library/multiprocessing.rst:314
 msgid "Synchronization between processes"
-msgstr ""
+msgstr "Synchronizace mezi procesy"
 
 #: ../../library/multiprocessing.rst:316
 msgid ""
@@ -463,6 +580,9 @@ msgid ""
 "primitives from :mod:`threading`.  For instance one can use a lock to "
 "ensure that only one process prints to standard output at a time::"
 msgstr ""
+":mod:`multiprocessing` obsahuje ekvivalenty všech synchronizačních "
+"primitiv z modulu :mod:`threading`. Například lze použít zámek k zajištění, "
+"že pouze jeden proces současně vypisuje na standardní výstup::"
 
 #: ../../library/multiprocessing.rst:320
 msgid ""
@@ -487,10 +607,11 @@ msgid ""
 "Without using the lock output from the different processes is liable to "
 "get all mixed up."
 msgstr ""
+"Bez použití zámku může být výstup z různých procesů promíchaný."
 
 #: ../../library/multiprocessing.rst:340
 msgid "Sharing state between processes"
-msgstr ""
+msgstr "Sdílení stavu mezi procesy"
 
 #: ../../library/multiprocessing.rst:342
 msgid ""
@@ -498,22 +619,29 @@ msgid ""
 "to avoid using shared state as far as possible.  This is particularly "
 "true when using multiple processes."
 msgstr ""
+"Jak bylo zmíněno výše, při souběžném programování je obvykle nejlepší "
+"vyhnout se co nejvíce použití sdíleného stavu. To platí zejména při "
+"používání více procesů."
 
 #: ../../library/multiprocessing.rst:346
 msgid ""
 "However, if you really do need to use some shared data then "
 ":mod:`multiprocessing` provides a couple of ways of doing so."
 msgstr ""
+"Pokud však opravdu potřebujete použít nějaká sdílená data, pak "
+":mod:`multiprocessing` poskytuje několik způsobů, jak to udělat."
 
 #: ../../library/multiprocessing.rst:349
 msgid "**Shared memory**"
-msgstr ""
+msgstr "**Sdílená paměť**"
 
 #: ../../library/multiprocessing.rst:351
 msgid ""
 "Data can be stored in a shared memory map using :class:`Value` or "
 ":class:`Array`.  For example, the following code ::"
 msgstr ""
+"Data mohou být uložena v mapě sdílené paměti pomocí :class:`Value` nebo "
+":class:`Array`. Například následující kód ::"
 
 #: ../../library/multiprocessing.rst:354
 msgid ""
@@ -538,7 +666,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:372 ../../library/multiprocessing.rst:422
 msgid "will print ::"
-msgstr ""
+msgstr "vypíše ::"
 
 #: ../../library/multiprocessing.rst:374
 msgid ""
@@ -553,6 +681,10 @@ msgid ""
 "indicates a double precision float and ``'i'`` indicates a signed "
 "integer.  These shared objects will be process and thread-safe."
 msgstr ""
+"Argumenty ``'d'`` a ``'i'`` použité při vytváření ``num`` a ``arr`` jsou "
+"typové kódy stejného druhu, jaké používá modul :mod:`array`: ``'d'`` "
+"označuje desetinné číslo s dvojitou přesností a ``'i'`` označuje "
+"celé číslo se znaménkem. Tyto sdílené objekty budou bezpečné pro procesy i vlákna."
 
 #: ../../library/multiprocessing.rst:382
 msgid ""
@@ -560,10 +692,13 @@ msgid ""
 ":mod:`multiprocessing.sharedctypes` module which supports the creation of"
 " arbitrary ctypes objects allocated from shared memory."
 msgstr ""
+"Pro větší flexibilitu při používání sdílené paměti lze použít modul "
+":mod:`multiprocessing.sharedctypes`, který podporuje vytváření "
+"libovolných objektů ctypes alokovaných ze sdílené paměti."
 
 #: ../../library/multiprocessing.rst:386
 msgid "**Server process**"
-msgstr ""
+msgstr "**Serverový proces**"
 
 #: ../../library/multiprocessing.rst:388
 msgid ""
@@ -571,6 +706,9 @@ msgid ""
 "which holds Python objects and allows other processes to manipulate them "
 "using proxies."
 msgstr ""
+"Objekt manažeru vrácený funkcí :func:`Manager` řídí serverový proces, "
+"který drží objekty Python a umožňuje jiným procesům s nimi manipulovat "
+"pomocí proxy."
 
 #: ../../library/multiprocessing.rst:392
 msgid ""
@@ -580,6 +718,11 @@ msgid ""
 ":class:`Condition`, :class:`Event`, :class:`Barrier`, :class:`Queue`, "
 ":class:`Value` and :class:`Array`.  For example, ::"
 msgstr ""
+"Manažer vrácený funkcí :func:`Manager` bude podporovat typy :class:`list`, "
+":class:`dict`, :class:`set`, :class:`~managers.Namespace`, :class:`Lock`, "
+":class:`RLock`, :class:`Semaphore`, :class:`BoundedSemaphore`, "
+":class:`Condition`, :class:`Event`, :class:`Barrier`, :class:`Queue`, "
+":class:`Value` a :class:`Array`. Například, ::"
 
 #: ../../library/multiprocessing.rst:398
 msgid ""
@@ -623,10 +766,14 @@ msgid ""
 "Also, a single manager can be shared by processes on different computers "
 "over a network. They are, however, slower than using shared memory."
 msgstr ""
+"Manažery serverových procesů jsou flexibilnější než použití objektů sdílené "
+"paměti, protože mohou být vytvořeny pro podporu libovolných typů objektů. "
+"Jeden manažer může být také sdílen procesy na různých počítačích přes síť. "
+"Jsou však pomalejší než použití sdílené paměti."
 
 #: ../../library/multiprocessing.rst:435
 msgid "Using a pool of workers"
-msgstr ""
+msgstr "Použití fondu pracovních procesů"
 
 #: ../../library/multiprocessing.rst:437
 msgid ""
@@ -634,10 +781,13 @@ msgid ""
 " processes.  It has methods which allows tasks to be offloaded to the "
 "worker processes in a few different ways."
 msgstr ""
+"Třída :class:`~multiprocessing.pool.Pool` představuje fond pracovních "
+"procesů. Má metody, které umožňují přenášet úlohy na pracovní procesy "
+"několika různými způsoby."
 
 #: ../../library/multiprocessing.rst:441
 msgid "For example::"
-msgstr ""
+msgstr "Například::"
 
 #: ../../library/multiprocessing.rst:443
 msgid ""
@@ -696,6 +846,8 @@ msgid ""
 "Note that the methods of a pool should only ever be used by the process "
 "which created it."
 msgstr ""
+"Pamatujte, že metody fondu by měly být používány pouze procesem, který "
+"jej vytvořil."
 
 #: ../../library/multiprocessing.rst:490
 msgid ""
@@ -705,6 +857,11 @@ msgid ""
 "examples, such as the :class:`multiprocessing.pool.Pool` examples will "
 "not work in the interactive interpreter. For example::"
 msgstr ""
+"Funkcionalita v tomto balíčku vyžaduje, aby modul ``__main__`` mohl být "
+"importován podřízenými procesy. To je pokryto v :ref:`multiprocessing-"
+"programming`, ale stojí za to to zde zmínit. To znamená, že některé "
+"příklady, jako například příklady s :class:`multiprocessing.pool.Pool`, "
+"nebudou fungovat v interaktivním interpreteru. Například::"
 
 #: ../../library/multiprocessing.rst:496
 msgid ""
@@ -735,26 +892,32 @@ msgid ""
 "interleaved in a semi-random fashion, and then you may have to stop the "
 "parent process somehow.)"
 msgstr ""
+"(Pokud to zkusíte, skutečně to vypíše tři úplné výpisy trasování prokládané "
+"polo-náhodným způsobem a pak možná budete muset rodičovský proces nějak "
+"zastavit.)"
 
 #: ../../library/multiprocessing.rst:519
 msgid "Reference"
-msgstr ""
+msgstr "Reference"
 
 #: ../../library/multiprocessing.rst:521
 msgid ""
 "The :mod:`multiprocessing` package mostly replicates the API of the "
 ":mod:`threading` module."
 msgstr ""
+"Balíček :mod:`multiprocessing` většinou replikuje API modulu :mod:`threading`."
 
 #: ../../library/multiprocessing.rst:527
 msgid "Global start method"
-msgstr ""
+msgstr "Globální metoda spuštění"
 
 #: ../../library/multiprocessing.rst:529
 msgid ""
 "Python supports several ways to create and initialize a process. The "
 "global start method sets the default mechanism for creating a process."
 msgstr ""
+"Python podporuje několik způsobů vytváření a inicializace procesu. Globální "
+"metoda spuštění nastavuje výchozí mechanismus pro vytváření procesu."
 
 #: ../../library/multiprocessing.rst:532
 msgid ""
@@ -768,7 +931,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:541
 msgid ":class:`Process` and exceptions"
-msgstr ""
+msgstr ":class:`Process` a výjimky"
 
 #: ../../library/multiprocessing.rst:546
 msgid ""
@@ -823,7 +986,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:581
 msgid "Example of this uncatchable error from the child::"
-msgstr ""
+msgstr "Příklad této nezachytitelné chyby z podřízeného procesu::"
 
 #: ../../library/multiprocessing.rst:583
 msgid ""
@@ -849,14 +1012,18 @@ msgid ""
 "that is no longer the default on any platform.  See :ref"
 ":`multiprocessing-start-methods`. See also :gh:`132898`."
 msgstr ""
+"Viz :ref:`multiprocessing-programming-spawn`. I když toto omezení neplatí "
+"při použití metody spouštění ``\"fork\"``, od Pythonu ``3.14`` už to není "
+"výchozí metoda na žádné platformě. Viz :ref:`multiprocessing-start-methods`. "
+"Viz také :gh:`132898`."
 
 #: ../../library/multiprocessing.rst:602
 msgid "Added the *daemon* parameter."
-msgstr ""
+msgstr "Přidán parametr *daemon*."
 
 #: ../../library/multiprocessing.rst:607
 msgid "Method representing the process's activity."
-msgstr ""
+msgstr "Metoda reprezentující aktivitu procesu."
 
 #: ../../library/multiprocessing.rst:609
 msgid ""
@@ -865,16 +1032,22 @@ msgid ""
 "the target argument, if any, with sequential and keyword arguments taken "
 "from the *args* and *kwargs* arguments, respectively."
 msgstr ""
+"Tuto metodu můžete přepsat v podtřídě. Standardní metoda :meth:`run` volá "
+"volatelný objekt předaný konstruktoru objektu jako argument target, pokud "
+"je zadán, s poziční a klíčovými argumenty převzatými z argumentů *args* a "
+"*kwargs*."
 
 #: ../../library/multiprocessing.rst:614
 msgid ""
 "Using a list or tuple as the *args* argument passed to :class:`Process` "
 "achieves the same effect."
 msgstr ""
+"Použití seznamu nebo n-tice jako argumentu *args* předaného třídě :class:"
+"`Process` dosáhne stejného efektu."
 
 #: ../../library/multiprocessing.rst:617
 msgid "Example::"
-msgstr ""
+msgstr "Příklad::"
 
 #: ../../library/multiprocessing.rst:619
 msgid ""
@@ -889,13 +1062,15 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:629
 msgid "Start the process's activity."
-msgstr ""
+msgstr "Spustí aktivitu procesu."
 
 #: ../../library/multiprocessing.rst:631
 msgid ""
 "This must be called at most once per process object.  It arranges for the"
 " object's :meth:`run` method to be invoked in a separate process."
 msgstr ""
+"Toto musí být voláno nejvýše jednou na objekt procesu. Zařídí, aby byla "
+"metoda :meth:`run` objektu vyvolána v samostatném procesu."
 
 #: ../../library/multiprocessing.rst:636
 msgid ""
@@ -906,16 +1081,24 @@ msgid ""
 " method times out.  Check the process's :attr:`exitcode` to determine if "
 "it terminated."
 msgstr ""
+"Pokud je volitelný argument *timeout* ``None`` (výchozí), metoda blokuje, "
+"dokud proces, na kterém je volána metoda :meth:`join`, neukončí. Pokud je "
+"*timeout* kladné číslo, blokuje maximálně *timeout* sekund. Všimněte si, "
+"že metoda vrací ``None``, pokud její proces ukončí nebo pokud metoda vyprší "
+"časový limit. Zkontrolujte :attr:`exitcode` procesu, abyste zjistili, zda "
+"ukončil."
 
 #: ../../library/multiprocessing.rst:643
 msgid "A process can be joined many times."
-msgstr ""
+msgstr "Proces může být spojen mnohokrát."
 
 #: ../../library/multiprocessing.rst:645
 msgid ""
 "A process cannot join itself because this would cause a deadlock.  It is "
 "an error to attempt to join a process before it has been started."
 msgstr ""
+"Proces nemůže spojit sám sebe, protože by to způsobilo zablokování. Je "
+"chybou pokusit se spojit proces před tím, než byl spuštěn."
 
 #: ../../library/multiprocessing.rst:650
 msgid ""
@@ -923,6 +1106,8 @@ msgid ""
 "purposes only.  It has no semantics.  Multiple processes may be given the"
 " same name."
 msgstr ""
+"Název procesu. Název je řetězec používaný pouze pro účely identifikace. "
+"Nemá žádnou sémantiku. Více procesů může mít stejný název."
 
 #: ../../library/multiprocessing.rst:654
 msgid ""
@@ -931,32 +1116,41 @@ msgid ""
 " :sub:`2`:...:N\\ :sub:`k`' is constructed, where each N\\ :sub:`k` is "
 "the N-th child of its parent."
 msgstr ""
+"Počáteční název je nastaven konstruktorem. Pokud není konstruktoru zadán "
+"explicitní název, vytvoří se název ve tvaru 'Process-N\\ :sub:`1`:N\\ :sub:"
+"`2`:...:N\\ :sub:`k`', kde každé N\\ :sub:`k` je N-té dítě svého rodiče."
 
 #: ../../library/multiprocessing.rst:661
 msgid "Return whether the process is alive."
-msgstr ""
+msgstr "Vrátí, zda je proces naživu."
 
 #: ../../library/multiprocessing.rst:663
 msgid ""
 "Roughly, a process object is alive from the moment the :meth:`start` "
 "method returns until the child process terminates."
 msgstr ""
+"Zhruba platí, že objekt procesu je naživu od okamžiku, kdy metoda :meth:"
+"`start` vrátí, až do ukončení podřízeného procesu."
 
 #: ../../library/multiprocessing.rst:668
 msgid ""
 "The process's daemon flag, a Boolean value.  This must be set before "
 ":meth:`start` is called."
 msgstr ""
+"Příznak démona procesu, booleovská hodnota. Toto musí být nastaveno před "
+"voláním :meth:`start`."
 
 #: ../../library/multiprocessing.rst:671
 msgid "The initial value is inherited from the creating process."
-msgstr ""
+msgstr "Počáteční hodnota je zděděna z vytvářejícího procesu."
 
 #: ../../library/multiprocessing.rst:673
 msgid ""
 "When a process exits, it attempts to terminate all of its daemonic child "
 "processes."
 msgstr ""
+"Když proces ukončí, pokusí se ukončit všechny své démonické podřízené "
+"procesy."
 
 #: ../../library/multiprocessing.rst:676
 msgid ""
@@ -966,24 +1160,33 @@ msgid ""
 "**not** Unix daemons or services, they are normal processes that will be "
 "terminated (and not joined) if non-daemonic processes have exited."
 msgstr ""
+"Všimněte si, že démonický proces nemá dovoleno vytvářet podřízené procesy. "
+"Jinak by démonický proces zanechal své děti osiřelé, pokud by byl ukončen "
+"při ukončení jeho rodičovského procesu. Kromě toho to **nejsou** Unixové "
+"démony nebo služby, jsou to normální procesy, které budou ukončeny (a ne "
+"spojeny), pokud nedémonické procesy ukončily."
 
 #: ../../library/multiprocessing.rst:682
 msgid ""
 "In addition to the  :class:`threading.Thread` API, :class:`Process` "
 "objects also support the following attributes and methods:"
 msgstr ""
+"Kromě API :class:`threading.Thread` objekty :class:`Process` také "
+"podporují následující atributy a metody:"
 
 #: ../../library/multiprocessing.rst:687
 msgid ""
 "Return the process ID.  Before the process is spawned, this will be "
 "``None``."
-msgstr ""
+msgstr "Vrátí ID procesu. Před vytvořením procesu bude toto ``None``."
 
 #: ../../library/multiprocessing.rst:692
 msgid ""
 "The child's exit code.  This will be ``None`` if the process has not yet "
 "terminated."
 msgstr ""
+"Výstupní kód podřízeného procesu. Toto bude ``None``, pokud proces ještě "
+"neukončil."
 
 #: ../../library/multiprocessing.rst:695
 msgid ""
@@ -991,6 +1194,9 @@ msgid ""
 "be 0.  If it terminated via :func:`sys.exit` with an integer argument "
 "*N*, the exit code will be *N*."
 msgstr ""
+"Pokud metoda :meth:`run` podřízeného procesu vrátila normálně, výstupní "
+"kód bude 0. Pokud ukončil přes :func:`sys.exit` s celočíselným argumentem "
+"*N*, výstupní kód bude *N*."
 
 #: ../../library/multiprocessing.rst:699
 msgid ""
@@ -998,16 +1204,21 @@ msgid ""
 ":meth:`run`, the exit code will be 1.  If it was terminated by signal "
 "*N*, the exit code will be the negative value *-N*."
 msgstr ""
+"Pokud podřízený proces ukončil kvůli výjimce, která nebyla zachycena v "
+":meth:`run`, výstupní kód bude 1. Pokud byl ukončen signálem *N*, výstupní "
+"kód bude záporná hodnota *-N*."
 
 #: ../../library/multiprocessing.rst:705
 msgid "The process's authentication key (a byte string)."
-msgstr ""
+msgstr "Autentizační klíč procesu (bajtový řetězec)."
 
 #: ../../library/multiprocessing.rst:707
 msgid ""
 "When :mod:`multiprocessing` is initialized the main process is assigned a"
 " random string using :func:`os.urandom`."
 msgstr ""
+"Když je :mod:`multiprocessing` inicializován, hlavnímu procesu je přiřazen "
+"náhodný řetězec pomocí :func:`os.urandom`."
 
 #: ../../library/multiprocessing.rst:710
 msgid ""
@@ -1015,16 +1226,21 @@ msgid ""
 "authentication key of its parent process, although this may be changed by"
 " setting :attr:`authkey` to another byte string."
 msgstr ""
+"Když je vytvořen objekt :class:`Process`, zdědí autentizační klíč svého "
+"rodičovského procesu, ačkoli to může být změněno nastavením :attr:`authkey` "
+"na jiný bajtový řetězec."
 
 #: ../../library/multiprocessing.rst:714
 msgid "See :ref:`multiprocessing-auth-keys`."
-msgstr ""
+msgstr "Viz :ref:`multiprocessing-auth-keys`."
 
 #: ../../library/multiprocessing.rst:718
 msgid ""
 "A numeric handle of a system object which will become \"ready\" when the "
 "process ends."
 msgstr ""
+"Číselný popisovač systémového objektu, který se stane \"připraveným\", "
+"když proces ukončí."
 
 #: ../../library/multiprocessing.rst:721
 msgid ""
@@ -1032,6 +1248,9 @@ msgid ""
 "using :func:`multiprocessing.connection.wait`.  Otherwise calling "
 ":meth:`join` is simpler."
 msgstr ""
+"Tuto hodnotu můžete použít, pokud chcete čekat na několik událostí najednou "
+"pomocí :func:`multiprocessing.connection.wait`. Jinak je volání :meth:`join` "
+"jednodušší."
 
 #: ../../library/multiprocessing.rst:725
 msgid ""
@@ -1039,12 +1258,17 @@ msgid ""
 "and ``WaitForMultipleObjects`` family of API calls.  On POSIX, this is a "
 "file descriptor usable with primitives from the :mod:`select` module."
 msgstr ""
+"Na Windows je to popisovač OS použitelný s rodinou API volání "
+"``WaitForSingleObject`` a ``WaitForMultipleObjects``. Na POSIX je to "
+"deskriptor souboru použitelný s primitivy z modulu :mod:`select`."
 
 #: ../../library/multiprocessing.rst:733
 msgid ""
 "Terminate the process. Works on POSIX using the "
 ":py:const:`~signal.SIGINT` signal. Behavior on Windows is undefined."
 msgstr ""
+"Ukončí proces. Funguje na POSIX pomocí signálu :py:const:`~signal.SIGINT`. "
+"Chování na Windows je nedefinované."
 
 #: ../../library/multiprocessing.rst:736
 msgid ""
@@ -1053,12 +1277,18 @@ msgid ""
 "respective signal handler in the child process :func:`signal.signal` for "
 ":py:const:`~signal.SIGINT`."
 msgstr ""
+"Ve výchozím nastavení ukončí podřízený proces vyvoláním :exc:"
+"`KeyboardInterrupt`. Toto chování může být změněno nastavením příslušného "
+"obsluhy signálu v podřízeném procesu :func:`signal.signal` pro :py:const:"
+"`~signal.SIGINT`."
 
 #: ../../library/multiprocessing.rst:740
 msgid ""
 "Note: if the child process catches and discards :exc:`KeyboardInterrupt`,"
 " the process will not be terminated."
 msgstr ""
+"Poznámka: pokud podřízený proces zachytí a zahodí :exc:`KeyboardInterrupt`, "
+"proces nebude ukončen."
 
 #: ../../library/multiprocessing.rst:743
 msgid ""
@@ -1067,6 +1297,10 @@ msgid ""
 "different :attr:`exitcode` you may simply catch :exc:`KeyboardInterrupt` "
 "and call ``exit(your_code)``."
 msgstr ""
+"Poznámka: výchozí chování také nastaví :attr:`exitcode` na ``1``, jako by "
+"byla v podřízeném procesu vyvolána nezachycená výjimka. Chcete-li mít jiný "
+":attr:`exitcode`, můžete jednoduše zachytit :exc:`KeyboardInterrupt` a "
+"zavolat ``exit(your_code)``."
 
 #: ../../library/multiprocessing.rst:752
 msgid ""
@@ -1075,12 +1309,17 @@ msgid ""
 ":c:func:`!TerminateProcess` is used.  Note that exit handlers and finally"
 " clauses, etc., will not be executed."
 msgstr ""
+"Ukončí proces. Na POSIX se to provádí pomocí signálu :py:const:`~signal."
+"SIGTERM`; na Windows se používá :c:func:`!TerminateProcess`. Všimněte si, "
+"že obsluhy ukončení a klauzule finally atd. nebudou provedeny."
 
 #: ../../library/multiprocessing.rst:756
 msgid ""
 "Note that descendant processes of the process will *not* be terminated --"
 " they will simply become orphaned."
 msgstr ""
+"Všimněte si, že potomci procesu *nebudou* ukončeni -- jednoduše se stanou "
+"osiřelými."
 
 #: ../../library/multiprocessing.rst:761
 msgid ""
@@ -1090,10 +1329,14 @@ msgid ""
 "lock or semaphore etc. then terminating it is liable to cause other "
 "processes to deadlock."
 msgstr ""
+"Pokud je tato metoda použita, když přidružený proces používá rouru nebo "
+"frontu, pak roura nebo fronta může být poškozena a může se stát "
+"nepoužitelnou jinými procesy. Podobně, pokud proces získal zámek nebo "
+"semafor atd., pak jeho ukončení může způsobit zablokování jiných procesů."
 
 #: ../../library/multiprocessing.rst:769
 msgid "Same as :meth:`terminate` but using the ``SIGKILL`` signal on POSIX."
-msgstr ""
+msgstr "Stejné jako :meth:`terminate`, ale používá signál ``SIGKILL`` na POSIX."
 
 #: ../../library/multiprocessing.rst:775
 msgid ""
@@ -1102,6 +1345,10 @@ msgid ""
 "running.  Once :meth:`close` returns successfully, most other methods and"
 " attributes of the :class:`Process` object will raise :exc:`ValueError`."
 msgstr ""
+"Uzavře objekt :class:`Process`, uvolní všechny související prostředky. Exc:"
+"`ValueError` je vyvolána, pokud základní proces stále běží. Jakmile :meth:"
+"`close` úspěšně vrátí, většina ostatních metod a atributů objektu :class:"
+"`Process` vyvolá :exc:`ValueError`."
 
 #: ../../library/multiprocessing.rst:783
 msgid ""
@@ -1109,10 +1356,13 @@ msgid ""
 ":meth:`terminate` and :attr:`exitcode` methods should only be called by "
 "the process that created the process object."
 msgstr ""
+"Všimněte si, že metody :meth:`start`, :meth:`join`, :meth:`is_alive`, "
+":meth:`terminate` a :attr:`exitcode` by měly být volány pouze procesem, "
+"který vytvořil objekt procesu."
 
 #: ../../library/multiprocessing.rst:787
 msgid "Example usage of some of the methods of :class:`Process`:"
-msgstr ""
+msgstr "Příklad použití některých metod třídy :class:`Process`:"
 
 #: ../../library/multiprocessing.rst:789
 msgid ""
@@ -1134,31 +1384,35 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:808
 msgid "The base class of all :mod:`multiprocessing` exceptions."
-msgstr ""
+msgstr "Základní třída všech výjimek modulu :mod:`multiprocessing`."
 
 #: ../../library/multiprocessing.rst:812
 msgid ""
 "Exception raised by :meth:`Connection.recv_bytes_into` when the supplied "
 "buffer object is too small for the message read."
 msgstr ""
+"Výjimka vyvolaná metodou :meth:`Connection.recv_bytes_into`, když je "
+"dodaný objekt bufferu příliš malý pro přečtenou zprávu."
 
 #: ../../library/multiprocessing.rst:815
 msgid ""
 "If ``e`` is an instance of :exc:`BufferTooShort` then ``e.args[0]`` will "
 "give the message as a byte string."
 msgstr ""
+"Pokud je ``e`` instancí :exc:`BufferTooShort`, pak ``e.args[0]`` vrátí "
+"zprávu jako bajtový řetězec."
 
 #: ../../library/multiprocessing.rst:820
 msgid "Raised when there is an authentication error."
-msgstr ""
+msgstr "Vyvolána, když dojde k autentizační chybě."
 
 #: ../../library/multiprocessing.rst:824
 msgid "Raised by methods with a timeout when the timeout expires."
-msgstr ""
+msgstr "Vyvolána metodami s časovým limitem, když časový limit vyprší."
 
 #: ../../library/multiprocessing.rst:827
 msgid "Pipes and Queues"
-msgstr ""
+msgstr "Roury a fronty"
 
 #: ../../library/multiprocessing.rst:829
 msgid ""
@@ -1166,6 +1420,9 @@ msgid ""
 "communication between processes and avoids having to use any "
 "synchronization primitives like locks."
 msgstr ""
+"Při použití více procesů se obecně používá předávání zpráv pro komunikaci "
+"mezi procesy a vyhýbá se nutnosti používat jakékoli synchronizační primitivy "
+"jako zámky."
 
 #: ../../library/multiprocessing.rst:833
 msgid ""
@@ -1173,6 +1430,8 @@ msgid ""
 "two processes) or a queue (which allows multiple producers and "
 "consumers)."
 msgstr ""
+"Pro předávání zpráv lze použít :func:`Pipe` (pro spojení mezi dvěma "
+"procesy) nebo frontu (která umožňuje více producentů a konzumentů)."
 
 #: ../../library/multiprocessing.rst:836
 msgid ""
@@ -1183,6 +1442,12 @@ msgid ""
 ":meth:`~queue.Queue.task_done` and :meth:`~queue.Queue.join` methods "
 "introduced into Python 2.5's :class:`queue.Queue` class."
 msgstr ""
+"Typy :class:`Queue`, :class:`SimpleQueue` a :class:`JoinableQueue` jsou "
+"fronty :abbr:`FIFO (first-in, first-out)` s více producenty a konzumenty, "
+"modelované podle třídy :class:`queue.Queue` ze standardní knihovny. Liší "
+"se v tom, že třídě :class:`Queue` chybí metody :meth:`~queue.Queue.task_done` "
+"a :meth:`~queue.Queue.join` zavedené do třídy :class:`queue.Queue` v Pythonu "
+"2.5."
 
 #: ../../library/multiprocessing.rst:843
 msgid ""
@@ -1191,6 +1456,10 @@ msgid ""
 "else the semaphore used to count the number of unfinished tasks may "
 "eventually overflow, raising an exception."
 msgstr ""
+"Pokud používáte :class:`JoinableQueue`, pak **musíte** volat :meth:"
+"`JoinableQueue.task_done` pro každý úkol odebraný z fronty, jinak semafor "
+"používaný k počítání nedokončených úkolů může nakonec přetéct a vyvolat "
+"výjimku."
 
 #: ../../library/multiprocessing.rst:848
 msgid ""
@@ -1199,12 +1468,18 @@ msgid ""
 "them using :mod:`pickle`. The object returned by the get method is a re-"
 "created object that does not share memory with the original object."
 msgstr ""
+"Jeden rozdíl oproti jiným implementacím front v Pythonu je, že fronty "
+":mod:`multiprocessing` serializují všechny objekty, které jsou do nich "
+"vloženy, pomocí :mod:`pickle`. Objekt vrácený metodou get je znovu "
+"vytvořený objekt, který nesdílí paměť s původním objektem."
 
 #: ../../library/multiprocessing.rst:853
 msgid ""
 "Note that one can also create a shared queue by using a manager object --"
 " see :ref:`multiprocessing-managers`."
 msgstr ""
+"Všimněte si, že lze také vytvořit sdílenou frontu pomocí objektu manažera -- "
+"viz :ref:`multiprocessing-managers`."
 
 #: ../../library/multiprocessing.rst:858
 msgid ""
@@ -1213,6 +1488,10 @@ msgid ""
 " in the :mod:`multiprocessing` namespace so you need to import them from "
 ":mod:`queue`."
 msgstr ""
+":mod:`multiprocessing` používá obvyklé výjimky :exc:`queue.Empty` a :exc:"
+"`queue.Full` k signalizaci vypršení časového limitu. Nejsou dostupné v "
+"jmenném prostoru :mod:`multiprocessing`, takže je musíte importovat z :mod:"
+"`queue`."
 
 #: ../../library/multiprocessing.rst:865
 msgid ""
@@ -1541,21 +1820,23 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1109
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Různé"
 
 #: ../../library/multiprocessing.rst:1113
 msgid "Return list of all live children of the current process."
-msgstr ""
+msgstr "Vrátí seznam všech živých dětí aktuálního procesu."
 
 #: ../../library/multiprocessing.rst:1115
 msgid ""
 "Calling this has the side effect of \"joining\" any processes which have "
 "already finished."
 msgstr ""
+"Volání tohoto má vedlejší efekt \"spojení\" jakýchkoli procesů, které již "
+"skončily."
 
 #: ../../library/multiprocessing.rst:1120
 msgid "Return the number of CPUs in the system."
-msgstr ""
+msgstr "Vrátí počet CPU v systému."
 
 #: ../../library/multiprocessing.rst:1122
 msgid ""
@@ -1563,12 +1844,16 @@ msgid ""
 "can use.  The number of usable CPUs can be obtained with "
 ":func:`os.process_cpu_count` (or ``len(os.sched_getaffinity(0))``)."
 msgstr ""
+"Toto číslo není ekvivalentní počtu CPU, které může aktuální proces použít. "
+"Počet použitelných CPU lze získat pomocí :func:`os.process_cpu_count` (nebo "
+"``len(os.sched_getaffinity(0))``)."
 
 #: ../../library/multiprocessing.rst:1126
 msgid ""
 "When the number of CPUs cannot be determined a :exc:`NotImplementedError`"
 " is raised."
 msgstr ""
+"Když nelze určit počet CPU, je vyvolána výjimka :exc:`NotImplementedError`."
 
 #: ../../library/multiprocessing.rst:1130
 msgid ":func:`os.cpu_count` :func:`os.process_cpu_count`"
@@ -1583,11 +1868,11 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1141
 msgid "Return the :class:`Process` object corresponding to the current process."
-msgstr ""
+msgstr "Vrátí objekt :class:`Process` odpovídající aktuálnímu procesu."
 
 #: ../../library/multiprocessing.rst:1143
 msgid "An analogue of :func:`threading.current_thread`."
-msgstr ""
+msgstr "Analogie k :func:`threading.current_thread`."
 
 #: ../../library/multiprocessing.rst:1147
 msgid ""
@@ -1595,6 +1880,8 @@ msgid ""
 " the :func:`current_process`. For the main process, ``parent_process`` "
 "will be ``None``."
 msgstr ""
+"Vrátí objekt :class:`Process` odpovídající rodičovskému procesu :func:"
+"`current_process`. Pro hlavní proces bude ``parent_process`` ``None``."
 
 #: ../../library/multiprocessing.rst:1155
 msgid ""
@@ -1714,6 +2001,10 @@ msgid ""
 " can be used as a performance enhancement to avoid repeated work in every"
 " process."
 msgstr ""
+"Nastaví seznam názvů modulů, které se hlavní proces forkserver pokusí "
+"importovat, aby jejich již importovaný stav byl zděděn odvětvenými procesy. "
+"Jakákoli :exc:`ImportError` při tom je tiše ignorována. Toto lze použít jako "
+"vylepšení výkonu, aby se předešlo opakované práci v každém procesu."
 
 #: ../../library/multiprocessing.rst:1245
 msgid ""
@@ -1721,12 +2012,16 @@ msgid ""
 "been launched (before creating a :class:`Pool` or starting a "
 ":class:`Process`)."
 msgstr ""
+"Aby to fungovalo, musí to být voláno před spuštěním procesu forkserver "
+"(před vytvořením :class:`Pool` nebo spuštěním :class:`Process`)."
 
 #: ../../library/multiprocessing.rst:1248
 msgid ""
 "Only meaningful when using the ``'forkserver'`` start method. See :ref"
 ":`multiprocessing-start-methods`."
 msgstr ""
+"Má smysl pouze při použití startovací metody ``'forkserver'``. Viz :ref"
+":`multiprocessing-start-methods`."
 
 #: ../../library/multiprocessing.rst:1255
 msgid ""
@@ -1737,16 +2032,24 @@ msgid ""
 " then the start method is set to ``None``.  If *method* is ``None`` and "
 "*force* is ``False`` then the context is set to the default context."
 msgstr ""
+"Nastaví metodu, která by měla být použita ke spuštění podřízených procesů. "
+"Argument *method* může být ``'fork'``, ``'spawn'`` nebo ``'forkserver'``. "
+"Vyvolá :exc:`RuntimeError`, pokud byla startovací metoda již nastavena a "
+"*force* není ``True``. Pokud je *method* ``None`` a *force* je ``True``, "
+"pak je startovací metoda nastavena na ``None``. Pokud je *method* ``None`` a "
+"*force* je ``False``, pak je kontext nastaven na výchozí kontext."
 
 #: ../../library/multiprocessing.rst:1262
 msgid ""
 "Note that this should be called at most once, and it should be protected "
 "inside the ``if __name__ == '__main__'`` clause of the main module."
 msgstr ""
+"Všimněte si, že toto by mělo být voláno nejvýše jednou a mělo by být chráněno "
+"uvnitř klauzule ``if __name__ == '__main__'`` hlavního modulu."
 
 #: ../../library/multiprocessing.rst:1266
 msgid "See :ref:`multiprocessing-start-methods`."
-msgstr ""
+msgstr "Viz :ref:`multiprocessing-start-methods`."
 
 #: ../../library/multiprocessing.rst:1272
 msgid ""
@@ -1755,10 +2058,14 @@ msgid ""
 ":func:`threading.settrace`, :func:`threading.setprofile`, "
 ":class:`threading.Timer`, or :class:`threading.local`."
 msgstr ""
+":mod:`multiprocessing` neobsahuje analogy "
+":func:`threading.active_count`, :func:`threading.enumerate`, "
+":func:`threading.settrace`, :func:`threading.setprofile`, "
+":class:`threading.Timer` ani :class:`threading.local`."
 
 #: ../../library/multiprocessing.rst:1279
 msgid "Connection Objects"
-msgstr ""
+msgstr "Objekty spojení"
 
 #: ../../library/multiprocessing.rst:1283
 msgid ""
@@ -1766,6 +2073,8 @@ msgid ""
 "or strings.  They can be thought of as message oriented connected "
 "sockets."
 msgstr ""
+"Objekty spojení umožňují odesílání a příjem pickle-ovatelných objektů nebo "
+"řetězců. Lze je považovat za zprávy orientované připojené sockety."
 
 #: ../../library/multiprocessing.rst:1286
 msgid ""
@@ -1773,18 +2082,24 @@ msgid ""
 "<multiprocessing.Pipe>` -- see also :ref:`multiprocessing-listeners-"
 "clients`."
 msgstr ""
+"Objekty spojení jsou obvykle vytvářeny pomocí :func:`Pipe <multiprocessing."
+"Pipe>` -- viz také :ref:`multiprocessing-listeners-clients`."
 
 #: ../../library/multiprocessing.rst:1294
 msgid ""
 "Send an object to the other end of the connection which should be read "
 "using :meth:`recv`."
 msgstr ""
+"Odešle objekt na druhý konec spojení, který by měl být přečten pomocí :meth:"
+"`recv`."
 
 #: ../../library/multiprocessing.rst:1297
 msgid ""
 "The object must be picklable.  Very large pickles (approximately 32 MiB+,"
 " though it depends on the OS) may raise a :exc:`ValueError` exception."
 msgstr ""
+"Objekt musí být pickle-ovatelný. Velmi velké pickly (přibližně 32 MiB+, "
+"ačkoli to závisí na OS) mohou vyvolat výjimku :exc:`ValueError`."
 
 #: ../../library/multiprocessing.rst:1302
 msgid ""
@@ -1793,22 +2108,25 @@ msgid ""
 ":exc:`EOFError` if there is nothing left to receive and the other end was"
 " closed."
 msgstr ""
+"Vrátí objekt odeslaný z druhého konce spojení pomocí :meth:`send`. Blokuje, "
+"dokud není co přijmout. Vyvolá :exc:`EOFError`, pokud není co přijmout a "
+"druhý konec byl uzavřen."
 
 #: ../../library/multiprocessing.rst:1309
 msgid "Return the file descriptor or handle used by the connection."
-msgstr ""
+msgstr "Vrátí deskriptor souboru nebo handle používaný spojením."
 
 #: ../../library/multiprocessing.rst:1313
 msgid "Close the connection."
-msgstr ""
+msgstr "Uzavře spojení."
 
 #: ../../library/multiprocessing.rst:1315
 msgid "This is called automatically when the connection is garbage collected."
-msgstr ""
+msgstr "Toto je voláno automaticky, když je spojení odstraněno garbage collectorem."
 
 #: ../../library/multiprocessing.rst:1319
 msgid "Return whether there is any data available to be read."
-msgstr ""
+msgstr "Vrátí, zda jsou k dispozici nějaká data ke čtení."
 
 #: ../../library/multiprocessing.rst:1321
 msgid ""
@@ -1816,16 +2134,21 @@ msgid ""
 "*timeout* is a number then this specifies the maximum time in seconds to "
 "block.  If *timeout* is ``None`` then an infinite timeout is used."
 msgstr ""
+"Pokud není *timeout* specifikován, vrátí se okamžitě. Pokud je *timeout* "
+"číslo, určuje maximální čas v sekundách k blokování. Pokud je *timeout* "
+"``None``, použije se nekonečný časový limit."
 
 #: ../../library/multiprocessing.rst:1325
 msgid ""
 "Note that multiple connection objects may be polled at once by using "
 ":func:`multiprocessing.connection.wait`."
 msgstr ""
+"Všimněte si, že více objektů spojení může být dotazováno najednou pomocí "
+":func:`multiprocessing.connection.wait`."
 
 #: ../../library/multiprocessing.rst:1330
 msgid "Send byte data from a :term:`bytes-like object` as a complete message."
-msgstr ""
+msgstr "Odešle bajtová data z :term:`bytes-like object` jako kompletní zprávu."
 
 #: ../../library/multiprocessing.rst:1332
 msgid ""
@@ -1834,6 +2157,10 @@ msgid ""
 "large buffers (approximately 32 MiB+, though it depends on the OS) may "
 "raise a :exc:`ValueError` exception"
 msgstr ""
+"Pokud je zadán *offset*, data jsou čtena z této pozice v *buffer*. Pokud je "
+"zadána *size*, bude z bufferu přečteno tolik bajtů. Velmi velké buffery "
+"(přibližně 32 MiB+, ačkoli to závisí na OS) mohou vyvolat výjimku :exc:"
+"`ValueError`"
 
 #: ../../library/multiprocessing.rst:1339
 msgid ""
@@ -1842,6 +2169,9 @@ msgid ""
 "Raises :exc:`EOFError` if there is nothing left to receive and the other "
 "end has closed."
 msgstr ""
+"Vrátí kompletní zprávu bajtových dat odeslanou z druhého konce spojení jako "
+"řetězec. Blokuje, dokud není co přijmout. Vyvolá :exc:`EOFError`, pokud není "
+"co přijmout a druhý konec byl uzavřen."
 
 #: ../../library/multiprocessing.rst:1344
 msgid ""
@@ -1849,12 +2179,16 @@ msgid ""
 "then :exc:`OSError` is raised and the connection will no longer be "
 "readable."
 msgstr ""
+"Pokud je specifikována *maxlength* a zpráva je delší než *maxlength*, "
+"je vyvolána :exc:`OSError` a spojení již nebude čitelné."
 
 #: ../../library/multiprocessing.rst:1348
 msgid ""
 "This function used to raise :exc:`IOError`, which is now an alias of "
 ":exc:`OSError`."
 msgstr ""
+"Tato funkce dříve vyvolávala :exc:`IOError`, což je nyní alias pro :exc:"
+"`OSError`."
 
 #: ../../library/multiprocessing.rst:1355
 msgid ""
@@ -1863,6 +2197,9 @@ msgid ""
 "Blocks until there is something to receive.  Raises :exc:`EOFError` if "
 "there is nothing left to receive and the other end was closed."
 msgstr ""
+"Přečte do *buffer* kompletní zprávu bajtových dat odeslanou z druhého konce "
+"spojení a vrátí počet bajtů ve zprávě. Blokuje, dokud není co přijmout. "
+"Vyvolá :exc:`EOFError`, pokud není co přijmout a druhý konec byl uzavřen."
 
 #: ../../library/multiprocessing.rst:1361
 msgid ""
@@ -1871,6 +2208,9 @@ msgid ""
 "position.  Offset must be a non-negative integer less than the length of "
 "*buffer* (in bytes)."
 msgstr ""
+"*buffer* musí být zapisovatelný :term:`bytes-like object`. Pokud je zadán "
+"*offset*, zpráva bude zapsána do bufferu od této pozice. Offset musí být "
+"nezáporné celé číslo menší než délka *buffer* (v bajtech)."
 
 #: ../../library/multiprocessing.rst:1366
 msgid ""
@@ -1878,12 +2218,16 @@ msgid ""
 "raised and the complete message is available as ``e.args[0]`` where ``e``"
 " is the exception instance."
 msgstr ""
+"Pokud je buffer příliš krátký, je vyvolána výjimka :exc:`BufferTooShort` a "
+"kompletní zpráva je dostupná jako ``e.args[0]``, kde ``e`` je instance výjimky."
 
 #: ../../library/multiprocessing.rst:1370
 msgid ""
 "Connection objects themselves can now be transferred between processes "
 "using :meth:`Connection.send` and :meth:`Connection.recv`."
 msgstr ""
+"Objekty spojení samotné nyní mohou být přeneseny mezi procesy pomocí :meth:"
+"`Connection.send` a :meth:`Connection.recv`."
 
 #: ../../library/multiprocessing.rst:1374
 msgid ""
@@ -1892,10 +2236,13 @@ msgid ""
 " the connection object, and :meth:`~contextmanager.__exit__` calls "
 ":meth:`close`."
 msgstr ""
+"Objekty spojení nyní také podporují protokol správy kontextu -- viz :ref:"
+"`typecontextmanager`. :meth:`~contextmanager.__enter__` vrací objekt spojení "
+"a :meth:`~contextmanager.__exit__` volá :meth:`close`."
 
 #: ../../library/multiprocessing.rst:1378
 msgid "For example:"
-msgstr ""
+msgstr "Například:"
 
 #: ../../library/multiprocessing.rst:1380
 msgid ""
@@ -1923,6 +2270,9 @@ msgid ""
 "receives, which can be a security risk unless you can trust the process "
 "which sent the message."
 msgstr ""
+"Metoda :meth:`Connection.recv` automaticky un-pickle data, která přijímá, "
+"což může být bezpečnostní riziko, pokud nemůžete důvěřovat procesu, který "
+"zprávu odeslal."
 
 #: ../../library/multiprocessing.rst:1407
 msgid ""
@@ -1931,6 +2281,9 @@ msgid ""
 ":meth:`~Connection.send` methods after performing some sort of "
 "authentication.  See :ref:`multiprocessing-auth-keys`."
 msgstr ""
+"Proto, pokud nebyl objekt spojení vytvořen pomocí :func:`Pipe`, měli byste "
+"používat metody :meth:`~Connection.recv` a :meth:`~Connection.send` pouze "
+"po provedení nějakého druhu autentizace. Viz :ref:`multiprocessing-auth-keys`."
 
 #: ../../library/multiprocessing.rst:1414
 msgid ""
@@ -1938,10 +2291,13 @@ msgid ""
 " the data in the pipe is likely to become corrupted, because it may "
 "become impossible to be sure where the message boundaries lie."
 msgstr ""
+"Pokud je proces ukončen, když se pokouší číst nebo zapisovat do roury, data "
+"v rouře se pravděpodobně poškodí, protože může být nemožné zjistit, kde leží "
+"hranice zpráv."
 
 #: ../../library/multiprocessing.rst:1420
 msgid "Synchronization primitives"
-msgstr ""
+msgstr "Synchronizační primitiva"
 
 #: ../../library/multiprocessing.rst:1424
 msgid ""
@@ -1949,22 +2305,27 @@ msgid ""
 "multiprocess program as they are in a multithreaded program.  See the "
 "documentation for :mod:`threading` module."
 msgstr ""
+"Obecně synchronizační primitiva nejsou v multi-procesovém programu tak nutná "
+"jako ve vícevláknovém programu. Viz dokumentace modulu :mod:`threading`."
 
 #: ../../library/multiprocessing.rst:1428
 msgid ""
 "Note that one can also create synchronization primitives by using a "
 "manager object -- see :ref:`multiprocessing-managers`."
 msgstr ""
+"Všimněte si, že synchronizační primitiva lze také vytvořit pomocí objektu "
+"manažer -- viz :ref:`multiprocessing-managers`."
 
 #: ../../library/multiprocessing.rst:1433
 msgid "A barrier object: a clone of :class:`threading.Barrier`."
-msgstr ""
+msgstr "Objekt bariéra: klon :class:`threading.Barrier`."
 
 #: ../../library/multiprocessing.rst:1442
 msgid ""
 "A bounded semaphore object: a close analog of "
 ":class:`threading.BoundedSemaphore`."
 msgstr ""
+"Objekt omezený semafor: blízká analogie :class:`threading.BoundedSemaphore`."
 
 #: ../../library/multiprocessing.rst:1448
 #: ../../library/multiprocessing.rst:1620
@@ -1973,38 +2334,44 @@ msgid ""
 "method's first argument is named *block*, as is consistent with "
 ":meth:`Lock.acquire`."
 msgstr ""
+"Existuje jediný rozdíl od jeho blízké analogie: první argument metody "
+"``acquire`` je pojmenován *block*, což je v souladu s :meth:`Lock.acquire`."
 
 #: ../../library/multiprocessing.rst:1453
 #: ../../library/multiprocessing.rst:1538
 #: ../../library/multiprocessing.rst:1608
 #: ../../library/multiprocessing.rst:1634
 msgid "Return a boolean indicating whether this object is locked right now."
-msgstr ""
+msgstr "Vrátí boolean indikující, zda je tento objekt právě zamčený."
 
 #: ../../library/multiprocessing.rst:1458
 msgid ""
 "On macOS, this is indistinguishable from :class:`Semaphore` because "
 "``sem_getvalue()`` is not implemented on that platform."
 msgstr ""
+"Na macOS je toto nerozlišitelné od :class:`Semaphore`, protože "
+"``sem_getvalue()`` není na této platformě implementováno."
 
 #: ../../library/multiprocessing.rst:1463
 msgid "A condition variable: an alias for :class:`threading.Condition`."
-msgstr ""
+msgstr "Podmínková proměnná: alias pro :class:`threading.Condition`."
 
 #: ../../library/multiprocessing.rst:1465
 msgid ""
 "If *lock* is specified then it should be a :class:`Lock` or "
 ":class:`RLock` object from :mod:`multiprocessing`."
 msgstr ""
+"Pokud je specifikován *lock*, měl by to být objekt :class:`Lock` nebo "
+":class:`RLock` z :mod:`multiprocessing`."
 
 #: ../../library/multiprocessing.rst:1471
 #: ../../library/multiprocessing.rst:2066
 msgid "The :meth:`~threading.Condition.wait_for` method was added."
-msgstr ""
+msgstr "Metoda :meth:`~threading.Condition.wait_for` byla přidána."
 
 #: ../../library/multiprocessing.rst:1476
 msgid "A clone of :class:`threading.Event`."
-msgstr ""
+msgstr "Klon :class:`threading.Event`."
 
 #: ../../library/multiprocessing.rst:1483
 msgid ""
@@ -2016,6 +2383,12 @@ msgid ""
 ":class:`multiprocessing.Lock` as it applies to either processes or "
 "threads, except as noted."
 msgstr ""
+"Objekt nerekurzivní zámek: blízká analogie :class:`threading.Lock`. Jakmile "
+"proces nebo vlákno získá zámek, následné pokusy o jeho získání z jakéhokoli "
+"procesu nebo vlákna budou blokovat, dokud nebude uvolněn; jakýkoli proces "
+"nebo vlákno ho může uvolnit. Koncepty a chování :class:`threading.Lock`, jak "
+"se vztahují na vlákna, jsou zde replikovány v :class:`multiprocessing.Lock`, "
+"jak se vztahují na procesy nebo vlákna, kromě uvedených výjimek."
 
 #: ../../library/multiprocessing.rst:1491
 msgid ""
@@ -2023,17 +2396,22 @@ msgid ""
 "instance of ``multiprocessing.synchronize.Lock`` initialized with a "
 "default context."
 msgstr ""
+"Všimněte si, že :class:`Lock` je ve skutečnosti tovární funkce, která vrací "
+"instanci ``multiprocessing.synchronize.Lock`` inicializovanou s výchozím "
+"kontextem."
 
 #: ../../library/multiprocessing.rst:1498
 msgid ""
 ":class:`Lock` supports the :term:`context manager` protocol and thus may "
 "be used in :keyword:`with` statements."
 msgstr ""
+":class:`Lock` podporuje protokol :term:`context manager` a tedy může být "
+"použit v příkazech :keyword:`with`."
 
 #: ../../library/multiprocessing.rst:1503
 #: ../../library/multiprocessing.rst:1564
 msgid "Acquire a lock, blocking or non-blocking."
-msgstr ""
+msgstr "Získá zámek, blokujícím nebo neblokujícím způsobem."
 
 #: ../../library/multiprocessing.rst:1505
 msgid ""
@@ -2042,6 +2420,10 @@ msgid ""
 "and return ``True``.  Note that the name of this first argument differs "
 "from that in :meth:`threading.Lock.acquire`."
 msgstr ""
+"S argumentem *block* nastaveným na ``True`` (výchozí), volání metody bude "
+"blokovat, dokud není zámek v odemčeném stavu, poté ho nastaví na zamčený a "
+"vrátí ``True``. Všimněte si, že název tohoto prvního argumentu se liší od "
+"toho v :meth:`threading.Lock.acquire`."
 
 #: ../../library/multiprocessing.rst:1510
 msgid ""
@@ -2049,6 +2431,9 @@ msgid ""
 "block.  If the lock is currently in a locked state, return ``False``; "
 "otherwise set the lock to a locked state and return ``True``."
 msgstr ""
+"S argumentem *block* nastaveným na ``False``, volání metody neblokuje. Pokud "
+"je zámek aktuálně v zamčeném stavu, vrátí ``False``; jinak nastaví zámek do "
+"zamčeného stavu a vrátí ``True``."
 
 #: ../../library/multiprocessing.rst:1514
 msgid ""
@@ -2064,18 +2449,31 @@ msgid ""
 "ignored.  Returns ``True`` if the lock has been acquired or ``False`` if "
 "the timeout period has elapsed."
 msgstr ""
+"Když je voláno s kladnou hodnotou s plovoucí desetinnou čárkou pro *timeout*, "
+"blokuje nejvýše po dobu sekund specifikovanou parametrem *timeout*, pokud "
+"zámek nelze získat. Volání se zápornou hodnotou pro *timeout* jsou ekvivalentní "
+"*timeout* nula. Volání s hodnotou *timeout* ``None`` (výchozí) nastaví časový "
+"limit na nekonečný. Všimněte si, že zpracování záporných nebo ``None`` hodnot "
+"pro *timeout* se liší od implementovaného chování v :meth:`threading.Lock."
+"acquire`. Argument *timeout* nemá žádný praktický dopad, pokud je argument "
+"*block* nastaven na ``False`` a je tedy ignorován. Vrátí ``True``, pokud byl "
+"zámek získán nebo ``False``, pokud časový limit vypršel."
 
 #: ../../library/multiprocessing.rst:1529
 msgid ""
 "Release a lock.  This can be called from any process or thread, not only "
 "the process or thread which originally acquired the lock."
 msgstr ""
+"Uvolní zámek. Toto může být voláno z jakéhokoli procesu nebo vlákna, nejen z "
+"procesu nebo vlákna, které původně zámek získalo."
 
 #: ../../library/multiprocessing.rst:1532
 msgid ""
 "Behavior is the same as in :meth:`threading.Lock.release` except that "
 "when invoked on an unlocked lock, a :exc:`ValueError` is raised."
 msgstr ""
+"Chování je stejné jako v :meth:`threading.Lock.release` s tím rozdílem, že "
+"když je voláno na odemčeném zámku, je vyvolána :exc:`ValueError`."
 
 #: ../../library/multiprocessing.rst:1545
 msgid ""
@@ -2085,6 +2483,11 @@ msgid ""
 "process or thread may acquire it again without blocking; that process or "
 "thread must release it once for each time it has been acquired."
 msgstr ""
+"Objekt rekurzivní zámek: blízká analogie :class:`threading.RLock`. Rekurzivní "
+"zámek musí být uvolněn procesem nebo vláknem, které ho získalo. Jakmile proces "
+"nebo vlákno získá rekurzivní zámek, stejný proces nebo vlákno ho může získat "
+"znovu bez blokování; tento proces nebo vlákno ho musí uvolnit jednou za každé "
+"získání."
 
 #: ../../library/multiprocessing.rst:1551
 msgid ""
@@ -2092,12 +2495,17 @@ msgid ""
 "instance of ``multiprocessing.synchronize.RLock`` initialized with a "
 "default context."
 msgstr ""
+"Všimněte si, že :class:`RLock` je ve skutečnosti tovární funkce, která vrací "
+"instanci ``multiprocessing.synchronize.RLock`` inicializovanou s výchozím "
+"kontextem."
 
 #: ../../library/multiprocessing.rst:1558
 msgid ""
 ":class:`RLock` supports the :term:`context manager` protocol and thus may"
 " be used in :keyword:`with` statements."
 msgstr ""
+":class:`RLock` podporuje protokol :term:`context manager` a tedy může být "
+"použit v příkazech :keyword:`with`."
 
 #: ../../library/multiprocessing.rst:1566
 msgid ""
@@ -2111,6 +2519,14 @@ msgid ""
 "to the implementation of :meth:`threading.RLock.acquire`, starting with "
 "the name of the argument itself."
 msgstr ""
+"Když je voláno s argumentem *block* nastaveným na ``True``, blokuje, dokud "
+"není zámek v odemčeném stavu (není vlastněn žádným procesem nebo vláknem), "
+"pokud zámek již není vlastněn aktuálním procesem nebo vláknem. Aktuální proces "
+"nebo vlákno pak převezme vlastnictví zámku (pokud ho ještě nemá) a úroveň "
+"rekurze uvnitř zámku se zvýší o jedna, což vede k návratové hodnotě ``True``. "
+"Všimněte si, že existuje několik rozdílů v chování tohoto prvního argumentu "
+"ve srovnání s implementací :meth:`threading.RLock.acquire`, počínaje názvem "
+"samotného argumentu."
 
 #: ../../library/multiprocessing.rst:1576
 msgid ""
@@ -2122,6 +2538,12 @@ msgid ""
 "current process or thread takes ownership and the recursion level is "
 "incremented, resulting in a return value of ``True``."
 msgstr ""
+"Když je voláno s argumentem *block* nastaveným na ``False``, neblokuje. Pokud "
+"byl zámek již získán (a tedy je vlastněn) jiným procesem nebo vláknem, aktuální "
+"proces nebo vlákno nepřevezme vlastnictví a úroveň rekurze uvnitř zámku se "
+"nezmění, což vede k návratové hodnotě ``False``. Pokud je zámek v odemčeném "
+"stavu, aktuální proces nebo vlákno převezme vlastnictví a úroveň rekurze se "
+"zvýší, což vede k návratové hodnotě ``True``."
 
 #: ../../library/multiprocessing.rst:1584
 msgid ""
@@ -2129,6 +2551,9 @@ msgid ""
 ":meth:`Lock.acquire`.  Note that some of these behaviors of *timeout* "
 "differ from the implemented behaviors in :meth:`threading.RLock.acquire`."
 msgstr ""
+"Použití a chování argumentu *timeout* je stejné jako v :meth:`Lock.acquire`. "
+"Všimněte si, že některá z těchto chování *timeout* se liší od implementovaných "
+"chování v :meth:`threading.RLock.acquire`."
 
 #: ../../library/multiprocessing.rst:1591
 msgid ""
@@ -2139,6 +2564,12 @@ msgid ""
 "proceed.  If after the decrement the recursion level is still nonzero, "
 "the lock remains locked and owned by the calling process or thread."
 msgstr ""
+"Uvolní zámek, sníží úroveň rekurze. Pokud je po snížení úroveň rekurze nula, "
+"resetuje zámek na odemčený (není vlastněn žádným procesem nebo vláknem) a "
+"pokud jsou nějaké jiné procesy nebo vlákna blokovány čekáním na odemčení "
+"zámku, umožní právě jednomu z nich pokračovat. Pokud je po snížení úroveň "
+"rekurze stále nenulová, zámek zůstává zamčený a vlastněný volajícím procesem "
+"nebo vláknem."
 
 #: ../../library/multiprocessing.rst:1599
 msgid ""
@@ -2148,20 +2579,27 @@ msgid ""
 " state.  Note that the type of exception raised in this situation differs"
 " from the implemented behavior in :meth:`threading.RLock.release`."
 msgstr ""
+"Volejte tuto metodu pouze tehdy, když volající proces nebo vlákno vlastní "
+"zámek. Je vyvolána :exc:`AssertionError`, pokud je tato metoda volána procesem "
+"nebo vláknem jiným než vlastníkem nebo pokud je zámek v odemčeném (nevlastněném) "
+"stavu. Všimněte si, že typ výjimky vyvolané v této situaci se liší od "
+"implementovaného chování v :meth:`threading.RLock.release`."
 
 #: ../../library/multiprocessing.rst:1615
 msgid "A semaphore object: a close analog of :class:`threading.Semaphore`."
-msgstr ""
+msgstr "Objekt semafor: blízká analogie :class:`threading.Semaphore`."
 
 #: ../../library/multiprocessing.rst:1626
 msgid "Return the current value of semaphore."
-msgstr ""
+msgstr "Vrátí aktuální hodnotu semaforu."
 
 #: ../../library/multiprocessing.rst:1641
 msgid ""
 "On macOS, ``sem_timedwait`` is unsupported, so calling ``acquire()`` with"
 " a timeout will emulate that function's behavior using a sleeping loop."
 msgstr ""
+"Na macOS není ``sem_timedwait`` podporován, takže volání ``acquire()`` s "
+"časovým limitem bude emulovat chování této funkce pomocí spící smyčky."
 
 #: ../../library/multiprocessing.rst:1646
 msgid ""
@@ -2171,16 +2609,22 @@ msgid ""
 "to import it will result in an :exc:`ImportError`. See :issue:`3770` for "
 "additional information."
 msgstr ""
+"Některá funkcionalita tohoto balíčku vyžaduje funkční implementaci sdíleného "
+"semaforu v hostitelském operačním systému. Bez něj bude modul :mod:"
+"`multiprocessing.synchronize` zakázán a pokusy o jeho import budou mít za "
+"následek :exc:`ImportError`. Pro další informace viz :issue:`3770`."
 
 #: ../../library/multiprocessing.rst:1654
 msgid "Shared :mod:`ctypes` Objects"
-msgstr ""
+msgstr "Sdílené objekty :mod:`ctypes`"
 
 #: ../../library/multiprocessing.rst:1656
 msgid ""
 "It is possible to create shared objects using shared memory which can be "
 "inherited by child processes."
 msgstr ""
+"Je možné vytvořit sdílené objekty pomocí sdílené paměti, které mohou být "
+"zděděny podřízenými procesy."
 
 #: ../../library/multiprocessing.rst:1661
 msgid ""
@@ -2189,6 +2633,9 @@ msgid ""
 "object itself can be accessed via the *value* attribute of a "
 ":class:`Value`."
 msgstr ""
+"Vrátí objekt :mod:`ctypes` alokovaný ze sdílené paměti. Ve výchozím nastavení "
+"je návratová hodnota ve skutečnosti synchronizovaný obal pro objekt. K samotnému "
+"objektu lze přistupovat přes atribut *value* objektu :class:`Value`."
 
 #: ../../library/multiprocessing.rst:1665
 #: ../../library/multiprocessing.rst:1755
@@ -2198,6 +2645,9 @@ msgid ""
 ":mod:`array` module.  *\\*args* is passed on to the constructor for the "
 "type."
 msgstr ""
+"*typecode_or_type* určuje typ vráceného objektu: je to buď typ ctypes nebo "
+"jednoznakový typový kód druhu používaného modulem :mod:`array`. *\\*args* je "
+"předáno konstruktoru typu."
 
 #: ../../library/multiprocessing.rst:1669
 msgid ""
@@ -2208,6 +2658,11 @@ msgid ""
 "will not be automatically protected by a lock, so it will not necessarily"
 " be \"process-safe\"."
 msgstr ""
+"Pokud je *lock* ``True`` (výchozí), je vytvořen nový rekurzivní zámek pro "
+"synchronizaci přístupu k hodnotě. Pokud je *lock* objekt :class:`Lock` nebo "
+":class:`RLock`, bude použit pro synchronizaci přístupu k hodnotě. Pokud je "
+"*lock* ``False``, přístup k vrácenému objektu nebude automaticky chráněn "
+"zámkem, takže nebude nutně \"bezpečný pro procesy\"."
 
 #: ../../library/multiprocessing.rst:1676
 msgid ""
@@ -2215,6 +2670,8 @@ msgid ""
 " if, for instance, you want to atomically increment a shared value it is "
 "insufficient to just do ::"
 msgstr ""
+"Operace jako ``+=``, které zahrnují čtení a zápis, nejsou atomické. Takže "
+"pokud například chcete atomicky zvýšit sdílenou hodnotu, nestačí jen provést ::"
 
 #: ../../library/multiprocessing.rst:1680
 msgid "counter.value += 1"
@@ -2225,6 +2682,8 @@ msgid ""
 "Assuming the associated lock is recursive (which it is by default) you "
 "can instead do ::"
 msgstr ""
+"Za předpokladu, že přidružený zámek je rekurzivní (což je ve výchozím "
+"nastavení), můžete místo toho provést ::"
 
 #: ../../library/multiprocessing.rst:1685
 msgid ""
@@ -2234,13 +2693,15 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1688
 msgid "Note that *lock* is a keyword-only argument."
-msgstr ""
+msgstr "Všimněte si, že *lock* je argument pouze s klíčovým slovem."
 
 #: ../../library/multiprocessing.rst:1692
 msgid ""
 "Return a ctypes array allocated from shared memory.  By default the "
 "return value is actually a synchronized wrapper for the array."
 msgstr ""
+"Vrátí pole ctypes alokované ze sdílené paměti. Ve výchozím nastavení je "
+"návratová hodnota ve skutečnosti synchronizovaný obal pro pole."
 
 #: ../../library/multiprocessing.rst:1695
 msgid ""
@@ -2254,6 +2715,13 @@ msgid ""
 "*size_or_initializer* is a sequence which is used to initialize the array"
 " and whose length determines the length of the array."
 msgstr ""
+"*typecode_or_type* určuje typ prvků vráceného pole: je to buď :ref:`ctypes "
+"typ <ctypes-fundamental-data-types>` nebo jednoznakový typový kód druhu "
+"používaného modulem :mod:`array` s výjimkou ``'w'``, který není podporován. "
+"Kromě toho je typový kód ``'c'`` alias pro :class:`ctypes.c_char`. Pokud je "
+"*size_or_initializer* celé číslo, pak určuje délku pole a pole bude zpočátku "
+"vynulováno. Jinak je *size_or_initializer* sekvence, která se používá k "
+"inicializaci pole a jejíž délka určuje délku pole."
 
 #: ../../library/multiprocessing.rst:1705
 msgid ""
@@ -2264,20 +2732,27 @@ msgid ""
 "not be automatically protected by a lock, so it will not necessarily be "
 "\"process-safe\"."
 msgstr ""
+"Pokud je *lock* ``True`` (výchozí), je vytvořen nový objekt zámek pro "
+"synchronizaci přístupu k hodnotě. Pokud je *lock* objekt :class:`Lock` nebo "
+":class:`RLock`, bude použit pro synchronizaci přístupu k hodnotě. Pokud je "
+"*lock* ``False``, přístup k vrácenému objektu nebude automaticky chráněn "
+"zámkem, takže nebude nutně \"bezpečný pro procesy\"."
 
 #: ../../library/multiprocessing.rst:1712
 msgid "Note that *lock* is a keyword only argument."
-msgstr ""
+msgstr "Všimněte si, že *lock* je argument pouze s klíčovým slovem."
 
 #: ../../library/multiprocessing.rst:1714
 msgid ""
 "Note that an array of :data:`ctypes.c_char` has *value* and *raw* "
 "attributes which allow one to use it to store and retrieve strings."
 msgstr ""
+"Všimněte si, že pole :data:`ctypes.c_char` má atributy *value* a *raw*, "
+"které umožňují jeho použití k ukládání a získávání řetězců."
 
 #: ../../library/multiprocessing.rst:1719
 msgid "The :mod:`multiprocessing.sharedctypes` module"
-msgstr ""
+msgstr "Modul :mod:`multiprocessing.sharedctypes`"
 
 #: ../../library/multiprocessing.rst:1724
 msgid ""
@@ -2285,6 +2760,9 @@ msgid ""
 "allocating :mod:`ctypes` objects from shared memory which can be "
 "inherited by child processes."
 msgstr ""
+"Modul :mod:`multiprocessing.sharedctypes` poskytuje funkce pro alokaci "
+"objektů :mod:`ctypes` ze sdílené paměti, které mohou být zděděny podřízenými "
+"procesy."
 
 #: ../../library/multiprocessing.rst:1730
 msgid ""
@@ -2294,10 +2772,14 @@ msgid ""
 "context of a second process and trying to dereference the pointer from "
 "the second process may cause a crash."
 msgstr ""
+"Ačkoli je možné uložit ukazatel do sdílené paměti, pamatujte, že toto bude "
+"odkazovat na umístění v adresním prostoru konkrétního procesu. Ukazatel však "
+"je velmi pravděpodobně neplatný v kontextu druhého procesu a pokus o "
+"dereferencování ukazatele z druhého procesu může způsobit pád."
 
 #: ../../library/multiprocessing.rst:1738
 msgid "Return a ctypes array allocated from shared memory."
-msgstr ""
+msgstr "Vrátí pole ctypes alokované ze sdílené paměti."
 
 #: ../../library/multiprocessing.rst:1740
 msgid ""
@@ -2334,6 +2816,9 @@ msgid ""
 "attributes which allow one to use it to store and retrieve strings -- see"
 " documentation for :mod:`ctypes`."
 msgstr ""
+"Všimněte si, že pole :data:`ctypes.c_char` má atributy ``value`` a ``raw``, "
+"které umožňují jeho použití k ukládání a získávání řetězců -- viz dokumentace "
+"pro :mod:`ctypes`."
 
 #: ../../library/multiprocessing.rst:1769
 msgid ""
@@ -2341,6 +2826,9 @@ msgid ""
 " a process-safe synchronization wrapper may be returned instead of a raw "
 "ctypes array."
 msgstr ""
+"Stejné jako :func:`RawArray` s tím rozdílem, že v závislosti na hodnotě *lock* "
+"může být vrácen obal pro synchronizaci bezpečný pro procesy namísto surového "
+"pole ctypes."
 
 #: ../../library/multiprocessing.rst:1773
 #: ../../library/multiprocessing.rst:1793
@@ -2352,6 +2840,12 @@ msgid ""
 "``False`` then access to the returned object will not be automatically "
 "protected by a lock, so it will not necessarily be \"process-safe\"."
 msgstr ""
+"Pokud je *lock* ``True`` (výchozí), je vytvořen nový objekt zámek pro "
+"synchronizaci přístupu k hodnotě. Pokud je *lock* objekt :class:"
+"`~multiprocessing.Lock` nebo :class:`~multiprocessing.RLock`, bude použit "
+"pro synchronizaci přístupu k hodnotě. Pokud je *lock* ``False``, přístup k "
+"vrácenému objektu nebude automaticky chráněn zámkem, takže nebude nutně "
+"\"bezpečný pro procesy\"."
 
 #: ../../library/multiprocessing.rst:1781
 #: ../../library/multiprocessing.rst:1800
@@ -2362,11 +2856,14 @@ msgid ""
 "``None``, calling this may set the global start method. See :ref:`global-"
 "start-method` for more details."
 msgstr ""
+"*ctx* je kontextový objekt nebo ``None`` (použije se aktuální kontext). Pokud "
+"je ``None``, volání tohoto může nastavit globální startovací metodu. Další "
+"podrobnosti viz :ref:`global-start-method`."
 
 #: ../../library/multiprocessing.rst:1785
 #: ../../library/multiprocessing.rst:1804
 msgid "Note that *lock* and *ctx* are keyword-only parameters."
-msgstr ""
+msgstr "Všimněte si, že *lock* a *ctx* jsou parametry pouze s klíčovým slovem."
 
 #: ../../library/multiprocessing.rst:1789
 msgid ""
@@ -2374,12 +2871,17 @@ msgid ""
 " a process-safe synchronization wrapper may be returned instead of a raw "
 "ctypes object."
 msgstr ""
+"Stejné jako :func:`RawValue` s tím rozdílem, že v závislosti na hodnotě *lock* "
+"může být vrácen obal pro synchronizaci bezpečný pro procesy namísto surového "
+"objektu ctypes."
 
 #: ../../library/multiprocessing.rst:1808
 msgid ""
 "Return a ctypes object allocated from shared memory which is a copy of "
 "the ctypes object *obj*."
 msgstr ""
+"Vrátí objekt ctypes alokovaný ze sdílené paměti, který je kopií objektu "
+"ctypes *obj*."
 
 #: ../../library/multiprocessing.rst:1813
 msgid ""
@@ -2387,6 +2889,9 @@ msgid ""
 "*lock* to synchronize access.  If *lock* is ``None`` (the default) then a"
 " :class:`multiprocessing.RLock` object is created automatically."
 msgstr ""
+"Vrátí obal bezpečný pro procesy pro objekt ctypes, který používá *lock* pro "
+"synchronizaci přístupu. Pokud je *lock* ``None`` (výchozí), je automaticky "
+"vytvořen objekt :class:`multiprocessing.RLock`."
 
 #: ../../library/multiprocessing.rst:1821
 msgid ""
@@ -2394,16 +2899,21 @@ msgid ""
 "object it wraps: :meth:`get_obj` returns the wrapped object and "
 ":meth:`get_lock` returns the lock object used for synchronization."
 msgstr ""
+"Synchronizovaný obal bude mít dvě metody navíc k metodám objektu, který "
+"obaluje: :meth:`get_obj` vrací obalený objekt a :meth:`get_lock` vrací objekt "
+"zámek používaný pro synchronizaci."
 
 #: ../../library/multiprocessing.rst:1825
 msgid ""
 "Note that accessing the ctypes object through the wrapper can be a lot "
 "slower than accessing the raw ctypes object."
 msgstr ""
+"Všimněte si, že přístup k objektu ctypes přes obal může být mnohem pomalejší "
+"než přístup k surovému objektu ctypes."
 
 #: ../../library/multiprocessing.rst:1828
 msgid "Synchronized objects support the :term:`context manager` protocol."
-msgstr ""
+msgstr "Synchronizované objekty podporují protokol :term:`context manager`."
 
 #: ../../library/multiprocessing.rst:1832
 msgid ""
@@ -2411,6 +2921,9 @@ msgid ""
 "from shared memory with the normal ctypes syntax.  (In the table "
 "``MyStruct`` is some subclass of :class:`ctypes.Structure`.)"
 msgstr ""
+"Následující tabulka porovnává syntaxi pro vytváření sdílených objektů ctypes "
+"ze sdílené paměti s normální syntaxí ctypes. (V tabulce je ``MyStruct`` "
+"nějakou podtřídou :class:`ctypes.Structure`.)"
 
 #: ../../library/multiprocessing.rst:1837
 msgid "ctypes"
@@ -2418,11 +2931,11 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1837
 msgid "sharedctypes using type"
-msgstr ""
+msgstr "sharedctypes pomocí typu"
 
 #: ../../library/multiprocessing.rst:1837
 msgid "sharedctypes using typecode"
-msgstr ""
+msgstr "sharedctypes pomocí typového kódu"
 
 #: ../../library/multiprocessing.rst:1839
 msgid "c_double(2.4)"
@@ -2512,7 +3025,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1884
 msgid "The results printed are ::"
-msgstr ""
+msgstr "Výsledky vytištěné jsou ::"
 
 #: ../../library/multiprocessing.rst:1886
 msgid ""
@@ -2524,7 +3037,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1897
 msgid "Managers"
-msgstr ""
+msgstr "Manažeři"
 
 #: ../../library/multiprocessing.rst:1899
 msgid ""
@@ -2534,6 +3047,11 @@ msgid ""
 " which manages *shared objects*.  Other processes can access the shared "
 "objects by using proxies."
 msgstr ""
+"Manažeři poskytují způsob, jak vytvořit data, která lze sdílet mezi "
+"různými procesy, včetně sdílení po síti mezi procesy běžícími na "
+"různých strojích. Objekt manažera řídí serverový proces, který spravuje "
+"*sdílené objekty*. Ostatní procesy mohou přistupovat ke sdíleným "
+"objektům pomocí proxy."
 
 #: ../../library/multiprocessing.rst:1908
 msgid ""
@@ -2542,6 +3060,10 @@ msgid ""
 "manager object corresponds to a spawned child process and has methods "
 "which will create shared objects and return corresponding proxies."
 msgstr ""
+"Vrací spuštěný objekt :class:`~multiprocessing.managers.SyncManager`, "
+"který lze použít pro sdílení objektů mezi procesy. Vrácený objekt "
+"manažera odpovídá vytvořenému podřízenému procesu a má metody, které "
+"vytvoří sdílené objekty a vrátí odpovídající proxy."
 
 #: ../../library/multiprocessing.rst:1916
 msgid ""
@@ -2549,10 +3071,13 @@ msgid ""
 "or their parent process exits.  The manager classes are defined in the "
 ":mod:`multiprocessing.managers` module:"
 msgstr ""
+"Procesy manažerů budou ukončeny, jakmile jsou uvolněny garbage collectorem "
+"nebo jejich rodičovský proces skončí. Třídy manažerů jsou definovány v "
+"modulu :mod:`multiprocessing.managers`:"
 
 #: ../../library/multiprocessing.rst:1922
 msgid "Create a BaseManager object."
-msgstr ""
+msgstr "Vytvoří objekt BaseManager."
 
 #: ../../library/multiprocessing.rst:1924
 msgid ""
@@ -2560,12 +3085,17 @@ msgid ""
 "``get_server().serve_forever()`` to ensure that the manager object refers"
 " to a started manager process."
 msgstr ""
+"Po vytvoření by se měla zavolat metoda :meth:`start` nebo "
+"``get_server().serve_forever()``, aby bylo zajištěno, že objekt manažera "
+"odkazuje na spuštěný proces manažera."
 
 #: ../../library/multiprocessing.rst:1927
 msgid ""
 "*address* is the address on which the manager process listens for new "
 "connections.  If *address* is ``None`` then an arbitrary one is chosen."
 msgstr ""
+"*address* je adresa, na které proces manažera naslouchá novým připojením. "
+"Pokud je *address* ``None``, pak je zvolena libovolná adresa."
 
 #: ../../library/multiprocessing.rst:1930
 msgid ""
@@ -2574,12 +3104,18 @@ msgid ""
 "``None`` then ``current_process().authkey`` is used. Otherwise *authkey* "
 "is used and it must be a byte string."
 msgstr ""
+"*authkey* je autentizační klíč, který bude použit pro kontrolu platnosti "
+"příchozích připojení k serverovému procesu. Pokud je *authkey* ``None``, "
+"pak se použije ``current_process().authkey``. Jinak se použije *authkey* "
+"a musí to být bajtový řetězec."
 
 #: ../../library/multiprocessing.rst:1935
 msgid ""
 "*serializer* must be ``'pickle'`` (use :mod:`pickle` serialization) or "
 "``'xmlrpclib'`` (use :mod:`xmlrpc.client` serialization)."
 msgstr ""
+"*serializer* musí být ``'pickle'`` (použije se serializace :mod:`pickle`) "
+"nebo ``'xmlrpclib'`` (použije se serializace :mod:`xmlrpc.client`)."
 
 #: ../../library/multiprocessing.rst:1942
 msgid ""
@@ -2588,10 +3124,14 @@ msgid ""
 "shutdown times out, the process is terminated. If terminating the process"
 " also times out, the process is killed."
 msgstr ""
+"*shutdown_timeout* je časový limit v sekundách použitý k čekání, dokud "
+"proces používaný manažerem neskončí v metodě :meth:`shutdown`. Pokud "
+"vypnutí vyprší, proces je ukončen. Pokud i ukončení procesu vyprší, "
+"proces je násilně zabit."
 
 #: ../../library/multiprocessing.rst:1947
 msgid "Added the *shutdown_timeout* parameter."
-msgstr ""
+msgstr "Přidán parametr *shutdown_timeout*."
 
 #: ../../library/multiprocessing.rst:1952
 msgid ""
@@ -2599,6 +3139,8 @@ msgid ""
 "``None`` then the subprocess will call ``initializer(*initargs)`` when it"
 " starts."
 msgstr ""
+"Spustí podproces pro spuštění manažera. Pokud *initializer* není ``None``, "
+"pak podproces zavolá ``initializer(*initargs)`` při svém spuštění."
 
 #: ../../library/multiprocessing.rst:1957
 msgid ""
@@ -2606,6 +3148,9 @@ msgid ""
 " the control of the Manager. The :class:`Server` object supports the "
 ":meth:`serve_forever` method::"
 msgstr ""
+"Vrací objekt :class:`Server`, který představuje skutečný server pod "
+"kontrolou manažera. Objekt :class:`Server` podporuje metodu "
+":meth:`serve_forever`::"
 
 #: ../../library/multiprocessing.rst:1961
 msgid ""
@@ -2617,11 +3162,11 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:1966
 msgid ":class:`Server` additionally has an :attr:`address` attribute."
-msgstr ""
+msgstr ":class:`Server` navíc má atribut :attr:`address`."
 
 #: ../../library/multiprocessing.rst:1970
 msgid "Connect a local manager object to a remote manager process::"
-msgstr ""
+msgstr "Připojí lokální objekt manažera ke vzdálenému procesu manažera::"
 
 #: ../../library/multiprocessing.rst:1972
 msgid ""
@@ -2635,22 +3180,28 @@ msgid ""
 "Stop the process used by the manager.  This is only available if "
 ":meth:`start` has been used to start the server process."
 msgstr ""
+"Zastaví proces používaný manažerem. Toto je dostupné pouze pokud byla "
+"použita metoda :meth:`start` pro spuštění serverového procesu."
 
 #: ../../library/multiprocessing.rst:1981
 msgid "This can be called multiple times."
-msgstr ""
+msgstr "Toto může být voláno vícekrát."
 
 #: ../../library/multiprocessing.rst:1985
 msgid ""
 "A classmethod which can be used for registering a type or callable with "
 "the manager class."
 msgstr ""
+"Třídní metoda, která může být použita pro registraci typu nebo volatelného "
+"objektu s třídou manažera."
 
 #: ../../library/multiprocessing.rst:1988
 msgid ""
 "*typeid* is a \"type identifier\" which is used to identify a particular "
 "type of shared object.  This must be a string."
 msgstr ""
+"*typeid* je \"identifikátor typu\", který se používá k identifikaci "
+"konkrétního typu sdíleného objektu. Toto musí být řetězec."
 
 #: ../../library/multiprocessing.rst:1991
 msgid ""
@@ -2659,6 +3210,10 @@ msgid ""
 "the :meth:`connect` method, or if the *create_method* argument is "
 "``False`` then this can be left as ``None``."
 msgstr ""
+"*callable* je volatelný objekt použitý pro vytváření objektů pro tento "
+"identifikátor typu. Pokud bude instance manažera připojena k serveru pomocí "
+"metody :meth:`connect`, nebo pokud je argument *create_method* ``False``, "
+"pak toto může zůstat jako ``None``."
 
 #: ../../library/multiprocessing.rst:1997
 msgid ""
@@ -2666,6 +3221,9 @@ msgid ""
 "proxies for shared objects with this *typeid*.  If ``None`` then a proxy "
 "class is created automatically."
 msgstr ""
+"*proxytype* je podtřída :class:`BaseProxy`, která se používá k vytváření "
+"proxy pro sdílené objekty s tímto *typeid*. Pokud je ``None``, pak je třída "
+"proxy vytvořena automaticky."
 
 #: ../../library/multiprocessing.rst:2001
 msgid ""
@@ -2678,6 +3236,13 @@ msgid ""
 " which has a :meth:`~object.__call__` method and whose name does not "
 "begin with ``'_'``.)"
 msgstr ""
+"*exposed* se používá k určení posloupnosti názvů metod, ke kterým by měly "
+"mít proxy pro tento typeid povolený přístup pomocí "
+":meth:`BaseProxy._callmethod`. (Pokud je *exposed* ``None``, pak se místo "
+"toho použije :attr:`proxytype._exposed_`, pokud existuje.) V případě, kdy "
+"není specifikován seznam exposed, budou přístupné všechny \"veřejné metody\" "
+"sdíleného objektu. (Zde \"veřejná metoda\" znamená jakýkoli atribut, který "
+"má metodu :meth:`~object.__call__` a jehož název nezačíná na ``'_'``.)"
 
 #: ../../library/multiprocessing.rst:2010
 msgid ""
@@ -2688,6 +3253,12 @@ msgid ""
 " method's name is not a key of this mapping or if the mapping is ``None``"
 " then the object returned by the method will be copied by value."
 msgstr ""
+"*method_to_typeid* je mapování použité k určení návratového typu těch "
+"exposed metod, které by měly vrátit proxy. Mapuje názvy metod na řetězce "
+"typeid. (Pokud je *method_to_typeid* ``None``, pak se místo toho použije "
+":attr:`proxytype._method_to_typeid_`, pokud existuje.) Pokud název metody "
+"není klíčem tohoto mapování nebo pokud je mapování ``None``, pak bude objekt "
+"vrácený metodou zkopírován hodnotou."
 
 #: ../../library/multiprocessing.rst:2017
 msgid ""
@@ -2695,14 +3266,18 @@ msgid ""
 "*typeid* which can be used to tell the server process to create a new "
 "shared object and return a proxy for it.  By default it is ``True``."
 msgstr ""
+"*create_method* určuje, zda by měla být vytvořena metoda s názvem *typeid*, "
+"která může být použita k tomu, aby řekla serverovému procesu, aby vytvořil "
+"nový sdílený objekt a vrátil pro něj proxy. Ve výchozím nastavení je to "
+"``True``."
 
 #: ../../library/multiprocessing.rst:2021
 msgid ":class:`BaseManager` instances also have one read-only property:"
-msgstr ""
+msgstr "Instance :class:`BaseManager` mají také jednu vlastnost pouze pro čtení:"
 
 #: ../../library/multiprocessing.rst:2025
 msgid "The address used by the manager."
-msgstr ""
+msgstr "Adresa používaná manažerem."
 
 #: ../../library/multiprocessing.rst:2027
 msgid ""
@@ -2711,12 +3286,18 @@ msgid ""
 "server process (if it has not already started) and then returns the "
 "manager object.  :meth:`~contextmanager.__exit__` calls :meth:`shutdown`."
 msgstr ""
+"Objekty manažera podporují protokol správy kontextu -- viz "
+":ref:`typecontextmanager`. :meth:`~contextmanager.__enter__` spustí "
+"serverový proces (pokud ještě nebyl spuštěn) a pak vrátí objekt manažera. "
+":meth:`~contextmanager.__exit__` volá :meth:`shutdown`."
 
 #: ../../library/multiprocessing.rst:2033
 msgid ""
 "In previous versions :meth:`~contextmanager.__enter__` did not start the "
 "manager's server process if it was not already started."
 msgstr ""
+"V předchozích verzích :meth:`~contextmanager.__enter__` nespouštěla "
+"serverový proces manažera, pokud ještě nebyl spuštěn."
 
 #: ../../library/multiprocessing.rst:2038
 msgid ""
@@ -2724,6 +3305,9 @@ msgid ""
 "synchronization of processes.  Objects of this type are returned by "
 ":func:`multiprocessing.Manager`."
 msgstr ""
+"Podtřída :class:`BaseManager`, která může být použita pro synchronizaci "
+"procesů. Objekty tohoto typu jsou vraceny funkcí "
+":func:`multiprocessing.Manager`."
 
 #: ../../library/multiprocessing.rst:2042
 msgid ""
@@ -2731,82 +3315,87 @@ msgid ""
 "number of commonly used data types to be synchronized across processes. "
 "This notably includes shared lists and dictionaries."
 msgstr ""
+"Jeho metody vytvářejí a vracejí :ref:`multiprocessing-proxy_objects` pro "
+"řadu běžně používaných datových typů, které mají být synchronizovány mezi "
+"procesy. To zejména zahrnuje sdílené seznamy a slovníky."
 
 #: ../../library/multiprocessing.rst:2048
 msgid ""
 "Create a shared :class:`threading.Barrier` object and return a proxy for "
 "it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.Barrier` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2055
 msgid ""
 "Create a shared :class:`threading.BoundedSemaphore` object and return a "
 "proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.BoundedSemaphore` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2060
 msgid ""
 "Create a shared :class:`threading.Condition` object and return a proxy "
 "for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.Condition` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2063
 msgid ""
 "If *lock* is supplied then it should be a proxy for a "
 ":class:`threading.Lock` or :class:`threading.RLock` object."
 msgstr ""
+"Pokud je dodáno *lock*, pak by to mělo být proxy pro objekt "
+":class:`threading.Lock` nebo :class:`threading.RLock`."
 
 #: ../../library/multiprocessing.rst:2071
 msgid "Create a shared :class:`threading.Event` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.Event` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2075
 msgid "Create a shared :class:`threading.Lock` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.Lock` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2079
 msgid "Create a shared :class:`Namespace` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`Namespace` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2083
 msgid "Create a shared :class:`queue.Queue` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`queue.Queue` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2087
 msgid "Create a shared :class:`threading.RLock` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.RLock` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2091
 msgid ""
 "Create a shared :class:`threading.Semaphore` object and return a proxy "
 "for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`threading.Semaphore` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2096
 msgid "Create an array and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří pole a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2100
 msgid ""
 "Create an object with a writable ``value`` attribute and return a proxy "
 "for it."
-msgstr ""
+msgstr "Vytvoří objekt se zapisovatelným atributem ``value`` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2107
 msgid "Create a shared :class:`dict` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`dict` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2112
 msgid "Create a shared :class:`list` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`list` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2118
 msgid "Create a shared :class:`set` object and return a proxy for it."
-msgstr ""
+msgstr "Vytvoří sdílený objekt :class:`set` a vrátí pro něj proxy."
 
 #: ../../library/multiprocessing.rst:2120
 msgid ":class:`set` support was added."
-msgstr ""
+msgstr "Byla přidána podpora pro :class:`set`."
 
 #: ../../library/multiprocessing.rst:2123
 msgid ""
@@ -2814,16 +3403,21 @@ msgid ""
 "container object such as a shared list can contain other shared objects "
 "which will all be managed and synchronized by the :class:`SyncManager`."
 msgstr ""
+"Sdílené objekty mohou být vnořené. Například sdílený kontejnerový objekt, "
+"jako je sdílený seznam, může obsahovat další sdílené objekty, které budou "
+"všechny spravovány a synchronizovány pomocí :class:`SyncManager`."
 
 #: ../../library/multiprocessing.rst:2130
 msgid "A type that can register with :class:`SyncManager`."
-msgstr ""
+msgstr "Typ, který se může registrovat s :class:`SyncManager`."
 
 #: ../../library/multiprocessing.rst:2132
 msgid ""
 "A namespace object has no public methods, but does have writable "
 "attributes. Its representation shows the values of its attributes."
 msgstr ""
+"Objekt namespace nemá žádné veřejné metody, ale má zapisovatelné atributy. "
+"Jeho reprezentace ukazuje hodnoty jeho atributů."
 
 #: ../../library/multiprocessing.rst:2135
 msgid ""
@@ -2831,6 +3425,8 @@ msgid ""
 "beginning with ``'_'`` will be an attribute of the proxy and not an "
 "attribute of the referent:"
 msgstr ""
+"Nicméně při použití proxy pro objekt namespace bude atribut začínající na "
+"``'_'`` atributem proxy a ne atributem referentu:"
 
 #: ../../library/multiprocessing.rst:2139
 msgid ""
@@ -2846,7 +3442,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2152
 msgid "Customized managers"
-msgstr ""
+msgstr "Vlastní manažeři"
 
 #: ../../library/multiprocessing.rst:2154
 msgid ""
@@ -2855,6 +3451,10 @@ msgid ""
 "classmethod to register new types or callables with the manager class.  "
 "For example::"
 msgstr ""
+"Pro vytvoření vlastního manažera se vytvoří podtřída "
+":class:`BaseManager` a použije se třídní metoda :meth:`~BaseManager.register` "
+"pro registraci nových typů nebo volatelných objektů s třídou manažera. "
+"Například::"
 
 #: ../../library/multiprocessing.rst:2158
 msgid ""
@@ -2880,7 +3480,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2179
 msgid "Using a remote manager"
-msgstr ""
+msgstr "Použití vzdáleného manažera"
 
 #: ../../library/multiprocessing.rst:2181
 msgid ""
@@ -2888,12 +3488,16 @@ msgid ""
 "use it from other machines (assuming that the firewalls involved allow "
 "it)."
 msgstr ""
+"Je možné spustit server manažera na jednom stroji a nechat klienty jej "
+"používat z jiných strojů (za předpokladu, že to příslušné firewally povolují)."
 
 #: ../../library/multiprocessing.rst:2184
 msgid ""
 "Running the following commands creates a server for a single shared queue"
 " which remote clients can access::"
 msgstr ""
+"Spuštění následujících příkazů vytvoří server pro jedinou sdílenou frontu, "
+"ke které mohou přistupovat vzdálení klienti::"
 
 #: ../../library/multiprocessing.rst:2187
 msgid ""
@@ -2909,7 +3513,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2196
 msgid "One client can access the server as follows::"
-msgstr ""
+msgstr "Jeden klient může přistupovat k serveru následovně::"
 
 #: ../../library/multiprocessing.rst:2198
 msgid ""
@@ -2925,7 +3529,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2206
 msgid "Another client can also use it::"
-msgstr ""
+msgstr "Jiný klient jej také může použít::"
 
 #: ../../library/multiprocessing.rst:2208
 msgid ""
@@ -2945,6 +3549,8 @@ msgid ""
 "Local processes can also access that queue, using the code from above on "
 "the client to access it remotely::"
 msgstr ""
+"Lokální procesy mohou také přistupovat k této frontě, použitím kódu "
+"z výše uvedeného klienta pro vzdálený přístup::"
 
 #: ../../library/multiprocessing.rst:2220
 msgid ""
@@ -2970,7 +3576,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2242
 msgid "Proxy Objects"
-msgstr ""
+msgstr "Objekty proxy"
 
 #: ../../library/multiprocessing.rst:2244
 msgid ""
@@ -2979,6 +3585,9 @@ msgid ""
 " *referent* of the proxy.  Multiple proxy objects may have the same "
 "referent."
 msgstr ""
+"Proxy je objekt, který *odkazuje* na sdílený objekt, který žije "
+"(pravděpodobně) v jiném procesu. Říká se, že sdílený objekt je *referent* "
+"proxy. Více objektů proxy může mít stejný referent."
 
 #: ../../library/multiprocessing.rst:2248
 msgid ""
@@ -2987,6 +3596,9 @@ msgid ""
 "available through the proxy).  In this way, a proxy can be used just like"
 " its referent can:"
 msgstr ""
+"Objekt proxy má metody, které vyvolávají odpovídající metody jeho referentu "
+"(ačkoli ne každá metoda referentu bude nutně dostupná přes proxy). Tímto "
+"způsobem může být proxy použito stejně jako jeho referent:"
 
 #: ../../library/multiprocessing.rst:2252
 msgid ""
@@ -3009,6 +3621,8 @@ msgid ""
 "representation of the referent, whereas applying :func:`repr` will return"
 " the representation of the proxy."
 msgstr ""
+"Všimněte si, že aplikování :func:`str` na proxy vrátí reprezentaci "
+"referentu, zatímco aplikování :func:`repr` vrátí reprezentaci proxy."
 
 #: ../../library/multiprocessing.rst:2270
 msgid ""
@@ -3017,6 +3631,10 @@ msgid ""
 ":`multiprocessing-proxy_objects`.  This permits nesting of these managed "
 "lists, dicts, and other :ref:`multiprocessing-proxy_objects`:"
 msgstr ""
+"Důležitou vlastností objektů proxy je, že jsou picklovatelné, takže mohou "
+"být předávány mezi procesy. Jako takový může referent obsahovat :ref"
+":`multiprocessing-proxy_objects`. To umožňuje vnořování těchto spravovaných "
+"seznamů, slovníků a dalších :ref:`multiprocessing-proxy_objects`:"
 
 #: ../../library/multiprocessing.rst:2275
 msgid ""
@@ -3032,7 +3650,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2286
 msgid "Similarly, dict and list proxies may be nested inside one another::"
-msgstr ""
+msgstr "Podobně mohou být proxy dict a list vnořeny do sebe::"
 
 #: ../../library/multiprocessing.rst:2288
 #, python-brace-format
@@ -3201,13 +3819,15 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2404
 msgid "Process Pools"
-msgstr ""
+msgstr "Fondy procesů"
 
 #: ../../library/multiprocessing.rst:2409
 msgid ""
 "One can create a pool of processes which will carry out tasks submitted "
 "to it with the :class:`Pool` class."
 msgstr ""
+"Lze vytvořit fond procesů, které budou vykonávat úkoly odeslané do něj, "
+"pomocí třídy :class:`Pool`."
 
 #: ../../library/multiprocessing.rst:2414
 msgid ""
@@ -3215,6 +3835,9 @@ msgid ""
 "jobs can be submitted.  It supports asynchronous results with timeouts "
 "and callbacks and has a parallel map implementation."
 msgstr ""
+"Objekt fondu procesů, který řídí fond pracovních procesů, do kterého mohou "
+"být odesílány úlohy. Podporuje asynchronní výsledky s časovými limity a "
+"zpětnými voláními a má implementaci paralelního map."
 
 #: ../../library/multiprocessing.rst:2418
 msgid ""
@@ -3505,7 +4128,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2642
 msgid "Listeners and Clients"
-msgstr ""
+msgstr "Naslouchače a klienti"
 
 #: ../../library/multiprocessing.rst:2647
 msgid ""
@@ -3795,7 +4418,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2865
 msgid "Address Formats"
-msgstr ""
+msgstr "Formáty adres"
 
 #: ../../library/multiprocessing.rst:2867
 msgid ""
@@ -3828,7 +4451,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2885
 msgid "Authentication keys"
-msgstr ""
+msgstr "Autentizační klíče"
 
 #: ../../library/multiprocessing.rst:2887
 msgid ""
@@ -3867,7 +4490,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2911
 msgid "Logging"
-msgstr ""
+msgstr "Logování"
 
 #: ../../library/multiprocessing.rst:2913
 msgid ""
@@ -3933,7 +4556,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:2959
 msgid "The :mod:`multiprocessing.dummy` module"
-msgstr ""
+msgstr "Modul :mod:`multiprocessing.dummy`"
 
 #: ../../library/multiprocessing.rst:2964
 msgid ""
@@ -3991,31 +4614,35 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3011
 msgid "Programming guidelines"
-msgstr ""
+msgstr "Pokyny pro programování"
 
 #: ../../library/multiprocessing.rst:3013
 msgid ""
 "There are certain guidelines and idioms which should be adhered to when "
 "using :mod:`multiprocessing`."
 msgstr ""
+"Existují určité pokyny a idiomy, kterých by se mělo dodržovat při použití "
+":mod:`multiprocessing`."
 
 #: ../../library/multiprocessing.rst:3018
 msgid "All start methods"
-msgstr ""
+msgstr "Všechny metody spuštění"
 
 #: ../../library/multiprocessing.rst:3020
 msgid "The following applies to all start methods."
-msgstr ""
+msgstr "Následující platí pro všechny metody spuštění."
 
 #: ../../library/multiprocessing.rst:3022
 msgid "Avoid shared state"
-msgstr ""
+msgstr "Vyhněte se sdílenému stavu"
 
 #: ../../library/multiprocessing.rst:3024
 msgid ""
 "As far as possible one should try to avoid shifting large amounts of data"
 " between processes."
 msgstr ""
+"Pokud je to možné, měli byste se pokusit vyhnout přesouvání velkých objemů "
+"dat mezi procesy."
 
 #: ../../library/multiprocessing.rst:3027
 msgid ""
@@ -4023,34 +4650,38 @@ msgid ""
 "between processes rather than using the lower level synchronization "
 "primitives."
 msgstr ""
+"Je pravděpodobně nejlepší držet se používání front nebo rour pro komunikaci "
+"mezi procesy spíše než používat synchronizační primitiva nižší úrovně."
 
 #: ../../library/multiprocessing.rst:3031
 msgid "Picklability"
-msgstr ""
+msgstr "Picklovatelnost"
 
 #: ../../library/multiprocessing.rst:3033
 msgid "Ensure that the arguments to the methods of proxies are picklable."
-msgstr ""
+msgstr "Ujistěte se, že argumenty metod proxy jsou picklovatelné."
 
 #: ../../library/multiprocessing.rst:3035
 msgid "Thread safety of proxies"
-msgstr ""
+msgstr "Bezpečnost vláken u proxy"
 
 #: ../../library/multiprocessing.rst:3037
 msgid ""
 "Do not use a proxy object from more than one thread unless you protect it"
 " with a lock."
 msgstr ""
+"Nepoužívejte objekt proxy z více než jednoho vlákna, pokud jej nechráníte "
+"zámkem."
 
 #: ../../library/multiprocessing.rst:3040
 msgid ""
 "(There is never a problem with different processes using the *same* "
 "proxy.)"
-msgstr ""
+msgstr "(Nikdy není problém, když různé procesy používají *stejné* proxy.)"
 
 #: ../../library/multiprocessing.rst:3042
 msgid "Joining zombie processes"
-msgstr ""
+msgstr "Joinování zombie procesů"
 
 #: ../../library/multiprocessing.rst:3044
 msgid ""
@@ -4066,7 +4697,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3052
 msgid "Better to inherit than pickle/unpickle"
-msgstr ""
+msgstr "Lepší dědit než pickle/unpickle"
 
 #: ../../library/multiprocessing.rst:3054
 msgid ""
@@ -4080,7 +4711,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3062
 msgid "Avoid terminating processes"
-msgstr ""
+msgstr "Vyhněte se ukončování procesů"
 
 #: ../../library/multiprocessing.rst:3064
 msgid ""
@@ -4099,7 +4730,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3074
 msgid "Joining processes that use queues"
-msgstr ""
+msgstr "Joinování procesů, které používají fronty"
 
 #: ../../library/multiprocessing.rst:3076
 msgid ""
@@ -4147,7 +4778,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3105
 msgid "Explicitly pass resources to child processes"
-msgstr ""
+msgstr "Explicitně předávejte zdroje podřízeným procesům"
 
 #: ../../library/multiprocessing.rst:3107
 msgid ""
@@ -4260,7 +4891,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3180
 msgid "The *spawn* and *forkserver* start methods"
-msgstr ""
+msgstr "Metody spuštění *spawn* a *forkserver*"
 
 #: ../../library/multiprocessing.rst:3182
 msgid ""
@@ -4270,7 +4901,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3185
 msgid "More picklability"
-msgstr ""
+msgstr "Více picklovatelnosti"
 
 #: ../../library/multiprocessing.rst:3187
 msgid ""
@@ -4282,7 +4913,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3192
 msgid "Global variables"
-msgstr ""
+msgstr "Globální proměnné"
 
 #: ../../library/multiprocessing.rst:3194
 msgid ""
@@ -4300,7 +4931,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3204
 msgid "Safe importing of main module"
-msgstr ""
+msgstr "Bezpečný import hlavního modulu"
 
 #: ../../library/multiprocessing.rst:3206
 msgid ""
@@ -4366,7 +4997,7 @@ msgstr ""
 
 #: ../../library/multiprocessing.rst:3249
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/multiprocessing.rst:3251
 msgid "Demonstration of how to create and use customized managers and proxies:"
