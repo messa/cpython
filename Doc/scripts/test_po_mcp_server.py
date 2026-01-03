@@ -166,6 +166,8 @@ def test_list_tools():
 
         assert "get_entries_to_translate" in tool_names, f"Missing get_entries_to_translate: {tool_names}"
         assert "submit_translations" in tool_names, f"Missing submit_translations: {tool_names}"
+        assert "list_translations" in tool_names, f"Missing list_translations: {tool_names}"
+        assert "status" in tool_names, f"Missing status: {tool_names}"
 
         print("OK")
 

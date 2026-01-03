@@ -5,6 +5,8 @@ MCP server for Czech translation of Python documentation.
 Provides tools for translating .po files:
 - get_entries_to_translate: Get untranslated entries from .po files
 - submit_translations: Apply translations to .po files
+- list_translations: List existing translations with pagination
+- status: Get server status (script path and PID)
 
 Requires: mcp, polib
 
@@ -18,6 +20,7 @@ from asyncio import run as asyncio_run
 from json import dumps as json_dumps
 from logging import getLogger, Formatter, StreamHandler, DEBUG, WARNING
 from logging.handlers import WatchedFileHandler
+from os import getpid
 from pathlib import Path
 from subprocess import run, TimeoutExpired
 from typing import Any
@@ -302,19 +305,72 @@ async def list_tools() -> list[Tool]:
                 "required": ["file", "translations"],
             },
         ),
+        Tool(
+            name="list_translations",
+            description=(
+                "List translations from a .po file. Returns paginated list of "
+                "entries with msgid (original) and msgstr (translation). Useful "
+                "for reviewing existing translations."
+            ),
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "type": "string",
+                        "description": "Path to .po file (relative to locale dir)",
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "Number of entries per page (default: 20, max: 50)",
+                        "default": 20,
+                    },
+                    "page": {
+                        "type": "integer",
+                        "description": "Page number, starting from 1 (default: 1)",
+                        "default": 1,
+                    },
+                },
+                "required": ["file"],
+            },
+        ),
+        Tool(
+            name="status",
+            description="Get server status: script path and process ID.",
+            inputSchema={
+                "type": "object",
+                "properties": {},
+                "required": [],
+            },
+        ),
     ]
 
 
 @server.call_tool()
 async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
     """Handle tool calls."""
-    logger.info("Tool call: %s, arguments: %s", name, arguments)
+    logger.info(
+        "Tool call: %s, arguments:\n%s",
+        name,
+        json_dumps(arguments, ensure_ascii=False, indent=2),
+    )
 
-    if name == "get_entries_to_translate":
+    if name == "status":
+        return [TextContent(
+            type="text",
+            text=json_dumps({
+                "script_path": str(Path(__file__).resolve()),
+                "pid": getpid(),
+            })
+        )]
+
+    elif name == "get_entries_to_translate":
         return await handle_get_entries(arguments)
 
     elif name == "submit_translations":
         return await handle_submit_translations(arguments)
+
+    elif name == "list_translations":
+        return await handle_list_translations(arguments)
 
     else:
         logger.warning("Unknown tool requested: %s", name)
@@ -496,39 +552,53 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
 
     # Save if any translations were applied
     if applied:
-        po.save()
-        logger.info("Saved %d translations to %s", len(applied), file_arg)
-
-        # Run validation
+        # Save to temporary file first, validate, then replace original
+        temp_path = po_path.with_suffix(".po.tmp")
         try:
-            valid, errors = run_msgfmt_check(po_path)
-        except TimeoutExpired:
-            logger.error("msgfmt timed out for %s", file_arg)
-            valid, errors = False, ["msgfmt validation timed out"]
-        if not valid:
-            logger.warning("Validation failed for %s: %s", file_arg, errors)
+            po.save(str(temp_path))
+            logger.debug("Saved translations to temp file: %s", temp_path)
+
+            # Run validation on temp file
+            try:
+                valid, errors = run_msgfmt_check(temp_path)
+            except TimeoutExpired:
+                logger.error("msgfmt timed out for %s", temp_path)
+                valid, errors = False, ["msgfmt validation timed out"]
+
+            if not valid:
+                # Validation failed - remove temp file and report error
+                logger.warning("Validation failed for %s: %s", file_arg, errors)
+                temp_path.unlink(missing_ok=True)
+                return [TextContent(
+                    type="text",
+                    text=json_dumps({
+                        "success": False,
+                        "error": "Validation failed, changes not applied",
+                        "validation_errors": errors,
+                        "applied": applied,
+                        "not_found": not_found if not_found else None,
+                    }, ensure_ascii=False, indent=2)
+                )]
+
+            # Validation passed - atomically replace original with temp
+            temp_path.replace(po_path)
+            logger.info("Saved %d translations to %s", len(applied), file_arg)
+
+        except Exception as e:
+            # Clean up temp file on any error
+            temp_path.unlink(missing_ok=True)
+            raise
 
         result = {
             "success": True,
             "applied_count": len(applied),
             "applied": applied,
-            "validation": {
-                "valid": valid,
-                "errors": errors if errors else None,
-            },
         }
 
         if not_found:
             result["not_found"] = not_found
         if already_translated:
             result["already_translated"] = already_translated
-
-        # If validation failed, warn but don't revert
-        if not valid:
-            result["warning"] = (
-                "Translations applied but validation failed. "
-                "Please review and fix the errors."
-            )
     else:
         result = {
             "success": False,
@@ -537,6 +607,94 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
             "already_translated": already_translated if already_translated else None,
         }
 
+    return [TextContent(type="text", text=json_dumps(result, ensure_ascii=False, indent=2))]
+
+
+async def handle_list_translations(arguments: dict[str, Any]) -> list[TextContent]:
+    """
+    Handle list_translations tool call.
+
+    Arguments:
+        file: path to .po file (required)
+        count: number of entries per page (default 20, max 50)
+        page: page number starting from 1 (default 1)
+
+    Returns JSON with paginated list of {msgid, msgstr} entries.
+    """
+    file_arg = arguments.get("file")
+    count = min(arguments.get("count", 20), MAX_ENTRIES_COUNT)
+    page = max(arguments.get("page", 1), 1)  # Ensure page >= 1
+    logger.debug("list_translations: file=%s, count=%d, page=%d", file_arg, count, page)
+
+    if not file_arg:
+        return [TextContent(
+            type="text",
+            text=json_dumps({
+                "success": False,
+                "error": "File parameter is required",
+            })
+        )]
+
+    # Validate and resolve path securely
+    try:
+        po_path = validate_po_path(file_arg)
+    except PathSecurityError as e:
+        return [TextContent(
+            type="text",
+            text=json_dumps({
+                "success": False,
+                "error": str(e),
+            })
+        )]
+
+    # Load .po file
+    try:
+        po = pofile(str(po_path))
+    except Exception as e:
+        return [TextContent(
+            type="text",
+            text=json_dumps({
+                "success": False,
+                "error": f"Failed to parse .po file: {e}",
+            })
+        )]
+
+    # Get all entries (excluding metadata entry with empty msgid)
+    all_entries = [entry for entry in po if entry.msgid]
+    total_entries = len(all_entries)
+
+    # Calculate pagination
+    start_idx = (page - 1) * count
+    end_idx = start_idx + count
+    page_entries = all_entries[start_idx:end_idx]
+
+    # Format entries as simple {msgid, msgstr} dicts
+    formatted_entries = [
+        {"msgid": entry.msgid, "msgstr": entry.msgstr}
+        for entry in page_entries
+    ]
+
+    # Calculate next page
+    total_pages = (total_entries + count - 1) // count  # Ceiling division
+    next_page = page + 1 if page < total_pages else None
+
+    relative_path = po_path.relative_to(LOCALE_DIR)
+
+    result = {
+        "success": True,
+        "file": str(relative_path),
+        "entries": formatted_entries,
+        "page": page,
+        "count": len(formatted_entries),
+        "totalEntries": total_entries,
+        "totalPages": total_pages,
+        "nextPage": next_page,
+    }
+
+    logger.info(
+        "list_translations: returned %d entries from %s (page %d/%d)",
+        len(formatted_entries), relative_path, page, total_pages
+    )
     return [TextContent(type="text", text=json_dumps(result, ensure_ascii=False, indent=2))]
 
 
