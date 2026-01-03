@@ -23,6 +23,13 @@ When finished, report:
 - How many entries you translated
 - Whether any files are now complete
 
+## Error Handling
+
+If a tool call returns an error saying the result is too large:
+1. Check if the tool has a `count` parameter
+2. If yes, retry the call with `count=1`
+3. Continue with smaller batches
+
 ## Translation Rules
 
 ### Czech Language Conventions
