@@ -9,6 +9,9 @@ scripts/analyze_po.py
 # 2. Check status of a specific file
 scripts/po_tool.py status tutorial/whatnow.po
 
+# 2b. Show detailed contents of a .po file (optional)
+scripts/show_po.py tutorial/whatnow.po
+
 # 3. Export untranslated entries to a template file
 scripts/po_tool.py export tutorial/whatnow.po           # exports first 15
 scripts/po_tool.py export tutorial/whatnow.po -n 20     # exports first 20
@@ -20,6 +23,9 @@ scripts/po_tool.py apply tutorial/whatnow.po tutorial_whatnow_todo.txt
 
 # 6. Build and verify
 make html SPHINXOPTS="-D language=cs"
+
+# 7. Delete the temporary *_todo.txt file (do not commit it)
+rm tutorial_whatnow_todo.txt
 ```
 
 ## Check .po files for syntax errors
