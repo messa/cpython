@@ -868,7 +868,7 @@ msgid "A new type of interpreter"
 msgstr "Nový typ interpretru"
 
 #: ../../whatsnew/3.14.rst:443
-#, python-format
+#, no-python-format
 msgid ""
 "A new type of interpreter has been added to CPython. It uses tail calls "
 "between small C functions that implement individual Python opcodes, rather "
@@ -879,13 +879,13 @@ msgid ""
 "The baseline is Python 3.14 built with Clang 19, without this new "
 "interpreter."
 msgstr ""
-"Do CPython byl přidán nový typ interpretru. Používá tail volání mezi malými "
+"Do CPythonu byl přidán nový typ interpretru. Používá tail volání mezi malými "
 "C funkcemi, které implementují jednotlivé pythonské opkódy, místo jednoho "
 "velkého příkazu C ``case``. Pro určité novější kompilátory poskytuje tento "
-"interpret významně lepší výkon. Preliminární benchmarky naznačují "
-"geometrický průměr 3-5 % na standardní sadě benchmarků ``pyperformance``, v "
-"závislosti na platformě a architektuře. Základní linkou je Python 3.14 "
-"sestaven s Clang 19 bez tohoto nového interpretru."
+"interpretr významně lepší výkon. Předběžné benchmarky naznačují geometrický "
+"průměr o 3–5 % rychlejší na standardní sadě benchmarků ``pyperformance``, v "
+"závislosti na platformě a architektuře. Základní linií je Python 3.14 "
+"sestavený s Clang 19 bez tohoto nového interpretru."
 
 #: ../../whatsnew/3.14.rst:452
 msgid ""
@@ -4247,7 +4247,7 @@ msgstr ""
 "podrobností naleznete v :ref:`níle <whatsnew314-refcount>`."
 
 #: ../../whatsnew/3.14.rst:2164
-#, python-format
+#, no-python-format
 msgid ""
 "Standard benchmark results have improved by 10-20% following the "
 "implementation of a new per-thread doubly linked list for :class:`native "
@@ -4257,12 +4257,12 @@ msgid ""
 " tasks running in all threads. (Contributed by Kumar Aditya in "
 ":gh:`107803`.)"
 msgstr ""
-"Výsledky standardních benchmarků se zlepšily o 10-20% následkem implementace"
-" nového četřů-specifického dvousměrně propojeného seznamu pro "
-":class:`nativní úlohy <asyncio.Task>`, také snižuje se paměťové použití. To "
+"Výsledky standardních benchmarků se zlepšily o 10–20 % díky implementaci "
+"nového dvousměrně propojeného seznamu pro jednotlivá vlákna pro "
+":class:`nativní úlohy <asyncio.Task>`, což také snižuje využití paměti. To "
 "umožňuje externím nástrojům introspekce, jako je :ref:`python -m asyncio "
 "pstree <whatsnew314-asyncio-introspection>`, introspektovat graf volání úloh"
-" asyncio spuoštěných ve všech vláknech. (Přispěl Kumar Aditya v "
+" asyncio spuštěných ve všech vláknech. (Přispěl Kumar Aditya v "
 ":gh:`107803`.)"
 
 #: ../../whatsnew/3.14.rst:2173
@@ -4377,26 +4377,26 @@ msgstr ""
 "škodlivý. Všechen ostatní kód bude fungovat správně."
 
 #: ../../whatsnew/3.14.rst:2242
-#, python-format
+#, no-python-format
 msgid ""
 "Opening and reading files now executes fewer system calls. Reading a small "
 "operating system cached file in full is up to 15% faster. (Contributed by "
 "Cody Maloney and Victor Stinner in :gh:`120754` and :gh:`90102`.)"
 msgstr ""
-"Otevření a čtení souborů nyní spouští méně systémových volání. Čtení malého "
-"souboru ulohoženého v operačním systému v Úplně je až o 15% rychlejší. "
+"Otevření a čtení souborů nyní provádí méně systémových volání. Čtení malého "
+"souboru uloženého v cache operačního systému celého je až o 15 % rychlejší. "
 "(Přispěli Cody Maloney a Victor Stinner v :gh:`120754` a :gh:`90102`.)"
 
 #: ../../whatsnew/3.14.rst:2251
-#, python-format
+#, no-python-format
 msgid ""
 ":func:`Path.read_bytes <pathlib.Path.read_bytes>` now uses unbuffered mode "
 "to open files, which is between 9% and 17% faster to read in full. "
 "(Contributed by Cody Maloney in :gh:`120754`.)"
 msgstr ""
-":func:`Path.read_bytes <pathlib.Path.read_bytes>` nyní používá režim bez "
-"bufferného otevření souborů, což je mezi 9% a 17% rychlejší na čtení v "
-"Úplně. (Přispěl Cody Maloney v :gh:`120754`.)"
+":func:`Path.read_bytes <pathlib.Path.read_bytes>` nyní používá nebufferovaný "
+"režim pro otevírání souborů, což je o 9 % až 17 % rychlejší pro úplné čtení. "
+"(Přispěl Cody Maloney v :gh:`120754`.)"
 
 #: ../../whatsnew/3.14.rst:2259
 msgid ""
@@ -4431,23 +4431,24 @@ msgstr ""
 "tabulátorem."
 
 #: ../../whatsnew/3.14.rst:2280
-#, python-format
+#, no-python-format
 msgid ""
 ":func:`~uuid.uuid3` and :func:`~uuid.uuid5` are now both roughly 40% faster "
 "for 16-byte names and 20% faster for 1024-byte names. Performance for longer"
 " names remains unchanged. (Contributed by Bénédikt Tran in :gh:`128150`.)"
 msgstr ""
-":func:`~uuid.uuid3` a :func:`~uuid.uuid5` jsou nyní oba přibližně o 40% "
-"rychlejší pro 16bajtová jména a 20% rychlejší pro 1024bajtová jména. Výkon "
-"pro delší jména zůstává nezměněný. (Přispěl Bénédikt Tran v :gh:`128150`.)"
+":func:`~uuid.uuid3` a :func:`~uuid.uuid5` jsou nyní oba přibližně o 40 % "
+"rychlejší pro 16bajtová jména a o 20 % rychlejší pro 1024bajtová jména. "
+"Výkon pro delší jména zůstává nezměněný. (Přispěl Bénédikt Tran v "
+":gh:`128150`.)"
 
 #: ../../whatsnew/3.14.rst:2285
-#, python-format
+#, no-python-format
 msgid ""
 ":func:`~uuid.uuid4` is now c. 30% faster. (Contributed by Bénédikt Tran in "
 ":gh:`128150`.)"
 msgstr ""
-":func:`~uuid.uuid4` je nyní přibližně o 30% rychlejší. (Přispěl Bénédikt "
+":func:`~uuid.uuid4` je nyní přibližně o 30 % rychlejší. (Přispěl Bénédikt "
 "Tran v :gh:`128150`.)"
 
 #: ../../whatsnew/3.14.rst:2290
