@@ -59,9 +59,9 @@ msgid ""
 "self-contained directory tree that contains a Python installation for a "
 "particular version of Python, plus a number of additional packages."
 msgstr ""
-"Řešením tohoto problému je vytvořit :term:`virtuální prostředí`, samostatný "
-"adresářový strom, který obsahuje instalaci Pythonu pro konkrétní verzi "
-"Pythonu a řadu dalších balíčků."
+"Řešením tohoto problému je vytvořit :term:`virtuální prostředí <virtual "
+"environment>`, samostatný adresářový strom, který obsahuje instalaci Pythonu"
+" pro konkrétní verzi Pythonu a řadu dalších balíčků."
 
 #: ../../tutorial/venv.rst:27
 msgid ""
@@ -72,6 +72,11 @@ msgid ""
 "application B requires a library be upgraded to version 3.0, this will not "
 "affect application A's environment."
 msgstr ""
+"Různé aplikace mohou poté používat různá virtuální prostředí. Aby se vyřešil"
+" dřívější příklad konfliktních požadavků, aplikace A může mít své vlastní "
+"virtuální prostředí s nainstalovanou verzí 1.0, zatímco aplikace B má jiné "
+"virtuální prostředí s verzí 2.0. Pokud aplikace B vyžaduje upgrade knihovny "
+"na verzi 3.0, nebude to mít vliv na prostředí aplikace A."
 
 #: ../../tutorial/venv.rst:36
 msgid "Creating Virtual Environments"
@@ -85,6 +90,10 @@ msgid ""
 "instance, executing the command with ``python3.12`` will install version "
 "3.12."
 msgstr ""
+"Modul používaný k vytváření a správě virtuálních prostředí se nazývá "
+":mod:`venv`. :mod:`venv` nainstaluje verzi Pythonu, ze které byl příkaz "
+"spuštěn (jak je uvedeno v možnosti :option:`--version`). Například spuštění "
+"příkazu s ``python3.12`` nainstaluje verzi 3.12."
 
 #: ../../tutorial/venv.rst:44
 msgid ""
@@ -92,10 +101,13 @@ msgid ""
 "place it, and run the :mod:`venv` module as a script with the directory "
 "path::"
 msgstr ""
+"Chcete-li vytvořit virtuální prostředí, rozhodněte se o adresáři, kam ho "
+"chcete umístit, a spusťte modul :mod:`venv` jako skript s cestou k "
+"adresáři::"
 
 #: ../../tutorial/venv.rst:47
 msgid "python -m venv tutorial-env"
-msgstr ""
+msgstr "python -m venv tutorial-env"
 
 #: ../../tutorial/venv.rst:49
 msgid ""
@@ -103,6 +115,9 @@ msgid ""
 "also create directories inside it containing a copy of the Python "
 "interpreter and various supporting files."
 msgstr ""
+"Toto vytvoří adresář ``tutorial-env``, pokud neexistuje, a vytvoří také "
+"adresáře uvnitř něj obsahující kopii interpretu Python a různé podpůrné "
+"soubory."
 
 #: ../../tutorial/venv.rst:53
 msgid ""
@@ -112,26 +127,31 @@ msgid ""
 "prevents clashing with ``.env`` environment variable definition files that "
 "some tooling supports."
 msgstr ""
+"Běžné umístění adresáře pro virtuální prostředí je ``.venv``. Tento název "
+"udržuje adresář typicky skrytý v shellu a tedy mimo cestu, přičemž mu dává "
+"jméno, které vysvětluje, proč adresář existuje. Také zabráňuje konfliktům se"
+" soubory ``.env`` definujícími proměnné prostředí, které některé nástroje "
+"podporují."
 
 #: ../../tutorial/venv.rst:59
 msgid "Once you've created a virtual environment, you may activate it."
-msgstr ""
+msgstr "Jakmile vytvoříte virtuální prostředí, můžete ho aktivovat."
 
 #: ../../tutorial/venv.rst:61
 msgid "On Windows, run::"
-msgstr ""
+msgstr "Na Windows spusťte::"
 
 #: ../../tutorial/venv.rst:63
 msgid "tutorial-env\\Scripts\\activate"
-msgstr ""
+msgstr "tutorial-env\\Scripts\\activate"
 
 #: ../../tutorial/venv.rst:65
 msgid "On Unix or MacOS, run::"
-msgstr ""
+msgstr "Na Unix nebo MacOS spusťte::"
 
 #: ../../tutorial/venv.rst:67
 msgid "source tutorial-env/bin/activate"
-msgstr ""
+msgstr "source tutorial-env/bin/activate"
 
 #: ../../tutorial/venv.rst:69
 msgid ""
@@ -139,6 +159,9 @@ msgid ""
 "or :program:`fish` shells, there are alternate ``activate.csh`` and "
 "``activate.fish`` scripts you should use instead.)"
 msgstr ""
+"(Tento skript je napsán pro bash shell. Pokud používáte :program:`csh` nebo "
+":program:`fish` shell, měl byste mít použít alternativní skripty "
+"``activate.csh`` a ``activate.fish``.)"
 
 #: ../../tutorial/venv.rst:74
 msgid ""
@@ -147,6 +170,9 @@ msgid ""
 "running ``python`` will get you that particular version and installation of "
 "Python. For example:"
 msgstr ""
+"Aktivace virtuálního prostředí změní výzvu vašeho shellu tak, aby ukázala, "
+"které virtuální prostředí používáte, a upravit prostředí tak, aby spuštění "
+"``python`` zpřístupnilo danou verzi a instalaci Pythonu. Například:"
 
 #: ../../tutorial/venv.rst:79
 msgid ""
@@ -160,18 +186,27 @@ msgid ""
 "'~/envs/tutorial-env/lib/python3.5/site-packages']\n"
 ">>>"
 msgstr ""
+"$ source ~/envs/tutorial-env/bin/activate\n"
+"(tutorial-env) $ python\n"
+"Python 3.5.1 (default, May  6 2016, 10:59:36)\n"
+"  ...\n"
+">>> import sys\n"
+">>> sys.path\n"
+"['', '/usr/local/lib/python35.zip', ...,\n"
+"'~/envs/tutorial-env/lib/python3.5/site-packages']\n"
+">>>"
 
 #: ../../tutorial/venv.rst:91
 msgid "To deactivate a virtual environment, type::"
-msgstr ""
+msgstr "Chcete-li deaktivovat virtuální prostředí, zadejte::"
 
 #: ../../tutorial/venv.rst:93
 msgid "deactivate"
-msgstr ""
+msgstr "deactivate"
 
 #: ../../tutorial/venv.rst:95
 msgid "into the terminal."
-msgstr ""
+msgstr "do terminálu."
 
 #: ../../tutorial/venv.rst:98
 msgid "Managing Packages with pip"
@@ -184,6 +219,10 @@ msgid ""
 "Package Index <https://pypi.org>`_.  You can browse the Python Package Index"
 " by going to it in your web browser."
 msgstr ""
+"Můžete instalovat, upgradovat a odstraňovat balíkčky pomocí programu "
+"nazývaného :program:`pip`. Ve výchozím nastavení bude ``pip`` instalovat "
+"balíkčky z `Python Package Index <https://pypi.org>`_. Můžete procházet "
+"Python Package Index tak, že do něj v jdete ve svém webovém prohlížeči."
 
 #: ../../tutorial/venv.rst:105
 msgid ""
@@ -191,12 +230,15 @@ msgid ""
 " etc.  (Consult the :ref:`installing-index` guide for complete documentation"
 " for ``pip``.)"
 msgstr ""
+"``pip`` má řadu podpříkazů: \"install\", \"uninstall\", \"freeze\", atd. "
+"(Konzultujte průvodce :ref:`installing-index` pro úpl nou dokumentaci "
+"``pip``.)"
 
 #: ../../tutorial/venv.rst:109
 msgid ""
 "You can install the latest version of a package by specifying a package's "
 "name:"
-msgstr ""
+msgstr "Můžete nainstalovat nejnovější verzi balíkčku zadáním názvu balíkčku:"
 
 #: ../../tutorial/venv.rst:111
 msgid ""
@@ -207,12 +249,20 @@ msgid ""
 "  Running setup.py install for novas\n"
 "Successfully installed novas-3.1.1.3"
 msgstr ""
+"(tutorial-env) $ python -m pip install novas\n"
+"Collecting novas\n"
+"  Downloading novas-3.1.1.3.tar.gz (136kB)\n"
+"Installing collected packages: novas\n"
+"  Running setup.py install for novas\n"
+"Successfully installed novas-3.1.1.3"
 
 #: ../../tutorial/venv.rst:120
 msgid ""
 "You can also install a specific version of a package by giving the package "
 "name  followed by ``==`` and the version number:"
 msgstr ""
+"Můžete také nainstalovat konkrétní verzi balíkčku zadáním názvu balíkčku "
+"následovaného ``==`` a číslem verze:"
 
 #: ../../tutorial/venv.rst:123
 msgid ""
@@ -222,6 +272,11 @@ msgid ""
 "Installing collected packages: requests\n"
 "Successfully installed requests-2.6.0"
 msgstr ""
+"(tutorial-env) $ python -m pip install requests==2.6.0\n"
+"Collecting requests==2.6.0\n"
+"  Using cached requests-2.6.0-py2.py3-none-any.whl\n"
+"Installing collected packages: requests\n"
+"Successfully installed requests-2.6.0"
 
 #: ../../tutorial/venv.rst:131
 msgid ""
@@ -230,6 +285,10 @@ msgid ""
 "number to get that version, or you can run ``python -m pip install "
 "--upgrade`` to upgrade the package to the latest version:"
 msgstr ""
+"Pokud tento příkaz spustíte znovu, ``pip`` si všimne, že je požadovaná verze"
+" již nainstalována, a nedělá nic. Můžete zadat jiné číslo verze nebo můžete "
+"spustit ``python -m pip install --upgrade``, aby se balíkček upgradoval na "
+"nejnovější verzi:"
 
 #: ../../tutorial/venv.rst:136
 msgid ""
@@ -241,17 +300,26 @@ msgid ""
 "      Successfully uninstalled requests-2.6.0\n"
 "Successfully installed requests-2.7.0"
 msgstr ""
+"(tutorial-env) $ python -m pip install --upgrade requests\n"
+"Collecting requests\n"
+"Installing collected packages: requests\n"
+"  Found existing installation: requests 2.6.0\n"
+"    Uninstalling requests-2.6.0:\n"
+"      Successfully uninstalled requests-2.6.0\n"
+"Successfully installed requests-2.7.0"
 
 #: ../../tutorial/venv.rst:146
 msgid ""
 "``python -m pip uninstall`` followed by one or more package names will "
 "remove the packages from the virtual environment."
 msgstr ""
+"``python -m pip uninstall`` následované jednym nebo víc názvy balíkčků "
+"odebere balíkčky z virtuálního prostředí."
 
 #: ../../tutorial/venv.rst:149
 msgid ""
 "``python -m pip show`` will display information about a particular package:"
-msgstr ""
+msgstr "``python -m pip show`` zobrazí informace o konkrétním balíkčku:"
 
 #: ../../tutorial/venv.rst:151
 msgid ""
@@ -268,12 +336,26 @@ msgid ""
 "Location: /Users/akuchling/envs/tutorial-env/lib/python3.4/site-packages\n"
 "Requires:"
 msgstr ""
+"(tutorial-env) $ python -m pip show requests\n"
+"---\n"
+"Metadata-Version: 2.0\n"
+"Name: requests\n"
+"Version: 2.7.0\n"
+"Summary: Python HTTP for Humans.\n"
+"Home-page: http://python-requests.org\n"
+"Author: Kenneth Reitz\n"
+"Author-email: me@kennethreitz.com\n"
+"License: Apache 2.0\n"
+"Location: /Users/akuchling/envs/tutorial-env/lib/python3.4/site-packages\n"
+"Requires:"
 
 #: ../../tutorial/venv.rst:166
 msgid ""
 "``python -m pip list`` will display all of the packages installed in the "
 "virtual environment:"
 msgstr ""
+"``python -m pip list`` zobrazí všechny balíkčky nainstalované v virtuálním "
+"prostředí:"
 
 #: ../../tutorial/venv.rst:169
 msgid ""
@@ -284,6 +366,12 @@ msgid ""
 "requests (2.7.0)\n"
 "setuptools (16.0)"
 msgstr ""
+"(tutorial-env) $ python -m pip list\n"
+"novas (3.1.1.3)\n"
+"numpy (1.9.2)\n"
+"pip (7.0.3)\n"
+"requests (2.7.0)\n"
+"setuptools (16.0)"
 
 #: ../../tutorial/venv.rst:178
 msgid ""
@@ -292,6 +380,9 @@ msgid ""
 "expects. A common convention is to put this list in a ``requirements.txt`` "
 "file:"
 msgstr ""
+"``python -m pip freeze`` vytvoří podobný seznam nainstalovaných balíkčků, "
+"ale výstup používá formát, který ``python -m pip install`` očekává. Občejnou"
+" konvencí je umístit tento seznam do souboru ``requirements.txt``:"
 
 #: ../../tutorial/venv.rst:182
 msgid ""
@@ -301,6 +392,11 @@ msgid ""
 "numpy==1.9.2\n"
 "requests==2.7.0"
 msgstr ""
+"(tutorial-env) $ python -m pip freeze > requirements.txt\n"
+"(tutorial-env) $ cat requirements.txt\n"
+"novas==3.1.1.3\n"
+"numpy==1.9.2\n"
+"requests==2.7.0"
 
 #: ../../tutorial/venv.rst:190
 msgid ""
@@ -308,6 +404,9 @@ msgid ""
 "shipped as part of an application.  Users can then install all the necessary"
 " packages with ``install -r``:"
 msgstr ""
+"``requirements.txt`` lze pak potvrdit do verzování a dodat jako součást "
+"aplikace. Uživatelé pak mohou nainstalovat všechny potřebné balíkčky pomocí "
+"``install -r``:"
 
 #: ../../tutorial/venv.rst:194
 msgid ""
@@ -322,6 +421,16 @@ msgid ""
 "  Running setup.py install for novas\n"
 "Successfully installed novas-3.1.1.3 numpy-1.9.2 requests-2.7.0"
 msgstr ""
+"(tutorial-env) $ python -m pip install -r requirements.txt\n"
+"Collecting novas==3.1.1.3 (from -r requirements.txt (line 1))\n"
+"  ...\n"
+"Collecting numpy==1.9.2 (from -r requirements.txt (line 2))\n"
+"  ...\n"
+"Collecting requests==2.7.0 (from -r requirements.txt (line 3))\n"
+"  ...\n"
+"Installing collected packages: novas, numpy, requests\n"
+"  Running setup.py install for novas\n"
+"Successfully installed novas-3.1.1.3 numpy-1.9.2 requests-2.7.0"
 
 #: ../../tutorial/venv.rst:207
 msgid ""
@@ -330,3 +439,7 @@ msgid ""
 "want to make it available on the Python Package Index, consult the `Python "
 "packaging user guide`_."
 msgstr ""
+"``pip`` má mnohem více možností. Konzultujte průvodce :ref:`installing-"
+"index` pro úplné dokumentaci ``pip``. Pokud jste napsali balíkček a chcete "
+"ho zpřístupnit na Python Package Index, konzultujte `Python packaging user "
+"guide`_."
