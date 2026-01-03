@@ -63,7 +63,9 @@ find locales/cs/LC_MESSAGES -name "*.po" -exec msgfmt --check -o /dev/null {} \;
 ```
 
 Common issues:
-- **Czech quotes**: Czech uses `„` (U+201E) for opening and `"` (U+201C) for closing. ASCII `"` is acceptable (polib escapes it), but Czech quotes are preferred.
+- **Quotes in translations**: Czech uses `„` (U+201E opening) and `"` (U+201C closing).
+  - **Via polib/MCP server**: Use either Czech quotes or ASCII `"` - polib handles escaping automatically.
+  - **Direct .po file editing**: ASCII `"` must be escaped as `\"`. Czech quotes need no escaping.
 - **Format string mismatch**: When msgid has `#, python-format` but contains `%` as literal text (e.g., `35%`, `99%`), change to `#, no-python-format`.
 - **RST inline markup**: Literals like `` ``close`` `` must have spaces around them. `` ``close``nete `` breaks RST.
 - **Split references**: RST roles like `:exc:`, `:meth:`, `:class:` must not be split across lines.
