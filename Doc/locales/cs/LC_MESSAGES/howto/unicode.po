@@ -21,15 +21,15 @@ msgstr ""
 
 #: ../../howto/unicode.rst:5
 msgid "Unicode HOWTO"
-msgstr ""
+msgstr "Průvodce Unicode"
 
 #: ../../howto/unicode.rst
 msgid "Release"
-msgstr ""
+msgstr "Vydání"
 
 #: ../../howto/unicode.rst:7
 msgid "1.12"
-msgstr ""
+msgstr "1.12"
 
 #: ../../howto/unicode.rst:9
 msgid ""
@@ -37,14 +37,17 @@ msgid ""
 "representing textual data, and explains various problems that people "
 "commonly encounter when trying to work with Unicode."
 msgstr ""
+"Tento průvodce popisuje podporu Pythonu pro specifikaci Unicode pro "
+"reprezentaci textových dat a vysvětluje různé problémy, se kterými se lidé "
+"běžně setkávají při práci s Unicode."
 
 #: ../../howto/unicode.rst:15
 msgid "Introduction to Unicode"
-msgstr ""
+msgstr "Úvod do Unicode"
 
 #: ../../howto/unicode.rst:18
 msgid "Definitions"
-msgstr ""
+msgstr "Definice"
 
 #: ../../howto/unicode.rst:20
 msgid ""
@@ -57,6 +60,14 @@ msgid ""
 "Unicode Standard for representing characters, which lets Python programs "
 "work with all these different possible characters."
 msgstr ""
+"Dnešní programy musí být schopné pracovat s širokou škálou znaků. "
+"Aplikace jsou často internacionalizovány, aby zobrazovaly zprávy a výstup "
+"v různých jazycích volitelných uživatelem; stejný program může potřebovat "
+"vypsat chybovou zprávu v angličtině, francouzštině, japonštině, hebrejštině "
+"nebo ruštině. Webový obsah může být napsán v kterémkoli z těchto jazyků a "
+"může také obsahovat různé emoji symboly. Řetězcový typ Pythonu používá "
+"Unicode Standard pro reprezentaci znaků, což umožňuje programům v Pythonu "
+"pracovat se všemi těmito různými možnými znaky."
 
 #: ../../howto/unicode.rst:30
 msgid ""
@@ -65,6 +76,10 @@ msgid ""
 "unique code.  The Unicode specifications are continually revised and "
 "updated to add new languages and symbols."
 msgstr ""
+"Unicode (https://www.unicode.org/) je specifikace, která se snaží vypsat "
+"každý znak používaný lidskými jazyky a přiřadit každému znaku jeho vlastní "
+"jedinečný kód. Specifikace Unicode jsou neustále revidovány a aktualizovány, "
+"aby přidaly nové jazyky a symboly."
 
 #: ../../howto/unicode.rst:35
 msgid ""
@@ -75,6 +90,11 @@ msgid ""
 "separate from the uppercase letter 'I'.  They'll usually look the same, "
 "but these are two different characters that have different meanings."
 msgstr ""
+"**Znak** je nejmenší možná komponenta textu. 'A', 'B', 'C' atd. jsou všechny "
+"různé znaky. Stejně tak 'È' a 'Í'. Znaky se liší v závislosti na jazyce nebo "
+"kontextu, o kterém mluvíte. Například existuje znak pro \"římskou číslici "
+"jedna\", 'Ⅰ', který je odlišný od velkého písmene 'I'. Obvykle vypadají "
+"stejně, ale jsou to dva různé znaky, které mají různé významy."
 
 #: ../../howto/unicode.rst:42
 msgid ""
@@ -86,12 +106,20 @@ msgid ""
 "notation ``U+265E`` to mean the character with value ``0x265e`` (9,822 in"
 " decimal)."
 msgstr ""
+"Unicode standard popisuje, jak jsou znaky reprezentovány pomocí **kódových "
+"bodů**. Hodnota kódového bodu je celé číslo v rozsahu 0 až 0x10FFFF (přibližně "
+"1,1 milionu hodnot, `skutečný počet přiřazených "
+"<https://www.unicode.org/versions/latest/#Summary>`_ je menší). "
+"Ve standardu a v tomto dokumentu je kódový bod zapsán pomocí notace ``U+265E`` "
+"pro označení znaku s hodnotou ``0x265e`` (9 822 v desítkové soustavě)."
 
 #: ../../howto/unicode.rst:50
 msgid ""
 "The Unicode standard contains a lot of tables listing characters and "
 "their corresponding code points:"
 msgstr ""
+"Unicode standard obsahuje mnoho tabulek se seznamy znaků a jejich "
+"odpovídajících kódových bodů:"
 
 #: ../../howto/unicode.rst:53
 msgid ""
@@ -111,6 +139,21 @@ msgid ""
 "1F609   '😉'; WINKING FACE\n"
 "..."
 msgstr ""
+"0061    'a'; LATIN SMALL LETTER A\n"
+"0062    'b'; LATIN SMALL LETTER B\n"
+"0063    'c'; LATIN SMALL LETTER C\n"
+"...\n"
+"007B    '{'; LEFT CURLY BRACKET\n"
+"...\n"
+"2167    'Ⅷ'; ROMAN NUMERAL EIGHT\n"
+"2168    'Ⅸ'; ROMAN NUMERAL NINE\n"
+"...\n"
+"265E    '♞'; BLACK CHESS KNIGHT\n"
+"265F    '♟'; BLACK CHESS PAWN\n"
+"...\n"
+"1F600   '😀'; GRINNING FACE\n"
+"1F609   '😉'; WINKING FACE\n"
+"..."
 
 #: ../../howto/unicode.rst:71
 msgid ""
@@ -120,6 +163,11 @@ msgid ""
 "CHESS KNIGHT', '♞'.  In informal contexts, this distinction between code "
 "points and characters will sometimes be forgotten."
 msgstr ""
+"Přísně vzato tyto definice znamenají, že je nesmyslné říkat 'toto je "
+"znak ``U+265E``'. ``U+265E`` je kódový bod, který reprezentuje nějaký "
+"konkrétní znak; v tomto případě reprezentuje znak 'BLACK CHESS KNIGHT', "
+"'♞'. V neformálních kontextech je tento rozdíl mezi kódovými body a znaky "
+"někdy zapomenut."
 
 #: ../../howto/unicode.rst:78
 msgid ""
@@ -131,10 +179,16 @@ msgid ""
 "display is generally the job of a GUI toolkit or a terminal's font "
 "renderer."
 msgstr ""
+"Znak je na obrazovce nebo na papíře reprezentován sadou grafických prvků, "
+"které se nazývají **glyf**. Glyf pro velké písmeno A je například tvořen "
+"dvěma šikmými tahy a jedním vodorovným tahem, i když přesné detaily závisí "
+"na použitém fontu. Většina kódu v Pythonu se nemusí starat o glyfy; zjištění "
+"správného glyfu k zobrazení je obecně úkolem GUI toolkitu nebo rendereru "
+"fontu terminálu."
 
 #: ../../howto/unicode.rst:87
 msgid "Encodings"
-msgstr ""
+msgstr "Kódování"
 
 #: ../../howto/unicode.rst:89
 msgid ""
@@ -145,6 +199,12 @@ msgid ""
 "bytes.  The rules for translating a Unicode string into a sequence of "
 "bytes are called a **character encoding**, or just an **encoding**."
 msgstr ""
+"Shrnutí předchozí sekce: řetězec Unicode je sekvence kódových bodů, což jsou "
+"čísla od 0 do ``0x10FFFF`` (1 114 111 v desítkové soustavě). Tato sekvence "
+"kódových bodů musí být v paměti reprezentována jako sada **kódových jednotek** "
+"a **kódové jednotky** jsou poté mapovány na 8-bitové bajty. Pravidla pro "
+"překlad řetězce Unicode do sekvence bajtů se nazývají **znakové kódování** "
+"nebo jen **kódování**."
 
 #: ../../howto/unicode.rst:97
 msgid ""
@@ -152,24 +212,30 @@ msgid ""
 "code unit, and then using the CPU's representation of 32-bit integers. In"
 " this representation, the string \"Python\" might look like this:"
 msgstr ""
+"První kódování, které vás může napadnout, je použití 32-bitových celých čísel "
+"jako kódové jednotky a poté použití CPU reprezentace 32-bitových celých čísel. "
+"V této reprezentaci by řetězec \"Python\" mohl vypadat takto:"
 
 #: ../../howto/unicode.rst:101
 msgid ""
 "   P           y           t           h           o           n\n"
-"0x50 00 00 00 79 00 00 00 74 00 00 00 68 00 00 00 6f 00 00 00 6e 00 00 00"
-"\n"
+"0x50 00 00 00 79 00 00 00 74 00 00 00 68 00 00 00 6f 00 00 00 6e 00 00 00\n"
 "   0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23"
 msgstr ""
+"   P           y           t           h           o           n\n"
+"0x50 00 00 00 79 00 00 00 74 00 00 00 68 00 00 00 6f 00 00 00 6e 00 00 00\n"
+"   0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23"
 
 #: ../../howto/unicode.rst:107
 msgid ""
 "This representation is straightforward but using it presents a number of "
 "problems."
 msgstr ""
+"Tato reprezentace je přímočará, ale její použití představuje řadu problémů."
 
 #: ../../howto/unicode.rst:110
 msgid "It's not portable; different processors order the bytes differently."
-msgstr ""
+msgstr "Není přenosná; různé procesory uspořádávají bajty různě."
 
 #: ../../howto/unicode.rst:112
 msgid ""
@@ -181,18 +247,28 @@ msgid ""
 "aren't usually that large), but expanding our usage of disk and network "
 "bandwidth by a factor of 4 is intolerable."
 msgstr ""
+"Je velmi plýtvavá místem. Ve většině textů je většina kódových bodů menší než "
+"127 nebo menší než 255, takže hodně místa zabírají bajty ``0x00``. Výše "
+"uvedený řetězec zabírá 24 bajtů ve srovnání s 6 bajty potřebnými pro ASCII "
+"reprezentaci. Zvýšené využití RAM není příliš důležité (stolní počítače mají "
+"gigabajty RAM a řetězce obvykle nejsou tak velké), ale rozšíření našeho "
+"využití diskové a síťové šířky pásma čtyřnásobně je nepřijatelné."
 
 #: ../../howto/unicode.rst:120
 msgid ""
 "It's not compatible with existing C functions such as ``strlen()``, so a "
 "new family of wide string functions would need to be used."
 msgstr ""
+"Není kompatibilní s existujícími funkcemi C jako ``strlen()``, takže by bylo "
+"nutné použít novou rodinu funkcí pro široké řetězce."
 
 #: ../../howto/unicode.rst:123
 msgid ""
 "Therefore this encoding isn't used very much, and people instead choose "
 "other encodings that are more efficient and convenient, such as UTF-8."
 msgstr ""
+"Proto se toto kódování příliš nepoužívá a lidé místo toho volí jiná kódování, "
+"která jsou efektivnější a pohodlnější, jako například UTF-8."
 
 #: ../../howto/unicode.rst:126
 msgid ""
@@ -202,26 +278,34 @@ msgid ""
 " also UTF-16 and UTF-32 encodings, but they are less frequently used than"
 " UTF-8.)  UTF-8 uses the following rules:"
 msgstr ""
+"UTF-8 je jedno z nejčastěji používaných kódování a Python ho často používá "
+"jako výchozí. UTF znamená \"Unicode Transformation Format\" a '8' znamená, "
+"že v kódování se používají 8-bitové hodnoty. (Existují také kódování UTF-16 "
+"a UTF-32, ale používají se méně často než UTF-8.) UTF-8 používá následující "
+"pravidla:"
 
 #: ../../howto/unicode.rst:132
 msgid ""
 "If the code point is < 128, it's represented by the corresponding byte "
 "value."
 msgstr ""
+"Pokud je kódový bod < 128, je reprezentován odpovídající hodnotou bajtu."
 
 #: ../../howto/unicode.rst:133
 msgid ""
 "If the code point is >= 128, it's turned into a sequence of two, three, "
 "or four bytes, where each byte of the sequence is between 128 and 255."
 msgstr ""
+"Pokud je kódový bod >= 128, je převeden na sekvenci dvou, tří nebo čtyř "
+"bajtů, kde každý bajt sekvence je mezi 128 a 255."
 
 #: ../../howto/unicode.rst:136
 msgid "UTF-8 has several convenient properties:"
-msgstr ""
+msgstr "UTF-8 má několik výhodných vlastností:"
 
 #: ../../howto/unicode.rst:138
 msgid "It can handle any Unicode code point."
-msgstr ""
+msgstr "Může zpracovat jakýkoli kódový bod Unicode."
 
 #: ../../howto/unicode.rst:139
 msgid ""
@@ -231,16 +315,23 @@ msgid ""
 "such as ``strcpy()`` and sent through protocols that can't handle zero "
 "bytes for anything other than end-of-string markers."
 msgstr ""
+"Řetězec Unicode je převeden na sekvenci bajtů, která obsahuje vložené nulové "
+"bajty pouze tam, kde reprezentují nulový znak (U+0000). To znamená, že "
+"řetězce UTF-8 mohou být zpracovány funkcemi C jako ``strcpy()`` a posílány "
+"prostřednictvím protokolů, které nemohou zpracovat nulové bajty jinak než "
+"jako značky konce řetězce."
 
 #: ../../howto/unicode.rst:144
 msgid "A string of ASCII text is also valid UTF-8 text."
-msgstr ""
+msgstr "Řetězec ASCII textu je také platný text UTF-8."
 
 #: ../../howto/unicode.rst:145
 msgid ""
 "UTF-8 is fairly compact; the majority of commonly used characters can be "
 "represented with one or two bytes."
 msgstr ""
+"UTF-8 je poměrně kompaktní; většina běžně používaných znaků může být "
+"reprezentována jedním nebo dvěma bajty."
 
 #: ../../howto/unicode.rst:147
 msgid ""
@@ -248,6 +339,9 @@ msgid ""
 "the next UTF-8-encoded code point and resynchronize.  It's also unlikely "
 "that random 8-bit data will look like valid UTF-8."
 msgstr ""
+"Pokud jsou bajty poškozeny nebo ztraceny, je možné určit začátek dalšího "
+"kódového bodu kódovaného UTF-8 a resynchronizovat. Je také nepravděpodobné, "
+"že náhodná 8-bitová data budou vypadat jako platné UTF-8."
 
 #: ../../howto/unicode.rst:150
 msgid ""
@@ -257,11 +351,16 @@ msgid ""
 " oriented encodings, like UTF-16 and UTF-32, where the sequence of bytes "
 "varies depending on the hardware on which the string was encoded."
 msgstr ""
+"UTF-8 je bajtově orientované kódování. Kódování specifikuje, že každý znak "
+"je reprezentován specifickou sekvencí jednoho nebo více bajtů. To se vyhýbá "
+"problémům s uspořádáním bajtů, které mohou nastat u celočíselně a slovně "
+"orientovaných kódování, jako UTF-16 a UTF-32, kde sekvence bajtů závisí na "
+"hardwaru, na kterém byl řetězec kódován."
 
 #: ../../howto/unicode.rst:158 ../../howto/unicode.rst:516
 #: ../../howto/unicode.rst:737
 msgid "References"
-msgstr ""
+msgstr "Reference"
 
 #: ../../howto/unicode.rst:160
 msgid ""
@@ -271,6 +370,10 @@ msgid ""
 "<https://www.unicode.org/history/>`_ of the origin and development of "
 "Unicode is also available on the site."
 msgstr ""
+"Stránky `Unicode Consortium <https://www.unicode.org>`_ obsahují znakové "
+"tabulky, glosář a PDF verze specifikace Unicode. Připravte se na náročné "
+"čtení. Na stránkách je také k dispozici `chronologie "
+"<https://www.unicode.org/history/>`_ vzniku a vývoje Unicode."
 
 #: ../../howto/unicode.rst:165
 msgid ""
@@ -278,6 +381,8 @@ msgid ""
 "history of Unicode and UTF-8 "
 "<https://www.youtube.com/watch?v=MijmeoH9LT4>`_ (9 minutes 36 seconds)."
 msgstr ""
+"Na YouTube kanálu Computerphile Tom Scott stručně `diskutuje historii Unicode "
+"a UTF-8 <https://www.youtube.com/watch?v=MijmeoH9LT4>`_ (9 minut 36 sekund)."
 
 #: ../../howto/unicode.rst:169
 msgid ""
@@ -285,6 +390,8 @@ msgid ""
 "introductory guide <https://jkorpela.fi/unicode/guide.html>`_ to reading "
 "the Unicode character tables."
 msgstr ""
+"Pro lepší pochopení standardu napsal Jukka Korpela `úvodního průvodce "
+"<https://jkorpela.fi/unicode/guide.html>`_ pro čtení znakových tabulek Unicode."
 
 #: ../../howto/unicode.rst:173
 msgid ""
@@ -295,6 +402,12 @@ msgid ""
 "introduction didn't make things clear to you, you should try reading this"
 " alternate article before continuing."
 msgstr ""
+"Další `dobrý úvodní článek "
+"<https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-"
+"software-developer-absolutely-positively-must-know-about-unicode-and-"
+"character-sets-no-excuses/>`_ napsal Joel Spolsky. Pokud vám tento úvod "
+"nevyjasnil situaci, měli byste si před pokračováním přečíst tento alternativní "
+"článek."
 
 #: ../../howto/unicode.rst:178
 msgid ""
@@ -302,20 +415,25 @@ msgid ""
 "encoding <https://en.wikipedia.org/wiki/Character_encoding>`_\" and "
 "`UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`_, for example."
 msgstr ""
+"Záznamy na Wikipedii jsou často užitečné; viz například záznamy pro "
+"\"`znakové kódování <https://en.wikipedia.org/wiki/Character_encoding>`_\" a "
+"`UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`_."
 
 #: ../../howto/unicode.rst:184
 msgid "Python's Unicode Support"
-msgstr ""
+msgstr "Podpora Unicode v Pythonu"
 
 #: ../../howto/unicode.rst:186
 msgid ""
 "Now that you've learned the rudiments of Unicode, we can look at Python's"
 " Unicode features."
 msgstr ""
+"Nyní, když jste se naučili základy Unicode, můžeme se podívat na funkce "
+"Unicode v Pythonu."
 
 #: ../../howto/unicode.rst:190
 msgid "The String Type"
-msgstr ""
+msgstr "Typ řetězce"
 
 #: ../../howto/unicode.rst:192
 msgid ""
@@ -324,12 +442,17 @@ msgid ""
 "``'unicode rocks!'``, or the triple-quoted string syntax is stored as "
 "Unicode."
 msgstr ""
+"Od Pythonu 3.0 typ :class:`str` jazyka obsahuje znaky Unicode, což znamená, "
+"že jakýkoli řetězec vytvořený pomocí ``\"unicode rocks!\"``, ``'unicode "
+"rocks!'`` nebo syntaxe řetězce s trojitými uvozovkami je uložen jako Unicode."
 
 #: ../../howto/unicode.rst:196
 msgid ""
 "The default encoding for Python source code is UTF-8, so you can simply "
 "include a Unicode character in a string literal::"
 msgstr ""
+"Výchozí kódování pro zdrojový kód Pythonu je UTF-8, takže můžete jednoduše "
+"zahrnout znak Unicode do řetězcového literálu::"
 
 #: ../../howto/unicode.rst:199
 msgid ""
@@ -340,12 +463,19 @@ msgid ""
 "    # 'File not found' error message.\n"
 "    print(\"Fichier non trouvé\")"
 msgstr ""
+"try:\n"
+"    with open('/tmp/input.txt', 'r') as f:\n"
+"        ...\n"
+"except OSError:\n"
+"    # 'File not found' error message.\n"
+"    print(\"Fichier non trouvé\")"
 
 #: ../../howto/unicode.rst:206
 msgid ""
 "Side note: Python 3 also supports using Unicode characters in "
 "identifiers::"
 msgstr ""
+"Poznámka: Python 3 také podporuje použití znaků Unicode v identifikátorech::"
 
 #: ../../howto/unicode.rst:208
 msgid ""
@@ -353,6 +483,9 @@ msgid ""
 "with open(répertoire, \"w\") as f:\n"
 "    f.write(\"test\\n\")"
 msgstr ""
+"répertoire = \"/tmp/records.log\"\n"
+"with open(répertoire, \"w\") as f:\n"
+"    f.write(\"test\\n\")"
 
 #: ../../howto/unicode.rst:212
 msgid ""
@@ -361,6 +494,10 @@ msgid ""
 "sequences in string literals. (Depending on your system, you may see the "
 "actual capital-delta glyph instead of a \\u escape.) ::"
 msgstr ""
+"Pokud nemůžete zadat konkrétní znak ve svém editoru nebo chcete z nějakého "
+"důvodu zachovat zdrojový kód pouze v ASCII, můžete také použít escape "
+"sekvence v řetězcových literálech. (V závislosti na vašem systému můžete "
+"vidět skutečný glyf velkého delta místo \\u escape.) ::"
 
 #: ../../howto/unicode.rst:217
 #, python-brace-format
@@ -372,6 +509,12 @@ msgid ""
 ">>> \"\\U00000394\"                      # Using a 32-bit hex value\n"
 "'\\u0394'"
 msgstr ""
+">>> \"\\N{GREEK CAPITAL LETTER DELTA}\"  # Using the character name\n"
+"'\\u0394'\n"
+">>> \"\\u0394\"                          # Using a 16-bit hex value\n"
+"'\\u0394'\n"
+">>> \"\\U00000394\"                      # Using a 32-bit hex value\n"
+"'\\u0394'"
 
 #: ../../howto/unicode.rst:224
 msgid ""
@@ -379,6 +522,9 @@ msgid ""
 "method of :class:`bytes`.  This method takes an *encoding* argument, such"
 " as ``UTF-8``, and optionally an *errors* argument."
 msgstr ""
+"Kromě toho lze vytvořit řetězec pomocí metody :func:`~bytes.decode` třídy "
+":class:`bytes`. Tato metoda přijímá argument *encoding*, jako například "
+"``UTF-8``, a volitelně argument *errors*."
 
 #: ../../howto/unicode.rst:228
 msgid ""
@@ -390,6 +536,12 @@ msgid ""
 "``'backslashreplace'`` (inserts a ``\\xNN`` escape sequence). The "
 "following examples show the differences::"
 msgstr ""
+"Argument *errors* specifikuje odpověď, když vstupní řetězec nelze převést "
+"podle pravidel kódování. Platné hodnoty pro tento argument jsou ``'strict'`` "
+"(vyvolá výjimku :exc:`UnicodeDecodeError`), ``'replace'`` (použije ``U+FFFD``, "
+"``REPLACEMENT CHARACTER``), ``'ignore'`` (jednoduše vynechá znak z výsledku "
+"Unicode) nebo ``'backslashreplace'`` (vloží escape sekvenci ``\\xNN``). "
+"Následující příklady ukazují rozdíly::"
 
 #: ../../howto/unicode.rst:236
 msgid ""
@@ -405,6 +557,17 @@ msgid ""
 ">>> b'\\x80abc'.decode(\"utf-8\", \"ignore\")\n"
 "'abc'"
 msgstr ""
+">>> b'\\x80abc'.decode(\"utf-8\", \"strict\")\n"
+"Traceback (most recent call last):\n"
+"    ...\n"
+"UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0:\n"
+"  invalid start byte\n"
+">>> b'\\x80abc'.decode(\"utf-8\", \"replace\")\n"
+"'\\ufffdabc'\n"
+">>> b'\\x80abc'.decode(\"utf-8\", \"backslashreplace\")\n"
+"'\\\\x80abc'\n"
+">>> b'\\x80abc'.decode(\"utf-8\", \"ignore\")\n"
+"'abc'"
 
 #: ../../howto/unicode.rst:248
 msgid ""
@@ -414,6 +577,11 @@ msgid ""
 "multiple names; for example, ``'latin-1'``, ``'iso_8859_1'`` and "
 "``'8859``' are all synonyms for the same encoding."
 msgstr ""
+"Kódování jsou specifikována jako řetězce obsahující název kódování. Python "
+"přichází s přibližně 100 různými kódováními; pro seznam viz odkaz na "
+"dokumentaci Python Library na :ref:`standard-encodings`. Některá kódování "
+"mají více názvů; například ``'latin-1'``, ``'iso_8859_1'`` a ``'8859'`` jsou "
+"všechny synonyma pro stejné kódování."
 
 #: ../../howto/unicode.rst:254
 msgid ""
@@ -423,6 +591,11 @@ msgid ""
 "operation is the built-in :func:`ord` function that takes a one-character"
 " Unicode string and returns the code point value::"
 msgstr ""
+"Jednoznakové řetězce Unicode lze také vytvořit pomocí vestavěné funkce "
+":func:`chr`, která přijímá celá čísla a vrací řetězec Unicode délky 1, který "
+"obsahuje odpovídající kódový bod. Obrácená operace je vestavěná funkce "
+":func:`ord`, která přijímá jednoznakový řetězec Unicode a vrací hodnotu "
+"kódového bodu::"
 
 #: ../../howto/unicode.rst:260
 msgid ""
@@ -431,10 +604,14 @@ msgid ""
 ">>> ord('\\ue000')\n"
 "57344"
 msgstr ""
+">>> chr(57344)\n"
+"'\\ue000'\n"
+">>> ord('\\ue000')\n"
+"57344"
 
 #: ../../howto/unicode.rst:266
 msgid "Converting to Bytes"
-msgstr ""
+msgstr "Převod na bajty"
 
 #: ../../howto/unicode.rst:268
 msgid ""
@@ -442,6 +619,9 @@ msgid ""
 "returns a :class:`bytes` representation of the Unicode string, encoded in"
 " the requested *encoding*."
 msgstr ""
+"Opačná metoda k :meth:`bytes.decode` je :meth:`str.encode`, která vrací "
+"reprezentaci :class:`bytes` řetězce Unicode, kódovanou v požadovaném "
+"*encoding*."
 
 #: ../../howto/unicode.rst:272
 #, python-brace-format
@@ -454,10 +634,16 @@ msgid ""
 "``backslashreplace`` (inserts a ``\\uNNNN`` escape sequence) and "
 "``namereplace`` (inserts a ``\\N{...}`` escape sequence)."
 msgstr ""
+"Parametr *errors* je stejný jako parametr metody :meth:`~bytes.decode`, ale "
+"podporuje několik dalších možných obslužných rutin. Kromě ``'strict'``, "
+"``'ignore'`` a ``'replace'`` (který v tomto případě vloží otazník místo "
+"nekódovatelného znaku) existuje také ``'xmlcharrefreplace'`` (vloží odkaz na "
+"znak XML), ``backslashreplace`` (vloží escape sekvenci ``\\uNNNN``) a "
+"``namereplace`` (vloží escape sekvenci ``\\N{...}``)."
 
 #: ../../howto/unicode.rst:280
 msgid "The following example shows the different results::"
-msgstr ""
+msgstr "Následující příklad ukazuje různé výsledky::"
 
 #: ../../howto/unicode.rst:282
 #, python-brace-format
@@ -481,6 +667,24 @@ msgid ""
 ">>> u.encode('ascii', 'namereplace')\n"
 "b'\\\\N{YI SYLLABLE IT}abcd\\\\u07b4'"
 msgstr ""
+">>> u = chr(40960) + 'abcd' + chr(1972)\n"
+">>> u.encode('utf-8')\n"
+"b'\\xea\\x80\\x80abcd\\xde\\xb4'\n"
+">>> u.encode('ascii')\n"
+"Traceback (most recent call last):\n"
+"    ...\n"
+"UnicodeEncodeError: 'ascii' codec can't encode character '\\ua000' in\n"
+"  position 0: ordinal not in range(128)\n"
+">>> u.encode('ascii', 'ignore')\n"
+"b'abcd'\n"
+">>> u.encode('ascii', 'replace')\n"
+"b'?abcd?'\n"
+">>> u.encode('ascii', 'xmlcharrefreplace')\n"
+"b'&#40960;abcd&#1972;'\n"
+">>> u.encode('ascii', 'backslashreplace')\n"
+"b'\\\\ua000abcd\\\\u07b4'\n"
+">>> u.encode('ascii', 'namereplace')\n"
+"b'\\\\N{YI SYLLABLE IT}abcd\\\\u07b4'"
 
 #: ../../howto/unicode.rst:301
 msgid ""
@@ -491,10 +695,16 @@ msgid ""
 "more low-level than is comfortable, and writing new encodings is a "
 "specialized task, so the module won't be covered in this HOWTO."
 msgstr ""
+"Nízkoúrovňové rutiny pro registraci a přístup k dostupným kódováním se "
+"nacházejí v modulu :mod:`codecs`. Implementace nových kódování také vyžaduje "
+"pochopení modulu :mod:`codecs`. Nicméně, funkce pro kódování a dekódování "
+"vrácené tímto modulem jsou obvykle nízkoúrovňovější, než je pohodlné, a psaní "
+"nových kódování je specializovaný úkol, takže modul nebude v tomto průvodci "
+"pokryt."
 
 #: ../../howto/unicode.rst:310
 msgid "Unicode Literals in Python Source Code"
-msgstr ""
+msgstr "Literály Unicode ve zdrojovém kódu Pythonu"
 
 #: ../../howto/unicode.rst:312
 msgid ""
@@ -503,6 +713,10 @@ msgid ""
 "the code point.  The ``\\U`` escape sequence is similar, but expects "
 "eight hex digits, not four::"
 msgstr ""
+"Ve zdrojovém kódu Pythonu lze konkrétní kódové body Unicode zapsat pomocí "
+"escape sekvence ``\\u``, která je následována čtyřmi hexadecimálními číslicemi "
+"udávajícími kódový bod. Escape sekvence ``\\U`` je podobná, ale očekává osm "
+"hexadecimálních číslic, ne čtyři::"
 
 #: ../../howto/unicode.rst:317
 msgid ""
@@ -513,6 +727,12 @@ msgid ""
 ">>> [ord(c) for c in s]\n"
 "[97, 172, 4660, 8364, 32768]"
 msgstr ""
+">>> s = \"a\\xac\\u1234\\u20ac\\U00008000\"\n"
+"... #     ^^^^ two-digit hex escape\n"
+"... #         ^^^^^^ four-digit Unicode escape\n"
+"... #                     ^^^^^^^^^^ eight-digit Unicode escape\n"
+">>> [ord(c) for c in s]\n"
+"[97, 172, 4660, 8364, 32768]"
 
 #: ../../howto/unicode.rst:324
 msgid ""
@@ -522,6 +742,11 @@ msgid ""
 "using language.  You can also assemble strings using the :func:`chr` "
 "built-in function, but this is even more tedious."
 msgstr ""
+"Použití escape sekvencí pro kódové body větší než 127 je v malých dávkách "
+"v pořádku, ale stává se obtěžujícím, pokud používáte mnoho znaků s diakritikou, "
+"jako v programu se zprávami ve francouzštině nebo jiném jazyce používajícím "
+"diakritiku. Můžete také sestavit řetězce pomocí vestavěné funkce :func:`chr`, "
+"ale to je ještě únavnější."
 
 #: ../../howto/unicode.rst:330
 msgid ""
@@ -530,6 +755,10 @@ msgid ""
 "favorite editor which would display the accented characters naturally, "
 "and have the right characters used at runtime."
 msgstr ""
+"Ideálně byste chtěli být schopni psát literály v přirozeném kódování vašeho "
+"jazyka. Poté byste mohli upravovat zdrojový kód Pythonu ve svém oblíbeném "
+"editoru, který by přirozeně zobrazoval znaky s diakritikou, a měli správné "
+"znaky použité za běhu."
 
 #: ../../howto/unicode.rst:335
 msgid ""
@@ -538,6 +767,10 @@ msgid ""
 " by including a special comment as either the first or second line of the"
 " source file::"
 msgstr ""
+"Python standardně podporuje psaní zdrojového kódu v UTF-8, ale můžete použít "
+"téměř jakékoli kódování, pokud deklarujete použité kódování. To se provádí "
+"zahrnutím speciálního komentáře jako první nebo druhý řádek zdrojového "
+"souboru::"
 
 #: ../../howto/unicode.rst:339
 msgid ""
@@ -547,6 +780,11 @@ msgid ""
 "u = 'abcdé'\n"
 "print(ord(u[-1]))"
 msgstr ""
+"#!/usr/bin/env python\n"
+"# -*- coding: latin-1 -*-\n"
+"\n"
+"u = 'abcdé'\n"
+"print(ord(u[-1]))"
 
 #: ../../howto/unicode.rst:345
 msgid ""
@@ -557,16 +795,23 @@ msgid ""
 "convention.  Python looks for ``coding: name`` or ``coding=name`` in the "
 "comment."
 msgstr ""
+"Syntaxe je inspirována notací Emacsu pro specifikaci proměnných lokálních "
+"pro soubor. Emacs podporuje mnoho různých proměnných, ale Python podporuje "
+"pouze 'coding'. Symboly ``-*-`` indikují Emacsu, že komentář je speciální; "
+"nemají pro Python žádný význam, ale jsou konvencí. Python hledá ``coding: "
+"name`` nebo ``coding=name`` v komentáři."
 
 #: ../../howto/unicode.rst:351
 msgid ""
 "If you don't include such a comment, the default encoding used will be "
 "UTF-8 as already mentioned.  See also :pep:`263` for more information."
 msgstr ""
+"Pokud takový komentář nezahrnete, bude použito výchozí kódování UTF-8, jak "
+"již bylo zmíněno. Viz také :pep:`263` pro více informací."
 
 #: ../../howto/unicode.rst:358
 msgid "Unicode Properties"
-msgstr ""
+msgstr "Vlastnosti Unicode"
 
 #: ../../howto/unicode.rst:360
 msgid ""
@@ -578,12 +823,20 @@ msgid ""
 "display-related properties, such as how to use the code point in "
 "bidirectional text."
 msgstr ""
+"Specifikace Unicode obsahuje databázi informací o kódových bodech. Pro každý "
+"definovaný kódový bod informace zahrnuje název znaku, jeho kategorii, "
+"číselnou hodnotu, pokud je použitelná (pro znaky reprezentující číselné "
+"koncepty jako římské číslice, zlomky jako jedna třetina a čtyři pětiny atd.). "
+"Existují také vlastnosti související se zobrazením, jako je způsob použití "
+"kódového bodu v obousměrném textu."
 
 #: ../../howto/unicode.rst:368
 msgid ""
 "The following program displays some information about several characters,"
 " and prints the numeric value of one particular character::"
 msgstr ""
+"Následující program zobrazuje některé informace o několika znacích a tiskne "
+"číselnou hodnotu jednoho konkrétního znaku::"
 
 #: ../../howto/unicode.rst:371
 #, python-format
@@ -599,10 +852,20 @@ msgid ""
 "# Get numeric value of second character\n"
 "print(unicodedata.numeric(u[1]))"
 msgstr ""
+"import unicodedata\n"
+"\n"
+"u = chr(233) + chr(0x0bf2) + chr(3972) + chr(6000) + chr(13231)\n"
+"\n"
+"for i, c in enumerate(u):\n"
+"    print(i, '%04x' % ord(c), unicodedata.category(c), end=\" \")\n"
+"    print(unicodedata.name(c))\n"
+"\n"
+"# Get numeric value of second character\n"
+"print(unicodedata.numeric(u[1]))"
 
 #: ../../howto/unicode.rst:382
 msgid "When run, this prints:"
-msgstr ""
+msgstr "Při spuštění toto vytiskne:"
 
 #: ../../howto/unicode.rst:384
 msgid ""
@@ -613,6 +876,12 @@ msgid ""
 "4 33af So SQUARE RAD OVER S SQUARED\n"
 "1000.0"
 msgstr ""
+"0 00e9 Ll LATIN SMALL LETTER E WITH ACUTE\n"
+"1 0bf2 No TAMIL NUMBER ONE THOUSAND\n"
+"2 0f84 Mn TIBETAN MARK HALANTA\n"
+"3 1770 Lo TAGBANWA LETTER SA\n"
+"4 33af So SQUARE RAD OVER S SQUARED\n"
+"1000.0"
 
 #: ../../howto/unicode.rst:393
 msgid ""
@@ -627,10 +896,17 @@ msgid ""
 "<https://www.unicode.org/reports/tr44/#General_Category_Values>`_ for a "
 "list of category codes."
 msgstr ""
+"Kódy kategorií jsou zkratky popisující povahu znaku. Ty jsou seskupeny do "
+"kategorií jako \"Písmeno\", \"Číslo\", \"Interpunkce\" nebo \"Symbol\", které "
+"jsou dále rozděleny do podkategorií. Z výše uvedeného výstupu ``'Ll'`` "
+"znamená 'Písmeno, malé', ``'No'`` znamená \"Číslo, jiné\", ``'Mn'`` je "
+"\"Značka, bez mezer\" a ``'So'`` je \"Symbol, jiný\". Pro seznam kódů "
+"kategorií viz `sekce General Category Values dokumentace Unicode Character "
+"Database <https://www.unicode.org/reports/tr44/#General_Category_Values>`_."
 
 #: ../../howto/unicode.rst:404
 msgid "Comparing Strings"
-msgstr ""
+msgstr "Porovnávání řetězců"
 
 #: ../../howto/unicode.rst:406
 msgid ""
@@ -642,6 +918,12 @@ msgid ""
 "produce the same output when printed, but one is a string of length 1 and"
 " the other is of length 2."
 msgstr ""
+"Unicode přidává do porovnávání řetězců určitou komplikaci, protože stejná "
+"sada znaků může být reprezentována různými sekvencemi kódových bodů. Například "
+"písmeno 'ê' může být reprezentováno jako jediný kódový bod U+00EA nebo jako "
+"U+0065 U+0302, což je kódový bod pro 'e' následovaný kódovým bodem pro "
+"'COMBINING CIRCUMFLEX ACCENT'. Ty vytvoří stejný výstup při tisku, ale jeden "
+"je řetězec délky 1 a druhý je délky 2."
 
 #: ../../howto/unicode.rst:414
 msgid ""
@@ -651,6 +933,11 @@ msgid ""
 "special handling for characters such as the German letter 'ß' (code point"
 " U+00DF), which becomes the pair of lowercase letters 'ss'."
 msgstr ""
+"Jeden nástroj pro porovnání bez rozlišení velikosti písmen je metoda řetězce "
+":meth:`~str.casefold`, která převádí řetězec do formy bez rozlišení velikosti "
+"písmen podle algoritmu popsaného Unicode standardem. Tento algoritmus má "
+"speciální zacházení pro znaky jako německé písmeno 'ß' (kódový bod U+00DF), "
+"které se stává dvojicí malých písmen 'ss'."
 
 #: ../../howto/unicode.rst:423
 msgid ""
@@ -658,6 +945,9 @@ msgid ""
 ">>> street.casefold()\n"
 "'gürzenichstrasse'"
 msgstr ""
+">>> street = 'Gürzenichstraße'\n"
+">>> street.casefold()\n"
+"'gürzenichstrasse'"
 
 #: ../../howto/unicode.rst:427
 msgid ""
@@ -668,6 +958,12 @@ msgid ""
 "used to perform string comparisons that won't falsely report inequality "
 "if two strings use combining characters differently:"
 msgstr ""
+"Druhým nástrojem je funkce :func:`~unicodedata.normalize` modulu "
+":mod:`unicodedata`, která převádí řetězce do jedné z několika normálních "
+"forem, kde písmena následovaná kombinujícím znakem jsou nahrazena jednotlivými "
+"znaky. :func:`~unicodedata.normalize` lze použít k provádění porovnání "
+"řetězců, které nebudou falešně hlásit nerovnost, pokud dva řetězce používají "
+"kombinující znaky odlišně:"
 
 #: ../../howto/unicode.rst:436
 #, python-brace-format
@@ -687,10 +983,24 @@ msgid ""
 "print('length of second string=', len(multiple_chars))\n"
 "print(compare_strs(single_char, multiple_chars))"
 msgstr ""
+"import unicodedata\n"
+"\n"
+"def compare_strs(s1, s2):\n"
+"    def NFD(s):\n"
+"        return unicodedata.normalize('NFD', s)\n"
+"\n"
+"    return NFD(s1) == NFD(s2)\n"
+"\n"
+"single_char = 'ê'\n"
+"multiple_chars = '\\N{LATIN SMALL LETTER E}\\N{COMBINING CIRCUMFLEX "
+"ACCENT}'\n"
+"print('length of first string=', len(single_char))\n"
+"print('length of second string=', len(multiple_chars))\n"
+"print(compare_strs(single_char, multiple_chars))"
 
 #: ../../howto/unicode.rst:450
 msgid "When run, this outputs:"
-msgstr ""
+msgstr "Při spuštění toto vypíše:"
 
 #: ../../howto/unicode.rst:452
 msgid ""
@@ -699,6 +1009,10 @@ msgid ""
 "length of second string= 2\n"
 "True"
 msgstr ""
+"$ python compare-strs.py\n"
+"length of first string= 1\n"
+"length of second string= 2\n"
+"True"
 
 #: ../../howto/unicode.rst:459
 msgid ""
@@ -706,10 +1020,15 @@ msgid ""
 "string giving the desired normalization form, which can be one of 'NFC', "
 "'NFKC', 'NFD', and 'NFKD'."
 msgstr ""
+"První argument funkce :func:`~unicodedata.normalize` je řetězec udávající "
+"požadovanou normalizační formu, která může být jedna z 'NFC', 'NFKC', 'NFD' "
+"a 'NFKD'."
 
 #: ../../howto/unicode.rst:463
 msgid "The Unicode Standard also specifies how to do caseless comparisons::"
 msgstr ""
+"Unicode Standard také specifikuje, jak provádět porovnání bez rozlišení "
+"velikosti písmen::"
 
 #: ../../howto/unicode.rst:465
 #, python-brace-format
@@ -729,6 +1048,20 @@ msgid ""
 "\n"
 "print(compare_caseless(single_char, multiple_chars))"
 msgstr ""
+"import unicodedata\n"
+"\n"
+"def compare_caseless(s1, s2):\n"
+"    def NFD(s):\n"
+"        return unicodedata.normalize('NFD', s)\n"
+"\n"
+"    return NFD(NFD(s1).casefold()) == NFD(NFD(s2).casefold())\n"
+"\n"
+"# Example usage\n"
+"single_char = 'ê'\n"
+"multiple_chars = '\\N{LATIN CAPITAL LETTER E}\\N{COMBINING CIRCUMFLEX "
+"ACCENT}'\n"
+"\n"
+"print(compare_caseless(single_char, multiple_chars))"
 
 #: ../../howto/unicode.rst:479
 msgid ""
@@ -737,10 +1070,14 @@ msgid ""
 "normalized string, so the result needs to be normalized again. See "
 "section 3.13 of the Unicode Standard for a discussion and an example.)"
 msgstr ""
+"Toto vytiskne ``True``. (Proč je :func:`!NFD` volána dvakrát? Protože existuje "
+"několik znaků, které způsobují, že :meth:`~str.casefold` vrátí nenormalizovaný "
+"řetězec, takže výsledek musí být znovu normalizován. Viz sekce 3.13 Unicode "
+"standardu pro diskusi a příklad.)"
 
 #: ../../howto/unicode.rst:486
 msgid "Unicode Regular Expressions"
-msgstr ""
+msgstr "Regulární výrazy Unicode"
 
 #: ../../howto/unicode.rst:488
 msgid ""
@@ -751,12 +1088,19 @@ msgid ""
 "match the characters ``[0-9]`` in bytes but in strings will match any "
 "character that's in the ``'Nd'`` category."
 msgstr ""
+"Regulární výrazy podporované modulem :mod:`re` mohou být poskytnuty buď jako "
+"bajty nebo řetězce. Některé speciální znakové sekvence jako ``\\d`` a ``\\w`` "
+"mají různé významy v závislosti na tom, zda je vzor poskytnut jako bajty nebo "
+"řetězec. Například ``\\d`` bude v bajtech odpovídat znakům ``[0-9]``, ale v "
+"řetězcích bude odpovídat jakémukoli znaku, který je v kategorii ``'Nd'``."
 
 #: ../../howto/unicode.rst:495
 msgid ""
 "The string in this example has the number 57 written in both Thai and "
 "Arabic numerals::"
 msgstr ""
+"Řetězec v tomto příkladu má číslo 57 napsané jak thajskými, tak arabskými "
+"číslicemi::"
 
 #: ../../howto/unicode.rst:498
 msgid ""
@@ -767,6 +1111,12 @@ msgid ""
 "m = p.search(s)\n"
 "print(repr(m.group()))"
 msgstr ""
+"import re\n"
+"p = re.compile(r'\\d+')\n"
+"\n"
+"s = \"Over \\u0e55\\u0e57 57 flavours\"\n"
+"m = p.search(s)\n"
+"print(repr(m.group()))"
 
 #: ../../howto/unicode.rst:505
 msgid ""
@@ -774,6 +1124,9 @@ msgid ""
 "  If you supply the :const:`re.ASCII` flag to :func:`~re.compile`, "
 "``\\d+`` will match the substring \"57\" instead."
 msgstr ""
+"Při spuštění ``\\d+`` bude odpovídat thajským číslicím a vypíše je. Pokud "
+"poskytnete příznak :const:`re.ASCII` funkci :func:`~re.compile`, ``\\d+`` "
+"bude místo toho odpovídat podřetězci \"57\"."
 
 #: ../../howto/unicode.rst:509
 msgid ""
@@ -782,10 +1135,13 @@ msgid ""
 "``\\s`` will match either Unicode whitespace characters or ``[ "
 "\\t\\n\\r\\f\\v]``."
 msgstr ""
+"Podobně ``\\w`` odpovídá široké škále znaků Unicode, ale pouze ``[a-zA-Z0-9_]`` "
+"v bajtech nebo pokud je poskytnuto :const:`re.ASCII`, a ``\\s`` bude odpovídat "
+"buď znakům Unicode mezer nebo ``[ \\t\\n\\r\\f\\v]``."
 
 #: ../../howto/unicode.rst:520
 msgid "Some good alternative discussions of Python's Unicode support are:"
-msgstr ""
+msgstr "Některé dobré alternativní diskuse o podpoře Unicode v Pythonu jsou:"
 
 #: ../../howto/unicode.rst:522
 msgid ""
@@ -793,26 +1149,32 @@ msgid ""
 "notes.curiousefficiency.org/en/latest/python3/text_file_processing.html>`_,"
 " by Nick Coghlan."
 msgstr ""
+"`Processing Text Files in Python 3 <https://python-"
+"notes.curiousefficiency.org/en/latest/python3/text_file_processing.html>`_, "
+"od Nicka Coghlana."
 
 #: ../../howto/unicode.rst:523
 msgid ""
 "`Pragmatic Unicode <https://nedbatchelder.com/text/unipain.html>`_, a "
 "PyCon 2012 presentation by Ned Batchelder."
 msgstr ""
+"`Pragmatic Unicode <https://nedbatchelder.com/text/unipain.html>`_, prezentace "
+"PyCon 2012 od Neda Batcheldera."
 
 #: ../../howto/unicode.rst:525
 msgid ""
 "The :class:`str` type is described in the Python library reference at "
 ":ref:`textseq`."
 msgstr ""
+"Typ :class:`str` je popsán v referenci knihovny Pythonu na :ref:`textseq`."
 
 #: ../../howto/unicode.rst:528
 msgid "The documentation for the :mod:`unicodedata` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`unicodedata`."
 
 #: ../../howto/unicode.rst:530
 msgid "The documentation for the :mod:`codecs` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`codecs`."
 
 #: ../../howto/unicode.rst:532
 msgid ""
@@ -822,10 +1184,15 @@ msgid ""
 "overview of the design of Python 2's Unicode features (where the Unicode "
 "string type is called ``unicode`` and literals start with ``u``)."
 msgstr ""
+"Marc-André Lemburg přednesl `prezentaci s názvem \"Python and Unicode\" "
+"(PDF slidy) <https://downloads.egenix.com/python/Unicode-"
+"EPC2002-Talk.pdf>`_ na EuroPython 2002. Slidy jsou výborným přehledem návrhu "
+"funkcí Unicode v Pythonu 2 (kde typ řetězce Unicode se nazývá ``unicode`` a "
+"literály začínají ``u``)."
 
 #: ../../howto/unicode.rst:540
 msgid "Reading and Writing Unicode Data"
-msgstr ""
+msgstr "Čtení a zápis dat Unicode"
 
 #: ../../howto/unicode.rst:542
 msgid ""
@@ -834,6 +1201,9 @@ msgid ""
 "program, and how do you convert Unicode into a form suitable for storage "
 "or transmission?"
 msgstr ""
+"Jakmile napíšete nějaký kód, který pracuje s daty Unicode, dalším problémem "
+"je vstup/výstup. Jak dostat řetězce Unicode do vašeho programu a jak převést "
+"Unicode do formy vhodné pro ukládání nebo přenos?"
 
 #: ../../howto/unicode.rst:546
 msgid ""
@@ -844,6 +1214,11 @@ msgid ""
 "support Unicode-valued columns and can return Unicode values from an SQL "
 "query."
 msgstr ""
+"Je možné, že nebudete muset dělat nic v závislosti na vašich zdrojích vstupu "
+"a cílech výstupu; měli byste zkontrolovat, zda knihovny používané ve vaší "
+"aplikaci nativně podporují Unicode. XML parsery například často vracejí data "
+"Unicode. Mnoho relačních databází také podporuje sloupce s hodnotami Unicode "
+"a může vracet hodnoty Unicode z SQL dotazu."
 
 #: ../../howto/unicode.rst:552
 msgid ""
@@ -853,6 +1228,10 @@ msgid ""
 "the bytes with ``bytes.decode(encoding)``.  However, the manual approach "
 "is not recommended."
 msgstr ""
+"Data Unicode jsou obvykle převedena na konkrétní kódování před tím, než jsou "
+"zapsána na disk nebo odeslána přes socket. Je možné udělat všechnu práci sami: "
+"otevřít soubor, přečíst z něj 8-bitový bajtový objekt a převést bajty pomocí "
+"``bytes.decode(encoding)``. Nicméně manuální přístup není doporučován."
 
 #: ../../howto/unicode.rst:557
 msgid ""
@@ -867,6 +1246,15 @@ msgid ""
 " (More, really, since for at least a moment you'd need to have both the "
 "encoded string and its Unicode version in memory.)"
 msgstr ""
+"Jeden problém je vícebajtová povaha kódování; jeden znak Unicode může být "
+"reprezentován několika bajty. Pokud chcete číst soubor v libovolně velkých "
+"částech (řekněme 1024 nebo 4096 bajtů), musíte napsat kód pro zpracování "
+"chyb, abyste zachytili případ, kdy je na konci části přečtena pouze část bajtů "
+"kódujících jeden znak Unicode. Jedním řešením by bylo načíst celý soubor do "
+"paměti a poté provést dekódování, ale to vám brání pracovat se soubory, které "
+"jsou extrémně velké; pokud potřebujete číst soubor o velikosti 2 GiB, "
+"potřebujete 2 GiB RAM. (Vlastně více, protože alespoň chvíli budete potřebovat "
+"mít v paměti jak kódovaný řetězec, tak jeho verzi Unicode.)"
 
 #: ../../howto/unicode.rst:567
 msgid ""
@@ -880,10 +1268,18 @@ msgid ""
 "interpreted just like those in :meth:`str.encode` and "
 ":meth:`bytes.decode`."
 msgstr ""
+"Řešením by bylo použít nízkoúrovňové rozhraní pro dekódování pro zachycení "
+"případu částečných kódovacích sekvencí. Práce na implementaci tohoto byla již "
+"provedena za vás: vestavěná funkce :func:`open` může vrátit souborový objekt, "
+"který předpokládá, že obsah souboru je v určeném kódování a přijímá parametry "
+"Unicode pro metody jako :meth:`~io.TextIOBase.read` a :meth:`~io.TextIOBase.write`. "
+"To funguje prostřednictvím parametrů *encoding* a *errors* funkce :func:`open`, "
+"které jsou interpretovány stejně jako ty v :meth:`str.encode` a "
+":meth:`bytes.decode`."
 
 #: ../../howto/unicode.rst:576
 msgid "Reading Unicode from a file is therefore simple::"
-msgstr ""
+msgstr "Čtení Unicode ze souboru je proto jednoduché::"
 
 #: ../../howto/unicode.rst:578
 msgid ""
@@ -891,12 +1287,17 @@ msgid ""
 "    for line in f:\n"
 "        print(repr(line))"
 msgstr ""
+"with open('unicode.txt', encoding='utf-8') as f:\n"
+"    for line in f:\n"
+"        print(repr(line))"
 
 #: ../../howto/unicode.rst:582
 msgid ""
 "It's also possible to open files in update mode, allowing both reading "
 "and writing::"
 msgstr ""
+"Je také možné otevřít soubory v režimu aktualizace, který umožňuje jak čtení, "
+"tak zápis::"
 
 #: ../../howto/unicode.rst:585
 msgid ""
@@ -905,6 +1306,10 @@ msgid ""
 "    f.seek(0)\n"
 "    print(repr(f.readline()[:1]))"
 msgstr ""
+"with open('test', encoding='utf-8', mode='w+') as f:\n"
+"    f.write('\\u4500 blah blah blah\\n')\n"
+"    f.seek(0)\n"
+"    print(repr(f.readline()[:1]))"
 
 #: ../../howto/unicode.rst:590
 msgid ""
@@ -918,6 +1323,13 @@ msgid ""
 "little-endian and big-endian encodings, that specify one particular byte "
 "ordering and don't skip the BOM."
 msgstr ""
+"Znak Unicode ``U+FEFF`` se používá jako značka pořadí bajtů (BOM) a často je "
+"zapsán jako první znak souboru, aby pomohl s automatickou detekcí pořadí "
+"bajtů souboru. Některá kódování, jako UTF-16, očekávají přítomnost BOM na "
+"začátku souboru; když je takové kódování použito, BOM bude automaticky zapsán "
+"jako první znak a bude tiše vynechán při čtení souboru. Existují varianty "
+"těchto kódování, jako 'utf-16-le' a 'utf-16-be' pro little-endian a big-endian "
+"kódování, které specifikují jedno konkrétní pořadí bajtů a nepřeskakují BOM."
 
 #: ../../howto/unicode.rst:599
 msgid ""
@@ -927,10 +1339,15 @@ msgid ""
 "  For reading such files, use the 'utf-8-sig' codec to automatically skip"
 " the mark if present."
 msgstr ""
+"V některých oblastech je také konvencí používat \"BOM\" na začátku souborů "
+"kódovaných UTF-8; název je zavádějící, protože UTF-8 není závislé na pořadí "
+"bajtů. Značka jednoduše oznamuje, že soubor je kódován v UTF-8. Pro čtení "
+"takových souborů použijte kodek 'utf-8-sig' pro automatické přeskočení značky, "
+"pokud je přítomna."
 
 #: ../../howto/unicode.rst:606
 msgid "Unicode filenames"
-msgstr ""
+msgstr "Názvy souborů Unicode"
 
 #: ../../howto/unicode.rst:608
 msgid ""
@@ -944,6 +1361,14 @@ msgid ""
 "you've set the ``LANG`` or ``LC_CTYPE`` environment variables; if you "
 "haven't, the default encoding is again UTF-8."
 msgstr ""
+"Většina běžně používaných operačních systémů dnes podporuje názvy souborů, "
+"které obsahují libovolné znaky Unicode. Obvykle se to implementuje převodem "
+"řetězce Unicode do nějakého kódování, které se liší v závislosti na systému. "
+"Dnes Python konverguje k používání UTF-8: Python na MacOS používá UTF-8 již "
+"několik verzí a Python 3.6 přešel na používání UTF-8 i ve Windows. Na Unix "
+"systémech bude pouze :term:`kódování souborového systému <filesystem encoding "
+"and error handler>`, pokud jste nastavili proměnné prostředí ``LANG`` nebo "
+"``LC_CTYPE``; pokud jste je nenastavili, výchozí kódování je opět UTF-8."
 
 #: ../../howto/unicode.rst:618
 msgid ""
@@ -954,6 +1379,11 @@ msgid ""
 "filename, and it will be automatically converted to the right encoding "
 "for you::"
 msgstr ""
+"Funkce :func:`sys.getfilesystemencoding` vrací kódování, které se má použít "
+"na vašem současném systému, pokud chcete provést kódování ručně, ale není "
+"mnoho důvodů se tím zabývat. Při otevírání souboru pro čtení nebo zápis můžete "
+"obvykle jednoduše poskytnout řetězec Unicode jako název souboru a bude "
+"automaticky převeden na správné kódování za vás::"
 
 #: ../../howto/unicode.rst:624
 msgid ""
@@ -961,12 +1391,17 @@ msgid ""
 "with open(filename, 'w') as f:\n"
 "    f.write('blah\\n')"
 msgstr ""
+"filename = 'filename\\u4500abc'\n"
+"with open(filename, 'w') as f:\n"
+"    f.write('blah\\n')"
 
 #: ../../howto/unicode.rst:628
 msgid ""
 "Functions in the :mod:`os` module such as :func:`os.stat` will also "
 "accept Unicode filenames."
 msgstr ""
+"Funkce v modulu :mod:`os` jako :func:`os.stat` také přijímají názvy souborů "
+"Unicode."
 
 #: ../../howto/unicode.rst:631
 msgid ""
@@ -981,6 +1416,15 @@ msgid ""
 "<filesystem encoding and error handler>` is UTF-8, running the following "
 "program::"
 msgstr ""
+"Funkce :func:`os.listdir` vrací názvy souborů, což vyvolává otázku: měla by "
+"vracet Unicode verzi názvů souborů, nebo by měla vracet bajty obsahující "
+"kódované verze? :func:`os.listdir` může dělat obojí, v závislosti na tom, zda "
+"jste poskytli cestu k adresáři jako bajty nebo řetězec Unicode. Pokud předáte "
+"řetězec Unicode jako cestu, názvy souborů budou dekódovány pomocí kódování "
+"souborového systému a bude vrácen seznam řetězců Unicode, zatímco předání "
+"bajtové cesty vrátí názvy souborů jako bajty. Například za předpokladu, že "
+"výchozí :term:`kódování souborového systému <filesystem encoding and error "
+"handler>` je UTF-8, spuštění následujícího programu::"
 
 #: ../../howto/unicode.rst:641
 msgid ""
@@ -992,10 +1436,17 @@ msgid ""
 "print(os.listdir(b'.'))\n"
 "print(os.listdir('.'))"
 msgstr ""
+"fn = 'filename\\u4500abc'\n"
+"f = open(fn, 'w')\n"
+"f.close()\n"
+"\n"
+"import os\n"
+"print(os.listdir(b'.'))\n"
+"print(os.listdir('.'))"
 
 #: ../../howto/unicode.rst:649
 msgid "will produce the following output:"
-msgstr ""
+msgstr "vytvoří následující výstup:"
 
 #: ../../howto/unicode.rst:651
 msgid ""
@@ -1003,12 +1454,17 @@ msgid ""
 "[b'filename\\xe4\\x94\\x80abc', ...]\n"
 "['filename\\u4500abc', ...]"
 msgstr ""
+"$ python listdir-test.py\n"
+"[b'filename\\xe4\\x94\\x80abc', ...]\n"
+"['filename\\u4500abc', ...]"
 
 #: ../../howto/unicode.rst:657
 msgid ""
 "The first list contains UTF-8-encoded filenames, and the second list "
 "contains the Unicode versions."
 msgstr ""
+"První seznam obsahuje názvy souborů kódované UTF-8 a druhý seznam obsahuje "
+"verze Unicode."
 
 #: ../../howto/unicode.rst:660
 msgid ""
@@ -1017,26 +1473,33 @@ msgid ""
 "undecodable file names can be present; that's pretty much only Unix "
 "systems now."
 msgstr ""
+"Všimněte si, že ve většině případů byste se měli držet používání Unicode s "
+"těmito API. Bajtové API by se mělo používat pouze na systémech, kde se mohou "
+"vyskytovat nedekódovatelné názvy souborů; to jsou v podstatě pouze Unix "
+"systémy nyní."
 
 #: ../../howto/unicode.rst:667
 msgid "Tips for Writing Unicode-aware Programs"
-msgstr ""
+msgstr "Tipy pro psaní programů podporujících Unicode"
 
 #: ../../howto/unicode.rst:669
 msgid ""
 "This section provides some suggestions on writing software that deals "
 "with Unicode."
 msgstr ""
+"Tato sekce poskytuje některé návrhy na psaní softwaru, který pracuje s Unicode."
 
 #: ../../howto/unicode.rst:672
 msgid "The most important tip is:"
-msgstr ""
+msgstr "Nejdůležitější tip je:"
 
 #: ../../howto/unicode.rst:674
 msgid ""
 "Software should only work with Unicode strings internally, decoding the "
 "input data as soon as possible and encoding the output only at the end."
 msgstr ""
+"Software by měl interně pracovat pouze s řetězci Unicode, dekódovat vstupní "
+"data co nejdříve a kódovat výstup pouze na konci."
 
 #: ../../howto/unicode.rst:677
 msgid ""
@@ -1046,6 +1509,11 @@ msgid ""
 "encoding or decoding: if you do e.g. ``str + bytes``, a :exc:`TypeError` "
 "will be raised."
 msgstr ""
+"Pokud se pokusíte napsat zpracovatelské funkce, které přijímají jak Unicode, "
+"tak bajtové řetězce, zjistíte, že váš program je zranitelný vůči chybám všude "
+"tam, kde kombinujete dva různé druhy řetězců. Neexistuje žádné automatické "
+"kódování nebo dekódování: pokud uděláte např. ``str + bytes``, bude vyvolána "
+"výjimka :exc:`TypeError`."
 
 #: ../../howto/unicode.rst:682
 msgid ""
@@ -1059,10 +1527,18 @@ msgid ""
 " encoding, since the attacker can then choose a clever way to hide "
 "malicious text in the encoded bytestream."
 msgstr ""
+"Při použití dat přicházejících z webového prohlížeče nebo jiného nedůvěryhodného "
+"zdroje je běžnou technikou kontrola nelegálních znaků v řetězci před použitím "
+"řetězce ve vygenerovaném příkazovém řádku nebo jeho uložením do databáze. Pokud "
+"to děláte, dávejte pozor, abyste kontrolovali dekódovaný řetězec, ne kódovaná "
+"bajtová data; některá kódování mohou mít zajímavé vlastnosti, jako například "
+"nejsou bijektivní nebo nejsou plně kompatibilní s ASCII. To platí zejména, "
+"pokud vstupní data také specifikují kódování, protože útočník pak může zvolit "
+"chytrý způsob, jak skrýt škodlivý text v kódovaném bajtovém proudu."
 
 #: ../../howto/unicode.rst:693
 msgid "Converting Between File Encodings"
-msgstr ""
+msgstr "Převod mezi kódováními souborů"
 
 #: ../../howto/unicode.rst:695
 msgid ""
@@ -1070,6 +1546,9 @@ msgid ""
 "between encodings, taking a stream that returns data in encoding #1 and "
 "behaving like a stream returning data in encoding #2."
 msgstr ""
+"Třída :class:`~codecs.StreamRecoder` může transparentně převádět mezi "
+"kódováními, přijímající proud, který vrací data v kódování #1 a chová se jako "
+"proud vracející data v kódování #2."
 
 #: ../../howto/unicode.rst:699
 msgid ""
@@ -1077,6 +1556,9 @@ msgid ""
 "wrap it with a :class:`~codecs.StreamRecoder` to return bytes encoded in "
 "UTF-8::"
 msgstr ""
+"Například pokud máte vstupní soubor *f*, který je v Latin-1, můžete jej "
+"zabalit pomocí :class:`~codecs.StreamRecoder` pro vrácení bajtů kódovaných v "
+"UTF-8::"
 
 #: ../../howto/unicode.rst:703
 msgid ""
@@ -1088,10 +1570,17 @@ msgid ""
 "    # reader/writer: used to read and write to the stream.\n"
 "    codecs.getreader('latin-1'), codecs.getwriter('latin-1') )"
 msgstr ""
+"new_f = codecs.StreamRecoder(f,\n"
+"    # en/decoder: used by read() to encode its results and\n"
+"    # by write() to decode its input.\n"
+"    codecs.getencoder('utf-8'), codecs.getdecoder('utf-8'),\n"
+"\n"
+"    # reader/writer: used to read and write to the stream.\n"
+"    codecs.getreader('latin-1'), codecs.getwriter('latin-1') )"
 
 #: ../../howto/unicode.rst:713
 msgid "Files in an Unknown Encoding"
-msgstr ""
+msgstr "Soubory v neznámém kódování"
 
 #: ../../howto/unicode.rst:715
 msgid ""
@@ -1100,6 +1589,10 @@ msgid ""
 "only want to examine or modify the ASCII parts, you can open the file "
 "with the ``surrogateescape`` error handler::"
 msgstr ""
+"Co můžete dělat, pokud potřebujete provést změnu v souboru, ale neznáte "
+"kódování souboru? Pokud víte, že kódování je kompatibilní s ASCII a chcete "
+"pouze zkoumat nebo upravit ASCII části, můžete otevřít soubor s obslužnou "
+"rutinou chyb ``surrogateescape``::"
 
 #: ../../howto/unicode.rst:720
 msgid ""
@@ -1113,6 +1606,15 @@ msgid ""
 "          encoding=\"ascii\", errors=\"surrogateescape\") as f:\n"
 "    f.write(data)"
 msgstr ""
+"with open(fname, 'r', encoding=\"ascii\", errors=\"surrogateescape\") as "
+"f:\n"
+"    data = f.read()\n"
+"\n"
+"# make changes to the string 'data'\n"
+"\n"
+"with open(fname + '.new', 'w',\n"
+"          encoding=\"ascii\", errors=\"surrogateescape\") as f:\n"
+"    f.write(data)"
 
 #: ../../howto/unicode.rst:729
 msgid ""
@@ -1122,6 +1624,10 @@ msgid ""
 "``surrogateescape`` error handler is used to encode the data and write it"
 " back out."
 msgstr ""
+"Obslužná rutina chyb ``surrogateescape`` dekóduje jakékoli ne-ASCII bajty jako "
+"kódové body ve speciálním rozsahu od U+DC80 do U+DCFF. Tyto kódové body se "
+"pak změní zpět na stejné bajty, když je obslužná rutina chyb ``surrogateescape`` "
+"použita ke kódování dat a jejich zapsání zpět."
 
 #: ../../howto/unicode.rst:739
 msgid ""
@@ -1130,6 +1636,10 @@ msgid ""
 "PyCon 2010 talk by David Beazley, discusses text processing and binary "
 "data handling."
 msgstr ""
+"Jedna sekce `Mastering Python 3 Input/Output "
+"<https://pyvideo.org/video/289/pycon-2010--mastering-python-3-i-o>`_, přednáška "
+"PyCon 2010 od Davida Beazleyho, diskutuje zpracování textu a manipulaci s "
+"binárními daty."
 
 #: ../../howto/unicode.rst:743
 msgid ""
@@ -1140,6 +1650,12 @@ msgid ""
 " well as how to internationalize and localize an application.  These "
 "slides cover Python 2.x only."
 msgstr ""
+"PDF slidy `pro prezentaci Marc-André Lemburga \"Writing Unicode-aware "
+"Applications in Python\" "
+"<https://downloads.egenix.com/python/LSM2005-Developing-Unicode-aware-"
+"applications-in-Python.pdf>`_ diskutují otázky znakových kódování, jakož i "
+"způsob internacionalizace a lokalizace aplikace. Tyto slidy pokrývají pouze "
+"Python 2.x."
 
 #: ../../howto/unicode.rst:749
 msgid ""
@@ -1147,10 +1663,13 @@ msgid ""
 "of-unicode-in-python>`_ is a PyCon 2013 talk by Benjamin Peterson that "
 "discusses the internal Unicode representation in Python 3.3."
 msgstr ""
+"`The Guts of Unicode in Python <https://pyvideo.org/video/1768/the-guts-"
+"of-unicode-in-python>`_ je přednáška PyCon 2013 od Benjamina Petersona, která "
+"diskutuje interní reprezentaci Unicode v Pythonu 3.3."
 
 #: ../../howto/unicode.rst:756
 msgid "Acknowledgements"
-msgstr ""
+msgstr "Poděkování"
 
 #: ../../howto/unicode.rst:758
 msgid ""
@@ -1158,6 +1677,9 @@ msgid ""
 " since been revised further by Alexander Belopolsky, Georg Brandl, Andrew"
 " Kuchling, and Ezio Melotti."
 msgstr ""
+"Počáteční návrh tohoto dokumentu napsal Andrew Kuchling. Od té doby byl dále "
+"revidován Alexandrem Belopolským, Georgem Brandlem, Andrew Kuchlingem a Eziem "
+"Melottim."
 
 #: ../../howto/unicode.rst:762
 msgid ""
@@ -1167,4 +1689,7 @@ msgid ""
 "von Löwis, Terry J. Reedy, Serhiy Storchaka, Eryk Sun, Chad Whitacre, "
 "Graham Wideman."
 msgstr ""
-
+"Díky následujícím lidem, kteří upozornili na chyby nebo nabídli návrhy k "
+"tomuto článku: Éric Araujo, Nicholas Bastin, Nick Coghlan, Marius Gedminas, "
+"Kent Johnson, Ken Krugler, Marc-André Lemburg, Martin von Löwis, Terry J. "
+"Reedy, Serhiy Storchaka, Eryk Sun, Chad Whitacre, Graham Wideman."

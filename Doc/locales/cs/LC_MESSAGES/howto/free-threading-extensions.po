@@ -1,16 +1,15 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation for Python documentation
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# Translated by AI, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-02 18:54+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2026-01-02 17:15+0000\n"
+"PO-Revision-Date: 2026-01-02 18:00+0000\n"
+"Last-Translator: AI Translation\n"
 "Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: ../../howto/free-threading-extensions.rst:7
 msgid "C API Extension Support for Free Threading"
-msgstr ""
+msgstr "Podpora rozšíření C API pro volné vláknování"
 
 #: ../../howto/free-threading-extensions.rst:9
 msgid ""
@@ -30,10 +29,14 @@ msgid ""
 ":term:`free threading`.  This document describes how to adapt C API "
 "extensions to support free threading."
 msgstr ""
+"Počínaje verzí 3.13 má CPython podporu pro spouštění se zakázaným "
+":term:`globálním zámkem interpretu <global interpreter lock>` (GIL) v "
+"konfiguraci nazvané :term:`volné vláknování <free threading>`. Tento "
+"dokument popisuje, jak upravit rozšíření C API pro podporu volného vláknování."
 
 #: ../../howto/free-threading-extensions.rst:16
 msgid "Identifying the Free-Threaded Build in C"
-msgstr ""
+msgstr "Identifikace volně vláknovaného sestavení v C"
 
 #: ../../howto/free-threading-extensions.rst:18
 msgid ""
@@ -42,6 +45,10 @@ msgid ""
 "defined. You can use it to enable code that only runs under the free-"
 "threaded build::"
 msgstr ""
+"C API CPythonu zpřístupňuje makro ``Py_GIL_DISABLED``: ve volně vláknovaném "
+"sestavení je definováno jako ``1`` a v běžném sestavení není definováno. "
+"Můžete ho použít k povolení kódu, který běží pouze ve volně vláknovaném "
+"sestavení::"
 
 #: ../../howto/free-threading-extensions.rst:22
 msgid ""
@@ -49,6 +56,9 @@ msgid ""
 "/* code that only runs in the free-threaded build */\n"
 "#endif"
 msgstr ""
+"#ifdef Py_GIL_DISABLED\n"
+"/* code that only runs in the free-threaded build */\n"
+"#endif"
 
 #: ../../howto/free-threading-extensions.rst:28
 msgid ""
@@ -57,10 +67,14 @@ msgid ""
 ":func:`sysconfig.get_config_var` function can be used to determine "
 "whether the current running interpreter had the macro defined."
 msgstr ""
+"Na Windows není toto makro definováno automaticky, ale musí být zadáno "
+"kompilátoru při sestavení. Funkce :func:`sysconfig.get_config_var` může "
+"být použita k určení, zda aktuálně běžící interpret měl toto makro "
+"definováno."
 
 #: ../../howto/free-threading-extensions.rst:35
 msgid "Module Initialization"
-msgstr ""
+msgstr "Inicializace modulu"
 
 #: ../../howto/free-threading-extensions.rst:37
 msgid ""
@@ -68,6 +82,8 @@ msgid ""
 "with the GIL disabled; otherwise importing the extension will raise a "
 "warning and enable the GIL at runtime."
 msgstr ""
+"Rozšiřující moduly musí explicitně uvést, že podporují běh se zakázaným "
+"GIL; jinak import rozšíření vyvolá varování a povolí GIL za běhu."
 
 #: ../../howto/free-threading-extensions.rst:41
 msgid ""
@@ -75,10 +91,13 @@ msgid ""
 "with the GIL disabled depending on whether the extension uses multi-phase"
 " or single-phase initialization."
 msgstr ""
+"Existují dva způsoby, jak uvést, že rozšiřující modul podporuje běh se "
+"zakázaným GIL v závislosti na tom, zda rozšíření používá vícefázovou nebo "
+"jednofázovou inicializaci."
 
 #: ../../howto/free-threading-extensions.rst:46
 msgid "Multi-Phase Initialization"
-msgstr ""
+msgstr "Vícefázová inicializace"
 
 #: ../../howto/free-threading-extensions.rst:48
 msgid ""
@@ -87,6 +106,12 @@ msgid ""
 " module definition.  If your extension supports older versions of "
 "CPython, you should guard the slot with a :c:data:`PY_VERSION_HEX` check."
 msgstr ""
+"Rozšíření, která používají :ref:`vícefázovou inicializaci <multi-phase-"
+"initialization>` (funkce jako :c:func:`PyModuleDef_Init`, exportní "
+"hook :c:func:`PyModExport_* <PyModExport_modulename>`, "
+":c:func:`PyModule_FromSlotsAndSpec`), by měla přidat slot :c:data:`Py_mod_gil` "
+"do definice modulu. Pokud vaše rozšíření podporuje starší verze CPython, "
+"měli byste slot chránit kontrolou :c:data:`PY_VERSION_HEX`."
 
 #: ../../howto/free-threading-extensions.rst:55
 msgid ""
@@ -104,10 +129,17 @@ msgid ""
 "    ...\n"
 "};"
 msgstr ""
+"static struct PyModuleDef_Slot module_slots[] = {\n"
+"    ...\n"
+"#if PY_VERSION_HEX >= 0x030D0000\n"
+"    {Py_mod_gil, Py_MOD_GIL_NOT_USED},\n"
+"#endif\n"
+"    {0, NULL}\n"
+"};"
 
 #: ../../howto/free-threading-extensions.rst:71
 msgid "Single-Phase Initialization"
-msgstr ""
+msgstr "Jednofázová inicializace"
 
 #: ../../howto/free-threading-extensions.rst:73
 msgid ""
@@ -118,6 +150,12 @@ msgid ""
 "the call with ``#ifdef Py_GIL_DISABLED`` to avoid compilation errors in "
 "the regular build."
 msgstr ""
+"Rozšíření, která používají zastaralou :ref:`jednofázovou inicializaci <single-"
+"phase-initialization>` (tj. :c:func:`PyModule_Create`), by měla volat "
+":c:func:`PyUnstable_Module_SetGIL`, aby naznačila, že podporují běh se "
+"zakázaným GIL. Funkce je definována pouze ve volně vláknovaném sestavení, "
+"takže byste měli volání chránit pomocí ``#ifdef Py_GIL_DISABLED``, abyste "
+"se vyhnuli chybám kompilace v běžném sestavení."
 
 #: ../../howto/free-threading-extensions.rst:81
 msgid ""
@@ -139,20 +177,39 @@ msgid ""
 "    return m;\n"
 "}"
 msgstr ""
+"static struct PyModuleDef moduledef = {\n"
+"    PyModuleDef_HEAD_INIT,\n"
+"    ...\n"
+"};\n"
+"\n"
+"PyMODINIT_FUNC\n"
+"PyInit_mymodule(void)\n"
+"{\n"
+"    PyObject *m = PyModule_Create(&moduledef);\n"
+"    if (m == NULL) {\n"
+"        return NULL;\n"
+"    }\n"
+"#ifdef Py_GIL_DISABLED\n"
+"    PyUnstable_Module_SetGIL(m, Py_MOD_GIL_NOT_USED);\n"
+"#endif\n"
+"    return m;\n"
+"}"
 
 #: ../../howto/free-threading-extensions.rst:101
 msgid "General API Guidelines"
-msgstr ""
+msgstr "Obecné pokyny pro API"
 
 #: ../../howto/free-threading-extensions.rst:103
 msgid "Most of the C API is thread-safe, but there are some exceptions."
-msgstr ""
+msgstr "Většina C API je vláknově bezpečná, ale existují výjimky."
 
 #: ../../howto/free-threading-extensions.rst:105
 msgid ""
 "**Struct Fields**: Accessing fields in Python C API objects or structs "
 "directly is not thread-safe if the field may be concurrently modified."
 msgstr ""
+"**Pole struktur**: Přímý přístup k polím objektů nebo struktur Python C API "
+"není vláknově bezpečný, pokud může být pole souběžně upravováno."
 
 #: ../../howto/free-threading-extensions.rst:107
 msgid ""
@@ -163,6 +220,11 @@ msgid ""
 "These macros are not thread-safe if the container object may be modified "
 "concurrently."
 msgstr ""
+"**Makra**: Přístupová makra jako :c:macro:`PyList_GET_ITEM`, "
+":c:macro:`PyList_SET_ITEM` a makra jako :c:macro:`PySequence_Fast_GET_SIZE`, "
+"která používají objekt vrácený funkcí :c:func:`PySequence_Fast`, neprovádějí "
+"žádnou kontrolu chyb ani zamykání. Tato makra nejsou vláknově bezpečná, "
+"pokud může být kontejnerový objekt souběžně upravován."
 
 #: ../../howto/free-threading-extensions.rst:113
 msgid ""
@@ -171,10 +233,14 @@ msgid ""
 " object is modified concurrently.  See the section on :ref:`borrowed "
 "references <borrowed-references>` for more information."
 msgstr ""
+"**Půjčené reference**: Funkce C API, které vracejí :term:`půjčené reference "
+"<borrowed reference>`, nemusí být vláknově bezpečné, pokud je obsahující "
+"objekt souběžně upravován. Viz část o :ref:`půjčených referencích <borrowed-"
+"references>` pro více informací."
 
 #: ../../howto/free-threading-extensions.rst:120
 msgid "Container Thread Safety"
-msgstr ""
+msgstr "Vláknová bezpečnost kontejnerů"
 
 #: ../../howto/free-threading-extensions.rst:122
 msgid ""
@@ -183,10 +249,14 @@ msgid ""
 "build.  For example, the :c:func:`PyList_Append` will lock the list "
 "before appending an item."
 msgstr ""
+"Kontejnery jako :c:struct:`PyListObject`, :c:struct:`PyDictObject` a "
+":c:struct:`PySetObject` provádějí interní zamykání ve volně vláknovaném "
+"sestavení. Například :c:func:`PyList_Append` zamkne seznam před přidáním "
+"položky."
 
 #: ../../howto/free-threading-extensions.rst:130
 msgid "``PyDict_Next``"
-msgstr ""
+msgstr "``PyDict_Next``"
 
 #: ../../howto/free-threading-extensions.rst:132
 msgid ""
@@ -195,6 +265,9 @@ msgid ""
 "protect the dictionary while iterating over it if the dictionary may be "
 "concurrently modified::"
 msgstr ""
+"Pozoruhodnou výjimkou je :c:func:`PyDict_Next`, která slovník nezamyká. "
+"Měli byste použít :c:macro:`Py_BEGIN_CRITICAL_SECTION` k ochraně slovníku "
+"během iterace přes něj, pokud může být slovník souběžně upravován::"
 
 #: ../../howto/free-threading-extensions.rst:137
 #, python-brace-format
@@ -207,10 +280,17 @@ msgid ""
 "}\n"
 "Py_END_CRITICAL_SECTION();"
 msgstr ""
+"Py_BEGIN_CRITICAL_SECTION(dict);\n"
+"PyObject *key, *value;\n"
+"Py_ssize_t pos = 0;\n"
+"while (PyDict_Next(dict, &pos, &key, &value)) {\n"
+"    ...\n"
+"}\n"
+"Py_END_CRITICAL_SECTION();"
 
 #: ../../howto/free-threading-extensions.rst:147
 msgid "Borrowed References"
-msgstr ""
+msgstr "Půjčené reference"
 
 #: ../../howto/free-threading-extensions.rst:151
 msgid ""
@@ -219,99 +299,105 @@ msgid ""
 "modified concurrently.  For example, it's not safe to use "
 ":c:func:`PyList_GetItem` if the list may be modified concurrently."
 msgstr ""
+"Některé funkce C API vracejí :term:`půjčené reference <borrowed reference>`. "
+"Tato API nejsou vláknově bezpečná, pokud je obsahující objekt souběžně "
+"upravován. Například není bezpečné použít :c:func:`PyList_GetItem`, pokud "
+"může být seznam souběžně upravován."
 
 #: ../../howto/free-threading-extensions.rst:156
 msgid ""
 "The following table lists some borrowed reference APIs and their "
 "replacements that return :term:`strong references <strong reference>`."
 msgstr ""
+"Následující tabulka uvádí některá API půjčených referencí a jejich náhrady, "
+"které vracejí :term:`silné reference <strong reference>`."
 
 #: ../../howto/free-threading-extensions.rst:160
 msgid "Borrowed reference API"
-msgstr ""
+msgstr "API půjčených referencí"
 
 #: ../../howto/free-threading-extensions.rst:160
 msgid "Strong reference API"
-msgstr ""
+msgstr "API silných referencí"
 
 #: ../../howto/free-threading-extensions.rst:162
 msgid ":c:func:`PyList_GetItem`"
-msgstr ""
+msgstr ":c:func:`PyList_GetItem`"
 
 #: ../../howto/free-threading-extensions.rst:162
 #: ../../howto/free-threading-extensions.rst:164
 msgid ":c:func:`PyList_GetItemRef`"
-msgstr ""
+msgstr ":c:func:`PyList_GetItemRef`"
 
 #: ../../howto/free-threading-extensions.rst:164
 msgid ":c:func:`PyList_GET_ITEM`"
-msgstr ""
+msgstr ":c:func:`PyList_GET_ITEM`"
 
 #: ../../howto/free-threading-extensions.rst:166
 msgid ":c:func:`PyDict_GetItem`"
-msgstr ""
+msgstr ":c:func:`PyDict_GetItem`"
 
 #: ../../howto/free-threading-extensions.rst:166
 #: ../../howto/free-threading-extensions.rst:168
 msgid ":c:func:`PyDict_GetItemRef`"
-msgstr ""
+msgstr ":c:func:`PyDict_GetItemRef`"
 
 #: ../../howto/free-threading-extensions.rst:168
 msgid ":c:func:`PyDict_GetItemWithError`"
-msgstr ""
+msgstr ":c:func:`PyDict_GetItemWithError`"
 
 #: ../../howto/free-threading-extensions.rst:170
 msgid ":c:func:`PyDict_GetItemString`"
-msgstr ""
+msgstr ":c:func:`PyDict_GetItemString`"
 
 #: ../../howto/free-threading-extensions.rst:170
 msgid ":c:func:`PyDict_GetItemStringRef`"
-msgstr ""
+msgstr ":c:func:`PyDict_GetItemStringRef`"
 
 #: ../../howto/free-threading-extensions.rst:172
 msgid ":c:func:`PyDict_SetDefault`"
-msgstr ""
+msgstr ":c:func:`PyDict_SetDefault`"
 
 #: ../../howto/free-threading-extensions.rst:172
 msgid ":c:func:`PyDict_SetDefaultRef`"
-msgstr ""
+msgstr ":c:func:`PyDict_SetDefaultRef`"
 
 #: ../../howto/free-threading-extensions.rst:174
 msgid ":c:func:`PyDict_Next`"
-msgstr ""
+msgstr ":c:func:`PyDict_Next`"
 
 #: ../../howto/free-threading-extensions.rst:174
 msgid "none (see :ref:`PyDict_Next`)"
-msgstr ""
+msgstr "žádná (viz :ref:`PyDict_Next`)"
 
-#: ../../howto/free-threading-extensions.rst:176
-msgid ":c:func:`PyWeakref_GetObject`"
-msgstr ""
+#: ../../howto/free-threading-extensions.rst:173
+msgid ":c:func:`!PyWeakref_GetObject`"
+msgstr ":c:func:`!PyWeakref_GetObject`"
 
 #: ../../howto/free-threading-extensions.rst:176
 #: ../../howto/free-threading-extensions.rst:178
 msgid ":c:func:`PyWeakref_GetRef`"
-msgstr ""
+msgstr ":c:func:`PyWeakref_GetRef`"
 
-#: ../../howto/free-threading-extensions.rst:178
-msgid ":c:func:`PyWeakref_GET_OBJECT`"
-msgstr ""
+#: ../../howto/free-threading-extensions.rst:175
+msgid ":c:func:`!PyWeakref_GET_OBJECT`"
+msgstr ":c:func:`!PyWeakref_GET_OBJECT`"
 
 #: ../../howto/free-threading-extensions.rst:180
 msgid ":c:func:`PyImport_AddModule`"
-msgstr ""
+msgstr ":c:func:`PyImport_AddModule`"
 
 #: ../../howto/free-threading-extensions.rst:180
 msgid ":c:func:`PyImport_AddModuleRef`"
-msgstr ""
+msgstr ":c:func:`PyImport_AddModuleRef`"
 
 #: ../../howto/free-threading-extensions.rst:182
 msgid ":c:func:`PyCell_GET`"
-msgstr ""
+msgstr ":c:func:`PyCell_GET`"
 
 #: ../../howto/free-threading-extensions.rst:182
 msgid ":c:func:`PyCell_Get`"
-msgstr ""
+msgstr ":c:func:`PyCell_Get`"
 
 #: ../../howto/free-threading-extensions.rst:185
 msgid ""
@@ -323,6 +409,13 @@ msgid ""
 "effectively private (not accessible by other threads), so using borrowed "
 "references in that context is safe."
 msgstr ""
+"Ne všechna API, která vracejí půjčené reference, jsou problematická. "
+"Například :c:func:`PyTuple_GetItem` je bezpečná, protože n-tice jsou "
+"neměnné. Podobně nejsou všechna použití výše uvedených API problematická. "
+"Například :c:func:`PyDict_GetItem` se často používá pro parsování slovníků "
+"klíčových argumentů při voláních funkcí; tyto slovníky klíčových argumentů "
+"jsou fakticky soukromé (nepřístupné jiným vláknům), takže použití půjčených "
+"referencí v tomto kontextu je bezpečné."
 
 #: ../../howto/free-threading-extensions.rst:193
 msgid ""
@@ -331,10 +424,13 @@ msgid ""
 "package to provide implementations of these functions for older Python "
 "versions."
 msgstr ""
+"Některé z těchto funkcí byly přidány v Pythonu 3.13. Můžete použít balíček "
+"`pythoncapi-compat <https://github.com/python/pythoncapi-compat>`_ k "
+"poskytnutí implementací těchto funkcí pro starší verze Pythonu."
 
 #: ../../howto/free-threading-extensions.rst:201
 msgid "Memory Allocation APIs"
-msgstr ""
+msgstr "API pro alokaci paměti"
 
 #: ../../howto/free-threading-extensions.rst:203
 msgid ""
@@ -346,6 +442,13 @@ msgid ""
 "prior Python versions, where this was only a best practice and not a hard"
 " requirement."
 msgstr ""
+"C API pro správu paměti Pythonu poskytuje funkce ve třech různých "
+":ref:`alokačních doménách <allocator-domains>`: \"raw\", \"mem\" a "
+"\"object\". Pro vláknovou bezpečnost vyžaduje volně vláknované sestavení, "
+"aby byly pouze objekty Pythonu alokovány pomocí objektové domény a aby "
+"všechny objekty Pythonu byly alokovány pomocí této domény. To se liší od "
+"předchozích verzí Pythonu, kde to byl pouze osvědčený postup a ne pevný "
+"požadavek."
 
 #: ../../howto/free-threading-extensions.rst:212
 msgid ""
@@ -354,28 +457,33 @@ msgid ""
 ":c:func:`PyMem_Malloc` to allocate buffers instead of "
 ":c:func:`PyObject_Malloc`."
 msgstr ""
+"Vyhledejte použití :c:func:`PyObject_Malloc` ve vašem rozšíření a zkontrolujte, "
+"že alokovaná paměť je používána pro objekty Pythonu. Použijte "
+":c:func:`PyMem_Malloc` k alokaci bufferů namísto :c:func:`PyObject_Malloc`."
 
 #: ../../howto/free-threading-extensions.rst:219
 msgid "Thread State and GIL APIs"
-msgstr ""
+msgstr "API pro stav vláken a GIL"
 
 #: ../../howto/free-threading-extensions.rst:221
 msgid ""
 "Python provides a set of functions and macros to manage thread state and "
 "the GIL, such as:"
 msgstr ""
+"Python poskytuje sadu funkcí a maker pro správu stavu vláken a GIL, jako "
+"jsou:"
 
 #: ../../howto/free-threading-extensions.rst:224
 msgid ":c:func:`PyGILState_Ensure` and :c:func:`PyGILState_Release`"
-msgstr ""
+msgstr ":c:func:`PyGILState_Ensure` a :c:func:`PyGILState_Release`"
 
 #: ../../howto/free-threading-extensions.rst:225
 msgid ":c:func:`PyEval_SaveThread` and :c:func:`PyEval_RestoreThread`"
-msgstr ""
+msgstr ":c:func:`PyEval_SaveThread` a :c:func:`PyEval_RestoreThread`"
 
 #: ../../howto/free-threading-extensions.rst:226
 msgid ":c:macro:`Py_BEGIN_ALLOW_THREADS` and :c:macro:`Py_END_ALLOW_THREADS`"
-msgstr ""
+msgstr ":c:macro:`Py_BEGIN_ALLOW_THREADS` a :c:macro:`Py_END_ALLOW_THREADS`"
 
 #: ../../howto/free-threading-extensions.rst:228
 msgid ""
@@ -385,6 +493,11 @@ msgid ""
 ":c:func:`PyGILState_Ensure` before calling into the Python API to ensure "
 "that the thread has a valid Python thread state."
 msgstr ""
+"Tyto funkce by měly být stále používány ve volně vláknovaném sestavení pro "
+"správu stavu vláken, i když je :term:`GIL` zakázán. Například pokud vytvoříte "
+"vlákno mimo Python, musíte před voláním Python API zavolat "
+":c:func:`PyGILState_Ensure`, abyste zajistili, že vlákno má platný stav "
+"vlákna Pythonu."
 
 #: ../../howto/free-threading-extensions.rst:234
 msgid ""
@@ -393,10 +506,14 @@ msgid ""
 " or lock acquisitions, to allow other threads to run the :term:`cyclic "
 "garbage collector <garbage collection>`."
 msgstr ""
+"Měli byste pokračovat ve volání :c:func:`PyEval_SaveThread` nebo "
+":c:macro:`Py_BEGIN_ALLOW_THREADS` kolem blokujících operací, jako je I/O "
+"nebo získávání zámků, aby mohla jiná vlákna spustit :term:`cyklický sběrač "
+"odpadu <garbage collection>`."
 
 #: ../../howto/free-threading-extensions.rst:241
 msgid "Protecting Internal Extension State"
-msgstr ""
+msgstr "Ochrana interního stavu rozšíření"
 
 #: ../../howto/free-threading-extensions.rst:243
 msgid ""
@@ -404,6 +521,9 @@ msgid ""
 "the GIL.  You may need to add locking to protect this state.  The "
 "approach will depend on your extension, but some common patterns include:"
 msgstr ""
+"Vaše rozšíření může mít interní stav, který byl dříve chráněn GIL. Možná "
+"budete muset přidat zamykání k ochraně tohoto stavu. Přístup bude záviset "
+"na vašem rozšíření, ale některé běžné vzory zahrnují:"
 
 #: ../../howto/free-threading-extensions.rst:247
 msgid ""
@@ -411,6 +531,9 @@ msgid ""
 "using a lock to protect the cache or disabling it in the free-threaded "
 "build if the cache is not critical for performance."
 msgstr ""
+"**Cache**: globální cache jsou běžným zdrojem sdíleného stavu. Zvažte "
+"použití zámku k ochraně cache nebo její zakázání ve volně vláknovaném "
+"sestavení, pokud cache není kritická pro výkon."
 
 #: ../../howto/free-threading-extensions.rst:250
 msgid ""
@@ -419,10 +542,14 @@ msgid ""
 " or ``_Thread_local`` for `thread-local storage "
 "<https://en.cppreference.com/w/c/language/storage_duration>`_."
 msgstr ""
+"**Globální stav**: globální stav může potřebovat ochranu zámkem nebo "
+"přesun do úložiště lokálního pro vlákno. C11 a C++11 poskytují ``thread_local`` "
+"nebo ``_Thread_local`` pro `úložiště lokální pro vlákno "
+"<https://en.cppreference.com/w/c/language/storage_duration>`_."
 
 #: ../../howto/free-threading-extensions.rst:257
 msgid "Critical Sections"
-msgstr ""
+msgstr "Kritické sekce"
 
 #: ../../howto/free-threading-extensions.rst:261
 msgid ""
@@ -433,10 +560,15 @@ msgid ""
 " crucial when using certain C API functions or managing shared state in "
 "the free-threaded build."
 msgstr ""
+"Ve volně vláknovaném sestavení poskytuje CPython mechanismus nazvaný "
+"\"kritické sekce\" k ochraně dat, která by jinak byla chráněna GIL. Ačkoli "
+"autoři rozšíření nemusí přímo pracovat s interní implementací kritických "
+"sekcí, pochopení jejich chování je zásadní při používání určitých funkcí "
+"C API nebo správě sdíleného stavu ve volně vláknovaném sestavení."
 
 #: ../../howto/free-threading-extensions.rst:268
 msgid "What Are Critical Sections?"
-msgstr ""
+msgstr "Co jsou kritické sekce?"
 
 #: ../../howto/free-threading-extensions.rst:270
 msgid ""
@@ -447,20 +579,28 @@ msgid ""
 "function like :c:func:`PyDict_SetItem`, or explicitly using macros), it "
 "attempts to acquire the underlying mutex."
 msgstr ""
+"Konceptuálně fungují kritické sekce jako vrstva pro vyhýbání se deadlocku "
+"postavená nad jednoduchými mutexy. Každé vlákno udržuje zásobník aktivních "
+"kritických sekcí. Když vlákno potřebuje získat zámek spojený s kritickou "
+"sekcí (např. implicitně při volání vláknově bezpečné funkce C API jako "
+":c:func:`PyDict_SetItem`, nebo explicitně pomocí maker), pokusí se získat "
+"podkladový mutex."
 
 #: ../../howto/free-threading-extensions.rst:278
 msgid "Using Critical Sections"
-msgstr ""
+msgstr "Použití kritických sekcí"
 
 #: ../../howto/free-threading-extensions.rst:280
 msgid "The primary APIs for using critical sections are:"
-msgstr ""
+msgstr "Primární API pro použití kritických sekcí jsou:"
 
 #: ../../howto/free-threading-extensions.rst:282
 msgid ""
 ":c:macro:`Py_BEGIN_CRITICAL_SECTION` and "
 ":c:macro:`Py_END_CRITICAL_SECTION` - For locking a single object"
 msgstr ""
+":c:macro:`Py_BEGIN_CRITICAL_SECTION` a "
+":c:macro:`Py_END_CRITICAL_SECTION` - Pro zamykání jednoho objektu"
 
 #: ../../howto/free-threading-extensions.rst:285
 msgid ""
@@ -468,6 +608,9 @@ msgid ""
 ":c:macro:`Py_END_CRITICAL_SECTION2` - For locking two objects "
 "simultaneously"
 msgstr ""
+":c:macro:`Py_BEGIN_CRITICAL_SECTION2` a "
+":c:macro:`Py_END_CRITICAL_SECTION2` - Pro zamykání dvou objektů "
+"současně"
 
 #: ../../howto/free-threading-extensions.rst:288
 msgid ""
@@ -476,6 +619,10 @@ msgid ""
 "in non-free-threaded builds, so they can be safely added to code that "
 "needs to support both build types."
 msgstr ""
+"Tato makra musí být použita v odpovídajících párech a musí se objevit ve "
+"stejném rozsahu C, protože vytvářejí nový lokální rozsah. Tato makra jsou "
+"no-ops (žádná operace) v nevolně vláknovaných sestaveních, takže mohou být "
+"bezpečně přidána do kódu, který musí podporovat oba typy sestavení."
 
 #: ../../howto/free-threading-extensions.rst:293
 msgid ""
@@ -484,6 +631,9 @@ msgid ""
 " has an internal count field, you could use a critical section while "
 "reading or writing that field::"
 msgstr ""
+"Běžné použití kritické sekce by bylo zamknout objekt při přístupu k jeho "
+"internímu atributu. Například pokud rozšiřující typ má interní pole count, "
+"můžete použít kritickou sekci při čtení nebo zápisu tohoto pole::"
 
 #: ../../howto/free-threading-extensions.rst:298
 msgid ""
@@ -499,10 +649,21 @@ msgid ""
 "obj->count = new_count;\n"
 "Py_END_CRITICAL_SECTION();"
 msgstr ""
+"// read the count, returns new reference to internal count value\n"
+"PyObject *result;\n"
+"Py_BEGIN_CRITICAL_SECTION(obj);\n"
+"result = Py_NewRef(obj->count);\n"
+"Py_END_CRITICAL_SECTION();\n"
+"return result;\n"
+"\n"
+"// write the count, consumes reference from new_count\n"
+"Py_BEGIN_CRITICAL_SECTION(obj);\n"
+"obj->count = new_count;\n"
+"Py_END_CRITICAL_SECTION();"
 
 #: ../../howto/free-threading-extensions.rst:312
 msgid "How Critical Sections Work"
-msgstr ""
+msgstr "Jak fungují kritické sekce"
 
 #: ../../howto/free-threading-extensions.rst:314
 msgid ""
@@ -512,16 +673,23 @@ msgid ""
 " I/O), the critical section is temporarily suspended—all locks are "
 "released—and then resumed when the blocking operation completes."
 msgstr ""
+"Na rozdíl od tradičních zámků nezaručují kritické sekce výhradní přístup "
+"po celou dobu jejich trvání. Pokud by vlákno blokovalo při držení kritické "
+"sekce (např. získáním jiného zámku nebo prováděním I/O), je kritická sekce "
+"dočasně pozastavena—všechny zámky jsou uvolněny—a poté obnovena, když se "
+"blokující operace dokončí."
 
 #: ../../howto/free-threading-extensions.rst:320
 msgid ""
 "This behavior is similar to what happens with the GIL when a thread makes"
 " a blocking call. The key differences are:"
 msgstr ""
+"Toto chování je podobné tomu, co se děje s GIL, když vlákno provede "
+"blokující volání. Klíčové rozdíly jsou:"
 
 #: ../../howto/free-threading-extensions.rst:323
 msgid "Critical sections operate on a per-object basis rather than globally"
-msgstr ""
+msgstr "Kritické sekce pracují na bázi jednotlivých objektů spíše než globálně"
 
 #: ../../howto/free-threading-extensions.rst:325
 msgid ""
@@ -529,20 +697,25 @@ msgid ""
 "\"begin\" and \"end\" macros enforce this since they must be paired and "
 "within the same scope)"
 msgstr ""
+"Kritické sekce dodržují zásobníkovou disciplínu v rámci každého vlákna "
+"(makra \"begin\" a \"end\" to vynucují, protože musí být spárována a v "
+"rámci stejného rozsahu)"
 
 #: ../../howto/free-threading-extensions.rst:328
 msgid ""
 "Critical sections automatically release and reacquire locks around "
 "potential blocking operations"
 msgstr ""
+"Kritické sekce automaticky uvolňují a znovu získávají zámky kolem "
+"potenciálně blokujících operací"
 
 #: ../../howto/free-threading-extensions.rst:332
 msgid "Deadlock Avoidance"
-msgstr ""
+msgstr "Vyhýbání se deadlocku"
 
 #: ../../howto/free-threading-extensions.rst:334
 msgid "Critical sections help avoid deadlocks in two ways:"
-msgstr ""
+msgstr "Kritické sekce pomáhají vyhnout se deadlocku dvěma způsoby:"
 
 #: ../../howto/free-threading-extensions.rst:336
 msgid ""
@@ -550,12 +723,16 @@ msgid ""
 "thread, it first suspends all of its active critical sections, "
 "temporarily releasing their locks"
 msgstr ""
+"Pokud se vlákno pokusí získat zámek, který již drží jiné vlákno, nejprve "
+"pozastaví všechny své aktivní kritické sekce a dočasně uvolní jejich zámky"
 
 #: ../../howto/free-threading-extensions.rst:340
 msgid ""
 "When the blocking operation completes, only the top-most critical section"
 " is reacquired first"
 msgstr ""
+"Když se blokující operace dokončí, je nejprve znovu získána pouze nejvyšší "
+"kritická sekce"
 
 #: ../../howto/free-threading-extensions.rst:343
 msgid ""
@@ -564,6 +741,10 @@ msgid ""
 "ones. Instead, use :c:macro:`Py_BEGIN_CRITICAL_SECTION2` to lock two "
 "objects simultaneously."
 msgstr ""
+"To znamená, že se nemůžete spoléhat na vnořené kritické sekce k zamykání "
+"více objektů najednou, protože vnitřní kritická sekce může pozastavit vnější. "
+"Namísto toho použijte :c:macro:`Py_BEGIN_CRITICAL_SECTION2` k zamykání dvou "
+"objektů současně."
 
 #: ../../howto/free-threading-extensions.rst:347
 msgid ""
@@ -576,10 +757,17 @@ msgid ""
 "section, it will not be released and therefore does not get the same "
 "deadlock avoidance."
 msgstr ""
+"Všimněte si, že výše popsané zámky jsou pouze zámky založené na :c:type:`PyMutex`. "
+"Implementace kritických sekcí nezná ani neovlivňuje jiné zamykací mechanismy, "
+"které mohou být používány, jako jsou POSIX mutexy. Také si všimněte, že zatímco "
+"blokování na jakémkoli :c:type:`PyMutex` způsobí pozastavení kritických sekcí, "
+"jsou uvolněny pouze mutexy, které jsou součástí kritických sekcí. Pokud je "
+":c:type:`PyMutex` použit bez kritické sekce, nebude uvolněn, a proto nedostane "
+"stejné vyhýbání se deadlocku."
 
 #: ../../howto/free-threading-extensions.rst:356
 msgid "Important Considerations"
-msgstr ""
+msgstr "Důležité úvahy"
 
 #: ../../howto/free-threading-extensions.rst:358
 msgid ""
@@ -587,6 +775,9 @@ msgid ""
 "threads to modify the protected data. Be careful about making assumptions"
 " about the state of the data after operations that might block."
 msgstr ""
+"Kritické sekce mohou dočasně uvolnit své zámky, což umožňuje jiným vláknům "
+"upravovat chráněná data. Buďte opatrní při vytváření předpokladů o stavu "
+"dat po operacích, které mohou blokovat."
 
 #: ../../howto/free-threading-extensions.rst:362
 msgid ""
@@ -598,6 +789,12 @@ msgid ""
 "sections will be released. This is similar to how the GIL can be released"
 " during blocking calls."
 msgstr ""
+"Protože zámky mohou být dočasně uvolněny (pozastaveny), vstup do kritické "
+"sekce nezaručuje výhradní přístup k chráněnému zdroji po celou dobu trvání "
+"sekce. Pokud kód v rámci kritické sekce zavolá jinou funkci, která blokuje "
+"(např. získá jiný zámek, provede blokující I/O), všechny zámky držené "
+"vláknem prostřednictvím kritických sekcí budou uvolněny. To je podobné "
+"tomu, jak může být GIL uvolněn během blokujících volání."
 
 #: ../../howto/free-threading-extensions.rst:369
 msgid ""
@@ -605,12 +802,17 @@ msgid ""
 "critical section are guaranteed to be held at any given time. Locks for "
 "outer, nested critical sections might have been suspended."
 msgstr ""
+"Pouze zámky spojené s naposledy vstoupenou (nejvyšší) kritickou sekcí je "
+"zaručeno, že budou drženy v daném okamžiku. Zámky pro vnější, vnořené "
+"kritické sekce mohly být pozastaveny."
 
 #: ../../howto/free-threading-extensions.rst:373
 msgid ""
 "You can lock at most two objects simultaneously with these APIs. If you "
 "need to lock more objects, you'll need to restructure your code."
 msgstr ""
+"S těmito API můžete současně zamknout maximálně dva objekty. Pokud "
+"potřebujete zamknout více objektů, budete muset přestrukturovat svůj kód."
 
 #: ../../howto/free-threading-extensions.rst:376
 msgid ""
@@ -618,6 +820,9 @@ msgid ""
 " object twice, they are less efficient than purpose-built reentrant locks"
 " for this use case."
 msgstr ""
+"Ačkoli kritické sekce nevyvolají deadlock, pokud se pokusíte zamknout stejný "
+"objekt dvakrát, jsou méně efektivní než účelově vytvořené reentrantní zámky "
+"pro tento případ použití."
 
 #: ../../howto/free-threading-extensions.rst:380
 msgid ""
@@ -626,6 +831,9 @@ msgid ""
 "avoidance), but it's good practice to always lock objects in a consistent"
 " order."
 msgstr ""
+"Při použití :c:macro:`Py_BEGIN_CRITICAL_SECTION2` neovlivňuje pořadí objektů "
+"správnost (implementace řeší vyhýbání se deadlocku), ale je dobrým zvykem "
+"vždy zamykat objekty v konzistentním pořadí."
 
 #: ../../howto/free-threading-extensions.rst:384
 msgid ""
@@ -635,10 +843,15 @@ msgid ""
 "protecting purely internal extension state, standard mutexes or other "
 "synchronization primitives might be more appropriate."
 msgstr ""
+"Pamatujte, že makra kritických sekcí jsou primárně určena pro ochranu "
+"přístupu k *objektům Pythonu*, které mohou být zapojeny do interních operací "
+"CPythonu náchylných ke scénářům deadlocku popsaným výše. Pro ochranu čistě "
+"interního stavu rozšíření mohou být vhodnější standardní mutexy nebo jiné "
+"synchronizační primitivy."
 
 #: ../../howto/free-threading-extensions.rst:392
 msgid "Building Extensions for the Free-Threaded Build"
-msgstr ""
+msgstr "Sestavování rozšíření pro volně vláknované sestavení"
 
 #: ../../howto/free-threading-extensions.rst:394
 msgid ""
@@ -646,12 +859,16 @@ msgid ""
 "build. The wheels, shared libraries, and binaries are indicated by a "
 "``t`` suffix."
 msgstr ""
+"Rozšíření C API musí být sestavena speciálně pro volně vláknované sestavení. "
+"Wheels, sdílené knihovny a binární soubory jsou označeny příponou ``t``."
 
 #: ../../howto/free-threading-extensions.rst:397
 msgid ""
 "`pypa/manylinux <https://github.com/pypa/manylinux>`_ supports the free-"
 "threaded build, with the ``t`` suffix, such as ``python3.13t``."
 msgstr ""
+"`pypa/manylinux <https://github.com/pypa/manylinux>`_ podporuje volně "
+"vláknované sestavení s příponou ``t``, například ``python3.13t``."
 
 #: ../../howto/free-threading-extensions.rst:399
 msgid ""
@@ -661,10 +878,15 @@ msgid ""
 "to set `CIBW_ENABLE to cpython-freethreading "
 "<https://cibuildwheel.pypa.io/en/stable/options/#enable>`_."
 msgstr ""
+"`pypa/cibuildwheel <https://github.com/pypa/cibuildwheel>`_ podporuje volně "
+"vláknované sestavení na Pythonu 3.13 a 3.14. Na Pythonu 3.14 budou volně "
+"vláknované wheels sestaveny ve výchozím nastavení. Na Pythonu 3.13 budete "
+"muset nastavit `CIBW_ENABLE na cpython-freethreading "
+"<https://cibuildwheel.pypa.io/en/stable/options/#enable>`_."
 
 #: ../../howto/free-threading-extensions.rst:405
 msgid "Limited C API and Stable ABI"
-msgstr ""
+msgstr "Omezené C API a stabilní ABI"
 
 #: ../../howto/free-threading-extensions.rst:407
 msgid ""
@@ -675,6 +897,12 @@ msgid ""
 "``py_limited_api=not sysconfig.get_config_var(\"Py_GIL_DISABLED\")`` to "
 "opt out of the limited API when building with the free-threaded build."
 msgstr ""
+"Volně vláknované sestavení momentálně nepodporuje :ref:`Omezené C API "
+"<limited-c-api>` ani stabilní ABI. Pokud používáte `setuptools "
+"<https://setuptools.pypa.io/en/latest/setuptools.html>`_ k sestavení "
+"vašeho rozšíření a aktuálně nastavujete ``py_limited_api=True``, můžete "
+"použít ``py_limited_api=not sysconfig.get_config_var(\"Py_GIL_DISABLED\")`` "
+"pro odhlášení z omezeného API při sestavování s volně vláknovaným sestavením."
 
 #: ../../howto/free-threading-extensions.rst:415
 msgid ""
@@ -682,10 +910,13 @@ msgid ""
 " build.  If you currently use the stable ABI, you can continue to build a"
 " single wheel for multiple non-free-threaded Python versions."
 msgstr ""
+"Budete muset sestavit samostatné wheels speciálně pro volně vláknované "
+"sestavení. Pokud aktuálně používáte stabilní ABI, můžete pokračovat v "
+"sestavování jediného wheelu pro více nevolně vláknovaných verzí Pythonu."
 
 #: ../../howto/free-threading-extensions.rst:421
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../howto/free-threading-extensions.rst:423
 msgid ""
@@ -693,6 +924,8 @@ msgid ""
 "manually define ``Py_GIL_DISABLED=1`` when building extensions from "
 "source."
 msgstr ""
+"Kvůli omezení oficiálního instalátoru Windows budete muset ručně definovat "
+"``Py_GIL_DISABLED=1`` při sestavování rozšíření ze zdroje."
 
 #: ../../howto/free-threading-extensions.rst:428
 msgid ""
@@ -700,6 +933,9 @@ msgid ""
 "threading.github.io/porting/>`_: A community-maintained porting guide for"
 " extension authors."
 msgstr ""
+"`Portování rozšiřujících modulů pro podporu volného vláknování <https://py-free-"
+"threading.github.io/porting/>`_: Komunitou udržovaný průvodce portováním pro "
+"autory rozšíření."
 
 #~ msgid ""
 #~ "Extensions that use :ref:`multi-phase "

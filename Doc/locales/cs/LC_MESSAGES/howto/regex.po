@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../../howto/regex.rst:5
 msgid "Regular Expression HOWTO"
-msgstr ""
+msgstr "HOWTO regulární výrazy"
 
 #: ../../howto/regex.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/regex.rst:7
 msgid "A.M. Kuchling <amk@amk.ca>"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:-1
 msgid "Abstract"
-msgstr ""
+msgstr "Abstrakt"
 
 #: ../../howto/regex.rst:18
 msgid ""
@@ -41,10 +41,13 @@ msgid ""
 " Python with the :mod:`re` module.  It provides a gentler introduction "
 "than the corresponding section in the Library Reference."
 msgstr ""
+"Tento dokument je úvodní tutoriál pro použití regulárních výrazů v Pythonu "
+"s modulem :mod:`re`. Poskytuje jemnější úvod než odpovídající sekce v "
+"referenční příručce knihovny."
 
 #: ../../howto/regex.rst:24
 msgid "Introduction"
-msgstr ""
+msgstr "Úvod"
 
 #: ../../howto/regex.rst:26
 msgid ""
@@ -58,6 +61,15 @@ msgid ""
 "there a match for the pattern anywhere in this string?\".  You can also "
 "use REs to modify a string or to split it apart in various ways."
 msgstr ""
+"Regulární výrazy (nazývané RE, nebo regexes, nebo vzory regulárních výrazů) "
+"jsou v podstatě malý, vysoce specializovaný programovací jazyk vložený do "
+"Pythonu a zpřístupněný prostřednictvím modulu :mod:`re`. Pomocí tohoto "
+"malého jazyka specifikujete pravidla pro množinu možných řetězců, které "
+"chcete najít; tato množina může obsahovat anglické věty, e-mailové adresy, "
+"TeX příkazy nebo cokoli jiného.  Poté můžete klást otázky jako \"Odpovídá "
+"tento řetězec vzoru?\" nebo \"Existuje shoda se vzorem někde v tomto "
+"řetězci?\".  Můžete také použít RE pro úpravu řetězce nebo jeho rozdělení "
+"různými způsoby."
 
 #: ../../howto/regex.rst:35
 msgid ""
@@ -69,6 +81,12 @@ msgid ""
 "because it requires that you have a good understanding of the matching "
 "engine's internals."
 msgstr ""
+"Vzory regulárních výrazů jsou zkompilovány do série bytekódů, které jsou "
+"poté prováděny vyhledávacím strojem napsaným v C. Pro pokročilé použití může "
+"být nutné pečlivě sledovat, jak bude stroj provádět daný RE, a napsat RE "
+"určitým způsobem, aby se vytvořil bytekód, který běží rychleji. Optimalizace "
+"není v tomto dokumentu pokryta, protože vyžaduje dobré pochopení vnitřních "
+"mechanismů vyhledávacího stroje."
 
 #: ../../howto/regex.rst:42
 msgid ""
@@ -80,10 +98,16 @@ msgid ""
 "processing; while Python code will be slower than an elaborate regular "
 "expression, it will also probably be more understandable."
 msgstr ""
+"Jazyk regulárních výrazů je relativně malý a omezený, takže ne všechny "
+"možné úlohy zpracování řetězců lze provádět pomocí regulárních výrazů. "
+"Existují také úlohy, které *lze* provádět pomocí regulárních výrazů, ale "
+"výrazy se ukážou být velmi komplikované. V těchto případech může být lepší "
+"napsat Python kód pro zpracování; zatímco Python kód bude pomalejší než "
+"propracovaný regulární výraz, bude také pravděpodobně srozumitelnější."
 
 #: ../../howto/regex.rst:51
 msgid "Simple Patterns"
-msgstr ""
+msgstr "Jednoduché vzory"
 
 #: ../../howto/regex.rst:53
 msgid ""
@@ -91,6 +115,9 @@ msgid ""
 "  Since regular expressions are used to operate on strings, we'll begin "
 "with the most common task: matching characters."
 msgstr ""
+"Začneme tím, že se naučíme o nejjednodušších možných regulárních výrazech. "
+"Protože regulární výrazy se používají k operacím na řetězcích, začneme "
+"s nejběžnějším úkolem: porovnáváním znaků."
 
 #: ../../howto/regex.rst:57
 msgid ""
@@ -98,10 +125,13 @@ msgid ""
 "expressions (deterministic and non-deterministic finite automata), you "
 "can refer to almost any textbook on writing compilers."
 msgstr ""
+"Pro podrobné vysvětlení počítačové vědy za regulárními výrazy (deterministické "
+"a nedeterministické konečné automaty) můžete nahlédnout téměř do jakékoli "
+"učebnice o psaní kompilátorů."
 
 #: ../../howto/regex.rst:63
 msgid "Matching Characters"
-msgstr ""
+msgstr "Porovnávání znaků"
 
 #: ../../howto/regex.rst:65
 msgid ""
@@ -110,6 +140,10 @@ msgid ""
 "(You can enable a case-insensitive mode that would let this RE match "
 "``Test`` or ``TEST`` as well; more about this later.)"
 msgstr ""
+"Většina písmen a znaků se jednoduše shoduje sama se sebou. Například "
+"regulární výraz ``test`` bude odpovídat přesně řetězci ``test``. (Můžete "
+"povolit režim nerozlišující velikost písmen, který by umožnil tomuto RE "
+"odpovídat také ``Test`` nebo ``TEST``; více o tom později.)"
 
 #: ../../howto/regex.rst:70
 msgid ""
@@ -120,12 +154,19 @@ msgid ""
 "Much of this document is devoted to discussing various metacharacters and"
 " what they do."
 msgstr ""
+"Existují výjimky z tohoto pravidla; některé znaky jsou speciální "
+":dfn:`metaznaky` a neshodují se samy se sebou. Místo toho signalizují, že "
+"by mělo být porovnáno něco neobvyklého, nebo ovlivňují jiné části RE jejich "
+"opakováním nebo změnou jejich významu. Velká část tohoto dokumentu je "
+"věnována diskuzi o různých metaznacích a o tom, co dělají."
 
 #: ../../howto/regex.rst:76
 msgid ""
 "Here's a complete list of the metacharacters; their meanings will be "
 "discussed in the rest of this HOWTO."
 msgstr ""
+"Zde je úplný seznam metaznaků; jejich významy budou probrány ve zbytku "
+"tohoto HOWTO."
 
 #: ../../howto/regex.rst:79
 #, python-brace-format
@@ -143,6 +184,13 @@ msgid ""
 " to express the same set of characters.  If you wanted to match only "
 "lowercase letters, your RE would be ``[a-z]``."
 msgstr ""
+"První metaznaky, na které se podíváme, jsou ``[`` a ``]``. Používají se "
+"pro specifikaci třídy znaků, což je množina znaků, které chcete porovnat. "
+"Znaky mohou být vypsány jednotlivě, nebo lze rozsah znaků označit zadáním "
+"dvou znaků a jejich oddělením pomocí ``'-'``. Například ``[abc]`` bude "
+"odpovídat kterémukoli ze znaků ``a``, ``b`` nebo ``c``; to je stejné jako "
+"``[a-c]``, který používá rozsah k vyjádření stejné množiny znaků. Pokud "
+"byste chtěli porovnat pouze malá písmena, váš RE by byl ``[a-z]``."
 
 #: ../../howto/regex.rst:92
 msgid ""
@@ -151,6 +199,10 @@ msgid ""
 "``'m'``, or ``'$'``; ``'$'`` is usually a metacharacter, but inside a "
 "character class it's stripped of its special nature."
 msgstr ""
+"Metaznaky (kromě ``\\``) nejsou aktivní uvnitř tříd. Například ``[akm$]`` "
+"bude odpovídat kterémukoli ze znaků ``'a'``, ``'k'``, ``'m'`` nebo ``'$'``; "
+"``'$'`` je obvykle metaznak, ale uvnitř třídy znaků je zbaven své speciální "
+"povahy."
 
 #: ../../howto/regex.rst:97
 msgid ""
@@ -161,6 +213,11 @@ msgid ""
 " class, it does not have special meaning. For example: ``[5^]`` will "
 "match either a ``'5'`` or a ``'^'``."
 msgstr ""
+"Můžete porovnat znaky, které nejsou ve třídě uvedeny, pomocí "
+":dfn:`doplňku` množiny. To se označuje zahrnutím ``'^'`` jako prvního "
+"znaku třídy. Například ``[^5]`` bude odpovídat jakémukoli znaku kromě "
+"``'5'``. Pokud se stříška objeví jinde ve třídě znaků, nemá speciální "
+"význam. Například: ``[5^]`` bude odpovídat buď ``'5'`` nebo ``'^'``."
 
 #: ../../howto/regex.rst:103
 msgid ""
@@ -171,6 +228,13 @@ msgid ""
 "example, if you need to match a ``[`` or  ``\\``, you can precede them "
 "with a backslash to remove their special meaning: ``\\[`` or ``\\\\``."
 msgstr ""
+"Možná nejdůležitějším metaznakem je zpětné lomítko, ``\\``. Jako v "
+"řetězcových literálech Pythonu může být zpětné lomítko následováno různými "
+"znaky k signalizaci různých speciálních sekvencí. Používá se také k "
+"escapování všech metaznaků, takže je stále můžete porovnávat ve vzorech; "
+"například pokud potřebujete porovnat ``[`` nebo ``\\``, můžete je předřadit "
+"zpětným lomítkem, abyste odstranili jejich speciální význam: ``\\[`` nebo "
+"``\\\\``."
 
 #: ../../howto/regex.rst:110
 msgid ""
@@ -178,6 +242,9 @@ msgid ""
 "predefined sets of characters that are often useful, such as the set of "
 "digits, the set of letters, or the set of anything that isn't whitespace."
 msgstr ""
+"Některé speciální sekvence začínající ``'\\'`` reprezentují předdefinované "
+"množiny znaků, které jsou často užitečné, jako je množina číslic, množina "
+"písmen nebo množina čehokoli, co není bílý znak."
 
 #: ../../howto/regex.rst:115
 msgid ""
@@ -189,6 +256,13 @@ msgid ""
 "definition of ``\\w`` in a string pattern by supplying the "
 ":const:`re.ASCII` flag when compiling the regular expression."
 msgstr ""
+"Vezměme si příklad: ``\\w`` odpovídá jakémukoli alfanumerickému znaku. "
+"Pokud je vzor regulárního výrazu vyjádřen v bajtech, je to ekvivalentní "
+"třídě ``[a-zA-Z0-9_]``. Pokud je vzor regulárního výrazu řetězec, ``\\w`` "
+"bude odpovídat všem znakům označeným jako písmena v Unicode databázi "
+"poskytované modulem :mod:`unicodedata`. Můžete použít více omezenou "
+"definici ``\\w`` ve vzoru řetězce zadáním příznaku :const:`re.ASCII` při "
+"kompilaci regulárního výrazu."
 
 #: ../../howto/regex.rst:123
 msgid ""
@@ -199,6 +273,11 @@ msgid ""
 "versions match any character that's in the appropriate category in the "
 "Unicode database."
 msgstr ""
+"Následující seznam speciálních sekvencí není úplný. Pro úplný seznam "
+"sekvencí a rozšířené definice tříd pro vzory řetězců Unicode viz poslední "
+"část :ref:`Regular Expression Syntax <re-syntax>` v referenční příručce "
+"standardní knihovny. Obecně platí, že Unicode verze odpovídají jakémukoli "
+"znaku, který je v příslušné kategorii v Unicode databázi."
 
 #: ../../howto/regex.rst:130
 msgid "``\\d``"
@@ -206,7 +285,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:131
 msgid "Matches any decimal digit; this is equivalent to the class ``[0-9]``."
-msgstr ""
+msgstr "Odpovídá jakékoli desítkové číslici; to je ekvivalentní třídě ``[0-9]``."
 
 #: ../../howto/regex.rst:133
 msgid "``\\D``"
@@ -217,6 +296,8 @@ msgid ""
 "Matches any non-digit character; this is equivalent to the class "
 "``[^0-9]``."
 msgstr ""
+"Odpovídá jakémukoli znaku, který není číslice; to je ekvivalentní třídě "
+"``[^0-9]``."
 
 #: ../../howto/regex.rst:136
 msgid "``\\s``"
@@ -227,6 +308,8 @@ msgid ""
 "Matches any whitespace character; this is equivalent to the class ``[ "
 "\\t\\n\\r\\f\\v]``."
 msgstr ""
+"Odpovídá jakémukoli bílému znaku; to je ekvivalentní třídě ``[ "
+"\\t\\n\\r\\f\\v]``."
 
 #: ../../howto/regex.rst:140
 msgid "``\\S``"
@@ -237,6 +320,8 @@ msgid ""
 "Matches any non-whitespace character; this is equivalent to the class "
 "``[^ \\t\\n\\r\\f\\v]``."
 msgstr ""
+"Odpovídá jakémukoli znaku, který není bílý znak; to je ekvivalentní třídě "
+"``[^ \\t\\n\\r\\f\\v]``."
 
 #: ../../howto/regex.rst:144
 msgid "``\\w``"
@@ -247,6 +332,8 @@ msgid ""
 "Matches any alphanumeric character; this is equivalent to the class "
 "``[a-zA-Z0-9_]``."
 msgstr ""
+"Odpovídá jakémukoli alfanumerickému znaku; to je ekvivalentní třídě "
+"``[a-zA-Z0-9_]``."
 
 #: ../../howto/regex.rst:148
 msgid "``\\W``"
@@ -257,6 +344,8 @@ msgid ""
 "Matches any non-alphanumeric character; this is equivalent to the class "
 "``[^a-zA-Z0-9_]``."
 msgstr ""
+"Odpovídá jakémukoli znaku, který není alfanumerický; to je ekvivalentní "
+"třídě ``[^a-zA-Z0-9_]``."
 
 #: ../../howto/regex.rst:152
 msgid ""
@@ -264,6 +353,9 @@ msgid ""
 "``[\\s,.]`` is a character class that will match any whitespace "
 "character, or ``','`` or ``'.'``."
 msgstr ""
+"Tyto sekvence mohou být zahrnuty uvnitř třídy znaků. Například ``[\\s,.]`` "
+"je třída znaků, která bude odpovídat jakémukoli bílému znaku nebo ``','`` "
+"nebo ``'.'``."
 
 #: ../../howto/regex.rst:156
 msgid ""
@@ -272,10 +364,14 @@ msgid ""
 "(:const:`re.DOTALL`) where it will match even a newline.  ``.`` is often "
 "used where you want to match \"any character\"."
 msgstr ""
+"Poslední metaznak v této sekci je ``.``. Odpovídá čemukoli kromě znaku "
+"nového řádku a existuje alternativní režim (:const:`re.DOTALL`), kde bude "
+"odpovídat dokonce i novému řádku. ``.`` se často používá tam, kde chcete "
+"porovnat \"jakýkoli znak\"."
 
 #: ../../howto/regex.rst:163
 msgid "Repeating Things"
-msgstr ""
+msgstr "Opakování věcí"
 
 #: ../../howto/regex.rst:165
 msgid ""
@@ -286,6 +382,11 @@ msgid ""
 "capability is that you can specify that portions of the RE must be "
 "repeated a certain number of times."
 msgstr ""
+"Schopnost porovnávat různé množiny znaků je první věc, kterou regulární "
+"výrazy umí a která ještě není možná s metodami dostupnými na řetězcích. "
+"Nicméně pokud by to byla jediná další schopnost regexů, nebylo by to nijak "
+"velký pokrok. Další schopností je, že můžete specifikovat, že části RE musí "
+"být opakovány určitý počet krát."
 
 #: ../../howto/regex.rst:171
 msgid ""
@@ -294,12 +395,17 @@ msgid ""
 "specifies that the previous character can be matched zero or more times, "
 "instead of exactly once."
 msgstr ""
+"První metaznak pro opakování věcí, na který se podíváme, je ``*``. ``*`` "
+"neodpovídá literálnímu znaku ``'*'``; místo toho specifikuje, že předchozí "
+"znak může být porovnán nula nebo vícekrát, namísto přesně jednou."
 
 #: ../../howto/regex.rst:175
 msgid ""
 "For example, ``ca*t`` will match ``'ct'`` (0 ``'a'`` characters), "
 "``'cat'`` (1 ``'a'``), ``'caaat'`` (3 ``'a'`` characters), and so forth."
 msgstr ""
+"Například ``ca*t`` bude odpovídat ``'ct'`` (0 znaků ``'a'``), ``'cat'`` "
+"(1 ``'a'``), ``'caaat'`` (3 znaky ``'a'``) a tak dále."
 
 #: ../../howto/regex.rst:178
 msgid ""
@@ -308,6 +414,10 @@ msgid ""
 " portions of the pattern don't match, the matching engine will then back "
 "up and try again with fewer repetitions."
 msgstr ""
+"Opakování jako ``*`` jsou :dfn:`chamtivá`; při opakování RE se vyhledávací "
+"stroj pokusí opakovat to tolikrát, kolikrát je to možné. Pokud pozdější "
+"části vzoru neodpovídají, vyhledávací stroj se pak vrátí zpět a zkusí to "
+"znovu s menším počtem opakování."
 
 #: ../../howto/regex.rst:183
 msgid ""
@@ -316,18 +426,22 @@ msgid ""
 "letters from the class ``[bcd]``, and finally ends with a ``'b'``.  Now "
 "imagine matching this RE against the string ``'abcbd'``."
 msgstr ""
+"Příklad krok za krokem to učiní zřejmějším. Uvažujme výraz ``a[bcd]*b``. "
+"Ten odpovídá písmenu ``'a'``, nule nebo více písmenům ze třídy ``[bcd]`` "
+"a nakonec končí ``'b'``. Nyní si představte porovnání tohoto RE s řetězcem "
+"``'abcbd'``."
 
 #: ../../howto/regex.rst:189
 msgid "Step"
-msgstr ""
+msgstr "Krok"
 
 #: ../../howto/regex.rst:189
 msgid "Matched"
-msgstr ""
+msgstr "Porovnáno"
 
 #: ../../howto/regex.rst:189
 msgid "Explanation"
-msgstr ""
+msgstr "Vysvětlení"
 
 #: ../../howto/regex.rst:191
 msgid "1"
@@ -339,7 +453,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:191
 msgid "The ``a`` in the RE matches."
-msgstr ""
+msgstr "``a`` v RE odpovídá."
 
 #: ../../howto/regex.rst:193
 msgid "2"
@@ -354,6 +468,8 @@ msgid ""
 "The engine matches ``[bcd]*``, going as far as it can, which is to the "
 "end of the string."
 msgstr ""
+"Stroj porovnává ``[bcd]*``, jde tak daleko, jak může, což je až na konec "
+"řetězce."
 
 #: ../../howto/regex.rst:197
 msgid "3"
@@ -361,13 +477,15 @@ msgstr ""
 
 #: ../../howto/regex.rst:197 ../../howto/regex.rst:205
 msgid "*Failure*"
-msgstr ""
+msgstr "*Selhání*"
 
 #: ../../howto/regex.rst:197
 msgid ""
 "The engine tries to match ``b``, but the current position is at the end "
 "of the string, so it fails."
 msgstr ""
+"Stroj se pokouší porovnat ``b``, ale aktuální pozice je na konci řetězce, "
+"takže selže."
 
 #: ../../howto/regex.rst:202
 msgid "4"
@@ -379,7 +497,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:202
 msgid "Back up, so that  ``[bcd]*`` matches one less character."
-msgstr ""
+msgstr "Vrátí se zpět, takže ``[bcd]*`` odpovídá o jeden znak méně."
 
 #: ../../howto/regex.rst:205
 msgid "5"
@@ -390,6 +508,8 @@ msgid ""
 "Try ``b`` again, but the current position is at the last character, which"
 " is a ``'d'``."
 msgstr ""
+"Zkusí ``b`` znovu, ale aktuální pozice je na posledním znaku, což je "
+"``'d'``."
 
 #: ../../howto/regex.rst:209 ../../howto/regex.rst:213
 msgid "6"
@@ -401,13 +521,15 @@ msgstr ""
 
 #: ../../howto/regex.rst:209
 msgid "Back up again, so that ``[bcd]*`` is only matching ``bc``."
-msgstr ""
+msgstr "Vrátí se znovu zpět, takže ``[bcd]*`` odpovídá pouze ``bc``."
 
 #: ../../howto/regex.rst:213
 msgid ""
 "Try ``b`` again.  This time the character at the current position is "
 "``'b'``, so it succeeds."
 msgstr ""
+"Zkusí ``b`` znovu. Tentokrát je znak na aktuální pozici ``'b'``, takže to "
+"uspěje."
 
 #: ../../howto/regex.rst:219
 msgid ""
@@ -418,6 +540,11 @@ msgid ""
 "zero matches for ``[bcd]*``, and if that subsequently fails, the engine "
 "will conclude that the string doesn't match the RE at all."
 msgstr ""
+"Nyní bylo dosaženo konce RE a bylo porovnáno ``'abcb'``. To demonstruje, "
+"jak vyhledávací stroj jde zpočátku tak daleko, jak může, a pokud není "
+"nalezena shoda, postupně se vrací zpět a opakuje zbytek RE znovu a znovu. "
+"Vrátí se zpět, dokud nezkoušel nulové shody pro ``[bcd]*``, a pokud to "
+"následně selže, stroj dojde k závěru, že řetězec vůbec neodpovídá RE."
 
 #: ../../howto/regex.rst:226
 msgid ""
@@ -428,6 +555,12 @@ msgid ""
 "use a similar example, ``ca+t`` will match ``'cat'`` (1 ``'a'``), "
 "``'caaat'`` (3 ``'a'``\\ s), but won't match ``'ct'``."
 msgstr ""
+"Dalším opakujícím se metaznakem je ``+``, který odpovídá jednou nebo "
+"vícekrát. Věnujte pozornost rozdílu mezi ``*`` a ``+``; ``*`` odpovídá "
+"*nula* nebo vícekrát, takže cokoliv je opakováno, nemusí být vůbec "
+"přítomno, zatímco ``+`` vyžaduje alespoň *jeden* výskyt. Pro použití "
+"podobného příkladu, ``ca+t`` bude odpovídat ``'cat'`` (1 ``'a'``), "
+"``'caaat'`` (3 ``'a'``), ale nebude odpovídat ``'ct'``."
 
 #: ../../howto/regex.rst:233
 msgid ""
@@ -436,6 +569,10 @@ msgid ""
 " as marking something as being optional.  For example, ``home-?brew`` "
 "matches either ``'homebrew'`` or ``'home-brew'``."
 msgstr ""
+"Existují ještě dva další opakující se operátory nebo kvantifikátory. Znak "
+"otazníku, ``?``, odpovídá buď jednou nebo nulakrát; můžete si to představit "
+"jako označení něčeho jako volitelného. Například ``home-?brew`` odpovídá "
+"buď ``'homebrew'`` nebo ``'home-brew'``."
 
 #: ../../howto/regex.rst:238
 #, python-brace-format
@@ -446,6 +583,11 @@ msgid ""
 "``'a/b'``, ``'a//b'``, and ``'a///b'``.  It won't match ``'ab'``, which "
 "has no slashes, or ``'a////b'``, which has four."
 msgstr ""
+"Nejsložitějším kvantifikátorem je ``{m,n}``, kde *m* a *n* jsou desítková "
+"celá čísla. Tento kvantifikátor znamená, že musí být alespoň *m* opakování "
+"a nejvýše *n*. Například ``a/{1,3}b`` bude odpovídat ``'a/b'``, ``'a//b'`` "
+"a ``'a///b'``. Nebude odpovídat ``'ab'``, které nemá žádná lomítka, nebo "
+"``'a////b'``, které má čtyři."
 
 #: ../../howto/regex.rst:244
 msgid ""
@@ -453,6 +595,9 @@ msgid ""
 "assumed for the missing value.  Omitting *m* is interpreted as a lower "
 "limit of 0, while omitting *n* results in an upper bound of infinity."
 msgstr ""
+"Můžete vynechat buď *m* nebo *n*; v tom případě se pro chybějící hodnotu "
+"předpokládá rozumná hodnota. Vynechání *m* je interpretováno jako dolní "
+"limit 0, zatímco vynechání *n* vede k horní hranici nekonečna."
 
 #: ../../howto/regex.rst:248
 #, python-brace-format
@@ -460,6 +605,8 @@ msgid ""
 "The simplest case ``{m}`` matches the preceding item exactly *m* times. "
 "For example, ``a/{2}b`` will only match ``'a//b'``."
 msgstr ""
+"Nejjednodušší případ ``{m}`` odpovídá předcházející položce přesně *m*krát. "
+"Například ``a/{2}b`` bude odpovídat pouze ``'a//b'``."
 
 #: ../../howto/regex.rst:251
 #, python-brace-format
@@ -470,10 +617,15 @@ msgid ""
 " as ``?``.  It's better to use ``*``, ``+``, or ``?`` when you can, "
 "simply because they're shorter and easier to read."
 msgstr ""
+"Čtenáři redukcionistického zaměření si mohou všimnout, že tři další "
+"kvantifikátory lze všechny vyjádřit pomocí této notace. ``{0,}`` je stejné "
+"jako ``*``, ``{1,}`` je ekvivalentní ``+`` a ``{0,1}`` je stejné jako "
+"``?``. Je lepší použít ``*``, ``+`` nebo ``?``, když můžete, jednoduše "
+"proto, že jsou kratší a snadněji čitelné."
 
 #: ../../howto/regex.rst:259
 msgid "Using Regular Expressions"
-msgstr ""
+msgstr "Použití regulárních výrazů"
 
 #: ../../howto/regex.rst:261
 msgid ""
@@ -482,10 +634,14 @@ msgid ""
 "to the regular expression engine, allowing you to compile REs into "
 "objects and then perform matches with them."
 msgstr ""
+"Nyní, když jsme se podívali na nějaké jednoduché regulární výrazy, jak je "
+"vlastně použijeme v Pythonu? Modul :mod:`re` poskytuje rozhraní k "
+"vyhledávacímu stroji regulárních výrazů, což vám umožňuje kompilovat RE "
+"do objektů a poté s nimi provádět porovnávání."
 
 #: ../../howto/regex.rst:268
 msgid "Compiling Regular Expressions"
-msgstr ""
+msgstr "Kompilace regulárních výrazů"
 
 #: ../../howto/regex.rst:270
 msgid ""
@@ -493,6 +649,9 @@ msgid ""
 " for various operations such as searching for pattern matches or "
 "performing string substitutions. ::"
 msgstr ""
+"Regulární výrazy jsou kompilovány do objektů vzorů, které mají metody pro "
+"různé operace, jako je vyhledávání shod se vzory nebo provádění náhrad "
+"řetězců. ::"
 
 #: ../../howto/regex.rst:274
 msgid ""
@@ -508,6 +667,9 @@ msgid ""
 "enable various special features and syntax variations.  We'll go over the"
 " available settings later, but for now a single example will do::"
 msgstr ""
+":func:`re.compile` také přijímá volitelný argument *flags*, který se používá "
+"k povolení různých speciálních funkcí a syntaktických variací. Dostupná "
+"nastavení probereme později, ale prozatím postačí jeden příklad::"
 
 #: ../../howto/regex.rst:283
 msgid ">>> p = re.compile('ab*', re.IGNORECASE)"
@@ -523,16 +685,25 @@ msgid ""
 "module is simply a C extension module included with Python, just like the"
 " :mod:`socket` or :mod:`zlib` modules."
 msgstr ""
+"RE je předáno :func:`re.compile` jako řetězec. RE jsou zpracovávány jako "
+"řetězce, protože regulární výrazy nejsou součástí jádra jazyka Python a "
+"nebyla vytvořena žádná speciální syntaxe pro jejich vyjádření. (Existují "
+"aplikace, které RE vůbec nepotřebují, takže není důvod nafukovat specifikaci "
+"jazyka jejich zahrnutím.) Místo toho je modul :mod:`re` jednoduše rozšiřující "
+"modul C zahrnutý s Pythonem, stejně jako moduly :mod:`socket` nebo "
+":mod:`zlib`."
 
 #: ../../howto/regex.rst:292
 msgid ""
 "Putting REs in strings keeps the Python language simpler, but has one "
 "disadvantage which is the topic of the next section."
 msgstr ""
+"Umístění RE do řetězců udržuje jazyk Python jednodušší, ale má jednu "
+"nevýhodu, která je tématem další sekce."
 
 #: ../../howto/regex.rst:299
 msgid "The Backslash Plague"
-msgstr ""
+msgstr "Zhouba zpětných lomítek"
 
 #: ../../howto/regex.rst:301
 msgid ""
@@ -542,6 +713,10 @@ msgid ""
 "Python's usage of the same character for the same purpose in string "
 "literals."
 msgstr ""
+"Jak již bylo uvedeno dříve, regulární výrazy používají znak zpětného lomítka "
+"(``'\\'``) k označení speciálních forem nebo k umožnění použití speciálních "
+"znaků bez vyvolání jejich speciálního významu. To je v konfliktu s použitím "
+"stejného znaku Pythonem pro stejný účel v řetězcových literálech."
 
 #: ../../howto/regex.rst:306
 msgid ""
@@ -554,14 +729,22 @@ msgid ""
 "``\\\\section``.  However, to express this as a Python string literal, "
 "both backslashes must be escaped *again*."
 msgstr ""
+"Řekněme, že chcete napsat RE, které odpovídá řetězci ``\\section``, který "
+"se může nacházet v LaTeX souboru. Chcete-li zjistit, co napsat do programového "
+"kódu, začněte s požadovaným řetězcem, který má být porovnán. Dále musíte "
+"escapovat jakákoli zpětná lomítka a další metaznaky jejich předřazením "
+"zpětným lomítkem, což vede k řetězci ``\\\\section``. Výsledný řetězec, "
+"který musí být předán :func:`re.compile`, musí být ``\\\\section``. Nicméně "
+"pro vyjádření tohoto jako řetězcového literálu Pythonu musí být obě zpětná "
+"lomítka escapována *znovu*."
 
 #: ../../howto/regex.rst:315
 msgid "Characters"
-msgstr ""
+msgstr "Znaky"
 
 #: ../../howto/regex.rst:315
 msgid "Stage"
-msgstr ""
+msgstr "Fáze"
 
 #: ../../howto/regex.rst:317
 msgid "``\\section``"
@@ -569,7 +752,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:317
 msgid "Text string to be matched"
-msgstr ""
+msgstr "Textový řetězec k porovnání"
 
 #: ../../howto/regex.rst:319
 msgid "``\\\\section``"
@@ -577,7 +760,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:319
 msgid "Escaped backslash for :func:`re.compile`"
-msgstr ""
+msgstr "Escapované zpětné lomítko pro :func:`re.compile`"
 
 #: ../../howto/regex.rst:321 ../../howto/regex.rst:348
 msgid "``\"\\\\\\\\section\"``"
@@ -585,7 +768,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:321
 msgid "Escaped backslashes for a string literal"
-msgstr ""
+msgstr "Escapovaná zpětná lomítka pro řetězcový literál"
 
 #: ../../howto/regex.rst:324
 msgid ""
@@ -596,6 +779,12 @@ msgid ""
 "to lots of repeated backslashes and makes the resulting strings difficult"
 " to understand."
 msgstr ""
+"Stručně řečeno, pro porovnání literálního zpětného lomítka je třeba napsat "
+"``'\\\\\\\\'`` jako řetězec RE, protože regulární výraz musí být ``\\\\`` "
+"a každé zpětné lomítko musí být vyjádřeno jako ``\\\\`` uvnitř běžného "
+"řetězcového literálu Pythonu. V RE, které opakovaně obsahují zpětná lomítka, "
+"to vede k velkému množství opakovaných zpětných lomítek a činí výsledné "
+"řetězce obtížně pochopitelnými."
 
 #: ../../howto/regex.rst:330
 msgid ""
@@ -606,6 +795,12 @@ msgid ""
 "string containing a newline. Regular expressions will often be written in"
 " Python code using this raw string notation."
 msgstr ""
+"Řešením je použít zápis syrového řetězce (raw string) Pythonu pro regulární "
+"výrazy; zpětná lomítka nejsou zpracovávána žádným speciálním způsobem v "
+"řetězcovém literálu s prefixem ``'r'``, takže ``r\"\\n\"`` je dvouznakový "
+"řetězec obsahující ``'\\'`` a ``'n'``, zatímco ``\"\\n\"`` je jednoznakový "
+"řetězec obsahující nový řádek. Regulární výrazy budou v kódu Pythonu často "
+"zapsány pomocí tohoto zápisu syrového řetězce."
 
 #: ../../howto/regex.rst:336
 msgid ""
@@ -615,14 +810,19 @@ msgid ""
 ":exc:`SyntaxError`, which means the sequences will be invalid if raw "
 "string notation or escaping the backslashes isn't used."
 msgstr ""
+"Navíc speciální escapovací sekvence, které jsou platné v regulárních "
+"výrazech, ale nejsou platné jako řetězcové literály Pythonu, nyní vedou k "
+":exc:`DeprecationWarning` a nakonec se stanou :exc:`SyntaxError`, což "
+"znamená, že sekvence budou neplatné, pokud není použit zápis syrového "
+"řetězce nebo escapování zpětných lomítek."
 
 #: ../../howto/regex.rst:344
 msgid "Regular String"
-msgstr ""
+msgstr "Běžný řetězec"
 
 #: ../../howto/regex.rst:344
 msgid "Raw string"
-msgstr ""
+msgstr "Syrový řetězec"
 
 #: ../../howto/regex.rst:346
 msgid "``\"ab*\"``"
@@ -646,7 +846,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:355
 msgid "Performing Matches"
-msgstr ""
+msgstr "Provádění porovnání"
 
 #: ../../howto/regex.rst:357
 msgid ""
@@ -655,16 +855,20 @@ msgid ""
 "Only the most significant ones will be covered here; consult the "
 ":mod:`re` docs for a complete listing."
 msgstr ""
+"Jakmile máte objekt reprezentující zkompilovaný regulární výraz, co s ním "
+"uděláte? Objekty vzorů mají několik metod a atributů. Zde budou pokryty "
+"pouze ty nejvýznamnější; pro úplný seznam se podívejte do dokumentace "
+":mod:`re`."
 
 #: ../../howto/regex.rst:363 ../../howto/regex.rst:417
 #: ../../howto/regex.rst:1072
 msgid "Method/Attribute"
-msgstr ""
+msgstr "Metoda/Atribut"
 
 #: ../../howto/regex.rst:363 ../../howto/regex.rst:417
 #: ../../howto/regex.rst:1072
 msgid "Purpose"
-msgstr ""
+msgstr "Účel"
 
 #: ../../howto/regex.rst:365
 msgid "``match()``"
@@ -672,7 +876,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:365
 msgid "Determine if the RE matches at the beginning of the string."
-msgstr ""
+msgstr "Určí, zda RE odpovídá na začátku řetězce."
 
 #: ../../howto/regex.rst:368
 msgid "``search()``"
@@ -680,7 +884,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:368
 msgid "Scan through a string, looking for any location where this RE matches."
-msgstr ""
+msgstr "Prohledá řetězec a hledá jakékoli místo, kde tento RE odpovídá."
 
 #: ../../howto/regex.rst:371
 msgid "``findall()``"
@@ -688,7 +892,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:371
 msgid "Find all substrings where the RE matches, and returns them as a list."
-msgstr ""
+msgstr "Najde všechny podřetězce, kde RE odpovídá, a vrátí je jako seznam."
 
 #: ../../howto/regex.rst:374
 msgid "``finditer()``"
@@ -699,6 +903,8 @@ msgid ""
 "Find all substrings where the RE matches, and returns them as an "
 ":term:`iterator`."
 msgstr ""
+"Najde všechny podřetězce, kde RE odpovídá, a vrátí je jako "
+":term:`iterátor`."
 
 #: ../../howto/regex.rst:378
 msgid ""
@@ -707,12 +913,17 @@ msgid ""
 "<match-objects>` instance is returned, containing information about the "
 "match: where it starts and ends, the substring it matched, and more."
 msgstr ""
+":meth:`~re.Pattern.match` a :meth:`~re.Pattern.search` vrátí ``None``, pokud "
+"nelze najít shodu. Pokud jsou úspěšné, je vrácena instance :ref:`objektu "
+"shody <match-objects>` obsahující informace o shodě: kde začíná a končí, "
+"podřetězec, který odpovídá, a další."
 
 #: ../../howto/regex.rst:383
 msgid ""
 "You can learn about this by interactively experimenting with the "
 ":mod:`re` module."
 msgstr ""
+"Můžete se o tom dozvědět interaktivním experimentováním s modulem :mod:`re`."
 
 #: ../../howto/regex.rst:386
 msgid ""
@@ -720,6 +931,8 @@ msgid ""
 "run the Python interpreter, import the :mod:`re` module, and compile a "
 "RE::"
 msgstr ""
+"Tento HOWTO používá pro své příklady standardní interpret Pythonu. Nejprve "
+"spusťte interpret Pythonu, importujte modul :mod:`re` a zkompilujte RE::"
 
 #: ../../howto/regex.rst:389
 msgid ""
@@ -737,6 +950,11 @@ msgid ""
 "case, which will cause the interpreter to print no output.  You can "
 "explicitly print the result of :meth:`!match` to make this clear. ::"
 msgstr ""
+"Nyní můžete zkusit porovnat různé řetězce s RE ``[a-z]+``. Prázdný řetězec "
+"by neměl vůbec odpovídat, protože ``+`` znamená 'jedno nebo více opakování'. "
+":meth:`~re.Pattern.match` by v tomto případě měla vrátit ``None``, což "
+"způsobí, že interpret nevypíše žádný výstup. Můžete explicitně vypsat "
+"výsledek :meth:`!match`, abyste to objasnili. ::"
 
 #: ../../howto/regex.rst:400
 msgid ""
@@ -752,6 +970,10 @@ msgid ""
 "<match-objects>`, so you should store the result in a variable for later "
 "use. ::"
 msgstr ""
+"Nyní to zkusme na řetězci, který by měl odpovídat, jako je ``tempo``. V "
+"tomto případě :meth:`~re.Pattern.match` vrátí :ref:`objekt shody "
+"<match-objects>`, takže byste měli výsledek uložit do proměnné pro pozdější "
+"použití. ::"
 
 #: ../../howto/regex.rst:408
 msgid ""
@@ -766,6 +988,9 @@ msgid ""
 " about the matching string.  Match object instances also have several "
 "methods and attributes; the most important ones are:"
 msgstr ""
+"Nyní můžete dotazovat :ref:`objekt shody <match-objects>` na informace o "
+"odpovídajícím řetězci. Instance objektu shody mají také několik metod a "
+"atributů; nejdůležitější jsou:"
 
 #: ../../howto/regex.rst:419
 msgid "``group()``"
@@ -773,7 +998,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:419
 msgid "Return the string matched by the RE"
-msgstr ""
+msgstr "Vrátí řetězec, který odpovídá RE"
 
 #: ../../howto/regex.rst:421
 msgid "``start()``"
@@ -781,7 +1006,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:421
 msgid "Return the starting position of the match"
-msgstr ""
+msgstr "Vrátí počáteční pozici shody"
 
 #: ../../howto/regex.rst:423
 msgid "``end()``"
@@ -789,7 +1014,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:423
 msgid "Return the ending position of the match"
-msgstr ""
+msgstr "Vrátí konečnou pozici shody"
 
 #: ../../howto/regex.rst:425
 msgid "``span()``"
@@ -797,11 +1022,11 @@ msgstr ""
 
 #: ../../howto/regex.rst:425
 msgid "Return a tuple containing the (start, end) positions  of the match"
-msgstr ""
+msgstr "Vrátí tuple obsahující pozice (začátek, konec) shody"
 
 #: ../../howto/regex.rst:429
 msgid "Trying these methods will soon clarify their meaning::"
-msgstr ""
+msgstr "Vyzkoušení těchto metod brzy objasní jejich význam::"
 
 #: ../../howto/regex.rst:431
 msgid ""
@@ -824,6 +1049,13 @@ msgid ""
 ":meth:`~re.Pattern.search` method of patterns scans through the string, "
 "so  the match may not start at zero in that case. ::"
 msgstr ""
+":meth:`~re.Match.group` vrátí podřetězec, který odpovídal RE. "
+":meth:`~re.Match.start` a :meth:`~re.Match.end` vracejí počáteční a "
+"konečný index shody. :meth:`~re.Match.span` vrátí počáteční i konečný "
+"index v jednom tuple. Protože metoda :meth:`~re.Pattern.match` pouze "
+"kontroluje, zda RE odpovídá na začátku řetězce, :meth:`!start` bude vždy "
+"nula. Nicméně metoda :meth:`~re.Pattern.search` vzorů prohledává řetězec, "
+"takže shoda nemusí v tomto případě začínat na nule. ::"
 
 #: ../../howto/regex.rst:446
 msgid ""
@@ -843,6 +1075,9 @@ msgid ""
 "object <match-objects>` in a variable, and then check if it was ``None``."
 "  This usually looks like::"
 msgstr ""
+"Ve skutečných programech je nejběžnějším stylem uložit :ref:`objekt shody "
+"<match-objects>` do proměnné a poté zkontrolovat, zda to bylo ``None``. "
+"To obvykle vypadá takto::"
 
 #: ../../howto/regex.rst:459
 msgid ""
@@ -859,6 +1094,8 @@ msgid ""
 "Two pattern methods return all of the matches for a pattern. "
 ":meth:`~re.Pattern.findall` returns a list of matching strings::"
 msgstr ""
+"Dvě metody vzorů vracejí všechny shody pro vzor. :meth:`~re.Pattern.findall` "
+"vrátí seznam odpovídajících řetězců::"
 
 #: ../../howto/regex.rst:469
 msgid ""
@@ -900,7 +1137,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:495
 msgid "Module-Level Functions"
-msgstr ""
+msgstr "Funkce na úrovni modulu"
 
 #: ../../howto/regex.rst:497
 msgid ""
@@ -912,6 +1149,12 @@ msgid ""
 " argument, and still return either ``None`` or a :ref:`match object "
 "<match-objects>` instance. ::"
 msgstr ""
+"Nemusíte vytvářet objekt vzoru a volat jeho metody; modul :mod:`re` také "
+"poskytuje funkce na nejvyšší úrovni nazvané :func:`~re.match`, "
+":func:`~re.search`, :func:`~re.findall`, :func:`~re.sub` a tak dále. Tyto "
+"funkce přijímají stejné argumenty jako odpovídající metoda vzoru s řetězcem "
+"RE přidaným jako první argument a stále vracejí buď ``None`` nebo instanci "
+":ref:`objektu shody <match-objects>`. ::"
 
 #: ../../howto/regex.rst:504
 msgid ""
@@ -928,6 +1171,10 @@ msgid ""
 "object in a cache, so future calls using the same RE won't need to parse "
 "the pattern again and again."
 msgstr ""
+"Pod pokličkou tyto funkce jednoduše vytvoří pro vás objekt vzoru a zavolají "
+"na něm příslušnou metodu. Také ukládají zkompilovaný objekt do vyrovnávací "
+"paměti, takže budoucí volání používající stejný RE nebude muset analyzovat "
+"vzor znovu a znovu."
 
 #: ../../howto/regex.rst:514
 msgid ""
@@ -936,10 +1183,14 @@ msgid ""
 "within a loop, pre-compiling it will save a few function calls. Outside "
 "of loops, there's not much difference thanks to the internal cache."
 msgstr ""
+"Měli byste použít tyto funkce na úrovni modulu, nebo byste měli získat vzor "
+"a volat jeho metody sami? Pokud přistupujete k regexu uvnitř smyčky, "
+"předkompilování ušetří několik volání funkcí. Mimo smyčky není velký rozdíl "
+"díky interní vyrovnávací paměti."
 
 #: ../../howto/regex.rst:522
 msgid "Compilation Flags"
-msgstr ""
+msgstr "Příznaky kompilace"
 
 #: ../../howto/regex.rst:526
 msgid ""

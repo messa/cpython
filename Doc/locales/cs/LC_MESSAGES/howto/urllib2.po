@@ -21,35 +21,39 @@ msgstr ""
 
 #: ../../howto/urllib2.rst:5
 msgid "HOWTO Fetch Internet Resources Using The urllib Package"
-msgstr ""
+msgstr "HOWTO Získávání internetových zdrojů pomocí balíčku urllib"
 
 #: ../../howto/urllib2.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/urllib2.rst:7
 msgid "`Michael Foord <https://agileabstractions.com/>`_"
-msgstr ""
+msgstr "`Michael Foord <https://agileabstractions.com/>`_"
 
 #: ../../howto/urllib2.rst:11
 msgid "Introduction"
-msgstr ""
+msgstr "Úvod"
 
 #: ../../howto/urllib2.rst:15
 msgid ""
 "You may also find useful the following article on fetching web resources "
 "with Python:"
 msgstr ""
+"Jako užitečný může být rovněž následující článek o získávání webových zdrojů "
+"pomocí Pythonu:"
 
 #: ../../howto/urllib2.rst:18
 msgid ""
 "`Basic Authentication "
 "<https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml>`__"
 msgstr ""
+"`Basic Authentication "
+"<https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml>`__"
 
 #: ../../howto/urllib2.rst:20
 msgid "A tutorial on *Basic Authentication*, with examples in Python."
-msgstr ""
+msgstr "Návod k *základnímu ověřování* s příklady v Pythonu."
 
 #: ../../howto/urllib2.rst:22
 msgid ""
@@ -60,6 +64,12 @@ msgid ""
 " handling common situations - like basic authentication, cookies, proxies"
 " and so on. These are provided by objects called handlers and openers."
 msgstr ""
+"**urllib.request** je modul Pythonu pro získávání URL adres (Uniform Resource "
+"Locators). Nabízí velmi jednoduché rozhraní ve formě funkce *urlopen*. Ta je "
+"schopna získávat URL adresy pomocí různých protokolů. Také nabízí trochu "
+"složitější rozhraní pro zvládání běžných situací - jako je základní ověřování, "
+"cookies, proxy a tak dále. Tyto funkce poskytují objekty zvané handlery a "
+"openers."
 
 #: ../../howto/urllib2.rst:29
 msgid ""
@@ -69,6 +79,11 @@ msgid ""
 "associated network protocols (e.g. FTP, HTTP). This tutorial focuses on "
 "the most common case, HTTP."
 msgstr ""
+"urllib.request podporuje získávání URL adres pro mnoho \"URL schémat\" "
+"(identifikovaných řetězcem před ``\":\"`` v URL - například ``\"ftp\"`` je "
+"URL schéma ``\"ftp://python.org/\"``) pomocí jejich přiřazených síťových "
+"protokolů (např. FTP, HTTP). Tento návod se zaměřuje na nejběžnější případ, "
+"HTTP."
 
 #: ../../howto/urllib2.rst:34
 msgid ""
@@ -81,14 +96,22 @@ msgid ""
 " help you through. It is not intended to replace the "
 ":mod:`urllib.request` docs, but is supplementary to them."
 msgstr ""
+"Pro přímočaré situace je *urlopen* velmi snadné na použití. Ale jakmile "
+"narazíte na chyby nebo netriviální případy při otevírání HTTP URL adres, "
+"budete potřebovat určité porozumění protokolu HyperText Transfer Protocol. "
+"Nejkomplexnější a nejautoritativnější referenci k HTTP je :rfc:`2616`. Jedná "
+"se o technický dokument a není zamýšlen jako snadno čitelný. Tento HOWTO si "
+"klade za cíl ilustrovat použití *urllib* s dostatečným množstvím detailů o "
+"HTTP, aby vám pomohl. Není zamýšlen jako náhrada dokumentace "
+":mod:`urllib.request`, ale jako doplněk k ní."
 
 #: ../../howto/urllib2.rst:44
 msgid "Fetching URLs"
-msgstr ""
+msgstr "Získávání URL adres"
 
 #: ../../howto/urllib2.rst:46
 msgid "The simplest way to use urllib.request is as follows::"
-msgstr ""
+msgstr "Nejjednodušší způsob použití urllib.request je následující::"
 
 #: ../../howto/urllib2.rst:48
 msgid ""
@@ -96,6 +119,9 @@ msgid ""
 "with urllib.request.urlopen('http://python.org/') as response:\n"
 "   html = response.read()"
 msgstr ""
+"import urllib.request\n"
+"with urllib.request.urlopen('http://python.org/') as response:\n"
+"   html = response.read()"
 
 #: ../../howto/urllib2.rst:52
 msgid ""
@@ -103,6 +129,9 @@ msgid ""
 "location, you can do so via the :func:`shutil.copyfileobj` and "
 ":func:`tempfile.NamedTemporaryFile` functions::"
 msgstr ""
+"Pokud chcete získat zdroj přes URL a uložit jej na dočasné místo, můžete tak "
+"učinit pomocí funkcí :func:`shutil.copyfileobj` a "
+":func:`tempfile.NamedTemporaryFile`::"
 
 #: ../../howto/urllib2.rst:56
 msgid ""
@@ -117,6 +146,16 @@ msgid ""
 "with open(tmp_file.name) as html:\n"
 "    pass"
 msgstr ""
+"import shutil\n"
+"import tempfile\n"
+"import urllib.request\n"
+"\n"
+"with urllib.request.urlopen('http://python.org/') as response:\n"
+"    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:\n"
+"        shutil.copyfileobj(response, tmp_file)\n"
+"\n"
+"with open(tmp_file.name) as html:\n"
+"    pass"
 
 #: ../../howto/urllib2.rst:67
 msgid ""
@@ -125,6 +164,9 @@ msgid ""
 "However, it's the purpose of this tutorial to explain the more "
 "complicated cases, concentrating on HTTP."
 msgstr ""
+"Mnoho použití urllib bude tak jednoduché (všimněte si, že místo 'http:' URL "
+"bychom mohli použít URL začínající 'ftp:', 'file:' atd.). Účelem tohoto "
+"návodu je však vysvětlit komplikovanější případy se zaměřením na HTTP."
 
 #: ../../howto/urllib2.rst:72
 msgid ""
@@ -136,6 +178,13 @@ msgid ""
 "object for the URL requested. This response is a file-like object, which "
 "means you can for example call ``.read()`` on the response::"
 msgstr ""
+"HTTP je založen na požadavcích a odpovědích - klient provádí požadavky a "
+"servery posílají odpovědi. urllib.request to odráží pomocí objektu ``Request``, "
+"který reprezentuje HTTP požadavek, který vytváříte. V nejjednodušší podobě "
+"vytvoříte objekt Request specifikující URL, kterou chcete získat. Volání "
+"``urlopen`` s tímto objektem Request vrátí objekt odpovědi pro požadovanou "
+"URL. Tato odpověď je souborový objekt, což znamená, že můžete například zavolat "
+"``.read()`` na odpovědi::"
 
 #: ../../howto/urllib2.rst:80
 msgid ""
@@ -145,6 +194,11 @@ msgid ""
 "with urllib.request.urlopen(req) as response:\n"
 "   the_page = response.read()"
 msgstr ""
+"import urllib.request\n"
+"\n"
+"req = urllib.request.Request('http://python.org/')\n"
+"with urllib.request.urlopen(req) as response:\n"
+"   the_page = response.read()"
 
 #: ../../howto/urllib2.rst:86
 msgid ""
@@ -152,10 +206,12 @@ msgid ""
 "handle all URL schemes.  For example, you can make an FTP request like "
 "so::"
 msgstr ""
+"Všimněte si, že urllib.request používá stejné rozhraní Request pro zpracování "
+"všech URL schémat. Například můžete provést FTP požadavek následovně::"
 
 #: ../../howto/urllib2.rst:89
 msgid "req = urllib.request.Request('ftp://example.com/')"
-msgstr ""
+msgstr "req = urllib.request.Request('ftp://example.com/')"
 
 #: ../../howto/urllib2.rst:91
 msgid ""
@@ -165,10 +221,15 @@ msgid ""
 " about the request itself, to the server - this information is sent as "
 "HTTP \"headers\".  Let's look at each of these in turn."
 msgstr ""
+"V případě HTTP existují dvě další věci, které objekty Request umožňují: "
+"Zaprvé můžete předat data k odeslání na server. Zadruhé můžete předat "
+"dodatečné informace (\"metadata\") *o* datech nebo o samotném požadavku na "
+"server - tyto informace jsou posílány jako HTTP \"hlavičky\". Podívejme se na "
+"každou z nich."
 
 #: ../../howto/urllib2.rst:98
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 #: ../../howto/urllib2.rst:100
 msgid ""
@@ -182,6 +243,15 @@ msgid ""
 "then passed to the Request object as the ``data`` argument. The encoding "
 "is done using a function from the :mod:`urllib.parse` library. ::"
 msgstr ""
+"Někdy chcete odeslat data na URL (často URL odkazuje na CGI (Common Gateway "
+"Interface) skript nebo jinou webovou aplikaci). S HTTP se to často provádí "
+"pomocí toho, čemu se říká **POST** požadavek. Často je to to, co dělá váš "
+"prohlížeč, když odešlete HTML formulář, který jste vyplnili na webu. Ne "
+"všechny POST požadavky musí pocházet z formulářů: můžete použít POST k "
+"přenosu libovolných dat do vaší vlastní aplikace. V běžném případě HTML "
+"formulářů musí být data zakódována standardním způsobem a poté předána "
+"objektu Request jako argument ``data``. Kódování se provádí pomocí funkce z "
+"knihovny :mod:`urllib.parse`. ::"
 
 #: ../../howto/urllib2.rst:110
 #, python-brace-format
@@ -200,6 +270,19 @@ msgid ""
 "with urllib.request.urlopen(req) as response:\n"
 "   the_page = response.read()"
 msgstr ""
+"import urllib.parse\n"
+"import urllib.request\n"
+"\n"
+"url = 'http://www.someserver.com/cgi-bin/register.cgi'\n"
+"values = {'name' : 'Michael Foord',\n"
+"          'location' : 'Northampton',\n"
+"          'language' : 'Python' }\n"
+"\n"
+"data = urllib.parse.urlencode(values)\n"
+"data = data.encode('ascii') # data should be bytes\n"
+"req = urllib.request.Request(url, data)\n"
+"with urllib.request.urlopen(req) as response:\n"
+"   the_page = response.read()"
 
 #: ../../howto/urllib2.rst:124
 msgid ""
@@ -208,6 +291,10 @@ msgid ""
 "<https://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13>`_ for more"
 " details)."
 msgstr ""
+"Všimněte si, že někdy jsou vyžadována jiná kódování (např. pro nahrávání "
+"souborů z HTML formulářů - viz `HTML Specification, Form Submission "
+"<https://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13>`_ pro více "
+"detailů)."
 
 #: ../../howto/urllib2.rst:129
 msgid ""
@@ -222,10 +309,19 @@ msgid ""
 "side-effects. Data can also be passed in an HTTP GET request by encoding "
 "it in the URL itself."
 msgstr ""
+"Pokud nepředáte argument ``data``, urllib použije **GET** požadavek. Jedním "
+"ze způsobů, jak se GET a POST požadavky liší, je, že POST požadavky často "
+"mají \"vedlejší efekty\": mění stav systému nějakým způsobem (například "
+"tím, že na webové stránce zadají objednávku pro sto kilo konzervovaného "
+"spamu k doručení k vašim dveřím). Ačkoli HTTP standard jasně uvádí, že POST "
+"požadavky jsou zamýšleny tak, aby *vždy* způsobily vedlejší efekty a GET "
+"požadavky aby *nikdy* nezpůsobily vedlejší efekty, nic nebrání GET požadavku "
+"mít vedlejší efekty, ani POST požadavku nemít vedlejší efekty. Data mohou "
+"být také předána v HTTP GET požadavku jejich zakódováním do samotné URL."
 
 #: ../../howto/urllib2.rst:139
 msgid "This is done as follows::"
-msgstr ""
+msgstr "To se provádí následovně::"
 
 #: ../../howto/urllib2.rst:141
 #, python-brace-format
@@ -243,22 +339,38 @@ msgid ""
 ">>> full_url = url + '?' + url_values\n"
 ">>> data = urllib.request.urlopen(full_url)"
 msgstr ""
+">>> import urllib.request\n"
+">>> import urllib.parse\n"
+">>> data = {}\n"
+">>> data['name'] = 'Somebody Here'\n"
+">>> data['location'] = 'Northampton'\n"
+">>> data['language'] = 'Python'\n"
+">>> url_values = urllib.parse.urlencode(data)\n"
+">>> print(url_values)  # The order may differ from below.\n"
+"name=Somebody+Here&language=Python&location=Northampton\n"
+">>> url = 'http://www.example.com/example.cgi'\n"
+">>> full_url = url + '?' + url_values\n"
+">>> data = urllib.request.urlopen(full_url)"
 
 #: ../../howto/urllib2.rst:154
 msgid ""
 "Notice that the full URL is created by adding a ``?`` to the URL, "
 "followed by the encoded values."
 msgstr ""
+"Všimněte si, že úplná URL je vytvořena přidáním ``?`` k URL, následované "
+"zakódovanými hodnotami."
 
 #: ../../howto/urllib2.rst:158
 msgid "Headers"
-msgstr ""
+msgstr "Hlavičky"
 
 #: ../../howto/urllib2.rst:160
 msgid ""
 "We'll discuss here one particular HTTP header, to illustrate how to add "
 "headers to your HTTP request."
 msgstr ""
+"Probereme zde jednu konkrétní HTTP hlavičku, abychom ilustrovali, jak "
+"přidat hlavičky do vašeho HTTP požadavku."
 
 #: ../../howto/urllib2.rst:163
 msgid ""
@@ -272,6 +384,15 @@ msgid ""
 "following example makes the same request as above, but identifies itself "
 "as a version of Internet Explorer [#]_. ::"
 msgstr ""
+"Některé webové stránky [#]_ nemají rády, když jsou procházeny programy, nebo "
+"posílají různé verze různým prohlížečům [#]_. Ve výchozím nastavení se "
+"urllib identifikuje jako ``Python-urllib/x.y`` (kde ``x`` a ``y`` jsou "
+"hlavní a vedlejší čísla verzí vydání Pythonu, např. ``Python-urllib/2.5``), "
+"což může web zmást, nebo prostě nebude fungovat. Způsob, jakým se prohlížeč "
+"identifikuje, je prostřednictvím hlavičky ``User-Agent`` [#]_. Když vytváříte "
+"objekt Request, můžete předat slovník hlaviček. Následující příklad vytváří "
+"stejný požadavek jako výše, ale identifikuje se jako verze Internet Explorer "
+"[#]_. ::"
 
 #: ../../howto/urllib2.rst:174
 #, python-brace-format
@@ -292,6 +413,21 @@ msgid ""
 "with urllib.request.urlopen(req) as response:\n"
 "   the_page = response.read()"
 msgstr ""
+"import urllib.parse\n"
+"import urllib.request\n"
+"\n"
+"url = 'http://www.someserver.com/cgi-bin/register.cgi'\n"
+"user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'\n"
+"values = {'name': 'Michael Foord',\n"
+"          'location': 'Northampton',\n"
+"          'language': 'Python' }\n"
+"headers = {'User-Agent': user_agent}\n"
+"\n"
+"data = urllib.parse.urlencode(values)\n"
+"data = data.encode('ascii')\n"
+"req = urllib.request.Request(url, data, headers)\n"
+"with urllib.request.urlopen(req) as response:\n"
+"   the_page = response.read()"
 
 #: ../../howto/urllib2.rst:190
 msgid ""
@@ -299,10 +435,12 @@ msgid ""
 "geturl`_ which comes after we have a look at what happens when things go "
 "wrong."
 msgstr ""
+"Odpověď má také dvě užitečné metody. Viz část o `info and geturl`_, která "
+"následuje poté, co se podíváme na to, co se stane, když se věci pokazí."
 
 #: ../../howto/urllib2.rst:195
 msgid "Handling Exceptions"
-msgstr ""
+msgstr "Zpracování výjimek"
 
 #: ../../howto/urllib2.rst:197
 msgid ""
@@ -310,20 +448,25 @@ msgid ""
 "response (though as usual with Python APIs, built-in exceptions such as "
 ":exc:`ValueError`, :exc:`TypeError` etc. may also be raised)."
 msgstr ""
+"*urlopen* vyvolá :exc:`~urllib.error.URLError`, když nemůže zpracovat "
+"odpověď (ačkoli jako obvykle s Python API mohou být vyvolány i vestavěné "
+"výjimky jako :exc:`ValueError`, :exc:`TypeError` atd.)."
 
 #: ../../howto/urllib2.rst:201
 msgid ""
 ":exc:`~urllib.error.HTTPError` is the subclass of "
 ":exc:`~urllib.error.URLError` raised in the specific case of HTTP URLs."
 msgstr ""
+":exc:`~urllib.error.HTTPError` je podtřída :exc:`~urllib.error.URLError` "
+"vyvolaná v konkrétním případě HTTP URL adres."
 
 #: ../../howto/urllib2.rst:204
 msgid "The exception classes are exported from the :mod:`urllib.error` module."
-msgstr ""
+msgstr "Třídy výjimek jsou exportovány z modulu :mod:`urllib.error`."
 
 #: ../../howto/urllib2.rst:207
 msgid "URLError"
-msgstr ""
+msgstr "URLError"
 
 #: ../../howto/urllib2.rst:209
 msgid ""
@@ -332,10 +475,14 @@ msgid ""
 "In this case, the exception raised will have a 'reason' attribute, which "
 "is a tuple containing an error code and a text error message."
 msgstr ""
+"Často je URLError vyvolána, protože neexistuje síťové připojení (žádná cesta "
+"k zadanému serveru), nebo zadaný server neexistuje. V tomto případě bude mít "
+"vyvolaná výjimka atribut 'reason', což je n-tice obsahující chybový kód a "
+"textovou chybovou zprávu."
 
 #: ../../howto/urllib2.rst:214
 msgid "e.g. ::"
-msgstr ""
+msgstr "např. ::"
 
 #: ../../howto/urllib2.rst:216
 msgid ""
@@ -346,10 +493,16 @@ msgid ""
 "...\n"
 "(4, 'getaddrinfo failed')"
 msgstr ""
+">>> req = urllib.request.Request('http://www.pretend_server.org')\n"
+">>> try: urllib.request.urlopen(req)\n"
+"... except urllib.error.URLError as e:\n"
+"...     print(e.reason)\n"
+"...\n"
+"(4, 'getaddrinfo failed')"
 
 #: ../../howto/urllib2.rst:225
 msgid "HTTPError"
-msgstr ""
+msgstr "HTTPError"
 
 #: ../../howto/urllib2.rst:227
 msgid ""
@@ -362,20 +515,29 @@ msgid ""
 ":exc:`~urllib.error.HTTPError`. Typical errors include '404' (page not "
 "found), '403' (request forbidden), and '401' (authentication required)."
 msgstr ""
+"Každá HTTP odpověď ze serveru obsahuje numerický \"stavový kód\". Někdy "
+"stavový kód indikuje, že server není schopen splnit požadavek. Výchozí "
+"handlery zpracují některé z těchto odpovědí za vás (například pokud je "
+"odpověď \"přesměrování\", které vyžaduje, aby klient získal dokument z jiné "
+"URL, urllib to za vás zpracuje). Pro ty, které nemůže zpracovat, urlopen "
+"vyvolá :exc:`~urllib.error.HTTPError`. Typické chyby zahrnují '404' (stránka "
+"nenalezena), '403' (požadavek zakázán) a '401' (vyžadováno ověření)."
 
 #: ../../howto/urllib2.rst:235
 msgid "See section 10 of :rfc:`2616` for a reference on all the HTTP error codes."
-msgstr ""
+msgstr "Viz sekce 10 :rfc:`2616` pro referenci všech HTTP chybových kódů."
 
 #: ../../howto/urllib2.rst:237
 msgid ""
 "The :exc:`~urllib.error.HTTPError` instance raised will have an integer "
 "'code' attribute, which corresponds to the error sent by the server."
 msgstr ""
+"Vyvolaná instance :exc:`~urllib.error.HTTPError` bude mít celočíselný "
+"atribut 'code', který odpovídá chybě poslané serverem."
 
 #: ../../howto/urllib2.rst:241
 msgid "Error Codes"
-msgstr ""
+msgstr "Chybové kódy"
 
 #: ../../howto/urllib2.rst:243
 msgid ""
@@ -383,6 +545,9 @@ msgid ""
 "and codes in the 100--299 range indicate success, you will usually only "
 "see error codes in the 400--599 range."
 msgstr ""
+"Protože výchozí handlery zpracovávají přesměrování (kódy v rozsahu 300) a "
+"kódy v rozsahu 100--299 indikují úspěch, obvykle uvidíte pouze chybové kódy "
+"v rozsahu 400--599."
 
 #: ../../howto/urllib2.rst:247
 msgid ""
@@ -390,6 +555,9 @@ msgid ""
 "dictionary of response codes that shows all the response codes used by "
 ":rfc:`2616`. An excerpt from the dictionary is shown below ::"
 msgstr ""
+":attr:`http.server.BaseHTTPRequestHandler.responses` je užitečný slovník "
+"kódů odpovědí, který zobrazuje všechny kódy odpovědí používané v :rfc:`2616`. "
+"Výňatek ze slovníku je zobrazen níže ::"
 
 #: ../../howto/urllib2.rst:251
 #, python-brace-format
@@ -418,6 +586,29 @@ msgid ""
 "    ...\n"
 "    }"
 msgstr ""
+"responses = {\n"
+"    ...\n"
+"    <HTTPStatus.OK: 200>: ('OK', 'Request fulfilled, document follows'),\n"
+"    ...\n"
+"    <HTTPStatus.FORBIDDEN: 403>: ('Forbidden',\n"
+"                                  'Request forbidden -- authorization "
+"will '\n"
+"                                  'not help'),\n"
+"    <HTTPStatus.NOT_FOUND: 404>: ('Not Found',\n"
+"                                  'Nothing matches the given URI'),\n"
+"    ...\n"
+"    <HTTPStatus.IM_A_TEAPOT: 418>: (\"I'm a Teapot\",\n"
+"                                    'Server refuses to brew coffee "
+"because '\n"
+"                                    'it is a teapot'),\n"
+"    ...\n"
+"    <HTTPStatus.SERVICE_UNAVAILABLE: 503>: ('Service Unavailable',\n"
+"                                            'The server cannot process "
+"the '\n"
+"                                            'request due to a high "
+"load'),\n"
+"    ...\n"
+"    }"
 
 #: ../../howto/urllib2.rst:271
 msgid ""
@@ -427,6 +618,10 @@ msgid ""
 "the code attribute, it also has read, geturl, and info, methods as "
 "returned by the ``urllib.response`` module::"
 msgstr ""
+"Když je vyvolána chyba, server odpoví vrácením HTTP chybového kódu *a* "
+"chybové stránky. Můžete použít instanci :exc:`~urllib.error.HTTPError` jako "
+"odpověď na vrácené stránce. To znamená, že kromě atributu code má také "
+"metody read, geturl a info, jak je vrací modul ``urllib.response``::"
 
 #: ../../howto/urllib2.rst:276
 msgid ""
@@ -446,10 +641,25 @@ msgid ""
 "  <title>Page Not Found</title>\\n\n"
 "  ..."
 msgstr ""
+">>> req = urllib.request.Request('http://www.python.org/fish.html')\n"
+">>> try:\n"
+"...     urllib.request.urlopen(req)\n"
+"... except urllib.error.HTTPError as e:\n"
+"...     print(e.code)\n"
+"...     print(e.read())\n"
+"...\n"
+"404\n"
+"b'<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
+"  "
+"\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\\n\\n\\n<html"
+"\n"
+"  ...\n"
+"  <title>Page Not Found</title>\\n\n"
+"  ..."
 
 #: ../../howto/urllib2.rst:291
 msgid "Wrapping it Up"
-msgstr ""
+msgstr "Shrnutí"
 
 #: ../../howto/urllib2.rst:293
 msgid ""
@@ -457,10 +667,13 @@ msgid ""
 ":exc:`~urllib.error.URLError` there are two basic approaches. I prefer "
 "the second approach."
 msgstr ""
+"Takže pokud chcete být připraveni na :exc:`~urllib.error.HTTPError` *nebo* "
+":exc:`~urllib.error.URLError`, existují dva základní přístupy. Preferuji "
+"druhý přístup."
 
 #: ../../howto/urllib2.rst:297
 msgid "Number 1"
-msgstr ""
+msgstr "Číslo 1"
 
 #: ../../howto/urllib2.rst:302
 msgid ""
@@ -478,16 +691,31 @@ msgid ""
 "else:\n"
 "    # everything is fine"
 msgstr ""
+"from urllib.request import Request, urlopen\n"
+"from urllib.error import URLError, HTTPError\n"
+"req = Request(someurl)\n"
+"try:\n"
+"    response = urlopen(req)\n"
+"except HTTPError as e:\n"
+"    print('The server couldn\\'t fulfill the request.')\n"
+"    print('Error code: ', e.code)\n"
+"except URLError as e:\n"
+"    print('We failed to reach a server.')\n"
+"    print('Reason: ', e.reason)\n"
+"else:\n"
+"    # everything is fine"
 
 #: ../../howto/urllib2.rst:319
 msgid ""
 "The ``except HTTPError`` *must* come first, otherwise ``except URLError``"
 " will *also* catch an :exc:`~urllib.error.HTTPError`."
 msgstr ""
+"``except HTTPError`` *musí* být první, jinak ``except URLError`` *také* "
+"zachytí :exc:`~urllib.error.HTTPError`."
 
 #: ../../howto/urllib2.rst:323
 msgid "Number 2"
-msgstr ""
+msgstr "Číslo 2"
 
 #: ../../howto/urllib2.rst:327
 msgid ""
@@ -506,10 +734,24 @@ msgid ""
 "else:\n"
 "    # everything is fine"
 msgstr ""
+"from urllib.request import Request, urlopen\n"
+"from urllib.error import URLError\n"
+"req = Request(someurl)\n"
+"try:\n"
+"    response = urlopen(req)\n"
+"except URLError as e:\n"
+"    if hasattr(e, 'reason'):\n"
+"        print('We failed to reach a server.')\n"
+"        print('Reason: ', e.reason)\n"
+"    elif hasattr(e, 'code'):\n"
+"        print('The server couldn\\'t fulfill the request.')\n"
+"        print('Error code: ', e.code)\n"
+"else:\n"
+"    # everything is fine"
 
 #: ../../howto/urllib2.rst:344
 msgid "info and geturl"
-msgstr ""
+msgstr "info a geturl"
 
 #: ../../howto/urllib2.rst:346
 msgid ""
@@ -517,6 +759,9 @@ msgid ""
 "instance) has two useful methods :meth:`!info` and :meth:`!geturl` and is"
 " defined in the module :mod:`urllib.response`."
 msgstr ""
+"Odpověď vrácená funkcí urlopen (nebo instance :exc:`~urllib.error.HTTPError`) "
+"má dvě užitečné metody :meth:`!info` a :meth:`!geturl` a je definována v "
+"modulu :mod:`urllib.response`."
 
 #: ../../howto/urllib2.rst:350
 msgid ""
@@ -525,6 +770,9 @@ msgid ""
 "a redirect. The URL of the page fetched may not be the same as the URL "
 "requested."
 msgstr ""
+"**geturl** - vrací skutečnou URL získané stránky. To je užitečné, protože "
+"``urlopen`` (nebo použitý objekt opener) mohl následovat přesměrování. URL "
+"získané stránky nemusí být stejná jako požadovaná URL."
 
 #: ../../howto/urllib2.rst:354
 msgid ""
@@ -532,6 +780,9 @@ msgid ""
 "fetched, particularly the headers sent by the server. It is currently an "
 ":class:`http.client.HTTPMessage` instance."
 msgstr ""
+"**info** - vrací objekt podobný slovníku, který popisuje získanou stránku, "
+"zejména hlavičky poslané serverem. V současnosti je to instance "
+":class:`http.client.HTTPMessage`."
 
 #: ../../howto/urllib2.rst:358
 msgid ""
@@ -540,10 +791,14 @@ msgid ""
 "for a useful listing of HTTP headers with brief explanations of their "
 "meaning and use."
 msgstr ""
+"Typické hlavičky zahrnují 'Content-length', 'Content-type' a tak dále. Viz "
+"`Quick Reference to HTTP Headers <https://jkorpela.fi/http.html>`_ pro "
+"užitečný seznam HTTP hlaviček s krátkými vysvětleními jejich významu a "
+"použití."
 
 #: ../../howto/urllib2.rst:365
 msgid "Openers and Handlers"
-msgstr ""
+msgstr "Openers a Handlers"
 
 #: ../../howto/urllib2.rst:367
 msgid ""
@@ -555,6 +810,13 @@ msgid ""
 " scheme (http, ftp, etc.), or how to handle an aspect of URL opening, for"
 " example HTTP redirections or HTTP cookies."
 msgstr ""
+"Když získáváte URL, používáte opener (instanci možná matoucně pojmenované "
+"třídy :class:`urllib.request.OpenerDirector`). Normálně jsme používali "
+"výchozí opener - přes ``urlopen`` - ale můžete vytvořit vlastní openers. "
+"Openers používají handlery. Veškerá \"těžká práce\" je prováděna handlery. "
+"Každý handler ví, jak otevřít URL adresy pro konkrétní URL schéma (http, ftp "
+"atd.), nebo jak zpracovat aspekt otevírání URL, například HTTP přesměrování "
+"nebo HTTP cookies."
 
 #: ../../howto/urllib2.rst:375
 msgid ""
@@ -562,12 +824,18 @@ msgid ""
 "handlers installed, for example to get an opener that handles cookies, or"
 " to get an opener that does not handle redirections."
 msgstr ""
+"Budete chtít vytvořit openers, pokud chcete získávat URL adresy s "
+"nainstalovanými konkrétními handlery, například pro získání openeru, který "
+"zpracovává cookies, nebo pro získání openeru, který nezpracovává "
+"přesměrování."
 
 #: ../../howto/urllib2.rst:379
 msgid ""
 "To create an opener, instantiate an ``OpenerDirector``, and then call "
 "``.add_handler(some_handler_instance)`` repeatedly."
 msgstr ""
+"Pro vytvoření openeru vytvořte instanci ``OpenerDirector`` a poté opakovaně "
+"volejte ``.add_handler(some_handler_instance)``."
 
 #: ../../howto/urllib2.rst:382
 msgid ""
@@ -576,12 +844,18 @@ msgid ""
 "``build_opener`` adds several handlers by default, but provides a quick "
 "way to add more and/or override the default handlers."
 msgstr ""
+"Alternativně můžete použít ``build_opener``, což je pomocná funkce pro "
+"vytváření objektů opener jediným voláním funkce. ``build_opener`` ve "
+"výchozím nastavení přidává několik handlerů, ale poskytuje rychlý způsob, "
+"jak přidat další a/nebo přepsat výchozí handlery."
 
 #: ../../howto/urllib2.rst:387
 msgid ""
 "Other sorts of handlers you might want to can handle proxies, "
 "authentication, and other common but slightly specialised situations."
 msgstr ""
+"Další typy handlerů, které můžete chtít, mohou zpracovávat proxy, ověřování "
+"a další běžné, ale mírně specializované situace."
 
 #: ../../howto/urllib2.rst:390
 msgid ""
@@ -589,6 +863,9 @@ msgid ""
 "default opener. This means that calls to ``urlopen`` will use the opener "
 "you have installed."
 msgstr ""
+"``install_opener`` může být použit k tomu, aby se objekt ``opener`` stal "
+"(globálním) výchozím openerem. To znamená, že volání ``urlopen`` použije "
+"opener, který jste nainstalovali."
 
 #: ../../howto/urllib2.rst:394
 msgid ""
@@ -596,10 +873,13 @@ msgid ""
 "fetch urls in the same way as the ``urlopen`` function: there's no need "
 "to call ``install_opener``, except as a convenience."
 msgstr ""
+"Objekty opener mají metodu ``open``, kterou lze volat přímo pro získání URL "
+"adres stejným způsobem jako funkci ``urlopen``: není nutné volat "
+"``install_opener``, kromě toho jako pohodlí."
 
 #: ../../howto/urllib2.rst:400
 msgid "Basic Authentication"
-msgstr ""
+msgstr "Základní ověřování"
 
 #: ../../howto/urllib2.rst:402
 msgid ""
@@ -609,6 +889,10 @@ msgid ""
 "`Basic Authentication Tutorial "
 "<https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml>`__."
 msgstr ""
+"Pro ilustraci vytváření a instalace handleru použijeme "
+"``HTTPBasicAuthHandler``. Pro podrobnější diskusi tohoto tématu -- včetně "
+"vysvětlení, jak funguje Basic Authentication - viz `Basic Authentication "
+"Tutorial <https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml>`__."
 
 #: ../../howto/urllib2.rst:408
 msgid ""
@@ -617,14 +901,17 @@ msgid ""
 "authentication scheme and a 'realm'. The header looks like: ``WWW-"
 "Authenticate: SCHEME realm=\"REALM\"``."
 msgstr ""
+"Když je vyžadováno ověření, server pošle hlavičku (stejně jako chybový kód "
+"401) požadující ověření. To specifikuje schéma ověření a 'realm'. Hlavička "
+"vypadá takto: ``WWW-Authenticate: SCHEME realm=\"REALM\"``."
 
 #: ../../howto/urllib2.rst:413
 msgid "e.g."
-msgstr ""
+msgstr "např."
 
 #: ../../howto/urllib2.rst:415
 msgid "WWW-Authenticate: Basic realm=\"cPanel Users\""
-msgstr ""
+msgstr "WWW-Authenticate: Basic realm=\"cPanel Users\""
 
 #: ../../howto/urllib2.rst:420
 msgid ""
@@ -634,6 +921,10 @@ msgid ""
 "an instance of ``HTTPBasicAuthHandler`` and an opener to use this "
 "handler."
 msgstr ""
+"Klient by měl poté opakovat požadavek s odpovídajícím jménem a heslem pro "
+"realm zahrnuté jako hlavička v požadavku. Toto je 'základní ověřování'. Pro "
+"zjednodušení tohoto procesu můžeme vytvořit instanci "
+"``HTTPBasicAuthHandler`` a opener pro použití tohoto handleru."
 
 #: ../../howto/urllib2.rst:425
 msgid ""
@@ -648,12 +939,22 @@ msgid ""
 "indicate this by providing ``None`` as the realm argument to the "
 "``add_password`` method."
 msgstr ""
+"``HTTPBasicAuthHandler`` používá objekt zvaný správce hesel pro zpracování "
+"mapování URL adres a realms na hesla a uživatelská jména. Pokud víte, co je "
+"realm (z hlavičky ověření poslané serverem), můžete použít "
+"``HTTPPasswordMgr``. Často člověka nezajímá, co je realm. V tom případě je "
+"vhodné použít ``HTTPPasswordMgrWithDefaultRealm``. To vám umožňuje "
+"specifikovat výchozí uživatelské jméno a heslo pro URL. To bude poskytnuto v "
+"případě, že neposkytujete alternativní kombinaci pro konkrétní realm. To "
+"indikujeme poskytnutím ``None`` jako argumentu realm metodě ``add_password``."
 
 #: ../../howto/urllib2.rst:435
 msgid ""
 "The top-level URL is the first URL that requires authentication. URLs "
 "\"deeper\" than the URL you pass to .add_password() will also match. ::"
 msgstr ""
+"Top-level URL je první URL, která vyžaduje ověření. URL adresy \"hlubší\" "
+"než URL, kterou předáte .add_password(), budou také odpovídat. ::"
 
 #: ../../howto/urllib2.rst:438
 msgid ""
@@ -677,6 +978,25 @@ msgid ""
 "# Now all calls to urllib.request.urlopen use our opener.\n"
 "urllib.request.install_opener(opener)"
 msgstr ""
+"# create a password manager\n"
+"password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()\n"
+"\n"
+"# Add the username and password.\n"
+"# If we knew the realm, we could use it instead of None.\n"
+"top_level_url = \"http://example.com/foo/\"\n"
+"password_mgr.add_password(None, top_level_url, username, password)\n"
+"\n"
+"handler = urllib.request.HTTPBasicAuthHandler(password_mgr)\n"
+"\n"
+"# create \"opener\" (OpenerDirector instance)\n"
+"opener = urllib.request.build_opener(handler)\n"
+"\n"
+"# use the opener to fetch a URL\n"
+"opener.open(a_url)\n"
+"\n"
+"# Install the opener.\n"
+"# Now all calls to urllib.request.urlopen use our opener.\n"
+"urllib.request.install_opener(opener)"
 
 #: ../../howto/urllib2.rst:460
 msgid ""
@@ -687,6 +1007,12 @@ msgid ""
 "``HTTPHandler``, ``HTTPDefaultErrorHandler``, ``HTTPRedirectHandler``, "
 "``FTPHandler``, ``FileHandler``, ``DataHandler``, ``HTTPErrorProcessor``."
 msgstr ""
+"Ve výše uvedeném příkladu jsme ``build_opener`` poskytli pouze náš "
+"``HTTPBasicAuthHandler``. Ve výchozím nastavení mají openers handlery pro "
+"normální situace -- ``ProxyHandler`` (pokud je nastavena proxy, jako je "
+"proměnná prostředí :envvar:`!http_proxy`), ``UnknownHandler``, "
+"``HTTPHandler``, ``HTTPDefaultErrorHandler``, ``HTTPRedirectHandler``, "
+"``FTPHandler``, ``FileHandler``, ``DataHandler``, ``HTTPErrorProcessor``."
 
 #: ../../howto/urllib2.rst:467
 msgid ""
@@ -698,10 +1024,17 @@ msgid ""
 "The authority, if present, must NOT contain the \"userinfo\" component - "
 "for example ``\"joe:password@example.com\"`` is not correct."
 msgstr ""
+"``top_level_url`` je ve skutečnosti *buď* úplná URL (včetně komponenty "
+"schématu 'http:' a názvu hostitele a volitelně čísla portu), např. "
+"``\"http://example.com/\"`` *nebo* \"autorita\" (tj. název hostitele, "
+"volitelně včetně čísla portu), např. ``\"example.com\"`` nebo "
+"``\"example.com:8080\"`` (poslední příklad zahrnuje číslo portu). Autorita, "
+"pokud je přítomna, NESMÍ obsahovat komponentu \"userinfo\" - například "
+"``\"joe:password@example.com\"`` není správné."
 
 #: ../../howto/urllib2.rst:477
 msgid "Proxies"
-msgstr ""
+msgstr "Proxy"
 
 #: ../../howto/urllib2.rst:479
 msgid ""
@@ -713,6 +1046,13 @@ msgid ""
 "done using similar steps to setting up a `Basic Authentication`_ handler:"
 " ::"
 msgstr ""
+"**urllib** automaticky detekuje vaše nastavení proxy a použije je. To je "
+"prostřednictvím ``ProxyHandler``, který je součástí normálního řetězce "
+"handlerů, když je detekováno nastavení proxy. Normálně je to dobrá věc, ale "
+"existují příležitosti, kdy to nemusí být užitečné [#]_. Jedním ze způsobů, "
+"jak to udělat, je nastavit náš vlastní ``ProxyHandler`` bez definovaných "
+"proxy. To se provádí pomocí podobných kroků jako nastavení handleru `Basic "
+"Authentication`_: ::"
 
 #: ../../howto/urllib2.rst:486
 #, python-brace-format
@@ -721,6 +1061,9 @@ msgid ""
 ">>> opener = urllib.request.build_opener(proxy_support)\n"
 ">>> urllib.request.install_opener(opener)"
 msgstr ""
+">>> proxy_support = urllib.request.ProxyHandler({})\n"
+">>> opener = urllib.request.build_opener(proxy_support)\n"
+">>> urllib.request.install_opener(opener)"
 
 #: ../../howto/urllib2.rst:492
 msgid ""
@@ -728,16 +1071,21 @@ msgid ""
 "locations through a proxy.  However, this can be enabled by extending "
 "urllib.request as shown in the recipe [#]_."
 msgstr ""
+"V současné době ``urllib.request`` *nepodporuje* získávání ``https`` umístění "
+"přes proxy. To však lze povolit rozšířením urllib.request, jak je ukázáno v "
+"receptu [#]_."
 
 #: ../../howto/urllib2.rst:498
 msgid ""
 "``HTTP_PROXY`` will be ignored if a variable ``REQUEST_METHOD`` is set; "
 "see the documentation on :func:`~urllib.request.getproxies`."
 msgstr ""
+"``HTTP_PROXY`` bude ignorováno, pokud je nastavena proměnná "
+"``REQUEST_METHOD``; viz dokumentace k :func:`~urllib.request.getproxies`."
 
 #: ../../howto/urllib2.rst:503
 msgid "Sockets and Layers"
-msgstr ""
+msgstr "Sockety a vrstvy"
 
 #: ../../howto/urllib2.rst:505
 msgid ""
@@ -745,6 +1093,8 @@ msgid ""
 "urllib uses the :mod:`http.client` library, which in turn uses the socket"
 " library."
 msgstr ""
+"Podpora Pythonu pro získávání zdrojů z webu je vrstvená. urllib používá "
+"knihovnu :mod:`http.client`, která zase používá knihovnu socket."
 
 #: ../../howto/urllib2.rst:508
 msgid ""
@@ -755,6 +1105,12 @@ msgid ""
 " or urllib.request levels. However, you can set the default timeout "
 "globally for all sockets using ::"
 msgstr ""
+"Od Pythonu 2.3 můžete specifikovat, jak dlouho má socket čekat na odpověď "
+"před vypršením časového limitu. To může být užitečné v aplikacích, které "
+"musí získávat webové stránky. Ve výchozím nastavení nemá modul socket *žádný "
+"časový limit* a může viset. V současné době není časový limit socketu "
+"vystaven na úrovni http.client nebo urllib.request. Nicméně můžete nastavit "
+"výchozí časový limit globálně pro všechny sockety pomocí ::"
 
 #: ../../howto/urllib2.rst:514
 msgid ""
@@ -770,18 +1126,29 @@ msgid ""
 "req = urllib.request.Request('http://www.voidspace.org.uk')\n"
 "response = urllib.request.urlopen(req)"
 msgstr ""
+"import socket\n"
+"import urllib.request\n"
+"\n"
+"# timeout in seconds\n"
+"timeout = 10\n"
+"socket.setdefaulttimeout(timeout)\n"
+"\n"
+"# this call to urllib.request.urlopen now uses the default timeout\n"
+"# we have set in the socket module\n"
+"req = urllib.request.Request('http://www.voidspace.org.uk')\n"
+"response = urllib.request.urlopen(req)"
 
 #: ../../howto/urllib2.rst:531
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../howto/urllib2.rst:533
 msgid "This document was reviewed and revised by John Lee."
-msgstr ""
+msgstr "Tento dokument byl zkontrolován a revidován Johnem Lee."
 
 #: ../../howto/urllib2.rst:535
 msgid "Google for example."
-msgstr ""
+msgstr "Například Google."
 
 #: ../../howto/urllib2.rst:536
 msgid ""
@@ -789,18 +1156,25 @@ msgid ""
 "sites using web standards is much more sensible. Unfortunately a lot of "
 "sites still send different versions to different browsers."
 msgstr ""
+"Detekce prohlížeče je velmi špatná praxe pro návrh webových stránek - "
+"budování stránek pomocí webových standardů je mnohem rozumnější. Bohužel "
+"mnoho stránek stále posílá různé verze různým prohlížečům."
 
 #: ../../howto/urllib2.rst:539
 msgid ""
 "The user agent for MSIE 6 is *'Mozilla/4.0 (compatible; MSIE 6.0; Windows"
 " NT 5.1; SV1; .NET CLR 1.1.4322)'*"
 msgstr ""
+"User agent pro MSIE 6 je *'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT "
+"5.1; SV1; .NET CLR 1.1.4322)'*"
 
 #: ../../howto/urllib2.rst:541
 msgid ""
 "For details of more HTTP request headers, see `Quick Reference to HTTP "
 "Headers`_."
 msgstr ""
+"Pro detaily o dalších hlavičkách HTTP požadavků viz `Quick Reference to HTTP "
+"Headers`_."
 
 #: ../../howto/urllib2.rst:543
 msgid ""
@@ -810,6 +1184,10 @@ msgid ""
 "scripts with a localhost server, I have to prevent urllib from using the "
 "proxy."
 msgstr ""
+"V mém případě musím použít proxy pro přístup k internetu v práci. Pokud se "
+"pokusíte získat *localhost* URL adresy přes tuto proxy, blokuje je. IE je "
+"nastaveno na použití proxy, což urllib zachytí. Abych mohl testovat skripty "
+"s localhost serverem, musím zabránit urllib v použití proxy."
 
 #: ../../howto/urllib2.rst:548
 msgid ""
@@ -817,4 +1195,6 @@ msgid ""
 "<https://code.activestate.com/recipes/456195-urrlib2-opener-for-ssl-"
 "proxy-connect-method/>`_."
 msgstr ""
-
+"urllib opener pro SSL proxy (metoda CONNECT): `ASPN Cookbook Recipe "
+"<https://code.activestate.com/recipes/456195-urrlib2-opener-for-ssl-"
+"proxy-connect-method/>`_."

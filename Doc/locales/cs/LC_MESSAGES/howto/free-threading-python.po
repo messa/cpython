@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../howto/free-threading-python.rst:5
 msgid "Python support for free threading"
-msgstr ""
+msgstr "Podpora volného vláknění v Pythonu"
 
 #: ../../howto/free-threading-python.rst:7
 msgid ""
@@ -33,6 +33,13 @@ msgid ""
 "automatically, programs designed with threading in mind will run faster "
 "on multi-core hardware."
 msgstr ""
+"Od verze 3.13 má CPython podporu pro sestavení Pythonu nazývané "
+":term:`free threading` (volné vláknění), kde je :term:`global interpreter lock` "
+"(GIL) zakázán. Provádění s volným vlákněním umožňuje plné využití "
+"dostupného výpočetního výkonu spouštěním vláken paralelně na dostupných "
+"jádrech CPU. I když ne každý software z toho automaticky profituje, "
+"programy navržené s ohledem na vláknění poběží rychleji na vícejádrovém "
+"hardwaru."
 
 #: ../../howto/free-threading-python.rst:14
 msgid ""
@@ -40,6 +47,9 @@ msgid ""
 "module`, may not be ready for use in a free-threaded build, and will re-"
 "enable the :term:`GIL`."
 msgstr ""
+"Některé balíčky třetích stran, zejména ty s :term:`rozšiřujícím modulem "
+"<extension module>`, nemusí být připraveny pro použití v sestavení s volným "
+"vlákněním a znovu povolí :term:`GIL`."
 
 #: ../../howto/free-threading-python.rst:18
 msgid ""
@@ -47,16 +57,21 @@ msgid ""
 "code.  See :ref:`freethreading-extensions-howto` for information on how "
 "to write C extensions that support the free-threaded build."
 msgstr ""
+"Tento dokument popisuje důsledky volného vláknění pro kód v Pythonu. "
+"Informace o psaní C rozšíření podporujících sestavení s volným vlákněním "
+"najdete v :ref:`freethreading-extensions-howto`."
 
 #: ../../howto/free-threading-python.rst:24
 msgid ""
 ":pep:`703` – Making the Global Interpreter Lock Optional in CPython for "
 "an overall description of free-threaded Python."
 msgstr ""
+":pep:`703` – Volitelný Global Interpreter Lock v CPythonu pro celkový "
+"popis Pythonu s volným vlákněním."
 
 #: ../../howto/free-threading-python.rst:29
 msgid "Installation"
-msgstr ""
+msgstr "Instalace"
 
 #: ../../howto/free-threading-python.rst:31
 msgid ""
@@ -64,6 +79,9 @@ msgid ""
 "optionally support installing free-threaded Python binaries.  The "
 "installers are available at https://www.python.org/downloads/."
 msgstr ""
+"Od Pythonu 3.13 oficiální instalátory pro macOS a Windows volitelně "
+"podporují instalaci binárních souborů Pythonu s volným vlákněním. "
+"Instalátory jsou k dispozici na https://www.python.org/downloads/."
 
 #: ../../howto/free-threading-python.rst:35
 msgid ""
@@ -72,16 +90,21 @@ msgid ""
 "community-maintained installation guide for installing free-threaded "
 "Python."
 msgstr ""
+"Informace o ostatních platformách najdete v `Installing a Free-Threaded "
+"Python <https://py-free-threading.github.io/installing-cpython/>`_, "
+"komunitně udržovaném průvodci instalací Pythonu s volným vlákněním."
 
 #: ../../howto/free-threading-python.rst:39
 msgid ""
 "When building CPython from source, the :option:`--disable-gil` configure "
 "option should be used to build a free-threaded Python interpreter."
 msgstr ""
+"Při kompilaci CPythonu ze zdrojových kódů by měla být použita volba "
+":option:`--disable-gil` pro sestavení interpretu Pythonu s volným vlákněním."
 
 #: ../../howto/free-threading-python.rst:44
 msgid "Identifying free-threaded Python"
-msgstr ""
+msgstr "Identifikace Pythonu s volným vlákněním"
 
 #: ../../howto/free-threading-python.rst:46
 msgid ""
@@ -91,6 +114,10 @@ msgid ""
 "used to check whether the GIL is actually disabled in the running "
 "process."
 msgstr ""
+"Pro zjištění, zda aktuální interpret podporuje volné vláknění, "
+":option:`python -VV <-V>` a :data:`sys.version` obsahují „free-threading "
+"build". Novou funkcí :func:`sys._is_gil_enabled` lze zjistit, zda je GIL "
+"skutečně zakázán v běžícím procesu."
 
 #: ../../howto/free-threading-python.rst:51
 msgid ""
@@ -100,10 +127,15 @@ msgid ""
 " threading.  This is the recommended mechanism for decisions related to "
 "the build configuration."
 msgstr ""
+"Konfigurační proměnná ``sysconfig.get_config_var(\"Py_GIL_DISABLED\")`` "
+"může být použita k určení, zda sestavení podporuje volné vláknění. Pokud "
+"je proměnná nastavena na ``1``, pak sestavení podporuje volné vláknění. "
+"Toto je doporučený mechanismus pro rozhodování související s konfigurací "
+"sestavení."
 
 #: ../../howto/free-threading-python.rst:58
 msgid "The global interpreter lock in free-threaded Python"
-msgstr ""
+msgstr "Globální zámek interpretu v Pythonu s volným vlákněním"
 
 #: ../../howto/free-threading-python.rst:60
 msgid ""
@@ -111,6 +143,9 @@ msgid ""
 "enabled at runtime using the environment variable :envvar:`PYTHON_GIL` or"
 " the command-line option :option:`-X gil`."
 msgstr ""
+"Sestavení CPythonu s volným vlákněním podporují volitelné spuštění s "
+"povoleným GIL za běhu pomocí proměnné prostředí :envvar:`PYTHON_GIL` nebo "
+"volby příkazového řádku :option:`-X gil`."
 
 #: ../../howto/free-threading-python.rst:64
 msgid ""
@@ -118,24 +153,29 @@ msgid ""
 "extension module that is not explicitly marked as supporting free "
 "threading.  A warning will be printed in this case."
 msgstr ""
+"GIL může být také automaticky povolen při importu rozšiřujícího modulu "
+"C-API, který není explicitně označen jako podporující volné vláknění. "
+"V tomto případě bude vypsáno varování."
 
 #: ../../howto/free-threading-python.rst:68
 msgid ""
 "In addition to individual package documentation, the following websites "
 "track the status of popular packages support for free threading:"
 msgstr ""
+"Kromě dokumentace jednotlivých balíčků sledují následující webové stránky "
+"stav podpory volného vláknění u populárních balíčků:"
 
 #: ../../howto/free-threading-python.rst:71
 msgid "https://py-free-threading.github.io/tracking/"
-msgstr ""
+msgstr "https://py-free-threading.github.io/tracking/"
 
 #: ../../howto/free-threading-python.rst:72
 msgid "https://hugovk.github.io/free-threaded-wheels/"
-msgstr ""
+msgstr "https://hugovk.github.io/free-threaded-wheels/"
 
 #: ../../howto/free-threading-python.rst:76
 msgid "Thread safety"
-msgstr ""
+msgstr "Bezpečnost vláken"
 
 #: ../../howto/free-threading-python.rst:78
 msgid ""
@@ -148,6 +188,14 @@ msgid ""
 "so this should be treated as a description of the current implementation,"
 " not a guarantee of current or future behavior."
 msgstr ""
+"Sestavení CPythonu s volným vlákněním se snaží poskytovat podobné chování "
+"z hlediska bezpečnosti vláken na úrovni Pythonu jako výchozí sestavení s "
+"povoleným GIL. Vestavěné typy jako :class:`dict`, :class:`list` a "
+":class:`set` používají interní zámky k ochraně před souběžnými modifikacemi "
+"způsobem, který se chová podobně jako GIL. Python však historicky "
+"negarantoval specifické chování pro souběžné modifikace těchto vestavěných "
+"typů, takže toto by mělo být chápáno jako popis aktuální implementace, "
+"nikoli jako záruka současného nebo budoucího chování."
 
 #: ../../howto/free-threading-python.rst:89
 msgid ""
@@ -155,20 +203,24 @@ msgid ""
 "synchronization primitives instead of relying on the internal locks of "
 "built-in types, when possible."
 msgstr ""
+"Je doporučeno používat :class:`threading.Lock` nebo jiné synchronizační "
+"primitivy místo spoléhání se na interní zámky vestavěných typů, kdykoli "
+"je to možné."
 
 #: ../../howto/free-threading-python.rst:95
 msgid "Known limitations"
-msgstr ""
+msgstr "Známá omezení"
 
 #: ../../howto/free-threading-python.rst:97
 msgid ""
 "This section describes known limitations of the free-threaded CPython "
 "build."
 msgstr ""
+"Tato sekce popisuje známá omezení sestavení CPythonu s volným vlákněním."
 
 #: ../../howto/free-threading-python.rst:100
 msgid "Immortalization"
-msgstr ""
+msgstr "Imortalizace"
 
 #: ../../howto/free-threading-python.rst:102
 msgid ""
@@ -177,24 +229,30 @@ msgid ""
 "modified.  This is done to avoid reference count contention that would "
 "prevent efficient multi-threaded scaling."
 msgstr ""
+"V sestavení s volným vlákněním jsou některé objekty :term:`nesmrtelné "
+"<immortal>`. Nesmrtelné objekty nejsou dealokovány a mají počty referencí, "
+"které se nikdy nemění. Toto je prováděno pro zabránění soupeření o počty "
+"referencí, které by bránilo efektivnímu vícevláknovému škálování."
 
 #: ../../howto/free-threading-python.rst:107
 msgid "As of the 3.14 release, immortalization is limited to:"
-msgstr ""
+msgstr "Od verze 3.14 je imortalizace omezena na:"
 
 #: ../../howto/free-threading-python.rst:109
 msgid ""
 "Code constants: numeric literals, string literals, and tuple literals "
 "composed of other constants."
 msgstr ""
+"Konstanty kódu: numerické literály, řetězcové literály a literály n-tic "
+"složené z jiných konstant."
 
 #: ../../howto/free-threading-python.rst:111
 msgid "Strings interned by :func:`sys.intern`."
-msgstr ""
+msgstr "Řetězce internované pomocí :func:`sys.intern`."
 
 #: ../../howto/free-threading-python.rst:115
 msgid "Frame objects"
-msgstr ""
+msgstr "Objekty rámců"
 
 #: ../../howto/free-threading-python.rst:117
 msgid ""
@@ -202,10 +260,13 @@ msgid ""
 "<frame-objects>` object if that frame is currently executing in another "
 "thread, and doing so may crash the interpreter."
 msgstr ""
+"Není bezpečné přistupovat k :attr:`frame.f_locals` z objektu :ref:`rámce "
+"<frame-objects>`, pokud se tento rámec aktuálně vykonává v jiném vlákně, "
+"a takový přístup může způsobit pád interpretu."
 
 #: ../../howto/free-threading-python.rst:123
 msgid "Iterators"
-msgstr ""
+msgstr "Iterátory"
 
 #: ../../howto/free-threading-python.rst:125
 msgid ""
@@ -213,10 +274,13 @@ msgid ""
 "multiple threads concurrently, and threads may see duplicate or missing "
 "elements."
 msgstr ""
+"Obecně není bezpečné z hlediska vláken přistupovat ke stejnému objektu "
+"iterátoru z více vláken současně a vlákna mohou vidět duplicitní nebo "
+"chybějící prvky."
 
 #: ../../howto/free-threading-python.rst:131
 msgid "Single-threaded performance"
-msgstr ""
+msgstr "Výkon v jednovláknových aplikacích"
 
 #: ../../howto/free-threading-python.rst:133
 #, python-format
@@ -227,20 +291,26 @@ msgid ""
 "suite, the average overhead ranges from about 1% on macOS aarch64 to 8% "
 "on x86-64 Linux systems."
 msgstr ""
+"Sestavení s volným vlákněním má při provádění kódu v Pythonu dodatečnou "
+"režii ve srovnání s výchozím sestavením s povoleným GIL. Velikost režie "
+"závisí na pracovní zátěži a hardwaru. Na benchmarkové sadě pyperformance "
+"se průměrná režie pohybuje od přibližně 1 % na macOS aarch64 do 8 % na "
+"systémech Linux x86-64."
 
 #: ../../howto/free-threading-python.rst:141
 msgid "Behavioral changes"
-msgstr ""
+msgstr "Změny chování"
 
 #: ../../howto/free-threading-python.rst:143
 msgid ""
 "This section describes CPython behavioural changes with the free-threaded"
 " build."
 msgstr ""
+"Tato sekce popisuje změny chování CPythonu v sestavení s volným vlákněním."
 
 #: ../../howto/free-threading-python.rst:148
 msgid "Context variables"
-msgstr ""
+msgstr "Kontextové proměnné"
 
 #: ../../howto/free-threading-python.rst:150
 msgid ""
@@ -252,10 +322,17 @@ msgid ""
 "flag defaults to false so threads start with an empty "
 ":class:`~contextvars.Context()`."
 msgstr ""
+"V sestavení s volným vlákněním je příznak "
+":data:`~sys.flags.thread_inherit_context` ve výchozím nastavení nastaven "
+"na true, což způsobuje, že vlákna vytvořená pomocí :class:`threading.Thread` "
+"začínají s kopií :class:`~contextvars.Context()` volajícího "
+":meth:`~threading.Thread.start`. Ve výchozím sestavení s povoleným GIL je "
+"příznak ve výchozím nastavení false, takže vlákna začínají s prázdným "
+":class:`~contextvars.Context()`."
 
 #: ../../howto/free-threading-python.rst:160
 msgid "Warning filters"
-msgstr ""
+msgstr "Filtry varování"
 
 #: ../../howto/free-threading-python.rst:162
 msgid ""
@@ -267,4 +344,11 @@ msgid ""
 ":class:`~warnings.catch_warnings` modifies the global filters list, which"
 " is not thread-safe.  See the :mod:`warnings` module for more details."
 msgstr ""
-
+"V sestavení s volným vlákněním je příznak "
+":data:`~sys.flags.context_aware_warnings` ve výchozím nastavení nastaven "
+"na true. Ve výchozím sestavení s povoleným GIL je příznak ve výchozím "
+"nastavení false. Pokud je příznak true, pak kontextový správce "
+":class:`warnings.catch_warnings` používá kontextovou proměnnou pro filtry "
+"varování. Pokud je příznak false, pak :class:`~warnings.catch_warnings` "
+"modifikuje globální seznam filtrů, což není bezpečné z hlediska vláken. "
+"Více podrobností najdete v modulu :mod:`warnings`."

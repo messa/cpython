@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../../howto/logging.rst:5
 msgid "Logging HOWTO"
-msgstr ""
+msgstr "Průvodce logováním"
 
 #: ../../howto/logging.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/logging.rst:7
 msgid "Vinay Sajip <vinay_sajip at red-dove dot com>"
@@ -36,10 +36,12 @@ msgid ""
 "This page contains tutorial information. For links to reference "
 "information and a logging cookbook, please see :ref:`tutorial-ref-links`."
 msgstr ""
+"Tato stránka obsahuje výukové informace. Pro odkazy na referenční "
+"informace a příručku logování viz :ref:`tutorial-ref-links`."
 
 #: ../../howto/logging.rst:17
 msgid "Basic Logging Tutorial"
-msgstr ""
+msgstr "Základní tutoriál logování"
 
 #: ../../howto/logging.rst:19
 msgid ""
@@ -51,10 +53,16 @@ msgid ""
 "also have an importance which the developer ascribes to the event; the "
 "importance can also be called the *level* or *severity*."
 msgstr ""
+"Logování je způsob sledování událostí, které nastanou při běhu softwaru. "
+"Vývojář softwaru přidává do svého kódu volání pro logování, aby naznačil, "
+"že došlo k určitým událostem. Událost je popsána popisnou zprávou, která "
+"může volitelně obsahovat proměnná data (tj. data, která se mohou pro každý "
+"výskyt události lišit). Události mají také důležitost, kterou vývojář "
+"události přisuzuje; důležitost lze také nazvat *úroveň* nebo *závažnost*."
 
 #: ../../howto/logging.rst:28
 msgid "When to use logging"
-msgstr ""
+msgstr "Kdy použít logování"
 
 #: ../../howto/logging.rst:30
 msgid ""
@@ -66,20 +74,28 @@ msgid ""
 " table below. It states, for each of a set of common tasks, the best tool"
 " to use for that task."
 msgstr ""
+"K funkcionalitě logování můžete přistupovat vytvořením loggeru pomocí ``logger = "
+"getLogger(__name__)`` a následným voláním metod loggeru "
+":meth:`~Logger.debug`, :meth:`~Logger.info`, :meth:`~Logger.warning`, "
+":meth:`~Logger.error` a :meth:`~Logger.critical`. Abyste zjistili, "
+"kdy použít logování a které metody loggeru kdy použít, viz níže uvedená "
+"tabulka. Uvádí pro každou ze sady běžných úloh nejlepší nástroj pro danou úlohu."
 
 #: ../../howto/logging.rst:38
 msgid "Task you want to perform"
-msgstr ""
+msgstr "Úloha, kterou chcete provést"
 
 #: ../../howto/logging.rst:38
 msgid "The best tool for the task"
-msgstr ""
+msgstr "Nejlepší nástroj pro úlohu"
 
 #: ../../howto/logging.rst:40
 msgid ""
 "Display console output for ordinary usage of a command line script or "
 "program"
 msgstr ""
+"Zobrazit konzolový výstup pro běžné použití skriptu nebo programu "
+"příkazové řádky"
 
 #: ../../howto/logging.rst:40
 msgid ":func:`print`"
@@ -90,22 +106,28 @@ msgid ""
 "Report events that occur during normal operation of a program (e.g. for "
 "status monitoring or fault investigation)"
 msgstr ""
+"Hlásit události, které nastanou během normálního běhu programu (např. pro "
+"sledování stavu nebo vyšetřování chyb)"
 
 #: ../../howto/logging.rst:44
 msgid ""
 "A logger's :meth:`~Logger.info` (or :meth:`~Logger.debug` method for very"
 " detailed output for diagnostic purposes)"
 msgstr ""
+"Metoda :meth:`~Logger.info` loggeru (nebo metoda :meth:`~Logger.debug` pro velmi"
+" podrobný výstup pro diagnostické účely)"
 
 #: ../../howto/logging.rst:49
 msgid "Issue a warning regarding a particular runtime event"
-msgstr ""
+msgstr "Vydat varování týkající se konkrétní události za běhu"
 
 #: ../../howto/logging.rst:49
 msgid ""
 ":func:`warnings.warn` in library code if the issue is avoidable and the "
 "client application should be modified to eliminate the warning"
 msgstr ""
+":func:`warnings.warn` v kódu knihovny, pokud je problém odstranitelný a "
+"klientská aplikace by měla být upravena pro odstranění varování"
 
 #: ../../howto/logging.rst:54
 msgid ""
@@ -113,20 +135,24 @@ msgid ""
 "application can do about the situation, but the event should still be "
 "noted"
 msgstr ""
+"Metoda :meth:`~Logger.warning` loggeru, pokud klientská aplikace nemůže "
+"se situací nic udělat, ale událost by měla být přesto zaznamenána"
 
 #: ../../howto/logging.rst:60
 msgid "Report an error regarding a particular runtime event"
-msgstr ""
+msgstr "Hlásit chybu týkající se konkrétní události za běhu"
 
 #: ../../howto/logging.rst:60
 msgid "Raise an exception"
-msgstr ""
+msgstr "Vyvolat výjimku"
 
 #: ../../howto/logging.rst:63
 msgid ""
 "Report suppression of an error without raising an exception (e.g. error "
 "handler in a long-running server process)"
 msgstr ""
+"Hlásit potlačení chyby bez vyvolání výjimky (např. obsluha chyb v "
+"dlouhodobě běžícím serverovém procesu)"
 
 #: ../../howto/logging.rst:63
 msgid ""
@@ -134,6 +160,9 @@ msgid ""
 ":meth:`~Logger.critical` method as appropriate for the specific error and"
 " application domain"
 msgstr ""
+"Metoda :meth:`~Logger.error`, :meth:`~Logger.exception` nebo "
+":meth:`~Logger.critical` loggeru podle toho, co je vhodné pro konkrétní chybu a"
+" doménu aplikace"
 
 #: ../../howto/logging.rst:70
 msgid ""
@@ -141,14 +170,17 @@ msgid ""
 "they are used to track. The standard levels and their applicability are "
 "described below (in increasing order of severity):"
 msgstr ""
+"Metody loggeru jsou pojmenovány podle úrovně nebo závažnosti událostí, "
+"které slouží ke sledování. Standardní úrovně a jejich použití jsou "
+"popsány níže (ve vzestupném pořadí závažnosti):"
 
 #: ../../howto/logging.rst:77 ../../howto/logging.rst:875
 msgid "Level"
-msgstr ""
+msgstr "Úroveň"
 
 #: ../../howto/logging.rst:77
 msgid "When it's used"
-msgstr ""
+msgstr "Kdy se používá"
 
 #: ../../howto/logging.rst:79 ../../howto/logging.rst:885
 msgid "``DEBUG``"
@@ -156,7 +188,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:79
 msgid "Detailed information, typically of interest only when diagnosing problems."
-msgstr ""
+msgstr "Podrobné informace, obvykle zajímavé pouze při diagnostikování problémů."
 
 #: ../../howto/logging.rst:82 ../../howto/logging.rst:883
 msgid "``INFO``"
@@ -164,7 +196,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:82
 msgid "Confirmation that things are working as expected."
-msgstr ""
+msgstr "Potvrzení, že vše funguje podle očekávání."
 
 #: ../../howto/logging.rst:85 ../../howto/logging.rst:881
 msgid "``WARNING``"
@@ -176,6 +208,9 @@ msgid ""
 "problem in the near future (e.g. 'disk space low'). The software is still"
 " working as expected."
 msgstr ""
+"Označení, že se stalo něco neočekávaného, nebo naznačení problému "
+"v blízké budoucnosti (např. 'málo místa na disku'). Software stále "
+"funguje podle očekávání."
 
 #: ../../howto/logging.rst:90 ../../howto/logging.rst:879
 msgid "``ERROR``"
@@ -186,6 +221,8 @@ msgid ""
 "Due to a more serious problem, the software has not been able to perform "
 "some function."
 msgstr ""
+"Kvůli závažnějšímu problému nebyl software schopen provést "
+"nějakou funkci."
 
 #: ../../howto/logging.rst:93 ../../howto/logging.rst:877
 msgid "``CRITICAL``"
@@ -196,6 +233,8 @@ msgid ""
 "A serious error, indicating that the program itself may be unable to "
 "continue running."
 msgstr ""
+"Závažná chyba naznačující, že samotný program možná nebude schopen "
+"pokračovat v běhu."
 
 #: ../../howto/logging.rst:97
 msgid ""
@@ -203,6 +242,8 @@ msgid ""
 "severity and higher will be tracked, unless the logging package is "
 "configured to do otherwise."
 msgstr ""
+"Výchozí úroveň je ``WARNING``, což znamená, že budou sledovány pouze události "
+"této závažnosti a vyšší, pokud není balíček logging nakonfigurován jinak."
 
 #: ../../howto/logging.rst:100
 msgid ""
@@ -210,14 +251,17 @@ msgid ""
 "way of handling tracked events is to print them to the console. Another "
 "common way is to write them to a disk file."
 msgstr ""
+"Sledované události lze zpracovávat různými způsoby. Nejjednodušší "
+"způsob zpracování sledovaných událostí je jejich výpis na konzoli. Dalším "
+"běžným způsobem je zápis do souboru na disku."
 
 #: ../../howto/logging.rst:108
 msgid "A simple example"
-msgstr ""
+msgstr "Jednoduchý příklad"
 
 #: ../../howto/logging.rst:110
 msgid "A very simple example is::"
-msgstr ""
+msgstr "Velmi jednoduchý příklad::"
 
 #: ../../howto/logging.rst:112
 msgid ""
@@ -228,7 +272,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:116
 msgid "If you type these lines into a script and run it, you'll see:"
-msgstr ""
+msgstr "Pokud tyto řádky napíšete do skriptu a spustíte ho, uvidíte:"
 
 #: ../../howto/logging.rst:118
 msgid "WARNING:root:Watch out!"
@@ -243,6 +287,12 @@ msgid ""
 " flexibly if you need that; formatting options will also be explained "
 "later."
 msgstr ""
+"vypsáno na konzoli. Zpráva ``INFO`` se nezobrazí, protože "
+"výchozí úroveň je ``WARNING``. Vypsaná zpráva zahrnuje "
+"označení úrovně a popis události poskytnutý při volání "
+"logování, tj. 'Watch out!'. Skutečný výstup může být formátován poměrně "
+"flexibilně, pokud to potřebujete; možnosti formátování budou vysvětleny "
+"později."
 
 #: ../../howto/logging.rst:128
 msgid ""
@@ -255,10 +305,17 @@ msgid ""
 "however - so for that reason as well as others, it's better to create "
 "loggers and call their methods."
 msgstr ""
+"Všimněte si, že v tomto příkladu používáme funkce přímo z modulu ``logging``, "
+"jako ``logging.debug``, místo vytvoření loggeru a volání funkcí na něm. "
+"Tyto funkce pracují s kořenovým loggerem, ale mohou být užitečné, "
+"protože za vás zavolají :func:`~logging.basicConfig`, pokud ještě nebyla "
+"volána, jako v tomto příkladu. Ve větších programech však obvykle "
+"budete chtít explicitně kontrolovat konfiguraci logování - takže z tohoto "
+"důvodu a také z dalších je lepší vytvářet loggery a volat jejich metody."
 
 #: ../../howto/logging.rst:137
 msgid "Logging to a file"
-msgstr ""
+msgstr "Logování do souboru"
 
 #: ../../howto/logging.rst:139
 msgid ""
@@ -267,6 +324,10 @@ msgid ""
 " Python interpreter, and don't just continue from the session described "
 "above::"
 msgstr ""
+"Velmi běžnou situací je zaznamenávání logovaných událostí do souboru, takže "
+"se na to nyní podíváme. Nezapomeňte vyzkoušet následující v nově spuštěném "
+"interpreteru Pythonu, a nepokračujte pouze ze sezení popsaného "
+"výše::"
 
 #: ../../howto/logging.rst:143
 msgid ""
@@ -288,12 +349,19 @@ msgid ""
 "be passed, which determines how encoding errors are handled. For "
 "available values and the default, see the documentation for :func:`open`."
 msgstr ""
+"Byl přidán argument *encoding*. V dřívějších verzích Pythonu, nebo pokud není "
+"zadán, je použito kódování s výchozí hodnotou používanou funkcí :func:`open`. "
+"I když to není v uvedeném příkladu ukázáno, lze nyní také předat argument *errors*, "
+"který určuje, jak se zpracovávají chyby kódování. Pro dostupné hodnoty "
+"a výchozí hodnotu viz dokumentaci k :func:`open`."
 
 #: ../../howto/logging.rst:158
 msgid ""
 "And now if we open the file and look at what we have, we should find the "
 "log messages:"
 msgstr ""
+"A nyní, když soubor otevřeme a podíváme se, co máme, měli bychom najít "
+"logovací zprávy:"
 
 #: ../../howto/logging.rst:161
 msgid ""
@@ -309,10 +377,13 @@ msgid ""
 "the threshold for tracking. In this case, because we set the threshold to"
 " ``DEBUG``, all of the messages were printed."
 msgstr ""
+"Tento příklad také ukazuje, jak můžete nastavit úroveň logování, která působí jako "
+"práh pro sledování. V tomto případě, protože jsme nastavili práh na "
+"``DEBUG``, všechny zprávy byly vypsány."
 
 #: ../../howto/logging.rst:172
 msgid "If you want to set the logging level from a command-line option such as:"
-msgstr ""
+msgstr "Pokud chcete nastavit úroveň logování z parametru příkazové řádky, jako je:"
 
 #: ../../howto/logging.rst:174
 msgid "--log=INFO"
@@ -323,6 +394,8 @@ msgid ""
 "and you have the value of the parameter passed for ``--log`` in some "
 "variable *loglevel*, you can use::"
 msgstr ""
+"a máte hodnotu parametru předanou pro ``--log`` v nějaké "
+"proměnné *loglevel*, můžete použít::"
 
 #: ../../howto/logging.rst:181
 msgid "getattr(logging, loglevel.upper())"
@@ -334,6 +407,9 @@ msgid ""
 " argument. You may want to error check any user input value, perhaps as "
 "in the following example::"
 msgstr ""
+"pro získání hodnoty, kterou předáte funkci :func:`basicConfig` pomocí argumentu *level*. "
+"Možná budete chtít zkontrolovat chyby v jakékoli hodnotě zadané uživatelem, "
+"například jako v následujícím příkladu::"
 
 #: ../../howto/logging.rst:187
 #, python-format
@@ -354,6 +430,10 @@ msgid ""
 "etc. Otherwise, that logging event may not be handled in the desired "
 "manner."
 msgstr ""
+"Volání funkce :func:`basicConfig` by mělo přijít *před* jakýmikoli voláními metod "
+"loggeru, jako jsou :meth:`~Logger.debug`, :meth:`~Logger.info` "
+"atd. Jinak nemusí být logovací událost zpracována požadovaným "
+"způsobem."
 
 #: ../../howto/logging.rst:199
 msgid ""
@@ -363,6 +443,11 @@ msgid ""
 "specify the *filemode* argument, by changing the call in the above "
 "example to::"
 msgstr ""
+"Pokud spustíte uvedený skript několikrát, zprávy z po sobě jdoucích "
+"spuštění se připojí k souboru *example.log*. Pokud chcete, aby každé spuštění "
+"začínalo od nuly, bez zapamatování zpráv z předchozích spuštění, můžete "
+"zadat argument *filemode* změnou volání ve výše uvedeném "
+"příkladu na::"
 
 #: ../../howto/logging.rst:204
 msgid ""
@@ -375,16 +460,20 @@ msgid ""
 "The output will be the same as before, but the log file is no longer "
 "appended to, so the messages from earlier runs are lost."
 msgstr ""
+"Výstup bude stejný jako předtím, ale logovací soubor již není "
+"připojován, takže zprávy z předchozích spuštění jsou ztraceny."
 
 #: ../../howto/logging.rst:211
 msgid "Logging variable data"
-msgstr ""
+msgstr "Logování proměnných dat"
 
 #: ../../howto/logging.rst:213
 msgid ""
 "To log variable data, use a format string for the event description "
 "message and append the variable data as arguments. For example::"
 msgstr ""
+"Pro logování proměnných dat použijte formátovací řetězec pro zprávu "
+"popisující událost a připojte proměnná data jako argumenty. Například::"
 
 #: ../../howto/logging.rst:216
 #, python-format
@@ -395,7 +484,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:219
 msgid "will display:"
-msgstr ""
+msgstr "zobrazí:"
 
 #: ../../howto/logging.rst:221
 msgid "WARNING:root:Look before you leap!"
@@ -412,16 +501,25 @@ msgid ""
 "scope of this tutorial: see :ref:`formatting-styles` for more "
 "information."
 msgstr ""
+"Jak můžete vidět, slučování proměnných dat do zprávy popisující událost "
+"používá starý styl formátování řetězců s %. To je kvůli zpětné "
+"kompatibilitě: balíček logging je starší než novější možnosti formátování, "
+"jako jsou :meth:`str.format` a :class:`string.Template`. Tyto novější "
+"možnosti formátování *jsou* podporovány, ale jejich zkoumání je mimo "
+"rozsah tohoto tutoriálu: viz :ref:`formatting-styles` pro více "
+"informací."
 
 #: ../../howto/logging.rst:234
 msgid "Changing the format of displayed messages"
-msgstr ""
+msgstr "Změna formátu zobrazovaných zpráv"
 
 #: ../../howto/logging.rst:236
 msgid ""
 "To change the format which is used to display messages, you need to "
 "specify the format you want to use::"
 msgstr ""
+"Pro změnu formátu, který se používá k zobrazení zpráv, musíte "
+"zadat formát, který chcete použít::"
 
 #: ../../howto/logging.rst:239
 #, python-format
@@ -436,7 +534,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:245
 msgid "which would print:"
-msgstr ""
+msgstr "což by vypsalo:"
 
 #: ../../howto/logging.rst:247
 msgid ""
@@ -454,10 +552,16 @@ msgid ""
 "(event description, including variable data) and perhaps to display when "
 "the event occurred. This is described in the next section."
 msgstr ""
+"Všimněte si, že 'root', který se objevoval v dřívějších příkladech, "
+"zmizel. Pro úplný seznam věcí, které se mohou objevit ve formátovacích řetězcích, "
+"se můžete podívat na dokumentaci k :ref:`logrecord-attributes`, ale "
+"pro jednoduché použití potřebujete pouze *levelname* (závažnost), *message* "
+"(popis události, včetně proměnných dat) a možná zobrazení, kdy "
+"událost nastala. To je popsáno v další sekci."
 
 #: ../../howto/logging.rst:262
 msgid "Displaying the date/time in messages"
-msgstr ""
+msgstr "Zobrazení data/času ve zprávách"
 
 #: ../../howto/logging.rst:264
 #, python-format
@@ -465,6 +569,8 @@ msgid ""
 "To display the date and time of an event, you would place '%(asctime)s' "
 "in your format string::"
 msgstr ""
+"Pro zobrazení data a času události byste umístili '%(asctime)s' "
+"do svého formátovacího řetězce::"
 
 #: ../../howto/logging.rst:267
 #, python-format
@@ -476,7 +582,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:271
 msgid "which should print something like this:"
-msgstr ""
+msgstr "což by mělo vypsat něco takového:"
 
 #: ../../howto/logging.rst:273
 msgid "2010-12-12 11:41:42,612 is when this event was logged."
@@ -489,6 +595,10 @@ msgid ""
 "date/time, provide a *datefmt* argument to ``basicConfig``, as in this "
 "example::"
 msgstr ""
+"Výchozí formát pro zobrazení data/času (uvedený výše) je jako ISO8601 nebo "
+":rfc:`3339`. Pokud potřebujete více kontroly nad formátováním "
+"data/času, poskytněte argument *datefmt* funkci ``basicConfig``, jako v tomto "
+"příkladu::"
 
 #: ../../howto/logging.rst:281
 #, python-format
@@ -501,7 +611,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:285
 msgid "which would display something like this:"
-msgstr ""
+msgstr "což by zobrazilo něco takového:"
 
 #: ../../howto/logging.rst:287
 msgid "12/12/2010 11:46:36 AM is when this event was logged."
@@ -512,10 +622,12 @@ msgid ""
 "The format of the *datefmt* argument is the same as supported by "
 ":func:`time.strftime`."
 msgstr ""
+"Formát argumentu *datefmt* je stejný jako ten, který podporuje "
+"funkce :func:`time.strftime`."
 
 #: ../../howto/logging.rst:296
 msgid "Next Steps"
-msgstr ""
+msgstr "Další kroky"
 
 #: ../../howto/logging.rst:298
 msgid ""
@@ -525,6 +637,11 @@ msgid ""
 "your time in reading the following sections. If you're ready for that, "
 "grab some of your favourite beverage and carry on."
 msgstr ""
+"Tím končí základní tutoriál. Mělo by to stačit k tomu, abyste začali "
+"s logováním. Balíček logging nabízí mnohem více, "
+"ale abyste z něj vytěžili maximum, budete muset investovat trochu více "
+"svého času do čtení následujících sekcí. Pokud jste na to připraveni, "
+"vezměte si svůj oblíbený nápoj a pokračujte."
 
 #: ../../howto/logging.rst:304
 msgid ""
@@ -535,6 +652,11 @@ msgid ""
 "<https://discuss.python.org/c/help/7>`_ and you should receive help "
 "before too long."
 msgstr ""
+"Pokud jsou vaše potřeby logování jednoduché, pak použijte výše uvedené příklady pro "
+"začlenění logování do vlastních skriptů, a pokud narazíte na problémy "
+"nebo něčemu nerozumíte, prosím napište dotaz v kategorii Help "
+"na `diskusním fóru Pythonu "
+"<https://discuss.python.org/c/help/7>`_ a měli byste brzy obdržet pomoc."
 
 #: ../../howto/logging.rst:310
 msgid ""
@@ -542,42 +664,53 @@ msgid ""
 " a slightly more advanced/in-depth tutorial than the basic one above. "
 "After that, you can take a look at the :ref:`logging-cookbook`."
 msgstr ""
+"Stále tady? Můžete pokračovat ve čtení následujících sekcí, které poskytují "
+"o něco pokročilejší/podrobnější tutoriál než ten základní výše. "
+"Poté se můžete podívat na :ref:`logging-cookbook`."
 
 #: ../../howto/logging.rst:318
 msgid "Advanced Logging Tutorial"
-msgstr ""
+msgstr "Pokročilý tutoriál logování"
 
 #: ../../howto/logging.rst:320
 msgid ""
 "The logging library takes a modular approach and offers several "
 "categories of components: loggers, handlers, filters, and formatters."
 msgstr ""
+"Knihovna pro logování používá modulární přístup a nabízí několik "
+"kategorií komponent: loggery, handlery, filtry a formátovače."
 
 #: ../../howto/logging.rst:323
 msgid "Loggers expose the interface that application code directly uses."
-msgstr ""
+msgstr "Loggery poskytují rozhraní, které kód aplikace přímo používá."
 
 #: ../../howto/logging.rst:324
 msgid ""
 "Handlers send the log records (created by loggers) to the appropriate "
 "destination."
 msgstr ""
+"Handlery odesílají záznamy logu (vytvořené loggery) na příslušné "
+"cílové místo."
 
 #: ../../howto/logging.rst:326
 msgid ""
 "Filters provide a finer grained facility for determining which log "
 "records to output."
 msgstr ""
+"Filtry poskytují jemnější mechanismus pro určení, které záznamy logu "
+"mají být vypsány."
 
 #: ../../howto/logging.rst:328
 msgid "Formatters specify the layout of log records in the final output."
-msgstr ""
+msgstr "Formátovače určují rozložení záznamů logu ve finálním výstupu."
 
 #: ../../howto/logging.rst:330
 msgid ""
 "Log event information is passed between loggers, handlers, filters and "
 "formatters in a :class:`LogRecord` instance."
 msgstr ""
+"Informace o logovací události jsou předávány mezi loggery, handlery, filtry a "
+"formátovači v instanci :class:`LogRecord`."
 
 #: ../../howto/logging.rst:333
 msgid ""
@@ -589,12 +722,21 @@ msgid ""
 "names can be anything you want, and indicate the area of an application "
 "in which a logged message originates."
 msgstr ""
+"Logování se provádí voláním metod na instancích třídy "
+":class:`Logger` (dále nazývané :dfn:`loggery`). Každá instance "
+"má název a jsou koncepčně uspořádány v hierarchii jmenných prostorů "
+"s použitím teček jako oddělovačů. Například logger pojmenovaný 'scan' je "
+"rodičem loggerů 'scan.text', 'scan.html' a 'scan.pdf'. Názvy loggerů "
+"mohou být cokoli, co chcete, a označují oblast aplikace, "
+"ze které pochází logovaná zpráva."
 
 #: ../../howto/logging.rst:340
 msgid ""
 "A good convention to use when naming loggers is to use a module-level "
 "logger, in each module which uses logging, named as follows::"
 msgstr ""
+"Dobrá konvence při pojmenovávání loggerů je používat logger na úrovni modulu, "
+"v každém modulu, který používá logování, pojmenovaný takto::"
 
 #: ../../howto/logging.rst:343
 msgid "logger = logging.getLogger(__name__)"
@@ -605,6 +747,8 @@ msgid ""
 "This means that logger names track the package/module hierarchy, and it's"
 " intuitively obvious where events are logged just from the logger name."
 msgstr ""
+"To znamená, že názvy loggerů sledují hierarchii balíčků/modulů a je "
+"intuitivně zřejmé, kde jsou události logovány, jen z názvu loggeru."
 
 #: ../../howto/logging.rst:348
 msgid ""
@@ -615,6 +759,12 @@ msgid ""
 "the same signatures. The root logger's name is printed as 'root' in the "
 "logged output."
 msgstr ""
+"Kořen hierarchie loggerů se nazývá kořenový logger. To je "
+"logger používaný funkcemi :func:`debug`, :func:`info`, "
+":func:`warning`, :func:`error` a :func:`critical`, které jen volají "
+"stejně pojmenovanou metodu kořenového loggeru. Funkce a metody mají "
+"stejné signatury. Název kořenového loggeru se ve výstupu logu "
+"vypisuje jako 'root'."
 
 #: ../../howto/logging.rst:354
 msgid ""
@@ -626,6 +776,13 @@ msgid ""
 "own log destination class if you have special requirements not met by any"
 " of the built-in handler classes."
 msgstr ""
+"Je samozřejmě možné logovat zprávy na různá cílová místa. "
+"Balíček zahrnuje podporu pro zápis logovaných zpráv do souborů, "
+"HTTP GET/POST umístění, e-mailů přes SMTP, obecné sockety, fronty nebo "
+"specifické mechanismy logování OS, jako jsou syslog nebo protokol událostí Windows NT. "
+"Cílová místa jsou obsluhována třídami :dfn:`handler`. Můžete vytvořit "
+"vlastní třídu pro cílové místo logu, pokud máte speciální požadavky, které nesplňují "
+"žádné ze zabudovaných tříd handlerů."
 
 #: ../../howto/logging.rst:361
 msgid ""
@@ -638,10 +795,18 @@ msgid ""
 "(``sys.stderr``) and a default format for the displayed message before "
 "delegating to the root logger to do the actual message output."
 msgstr ""
+"Ve výchozím nastavení není pro žádné logovací zprávy nastaveno cílové místo. Můžete "
+"zadat cílové místo (jako je konzole nebo soubor) pomocí "
+":func:`basicConfig` jako v příkladech tutoriálu. Pokud zavoláte "
+"funkce :func:`debug`, :func:`info`, :func:`warning`, :func:`error` "
+"a :func:`critical`, zkontrolují, zda není nastaveno cílové místo; "
+"a pokud není nastaveno, nastaví cílové místo na konzoli "
+"(``sys.stderr``) a výchozí formát pro zobrazovanou zprávu před "
+"delegováním na kořenový logger pro skutečný výstup zprávy."
 
 #: ../../howto/logging.rst:369
 msgid "The default format set by :func:`basicConfig` for messages is:"
-msgstr ""
+msgstr "Výchozí formát nastavený funkcí :func:`basicConfig` pro zprávy je:"
 
 #: ../../howto/logging.rst:371
 msgid "severity:logger name:message"
@@ -653,20 +818,25 @@ msgid ""
 "with the *format* keyword argument. For all options regarding how a "
 "format string is constructed, see :ref:`formatter-objects`."
 msgstr ""
+"Toto můžete změnit předáním formátovacího řetězce funkci :func:`basicConfig` "
+"pomocí klíčového argumentu *format*. Pro všechny možnosti týkající se toho, jak je "
+"formátovací řetězec konstruován, viz :ref:`formatter-objects`."
 
 #: ../../howto/logging.rst:380
 msgid "Logging Flow"
-msgstr ""
+msgstr "Tok logování"
 
 #: ../../howto/logging.rst:382
 msgid ""
 "The flow of log event information in loggers and handlers is illustrated "
 "in the following diagram."
 msgstr ""
+"Tok informací o logovacích událostech v loggerech a handlerech je ilustrován "
+"v následujícím diagramu."
 
 #: ../../howto/logging.rst:433
 msgid "Loggers"
-msgstr ""
+msgstr "Loggery"
 
 #: ../../howto/logging.rst:435
 msgid ""
@@ -677,16 +847,24 @@ msgid ""
 "Third, logger objects pass along relevant log messages to all interested "
 "log handlers."
 msgstr ""
+"Objekty :class:`Logger` mají trojí úlohu. Zaprvé poskytují několik "
+"metod kódu aplikace, aby aplikace mohly logovat zprávy za "
+"běhu. Zadruhé objekty loggeru určují, na které logovací zprávy reagovat "
+"na základě závažnosti (výchozí mechanismus filtrování) nebo objektů filtrů. "
+"Zatřetí objekty loggeru předávají relevantní logovací zprávy všem zainteresovaným "
+"handlerům logu."
 
 #: ../../howto/logging.rst:441
 msgid ""
 "The most widely used methods on logger objects fall into two categories: "
 "configuration and message sending."
 msgstr ""
+"Nejčastěji používané metody na objektech loggeru spadají do dvou kategorií: "
+"konfigurace a odesílání zpráv."
 
 #: ../../howto/logging.rst:444
 msgid "These are the most common configuration methods:"
-msgstr ""
+msgstr "Zde jsou nejběžnější konfigurační metody:"
 
 #: ../../howto/logging.rst:446
 msgid ""
@@ -696,6 +874,11 @@ msgid ""
 " level is INFO, the logger will handle only INFO, WARNING, ERROR, and "
 "CRITICAL messages and will ignore DEBUG messages."
 msgstr ""
+":meth:`Logger.setLevel` určuje logovací zprávu s nejnižší závažností, kterou "
+"logger zpracuje, kde debug je nejnižší zabudovaná úroveň závažnosti a "
+"critical je nejvyšší zabudovaná závažnost. Například, pokud je úroveň "
+"závažnosti INFO, logger bude zpracovávat pouze zprávy INFO, WARNING, ERROR a "
+"CRITICAL a bude ignorovat zprávy DEBUG."
 
 #: ../../howto/logging.rst:452
 msgid ""
@@ -703,6 +886,9 @@ msgid ""
 " handler objects from the logger object.  Handlers are covered in more "
 "detail in :ref:`handler-basic`."
 msgstr ""
+":meth:`Logger.addHandler` a :meth:`Logger.removeHandler` přidávají a odebírají "
+"objekty handlerů z objektu loggeru. Handlery jsou podrobněji popsány "
+"v :ref:`handler-basic`."
 
 #: ../../howto/logging.rst:456
 msgid ""
@@ -710,18 +896,25 @@ msgid ""
 "filter objects from the logger object.  Filters are covered in more "
 "detail in :ref:`filter`."
 msgstr ""
+":meth:`Logger.addFilter` a :meth:`Logger.removeFilter` přidávají a odebírají "
+"objekty filtrů z objektu loggeru. Filtry jsou podrobněji popsány "
+"v :ref:`filter`."
 
 #: ../../howto/logging.rst:460
 msgid ""
 "You don't need to always call these methods on every logger you create. "
 "See the last two paragraphs in this section."
 msgstr ""
+"Nemusíte tyto metody vždy volat na každém loggeru, který vytvoříte. "
+"Viz poslední dva odstavce v této sekci."
 
 #: ../../howto/logging.rst:463
 msgid ""
 "With the logger object configured, the following methods create log "
 "messages:"
 msgstr ""
+"Po nakonfigurování objektu loggeru následující metody vytvářejí logovací "
+"zprávy:"
 
 #: ../../howto/logging.rst:465
 #, python-format
@@ -736,6 +929,15 @@ msgid ""
 " logging methods care only about a keyword of ``exc_info`` and use it to "
 "determine whether to log exception information."
 msgstr ""
+":meth:`Logger.debug`, :meth:`Logger.info`, :meth:`Logger.warning`, "
+":meth:`Logger.error` a :meth:`Logger.critical` všechny vytvářejí záznamy logu "
+"se zprávou a úrovní odpovídající jejich příslušným názvům metod. "
+"Zpráva je ve skutečnosti formátovací řetězec, který může obsahovat "
+"standardní syntaxi substituce řetězců ``%s``, ``%d``, ``%f`` atd. "
+"Zbytek jejich argumentů je seznam objektů, které odpovídají "
+"substitučním polím ve zprávě. Pokud jde o ``**kwargs``, "
+"logovací metody se zajímají pouze o klíčové slovo ``exc_info`` a používají ho k "
+"určení, zda logovat informace o výjimce."
 
 #: ../../howto/logging.rst:475
 msgid ""
@@ -744,6 +946,10 @@ msgid ""
 "dumps a stack trace along with it.  Call this method only from an "
 "exception handler."
 msgstr ""
+":meth:`Logger.exception` vytváří logovací zprávu podobnou "
+":meth:`Logger.error`. Rozdíl je v tom, že :meth:`Logger.exception` "
+"vypíše spolu se zprávou také trasování zásobníku. Tuto metodu volejte pouze z "
+"obsluhy výjimek."
 
 #: ../../howto/logging.rst:479
 msgid ""
@@ -752,6 +958,10 @@ msgid ""
 "convenience methods listed above, but this is how to log at custom log "
 "levels."
 msgstr ""
+":meth:`Logger.log` přijímá úroveň logu jako explicitní argument. To je "
+"o něco podrobnější pro logování zpráv než použití výše uvedených "
+"pomocných metod úrovně logu, ale toto je způsob, jak logovat na vlastních úrovních "
+"logu."
 
 #: ../../howto/logging.rst:483
 msgid ""
@@ -764,6 +974,14 @@ msgid ""
 "logger with a name of ``foo``, loggers with names of ``foo.bar``, "
 "``foo.bar.baz``, and ``foo.bam`` are all descendants of ``foo``."
 msgstr ""
+":func:`getLogger` vrací odkaz na instanci loggeru se "
+"zadaným názvem, pokud je uveden, nebo ``root``, pokud není. Názvy jsou "
+"hierarchické struktury oddělené tečkami. Vícenásobná volání "
+":func:`getLogger` se stejným názvem vrátí odkaz na stejný "
+"objekt loggeru. Loggery, které jsou níže v hierarchickém seznamu, "
+"jsou potomky loggerů výše v seznamu. Například, pokud máte "
+"logger s názvem ``foo``, loggery s názvy ``foo.bar``, "
+"``foo.bar.baz`` a ``foo.bam`` jsou všechny potomky ``foo``."
 
 #: ../../howto/logging.rst:491
 msgid ""
@@ -776,6 +994,14 @@ msgid ""
 "effective level of the logger is used to determine whether the event is "
 "passed to the logger's handlers."
 msgstr ""
+"Loggery mají koncept *efektivní úrovně*. Pokud úroveň není explicitně "
+"nastavena na loggeru, úroveň jeho rodiče je místo toho použita jako jeho "
+"efektivní úroveň. Pokud rodič nemá explicitně nastavenou úroveň, je zkoumán *jeho* rodič "
+"atd. - všichni předci jsou prohledáváni, dokud není nalezena explicitně nastavená "
+"úroveň. Kořenový logger má vždy explicitně nastavenou úroveň "
+"(výchozí je ``WARNING``). Při rozhodování, zda zpracovat událost, je "
+"efektivní úroveň loggeru použita k určení, zda je událost "
+"předána handlerům loggeru."
 
 #: ../../howto/logging.rst:499
 msgid ""
@@ -786,10 +1012,16 @@ msgid ""
 "loggers as needed. (You can, however, turn off propagation by setting the"
 " *propagate* attribute of a logger to ``False``.)"
 msgstr ""
+"Potomci loggerů propagují zprávy nahoru k handlerům přidruženým k jejich "
+"předkům loggerům. Kvůli tomu je zbytečné definovat a "
+"konfigurovat handlery pro všechny loggery, které aplikace používá. Stačí "
+"nakonfigurovat handlery pro logger na nejvyšší úrovni a vytvořit potomky "
+"loggerů podle potřeby. (Můžete však vypnout propagaci nastavením "
+"atributu *propagate* loggeru na ``False``.)"
 
 #: ../../howto/logging.rst:510
 msgid "Handlers"
-msgstr ""
+msgstr "Handlery"
 
 #: ../../howto/logging.rst:512
 msgid ""
@@ -803,6 +1035,15 @@ msgid ""
 "three individual handlers where each handler is responsible for sending "
 "messages of a specific severity to a specific location."
 msgstr ""
+"Objekty :class:`~logging.Handler` jsou odpovědné za odesílání "
+"příslušných logovacích zpráv (na základě závažnosti logovacích zpráv) na "
+"určené cílové místo handleru. Objekty :class:`Logger` mohou přidat nula nebo "
+"více objektů handlerů k sobě pomocí metody :meth:`~Logger.addHandler`. "
+"Jako příklad scénáře může aplikace chtít odeslat všechny logovací "
+"zprávy do souboru logu, všechny logovací zprávy chyby nebo vyšší na stdout "
+"a všechny zprávy critical na e-mailovou adresu. Tento scénář vyžaduje "
+"tři jednotlivé handlery, kde každý handler je odpovědný za odesílání "
+"zpráv konkrétní závažnosti na konkrétní místo."
 
 #: ../../howto/logging.rst:522
 msgid ""
@@ -810,6 +1051,9 @@ msgid ""
 ":`useful-handlers`); the tutorials use mainly :class:`StreamHandler` and "
 ":class:`FileHandler` in its examples."
 msgstr ""
+"Standardní knihovna obsahuje poměrně dost typů handlerů (viz :ref"
+":`useful-handlers`); tutoriály používají ve svých příkladech hlavně :class:`StreamHandler` a "
+":class:`FileHandler`."
 
 #: ../../howto/logging.rst:526
 msgid ""
@@ -819,6 +1063,11 @@ msgid ""
 "is, not creating custom handlers) are the following configuration "
 "methods:"
 msgstr ""
+"V handleru je velmi málo metod, o které by se měli vývojáři aplikací "
+"zajímat. Jediné metody handleru, které se zdají relevantní pro "
+"vývojáře aplikací používající zabudované objekty handlerů (tj. "
+"nevytvářející vlastní handlery), jsou následující konfigurační "
+"metody:"
 
 #: ../../howto/logging.rst:531
 msgid ""
@@ -829,18 +1078,28 @@ msgid ""
 "pass to its handlers.  The level set in each handler determines which "
 "messages that handler will send on."
 msgstr ""
+"Metoda :meth:`~Handler.setLevel`, stejně jako u objektů loggeru, "
+"určuje nejnižší závažnost, která bude odeslána na příslušné "
+"cílové místo. Proč existují dvě metody :meth:`~Handler.setLevel`? "
+"Úroveň nastavená v loggeru určuje, jakou závažnost zpráv předá "
+"svým handlerům. Úroveň nastavená v každém handleru určuje, které "
+"zprávy tento handler odešle dál."
 
 #: ../../howto/logging.rst:537
 msgid ""
 ":meth:`~Handler.setFormatter` selects a Formatter object for this handler"
 " to use."
 msgstr ""
+":meth:`~Handler.setFormatter` vybírá objekt Formatter, který tento handler "
+"použije."
 
 #: ../../howto/logging.rst:540
 msgid ""
 ":meth:`~Handler.addFilter` and :meth:`~Handler.removeFilter` respectively"
 " configure and deconfigure filter objects on handlers."
 msgstr ""
+":meth:`~Handler.addFilter` a :meth:`~Handler.removeFilter` odpovídajícím způsobem "
+"konfigurují a dekonfigurují objekty filtrů na handlerech."
 
 #: ../../howto/logging.rst:543
 msgid ""
@@ -849,10 +1108,14 @@ msgid ""
 "that defines the interface that all handlers should have and establishes "
 "some default behavior that child classes can use (or override)."
 msgstr ""
+"Kód aplikace by neměl přímo vytvářet instance a používat instance "
+":class:`Handler`. Místo toho je třída :class:`Handler` základní třída, "
+"která definuje rozhraní, které by všechny handlery měly mít, a stanovuje "
+"nějaké výchozí chování, které mohou podtřídy použít (nebo přepsat)."
 
 #: ../../howto/logging.rst:550
 msgid "Formatters"
-msgstr ""
+msgstr "Formátovače"
 
 #: ../../howto/logging.rst:552
 msgid ""
@@ -863,12 +1126,20 @@ msgid ""
 "  The constructor takes three optional arguments -- a message format "
 "string, a date format string and a style indicator."
 msgstr ""
+"Objekty Formatter konfigurují konečné pořadí, strukturu a obsah "
+"logovací zprávy. Na rozdíl od základní třídy :class:`logging.Handler` "
+"může kód aplikace vytvářet instance tříd formátovačů, ačkoli byste mohli "
+"pravděpodobně podtřídit formátovač, pokud vaše aplikace potřebuje speciální chování. "
+"Konstruktor přijímá tři volitelné argumenty -- formátovací řetězec zprávy, "
+"formátovací řetězec data a indikátor stylu."
 
 #: ../../howto/logging.rst:561
 msgid ""
 "If there is no message format string, the default is to use the raw "
 "message.  If there is no date format string, the default date format is:"
 msgstr ""
+"Pokud není zadán formátovací řetězec zprávy, výchozí je použití nezpracované "
+"zprávy. Pokud není zadán formátovací řetězec data, výchozí formát data je:"
 
 #: ../../howto/logging.rst:564
 #, python-format
@@ -881,6 +1152,9 @@ msgid ""
 "``'%'``, ``'{'``, or ``'$'``. If one of these is not specified, then "
 "``'%'`` will be used."
 msgstr ""
+"s milisekundami připojenými na konci. ``style`` je jedno z "
+"``'%'``, ``'{'`` nebo ``'$'``. Pokud není zadána žádná z těchto možností, bude "
+"použito ``'%'``."
 
 #: ../../howto/logging.rst:571
 msgid ""
@@ -892,10 +1166,17 @@ msgid ""
 "``'$'`` then the message format string should conform to what is expected"
 " by :meth:`string.Template.substitute`."
 msgstr ""
+"Pokud je ``style`` rovno ``'%'``, formátovací řetězec zprávy používá "
+"substituci řetězců ve stylu ``%(<klíč slovníku>)s``; možné klíče "
+"jsou zdokumentovány v :ref:`logrecord-attributes`. Pokud je styl ``'{'``, "
+"předpokládá se, že formátovací řetězec zprávy je kompatibilní s "
+":meth:`str.format` (s použitím klíčových argumentů), zatímco pokud je styl "
+"``'$'``, pak by formátovací řetězec zprávy měl odpovídat tomu, co očekává "
+"metoda :meth:`string.Template.substitute`."
 
 #: ../../howto/logging.rst:578
 msgid "Added the ``style`` parameter."
-msgstr ""
+msgstr "Byl přidán parametr ``style``."
 
 #: ../../howto/logging.rst:581
 msgid ""
@@ -903,6 +1184,9 @@ msgid ""
 " format, the severity of the message, and the contents of the message, in"
 " that order::"
 msgstr ""
+"Následující formátovací řetězec zprávy bude logovat čas v lidsky čitelném "
+"formátu, závažnost zprávy a obsah zprávy, v tomto "
+"pořadí::"
 
 #: ../../howto/logging.rst:585
 #, python-format
@@ -920,32 +1204,46 @@ msgid ""
 " set the ``converter`` attribute in the Formatter class (to "
 "``time.gmtime`` for GMT display)."
 msgstr ""
+"Formátovače používají uživatelsky konfigurovatelnou funkci pro převod času vytvoření "
+"záznamu na n-tici. Ve výchozím nastavení se používá :func:`time.localtime`; pro "
+"změnu tohoto chování pro konkrétní instanci formátovače nastavte atribut ``converter`` "
+"instance na funkci se stejnou signaturou jako "
+":func:`time.localtime` nebo :func:`time.gmtime`. Pro změnu pro všechny "
+"formátovače, například pokud chcete, aby všechny časy logování byly zobrazeny v GMT, "
+"nastavte atribut ``converter`` ve třídě Formatter (na "
+"``time.gmtime`` pro zobrazení GMT)."
 
 #: ../../howto/logging.rst:597
 msgid "Configuring Logging"
-msgstr ""
+msgstr "Konfigurace logování"
 
 #: ../../howto/logging.rst:601
 msgid "Programmers can configure logging in three ways:"
-msgstr ""
+msgstr "Programátoři mohou konfigurovat logování třemi způsoby:"
 
 #: ../../howto/logging.rst:603
 msgid ""
 "Creating loggers, handlers, and formatters explicitly using Python code "
 "that calls the configuration methods listed above."
 msgstr ""
+"Explicitní vytváření loggerů, handlerů a formátovačů pomocí kódu Pythonu, "
+"který volá výše uvedené konfigurační metody."
 
 #: ../../howto/logging.rst:605
 msgid ""
 "Creating a logging config file and reading it using the "
 ":func:`fileConfig` function."
 msgstr ""
+"Vytvoření konfiguračního souboru pro logování a jeho čtení pomocí "
+"funkce :func:`fileConfig`."
 
 #: ../../howto/logging.rst:607
 msgid ""
 "Creating a dictionary of configuration information and passing it to the "
 ":func:`dictConfig` function."
 msgstr ""
+"Vytvoření slovníku s konfiguračními informacemi a jeho předání "
+"funkci :func:`dictConfig`."
 
 #: ../../howto/logging.rst:610
 msgid ""
@@ -953,6 +1251,9 @@ msgid ""
 ":`logging-config-api`.  The following example configures a very simple "
 "logger, a console handler, and a simple formatter using Python code::"
 msgstr ""
+"Pro referenční dokumentaci k posledním dvěma možnostem viz :ref"
+":`logging-config-api`. Následující příklad konfiguruje velmi jednoduchý "
+"logger, konzolový handler a jednoduchý formátovač pomocí kódu Pythonu::"
 
 #: ../../howto/logging.rst:614
 #, python-format
@@ -987,7 +1288,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:640
 msgid "Running this module from the command line produces the following output:"
-msgstr ""
+msgstr "Spuštění tohoto modulu z příkazové řádky vytvoří následující výstup:"
 
 #: ../../howto/logging.rst:642
 msgid ""
@@ -1005,6 +1306,9 @@ msgid ""
 "nearly identical to those in the example listed above, with the only "
 "difference being the names of the objects::"
 msgstr ""
+"Následující modul Pythonu vytváří logger, handler a formátovač "
+"téměř identické s těmi ve výše uvedeném příkladu, s jediným "
+"rozdílem v názvech objektů::"
 
 #: ../../howto/logging.rst:655
 msgid ""
@@ -1026,7 +1330,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:670
 msgid "Here is the logging.conf file:"
-msgstr ""
+msgstr "Zde je soubor logging.conf:"
 
 #: ../../howto/logging.rst:672
 #, python-format
@@ -1065,6 +1369,7 @@ msgid ""
 "The output is nearly identical to that of the non-config-file-based "
 "example:"
 msgstr ""
+"Výstup je téměř identický s výstupem příkladu bez konfiguračního souboru:"
 
 #: ../../howto/logging.rst:704
 msgid ""
@@ -1082,6 +1387,9 @@ msgid ""
 "Python code approach, mainly separation of configuration and code and the"
 " ability of noncoders to easily modify the logging properties."
 msgstr ""
+"Můžete vidět, že přístup s konfiguračním souborem má několik výhod oproti "
+"přístupu s kódem Pythonu, především oddělení konfigurace a kódu a "
+"možnost neprogramátorů snadno upravovat vlastnosti logování."
 
 #: ../../howto/logging.rst:717
 msgid ""
@@ -1168,7 +1476,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:783
 msgid "What happens if no configuration is provided"
-msgstr ""
+msgstr "Co se stane, pokud není poskytnuta žádná konfigurace"
 
 #: ../../howto/logging.rst:785
 msgid ""
@@ -1213,7 +1521,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:814
 msgid "Configuring Logging for a Library"
-msgstr ""
+msgstr "Konfigurace logování pro knihovnu"
 
 #: ../../howto/logging.rst:816
 msgid ""
@@ -1286,7 +1594,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:866
 msgid "Logging Levels"
-msgstr ""
+msgstr "Úrovně logování"
 
 #: ../../howto/logging.rst:868
 msgid ""
@@ -1299,7 +1607,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:875
 msgid "Numeric value"
-msgstr ""
+msgstr "Číselná hodnota"
 
 #: ../../howto/logging.rst:877
 msgid "50"
@@ -1377,7 +1685,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:924
 msgid "Custom Levels"
-msgstr ""
+msgstr "Vlastní úrovně"
 
 #: ../../howto/logging.rst:926
 msgid ""
@@ -1395,23 +1703,25 @@ msgstr ""
 
 #: ../../howto/logging.rst:939
 msgid "Useful Handlers"
-msgstr ""
+msgstr "Užitečné handlery"
 
 #: ../../howto/logging.rst:941
 msgid ""
 "In addition to the base :class:`Handler` class, many useful subclasses "
 "are provided:"
 msgstr ""
+"Kromě základní třídy :class:`Handler` je poskytováno mnoho užitečných podtříd:"
 
 #: ../../howto/logging.rst:944
 msgid ""
 ":class:`StreamHandler` instances send messages to streams (file-like "
 "objects)."
 msgstr ""
+"Instance :class:`StreamHandler` odesílají zprávy do proudů (objektů podobných souborům)."
 
 #: ../../howto/logging.rst:947
 msgid ":class:`FileHandler` instances send messages to disk files."
-msgstr ""
+msgstr "Instance :class:`FileHandler` odesílají zprávy do souborů na disku."
 
 #: ../../howto/logging.rst:949
 msgid ""
@@ -1502,11 +1812,11 @@ msgstr ""
 
 #: ../../howto/logging.rst:995
 msgid "The :class:`NullHandler` class."
-msgstr ""
+msgstr "Třída :class:`NullHandler`."
 
 #: ../../howto/logging.rst:998
 msgid "The :class:`~handlers.QueueHandler` class."
-msgstr ""
+msgstr "Třída :class:`~handlers.QueueHandler`."
 
 #: ../../howto/logging.rst:1001
 msgid ""
@@ -1551,7 +1861,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1030
 msgid "Exceptions raised during logging"
-msgstr ""
+msgstr "Výjimky vyvolané během logování"
 
 #: ../../howto/logging.rst:1032
 msgid ""
@@ -1588,7 +1898,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1058
 msgid "Using arbitrary objects as messages"
-msgstr ""
+msgstr "Použití libovolných objektů jako zpráv"
 
 #: ../../howto/logging.rst:1060
 msgid ""
@@ -1604,7 +1914,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1071
 msgid "Optimization"
-msgstr ""
+msgstr "Optimalizace"
 
 #: ../../howto/logging.rst:1073
 msgid ""
@@ -1654,15 +1964,15 @@ msgstr ""
 
 #: ../../howto/logging.rst:1103
 msgid "What you don't want to collect"
-msgstr ""
+msgstr "Co nechcete sbírat"
 
 #: ../../howto/logging.rst:1103
 msgid "How to avoid collecting it"
-msgstr ""
+msgstr "Jak se vyhnout jeho sbírání"
 
 #: ../../howto/logging.rst:1105
 msgid "Information about where calls were made from."
-msgstr ""
+msgstr "Informace o tom, odkud byla volání provedena."
 
 #: ../../howto/logging.rst:1105
 msgid ""
@@ -1674,37 +1984,39 @@ msgstr ""
 
 #: ../../howto/logging.rst:1111
 msgid "Threading information."
-msgstr ""
+msgstr "Informace o vláknech."
 
 #: ../../howto/logging.rst:1111
 msgid "Set ``logging.logThreads`` to ``False``."
-msgstr ""
+msgstr "Nastavte ``logging.logThreads`` na ``False``."
 
 #: ../../howto/logging.rst:1113
 msgid "Current process ID (:func:`os.getpid`)"
-msgstr ""
+msgstr "ID aktuálního procesu (:func:`os.getpid`)"
 
 #: ../../howto/logging.rst:1113
 msgid "Set ``logging.logProcesses`` to ``False``."
-msgstr ""
+msgstr "Nastavte ``logging.logProcesses`` na ``False``."
 
 #: ../../howto/logging.rst:1115
 msgid ""
 "Current process name when using ``multiprocessing`` to manage multiple "
 "processes."
 msgstr ""
+"Název aktuálního procesu při používání ``multiprocessing`` pro správu více "
+"procesů."
 
 #: ../../howto/logging.rst:1115
 msgid "Set ``logging.logMultiprocessing`` to ``False``."
-msgstr ""
+msgstr "Nastavte ``logging.logMultiprocessing`` na ``False``."
 
 #: ../../howto/logging.rst:1118
 msgid "Current :class:`asyncio.Task` name when using ``asyncio``."
-msgstr ""
+msgstr "Název aktuální :class:`asyncio.Task` při používání ``asyncio``."
 
 #: ../../howto/logging.rst:1118
 msgid "Set ``logging.logAsyncioTasks`` to ``False``."
-msgstr ""
+msgstr "Nastavte ``logging.logAsyncioTasks`` na ``False``."
 
 #: ../../howto/logging.rst:1122
 msgid ""
@@ -1715,7 +2027,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1129
 msgid "Other resources"
-msgstr ""
+msgstr "Další zdroje"
 
 #: ../../howto/logging.rst:1133
 msgid "Module :mod:`logging`"
@@ -1723,7 +2035,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1134
 msgid "API reference for the logging module."
-msgstr ""
+msgstr "API reference pro modul logging."
 
 #: ../../howto/logging.rst:1136
 msgid "Module :mod:`logging.config`"
@@ -1731,7 +2043,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1137
 msgid "Configuration API for the logging module."
-msgstr ""
+msgstr "Konfigurační API pro modul logging."
 
 #: ../../howto/logging.rst:1139
 msgid "Module :mod:`logging.handlers`"
@@ -1739,7 +2051,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1140
 msgid "Useful handlers included with the logging module."
-msgstr ""
+msgstr "Užitečné handlery zahrnuté v modulu logging."
 
 #: ../../howto/logging.rst:1142
 msgid ":ref:`A logging cookbook <logging-cookbook>`"

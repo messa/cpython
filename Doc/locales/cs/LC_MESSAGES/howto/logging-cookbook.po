@@ -21,15 +21,15 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:5
 msgid "Logging Cookbook"
-msgstr ""
+msgstr "Kniha receptů pro logování"
 
 #: ../../howto/logging-cookbook.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/logging-cookbook.rst:7
 msgid "Vinay Sajip <vinay_sajip at red-dove dot com>"
-msgstr ""
+msgstr "Vinay Sajip <vinay_sajip at red-dove dot com>"
 
 #: ../../howto/logging-cookbook.rst:9
 msgid ""
@@ -37,10 +37,13 @@ msgid ""
 "been found useful in the past. For links to tutorial and reference "
 "information, please see :ref:`cookbook-ref-links`."
 msgstr ""
+"Tato stránka obsahuje řadu receptů souvisejících s logováním, které se v "
+"minulosti ukázaly jako užitečné. Odkazy na tutoriál a referenční "
+"informace naleznete v :ref:`cookbook-ref-links`."
 
 #: ../../howto/logging-cookbook.rst:16
 msgid "Using logging in multiple modules"
-msgstr ""
+msgstr "Použití logování ve více modulech"
 
 #: ../../howto/logging-cookbook.rst:18
 msgid ""
@@ -53,6 +56,14 @@ msgid ""
 "all logger calls to the child will pass up to the parent.  Here is a main"
 " module::"
 msgstr ""
+"Vícenásobná volání ``logging.getLogger('someLogger')`` vrací referenci "
+"na stejný objekt loggeru. To platí nejen v rámci stejného modulu, "
+"ale i mezi moduly, pokud se jedná o stejný proces interpretu Pythonu. "
+"Platí to pro reference na stejný objekt; navíc může kód aplikace "
+"definovat a nakonfigurovat nadřazený logger v jednom modulu a vytvořit "
+"(ale nekonfigurovat) podřízený logger v jiném modulu a všechna volání "
+"loggeru na podřízeném loggeru se předají nadřazenému. Zde je hlavní "
+"modul::"
 
 #: ../../howto/logging-cookbook.rst:26
 #, python-format
@@ -91,7 +102,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:56
 msgid "Here is the auxiliary module::"
-msgstr ""
+msgstr "Zde je pomocný modul::"
 
 #: ../../howto/logging-cookbook.rst:58
 msgid ""
@@ -117,7 +128,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:76
 msgid "The output looks like this:"
-msgstr ""
+msgstr "Výstup vypadá takto:"
 
 #: ../../howto/logging-cookbook.rst:78
 msgid ""
@@ -145,13 +156,15 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:102
 msgid "Logging from multiple threads"
-msgstr ""
+msgstr "Logování z více vláken"
 
 #: ../../howto/logging-cookbook.rst:104
 msgid ""
 "Logging from multiple threads requires no special effort. The following "
 "example shows logging from the main (initial) thread and another thread::"
 msgstr ""
+"Logování z více vláken nevyžaduje žádné zvláštní úsilí. Následující "
+"příklad ukazuje logování z hlavního (počátečního) vlákna a jiného vlákna::"
 
 #: ../../howto/logging-cookbook.rst:107
 #, python-brace-format, python-format
@@ -186,7 +199,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:133
 msgid "When run, the script should print something like the following:"
-msgstr ""
+msgstr "Po spuštění by skript měl vypsat něco jako následující:"
 
 #: ../../howto/logging-cookbook.rst:135
 msgid ""
@@ -214,10 +227,12 @@ msgid ""
 "This shows the logging output interspersed as one might expect. This "
 "approach works for more threads than shown here, of course."
 msgstr ""
+"To ukazuje prokládaný výstup logování, jak by se dalo očekávat. Tento "
+"přístup samozřejmě funguje pro více vláken, než je zde ukázáno."
 
 #: ../../howto/logging-cookbook.rst:159
 msgid "Multiple handlers and formatters"
-msgstr ""
+msgstr "Více handlerů a formátovačů"
 
 #: ../../howto/logging-cookbook.rst:161
 msgid ""
@@ -230,6 +245,14 @@ msgid ""
 "unchanged.  Here is a slight modification to the previous simple module-"
 "based configuration example::"
 msgstr ""
+"Loggery jsou běžné objekty Pythonu. Metoda :meth:`~Logger.addHandler` "
+"nemá žádnou minimální nebo maximální kvótu pro počet handlerů, které můžete "
+"přidat. Někdy bude pro aplikaci výhodné logovat všechny zprávy všech "
+"úrovní závažnosti do textového souboru a současně logovat chyby nebo "
+"vyšší na konzoli. K nastavení tohoto stačí nakonfigurovat příslušné "
+"handlery. Volání logování v kódu aplikace zůstanou "
+"nezměněna. Zde je mírná úprava předchozího příkladu jednoduché "
+"konfigurace založené na modulu::"
 
 #: ../../howto/logging-cookbook.rst:169
 #, python-format
@@ -267,6 +290,9 @@ msgid ""
 "  All that changed was the addition and configuration of a new handler "
 "named *fh*."
 msgstr ""
+"Všimněte si, že kód 'aplikace' neřeší více handlerů. "
+"Vše, co se změnilo, bylo přidání a konfigurace nového handleru "
+"s názvem *fh*."
 
 #: ../../howto/logging-cookbook.rst:197
 msgid ""
@@ -279,10 +305,18 @@ msgid ""
 "change that needs to happen is to modify the severity level of the logger"
 " and/or handler to debug."
 msgstr ""
+"Schopnost vytvářet nové handlery s filtry vyšší nebo nižší závažnosti "
+"může být velmi užitečná při psaní a testování aplikace. Namísto "
+"používání mnoha příkazů ``print`` pro ladění použijte ``logger.debug``: "
+"Na rozdíl od příkazů print, které budete muset později odstranit nebo "
+"zakomentovat, mohou příkazy logger.debug zůstat nedotčené ve zdrojovém kódu "
+"a zůstat neaktivní, dokud je znovu nebudete potřebovat. V té době je "
+"jedinou změnou, kterou je třeba provést, úprava úrovně závažnosti loggeru "
+"a/nebo handleru na debug."
 
 #: ../../howto/logging-cookbook.rst:208
 msgid "Logging to multiple destinations"
-msgstr ""
+msgstr "Logování do více cílů"
 
 #: ../../howto/logging-cookbook.rst:210
 msgid ""
@@ -293,6 +327,12 @@ msgid ""
 "timestamps, but the console messages should not. Here's how you can "
 "achieve this::"
 msgstr ""
+"Řekněme, že chcete logovat do konzole a souboru s různými formáty zpráv "
+"a za různých okolností. Řekněme, že chcete logovat zprávy s "
+"úrovněmi DEBUG a vyšší do souboru a zprávy na úrovni INFO a "
+"vyšší do konzole. Předpokládejme také, že soubor by měl obsahovat "
+"časová razítka, ale zprávy v konzoli ne. Zde je způsob, jak toho "
+"dosáhnout::"
 
 #: ../../howto/logging-cookbook.rst:216
 #, python-format
@@ -337,7 +377,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:248
 msgid "When you run this, on the console you will see"
-msgstr ""
+msgstr "Když to spustíte, na konzoli uvidíte"
 
 #: ../../howto/logging-cookbook.rst:250
 msgid ""
@@ -349,7 +389,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:257
 msgid "and in the file you will see something like"
-msgstr ""
+msgstr "a v souboru uvidíte něco jako"
 
 #: ../../howto/logging-cookbook.rst:259
 msgid ""
@@ -366,12 +406,16 @@ msgid ""
 "As you can see, the DEBUG message only shows up in the file. The other "
 "messages are sent to both destinations."
 msgstr ""
+"Jak vidíte, zpráva DEBUG se zobrazuje pouze v souboru. Ostatní "
+"zprávy jsou odesílány do obou cílů."
 
 #: ../../howto/logging-cookbook.rst:270
 msgid ""
 "This example uses console and file handlers, but you can use any number "
 "and combination of handlers you choose."
 msgstr ""
+"Tento příklad používá konzolové a souborové handlery, ale můžete použít "
+"libovolný počet a kombinaci handlerů podle svého výběru."
 
 #: ../../howto/logging-cookbook.rst:273
 msgid ""
@@ -381,10 +425,15 @@ msgid ""
 "ensure that the directory exists and that you have the permissions to "
 "create and update files in it."
 msgstr ""
+"Všimněte si, že výše uvedená volba názvu souboru logu ``/tmp/myapp.log`` "
+"předpokládá použití standardního umístění pro dočasné soubory v systémech "
+"POSIX. Ve Windows možná budete muset zvolit jiný název adresáře pro log - "
+"jen se ujistěte, že adresář existuje a že máte oprávnění k "
+"vytváření a aktualizaci souborů v něm."
 
 #: ../../howto/logging-cookbook.rst:282
 msgid "Custom handling of levels"
-msgstr ""
+msgstr "Vlastní zpracování úrovní"
 
 #: ../../howto/logging-cookbook.rst:284
 msgid ""
@@ -394,22 +443,27 @@ msgid ""
 "filters. Let's look at a scenario where you want to arrange things as "
 "follows:"
 msgstr ""
+"Někdy možná budete chtít udělat něco trochu odlišného od "
+"standardního zpracování úrovní v handlerech, kde všechny úrovně nad "
+"prahem jsou zpracovány handlerem. K tomu je třeba použít "
+"filtry. Podívejme se na scénář, kdy chcete věci uspořádat "
+"následovně:"
 
 #: ../../howto/logging-cookbook.rst:289
 msgid "Send messages of severity ``INFO`` and ``WARNING`` to ``sys.stdout``"
-msgstr ""
+msgstr "Odeslat zprávy závažnosti ``INFO`` a ``WARNING`` do ``sys.stdout``"
 
 #: ../../howto/logging-cookbook.rst:290
 msgid "Send messages of severity ``ERROR`` and above to ``sys.stderr``"
-msgstr ""
+msgstr "Odeslat zprávy závažnosti ``ERROR`` a vyšší do ``sys.stderr``"
 
 #: ../../howto/logging-cookbook.rst:291
 msgid "Send messages of severity ``DEBUG`` and above to file ``app.log``"
-msgstr ""
+msgstr "Odeslat zprávy závažnosti ``DEBUG`` a vyšší do souboru ``app.log``"
 
 #: ../../howto/logging-cookbook.rst:293
 msgid "Suppose you configure logging with the following JSON:"
-msgstr ""
+msgstr "Předpokládejme, že nakonfigurujete logování pomocí následujícího JSON:"
 
 #: ../../howto/logging-cookbook.rst:295
 #, python-brace-format, python-format
@@ -462,6 +516,12 @@ msgid ""
 "messages and add it to the relevant handler. This can be configured by "
 "adding a ``filters`` section parallel to ``formatters`` and ``handlers``:"
 msgstr ""
+"Tato konfigurace dělá *téměř* to, co chceme, kromě toho, že ``sys.stdout`` "
+"by zobrazoval zprávy závažnosti ``ERROR`` a budou sledovány pouze události "
+"této závažnosti a vyšší, stejně jako zprávy ``INFO`` a ``WARNING``. "
+"Abychom tomu zabránili, můžeme nastavit filtr, který tyto zprávy vyloučí "
+"a přidat jej do příslušného handleru. To lze nakonfigurovat "
+"přidáním sekce ``filters`` paralelně k ``formatters`` a ``handlers``:"
 
 #: ../../howto/logging-cookbook.rst:341
 #, python-brace-format
@@ -478,7 +538,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:352
 msgid "and changing the section on the ``stdout`` handler to add it:"
-msgstr ""
+msgstr "a změnou sekce handleru ``stdout`` pro jeho přidání:"
 
 #: ../../howto/logging-cookbook.rst:354
 #, python-brace-format
@@ -499,6 +559,8 @@ msgid ""
 "A filter is just a function, so we can define the ``filter_maker`` (a "
 "factory function) as follows:"
 msgstr ""
+"Filtr je jen funkce, takže můžeme definovat ``filter_maker`` (tovární "
+"funkci) následovně:"
 
 #: ../../howto/logging-cookbook.rst:369
 msgid ""
@@ -521,10 +583,17 @@ msgid ""
 " ``__main__.filter_maker`` in the filter configuration. You will need to "
 "change that if you define it in a different module."
 msgstr ""
+"Toto převede řetězcový argument na číselnou úroveň a "
+"vrátí funkci, která vrací ``True`` pouze pokud je úroveň předaného "
+"záznamu na nebo pod zadanou úrovní. Všimněte si, že v tomto příkladu "
+"jsem definoval ``filter_maker`` v testovacím skriptu ``main.py``, který "
+"spouštím z příkazové řádky, takže jeho modul bude ``__main__`` - odtud "
+"``__main__.filter_maker`` v konfiguraci filtru. Budete to muset "
+"změnit, pokud to definujete v jiném modulu."
 
 #: ../../howto/logging-cookbook.rst:387
 msgid "With the filter added, we can run ``main.py``, which in full is:"
-msgstr ""
+msgstr "S přidaným filtrem můžeme spustit ``main.py``, který je kompletně:"
 
 #: ../../howto/logging-cookbook.rst:389
 #, python-brace-format, python-format
@@ -598,15 +667,15 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:457
 msgid "And after running it like this:"
-msgstr ""
+msgstr "A po spuštění takto:"
 
 #: ../../howto/logging-cookbook.rst:459
 msgid "python main.py 2>stderr.log >stdout.log"
-msgstr ""
+msgstr "python main.py 2>stderr.log >stdout.log"
 
 #: ../../howto/logging-cookbook.rst:463
 msgid "We can see the results are as expected:"
-msgstr ""
+msgstr "Můžeme vidět, že výsledky jsou podle očekávání:"
 
 #: ../../howto/logging-cookbook.rst:465
 msgid ""
@@ -633,11 +702,11 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:489
 msgid "Configuration server example"
-msgstr ""
+msgstr "Příklad konfiguračního serveru"
 
 #: ../../howto/logging-cookbook.rst:491
 msgid "Here is an example of a module using the logging configuration server::"
-msgstr ""
+msgstr "Zde je příklad modulu používajícího konfigurační server logování::"
 
 #: ../../howto/logging-cookbook.rst:493
 msgid ""
@@ -677,6 +746,9 @@ msgid ""
 "server, properly preceded with the binary-encoded length, as the new "
 "logging configuration::"
 msgstr ""
+"A zde je skript, který vezme název souboru a odešle tento soubor na "
+"server, správně předcházen binárně kódovanou délkou, jako novou "
+"konfiguraci logování::"
 
 #: ../../howto/logging-cookbook.rst:526
 msgid ""
@@ -700,7 +772,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:547
 msgid "Dealing with handlers that block"
-msgstr ""
+msgstr "Práce s handlery, které blokují"
 
 #: ../../howto/logging-cookbook.rst:551
 msgid ""
@@ -708,6 +780,9 @@ msgid ""
 "blocking the thread you're logging from. This is common in web "
 "applications, though of course it also occurs in other scenarios."
 msgstr ""
+"Někdy musíte zajistit, aby vaše handlery logování vykonávaly svou práci bez "
+"blokování vlákna, ze kterého logujete. To je běžné ve webových "
+"aplikacích, ale samozřejmě se to vyskytuje i v jiných scénářích."
 
 #: ../../howto/logging-cookbook.rst:555
 msgid ""
@@ -719,6 +794,13 @@ msgid ""
 "query under the hood which is too slow (and this query can be deep in the"
 " socket library code, below the Python layer, and outside your control)."
 msgstr ""
+"Běžným viníkem, který vykazuje pomalé chování, je "
+":class:`SMTPHandler`: odesílání e-mailů může trvat dlouho z řady "
+"důvodů mimo kontrolu vývojáře (například špatně "
+"fungující e-mailová nebo síťová infrastruktura). Ale téměř jakýkoli síťový "
+"handler může blokovat: Dokonce i operace :class:`SocketHandler` může provést DNS "
+"dotaz na pozadí, který je příliš pomalý (a tento dotaz může být hluboko v "
+"kódu knihovny socketů, pod vrstvou Pythonu a mimo vaši kontrolu)."
 
 #: ../../howto/logging-cookbook.rst:563
 msgid ""
@@ -733,6 +815,16 @@ msgid ""
 "(together with a suggestion to attach only ``QueueHandlers`` to your "
 "loggers) for the benefit of other developers who will use your code."
 msgstr ""
+"Jedním řešením je použít dvoufázový přístup. Pro první část připojte "
+"pouze :class:`QueueHandler` k těm loggerům, které jsou přístupné z "
+"vláken kritických pro výkon. Ty jednoduše zapisují do své fronty, která může "
+"být dimenzována na dostatečně velkou kapacitu nebo inicializována bez horní hranice "
+"své velikosti. Zápis do fronty bude typicky přijat rychle, "
+"ačkoli pravděpodobně budete muset zachytit výjimku :exc:`queue.Full` "
+"jako preventivní opatření ve vašem kódu. Pokud jste vývojář knihovny, který má "
+"vlákna kritická pro výkon ve svém kódu, nezapomeňte to zdokumentovat "
+"(spolu s návrhem připojit pouze ``QueueHandlers`` k vašim "
+"loggerům) ve prospěch ostatních vývojářů, kteří budou používat váš kód."
 
 #: ../../howto/logging-cookbook.rst:574
 msgid ""
@@ -744,6 +836,13 @@ msgid ""
 "``LogRecords``, for that matter). The ``LogRecords`` are removed from the"
 " queue and passed to the handlers for processing."
 msgstr ""
+"Druhou částí řešení je :class:`QueueListener`, který byl "
+"navržen jako protějšek k :class:`QueueHandler`. "
+":class:`QueueListener` je velmi jednoduchý: je mu předána fronta a některé "
+"handlery a spustí interní vlákno, které naslouchá své frontě "
+"pro LogRecords odeslané z ``QueueHandlers`` (nebo jakéhokoli jiného zdroje "
+"``LogRecords``). ``LogRecords`` jsou odstraněny z "
+"fronty a předány handlerům ke zpracování."
 
 #: ../../howto/logging-cookbook.rst:582
 msgid ""
@@ -753,10 +852,15 @@ msgid ""
 "existing handler classes, which would eat up one thread per handler for "
 "no particular benefit."
 msgstr ""
+"Výhodou samostatné třídy :class:`QueueListener` je, že "
+"můžete použít stejnou instanci k obsluze více ``QueueHandlers``. To "
+"je více šetrné k prostředkům než například vláknové verze "
+"existujících tříd handlerů, které by spotřebovaly jedno vlákno na handler "
+"bez konkrétního přínosu."
 
 #: ../../howto/logging-cookbook.rst:587
 msgid "An example of using these two classes follows (imports omitted)::"
-msgstr ""
+msgstr "Následuje příklad použití těchto dvou tříd (importy vynechány)::"
 
 #: ../../howto/logging-cookbook.rst:589
 #, python-format
@@ -780,11 +884,11 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:605
 msgid "which, when run, will produce:"
-msgstr ""
+msgstr "který po spuštění vyprodukuje:"
 
 #: ../../howto/logging-cookbook.rst:607
 msgid "MainThread: Look out!"
-msgstr ""
+msgstr "MainThread: Look out!"
 
 #: ../../howto/logging-cookbook.rst:611
 msgid ""
@@ -796,6 +900,13 @@ msgid ""
 "an application, to use the above approach for logging, so that any "
 "blocking code runs only in the ``QueueListener`` thread."
 msgstr ""
+"Ačkoli předchozí diskuse nemluvila specificky o asynchronním "
+"kódu, ale spíše o pomalých handlerech logování, je třeba poznamenat, že "
+"při logování z asynchronního kódu mohou síťové a dokonce i souborové handlery vést "
+"k problémům (blokování smyčky událostí), protože některé logování se provádí z "
+"interních funkcí :mod:`asyncio`. Může být nejlepší, pokud se v "
+"aplikaci používá nějaký asynchronní kód, použít výše uvedený přístup pro logování, takže jakýkoli "
+"blokující kód běží pouze ve vlákně ``QueueListener``."
 
 #: ../../howto/logging-cookbook.rst:619
 msgid ""
@@ -809,12 +920,23 @@ msgid ""
 "handler's level, and only passes a message to a handler if it's "
 "appropriate to do so."
 msgstr ""
+"Před Pythonem 3.5 :class:`QueueListener` vždy předával každou "
+"zprávu přijatou z fronty každému handleru, se kterým byl inicializován. "
+"(To proto, že se předpokládalo, že filtrování úrovní se provádí na "
+"druhé straně, kde se fronta plní.) Od verze 3.5 lze toto "
+"chování změnit předáním klíčového argumentu "
+"``respect_handler_level=True`` konstruktoru listeneru. Když se to "
+"provede, listener porovnává úroveň každé zprávy s "
+"úrovní handleru a předá zprávu handleru pouze pokud je to "
+"vhodné."
 
 #: ../../howto/logging-cookbook.rst:629
 msgid ""
 "The :class:`QueueListener` can be started (and stopped) via the "
 ":keyword:`with` statement. For example:"
 msgstr ""
+":class:`QueueListener` může být spuštěn (a zastaven) pomocí "
+"příkazu :keyword:`with`. Například:"
 
 #: ../../howto/logging-cookbook.rst:633
 msgid ""
@@ -828,7 +950,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:645
 msgid "Sending and receiving logging events across a network"
-msgstr ""
+msgstr "Odesílání a příjem událostí logování přes síť"
 
 #: ../../howto/logging-cookbook.rst:647
 msgid ""
@@ -836,6 +958,9 @@ msgid ""
 "them at the receiving end. A simple way of doing this is attaching a "
 ":class:`SocketHandler` instance to the root logger at the sending end::"
 msgstr ""
+"Řekněme, že chcete odesílat události logování přes síť a zpracovat "
+"je na přijímací straně. Jednoduchý způsob, jak to udělat, je připojit "
+"instanci :class:`SocketHandler` ke kořenovému loggeru na odesílající straně::"
 
 #: ../../howto/logging-cookbook.rst:651
 msgid ""
@@ -872,6 +997,8 @@ msgid ""
 "At the receiving end, you can set up a receiver using the "
 ":mod:`socketserver` module. Here is a basic working example::"
 msgstr ""
+"Na přijímací straně můžete nastavit přijímač pomocí "
+"modulu :mod:`socketserver`. Zde je základní funkční příklad::"
 
 #: ../../howto/logging-cookbook.rst:678
 #, python-format
@@ -991,10 +1118,15 @@ msgid ""
 "your alternative there, as well as adapting the above script to use your "
 "alternative serialization."
 msgstr ""
+"Všimněte si, že v některých scénářích existují bezpečnostní problémy s pickle. "
+"Pokud vás to ovlivňuje, můžete použít alternativní schéma serializace "
+"přepsáním metody :meth:`~SocketHandler.makePickle` a implementací "
+"vaší alternativy tam, stejně jako přizpůsobením výše uvedeného skriptu pro použití vaší "
+"alternativní serializace."
 
 #: ../../howto/logging-cookbook.rst:783
 msgid "Running a logging socket listener in production"
-msgstr ""
+msgstr "Spuštění socket listeneru pro logování v produkci"
 
 #: ../../howto/logging-cookbook.rst:787
 msgid ""
@@ -1004,78 +1136,91 @@ msgid ""
 " run the above functionality using Supervisor. It consists of the "
 "following files:"
 msgstr ""
+"Pro spuštění listeneru logování v produkci možná budete muset použít nástroj "
+"pro správu procesů, jako je `Supervisor <http://supervisord.org/>`_. `Zde je "
+"Gist <socket-listener-gist_>`__, který poskytuje základní soubory pro "
+"spuštění výše uvedené funkčnosti pomocí Supervisoru. Skládá se z "
+"následujících souborů:"
 
 #: ../../howto/logging-cookbook.rst:794
 msgid "File"
-msgstr ""
+msgstr "Soubor"
 
 #: ../../howto/logging-cookbook.rst:794
 msgid "Purpose"
-msgstr ""
+msgstr "Účel"
 
 #: ../../howto/logging-cookbook.rst:796
 msgid ":file:`prepare.sh`"
-msgstr ""
+msgstr ":file:`prepare.sh`"
 
 #: ../../howto/logging-cookbook.rst:796
 msgid "A Bash script to prepare the environment for testing"
-msgstr ""
+msgstr "Bash skript pro přípravu prostředí pro testování"
 
 #: ../../howto/logging-cookbook.rst:799
 msgid ":file:`supervisor.conf`"
-msgstr ""
+msgstr ":file:`supervisor.conf`"
 
 #: ../../howto/logging-cookbook.rst:799
 msgid ""
 "The Supervisor configuration file, which has entries for the listener and"
 " a multi-process web application"
 msgstr ""
+"Konfigurační soubor Supervisoru, který má záznamy pro listener a "
+"víceprocesovou webovou aplikaci"
 
 #: ../../howto/logging-cookbook.rst:803
 msgid ":file:`ensure_app.sh`"
-msgstr ""
+msgstr ":file:`ensure_app.sh`"
 
 #: ../../howto/logging-cookbook.rst:803
 msgid ""
 "A Bash script to ensure that Supervisor is running with the above "
 "configuration"
 msgstr ""
+"Bash skript pro zajištění, že Supervisor běží s výše uvedenou "
+"konfigurací"
 
 #: ../../howto/logging-cookbook.rst:806
 msgid ":file:`log_listener.py`"
-msgstr ""
+msgstr ":file:`log_listener.py`"
 
 #: ../../howto/logging-cookbook.rst:806
 msgid ""
 "The socket listener program which receives log events and records them to"
 " a file"
 msgstr ""
+"Program socket listeneru, který přijímá události logování a zaznamenává je do "
+"souboru"
 
 #: ../../howto/logging-cookbook.rst:809
 msgid ":file:`main.py`"
-msgstr ""
+msgstr ":file:`main.py`"
 
 #: ../../howto/logging-cookbook.rst:809
 msgid ""
 "A simple web application which performs logging via a socket connected to"
 " the listener"
 msgstr ""
+"Jednoduchá webová aplikace, která provádí logování přes socket připojený k "
+"listeneru"
 
 #: ../../howto/logging-cookbook.rst:812
 msgid ":file:`webapp.json`"
-msgstr ""
+msgstr ":file:`webapp.json`"
 
 #: ../../howto/logging-cookbook.rst:812
 msgid "A JSON configuration file for the web application"
-msgstr ""
+msgstr "JSON konfigurační soubor pro webovou aplikaci"
 
 #: ../../howto/logging-cookbook.rst:814
 msgid ":file:`client.py`"
-msgstr ""
+msgstr ":file:`client.py`"
 
 #: ../../howto/logging-cookbook.rst:814
 msgid "A Python script to exercise the web application"
-msgstr ""
+msgstr "Python skript pro testování webové aplikace"
 
 #: ../../howto/logging-cookbook.rst:817
 msgid ""
@@ -1085,20 +1230,27 @@ msgid ""
 "the same log file without conflicting with one another --- they all go "
 "through the socket listener."
 msgstr ""
+"Webová aplikace používá `Gunicorn <https://gunicorn.org/>`_, což je "
+"populární server webových aplikací, který spouští více pracovních procesů pro "
+"zpracování požadavků. Toto ukázkové nastavení ukazuje, jak mohou pracovníci zapisovat do "
+"stejného souboru logu bez vzájemných konfliktů --- všechny procházejí "
+"socket listenerem."
 
 #: ../../howto/logging-cookbook.rst:822
 msgid "To test these files, do the following in a POSIX environment:"
-msgstr ""
+msgstr "Pro testování těchto souborů proveďte následující v prostředí POSIX:"
 
 #: ../../howto/logging-cookbook.rst:824
 msgid ""
 "Download `the Gist <socket-listener-gist_>`__ as a ZIP archive using the "
 ":guilabel:`Download ZIP` button."
 msgstr ""
+"Stáhněte `Gist <socket-listener-gist_>`__ jako ZIP archiv pomocí "
+"tlačítka :guilabel:`Download ZIP`."
 
 #: ../../howto/logging-cookbook.rst:827
 msgid "Unzip the above files from the archive into a scratch directory."
-msgstr ""
+msgstr "Rozbalte výše uvedené soubory z archivu do pracovního adresáře."
 
 #: ../../howto/logging-cookbook.rst:829
 msgid ""
@@ -1108,18 +1260,26 @@ msgid ""
 "environment into which ``bottle``, ``gunicorn`` and ``supervisor`` are "
 "installed."
 msgstr ""
+"V pracovním adresáři spusťte ``bash prepare.sh`` pro přípravu. "
+"Toto vytvoří podadresář :file:`run` obsahující soubory související se Supervisorem a "
+"soubory logu a podadresář :file:`venv` obsahující virtuální "
+"prostředí, do kterého jsou nainstalovány ``bottle``, ``gunicorn`` a ``supervisor``."
 
 #: ../../howto/logging-cookbook.rst:834
 msgid ""
 "Run ``bash ensure_app.sh`` to ensure that Supervisor is running with the "
 "above configuration."
 msgstr ""
+"Spusťte ``bash ensure_app.sh`` pro zajištění, že Supervisor běží s "
+"výše uvedenou konfigurací."
 
 #: ../../howto/logging-cookbook.rst:837
 msgid ""
 "Run ``venv/bin/python client.py`` to exercise the web application, which "
 "will lead to records being written to the log."
 msgstr ""
+"Spusťte ``venv/bin/python client.py`` pro testování webové aplikace, což "
+"povede k zápisu záznamů do logu."
 
 #: ../../howto/logging-cookbook.rst:840
 msgid ""
@@ -1128,24 +1288,34 @@ msgid ""
 "They won't be in any particular order, since they have been handled "
 "concurrently by different worker processes in a non-deterministic way."
 msgstr ""
+"Zkontrolujte soubory logu v podadresáři :file:`run`. Měli byste vidět "
+"nejnovější řádky logu v souborech odpovídajících vzoru :file:`app.log*`. "
+"Nebudou v žádném konkrétním pořadí, protože byly zpracovány "
+"souběžně různými pracovními procesy nedeterministickým způsobem."
 
 #: ../../howto/logging-cookbook.rst:845
 msgid ""
 "You can shut down the listener and the web application by running "
 "``venv/bin/supervisorctl -c supervisor.conf shutdown``."
 msgstr ""
+"Můžete vypnout listener a webovou aplikaci spuštěním "
+"``venv/bin/supervisorctl -c supervisor.conf shutdown``."
 
 #: ../../howto/logging-cookbook.rst:848
 msgid ""
 "You may need to tweak the configuration files in the unlikely event that "
 "the configured ports clash with something else in your test environment."
 msgstr ""
+"Možná budete muset upravit konfigurační soubory v nepravděpodobném případě, že "
+"nakonfigurované porty kolidují s něčím jiným ve vašem testovacím prostředí."
 
 #: ../../howto/logging-cookbook.rst:851
 msgid ""
 "The default configuration uses a TCP socket on port 9020. You can use a "
 "Unix Domain socket instead of a TCP socket by doing the following:"
 msgstr ""
+"Výchozí konfigurace používá TCP socket na portu 9020. Můžete použít "
+"Unix Domain socket místo TCP socketu provedením následujícího:"
 
 #: ../../howto/logging-cookbook.rst:854
 msgid ""
@@ -1154,6 +1324,10 @@ msgid ""
 "listens on the corresponding domain socket and not on a TCP socket (the "
 "``port`` key is ignored)."
 msgstr ""
+"V :file:`listener.json` přidejte klíč ``socket`` s cestou k "
+"domain socketu, který chcete použít. Pokud je tento klíč přítomen, listener "
+"naslouchá na odpovídajícím domain socketu a ne na TCP socketu ("
+"klíč ``port`` je ignorován)."
 
 #: ../../howto/logging-cookbook.rst:859
 msgid ""
@@ -1161,10 +1335,13 @@ msgid ""
 "dictionary so that the ``host`` value is the path to the domain socket, "
 "and set the ``port`` value to ``null``."
 msgstr ""
+"V :file:`webapp.json` změňte konfigurační slovník "
+"socket handleru tak, aby hodnota ``host`` byla cesta k domain socketu "
+"a nastavte hodnotu ``port`` na ``null``."
 
 #: ../../howto/logging-cookbook.rst:869
 msgid "Adding contextual information to your logging output"
-msgstr ""
+msgstr "Přidání kontextových informací do výstupu logování"
 
 #: ../../howto/logging-cookbook.rst:871
 msgid ""
@@ -1181,10 +1358,22 @@ msgid ""
 "want to use in logging an application, it could be hard to manage if the "
 "number of :class:`Logger` instances becomes effectively unbounded."
 msgstr ""
+"Někdy chcete, aby výstup logování obsahoval kontextové informace navíc "
+"k parametrům předaným volání logování. Například v "
+"síťové aplikaci může být žádoucí logovat informace specifické pro klienta "
+"v logu (např. uživatelské jméno vzdáleného klienta nebo IP adresu). "
+"Ačkoli byste mohli k dosažení tohoto cíle použít parametr *extra*, není to "
+"vždy pohodlné předávat informace tímto způsobem. Ačkoli by mohlo být "
+"lákavé vytvořit instance :class:`Logger` na základě jednotlivých připojení, "
+"není to dobrý nápad, protože tyto instance nejsou uklízeny "
+"garbage collectorem. Ačkoli to v praxi není problém, když je počet "
+"instancí :class:`Logger` závislý na úrovni granularity, kterou "
+"chcete použít při logování aplikace, mohlo by být obtížné to spravovat, pokud "
+"se počet instancí :class:`Logger` stane fakticky neomezený."
 
 #: ../../howto/logging-cookbook.rst:886
 msgid "Using LoggerAdapters to impart contextual information"
-msgstr ""
+msgstr "Použití LoggerAdapters pro předání kontextových informací"
 
 #: ../../howto/logging-cookbook.rst:888
 msgid ""
@@ -1196,6 +1385,13 @@ msgid ""
 "the same signatures as their counterparts in :class:`Logger`, so you can "
 "use the two types of instances interchangeably."
 msgstr ""
+"Snadný způsob, jak můžete předat kontextové informace k výstupu "
+"spolu s informacemi o událostech logování, je použít třídu :class:`LoggerAdapter`. "
+"Tato třída je navržena tak, aby vypadala jako :class:`Logger`, takže "
+"můžete volat :meth:`debug`, :meth:`info`, :meth:`warning`, :meth:`error`, "
+":meth:`exception`, :meth:`critical` a :meth:`log`. Tyto metody mají "
+"stejné signatury jako jejich protějšky v :class:`Logger`, takže můžete "
+"používat oba typy instancí zaměnitelně."
 
 #: ../../howto/logging-cookbook.rst:896
 msgid ""
@@ -1207,6 +1403,13 @@ msgid ""
 "arranges to pass the contextual information in the delegated call. Here's"
 " a snippet from the code of :class:`LoggerAdapter`::"
 msgstr ""
+"Když vytvoříte instanci :class:`LoggerAdapter`, předáte jí "
+"instanci :class:`Logger` a objekt podobný slovníku, který obsahuje vaše "
+"kontextové informace. Když zavoláte jednu z metod logování na "
+"instanci :class:`LoggerAdapter`, deleguje volání na "
+"podkladovou instanci :class:`Logger` předanou jejímu konstruktoru a "
+"zařídí předání kontextových informací v delegovaném volání. Zde je "
+"úryvek z kódu :class:`LoggerAdapter`::"
 
 #: ../../howto/logging-cookbook.rst:904
 msgid ""
@@ -1231,6 +1434,15 @@ msgid ""
 "Of course, if you had passed an 'extra' keyword argument in the call to "
 "the adapter, it will be silently overwritten."
 msgstr ""
+"Metoda :meth:`~LoggerAdapter.process` třídy :class:`LoggerAdapter` je "
+"místem, kde se do výstupu logování přidávají kontextové informace. Je jí "
+"předána zpráva a klíčové argumenty volání logování a ona "
+"vrací (potenciálně) upravené verze těchto hodnot pro použití ve volání "
+"podkladového loggeru. Výchozí implementace této metody "
+"ponechává zprávu nedotčenou, ale vloží klíč 'extra' do klíčového "
+"argumentu, jehož hodnotou je objekt podobný slovníku předaný konstruktoru. "
+"Samozřejmě, pokud jste předali klíčový argument 'extra' ve volání "
+"adaptéru, bude tiše přepsán."
 
 #: ../../howto/logging-cookbook.rst:921
 msgid ""
@@ -1243,6 +1455,14 @@ msgid ""
 "and override :meth:`~LoggerAdapter.process` to do what you need. Here is "
 "a simple example::"
 msgstr ""
+"Výhodou použití 'extra' je, že hodnoty v objektu podobném slovníku "
+"jsou sloučeny do __dict__ instance :class:`LogRecord`, což vám umožňuje "
+"používat přizpůsobené řetězce s vašimi instancemi :class:`Formatter`, které "
+"znají klíče objektu podobného slovníku. Pokud potřebujete jinou "
+"metodu, např. pokud chcete přidat kontextové informace před nebo za "
+"řetězec zprávy, stačí vytvořit podtřídu :class:`LoggerAdapter` "
+"a přepsat :meth:`~LoggerAdapter.process` tak, aby dělala, co potřebujete. Zde je "
+"jednoduchý příklad::"
 
 #: ../../howto/logging-cookbook.rst:929
 #, python-format
@@ -1260,7 +1480,7 @@ msgstr ""
 
 #: ../../howto/logging-cookbook.rst:937
 msgid "which you can use like this::"
-msgstr ""
+msgstr "který můžete použít takto::"
 
 #: ../../howto/logging-cookbook.rst:939
 #, python-brace-format
@@ -1274,10 +1494,12 @@ msgid ""
 "Then any events that you log to the adapter will have the value of "
 "``some_conn_id`` prepended to the log messages."
 msgstr ""
+"Pak jakékoli události, které zalogujete do adaptéru, budou mít hodnotu "
+"``some_conn_id`` připojenou před zprávy logu."
 
 #: ../../howto/logging-cookbook.rst:946
 msgid "Using objects other than dicts to pass contextual information"
-msgstr ""
+msgstr "Použití jiných objektů než slovníků pro předání kontextových informací"
 
 #: ../../howto/logging-cookbook.rst:948
 msgid ""
@@ -1287,10 +1509,15 @@ msgid ""
 "useful if you want to generate values dynamically (whereas the values in "
 "a dict would be constant)."
 msgstr ""
+"Nemusíte předávat skutečný slovník do :class:`LoggerAdapter` - můžete "
+"předat instanci třídy, která implementuje ``__getitem__`` a "
+"``__iter__`` tak, aby vypadala jako slovník pro logování. To by bylo "
+"užitečné, pokud chcete generovat hodnoty dynamicky (zatímco hodnoty ve "
+"slovníku by byly konstantní)."
 
 #: ../../howto/logging-cookbook.rst:957
 msgid "Using Filters to impart contextual information"
-msgstr ""
+msgstr "Použití filtrů pro předání kontextových informací"
 
 #: ../../howto/logging-cookbook.rst:959
 msgid ""
