@@ -757,6 +757,17 @@ msgid ""
 " See the later comments on :gh:`70766` for discussions of what workarounds "
 "such code may need. (Contributed by Serhiy Storchaka in :issue:`26579`.)"
 msgstr ""
+"Přidán :meth:`object.__getstate__`, který poskytuje výchozí implementaci "
+"metody :meth:`!__getstate__`. :mod:`copy`\\ování a :mod:`pickle`\\ování "
+"instancí podtříd vestavěných typů :class:`bytearray`, :class:`set`, "
+":class:`frozenset`, :class:`collections.OrderedDict`, "
+":class:`collections.deque`, :class:`weakref.WeakSet` a "
+":class:`datetime.tzinfo` nyní kopíruje a pickluje atributy instancí "
+"implementované jako :term:`slots <__slots__>`. Tato změna má nežádoucí "
+"vedlejší efekt: Trip up malou menšinu stávajících Python projektů "
+"neočekávajících, že :meth:`object.__getstate__` existuje. Viz pozdější "
+"komentáře na :gh:`70766` pro diskusi o tom, jaké obejití takový kód může "
+"potřebovat. (Přispěl Serhiy Storchaka v :issue:`26579`.)"
 
 #: ../../whatsnew/3.11.rst:470
 msgid ""
@@ -3173,6 +3184,8 @@ msgid ""
 "See [#bytecode-jump]_; ``TRUE``, ``FALSE``, ``NONE`` and ``NOT_NONE`` "
 "variants for each direction"
 msgstr ""
+"Viz [#bytecode-jump]_; ``TRUE``, ``FALSE``, ``NONE`` a ``NOT_NONE`` varianty"
+" pro každý směr"
 
 #: ../../whatsnew/3.11.rst
 msgid ":opcode:`!SETUP_WITH`"
@@ -3197,6 +3210,9 @@ msgid ""
 "argument is now an offset from the current instruction rather than an "
 "absolute location."
 msgstr ""
+"Všechny operace skoku jsou nyní relativní, včetně stávajících "
+":opcode:`!JUMP_IF_TRUE_OR_POP` a :opcode:`!JUMP_IF_FALSE_OR_POP`. Argument "
+"je nyní posun od aktuální instrukce místo absolutního umístění."
 
 #: ../../whatsnew/3.11.rst:1688
 msgid "Changed/removed opcodes"
@@ -3208,18 +3224,25 @@ msgid ""
 "additional boolean value to indicate success/failure. Instead, ``None`` is "
 "pushed on failure in place of the tuple of extracted values."
 msgstr ""
+"Změněno :opcode:`MATCH_CLASS` a :opcode:`MATCH_KEYS` již nepousí další "
+"booleovskou hodnotu k označení úspěchu/neúspěchu. Místo toho je ``None`` "
+"tlačeno selhání místo n-tice extrahovaných hodnot."
 
 #: ../../whatsnew/3.11.rst:1695
 msgid ""
 "Changed opcodes that work with exceptions to reflect them now being "
 "represented as one item on the stack instead of three (see :gh:`89874`)."
 msgstr ""
+"Změněny operace pracující s výjimkami, aby odrážely, že jsou nyní "
+"reprezentovány jako jedna položka na zásobníku místo tří (viz :gh:`89874`)."
 
 #: ../../whatsnew/3.11.rst:1699
 msgid ""
 "Removed :opcode:`!COPY_DICT_WITHOUT_KEYS`, :opcode:`!GEN_START`, "
 ":opcode:`!POP_BLOCK`, :opcode:`!SETUP_FINALLY` and :opcode:`!YIELD_FROM`."
 msgstr ""
+"Odstraněno :opcode:`!COPY_DICT_WITHOUT_KEYS`, :opcode:`!GEN_START`, "
+":opcode:`!POP_BLOCK`, :opcode:`!SETUP_FINALLY` a :opcode:`!YIELD_FROM`."
 
 #: ../../whatsnew/3.11.rst:1707 ../../whatsnew/3.11.rst:2580
 msgid "Deprecated"
@@ -3251,6 +3274,12 @@ msgid ""
 "consider using the :attr:`!__wrapped__` attribute that was added in Python "
 "3.10. (Contributed by Raymond Hettinger in :gh:`89519`.)"
 msgstr ""
+"Řetězení deskriptorů :class:`classmethod` (zavedeno v :issue:`19072`) je "
+"nyní zastaralé. Již jej nelze použít k zabalení jiných deskriptorů, jako je "
+":class:`property`. Návrh základního rysů byl chybný a způsobil řadu problémů"
+" v downcastreamu. Aby \"projít skrz\" :class:`classmethod`, zvažte použití "
+"atributu :attr:`!__wrapped__`, který byl přidán v Pythonu 3.10. (Přispěl "
+"Raymond Hettinger v :gh:`89519`.)"
 
 #: ../../whatsnew/3.11.rst:1728
 msgid ""
@@ -3259,6 +3288,11 @@ msgid ""
 "Python version, they will raise a :exc:`SyntaxWarning` and eventually a "
 ":exc:`SyntaxError`. (Contributed by Serhiy Storchaka in :gh:`81548`.)"
 msgstr ""
+"Osmičkové escape sekvence v řetězcích a bajtových literálech s hodnotami "
+"většími než ``0o377`` (255 v desítkovém formátu) nyní vytvářejí "
+":exc:`DeprecationWarning`. V budoucí verzi Pythonu budou vyvolávat "
+":exc:`SyntaxWarning` a nakonec :exc:`SyntaxError`. (Přispěl Serhiy Storchaka"
+" v :gh:`81548`.)"
 
 #: ../../whatsnew/3.11.rst:1734
 msgid ""
@@ -3268,6 +3302,10 @@ msgid ""
 ":meth:`~object.__index__` now raises a :exc:`DeprecationWarning`. "
 "(Contributed by Zackery Spytz in :issue:`44977`.)"
 msgstr ""
+"Delegace :func:`int` na :meth:`~object.__trunc__` je nyní zastaralá. Volání "
+"``int(a)``, když ``type(a)`` implementuje :meth:`!__trunc__`, ale ne "
+":meth:`~object.__int__` nebo :meth:`~object.__index__`, nyní vyvolává "
+":exc:`DeprecationWarning`. (Přispěl Zackery Spytz v :issue:`44977`.)"
 
 #: ../../whatsnew/3.11.rst:1744
 msgid "Modules"
@@ -3436,6 +3474,12 @@ msgid ""
 ":class:`configparser.ExtendedInterpolation` instead. (Contributed by Hugo "
 "van Kemenade in :issue:`46607`.)"
 msgstr ""
+":class:`!configparser.LegacyInterpolation` je zastaralý v docstringu od "
+"Pythonu 3.2 a není uveden v dokumentaci :mod:`configparser`. Nyní emituje "
+":exc:`DeprecationWarning` a bude odstraněn v Pythonu 3.13. Místo toho "
+"použijte :class:`configparser.BasicInterpolation` nebo "
+":class:`configparser.ExtendedInterpolation`. (Přispěl Hugo van Kemenade v "
+":issue:`46607`.)"
 
 #: ../../whatsnew/3.11.rst:1801
 msgid ""
@@ -3495,6 +3539,9 @@ msgid ""
 "in Python 3.13. Use ``locale.setlocale(locale.LC_ALL, \"\")`` instead. "
 "(Contributed by Victor Stinner in :gh:`90817`.)"
 msgstr ""
+"Funkce :func:`!locale.resetlocale` je zastaralá a bude odstraněna v Pythonu "
+"3.13. Místo toho použijte ``locale.setlocale(locale.LC_ALL, \"\")``. "
+"(Přispěl Victor Stinner v :gh:`90817`.)"
 
 #: ../../whatsnew/3.11.rst:1824
 msgid ""
@@ -3535,6 +3582,11 @@ msgid ""
 "deprecated, and its docstring is now corrected). (Contributed by Hugo van "
 "Kemenade in :issue:`45837`.)"
 msgstr ""
+":func:`!turtle.settiltangle` je zastaralá od Pythonu 3.1; nyní emituje "
+"varování o zastaralosti a bude odstraněna v Pythonu 3.13. Místo toho "
+"použijte :func:`turtle.tiltangle` (byla dříve nesprávně označena jako "
+"zastaralá a její docstring je nyní opraven). (Přispěl Hugo van Kemenade v "
+":issue:`45837`.)"
 
 #: ../../whatsnew/3.11.rst:1844
 msgid ""
@@ -4788,6 +4840,10 @@ msgid ""
 "function (:c:member:`PyTypeObject.tp_traverse`). (Contributed by Victor "
 "Stinner in :issue:`44263`.)"
 msgstr ""
+"Funkce :c:func:`PyType_Ready` nyní vyvolá chybu, pokud je typ definován s "
+"příznakem :c:macro:`Py_TPFLAGS_HAVE_GC`, ale nemá funkci traversu "
+"(:c:member:`PyTypeObject.tp_traverse`). (Přispěl Victor Stinner v "
+":issue:`44263`.)"
 
 #: ../../whatsnew/3.11.rst:2372
 msgid ""
@@ -4796,6 +4852,9 @@ msgid ""
 " :ref:`static types <static-types>`. (Contributed by Erlend E. Aasland in "
 ":issue:`43908`)"
 msgstr ""
+"Typy haldy s příznakem :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` mohou nyní dědit "
+"protokol :pep:`590` vectorcall. Dříve to bylo možné pouze pro :ref:`statické"
+" typy <static-types>`. (Přispěl Erlend E. Aasland v :issue:`43908`)"
 
 #: ../../whatsnew/3.11.rst:2377
 msgid ""
@@ -4804,6 +4863,10 @@ msgid ""
 "new_type)``: see the :c:func:`Py_SET_TYPE()` function (available since "
 "Python 3.9). For backward compatibility, this macro can be used::"
 msgstr ""
+"Protože :c:func:`Py_TYPE()` se změnila na vestavěnou statickou funkci, "
+"``Py_TYPE(obj) = new_type`` musí být nahrazeno ``Py_SET_TYPE(obj, "
+"new_type)``: viz funkce :c:func:`Py_SET_TYPE()` (dostupná od Pythonu 3.9). "
+"Pro zpětnou kompatibilitu lze použít toto makro::"
 
 #: ../../whatsnew/3.11.rst:2383
 #, python-brace-format
@@ -5107,10 +5170,13 @@ msgid ""
 "Or use the `pythoncapi_compat project <https://github.com/python/pythoncapi-"
 "compat>`__ to get these two functions on older Python versions."
 msgstr ""
+"Nebo použijte projekt `pythoncapi_compat "
+"<https://github.com/python/pythoncapi-compat>`__ pro získání těchto dvou "
+"funkcí na starších verzích Pythonu."
 
 #: ../../whatsnew/3.11.rst:2510
 msgid "Changes of the :c:type:`PyThreadState` structure members:"
-msgstr ""
+msgstr "Změny členů struktury :c:type:`PyThreadState`:"
 
 #: ../../whatsnew/3.11.rst:2512
 msgid ""
@@ -5118,6 +5184,9 @@ msgid ""
 "Python 3.9 by :issue:`40429`). Warning: the function returns a :term:`strong"
 " reference`, need to call :c:func:`Py_XDECREF`."
 msgstr ""
+"``frame``: odstraněno, používejte :c:func:`PyThreadState_GetFrame` (funkce "
+"přidána do Pythonu 3.9 v :issue:`40429`). Upozornění: funkce vrací "
+":term:`silný odkaz`, je nutné zavolat :c:func:`Py_XDECREF`."
 
 #: ../../whatsnew/3.11.rst:2516
 msgid ""
@@ -5125,20 +5194,26 @@ msgid ""
 ":c:func:`PyThreadState_LeaveTracing` (functions added to Python 3.11 by "
 ":issue:`43760`)."
 msgstr ""
+"``tracing``: změněno, používejte :c:func:`PyThreadState_EnterTracing` a "
+":c:func:`PyThreadState_LeaveTracing` (funkce přidány do Pythonu 3.11 v "
+":issue:`43760`)."
 
 #: ../../whatsnew/3.11.rst:2519
 msgid ""
 "``recursion_depth``: removed, use ``(tstate->recursion_limit - "
 "tstate->recursion_remaining)`` instead."
 msgstr ""
+"``recursion_depth``: odstraněno, místo toho používejte "
+"``(tstate->recursion_limit - tstate->recursion_remaining)``."
 
 #: ../../whatsnew/3.11.rst:2521
 msgid "``stackcheck_counter``: removed."
-msgstr ""
+msgstr "``stackcheck_counter``: odstraněno."
 
 #: ../../whatsnew/3.11.rst:2523
 msgid "Code defining ``PyThreadState_GetFrame()`` on Python 3.8 and older::"
 msgstr ""
+"Kód definující ``PyThreadState_GetFrame()`` na Pythonu 3.8 a starším::"
 
 #: ../../whatsnew/3.11.rst:2525
 #, python-brace-format
@@ -5157,6 +5232,8 @@ msgid ""
 "Code defining ``PyThreadState_EnterTracing()`` and "
 "``PyThreadState_LeaveTracing()`` on Python 3.10 and older::"
 msgstr ""
+"Kód definující ``PyThreadState_EnterTracing()`` a "
+"``PyThreadState_LeaveTracing()`` na Pythonu 3.10 a starším::"
 
 #: ../../whatsnew/3.11.rst:2536
 msgid ""
@@ -5189,12 +5266,17 @@ msgid ""
 "Or use `the pythoncapi-compat project <https://github.com/python/pythoncapi-"
 "compat>`__ to get these functions on old Python functions."
 msgstr ""
+"Nebo použijte projekt `pythoncapi-compat "
+"<https://github.com/python/pythoncapi-compat>`__ pro získání těchto funkcí "
+"na starších verzích Pythonu."
 
 #: ../../whatsnew/3.11.rst:2563
 msgid ""
 "Distributors are encouraged to build Python with the optimized Blake2 "
 "library `libb2`_."
 msgstr ""
+"Distributoři jsou vyzýváni, aby vytvořili Python s optimalizovanou knihovnou"
+" Blake2 `libb2`_."
 
 #: ../../whatsnew/3.11.rst:2566
 msgid ""
@@ -5203,6 +5285,10 @@ msgid ""
 "initialize :data:`sys.path`. Otherwise, initialization will recalculate the "
 "path and replace any values added to ``module_search_paths``."
 msgstr ""
+"Pole :c:member:`PyConfig.module_search_paths_set` musí být nyní nastaveno na"
+" 1, aby inicializace použila :c:member:`PyConfig.module_search_paths` k "
+"inicializaci :data:`sys.path`. V opačném případě inicializace přepočítá "
+"cestu a nahradí všechny hodnoty přidané do ``module_search_paths``."
 
 #: ../../whatsnew/3.11.rst:2571
 msgid ""
@@ -5212,11 +5298,16 @@ msgid ""
 ":c:func:`PySys_GetObject` to retrieve :data:`sys.path` as a Python list "
 "object and modify it directly."
 msgstr ""
+":c:func:`PyConfig_Read` již nepočítá počáteční cestu hledání a nevyplní "
+"žádné hodnoty do :c:member:`PyConfig.module_search_paths`. Chcete-li "
+"vypočítat výchozí cesty a poté je upravit, dokončete inicializaci a použijte"
+" :c:func:`PySys_GetObject` k získání :data:`sys.path` jako objektu seznamu "
+"Pythonu a upravte jej přímo."
 
 #: ../../whatsnew/3.11.rst:2582
 msgid ""
 "Deprecate the following functions to configure the Python initialization:"
-msgstr ""
+msgstr "Zastaraly následující funkce pro konfiguraci inicializace Pythonu:"
 
 #: ../../whatsnew/3.11.rst:2584
 msgid ":c:func:`!PySys_AddWarnOptionUnicode`"
@@ -5272,6 +5363,9 @@ msgid ""
 "Configuration <init-config>` instead (:pep:`587`). (Contributed by Victor "
 "Stinner in :gh:`88279`.)"
 msgstr ""
+"Místo toho použijte nové API :c:type:`PyConfig` konfigurace :ref:`Python "
+"Initialization Configuration <init-config>` (:pep:`587`). (Přispělo Victor "
+"Stinner v :gh:`88279`.)"
 
 #: ../../whatsnew/3.11.rst:2601
 msgid ""
@@ -5279,12 +5373,16 @@ msgid ""
 ":c:func:`PyObject_Hash` instead. (Contributed by Inada Naoki in "
 ":issue:`46864`.)"
 msgstr ""
+"Zastaraly člena ``ob_shash`` z :c:type:`PyBytesObject`. Místo toho použijte "
+":c:func:`PyObject_Hash`. (Přispělo Inada Naoki v :issue:`46864`.)"
 
 #: ../../whatsnew/3.11.rst:2610
 msgid ""
 "The following C APIs have been deprecated in earlier Python releases, and "
 "will be removed in Python 3.12."
 msgstr ""
+"Následující C API byla zástárala v dřívějších verzích Pythonu a budou "
+"odstraněna v Pythonu 3.12."
 
 #: ../../whatsnew/3.11.rst:2613
 msgid ":c:func:`!PyUnicode_AS_DATA`"
@@ -5355,34 +5453,37 @@ msgid ""
 ":c:func:`!PyFrame_BlockSetup` and :c:func:`!PyFrame_BlockPop` have been "
 "removed. (Contributed by Mark Shannon in :issue:`40222`.)"
 msgstr ""
+":c:func:`!PyFrame_BlockSetup` a :c:func:`!PyFrame_BlockPop` byly odstraněny."
+" (Přispělo Mark Shannon v :issue:`40222`.)"
 
 #: ../../whatsnew/3.11.rst:2640
 msgid "Remove the following math macros using the ``errno`` variable:"
 msgstr ""
+"Odstraňte následující matematické makra používající proměnnou ``errno``:"
 
 #: ../../whatsnew/3.11.rst:2642
 msgid "``Py_ADJUST_ERANGE1()``"
-msgstr ""
+msgstr "``Py_ADJUST_ERANGE1()``"
 
 #: ../../whatsnew/3.11.rst:2643
 msgid "``Py_ADJUST_ERANGE2()``"
-msgstr ""
+msgstr "``Py_ADJUST_ERANGE2()``"
 
 #: ../../whatsnew/3.11.rst:2644
 msgid "``Py_OVERFLOWED()``"
-msgstr ""
+msgstr "``Py_OVERFLOWED()``"
 
 #: ../../whatsnew/3.11.rst:2645
 msgid "``Py_SET_ERANGE_IF_OVERFLOW()``"
-msgstr ""
+msgstr "``Py_SET_ERANGE_IF_OVERFLOW()``"
 
 #: ../../whatsnew/3.11.rst:2646
 msgid "``Py_SET_ERRNO_ON_MATH_ERROR()``"
-msgstr ""
+msgstr "``Py_SET_ERRNO_ON_MATH_ERROR()``"
 
 #: ../../whatsnew/3.11.rst:2648
 msgid "(Contributed by Victor Stinner in :issue:`45412`.)"
-msgstr ""
+msgstr "(Přispělo Victor Stinner v :issue:`45412`.)"
 
 #: ../../whatsnew/3.11.rst:2650
 msgid ""
@@ -5391,6 +5492,10 @@ msgid ""
 "(``wchar_t*`` string), and ``PyUnicode_Fill()`` functions instead. "
 "(Contributed by Victor Stinner in :issue:`41123`.)"
 msgstr ""
+"Odstraňte makra ``Py_UNICODE_COPY()`` a ``Py_UNICODE_FILL()``, zastaralá od "
+"Pythonu 3.3. Místo toho použijte funkce ``PyUnicode_CopyCharacters()`` nebo "
+"``memcpy()`` (``wchar_t*`` řetězec) a ``PyUnicode_Fill()``. (Přispělo Victor"
+" Stinner v :issue:`41123`.)"
 
 #: ../../whatsnew/3.11.rst:2655
 msgid ""
@@ -5398,6 +5503,9 @@ msgid ""
 " extensions should only include the main ``<Python.h>`` header file. "
 "(Contributed by Victor Stinner in :issue:`45434`.)"
 msgstr ""
+"Odstraňte hlavičkový soubor ``pystrhex.h``. Obsahuje pouze soukromé funkce. "
+"Rozšíření C by měla obsahovat pouze hlavní hlavičkový soubor ``<Python.h>``."
+" (Přispělo Victor Stinner v :issue:`45434`.)"
 
 #: ../../whatsnew/3.11.rst:2659
 msgid ""
@@ -5405,12 +5513,16 @@ msgid ""
 "``Py_IS_INFINITY()`` macro. (Contributed by Victor Stinner in "
 ":issue:`45440`.)"
 msgstr ""
+"Odstraňte makro ``Py_FORCE_DOUBLE()``. Bylo používáno makrem "
+"``Py_IS_INFINITY()``. (Přispělo Victor Stinner v :issue:`45440`.)"
 
 #: ../../whatsnew/3.11.rst:2663
 msgid ""
 "The following items are no longer available when :c:macro:`Py_LIMITED_API` "
 "is defined:"
 msgstr ""
+"Následující položky již není možné použít, pokud je definováno "
+":c:macro:`Py_LIMITED_API`:"
 
 #: ../../whatsnew/3.11.rst:2666
 msgid ":c:func:`PyMarshal_WriteLongToFile`"

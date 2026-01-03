@@ -5334,15 +5334,15 @@ msgstr ""
 
 #: ../../whatsnew/3.12.rst:1928
 msgid ":c:func:`PyObject_Vectorcall`"
-msgstr ""
+msgstr ":c:func:`PyObject_Vectorcall`"
 
 #: ../../whatsnew/3.12.rst:1929
 msgid ":c:func:`PyObject_VectorcallMethod`"
-msgstr ""
+msgstr ":c:func:`PyObject_VectorcallMethod`"
 
 #: ../../whatsnew/3.12.rst:1930
 msgid ":c:macro:`PY_VECTORCALL_ARGUMENTS_OFFSET`"
-msgstr ""
+msgstr ":c:macro:`PY_VECTORCALL_ARGUMENTS_OFFSET`"
 
 #: ../../whatsnew/3.12.rst:1932
 msgid ""
@@ -5350,6 +5350,8 @@ msgid ""
 "protocol are now available in the :ref:`Limited API <stable>`. (Contributed "
 "by Wenzel Jakob in :gh:`98586`.)"
 msgstr ""
+"To znamená, že oba konce protokolu vektorového volání jsou nyní dostupné v "
+":ref:`Limited API <stable>`. (Přispěl Wenzel Jakob v :gh:`98586`.)"
 
 #: ../../whatsnew/3.12.rst:1936
 msgid ""
@@ -5358,6 +5360,10 @@ msgid ""
 " functions in all running threads in addition to the calling one. "
 "(Contributed by Pablo Galindo in :gh:`93503`.)"
 msgstr ""
+"Přidány dvě nové veřejné funkce, :c:func:`PyEval_SetProfileAllThreads` a "
+":c:func:`PyEval_SetTraceAllThreads`, které umožňují nastavit tracing a "
+"profiling funkce ve všech běžících vláknech kromě volajícího. (Přispěl Pablo"
+" Galindo v :gh:`93503`.)"
 
 #: ../../whatsnew/3.12.rst:1942
 msgid ""
@@ -5365,6 +5371,9 @@ msgid ""
 "the vectorcall field of a given :c:type:`PyFunctionObject`. (Contributed by "
 "Andrew Frost in :gh:`92257`.)"
 msgstr ""
+"Přidána nová funkce :c:func:`PyFunction_SetVectorcall` do C API, která "
+"nastavuje vectorcall pole daného :c:type:`PyFunctionObject`. (Přispěl Andrew"
+" Frost v :gh:`92257`.)"
 
 #: ../../whatsnew/3.12.rst:1946
 msgid ""
@@ -5373,6 +5382,10 @@ msgid ""
 "is modified. This is intended for use by optimizing interpreters, JIT "
 "compilers, or debuggers. (Contributed by Carl Meyer in :gh:`91052`.)"
 msgstr ""
+"C API nyní dovoluje registrovat callbacky přes :c:func:`PyDict_AddWatcher`, "
+":c:func:`PyDict_Watch` a související API, které mají být volány kdykoliv je "
+"slovník modifikován. To je určeno pro použití optimalizujícími interpretery,"
+" JIT kompilátory, nebo debuggery. (Přispěl Carl Meyer v :gh:`91052`.)"
 
 #: ../../whatsnew/3.12.rst:1952
 msgid ""
@@ -5380,6 +5393,9 @@ msgid ""
 "callbacks to receive notification on changes to a type. (Contributed by Carl"
 " Meyer in :gh:`91051`.)"
 msgstr ""
+"Přidáno :c:func:`PyType_AddWatcher` a :c:func:`PyType_Watch` API pro "
+"registraci callbacků na příjem notifikace o změnách typu. (Přispěl Carl "
+"Meyer v :gh:`91051`.)"
 
 #: ../../whatsnew/3.12.rst:1956
 msgid ""
@@ -5387,6 +5403,9 @@ msgid ""
 "register callbacks to receive notification on creation and destruction of "
 "code objects. (Contributed by Itamar Oren in :gh:`91054`.)"
 msgstr ""
+"Přidáno :c:func:`PyCode_AddWatcher` a :c:func:`PyCode_ClearWatcher` API pro "
+"registraci callbacků na příjem notifikace o vytvoření a zničení objektů "
+"kódu. (Přispěl Itamar Oren v :gh:`91054`.)"
 
 #: ../../whatsnew/3.12.rst:1961
 msgid ""
@@ -5394,6 +5413,9 @@ msgid ""
 " get a frame variable by its name. (Contributed by Victor Stinner in "
 ":gh:`91248`.)"
 msgstr ""
+"Přidány funkce :c:func:`PyFrame_GetVar` a :c:func:`PyFrame_GetVarString` pro"
+" získání proměnné rámce podle jeho jména. (Přispěl Victor Stinner v "
+":gh:`91248`.)"
 
 #: ../../whatsnew/3.12.rst:1965
 msgid ""
@@ -5404,6 +5426,12 @@ msgid ""
 " and :c:func:`PyErr_Restore`. This is less error prone and a bit more "
 "efficient. (Contributed by Mark Shannon in :gh:`101578`.)"
 msgstr ""
+"Přidány :c:func:`PyErr_GetRaisedException` a "
+":c:func:`PyErr_SetRaisedException` pro uložení a obnovu aktuální výjimky. "
+"Tyto funkce vracejí a přijímají jeden objekt výj imky, místo trojice "
+"argumentů nyní zastaralého :c:func:`PyErr_Fetch` a :c:func:`PyErr_Restore`. "
+"To je méně náchylné k chybám a trochu efektivnější. (Přispěl Mark Shannon v "
+":gh:`101578`.)"
 
 #: ../../whatsnew/3.12.rst:1973
 msgid ""
@@ -5411,6 +5439,9 @@ msgid ""
 "replace the legacy-API ``_PyErr_ChainExceptions``, which is now deprecated. "
 "(Contributed by Mark Shannon in :gh:`101578`.)"
 msgstr ""
+"Přidáno ``_PyErr_ChainExceptions1``, které bere instanci výj imky, nahrazuje"
+" zastaralé ``_PyErr_ChainExceptions``. (Přispěl Mark Shannon v "
+":gh:`101578`.)"
 
 #: ../../whatsnew/3.12.rst:1977
 msgid ""
@@ -5419,6 +5450,9 @@ msgid ""
 ":attr:`~BaseException.args` passed to the exception's constructor. "
 "(Contributed by Mark Shannon in :gh:`101578`.)"
 msgstr ""
+"Přidány :c:func:`PyException_GetArgs` a :c:func:`PyException_SetArgs` jako "
+"pohodlné funkce pro získání a modifikaci :attr:`~BaseException.args` "
+"předaných konstruktoru výj imky. (Přispěl Mark Shannon v :gh:`101578`.)"
 
 #: ../../whatsnew/3.12.rst:1982
 msgid ""
@@ -5426,65 +5460,77 @@ msgid ""
 "replace the legacy-api :c:func:`!PyErr_Display`. (Contributed by Irit "
 "Katriel in :gh:`102755`)."
 msgstr ""
+"Přidáno :c:func:`PyErr_DisplayException`, které bere instanci výj imky, "
+"nahrazuje zastaralé :c:func:`!PyErr_Display`. (Přispěl Irit Katriel v "
+":gh:`102755`)."
 
 #: ../../whatsnew/3.12.rst:1988
 msgid ""
 ":pep:`683`: Introduce *Immortal Objects*, which allows objects to bypass "
 "reference counts, and related changes to the C-API:"
 msgstr ""
+":pep:`683`: Zavedení *Immortal Objects*, což umožňuje objektům obejít "
+"reference count, a související změny C-API:"
 
 #: ../../whatsnew/3.12.rst:1991
 msgid "``_Py_IMMORTAL_REFCNT``: The reference count that defines an object"
-msgstr ""
+msgstr "``_Py_IMMORTAL_REFCNT``: Reference count, který definuje objekt"
 
 #: ../../whatsnew/3.12.rst:1992
 msgid "as immortal."
-msgstr ""
+msgstr "jako immortal."
 
 #: ../../whatsnew/3.12.rst:1993
 msgid ""
 "``_Py_IsImmortal`` Checks if an object has the immortal reference count."
 msgstr ""
+"``_Py_IsImmortal`` Kontroluje, zda objekt má immortal reference count."
 
 #: ../../whatsnew/3.12.rst:1994
 msgid "``PyObject_HEAD_INIT`` This will now initialize reference count to"
-msgstr ""
+msgstr "``PyObject_HEAD_INIT`` Nyní se inicializuje reference count na"
 
 #: ../../whatsnew/3.12.rst:1995
 msgid "``_Py_IMMORTAL_REFCNT`` when used with ``Py_BUILD_CORE``."
-msgstr ""
+msgstr "``_Py_IMMORTAL_REFCNT`` při použití s ``Py_BUILD_CORE``."
 
 #: ../../whatsnew/3.12.rst:1996
 msgid ""
 "``SSTATE_INTERNED_IMMORTAL`` An identifier for interned unicode objects"
 msgstr ""
+"``SSTATE_INTERNED_IMMORTAL`` Identifikátor pro internalizované unicode "
+"objekty"
 
 #: ../../whatsnew/3.12.rst:1997
 msgid "that are immortal."
-msgstr ""
+msgstr "které jsou immortal."
 
 #: ../../whatsnew/3.12.rst:1998
 msgid "``SSTATE_INTERNED_IMMORTAL_STATIC`` An identifier for interned unicode"
 msgstr ""
+"``SSTATE_INTERNED_IMMORTAL_STATIC`` Identifikátor pro internalizované "
+"unicode"
 
 #: ../../whatsnew/3.12.rst:1999
 msgid "objects that are immortal and static"
-msgstr ""
+msgstr "objekty, které jsou immortal a static"
 
 #: ../../whatsnew/3.12.rst:2000
 msgid ""
 "``sys.getunicodeinternedsize`` This returns the total number of unicode"
-msgstr ""
+msgstr "``sys.getunicodeinternedsize`` Vrátí celkový počet unicode"
 
 #: ../../whatsnew/3.12.rst:2001
 msgid ""
 "objects that have been interned. This is now needed for :file:`refleak.py` "
 "to correctly track reference counts and allocated blocks"
 msgstr ""
+"objektů, které byly internalizovány. Toto je nyní potřebné pro "
+":file:`refleak.py` aby správně sledoval reference count a přidelené bloky"
 
 #: ../../whatsnew/3.12.rst:2004
 msgid "(Contributed by Eddie Elizondo in :gh:`84436`.)"
-msgstr ""
+msgstr "(Přispěl Eddie Elizondo v :gh:`84436`.)"
 
 #: ../../whatsnew/3.12.rst:2006
 msgid ""
@@ -5493,6 +5539,10 @@ msgid ""
 "with their own GILs. (See :ref:`whatsnew312-pep684` for more info.) "
 "(Contributed by Eric Snow in :gh:`104110`.)"
 msgstr ""
+":pep:`684`: Přidána nová funkce :c:func:`Py_NewInterpreterFromConfig` a "
+":c:type:`PyInterpreterConfig`, kterou lze použít k vytvoření sub-interpretů "
+"s vlastními GIL. (Viz :ref:`whatsnew312-pep684` pro více informácí.) "
+"(Přispěl Eric Snow v :gh:`104110`.)"
 
 #: ../../whatsnew/3.12.rst:2012
 msgid ""
@@ -5501,12 +5551,17 @@ msgid ""
 "to hide implementation details. (Contributed by Victor Stinner in "
 ":gh:`105387`.)"
 msgstr ""
+"V limited C API verzi 3.12 jsou funkce :c:func:`Py_INCREF` a "
+":c:func:`Py_DECREF` nyní implementovány jako neprůhledné volané funkce, aby "
+"se skryly detaily implementace. (Přispěl Victor Stinner v :gh:`105387`.)"
 
 #: ../../whatsnew/3.12.rst:2020
 msgid ""
 "Legacy Unicode APIs based on ``Py_UNICODE*`` representation has been "
 "removed. Please migrate to APIs based on UTF-8 or ``wchar_t*``."
 msgstr ""
+"Zastaralé Unicode API založené na ``Py_UNICODE*`` reprezentaci byla "
+"odebrána. Migrace prosím na API založené na UTF-8 nebo ``wchar_t*``."
 
 #: ../../whatsnew/3.12.rst:2023
 msgid ""
@@ -5514,6 +5569,9 @@ msgid ""
 "``Py_UNICODE*`` based format (e.g. ``u``, ``Z``) anymore. Please migrate to "
 "other formats for Unicode like ``s``, ``z``, ``es``, and ``U``."
 msgstr ""
+"Funkce pro parsávání argumentů jako :c:func:`PyArg_ParseTuple` již nepodporu"
+" jou ``Py_UNICODE*`` založené formáty (např. ``u``, ``Z``). Migrace prosím "
+"na jiné formáty pro Unicode jako ``s``, ``z``, ``es`` a ``U``."
 
 #: ../../whatsnew/3.12.rst:2027
 msgid ""
@@ -5523,6 +5581,12 @@ msgid ""
 "breakage, consider using the existing public C-API instead, or, if "
 "necessary, the (internal-only) ``_PyObject_GET_WEAKREFS_LISTPTR()`` macro."
 msgstr ""
+"``tp_weaklist`` pro všechny statické vstavované typy je vždy ``NULL``. Toto "
+"je pole pouze pro interní použití na ``PyTypeObject``, ale upozorňujeme na "
+"změnu pro případ, že by někdo přímo přistupoval poli. K zabránění poruché "
+"funkcionality zvAžte použít existující veřejné C-API, nebo pokud je "
+"potřebné, makro ``_PyObject_GET_WEAKREFS_LISTPTR()`` (pouze pro interní "
+"použití)."
 
 #: ../../whatsnew/3.12.rst:2034
 msgid ""
@@ -5531,6 +5595,10 @@ msgid ""
 "this.  We mention this in case someone happens to be accessing the internal-"
 "only field directly."
 msgstr ""
+"Toto pole pouze pro interní použití :c:member:`PyTypeObject.tp_subclasses` "
+"nemusí být platným ukázatelem na objekt. Jeho typ byl změněn na "
+":c:expr:`void *` aby se to odrážilo. Zmiňujeme to pro případ, že by někdo "
+"přímo přistupoval poli pouze pro interní použití."
 
 #: ../../whatsnew/3.12.rst:2039
 msgid ""
@@ -5538,6 +5606,9 @@ msgid ""
 ":py:meth:`~type.__subclasses__` (using :c:func:`PyObject_CallMethod`, for "
 "example)."
 msgstr ""
+"Pro získání seznamu podtfrïd zavolejte metodu Python "
+":py:meth:`~type.__subclasses__` (napoužitím :c:func:`PyObject_CallMethod` "
+"například)."
 
 #: ../../whatsnew/3.12.rst:2043
 msgid ""
@@ -5547,6 +5618,11 @@ msgid ""
 " :c:func:`PyUnicode_FromFormatV`. (Contributed by Serhiy Storchaka in "
 ":gh:`98836`.)"
 msgstr ""
+"Přidána podpora více voleb formátu (levé zarovnání, oktalové čísla, velké "
+"hexadecimální čísla, :c:type:`intmax_t`, :c:type:`ptrdiff_t`, "
+":c:type:`wchar_t` C řetězce, proměnná šíká a přesnost) v "
+":c:func:`PyUnicode_FromFormat` a :c:func:`PyUnicode_FromFormatV`. (Přispěl "
+"Serhiy Storchaka v :gh:`98836`.)"
 
 #: ../../whatsnew/3.12.rst:2049
 msgid ""
@@ -5556,6 +5632,11 @@ msgid ""
 "the result string, and any extra arguments discarded. (Contributed by Serhiy"
 " Storchaka in :gh:`95781`.)"
 msgstr ""
+"Nepoznaný formátovací znak v :c:func:`PyUnicode_FromFormat` a "
+":c:func:`PyUnicode_FromFormatV` nyní nastaví :exc:`SystemError`. V "
+"předchozích verzích způsobil, že se zbytek formátovacího řetězce zkopíroval "
+"tak jak je do výsledného řetězce a jakékoliv další argumenty byly zah azeny."
+" (Přispěl Serhiy Storchaka v :gh:`95781`.)"
 
 #: ../../whatsnew/3.12.rst:2055
 msgid ""
@@ -5563,6 +5644,8 @@ msgid ""
 ":c:func:`PyUnicode_FromFormatV`. (Contributed by Philip Georgi in "
 ":gh:`95504`.)"
 msgstr ""
+"Opraveno chybné umístnění znaménka v :c:func:`PyUnicode_FromFormat` a "
+":c:func:`PyUnicode_FromFormatV`. (Přispěl Philip Georgi v :gh:`95504`.)"
 
 #: ../../whatsnew/3.12.rst:2059
 msgid ""
@@ -5578,6 +5661,17 @@ msgid ""
 " dictionaries. To clear weakrefs, call :c:func:`PyObject_ClearWeakRefs`, as "
 "before."
 msgstr ""
+"Třídy rozšíření, které chtějí přidat slot :attr:`~object.__dict__` nebo weak"
+" reference, by měly použít :c:macro:`Py_TPFLAGS_MANAGED_DICT` a "
+":c:macro:`Py_TPFLAGS_MANAGED_WEAKREF` místo ``tp_dictoffset`` a "
+"``tp_weaklistoffset``. Použití ``tp_dictoffset`` a ``tp_weaklistoffset`` je "
+"stále podporováno, ale nepředznamenaš plnou podporu vícenásobné dědičnosti "
+"(:gh:`95589`), a výkon může být horší. Třídy deklarující "
+":c:macro:`Py_TPFLAGS_MANAGED_DICT` musí volat "
+":c:func:`!_PyObject_VisitManagedDict` a "
+":c:func:`!_PyObject_ClearManagedDict` k procházení a mažování slovníků "
+"jejich instancí. K mažování weakrefů zavolejte "
+":c:func:`PyObject_ClearWeakRefs`, jak byly dřívě."
 
 #: ../../whatsnew/3.12.rst:2071
 msgid ""
@@ -5586,6 +5680,10 @@ msgid ""
 " :class:`bytes` type is accepted for bytes strings. (Contributed by Victor "
 "Stinner in :gh:`98393`.)"
 msgstr ""
+"Funkce :c:func:`PyUnicode_FSDecoder` již ne přijímá cesty jako bytes, jako "
+"jsou typy :class:`bytearray` a :class:`memoryview`: pouze přesný typ "
+":class:`bytes` je přiját pro byte řetězce. (Přispěl Victor Stinner v "
+":gh:`98393`.)"
 
 #: ../../whatsnew/3.12.rst:2076
 msgid ""
@@ -5594,6 +5692,10 @@ msgid ""
 "effects, these side effects are no longer duplicated. (Contributed by Victor"
 " Stinner in :gh:`98724`.)"
 msgstr ""
+"Makra :c:macro:`Py_CLEAR`, :c:macro:`Py_SETREF` a :c:macro:`Py_XSETREF` nyní"
+" vyjednoťují své argumenty pouze jednou. Jestliže argument má vedlejší "
+"efekty, tyto vedlejší efekty již nejsou duplikovány. (Přispěl Victor Stinner"
+" v :gh:`98724`.)"
 
 #: ../../whatsnew/3.12.rst:2081
 msgid ""
@@ -5602,6 +5704,10 @@ msgid ""
 " that set the error indicator now normalize the exception before storing it."
 " (Contributed by Mark Shannon in :gh:`101578`.)"
 msgstr ""
+"Indikátor chyby interpretu je nyní vždy normalizován. To znamená, že "
+":c:func:`PyErr_SetObject`, :c:func:`PyErr_SetString` a další funkce, které "
+"nastavují indikátor chyby, nyní normalizují výjimku před jejím uložením. "
+"(Přispěl Mark Shannon v :gh:`101578`.)"
 
 #: ../../whatsnew/3.12.rst:2086
 msgid ""
@@ -5610,24 +5716,29 @@ msgid ""
 "debug builds.  If you happen to be using it then you'll need to start using "
 "``_Py_GetGlobalRefTotal()``."
 msgstr ""
+"``_Py_RefTotal`` již není autorita a je pouze uchováván pro kompatibilitu "
+"ABI. Vezměte na vědomí, že se jedná o interní globální proměnné a je "
+"dostupná pouze v debug buildu. Pokud ji náhodně používáte, budete muset "
+"začít používat ``_Py_GetGlobalRefTotal()``."
 
 #: ../../whatsnew/3.12.rst:2091
 msgid ""
 "The following functions now select an appropriate metaclass for the newly "
 "created type:"
 msgstr ""
+"Následující funkce nyní vybrají vhodný metatraïd pro nově vytvořený typ:"
 
 #: ../../whatsnew/3.12.rst:2094
 msgid ":c:func:`PyType_FromSpec`"
-msgstr ""
+msgstr ":c:func:`PyType_FromSpec`"
 
 #: ../../whatsnew/3.12.rst:2095
 msgid ":c:func:`PyType_FromSpecWithBases`"
-msgstr ""
+msgstr ":c:func:`PyType_FromSpecWithBases`"
 
 #: ../../whatsnew/3.12.rst:2096
 msgid ":c:func:`PyType_FromModuleAndSpec`"
-msgstr ""
+msgstr ":c:func:`PyType_FromModuleAndSpec`"
 
 #: ../../whatsnew/3.12.rst:2098
 msgid ""
@@ -5636,6 +5747,10 @@ msgid ""
 "functions ignore ``tp_new`` of the metaclass, possibly allowing incomplete "
 "initialization."
 msgstr ""
+"Vytváření tří, jejichž metatype přepisuje :c:member:`~PyTypeObject.tp_new` "
+"je zastaralé a v Pythonu 3.14+ bude zakázáno. Vezměte na vědomí, že tyto "
+"funkce ignorují ``tp_new`` metatraídu, čímž je možné běžné inicializačne "
+"nekompletní."
 
 #: ../../whatsnew/3.12.rst:2103
 msgid ""
@@ -5643,6 +5758,9 @@ msgid ""
 "disallows creating classes whose metaclass overrides ``tp_new`` "
 "(:meth:`~object.__new__` in Python)."
 msgstr ""
+"Vezměte na vědomí, že :c:func:`PyType_FromMetaclass` (přidána v Pythonu "
+"3.12) již zakázá vytváření tří, jejichž metatype přepisuje ``tp_new`` "
+"(:meth:`~object.__new__` v Pythonu)."
 
 #: ../../whatsnew/3.12.rst:2107
 msgid ""
@@ -5652,16 +5770,23 @@ msgid ""
 "since (meta)classes assume that ``tp_new`` was called. There is no simple "
 "general workaround. One of the following may work for you:"
 msgstr ""
+"Vzhledem k tomu, že ``tp_new`` přepisuje skoro všechno, co dělají funkce "
+"``PyType_From*``, jsou tyto dva neslucitelné. Stav chování -- ignorování "
+"metatraídu v několika fázích vytváření typu -- je obecně nev́bne, protože "
+"(meta)třídy předpokládají, že byla volána ``tp_new``. Neexistuje jednoduchý "
+"obecný workaround. Má by mohl fungovat jeden z následujících:"
 
 #: ../../whatsnew/3.12.rst:2114
 msgid "If you control the metaclass, avoid using ``tp_new`` in it:"
-msgstr ""
+msgstr "Pokud ovládáte metatype, vyhněte se použítí ``tp_new`` v ní:"
 
 #: ../../whatsnew/3.12.rst:2116
 msgid ""
 "If initialization can be skipped, it can be done in "
 ":c:member:`~PyTypeObject.tp_init` instead."
 msgstr ""
+"Pokud může být inicializace přeskočena, lze ji provést v "
+":c:member:`~PyTypeObject.tp_init` místo toho."
 
 #: ../../whatsnew/3.12.rst:2118
 msgid ""
@@ -5670,6 +5795,9 @@ msgid ""
 ":c:macro:`Py_TPFLAGS_DISALLOW_INSTANTIATION` flag. This makes it acceptable "
 "for ``PyType_From*`` functions."
 msgstr ""
+"Pokud metatype nemusí být instancikována z Pythonu, nastavte její ``tp_new``"
+" na ``NULL`` pomocí vlajky :c:macro:`Py_TPFLAGS_DISALLOW_INSTANTIATION`. To "
+"její vyřazovává přijatelnou pro funkce ``PyType_From*``."
 
 #: ../../whatsnew/3.12.rst:2123
 msgid ""
@@ -5677,12 +5805,17 @@ msgid ""
 "(slots or setting the instance size), create types by :ref:`calling <call>` "
 "the metaclass."
 msgstr ""
+"Vyhněte se funk cím ``PyType_From*``: pokud nepotřebujete funkce specifické "
+"pro C (sloty nebo nastavení velikosti instance), vytvąřejte typy "
+":ref:`voláním <call>` metatraídu."
 
 #: ../../whatsnew/3.12.rst:2127
 msgid ""
 "If you *know* the ``tp_new`` can be skipped safely, filter the deprecation "
 "warning out using :func:`warnings.catch_warnings` from Python."
 msgstr ""
+"Pokud si *jisté* jste, že ``tp_new`` lze bezpečně přeskočit, filtrujte "
+"deprecation upozornění pomocí :func:`warnings.catch_warnings` z Pythonu."
 
 #: ../../whatsnew/3.12.rst:2130
 msgid ""
@@ -5691,6 +5824,11 @@ msgid ""
 "because clients generally rely on process-wide global state (since these "
 "callbacks have no way of recovering extension module state)."
 msgstr ""
+":c:var:`PyOS_InputHook` a :c:var:`PyOS_ReadlineFunctionPointer` již nejsou "
+"volány v :ref:`subinterpreters <sub-interpreter-support>`. Je to proto, že "
+"klienti obecně zlávají na globálním stavu včetinového procesu (vzhledem k "
+"tomu, že tyto callbacky nemají způsob, jak obnovit stav rozšířovacího "
+"modulu)."
 
 #: ../../whatsnew/3.12.rst:2135
 msgid ""
@@ -5698,6 +5836,9 @@ msgid ""
 "a subinterpreter that they don't support (or haven't yet been loaded in). "
 "See :gh:`104668` for more info."
 msgstr ""
+"To také vyhybuje situacím, kdy rozšířující se moduly mohou objevít v "
+"subinterpreteru, který nepodporují (nebo nebyly zatím načteny). Viz "
+":gh:`104668` pro více informací."
 
 #: ../../whatsnew/3.12.rst:2139
 msgid ""
@@ -5709,14 +5850,20 @@ msgid ""
 "provided for efficient access to the value of :c:struct:`PyLongObject`\\s "
 "which fit into a single machine word:"
 msgstr ""
+":c:struct:`PyLongObject` měl své internály změněny pro lepší výkon. Přestože"
+" jsou internaly :c:struct:`PyLongObject` soukromé, jsou používány některými "
+"rozšířovacími moduly. Internální pole by již neměla být přístupována přímo, "
+"místo toho by měly být používány funkce API zaĎínající ``PyLong_...\". Jsou "
+"poskytnuta dvoustrané *nestabilní* API funkce pro efektivní přístup k "
+"hodnotě :c:struct:`PyLongObject`\\s, které se vejdou na jedno slovo machine:"
 
 #: ../../whatsnew/3.12.rst:2147
 msgid ":c:func:`PyUnstable_Long_IsCompact`"
-msgstr ""
+msgstr ":c:func:`PyUnstable_Long_IsCompact`"
 
 #: ../../whatsnew/3.12.rst:2148
 msgid ":c:func:`PyUnstable_Long_CompactValue`"
-msgstr ""
+msgstr ":c:func:`PyUnstable_Long_CompactValue`"
 
 #: ../../whatsnew/3.12.rst:2150
 msgid ""
@@ -5726,6 +5873,11 @@ msgid ""
 "allocator is not already thread-safe and you need guidance then please "
 "create a new GitHub issue and CC ``@ericsnowcurrently``."
 msgstr ""
+"Vlastní aloktor, nastavené pomáhá :c:func:`PyMem_SetAllocator`, jsou nyní "
+"požadovány, aby byly thread-safe, bez ohledu na paměťové domény. Alokatory, "
+"které nemají svůj vlastní stav, včetně \"hooks\", nejsou ovlivněny. Pokud "
+"váš vlastní alokator již není thread-safe a potřebujete radu, vytvořte nový "
+"GitHub issue a CC ``@ericsnowcurrently``."
 
 #: ../../whatsnew/3.12.rst:2160
 msgid ""
@@ -5735,183 +5887,230 @@ msgid ""
 "removed in Python 3.14. (Contributed by Ramvikrams and Kumar Aditya in "
 ":gh:`101193`. PEP by Ken Jin.)"
 msgstr ""
+"V souladu s :pep:`699`, je pole ``ma_version_tag`` v :c:type:`PyDictObject` "
+"zastaralé pro rozšířovací moduly. Přístup k tomuto poli vygeneruje "
+"upozornění kompilátoru v doubě kompilace. Toto pole bude odebráno v Pythonu "
+"3.14. (Přispěli Ramvikrams a Kumar Aditya v :gh:`101193`. PEP od Kena Jina.)"
 
 #: ../../whatsnew/3.12.rst:2165
 msgid "Deprecate global configuration variable:"
-msgstr ""
+msgstr "Zastaralé globální konfigurační proměnné:"
 
 #: ../../whatsnew/3.12.rst:2167
 msgid ":c:var:`Py_DebugFlag`: use :c:member:`PyConfig.parser_debug`"
-msgstr ""
+msgstr ":c:var:`Py_DebugFlag`: použití :c:member:`PyConfig.parser_debug`"
 
 #: ../../whatsnew/3.12.rst:2168
 msgid ":c:var:`Py_VerboseFlag`: use :c:member:`PyConfig.verbose`"
-msgstr ""
+msgstr ":c:var:`Py_VerboseFlag`: použití :c:member:`PyConfig.verbose`"
 
 #: ../../whatsnew/3.12.rst:2169
 msgid ":c:var:`Py_QuietFlag`: use :c:member:`PyConfig.quiet`"
-msgstr ""
+msgstr ":c:var:`Py_QuietFlag`: použití :c:member:`PyConfig.quiet`"
 
 #: ../../whatsnew/3.12.rst:2170
 msgid ":c:var:`Py_InteractiveFlag`: use :c:member:`PyConfig.interactive`"
-msgstr ""
+msgstr ":c:var:`Py_InteractiveFlag`: použití :c:member:`PyConfig.interactive`"
 
 #: ../../whatsnew/3.12.rst:2171
 msgid ":c:var:`Py_InspectFlag`: use :c:member:`PyConfig.inspect`"
-msgstr ""
+msgstr ":c:var:`Py_InspectFlag`: použití :c:member:`PyConfig.inspect`"
 
 #: ../../whatsnew/3.12.rst:2172
 msgid ":c:var:`Py_OptimizeFlag`: use :c:member:`PyConfig.optimization_level`"
 msgstr ""
+":c:var:`Py_OptimizeFlag`: použití :c:member:`PyConfig.optimization_level`"
 
 #: ../../whatsnew/3.12.rst:2173
 msgid ":c:var:`Py_NoSiteFlag`: use :c:member:`PyConfig.site_import`"
-msgstr ""
+msgstr ":c:var:`Py_NoSiteFlag`: použití :c:member:`PyConfig.site_import`"
 
 #: ../../whatsnew/3.12.rst:2174
 msgid ":c:var:`Py_BytesWarningFlag`: use :c:member:`PyConfig.bytes_warning`"
 msgstr ""
+":c:var:`Py_BytesWarningFlag`: použití :c:member:`PyConfig.bytes_warning`"
 
 #: ../../whatsnew/3.12.rst:2175
 msgid ":c:var:`Py_FrozenFlag`: use :c:member:`PyConfig.pathconfig_warnings`"
 msgstr ""
+":c:var:`Py_FrozenFlag`: použití :c:member:`PyConfig.pathconfig_warnings`"
 
 #: ../../whatsnew/3.12.rst:2176
 msgid ""
 ":c:var:`Py_IgnoreEnvironmentFlag`: use :c:member:`PyConfig.use_environment`"
 msgstr ""
+":c:var:`Py_IgnoreEnvironmentFlag`: použití "
+":c:member:`PyConfig.use_environment`"
 
 #: ../../whatsnew/3.12.rst:2177
 msgid ""
 ":c:var:`Py_DontWriteBytecodeFlag`: use :c:member:`PyConfig.write_bytecode`"
 msgstr ""
+":c:var:`Py_DontWriteBytecodeFlag`: použití "
+":c:member:`PyConfig.write_bytecode`"
 
 #: ../../whatsnew/3.12.rst:2178
 msgid ""
 ":c:var:`Py_NoUserSiteDirectory`: use "
 ":c:member:`PyConfig.user_site_directory`"
 msgstr ""
+":c:var:`Py_NoUserSiteDirectory`: použití "
+":c:member:`PyConfig.user_site_directory`"
 
 #: ../../whatsnew/3.12.rst:2179
 msgid ""
 ":c:var:`Py_UnbufferedStdioFlag`: use :c:member:`PyConfig.buffered_stdio`"
 msgstr ""
+":c:var:`Py_UnbufferedStdioFlag`: použití :c:member:`PyConfig.buffered_stdio`"
 
 #: ../../whatsnew/3.12.rst:2180
 msgid ""
 ":c:var:`Py_HashRandomizationFlag`: use :c:member:`PyConfig.use_hash_seed` "
 "and :c:member:`PyConfig.hash_seed`"
 msgstr ""
+":c:var:`Py_HashRandomizationFlag`: použití "
+":c:member:`PyConfig.use_hash_seed` a :c:member:`PyConfig.hash_seed`"
 
 #: ../../whatsnew/3.12.rst:2182
 msgid ":c:var:`Py_IsolatedFlag`: use :c:member:`PyConfig.isolated`"
-msgstr ""
+msgstr ":c:var:`Py_IsolatedFlag`: použití :c:member:`PyConfig.isolated`"
 
 #: ../../whatsnew/3.12.rst:2183
 msgid ""
 ":c:var:`Py_LegacyWindowsFSEncodingFlag`: use "
 ":c:member:`PyPreConfig.legacy_windows_fs_encoding`"
 msgstr ""
+":c:var:`Py_LegacyWindowsFSEncodingFlag`: použití "
+":c:member:`PyPreConfig.legacy_windows_fs_encoding`"
 
 #: ../../whatsnew/3.12.rst:2184
 msgid ""
 ":c:var:`Py_LegacyWindowsStdioFlag`: use "
 ":c:member:`PyConfig.legacy_windows_stdio`"
 msgstr ""
+":c:var:`Py_LegacyWindowsStdioFlag`: použití "
+":c:member:`PyConfig.legacy_windows_stdio`"
 
 #: ../../whatsnew/3.12.rst:2185
 msgid ""
 ":c:var:`!Py_FileSystemDefaultEncoding`: use "
 ":c:member:`PyConfig.filesystem_encoding`"
 msgstr ""
+":c:var:`!Py_FileSystemDefaultEncoding`: použití "
+":c:member:`PyConfig.filesystem_encoding`"
 
 #: ../../whatsnew/3.12.rst:2186
 msgid ""
 ":c:var:`!Py_HasFileSystemDefaultEncoding`: use "
 ":c:member:`PyConfig.filesystem_encoding`"
 msgstr ""
+":c:var:`!Py_HasFileSystemDefaultEncoding`: pouziti "
+":c:member:`PyConfig.filesystem_encoding`"
 
 #: ../../whatsnew/3.12.rst:2187
 msgid ""
 ":c:var:`!Py_FileSystemDefaultEncodeErrors`: use "
 ":c:member:`PyConfig.filesystem_errors`"
 msgstr ""
+":c:var:`!Py_FileSystemDefaultEncodeErrors`: pouziti "
+":c:member:`PyConfig.filesystem_errors`"
 
 #: ../../whatsnew/3.12.rst:2188
 msgid ""
 ":c:var:`!Py_UTF8Mode`: use :c:member:`PyPreConfig.utf8_mode` (see "
 ":c:func:`Py_PreInitialize`)"
 msgstr ""
+":c:var:`!Py_UTF8Mode`: pouziti :c:member:`PyPreConfig.utf8_mode` (viz "
+":c:func:`Py_PreInitialize`)"
 
 #: ../../whatsnew/3.12.rst:2190
 msgid ""
 "The :c:func:`Py_InitializeFromConfig` API should be used with "
 ":c:type:`PyConfig` instead. (Contributed by Victor Stinner in :gh:`77782`.)"
 msgstr ""
+"Melo by se pouziti API :c:func:`Py_InitializeFromConfig` s "
+":c:type:`PyConfig`. (Prispel Victor Stinner v :gh:`77782`.)"
 
 #: ../../whatsnew/3.12.rst:2194
 msgid ""
 "Creating :c:data:`immutable types <Py_TPFLAGS_IMMUTABLETYPE>` with mutable "
 "bases is deprecated and will be disabled in Python 3.14. (:gh:`95388`)"
 msgstr ""
+"Vytvareni :c:data:`imutabilnich typu <Py_TPFLAGS_IMMUTABLETYPE>` s "
+"mutovatelnymi zaklady je zastarale a bude zakazano v Pythonu 3.14. "
+"(:gh:`95388`)"
 
 #: ../../whatsnew/3.12.rst:2197
 msgid ""
 "The :file:`structmember.h` header is deprecated, though it continues to be "
 "available and there are no plans to remove it."
 msgstr ""
+"Hlavicka :file:`structmember.h` je zastarala, ackoliv ji zustava k dispozici"
+" a neexistuji plany na jeji odstraneni."
 
 #: ../../whatsnew/3.12.rst:2200
 msgid ""
 "Its contents are now available just by including :file:`Python.h`, with a "
 "``Py`` prefix added if it was missing:"
 msgstr ""
+"Jeji obsah je nyni dostupny pouze zahrnutim :file:`Python.h`, s predponou "
+"``Py``, pokud byla chybejici:"
 
 #: ../../whatsnew/3.12.rst:2203
 msgid ""
 ":c:struct:`PyMemberDef`, :c:func:`PyMember_GetOne` and "
 ":c:func:`PyMember_SetOne`"
 msgstr ""
+":c:struct:`PyMemberDef`, :c:func:`PyMember_GetOne` a "
+":c:func:`PyMember_SetOne`"
 
 #: ../../whatsnew/3.12.rst:2205
 msgid ""
 "Type macros like :c:macro:`Py_T_INT`, :c:macro:`Py_T_DOUBLE`, etc. "
 "(previously ``T_INT``, ``T_DOUBLE``, etc.)"
 msgstr ""
+"Typu makra jako :c:macro:`Py_T_INT`, :c:macro:`Py_T_DOUBLE`, atd. (drive "
+"``T_INT``, ``T_DOUBLE``, atd.)"
 
 #: ../../whatsnew/3.12.rst:2207
 msgid ""
 "The flags :c:macro:`Py_READONLY` (previously ``READONLY``) and "
 ":c:macro:`Py_AUDIT_READ` (previously all uppercase)"
 msgstr ""
+"Vlajky :c:macro:`Py_READONLY` (drive ``READONLY``) a "
+":c:macro:`Py_AUDIT_READ` (drive ve vsech velkych pismenach)"
 
 #: ../../whatsnew/3.12.rst:2210
 msgid "Several items are not exposed from :file:`Python.h`:"
-msgstr ""
+msgstr "Nektere polozky nejsou odhaleny z :file:`Python.h`:"
 
 #: ../../whatsnew/3.12.rst:2212
 msgid ":c:macro:`T_OBJECT` (use :c:macro:`Py_T_OBJECT_EX`)"
-msgstr ""
+msgstr ":c:macro:`T_OBJECT` (pouziti :c:macro:`Py_T_OBJECT_EX`)"
 
 #: ../../whatsnew/3.12.rst:2213
 msgid ":c:macro:`T_NONE` (previously undocumented, and pretty quirky)"
-msgstr ""
+msgstr ":c:macro:`T_NONE` (drive nedokumentovano, a dosti zvlastni)"
 
 #: ../../whatsnew/3.12.rst:2214
 msgid "The macro ``WRITE_RESTRICTED`` which does nothing."
-msgstr ""
+msgstr "Makro ``WRITE_RESTRICTED`` ktere nic nedela."
 
 #: ../../whatsnew/3.12.rst:2215
 msgid ""
 "The macros ``RESTRICTED`` and ``READ_RESTRICTED``, equivalents of "
 ":c:macro:`Py_AUDIT_READ`."
 msgstr ""
+"Makra ``RESTRICTED`` a ``READ_RESTRICTED``, ekvivalenty "
+":c:macro:`Py_AUDIT_READ`."
 
 #: ../../whatsnew/3.12.rst:2217
 msgid ""
 "In some configurations, ``<stddef.h>`` is not included from "
 ":file:`Python.h`. It should be included manually when using ``offsetof()``."
 msgstr ""
+"V nekterych konfiguracich, ``<stddef.h>`` neni zahrnuto z :file:`Python.h`. "
+"Melo by byt zahrnuto rucne pri pouzivani ``offsetof()``."
 
 #: ../../whatsnew/3.12.rst:2220
 msgid ""
@@ -5919,12 +6118,17 @@ msgid ""
 "original names. Your old code can stay unchanged, unless the extra include "
 "and non-namespaced macros bother you greatly."
 msgstr ""
+"Zastarale hlavička i nadále poskytuje svý původní obsah pod původními jmény."
+" Váš starý kód může zůstat nezměněný, pokud vás extra include a ne-"
+"namespacová makra príslušně nezávadí."
 
 #: ../../whatsnew/3.12.rst:2225
 msgid ""
 "(Contributed in :gh:`47146` by Petr Viktorin, based on earlier work by "
 "Alexander Belopolsky and Matthias Braun.)"
 msgstr ""
+"(Přispělo v :gh:`47146` Petr Viktorin, na základě dřívější práce Aleksandra "
+"Belopolského a Matthiase Brauna.)"
 
 #: ../../whatsnew/3.12.rst:2228
 msgid ""
@@ -5932,18 +6136,26 @@ msgid ""
 ":c:func:`PyErr_GetRaisedException` and :c:func:`PyErr_SetRaisedException` "
 "instead. (Contributed by Mark Shannon in :gh:`101578`.)"
 msgstr ""
+":c:func:`PyErr_Fetch` a :c:func:`PyErr_Restore` jsou zastaralé. Použití "
+":c:func:`PyErr_GetRaisedException` a :c:func:`PyErr_SetRaisedException` "
+"místo toho. (Přispěl Mark Shannon v :gh:`101578`.)"
 
 #: ../../whatsnew/3.12.rst:2233
 msgid ""
 ":c:func:`!PyErr_Display` is deprecated. Use :c:func:`PyErr_DisplayException`"
 " instead. (Contributed by Irit Katriel in :gh:`102755`)."
 msgstr ""
+":c:func:`!PyErr_Display` je zastaralé. Použití "
+":c:func:`PyErr_DisplayException` místo toho. (Přispěla Irit Katriel v "
+":gh:`102755`)."
 
 #: ../../whatsnew/3.12.rst:2236
 msgid ""
 "``_PyErr_ChainExceptions`` is deprecated. Use ``_PyErr_ChainExceptions1`` "
 "instead. (Contributed by Irit Katriel in :gh:`102192`.)"
 msgstr ""
+"``_PyErr_ChainExceptions`` je zastarale. Pouziti ``_PyErr_ChainExceptions1``"
+" miste toho. (Prispela Irit Katriel v :gh:`102192`.)"
 
 #: ../../whatsnew/3.12.rst:2239
 msgid ""
@@ -5952,24 +6164,34 @@ msgid ""
 "overrides :c:member:`~PyTypeObject.tp_new` is deprecated. Call the metaclass"
 " instead."
 msgstr ""
+"Pouziti :c:func:`PyType_FromSpec`, :c:func:`PyType_FromSpecWithBases` nebo "
+":c:func:`PyType_FromModuleAndSpec` k vytvoreni tridy, jejiz metatra da "
+"prepisu je :c:member:`~PyTypeObject.tp_new` je zastarale. Zavolejte metatra "
+"miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.14.rst:4
 msgid ""
 "The ``ma_version_tag`` field in :c:type:`PyDictObject` for extension modules"
 " (:pep:`699`; :gh:`101193`)."
 msgstr ""
+"Pole ``ma_version_tag`` v :c:type:`PyDictObject` pro roz siri ujici moduly "
+"(:pep:`699`; :gh:`101193`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.14.rst:7
 msgid ""
 "Creating :c:data:`immutable types <Py_TPFLAGS_IMMUTABLETYPE>` with mutable "
 "bases (:gh:`95388`)."
 msgstr ""
+"Vytvareni :c:data:`imutabilnich typu <Py_TPFLAGS_IMMUTABLETYPE>` s "
+"mutovatelnymi zaklady (:gh:`95388`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:4
 msgid ""
 "The :c:func:`PyImport_ImportModuleNoBlock`: Use "
 ":c:func:`PyImport_ImportModule` instead."
 msgstr ""
+"Funkce :c:func:`PyImport_ImportModuleNoBlock`: Pouziti "
+":c:func:`PyImport_ImportModule` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:6
 msgid ""
@@ -5978,17 +6200,25 @@ msgid ""
 "<https://github.com/python/pythoncapi-compat/>`__ can be used to get "
 ":c:func:`PyWeakref_GetRef` on Python 3.12 and older."
 msgstr ""
+":c:func:`PyWeakref_GetObject` a :c:func:`PyWeakref_GET_OBJECT`: Pouziti "
+":c:func:`PyWeakref_GetRef` miste toho. `pythoncapi-compat projekt "
+"<https://github.com/python/pythoncapi-compat/>`__ lze pouzit k ziskani "
+":c:func:`PyWeakref_GetRef` na Pythonu 3.12 a starších."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:10
 msgid ""
 ":c:type:`Py_UNICODE` type and the :c:macro:`!Py_UNICODE_WIDE` macro: Use "
 ":c:type:`wchar_t` instead."
 msgstr ""
+":c:type:`Py_UNICODE` typ a makro :c:macro:`!Py_UNICODE_WIDE`: Pouziti "
+":c:type:`wchar_t` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:12
 msgid ""
 ":c:func:`!PyUnicode_AsDecodedObject`: Use :c:func:`PyCodec_Decode` instead."
 msgstr ""
+":c:func:`!PyUnicode_AsDecodedObject`: Pouziti :c:func:`PyCodec_Decode` miste"
+" toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:14
 msgid ""
@@ -5996,11 +6226,16 @@ msgid ""
 " Note that some codecs (for example, \"base64\") may return a type other "
 "than :class:`str`, such as :class:`bytes`."
 msgstr ""
+":c:func:`!PyUnicode_AsDecodedUnicode`: Pouziti :c:func:`PyCodec_Decode` "
+"miste toho; Vezmet na vdomí, ze nektere kodky (priklad \" base64\") mohou "
+"vratit typ jiny nez :class:`str`, jako je :class:`bytes`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:17
 msgid ""
 ":c:func:`!PyUnicode_AsEncodedObject`: Use :c:func:`PyCodec_Encode` instead."
 msgstr ""
+":c:func:`!PyUnicode_AsEncodedObject`: Pouziti :c:func:`PyCodec_Encode` miste"
+" toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:19
 msgid ""
@@ -6008,16 +6243,21 @@ msgid ""
 " Note that some codecs (for example, \"base64\") may return a type other "
 "than :class:`bytes`, such as :class:`str`."
 msgstr ""
+":c:func:`!PyUnicode_AsEncodedUnicode`: Pouziti :c:func:`PyCodec_Encode` "
+"miste toho; Vezmet na vdomí, ze nektere kodky (priklad \" base64\") mohou "
+"vratit typ jiny nez :class:`bytes`, jako je :class:`str`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:22
 msgid "Python initialization functions, deprecated in Python 3.13:"
-msgstr ""
+msgstr "Inicializační funkce Pythonu, zastarale v Pythonu 3.13:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:24
 msgid ""
 ":c:func:`Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") "
 "<PyConfig_Get>` (:data:`sys.path`) instead."
 msgstr ""
+":c:func:`Py_GetPath`: Pouziti :c:func:`PyConfig_Get(\"module_search_paths\")"
+" <PyConfig_Get>` (:data:`sys.path`) miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:27
 msgid ""
@@ -6026,6 +6266,10 @@ msgid ""
 ":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if "
 ":ref:`virtual environments <venv-def>` need to be handled."
 msgstr ""
+":c:func:`Py_GetPrefix`: Pouziti :c:func:`PyConfig_Get(\"base_prefix\") "
+"<PyConfig_Get>` (:data:`sys.base_prefix`) miste toho. Pouziti "
+":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) pokud"
+" :ref:`virtualne prostredi <venv-def>` potrebuji byt zpracovana."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:32
 msgid ""
@@ -6035,24 +6279,37 @@ msgid ""
 "(:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to "
 "be handled."
 msgstr ""
+":c:func:`Py_GetExecPrefix`: Pouziti "
+":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
+"(:data:`sys.base_exec_prefix`) miste toho. Pouziti "
+":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
+"(:data:`sys.exec_prefix`) pokud :ref:`virtualne prostredi <venv-def>` "
+"potrebuji byt zpracovana."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:38
 msgid ""
 ":c:func:`Py_GetProgramFullPath`: Use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
+":c:func:`Py_GetProgramFullPath`: Pouziti "
+":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
+"(:data:`sys.executable`) miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:41
 msgid ""
 ":c:func:`Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
+":c:func:`Py_GetProgramName`: Pouziti :c:func:`PyConfig_Get(\"executable\") "
+"<PyConfig_Get>` (:data:`sys.executable`) miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:44
 msgid ""
 ":c:func:`Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") "
 "<PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ""
+":c:func:`Py_GetPythonHome`: Pouziti :c:func:`PyConfig_Get(\"home\") "
+"<PyConfig_Get>` nebo promenna :envvar:`PYTHONHOME` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:48
 msgid ""
@@ -6060,111 +6317,149 @@ msgid ""
 "compat/>`__ can be used to get :c:func:`PyConfig_Get` on Python 3.13 and "
 "older."
 msgstr ""
+"`pythoncapi-compat projekt <https://github.com/python/pythoncapi-compat/>`__"
+" lze pouzit k ziskani :c:func:`PyConfig_Get` na Pythonu 3.13 a starších."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:52
 msgid ""
 "Functions to configure Python's initialization, deprecated in Python 3.11:"
 msgstr ""
+"Funkce pro konfiguraci inicializace Pythonu, zastarale v Pythonu 3.11:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:54
 msgid ":c:func:`!PySys_SetArgvEx()`: Set :c:member:`PyConfig.argv` instead."
 msgstr ""
+":c:func:`!PySys_SetArgvEx()`: Nastav :c:member:`PyConfig.argv` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:56
 msgid ":c:func:`!PySys_SetArgv()`: Set :c:member:`PyConfig.argv` instead."
 msgstr ""
+":c:func:`!PySys_SetArgv()`: Nastav :c:member:`PyConfig.argv` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:58
 msgid ""
 ":c:func:`!Py_SetProgramName()`: Set :c:member:`PyConfig.program_name` "
 "instead."
 msgstr ""
+":c:func:`!Py_SetProgramName()`: Nastav :c:member:`PyConfig.program_name` "
+"miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:60
 msgid ":c:func:`!Py_SetPythonHome()`: Set :c:member:`PyConfig.home` instead."
 msgstr ""
+":c:func:`!Py_SetPythonHome()`: Nastav :c:member:`PyConfig.home` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:62
 msgid ""
 ":c:func:`PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and "
 ":data:`!warnings.filters` instead."
 msgstr ""
+":c:func:`PySys_ResetWarnOptions`: Vycisti :data:`sys.warnoptions` a "
+":data:`!warnings.filters` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:65
 msgid ""
 "The :c:func:`Py_InitializeFromConfig` API should be used with "
 ":c:type:`PyConfig` instead."
 msgstr ""
+"API :c:func:`Py_InitializeFromConfig` by melo byt pouzito s "
+":c:type:`PyConfig` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:68
 msgid "Global configuration variables:"
-msgstr ""
+msgstr "Globalni konfiguracni promenne:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:70
 msgid ""
 ":c:var:`Py_DebugFlag`: Use :c:member:`PyConfig.parser_debug` or "
 ":c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_DebugFlag`: Pouziti :c:member:`PyConfig.parser_debug` nebo "
+":c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:73
 msgid ""
 ":c:var:`Py_VerboseFlag`: Use :c:member:`PyConfig.verbose` or "
 ":c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_VerboseFlag`: Pouziti :c:member:`PyConfig.verbose` nebo "
+":c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:76
 msgid ""
 ":c:var:`Py_QuietFlag`: Use :c:member:`PyConfig.quiet` or "
 ":c:func:`PyConfig_Get(\"quiet\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_QuietFlag`: Pouziti :c:member:`PyConfig.quiet` nebo "
+":c:func:`PyConfig_Get(\"quiet\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:79
 msgid ""
 ":c:var:`Py_InteractiveFlag`: Use :c:member:`PyConfig.interactive` or "
 ":c:func:`PyConfig_Get(\"interactive\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_InteractiveFlag`: Pouziti :c:member:`PyConfig.interactive` nebo "
+":c:func:`PyConfig_Get(\"interactive\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:82
 msgid ""
 ":c:var:`Py_InspectFlag`: Use :c:member:`PyConfig.inspect` or "
 ":c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_InspectFlag`: Pouziti :c:member:`PyConfig.inspect` nebo "
+":c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:85
 msgid ""
 ":c:var:`Py_OptimizeFlag`: Use :c:member:`PyConfig.optimization_level` or "
 ":c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_OptimizeFlag`: Pouziti :c:member:`PyConfig.optimization_level` "
+"nebo :c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:88
 msgid ""
 ":c:var:`Py_NoSiteFlag`: Use :c:member:`PyConfig.site_import` or "
 ":c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_NoSiteFlag`: Pouziti :c:member:`PyConfig.site_import` nebo "
+":c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:91
 msgid ""
 ":c:var:`Py_BytesWarningFlag`: Use :c:member:`PyConfig.bytes_warning` or "
 ":c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_BytesWarningFlag`: Pouziti :c:member:`PyConfig.bytes_warning` "
+"nebo :c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:94
 msgid ""
 ":c:var:`Py_FrozenFlag`: Use :c:member:`PyConfig.pathconfig_warnings` or "
 ":c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_FrozenFlag`: Pouziti :c:member:`PyConfig.pathconfig_warnings` "
+"nebo :c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:97
 msgid ""
 ":c:var:`Py_IgnoreEnvironmentFlag`: Use :c:member:`PyConfig.use_environment` "
 "or :c:func:`PyConfig_Get(\"use_environment\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_IgnoreEnvironmentFlag`: Pouziti "
+":c:member:`PyConfig.use_environment` nebo "
+":c:func:`PyConfig_Get(\"use_environment\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:100
 msgid ""
 ":c:var:`Py_DontWriteBytecodeFlag`: Use :c:member:`PyConfig.write_bytecode` "
 "or :c:func:`PyConfig_Get(\"write_bytecode\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_DontWriteBytecodeFlag`: Pouziti "
+":c:member:`PyConfig.write_bytecode` nebo "
+":c:func:`PyConfig_Get(\"write_bytecode\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:103
 msgid ""
@@ -6172,12 +6467,17 @@ msgid ""
 ":c:member:`PyConfig.user_site_directory` or "
 ":c:func:`PyConfig_Get(\"user_site_directory\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_NoUserSiteDirectory`: Pouziti "
+":c:member:`PyConfig.user_site_directory` nebo "
+":c:func:`PyConfig_Get(\"user_site_directory\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:106
 msgid ""
 ":c:var:`Py_UnbufferedStdioFlag`: Use :c:member:`PyConfig.buffered_stdio` or "
 ":c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_UnbufferedStdioFlag`: Pouziti :c:member:`PyConfig.buffered_stdio`"
+" nebo :c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:109
 msgid ""
@@ -6185,12 +6485,17 @@ msgid ""
 "and :c:member:`PyConfig.hash_seed` or :c:func:`PyConfig_Get(\"hash_seed\") "
 "<PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_HashRandomizationFlag`: Pouziti "
+":c:member:`PyConfig.use_hash_seed` a :c:member:`PyConfig.hash_seed` nebo "
+":c:func:`PyConfig_Get(\"hash_seed\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:113
 msgid ""
 ":c:var:`Py_IsolatedFlag`: Use :c:member:`PyConfig.isolated` or "
 ":c:func:`PyConfig_Get(\"isolated\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_IsolatedFlag`: Pouziti :c:member:`PyConfig.isolated` nebo "
+":c:func:`PyConfig_Get(\"isolated\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:116
 msgid ""
@@ -6199,6 +6504,10 @@ msgid ""
 ":c:func:`PyConfig_Get(\"legacy_windows_fs_encoding\") <PyConfig_Get>` "
 "instead."
 msgstr ""
+":c:var:`Py_LegacyWindowsFSEncodingFlag`: Pouziti "
+":c:member:`PyPreConfig.legacy_windows_fs_encoding` nebo "
+":c:func:`PyConfig_Get(\"legacy_windows_fs_encoding\") <PyConfig_Get>` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:119
 msgid ""
@@ -6206,6 +6515,9 @@ msgid ""
 ":c:member:`PyConfig.legacy_windows_stdio` or "
 ":c:func:`PyConfig_Get(\"legacy_windows_stdio\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_LegacyWindowsStdioFlag`: Pouziti "
+":c:member:`PyConfig.legacy_windows_stdio` nebo "
+":c:func:`PyConfig_Get(\"legacy_windows_stdio\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:122
 msgid ""
@@ -6214,6 +6526,10 @@ msgid ""
 ":c:member:`PyConfig.filesystem_encoding` or "
 ":c:func:`PyConfig_Get(\"filesystem_encoding\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`!Py_FileSystemDefaultEncoding`, "
+":c:var:`!Py_HasFileSystemDefaultEncoding`: Pouziti "
+":c:member:`PyConfig.filesystem_encoding` nebo "
+":c:func:`PyConfig_Get(\"filesystem_encoding\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:125
 msgid ""
@@ -6221,6 +6537,9 @@ msgid ""
 ":c:member:`PyConfig.filesystem_errors` or "
 ":c:func:`PyConfig_Get(\"filesystem_errors\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`!Py_FileSystemDefaultEncodeErrors`: Pouziti "
+":c:member:`PyConfig.filesystem_errors` nebo "
+":c:func:`PyConfig_Get(\"filesystem_errors\") <PyConfig_Get>` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:128
 msgid ""
@@ -6228,6 +6547,9 @@ msgid ""
 ":c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>` instead. (see "
 ":c:func:`Py_PreInitialize`)"
 msgstr ""
+":c:var:`!Py_UTF8Mode`: Pouziti :c:member:`PyPreConfig.utf8_mode` nebo "
+":c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>` miste toho. (viz "
+":c:func:`Py_PreInitialize`)"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:133
 msgid ""
@@ -6235,106 +6557,138 @@ msgid ""
 ":c:type:`PyConfig` to set these options. Or :c:func:`PyConfig_Get` can be "
 "used to get these options at runtime."
 msgstr ""
+"API :c:func:`Py_InitializeFromConfig` by melo byt pouzito s "
+":c:type:`PyConfig` k nastaveni techto moznosti. Nebo :c:func:`PyConfig_Get` "
+"lze pouzit k ziskani techto moznosti za behu."
 
 #: ../../deprecations/c-api-pending-removal-in-3.16.rst:4
 msgid "The bundled copy of ``libmpdec``."
-msgstr ""
+msgstr "Bundled kopie ``libmpdec``."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:4
 msgid ""
 "The following APIs are deprecated and will be removed, although there is "
 "currently no date scheduled for their removal."
 msgstr ""
+"Nasledujici API jsou zastarale a budou odebrana, ackoliv neni vytvoren zadny"
+" cas jejich odstraneni."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:7
 msgid ":c:macro:`Py_TPFLAGS_HAVE_FINALIZE`: Unneeded since Python 3.8."
-msgstr ""
+msgstr ":c:macro:`Py_TPFLAGS_HAVE_FINALIZE`: Nepotrebna od Pythonu 3.8."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:9
 msgid ":c:func:`PyErr_Fetch`: Use :c:func:`PyErr_GetRaisedException` instead."
 msgstr ""
+":c:func:`PyErr_Fetch`: Pouziti :c:func:`PyErr_GetRaisedException` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:11
 msgid ""
 ":c:func:`PyErr_NormalizeException`: Use :c:func:`PyErr_GetRaisedException` "
 "instead."
 msgstr ""
+":c:func:`PyErr_NormalizeException`: Pouziti "
+":c:func:`PyErr_GetRaisedException` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:13
 msgid ""
 ":c:func:`PyErr_Restore`: Use :c:func:`PyErr_SetRaisedException` instead."
 msgstr ""
+":c:func:`PyErr_Restore`: Pouziti :c:func:`PyErr_SetRaisedException` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:15
 msgid ""
 ":c:func:`PyModule_GetFilename`: Use :c:func:`PyModule_GetFilenameObject` "
 "instead."
 msgstr ""
+":c:func:`PyModule_GetFilename`: Pouziti :c:func:`PyModule_GetFilenameObject`"
+" miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:17
 msgid ":c:func:`PyOS_AfterFork`: Use :c:func:`PyOS_AfterFork_Child` instead."
 msgstr ""
+":c:func:`PyOS_AfterFork`: Pouziti :c:func:`PyOS_AfterFork_Child` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:19
 msgid ""
 ":c:func:`PySlice_GetIndicesEx`: Use :c:func:`PySlice_Unpack` and "
 ":c:func:`PySlice_AdjustIndices` instead."
 msgstr ""
+":c:func:`PySlice_GetIndicesEx`: Pouziti :c:func:`PySlice_Unpack` a "
+":c:func:`PySlice_AdjustIndices` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:21
 msgid ":c:func:`PyUnicode_READY`: Unneeded since Python 3.12"
-msgstr ""
+msgstr ":c:func:`PyUnicode_READY`: Nepotrebna od Pythonu 3.12"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:23
 msgid ""
 ":c:func:`!PyErr_Display`: Use :c:func:`PyErr_DisplayException` instead."
 msgstr ""
+":c:func:`!PyErr_Display`: Pouziti :c:func:`PyErr_DisplayException` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:25
 msgid ""
 ":c:func:`!_PyErr_ChainExceptions`: Use :c:func:`!_PyErr_ChainExceptions1` "
 "instead."
 msgstr ""
+":c:func:`!_PyErr_ChainExceptions`: Pouziti "
+":c:func:`!_PyErr_ChainExceptions1` miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:27
 msgid ""
 ":c:member:`!PyBytesObject.ob_shash` member: call :c:func:`PyObject_Hash` "
 "instead."
 msgstr ""
+":c:member:`!PyBytesObject.ob_shash` clen: zavolejte :c:func:`PyObject_Hash` "
+"miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:29
 msgid "Thread Local Storage (TLS) API:"
-msgstr ""
+msgstr "Thread Local Storage (TLS) API:"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:31
 msgid ""
 ":c:func:`PyThread_create_key`: Use :c:func:`PyThread_tss_alloc` instead."
 msgstr ""
+":c:func:`PyThread_create_key`: Pouziti :c:func:`PyThread_tss_alloc` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:33
 msgid ""
 ":c:func:`PyThread_delete_key`: Use :c:func:`PyThread_tss_free` instead."
 msgstr ""
+":c:func:`PyThread_delete_key`: Pouziti :c:func:`PyThread_tss_free` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:35
 msgid ""
 ":c:func:`PyThread_set_key_value`: Use :c:func:`PyThread_tss_set` instead."
 msgstr ""
+":c:func:`PyThread_set_key_value`: Pouziti :c:func:`PyThread_tss_set` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:37
 msgid ""
 ":c:func:`PyThread_get_key_value`: Use :c:func:`PyThread_tss_get` instead."
 msgstr ""
+":c:func:`PyThread_get_key_value`: Pouziti :c:func:`PyThread_tss_get` miste "
+"toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:39
 msgid ""
 ":c:func:`PyThread_delete_key_value`: Use :c:func:`PyThread_tss_delete` "
 "instead."
 msgstr ""
+":c:func:`PyThread_delete_key_value`: Pouziti :c:func:`PyThread_tss_delete` "
+"miste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:41
 msgid ":c:func:`PyThread_ReInitTLS`: Unneeded since Python 3.7."
-msgstr ""
+msgstr ":c:func:`PyThread_ReInitTLS`: Nepotrebna od Pythonu 3.7."
 
 #: ../../whatsnew/3.12.rst:2257
 msgid ""
@@ -6342,52 +6696,57 @@ msgid ""
 " C API. The :file:`token.h` header file was only designed to be used by "
 "Python internals. (Contributed by Victor Stinner in :gh:`92651`.)"
 msgstr ""
+"Odebrat hlavička :file:`token.h`. Nikdy neexistovalo žádné veřejné tokenizer"
+" C API. Hlavička :file:`token.h` byla vymyslena pouze pro použití Python "
+"internālámi. (Přispěl Victor Stinner v :gh:`92651`.)"
 
 #: ../../whatsnew/3.12.rst:2262
 msgid "Legacy Unicode APIs have been removed. See :pep:`623` for detail."
-msgstr ""
+msgstr "Zastaralé Unicode API byly odebrány. Viz :pep:`623` pro detaily."
 
 #: ../../whatsnew/3.12.rst:2264
 msgid ":c:macro:`!PyUnicode_WCHAR_KIND`"
-msgstr ""
+msgstr ":c:macro:`!PyUnicode_WCHAR_KIND`"
 
 #: ../../whatsnew/3.12.rst:2265
 msgid ":c:func:`!PyUnicode_AS_UNICODE`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_AS_UNICODE`"
 
 #: ../../whatsnew/3.12.rst:2266
 msgid ":c:func:`!PyUnicode_AsUnicode`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_AsUnicode`"
 
 #: ../../whatsnew/3.12.rst:2267
 msgid ":c:func:`!PyUnicode_AsUnicodeAndSize`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_AsUnicodeAndSize`"
 
 #: ../../whatsnew/3.12.rst:2268
 msgid ":c:func:`!PyUnicode_AS_DATA`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_AS_DATA`"
 
 #: ../../whatsnew/3.12.rst:2269
 msgid ":c:func:`!PyUnicode_FromUnicode`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_FromUnicode`"
 
 #: ../../whatsnew/3.12.rst:2270
 msgid ":c:func:`!PyUnicode_GET_SIZE`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_GET_SIZE`"
 
 #: ../../whatsnew/3.12.rst:2271
 msgid ":c:func:`!PyUnicode_GetSize`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_GetSize`"
 
 #: ../../whatsnew/3.12.rst:2272
 msgid ":c:func:`!PyUnicode_GET_DATA_SIZE`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_GET_DATA_SIZE`"
 
 #: ../../whatsnew/3.12.rst:2274
 msgid ""
 "Remove the ``PyUnicode_InternImmortal()`` function macro. (Contributed by "
 "Victor Stinner in :gh:`85858`.)"
 msgstr ""
+"Odebrat makro funkce ``PyUnicode_InternImmortal()``. (Prispel Victor Stinner"
+" v :gh:`85858`.)"
 
 #~ msgid ""
 #~ "Setting :attr:`~module.__package__` or ``__cached__`` on a module is "

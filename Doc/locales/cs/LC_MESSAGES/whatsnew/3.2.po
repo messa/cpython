@@ -11,132 +11,151 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../whatsnew/3.2.rst:3
 msgid "What's New In Python 3.2"
-msgstr ""
+msgstr "Co je nového v Pythonu 3.2"
 
 #: ../../whatsnew/3.2.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../whatsnew/3.2.rst:5
 msgid "Raymond Hettinger"
-msgstr ""
+msgstr "Raymond Hettinger"
 
 #: ../../whatsnew/3.2.rst:51
 msgid ""
 "This article explains the new features in Python 3.2 as compared to 3.1. "
-"Python 3.2 was released on February 20, 2011. It focuses on a few "
-"highlights and gives a few examples.  For full details, see the "
-"`Misc/NEWS "
+"Python 3.2 was released on February 20, 2011. It focuses on a few highlights"
+" and gives a few examples.  For full details, see the `Misc/NEWS "
 "<https://github.com/python/cpython/blob/076ca6c3c8df3030307e548d9be792ce3c1c6eea/Misc/NEWS>`__"
 " file."
 msgstr ""
+"Tento článek vysvětluje nové funkce v Pythonu 3.2 ve srovnání s verzí 3.1. "
+"Python 3.2 byl vydán 20. února 2011. Zaměřuje se na několik klíčových "
+"vlastností a uvádí některé příklady. Podrobnosti najdete v souboru "
+"`Misc/NEWS "
+"<https://github.com/python/cpython/blob/076ca6c3c8df3030307e548d9be792ce3c1c6eea/Misc/NEWS>`__."
 
 #: ../../whatsnew/3.2.rst:60
 msgid ":pep:`392` - Python 3.2 Release Schedule"
-msgstr ""
+msgstr ":pep:`392` - Plán vydání Pythonu 3.2"
 
 #: ../../whatsnew/3.2.rst:64
 msgid "PEP 384: Defining a Stable ABI"
-msgstr ""
+msgstr "PEP 384: Definice stabilního ABI"
 
 #: ../../whatsnew/3.2.rst:66
 msgid ""
-"In the past, extension modules built for one Python version were often "
-"not usable with other Python versions. Particularly on Windows, every "
-"feature release of Python required rebuilding all extension modules that "
-"one wanted to use. This requirement was the result of the free access to "
-"Python interpreter internals that extension modules could use."
+"In the past, extension modules built for one Python version were often not "
+"usable with other Python versions. Particularly on Windows, every feature "
+"release of Python required rebuilding all extension modules that one wanted "
+"to use. This requirement was the result of the free access to Python "
+"interpreter internals that extension modules could use."
 msgstr ""
+"V minulosti byly rozšiřující moduly vytvořené pro jednu verzi Pythonu často "
+"nepoužívajmajné s jinými verzemi. Zvláště v systému Windows vyžadovala každá"
+" nová verze Pythonu nové překolivání všech rozšiřujících modulů, které "
+"chcete používat. Tato nutnost byla výsledém volného přístupu k internám "
+"Python interpretu, které rozšiřující moduly mohly používat."
 
 #: ../../whatsnew/3.2.rst:72
 msgid ""
 "With Python 3.2, an alternative approach becomes available: extension "
 "modules which restrict themselves to a limited API (by defining "
-"Py_LIMITED_API) cannot use many of the internals, but are constrained to "
-"a set of API functions that are promised to be stable for several "
-"releases. As a consequence, extension modules built for 3.2 in that mode "
-"will also work with 3.3, 3.4, and so on. Extension modules that make use "
-"of details of memory structures can still be built, but will need to be "
-"recompiled for every feature release."
+"Py_LIMITED_API) cannot use many of the internals, but are constrained to a "
+"set of API functions that are promised to be stable for several releases. As"
+" a consequence, extension modules built for 3.2 in that mode will also work "
+"with 3.3, 3.4, and so on. Extension modules that make use of details of "
+"memory structures can still be built, but will need to be recompiled for "
+"every feature release."
 msgstr ""
+"S Pythonem 3.2 je k dispozici alternativní přístup: rozšiřující moduly, "
+"které se omezují na omezené API (definováním Py_LIMITED_API), nemohou "
+"používat mnoho internálů, ale jsou omezeny na sadu funkcí API, které jsou "
+"zaručêviny jako stabilní na několik vydání. V důsledku toho budou "
+"rozšiřující moduly vytvořené pro 3.2 v tomto režimu pracovat i s 3.3, 3.4 a "
+"tak dále. Rozšiřující moduly, které používají detaily paměťových struktur, "
+"lze stále vytvořit, ale bude je nutné překolivávat pro každé vydvání verze."
 
 #: ../../whatsnew/3.2.rst:83
 msgid ":pep:`384` - Defining a Stable ABI"
-msgstr ""
+msgstr ":pep:`384` - Definice stabilního ABI"
 
 #: ../../whatsnew/3.2.rst:84
 msgid "PEP written by Martin von Löwis."
-msgstr ""
+msgstr "PEP napsán Martin von Löwisem."
 
 #: ../../whatsnew/3.2.rst:88
 msgid "PEP 389: Argparse Command Line Parsing Module"
-msgstr ""
+msgstr "PEP 389: Modul argparse pro analýzu příkazové řádky"
 
 #: ../../whatsnew/3.2.rst:90
 msgid ""
-"A new module for command line parsing, :mod:`argparse`, was introduced to"
-" overcome the limitations of :mod:`optparse` which did not provide "
-"support for positional arguments (not just options), subcommands, "
-"required options and other common patterns of specifying and validating "
-"options."
+"A new module for command line parsing, :mod:`argparse`, was introduced to "
+"overcome the limitations of :mod:`optparse` which did not provide support "
+"for positional arguments (not just options), subcommands, required options "
+"and other common patterns of specifying and validating options."
 msgstr ""
+"Nový modul pro analýzu příkazové řádky :mod:`argparse` byl připraven, aby se"
+" překonal omezení :mod:`optparse`, které nepřinášelo podporu pro poziové "
+"argumenty (ne jen volby), podpříkazy, povinné volby a další běžné vzory k "
+"určení a validaci voleb."
 
 #: ../../whatsnew/3.2.rst:95
 msgid ""
-"This module has already had widespread success in the community as a "
-"third-party module.  Being more fully featured than its predecessor, the "
+"This module has already had widespread success in the community as a third-"
+"party module.  Being more fully featured than its predecessor, the "
 ":mod:`argparse` module is now the preferred module for command-line "
-"processing. The older module is still being kept available because of the"
-" substantial amount of legacy code that depends on it."
+"processing. The older module is still being kept available because of the "
+"substantial amount of legacy code that depends on it."
 msgstr ""
+"Tento modul již měl mezi komunitou velký úspěch jako modul třetí strany. "
+"Vzhledem k tomu, že je více plnově vybavené než jeho předchůdce, je modul "
+":mod:`argparse` nyní upřednostňovaným modulem pro zpracování příkazové "
+"řádky. Starší modul je stále k dispozici, protože existuje značné množství "
+"zastaralého kódu, který na něm závisí."
 
 #: ../../whatsnew/3.2.rst:101
 msgid ""
-"Here's an annotated example parser showing features like limiting results"
-" to a set of choices, specifying a *metavar* in the help screen, "
-"validating that one or more positional arguments is present, and making a"
-" required option::"
+"Here's an annotated example parser showing features like limiting results to"
+" a set of choices, specifying a *metavar* in the help screen, validating "
+"that one or more positional arguments is present, and making a required "
+"option::"
 msgstr ""
+"Zde je okomentovaný příklad parseru ukazující funkce jako omezení výsledků "
+"na sadu voleb, zadání *metavar* na obrazovce nápovědy, ověření, že jeden "
+"nebo více poziových argumentů je přítomno, a vytvoření povinné volby::"
 
 #: ../../whatsnew/3.2.rst:105
 msgid ""
 "import argparse\n"
 "parser = argparse.ArgumentParser(\n"
-"            description = 'Manage servers',         # main description "
-"for help\n"
-"            epilog = 'Tested on Solaris and Linux') # displayed after "
-"help\n"
+"            description = 'Manage servers',         # main description for help\n"
+"            epilog = 'Tested on Solaris and Linux') # displayed after help\n"
 "parser.add_argument('action',                       # argument name\n"
-"            choices = ['deploy', 'start', 'stop'],  # three allowed "
-"values\n"
+"            choices = ['deploy', 'start', 'stop'],  # three allowed values\n"
 "            help = 'action on each target')         # help msg\n"
 "parser.add_argument('targets',\n"
-"            metavar = 'HOSTNAME',                   # var name used in "
-"help msg\n"
-"            nargs = '+',                            # require one or more"
-" targets\n"
-"            help = 'url for target machines')       # help msg "
-"explanation\n"
-"parser.add_argument('-u', '--user',                 # -u or --user option"
-"\n"
-"            required = True,                        # make it a required "
-"argument\n"
+"            metavar = 'HOSTNAME',                   # var name used in help msg\n"
+"            nargs = '+',                            # require one or more targets\n"
+"            help = 'url for target machines')       # help msg explanation\n"
+"parser.add_argument('-u', '--user',                 # -u or --user option\n"
+"            required = True,                        # make it a required argument\n"
 "            help = 'login as user')"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:120
 msgid "Example of calling the parser on a command string::"
-msgstr ""
+msgstr "Příklad volání parseru na řetězec příkazu::"
 
 #: ../../whatsnew/3.2.rst:122
 msgid ""
@@ -152,7 +171,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:131
 msgid "Example of the parser's automatically generated help::"
-msgstr ""
+msgstr "Příklad automaticky generované nápovědy parseru::"
 
 #: ../../whatsnew/3.2.rst:133
 #, python-brace-format
@@ -187,74 +206,78 @@ msgid ""
 "parser = argparse.ArgumentParser(prog='HELM')\n"
 "subparsers = parser.add_subparsers()\n"
 "\n"
-"parser_l = subparsers.add_parser('launch', help='Launch Control')   # "
-"first subgroup\n"
+"parser_l = subparsers.add_parser('launch', help='Launch Control')   # first subgroup\n"
 "parser_l.add_argument('-m', '--missiles', action='store_true')\n"
 "parser_l.add_argument('-t', '--torpedos', action='store_true')\n"
 "\n"
-"parser_m = subparsers.add_parser('move', help='Move Vessel',        # "
-"second subgroup\n"
-"                                 aliases=('steer', 'turn'))         # "
-"equivalent names\n"
+"parser_m = subparsers.add_parser('move', help='Move Vessel',        # second subgroup\n"
+"                                 aliases=('steer', 'turn'))         # equivalent names\n"
 "parser_m.add_argument('-c', '--course', type=int, required=True)\n"
 "parser_m.add_argument('-s', '--speed', type=int, default=0)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:166
 msgid ""
-"$ ./helm.py --help                         # top level help (launch and "
-"move)\n"
+"$ ./helm.py --help                         # top level help (launch and move)\n"
 "$ ./helm.py launch --help                  # help for launch options\n"
-"$ ./helm.py launch --missiles              # set missiles=True and "
-"torpedos=False\n"
+"$ ./helm.py launch --missiles              # set missiles=True and torpedos=False\n"
 "$ ./helm.py steer --course 180 --speed 5   # set movement parameters"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:175
 msgid ":pep:`389` - New Command Line Parsing Module"
-msgstr ""
+msgstr ":pep:`389` - Nový modul pro analýzu příkazové řádky"
 
 #: ../../whatsnew/3.2.rst:176
 msgid "PEP written by Steven Bethard."
-msgstr ""
+msgstr "PEP napsán Stevenem Bethardem."
 
 #: ../../whatsnew/3.2.rst:178
 msgid ""
 ":ref:`upgrading-optparse-code` for details on the differences from "
 ":mod:`optparse`."
 msgstr ""
+":ref:`upgrading-optparse-code` pro detaily o rozdíle vůči :mod:`optparse`."
 
 #: ../../whatsnew/3.2.rst:182
 msgid "PEP 391:  Dictionary Based Configuration for Logging"
-msgstr ""
+msgstr "PEP 391: Slovníkové konfigurace pro protokolování"
 
 #: ../../whatsnew/3.2.rst:184
 msgid ""
 "The :mod:`logging` module provided two kinds of configuration, one style "
-"with function calls for each option or another style driven by an "
-"external file saved in a :mod:`configparser` format.  Those options did "
-"not provide the flexibility to create configurations from JSON or YAML "
-"files, nor did they support incremental configuration, which is needed "
-"for specifying logger options from a command line."
+"with function calls for each option or another style driven by an external "
+"file saved in a :mod:`configparser` format.  Those options did not provide "
+"the flexibility to create configurations from JSON or YAML files, nor did "
+"they support incremental configuration, which is needed for specifying "
+"logger options from a command line."
 msgstr ""
+"Modul :mod:`logging` poskytl dva druhy konfigurace, jeden styl s voláním "
+"funkcí pro každé volbu nebo jiný styl řízený externím souborem uloženým ve "
+"formátu :mod:`configparser`. Tyto volby neposkytovaly flexibilitu k "
+"vytváření konfigurací z JSON nebo YAML souborů, ani nepodporovaly "
+"inkrementální konfiguraci, která je potřebná pro zadání voleb výstrahù z "
+"příkazové řádky."
 
 #: ../../whatsnew/3.2.rst:191
 msgid ""
 "To support a more flexible style, the module now offers "
-":func:`logging.config.dictConfig` for specifying logging configuration "
-"with plain Python dictionaries.  The configuration options include "
-"formatters, handlers, filters, and loggers.  Here's a working example of "
-"a configuration dictionary::"
+":func:`logging.config.dictConfig` for specifying logging configuration with "
+"plain Python dictionaries.  The configuration options include formatters, "
+"handlers, filters, and loggers.  Here's a working example of a configuration"
+" dictionary::"
 msgstr ""
+"Na podporu flexibilnějšího stylu modul nyní nabíbá "
+":func:`logging.config.dictConfig` pro zadání konfigurace protokolování s "
+"prostými slovníky Pythonu. Volby konfigurace zahrnují formátry, obsluhovače,"
+" filtry a výstrahý. Zde je funkční příklad konfiguračního slovníku::"
 
 #: ../../whatsnew/3.2.rst:197
 #, python-brace-format, python-format
 msgid ""
 "{\"version\": 1,\n"
-" \"formatters\": {\"brief\": {\"format\": \"%(levelname)-8s: %(name)-15s:"
-" %(message)s\"},\n"
-"                \"full\": {\"format\": \"%(asctime)s %(name)-15s "
-"%(levelname)-8s %(message)s\"}\n"
+" \"formatters\": {\"brief\": {\"format\": \"%(levelname)-8s: %(name)-15s: %(message)s\"},\n"
+"                \"full\": {\"format\": \"%(asctime)s %(name)-15s %(levelname)-8s %(message)s\"}\n"
 "                },\n"
 " \"handlers\": {\"console\": {\n"
 "                   \"class\": \"logging.StreamHandler\",\n"
@@ -267,15 +290,16 @@ msgid ""
 "                   \"level\": \"ERROR\",\n"
 "                   \"stream\": \"ext://sys.stderr\"}\n"
 "              },\n"
-" \"root\": {\"level\": \"DEBUG\", \"handlers\": [\"console\", "
-"\"console_priority\"]}}"
+" \"root\": {\"level\": \"DEBUG\", \"handlers\": [\"console\", \"console_priority\"]}}"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:215
 msgid ""
-"If that dictionary is stored in a file called :file:`conf.json`, it can "
-"be loaded and called with code like this::"
+"If that dictionary is stored in a file called :file:`conf.json`, it can be "
+"loaded and called with code like this::"
 msgstr ""
+"Pokud je tento slovník uložen v souboru nazvaném :file:`conf.json`, lze jej "
+"načíst a zavolat kódem jako je tento::"
 
 #: ../../whatsnew/3.2.rst:218
 msgid ""
@@ -292,70 +316,98 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:230
 msgid ":pep:`391` - Dictionary Based Configuration for Logging"
-msgstr ""
+msgstr ":pep:`391` - Slovníkové konfigurace pro protokolování"
 
 #: ../../whatsnew/3.2.rst:231
 msgid "PEP written by Vinay Sajip."
-msgstr ""
+msgstr "PEP napsán Vinayem Sajipem."
 
 #: ../../whatsnew/3.2.rst:235
 msgid "PEP 3148:  The ``concurrent.futures`` module"
-msgstr ""
+msgstr "PEP 3148: Modul ``concurrent.futures``"
 
 #: ../../whatsnew/3.2.rst:237
 msgid ""
-"Code for creating and managing concurrency is being collected in a new "
-"top-level namespace, *concurrent*.  Its first member is a *futures* "
-"package which provides a uniform high-level interface for managing "
-"threads and processes."
+"Code for creating and managing concurrency is being collected in a new top-"
+"level namespace, *concurrent*.  Its first member is a *futures* package "
+"which provides a uniform high-level interface for managing threads and "
+"processes."
 msgstr ""
+"Kód pro vytváření a správu konkurence se sbírá v novém oboru názvů "
+"nejvyššího stupně *concurrent*. Jeho prvním členem je balík *futures*, který"
+" poskytuje jednotné rozhraní vysoké úrovně pro správu vláken a procesů."
 
 #: ../../whatsnew/3.2.rst:241
 msgid ""
 "The design for :mod:`concurrent.futures` was inspired by the "
 "*java.util.concurrent* package.  In that model, a running call and its "
-"result are represented by a :class:`~concurrent.futures.Future` object "
-"that abstracts features common to threads, processes, and remote "
-"procedure calls.  That object supports status checks (running or done), "
-"timeouts, cancellations, adding callbacks, and access to results or "
-"exceptions."
+"result are represented by a :class:`~concurrent.futures.Future` object that "
+"abstracts features common to threads, processes, and remote procedure calls."
+"  That object supports status checks (running or done), timeouts, "
+"cancellations, adding callbacks, and access to results or exceptions."
 msgstr ""
+"Návrh pro :mod:`concurrent.futures` se inspiroval balíkem "
+"*java.util.concurrent*. V tomto modelu je spuštěné volání a jeho výsledek "
+"reprezentovány objektem :class:`~concurrent.futures.Future`, který "
+"abstrahuje funkce společné vláknům, procesům a vzdaleným volaním procedur. "
+"Tento objekt podporuje kontrolu stavu (spuný nebo dokončený), časové limity,"
+" zrušení, přidávání zpětných volání a přístup k výsledkům nebo výjimkám."
 
 #: ../../whatsnew/3.2.rst:248
 msgid ""
 "The primary offering of the new module is a pair of executor classes for "
 "launching and managing calls.  The goal of the executors is to make it "
-"easier to use existing tools for making parallel calls. They save the "
-"effort needed to setup a pool of resources, launch the calls, create a "
-"results queue, add time-out handling, and limit the total number of "
-"threads, processes, or remote procedure calls."
+"easier to use existing tools for making parallel calls. They save the effort"
+" needed to setup a pool of resources, launch the calls, create a results "
+"queue, add time-out handling, and limit the total number of threads, "
+"processes, or remote procedure calls."
 msgstr ""
+"Hlavní nabízením nového modulu je pár tříd exekutora pro spuštění a správu "
+"volání. Cílem exekutorů je zjednoduslot použítí existujících nástrojů pro "
+"provnání paralelních volání. Uschorší úsilí potřebné k nastavení skupiny "
+"prostředků, spuštění volání, vytvoření fronty výsledků, přidání zprávy o "
+"časových limitech a omezení celkového počtu vláken, procesů nebo vzdalených "
+"volání procedur."
 
 #: ../../whatsnew/3.2.rst:255
 msgid ""
 "Ideally, each application should share a single executor across multiple "
-"components so that process and thread limits can be centrally managed.  "
-"This solves the design challenge that arises when each component has its "
-"own competing strategy for resource management."
+"components so that process and thread limits can be centrally managed.  This"
+" solves the design challenge that arises when each component has its own "
+"competing strategy for resource management."
 msgstr ""
+"V ideálním případě by každá aplikace měla sdílet jednotného exekutora v "
+"rámci více komponent, aby mohly být omezení procesů a vláken centrálně "
+"správána. To řeší vácnové projektu, která vznikne, když každá komponenta má "
+"svou vlastní konkurenci strategii pro správu prostředků."
 
 #: ../../whatsnew/3.2.rst:260
 msgid ""
 "Both classes share a common interface with three methods: "
-":meth:`~concurrent.futures.Executor.submit` for scheduling a callable and"
-" returning a :class:`~concurrent.futures.Future` object; "
-":meth:`~concurrent.futures.Executor.map` for scheduling many asynchronous"
-" calls at a time, and :meth:`~concurrent.futures.Executor.shutdown` for "
-"freeing resources.  The class is a :term:`context manager` and can be "
-"used in a :keyword:`with` statement to assure that resources are "
-"automatically released when currently pending futures are done executing."
+":meth:`~concurrent.futures.Executor.submit` for scheduling a callable and "
+"returning a :class:`~concurrent.futures.Future` object; "
+":meth:`~concurrent.futures.Executor.map` for scheduling many asynchronous "
+"calls at a time, and :meth:`~concurrent.futures.Executor.shutdown` for "
+"freeing resources.  The class is a :term:`context manager` and can be used "
+"in a :keyword:`with` statement to assure that resources are automatically "
+"released when currently pending futures are done executing."
 msgstr ""
+"Obě třídy sdílejí společné rozhraní se třemi metodami: "
+":meth:`~concurrent.futures.Executor.submit` pro naplandání volání a vrácení "
+"objektu :class:`~concurrent.futures.Future`; "
+":meth:`~concurrent.futures.Executor.map` pro naplandání mnoha asynchronních "
+"volání nanajednou a :meth:`~concurrent.futures.Executor.shutdown` pro "
+"uvolňování prostředků. Třída je :term:`spračou prvků` a lze ji použít v "
+"příkazu :keyword:`with` k zajištění automatického uvolňování prostředků, "
+"když jsou v současnosti čekající futures dokončena."
 
 #: ../../whatsnew/3.2.rst:269
 msgid ""
-"A simple of example of :class:`~concurrent.futures.ThreadPoolExecutor` is"
-" a launch of four parallel threads for copying files::"
+"A simple of example of :class:`~concurrent.futures.ThreadPoolExecutor` is a "
+"launch of four parallel threads for copying files::"
 msgstr ""
+"Jednoduchý příklad :class:`~concurrent.futures.ThreadPoolExecutor` je "
+"spuštění čtyř paralelních vláken pro kopírání souborů::"
 
 #: ../../whatsnew/3.2.rst:272
 msgid ""
@@ -369,17 +421,19 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:281
 msgid ":pep:`3148` - Futures -- Execute Computations Asynchronously"
-msgstr ""
+msgstr ":pep:`3148` - Futures -- Asynchronné provádění výpočtů"
 
 #: ../../whatsnew/3.2.rst:282
 msgid "PEP written by Brian Quinlan."
-msgstr ""
+msgstr "PEP napsán Brianem Quinlanem."
 
 #: ../../whatsnew/3.2.rst:284
 msgid ""
-":ref:`Code for Threaded Parallel URL reads<threadpoolexecutor-example>`, "
-"an example using threads to fetch multiple web pages in parallel."
+":ref:`Code for Threaded Parallel URL reads<threadpoolexecutor-example>`, an "
+"example using threads to fetch multiple web pages in parallel."
 msgstr ""
+":ref:`Kód pro čtení parallelíních URL vlákny<threadpoolexecutor-example>`, "
+"příklad použití vláken k získání více webových stránek paralelně."
 
 #: ../../whatsnew/3.2.rst:287
 msgid ""
@@ -387,113 +441,157 @@ msgid ""
 "example>`, an example demonstrating "
 ":class:`~concurrent.futures.ProcessPoolExecutor`."
 msgstr ""
+":ref:`Kód pro výpočet prvních čísel paralelně<processpoolexecutor-example>`,"
+" příklad demonstrující :class:`~concurrent.futures.ProcessPoolExecutor`."
 
 #: ../../whatsnew/3.2.rst:293
 msgid "PEP 3147:  PYC Repository Directories"
-msgstr ""
+msgstr "PEP 3147: Adresáře PYC ??epo"
 
 #: ../../whatsnew/3.2.rst:295
 msgid ""
-"Python's scheme for caching bytecode in *.pyc* files did not work well in"
-" environments with multiple Python interpreters.  If one interpreter "
-"encountered a cached file created by another interpreter, it would "
-"recompile the source and overwrite the cached file, thus losing the "
-"benefits of caching."
+"Python's scheme for caching bytecode in *.pyc* files did not work well in "
+"environments with multiple Python interpreters.  If one interpreter "
+"encountered a cached file created by another interpreter, it would recompile"
+" the source and overwrite the cached file, thus losing the benefits of "
+"caching."
 msgstr ""
+"Pythonovo schéma pro cacheéní bytekodu v souborech *.pyc* nefungovalo dobře "
+"v prostředích s více Python interprety. Pokud jeden interpret setkal se "
+"souborem cacheéným jiným interpretem, znovu se zkompiloval zdroj a přepsal "
+"cacheéný soubor, čímž se ztratily výhody cacheéní."
 
 #: ../../whatsnew/3.2.rst:300
 msgid ""
 "The issue of \"pyc fights\" has become more pronounced as it has become "
 "commonplace for Linux distributions to ship with multiple versions of "
-"Python. These conflicts also arise with CPython alternatives such as "
-"Unladen Swallow."
+"Python. These conflicts also arise with CPython alternatives such as Unladen"
+" Swallow."
 msgstr ""
+"Problém \"pyc fights\" se stal více zřejmým, protože se stalo běžnou praxí, "
+"aby distribuce Linuxu dodaly více verzí Pythonu. Tyto konflikty vznikají "
+"také s alternativami CPython, jako je Unladen Swallow."
 
 #: ../../whatsnew/3.2.rst:304
 msgid ""
-"To solve this problem, Python's import machinery has been extended to use"
-" distinct filenames for each interpreter.  Instead of Python 3.2 and "
-"Python 3.3 and Unladen Swallow each competing for a file called "
-"\"mymodule.pyc\", they will now look for \"mymodule.cpython-32.pyc\", "
-"\"mymodule.cpython-33.pyc\", and \"mymodule.unladen10.pyc\".  And to "
-"prevent all of these new files from cluttering source directories, the "
-"*pyc* files are now collected in a \"__pycache__\" directory stored under"
-" the package directory."
+"To solve this problem, Python's import machinery has been extended to use "
+"distinct filenames for each interpreter.  Instead of Python 3.2 and Python "
+"3.3 and Unladen Swallow each competing for a file called \"mymodule.pyc\", "
+"they will now look for \"mymodule.cpython-32.pyc\", "
+"\"mymodule.cpython-33.pyc\", and \"mymodule.unladen10.pyc\".  And to prevent"
+" all of these new files from cluttering source directories, the *pyc* files "
+"are now collected in a \"__pycache__\" directory stored under the package "
+"directory."
 msgstr ""
+"K řešení tohoto problému byla Python importní mechanika rozšířena, aby "
+"používala odlišné názvy souborů pro každý interpret. Namísto Pythonu 3.2, "
+"Python 3.3 a Unladen Swallow, které se navzájem pokoušely o soubor nazvaný "
+"\"mymodule.pyc\", budou nyní hledat \"mymodule.cpython-32.pyc\", "
+"\"mymodule.cpython-33.pyc\" a \"mymodule.unladen10.pyc\". A aby se zabránilo"
+" příslušným novým souborům, které znečišťují zdrojové adresáře, jsou soubory"
+" *pyc* nyní sbírány v adresáři \"__pycache__\" uloženém pod adresářem "
+"balíků."
 
 #: ../../whatsnew/3.2.rst:312
 msgid ""
-"Aside from the filenames and target directories, the new scheme has a few"
-" aspects that are visible to the programmer:"
-msgstr ""
+"Aside from the filenames and target directories, the new scheme has a few "
+"aspects that are visible to the programmer:"
+msgstr "Mimo jiné aspekty je nove schema viditelne programatorovi:"
 
 #: ../../whatsnew/3.2.rst:315
 msgid ""
 "Imported modules now have a :attr:`~module.__cached__` attribute which "
 "stores the name of the actual file that was imported:"
 msgstr ""
+"Importovane moduly nyni maji atribut :attr:`~module.__cached__`, ktery "
+"uchova nazev skutecneho souboru, ktery byl importovan:"
 
 #: ../../whatsnew/3.2.rst:322
 msgid ""
 "The tag that is unique to each interpreter is accessible from the "
 ":mod:`!imp` module:"
 msgstr ""
+"Znacka, ktera je jedina pro kazdy interpret, je pristupna z modulu "
+":mod:`!imp`:"
 
 #: ../../whatsnew/3.2.rst:329
 msgid ""
-"Scripts that try to deduce source filename from the imported file now "
-"need to be smarter.  It is no longer sufficient to simply strip the \"c\""
-" from a \".pyc\" filename.  Instead, use the new functions in the "
-":mod:`!imp` module:"
+"Scripts that try to deduce source filename from the imported file now need "
+"to be smarter.  It is no longer sufficient to simply strip the \"c\" from a "
+"\".pyc\" filename.  Instead, use the new functions in the :mod:`!imp` "
+"module:"
 msgstr ""
+"Skripty, ktere se snazi zjednotit nazev zdrojoveho souboru z importovaneho "
+"souboru, nyni musi byt inteligentnejsi. Jiz neni dostatecne jednoduche "
+"odstranit \"c\" z nazvu souboru \".pyc\". Namiste toho pouzijte nove funkce "
+"v modulu :mod:`!imp`:"
 
 #: ../../whatsnew/3.2.rst:338
 msgid ""
 "The :mod:`py_compile` and :mod:`compileall` modules have been updated to "
-"reflect the new naming convention and target directory.  The command-line"
-" invocation of *compileall* has new options: ``-i`` for specifying a list"
-" of files and directories to compile and ``-b`` which causes bytecode "
-"files to be written to their legacy location rather than *__pycache__*."
+"reflect the new naming convention and target directory.  The command-line "
+"invocation of *compileall* has new options: ``-i`` for specifying a list of "
+"files and directories to compile and ``-b`` which causes bytecode files to "
+"be written to their legacy location rather than *__pycache__*."
 msgstr ""
+"Moduly :mod:`py_compile` a :mod:`compileall` byly aktualizovany, aby "
+"odrazely nove konvence pojmenovani a cilove adresare. Volba prikkazove radky"
+" *compileall* ma nove volby: ``-i`` pro zadani seznamu souboru a adresaru ke"
+" kompilaci a ``-b``, ktera zaprici zapis bytekodovych souboru do jejich "
+"puvodniho umisteni namiste *__pycache__*."
 
 #: ../../whatsnew/3.2.rst:345
 msgid ""
-"The :mod:`importlib.abc` module has been updated with new :term:`abstract"
-" base classes <abstract base class>` for loading bytecode files.  The "
+"The :mod:`importlib.abc` module has been updated with new :term:`abstract "
+"base classes <abstract base class>` for loading bytecode files.  The "
 "obsolete ABCs, :class:`!PyLoader` and :class:`!PyPycLoader`, have been "
-"deprecated (instructions on how to stay Python 3.1 compatible are "
-"included with the documentation)."
+"deprecated (instructions on how to stay Python 3.1 compatible are included "
+"with the documentation)."
 msgstr ""
+"Modul :mod:`importlib.abc` byl aktualizovan novymi :term:`abstraktnimi "
+"zakladnimi tridami <abstract base class>` pro nacitani bytekodovych souboru."
+" Zastarale ABC, :class:`!PyLoader` a :class:`!PyPycLoader`, byly zastarany "
+"(pokyny, jak zustat kompatibilni s Pythonem 3.1, jsou zahrnuty s "
+"dokumentaci)."
 
 #: ../../whatsnew/3.2.rst:353
 msgid ":pep:`3147` - PYC Repository Directories"
-msgstr ""
+msgstr ":pep:`3147` - PYC Repository Directories"
 
 #: ../../whatsnew/3.2.rst:354 ../../whatsnew/3.2.rst:385
 msgid "PEP written by Barry Warsaw."
-msgstr ""
+msgstr "PEP napsan Barrym Warsawem."
 
 #: ../../whatsnew/3.2.rst:358
 msgid "PEP 3149: ABI Version Tagged .so Files"
-msgstr ""
+msgstr "PEP 3149: Soubory .so se znackou verze ABI"
 
 #: ../../whatsnew/3.2.rst:360
 msgid ""
-"The PYC repository directory allows multiple bytecode cache files to be "
-"co-located.  This PEP implements a similar mechanism for shared object "
-"files by giving them a common directory and distinct names for each "
-"version."
+"The PYC repository directory allows multiple bytecode cache files to be co-"
+"located.  This PEP implements a similar mechanism for shared object files by"
+" giving them a common directory and distinct names for each version."
 msgstr ""
+"Adresar PYC repository umoznuje, aby byly vice bytecodovych cache souboru "
+"umisteny vedle sebe. Tato PEP implementuje podobny mechanismus pro sdilene "
+"objektove soubory tim, ze jim dava spolecny adresar a odlisne jmena pro "
+"kazdou verzi."
 
 #: ../../whatsnew/3.2.rst:364
 msgid ""
-"The common directory is \"pyshared\" and the file names are made distinct"
-" by identifying the Python implementation (such as CPython, PyPy, Jython,"
-" etc.), the major and minor version numbers, and optional build flags "
-"(such as \"d\" for debug, \"m\" for pymalloc, \"u\" for wide-unicode).  "
-"For an arbitrary package \"foo\", you may see these files when the "
-"distribution package is installed::"
+"The common directory is \"pyshared\" and the file names are made distinct by"
+" identifying the Python implementation (such as CPython, PyPy, Jython, "
+"etc.), the major and minor version numbers, and optional build flags (such "
+"as \"d\" for debug, \"m\" for pymalloc, \"u\" for wide-unicode).  For an "
+"arbitrary package \"foo\", you may see these files when the distribution "
+"package is installed::"
 msgstr ""
+"Spolecny adresar je \"pyshared\" a jmena souboru jsou cinena odlisne tim, ze"
+" jsou identifikovany Python implementace (jako je CPython, PyPy, Jython, "
+"atd.), hlavni a vedlejsi cisla verzani a volitelne vlajky sestaveni (jako je"
+" \"d\" pro ladeni, \"m\" pro pymalloc, \"u\" pro siroku unicode). Pro "
+"libovolny balik \"foo\" mate viditelne tyto soubory, kdyz je balik "
+"distribuce instalovan::"
 
 #: ../../whatsnew/3.2.rst:370
 msgid ""
@@ -506,133 +604,174 @@ msgid ""
 "In Python itself, the tags are accessible from functions in the "
 ":mod:`sysconfig` module::"
 msgstr ""
+"V Pythonu samy jsou tagy pristupne z funkci v modulu :mod:`sysconfig`::"
 
 #: ../../whatsnew/3.2.rst:376
 msgid ""
 ">>> import sysconfig\n"
 ">>> sysconfig.get_config_var('SOABI')       # find the version tag\n"
 "'cpython-32mu'\n"
-">>> sysconfig.get_config_var('EXT_SUFFIX')  # find the full filename "
-"extension\n"
+">>> sysconfig.get_config_var('EXT_SUFFIX')  # find the full filename extension\n"
 "'.cpython-32mu.so'"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:384
 msgid ":pep:`3149` - ABI Version Tagged .so Files"
-msgstr ""
+msgstr ":pep:`3149` - ABI Version Tagged .so Files"
 
 #: ../../whatsnew/3.2.rst:389
 msgid "PEP 3333: Python Web Server Gateway Interface v1.0.1"
-msgstr ""
+msgstr "PEP 3333: Python Web Server Gateway Interface v1.0.1"
 
 #: ../../whatsnew/3.2.rst:391
 msgid ""
-"This informational PEP clarifies how bytes/text issues are to be handled "
-"by the WSGI protocol.  The challenge is that string handling in Python 3 "
-"is most conveniently handled with the :class:`str` type even though the "
-"HTTP protocol is itself bytes oriented."
+"This informational PEP clarifies how bytes/text issues are to be handled by "
+"the WSGI protocol.  The challenge is that string handling in Python 3 is "
+"most conveniently handled with the :class:`str` type even though the HTTP "
+"protocol is itself bytes oriented."
 msgstr ""
+"Tato informacni PEP objasnjuje, jak se maja problemy bytes/text handleovat "
+"WSGI protokolem. Vyzva spociva v tom, ze manipulace s retezci v Pythonu 3 je"
+" nejpohodlneji zpracovana s typem :class:`str` i kdyz je HTTP protokol sam o"
+" sobe orientovan na bajty."
 
 #: ../../whatsnew/3.2.rst:396
 msgid ""
 "The PEP differentiates so-called *native strings* that are used for "
-"request/response headers and metadata versus *byte strings* which are "
-"used for the bodies of requests and responses."
+"request/response headers and metadata versus *byte strings* which are used "
+"for the bodies of requests and responses."
 msgstr ""
+"PEP rozlisuje tzv. *native strings*, ktere se pouzivaji pro zahlavi "
+"zadosti/odpovedi a metadata proti *byte strings*, ktere se pouzivaji pro "
+"tela zadosti a odpovedi."
 
 #: ../../whatsnew/3.2.rst:400
 msgid ""
-"The *native strings* are always of type :class:`str` but are restricted "
-"to code points between *U+0000* through *U+00FF* which are translatable "
-"to bytes using *Latin-1* encoding.  These strings are used for the keys "
-"and values in the environment dictionary and for response headers and "
-"statuses in the :func:`!start_response` function.  They must follow "
-":rfc:`2616` with respect to encoding. That is, they must either be "
-"*ISO-8859-1* characters or use :rfc:`2047` MIME encoding."
+"The *native strings* are always of type :class:`str` but are restricted to "
+"code points between *U+0000* through *U+00FF* which are translatable to "
+"bytes using *Latin-1* encoding.  These strings are used for the keys and "
+"values in the environment dictionary and for response headers and statuses "
+"in the :func:`!start_response` function.  They must follow :rfc:`2616` with "
+"respect to encoding. That is, they must either be *ISO-8859-1* characters or"
+" use :rfc:`2047` MIME encoding."
 msgstr ""
+"*native strings* jsou vzdy typu :class:`str`, ale jsou omezeny na body kodu "
+"mezi *U+0000* az *U+00FF*, ktere jsou prevoditelne na bajty pomoci kodovani "
+"*Latin-1*. Tyto retezce se pouzivaji pro klice a hodnoty v slovniku "
+"prostredi a pro zahlavi odpovedi a stavy v funkci :func:`!start_response`. "
+"Musi se ridit :rfc:`2616` vzhledem k kodovani. To znamena, ze musi byt bud "
+"*ISO-8859-1* znaky nebo pouzit :rfc:`2047` MIME kodovani."
 
 #: ../../whatsnew/3.2.rst:408
 msgid ""
-"For developers porting WSGI applications from Python 2, here are the "
-"salient points:"
+"For developers porting WSGI applications from Python 2, here are the salient"
+" points:"
 msgstr ""
+"Pro vyvojare presunujici WSGI aplikace z Pythonu 2, zde jsou dulezite body:"
 
 #: ../../whatsnew/3.2.rst:411
 msgid ""
 "If the app already used strings for headers in Python 2, no change is "
 "needed."
 msgstr ""
+"Pokud aplikace jiz pouzivala retezce pro zahlavi v Pythonu 2, zadna zmena "
+"neni potrebna."
 
 #: ../../whatsnew/3.2.rst:413
 msgid ""
-"If instead, the app encoded output headers or decoded input headers, then"
-" the headers will need to be re-encoded to Latin-1.  For example, an "
-"output header encoded in utf-8 was using ``h.encode('utf-8')`` now needs "
-"to convert from bytes to native strings using "
-"``h.encode('utf-8').decode('latin-1')``."
+"If instead, the app encoded output headers or decoded input headers, then "
+"the headers will need to be re-encoded to Latin-1.  For example, an output "
+"header encoded in utf-8 was using ``h.encode('utf-8')`` now needs to convert"
+" from bytes to native strings using ``h.encode('utf-8').decode('latin-1')``."
 msgstr ""
+"Pokud namiste toho aplikace kodovala zahlavi vystupu nebo dekodovala zahlavi"
+" vstupu, pak zahlavi bude potreba prekodovat na Latin-1. Naprklad zahlavi "
+"vystupu kodovane v utf-8 pouzivajici ``h.encode('utf-8')`` nyni potrebuje "
+"prevod z bajtu na nativni retezce pouziti "
+"``h.encode('utf-8').decode('latin-1')``."
 
 #: ../../whatsnew/3.2.rst:418
 msgid ""
 "Values yielded by an application or sent using the :meth:`!write` method "
-"must be byte strings.  The :func:`!start_response` function and environ "
-"must use native strings.  The two cannot be mixed."
+"must be byte strings.  The :func:`!start_response` function and environ must"
+" use native strings.  The two cannot be mixed."
 msgstr ""
+"Hodnoty vracene aplikaci nebo odeslane pomoci metody :meth:`!write` musi byt"
+" byte stringy. Funkce :func:`!start_response` a environ musi pouzivat "
+"nativni stringy. Obe nemohou byt smisovany."
 
 #: ../../whatsnew/3.2.rst:422
 msgid ""
 "For server implementers writing CGI-to-WSGI pathways or other CGI-style "
 "protocols, the users must to be able access the environment using native "
-"strings even though the underlying platform may have a different "
-"convention.  To bridge this gap, the :mod:`wsgiref` module has a new "
-"function, :func:`wsgiref.handlers.read_environ` for transcoding CGI "
-"variables from :data:`os.environ` into native strings and returning a new"
-" dictionary."
+"strings even though the underlying platform may have a different convention."
+"  To bridge this gap, the :mod:`wsgiref` module has a new function, "
+":func:`wsgiref.handlers.read_environ` for transcoding CGI variables from "
+":data:`os.environ` into native strings and returning a new dictionary."
 msgstr ""
+"Pro implementatory serveru pisu CGI-to-WSGI cesty nebo jine CGI-style "
+"protokoly, uzivatele musi byt schopni pristupovat prostredi pomoci nativnich"
+" stringu i kdyz podkladova platforma muze mit jinou konvenci. K mosteni této"
+" mezery ma modul :mod:`wsgiref` novou funkci "
+":func:`wsgiref.handlers.read_environ` pro prekodovani CGI promennych z "
+":data:`os.environ` na nativni stringy a vraceni noveho slovniku."
 
 #: ../../whatsnew/3.2.rst:431
 msgid ":pep:`3333` - Python Web Server Gateway Interface v1.0.1"
-msgstr ""
+msgstr ":pep:`3333` - Python Web Server Gateway Interface v1.0.1"
 
 #: ../../whatsnew/3.2.rst:432
 msgid "PEP written by Phillip Eby."
-msgstr ""
+msgstr "PEP napsan Phillipem Ebym."
 
 #: ../../whatsnew/3.2.rst:436
 msgid "Other Language Changes"
-msgstr ""
+msgstr "Jine zmeny jazyka"
 
 #: ../../whatsnew/3.2.rst:438
 msgid "Some smaller changes made to the core Python language are:"
-msgstr ""
+msgstr "Nektere mensi zmeny jadra Pythonovuho jazyka jsou:"
 
 #: ../../whatsnew/3.2.rst:440
 msgid ""
 "String formatting for :func:`format` and :meth:`str.format` gained new "
-"capabilities for the format character **#**.  Previously, for integers in"
-" binary, octal, or hexadecimal, it caused the output to be prefixed with "
-"'0b', '0o', or '0x' respectively.  Now it can also handle floats, "
-"complex, and Decimal, causing the output to always have a decimal point "
-"even when no digits follow it."
+"capabilities for the format character **#**.  Previously, for integers in "
+"binary, octal, or hexadecimal, it caused the output to be prefixed with "
+"'0b', '0o', or '0x' respectively.  Now it can also handle floats, complex, "
+"and Decimal, causing the output to always have a decimal point even when no "
+"digits follow it."
 msgstr ""
+"Formatovani stringu pro :func:`format` a :meth:`str.format` ziskalo nove "
+"moznosti pro znak formatu **#**. Drive pro cela cisla v binarne, osmickove "
+"nebo sestnactkove, to zpusobilo, ze vysledek byl prefixovan '0b', '0o', nebo"
+" '0x'. Nyni muze take zvladat float, complex a Decimal, zpusobujici, ze "
+"vysledek ma vzdy desetinnou carku, i kdyz po ni neni zadne cislice."
 
 #: ../../whatsnew/3.2.rst:452
 msgid ""
 "(Suggested by Mark Dickinson and implemented by Eric Smith in "
 ":issue:`7094`.)"
-msgstr ""
+msgstr "(Navrh Marka Dickinsona a implementace Erica Smithe v :issue:`7094`.)"
 
 #: ../../whatsnew/3.2.rst:454
 msgid ""
 "There is also a new :meth:`str.format_map` method that extends the "
 "capabilities of the existing :meth:`str.format` method by accepting "
-"arbitrary :term:`mapping` objects.  This new method makes it possible to "
-"use string formatting with any of Python's many dictionary-like objects "
-"such as :class:`~collections.defaultdict`, :class:`~shelve.Shelf`, "
-":class:`~configparser.ConfigParser`, or :mod:`dbm`.  It is also useful "
-"with custom :class:`dict` subclasses that normalize keys before look-up "
-"or that supply a :meth:`~object.__missing__` method for unknown keys::"
+"arbitrary :term:`mapping` objects.  This new method makes it possible to use"
+" string formatting with any of Python's many dictionary-like objects such as"
+" :class:`~collections.defaultdict`, :class:`~shelve.Shelf`, "
+":class:`~configparser.ConfigParser`, or :mod:`dbm`.  It is also useful with "
+"custom :class:`dict` subclasses that normalize keys before look-up or that "
+"supply a :meth:`~object.__missing__` method for unknown keys::"
 msgstr ""
+"Existuje take nova metoda :meth:`str.format_map`, ktera rozsiruje moznosti "
+"existujici metody :meth:`str.format` prijimajici libovolne objekty "
+":term:`mapping`. Tato nova metoda umoznuje pouzit formatovani stringu s "
+"kterymkoli z mnoha slovnikove objekty Pythonu, jako je "
+":class:`~collections.defaultdict`, :class:`~shelve.Shelf`, "
+":class:`~configparser.ConfigParser`, nebo :mod:`dbm`. Je take uzitecna s "
+"vlastnimi podtridami :class:`dict`, ktere normalizuji klice pred hledanim "
+"nebo ktere tarme :meth:`~object.__missing__` metodu pro nezname klice::"
 
 #: ../../whatsnew/3.2.rst:463
 #, python-brace-format
@@ -663,14 +802,18 @@ msgid ""
 "(Suggested by Raymond Hettinger and implemented by Eric Smith in "
 ":issue:`6081`.)"
 msgstr ""
+"(Navrh Raymonda Hettingera a implementace Erica Smithe v :issue:`6081`.)"
 
 #: ../../whatsnew/3.2.rst:486
 msgid ""
-"The interpreter can now be started with a quiet option, ``-q``, to "
-"prevent the copyright and version information from being displayed in the"
-" interactive mode.  The option can be introspected using the "
+"The interpreter can now be started with a quiet option, ``-q``, to prevent "
+"the copyright and version information from being displayed in the "
+"interactive mode.  The option can be introspected using the "
 ":data:`sys.flags` attribute:"
 msgstr ""
+"Interpret lze nyni spustit s tichkou moznosti ``-q`` , aby nedoslo k "
+"zobrazeni informaci o copyrightu a verzi v interaktivnim rezimu. Moznost "
+"muze byt introspektovana pomoci atributu :data:`sys.flags`:"
 
 #: ../../whatsnew/3.2.rst:490
 msgid ""
@@ -683,18 +826,25 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:498
 msgid "(Contributed by Marcin Wojdyr in :issue:`1772833`)."
-msgstr ""
+msgstr "(Prispeli Marcin Wojdyr v :issue:`1772833`)."
 
 #: ../../whatsnew/3.2.rst:500
 msgid ""
-"The :func:`hasattr` function works by calling :func:`getattr` and "
-"detecting whether an exception is raised.  This technique allows it to "
-"detect methods created dynamically by :meth:`~object.__getattr__` or "
-":meth:`~object.__getattribute__` which would otherwise be absent from the"
-" class dictionary.  Formerly, *hasattr* would catch any exception, "
-"possibly masking genuine errors.  Now, *hasattr* has been tightened to "
-"only catch :exc:`AttributeError` and let other exceptions pass through::"
+"The :func:`hasattr` function works by calling :func:`getattr` and detecting "
+"whether an exception is raised.  This technique allows it to detect methods "
+"created dynamically by :meth:`~object.__getattr__` or "
+":meth:`~object.__getattribute__` which would otherwise be absent from the "
+"class dictionary.  Formerly, *hasattr* would catch any exception, possibly "
+"masking genuine errors.  Now, *hasattr* has been tightened to only catch "
+":exc:`AttributeError` and let other exceptions pass through::"
 msgstr ""
+"Funkce :func:`hasattr` pracuje volanim :func:`getattr` a detekci, zda je "
+"vyvolvana vyjimka. Tato technika ji umoznuje detekovat metody vytvorene "
+"dynamicky :meth:`~object.__getattr__` nebo :meth:`~object.__getattribute__`,"
+" ktere by jinak byly absence z dlouhovekyho slovniku. Drive by *hasattr* "
+"chytala jakoukoli vyjimku, mozne maskujici genuini chyby. Nyni byl *hasattr*"
+" utesen pouze k chytani :exc:`AttributeError` a nechat ostatni vyjimky pist "
+"pres::"
 
 #: ../../whatsnew/3.2.rst:508
 msgid ""
@@ -715,6 +865,7 @@ msgid ""
 "(Discovered by Yury Selivanov and fixed by Benjamin Peterson; "
 ":issue:`9666`.)"
 msgstr ""
+"(Objeveno Yury Selivanovem a opraveno Benjaminem Petersonem; :issue:`9666`.)"
 
 #: ../../whatsnew/3.2.rst:521
 msgid ""
@@ -723,28 +874,38 @@ msgid ""
 "caused confusion and is no longer needed now that the shortest possible "
 ":func:`repr` is displayed by default:"
 msgstr ""
+":func:`str` floatu nebo komplexniho cisla je nyni stejny jako jeho "
+":func:`repr`. Drive byla forma :func:`str` kratsi ale to jen zpusobilo "
+"zmatek a uz neni potrebna, nyni je standardne zobrazeny nejkratsi mozny "
+":func:`repr`:"
 
 #: ../../whatsnew/3.2.rst:532
 msgid "(Proposed and implemented by Mark Dickinson; :issue:`9337`.)"
-msgstr ""
+msgstr "(Navrh a implementace Marka Dickinsona; :issue:`9337`.)"
 
 #: ../../whatsnew/3.2.rst:534
 msgid ""
-":class:`memoryview` objects now have a :meth:`~memoryview.release` method"
-" and they also now support the context management protocol.  This allows "
-"timely release of any resources that were acquired when requesting a "
-"buffer from the original object."
+":class:`memoryview` objects now have a :meth:`~memoryview.release` method "
+"and they also now support the context management protocol.  This allows "
+"timely release of any resources that were acquired when requesting a buffer "
+"from the original object."
 msgstr ""
+"Objekty :class:`memoryview` maji nyni metodu :meth:`~memoryview.release` a "
+"podporuji take protokol spravceho kontextu. To umoznuje casove vyznamne "
+"vyznamne vyznamne vyznamne releasy jakychkoli zdroju, ktere byly ziskany pri"
+" zadosti bufferu z puvodni objektu."
 
 #: ../../whatsnew/3.2.rst:543
 msgid "(Added by Antoine Pitrou; :issue:`9757`.)"
-msgstr ""
+msgstr "(Pridan Antoine Pitrou; :issue:`9757`.)"
 
 #: ../../whatsnew/3.2.rst:545
 msgid ""
-"Previously it was illegal to delete a name from the local namespace if it"
-" occurs as a free variable in a nested block::"
+"Previously it was illegal to delete a name from the local namespace if it "
+"occurs as a free variable in a nested block::"
 msgstr ""
+"Drive bylo ilegalne mazat jmeno z lokalniho oboru nazvu, pokud se vyskytuje "
+"jako volna promenna v vlozenim bloku::"
 
 #: ../../whatsnew/3.2.rst:548
 msgid ""
@@ -758,9 +919,12 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:554
 msgid ""
 "This is now allowed.  Remember that the target of an :keyword:`except` "
-"clause is cleared, so this code which used to work with Python 2.6, "
-"raised a :exc:`SyntaxError` with Python 3.1 and now works again::"
+"clause is cleared, so this code which used to work with Python 2.6, raised a"
+" :exc:`SyntaxError` with Python 3.1 and now works again::"
 msgstr ""
+"To je nyni povoleno. Pamatujte, ze cil klauzule :keyword:`except` je "
+"vycisten, takze tento kod, ktery pracoval s Pythonem 2.6, vyvolal "
+":exc:`SyntaxError` s Pythonem 3.1 a nyni pracuje opet::"
 
 #: ../../whatsnew/3.2.rst:558
 msgid ""
@@ -776,68 +940,92 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:567
 msgid "(See :issue:`4617`.)"
-msgstr ""
+msgstr "(Viz :issue:`4617`.)"
 
 #: ../../whatsnew/3.2.rst:569
 msgid ""
-":ref:`Struct sequence types <struct-sequence-objects>` are now subclasses"
-" of tuple. This means that C structures like those returned by "
-":func:`os.stat`, :func:`time.gmtime`, and :data:`sys.version_info` now "
-"work like a :term:`named tuple` and now work with functions and methods "
-"that expect a tuple as an argument.  This is a big step forward in making"
-" the C structures as flexible as their pure Python counterparts:"
+":ref:`Struct sequence types <struct-sequence-objects>` are now subclasses of"
+" tuple. This means that C structures like those returned by :func:`os.stat`,"
+" :func:`time.gmtime`, and :data:`sys.version_info` now work like a "
+":term:`named tuple` and now work with functions and methods that expect a "
+"tuple as an argument.  This is a big step forward in making the C structures"
+" as flexible as their pure Python counterparts:"
 msgstr ""
+"Typy :ref:`Struct sequence <struct-sequence-objects>` jsou nyt podtridou "
+"tuple. To znamena, ze C struktury, jako ty vracene :func:`os.stat`, "
+":func:`time.gmtime`, a :data:`sys.version_info` nyni pracuji jako "
+":term:`pojmenovany tuple` a nyni pracuji s funkcemi a metodami, ktere "
+"ocekavaji tuple jako argument. Toto je velky posun vpred pri cineni C "
+"struktur tak flexibilne jako jejich cisty Python ekvivalenty:"
 
 #: ../../whatsnew/3.2.rst:582
 msgid ""
 "(Suggested by Arfrever Frehtes Taifersar Arahesis and implemented by "
 "Benjamin Peterson in :issue:`8413`.)"
 msgstr ""
+"(Navrh Arfrever Frehtes Taifersar Arahesis a implementace Benjamin Peterson "
+"v :issue:`8413`.)"
 
 #: ../../whatsnew/3.2.rst:585
 msgid ""
 "Warnings are now easier to control using the :envvar:`PYTHONWARNINGS` "
-"environment variable as an alternative to using ``-W`` at the command "
-"line:"
+"environment variable as an alternative to using ``-W`` at the command line:"
 msgstr ""
+"Varovani jsou nyni jednodussi kontrolovat pomoci promenne prostredi "
+":envvar:`PYTHONWARNINGS` jako alternativu k pouziti ``-W`` na prikazove "
+"radce:"
 
 #: ../../whatsnew/3.2.rst:588
-msgid "$ export PYTHONWARNINGS='ignore::RuntimeWarning::,once::UnicodeWarning::'"
+msgid ""
+"$ export PYTHONWARNINGS='ignore::RuntimeWarning::,once::UnicodeWarning::'"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:592
 msgid ""
 "(Suggested by Barry Warsaw and implemented by Philip Jenvey in "
 ":issue:`7301`.)"
-msgstr ""
+msgstr "(Navrh Barry Warsaw a implementace Philip Jenvey v :issue:`7301`.)"
 
 #: ../../whatsnew/3.2.rst:594
 msgid ""
 "A new warning category, :exc:`ResourceWarning`, has been added.  It is "
 "emitted when potential issues with resource consumption or cleanup are "
 "detected.  It is silenced by default in normal release builds but can be "
-"enabled through the means provided by the :mod:`warnings` module, or on "
-"the command line."
+"enabled through the means provided by the :mod:`warnings` module, or on the "
+"command line."
 msgstr ""
+"Nova kategorie varovani :exc:`ResourceWarning` byla pridana. Je vyslanapri "
+"zjisteni potencialnich problemu se spotrebou nebo vycistenim zdroju. Je "
+"ticha implicitne v normalnych vydanich, ale lze ji povolit prostredky "
+"poskytovanymi modulem :mod:`warnings` nebo na prikazove radce."
 
 #: ../../whatsnew/3.2.rst:600
 msgid ""
 "A :exc:`ResourceWarning` is issued at interpreter shutdown if the "
-":data:`gc.garbage` list isn't empty, and if "
-":const:`gc.DEBUG_UNCOLLECTABLE` is set, all uncollectable objects are "
-"printed.  This is meant to make the programmer aware that their code "
-"contains object finalization issues."
+":data:`gc.garbage` list isn't empty, and if :const:`gc.DEBUG_UNCOLLECTABLE` "
+"is set, all uncollectable objects are printed.  This is meant to make the "
+"programmer aware that their code contains object finalization issues."
 msgstr ""
+":exc:`ResourceWarning` je vyvolvana pri vyputi interpretu, pokud seznam "
+":data:`gc.garbage` neni prazdny a pokud je nastaveno "
+":const:`gc.DEBUG_UNCOLLECTABLE`, jsou vytisteny vse neshromazitelne objekty."
+" Toto ma ucinu programatora, ze jejich kod obsahuje problemy finalizace "
+"objektu."
 
 #: ../../whatsnew/3.2.rst:605
 msgid ""
 "A :exc:`ResourceWarning` is also issued when a :term:`file object` is "
-"destroyed without having been explicitly closed.  While the deallocator "
-"for such object ensures it closes the underlying operating system "
-"resource (usually, a file descriptor), the delay in deallocating the "
-"object could produce various issues, especially under Windows.  Here is "
-"an example of enabling the warning from the command line:"
+"destroyed without having been explicitly closed.  While the deallocator for "
+"such object ensures it closes the underlying operating system resource "
+"(usually, a file descriptor), the delay in deallocating the object could "
+"produce various issues, especially under Windows.  Here is an example of "
+"enabling the warning from the command line:"
 msgstr ""
+":exc:`ResourceWarning` je take vydavna pri destrukci objektu :term:`file "
+"object` bez vycisteni. Zatimco uvolnitel pro takovy objekt zajistuje jeho "
+"uzavreni podkladoveho zdroje operacniho systemu (obvykle popisovac souboru),"
+" zpozdeni v dealokaci objektu by mohlo vytvorit rozlicne problemy, specialne"
+" v systemu Windows. Zde je priklad aktivace varovani z prikazove radky:"
 
 #: ../../whatsnew/3.2.rst:612
 msgid ""
@@ -852,17 +1040,24 @@ msgid ""
 "(Added by Antoine Pitrou and Georg Brandl in :issue:`10093` and "
 ":issue:`477863`.)"
 msgstr ""
+"(Pridan Antoine Pitrou a Georg Brandl v :issue:`10093` a :issue:`477863`.)"
 
 #: ../../whatsnew/3.2.rst:621
 msgid ""
-":class:`range` objects now support *index* and *count* methods. This is "
-"part of an effort to make more objects fully implement the "
+":class:`range` objects now support *index* and *count* methods. This is part"
+" of an effort to make more objects fully implement the "
 ":class:`collections.Sequence <collections.abc.Sequence>` :term:`abstract "
-"base class`.  As a result, the language will have a more uniform API.  In"
-" addition, :class:`range` objects now support slicing and negative "
-"indices, even with values larger than :data:`sys.maxsize`.  This makes "
-"*range* more interoperable with lists::"
+"base class`.  As a result, the language will have a more uniform API.  In "
+"addition, :class:`range` objects now support slicing and negative indices, "
+"even with values larger than :data:`sys.maxsize`.  This makes *range* more "
+"interoperable with lists::"
 msgstr ""
+"Objekty :class:`range` nyni podporuji metody *index* a *count*. Toto je cast"
+" snah, aby vice objektu plne implementovalo :class:`collections.Sequence "
+"<collections.abc.Sequence>` :term:`abstraktni zakladni tridu`. V dusledku "
+"toho bude jazyk mit jednotnejsi API. Navic objekty :class:`range` nyni "
+"podporuji zrezavani a zaporne indexy, i s hodnotami vetsimi nez "
+":data:`sys.maxsize`. To cinii *range* interoperabilnejsi se seznamy::"
 
 #: ../../whatsnew/3.2.rst:628
 msgid ""
@@ -878,117 +1073,156 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:637
 msgid ""
-"(Contributed by Daniel Stutzbach in :issue:`9213`, by Alexander "
-"Belopolsky in :issue:`2690`, and by Nick Coghlan in :issue:`10889`.)"
+"(Contributed by Daniel Stutzbach in :issue:`9213`, by Alexander Belopolsky "
+"in :issue:`2690`, and by Nick Coghlan in :issue:`10889`.)"
 msgstr ""
+"(Prispel Daniel Stutzbach v :issue:`9213`, Alexander Belopolsky v "
+":issue:`2690` a Nick Coghlan v :issue:`10889`.)"
 
 #: ../../whatsnew/3.2.rst:640
 msgid ""
 "The :func:`callable` builtin function from Py2.x was resurrected.  It "
-"provides a concise, readable alternative to using an :term:`abstract base"
-" class` in an expression like ``isinstance(x, collections.Callable)``:"
+"provides a concise, readable alternative to using an :term:`abstract base "
+"class` in an expression like ``isinstance(x, collections.Callable)``:"
 msgstr ""
+"Vestavena funkce :func:`callable` z Py2.x byla vzkvesena. Poskytuje "
+"strucnou, citelnou alternativu k pouziti :term:`abstraktni zakladni tridy` v"
+" vyrazech jako ``isinstance(x, collections.Callable)``:"
 
 #: ../../whatsnew/3.2.rst:649
 msgid "(See :issue:`10518`.)"
-msgstr ""
+msgstr "(Viz :issue:`10518`.)"
 
 #: ../../whatsnew/3.2.rst:651
 msgid ""
-"Python's import mechanism can now load modules installed in directories "
-"with non-ASCII characters in the path name.  This solved an aggravating "
-"problem with home directories for users with non-ASCII characters in "
-"their usernames."
+"Python's import mechanism can now load modules installed in directories with"
+" non-ASCII characters in the path name.  This solved an aggravating problem "
+"with home directories for users with non-ASCII characters in their "
+"usernames."
 msgstr ""
+"Python importni mekanismus nyni muze nacitat moduly instalovane v adresarech"
+" s ne-ASCII znaky v ceste. To vyresilo rozladujici problem domovskych "
+"adresaru pro uzivatele s ne-ASCII znaky ve jejich uzivatelskych jmenech."
 
 #: ../../whatsnew/3.2.rst:655
 msgid "(Required extensive work by Victor Stinner in :issue:`9425`.)"
-msgstr ""
+msgstr "(Vyzadovano rozsahle prace Victor Stinnerem v :issue:`9425`.)"
 
 #: ../../whatsnew/3.2.rst:659
 msgid "New, Improved, and Deprecated Modules"
-msgstr ""
+msgstr "Nove, Vylepsene a Zastarele Moduly"
 
 #: ../../whatsnew/3.2.rst:661
 msgid ""
-"Python's standard library has undergone significant maintenance efforts "
-"and quality improvements."
+"Python's standard library has undergone significant maintenance efforts and "
+"quality improvements."
 msgstr ""
+"Standardni knihovna Pythonu se podrobila vyznamnemu udrzovacmu usili a "
+"vylepsenym kvality."
 
 #: ../../whatsnew/3.2.rst:664
 msgid ""
 "The biggest news for Python 3.2 is that the :mod:`email` package, "
-":mod:`mailbox` module, and :mod:`!nntplib` modules now work correctly "
-"with the bytes/text model in Python 3.  For the first time, there is "
-"correct handling of messages with mixed encodings."
+":mod:`mailbox` module, and :mod:`!nntplib` modules now work correctly with "
+"the bytes/text model in Python 3.  For the first time, there is correct "
+"handling of messages with mixed encodings."
 msgstr ""
+"Nejvetsim zpravou pro Python 3.2 je, ze baliky :mod:`email`, modul "
+":mod:`mailbox` a moduly :mod:`!nntplib` nyni pracuji spravne s modelem "
+"bytes/text v Pythonu 3. Poprvé existuje spravna manipulace se zpravam se "
+"smisenyma kodovanim."
 
 #: ../../whatsnew/3.2.rst:669
 msgid ""
-"Throughout the standard library, there has been more careful attention to"
-" encodings and text versus bytes issues.  In particular, interactions "
-"with the operating system are now better able to exchange non-ASCII data "
-"using the Windows MBCS encoding, locale-aware encodings, or UTF-8."
+"Throughout the standard library, there has been more careful attention to "
+"encodings and text versus bytes issues.  In particular, interactions with "
+"the operating system are now better able to exchange non-ASCII data using "
+"the Windows MBCS encoding, locale-aware encodings, or UTF-8."
 msgstr ""
+"V cele standardni knihovne bylo vetsim pozornosti na kodovani a text versus "
+"bytes problemy. Zejmena interakce s operacnim systemem jsou nyni lepe "
+"schopny vymenitovat ne-ASCII data pouzitim Windows MBCS kodovani, locale-"
+"aware kodovani nebo UTF-8."
 
 #: ../../whatsnew/3.2.rst:674
 msgid ""
-"Another significant win is the addition of substantially better support "
-"for *SSL* connections and security certificates."
+"Another significant win is the addition of substantially better support for "
+"*SSL* connections and security certificates."
 msgstr ""
+"Dalsi vyznacna vyhoda je pridani vyznamne lepsich podpory pro spojeni *SSL* "
+"a bezpecnostni certifikaty."
 
 #: ../../whatsnew/3.2.rst:677
 msgid ""
-"In addition, more classes now implement a :term:`context manager` to "
-"support convenient and reliable resource clean-up using a :keyword:`with`"
-" statement."
+"In addition, more classes now implement a :term:`context manager` to support"
+" convenient and reliable resource clean-up using a :keyword:`with` "
+"statement."
 msgstr ""
+"Navic vice trid nyni implementuje :term:`spravce kontextu` pro podporu "
+"vyhodne a spolehlivem cisteni zdroju pomoci :keyword:`with` prikazu."
 
 #: ../../whatsnew/3.2.rst:681
 msgid "email"
-msgstr ""
+msgstr "email"
 
 #: ../../whatsnew/3.2.rst:683
 msgid ""
-"The usability of the :mod:`email` package in Python 3 has been mostly "
-"fixed by the extensive efforts of R. David Murray.  The problem was that "
-"emails are typically read and stored in the form of :class:`bytes` rather"
-" than :class:`str` text, and they may contain multiple encodings within a"
-" single email.  So, the email package had to be extended to parse and "
-"generate email messages in bytes format."
+"The usability of the :mod:`email` package in Python 3 has been mostly fixed "
+"by the extensive efforts of R. David Murray.  The problem was that emails "
+"are typically read and stored in the form of :class:`bytes` rather than "
+":class:`str` text, and they may contain multiple encodings within a single "
+"email.  So, the email package had to be extended to parse and generate email"
+" messages in bytes format."
 msgstr ""
+"Pouzitelnost baliku :mod:`email` v Pythonu 3 byla vetsinou opravena obsahle "
+"snahami R. Davida Muraye. Problem byl, ze emaily se typicky cteou a skladuji"
+" ve forme :class:`bytes` miste :class:`str` textu a mohou obsahovat vice "
+"kodovani v jednom emailu. Takze, balik email musel byt rozsiren, aby "
+"analyzoval a generoval emailove zpravy v bytes formatu."
 
 #: ../../whatsnew/3.2.rst:690
 msgid ""
 "New functions :func:`~email.message_from_bytes` and "
 ":func:`~email.message_from_binary_file`, and new classes "
 ":class:`~email.parser.BytesFeedParser` and "
-":class:`~email.parser.BytesParser` allow binary message data to be parsed"
-" into model objects."
+":class:`~email.parser.BytesParser` allow binary message data to be parsed "
+"into model objects."
 msgstr ""
+"Nove funkce :func:`~email.message_from_bytes` a "
+":func:`~email.message_from_binary_file` a nove tridy "
+":class:`~email.parser.BytesFeedParser` a :class:`~email.parser.BytesParser` "
+"umoznuji, aby binarne datove zpravy byly analyzovany do modelovych objektu."
 
 #: ../../whatsnew/3.2.rst:695
 msgid ""
-"Given bytes input to the model, "
-":meth:`~email.message.Message.get_payload` will by default decode a "
-"message body that has a :mailheader:`Content-Transfer-Encoding` of *8bit*"
-" using the charset specified in the MIME headers and return the resulting"
-" string."
+"Given bytes input to the model, :meth:`~email.message.Message.get_payload` "
+"will by default decode a message body that has a :mailheader:`Content-"
+"Transfer-Encoding` of *8bit* using the charset specified in the MIME headers"
+" and return the resulting string."
 msgstr ""
+"Vzhledem k bytes vstupu do modelu, "
+":meth:`~email.message.Message.get_payload` bude ve vychozi nastaveni "
+"dekodovat sprava zpravy, ktere maji :mailheader:`Content-Transfer-Encoding` "
+"z *8bit* pouzitim znakovy sady specifikovane v MIME hlavickach a vrati "
+"vysledny string."
 
 #: ../../whatsnew/3.2.rst:700
 msgid ""
 "Given bytes input to the model, :class:`~email.generator.Generator` will "
-"convert message bodies that have a :mailheader:`Content-Transfer-"
-"Encoding` of *8bit* to instead have a *7bit* :mailheader:`Content-"
-"Transfer-Encoding`."
+"convert message bodies that have a :mailheader:`Content-Transfer-Encoding` "
+"of *8bit* to instead have a *7bit* :mailheader:`Content-Transfer-Encoding`."
 msgstr ""
+"Vzhledem k bytes vstupu do modelu, :class:`~email.generator.Generator` bude "
+"prevadeze zpravy, ktere maji :mailheader:`Content-Transfer-Encoding` z "
+"*8bit* na miste mit *7bit* :mailheader:`Content-Transfer-Encoding`."
 
 #: ../../whatsnew/3.2.rst:704
 msgid ""
 "Headers with unencoded non-ASCII bytes are deemed to be :rfc:`2047`\\ "
 "-encoded using the *unknown-8bit* character set."
 msgstr ""
+"Hlavicky s neskodovanyma ne-ASCII bajty jsou povazovany za :rfc:`2047`\\ "
+"-encoded pouzitim znakovy sady *unknown-8bit*."
 
 #: ../../whatsnew/3.2.rst:707
 msgid ""
@@ -997,94 +1231,122 @@ msgid ""
 "input used to build the model, including message bodies with a "
 ":mailheader:`Content-Transfer-Encoding` of *8bit*."
 msgstr ""
+"Nova trida :class:`~email.generator.BytesGenerator` produkuje bajty jako "
+"vysledek, zachovavajici kazde nezmenene ne-ASCII data, ktera byla pritomna "
+"ve vstupu pouzitym k vytvoreni modelu, vcetne sprav se :mailheader:`Content-"
+"Transfer-Encoding` z *8bit*."
 
 #: ../../whatsnew/3.2.rst:712
 msgid ""
-"The :mod:`smtplib` :class:`~smtplib.SMTP` class now accepts a byte string"
-" for the *msg* argument to the :meth:`~smtplib.SMTP.sendmail` method, and"
-" a new method, :meth:`~smtplib.SMTP.send_message` accepts a "
+"The :mod:`smtplib` :class:`~smtplib.SMTP` class now accepts a byte string "
+"for the *msg* argument to the :meth:`~smtplib.SMTP.sendmail` method, and a "
+"new method, :meth:`~smtplib.SMTP.send_message` accepts a "
 ":class:`~email.message.Message` object and can optionally obtain the "
 "*from_addr* and *to_addrs* addresses directly from the object."
 msgstr ""
+"Trida :mod:`smtplib` :class:`~smtplib.SMTP` nyni akceptuje byte string pro "
+"argument *msg* metode :meth:`~smtplib.SMTP.sendmail` a nova metoda "
+":meth:`~smtplib.SMTP.send_message` akceptuje :class:`~email.message.Message`"
+" objekt a muze volitelne ziskat adresy *from_addr* a *to_addrs* primo z "
+"objektu."
 
 #: ../../whatsnew/3.2.rst:718
 msgid ""
 "(Proposed and implemented by R. David Murray, :issue:`4661` and "
 ":issue:`10321`.)"
 msgstr ""
+"(Navrzeno a implementovano R. Davidem Murraym, :issue:`4661` a "
+":issue:`10321`.)"
 
 #: ../../whatsnew/3.2.rst:721
 msgid "elementtree"
-msgstr ""
+msgstr "elementtree"
 
 #: ../../whatsnew/3.2.rst:723
 msgid ""
 "The :mod:`xml.etree.ElementTree` package and its "
-":mod:`!xml.etree.cElementTree` counterpart have been updated to version "
-"1.3."
+":mod:`!xml.etree.cElementTree` counterpart have been updated to version 1.3."
 msgstr ""
+"Balik :mod:`xml.etree.ElementTree` a jeho :mod:`!xml.etree.cElementTree` "
+"ekvivalent byly aktualizovany na verzi 1.3."
 
 #: ../../whatsnew/3.2.rst:726
 msgid "Several new and useful functions and methods have been added:"
-msgstr ""
+msgstr "Bylo pridano nektera nove a uzitecne funkce a metody:"
 
 #: ../../whatsnew/3.2.rst:728
 msgid ""
-":func:`xml.etree.ElementTree.fromstringlist` which builds an XML document"
-" from a sequence of fragments"
+":func:`xml.etree.ElementTree.fromstringlist` which builds an XML document "
+"from a sequence of fragments"
 msgstr ""
+":func:`xml.etree.ElementTree.fromstringlist`, ktera vytvari XML dokument ze "
+"sekvence fragmentu"
 
 #: ../../whatsnew/3.2.rst:730
 msgid ""
-":func:`xml.etree.ElementTree.register_namespace` for registering a global"
-" namespace prefix"
+":func:`xml.etree.ElementTree.register_namespace` for registering a global "
+"namespace prefix"
 msgstr ""
+":func:`xml.etree.ElementTree.register_namespace` pro registraci globalni "
+"predpony jmeneho prostoru"
 
 #: ../../whatsnew/3.2.rst:732
 msgid ""
 ":func:`xml.etree.ElementTree.tostringlist` for string representation "
 "including all sublists"
 msgstr ""
+":func:`xml.etree.ElementTree.tostringlist` pro reprezentaci retezce vcetn "
+"vsech podseznamu"
 
 #: ../../whatsnew/3.2.rst:734
 msgid ""
 ":meth:`xml.etree.ElementTree.Element.extend` for appending a sequence of "
 "zero or more elements"
 msgstr ""
+":meth:`xml.etree.ElementTree.Element.extend` pro pridani sekvence nula nebo "
+"vice prvku"
 
 #: ../../whatsnew/3.2.rst:736
 msgid ""
 ":meth:`xml.etree.ElementTree.Element.iterfind` searches an element and "
 "subelements"
 msgstr ""
+":meth:`xml.etree.ElementTree.Element.iterfind` prohledava prvek a podnilky"
 
 #: ../../whatsnew/3.2.rst:738
 msgid ""
-":meth:`xml.etree.ElementTree.Element.itertext` creates a text iterator "
-"over an element and its subelements"
+":meth:`xml.etree.ElementTree.Element.itertext` creates a text iterator over "
+"an element and its subelements"
 msgstr ""
+":meth:`xml.etree.ElementTree.Element.itertext` vytvari iterator textu nad "
+"prvkem a jeho podnilky"
 
 #: ../../whatsnew/3.2.rst:740
-msgid ":meth:`xml.etree.ElementTree.TreeBuilder.end` closes the current element"
-msgstr ""
+msgid ""
+":meth:`xml.etree.ElementTree.TreeBuilder.end` closes the current element"
+msgstr ":meth:`xml.etree.ElementTree.TreeBuilder.end` uzavira aktulni prvek"
 
 #: ../../whatsnew/3.2.rst:741
 msgid ""
 ":meth:`xml.etree.ElementTree.TreeBuilder.doctype` handles a doctype "
 "declaration"
 msgstr ""
+":meth:`xml.etree.ElementTree.TreeBuilder.doctype` zvlada deklaraci doctype"
 
 #: ../../whatsnew/3.2.rst:744
 msgid "Two methods have been deprecated:"
-msgstr ""
+msgstr "Dve metody byly zastarany:"
 
 #: ../../whatsnew/3.2.rst:746
 msgid ":meth:`!xml.etree.ElementTree.getchildren` use ``list(elem)`` instead."
 msgstr ""
+":meth:`!xml.etree.ElementTree.getchildren` pouzijte ``list(elem)`` miste."
 
 #: ../../whatsnew/3.2.rst:747
-msgid ":meth:`!xml.etree.ElementTree.getiterator` use ``Element.iter`` instead."
+msgid ""
+":meth:`!xml.etree.ElementTree.getiterator` use ``Element.iter`` instead."
 msgstr ""
+":meth:`!xml.etree.ElementTree.getiterator` pouzijte ``Element.iter`` miste."
 
 #: ../../whatsnew/3.2.rst:749
 msgid ""
@@ -1092,78 +1354,109 @@ msgid ""
 "<https://web.archive.org/web/20200703234532/http://effbot.org/zone/elementtree-13-intro.htm>`_"
 " on Fredrik Lundh's website."
 msgstr ""
+"Pro detaily aktualizace, viz `Introducing ElementTree "
+"<https://web.archive.org/web/20200703234532/http://effbot.org/zone/elementtree-13-intro.htm>`_"
+" na webech Fredrika Lundhho."
 
 #: ../../whatsnew/3.2.rst:753
 msgid "(Contributed by Florent Xicluna and Fredrik Lundh, :issue:`6472`.)"
-msgstr ""
+msgstr "(Prispel Florent Xicluna a Fredrik Lundh, :issue:`6472`.)"
 
 #: ../../whatsnew/3.2.rst:756
 msgid "functools"
-msgstr ""
+msgstr "functools"
 
 #: ../../whatsnew/3.2.rst:758
 msgid ""
-"The :mod:`functools` module includes a new decorator for caching function"
-" calls.  :func:`functools.lru_cache` can save repeated queries to an "
-"external resource whenever the results are expected to be the same."
+"The :mod:`functools` module includes a new decorator for caching function "
+"calls.  :func:`functools.lru_cache` can save repeated queries to an external"
+" resource whenever the results are expected to be the same."
 msgstr ""
+"Modul :mod:`functools` zahrnuje nove dekoratoru pro cache volan funkci. "
+":func:`functools.lru_cache` muze uleteloit opakujici se dotazy na externi "
+"zdroj, kdykoli se ocekavaji, ze vysledky budou stejne."
 
 #: ../../whatsnew/3.2.rst:762
 msgid ""
 "For example, adding a caching decorator to a database query function can "
 "save database accesses for popular searches:"
 msgstr ""
+"Naprklad, pridani dekoratoru cache na funkci databazoveho dotazu muze "
+"uleteloit pristupy do databaze pro popularne vyhledavani:"
 
 #: ../../whatsnew/3.2.rst:775
 msgid ""
 "To help with choosing an effective cache size, the wrapped function is "
 "instrumented for tracking cache statistics:"
 msgstr ""
+"Aby se pomohlo s volbou efektivni velikosti cache, je balevana funkce "
+"instrumentovana pro sledovani statistik cache:"
 
 #: ../../whatsnew/3.2.rst:781
 msgid ""
-"If the phonelist table gets updated, the outdated contents of the cache "
-"can be cleared with:"
+"If the phonelist table gets updated, the outdated contents of the cache can "
+"be cleared with:"
 msgstr ""
+"Pokud se tabulka telefonniho seznamu aktualizuje, zastaraleho obsahu cache "
+"lze vycistit pomoci:"
 
 #: ../../whatsnew/3.2.rst:786
 msgid ""
-"(Contributed by Raymond Hettinger and incorporating design ideas from Jim"
-" Baker, Miki Tebeka, and Nick Coghlan; see `recipe 498245 "
+"(Contributed by Raymond Hettinger and incorporating design ideas from Jim "
+"Baker, Miki Tebeka, and Nick Coghlan; see `recipe 498245 "
 "<https://code.activestate.com/recipes/498245-lru-and-lfu-cache-"
 "decorators/>`_\\, `recipe 577479 "
-"<https://code.activestate.com/recipes/577479-simple-caching-"
-"decorator/>`_\\, :issue:`10586`, and :issue:`10593`.)"
+"<https://code.activestate.com/recipes/577479-simple-caching-decorator/>`_\\,"
+" :issue:`10586`, and :issue:`10593`.)"
 msgstr ""
+"(Prispel Raymond Hettinger a zahrnuje navrhy od Jima Bakera, Mikiho Tebeki a"
+" Nicka Coghlana; viz `recipe 498245 "
+"<https://code.activestate.com/recipes/498245-lru-and-lfu-cache-"
+"decorators/>`_\\, `recipe 577479 "
+"<https://code.activestate.com/recipes/577479-simple-caching-decorator/>`_\\,"
+" :issue:`10586` a :issue:`10593`.)"
 
 #: ../../whatsnew/3.2.rst:792
 msgid ""
 "The :func:`functools.wraps` decorator now adds a :attr:`__wrapped__` "
-"attribute pointing to the original callable function.  This allows "
-"wrapped functions to be introspected.  It also copies "
-":attr:`~function.__annotations__` if defined.  And now it also gracefully"
-" skips over missing attributes such as :attr:`~function.__doc__` which "
-"might not be defined for the wrapped callable."
+"attribute pointing to the original callable function.  This allows wrapped "
+"functions to be introspected.  It also copies "
+":attr:`~function.__annotations__` if defined.  And now it also gracefully "
+"skips over missing attributes such as :attr:`~function.__doc__` which might "
+"not be defined for the wrapped callable."
 msgstr ""
+"Dekorator :func:`functools.wraps` nyni prida atribut :attr:`__wrapped__` "
+"ukazujici na puvodni volaproceduru. Toto umoznuje introspekci zalomovanych "
+"funkci. Kopiruje take :attr:`~function.__annotations__` pokud je definovano."
+" A nyni to take hlasiteme preskakovava chybejici atributy jako "
+":attr:`~function.__doc__`, ktere nemusejici byt definovany pro zabaleni "
+"volaprocedury."
 
 #: ../../whatsnew/3.2.rst:799
 msgid ""
-"In the above example, the cache can be removed by recovering the original"
-" function:"
+"In the above example, the cache can be removed by recovering the original "
+"function:"
 msgstr ""
+"Ve vyseukazaneho prikladu, cache muze byt odstranen obnovenin originalni "
+"funkce:"
 
 #: ../../whatsnew/3.2.rst:804
 msgid ""
 "(By Nick Coghlan and Terrence Cole; :issue:`9567`, :issue:`3445`, and "
 ":issue:`8814`.)"
 msgstr ""
+"(Od Nicka Coghlana a Terrenceu Cole; :issue:`9567`, :issue:`3445` a "
+":issue:`8814`.)"
 
 #: ../../whatsnew/3.2.rst:807
 msgid ""
 "To help write classes with rich comparison methods, a new decorator "
-":func:`functools.total_ordering` will use existing equality and "
-"inequality methods to fill in the remaining methods."
+":func:`functools.total_ordering` will use existing equality and inequality "
+"methods to fill in the remaining methods."
 msgstr ""
+"Aby se pomohlo psat tridy s bogatymi metodami srovnani, novy dekorator "
+":func:`functools.total_ordering` bude pouzivat existujici rovnost a "
+"nerovnosti metody k vyplneni zbylych metod."
 
 #: ../../whatsnew/3.2.rst:811
 msgid ""
@@ -1171,6 +1464,8 @@ msgid ""
 ":func:`~functools.total_ordering` to fill-in *__le__*, *__gt__* and "
 "*__ge__*::"
 msgstr ""
+"Naprklad poskytovani *__eq__* a *__lt__* umoznuje "
+":func:`~functools.total_ordering` vyplnit *__le__*, *__gt__* a *__ge__*::"
 
 #: ../../whatsnew/3.2.rst:814
 msgid ""
@@ -1187,130 +1482,169 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:824
 msgid ""
-"With the *total_ordering* decorator, the remaining comparison methods are"
-" filled in automatically."
+"With the *total_ordering* decorator, the remaining comparison methods are "
+"filled in automatically."
 msgstr ""
+"S dekoratorem *total_ordering* jsou zbyle metody srovnani vyplneny "
+"automaticky."
 
 #: ../../whatsnew/3.2.rst:827 ../../whatsnew/3.2.rst:839
 #: ../../whatsnew/3.2.rst:883 ../../whatsnew/3.2.rst:904
 #: ../../whatsnew/3.2.rst:918 ../../whatsnew/3.2.rst:1788
 #: ../../whatsnew/3.2.rst:1832
 msgid "(Contributed by Raymond Hettinger.)"
-msgstr ""
+msgstr "(Prispel Raymond Hettinger.)"
 
 #: ../../whatsnew/3.2.rst:829
 msgid ""
-"To aid in porting programs from Python 2, the "
-":func:`functools.cmp_to_key` function converts an old-style comparison "
-"function to modern :term:`key function`:"
+"To aid in porting programs from Python 2, the :func:`functools.cmp_to_key` "
+"function converts an old-style comparison function to modern :term:`key "
+"function`:"
 msgstr ""
+"Aby se pomohlo pri presunu programu z Pythonu 2, funkce "
+":func:`functools.cmp_to_key` prevaadi starou funkci srovnani na moderanni "
+":term:`klicova funkce`:"
 
 #: ../../whatsnew/3.2.rst:836
 msgid ""
-"For sorting examples and a brief sorting tutorial, see the `Sorting HowTo"
-" <https://wiki.python.org/moin/HowTo/Sorting/>`_ tutorial."
+"For sorting examples and a brief sorting tutorial, see the `Sorting HowTo "
+"<https://wiki.python.org/moin/HowTo/Sorting/>`_ tutorial."
 msgstr ""
+"Pro prikladay a kratky tutorial trideni viz `Sorting HowTo "
+"<https://wiki.python.org/moin/HowTo/Sorting/>`_ tutorial."
 
 #: ../../whatsnew/3.2.rst:842
 msgid "itertools"
-msgstr ""
+msgstr "itertools"
 
 #: ../../whatsnew/3.2.rst:844
 msgid ""
-"The :mod:`itertools` module has a new :func:`~itertools.accumulate` "
-"function modeled on APL's *scan* operator and Numpy's *accumulate* "
-"function:"
+"The :mod:`itertools` module has a new :func:`~itertools.accumulate` function"
+" modeled on APL's *scan* operator and Numpy's *accumulate* function:"
 msgstr ""
+"Modul :mod:`itertools` ma novou funkci :func:`~itertools.accumulate` "
+"modelovanu na APL operatoru *scan* a numpy funkci *accumulate*:"
 
 #: ../../whatsnew/3.2.rst:855
 msgid ""
-"For an example using :func:`~itertools.accumulate`, see the "
-":ref:`examples for the random module <random-examples>`."
+"For an example using :func:`~itertools.accumulate`, see the :ref:`examples "
+"for the random module <random-examples>`."
 msgstr ""
+"Priklad pouziti :func:`~itertools.accumulate`, viz :ref:`examples pro modul "
+"random <random-examples>`."
 
 #: ../../whatsnew/3.2.rst:858
 msgid ""
-"(Contributed by Raymond Hettinger and incorporating design suggestions "
-"from Mark Dickinson.)"
-msgstr ""
+"(Contributed by Raymond Hettinger and incorporating design suggestions from "
+"Mark Dickinson.)"
+msgstr "(Prispel Raymond Hettinger a zahrnuje navrhy od Marka Dickinsona.)"
 
 #: ../../whatsnew/3.2.rst:862
 msgid "collections"
-msgstr ""
+msgstr "collections"
 
 #: ../../whatsnew/3.2.rst:864
 msgid ""
 "The :class:`collections.Counter` class now has two forms of in-place "
 "subtraction, the existing *-=* operator for `saturating subtraction "
 "<https://en.wikipedia.org/wiki/Saturation_arithmetic>`_ and the new "
-":meth:`~collections.Counter.subtract` method for regular subtraction.  "
-"The former is suitable for `multisets "
-"<https://en.wikipedia.org/wiki/Multiset>`_ which only have positive "
-"counts, and the latter is more suitable for use cases that allow negative"
-" counts:"
+":meth:`~collections.Counter.subtract` method for regular subtraction.  The "
+"former is suitable for `multisets <https://en.wikipedia.org/wiki/Multiset>`_"
+" which only have positive counts, and the latter is more suitable for use "
+"cases that allow negative counts:"
 msgstr ""
+"Trida :class:`collections.Counter` ma nyni dve formy odcitani na miste, "
+"existujici operator *-=* pro `saturovane odcitani "
+"<https://en.wikipedia.org/wiki/Saturation_arithmetic>`_ a nova metoda "
+":meth:`~collections.Counter.subtract` pro regularne odcitani. Prvni je "
+"vhodna pro `multisets <https://en.wikipedia.org/wiki/Multiset>`_, ktere maji"
+" pouze kladne pocty, a druha je vhodnejsi pro priklady pouziti, ktere "
+"umoznuji zaporne pocty:"
 
 #: ../../whatsnew/3.2.rst:885
 msgid ""
 "The :class:`collections.OrderedDict` class has a new method "
-":meth:`~collections.OrderedDict.move_to_end` which takes an existing key "
-"and moves it to either the first or last position in the ordered "
-"sequence."
+":meth:`~collections.OrderedDict.move_to_end` which takes an existing key and"
+" moves it to either the first or last position in the ordered sequence."
 msgstr ""
+"Trida :class:`collections.OrderedDict` ma novou metodu "
+":meth:`~collections.OrderedDict.move_to_end`, ktera bere existujici klic a "
+"presune ho na prvni nebo posledni pozici v serazenem poradi."
 
 #: ../../whatsnew/3.2.rst:889
 msgid ""
-"The default is to move an item to the last position.  This is equivalent "
-"of renewing an entry with ``od[k] = od.pop(k)``."
+"The default is to move an item to the last position.  This is equivalent of "
+"renewing an entry with ``od[k] = od.pop(k)``."
 msgstr ""
+"Vychozi presunutim polozky na konec. To je ekvivalentni obnoveni zaznam s "
+"``od[k] = od.pop(k)``."
 
 #: ../../whatsnew/3.2.rst:892
 msgid ""
 "A fast move-to-end operation is useful for resequencing entries.  For "
-"example, an ordered dictionary can be used to track order of access by "
-"aging entries from the oldest to the most recently accessed."
+"example, an ordered dictionary can be used to track order of access by aging"
+" entries from the oldest to the most recently accessed."
 msgstr ""
+"Rychla operace presunu na konec je uzitecna pro zmenu poradi zaznamu. "
+"Naprklad, serazeny slovnik muze byt pouzit ke sledovani poradi pristupu "
+"starnuti zaznamu z nejstarsiho na naposledy pristupeny."
 
 #: ../../whatsnew/3.2.rst:906
 msgid ""
 "The :class:`collections.deque` class grew two new methods "
-":meth:`~collections.deque.count` and :meth:`~collections.deque.reverse` "
-"that make them more substitutable for :class:`list` objects:"
+":meth:`~collections.deque.count` and :meth:`~collections.deque.reverse` that"
+" make them more substitutable for :class:`list` objects:"
 msgstr ""
+"Trida :class:`collections.deque` dostala dve nove metody "
+":meth:`~collections.deque.count` a :meth:`~collections.deque.reverse`, ktere"
+" je ciniji vicesousledne pro objekty :class:`list`:"
 
 #: ../../whatsnew/3.2.rst:921
 msgid "threading"
-msgstr ""
+msgstr "threading"
 
 #: ../../whatsnew/3.2.rst:923
 msgid ""
 "The :mod:`threading` module has a new :class:`~threading.Barrier` "
 "synchronization class for making multiple threads wait until all of them "
-"have reached a common barrier point.  Barriers are useful for making sure"
-" that a task with multiple preconditions does not run until all of the "
+"have reached a common barrier point.  Barriers are useful for making sure "
+"that a task with multiple preconditions does not run until all of the "
 "predecessor tasks are complete."
 msgstr ""
+"Modul :mod:`threading` ma novou tridu :class:`~threading.Barrier` "
+"synchronizace pro vytvoreni viceho vlaken vycekavani az se vsechny dostaly "
+"do spolecneho bodu bariery. Bariery jsou uzitecne pro ujisteni se, ze uloha "
+"s vicestrannym podminkama se nespusti, dokud nejsou vsechny predchudci ukoly"
+" dokonceny."
 
 #: ../../whatsnew/3.2.rst:929
 msgid ""
 "Barriers can work with an arbitrary number of threads.  This is a "
 "generalization of a `Rendezvous "
-"<https://en.wikipedia.org/wiki/Synchronous_rendezvous>`_ which is defined"
-" for only two threads."
+"<https://en.wikipedia.org/wiki/Synchronous_rendezvous>`_ which is defined "
+"for only two threads."
 msgstr ""
+"Bariery mohou pracovat s libovolnym poctem vlaken. Toto je zobecneni "
+"`Rendezvous <https://en.wikipedia.org/wiki/Synchronous_rendezvous>`_, ktery "
+"je definovan pro pouze dve vlakna."
 
 #: ../../whatsnew/3.2.rst:933
 msgid ""
 "Implemented as a two-phase cyclic barrier, :class:`~threading.Barrier` "
 "objects are suitable for use in loops.  The separate *filling* and "
-"*draining* phases assure that all threads get released (drained) before "
-"any one of them can loop back and re-enter the barrier.  The barrier "
-"fully resets after each cycle."
+"*draining* phases assure that all threads get released (drained) before any "
+"one of them can loop back and re-enter the barrier.  The barrier fully "
+"resets after each cycle."
 msgstr ""
+"Implementovano jako dvoustupnova cyklicka bariera, objekty "
+":class:`~threading.Barrier` jsou vhodne pro pouziti v smyckach. Samostatne "
+"faze *vyplnovani* a *vypousteni* zajistovuji, ze vsechna vlakna jsou "
+"uvolnena (vypousten) pred tim, nez se jedno z nich muze vratit zpet a znovu "
+"vstoupit do bariery. Bariera se plne resetuje po kazdem cyklu."
 
 #: ../../whatsnew/3.2.rst:938
 msgid "Example of using barriers::"
-msgstr ""
+msgstr "Priklad pouziti bariery::"
 
 #: ../../whatsnew/3.2.rst:940
 msgid ""
@@ -1318,8 +1652,7 @@ msgid ""
 "\n"
 "def get_votes(site):\n"
 "    ballots = conduct_election(site)\n"
-"    all_polls_closed.wait()        # do not count until all polls are "
-"closed\n"
+"    all_polls_closed.wait()        # do not count until all polls are closed\n"
 "    totals = summarize(ballots)\n"
 "    publish(site, totals)\n"
 "\n"
@@ -1330,21 +1663,31 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:952
 msgid ""
-"In this example, the barrier enforces a rule that votes cannot be counted"
-" at any polling site until all polls are closed.  Notice how a solution "
-"with a barrier is similar to one with :meth:`threading.Thread.join`, but "
-"the threads stay alive and continue to do work (summarizing ballots) "
-"after the barrier point is crossed."
+"In this example, the barrier enforces a rule that votes cannot be counted at"
+" any polling site until all polls are closed.  Notice how a solution with a "
+"barrier is similar to one with :meth:`threading.Thread.join`, but the "
+"threads stay alive and continue to do work (summarizing ballots) after the "
+"barrier point is crossed."
 msgstr ""
+"V tomto prikladu bariera vynucuje pravidlo, ze hlasy nemohou byt pocitany na"
+" jakemkoli volebnim miste, dokud nejsou vsechny volby zavreny. Vsimntete si,"
+" ze reseni s barieru je podobne jako s :meth:`threading.Thread.join`, ale "
+"vlakna zustavaji ziva a pokracuji v prace (soucet hlasu) po prechodu bodu "
+"bariery."
 
 #: ../../whatsnew/3.2.rst:958
 msgid ""
 "If any of the predecessor tasks can hang or be delayed, a barrier can be "
-"created with an optional *timeout* parameter.  Then if the timeout period"
-" elapses before all the predecessor tasks reach the barrier point, all "
+"created with an optional *timeout* parameter.  Then if the timeout period "
+"elapses before all the predecessor tasks reach the barrier point, all "
 "waiting threads are released and a :exc:`~threading.BrokenBarrierError` "
 "exception is raised::"
 msgstr ""
+"Pokud se mely predchudci ukoly zastavit nebo jsou zpozdeny, muze byt "
+"vytvorena bariera s volitelnym parametrem *timeout*. Pak pokud cas timeout "
+"vyprsne pred tim, nez se vsechny predchudci ukoly dostaly k bodu bariery, "
+"vsechna cekajici vlakna jsou uvolnena a vyvolvana vyjimka "
+":exc:`~threading.BrokenBarrierError`::"
 
 #: ../../whatsnew/3.2.rst:963
 msgid ""
@@ -1362,39 +1705,55 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:974
 msgid ""
-"In this example, the barrier enforces a more robust rule.  If some "
-"election sites do not finish before midnight, the barrier times-out and "
-"the ballots are sealed and deposited in a queue for later handling."
+"In this example, the barrier enforces a more robust rule.  If some election "
+"sites do not finish before midnight, the barrier times-out and the ballots "
+"are sealed and deposited in a queue for later handling."
 msgstr ""
+"V tomto prikladu bariera vynucuje robustnejsi pravidlo. Pokud nektere "
+"volebni mista neskoncila pred pulnoci, bariera vyprsi a hlasy jsou utesne a "
+"ulozeny ve fronte k pozdejsimu zpracovani."
 
 #: ../../whatsnew/3.2.rst:978
 msgid ""
 "See `Barrier Synchronization Patterns "
 "<https://osl.cs.illinois.edu/media/papers/karmani-2009-barrier_synchronization_pattern.pdf>`_"
-" for more examples of how barriers can be used in parallel computing.  "
-"Also, there is a simple but thorough explanation of barriers in `The "
-"Little Book of Semaphores "
+" for more examples of how barriers can be used in parallel computing.  Also,"
+" there is a simple but thorough explanation of barriers in `The Little Book "
+"of Semaphores "
 "<https://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf>`_, "
 "*section 3.6*."
 msgstr ""
+"Viz `Barrier Synchronization Patterns "
+"<https://osl.cs.illinois.edu/media/papers/karmani-2009-barrier_synchronization_pattern.pdf>`_"
+" pro viceobrazky, jak mohou byt bariery pouzivany v paralelnich vypoctech. "
+"Take existuje jednoduche ale uchvacujici vysvetleni bariery v `The Little "
+"Book of Semaphores "
+"<https://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf>`_, *sekce "
+"3.6*."
 
 #: ../../whatsnew/3.2.rst:984
 msgid ""
-"(Contributed by Kristján Valur Jónsson with an API review by Jeffrey "
-"Yasskin in :issue:`8777`.)"
+"(Contributed by Kristján Valur Jónsson with an API review by Jeffrey Yasskin"
+" in :issue:`8777`.)"
 msgstr ""
+"(Prispel Kristjan Valur Jonsson s API pregledavani Jeffrey Yasskin v "
+":issue:`8777`.)"
 
 #: ../../whatsnew/3.2.rst:988
 msgid "datetime and time"
-msgstr ""
+msgstr "datum a cas"
 
 #: ../../whatsnew/3.2.rst:990
 msgid ""
-"The :mod:`datetime` module has a new type :class:`~datetime.timezone` "
-"that implements the :class:`~datetime.tzinfo` interface by returning a "
-"fixed UTC offset and timezone name. This makes it easier to create "
-"timezone-aware datetime objects::"
+"The :mod:`datetime` module has a new type :class:`~datetime.timezone` that "
+"implements the :class:`~datetime.tzinfo` interface by returning a fixed UTC "
+"offset and timezone name. This makes it easier to create timezone-aware "
+"datetime objects::"
 msgstr ""
+"Modul :mod:`datetime` ma novy typ :class:`~datetime.timezone`, ktery "
+"implementuje rozhrani :class:`~datetime.tzinfo` vracenim fixniho UTC offsetu"
+" a jmena casoveho pasma. Toto cinii jednodussim vytvoreni objektu datetime "
+"znalych casoveho pasma::"
 
 #: ../../whatsnew/3.2.rst:995
 #, python-format
@@ -1402,8 +1761,7 @@ msgid ""
 ">>> from datetime import datetime, timezone\n"
 "\n"
 ">>> datetime.now(timezone.utc)\n"
-"datetime.datetime(2010, 12, 8, 21, 4, 2, 923754, "
-"tzinfo=datetime.timezone.utc)\n"
+"datetime.datetime(2010, 12, 8, 21, 4, 2, 923754, tzinfo=datetime.timezone.utc)\n"
 "\n"
 ">>> datetime.strptime(\"01/01/2000 12:00 +0000\", \"%m/%d/%Y %H:%M %z\")\n"
 "datetime.datetime(2000, 1, 1, 12, 0, tzinfo=datetime.timezone.utc)"
@@ -1412,32 +1770,44 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1003
 msgid ""
 "Also, :class:`~datetime.timedelta` objects can now be multiplied by "
-":class:`float` and divided by :class:`float` and :class:`int` objects. "
-"And :class:`~datetime.timedelta` objects can now divide one another."
+":class:`float` and divided by :class:`float` and :class:`int` objects. And "
+":class:`~datetime.timedelta` objects can now divide one another."
 msgstr ""
+"Take objekty :class:`~datetime.timedelta` mohou byt nyni nasobirovany "
+":class:`float` a deleny :class:`float` a :class:`int` objekty. A objekty "
+":class:`~datetime.timedelta` mohou nyni delit se navzajem."
 
 #: ../../whatsnew/3.2.rst:1007
 msgid ""
-"The :meth:`datetime.date.strftime` method is no longer restricted to "
-"years after 1900.  The new supported year range is from 1000 to 9999 "
-"inclusive."
+"The :meth:`datetime.date.strftime` method is no longer restricted to years "
+"after 1900.  The new supported year range is from 1000 to 9999 inclusive."
 msgstr ""
+"Metoda :meth:`datetime.date.strftime` uz neni omezena na roky po 1900. Nova "
+"podporovana rocni rada je od 1000 do 9999 vcetne."
 
 #: ../../whatsnew/3.2.rst:1010
 msgid ""
-"Whenever a two-digit year is used in a time tuple, the interpretation has"
-" been governed by :data:`!time.accept2dyear`.  The default is ``True`` "
-"which means that for a two-digit year, the century is guessed according "
-"to the POSIX rules governing the ``%y`` strptime format."
+"Whenever a two-digit year is used in a time tuple, the interpretation has "
+"been governed by :data:`!time.accept2dyear`.  The default is ``True`` which "
+"means that for a two-digit year, the century is guessed according to the "
+"POSIX rules governing the ``%y`` strptime format."
 msgstr ""
+"Kdykoliv je dvouciferniky rok pouzit v casovem n-tici, interpretace je "
+"regulovana :data:`!time.accept2dyear`. Vychozim nastavenim je ``True``, coz "
+"znamena, ze pro dvouciferniky rok je stoletim hadan podle pravidel POSIX, "
+"ktere reguluji format ``%y`` strptime."
 
 #: ../../whatsnew/3.2.rst:1015
 msgid ""
 "Starting with Py3.2, use of the century guessing heuristic will emit a "
 ":exc:`DeprecationWarning`.  Instead, it is recommended that "
-":data:`!time.accept2dyear` be set to ``False`` so that large date ranges "
-"can be used without guesswork::"
+":data:`!time.accept2dyear` be set to ``False`` so that large date ranges can"
+" be used without guesswork::"
 msgstr ""
+"Pocinajici Py3.2, pouziti heuristiky hadeky stoletim bude emitovat "
+":exc:`DeprecationWarning`. Miste toho se preporucuje, aby bylo "
+":data:`!time.accept2dyear` nastaveno na ``False``, aby rozsah data mohl byt "
+"pouzit bez hadanky::"
 
 #: ../../whatsnew/3.2.rst:1020
 msgid ""
@@ -1451,8 +1821,7 @@ msgid ""
 "DeprecationWarning: Century info guessed for a 2-digit year.\n"
 "'Fri Jan  1 12:34:56 2011'\n"
 "\n"
-">>> time.accept2dyear = False     # use the full range of allowable dates"
-"\n"
+">>> time.accept2dyear = False     # use the full range of allowable dates\n"
 ">>> time.asctime((11, 1, 1, 12, 34, 56, 4, 1, 0))\n"
 "'Fri Jan  1 12:34:56 11'"
 msgstr ""
@@ -1460,28 +1829,38 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1034
 msgid ""
 "Several functions now have significantly expanded date ranges.  When "
-":data:`!time.accept2dyear` is false, the :func:`time.asctime` function "
-"will accept any year that fits in a C int, while the :func:`time.mktime` "
-"and :func:`time.strftime` functions will accept the full range supported "
-"by the corresponding operating system functions."
+":data:`!time.accept2dyear` is false, the :func:`time.asctime` function will "
+"accept any year that fits in a C int, while the :func:`time.mktime` and "
+":func:`time.strftime` functions will accept the full range supported by the "
+"corresponding operating system functions."
 msgstr ""
+"Nektere funkce maji nyni vyznamne rozsirene datove razitka. Kdyz je "
+":data:`!time.accept2dyear` false, funkce :func:`time.asctime` bude "
+"akceptovat jakykoli rok, ktery se vejde do C int, zatimco funkce "
+":func:`time.mktime` a :func:`time.strftime` budou akceptovat pln rozsah "
+"podporovany odpovidae funkce operacniho systemu."
 
 #: ../../whatsnew/3.2.rst:1040
 msgid ""
-"(Contributed by Alexander Belopolsky and Victor Stinner in "
-":issue:`1289118`, :issue:`5094`, :issue:`6641`, :issue:`2706`, "
-":issue:`1777412`, :issue:`8013`, and :issue:`10827`.)"
+"(Contributed by Alexander Belopolsky and Victor Stinner in :issue:`1289118`,"
+" :issue:`5094`, :issue:`6641`, :issue:`2706`, :issue:`1777412`, "
+":issue:`8013`, and :issue:`10827`.)"
 msgstr ""
+"(Prispeli Alexander Belopolsky a Victor Stinner v :issue:`1289118`, "
+":issue:`5094`, :issue:`6641`, :issue:`2706`, :issue:`1777412`, :issue:`8013`"
+" a :issue:`10827`.)"
 
 #: ../../whatsnew/3.2.rst:1047
 msgid "math"
-msgstr ""
+msgstr "matematika"
 
 #: ../../whatsnew/3.2.rst:1049
 msgid ""
-"The :mod:`math` module has been updated with six new functions inspired "
-"by the C99 standard."
+"The :mod:`math` module has been updated with six new functions inspired by "
+"the C99 standard."
 msgstr ""
+"Modul :mod:`math` byl aktualizovan s sesti novymi funkcemi inspirovanymi C99"
+" standardem."
 
 #: ../../whatsnew/3.2.rst:1052
 msgid ""
@@ -1489,30 +1868,35 @@ msgid ""
 "detect special values.  It returns ``True`` for regular numbers and "
 "``False`` for *Nan* or *Infinity*:"
 msgstr ""
+"Funkce :func:`~math.isfinite` poskytuje spolehlivou a rychlou cestu k "
+"detekci specialnich hodnot. Vraci ``True`` pro regulerni cisla a ``False`` "
+"pro *Nan* nebo *Infinity*:"
 
 #: ../../whatsnew/3.2.rst:1060
 msgid ""
-"The :func:`~math.expm1` function computes ``e**x-1`` for small values of "
-"*x* without incurring the loss of precision that usually accompanies the "
+"The :func:`~math.expm1` function computes ``e**x-1`` for small values of *x*"
+" without incurring the loss of precision that usually accompanies the "
 "subtraction of nearly equal quantities:"
 msgstr ""
+"Funkce :func:`~math.expm1` pocita ``e**x-1`` pro male hodnoty *x* bez vzniku"
+" ztraty presnosti, ktera obvykle provazi odcitani temer stejnych velichin:"
 
 #: ../../whatsnew/3.2.rst:1068
 msgid ""
-"The :func:`~math.erf` function computes a probability integral or "
-"`Gaussian error function "
-"<https://en.wikipedia.org/wiki/Error_function>`_.  The complementary "
-"error function, :func:`~math.erfc`, is ``1 - erf(x)``:"
+"The :func:`~math.erf` function computes a probability integral or `Gaussian "
+"error function <https://en.wikipedia.org/wiki/Error_function>`_.  The "
+"complementary error function, :func:`~math.erfc`, is ``1 - erf(x)``:"
 msgstr ""
+"Funkce :func:`~math.erf` pocita pravdepodobnostni integral nebo `Gaussovskou"
+" chybovou funkci <https://en.wikipedia.org/wiki/Error_function>`_. "
+"Komplementarni chybova funkce :func:`~math.erfc` je ``1 - erf(x)``:"
 
 #: ../../whatsnew/3.2.rst:1072
 msgid ""
 ">>> from math import erf, erfc, sqrt\n"
-">>> erf(1.0/sqrt(2.0))   # portion of normal distribution within 1 "
-"standard deviation\n"
+">>> erf(1.0/sqrt(2.0))   # portion of normal distribution within 1 standard deviation\n"
 "0.682689492137086\n"
-">>> erfc(1.0/sqrt(2.0))  # portion of normal distribution outside 1 "
-"standard deviation\n"
+">>> erfc(1.0/sqrt(2.0))  # portion of normal distribution outside 1 standard deviation\n"
 "0.31731050786291404\n"
 ">>> erf(1.0/sqrt(2.0)) + erfc(1.0/sqrt(2.0))\n"
 "1.0"
@@ -1520,33 +1904,43 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1083
 msgid ""
-"The :func:`~math.gamma` function is a continuous extension of the "
-"factorial function.  See https://en.wikipedia.org/wiki/Gamma_function for"
-" details.  Because the function is related to factorials, it grows large "
-"even for small values of *x*, so there is also a :func:`~math.lgamma` "
-"function for computing the natural logarithm of the gamma function:"
+"The :func:`~math.gamma` function is a continuous extension of the factorial "
+"function.  See https://en.wikipedia.org/wiki/Gamma_function for details.  "
+"Because the function is related to factorials, it grows large even for small"
+" values of *x*, so there is also a :func:`~math.lgamma` function for "
+"computing the natural logarithm of the gamma function:"
 msgstr ""
+"Funkce :func:`~math.gamma` je trvala rozsirenin faktorialove funkce. "
+"Podrobnosti: https://en.wikipedia.org/wiki/Gamma_function. Vzhledem k tomu, "
+"ze funkce souvisi s faktorialy, rusta i pro male hodnoty *x*, takze existuje"
+" take funkce :func:`~math.lgamma` pro vypocet prirozeneho logaritmu funkcni "
+"gamma:"
 
 #: ../../whatsnew/3.2.rst:1095
 msgid "(Contributed by Mark Dickinson.)"
-msgstr ""
+msgstr "(Prispel Mark Dickinson.)"
 
 #: ../../whatsnew/3.2.rst:1098
 msgid "abc"
-msgstr ""
+msgstr "abc"
 
 #: ../../whatsnew/3.2.rst:1100
 msgid ""
 "The :mod:`abc` module now supports :func:`~abc.abstractclassmethod` and "
 ":func:`~abc.abstractstaticmethod`."
 msgstr ""
+"Modul :mod:`abc` nyni podporuje :func:`~abc.abstractclassmethod` a "
+":func:`~abc.abstractstaticmethod`."
 
 #: ../../whatsnew/3.2.rst:1103
 msgid ""
-"These tools make it possible to define an :term:`abstract base class` "
-"that requires a particular :func:`classmethod` or :func:`staticmethod` to"
-" be implemented::"
+"These tools make it possible to define an :term:`abstract base class` that "
+"requires a particular :func:`classmethod` or :func:`staticmethod` to be "
+"implemented::"
 msgstr ""
+"Tyto nastroje umoznuji definovat :term:`abstraktni zakladni tridu`, ktera "
+"vyzaduje, aby byla implementovana konkretni :func:`classmethod` nebo "
+":func:`staticmethod`::"
 
 #: ../../whatsnew/3.2.rst:1107
 msgid ""
@@ -1561,20 +1955,23 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1115
 msgid "(Patch submitted by Daniel Urban; :issue:`5867`.)"
-msgstr ""
+msgstr "(Patch predlozena Danielem Urbanem; :issue:`5867`.)"
 
 #: ../../whatsnew/3.2.rst:1118
 msgid "io"
-msgstr ""
+msgstr "io"
 
 #: ../../whatsnew/3.2.rst:1120
 msgid ""
 "The :class:`io.BytesIO` has a new method, :meth:`~io.BytesIO.getbuffer`, "
-"which provides functionality similar to :func:`memoryview`.  It creates "
-"an editable view of the data without making a copy.  The buffer's random "
-"access and support for slice notation are well-suited to in-place "
-"editing::"
+"which provides functionality similar to :func:`memoryview`.  It creates an "
+"editable view of the data without making a copy.  The buffer's random access"
+" and support for slice notation are well-suited to in-place editing::"
 msgstr ""
+":class:`io.BytesIO` ma novou metodu :meth:`~io.BytesIO.getbuffer`, ktera "
+"poskytuje funkcnost podobnou :func:`memoryview`. Vytvari upravitelny pohled "
+"na data bez vytvoreni kopie. Nahodilost pristupu bufferu a podpora notace "
+"sectionu jsou vhodne pro upravu na miste::"
 
 #: ../../whatsnew/3.2.rst:1125
 msgid ""
@@ -1610,19 +2007,19 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1151
 msgid ""
-"When writing a :meth:`~object.__repr__` method for a custom container, it"
-" is easy to forget to handle the case where a member refers back to the "
+"When writing a :meth:`~object.__repr__` method for a custom container, it is"
+" easy to forget to handle the case where a member refers back to the "
 "container itself. Python's builtin objects such as :class:`list` and "
-":class:`set` handle self-reference by displaying \"...\" in the recursive"
-" part of the representation string."
+":class:`set` handle self-reference by displaying \"...\" in the recursive "
+"part of the representation string."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1157
 msgid ""
 "To help write such :meth:`~object.__repr__` methods, the :mod:`reprlib` "
-"module has a new decorator, :func:`~reprlib.recursive_repr`, for "
-"detecting recursive calls to :meth:`!__repr__` and substituting a "
-"placeholder string instead::"
+"module has a new decorator, :func:`~reprlib.recursive_repr`, for detecting "
+"recursive calls to :meth:`!__repr__` and substituting a placeholder string "
+"instead::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1161
@@ -1656,18 +2053,17 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1180
 msgid ""
 "The logging documentation has been augmented by a :ref:`basic tutorial "
-"<logging-basic-tutorial>`\\, an :ref:`advanced tutorial <logging-"
-"advanced-tutorial>`\\, and a :ref:`cookbook <logging-cookbook>` of "
-"logging recipes.  These documents are the fastest way to learn about "
-"logging."
+"<logging-basic-tutorial>`\\, an :ref:`advanced tutorial <logging-advanced-"
+"tutorial>`\\, and a :ref:`cookbook <logging-cookbook>` of logging recipes.  "
+"These documents are the fastest way to learn about logging."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1185
 #, python-format
 msgid ""
-"The :func:`logging.basicConfig` set-up function gained a *style* argument"
-" to support three different types of string formatting.  It defaults to "
-"\"%\" for traditional %-formatting, can be set to \"{\" for the new "
+"The :func:`logging.basicConfig` set-up function gained a *style* argument to"
+" support three different types of string formatting.  It defaults to \"%\" "
+"for traditional %-formatting, can be set to \"{\" for the new "
 ":meth:`str.format` style, or can be set to \"$\" for the shell-style "
 "formatting provided by :class:`string.Template`.  The following three "
 "configurations are equivalent::"
@@ -1677,35 +2073,34 @@ msgstr ""
 #, python-format
 msgid ""
 ">>> from logging import basicConfig\n"
-">>> basicConfig(style='%', format=\"%(name)s -> %(levelname)s: "
-"%(message)s\")\n"
+">>> basicConfig(style='%', format=\"%(name)s -> %(levelname)s: %(message)s\")\n"
 ">>> basicConfig(style='{', format=\"{name} -> {levelname} {message}\")\n"
 ">>> basicConfig(style='$', format=\"$name -> $levelname: $message\")"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1196
 msgid ""
-"If no configuration is set-up before a logging event occurs, there is now"
-" a default configuration using a :class:`~logging.StreamHandler` directed"
-" to :data:`sys.stderr` for events of ``WARNING`` level or higher.  "
-"Formerly, an event occurring before a configuration was set-up would "
-"either raise an exception or silently drop the event depending on the "
-"value of :data:`logging.raiseExceptions`.  The new default handler is "
-"stored in :data:`logging.lastResort`."
+"If no configuration is set-up before a logging event occurs, there is now a "
+"default configuration using a :class:`~logging.StreamHandler` directed to "
+":data:`sys.stderr` for events of ``WARNING`` level or higher.  Formerly, an "
+"event occurring before a configuration was set-up would either raise an "
+"exception or silently drop the event depending on the value of "
+":data:`logging.raiseExceptions`.  The new default handler is stored in "
+":data:`logging.lastResort`."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1204
 msgid ""
 "The use of filters has been simplified.  Instead of creating a "
-":class:`~logging.Filter` object, the predicate can be any Python callable"
-" that returns ``True`` or ``False``."
+":class:`~logging.Filter` object, the predicate can be any Python callable "
+"that returns ``True`` or ``False``."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1208
 msgid ""
-"There were a number of other improvements that add flexibility and "
-"simplify configuration.  See the module documentation for a full listing "
-"of changes in Python 3.2."
+"There were a number of other improvements that add flexibility and simplify "
+"configuration.  See the module documentation for a full listing of changes "
+"in Python 3.2."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1213
@@ -1743,8 +2138,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1233
 msgid ""
-"(New dialect suggested by Jay Talbot in :issue:`5975`, and the new method"
-" suggested by Ed Abraham in :issue:`1537721`.)"
+"(New dialect suggested by Jay Talbot in :issue:`5975`, and the new method "
+"suggested by Ed Abraham in :issue:`1537721`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1237
@@ -1767,21 +2162,21 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1247
 msgid ""
-"The basic idea is that both context managers and function decorators can "
-"be used for pre-action and post-action wrappers.  Context managers wrap a"
-" group of statements using a :keyword:`with` statement, and function "
-"decorators wrap a group of statements enclosed in a function.  So, "
-"occasionally there is a need to write a pre-action or post-action wrapper"
-" that can be used in either role."
+"The basic idea is that both context managers and function decorators can be "
+"used for pre-action and post-action wrappers.  Context managers wrap a group"
+" of statements using a :keyword:`with` statement, and function decorators "
+"wrap a group of statements enclosed in a function.  So, occasionally there "
+"is a need to write a pre-action or post-action wrapper that can be used in "
+"either role."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1253
 msgid ""
 "For example, it is sometimes useful to wrap functions or groups of "
-"statements with a logger that can track the time of entry and time of "
-"exit.  Rather than writing both a function decorator and a context "
-"manager for the task, the :func:`~contextlib.contextmanager` provides "
-"both capabilities in a single definition::"
+"statements with a logger that can track the time of entry and time of exit."
+"  Rather than writing both a function decorator and a context manager for "
+"the task, the :func:`~contextlib.contextmanager` provides both capabilities "
+"in a single definition::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1259
@@ -1826,15 +2221,15 @@ msgstr ""
 msgid ""
 "Trying to fulfill two roles at once places some limitations on the "
 "technique. Context managers normally have the flexibility to return an "
-"argument usable by a :keyword:`with` statement, but there is no parallel "
-"for function decorators."
+"argument usable by a :keyword:`with` statement, but there is no parallel for"
+" function decorators."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1287
 msgid ""
 "In the above example, there is not a clean way for the "
-"*track_entry_and_exit* context manager to return a logging instance for "
-"use in the body of enclosed statements."
+"*track_entry_and_exit* context manager to return a logging instance for use "
+"in the body of enclosed statements."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1291
@@ -1861,27 +2256,26 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1303
 msgid ""
 "Some of the hashing details are exposed through a new attribute, "
-":data:`sys.hash_info`, which describes the bit width of the hash value, "
-"the prime modulus, the hash values for *infinity* and *nan*, and the "
-"multiplier used for the imaginary part of a number:"
+":data:`sys.hash_info`, which describes the bit width of the hash value, the "
+"prime modulus, the hash values for *infinity* and *nan*, and the multiplier "
+"used for the imaginary part of a number:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1311
 msgid ""
-"An early decision to limit the interoperability of various numeric types "
-"has been relaxed.  It is still unsupported (and ill-advised) to have "
-"implicit mixing in arithmetic expressions such as ``Decimal('1.1') + "
-"float('1.1')`` because the latter loses information in the process of "
-"constructing the binary float.  However, since existing floating-point "
-"value can be converted losslessly to either a decimal or rational "
-"representation, it makes sense to add them to the constructor and to "
-"support mixed-type comparisons."
+"An early decision to limit the interoperability of various numeric types has"
+" been relaxed.  It is still unsupported (and ill-advised) to have implicit "
+"mixing in arithmetic expressions such as ``Decimal('1.1') + float('1.1')`` "
+"because the latter loses information in the process of constructing the "
+"binary float.  However, since existing floating-point value can be converted"
+" losslessly to either a decimal or rational representation, it makes sense "
+"to add them to the constructor and to support mixed-type comparisons."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1319
 msgid ""
-"The :class:`decimal.Decimal` constructor now accepts :class:`float` "
-"objects directly so there in no longer a need to use the "
+"The :class:`decimal.Decimal` constructor now accepts :class:`float` objects "
+"directly so there in no longer a need to use the "
 ":meth:`~decimal.Decimal.from_float` method (:issue:`8257`)."
 msgstr ""
 
@@ -1904,9 +2298,9 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1338
 msgid ""
 "Another useful change for the :mod:`decimal` module is that the "
-":attr:`Context.clamp <decimal.Context.clamp>` attribute is now public.  "
-"This is useful in creating contexts that correspond to the decimal "
-"interchange formats specified in IEEE 754 (see :issue:`8540`)."
+":attr:`Context.clamp <decimal.Context.clamp>` attribute is now public.  This"
+" is useful in creating contexts that correspond to the decimal interchange "
+"formats specified in IEEE 754 (see :issue:`8540`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1343
@@ -1919,9 +2313,9 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1348
 msgid ""
-"The :class:`ftplib.FTP` class now supports the context management "
-"protocol to unconditionally consume :exc:`socket.error` exceptions and to"
-" close the FTP connection when done::"
+"The :class:`ftplib.FTP` class now supports the context management protocol "
+"to unconditionally consume :exc:`socket.error` exceptions and to close the "
+"FTP connection when done::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1352
@@ -1953,16 +2347,16 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1370
 msgid ""
-"(Contributed by Tarek Ziadé and Giampaolo Rodolà in :issue:`4972`, and by"
-" Georg Brandl in :issue:`8046` and :issue:`1286`.)"
+"(Contributed by Tarek Ziadé and Giampaolo Rodolà in :issue:`4972`, and by "
+"Georg Brandl in :issue:`8046` and :issue:`1286`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1373
 msgid ""
-"The :class:`~ftplib.FTP_TLS` class now accepts a *context* parameter, "
-"which is a :class:`ssl.SSLContext` object allowing bundling SSL "
-"configuration options, certificates and private keys into a single "
-"(potentially long-lived) structure."
+"The :class:`~ftplib.FTP_TLS` class now accepts a *context* parameter, which "
+"is a :class:`ssl.SSLContext` object allowing bundling SSL configuration "
+"options, certificates and private keys into a single (potentially long-"
+"lived) structure."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1377
@@ -1992,9 +2386,9 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1391
 msgid ""
 "The :mod:`select` module now exposes a new, constant attribute, "
-":const:`~select.PIPE_BUF`, which gives the minimum number of bytes which "
-"are guaranteed not to block when :func:`select.select` says a pipe is "
-"ready for writing."
+":const:`~select.PIPE_BUF`, which gives the minimum number of bytes which are"
+" guaranteed not to block when :func:`select.select` says a pipe is ready for"
+" writing."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1400
@@ -2009,30 +2403,30 @@ msgstr ""
 msgid ""
 ":class:`gzip.GzipFile` now implements the :class:`io.BufferedIOBase` "
 ":term:`abstract base class` (except for ``truncate()``).  It also has a "
-":meth:`~gzip.GzipFile.peek` method and supports unseekable as well as "
-"zero-padded file objects."
+":meth:`~gzip.GzipFile.peek` method and supports unseekable as well as zero-"
+"padded file objects."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1410
 msgid ""
 "The :mod:`gzip` module also gains the :func:`~gzip.compress` and "
 ":func:`~gzip.decompress` functions for easier in-memory compression and "
-"decompression.  Keep in mind that text needs to be encoded as "
-":class:`bytes` before compressing and decompressing:"
+"decompression.  Keep in mind that text needs to be encoded as :class:`bytes`"
+" before compressing and decompressing:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1427
 msgid ""
-"(Contributed by Anand B. Pillai in :issue:`3488`; and by Antoine Pitrou, "
-"Nir Aides and Brian Curtin in :issue:`9962`, :issue:`1675951`, "
-":issue:`7471` and :issue:`2846`.)"
+"(Contributed by Anand B. Pillai in :issue:`3488`; and by Antoine Pitrou, Nir"
+" Aides and Brian Curtin in :issue:`9962`, :issue:`1675951`, :issue:`7471` "
+"and :issue:`2846`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1431
 msgid ""
 "Also, the :class:`zipfile.ZipExtFile <zipfile.ZipFile.open>` class was "
-"reworked internally to represent files stored inside an archive.  The new"
-" implementation is significantly faster and can be wrapped in an "
+"reworked internally to represent files stored inside an archive.  The new "
+"implementation is significantly faster and can be wrapped in an "
 ":class:`io.BufferedReader` object for more speedups.  It also solves an "
 "issue where interleaved calls to *read* and *readline* gave the wrong "
 "results."
@@ -2048,20 +2442,20 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1442
 msgid ""
-"The :class:`~tarfile.TarFile` class can now be used as a context manager."
-"  In addition, its :meth:`~tarfile.TarFile.add` method has a new option, "
-"*filter*, that controls which files are added to the archive and allows "
-"the file metadata to be edited."
+"The :class:`~tarfile.TarFile` class can now be used as a context manager.  "
+"In addition, its :meth:`~tarfile.TarFile.add` method has a new option, "
+"*filter*, that controls which files are added to the archive and allows the "
+"file metadata to be edited."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1447
 msgid ""
 "The new *filter* option replaces the older, less flexible *exclude* "
 "parameter which is now deprecated.  If specified, the optional *filter* "
-"parameter needs to be a :term:`keyword argument`.  The user-supplied "
-"filter function accepts a :class:`~tarfile.TarInfo` object and returns an"
-" updated :class:`~tarfile.TarInfo` object, or if it wants the file to be "
-"excluded, the function can return ``None``::"
+"parameter needs to be a :term:`keyword argument`.  The user-supplied filter "
+"function accepts a :class:`~tarfile.TarInfo` object and returns an updated "
+":class:`~tarfile.TarInfo` object, or if it wants the file to be excluded, "
+"the function can return ``None``::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1454
@@ -2078,8 +2472,7 @@ msgid ""
 "...         tf.add(filename, filter=myfilter)\n"
 "...     tf.list()\n"
 "-rw-r--r-- monty/501        902 2011-01-26 17:59:11 annotations.txt\n"
-"-rw-r--r-- monty/501        123 2011-01-26 17:59:11 general_questions.txt"
-"\n"
+"-rw-r--r-- monty/501        123 2011-01-26 17:59:11 general_questions.txt\n"
 "-rw-r--r-- monty/501       3514 2011-01-26 17:59:11 prion.txt\n"
 "-rw-r--r-- monty/501        124 2011-01-26 17:59:11 py_todo.txt\n"
 "-rw-r--r-- monty/501       1399 2011-01-26 17:59:11 semaphore_notes.txt"
@@ -2087,8 +2480,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1471
 msgid ""
-"(Proposed by Tarek Ziadé and implemented by Lars Gustäbel in "
-":issue:`6856`.)"
+"(Proposed by Tarek Ziadé and implemented by Lars Gustäbel in :issue:`6856`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1474
@@ -2098,8 +2490,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1476
 msgid ""
 "The :mod:`hashlib` module has two new constant attributes listing the "
-"hashing algorithms guaranteed to be present in all implementations and "
-"those available on the current implementation::"
+"hashing algorithms guaranteed to be present in all implementations and those"
+" available on the current implementation::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1480
@@ -2111,8 +2503,7 @@ msgid ""
 "{'sha1', 'sha224', 'sha384', 'sha256', 'sha512', 'md5'}\n"
 "\n"
 ">>> hashlib.algorithms_available\n"
-"{'md2', 'SHA256', 'SHA512', 'dsaWithSHA', 'mdc2', 'SHA224', 'MD4', "
-"'sha256',\n"
+"{'md2', 'SHA256', 'SHA512', 'dsaWithSHA', 'mdc2', 'SHA224', 'MD4', 'sha256',\n"
 "'sha512', 'ripemd160', 'SHA1', 'MDC2', 'SHA', 'SHA384', 'MD2',\n"
 "'ecdsa-with-SHA1','md4', 'md5', 'sha1', 'DSA-SHA', 'sha224',\n"
 "'dsaEncryption', 'DSA', 'RIPEMD160', 'sha', 'MD5', 'sha384'}"
@@ -2133,8 +2524,7 @@ msgid ""
 ":func:`ast.literal_eval` function serves as a secure alternative to the "
 "builtin :func:`eval` function which is easily abused.  Python 3.2 adds "
 ":class:`bytes` and :class:`set` literals to the list of supported types: "
-"strings, bytes, numbers, tuples, lists, dicts, sets, booleans, and "
-"``None``."
+"strings, bytes, numbers, tuples, lists, dicts, sets, booleans, and ``None``."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1505
@@ -2172,15 +2562,15 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1532
 msgid ""
 "Some operating systems allow direct access to encoded bytes in the "
-"environment.  If so, the :const:`os.supports_bytes_environ` constant will"
-" be true."
+"environment.  If so, the :const:`os.supports_bytes_environ` constant will be"
+" true."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1536
 msgid ""
-"For direct access to encoded environment variables (if available), use "
-"the new :func:`os.getenvb` function or use :data:`os.environb` which is a"
-" bytes version of :data:`os.environ`."
+"For direct access to encoded environment variables (if available), use the "
+"new :func:`os.getenvb` function or use :data:`os.environb` which is a bytes "
+"version of :data:`os.environ`."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1540
@@ -2198,8 +2588,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1547
 msgid ""
 "*ignore_dangling_symlinks*: when ``symlinks=False`` so that the function "
-"copies a file pointed to by a symlink, not the symlink itself. This "
-"option will silence the error raised if the file doesn't exist."
+"copies a file pointed to by a symlink, not the symlink itself. This option "
+"will silence the error raised if the file doesn't exist."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1551
@@ -2225,10 +2615,9 @@ msgstr ""
 msgid ""
 "The principal functions are :func:`~shutil.make_archive` and "
 ":func:`~shutil.unpack_archive`.  By default, both operate on the current "
-"directory (which can be set by :func:`os.chdir`) and on any sub-"
-"directories. The archive filename needs to be specified with a full "
-"pathname.  The archiving step is non-destructive (the original files are "
-"left unchanged)."
+"directory (which can be set by :func:`os.chdir`) and on any sub-directories."
+" The archive filename needs to be specified with a full pathname.  The "
+"archiving step is non-destructive (the original files are left unchanged)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1569
@@ -2263,22 +2652,22 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1597
 msgid ""
-"The :mod:`sqlite3` module was updated to pysqlite version 2.6.0.  It has "
-"two new capabilities."
+"The :mod:`sqlite3` module was updated to pysqlite version 2.6.0.  It has two"
+" new capabilities."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1599
 msgid ""
-"The :attr:`!sqlite3.Connection.in_transit` attribute is true if there is "
-"an active transaction for uncommitted changes."
+"The :attr:`!sqlite3.Connection.in_transit` attribute is true if there is an "
+"active transaction for uncommitted changes."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1602
 msgid ""
 "The :meth:`sqlite3.Connection.enable_load_extension` and "
-":meth:`sqlite3.Connection.load_extension` methods allows you to load "
-"SQLite extensions from \".so\" files.  One well-known extension is the "
-"fulltext-search extension distributed with SQLite."
+":meth:`sqlite3.Connection.load_extension` methods allows you to load SQLite "
+"extensions from \".so\" files.  One well-known extension is the fulltext-"
+"search extension distributed with SQLite."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1607
@@ -2292,8 +2681,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1612
 msgid ""
 "A new :mod:`html` module was introduced with only a single function, "
-":func:`~html.escape`, which is used for escaping reserved characters from"
-" HTML markup:"
+":func:`~html.escape`, which is used for escaping reserved characters from "
+"HTML markup:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1621
@@ -2306,17 +2695,17 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1625
 msgid ""
-"Socket objects now have a :meth:`~socket.socket.detach` method which puts"
-" the socket into closed state without actually closing the underlying "
-"file descriptor.  The latter can then be reused for other purposes. "
-"(Added by Antoine Pitrou; :issue:`8524`.)"
+"Socket objects now have a :meth:`~socket.socket.detach` method which puts "
+"the socket into closed state without actually closing the underlying file "
+"descriptor.  The latter can then be reused for other purposes. (Added by "
+"Antoine Pitrou; :issue:`8524`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1630
 msgid ""
 ":func:`socket.create_connection` now supports the context management "
-"protocol to unconditionally consume :exc:`socket.error` exceptions and to"
-" close the socket when done. (Contributed by Giampaolo Rodolà; "
+"protocol to unconditionally consume :exc:`socket.error` exceptions and to "
+"close the socket when done. (Contributed by Giampaolo Rodolà; "
 ":issue:`9794`.)"
 msgstr ""
 
@@ -2332,18 +2721,17 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1641
 msgid ""
-"A new class, :class:`~ssl.SSLContext`, serves as a container for "
-"persistent SSL data, such as protocol settings, certificates, private "
-"keys, and various other options. It includes a "
-":meth:`~ssl.SSLContext.wrap_socket` for creating an SSL socket from an "
-"SSL context."
+"A new class, :class:`~ssl.SSLContext`, serves as a container for persistent "
+"SSL data, such as protocol settings, certificates, private keys, and various"
+" other options. It includes a :meth:`~ssl.SSLContext.wrap_socket` for "
+"creating an SSL socket from an SSL context."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1646
 msgid ""
 "A new function, :func:`!ssl.match_hostname`, supports server identity "
-"verification for higher-level protocols by implementing the rules of "
-"HTTPS (from :rfc:`2818`) which are also suitable for other protocols."
+"verification for higher-level protocols by implementing the rules of HTTPS "
+"(from :rfc:`2818`) which are also suitable for other protocols."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1650
@@ -2357,11 +2745,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1655
 msgid ""
-"When linked against recent versions of OpenSSL, the :mod:`ssl` module now"
-" supports the Server Name Indication extension to the TLS protocol, "
-"allowing multiple \"virtual hosts\" using different certificates on a "
-"single IP port. This extension is only supported in client mode, and is "
-"activated by passing the *server_hostname* argument to "
+"When linked against recent versions of OpenSSL, the :mod:`ssl` module now "
+"supports the Server Name Indication extension to the TLS protocol, allowing "
+"multiple \"virtual hosts\" using different certificates on a single IP port."
+" This extension is only supported in client mode, and is activated by "
+"passing the *server_hostname* argument to "
 ":meth:`ssl.SSLContext.wrap_socket`."
 msgstr ""
 
@@ -2374,9 +2762,9 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1665
 msgid ""
-"The extension now loads all the OpenSSL ciphers and digest algorithms.  "
-"If some SSL certificates cannot be verified, they are reported as an "
-"\"unknown algorithm\" error."
+"The extension now loads all the OpenSSL ciphers and digest algorithms.  If "
+"some SSL certificates cannot be verified, they are reported as an \"unknown "
+"algorithm\" error."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1669
@@ -2400,10 +2788,10 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1680
 msgid ""
-"The :mod:`!nntplib` module has a revamped implementation with better "
-"bytes and text semantics as well as more practical APIs.  These "
-"improvements break compatibility with the nntplib version in Python 3.1, "
-"which was partly dysfunctional in itself."
+"The :mod:`!nntplib` module has a revamped implementation with better bytes "
+"and text semantics as well as more practical APIs.  These improvements break"
+" compatibility with the nntplib version in Python 3.1, which was partly "
+"dysfunctional in itself."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1685
@@ -2425,11 +2813,10 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1694
 msgid ""
-":class:`http.client.HTTPSConnection`, "
-":class:`urllib.request.HTTPSHandler` and :func:`urllib.request.urlopen` "
-"now take optional arguments to allow for server certificate checking "
-"against a set of Certificate Authorities, as recommended in public uses "
-"of HTTPS."
+":class:`http.client.HTTPSConnection`, :class:`urllib.request.HTTPSHandler` "
+"and :func:`urllib.request.urlopen` now take optional arguments to allow for "
+"server certificate checking against a set of Certificate Authorities, as "
+"recommended in public uses of HTTPS."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1699
@@ -2457,16 +2844,16 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1712
 msgid ""
 "There were a number of small API improvements in the :mod:`http.client` "
-"module. The old-style HTTP 0.9 simple responses are no longer supported "
-"and the *strict* parameter is deprecated in all classes."
+"module. The old-style HTTP 0.9 simple responses are no longer supported and "
+"the *strict* parameter is deprecated in all classes."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1716
 msgid ""
 "The :class:`~http.client.HTTPConnection` and "
-":class:`~http.client.HTTPSConnection` classes now have a *source_address*"
-" parameter for a (host, port) tuple indicating where the HTTP connection "
-"is made from."
+":class:`~http.client.HTTPSConnection` classes now have a *source_address* "
+"parameter for a (host, port) tuple indicating where the HTTP connection is "
+"made from."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1721
@@ -2477,27 +2864,27 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1724
 msgid ""
-"The :meth:`~http.client.HTTPConnection.request` method on connection "
-"objects allowed an optional *body* argument so that a :term:`file object`"
-" could be used to supply the content of the request.  Conveniently, the "
-"*body* argument now also accepts an :term:`iterable` object so long as it"
-" includes an explicit ``Content-Length`` header.  This extended interface"
-" is much more flexible than before."
+"The :meth:`~http.client.HTTPConnection.request` method on connection objects"
+" allowed an optional *body* argument so that a :term:`file object` could be "
+"used to supply the content of the request.  Conveniently, the *body* "
+"argument now also accepts an :term:`iterable` object so long as it includes "
+"an explicit ``Content-Length`` header.  This extended interface is much more"
+" flexible than before."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1731
 msgid ""
 "To establish an HTTPS connection through a proxy server, there is a new "
-":meth:`~http.client.HTTPConnection.set_tunnel` method that sets the host "
-"and port for HTTP Connect tunneling."
+":meth:`~http.client.HTTPConnection.set_tunnel` method that sets the host and"
+" port for HTTP Connect tunneling."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1735
 msgid ""
 "To match the behavior of :mod:`http.server`, the HTTP client library now "
 "also encodes headers with ISO-8859-1 (Latin-1) encoding.  It was already "
-"doing that for incoming headers, so now the behavior is consistent for "
-"both incoming and outgoing traffic. (See work by Armin Ronacher in "
+"doing that for incoming headers, so now the behavior is consistent for both "
+"incoming and outgoing traffic. (See work by Armin Ronacher in "
 ":issue:`10980`.)"
 msgstr ""
 
@@ -2507,20 +2894,20 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1743
 msgid ""
-"The unittest module has a number of improvements supporting test "
-"discovery for packages, easier experimentation at the interactive prompt,"
-" new testcase methods, improved diagnostic messages for test failures, "
-"and better method names."
+"The unittest module has a number of improvements supporting test discovery "
+"for packages, easier experimentation at the interactive prompt, new testcase"
+" methods, improved diagnostic messages for test failures, and better method "
+"names."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1748
 msgid ""
 "The command-line call ``python -m unittest`` can now accept file paths "
-"instead of module names for running specific tests (:issue:`10620`).  The"
-" new test discovery can find tests within packages, locating any test "
+"instead of module names for running specific tests (:issue:`10620`).  The "
+"new test discovery can find tests within packages, locating any test "
 "importable from the top-level directory.  The top-level directory can be "
-"specified with the ``-t`` option, a pattern for matching files with "
-"``-p``, and a directory to start discovery with ``-s``:"
+"specified with the ``-t`` option, a pattern for matching files with ``-p``, "
+"and a directory to start discovery with ``-s``:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1755
@@ -2535,16 +2922,15 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1761
 msgid ""
 "Experimentation at the interactive prompt is now easier because the "
-":class:`unittest.TestCase` class can now be instantiated without "
-"arguments:"
+":class:`unittest.TestCase` class can now be instantiated without arguments:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1770
 msgid ""
 "The :mod:`unittest` module has two new methods, "
 ":meth:`~unittest.TestCase.assertWarns` and "
-":meth:`~unittest.TestCase.assertWarnsRegex` to verify that a given "
-"warning type is triggered by the code under test::"
+":meth:`~unittest.TestCase.assertWarnsRegex` to verify that a given warning "
+"type is triggered by the code under test::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1775
@@ -2559,10 +2945,10 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1780
 msgid ""
-"Another new method, :meth:`~unittest.TestCase.assertCountEqual` is used "
-"to compare two iterables to determine if their element counts are equal "
-"(whether the same elements are present with the same number of "
-"occurrences regardless of order)::"
+"Another new method, :meth:`~unittest.TestCase.assertCountEqual` is used to "
+"compare two iterables to determine if their element counts are equal "
+"(whether the same elements are present with the same number of occurrences "
+"regardless of order)::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1785
@@ -2575,10 +2961,10 @@ msgstr ""
 msgid ""
 "A principal feature of the unittest module is an effort to produce "
 "meaningful diagnostics when a test fails.  When possible, the failure is "
-"recorded along with a diff of the output.  This is especially helpful for"
-" analyzing log files of failed test runs. However, since diffs can "
-"sometime be voluminous, there is a new :attr:`~unittest.TestCase.maxDiff`"
-" attribute that sets maximum length of diffs displayed."
+"recorded along with a diff of the output.  This is especially helpful for "
+"analyzing log files of failed test runs. However, since diffs can sometime "
+"be voluminous, there is a new :attr:`~unittest.TestCase.maxDiff` attribute "
+"that sets maximum length of diffs displayed."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1797
@@ -2593,9 +2979,9 @@ msgid ""
 ":meth:`!assertRegexpMatches` which was misnamed because the test uses "
 ":func:`re.search`, not :func:`re.match`.  Other methods using regular "
 "expressions are now named using short form \"Regex\" in preference to "
-"\"Regexp\" -- this matches the names used in other unittest "
-"implementations, matches Python's old name for the :mod:`re` module, and "
-"it has unambiguous camel-casing."
+"\"Regexp\" -- this matches the names used in other unittest implementations,"
+" matches Python's old name for the :mod:`re` module, and it has unambiguous "
+"camel-casing."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1807
@@ -2669,11 +3055,10 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1827
 #, python-brace-format
 msgid ""
-"The :meth:`!assertDictContainsSubset` method was deprecated because it "
-"was misimplemented with the arguments in the wrong order.  This created "
-"hard-to-debug optical illusions where tests like "
-"``TestCase().assertDictContainsSubset({'a':1, 'b':2}, {'a':1})`` would "
-"fail."
+"The :meth:`!assertDictContainsSubset` method was deprecated because it was "
+"misimplemented with the arguments in the wrong order.  This created hard-to-"
+"debug optical illusions where tests like "
+"``TestCase().assertDictContainsSubset({'a':1, 'b':2}, {'a':1})`` would fail."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1835
@@ -2683,14 +3068,13 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1837
 msgid ""
 "The integer methods in the :mod:`random` module now do a better job of "
-"producing uniform distributions.  Previously, they computed selections "
-"with ``int(n*random())`` which had a slight bias whenever *n* was not a "
-"power of two. Now, multiple selections are made from a range up to the "
-"next power of two and a selection is kept only when it falls within the "
-"range ``0 <= x < n``.  The functions and methods affected are "
-":func:`~random.randrange`, :func:`~random.randint`, "
-":func:`~random.choice`, :func:`~random.shuffle` and "
-":func:`~random.sample`."
+"producing uniform distributions.  Previously, they computed selections with "
+"``int(n*random())`` which had a slight bias whenever *n* was not a power of "
+"two. Now, multiple selections are made from a range up to the next power of "
+"two and a selection is kept only when it falls within the range ``0 <= x < "
+"n``.  The functions and methods affected are :func:`~random.randrange`, "
+":func:`~random.randint`, :func:`~random.choice`, :func:`~random.shuffle` and"
+" :func:`~random.sample`."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1846
@@ -2703,8 +3087,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1851
 msgid ""
-":class:`~poplib.POP3_SSL` class now accepts a *context* parameter, which "
-"is a :class:`ssl.SSLContext` object allowing bundling SSL configuration "
+":class:`~poplib.POP3_SSL` class now accepts a *context* parameter, which is "
+"a :class:`ssl.SSLContext` object allowing bundling SSL configuration "
 "options, certificates and private keys into a single (potentially long-"
 "lived) structure."
 msgstr ""
@@ -2719,11 +3103,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1861
 msgid ""
-":class:`!asyncore.dispatcher` now provides a :meth:`!handle_accepted` "
-"method returning a ``(sock, addr)`` pair which is called when a "
-"connection has actually been established with a new remote endpoint. This"
-" is supposed to be used as a replacement for old :meth:`!handle_accept` "
-"and avoids the user  to call :meth:`!accept` directly."
+":class:`!asyncore.dispatcher` now provides a :meth:`!handle_accepted` method"
+" returning a ``(sock, addr)`` pair which is called when a connection has "
+"actually been established with a new remote endpoint. This is supposed to be"
+" used as a replacement for old :meth:`!handle_accept` and avoids the user  "
+"to call :meth:`!accept` directly."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1868
@@ -2758,8 +3142,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1885
 msgid ""
 "The :mod:`inspect` module has a new function "
-":func:`~inspect.getgeneratorstate` to easily identify the current state "
-"of a generator-iterator::"
+":func:`~inspect.getgeneratorstate` to easily identify the current state of a"
+" generator-iterator::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1889
@@ -2814,9 +3198,9 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1929
 msgid ""
-"The :mod:`pydoc` module now provides a much-improved web server "
-"interface, as well as a new command-line option ``-b`` to automatically "
-"open a browser window to display that server:"
+"The :mod:`pydoc` module now provides a much-improved web server interface, "
+"as well as a new command-line option ``-b`` to automatically open a browser "
+"window to display that server:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1933
@@ -2834,10 +3218,10 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1942
 msgid ""
 "The :mod:`dis` module gained two new functions for inspecting code, "
-":func:`~dis.code_info` and :func:`~dis.show_code`.  Both provide detailed"
-" code object information for the supplied function, method, source code "
-"string or code object.  The former returns a string and the latter prints"
-" it::"
+":func:`~dis.code_info` and :func:`~dis.show_code`.  Both provide detailed "
+"code object information for the supplied function, method, source code "
+"string or code object.  The former returns a string and the latter prints "
+"it::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1947
@@ -2845,9 +3229,7 @@ msgid ""
 ">>> import dis, random\n"
 ">>> dis.show_code(random.choice)\n"
 "Name:              choice\n"
-"Filename:          "
-"/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/random.py"
-"\n"
+"Filename:          /Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/random.py\n"
 "Argument count:    2\n"
 "Kw-only arguments: 0\n"
 "Number of locals:  3\n"
@@ -2869,9 +3251,9 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1969
 msgid ""
-"In addition, the :func:`~dis.dis` function now accepts string arguments "
-"so that the common idiom ``dis(compile(s, '', 'eval'))`` can be shortened"
-" to ``dis(s)``::"
+"In addition, the :func:`~dis.dis` function now accepts string arguments so "
+"that the common idiom ``dis(compile(s, '', 'eval'))`` can be shortened to "
+"``dis(s)``::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1973
@@ -2897,9 +3279,9 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1991
 msgid ""
-"Taken together, these improvements make it easier to explore how CPython "
-"is implemented and to see for yourself what the language syntax does "
-"under-the-hood."
+"Taken together, these improvements make it easier to explore how CPython is "
+"implemented and to see for yourself what the language syntax does under-the-"
+"hood."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:1995
@@ -2912,8 +3294,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2000
 msgid ""
-"All database modules now support the :meth:`!get` and :meth:`!setdefault`"
-" methods."
+"All database modules now support the :meth:`!get` and :meth:`!setdefault` "
+"methods."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2002
@@ -2936,32 +3318,32 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2012
 msgid ""
-"The :mod:`site` module has three new functions useful for reporting on "
-"the details of a given Python installation."
+"The :mod:`site` module has three new functions useful for reporting on the "
+"details of a given Python installation."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2015
-msgid ":func:`~site.getsitepackages` lists all global site-packages directories."
+msgid ""
+":func:`~site.getsitepackages` lists all global site-packages directories."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2017
 msgid ""
-":func:`~site.getuserbase` reports on the user's base directory where data"
-" can be stored."
+":func:`~site.getuserbase` reports on the user's base directory where data "
+"can be stored."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2020
 msgid ""
-":func:`~site.getusersitepackages` reveals the user-specific site-packages"
-" directory path."
+":func:`~site.getusersitepackages` reveals the user-specific site-packages "
+"directory path."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2025
 msgid ""
 ">>> import site\n"
 ">>> site.getsitepackages()\n"
-"['/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/site-"
-"packages',\n"
+"['/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/site-packages',\n"
 " '/Library/Frameworks/Python.framework/Versions/3.2/lib/site-python',\n"
 " '/Library/Python/3.2/site-packages']\n"
 ">>> site.getuserbase()\n"
@@ -2972,8 +3354,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2035
 msgid ""
-"Conveniently, some of site's functionality is accessible directly from "
-"the command-line:"
+"Conveniently, some of site's functionality is accessible directly from the "
+"command-line:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2038
@@ -2995,14 +3377,14 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2050
 msgid ""
 "The new :mod:`sysconfig` module makes it straightforward to discover "
-"installation paths and configuration variables that vary across platforms"
-" and installations."
+"installation paths and configuration variables that vary across platforms "
+"and installations."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2054
 msgid ""
-"The module offers access simple access functions for platform and version"
-" information:"
+"The module offers access simple access functions for platform and version "
+"information:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2057
@@ -3013,16 +3395,15 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2059
 msgid ""
-":func:`~sysconfig.get_python_version` returns a Python version string "
-"such as \"3.2\"."
+":func:`~sysconfig.get_python_version` returns a Python version string such "
+"as \"3.2\"."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2062
 msgid ""
-"It also provides access to the paths and variables corresponding to one "
-"of seven named schemes used by ``distutils``.  Those include "
-"*posix_prefix*, *posix_home*, *posix_user*, *nt*, *nt_user*, *os2*, "
-"*os2_home*:"
+"It also provides access to the paths and variables corresponding to one of "
+"seven named schemes used by ``distutils``.  Those include *posix_prefix*, "
+"*posix_home*, *posix_user*, *nt*, *nt_user*, *os2*, *os2_home*:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2066
@@ -3033,8 +3414,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2068
 msgid ""
-":func:`~sysconfig.get_config_vars` returns a dictionary of platform "
-"specific variables."
+":func:`~sysconfig.get_config_vars` returns a dictionary of platform specific"
+" variables."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2071
@@ -3076,8 +3457,7 @@ msgid ""
 "        py_version_nodot = \"32\"\n"
 "        py_version_short = \"3.2\"\n"
 "        srcdir = \"C:\\Python32\"\n"
-"        userbase = \"C:\\Documents and Settings\\Raymond\\Application "
-"Data\\Python\""
+"        userbase = \"C:\\Documents and Settings\\Raymond\\Application Data\\Python\""
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2110
@@ -3089,23 +3469,25 @@ msgid "pdb"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2115
-msgid "The :mod:`pdb` debugger module gained a number of usability improvements:"
+msgid ""
+"The :mod:`pdb` debugger module gained a number of usability improvements:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2117
 msgid ""
-":file:`pdb.py` now has a ``-c`` option that executes commands as given in"
-" a :file:`.pdbrc` script file."
+":file:`pdb.py` now has a ``-c`` option that executes commands as given in a "
+":file:`.pdbrc` script file."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2119
 msgid ""
-"A :file:`.pdbrc` script file can contain ``continue`` and ``next`` "
-"commands that continue debugging."
+"A :file:`.pdbrc` script file can contain ``continue`` and ``next`` commands "
+"that continue debugging."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2121
-msgid "The :class:`~pdb.Pdb` class constructor now accepts a *nosigint* argument."
+msgid ""
+"The :class:`~pdb.Pdb` class constructor now accepts a *nosigint* argument."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2122
@@ -3116,14 +3498,14 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2124
 msgid ""
-"New commands: ``display`` and ``undisplay`` for showing or hiding the "
-"value of an expression if it has changed."
+"New commands: ``display`` and ``undisplay`` for showing or hiding the value "
+"of an expression if it has changed."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2126
 msgid ""
-"New command: ``interact`` for starting an interactive interpreter "
-"containing the global and local  names found in the current scope."
+"New command: ``interact`` for starting an interactive interpreter containing"
+" the global and local  names found in the current scope."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2128
@@ -3141,12 +3523,12 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2135
 msgid ""
 "The :mod:`configparser` module was modified to improve usability and "
-"predictability of the default parser and its supported INI syntax.  The "
-"old :class:`!ConfigParser` class was removed in favor of "
+"predictability of the default parser and its supported INI syntax.  The old "
+":class:`!ConfigParser` class was removed in favor of "
 ":class:`!SafeConfigParser` which has in turn been renamed to "
 ":class:`~configparser.ConfigParser`. Support for inline comments is now "
-"turned off by default and section or option duplicates are not allowed in"
-" a single configuration source."
+"turned off by default and section or option duplicates are not allowed in a "
+"single configuration source."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2142
@@ -3192,9 +3574,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2173
 msgid ""
 "The INI file structure accepted by config parsers can now be customized. "
-"Users can specify alternative option/value delimiters and comment "
-"prefixes, change the name of the *DEFAULT* section or switch the "
-"interpolation syntax."
+"Users can specify alternative option/value delimiters and comment prefixes, "
+"change the name of the *DEFAULT* section or switch the interpolation syntax."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2177
@@ -3240,8 +3621,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2210
 msgid ""
 "A number of smaller features were also introduced, like support for "
-"specifying encoding in read operations, specifying fallback values for "
-"get-functions, or reading directly from dictionaries and strings."
+"specifying encoding in read operations, specifying fallback values for get-"
+"functions, or reading directly from dictionaries and strings."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2214
@@ -3284,10 +3665,10 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2245
 msgid ""
-"And, the :func:`~urllib.parse.urlencode` function is now much more "
-"flexible, accepting either a string or bytes type for the *query* "
-"argument.  If it is a string, then the *safe*, *encoding*, and *error* "
-"parameters are sent to :func:`~urllib.parse.quote_plus` for encoding::"
+"And, the :func:`~urllib.parse.urlencode` function is now much more flexible,"
+" accepting either a string or bytes type for the *query* argument.  If it is"
+" a string, then the *safe*, *encoding*, and *error* parameters are sent to "
+":func:`~urllib.parse.quote_plus` for encoding::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2250
@@ -3304,9 +3685,9 @@ msgstr ""
 msgid ""
 "As detailed in :ref:`parsing-ascii-encoded-bytes`, all the "
 ":mod:`urllib.parse` functions now accept ASCII-encoded byte strings as "
-"input, so long as they are not mixed with regular strings.  If ASCII-"
-"encoded byte strings are given as parameters, the return types will also "
-"be an ASCII-encoded byte strings:"
+"input, so long as they are not mixed with regular strings.  If ASCII-encoded"
+" byte strings are given as parameters, the return types will also be an "
+"ASCII-encoded byte strings:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2265
@@ -3321,18 +3702,18 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2271
 msgid ""
-"Thanks to a concerted effort by R. David Murray, the :mod:`mailbox` "
-"module has been fixed for Python 3.2.  The challenge was that mailbox had"
-" been originally designed with a text interface, but email messages are "
-"best represented with :class:`bytes` because various parts of a message "
-"may have different encodings."
+"Thanks to a concerted effort by R. David Murray, the :mod:`mailbox` module "
+"has been fixed for Python 3.2.  The challenge was that mailbox had been "
+"originally designed with a text interface, but email messages are best "
+"represented with :class:`bytes` because various parts of a message may have "
+"different encodings."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2276
 msgid ""
-"The solution harnessed the :mod:`email` package's binary support for "
-"parsing arbitrary email messages.  In addition, the solution required a "
-"number of API changes."
+"The solution harnessed the :mod:`email` package's binary support for parsing"
+" arbitrary email messages.  In addition, the solution required a number of "
+"API changes."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2280
@@ -3344,32 +3725,31 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2283
 msgid ""
 ":class:`~io.StringIO` and text file input are deprecated.  Also, string "
-"input will fail early if non-ASCII characters are used.  Previously it "
-"would fail when the email was processed in a later step."
+"input will fail early if non-ASCII characters are used.  Previously it would"
+" fail when the email was processed in a later step."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2287
 msgid ""
 "There is also support for binary output.  The "
-":meth:`~mailbox.Mailbox.get_file` method now returns a file in the binary"
-" mode (where it used to incorrectly set the file to text-mode).  There is"
-" also a new :meth:`~mailbox.Mailbox.get_bytes` method that returns a "
-":class:`bytes` representation of a message corresponding to a given "
-"*key*."
+":meth:`~mailbox.Mailbox.get_file` method now returns a file in the binary "
+"mode (where it used to incorrectly set the file to text-mode).  There is "
+"also a new :meth:`~mailbox.Mailbox.get_bytes` method that returns a "
+":class:`bytes` representation of a message corresponding to a given *key*."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2293
 msgid ""
 "It is still possible to get non-binary output using the old API's "
-":meth:`~mailbox.Mailbox.get_string` method, but that approach is not very"
-" useful.  Instead, it is best to extract messages from a "
+":meth:`~mailbox.Mailbox.get_string` method, but that approach is not very "
+"useful.  Instead, it is best to extract messages from a "
 ":class:`~mailbox.Message` object or to load them from binary input."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2298
 msgid ""
-"(Contributed by R. David Murray, with efforts from Steffen Daode Nurpmeso"
-" and an initial patch by Victor Stinner in :issue:`9124`.)"
+"(Contributed by R. David Murray, with efforts from Steffen Daode Nurpmeso "
+"and an initial patch by Victor Stinner in :issue:`9124`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2302
@@ -3379,9 +3759,9 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2304
 msgid ""
 "The demonstration code for the :mod:`turtle` module was moved from the "
-"*Demo* directory to main library.  It includes over a dozen sample "
-"scripts with lively displays.  Being on :data:`sys.path`, it can now be "
-"run directly from the command-line:"
+"*Demo* directory to main library.  It includes over a dozen sample scripts "
+"with lively displays.  Being on :data:`sys.path`, it can now be run directly"
+" from the command-line:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2309
@@ -3389,7 +3769,8 @@ msgid "$ python -m turtledemo"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2313
-msgid "(Moved from the Demo directory by Alexander Belopolsky in :issue:`10199`.)"
+msgid ""
+"(Moved from the Demo directory by Alexander Belopolsky in :issue:`10199`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2316
@@ -3399,21 +3780,21 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2318
 msgid ""
 "The mechanism for serializing execution of concurrently running Python "
-"threads (generally known as the :term:`GIL` or Global Interpreter Lock) "
-"has been rewritten.  Among the objectives were more predictable switching"
-" intervals and reduced overhead due to lock contention and the number of "
-"ensuing system calls.  The notion of a \"check interval\" to allow thread"
-" switches has been abandoned and replaced by an absolute duration "
-"expressed in seconds.  This parameter is tunable through "
+"threads (generally known as the :term:`GIL` or Global Interpreter Lock) has "
+"been rewritten.  Among the objectives were more predictable switching "
+"intervals and reduced overhead due to lock contention and the number of "
+"ensuing system calls.  The notion of a \"check interval\" to allow thread "
+"switches has been abandoned and replaced by an absolute duration expressed "
+"in seconds.  This parameter is tunable through "
 ":func:`sys.setswitchinterval`. It currently defaults to 5 milliseconds."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2327
 msgid ""
-"Additional details about the implementation can be read from a `python-"
-"dev mailing-list message <https://mail.python.org/pipermail/python-"
-"dev/2009-October/093321.html>`_ (however, \"priority requests\" as "
-"exposed in this message have not been kept for inclusion)."
+"Additional details about the implementation can be read from a `python-dev "
+"mailing-list message <https://mail.python.org/pipermail/python-"
+"dev/2009-October/093321.html>`_ (however, \"priority requests\" as exposed "
+"in this message have not been kept for inclusion)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2333
@@ -3435,11 +3816,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2342
 msgid ""
-"Regular and recursive lock acquisitions can now be interrupted by signals"
-" on platforms using Pthreads.  This means that Python programs that "
-"deadlock while acquiring locks can be successfully killed by repeatedly "
-"sending SIGINT to the process (by pressing :kbd:`Ctrl+C` in most shells)."
-" (Contributed by Reid Kleckner; :issue:`8844`.)"
+"Regular and recursive lock acquisitions can now be interrupted by signals on"
+" platforms using Pthreads.  This means that Python programs that deadlock "
+"while acquiring locks can be successfully killed by repeatedly sending "
+"SIGINT to the process (by pressing :kbd:`Ctrl+C` in most shells). "
+"(Contributed by Reid Kleckner; :issue:`8844`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2350
@@ -3453,17 +3834,16 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2354
 #, python-brace-format
 msgid ""
-"Python's peephole optimizer now recognizes patterns such ``x in {1, 2, "
-"3}`` as being a test for membership in a set of constants.  The optimizer"
-" recasts the :class:`set` as a :class:`frozenset` and stores the pre-"
-"built constant."
+"Python's peephole optimizer now recognizes patterns such ``x in {1, 2, 3}`` "
+"as being a test for membership in a set of constants.  The optimizer recasts"
+" the :class:`set` as a :class:`frozenset` and stores the pre-built constant."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2358
 msgid ""
 "Now that the speed penalty is gone, it is practical to start writing "
-"membership tests using set-notation.  This style is both semantically "
-"clear and operationally fast::"
+"membership tests using set-notation.  This style is both semantically clear "
+"and operationally fast::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2362
@@ -3475,7 +3855,8 @@ msgid ""
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2366
-msgid "(Patch and additional tests contributed by Dave Malcolm; :issue:`6690`)."
+msgid ""
+"(Patch and additional tests contributed by Dave Malcolm; :issue:`6690`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2368
@@ -3486,19 +3867,19 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2371
 msgid ""
-"(Contributed by Alexandre Vassalotti, Antoine Pitrou and the Unladen "
-"Swallow team in :issue:`9410` and :issue:`3873`.)"
+"(Contributed by Alexandre Vassalotti, Antoine Pitrou and the Unladen Swallow"
+" team in :issue:`9410` and :issue:`3873`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2374
 msgid ""
 "The `Timsort algorithm <https://en.wikipedia.org/wiki/Timsort>`_ used in "
-":meth:`list.sort` and :func:`sorted` now runs faster and uses less memory"
-" when called with a :term:`key function`.  Previously, every element of a"
-" list was wrapped with a temporary object that remembered the key value "
-"associated with each element.  Now, two arrays of keys and values are "
-"sorted in parallel.  This saves the memory consumed by the sort wrappers,"
-" and it saves time lost to delegating comparisons."
+":meth:`list.sort` and :func:`sorted` now runs faster and uses less memory "
+"when called with a :term:`key function`.  Previously, every element of a "
+"list was wrapped with a temporary object that remembered the key value "
+"associated with each element.  Now, two arrays of keys and values are sorted"
+" in parallel.  This saves the memory consumed by the sort wrappers, and it "
+"saves time lost to delegating comparisons."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2382
@@ -3508,22 +3889,21 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2384
 msgid ""
 "JSON decoding performance is improved and memory consumption is reduced "
-"whenever the same string is repeated for multiple keys.  Also, JSON "
-"encoding now uses the C speedups when the ``sort_keys`` argument is true."
+"whenever the same string is repeated for multiple keys.  Also, JSON encoding"
+" now uses the C speedups when the ``sort_keys`` argument is true."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2388
 msgid ""
-"(Contributed by Antoine Pitrou in :issue:`7451` and by Raymond Hettinger "
-"and Antoine Pitrou in :issue:`10314`.)"
+"(Contributed by Antoine Pitrou in :issue:`7451` and by Raymond Hettinger and"
+" Antoine Pitrou in :issue:`10314`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2391
 msgid ""
-"Recursive locks (created with the :func:`threading.RLock` API) now "
-"benefit from a C implementation which makes them as fast as regular "
-"locks, and between 10x and 15x faster than their previous pure Python "
-"implementation."
+"Recursive locks (created with the :func:`threading.RLock` API) now benefit "
+"from a C implementation which makes them as fast as regular locks, and "
+"between 10x and 15x faster than their previous pure Python implementation."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2395
@@ -3546,8 +3926,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2406
 msgid ""
-"Integer to string conversions now work two \"digits\" at a time, reducing"
-" the number of division and modulo operations."
+"Integer to string conversions now work two \"digits\" at a time, reducing "
+"the number of division and modulo operations."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2409
@@ -3558,13 +3938,13 @@ msgstr ""
 msgid ""
 "There were several other minor optimizations. Set differencing now runs "
 "faster when one operand is much larger than the other (patch by Andress "
-"Bennetts in :issue:`8685`).  The :meth:`!array.repeat` method has a "
-"faster implementation (:issue:`1569291` by Alexander Belopolsky). The "
-":class:`~http.server.BaseHTTPRequestHandler` has more efficient buffering"
-" (:issue:`3709` by Andrew Schaaf).  The :func:`operator.attrgetter` "
-"function has been sped-up (:issue:`10160` by Christos Georgiou).  And "
-":class:`~configparser.ConfigParser` loads multi-line arguments a bit "
-"faster (:issue:`7113` by Łukasz Langa)."
+"Bennetts in :issue:`8685`).  The :meth:`!array.repeat` method has a faster "
+"implementation (:issue:`1569291` by Alexander Belopolsky). The "
+":class:`~http.server.BaseHTTPRequestHandler` has more efficient buffering "
+"(:issue:`3709` by Andrew Schaaf).  The :func:`operator.attrgetter` function "
+"has been sped-up (:issue:`10160` by Christos Georgiou).  And "
+":class:`~configparser.ConfigParser` loads multi-line arguments a bit faster "
+"(:issue:`7113` by Łukasz Langa)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2422
@@ -3574,19 +3954,19 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2424
 msgid ""
 "Python has been updated to `Unicode 6.0.0 "
-"<https://unicode.org/versions/Unicode6.0.0/>`_.  The update to the "
-"standard adds over 2,000 new characters including `emoji "
+"<https://unicode.org/versions/Unicode6.0.0/>`_.  The update to the standard "
+"adds over 2,000 new characters including `emoji "
 "<https://en.wikipedia.org/wiki/Emoji>`_ symbols which are important for "
 "mobile phones."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2429
 msgid ""
-"In addition, the updated standard has altered the character properties "
-"for two Kannada characters (U+0CF1, U+0CF2) and one New Tai Lue numeric "
-"character (U+19DA), making the former eligible for use in identifiers "
-"while disqualifying the latter.  For more information, see `Unicode "
-"Character Database Changes "
+"In addition, the updated standard has altered the character properties for "
+"two Kannada characters (U+0CF1, U+0CF2) and one New Tai Lue numeric "
+"character (U+19DA), making the former eligible for use in identifiers while "
+"disqualifying the latter.  For more information, see `Unicode Character "
+"Database Changes "
 "<https://www.unicode.org/versions/Unicode6.0.0/#Database_Changes>`_."
 msgstr ""
 
@@ -3600,10 +3980,10 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2441
 msgid ""
-"MBCS encoding no longer ignores the error handler argument. In the "
-"default strict mode, it raises an :exc:`UnicodeDecodeError` when it "
-"encounters an undecodable byte sequence and an :exc:`UnicodeEncodeError` "
-"for an unencodable character."
+"MBCS encoding no longer ignores the error handler argument. In the default "
+"strict mode, it raises an :exc:`UnicodeDecodeError` when it encounters an "
+"undecodable byte sequence and an :exc:`UnicodeEncodeError` for an "
+"unencodable character."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2446
@@ -3620,15 +4000,15 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2452
 msgid ""
-"On Mac OS X, Python decodes command line arguments with ``'utf-8'`` "
-"rather than the locale encoding."
+"On Mac OS X, Python decodes command line arguments with ``'utf-8'`` rather "
+"than the locale encoding."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2455
 msgid ""
-"By default, :mod:`tarfile` uses ``'utf-8'`` encoding on Windows (instead "
-"of ``'mbcs'``) and the ``'surrogateescape'`` error handler on all "
-"operating systems."
+"By default, :mod:`tarfile` uses ``'utf-8'`` encoding on Windows (instead of "
+"``'mbcs'``) and the ``'surrogateescape'`` error handler on all operating "
+"systems."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2461
@@ -3641,18 +4021,18 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2465
 msgid ""
-"A table of quick links has been added to the top of lengthy sections such"
-" as :ref:`built-in-funcs`.  In the case of :mod:`itertools`, the links "
-"are accompanied by tables of cheatsheet-style summaries to provide an "
-"overview and memory jog without having to read all of the docs."
+"A table of quick links has been added to the top of lengthy sections such as"
+" :ref:`built-in-funcs`.  In the case of :mod:`itertools`, the links are "
+"accompanied by tables of cheatsheet-style summaries to provide an overview "
+"and memory jog without having to read all of the docs."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2470
 msgid ""
-"In some cases, the pure Python source code can be a helpful adjunct to "
-"the documentation, so now many modules now feature quick links to the "
-"latest version of the source code.  For example, the :mod:`functools` "
-"module documentation has a quick link at the top labeled:"
+"In some cases, the pure Python source code can be a helpful adjunct to the "
+"documentation, so now many modules now feature quick links to the latest "
+"version of the source code.  For example, the :mod:`functools` module "
+"documentation has a quick link at the top labeled:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2475
@@ -3667,8 +4047,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2480
 msgid ""
-"The docs now contain more examples and recipes.  In particular, :mod:`re`"
-" module has an extensive section, :ref:`re-examples`.  Likewise, the "
+"The docs now contain more examples and recipes.  In particular, :mod:`re` "
+"module has an extensive section, :ref:`re-examples`.  Likewise, the "
 ":mod:`itertools` module continues to be updated with new :ref:`itertools-"
 "recipes`."
 msgstr ""
@@ -3676,8 +4056,8 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2485
 msgid ""
 "The :mod:`datetime` module now has an auxiliary implementation in pure "
-"Python. No functionality was changed.  This just provides an easier-to-"
-"read alternate implementation."
+"Python. No functionality was changed.  This just provides an easier-to-read "
+"alternate implementation."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2489
@@ -3686,9 +4066,9 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2491
 msgid ""
-"The unmaintained :file:`Demo` directory has been removed.  Some demos "
-"were integrated into the documentation, some were moved to the "
-":file:`Tools/demo` directory, and others were removed altogether."
+"The unmaintained :file:`Demo` directory has been removed.  Some demos were "
+"integrated into the documentation, some were moved to the :file:`Tools/demo`"
+" directory, and others were removed altogether."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2495
@@ -3732,17 +4112,17 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2517
 msgid ""
-"After the 3.2 release, there are plans to switch to Mercurial as the "
-"primary repository.  This distributed version control system should make "
-"it easier for members of the community to create and share external "
-"changesets.  See :pep:`385` for details."
+"After the 3.2 release, there are plans to switch to Mercurial as the primary"
+" repository.  This distributed version control system should make it easier "
+"for members of the community to create and share external changesets.  See "
+":pep:`385` for details."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2522
 msgid ""
 "To learn to use the new version control system, see the `Quick Start "
-"<https://www.mercurial-scm.org/wiki/QuickStart>`_ or the `Guide to "
-"Mercurial Workflows <https://www.mercurial-scm.org/guide>`_."
+"<https://www.mercurial-scm.org/wiki/QuickStart>`_ or the `Guide to Mercurial"
+" Workflows <https://www.mercurial-scm.org/guide>`_."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2528
@@ -3770,14 +4150,15 @@ msgid ""
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2542
-msgid "(Reported by Bupjoe Lee and fixed by Amaury Forgeot D'Arc; :issue:`5127`.)"
+msgid ""
+"(Reported by Bupjoe Lee and fixed by Amaury Forgeot D'Arc; :issue:`5127`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2544
 msgid ""
-"Computed gotos are now enabled by default on supported compilers (which "
-"are detected by the configure script).  They can still be disabled "
-"selectively by specifying ``--without-computed-gotos``."
+"Computed gotos are now enabled by default on supported compilers (which are "
+"detected by the configure script).  They can still be disabled selectively "
+"by specifying ``--without-computed-gotos``."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2548
@@ -3786,8 +4167,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2550
 msgid ""
-"The option ``--with-wctype-functions`` was removed.  The built-in unicode"
-" database is now used for all functions."
+"The option ``--with-wctype-functions`` was removed.  The built-in unicode "
+"database is now used for all functions."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2553
@@ -3798,11 +4179,10 @@ msgstr ""
 msgid ""
 "Hash values are now values of a new type, :c:type:`Py_hash_t`, which is "
 "defined to be the same size as a pointer.  Previously they were of type "
-"long, which on some 64-bit operating systems is still only 32 bits long."
-"  As a result of this fix, :class:`set` and :class:`dict` can now hold "
-"more than ``2**32`` entries on builds with 64-bit pointers (previously, "
-"they could grow to that size but their performance degraded "
-"catastrophically)."
+"long, which on some 64-bit operating systems is still only 32 bits long.  As"
+" a result of this fix, :class:`set` and :class:`dict` can now hold more than"
+" ``2**32`` entries on builds with 64-bit pointers (previously, they could "
+"grow to that size but their performance degraded catastrophically)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2562
@@ -3813,32 +4193,31 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2565
 msgid ""
-"A new macro :c:macro:`!Py_VA_COPY` copies the state of the variable "
-"argument list.  It is equivalent to C99 *va_copy* but available on all "
-"Python platforms (:issue:`2443`)."
+"A new macro :c:macro:`!Py_VA_COPY` copies the state of the variable argument"
+" list.  It is equivalent to C99 *va_copy* but available on all Python "
+"platforms (:issue:`2443`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2569
 msgid ""
 "A new C API function :c:func:`!PySys_SetArgvEx` allows an embedded "
-"interpreter to set :data:`sys.argv` without also modifying "
-":data:`sys.path` (:issue:`5753`)."
+"interpreter to set :data:`sys.argv` without also modifying :data:`sys.path` "
+"(:issue:`5753`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2573
 msgid ""
 ":c:func:`!PyEval_CallObject` is now only available in macro form.  The "
-"function declaration, which was kept for backwards compatibility reasons,"
-" is now removed -- the macro was introduced in 1997 (:issue:`8276`)."
+"function declaration, which was kept for backwards compatibility reasons, is"
+" now removed -- the macro was introduced in 1997 (:issue:`8276`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2577
 msgid ""
 "There is a new function :c:func:`PyLong_AsLongLongAndOverflow` which is "
-"analogous to :c:func:`PyLong_AsLongAndOverflow`.  They both serve to "
-"convert Python :class:`int` into a native fixed-width type while "
-"providing detection of cases where the conversion won't fit "
-"(:issue:`7767`)."
+"analogous to :c:func:`PyLong_AsLongAndOverflow`.  They both serve to convert"
+" Python :class:`int` into a native fixed-width type while providing "
+"detection of cases where the conversion won't fit (:issue:`7767`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2582
@@ -3850,30 +4229,30 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2585
 msgid ""
 "There is a new function :c:func:`PyErr_NewExceptionWithDoc` that is like "
-":c:func:`PyErr_NewException` but allows a docstring to be specified. This"
-" lets C exceptions have the same self-documenting capabilities as their "
-"pure Python counterparts (:issue:`7033`)."
+":c:func:`PyErr_NewException` but allows a docstring to be specified. This "
+"lets C exceptions have the same self-documenting capabilities as their pure "
+"Python counterparts (:issue:`7033`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2590
 msgid ""
-"When compiled with the ``--with-valgrind`` option, the pymalloc allocator"
-" will be automatically disabled when running under Valgrind.  This gives "
+"When compiled with the ``--with-valgrind`` option, the pymalloc allocator "
+"will be automatically disabled when running under Valgrind.  This gives "
 "improved memory leak detection when running under Valgrind, while taking "
 "advantage of pymalloc at other times (:issue:`2422`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2595
 msgid ""
-"Removed the ``O?`` format from the *PyArg_Parse* functions.  The format "
-"is no longer used and it had never been documented (:issue:`8837`)."
+"Removed the ``O?`` format from the *PyArg_Parse* functions.  The format is "
+"no longer used and it had never been documented (:issue:`8837`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2598
 msgid ""
-"There were a number of other small changes to the C-API.  See the "
-"`Misc/NEWS <https://github.com/python/cpython/blob/v3.2.6/Misc/NEWS>`__ "
-"file for a complete list."
+"There were a number of other small changes to the C-API.  See the `Misc/NEWS"
+" <https://github.com/python/cpython/blob/v3.2.6/Misc/NEWS>`__ file for a "
+"complete list."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2602
@@ -3881,10 +4260,9 @@ msgid ""
 "Also, there were a number of updates to the Mac OS X build, see "
 "`Mac/BuildScript/README.txt "
 "<https://github.com/python/cpython/blob/v3.2.6/Mac/BuildScript/README.txt>`_"
-" for details.  For users running a 32/64-bit build, there is a known "
-"problem with the default Tcl/Tk on Mac OS X 10.6. Accordingly, we "
-"recommend installing an updated alternative such as `ActiveState Tcl/Tk "
-"8.5.9 "
+" for details.  For users running a 32/64-bit build, there is a known problem"
+" with the default Tcl/Tk on Mac OS X 10.6. Accordingly, we recommend "
+"installing an updated alternative such as `ActiveState Tcl/Tk 8.5.9 "
 "<https://web.archive.org/web/20101208191259/https://www.activestate.com/activetcl/downloads>`_\\."
 " See https://www.python.org/download/mac/tcltk/ for additional details."
 msgstr ""
@@ -3895,16 +4273,16 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2613
 msgid ""
-"This section lists previously described changes and other bugfixes that "
-"may require changes to your code:"
+"This section lists previously described changes and other bugfixes that may "
+"require changes to your code:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2616
 msgid ""
-"The :mod:`configparser` module has a number of clean-ups.  The major "
-"change is to replace the old :class:`!ConfigParser` class with long-"
-"standing preferred alternative :class:`!SafeConfigParser`.  In addition "
-"there are a number of smaller incompatibilities:"
+"The :mod:`configparser` module has a number of clean-ups.  The major change "
+"is to replace the old :class:`!ConfigParser` class with long-standing "
+"preferred alternative :class:`!SafeConfigParser`.  In addition there are a "
+"number of smaller incompatibilities:"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2621
@@ -3921,8 +4299,8 @@ msgstr ""
 msgid ""
 "The :meth:`~configparser.ConfigParser.set` and "
 ":meth:`~configparser.ConfigParser.add_section` methods now verify that "
-"values are actual strings.  Formerly, unsupported types could be "
-"introduced unintentionally."
+"values are actual strings.  Formerly, unsupported types could be introduced "
+"unintentionally."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2632
@@ -3935,40 +4313,39 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2637
 msgid ""
-"Inline comments are now disabled by default so now the **;** character "
-"can be safely used in values."
+"Inline comments are now disabled by default so now the **;** character can "
+"be safely used in values."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2640
 msgid ""
-"Comments now can be indented.  Consequently, for **;** or **#** to appear"
-" at the start of a line in multiline values, it has to be interpolated.  "
-"This keeps comment prefix characters in values from being mistaken as "
-"comments."
+"Comments now can be indented.  Consequently, for **;** or **#** to appear at"
+" the start of a line in multiline values, it has to be interpolated.  This "
+"keeps comment prefix characters in values from being mistaken as comments."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2644
 msgid ""
-"``\"\"`` is now a valid value and is no longer automatically converted to"
-" an empty string. For empty strings, use ``\"option =\"`` in a line."
+"``\"\"`` is now a valid value and is no longer automatically converted to an"
+" empty string. For empty strings, use ``\"option =\"`` in a line."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2647
 msgid ""
-"The :mod:`!nntplib` module was reworked extensively, meaning that its "
-"APIs are often incompatible with the 3.1 APIs."
+"The :mod:`!nntplib` module was reworked extensively, meaning that its APIs "
+"are often incompatible with the 3.1 APIs."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2650
 msgid ""
-":class:`bytearray` objects can no longer be used as filenames; instead, "
-"they should be converted to :class:`bytes`."
+":class:`bytearray` objects can no longer be used as filenames; instead, they"
+" should be converted to :class:`bytes`."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2653
 msgid ""
-"The :meth:`!array.tostring` and :meth:`!array.fromstring` have been "
-"renamed to :meth:`array.tobytes() <array.array.tobytes>` and "
+"The :meth:`!array.tostring` and :meth:`!array.fromstring` have been renamed "
+"to :meth:`array.tobytes() <array.array.tobytes>` and "
 ":meth:`array.frombytes() <array.array.frombytes>` for clarity.  The old "
 "names have been deprecated. (See :issue:`8990`.)"
 msgstr ""
@@ -3987,24 +4364,24 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2663
 msgid ""
-"The :c:type:`!PyCObject` type, deprecated in 3.1, has been removed.  To "
-"wrap opaque C pointers in Python objects, the :c:type:`PyCapsule` API "
-"should be used instead; the new type has a well-defined interface for "
-"passing typing safety information and a less complicated signature for "
-"calling a destructor."
+"The :c:type:`!PyCObject` type, deprecated in 3.1, has been removed.  To wrap"
+" opaque C pointers in Python objects, the :c:type:`PyCapsule` API should be "
+"used instead; the new type has a well-defined interface for passing typing "
+"safety information and a less complicated signature for calling a "
+"destructor."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2668
 msgid ""
-"The :func:`!sys.setfilesystemencoding` function was removed because it "
-"had a flawed design."
+"The :func:`!sys.setfilesystemencoding` function was removed because it had a"
+" flawed design."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2671
 msgid ""
-"The :func:`random.seed` function and method now salt string seeds with an"
-" sha512 hash function.  To access the previous version of *seed* in order"
-" to reproduce Python 3.1 sequences, set the *version* argument to *1*, "
+"The :func:`random.seed` function and method now salt string seeds with an "
+"sha512 hash function.  To access the previous version of *seed* in order to "
+"reproduce Python 3.1 sequences, set the *version* argument to *1*, "
 "``random.seed(s, version=1)``."
 msgstr ""
 
@@ -4012,11 +4389,11 @@ msgstr ""
 msgid ""
 "The previously deprecated :func:`!string.maketrans` function has been "
 "removed in favor of the static methods :meth:`bytes.maketrans` and "
-":meth:`bytearray.maketrans`.  This change solves the confusion around "
-"which types were supported by the :mod:`string` module.  Now, "
-":class:`str`, :class:`bytes`, and :class:`bytearray` each have their own "
-"**maketrans** and **translate** methods with intermediate translation "
-"tables of the appropriate type."
+":meth:`bytearray.maketrans`.  This change solves the confusion around which "
+"types were supported by the :mod:`string` module.  Now, :class:`str`, "
+":class:`bytes`, and :class:`bytearray` each have their own **maketrans** and"
+" **translate** methods with intermediate translation tables of the "
+"appropriate type."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2684
@@ -4027,9 +4404,9 @@ msgstr ""
 msgid ""
 "The previously deprecated :func:`!contextlib.nested` function has been "
 "removed in favor of a plain :keyword:`with` statement which can accept "
-"multiple context managers.  The latter technique is faster (because it is"
-" built-in), and it does a better job finalizing multiple context managers"
-" when one of them raises an exception::"
+"multiple context managers.  The latter technique is faster (because it is "
+"built-in), and it does a better job finalizing multiple context managers "
+"when one of them raises an exception::"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2692
@@ -4042,58 +4419,59 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2697
 msgid ""
-"(Contributed by Georg Brandl and Mattias Brändström; `appspot issue 53094"
-" <https://codereview.appspot.com/53094>`_.)"
+"(Contributed by Georg Brandl and Mattias Brändström; `appspot issue 53094 "
+"<https://codereview.appspot.com/53094>`_.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2700
 msgid ""
-":func:`struct.pack` now only allows bytes for the ``s`` string pack code."
-" Formerly, it would accept text arguments and implicitly encode them to "
-"bytes using UTF-8.  This was problematic because it made assumptions "
-"about the correct encoding and because a variable-length encoding can "
-"fail when writing to fixed length segment of a structure."
+":func:`struct.pack` now only allows bytes for the ``s`` string pack code. "
+"Formerly, it would accept text arguments and implicitly encode them to bytes"
+" using UTF-8.  This was problematic because it made assumptions about the "
+"correct encoding and because a variable-length encoding can fail when "
+"writing to fixed length segment of a structure."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2706
 msgid ""
-"Code such as ``struct.pack('<6sHHBBB', 'GIF87a', x, y)`` should be "
-"rewritten with to use bytes instead of text, ``struct.pack('<6sHHBBB', "
-"b'GIF87a', x, y)``."
+"Code such as ``struct.pack('<6sHHBBB', 'GIF87a', x, y)`` should be rewritten"
+" with to use bytes instead of text, ``struct.pack('<6sHHBBB', b'GIF87a', x, "
+"y)``."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2709
-msgid "(Discovered by David Beazley and fixed by Victor Stinner; :issue:`10783`.)"
+msgid ""
+"(Discovered by David Beazley and fixed by Victor Stinner; :issue:`10783`.)"
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2711
 msgid ""
 "The :class:`xml.etree.ElementTree` class now raises an "
-":exc:`xml.etree.ElementTree.ParseError` when a parse fails. Previously it"
-" raised an :exc:`xml.parsers.expat.ExpatError`."
+":exc:`xml.etree.ElementTree.ParseError` when a parse fails. Previously it "
+"raised an :exc:`xml.parsers.expat.ExpatError`."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2715
 msgid ""
-"The new, longer :func:`str` value on floats may break doctests which rely"
-" on the old output format."
+"The new, longer :func:`str` value on floats may break doctests which rely on"
+" the old output format."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2718
 msgid ""
 "In :class:`subprocess.Popen`, the default value for *close_fds* is now "
 "``True`` under Unix; under Windows, it is ``True`` if the three standard "
-"streams are set to ``None``, ``False`` otherwise.  Previously, "
-"*close_fds* was always ``False`` by default, which produced difficult to "
-"solve bugs or race conditions when open file descriptors would leak into "
-"the child process."
+"streams are set to ``None``, ``False`` otherwise.  Previously, *close_fds* "
+"was always ``False`` by default, which produced difficult to solve bugs or "
+"race conditions when open file descriptors would leak into the child "
+"process."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2725
 msgid ""
-"Support for legacy HTTP 0.9 has been removed from :mod:`urllib.request` "
-"and :mod:`http.client`.  Such support is still present on the server side"
-" (in :mod:`http.server`)."
+"Support for legacy HTTP 0.9 has been removed from :mod:`urllib.request` and "
+":mod:`http.client`.  Such support is still present on the server side (in "
+":mod:`http.server`)."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2729
@@ -4102,8 +4480,8 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:2731
 msgid ""
-"SSL sockets in timeout mode now raise :exc:`socket.timeout` when a "
-"timeout occurs, rather than a generic :exc:`~ssl.SSLError`."
+"SSL sockets in timeout mode now raise :exc:`socket.timeout` when a timeout "
+"occurs, rather than a generic :exc:`~ssl.SSLError`."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2734
@@ -4113,16 +4491,16 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:2736
 msgid ""
 "The misleading functions :c:func:`!PyEval_AcquireLock` and "
-":c:func:`!PyEval_ReleaseLock` have been officially deprecated.  The "
-"thread-state aware APIs (such as :c:func:`PyEval_SaveThread` and "
+":c:func:`!PyEval_ReleaseLock` have been officially deprecated.  The thread-"
+"state aware APIs (such as :c:func:`PyEval_SaveThread` and "
 ":c:func:`PyEval_RestoreThread`) should be used instead."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2741
 msgid ""
-"Due to security risks, :func:`!asyncore.handle_accept` has been "
-"deprecated, and a new function, :func:`!asyncore.handle_accepted`, was "
-"added to replace it."
+"Due to security risks, :func:`!asyncore.handle_accept` has been deprecated, "
+"and a new function, :func:`!asyncore.handle_accepted`, was added to replace "
+"it."
 msgstr ""
 
 #: ../../whatsnew/3.2.rst:2744
@@ -4136,9 +4514,6 @@ msgid ""
 msgstr ""
 
 #~ msgid ""
-#~ "Imported modules now have a "
-#~ "``__cached__`` attribute which stores the "
-#~ "name of the actual file that was"
-#~ " imported:"
+#~ "Imported modules now have a ``__cached__`` attribute which stores the name "
+#~ "of the actual file that was imported:"
 #~ msgstr ""
-

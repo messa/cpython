@@ -40,6 +40,7 @@ LOCALE_DIR = (_DOC_DIR / "locales" / "cs" / "LC_MESSAGES").resolve()
 
 # Limits
 MAX_ENTRIES_COUNT = 50  # Maximum entries to return in one request
+MAX_MSGID_SIZE = 10 * 1024  # Skip entries with msgid larger than 10 KB
 
 # Ensure LOCALE_DIR is within DOC_DIR (sanity check)
 if not str(LOCALE_DIR).startswith(str(_DOC_DIR)):
@@ -456,8 +457,11 @@ async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
             })
         )]
 
-    # Get untranslated entries
-    untranslated = po.untranslated_entries()
+    # Get untranslated entries (skip entries with msgid > MAX_MSGID_SIZE)
+    untranslated = [
+        entry for entry in po.untranslated_entries()
+        if len(entry.msgid.encode('utf-8')) <= MAX_MSGID_SIZE
+    ]
     entries_to_return = untranslated[:count]
 
     # Format entries with context
