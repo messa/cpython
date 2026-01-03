@@ -127,6 +127,22 @@ msgid ""
 "\n"
 "asyncio.run(main())"
 msgstr ""
+"import asyncio\n"
+"import time\n"
+"\n"
+"async def say_after(delay, what):\n"
+"    await asyncio.sleep(delay)\n"
+"    print(what)\n"
+"\n"
+"async def main():\n"
+"    print(f\"started at {time.strftime('%X')}\")\n"
+"\n"
+"    await say_after(1, 'hello')\n"
+"    await say_after(2, 'world')\n"
+"\n"
+"    print(f\"finished at {time.strftime('%X')}\")\n"
+"\n"
+"asyncio.run(main())"
 
 #: ../../library/asyncio-task.rst:73
 msgid "Expected output::"
@@ -1445,6 +1461,8 @@ msgid ""
 "To avoid the task :meth:`cancellation <Task.cancel>`, wrap it in "
 ":func:`shield`."
 msgstr ""
+"Aby se zabránilo :meth:`zrušení <Task.cancel>` úkolu, zabalte jej do "
+":func:`shield`."
 
 #: ../../library/asyncio-task.rst:854
 msgid ""
@@ -1452,10 +1470,13 @@ msgid ""
 "total wait time may exceed the *timeout*. If an exception happens during "
 "cancellation, it is propagated."
 msgstr ""
+"Funkce bude čekat, dokud se budoucnost skutečně nezruší, takže celková doba "
+"čekání může překročit *timeout*. Pokud během zrušení dojde k výjimce, je "
+"šířena."
 
 #: ../../library/asyncio-task.rst:858
 msgid "If the wait is cancelled, the future *aw* is also cancelled."
-msgstr ""
+msgstr "Pokud je čekání zrušeno, budoucnost *aw* je také zrušena."
 
 #: ../../library/asyncio-task.rst:864
 msgid ""
@@ -1477,20 +1498,39 @@ msgid ""
 "#\n"
 "#     timeout!"
 msgstr ""
+"async def eternity():\n"
+"    # Sleep for one hour\n"
+"    await asyncio.sleep(3600)\n"
+"    print('yay!')\n"
+"\n"
+"async def main():\n"
+"    # Wait for at most 1 second\n"
+"    try:\n"
+"        await asyncio.wait_for(eternity(), timeout=1.0)\n"
+"    except TimeoutError:\n"
+"        print('timeout!')\n"
+"\n"
+"asyncio.run(main())\n"
+"\n"
+"# Expected output:\n"
+"#\n"
+"#     timeout!"
 
 #: ../../library/asyncio-task.rst:882
 msgid ""
 "When *aw* is cancelled due to a timeout, ``wait_for`` waits for *aw* to "
 "be cancelled.  Previously, it raised :exc:`TimeoutError` immediately."
 msgstr ""
+"Když se *aw* zruší kvůli vypršení času, ``wait_for`` čeká na zrušení *aw*. "
+"Dříve vyvolala :exc:`TimeoutError` okamžitě."
 
 #: ../../library/asyncio-task.rst:890
 msgid "Raises :exc:`TimeoutError` instead of :exc:`asyncio.TimeoutError`."
-msgstr ""
+msgstr "Vyvolá :exc:`TimeoutError` místo :exc:`asyncio.TimeoutError`."
 
 #: ../../library/asyncio-task.rst:895
 msgid "Waiting Primitives"
-msgstr ""
+msgstr "Primitivy čekání"
 
 #: ../../library/asyncio-task.rst:900
 msgid ""
@@ -1498,28 +1538,33 @@ msgid ""
 "*aws* iterable concurrently and block until the condition specified by "
 "*return_when*."
 msgstr ""
+"Spusťte instance :class:`~asyncio.Future` a :class:`~asyncio.Task` v "
+"iterovatelném *aws* souběžně a blokujte, dokud není splněna podmínka "
+"zadaná *return_when*."
 
 #: ../../library/asyncio-task.rst:904
 msgid "The *aws* iterable must not be empty."
-msgstr ""
+msgstr "Iterovatelný *aws* nesmí být prázdný."
 
 #: ../../library/asyncio-task.rst:906
 msgid "Returns two sets of Tasks/Futures: ``(done, pending)``."
-msgstr ""
+msgstr "Vrací dvě sady úkolů/budoucností: ``(done, pending)``."
 
 #: ../../library/asyncio-task.rst:908
 msgid "Usage::"
-msgstr ""
+msgstr "Použití::"
 
 #: ../../library/asyncio-task.rst:910
 msgid "done, pending = await asyncio.wait(aws)"
-msgstr ""
+msgstr "done, pending = await asyncio.wait(aws)"
 
 #: ../../library/asyncio-task.rst:912
 msgid ""
 "*timeout* (a float or int), if specified, can be used to control the "
 "maximum number of seconds to wait before returning."
 msgstr ""
+"*timeout* (float nebo int), pokud je zadán, lze použít k řízení maximálního "
+"počtu sekund čekání před vrácením."
 
 #: ../../library/asyncio-task.rst:915
 msgid ""
@@ -1527,24 +1572,29 @@ msgid ""
 "Tasks that aren't done when the timeout occurs are simply returned in the"
 " second set."
 msgstr ""
+"Všimněte si, že tato funkce nevyvolá :exc:`TimeoutError`. Budoucnosti nebo "
+"úkoly, které nejsou hotovy, když dojde k vypršení času, se jednoduše vrátí "
+"v druhé sadě."
 
 #: ../../library/asyncio-task.rst:919
 msgid ""
 "*return_when* indicates when this function should return.  It must be one"
 " of the following constants:"
 msgstr ""
+"*return_when* označuje, kdy by měla tato funkce vrátit. Musí to být jedna "
+"z následujících konstant:"
 
 #: ../../library/asyncio-task.rst:925
 msgid "Constant"
-msgstr ""
+msgstr "Konstanta"
 
 #: ../../library/asyncio-task.rst:926
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: ../../library/asyncio-task.rst:929
 msgid "The function will return when any future finishes or is cancelled."
-msgstr ""
+msgstr "Funkce se vrátí, když se některá budoucnost skončí nebo zruší."
 
 #: ../../library/asyncio-task.rst:932
 msgid ""
@@ -1552,24 +1602,28 @@ msgid ""
 "exception. If no future raises an exception then it is equivalent to "
 ":const:`ALL_COMPLETED`."
 msgstr ""
+"Funkce se vrátí, když se některá budoucnost skončí vyvolením výjimky. Pokud "
+"žádná budoucnost nevyvolá výjimku, je ekvivalentní :const:`ALL_COMPLETED`."
 
 #: ../../library/asyncio-task.rst:937
 msgid "The function will return when all futures finish or are cancelled."
-msgstr ""
+msgstr "Funkce se vrátí, když se všechny budoucnosti skončí nebo zruší."
 
 #: ../../library/asyncio-task.rst:939
 msgid ""
 "Unlike :func:`~asyncio.wait_for`, ``wait()`` does not cancel the futures "
 "when a timeout occurs."
 msgstr ""
+"Na rozdíl od :func:`~asyncio.wait_for`, ``wait()`` nezruší budoucnosti, "
+"když dojde k vypršení času."
 
 #: ../../library/asyncio-task.rst:945
 msgid "Passing coroutine objects to ``wait()`` directly is forbidden."
-msgstr ""
+msgstr "Přímé předávání objektů korutin ``wait()`` je zakázáno."
 
 #: ../../library/asyncio-task.rst:948 ../../library/asyncio-task.rst:1006
 msgid "Added support for generators yielding tasks."
-msgstr ""
+msgstr "Přidána podpora generátorů vracejících úkoly."
 
 #: ../../library/asyncio-task.rst:954
 msgid ""
@@ -1577,6 +1631,9 @@ msgid ""
 "concurrently. The returned object can be iterated to obtain the results "
 "of the awaitables as they finish."
 msgstr ""
+"Spusťte :ref:`čekatelné objekty <asyncio-awaitables>` v iterovatelném *aws* "
+"souběžně. Vrácený objekt lze iterovat, aby se získaly výsledky čekatelných "
+"objektů, jak se dokončují."
 
 #: ../../library/asyncio-task.rst:958
 msgid ""
@@ -1586,6 +1643,11 @@ msgid ""
 "yielded if they are tasks or futures. This makes it easy to correlate "
 "previously-scheduled tasks with their results. Example::"
 msgstr ""
+"Objekt vrácený ``as_completed()`` lze iterovat jako "
+":term:`asynchronous iterator` nebo jako běžný :term:`iterator`. Když se "
+"používá asynchronní iterace, původně dodané čekatelné objekty se vrací, "
+"pokud jsou úkoly nebo budoucnosti. To usnadňuje korelaci dříve naplánovaných "
+"úkolů s jejich výsledky. Příklad::"
 
 #: ../../library/asyncio-task.rst:964
 msgid ""
@@ -1653,11 +1715,11 @@ msgstr ""
 
 #: ../../library/asyncio-task.rst:1015
 msgid "Running in Threads"
-msgstr ""
+msgstr "Spouštění ve vláknech"
 
 #: ../../library/asyncio-task.rst:1020
 msgid "Asynchronously run function *func* in a separate thread."
-msgstr ""
+msgstr "Asynchronně spustit funkci *func* v samostatném vlákně."
 
 #: ../../library/asyncio-task.rst:1022
 msgid ""
@@ -1666,12 +1728,17 @@ msgid ""
 "propagated, allowing context variables from the event loop thread to be "
 "accessed in the separate thread."
 msgstr ""
+"Jakýkoli \\*args a \\*\\*kwargs dodané pro tuto funkci jsou předány "
+"přímo *func*. Také je aktuální :class:`contextvars.Context` šířen, "
+"což umožňuje přístup k proměnným kontextu ze vlákna smyčky událostí "
+"v samostatném vlákně."
 
 #: ../../library/asyncio-task.rst:1027
 msgid ""
 "Return a coroutine that can be awaited to get the eventual result of "
 "*func*."
 msgstr ""
+"Vrátit korutinu, kterou lze čekat, aby se získal konečný výsledek *func*."
 
 #: ../../library/asyncio-task.rst:1029
 msgid ""
@@ -1679,6 +1746,9 @@ msgid ""
 "IO-bound functions/methods that would otherwise block the event loop if "
 "they were run in the main thread. For example::"
 msgstr ""
+"Tato funkce korutiny je primárně určena k spouštění funkcí/metod vázaných "
+"na I/O, které by jinak blokovaly smyčku událostí, pokud by běžely v hlavním "
+"vlákně. Například::"
 
 #: ../../library/asyncio-task.rst:1033
 #, python-brace-format, python-format
@@ -1717,6 +1787,10 @@ msgid ""
 "Instead, by using ``asyncio.to_thread()``, we can run it in a separate "
 "thread without blocking the event loop."
 msgstr ""
+"Přímé volání ``blocking_io()`` v jakékoli korutině by blokovalo smyčku "
+"událostí po dobu jejího trvání, což by mělo za následek další 1 sekundu "
+"spuštění. Místo toho můžeme pomocí ``asyncio.to_thread()`` spustit v "
+"samostatném vlákně bez blokování smyčky událostí."
 
 #: ../../library/asyncio-task.rst:1066
 msgid ""
@@ -1726,14 +1800,18 @@ msgid ""
 "don't have one, ``asyncio.to_thread()`` can also be used for CPU-bound "
 "functions."
 msgstr ""
+"Kvůli :term:`GIL` lze ``asyncio.to_thread()`` obvykle používat pouze k "
+"vytvoření funkcí vázaných na I/O bez blokování. Však pro moduly rozšíření, "
+"které uvolňují GIL nebo alternativní implementace Pythonu, které jej nemají, "
+"lze ``asyncio.to_thread()`` používat také pro funkce vázané na CPU."
 
 #: ../../library/asyncio-task.rst:1075
 msgid "Scheduling From Other Threads"
-msgstr ""
+msgstr "Plánování z jiných vláken"
 
 #: ../../library/asyncio-task.rst:1079
 msgid "Submit a coroutine to the given event loop.  Thread-safe."
-msgstr ""
+msgstr "Odeslat korutinu do dané smyčky событostí. Bezpečné pro vlákna."
 
 #: ../../library/asyncio-task.rst:1081
 msgid ""
