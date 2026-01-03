@@ -265,6 +265,11 @@ async def list_tools() -> list[Tool]:
                             "required": ["msgid", "msgstr"],
                         },
                     },
+                    "overwrite": {
+                        "type": "boolean",
+                        "description": "If false, skip already translated entries (default: true)",
+                        "default": True,
+                    },
                 },
                 "required": ["file", "translations"],
             },
@@ -369,7 +374,8 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
     """Handle submit_translations tool call."""
     file_arg = arguments.get("file")
     translations = arguments.get("translations", [])
-    logger.debug("submit_translations: file=%s, count=%d", file_arg, len(translations))
+    overwrite = arguments.get("overwrite", True)
+    logger.debug("submit_translations: file=%s, count=%d, overwrite=%s", file_arg, len(translations), overwrite)
 
     if not file_arg:
         return [TextContent(
@@ -430,7 +436,7 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
         for entry in po:
             if entry.msgid == msgid:
                 found = True
-                if entry.msgstr:
+                if entry.msgstr and not overwrite:
                     already_translated.append(msgid[:50] + "..." if len(msgid) > 50 else msgid)
                 else:
                     entry.msgstr = msgstr

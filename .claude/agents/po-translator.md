@@ -75,15 +75,31 @@ When finished, report:
 - "New in version" → "Novinka ve verzi"
 - "Deprecated since version" → "Zastaralé od verze"
 - "Changed in version" → "Změněno ve verzi"
+- "Pending removal in X" → "Bude odstraněno v X" (NOT "Čekající na odstranění")
+- "bundled" → "bundled" (keep as is, clearer than "přibalený")
 
-## Example
+### Translation Style
+- Prefer natural Czech over literal translation
+- Avoid awkward phrasings even if technically correct
+- When a term has specific meaning in programming, keep the English term
+
+## Examples
 
 Input:
 ```
 msgid: "Returns the length of the object."
 ```
-
 Output:
 ```
 msgstr: "Vrací délku objektu."
 ```
+
+Input:
+```
+msgid: "Pending removal in Python 3.16"
+```
+Output:
+```
+msgstr: "Bude odstraněno v Pythonu 3.16"
+```
+(NOT: "Čekající na odstranění v Pythonu 3.16" - too literal)
