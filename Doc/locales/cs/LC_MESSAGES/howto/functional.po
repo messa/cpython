@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../../howto/functional.rst:5
 msgid "Functional Programming HOWTO"
-msgstr ""
+msgstr "HOWTO: Funkcionální programování"
 
 #: ../../howto/functional.rst
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../../howto/functional.rst:7
 msgid "\\A. M. Kuchling"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../../howto/functional.rst
 msgid "Release"
-msgstr ""
+msgstr "Vydání"
 
 #: ../../howto/functional.rst:8
 msgid "0.32"
@@ -47,10 +47,15 @@ msgid ""
 "such as :term:`iterator`\\s and :term:`generator`\\s and relevant library"
 " modules such as :mod:`itertools` and :mod:`functools`."
 msgstr ""
+"V tomto dokumentu se podíváme na funkce Pythonu vhodné pro implementaci "
+"programů ve funkcionálním stylu. Po úvodu do konceptů funkcionálního "
+"programování se podíváme na jazykové funkce jako :term:`iterator`\\y a "
+":term:`generator`\\y a relevantní knihovní moduly jako :mod:`itertools` "
+"a :mod:`functools`."
 
 #: ../../howto/functional.rst:18
 msgid "Introduction"
-msgstr ""
+msgstr "Úvod"
 
 #: ../../howto/functional.rst:20
 msgid ""
@@ -58,12 +63,17 @@ msgid ""
 "you're just interested in learning about Python language features, skip "
 "to the next section on :ref:`functional-howto-iterators`."
 msgstr ""
+"Tato sekce vysvětluje základní koncept funkcionálního programování; pokud "
+"vás zajímají pouze jazykové funkce Pythonu, přejděte k další sekci "
+":ref:`functional-howto-iterators`."
 
 #: ../../howto/functional.rst:24
 msgid ""
 "Programming languages support decomposing problems in several different "
 "ways:"
 msgstr ""
+"Programovací jazyky podporují dekompozici problémů několika různými "
+"způsoby:"
 
 #: ../../howto/functional.rst:26
 msgid ""
@@ -71,6 +81,9 @@ msgid ""
 "instructions that tell the computer what to do with the program's input."
 "  C, Pascal, and even Unix shells are procedural languages."
 msgstr ""
+"Většina programovacích jazyků je **procedurální**: programy jsou seznamy "
+"instrukcí, které říkají počítači, co má dělat se vstupem programu. C, "
+"Pascal a dokonce i unixové shelly jsou procedurální jazyky."
 
 #: ../../howto/functional.rst:30
 msgid ""
@@ -81,6 +94,12 @@ msgid ""
 "set you want to retrieve, and the SQL engine decides whether to scan "
 "tables or use indexes, which subclauses should be performed first, etc."
 msgstr ""
+"V **deklarativních** jazycích píšete specifikaci, která popisuje problém, "
+"který má být vyřešen, a implementace jazyka zjistí, jak efektivně provést "
+"výpočet. SQL je deklarativní jazyk, se kterým jste se s největší "
+"pravděpodobností setkali; SQL dotaz popisuje sadu dat, kterou chcete "
+"získat, a SQL engine rozhoduje, zda skenovat tabulky nebo použít indexy, "
+"které poddotazy by měly být provedeny jako první, atd."
 
 #: ../../howto/functional.rst:37
 msgid ""
@@ -90,6 +109,11 @@ msgid ""
 "languages.  C++ and Python are languages that support object-oriented "
 "programming, but don't force the use of object-oriented features."
 msgstr ""
+"**Objektově orientované** programy manipulují s kolekcemi objektů. Objekty "
+"mají vnitřní stav a podporují metody, které dotazují nebo nějakým způsobem "
+"modifikují tento vnitřní stav. Smalltalk a Java jsou objektově orientované "
+"jazyky. C++ a Python jsou jazyky, které podporují objektově orientované "
+"programování, ale nevynucují použití objektově orientovaných funkcí."
 
 #: ../../howto/functional.rst:43
 msgid ""
@@ -99,6 +123,11 @@ msgid ""
 "Well-known functional languages include the ML family (Standard ML, "
 "OCaml, and other variants) and Haskell."
 msgstr ""
+"**Funkcionální** programování rozkládá problém na sadu funkcí. Ideálně "
+"funkce pouze přijímají vstupy a produkují výstupy a nemají žádný vnitřní "
+"stav, který by ovlivňoval výstup produkovaný pro daný vstup. Známé "
+"funkcionální jazyky zahrnují rodinu ML (Standard ML, OCaml a další "
+"varianty) a Haskell."
 
 #: ../../howto/functional.rst:49
 msgid ""
@@ -112,6 +141,15 @@ msgid ""
 " different approaches; the GUI might be object-oriented while the "
 "processing logic is procedural or functional, for example."
 msgstr ""
+"Návrháři některých počítačových jazyků se rozhodli zdůraznit jeden "
+"konkrétní přístup k programování. To často ztěžuje psaní programů, které "
+"používají jiný přístup. Jiné jazyky jsou multi-paradigmatické jazyky, "
+"které podporují několik různých přístupů. Lisp, C++ a Python jsou multi-"
+"paradigmatické; můžete psát programy nebo knihovny, které jsou převážně "
+"procedurální, objektově orientované nebo funkcionální ve všech těchto "
+"jazycích. Ve velkém programu mohou být různé sekce napsány pomocí různých "
+"přístupů; GUI může být objektově orientované, zatímco logika zpracování "
+"může být procedurální nebo funkcionální, například."
 
 #: ../../howto/functional.rst:60
 msgid ""
@@ -124,6 +162,14 @@ msgid ""
 " get updated as a program runs; every function's output must only depend "
 "on its input."
 msgstr ""
+"Ve funkcionálním programu vstup prochází sadou funkcí. Každá funkce "
+"operuje na svém vstupu a produkuje nějaký výstup. Funkcionální styl "
+"odrazuje od funkcí s vedlejšími efekty, které modifikují vnitřní stav "
+"nebo provádějí jiné změny, které nejsou viditelné v návratové hodnotě "
+"funkce. Funkce, které nemají vůbec žádné vedlejší efekty, se nazývají "
+"**čistě funkcionální**. Vyhýbání se vedlejším efektům znamená nepoužívat "
+"datové struktury, které se aktualizují při běhu programu; výstup každé "
+"funkce musí záviset pouze na jejím vstupu."
 
 #: ../../howto/functional.rst:68
 msgid ""
@@ -135,6 +181,13 @@ msgid ""
 "Both are called only for their side effects of sending some text to the "
 "screen or pausing execution for a second."
 msgstr ""
+"Některé jazyky jsou velmi striktní ohledně čistoty a dokonce nemají "
+"příkazy přiřazení jako ``a=3`` nebo ``c = a + b``, ale je těžké se "
+"vyhnout všem vedlejším efektům, jako je tisk na obrazovku nebo zápis do "
+"souboru na disku. Dalším příkladem je volání funkce :func:`print` nebo "
+":func:`time.sleep`, z nichž žádná nevrací užitečnou hodnotu. Obě jsou "
+"volány pouze pro své vedlejší efekty odeslání textu na obrazovku nebo "
+"pozastavení provádění na sekundu."
 
 #: ../../howto/functional.rst:75
 msgid ""
@@ -145,6 +198,12 @@ msgid ""
 "assignments to local variables, but won't modify global variables or have"
 " other side effects."
 msgstr ""
+"Pythonové programy psané ve funkcionálním stylu obvykle nebudou chodit do "
+"extrému vyhýbání se všem I/O operacím nebo všem přiřazením; místo toho "
+"poskytnou funkcionálně vypadající rozhraní, ale interně budou používat "
+"nefunkcionální vlastnosti. Například implementace funkce bude stále "
+"používat přiřazení k lokálním proměnným, ale nebude modifikovat globální "
+"proměnné ani mít jiné vedlejší efekty."
 
 #: ../../howto/functional.rst:81
 msgid ""
@@ -158,6 +217,14 @@ msgid ""
 "instances representing objects in your application (e-mail messages, "
 "transactions, etc.)."
 msgstr ""
+"Funkcionální programování lze považovat za opak objektově orientovaného "
+"programování. Objekty jsou malé kapsle obsahující nějaký vnitřní stav "
+"spolu s kolekcí volání metod, které vám umožňují tento stav modifikovat, "
+"a programy spočívají v provádění správné sady změn stavu. Funkcionální "
+"programování se chce co nejvíce vyhnout změnám stavu a pracuje s daty "
+"proudícími mezi funkcemi. V Pythonu můžete kombinovat oba přístupy tím, "
+"že napíšete funkce, které přijímají a vracejí instance reprezentující "
+"objekty ve vaší aplikaci (e-mailové zprávy, transakce atd.)."
 
 #: ../../howto/functional.rst:90
 msgid ""
@@ -165,32 +232,37 @@ msgid ""
 "should you avoid objects and side effects?  There are theoretical and "
 "practical advantages to the functional style:"
 msgstr ""
+"Funkcionální design se může zdát jako zvláštní omezení, pod kterým "
+"pracovat. Proč byste se měli vyhýbat objektům a vedlejším efektům? "
+"Funkcionální styl má teoretické i praktické výhody:"
 
 #: ../../howto/functional.rst:94
 msgid "Formal provability."
-msgstr ""
+msgstr "Formální prokazatelnost."
 
 #: ../../howto/functional.rst:95
 msgid "Modularity."
-msgstr ""
+msgstr "Modularita."
 
 #: ../../howto/functional.rst:96
 msgid "Composability."
-msgstr ""
+msgstr "Kompozovatelnost."
 
 #: ../../howto/functional.rst:97
 msgid "Ease of debugging and testing."
-msgstr ""
+msgstr "Snadné ladění a testování."
 
 #: ../../howto/functional.rst:101
 msgid "Formal provability"
-msgstr ""
+msgstr "Formální prokazatelnost"
 
 #: ../../howto/functional.rst:103
 msgid ""
 "A theoretical benefit is that it's easier to construct a mathematical "
 "proof that a functional program is correct."
 msgstr ""
+"Teoretickou výhodou je, že je snazší vytvořit matematický důkaz, že "
+"funkcionální program je správný."
 
 #: ../../howto/functional.rst:106
 msgid ""
@@ -201,6 +273,11 @@ msgid ""
 "looks right; the goal is instead a rigorous proof that a program produces"
 " the right result for all possible inputs."
 msgstr ""
+"Vědci se již dlouho zajímají o hledání způsobů, jak matematicky dokázat "
+"správnost programů. To se liší od testování programu na mnoha vstupech "
+"a závěru, že jeho výstup je obvykle správný, nebo čtení zdrojového kódu "
+"programu a závěru, že kód vypadá správně; cílem je místo toho rigorózní "
+"důkaz, že program produkuje správný výsledek pro všechny možné vstupy."
 
 #: ../../howto/functional.rst:113
 msgid ""
@@ -213,6 +290,13 @@ msgid ""
 "which point the invariants should match the desired conditions on the "
 "program's output."
 msgstr ""
+"Technika používaná k důkazu správnosti programů spočívá v zápisu "
+"**invariantů**, vlastností vstupních dat a proměnných programu, které "
+"jsou vždy pravdivé. Pro každý řádek kódu pak ukážete, že pokud jsou "
+"invarianty X a Y pravdivé **před** provedením řádku, mírně odlišné "
+"invarianty X' a Y' jsou pravdivé **po** provedení řádku. To pokračuje, "
+"dokud nedosáhnete konce programu, v kterémžto bodě by invarianty měly "
+"odpovídat požadovaným podmínkám na výstup programu."
 
 #: ../../howto/functional.rst:121
 msgid ""
@@ -221,6 +305,11 @@ msgid ""
 "break invariants that were true before the assignment without producing "
 "any new invariants that can be propagated onward."
 msgstr ""
+"Vyhýbání se přiřazením ve funkcionálním programování vzniklo proto, že "
+"přiřazení jsou touto technikou obtížně zpracovatelná; přiřazení mohou "
+"porušit invarianty, které byly před přiřazením pravdivé, aniž by "
+"vyprodukovaly nějaké nové invarianty, které by mohly být propagovány "
+"dále."
 
 #: ../../howto/functional.rst:126
 msgid ""
@@ -233,10 +322,18 @@ msgid ""
 "there would then be the question of verifying the proof; maybe there's an"
 " error in it, and you wrongly believe you've proved the program correct."
 msgstr ""
+"Bohužel dokazování správnosti programů je převážně nepraktické a není "
+"relevantní pro Pythonový software. Dokonce i triviální programy vyžadují "
+"důkazy dlouhé několik stran; důkaz správnosti pro středně komplikovaný "
+"program by byl obrovský a jen málo programů, které denně používáte "
+"(interpret Pythonu, váš XML parser, váš webový prohlížeč), nebo žádný z "
+"nich by nemohl být dokázán jako správný. I kdybyste napsali nebo "
+"vygenerovali důkaz, vznikla by pak otázka ověření důkazu; možná v něm "
+"je chyba a vy mylně věříte, že jste dokázali správnost programu."
 
 #: ../../howto/functional.rst:137
 msgid "Modularity"
-msgstr ""
+msgstr "Modularita"
 
 #: ../../howto/functional.rst:139
 msgid ""
@@ -247,14 +344,19 @@ msgid ""
 "transformation.  Small functions are also easier to read and to check for"
 " errors."
 msgstr ""
+"Praktičtější výhodou funkcionálního programování je, že vás nutí rozdělit "
+"váš problém na malé části. Programy jsou díky tomu modulárnější. Je "
+"snazší specifikovat a napsat malou funkci, která dělá jednu věc, než "
+"velkou funkci, která provádí komplikovanou transformaci. Malé funkce jsou "
+"také snazší na čtení a kontrolu chyb."
 
 #: ../../howto/functional.rst:147
 msgid "Ease of debugging and testing"
-msgstr ""
+msgstr "Snadné ladění a testování"
 
 #: ../../howto/functional.rst:149
 msgid "Testing and debugging a functional-style program is easier."
-msgstr ""
+msgstr "Testování a ladění programu ve funkcionálním stylu je snazší."
 
 #: ../../howto/functional.rst:151
 msgid ""
@@ -264,6 +366,11 @@ msgid ""
 " intermediate inputs and outputs to quickly isolate the function that's "
 "responsible for a bug."
 msgstr ""
+"Ladění je zjednodušeno, protože funkce jsou obecně malé a jasně "
+"specifikované. Když program nefunguje, každá funkce je interfejsovým "
+"bodem, kde můžete zkontrolovat, že data jsou správná. Můžete se podívat "
+"na mezilehlé vstupy a výstupy a rychle izolovat funkci, která je "
+"zodpovědná za chybu."
 
 #: ../../howto/functional.rst:156
 msgid ""
@@ -272,10 +379,14 @@ msgid ""
 " before running a test; instead you only have to synthesize the right "
 "input and then check that the output matches expectations."
 msgstr ""
+"Testování je snazší, protože každá funkce je potenciálním subjektem pro "
+"unit test. Funkce nezávisí na stavu systému, který by musel být "
+"replikován před spuštěním testu; místo toho stačí syntetizovat správný "
+"vstup a pak zkontrolovat, že výstup odpovídá očekáváním."
 
 #: ../../howto/functional.rst:163
 msgid "Composability"
-msgstr ""
+msgstr "Kompozovatelnost"
 
 #: ../../howto/functional.rst:165
 msgid ""
@@ -287,6 +398,12 @@ msgid ""
 " a function that takes a filename and returns its contents, can be "
 "applied to many different situations."
 msgstr ""
+"Při práci na programu ve funkcionálním stylu napíšete řadu funkcí s "
+"různými vstupy a výstupy. Některé z těchto funkcí budou nevyhnutelně "
+"specializované na konkrétní aplikaci, ale jiné budou užitečné v široké "
+"škále programů. Například funkce, která přijímá cestu k adresáři a vrací "
+"všechny XML soubory v adresáři, nebo funkce, která přijímá název souboru "
+"a vrací jeho obsah, mohou být aplikovány v mnoha různých situacích."
 
 #: ../../howto/functional.rst:172
 msgid ""
@@ -295,16 +412,21 @@ msgid ""
 "configuration and writing a few functions specialized for the current "
 "task."
 msgstr ""
+"Postupem času si vytvoříte osobní knihovnu utilit. Často budete sestavovat "
+"nové programy uspořádáním existujících funkcí do nové konfigurace a "
+"napsáním několika funkcí specializovaných pro aktuální úlohu."
 
 #: ../../howto/functional.rst:180
 msgid "Iterators"
-msgstr ""
+msgstr "Iterátory"
 
 #: ../../howto/functional.rst:182
 msgid ""
 "I'll start by looking at a Python language feature that's an important "
 "foundation for writing functional-style programs: iterators."
 msgstr ""
+"Začnu pohledem na vlastnost jazyka Python, která je důležitým základem "
+"pro psaní programů ve funkcionálním stylu: iterátory."
 
 #: ../../howto/functional.rst:185
 msgid ""
@@ -317,6 +439,13 @@ msgid ""
 "though; it's perfectly reasonable to write an iterator that produces an "
 "infinite stream of data."
 msgstr ""
+"Iterátor je objekt reprezentující proud dat; tento objekt vrací data po "
+"jednom prvku. Pythonový iterátor musí podporovat metodu "
+":meth:`~iterator.__next__`, která nebere žádné argumenty a vždy vrací "
+"další prvek proudu. Pokud v proudu nejsou žádné další prvky, "
+":meth:`~iterator.__next__` musí vyvolat výjimku :exc:`StopIteration`. "
+"Iterátory však nemusí být konečné; je zcela přijatelné napsat iterátor, "
+"který produkuje nekonečný proud dat."
 
 #: ../../howto/functional.rst:193
 msgid ""
@@ -327,10 +456,15 @@ msgid ""
 "common being lists and dictionaries.  An object is called "
 ":term:`iterable` if you can get an iterator for it."
 msgstr ""
+"Vestavěná funkce :func:`iter` přijímá libovolný objekt a pokouší se vrátit "
+"iterátor, který vrátí obsah nebo prvky objektu, vyvolá :exc:`TypeError`, "
+"pokud objekt nepodporuje iteraci. Několik vestavěných datových typů "
+"Pythonu podporuje iteraci, nejběžnější jsou seznamy a slovníky. Objekt se "
+"nazývá :term:`iterable`, pokud pro něj můžete získat iterátor."
 
 #: ../../howto/functional.rst:200
 msgid "You can experiment with the iteration interface manually:"
-msgstr ""
+msgstr "Můžete experimentovat s iteračním rozhraním manuálně:"
 
 #: ../../howto/functional.rst:218
 msgid ""
@@ -339,6 +473,10 @@ msgid ""
 "in Y``, Y must be an iterator or some object for which :func:`iter` can "
 "create an iterator.  These two statements are equivalent::"
 msgstr ""
+"Python očekává iterovatelné objekty v několika různých kontextech, "
+"nejdůležitější je příkaz :keyword:`for`. V příkazu ``for X in Y`` musí "
+"být Y iterátor nebo nějaký objekt, pro který může :func:`iter` vytvořit "
+"iterátor. Tyto dva příkazy jsou ekvivalentní::"
 
 #: ../../howto/functional.rst:224
 msgid ""
@@ -354,12 +492,16 @@ msgid ""
 "Iterators can be materialized as lists or tuples by using the "
 ":func:`list` or :func:`tuple` constructor functions:"
 msgstr ""
+"Iterátory mohou být materializovány jako seznamy nebo n-tice pomocí "
+"konstruktorových funkcí :func:`list` nebo :func:`tuple`:"
 
 #: ../../howto/functional.rst:239
 msgid ""
 "Sequence unpacking also supports iterators: if you know an iterator will "
 "return N elements, you can unpack them into an N-tuple:"
 msgstr ""
+"Rozbalování sekvencí také podporuje iterátory: pokud víte, že iterátor "
+"vrátí N prvků, můžete je rozbalit do N-tice:"
 
 #: ../../howto/functional.rst:248
 msgid ""
@@ -372,6 +514,13 @@ msgid ""
 "appears in the stream, the ``\"in\"`` and ``\"not in\"`` operators won't "
 "return either."
 msgstr ""
+"Vestavěné funkce jako :func:`max` a :func:`min` mohou přijmout jediný "
+"argument iterátoru a vrátí největší nebo nejmenší prvek. Operátory "
+"``\"in\"`` a ``\"not in\"`` také podporují iterátory: ``X in iterator`` "
+"je pravda, pokud je X nalezen v proudu vráceném iterátorem. Narazíte na "
+"zjevné problémy, pokud je iterátor nekonečný; :func:`max`, :func:`min` "
+"nikdy nevrátí hodnotu a pokud se prvek X nikdy neobjeví v proudu, "
+"operátory ``\"in\"`` a ``\"not in\"`` také nevrátí hodnotu."
 
 #: ../../howto/functional.rst:256
 msgid ""
@@ -383,10 +532,16 @@ msgid ""
 "need to do something different with the same stream, you'll have to "
 "create a new iterator."
 msgstr ""
+"Všimněte si, že v iterátoru se můžete pohybovat pouze vpřed; neexistuje "
+"způsob, jak získat předchozí prvek, resetovat iterátor nebo vytvořit jeho "
+"kopii. Objekty iterátorů mohou volitelně poskytovat tyto další schopnosti, "
+"ale protokol iterátoru specifikuje pouze metodu :meth:`~iterator.__next__`. "
+"Funkce proto mohou spotřebovat veškerý výstup iterátoru, a pokud potřebujete "
+"udělat něco jiného se stejným proudem, budete muset vytvořit nový iterátor."
 
 #: ../../howto/functional.rst:266
 msgid "Data Types That Support Iterators"
-msgstr ""
+msgstr "Datové typy, které podporují iterátory"
 
 #: ../../howto/functional.rst:268
 msgid ""
@@ -394,12 +549,17 @@ msgid ""
 "Python sequence type, such as strings, will automatically support "
 "creation of an iterator."
 msgstr ""
+"Už jsme viděli, jak seznamy a n-tice podporují iterátory. Ve skutečnosti "
+"jakýkoli Pythonový sekvenční typ, jako jsou řetězce, automaticky podporuje "
+"vytvoření iterátoru."
 
 #: ../../howto/functional.rst:272
 msgid ""
 "Calling :func:`iter` on a dictionary returns an iterator that will loop "
 "over the dictionary's keys::"
 msgstr ""
+"Volání :func:`iter` na slovníku vrací iterátor, který bude procházet "
+"klíče slovníku::"
 
 #: ../../howto/functional.rst:275
 #, python-brace-format
@@ -428,6 +588,9 @@ msgid ""
 "guaranteed to be the same as the insertion order. In earlier versions, "
 "the behaviour was unspecified and could vary between implementations."
 msgstr ""
+"Všimněte si, že od Pythonu 3.7 je pořadí iterace slovníku zaručeno být "
+"stejné jako pořadí vkládání. V dřívějších verzích bylo chování nespecifikované "
+"a mohlo se lišit mezi implementacemi."
 
 #: ../../howto/functional.rst:296
 msgid ""
@@ -437,12 +600,18 @@ msgid ""
 ":meth:`~dict.values` or :meth:`~dict.items` methods to get an appropriate"
 " iterator."
 msgstr ""
+"Použití :func:`iter` na slovník vždy prochází klíče, ale slovníky mají "
+"metody, které vracejí jiné iterátory. Pokud chcete iterovat přes hodnoty "
+"nebo páry klíč/hodnota, můžete explicitně zavolat metody :meth:`~dict.values` "
+"nebo :meth:`~dict.items`, abyste získali příslušný iterátor."
 
 #: ../../howto/functional.rst:302
 msgid ""
 "The :func:`dict` constructor can accept an iterator that returns a finite"
 " stream of ``(key, value)`` tuples:"
 msgstr ""
+"Konstruktor :func:`dict` může přijmout iterátor, který vrací konečný "
+"proud n-tic ``(key, value)``:"
 
 #: ../../howto/functional.rst:309
 msgid ""
@@ -450,6 +619,9 @@ msgid ""
 ":meth:`~io.TextIOBase.readline` method until there are no more lines in "
 "the file.  This means you can read each line of a file like this::"
 msgstr ""
+"Soubory také podporují iteraci voláním metody :meth:`~io.TextIOBase.readline`, "
+"dokud v souboru nejsou žádné další řádky. To znamená, že můžete číst "
+"každý řádek souboru takto::"
 
 #: ../../howto/functional.rst:313
 msgid ""
@@ -463,6 +635,8 @@ msgid ""
 "Sets can take their contents from an iterable and let you iterate over "
 "the set's elements::"
 msgstr ""
+"Množiny mohou vzít svůj obsah z iterovatelného objektu a umožnit vám "
+"iterovat přes prvky množiny::"
 
 #: ../../howto/functional.rst:320
 #, python-brace-format
@@ -480,7 +654,7 @@ msgstr ""
 
 #: ../../howto/functional.rst:333
 msgid "Generator expressions and list comprehensions"
-msgstr ""
+msgstr "Generátorové výrazy a list comprehensions"
 
 #: ../../howto/functional.rst:335
 msgid ""
@@ -490,6 +664,11 @@ msgid ""
 "strip off trailing whitespace from each line or extract all the strings "
 "containing a given substring."
 msgstr ""
+"Dvě běžné operace na výstupu iterátoru jsou 1) provedení nějaké operace "
+"pro každý prvek, 2) výběr podmnožiny prvků, které splňují nějakou podmínku. "
+"Například, máte-li seznam řetězců, můžete chtít odstranit koncové prázdné "
+"znaky z každého řádku nebo extrahovat všechny řetězce obsahující daný "
+"podřetězec."
 
 #: ../../howto/functional.rst:341
 msgid ""
@@ -499,6 +678,11 @@ msgid ""
 "(https://www.haskell.org/).  You can strip all the whitespace from a "
 "stream of strings with the following code::"
 msgstr ""
+"List comprehensions a generátorové výrazy (zkrácená forma: \"listcomps\" "
+"a \"genexps\") jsou stručným zápisem pro takové operace, vypůjčeným z "
+"funkcionálního programovacího jazyka Haskell (https://www.haskell.org/). "
+"Můžete odstranit všechny prázdné znaky z proudu řetězců následujícím "
+"kódem::"
 
 #: ../../howto/functional.rst:346
 msgid ""
@@ -513,7 +697,7 @@ msgstr ""
 
 #: ../../howto/functional.rst:354
 msgid "You can select only certain elements by adding an ``\"if\"`` condition::"
-msgstr ""
+msgstr "Můžete vybrat pouze určité prvky přidáním podmínky ``\"if\"`::"
 
 #: ../../howto/functional.rst:356
 msgid ""
@@ -531,6 +715,13 @@ msgid ""
 " an infinite stream or a very large amount of data.  Generator "
 "expressions are preferable in these situations."
 msgstr ""
+"S list comprehension dostanete zpět Pythonový seznam; ``stripped_list`` "
+"je seznam obsahující výsledné řádky, nikoli iterátor. Generátorové výrazy "
+"vracejí iterátor, který vypočítává hodnoty podle potřeby, aniž by bylo "
+"nutné materializovat všechny hodnoty najednou. To znamená, že list "
+"comprehensions nejsou užitečné, pokud pracujete s iterátory, které vracejí "
+"nekonečný proud nebo velmi velké množství dat. Generátorové výrazy jsou "
+"v těchto situacích vhodnější."
 
 #: ../../howto/functional.rst:366
 msgid ""
@@ -538,6 +729,9 @@ msgid ""
 "comprehensions are surrounded by square brackets (\"[]\").  Generator "
 "expressions have the form::"
 msgstr ""
+"Generátorové výrazy jsou obklopeny závorkami (\"()\") a list comprehensions "
+"jsou obklopeny hranatými závorkami (\"[]\"). Generátorové výrazy mají "
+"tvar::"
 
 #: ../../howto/functional.rst:370
 msgid ""
@@ -557,6 +751,8 @@ msgid ""
 "Again, for a list comprehension only the outside brackets are different "
 "(square brackets instead of parentheses)."
 msgstr ""
+"Opět platí, že pro list comprehension jsou odlišné pouze vnější závorky "
+"(hranaté závorky místo kulatých)."
 
 #: ../../howto/functional.rst:383
 msgid ""
@@ -565,6 +761,9 @@ msgid ""
 "``expression`` is only evaluated and added to the result when "
 "``condition`` is true."
 msgstr ""
+"Prvky generovaného výstupu budou postupné hodnoty ``expression``. Klauzule "
+"``if`` jsou všechny volitelné; pokud jsou přítomny, ``expression`` je "
+"vyhodnocen a přidán do výsledku pouze když je ``condition`` pravda."
 
 #: ../../howto/functional.rst:387
 msgid ""
@@ -573,6 +772,9 @@ msgid ""
 "create an iterator that will be immediately passed to a function you can "
 "write::"
 msgstr ""
+"Generátorové výrazy musí být vždy zapsány uvnitř závorek, ale závorky "
+"signalizující volání funkce se také počítají. Pokud chcete vytvořit iterátor, "
+"který bude okamžitě předán funkci, můžete napsat::"
 
 #: ../../howto/functional.rst:391
 msgid "obj_total = sum(obj.count for obj in list_all_objects())"
@@ -587,12 +789,19 @@ msgid ""
 "``sequence3`` is then looped over for each resulting pair of elements "
 "from ``sequence1`` and ``sequence2``."
 msgstr ""
+"Klauzule ``for...in`` obsahují sekvence, které mají být iterovány. Sekvence "
+"nemusí mít stejnou délku, protože jsou iterovány zleva doprava, **ne** "
+"paralelně. Pro každý prvek v ``sequence1`` je ``sequence2`` procházena od "
+"začátku. ``sequence3`` je pak procházena pro každý výsledný pár prvků z "
+"``sequence1`` a ``sequence2``."
 
 #: ../../howto/functional.rst:399
 msgid ""
 "To put it another way, a list comprehension or generator expression is "
 "equivalent to the following Python code::"
 msgstr ""
+"Jinými slovy, list comprehension nebo generátorový výraz je ekvivalentní "
+"následujícímu Pythonovému kódu::"
 
 #: ../../howto/functional.rst:402
 msgid ""
@@ -618,6 +827,9 @@ msgid ""
 "product of the lengths of all the sequences.  If you have two lists of "
 "length 3, the output list is 9 elements long:"
 msgstr ""
+"To znamená, že když je více klauzulí ``for...in``, ale žádné klauzule "
+"``if``, délka výsledného výstupu bude rovna součinu délek všech sekvencí. "
+"Pokud máte dva seznamy délky 3, výstupní seznam má 9 prvků:"
 
 #: ../../howto/functional.rst:428
 msgid ""
@@ -626,6 +838,9 @@ msgid ""
 "parentheses.  The first list comprehension below is a syntax error, while"
 " the second one is correct::"
 msgstr ""
+"Aby se zabránilo zavedení nejednoznačnosti do gramatiky Pythonu, pokud "
+"``expression`` vytváří n-tici, musí být obklopen závorkami. První list "
+"comprehension níže je syntaktická chyba, zatímco druhá je správná::"
 
 #: ../../howto/functional.rst:432
 msgid ""
@@ -637,7 +852,7 @@ msgstr ""
 
 #: ../../howto/functional.rst:439
 msgid "Generators"
-msgstr ""
+msgstr "Generátory"
 
 #: ../../howto/functional.rst:441
 msgid ""
@@ -645,6 +860,9 @@ msgid ""
 "writing iterators.  Regular functions compute a value and return it, but "
 "generators return an iterator that returns a stream of values."
 msgstr ""
+"Generátory jsou speciální třída funkcí, které zjednodušují úkol psaní "
+"iterátorů. Běžné funkce vypočítají hodnotu a vrátí ji, ale generátory "
+"vracejí iterátor, který vrací proud hodnot."
 
 #: ../../howto/functional.rst:445
 msgid ""
@@ -658,10 +876,18 @@ msgid ""
 "later resume the function where it left off?  This is what generators "
 "provide; they can be thought of as resumable functions."
 msgstr ""
+"Nepochybně znáte, jak fungují běžná volání funkcí v Pythonu nebo C. Když "
+"zavoláte funkci, získá privátní jmenný prostor, kde jsou vytvořeny její "
+"lokální proměnné. Když funkce dosáhne příkazu ``return``, lokální proměnné "
+"jsou zničeny a hodnota je vrácena volajícímu. Pozdější volání stejné funkce "
+"vytvoří nový privátní jmenný prostor a novou sadu lokálních proměnných. "
+"Ale co kdyby lokální proměnné nebyly při ukončení funkce zahozeny? Co kdybyste "
+"mohli později obnovit funkci tam, kde skončila? To je to, co generátory "
+"poskytují; můžete si je představit jako obnovitelné funkce."
 
 #: ../../howto/functional.rst:454
 msgid "Here's the simplest example of a generator function:"
-msgstr ""
+msgstr "Zde je nejjednodušší příklad generátorové funkce:"
 
 #: ../../howto/functional.rst:460
 msgid ""
@@ -669,6 +895,9 @@ msgid ""
 "function; this is detected by Python's :term:`bytecode` compiler which "
 "compiles the function specially as a result."
 msgstr ""
+"Jakákoli funkce obsahující klíčové slovo :keyword:`yield` je generátorová "
+"funkce; to je detekováno kompilátoremPythonového :term:`bytecode`, který "
+"výsledně funkci zkompiluje speciálně."
 
 #: ../../howto/functional.rst:464
 msgid ""
@@ -681,16 +910,25 @@ msgid ""
 "local variables are preserved.  On the next call to the generator's "
 ":meth:`~generator.__next__` method, the function will resume executing."
 msgstr ""
+"Když zavoláte generátorovou funkci, nevrátí jedinou hodnotu; místo toho "
+"vrátí generátorový objekt, který podporuje protokol iterátoru. Při provádění "
+"výrazu ``yield`` generátor vyprodukuje hodnotu ``i``, podobně jako příkaz "
+"``return``. Velký rozdíl mezi ``yield`` a příkazem ``return`` je, že při "
+"dosažení ``yield`` je stav provádění generátoru pozastaven a lokální proměnné "
+"jsou zachovány. Při dalším volání metody :meth:`~generator.__next__` generátoru "
+"funkce obnoví provádění."
 
 #: ../../howto/functional.rst:473
 msgid "Here's a sample usage of the ``generate_ints()`` generator:"
-msgstr ""
+msgstr "Zde je příklad použití generátoru ``generate_ints()``:"
 
 #: ../../howto/functional.rst:490
 msgid ""
 "You could equally write ``for i in generate_ints(5)``, or ``a, b, c = "
 "generate_ints(3)``."
 msgstr ""
+"Můžete stejně dobře napsat ``for i in generate_ints(5)``, nebo ``a, b, c = "
+"generate_ints(3)``."
 
 #: ../../howto/functional.rst:493
 msgid ""
@@ -872,17 +1110,19 @@ msgstr ""
 
 #: ../../howto/functional.rst:626
 msgid "Built-in functions"
-msgstr ""
+msgstr "Vestavěné funkce"
 
 #: ../../howto/functional.rst:628
 msgid "Let's look in more detail at built-in functions often used with iterators."
-msgstr ""
+msgstr "Podívejme se podrobněji na vestavěné funkce často používané s iterátory."
 
 #: ../../howto/functional.rst:630
 msgid ""
 "Two of Python's built-in functions, :func:`map` and :func:`filter` "
 "duplicate the features of generator expressions:"
 msgstr ""
+"Dvě vestavěné funkce Pythonu, :func:`map` a :func:`filter`, duplikují "
+"vlastnosti generátorových výrazů:"
 
 #: ../../howto/functional.rst:633
 msgid ""
@@ -898,7 +1138,7 @@ msgstr ""
 
 #: ../../howto/functional.rst:644
 msgid "You can of course achieve the same effect with a list comprehension."
-msgstr ""
+msgstr "Můžete samozřejmě dosáhnout stejného efektu pomocí list comprehension."
 
 #: ../../howto/functional.rst:646
 msgid ""
@@ -911,7 +1151,7 @@ msgstr ""
 
 #: ../../howto/functional.rst:659
 msgid "This can also be written as a list comprehension:"
-msgstr ""
+msgstr "Toto může být také zapsáno jako list comprehension:"
 
 #: ../../howto/functional.rst:665
 msgid ""

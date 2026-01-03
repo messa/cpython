@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:5
 msgid "Enum HOWTO"
-msgstr ""
+msgstr "Průvodce Enum"
 
 #: ../../howto/enum.rst:11
 msgid ""
@@ -29,12 +29,17 @@ msgid ""
 " are similar to global variables, but they offer a more useful "
 ":func:`repr`, grouping, type-safety, and a few other features."
 msgstr ""
+":class:`Enum` je množina symbolických jmen vázaných na unikátní hodnoty. Jsou "
+"podobné globálním proměnným, ale nabízejí užitečnější :func:`repr`, seskupení, "
+"typovou bezpečnost a několik dalších funkcí."
 
 #: ../../howto/enum.rst:15
 msgid ""
 "They are most useful when you have a variable that can take one of a "
 "limited selection of values.  For example, the days of the week::"
 msgstr ""
+"Jsou nejužitečnější, když máte proměnnou, která může nabývat jedné z omezeného "
+"výběru hodnot. Například dny v týdnu::"
 
 #: ../../howto/enum.rst:18
 msgid ""
@@ -51,7 +56,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:28
 msgid "Or perhaps the RGB primary colors::"
-msgstr ""
+msgstr "Nebo možná primární barvy RGB::"
 
 #: ../../howto/enum.rst:30
 msgid ""
@@ -67,10 +72,12 @@ msgid ""
 "As you can see, creating an :class:`Enum` is as simple as writing a class"
 " that inherits from :class:`Enum` itself."
 msgstr ""
+"Jak vidíte, vytvoření :class:`Enum` je tak jednoduché jako napsání třídy, která "
+"dědí z :class:`Enum` samotného."
 
 #: ../../howto/enum.rst:39
 msgid "Case of Enum Members"
-msgstr ""
+msgstr "Velikost písmen členů Enum"
 
 #: ../../howto/enum.rst:41
 msgid ""
@@ -79,6 +86,10 @@ msgid ""
 "we strongly recommend using UPPER_CASE names for members, and will be "
 "using that style in our examples."
 msgstr ""
+"Protože se výčty používají k reprezentaci konstant a aby se předešlo problémům "
+"s kolizí jmen mezi metodami/atributy mix-in tříd a názvy výčtů, důrazně "
+"doporučujeme používat pro členy názvy VELKÝMI_PÍSMENY a tento styl budeme "
+"používat v našich příkladech."
 
 #: ../../howto/enum.rst:46
 msgid ""
@@ -86,6 +97,8 @@ msgid ""
 "important, but either way that value can be used to get the corresponding"
 " member::"
 msgstr ""
+"V závislosti na povaze výčtu může být hodnota členu důležitá nebo ne, ale v "
+"každém případě lze tuto hodnotu použít k získání odpovídajícího členu::"
 
 #: ../../howto/enum.rst:50
 msgid ""
@@ -99,6 +112,8 @@ msgid ""
 "member name, and the value.  The ``str()`` of a member shows only the "
 "enum name and member name::"
 msgstr ""
+"Jak vidíte, ``repr()`` členu zobrazuje název výčtu, název členu a hodnotu. "
+"``str()`` členu zobrazuje pouze název výčtu a název členu::"
 
 #: ../../howto/enum.rst:57
 msgid ""
@@ -108,7 +123,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:60
 msgid "The *type* of an enumeration member is the enum it belongs to::"
-msgstr ""
+msgstr "*Typ* členu výčtu je výčet, do kterého patří::"
 
 #: ../../howto/enum.rst:62
 msgid ""
@@ -120,7 +135,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:67
 msgid "Enum members have an attribute that contains just their :attr:`!name`::"
-msgstr ""
+msgstr "Členové výčtu mají atribut, který obsahuje pouze jejich :attr:`!name`::"
 
 #: ../../howto/enum.rst:69
 msgid ""
@@ -130,7 +145,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:72
 msgid "Likewise, they have an attribute for their :attr:`!value`::"
-msgstr ""
+msgstr "Podobně mají atribut pro jejich :attr:`!value`::"
 
 #: ../../howto/enum.rst:75
 msgid ""
@@ -149,6 +164,14 @@ msgid ""
 ":class:`!Weekday` enum to extract the day from the "
 ":class:`~datetime.date` instance and return the matching enum member::"
 msgstr ""
+"Na rozdíl od mnoha jazyků, které zacházejí s výčty pouze jako s dvojicemi "
+"název/hodnota, mohou mít Python výčty přidané chování. Například "
+":class:`datetime.date` má dvě metody pro vrácení dne v týdnu: "
+":meth:`~datetime.date.weekday` a :meth:`~datetime.date.isoweekday`. Rozdíl je "
+"v tom, že jedna z nich počítá od 0-6 a druhá od 1-7. Místo toho, abychom si to "
+"pamatovali sami, můžeme přidat metodu do výčtu :class:`!Weekday`, která "
+"extrahuje den z instance :class:`~datetime.date` a vrátí odpovídající člen "
+"výčtu::"
 
 #: ../../howto/enum.rst:87
 msgid ""
@@ -159,7 +182,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:91
 msgid "The complete :class:`!Weekday` enum now looks like this::"
-msgstr ""
+msgstr "Úplný výčet :class:`!Weekday` nyní vypadá takto::"
 
 #: ../../howto/enum.rst:93
 msgid ""
@@ -179,7 +202,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:106
 msgid "Now we can find out what today is!  Observe::"
-msgstr ""
+msgstr "Nyní můžeme zjistit, jaký je dnes den! Pozorujte::"
 
 #: ../../howto/enum.rst:108
 msgid ""
@@ -193,6 +216,7 @@ msgid ""
 "Of course, if you're reading this on some other day, you'll see that day "
 "instead."
 msgstr ""
+"Samozřejmě, pokud to čtete v jiný den, uvidíte místo toho ten den."
 
 #: ../../howto/enum.rst:114
 msgid ""
@@ -201,6 +225,10 @@ msgid ""
 "chores during a week, and don't want to use a :class:`list` -- we could "
 "use a different type of :class:`Enum`::"
 msgstr ""
+"Tento výčet :class:`!Weekday` je skvělý, pokud naše proměnná potřebuje pouze "
+"jeden den, ale co když potřebujeme několik? Možná píšeme funkci pro plánování "
+"povinností během týdne a nechceme použít :class:`list` -- mohli bychom použít "
+"jiný typ :class:`Enum`::"
 
 #: ../../howto/enum.rst:119
 msgid ""
@@ -220,12 +248,15 @@ msgid ""
 "We've changed two things: we're inherited from :class:`Flag`, and the "
 "values are all powers of 2."
 msgstr ""
+"Změnili jsme dvě věci: dědíme z :class:`Flag` a hodnoty jsou všechny mocniny "
+"čísla 2."
 
 #: ../../howto/enum.rst:132
 msgid ""
 "Just like the original :class:`!Weekday` enum above, we can have a single"
 " selection::"
 msgstr ""
+"Stejně jako u původního výčtu :class:`!Weekday` výše můžeme mít jeden výběr::"
 
 #: ../../howto/enum.rst:134
 msgid ""
@@ -239,6 +270,8 @@ msgid ""
 "But :class:`Flag` also allows us to combine several members into a single"
 " variable::"
 msgstr ""
+"Ale :class:`Flag` nám také umožňuje kombinovat několik členů do jedné "
+"proměnné::"
 
 #: ../../howto/enum.rst:141
 msgid ""
@@ -249,7 +282,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:145
 msgid "You can even iterate over a :class:`Flag` variable::"
-msgstr ""
+msgstr "Můžete dokonce iterovat přes proměnnou :class:`Flag`::"
 
 #: ../../howto/enum.rst:147
 msgid ""
@@ -261,7 +294,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:152
 msgid "Okay, let's get some chores set up::"
-msgstr ""
+msgstr "Dobře, nastavme nějaké povinnosti::"
 
 #: ../../howto/enum.rst:154
 #, python-brace-format
@@ -276,7 +309,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:160
 msgid "And a function to display the chores for a given day::"
-msgstr ""
+msgstr "A funkci pro zobrazení povinností pro daný den::"
 
 #: ../../howto/enum.rst:162
 msgid ""
@@ -294,6 +327,8 @@ msgid ""
 "In cases where the actual values of the members do not matter, you can "
 "save yourself some work and use :func:`auto` for the values::"
 msgstr ""
+"V případech, kdy skutečné hodnoty členů nezáleží, můžete si ušetřit práci a "
+"použít pro hodnoty :func:`auto`::"
 
 #: ../../howto/enum.rst:173
 msgid ""
@@ -311,7 +346,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:189
 msgid "Programmatic access to enumeration members and their attributes"
-msgstr ""
+msgstr "Programový přístup k členům výčtu a jejich atributům"
 
 #: ../../howto/enum.rst:191
 msgid ""
@@ -319,6 +354,9 @@ msgid ""
 "(i.e. situations where ``Color.RED`` won't do because the exact color is "
 "not known at program-writing time).  ``Enum`` allows such access::"
 msgstr ""
+"Někdy je užitečné přistupovat k členům výčtů programově (tj. situace, kdy "
+"``Color.RED`` nestačí, protože přesná barva není známa v době psaní programu). "
+"``Enum`` takový přístup umožňuje::"
 
 #: ../../howto/enum.rst:195
 msgid ""
@@ -330,7 +368,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:200
 msgid "If you want to access enum members by *name*, use item access::"
-msgstr ""
+msgstr "Pokud chcete přistupovat k členům výčtu podle *názvu*, použijte přístup přes položku::"
 
 #: ../../howto/enum.rst:202
 msgid ""
@@ -342,7 +380,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:207
 msgid "If you have an enum member and need its :attr:`!name` or :attr:`!value`::"
-msgstr ""
+msgstr "Pokud máte člen výčtu a potřebujete jeho :attr:`!name` nebo :attr:`!value`::"
 
 #: ../../howto/enum.rst:209
 msgid ""
@@ -355,11 +393,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:217
 msgid "Duplicating enum members and values"
-msgstr ""
+msgstr "Duplikování členů a hodnot výčtu"
 
 #: ../../howto/enum.rst:219
 msgid "Having two enum members with the same name is invalid::"
-msgstr ""
+msgstr "Mít dva členy výčtu se stejným názvem je neplatné::"
 
 #: ../../howto/enum.rst:221
 msgid ""
@@ -381,6 +419,11 @@ msgid ""
 "will return the member ``A``. By-name lookup of ``B`` will also return "
 "the member ``A``::"
 msgstr ""
+"Nicméně člen výčtu může mít přidružené jiné názvy. Při dvou záznamech ``A`` "
+"a ``B`` se stejnou hodnotou (a ``A`` definovaném první), ``B`` je alias pro "
+"člen ``A``. Vyhledání podle hodnoty hodnoty ``A`` vrátí člen ``A``. Vyhledání "
+"podle názvu ``A`` vrátí člen ``A``. Vyhledání podle názvu ``B`` také vrátí "
+"člen ``A``::"
 
 #: ../../howto/enum.rst:235
 msgid ""
@@ -404,10 +447,13 @@ msgid ""
 "attribute (another member, a method, etc.) or attempting to create an "
 "attribute with the same name as a member is not allowed."
 msgstr ""
+"Pokus o vytvoření členu se stejným názvem jako již definovaný atribut (jiný "
+"člen, metoda atd.) nebo pokus o vytvoření atributu se stejným názvem jako člen "
+"není povolen."
 
 #: ../../howto/enum.rst:256
 msgid "Ensuring unique enumeration values"
-msgstr ""
+msgstr "Zajištění unikátních hodnot výčtu"
 
 #: ../../howto/enum.rst:258
 msgid ""
@@ -415,6 +461,8 @@ msgid ""
 "value. When this behavior isn't desired, you can use the :func:`unique` "
 "decorator::"
 msgstr ""
+"Ve výchozím nastavení výčty umožňují více názvů jako aliasů pro stejnou "
+"hodnotu. Když toto chování není žádoucí, můžete použít dekorátor :func:`unique`::"
 
 #: ../../howto/enum.rst:261
 msgid ""
@@ -433,11 +481,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:275
 msgid "Using automatic values"
-msgstr ""
+msgstr "Použití automatických hodnot"
 
 #: ../../howto/enum.rst:277
 msgid "If the exact value is unimportant you can use :class:`auto`::"
-msgstr ""
+msgstr "Pokud přesná hodnota není důležitá, můžete použít :class:`auto`::"
 
 #: ../../howto/enum.rst:279
 msgid ""
@@ -456,6 +504,8 @@ msgid ""
 "The values are chosen by :func:`~Enum._generate_next_value_`, which can "
 "be overridden::"
 msgstr ""
+"Hodnoty jsou vybrány funkcí :func:`~Enum._generate_next_value_`, kterou lze "
+"přepsat::"
 
 #: ../../howto/enum.rst:291
 msgid ""
@@ -479,14 +529,16 @@ msgid ""
 "The :meth:`~Enum._generate_next_value_` method must be defined before any"
 " members."
 msgstr ""
+"Metoda :meth:`~Enum._generate_next_value_` musí být definována před jakýmikoli "
+"členy."
 
 #: ../../howto/enum.rst:310
 msgid "Iteration"
-msgstr ""
+msgstr "Iterace"
 
 #: ../../howto/enum.rst:312
 msgid "Iterating over the members of an enum does not provide the aliases::"
-msgstr ""
+msgstr "Iterace přes členy výčtu neposkytuje aliasy::"
 
 #: ../../howto/enum.rst:314
 msgid ""
@@ -503,6 +555,8 @@ msgid ""
 "Note that the aliases ``Shape.ALIAS_FOR_SQUARE`` and ``Weekday.WEEKEND`` "
 "aren't shown."
 msgstr ""
+"Všimněte si, že aliasy ``Shape.ALIAS_FOR_SQUARE`` a ``Weekday.WEEKEND`` nejsou "
+"zobrazeny."
 
 #: ../../howto/enum.rst:321
 msgid ""
@@ -510,6 +564,8 @@ msgid ""
 "names to members.  It includes all names defined in the enumeration, "
 "including the aliases::"
 msgstr ""
+"Speciální atribut ``__members__`` je mapování názvů na členy pouze pro čtení. "
+"Zahrnuje všechny názvy definované ve výčtu, včetně aliasů::"
 
 #: ../../howto/enum.rst:325
 msgid ""
@@ -528,6 +584,8 @@ msgid ""
 "access to the enumeration members.  For example, finding all the "
 "aliases::"
 msgstr ""
+"Atribut ``__members__`` lze použít pro podrobný programový přístup k členům "
+"výčtu. Například nalezení všech aliasů::"
 
 #: ../../howto/enum.rst:336
 msgid ""
@@ -541,14 +599,16 @@ msgid ""
 "Aliases for flags include values with multiple flags set, such as ``3``, "
 "and no flags set, i.e. ``0``."
 msgstr ""
+"Aliasy pro příznaky zahrnují hodnoty s více nastaveními příznaků, například "
+"``3``, a žádné nastavené příznaky, tj. ``0``."
 
 #: ../../howto/enum.rst:346
 msgid "Comparisons"
-msgstr ""
+msgstr "Porovnání"
 
 #: ../../howto/enum.rst:348
 msgid "Enumeration members are compared by identity::"
-msgstr ""
+msgstr "Členové výčtu jsou porovnáváni podle identity::"
 
 #: ../../howto/enum.rst:350
 msgid ""
@@ -565,6 +625,8 @@ msgid ""
 "Ordered comparisons between enumeration values are *not* supported.  Enum"
 " members are not integers (but see `IntEnum`_ below)::"
 msgstr ""
+"Uspořádaná porovnání mezi hodnotami výčtu *nejsou* podporována. Členové výčtu "
+"nejsou celá čísla (ale viz `IntEnum`_ níže)::"
 
 #: ../../howto/enum.rst:360
 msgid ""
@@ -576,7 +638,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:365
 msgid "Equality comparisons are defined though::"
-msgstr ""
+msgstr "Porovnání rovnosti jsou však definována::"
 
 #: ../../howto/enum.rst:367
 msgid ""
@@ -594,6 +656,9 @@ msgid ""
 "(again, :class:`IntEnum` was explicitly designed to behave differently, "
 "see below)::"
 msgstr ""
+"Porovnání s hodnotami, které nejsou výčty, budou vždy porovnány jako nerovné "
+"(opět, :class:`IntEnum` byl explicitně navržen tak, aby se choval jinak, viz "
+"níže)::"
 
 #: ../../howto/enum.rst:378
 msgid ""
@@ -607,10 +672,12 @@ msgid ""
 "they will be recreated, and the new members may not compare "
 "identical/equal to the original members."
 msgstr ""
+"Je možné znovu načíst moduly -- pokud znovu načtený modul obsahuje výčty, budou "
+"znovu vytvořeny a noví členové nemusí být shodní/rovní původním členům."
 
 #: ../../howto/enum.rst:388
 msgid "Allowed members and attributes of enumerations"
-msgstr ""
+msgstr "Povolené členy a atributy výčtů"
 
 #: ../../howto/enum.rst:390
 msgid ""
@@ -620,12 +687,19 @@ msgid ""
 "one doesn't care what the actual value of an enumeration is.  But if the "
 "value *is* important, enumerations can have arbitrary values."
 msgstr ""
+"Většina výše uvedených příkladů používá pro hodnoty výčtu celá čísla. Použití "
+"celých čísel je krátké a praktické (a ve výchozím nastavení poskytováno "
+"`Funkčním API`_), ale není striktně vynucováno. Ve velké většině případů "
+"použití nikoho nezajímá, jaká je skutečná hodnota výčtu. Pokud je však hodnota "
+"*důležitá*, výčty mohou mít libovolné hodnoty."
 
 #: ../../howto/enum.rst:396
 msgid ""
 "Enumerations are Python classes, and can have methods and special methods"
 " as usual.  If we have this enumeration::"
 msgstr ""
+"Výčty jsou třídy Pythonu a mohou mít metody a speciální metody jako obvykle. "
+"Pokud máme tento výčet::"
 
 #: ../../howto/enum.rst:399
 #, python-brace-format
@@ -650,7 +724,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:416
 msgid "Then::"
-msgstr ""
+msgstr "Poté::"
 
 #: ../../howto/enum.rst:418
 msgid ""
@@ -672,6 +746,11 @@ msgid ""
 "(methods are also descriptors), and variable names listed in "
 ":attr:`~Enum._ignore_`."
 msgstr ""
+"Pravidla pro to, co je povoleno, jsou následující: názvy začínající a končící "
+"jedním podtržítkem jsou vyhrazeny pro výčet a nelze je použít; všechny ostatní "
+"atributy definované ve výčtu se stanou členy tohoto výčtu, s výjimkou speciálních "
+"metod (:meth:`~object.__str__`, :meth:`~object.__add__` atd.), deskriptorů "
+"(metody jsou také deskriptory) a názvů proměnných uvedených v :attr:`~Enum._ignore_`."
 
 #: ../../howto/enum.rst:432
 msgid ""
@@ -679,6 +758,9 @@ msgid ""
 ":meth:`~object.__init__`, any value(s) given to the enum member will be "
 "passed into those methods. See `Planet`_ for an example."
 msgstr ""
+"Poznámka: pokud váš výčet definuje :meth:`~object.__new__` a/nebo "
+":meth:`~object.__init__`, jakékoli hodnoty předané členu výčtu budou předány "
+"těmto metodám. Viz příklad `Planet`_."
 
 #: ../../howto/enum.rst:438
 msgid ""
@@ -687,10 +769,14 @@ msgid ""
 ":meth:`~object.__new__` which is used after class creation for lookup of "
 "existing members.  See :ref:`new-vs-init` for more details."
 msgstr ""
+"Metoda :meth:`~object.__new__`, pokud je definována, se používá během vytváření "
+"členů Enum; poté je nahrazena metodou :meth:`~object.__new__` třídy Enum, která "
+"se používá po vytvoření třídy pro vyhledávání existujících členů. Další "
+"podrobnosti viz :ref:`new-vs-init`."
 
 #: ../../howto/enum.rst:445
 msgid "Restricted Enum subclassing"
-msgstr ""
+msgstr "Omezené dědění Enum"
 
 #: ../../howto/enum.rst:447
 msgid ""
@@ -698,6 +784,9 @@ msgid ""
 "concrete data type, and as many :class:`object`-based mixin classes as "
 "needed.  The order of these base classes is::"
 msgstr ""
+"Nová třída :class:`Enum` musí mít jednu základní třídu výčtu, nejvýše jeden "
+"konkrétní datový typ a tolik mix-in tříd založených na :class:`object`, kolik "
+"je potřeba. Pořadí těchto základních tříd je::"
 
 #: ../../howto/enum.rst:451
 msgid ""
@@ -710,6 +799,8 @@ msgid ""
 "Also, subclassing an enumeration is allowed only if the enumeration does "
 "not define any members.  So this is forbidden::"
 msgstr ""
+"Dědění výčtu je povoleno pouze v případě, že výčet nedefinuje žádné členy. To "
+"je tedy zakázáno::"
 
 #: ../../howto/enum.rst:457
 msgid ""
@@ -723,7 +814,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:464
 msgid "But this is allowed::"
-msgstr ""
+msgstr "Ale toto je povoleno::"
 
 #: ../../howto/enum.rst:466
 msgid ""
@@ -744,16 +835,21 @@ msgid ""
 "other hand, it makes sense to allow sharing some common behavior between "
 "a group of enumerations. (See `OrderedEnum`_ for an example.)"
 msgstr ""
+"Povolení dědění výčtů, které definují členy, by vedlo k porušení některých "
+"důležitých invariantů typů a instancí. Na druhou stranu má smysl povolit "
+"sdílení společného chování mezi skupinou výčtů. (Viz příklad `OrderedEnum`_.)"
 
 #: ../../howto/enum.rst:484
 msgid "Dataclass support"
-msgstr ""
+msgstr "Podpora datových tříd"
 
 #: ../../howto/enum.rst:486
 msgid ""
 "When inheriting from a :class:`~dataclasses.dataclass`, the "
 ":meth:`~Enum.__repr__` omits the inherited class' name.  For example::"
 msgstr ""
+"Při dědění z :class:`~dataclasses.dataclass` metoda :meth:`~Enum.__repr__` "
+"vynechá název zděděné třídy. Například::"
 
 #: ../../howto/enum.rst:489
 msgid ""
@@ -777,12 +873,16 @@ msgid ""
 "Use the :func:`~dataclasses.dataclass` argument ``repr=False`` to use the"
 " standard :func:`repr`."
 msgstr ""
+"Použijte argument :func:`~dataclasses.dataclass` ``repr=False`` pro použití "
+"standardního :func:`repr`."
 
 #: ../../howto/enum.rst:506
 msgid ""
 "Only the dataclass fields are shown in the value area, not the dataclass'"
 " name."
 msgstr ""
+"V oblasti hodnoty jsou zobrazena pouze pole datové třídy, nikoli název datové "
+"třídy."
 
 #: ../../howto/enum.rst:512
 msgid ""
@@ -791,6 +891,9 @@ msgid ""
 "produce very strange results at runtime, such as members being equal to "
 "each other::"
 msgstr ""
+"Přidání dekorátoru :func:`~dataclasses.dataclass` na :class:`Enum` a jeho "
+"podtřídy není podporováno. Nevyvolá to žádné chyby, ale za běhu to vytvoří "
+"velmi podivné výsledky, například že si členové budou rovni::"
 
 #: ../../howto/enum.rst:517
 msgid ""
@@ -807,11 +910,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:529
 msgid "Pickling"
-msgstr ""
+msgstr "Serializace"
 
 #: ../../howto/enum.rst:531
 msgid "Enumerations can be pickled and unpickled::"
-msgstr ""
+msgstr "Výčty lze serializovat a deserializovat::"
 
 #: ../../howto/enum.rst:533
 msgid ""
@@ -827,12 +930,17 @@ msgid ""
 "defined in the top level of a module, since unpickling requires them to "
 "be importable from that module."
 msgstr ""
+"Platí obvyklá omezení pro serializaci: serializovatelné výčty musí být "
+"definovány na nejvyšší úrovni modulu, protože deserializace vyžaduje, aby byly "
+"importovatelné z tohoto modulu."
 
 #: ../../howto/enum.rst:544
 msgid ""
 "With pickle protocol version 4 it is possible to easily pickle enums "
 "nested in other classes."
 msgstr ""
+"S pickle protokolem verze 4 je možné snadno serializovat výčty vnořené v "
+"jiných třídách."
 
 #: ../../howto/enum.rst:547
 msgid ""
@@ -841,6 +949,9 @@ msgid ""
 "default method is by-value, but enums with complicated values may want to"
 " use by-name::"
 msgstr ""
+"Je možné upravit způsob serializace/deserializace členů výčtu definováním "
+":meth:`~object.__reduce_ex__` ve třídě výčtu. Výchozí metoda je podle hodnoty, "
+"ale výčty se složitými hodnotami mohou chtít použít podle názvu::"
 
 #: ../../howto/enum.rst:551
 msgid ""
@@ -854,16 +965,19 @@ msgid ""
 "Using by-name for flags is not recommended, as unnamed aliases will not "
 "unpickle."
 msgstr ""
+"Použití podle názvu pro příznaky není doporučeno, protože nepojmenované aliasy "
+"se nebudou deserializovat."
 
 #: ../../howto/enum.rst:562
 msgid "Functional API"
-msgstr ""
+msgstr "Funkční API"
 
 #: ../../howto/enum.rst:564
 msgid ""
 "The :class:`Enum` class is callable, providing the following functional "
 "API::"
 msgstr ""
+"Třída :class:`Enum` je volatelná a poskytuje následující funkční API::"
 
 #: ../../howto/enum.rst:566
 msgid ""
@@ -882,6 +996,8 @@ msgid ""
 "first argument of the call to :class:`Enum` is the name of the "
 "enumeration."
 msgstr ""
+"Sémantika tohoto API připomíná :class:`~collections.namedtuple`. První argument "
+"volání :class:`Enum` je název výčtu."
 
 #: ../../howto/enum.rst:577
 msgid ""
@@ -894,6 +1010,13 @@ msgid ""
 "starting value).  A new class derived from :class:`Enum` is returned.  In"
 " other words, the above assignment to :class:`!Animal` is equivalent to::"
 msgstr ""
+"Druhý argument je *zdroj* názvů členů výčtu. Může to být řetězec názvů "
+"oddělených mezerami, sekvence názvů, sekvence 2-tic s dvojicemi klíč/hodnota "
+"nebo mapování (např. slovník) názvů na hodnoty. Poslední dvě možnosti umožňují "
+"přiřadit výčtům libovolné hodnoty; ostatní automaticky přiřadí rostoucí celá "
+"čísla začínající 1 (použijte parametr ``start`` k zadání jiné počáteční hodnoty). "
+"Je vrácena nová třída odvozená z :class:`Enum`. Jinými slovy, výše uvedené "
+"přiřazení do :class:`!Animal` je ekvivalentní::"
 
 #: ../../howto/enum.rst:586
 msgid ""
@@ -911,6 +1034,9 @@ msgid ""
 "is that ``0`` is ``False`` in a boolean sense, but by default enum "
 "members all evaluate to ``True``."
 msgstr ""
+"Důvod pro výchozí počáteční číslo ``1`` místo ``0`` je, že ``0`` je ``False`` "
+"v booleovském smyslu, ale ve výchozím nastavení se všichni členové výčtu "
+"vyhodnotí jako ``True``."
 
 #: ../../howto/enum.rst:597
 msgid ""
@@ -921,6 +1047,11 @@ msgid ""
 "IronPython or Jython). The solution is to specify the module name "
 "explicitly as follows::"
 msgstr ""
+"Serializace výčtů vytvořených funkčním API může být složitá, protože se "
+"používají detaily implementace rámce zásobníku, aby se zjistilo, ve kterém "
+"modulu je výčet vytvářen (např. selže, pokud použijete pomocnou funkci v "
+"samostatném modulu, a také nemusí fungovat na IronPython nebo Jython). "
+"Řešením je explicitně zadat název modulu následovně::"
 
 #: ../../howto/enum.rst:603
 msgid ">>> Animal = Enum('Animal', 'ANT BEE CAT DOG', module=__name__)"
@@ -932,6 +1063,9 @@ msgid ""
 "new Enum members will not be unpicklable; to keep errors closer to the "
 "source, pickling will be disabled."
 msgstr ""
+"Pokud není zadán ``module`` a Enum nemůže určit, co to je, noví členové Enum "
+"nebudou deserializovatelní; aby chyby byly blíže ke zdroji, serializace bude "
+"zakázána."
 
 #: ../../howto/enum.rst:611
 msgid ""
@@ -940,6 +1074,9 @@ msgid ""
 " able to find the class.  For example, if the class was made available in"
 " class SomeData in the global scope::"
 msgstr ""
+"Nový pickle protokol 4 také za určitých okolností spoléhá na nastavení "
+":attr:`~type.__qualname__` na umístění, kde pickle bude moci najít třídu. "
+"Například, pokud byla třída zpřístupněna ve třídě SomeData v globálním rozsahu::"
 
 #: ../../howto/enum.rst:616
 msgid ">>> Animal = Enum('Animal', 'ANT BEE CAT DOG', qualname='SomeData.Animal')"
@@ -947,7 +1084,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:618
 msgid "The complete signature is::"
-msgstr ""
+msgstr "Úplný podpis je::"
 
 #: ../../howto/enum.rst:620
 msgid ""
@@ -964,13 +1101,15 @@ msgstr ""
 
 #: ../../howto/enum.rst:630
 msgid "*value*: What the new enum class will record as its name."
-msgstr ""
+msgstr "*value*: Co nová třída výčtu zaznamená jako svůj název."
 
 #: ../../howto/enum.rst:632
 msgid ""
 "*names*: The enum members.  This can be a whitespace- or comma-separated "
 "string (values will start at 1 unless otherwise specified)::"
 msgstr ""
+"*names*: Členové výčtu. Může to být řetězec oddělený mezerami nebo čárkami "
+"(hodnoty začnou na 1, pokud není uvedeno jinak)::"
 
 #: ../../howto/enum.rst:635
 msgid "'RED GREEN BLUE' | 'RED,GREEN,BLUE' | 'RED, GREEN, BLUE'"
@@ -978,7 +1117,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:637
 msgid "or an iterator of names::"
-msgstr ""
+msgstr "nebo iterátor názvů::"
 
 #: ../../howto/enum.rst:639
 msgid "['RED', 'GREEN', 'BLUE']"
@@ -986,7 +1125,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:641
 msgid "or an iterator of (name, value) pairs::"
-msgstr ""
+msgstr "nebo iterátor dvojic (název, hodnota)::"
 
 #: ../../howto/enum.rst:643
 msgid "[('CYAN', 4), ('MAGENTA', 5), ('YELLOW', 6)]"
@@ -994,7 +1133,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:645
 msgid "or a mapping::"
-msgstr ""
+msgstr "nebo mapování::"
 
 #: ../../howto/enum.rst:647
 #, python-brace-format
@@ -1003,27 +1142,27 @@ msgstr ""
 
 #: ../../howto/enum.rst:649
 msgid "*module*: name of module where new enum class can be found."
-msgstr ""
+msgstr "*module*: název modulu, kde lze novou třídu výčtu najít."
 
 #: ../../howto/enum.rst:651
 msgid "*qualname*: where in module new enum class can be found."
-msgstr ""
+msgstr "*qualname*: kde v modulu lze novou třídu výčtu najít."
 
 #: ../../howto/enum.rst:653
 msgid "*type*: type to mix in to new enum class."
-msgstr ""
+msgstr "*type*: typ, který se má přidat do nové třídy výčtu."
 
 #: ../../howto/enum.rst:655
 msgid "*start*: number to start counting at if only names are passed in."
-msgstr ""
+msgstr "*start*: číslo, od kterého začít počítat, pokud jsou předány pouze názvy."
 
 #: ../../howto/enum.rst:657
 msgid "The *start* parameter was added."
-msgstr ""
+msgstr "Byl přidán parametr *start*."
 
 #: ../../howto/enum.rst:662
 msgid "Derived Enumerations"
-msgstr ""
+msgstr "Odvozené výčty"
 
 #: ../../howto/enum.rst:665
 msgid "IntEnum"
@@ -1036,6 +1175,9 @@ msgid ""
 "integers; by extension, integer enumerations of different types can also "
 "be compared to each other::"
 msgstr ""
+"První poskytovaná varianta :class:`Enum` je také podtřídou :class:`int`. Členové "
+":class:`IntEnum` lze porovnávat s celými čísly; navíc lze celočíselné výčty "
+"různých typů porovnávat také navzájem::"
 
 #: ../../howto/enum.rst:672
 msgid ""
@@ -1061,6 +1203,7 @@ msgid ""
 "However, they still can't be compared to standard :class:`Enum` "
 "enumerations::"
 msgstr ""
+"Nicméně je stále nelze porovnávat se standardními výčty :class:`Enum`::"
 
 #: ../../howto/enum.rst:690
 msgid ""
@@ -1079,6 +1222,8 @@ msgstr ""
 #: ../../howto/enum.rst:701
 msgid ":class:`IntEnum` values behave like integers in other ways you'd expect::"
 msgstr ""
+"Hodnoty :class:`IntEnum` se chovají jako celá čísla i jinými způsoby, které "
+"byste očekávali::"
 
 #: ../../howto/enum.rst:703
 msgid ""
@@ -1101,6 +1246,9 @@ msgid ""
 "strings; by extension, string enumerations of different types can also be"
 " compared to each other."
 msgstr ""
+"Druhá poskytovaná varianta :class:`Enum` je také podtřídou :class:`str`. Členové "
+":class:`StrEnum` lze porovnávat s řetězci; navíc lze řetězcové výčty různých "
+"typů porovnávat také navzájem."
 
 #: ../../howto/enum.rst:723
 msgid "IntFlag"
@@ -1115,12 +1263,20 @@ msgid ""
 ":class:`IntFlag` members are also integers and can be used wherever an "
 ":class:`int` is used."
 msgstr ""
+"Další poskytovaná varianta :class:`Enum`, :class:`IntFlag`, je také založena "
+"na :class:`int`. Rozdíl je v tom, že členy :class:`IntFlag` lze kombinovat "
+"pomocí bitových operátorů (&, \\|, ^, ~) a výsledek je stále člen "
+":class:`IntFlag`, pokud je to možné. Stejně jako :class:`IntEnum` jsou členové "
+":class:`IntFlag` také celá čísla a lze je použít všude, kde se používá "
+":class:`int`."
 
 #: ../../howto/enum.rst:733
 msgid ""
 "Any operation on an :class:`IntFlag` member besides the bit-wise "
 "operations will lose the :class:`IntFlag` membership."
 msgstr ""
+"Jakákoli operace na členu :class:`IntFlag` kromě bitových operací ztratí "
+"členství :class:`IntFlag`."
 
 #: ../../howto/enum.rst:736
 msgid ""
@@ -1128,10 +1284,12 @@ msgid ""
 "lose the :class:`IntFlag` membership.  See :class:`FlagBoundary` for "
 "details."
 msgstr ""
+"Bitové operace, které vedou k neplatným hodnotám :class:`IntFlag`, ztratí "
+"členství :class:`IntFlag`. Podrobnosti viz :class:`FlagBoundary`."
 
 #: ../../howto/enum.rst:743
 msgid "Sample :class:`IntFlag` class::"
-msgstr ""
+msgstr "Ukázková třída :class:`IntFlag`::"
 
 #: ../../howto/enum.rst:745
 msgid ""
@@ -1152,7 +1310,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:759
 msgid "It is also possible to name the combinations::"
-msgstr ""
+msgstr "Je také možné pojmenovat kombinace::"
 
 #: ../../howto/enum.rst:761
 msgid ""
@@ -1175,6 +1333,8 @@ msgid ""
 "Named combinations are considered aliases.  Aliases do not show up during"
 " iteration, but can be returned from by-value lookups."
 msgstr ""
+"Pojmenované kombinace jsou považovány za aliasy. Aliasy se nezobrazují při "
+"iteraci, ale mohou být vráceny z vyhledávání podle hodnoty."
 
 #: ../../howto/enum.rst:781
 msgid ""
@@ -1182,6 +1342,9 @@ msgid ""
 "is that if no flags are set (the value is 0), its boolean evaluation is "
 ":data:`False`::"
 msgstr ""
+"Dalším důležitým rozdílem mezi :class:`IntFlag` a :class:`Enum` je, že pokud "
+"nejsou nastaveny žádné příznaky (hodnota je 0), jeho booleovské vyhodnocení je "
+":data:`False`::"
 
 #: ../../howto/enum.rst:784
 msgid ""
@@ -1196,6 +1359,8 @@ msgid ""
 "Because :class:`IntFlag` members are also subclasses of :class:`int` they"
 " can be combined with them (but may lose :class:`IntFlag` membership::"
 msgstr ""
+"Protože členové :class:`IntFlag` jsou také podtřídami :class:`int`, lze je s "
+"nimi kombinovat (ale mohou ztratit členství :class:`IntFlag`::"
 
 #: ../../howto/enum.rst:792
 msgid ""
@@ -1211,6 +1376,7 @@ msgid ""
 "The negation operator, ``~``, always returns an :class:`IntFlag` member "
 "with a positive value::"
 msgstr ""
+"Operátor negace, ``~``, vždy vrací člen :class:`IntFlag` s kladnou hodnotou::"
 
 #: ../../howto/enum.rst:803
 msgid ""
@@ -1220,7 +1386,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:806
 msgid ":class:`IntFlag` members can also be iterated over::"
-msgstr ""
+msgstr "Členy :class:`IntFlag` lze také iterovat::"
 
 #: ../../howto/enum.rst:808
 msgid ""
@@ -1242,12 +1408,20 @@ msgid ""
 "to use :class:`auto` as the value and let :class:`Flag` select an "
 "appropriate value."
 msgstr ""
+"Poslední variací je :class:`Flag`. Stejně jako :class:`IntFlag` lze členy "
+":class:`Flag` kombinovat pomocí bitových operátorů (&, \\|, ^, ~). Na rozdíl "
+"od :class:`IntFlag` je nelze kombinovat s žádným jiným výčtem :class:`Flag` "
+"ani s :class:`int` ani s nimi porovnávat. I když je možné zadat hodnoty přímo, "
+"doporučuje se použít :class:`auto` jako hodnotu a nechat :class:`Flag` vybrat "
+"vhodnou hodnotu."
 
 #: ../../howto/enum.rst:826
 msgid ""
 "Like :class:`IntFlag`, if a combination of :class:`Flag` members results "
 "in no flags being set, the boolean evaluation is :data:`False`::"
 msgstr ""
+"Stejně jako :class:`IntFlag`, pokud kombinace členů :class:`Flag` vede k "
+"nenastavení žádných příznaků, booleovské vyhodnocení je :data:`False`::"
 
 #: ../../howto/enum.rst:829
 msgid ""
@@ -1268,6 +1442,8 @@ msgid ""
 "Individual flags should have values that are powers of two (1, 2, 4, 8, "
 "...), while combinations of flags will not::"
 msgstr ""
+"Jednotlivé příznaky by měly mít hodnoty, které jsou mocniny dvou (1, 2, 4, 8, "
+"...), zatímco kombinace příznaků ne::"
 
 #: ../../howto/enum.rst:843
 msgid ""
@@ -1286,6 +1462,8 @@ msgid ""
 "Giving a name to the \"no flags set\" condition does not change its "
 "boolean value::"
 msgstr ""
+"Pojmenování stavu \"žádné příznaky nenastaveny\" nezmění jeho booleovskou "
+"hodnotu::"
 
 #: ../../howto/enum.rst:855
 msgid ""
@@ -1303,7 +1481,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:866
 msgid ":class:`Flag` members can also be iterated over::"
-msgstr ""
+msgstr "Členy :class:`Flag` lze také iterovat::"
 
 #: ../../howto/enum.rst:868
 msgid ""
@@ -1323,16 +1501,25 @@ msgid ""
 "constants are replaced with enumerations, or for interoperability with "
 "other systems."
 msgstr ""
+"Pro většinu nového kódu jsou důrazně doporučeny :class:`Enum` a :class:`Flag`, "
+"protože :class:`IntEnum` a :class:`IntFlag` porušují některé sémantické sliby "
+"výčtu (tím, že jsou porovnatelné s celými čísly, a tedy tranzitivitou s jinými "
+"nesouvisejícími výčty). :class:`IntEnum` a :class:`IntFlag` by měly být "
+"použity pouze v případech, kdy :class:`Enum` a :class:`Flag` nestačí; například "
+"když jsou celočíselné konstanty nahrazeny výčty nebo pro interoperabilitu s "
+"jinými systémy."
 
 #: ../../howto/enum.rst:886
 msgid "Others"
-msgstr ""
+msgstr "Ostatní"
 
 #: ../../howto/enum.rst:888
 msgid ""
 "While :class:`IntEnum` is part of the :mod:`enum` module, it would be "
 "very simple to implement independently::"
 msgstr ""
+"I když je :class:`IntEnum` součástí modulu :mod:`enum`, bylo by velmi "
+"jednoduché jej implementovat nezávisle::"
 
 #: ../../howto/enum.rst:891
 msgid ""
@@ -1346,10 +1533,12 @@ msgid ""
 "example a :class:`!FloatEnum` that mixes in :class:`float` instead of "
 ":class:`int`."
 msgstr ""
+"To demonstruje, jak lze definovat podobné odvozené výčty; například "
+":class:`!FloatEnum`, který přidává :class:`float` místo :class:`int`."
 
 #: ../../howto/enum.rst:897
 msgid "Some rules:"
-msgstr ""
+msgstr "Některá pravidla:"
 
 #: ../../howto/enum.rst:899
 msgid ""
@@ -1357,6 +1546,9 @@ msgid ""
 ":class:`Enum` class itself in the sequence of bases, as in the "
 ":class:`IntEnum` example above."
 msgstr ""
+"Při dědění z :class:`Enum` musí mix-in typy být uvedeny před samotnou třídou "
+":class:`Enum` v sekvenci základních tříd, jako v příkladu :class:`IntEnum` "
+"výše."
 
 #: ../../howto/enum.rst:902
 msgid ""
@@ -1364,6 +1556,9 @@ msgid ""
 ":class:`range` are not subclassable and will throw an error during Enum "
 "creation if used as the mix-in type."
 msgstr ""
+"Mix-in typy musí být děditelné. Například :class:`bool` a :class:`range` "
+"nejsou děditelné a při použití jako mix-in typ vyvolají chybu během vytváření "
+"Enum."
 
 #: ../../howto/enum.rst:905
 msgid ""
@@ -1372,6 +1567,10 @@ msgid ""
 ":class:`int` above.  This restriction does not apply to mix-ins which "
 "only add methods and don't specify another type."
 msgstr ""
+"I když :class:`Enum` může mít členy jakéhokoli typu, jakmile přidáte další typ, "
+"všichni členové musí mít hodnoty tohoto typu, např. :class:`int` výše. Toto "
+"omezení se nevztahuje na mix-iny, které pouze přidávají metody a neurčují jiný "
+"typ."
 
 #: ../../howto/enum.rst:909
 msgid ""
@@ -1379,12 +1578,16 @@ msgid ""
 "*not the same* as the enum member itself, although it is equivalent and "
 "will compare equal."
 msgstr ""
+"Když je přidán jiný datový typ, atribut :attr:`~Enum.value` *není stejný* jako "
+"samotný člen výčtu, i když je ekvivalentní a bude se porovnávat jako rovný."
 
 #: ../../howto/enum.rst:912
 msgid ""
 "A ``data type`` is a mixin that defines :meth:`~object.__new__`, or a "
 ":class:`~dataclasses.dataclass`"
 msgstr ""
+"``Datový typ`` je mix-in, který definuje :meth:`~object.__new__`, nebo "
+":class:`~dataclasses.dataclass`"
 
 #: ../../howto/enum.rst:914
 #, python-format
@@ -1394,12 +1597,17 @@ msgid ""
 "codes (such as ``%i`` or ``%h`` for IntEnum) treat the enum member as its"
 " mixed-in type."
 msgstr ""
+"Formátování ve stylu %:  ``%s`` a ``%r`` volají :meth:`~object.__str__` a "
+":meth:`~object.__repr__` třídy :class:`Enum`; ostatní kódy (jako ``%i`` nebo "
+"``%h`` pro IntEnum) zacházejí s členem výčtu jako s jeho přidaným typem."
 
 #: ../../howto/enum.rst:917
 msgid ""
 ":ref:`Formatted string literals <f-strings>`, :meth:`str.format`, and "
 ":func:`format` will use the enum's :meth:`~object.__str__` method."
 msgstr ""
+":ref:`Formátované řetězcové literály <f-strings>`, :meth:`str.format` a "
+":func:`format` použijí metodu :meth:`~object.__str__` výčtu."
 
 #: ../../howto/enum.rst:922
 msgid ""
@@ -1408,10 +1616,13 @@ msgid ""
 ":meth:`~object.__str__` method has been reset to their data types' "
 ":meth:`~object.__str__` method."
 msgstr ""
+"Protože :class:`IntEnum`, :class:`IntFlag` a :class:`StrEnum` jsou navrženy "
+"jako přímé náhrady za existující konstanty, jejich metoda :meth:`~object.__str__` "
+"byla resetována na metodu :meth:`~object.__str__` jejich datových typů."
 
 #: ../../howto/enum.rst:930
 msgid "When to use :meth:`~object.__new__` vs. :meth:`~object.__init__`"
-msgstr ""
+msgstr "Kdy použít :meth:`~object.__new__` vs. :meth:`~object.__init__`"
 
 #: ../../howto/enum.rst:932
 msgid ""
@@ -1420,12 +1631,18 @@ msgid ""
 " in either :meth:`~object.__new__` or :meth:`~object.__init__`, with "
 ":meth:`~object.__init__` being preferred."
 msgstr ""
+":meth:`~object.__new__` musí být použit, kdykoli chcete přizpůsobit skutečnou "
+"hodnotu členu :class:`Enum`. Jakékoli jiné úpravy mohou být buď v "
+":meth:`~object.__new__` nebo :meth:`~object.__init__`, přičemž je preferován "
+":meth:`~object.__init__`."
 
 #: ../../howto/enum.rst:936
 msgid ""
 "For example, if you want to pass several items to the constructor, but "
 "only want one of them to be the value::"
 msgstr ""
+"Například pokud chcete předat konstruktoru několik položek, ale chcete, aby "
+"pouze jedna z nich byla hodnotou::"
 
 #: ../../howto/enum.rst:939
 msgid ""
@@ -1458,20 +1675,24 @@ msgid ""
 "*Do not* call ``super().__new__()``, as the lookup-only ``__new__`` is "
 "the one that is found; instead, use the data type directly."
 msgstr ""
+"*Nevolejte* ``super().__new__()``, protože ``__new__`` pouze pro vyhledávání "
+"je ten, který je nalezen; místo toho použijte datový typ přímo."
 
 #: ../../howto/enum.rst:968
 msgid "Finer Points"
-msgstr ""
+msgstr "Jemnější detaily"
 
 #: ../../howto/enum.rst:971
 msgid "Supported ``__dunder__`` names"
-msgstr ""
+msgstr "Podporované názvy ``__dunder__``"
 
 #: ../../howto/enum.rst:973
 msgid ""
 ":attr:`~enum.EnumType.__members__` is a read-only ordered mapping of "
 "``member_name``:``member`` items.  It is only available on the class."
 msgstr ""
+":attr:`~enum.EnumType.__members__` je mapování položek ``member_name``:``member`` "
+"pouze pro čtení. Je k dispozici pouze na třídě."
 
 #: ../../howto/enum.rst:976
 msgid ""
@@ -1480,24 +1701,29 @@ msgid ""
 ":attr:`~Enum._value_` appropriately.  Once all the members are created it"
 " is no longer used."
 msgstr ""
+":meth:`~object.__new__`, pokud je zadán, musí vytvořit a vrátit členy výčtu; "
+"je také velmi dobré nastavit :attr:`~Enum._value_` členu odpovídajícím způsobem. "
+"Jakmile jsou vytvořeni všichni členové, již se nepoužívá."
 
 #: ../../howto/enum.rst:982
 msgid "Supported ``_sunder_`` names"
-msgstr ""
+msgstr "Podporované názvy ``_sunder_``"
 
 #: ../../howto/enum.rst:984
 msgid ":attr:`~Enum._name_` -- name of the member"
-msgstr ""
+msgstr ":attr:`~Enum._name_` -- název členu"
 
 #: ../../howto/enum.rst:985
 msgid ":attr:`~Enum._value_` -- value of the member; can be set in ``__new__``"
-msgstr ""
+msgstr ":attr:`~Enum._value_` -- hodnota členu; lze nastavit v ``__new__``"
 
 #: ../../howto/enum.rst:986
 msgid ""
 ":meth:`~Enum._missing_` -- a lookup function used when a value is not "
 "found; may be overridden"
 msgstr ""
+":meth:`~Enum._missing_` -- vyhledávací funkce použitá, když hodnota není "
+"nalezena; může být přepsána"
 
 #: ../../howto/enum.rst:988
 msgid ""
@@ -1505,40 +1731,52 @@ msgid ""
 " :class:`str`, that will not be transformed into members, and will be "
 "removed from the final class"
 msgstr ""
+":attr:`~Enum._ignore_` -- seznam názvů, buď jako :class:`list` nebo "
+":class:`str`, které nebudou transformovány na členy a budou odstraněny z "
+"finální třídy"
 
 #: ../../howto/enum.rst:991
 msgid ""
 ":meth:`~Enum._generate_next_value_` -- used to get an appropriate value "
 "for an enum member; may be overridden"
 msgstr ""
+":meth:`~Enum._generate_next_value_` -- používá se k získání vhodné hodnoty "
+"pro člen výčtu; může být přepsána"
 
 #: ../../howto/enum.rst:993
 msgid ""
 ":meth:`~Enum._add_alias_` -- adds a new name as an alias to an existing "
 "member."
 msgstr ""
+":meth:`~Enum._add_alias_` -- přidá nový název jako alias k existujícímu členu."
 
 #: ../../howto/enum.rst:995
 msgid ""
 ":meth:`~Enum._add_value_alias_` -- adds a new value as an alias to an "
 "existing member.  See `MultiValueEnum`_ for an example."
 msgstr ""
+":meth:`~Enum._add_value_alias_` -- přidá novou hodnotu jako alias k "
+"existujícímu členu. Viz příklad `MultiValueEnum`_."
 
 #: ../../howto/enum.rst:1000
 msgid ""
 "For standard :class:`Enum` classes the next value chosen is the highest "
 "value seen incremented by one."
 msgstr ""
+"Pro standardní třídy :class:`Enum` je další vybraná hodnota nejvyšší viděná "
+"hodnota zvýšená o jedna."
 
 #: ../../howto/enum.rst:1003
 msgid ""
 "For :class:`Flag` classes the next value chosen will be the next highest "
 "power-of-two."
 msgstr ""
+"Pro třídy :class:`Flag` bude další vybraná hodnota další nejvyšší mocnina "
+"dvou."
 
 #: ../../howto/enum.rst:1006
 msgid "Prior versions would use the last seen value instead of the highest value."
-msgstr ""
+msgstr "Předchozí verze používaly poslední viděnou hodnotu místo nejvyšší hodnoty."
 
 #: ../../howto/enum.rst:1009
 msgid "``_missing_``, ``_order_``, ``_generate_next_value_``"
@@ -1558,6 +1796,9 @@ msgid ""
 "attribute can be provided.  It will be checked against the actual order "
 "of the enumeration and raise an error if the two do not match::"
 msgstr ""
+"Pro udržení synchronizace kódu Python 2 / Python 3 lze poskytnout atribut "
+":attr:`~Enum._order_`. Bude zkontrolován proti skutečnému pořadí výčtu a "
+"vyvolá chybu, pokud se obě neshodují::"
 
 #: ../../howto/enum.rst:1017
 msgid ""
@@ -1579,6 +1820,8 @@ msgid ""
 "In Python 2 code the :attr:`~Enum._order_` attribute is necessary as "
 "definition order is lost before it can be recorded."
 msgstr ""
+"V kódu Python 2 je atribut :attr:`~Enum._order_` nezbytný, protože pořadí "
+"definice je ztraceno dříve, než může být zaznamenáno."
 
 #: ../../howto/enum.rst:1036
 msgid "_Private__names"
@@ -1589,10 +1832,12 @@ msgid ""
 ":ref:`Private names <private-name-mangling>` are not converted to enum "
 "members, but remain normal attributes."
 msgstr ""
+":ref:`Soukromé názvy <private-name-mangling>` nejsou převedeny na členy výčtu, "
+"ale zůstávají normálními atributy."
 
 #: ../../howto/enum.rst:1045
 msgid "``Enum`` member type"
-msgstr ""
+msgstr "Typ členu ``Enum``"
 
 #: ../../howto/enum.rst:1047
 msgid ""
@@ -1603,10 +1848,15 @@ msgid ""
 " member names and attributes/methods from mixed-in classes, upper-case "
 "names are strongly recommended."
 msgstr ""
+"Členové výčtu jsou instancemi své třídy výčtu a obvykle se k nim přistupuje "
+"jako ``EnumClass.member``. V určitých situacích, jako je psaní vlastního chování "
+"výčtu, je užitečné mít možnost přistupovat k jednomu členu přímo z jiného, a to "
+"je podporováno; nicméně, aby se předešlo kolizím názvů mezi názvy členů a "
+"atributy/metodami z mix-in tříd, jsou důrazně doporučeny názvy velkými písmeny."
 
 #: ../../howto/enum.rst:1058
 msgid "Creating members that are mixed with other data types"
-msgstr ""
+msgstr "Vytváření členů smíchaných s jinými datovými typy"
 
 #: ../../howto/enum.rst:1060
 msgid ""
@@ -1614,6 +1864,9 @@ msgid ""
 "with an :class:`Enum`, all values after the ``=`` are passed to that data"
 " type's constructor.  For example::"
 msgstr ""
+"Při dědění jiných datových typů, jako :class:`int` nebo :class:`str`, s "
+":class:`Enum`, jsou všechny hodnoty po ``=`` předány konstruktoru tohoto "
+"datového typu. Například::"
 
 #: ../../howto/enum.rst:1064
 msgid ""
@@ -1627,7 +1880,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:1072
 msgid "Boolean value of ``Enum`` classes and members"
-msgstr ""
+msgstr "Booleovská hodnota tříd a členů ``Enum``"
 
 #: ../../howto/enum.rst:1074
 msgid ""
@@ -1637,6 +1890,10 @@ msgid ""
 "your own enum's boolean evaluation depend on the member's value add the "
 "following to your class::"
 msgstr ""
+"Třídy Enum, které jsou smíchány s typy ne-:class:`Enum` (jako :class:`int`, "
+":class:`str` atd.), jsou vyhodnoceny podle pravidel přidaného typu; jinak se "
+"všichni členové vyhodnotí jako :data:`True`. Aby booleovské vyhodnocení vašeho "
+"vlastního výčtu záviselo na hodnotě členu, přidejte do své třídy následující::"
 
 #: ../../howto/enum.rst:1080
 msgid ""
@@ -1646,11 +1903,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:1083
 msgid "Plain :class:`Enum` classes always evaluate as :data:`True`."
-msgstr ""
+msgstr "Jednoduché třídy :class:`Enum` se vždy vyhodnotí jako :data:`True`."
 
 #: ../../howto/enum.rst:1087
 msgid "``Enum`` classes with methods"
-msgstr ""
+msgstr "Třídy ``Enum`` s metodami"
 
 #: ../../howto/enum.rst:1089
 msgid ""
@@ -1658,6 +1915,8 @@ msgid ""
 "below, those methods will show up in a :func:`dir` of the member, but not"
 " of the class::"
 msgstr ""
+"Pokud poskytnete své podtřídě výčtu další metody, jako třída `Planet`_ níže, "
+"tyto metody se zobrazí v :func:`dir` členu, ale ne třídy::"
 
 #: ../../howto/enum.rst:1093
 msgid ""
@@ -1671,13 +1930,15 @@ msgstr ""
 
 #: ../../howto/enum.rst:1100
 msgid "Combining members of ``Flag``"
-msgstr ""
+msgstr "Kombinování členů ``Flag``"
 
 #: ../../howto/enum.rst:1102
 msgid ""
 "Iterating over a combination of :class:`Flag` members will only return "
 "the members that are comprised of a single bit::"
 msgstr ""
+"Iterace přes kombinaci členů :class:`Flag` vrátí pouze členy, které se skládají "
+"z jednoho bitu::"
 
 #: ../../howto/enum.rst:1105
 msgid ""
@@ -1697,11 +1958,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:1120
 msgid "``Flag`` and ``IntFlag`` minutia"
-msgstr ""
+msgstr "Detaily ``Flag`` a ``IntFlag``"
 
 #: ../../howto/enum.rst:1122
 msgid "Using the following snippet for our examples::"
-msgstr ""
+msgstr "Použití následujícího úryvku pro naše příklady::"
 
 #: ../../howto/enum.rst:1124
 msgid ""
@@ -1717,19 +1978,19 @@ msgstr ""
 
 #: ../../howto/enum.rst:1133
 msgid "the following are true:"
-msgstr ""
+msgstr "následující jsou pravdivé:"
 
 #: ../../howto/enum.rst:1135
 msgid "single-bit flags are canonical"
-msgstr ""
+msgstr "jednobitové příznaky jsou kanonické"
 
 #: ../../howto/enum.rst:1136
 msgid "multi-bit and zero-bit flags are aliases"
-msgstr ""
+msgstr "vícebitové a nula-bitové příznaky jsou aliasy"
 
 #: ../../howto/enum.rst:1137
 msgid "only canonical flags are returned during iteration::"
-msgstr ""
+msgstr "během iterace jsou vráceny pouze kanonické příznaky::"
 
 #: ../../howto/enum.rst:1139
 msgid ""
@@ -1742,6 +2003,8 @@ msgid ""
 "negating a flag or flag set returns a new flag/flag set with the "
 "corresponding positive integer value::"
 msgstr ""
+"negace příznaku nebo sady příznaků vrátí nový příznak/sadu příznaků s "
+"odpovídající kladnou celočíselnou hodnotou::"
 
 #: ../../howto/enum.rst:1145
 msgid ""
@@ -1754,7 +2017,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:1151
 msgid "names of pseudo-flags are constructed from their members' names::"
-msgstr ""
+msgstr "názvy pseudo-příznaků jsou konstruovány z názvů jejich členů::"
 
 #: ../../howto/enum.rst:1153
 msgid ""
@@ -1772,7 +2035,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:1164
 msgid "multi-bit flags, aka aliases, can be returned from operations::"
-msgstr ""
+msgstr "vícebitové příznaky, neboli aliasy, mohou být vráceny z operací::"
 
 #: ../../howto/enum.rst:1166
 msgid ""
@@ -1791,6 +2054,8 @@ msgid ""
 "membership / containment checking: zero-valued flags are always "
 "considered to be contained::"
 msgstr ""
+"kontrola členství / obsahování: příznaky s nulovou hodnotou jsou vždy "
+"považovány za obsažené::"
 
 #: ../../howto/enum.rst:1178
 msgid ""
@@ -1803,6 +2068,8 @@ msgid ""
 "otherwise, only if all bits of one flag are in the other flag will True "
 "be returned::"
 msgstr ""
+"jinak bude vráceno True pouze v případě, že všechny bity jednoho příznaku "
+"jsou v druhém příznaku::"
 
 #: ../../howto/enum.rst:1184
 msgid ""
@@ -1819,34 +2086,36 @@ msgid ""
 "invalid bits are handled: ``STRICT``, ``CONFORM``, ``EJECT``, and "
 "``KEEP``:"
 msgstr ""
+"Existuje nový hraniční mechanismus, který řídí, jak jsou zpracovány bity mimo "
+"rozsah / neplatné bity: ``STRICT``, ``CONFORM``, ``EJECT`` a ``KEEP``:"
 
 #: ../../howto/enum.rst:1193
 msgid "STRICT --> raises an exception when presented with invalid values"
-msgstr ""
+msgstr "STRICT --> vyvolá výjimku při předložení neplatných hodnot"
 
 #: ../../howto/enum.rst:1194
 msgid "CONFORM --> discards any invalid bits"
-msgstr ""
+msgstr "CONFORM --> zahodí jakékoliv neplatné bity"
 
 #: ../../howto/enum.rst:1195
 msgid "EJECT --> lose Flag status and become a normal int with the given value"
-msgstr ""
+msgstr "EJECT --> ztratí status Flag a stane se normálním int s danou hodnotou"
 
 #: ../../howto/enum.rst:1196
 msgid "KEEP --> keep the extra bits"
-msgstr ""
+msgstr "KEEP --> zachová extra bity"
 
 #: ../../howto/enum.rst:1198
 msgid "keeps Flag status and extra bits"
-msgstr ""
+msgstr "zachová status Flag a extra bity"
 
 #: ../../howto/enum.rst:1199
 msgid "extra bits do not show up in iteration"
-msgstr ""
+msgstr "extra bity se nezobrazují při iteraci"
 
 #: ../../howto/enum.rst:1200
 msgid "extra bits do show up in repr() and str()"
-msgstr ""
+msgstr "extra bity se zobrazují v repr() a str()"
 
 #: ../../howto/enum.rst:1202
 msgid ""
@@ -1854,20 +2123,25 @@ msgid ""
 "``EJECT``, and the default for ``_convert_`` is ``KEEP`` (see "
 "``ssl.Options`` for an example of when ``KEEP`` is needed)."
 msgstr ""
+"Výchozí pro Flag je ``STRICT``, výchozí pro ``IntFlag`` je ``EJECT`` a "
+"výchozí pro ``_convert_`` je ``KEEP`` (viz ``ssl.Options`` pro příklad, kdy "
+"je ``KEEP`` potřeba)."
 
 #: ../../howto/enum.rst:1210
 msgid "How are Enums and Flags different?"
-msgstr ""
+msgstr "Jak se liší výčty a příznaky?"
 
 #: ../../howto/enum.rst:1212
 msgid ""
 "Enums have a custom metaclass that affects many aspects of both derived "
 ":class:`Enum` classes and their instances (members)."
 msgstr ""
+"Výčty mají vlastní metatřídu, která ovlivňuje mnoho aspektů odvozených tříd "
+":class:`Enum` i jejich instancí (členů)."
 
 #: ../../howto/enum.rst:1217
 msgid "Enum Classes"
-msgstr ""
+msgstr "Třídy Enum"
 
 #: ../../howto/enum.rst:1219
 msgid ""
@@ -1881,10 +2155,17 @@ msgid ""
 ":meth:`~object.__getnewargs__`, :meth:`~object.__str__` and "
 ":meth:`~object.__repr__`)."
 msgstr ""
+"Metatřída :class:`EnumType` je zodpovědná za poskytování metod "
+":meth:`~object.__contains__`, :meth:`~object.__dir__`, :meth:`~object.__iter__` "
+"a dalších metod, které umožňují dělat věci s třídou :class:`Enum`, které "
+"selžou u typické třídy, jako ``list(Color)`` nebo ``some_enum_var in Color``. "
+":class:`EnumType` je zodpovědná za zajištění, že různé další metody finální "
+"třídy :class:`Enum` jsou správné (jako :meth:`~object.__new__`, "
+":meth:`~object.__getnewargs__`, :meth:`~object.__str__` a :meth:`~object.__repr__`)."
 
 #: ../../howto/enum.rst:1228
 msgid "Flag Classes"
-msgstr ""
+msgstr "Třídy Flag"
 
 #: ../../howto/enum.rst:1230
 msgid ""
@@ -1894,10 +2175,14 @@ msgid ""
 "(a.k.a. ``0``) or with more than one power-of-two value (e.g. ``3``) is "
 "considered an alias."
 msgstr ""
+"Příznaky mají rozšířený pohled na aliasování: aby byl kanonický, hodnota "
+"příznaku musí být mocnina dvou, a nikoli duplicitní název. Takže kromě "
+"definice aliasu :class:`Enum` je příznak bez hodnoty (neboli ``0``) nebo s "
+"více než jednou mocninou dvou (např. ``3``) považován za alias."
 
 #: ../../howto/enum.rst:1236
 msgid "Enum Members (aka instances)"
-msgstr ""
+msgstr "Členové Enum (neboli instance)"
 
 #: ../../howto/enum.rst:1238
 msgid ""
@@ -1907,16 +2192,22 @@ msgid ""
 "place to ensure that no new ones are ever instantiated by returning only "
 "the existing member instances."
 msgstr ""
+"Nejzajímavější věcí na členech výčtu je, že jsou singletony. :class:`EnumType` "
+"je všechny vytvoří, když vytváří samotnou třídu výčtu, a poté umístí vlastní "
+":meth:`~object.__new__`, aby zajistil, že žádné nové již nebudou vytvořeny "
+"tím, že vrací pouze existující instance členů."
 
 #: ../../howto/enum.rst:1244
 msgid "Flag Members"
-msgstr ""
+msgstr "Členové Flag"
 
 #: ../../howto/enum.rst:1246
 msgid ""
 "Flag members can be iterated over just like the :class:`Flag` class, and "
 "only the canonical members will be returned.  For example::"
 msgstr ""
+"Členy Flag lze iterovat stejně jako třídu :class:`Flag` a budou vráceni pouze "
+"kanonickí členové. Například::"
 
 #: ../../howto/enum.rst:1249
 msgid ""
@@ -1926,13 +2217,15 @@ msgstr ""
 
 #: ../../howto/enum.rst:1252
 msgid "(Note that ``BLACK``, ``PURPLE``, and ``WHITE`` do not show up.)"
-msgstr ""
+msgstr "(Všimněte si, že ``BLACK``, ``PURPLE`` a ``WHITE`` se nezobrazují.)"
 
 #: ../../howto/enum.rst:1254
 msgid ""
 "Inverting a flag member returns the corresponding positive value, rather "
 "than a negative value --- for example::"
 msgstr ""
+"Invertování člena příznaku vrací odpovídající kladnou hodnotu místo záporné "
+"hodnoty --- například::"
 
 #: ../../howto/enum.rst:1257
 msgid ""
@@ -1945,6 +2238,8 @@ msgid ""
 "Flag members have a length corresponding to the number of power-of-two "
 "values they contain.  For example::"
 msgstr ""
+"Členové Flag mají délku odpovídající počtu mocnin dvou, které obsahují. "
+"Například::"
 
 #: ../../howto/enum.rst:1263
 msgid ""
@@ -1954,7 +2249,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:1270
 msgid "Enum Cookbook"
-msgstr ""
+msgstr "Kuchařka Enum"
 
 #: ../../howto/enum.rst:1273
 msgid ""
@@ -1964,10 +2259,14 @@ msgid ""
 " enumerations that can be used directly, or as examples for creating "
 "one's own."
 msgstr ""
+"Zatímco se očekává, že :class:`Enum`, :class:`IntEnum`, :class:`StrEnum`, "
+":class:`Flag` a :class:`IntFlag` pokryjí většinu případů použití, nemohou "
+"pokrýt všechny. Zde jsou recepty pro některé různé typy výčtů, které lze "
+"použít přímo, nebo jako příklady pro vytvoření vlastního."
 
 #: ../../howto/enum.rst:1280
 msgid "Omitting values"
-msgstr ""
+msgstr "Vynechání hodnot"
 
 #: ../../howto/enum.rst:1282
 msgid ""
@@ -1975,24 +2274,28 @@ msgid ""
 "enumeration is. There are several ways to define this type of simple "
 "enumeration:"
 msgstr ""
+"V mnoha případech použití nezáleží na tom, jaká je skutečná hodnota výčtu. "
+"Existuje několik způsobů, jak definovat tento typ jednoduchého výčtu:"
 
 #: ../../howto/enum.rst:1285
 msgid "use instances of :class:`auto` for the value"
-msgstr ""
+msgstr "použít instance :class:`auto` jako hodnotu"
 
 #: ../../howto/enum.rst:1286
 msgid "use instances of :class:`object` as the value"
-msgstr ""
+msgstr "použít instance :class:`object` jako hodnotu"
 
 #: ../../howto/enum.rst:1287
 msgid "use a descriptive string as the value"
-msgstr ""
+msgstr "použít popisný řetězec jako hodnotu"
 
 #: ../../howto/enum.rst:1288
 msgid ""
 "use a tuple as the value and a custom :meth:`~object.__new__` to replace "
 "the tuple with an :class:`int` value"
 msgstr ""
+"použít tuple jako hodnotu a vlastní :meth:`~object.__new__` k nahrazení "
+"tuple hodnotou :class:`int`"
 
 #: ../../howto/enum.rst:1291
 msgid ""
@@ -2000,14 +2303,17 @@ msgid ""
 "not important, and also enables one to add, remove, or reorder members "
 "without having to renumber the remaining members."
 msgstr ""
+"Použití kterékoliv z těchto metod uživateli signalizuje, že tyto hodnoty "
+"nejsou důležité, a také umožňuje přidávat, odebírat nebo měnit pořadí členů "
+"bez nutnosti přečíslování zbývajících členů."
 
 #: ../../howto/enum.rst:1297
 msgid "Using :class:`auto`"
-msgstr ""
+msgstr "Použití :class:`auto`"
 
 #: ../../howto/enum.rst:1299
 msgid "Using :class:`auto` would look like::"
-msgstr ""
+msgstr "Použití :class:`auto` by vypadalo takto::"
 
 #: ../../howto/enum.rst:1301
 msgid ""
@@ -2022,11 +2328,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:1311
 msgid "Using :class:`object`"
-msgstr ""
+msgstr "Použití :class:`object`"
 
 #: ../../howto/enum.rst:1313
 msgid "Using :class:`object` would look like::"
-msgstr ""
+msgstr "Použití :class:`object` by vypadalo takto::"
 
 #: ../../howto/enum.rst:1315
 msgid ""
@@ -2044,6 +2350,8 @@ msgid ""
 "This is also a good example of why you might want to write your own "
 ":meth:`~object.__repr__`::"
 msgstr ""
+"Toto je také dobrý příklad, proč byste mohli chtít napsat vlastní "
+":meth:`~object.__repr__`::"
 
 #: ../../howto/enum.rst:1326
 #, python-format
@@ -2061,11 +2369,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:1339
 msgid "Using a descriptive string"
-msgstr ""
+msgstr "Použití popisného řetězce"
 
 #: ../../howto/enum.rst:1341
 msgid "Using a string as the value would look like::"
-msgstr ""
+msgstr "Použití řetězce jako hodnoty by vypadalo takto::"
 
 #: ../../howto/enum.rst:1343
 msgid ""
@@ -2080,11 +2388,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:1353
 msgid "Using a custom :meth:`~object.__new__`"
-msgstr ""
+msgstr "Použití vlastní :meth:`~object.__new__`"
 
 #: ../../howto/enum.rst:1355
 msgid "Using an auto-numbering :meth:`~object.__new__` would look like::"
-msgstr ""
+msgstr "Použití automaticky číslující :meth:`~object.__new__` by vypadalo takto::"
 
 #: ../../howto/enum.rst:1357
 msgid ""
@@ -2109,6 +2417,8 @@ msgid ""
 "To make a more general purpose ``AutoNumber``, add ``*args`` to the "
 "signature::"
 msgstr ""
+"Pro vytvoření ``AutoNumber`` pro všeobecnější účely přidejte do signatury "
+"``*args``::"
 
 #: ../../howto/enum.rst:1374
 msgid ""
@@ -2127,6 +2437,8 @@ msgid ""
 "Then when you inherit from ``AutoNumber`` you can write your own "
 "``__init__`` to handle any extra arguments::"
 msgstr ""
+"Poté, když budete dědit z ``AutoNumber``, můžete napsat vlastní ``__init__`` "
+"pro zpracování jakýchkoliv dalších argumentů::"
 
 #: ../../howto/enum.rst:1385
 msgid ""
@@ -2152,12 +2464,17 @@ msgid ""
 ":meth:`~object.__new__` which is used after class creation for lookup of "
 "existing members."
 msgstr ""
+"Metoda :meth:`~object.__new__`, pokud je definována, se používá během vytváření "
+"členů Enum; poté je nahrazena metodou :meth:`~object.__new__` třídy Enum, "
+"která se používá po vytvoření třídy pro vyhledávání existujících členů."
 
 #: ../../howto/enum.rst:1407
 msgid ""
 "*Do not* call ``super().__new__()``, as the lookup-only ``__new__`` is "
 "the one that is found; instead, use the data type directly -- e.g.::"
 msgstr ""
+"*Nevolejte* ``super().__new__()``, protože bude nalezena pouze vyhledávací "
+"``__new__``; místo toho použijte datový typ přímo -- např.::"
 
 #: ../../howto/enum.rst:1410
 msgid "obj = int.__new__(cls, value)"
@@ -2165,7 +2482,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:1414
 msgid "OrderedEnum"
-msgstr ""
+msgstr "OrderedEnum"
 
 #: ../../howto/enum.rst:1416
 msgid ""
@@ -2173,6 +2490,9 @@ msgid ""
 "maintains the normal :class:`Enum` invariants (such as not being "
 "comparable to other enumerations)::"
 msgstr ""
+"Uspořádaný výčet, který není založen na :class:`IntEnum`, a proto udržuje "
+"normální invarianty :class:`Enum` (jako např. není srovnatelný s jinými "
+"výčty)::"
 
 #: ../../howto/enum.rst:1420
 msgid ""
@@ -2207,13 +2527,15 @@ msgstr ""
 
 #: ../../howto/enum.rst:1450
 msgid "DuplicateFreeEnum"
-msgstr ""
+msgstr "DuplicateFreeEnum"
 
 #: ../../howto/enum.rst:1452
 msgid ""
 "Raises an error if a duplicate member value is found instead of creating "
 "an alias::"
 msgstr ""
+"Vyvolá chybu, pokud je nalezena duplicitní hodnota člena, místo vytvoření "
+"aliasu::"
 
 #: ../../howto/enum.rst:1455
 #, python-format
@@ -2246,14 +2568,17 @@ msgid ""
 "behaviors as well as disallowing aliases.  If the only desired change is "
 "disallowing aliases, the :func:`unique` decorator can be used instead."
 msgstr ""
+"Toto je užitečný příklad pro dědění z Enum za účelem přidání nebo změny "
+"jiného chování, stejně jako zakázání aliasů. Pokud je jedinou žádoucí změnou "
+"zakázání aliasů, lze místo toho použít dekorátor :func:`unique`."
 
 #: ../../howto/enum.rst:1483
 msgid "MultiValueEnum"
-msgstr ""
+msgstr "MultiValueEnum"
 
 #: ../../howto/enum.rst:1485
 msgid "Supports having more than one value per member::"
-msgstr ""
+msgstr "Podporuje více než jednu hodnotu na člena::"
 
 #: ../../howto/enum.rst:1487
 msgid ""
@@ -2277,13 +2602,15 @@ msgstr ""
 
 #: ../../howto/enum.rst:1506
 msgid "Planet"
-msgstr ""
+msgstr "Planeta"
 
 #: ../../howto/enum.rst:1508
 msgid ""
 "If :meth:`~object.__new__` or :meth:`~object.__init__` is defined, the "
 "value of the enum member will be passed to those methods::"
 msgstr ""
+"Pokud je definována :meth:`~object.__new__` nebo :meth:`~object.__init__`, "
+"hodnota člena výčtu bude předána těmto metodám::"
 
 #: ../../howto/enum.rst:1511
 msgid ""
@@ -2313,11 +2640,11 @@ msgstr ""
 
 #: ../../howto/enum.rst:1537
 msgid "TimePeriod"
-msgstr ""
+msgstr "Časové období"
 
 #: ../../howto/enum.rst:1539
 msgid "An example to show the :attr:`~Enum._ignore_` attribute in use::"
-msgstr ""
+msgstr "Příklad ukazující použití atributu :attr:`~Enum._ignore_`::"
 
 #: ../../howto/enum.rst:1541
 #, python-format
@@ -2340,7 +2667,7 @@ msgstr ""
 
 #: ../../howto/enum.rst:1558
 msgid "Subclassing EnumType"
-msgstr ""
+msgstr "Dědění z EnumType"
 
 #: ../../howto/enum.rst:1560
 msgid ""
@@ -2348,4 +2675,7 @@ msgid ""
 " either with class decorators or custom functions, :class:`EnumType` can "
 "be subclassed to provide a different Enum experience."
 msgstr ""
+"Zatímco většině potřeb výčtů lze vyhovět přizpůsobením podtříd :class:`Enum`, "
+"ať už pomocí dekorátorů tříd nebo vlastních funkcí, lze dědit z :class:`EnumType` "
+"pro poskytnutí jiné zkušenosti s výčtem."
 
