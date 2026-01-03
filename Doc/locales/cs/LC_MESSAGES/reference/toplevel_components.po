@@ -11,171 +11,197 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../reference/toplevel_components.rst:6
 msgid "Top-level components"
-msgstr ""
+msgstr "Komponenty na nejvyšší úrovni"
 
 #: ../../reference/toplevel_components.rst:10
 msgid ""
-"The Python interpreter can get its input from a number of sources: from a"
-" script passed to it as standard input or as program argument, typed in "
+"The Python interpreter can get its input from a number of sources: from a "
+"script passed to it as standard input or as program argument, typed in "
 "interactively, from a module source file, etc.  This chapter gives the "
 "syntax used in these cases."
 msgstr ""
+"Pythonský interpret může získávat vstup z různých zdrojů: ze skriptu "
+"předaného standardním vstupem nebo jako argument programu, zadaného "
+"interaktivně, ze souboru modulu atd. Tato kapitola popisuje syntaxi "
+"používanou v těchto případech."
 
 #: ../../reference/toplevel_components.rst:19
 msgid "Complete Python programs"
-msgstr ""
+msgstr "Úplné programy v Pythonu"
 
 #: ../../reference/toplevel_components.rst:28
 msgid ""
 "While a language specification need not prescribe how the language "
-"interpreter is invoked, it is useful to have a notion of a complete "
-"Python program.  A complete Python program is executed in a minimally "
-"initialized environment: all built-in and standard modules are available,"
-" but none have been initialized, except for :mod:`sys` (various system "
-"services), :mod:`builtins` (built-in functions, exceptions and ``None``) "
-"and :mod:`__main__`.  The latter is used to provide the local and global "
+"interpreter is invoked, it is useful to have a notion of a complete Python "
+"program.  A complete Python program is executed in a minimally initialized "
+"environment: all built-in and standard modules are available, but none have "
+"been initialized, except for :mod:`sys` (various system services), "
+":mod:`builtins` (built-in functions, exceptions and ``None``) and "
+":mod:`__main__`.  The latter is used to provide the local and global "
 "namespace for execution of the complete program."
 msgstr ""
+"Ačkoliv specifikace jazyka nemusí předepisovat, jak se interpret jazyka "
+"vyvolá, je užitečné mít pojem úplného programu v Pythonu. Úplný program v "
+"Pythonu je provádán v minimálně inicializovaném prostředí: všechny vestavěné"
+" a standardní moduly jsou k dispozici, ale žádný nebyl inicializován, s "
+"výjimkou :mod:`sys` (různé systémové služby), :mod:`builtins` (vestavěné "
+"funkce, výjimky a ``None``) a :mod:`__main__`. Ten se používá k poskytování "
+"místního a globálního prostoru názvů pro provádění úplného programu."
 
 #: ../../reference/toplevel_components.rst:36
 msgid ""
-"The syntax for a complete Python program is that for file input, "
-"described in the next section."
+"The syntax for a complete Python program is that for file input, described "
+"in the next section."
 msgstr ""
+"Syntaxe pro úplný program v Pythonu je stejná jako pro vstup souboru, "
+"popsaný v další sekci."
 
 #: ../../reference/toplevel_components.rst:43
 msgid ""
-"The interpreter may also be invoked in interactive mode; in this case, it"
-" does not read and execute a complete program but reads and executes one "
+"The interpreter may also be invoked in interactive mode; in this case, it "
+"does not read and execute a complete program but reads and executes one "
 "statement (possibly compound) at a time.  The initial environment is "
-"identical to that of a complete program; each statement is executed in "
-"the namespace of :mod:`__main__`."
+"identical to that of a complete program; each statement is executed in the "
+"namespace of :mod:`__main__`."
 msgstr ""
+"Interpret se může také vyvolat v interaktivním režimu; v tomto případě nečte"
+" a nevykonává úplný program, ale čte a vykonává jeden příkaz (případně "
+"složený) po jednom. Počáteční prostředí je shodné s prostředím úplného "
+"programu; každý příkaz se vykonává v prostoru názvů :mod:`__main__`."
 
 #: ../../reference/toplevel_components.rst:55
 msgid ""
-"A complete program can be passed to the interpreter in three forms: with "
-"the :option:`-c` *string* command line option, as a file passed as the "
-"first command line argument, or as standard input.  If the file or "
-"standard input is a tty device, the interpreter enters interactive mode; "
-"otherwise, it executes the file as a complete program."
+"A complete program can be passed to the interpreter in three forms: with the"
+" :option:`-c` *string* command line option, as a file passed as the first "
+"command line argument, or as standard input.  If the file or standard input "
+"is a tty device, the interpreter enters interactive mode; otherwise, it "
+"executes the file as a complete program."
 msgstr ""
+"Úplný program lze předat interpretovi třemi způsoby: s volbou příkazového "
+"řádku :option:`-c` *string*, jako soubor předaný jako první argument "
+"příkazového řádku nebo jako standardní vstup. Pokud je soubor nebo "
+"standardní vstup zařízením tty, interpret přejde do interaktivního režimu; v"
+" opačném případě provede soubor jako úplný program."
 
 #: ../../reference/toplevel_components.rst:65
 msgid "File input"
-msgstr ""
+msgstr "Vstup ze souboru"
 
 #: ../../reference/toplevel_components.rst:67
 msgid "All input read from non-interactive files has the same form:"
-msgstr ""
+msgstr "Všechny vstupy načtené z neinteraktivních souborů mají stejný formát:"
 
 #: ../../reference/toplevel_components.rst:74
 msgid "This syntax is used in the following situations:"
-msgstr ""
+msgstr "Tato syntaxe se používá v následujících situacích:"
 
 #: ../../reference/toplevel_components.rst:76
 msgid "when parsing a complete Python program (from a file or from a string);"
-msgstr ""
+msgstr "při parsování úplného programu v Pythonu (ze souboru nebo řetězce);"
 
 #: ../../reference/toplevel_components.rst:78
 msgid "when parsing a module;"
-msgstr ""
+msgstr "při parsování modulu;"
 
 #: ../../reference/toplevel_components.rst:80
 msgid "when parsing a string passed to the :func:`exec` function;"
-msgstr ""
+msgstr "při parsování řetězce předaného funkci :func:`exec`;"
 
 #: ../../reference/toplevel_components.rst:86
 msgid "Interactive input"
-msgstr ""
+msgstr "Interaktivní vstup"
 
 #: ../../reference/toplevel_components.rst:88
 msgid "Input in interactive mode is parsed using the following grammar:"
 msgstr ""
+"Vstup v interaktivním režimu je parsován pomocí následující gramatiky:"
 
 #: ../../reference/toplevel_components.rst:95
 msgid ""
-"Note that a (top-level) compound statement must be followed by a blank "
-"line in interactive mode; this is needed to help the parser detect the "
-"end of the input."
+"Note that a (top-level) compound statement must be followed by a blank line "
+"in interactive mode; this is needed to help the parser detect the end of the"
+" input."
 msgstr ""
+"Všimněte si, že (vrcholový) složený příkaz musí být v interaktivním režimu "
+"následován prázdným řádkem; to je nezbytné, aby parser mohl detekovat konec "
+"vstupu."
 
 #: ../../reference/toplevel_components.rst:102
 msgid "Expression input"
-msgstr ""
+msgstr "Vstup výrazu"
 
 #: ../../reference/toplevel_components.rst:107
 msgid ""
-":func:`eval` is used for expression input.  It ignores leading "
-"whitespace. The string argument to :func:`eval` must have the following "
-"form:"
+":func:`eval` is used for expression input.  It ignores leading whitespace. "
+"The string argument to :func:`eval` must have the following form:"
 msgstr ""
+":func:`eval` se používá pro vstup výrazu. Ignoruje počáteční bílé znaky. "
+"Argument řetězce pro :func:`eval` musí mít následující formát:"
 
 #: ../../reference/toplevel_components.rst:8
 msgid "interpreter"
-msgstr ""
+msgstr "interpret"
 
 #: ../../reference/toplevel_components.rst:21
 msgid "program"
-msgstr ""
+msgstr "program"
 
 #: ../../reference/toplevel_components.rst:23
 #: ../../reference/toplevel_components.rst:39
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../reference/toplevel_components.rst:23
 msgid "sys"
-msgstr ""
+msgstr "sys"
 
 #: ../../reference/toplevel_components.rst:23
 #: ../../reference/toplevel_components.rst:39
 msgid "__main__"
-msgstr ""
+msgstr "__main__"
 
 #: ../../reference/toplevel_components.rst:23
 msgid "builtins"
-msgstr ""
+msgstr "builtins"
 
 #: ../../reference/toplevel_components.rst:39
 msgid "interactive mode"
-msgstr ""
+msgstr "interaktivní režim"
 
 #: ../../reference/toplevel_components.rst:49
 msgid "UNIX"
-msgstr ""
+msgstr "UNIX"
 
 #: ../../reference/toplevel_components.rst:49
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../reference/toplevel_components.rst:49
 msgid "command line"
-msgstr ""
+msgstr "příkazový řádek"
 
 #: ../../reference/toplevel_components.rst:49
 msgid "standard input"
-msgstr ""
+msgstr "standardní vstup"
 
 #: ../../reference/toplevel_components.rst:104
 msgid "input"
-msgstr ""
+msgstr "vstup"
 
 #: ../../reference/toplevel_components.rst:105
 msgid "built-in function"
-msgstr ""
+msgstr "vestavěná funkce"
 
 #: ../../reference/toplevel_components.rst:105
 msgid "eval"
-msgstr ""
-
+msgstr "eval"

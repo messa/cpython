@@ -11,175 +11,234 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../reference/simple_stmts.rst:6
 msgid "Simple statements"
-msgstr ""
+msgstr "Jednoduché příkazy"
 
 #: ../../reference/simple_stmts.rst:10
 msgid ""
-"A simple statement is comprised within a single logical line. Several "
-"simple statements may occur on a single line separated by semicolons.  "
-"The syntax for simple statements is:"
+"A simple statement is comprised within a single logical line. Several simple"
+" statements may occur on a single line separated by semicolons.  The syntax "
+"for simple statements is:"
 msgstr ""
+"Jednoduchý příkaz je obsažen v jednom logickém řádku. Více jednoduchých "
+"příkazů se může vyskytovat na jednom řádku oddělených středníky. Syntaxe pro"
+" jednoduché příkazy je:"
 
 #: ../../reference/simple_stmts.rst:37
 msgid "Expression statements"
-msgstr ""
+msgstr "Příkazy výrazu"
 
 #: ../../reference/simple_stmts.rst:44
 msgid ""
-"Expression statements are used (mostly interactively) to compute and "
-"write a value, or (usually) to call a procedure (a function that returns "
-"no meaningful result; in Python, procedures return the value ``None``).  "
-"Other uses of expression statements are allowed and occasionally useful."
-"  The syntax for an expression statement is:"
+"Expression statements are used (mostly interactively) to compute and write a"
+" value, or (usually) to call a procedure (a function that returns no "
+"meaningful result; in Python, procedures return the value ``None``).  Other "
+"uses of expression statements are allowed and occasionally useful.  The "
+"syntax for an expression statement is:"
 msgstr ""
+"Příkazy výrazu se používají (především interaktivně) k výpočtu a zápisu "
+"hodnoty, nebo (obvykle) k zavolání procedury (funkcí, která vrací žádný "
+"smysluplný výsledek; v Pythonu procedury vrací hodnotu ``None``). Další "
+"použití příkazů výrazu jsou povolena a občas užitečná. Syntaxe pro příkaz "
+"výrazu je:"
 
 #: ../../reference/simple_stmts.rst:53
 msgid ""
-"An expression statement evaluates the expression list (which may be a "
-"single expression)."
+"An expression statement evaluates the expression list (which may be a single"
+" expression)."
 msgstr ""
+"Příkaz výrazu vyhodnotí seznam výrazů (který může být jednotlivý výraz)."
 
 #: ../../reference/simple_stmts.rst:65
 msgid ""
 "In interactive mode, if the value is not ``None``, it is converted to a "
-"string using the built-in :func:`repr` function and the resulting string "
-"is written to standard output on a line by itself (except if the result "
-"is ``None``, so that procedure calls do not cause any output.)"
+"string using the built-in :func:`repr` function and the resulting string is "
+"written to standard output on a line by itself (except if the result is "
+"``None``, so that procedure calls do not cause any output.)"
 msgstr ""
+"V interaktivním režimu, pokud hodnota není ``None``, je převedena na řetězec"
+" pomocí vestavěné funkce :func:`repr` a výsledný řetězec je zapsán na "
+"standardní výstup na samostatném řádku (s výjimkou případu, kdy je výsledek "
+"``None``, aby volání procedur neprodukovala žádný výstup.)"
 
 #: ../../reference/simple_stmts.rst:73
 msgid "Assignment statements"
-msgstr ""
+msgstr "Příkazy přiřazení"
 
 #: ../../reference/simple_stmts.rst:83
 msgid ""
 "Assignment statements are used to (re)bind names to values and to modify "
 "attributes or items of mutable objects:"
 msgstr ""
+"Příkazy přiřazení se používají k (opětovnému) vázání jmen na hodnoty a k "
+"modifikaci atributů nebo položek měnitelných objektů:"
 
 #: ../../reference/simple_stmts.rst:97
 msgid ""
-"(See section :ref:`primaries` for the syntax definitions for "
-"*attributeref*, *subscription*, and *slicing*.)"
+"(See section :ref:`primaries` for the syntax definitions for *attributeref*,"
+" *subscription*, and *slicing*.)"
 msgstr ""
+"(Viz oddíl :ref:`primaries` pro definice syntaxe pro *attributeref*, "
+"*subscription* a *slicing*.)"
 
 #: ../../reference/simple_stmts.rst:100
 msgid ""
-"An assignment statement evaluates the expression list (remember that this"
-" can be a single expression or a comma-separated list, the latter "
-"yielding a tuple) and assigns the single resulting object to each of the "
-"target lists, from left to right."
+"An assignment statement evaluates the expression list (remember that this "
+"can be a single expression or a comma-separated list, the latter yielding a "
+"tuple) and assigns the single resulting object to each of the target lists, "
+"from left to right."
 msgstr ""
+"Příkaz přiřazení vyhodnotí seznam výrazů (pamatujte, že to může být "
+"jednotlivý výraz nebo seznam oddělený čárkami, přičemž druhý případ vytváří "
+"tuple) a přiřadí jednotlivý výsledný objekt každému cílovému seznamu, zleva "
+"doprava."
 
 #: ../../reference/simple_stmts.rst:109
 msgid ""
 "Assignment is defined recursively depending on the form of the target "
-"(list). When a target is part of a mutable object (an attribute "
-"reference, subscription or slicing), the mutable object must ultimately "
-"perform the assignment and decide about its validity, and may raise an "
-"exception if the assignment is unacceptable.  The rules observed by "
-"various types and the exceptions raised are given with the definition of "
-"the object types (see section :ref:`types`)."
+"(list). When a target is part of a mutable object (an attribute reference, "
+"subscription or slicing), the mutable object must ultimately perform the "
+"assignment and decide about its validity, and may raise an exception if the "
+"assignment is unacceptable.  The rules observed by various types and the "
+"exceptions raised are given with the definition of the object types (see "
+"section :ref:`types`)."
 msgstr ""
+"Přiřazení je definováno rekurzivně v závislosti na formě cíle (seznamu). "
+"Když je cíl součástí měnitelného objektu (odkaz atributu, předplatné nebo "
+"řezání), měnitelný objekt musí nakonec provést přiřazení a rozhodnout o jeho"
+" platnosti a může vyvolat výjimku, pokud je přiřazení nepřijatelné. Pravidla"
+" dodržovaná různými typy a výjimky, které jsou vyvolány, jsou uvedeny v "
+"definici typů objektů (viz oddíl :ref:`types`)."
 
 #: ../../reference/simple_stmts.rst:122
 msgid ""
-"Assignment of an object to a target list, optionally enclosed in "
-"parentheses or square brackets, is recursively defined as follows."
+"Assignment of an object to a target list, optionally enclosed in parentheses"
+" or square brackets, is recursively defined as follows."
 msgstr ""
+"Přiřazení objektu cílovému seznamu, volitelně uzavřenému v závorkách nebo "
+"hranatých závorkách, je rekurzivně definováno takto."
 
 #: ../../reference/simple_stmts.rst:125
 msgid ""
-"If the target list is a single target with no trailing comma, optionally "
-"in parentheses, the object is assigned to that target."
+"If the target list is a single target with no trailing comma, optionally in "
+"parentheses, the object is assigned to that target."
 msgstr ""
+"Pokud je cílový seznam jednotlivý cíl bez koncové čárky, volitelně v "
+"závorkách, je objekt přiřazen tomuto cíli."
 
 #: ../../reference/simple_stmts.rst:128
 msgid "Else:"
-msgstr ""
+msgstr "Jinak:"
 
 #: ../../reference/simple_stmts.rst:130
 msgid ""
-"If the target list contains one target prefixed with an asterisk, called "
-"a \"starred\" target: The object must be an iterable with at least as "
-"many items as there are targets in the target list, minus one.  The first"
-" items of the iterable are assigned, from left to right, to the targets "
-"before the starred target.  The final items of the iterable are assigned "
-"to the targets after the starred target.  A list of the remaining items "
-"in the iterable is then assigned to the starred target (the list can be "
-"empty)."
+"If the target list contains one target prefixed with an asterisk, called a "
+"\"starred\" target: The object must be an iterable with at least as many "
+"items as there are targets in the target list, minus one.  The first items "
+"of the iterable are assigned, from left to right, to the targets before the "
+"starred target.  The final items of the iterable are assigned to the targets"
+" after the starred target.  A list of the remaining items in the iterable is"
+" then assigned to the starred target (the list can be empty)."
 msgstr ""
+"Pokud cílový seznam obsahuje jeden cíl s předponou hvězdičky, nazývaný "
+"\"hvězdičkový\" cíl: Objekt musí být iterovatelný s nejméně tolik položkami,"
+" kolik je cílů v cílovém seznamu, mínus jeden. První položky iterovatelného "
+"objektu jsou přiřazeny, zleva doprava, cílům před hvězdičkovým cílem. "
+"Poslední položky iterovatelného objektu jsou přiřazeny cílům za hvězdičkovým"
+" cílem. Seznamu zbývajících položek v iterovatelném objektu je pak přiřazen "
+"hvězdičkový cíl (seznam může být prázdný)."
 
 #: ../../reference/simple_stmts.rst:138
 msgid ""
-"Else: The object must be an iterable with the same number of items as "
-"there are targets in the target list, and the items are assigned, from "
-"left to right, to the corresponding targets."
+"Else: The object must be an iterable with the same number of items as there "
+"are targets in the target list, and the items are assigned, from left to "
+"right, to the corresponding targets."
 msgstr ""
+"Jinak: Objekt musí být iterovatelný se stejným počtem položek, kolik je cílů"
+" v cílovém seznamu, a položky jsou přiřazeny, zleva doprava, odpovídajícím "
+"cílům."
 
 #: ../../reference/simple_stmts.rst:142
 msgid ""
 "Assignment of an object to a single target is recursively defined as "
 "follows."
-msgstr ""
+msgstr "Přiřazení objektu jedinému cíli je rekurzivně definováno takto."
 
 #: ../../reference/simple_stmts.rst:144
 msgid "If the target is an identifier (name):"
-msgstr ""
+msgstr "Pokud je cílem identifikátor (jméno):"
 
 #: ../../reference/simple_stmts.rst:146
 msgid ""
 "If the name does not occur in a :keyword:`global` or :keyword:`nonlocal` "
-"statement in the current code block: the name is bound to the object in "
-"the current local namespace."
+"statement in the current code block: the name is bound to the object in the "
+"current local namespace."
 msgstr ""
+"Pokud se jméno nevyskytuje v příkazu :keyword:`global` nebo "
+":keyword:`nonlocal` v aktuálním bloku kódu: jméno je vázáno na objekt v "
+"aktuálním místním jmenném prostoru."
 
 #: ../../reference/simple_stmts.rst:150
 msgid ""
-"Otherwise: the name is bound to the object in the global namespace or the"
-" outer namespace determined by :keyword:`nonlocal`, respectively."
+"Otherwise: the name is bound to the object in the global namespace or the "
+"outer namespace determined by :keyword:`nonlocal`, respectively."
 msgstr ""
+"Jinak: jméno je vázáno na objekt v globálním jmenném prostoru nebo v vnějším"
+" jmenném prostoru určeném :keyword:`nonlocal`, respektive."
 
 #: ../../reference/simple_stmts.rst:155
 msgid ""
-"The name is rebound if it was already bound.  This may cause the "
-"reference count for the object previously bound to the name to reach "
-"zero, causing the object to be deallocated and its destructor (if it has "
-"one) to be called."
+"The name is rebound if it was already bound.  This may cause the reference "
+"count for the object previously bound to the name to reach zero, causing the"
+" object to be deallocated and its destructor (if it has one) to be called."
 msgstr ""
+"Jméno je opět vázáno, pokud bylo již vázáno. To může způsobit, že počet "
+"odkazů objektu předchozí vázáného na jméno dosáhne nuly, způsobova nealokaci"
+" objektu a vyvolání jeho destruktoru (pokud má)."
 
 #: ../../reference/simple_stmts.rst:161
 msgid ""
 "If the target is an attribute reference: The primary expression in the "
 "reference is evaluated.  It should yield an object with assignable "
 "attributes; if this is not the case, :exc:`TypeError` is raised.  That "
-"object is then asked to assign the assigned object to the given "
-"attribute; if it cannot perform the assignment, it raises an exception "
-"(usually but not necessarily :exc:`AttributeError`)."
+"object is then asked to assign the assigned object to the given attribute; "
+"if it cannot perform the assignment, it raises an exception (usually but not"
+" necessarily :exc:`AttributeError`)."
 msgstr ""
+"Pokud je cílem odkaz atributu: Primární výraz v odkazu je vyhodnocen. Měl by"
+" vydát objekt s přiřazovnými atributy; pokud tomu tak není, je vyvolána "
+":exc:`TypeError`. Tomuto objektu je pak požádáno, aby přiřadil přiřazený "
+"objekt danému atributu; pokud to nemůže provést, vyvolá výjimku (obvykle "
+"ale ne nutně :exc:`AttributeError`)."
 
 #: ../../reference/simple_stmts.rst:170
 msgid ""
-"Note: If the object is a class instance and the attribute reference "
-"occurs on both sides of the assignment operator, the right-hand side "
-"expression, ``a.x`` can access either an instance attribute or (if no "
-"instance attribute exists) a class attribute.  The left-hand side target "
-"``a.x`` is always set as an instance attribute, creating it if necessary."
-"  Thus, the two occurrences of ``a.x`` do not necessarily refer to the "
-"same attribute: if the right-hand side expression refers to a class "
-"attribute, the left-hand side creates a new instance attribute as the "
-"target of the assignment::"
+"Note: If the object is a class instance and the attribute reference occurs "
+"on both sides of the assignment operator, the right-hand side expression, "
+"``a.x`` can access either an instance attribute or (if no instance attribute"
+" exists) a class attribute.  The left-hand side target ``a.x`` is always set"
+" as an instance attribute, creating it if necessary.  Thus, the two "
+"occurrences of ``a.x`` do not necessarily refer to the same attribute: if "
+"the right-hand side expression refers to a class attribute, the left-hand "
+"side creates a new instance attribute as the target of the assignment::"
 msgstr ""
+"Poznámka: Pokud je objekt instancí třídy a odkaz atributu se vyskytuje na "
+"obou stranách operátoru přiřazení, výraz na pravé straně ``a.x`` může "
+"přistupovat buď atributu instance nebo (pokud neexistuje atribut instance) "
+"atributu třídy. Cíl na levé straně ``a.x`` je vždy nastaven jako atribut "
+"instance, pokud je potřeba vytvořen. Proto dva výskyt ``a.x`` nemusí nutně "
+"odkazovat na stejný atribut: pokud se výraz na pravé straně odkazuje na "
+"atribut třídy, cíl na levé straně vytváří nový atribut instance jako cíl "
+"přiřazení::"
 
 #: ../../reference/simple_stmts.rst:179
 msgid ""
@@ -188,63 +247,95 @@ msgid ""
 "inst = Cls()\n"
 "inst.x = inst.x + 1   # writes inst.x as 4 leaving Cls.x as 3"
 msgstr ""
+"class Cls:\n"
+"    x = 3             # proměnná třídy\n"
+"inst = Cls()\n"
+"inst.x = inst.x + 1   # zapíše inst.x jako 4, zaručí Cls.x jako 3"
 
 #: ../../reference/simple_stmts.rst:184
 msgid ""
-"This description does not necessarily apply to descriptor attributes, "
-"such as properties created with :func:`property`."
+"This description does not necessarily apply to descriptor attributes, such "
+"as properties created with :func:`property`."
 msgstr ""
+"Tato charakteristika se nemusí vztahovat na atributy deskriptoru, jako jsou "
+"vlastnosti vytvořené s :func:`property`."
 
 #: ../../reference/simple_stmts.rst:191
 msgid ""
-"If the target is a subscription: The primary expression in the reference "
-"is evaluated.  It should yield either a mutable sequence object (such as "
-"a list) or a mapping object (such as a dictionary).  Next, the subscript "
+"If the target is a subscription: The primary expression in the reference is "
+"evaluated.  It should yield either a mutable sequence object (such as a "
+"list) or a mapping object (such as a dictionary).  Next, the subscript "
 "expression is evaluated."
 msgstr ""
+"Pokud je cílem předplatné: Primární výraz v odkazu je vyhodnocen. Měl by "
+"vydát buď objekt měnitelné sekvence (jako je seznam) nebo objekt mapování "
+"(jako je slovník). Dále je vyhodnocen výraz doleva."
 
 #: ../../reference/simple_stmts.rst:200
 msgid ""
-"If the primary is a mutable sequence object (such as a list), the "
-"subscript must yield an integer.  If it is negative, the sequence's "
-"length is added to it.  The resulting value must be a nonnegative integer"
-" less than the sequence's length, and the sequence is asked to assign the"
-" assigned object to its item with that index.  If the index is out of "
-"range, :exc:`IndexError` is raised (assignment to a subscripted sequence "
-"cannot add new items to a list)."
+"If the primary is a mutable sequence object (such as a list), the subscript "
+"must yield an integer.  If it is negative, the sequence's length is added to"
+" it.  The resulting value must be a nonnegative integer less than the "
+"sequence's length, and the sequence is asked to assign the assigned object "
+"to its item with that index.  If the index is out of range, "
+":exc:`IndexError` is raised (assignment to a subscripted sequence cannot add"
+" new items to a list)."
 msgstr ""
+"Pokud je primární prvek objektem měnitelné sekvence (jako je seznam), indexů"
+" v čárce musí vydát celé číslo. Pokud je záporné, délka sekvence se k němu "
+"přidá. Výsledná hodnota musí být neěádné celé číslo menší než délka sekvence"
+" a sekvence je požádána, aby přiřadila přiřazený objekt své položce s tímto "
+"indexem. Pokud je index mimo rozsah, je vyvolána :exc:`IndexError` "
+"(přiřazení do indexové sekvence nemůže přidat nové prvky do seznamu)."
 
 #: ../../reference/simple_stmts.rst:211
 msgid ""
 "If the primary is a mapping object (such as a dictionary), the subscript "
-"must have a type compatible with the mapping's key type, and the mapping "
-"is then asked to create a key/value pair which maps the subscript to the "
-"assigned object.  This can either replace an existing key/value pair with"
-" the same key value, or insert a new key/value pair (if no key with the "
-"same value existed)."
+"must have a type compatible with the mapping's key type, and the mapping is "
+"then asked to create a key/value pair which maps the subscript to the "
+"assigned object.  This can either replace an existing key/value pair with "
+"the same key value, or insert a new key/value pair (if no key with the same "
+"value existed)."
 msgstr ""
+"Pokud je primární prvek objektem mapování (jako je slovník), indexů v čárce "
+"musí mít typ kompatibilní s typem klíče mapování a mapování je pak požádáno,"
+" aby vytvořilo pár klíč/hodnota, který mapuje indexů v čárce na přiřazený "
+"objekt. To může buď nahradit existující pár klíč/hodnota se stejnou hodnotou"
+" klíče nebo vložit nový pár klíč/hodnota (pokud neexistoval klíč se stejnou "
+"hodnotou)."
 
 #: ../../reference/simple_stmts.rst:217
 msgid ""
-"For user-defined objects, the :meth:`~object.__setitem__` method is "
-"called with appropriate arguments."
+"For user-defined objects, the :meth:`~object.__setitem__` method is called "
+"with appropriate arguments."
 msgstr ""
+"Pro uživatelsky definované objekty je vyvolána metoda "
+":meth:`~object.__setitem__` s vhodnými argumenty."
 
 #: ../../reference/simple_stmts.rst:222
 msgid ""
 "If the target is a slicing: The primary expression in the reference is "
-"evaluated.  It should yield a mutable sequence object (such as a list).  "
-"The assigned object should be a sequence object of the same type.  Next, "
-"the lower and upper bound expressions are evaluated, insofar they are "
-"present; defaults are zero and the sequence's length.  The bounds should "
-"evaluate to integers. If either bound is negative, the sequence's length "
-"is added to it.  The resulting bounds are clipped to lie between zero and"
-" the sequence's length, inclusive.  Finally, the sequence object is asked"
-" to replace the slice with the items of the assigned sequence.  The "
-"length of the slice may be different from the length of the assigned "
-"sequence, thus changing the length of the target sequence, if the target "
-"sequence allows it."
+"evaluated.  It should yield a mutable sequence object (such as a list).  The"
+" assigned object should be a sequence object of the same type.  Next, the "
+"lower and upper bound expressions are evaluated, insofar they are present; "
+"defaults are zero and the sequence's length.  The bounds should evaluate to "
+"integers. If either bound is negative, the sequence's length is added to it."
+"  The resulting bounds are clipped to lie between zero and the sequence's "
+"length, inclusive.  Finally, the sequence object is asked to replace the "
+"slice with the items of the assigned sequence.  The length of the slice may "
+"be different from the length of the assigned sequence, thus changing the "
+"length of the target sequence, if the target sequence allows it."
 msgstr ""
+"Pokud je cílem řezání: Primární výraz v odkazu je vyhodnocen. Měl by vydát "
+"objekt měnitelné sekvence (jako je seznam). Přiřazený objekt by měl být "
+"objekt sekvence stejného typu. Dále jsou vyhodnoceny dolní a horní hranice, "
+"pokud jsou přítomny; výchozí hodnoty jsou nula a délka sekvence. Hranice by "
+"se měly vyhodnotit na celá čísla. Pokud je některá hranice záporná, délka "
+"sekvence se k ní přidá. Výsledné hranice jsou zahřáty tak, aby ležely mezi "
+"nulou a délkou sekvence (včetně). Konečně je objekt sekvence požádán, aby "
+"nahradil řez prvky přiřazené sekvence. Délka řezu může být jiná než délka "
+"přiřazené sekvence, tedy mění délku cílové sekvence, pokud to cílová "
+"sekvence dovoluje."
 
 #: ../../reference/simple_stmts.rst:236
 msgid ""
@@ -252,15 +343,20 @@ msgid ""
 "same as for expressions, and invalid syntax is rejected during the code "
 "generation phase, causing less detailed error messages."
 msgstr ""
+"V současné implementaci je syntaxe pro cíle brana jako stejná jako pro "
+"výrazy a neplatná syntaxe je zamítnuta během fáze generáování kódu, což "
+"způsobuje méně podrobné chybové zprávy."
 
 #: ../../reference/simple_stmts.rst:240
 msgid ""
 "Although the definition of assignment implies that overlaps between the "
-"left-hand side and the right-hand side are 'simultaneous' (for example "
-"``a, b = b, a`` swaps two variables), overlaps *within* the collection of"
-" assigned-to variables occur left-to-right, sometimes resulting in "
-"confusion.  For instance, the following program prints ``[0, 2]``::"
+"left-hand side and the right-hand side are 'simultaneous' (for example ``a, "
+"b = b, a`` swaps two variables), overlaps *within* the collection of "
+"assigned-to variables occur left-to-right, sometimes resulting in confusion."
+"  For instance, the following program prints ``[0, 2]``::"
 msgstr ""
+"Defi\n"
+"ace přiřazení implikuje, že překryvý mezi levou a pravou stranou jsou 'současné' (např. ``a, b = b, a`` vymění dvě proměnné), překryvý *v rámci* sboru přiřazených proměnných se vyskytují zleva doprava, niekdy způsobova zmatečnost. Napříkład, následující program vytiskne ``[0, 2]``"
 
 #: ../../reference/simple_stmts.rst:246
 msgid ""
@@ -269,67 +365,89 @@ msgid ""
 "i, x[i] = 1, 2         # i is updated, then x[i] is updated\n"
 "print(x)"
 msgstr ""
+"x = [0, 1]\n"
+"i = 0\n"
+"i, x[i] = 1, 2         # i je aktualizováno, pak je x[i] aktualizováno\n"
+"print(x)"
 
 #: ../../reference/simple_stmts.rst:254
 msgid ":pep:`3132` - Extended Iterable Unpacking"
-msgstr ""
+msgstr ":pep:`3132` - Extended Iterable Unpacking"
 
 #: ../../reference/simple_stmts.rst:255
 msgid "The specification for the ``*target`` feature."
-msgstr ""
+msgstr "Specifikace pro vlastnost ``*target``."
 
 #: ../../reference/simple_stmts.rst:261
 msgid "Augmented assignment statements"
-msgstr ""
+msgstr "Příkazy zvétšeného přiřazení"
 
 #: ../../reference/simple_stmts.rst:279
 msgid ""
-"Augmented assignment is the combination, in a single statement, of a "
-"binary operation and an assignment statement:"
+"Augmented assignment is the combination, in a single statement, of a binary "
+"operation and an assignment statement:"
 msgstr ""
+"Zvétšené přiřazení je kombinace, v jediném příkazu, binární operace a "
+"příkazu přiřazení:"
 
 #: ../../reference/simple_stmts.rst:288
 msgid ""
-"(See section :ref:`primaries` for the syntax definitions of the last "
-"three symbols.)"
+"(See section :ref:`primaries` for the syntax definitions of the last three "
+"symbols.)"
 msgstr ""
+"(Viz oddíl :ref:`primaries` pro definice syntaxe posledních tří symbolů.)"
 
 #: ../../reference/simple_stmts.rst:291
 msgid ""
 "An augmented assignment evaluates the target (which, unlike normal "
 "assignment statements, cannot be an unpacking) and the expression list, "
-"performs the binary operation specific to the type of assignment on the "
-"two operands, and assigns the result to the original target.  The target "
-"is only evaluated once."
+"performs the binary operation specific to the type of assignment on the two "
+"operands, and assigns the result to the original target.  The target is only"
+" evaluated once."
 msgstr ""
+"Zvétšené přiřazení vyhodnotí cíl (který, na rozdíles od normálních příkazů "
+"přiřazení, nemůže být rozbalováním) a seznam výrazů, provéde binární operaci"
+" konkrétní pro typ přiřazení na dvou operandech a přiřadí výsledek původnímu"
+" cíli. Cíl je vyhodnocen pouze jednou."
 
 #: ../../reference/simple_stmts.rst:296
 msgid ""
-"An augmented assignment statement like ``x += 1`` can be rewritten as ``x"
-" = x + 1`` to achieve a similar, but not exactly equal effect. In the "
-"augmented version, ``x`` is only evaluated once. Also, when possible, the"
-" actual operation is performed *in-place*, meaning that rather than "
-"creating a new object and assigning that to the target, the old object is"
-" modified instead."
+"An augmented assignment statement like ``x += 1`` can be rewritten as ``x = "
+"x + 1`` to achieve a similar, but not exactly equal effect. In the augmented"
+" version, ``x`` is only evaluated once. Also, when possible, the actual "
+"operation is performed *in-place*, meaning that rather than creating a new "
+"object and assigning that to the target, the old object is modified instead."
 msgstr ""
+"Příkaz zvétšeného přiřazení jako ``x += 1`` lze přepsat jako ``x = x + 1``,"
+" aby se dosáhlo podobného, ale ne zcela stejného efektu. V zvétšené verzi "
+"je ``x`` vyhodnocen pouze jednou. Také, pokud je to možné, je skutečná "
+"operace provedena *v místech*, což znamená, že místech vytvoření nového "
+"objektu a přiřazení k cíli, je starý objekt měněn."
 
 #: ../../reference/simple_stmts.rst:302
 msgid ""
-"Unlike normal assignments, augmented assignments evaluate the left-hand "
-"side *before* evaluating the right-hand side.  For example, ``a[i] += "
-"f(x)`` first looks-up ``a[i]``, then it evaluates ``f(x)`` and performs "
-"the addition, and lastly, it writes the result back to ``a[i]``."
+"Unlike normal assignments, augmented assignments evaluate the left-hand side"
+" *before* evaluating the right-hand side.  For example, ``a[i] += f(x)`` "
+"first looks-up ``a[i]``, then it evaluates ``f(x)`` and performs the "
+"addition, and lastly, it writes the result back to ``a[i]``."
 msgstr ""
+"Na rozdíles od normálních přiřazení, zvětšené přiřazení vyhodnocují levou "
+"stranu *před* vyhodnocením pravé strany. Napříkład ``a[i] += f(x)`` nejprve "
+"vyhledá ``a[i]``, pak vyhodnotí ``f(x)`` a provéde sčítání a nakonec zapíše "
+"výsledek zpět na ``a[i]``."
 
 #: ../../reference/simple_stmts.rst:307
 msgid ""
-"With the exception of assigning to tuples and multiple targets in a "
-"single statement, the assignment done by augmented assignment statements "
-"is handled the same way as normal assignments. Similarly, with the "
-"exception of the possible *in-place* behavior, the binary operation "
-"performed by augmented assignment is the same as the normal binary "
-"operations."
+"With the exception of assigning to tuples and multiple targets in a single "
+"statement, the assignment done by augmented assignment statements is handled"
+" the same way as normal assignments. Similarly, with the exception of the "
+"possible *in-place* behavior, the binary operation performed by augmented "
+"assignment is the same as the normal binary operations."
 msgstr ""
+"S výjimkou přiřazení do n-tic a násobných cílů v jediném příkazu je "
+"přiřazení provedenné zvétšeným přiřazením sprácováno stejně jako normální "
+"přiřazení. Podobně, s výjimkou možné chování *v místech*, je binární operace"
+" provedenná zvétšeným přiřazením stejná jako normální binární operace."
 
 #: ../../reference/simple_stmts.rst:313
 msgid ""
@@ -337,147 +455,192 @@ msgid ""
 "class and instance attributes <attr-target-note>` applies as for regular "
 "assignments."
 msgstr ""
+"Pro cíle, které jsou odkazy atributů, se stejné :ref:`upozornění o "
+"atributech třídy a instance <attr-target-note>` vztahuje jako pro běžné "
+"přiřazení."
 
 #: ../../reference/simple_stmts.rst:320
 msgid "Annotated assignment statements"
-msgstr ""
+msgstr "Příkazy anotovaného přiřazení"
 
 #: ../../reference/simple_stmts.rst:327
 msgid ""
-":term:`Annotation <variable annotation>` assignment is the combination, "
-"in a single statement, of a variable or attribute annotation and an "
-"optional assignment statement:"
+":term:`Annotation <variable annotation>` assignment is the combination, in a"
+" single statement, of a variable or attribute annotation and an optional "
+"assignment statement:"
 msgstr ""
+":term:`Anotace <variable annotation>` přiřazení je kombinace, v jediném "
+"příkazu, anotace proměnné nebo atributu a volitelného příkazu přiřazení:"
 
 #: ../../reference/simple_stmts.rst:334
 msgid ""
-"The difference from normal :ref:`assignment` is that only a single target"
-" is allowed."
+"The difference from normal :ref:`assignment` is that only a single target is"
+" allowed."
 msgstr ""
+"Rozdíl od normálního :ref:`přiřazení` je v tom, že je povolen pouze jeden "
+"cíl."
 
 #: ../../reference/simple_stmts.rst:336
 msgid ""
-"The assignment target is considered \"simple\" if it consists of a single"
-" name that is not enclosed in parentheses. For simple assignment targets,"
-" if in class or module scope, the annotations are gathered in a lazily "
-"evaluated :ref:`annotation scope <annotation-scopes>`. The annotations "
-"can be evaluated using the :attr:`~object.__annotations__` attribute of a"
-" class or module, or using the facilities in the :mod:`annotationlib` "
-"module."
+"The assignment target is considered \"simple\" if it consists of a single "
+"name that is not enclosed in parentheses. For simple assignment targets, if "
+"in class or module scope, the annotations are gathered in a lazily evaluated"
+" :ref:`annotation scope <annotation-scopes>`. The annotations can be "
+"evaluated using the :attr:`~object.__annotations__` attribute of a class or "
+"module, or using the facilities in the :mod:`annotationlib` module."
 msgstr ""
+"Cíl přiřazení je vhodán za \"jednoduchý\", pokud se skládá z jediného jména,"
+" které není uzavřeno v závorkách. Pro jednoduché cíle přiřazení se v rozsahu"
+" třídy nebo modulu anotace shromažďují v činno vyhodnocované :ref:`anotaci "
+"rozsahu <annotation-scopes>`. Anotace lze vyhodnotit pomocí atributu "
+":attr:`~object.__annotations__` třídy nebo modulu nebo pomocí zařízení v "
+"modulu :mod:`annotationlib`."
 
 #: ../../reference/simple_stmts.rst:345
 msgid ""
 "If the assignment target is not simple (an attribute, subscript node, or "
 "parenthesized name), the annotation is never evaluated."
 msgstr ""
+"Pokud cíl přiřazení není jednoduchý (atribut, uzel předplatného nebo jméno v"
+" závorkách), anotace není nikdy vyhodnocena."
 
 #: ../../reference/simple_stmts.rst:348
 msgid ""
-"If a name is annotated in a function scope, then this name is local for "
-"that scope. Annotations are never evaluated and stored in function "
-"scopes."
+"If a name is annotated in a function scope, then this name is local for that"
+" scope. Annotations are never evaluated and stored in function scopes."
 msgstr ""
+"Pokud je jméno anotováno v rozsahu funkce, toto jméno je místní pro tento "
+"rozsah. Anotace nejsou nikdy vyhodnoceny a uloženy v rozsazích funkcí."
 
 #: ../../reference/simple_stmts.rst:351
 msgid ""
 "If the right hand side is present, an annotated assignment performs the "
-"actual assignment as if there was no annotation present. If the right "
-"hand side is not present for an expression target, then the interpreter "
-"evaluates the target except for the last :meth:`~object.__setitem__` or "
+"actual assignment as if there was no annotation present. If the right hand "
+"side is not present for an expression target, then the interpreter evaluates"
+" the target except for the last :meth:`~object.__setitem__` or "
 ":meth:`~object.__setattr__` call."
 msgstr ""
+"Pokud je pravostraná strana přítomna, anotované přiřazení provede skutečné "
+"přiřazení, jako by tam žádná anotace nebyla. Pokud pravostraná strana není "
+"přítomna pro cíl výrazu, interpret vyhodnotit cíl s výjimkou posledního "
+"hovoru :meth:`~object.__setitem__` nebo :meth:`~object.__setattr__`."
 
 #: ../../reference/simple_stmts.rst:359
 msgid ":pep:`526` - Syntax for Variable Annotations"
-msgstr ""
+msgstr ":pep:`526` - Syntaxe pro anotace proměnných"
 
 #: ../../reference/simple_stmts.rst:360
 msgid ""
 "The proposal that added syntax for annotating the types of variables "
-"(including class variables and instance variables), instead of expressing"
-" them through comments."
+"(including class variables and instance variables), instead of expressing "
+"them through comments."
 msgstr ""
+"Návrh, který přidalsyntaxu pro anotaci typů proměnných (včetně proměnných "
+"třídy a instancí), místech jejich vyjadřování pomocí komentářů."
 
 #: ../../reference/simple_stmts.rst:364
 msgid ":pep:`484` - Type hints"
-msgstr ""
+msgstr ":pep:`484` - Tipy typů"
 
 #: ../../reference/simple_stmts.rst:365
 msgid ""
 "The proposal that added the :mod:`typing` module to provide a standard "
-"syntax for type annotations that can be used in static analysis tools and"
-" IDEs."
+"syntax for type annotations that can be used in static analysis tools and "
+"IDEs."
 msgstr ""
+"Návrh, který přdal modul :mod:`typing`, aby poskytl standardní syntaxi pro "
+"anotace typů, které lze použít v nástrojích statické analýzy a IDE."
 
 #: ../../reference/simple_stmts.rst:369
 msgid ""
-"Now annotated assignments allow the same expressions in the right hand "
-"side as regular assignments. Previously, some expressions (like un-"
-"parenthesized tuple expressions) caused a syntax error."
+"Now annotated assignments allow the same expressions in the right hand side "
+"as regular assignments. Previously, some expressions (like un-parenthesized "
+"tuple expressions) caused a syntax error."
 msgstr ""
+"Nyní anotovaná přiřazení umožňují stejné výrazy na pravé straně jako běžná "
+"přiřazení. Dříve některé výrazy (jako nezávorkované výrazy tuple) způsobily "
+"chybu syntaxe."
 
 #: ../../reference/simple_stmts.rst:374
 msgid ""
-"Annotations are now lazily evaluated in a separate :ref:`annotation scope"
-" <annotation-scopes>`. If the assignment target is not simple, "
-"annotations are never evaluated."
+"Annotations are now lazily evaluated in a separate :ref:`annotation scope "
+"<annotation-scopes>`. If the assignment target is not simple, annotations "
+"are never evaluated."
 msgstr ""
+"Anotace jsou nyní léně vyhodnocovány v samostatném :ref:`rozsahu anotací "
+"<annotation-scopes>`. Pokud cíl přiřazení není jednoduchý, anotace nejsou "
+"nikdy vyhodnoceny."
 
 #: ../../reference/simple_stmts.rst:382
 msgid "The :keyword:`!assert` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!assert`"
 
 #: ../../reference/simple_stmts.rst:389
 msgid ""
-"Assert statements are a convenient way to insert debugging assertions "
-"into a program:"
+"Assert statements are a convenient way to insert debugging assertions into a"
+" program:"
 msgstr ""
+"Asserční příkazy jsou pohodlným způsobem, jak vložit asserční překontrolace "
+"lazení do programu:"
 
 #: ../../reference/simple_stmts.rst:395
 msgid "The simple form, ``assert expression``, is equivalent to ::"
-msgstr ""
+msgstr "Jednoduchá forma, ``assert expression``, je ekvivalentní ::"
 
 #: ../../reference/simple_stmts.rst:397
 msgid ""
 "if __debug__:\n"
 "    if not expression: raise AssertionError"
 msgstr ""
+"if __debug__:\n"
+"    if not expression: raise AssertionError"
 
 #: ../../reference/simple_stmts.rst:400
 msgid ""
-"The extended form, ``assert expression1, expression2``, is equivalent to "
-"::"
+"The extended form, ``assert expression1, expression2``, is equivalent to ::"
 msgstr ""
+"Rozšířená forma, ``assert expression1, expression2``, je ekvivalentní ::"
 
 #: ../../reference/simple_stmts.rst:402
 msgid ""
 "if __debug__:\n"
 "    if not expression1: raise AssertionError(expression2)"
 msgstr ""
+"if __debug__:\n"
+"    if not expression1: raise AssertionError(expression2)"
 
 #: ../../reference/simple_stmts.rst:409
 msgid ""
-"These equivalences assume that :const:`__debug__` and "
-":exc:`AssertionError` refer to the built-in variables with those names.  "
-"In the current implementation, the built-in variable ``__debug__`` is "
-"``True`` under normal circumstances, ``False`` when optimization is "
-"requested (command line option :option:`-O`).  The current code generator"
-" emits no code for an :keyword:`assert` statement when optimization is "
-"requested at compile time.  Note that it is unnecessary to include the "
-"source code for the expression that failed in the error message; it will "
-"be displayed as part of the stack trace."
+"These equivalences assume that :const:`__debug__` and :exc:`AssertionError` "
+"refer to the built-in variables with those names.  In the current "
+"implementation, the built-in variable ``__debug__`` is ``True`` under normal"
+" circumstances, ``False`` when optimization is requested (command line "
+"option :option:`-O`).  The current code generator emits no code for an "
+":keyword:`assert` statement when optimization is requested at compile time."
+"  Note that it is unnecessary to include the source code for the expression "
+"that failed in the error message; it will be displayed as part of the stack "
+"trace."
 msgstr ""
+"Tyto ekvivalence předpokládají, že :const:`__debug__` a "
+":exc:`AssertionError` odkazují na vestavěné proměnné s těmito jmény. V "
+"současné implementaci je vestavěná proměnná ``__debug__`` ``True`` v "
+"normálních podmínkách, ``False`` když je požádána optimalizace (volitelná "
+"příkazového řádku :option:`-O`). Současný generátor kódu nevydává žádný kód "
+"pro příkaz :keyword:`assert`, když je optimalizace požádána v době překladu."
+" Poznamenejme, že není nutné začítávat zdrojový kód pro výraz, který selhal,"
+" do chybové zprávy; bude zobrazen jako součást trasování zásobníku."
 
 #: ../../reference/simple_stmts.rst:418
 msgid ""
-"Assignments to :const:`__debug__` are illegal.  The value for the built-"
-"in variable is determined when the interpreter starts."
+"Assignments to :const:`__debug__` are illegal.  The value for the built-in "
+"variable is determined when the interpreter starts."
 msgstr ""
+"Přiřazení :const:`__debug__` jsou nezakoná. Hodnota vestavěné proměnné je "
+"určena, když se interpret spustí."
 
 #: ../../reference/simple_stmts.rst:425
 msgid "The :keyword:`!pass` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!pass`"
 
 #: ../../reference/simple_stmts.rst:435
 msgid ""
@@ -485,6 +648,9 @@ msgid ""
 "happens. It is useful as a placeholder when a statement is required "
 "syntactically, but no code needs to be executed, for example::"
 msgstr ""
+":keyword:`pass` je operace bez efektu --- když je proveden, nic se ne stává."
+" Je užitečný jako zástupný symbol, když je příkaz požádan syn takticě, ale "
+"žádný kód musí být provečen, napříkład::"
 
 #: ../../reference/simple_stmts.rst:439
 msgid ""
@@ -492,96 +658,123 @@ msgid ""
 "\n"
 "class C: pass       # a class with no methods (yet)"
 msgstr ""
+"def f(arg): pass    # funkce, která nedělá nic (zatín)\n"
+"\n"
+"class C: pass       # třída bez metod (zatín)"
 
 #: ../../reference/simple_stmts.rst:447
 msgid "The :keyword:`!del` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!del`"
 
 #: ../../reference/simple_stmts.rst:457
 msgid ""
 "Deletion is recursively defined very similar to the way assignment is "
-"defined. Rather than spelling it out in full details, here are some "
-"hints."
+"defined. Rather than spelling it out in full details, here are some hints."
 msgstr ""
+"Smazání je rekurzivně definováno velmi podobně způsobu, jak je definováno "
+"přiřazení. Místech popisu všeho v podrobnostech, zde jsou některé nápady."
 
 #: ../../reference/simple_stmts.rst:460
 msgid ""
 "Deletion of a target list recursively deletes each target, from left to "
 "right."
-msgstr ""
+msgstr "Smazání seznamu cílů rekurzivně smazá každý cíl, zleva doprava."
 
 #: ../../reference/simple_stmts.rst:466
 msgid ""
-"Deletion of a name removes the binding of that name from the local or "
-"global namespace, depending on whether the name occurs in a "
-":keyword:`global` statement in the same code block.  Trying to delete an "
-"unbound name raises a :exc:`NameError` exception."
+"Deletion of a name removes the binding of that name from the local or global"
+" namespace, depending on whether the name occurs in a :keyword:`global` "
+"statement in the same code block.  Trying to delete an unbound name raises a"
+" :exc:`NameError` exception."
 msgstr ""
+"Smazání jména odebrá vázání tohoto jména z místního nebo globálního jmenného"
+" prostoru, v závislosti na tom, zda se jméno vyskytuje v příkazu "
+":keyword:`global` v též bloku kódu. Pokus o smazání nevzorovaného jména "
+"vyvolá :exc:`NameError` výjimku."
 
 #: ../../reference/simple_stmts.rst:473
 msgid ""
-"Deletion of attribute references, subscriptions and slicings is passed to"
-" the primary object involved; deletion of a slicing is in general "
-"equivalent to assignment of an empty slice of the right type (but even "
-"this is determined by the sliced object)."
+"Deletion of attribute references, subscriptions and slicings is passed to "
+"the primary object involved; deletion of a slicing is in general equivalent "
+"to assignment of an empty slice of the right type (but even this is "
+"determined by the sliced object)."
 msgstr ""
+"Smazání odkazů atributů, předplatitelů a řezání je předáno primárnímu "
+"objektu v qříselném procesem; smazání řezu se obecně rovná přiřazení "
+"prázdného řezu správného typu (ale i to je určeno objektem řezáním)."
 
 #: ../../reference/simple_stmts.rst:478
 msgid ""
-"Previously it was illegal to delete a name from the local namespace if it"
-" occurs as a free variable in a nested block."
+"Previously it was illegal to delete a name from the local namespace if it "
+"occurs as a free variable in a nested block."
 msgstr ""
+"Dříve bylo nezakoné smazat jméno z místního jmenného prostoru, pokud se "
+"vyskytuje jako volná proměnná ve vnořeném bloku."
 
 #: ../../reference/simple_stmts.rst:486
 msgid "The :keyword:`!return` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!return`"
 
 #: ../../reference/simple_stmts.rst:496
 msgid ""
 ":keyword:`return` may only occur syntactically nested in a function "
 "definition, not within a nested class definition."
 msgstr ""
+":keyword:`return` se může vyskytovat pouze syntakticky vnitřně v definiční "
+"funkci, ne v rámci vnořené definice třídy."
 
 #: ../../reference/simple_stmts.rst:499
 msgid ""
 "If an expression list is present, it is evaluated, else ``None`` is "
 "substituted."
 msgstr ""
+"Pokud je seznam výrazů přítomen, je vyhodnocen, jinak ``None`` je nahrazen."
 
 #: ../../reference/simple_stmts.rst:501
 msgid ""
-":keyword:`return` leaves the current function call with the expression "
-"list (or ``None``) as return value."
+":keyword:`return` leaves the current function call with the expression list "
+"(or ``None``) as return value."
 msgstr ""
+":keyword:`return` opuští aktuální volání funkce se seznamem výrazů (nebo "
+"``None``) jako návratná hodnota."
 
 #: ../../reference/simple_stmts.rst:506
 msgid ""
-"When :keyword:`return` passes control out of a :keyword:`try` statement "
-"with a :keyword:`finally` clause, that :keyword:`!finally` clause is "
-"executed before really leaving the function."
+"When :keyword:`return` passes control out of a :keyword:`try` statement with"
+" a :keyword:`finally` clause, that :keyword:`!finally` clause is executed "
+"before really leaving the function."
 msgstr ""
+"Když :keyword:`return` předává řízení mimo příkaz :keyword:`try` s klauzulí "
+":keyword:`finally`, ta klauzule :keyword:`!finally` se provédí dříve, než "
+"opravdu opustí funkci."
 
 #: ../../reference/simple_stmts.rst:510
 msgid ""
-"In a generator function, the :keyword:`return` statement indicates that "
-"the generator is done and will cause :exc:`StopIteration` to be raised. "
-"The returned value (if any) is used as an argument to construct "
-":exc:`StopIteration` and becomes the :attr:`StopIteration.value` "
-"attribute."
+"In a generator function, the :keyword:`return` statement indicates that the "
+"generator is done and will cause :exc:`StopIteration` to be raised. The "
+"returned value (if any) is used as an argument to construct "
+":exc:`StopIteration` and becomes the :attr:`StopIteration.value` attribute."
 msgstr ""
+"V generátoru funkcí příkaz :keyword:`return` indikuje, že generátor je hotov"
+" a způsobuje vyvolání :exc:`StopIteration`. Návratová hodnota (pokud "
+"existuje) se používá jako argument k sestavení :exc:`StopIteration` a stává "
+"se atributem :attr:`StopIteration.value`."
 
 #: ../../reference/simple_stmts.rst:515
 msgid ""
-"In an asynchronous generator function, an empty :keyword:`return` "
-"statement indicates that the asynchronous generator is done and will "
-"cause :exc:`StopAsyncIteration` to be raised.  A non-empty "
-":keyword:`!return` statement is a syntax error in an asynchronous "
-"generator function."
+"In an asynchronous generator function, an empty :keyword:`return` statement "
+"indicates that the asynchronous generator is done and will cause "
+":exc:`StopAsyncIteration` to be raised.  A non-empty :keyword:`!return` "
+"statement is a syntax error in an asynchronous generator function."
 msgstr ""
+"V asynchronní generátorové funkci prázdný příkaz :keyword:`return` indikuje,"
+" že asynchronní generátor je hotov a způsobuje vyvolání "
+":exc:`StopAsyncIteration`. Neprázdný příkaz :keyword:`!return` je "
+"syntaktickou chybou v asynchronní generátorové funkci."
 
 #: ../../reference/simple_stmts.rst:523
 msgid "The :keyword:`!yield` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!yield`"
 
 #: ../../reference/simple_stmts.rst:535
 msgid ""
@@ -590,77 +783,107 @@ msgid ""
 "parentheses that would otherwise be required in the equivalent yield "
 "expression statement. For example, the yield statements ::"
 msgstr ""
+"Příkaz :keyword:`yield` je sémanticky ekvivalentní :ref:`výrazu yield "
+"<yieldexpr>`. Příkaz ``yield`` lze použít k vynechání závorek, které by "
+"jinak byly potřebné v ekvivalentním příkazu výrazu yield. Napříkład příkazy "
+"yield ::"
 
 #: ../../reference/simple_stmts.rst:540
 msgid ""
 "yield <expr>\n"
 "yield from <expr>"
 msgstr ""
+"yield <expr>\n"
+"yield from <expr>"
 
 #: ../../reference/simple_stmts.rst:543
 msgid "are equivalent to the yield expression statements ::"
-msgstr ""
+msgstr "jsou ekvivalentní příkazům výrazu yield ::"
 
 #: ../../reference/simple_stmts.rst:545
 msgid ""
 "(yield <expr>)\n"
 "(yield from <expr>)"
 msgstr ""
+"(yield <expr>)\n"
+"(yield from <expr>)"
 
 #: ../../reference/simple_stmts.rst:548
 msgid ""
 "Yield expressions and statements are only used when defining a "
-":term:`generator` function, and are only used in the body of the "
-"generator function.  Using :keyword:`yield` in a function definition is "
-"sufficient to cause that definition to create a generator function "
-"instead of a normal function."
+":term:`generator` function, and are only used in the body of the generator "
+"function.  Using :keyword:`yield` in a function definition is sufficient to "
+"cause that definition to create a generator function instead of a normal "
+"function."
 msgstr ""
+"Výrazy a příkazy yield se používají pouze při definóvání :term:`generátoru` "
+"funkce a jsou používány pouze v těle generátorové funkce. Použití "
+":keyword:`yield` v definiční funkci stačí k tomu, aby tato definice "
+"vytvořila generátoruq funkci místech normální funkce."
 
 #: ../../reference/simple_stmts.rst:553
 msgid ""
 "For full details of :keyword:`yield` semantics, refer to the "
 ":ref:`yieldexpr` section."
 msgstr ""
+"Pro úplné podrobnosti o sémantice :keyword:`yield`, odkazujte na sekci "
+":ref:`yieldexpr`."
 
 #: ../../reference/simple_stmts.rst:559
 msgid "The :keyword:`!raise` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!raise`"
 
 #: ../../reference/simple_stmts.rst:570
 msgid ""
-"If no expressions are present, :keyword:`raise` re-raises the exception "
-"that is currently being handled, which is also known as the *active "
-"exception*. If there isn't currently an active exception, a "
-":exc:`RuntimeError` exception is raised indicating that this is an error."
+"If no expressions are present, :keyword:`raise` re-raises the exception that"
+" is currently being handled, which is also known as the *active exception*. "
+"If there isn't currently an active exception, a :exc:`RuntimeError` "
+"exception is raised indicating that this is an error."
 msgstr ""
+"Pokud nejsou přítomny žádné výrazy, :keyword:`raise` opět vyvolá výjimku, "
+"která je aktuálně zpracovávána, což je také známo jako *aktivní výjimka*. "
+"Pokud není aktuálně žádná aktivní výjimka, je vyvolána výjimka "
+":exc:`RuntimeError` oznamující, že toto je chyba."
 
 #: ../../reference/simple_stmts.rst:575
 msgid ""
-"Otherwise, :keyword:`raise` evaluates the first expression as the "
-"exception object.  It must be either a subclass or an instance of "
+"Otherwise, :keyword:`raise` evaluates the first expression as the exception "
+"object.  It must be either a subclass or an instance of "
 ":class:`BaseException`. If it is a class, the exception instance will be "
 "obtained when needed by instantiating the class with no arguments."
 msgstr ""
+"Jinak :keyword:`raise` vyhodnotí první výraz jako objekt výjimky. Musí to "
+"být buď podmě třídy nebo instance :class:`BaseException`. Pokud je to třída,"
+" instance výjimky bude získána v případě potřeby instancováním třídy bez "
+"argumentů."
 
 #: ../../reference/simple_stmts.rst:580
 msgid ""
 "The :dfn:`type` of the exception is the exception instance's class, the "
 ":dfn:`value` is the instance itself."
 msgstr ""
+":dfn:`Typ` výjimky je třída instance výjimky, :dfn:`hodnota` je sama "
+"instance."
 
 #: ../../reference/simple_stmts.rst:585
 msgid ""
-"A traceback object is normally created automatically when an exception is"
-" raised and attached to it as the :attr:`~BaseException.__traceback__` "
+"A traceback object is normally created automatically when an exception is "
+"raised and attached to it as the :attr:`~BaseException.__traceback__` "
 "attribute. You can create an exception and set your own traceback in one "
-"step using the :meth:`~BaseException.with_traceback` exception method "
-"(which returns the same exception instance, with its traceback set to its"
-" argument), like so::"
+"step using the :meth:`~BaseException.with_traceback` exception method (which"
+" returns the same exception instance, with its traceback set to its "
+"argument), like so::"
 msgstr ""
+"Objekt trasování je obvykle vytvořen automaticky, když je výjimka vyvolána a"
+" připojena k ní jako atribut :attr:`~BaseException.__traceback__`. Můžete "
+"vytvořit výjimku a nastavit své vlastní trasování v jedném kroku pomocí "
+"metody :meth:`~BaseException.with_traceback` výjimky (která vrací stejnou "
+"instanci výjimky, s jejím trasováním nastaveným na její argument), jako "
+"takto::"
 
 #: ../../reference/simple_stmts.rst:591
 msgid "raise Exception(\"foo occurred\").with_traceback(tracebackobj)"
-msgstr ""
+msgstr "raise Exception(\"foo occurred\").with_traceback(tracebackobj)"
 
 #: ../../reference/simple_stmts.rst:597
 msgid ""
@@ -669,10 +892,17 @@ msgid ""
 "expression is an exception instance, it will be attached to the raised "
 "exception as the :attr:`~BaseException.__cause__` attribute (which is "
 "writable). If the expression is an exception class, the class will be "
-"instantiated and the resulting exception instance will be attached to the"
-" raised exception as the :attr:`!__cause__` attribute. If the raised "
+"instantiated and the resulting exception instance will be attached to the "
+"raised exception as the :attr:`!__cause__` attribute. If the raised "
 "exception is not handled, both exceptions will be printed:"
 msgstr ""
+"Klauzule ``from`` se používá pro řetězování výjimek: pokud je předána, druhá"
+" *expression* musí být další třída výjimky nebo instance. Pokud je druhá "
+"výraz instance výjimky, bude připojena k vyvoléné výjimce jako atribut "
+":attr:`~BaseException.__cause__` (který je zapisovatelný). Pokud je výraz "
+"třída výjimky, třída bude instancována a výsledná instance výjimky bude "
+"připojena k vyvoléné výjimce jako atribut :attr:`!__cause__`. Pokud vyvoláná"
+" výjimka není zpracována, obě výjimky budou vytisknuty:"
 
 #: ../../reference/simple_stmts.rst:606
 msgid ""
@@ -694,15 +924,37 @@ msgid ""
 "    raise RuntimeError(\"Something bad happened\") from exc\n"
 "RuntimeError: Something bad happened"
 msgstr ""
+">>> try:\n"
+"...     print(1 / 0)\n"
+"... except Exception as exc:\n"
+"...     raise RuntimeError(\"Something bad happened\") from exc\n"
+"...\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 2, in <module>\n"
+"    print(1 / 0)\n"
+"          ~~^~~\n"
+"ZeroDivisionError: division by zero\n"
+"\n"
+"The above exception was the direct cause of the following exception:\n"
+"\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 4, in <module>\n"
+"    raise RuntimeError(\"Something bad happened\") from exc\n"
+"RuntimeError: Something bad happened"
 
 #: ../../reference/simple_stmts.rst:626
 msgid ""
-"A similar mechanism works implicitly if a new exception is raised when an"
-" exception is already being handled.  An exception may be handled when an"
-" :keyword:`except` or :keyword:`finally` clause, or a :keyword:`with` "
+"A similar mechanism works implicitly if a new exception is raised when an "
+"exception is already being handled.  An exception may be handled when an "
+":keyword:`except` or :keyword:`finally` clause, or a :keyword:`with` "
 "statement, is used.  The previous exception is then attached as the new "
 "exception's :attr:`~BaseException.__context__` attribute:"
 msgstr ""
+"Podobný mechanismus pracuje implicitně, pokud je nová výjimka vyvolána, když"
+" je již zpracovávána výjimka. Výjimka může být zpracována, když se používá "
+"klauzule :keyword:`except` nebo :keyword:`finally`, nebo příkaz "
+":keyword:`with`. Předchozí výjimka je pak připojena jako atribut "
+":attr:`~BaseException.__context__` nové výjimky:"
 
 #: ../../reference/simple_stmts.rst:632
 msgid ""
@@ -724,12 +976,31 @@ msgid ""
 "    raise RuntimeError(\"Something bad happened\")\n"
 "RuntimeError: Something bad happened"
 msgstr ""
+">>> try:\n"
+"...     print(1 / 0)\n"
+"... except:\n"
+"...     raise RuntimeError(\"Something bad happened\")\n"
+"...\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 2, in <module>\n"
+"    print(1 / 0)\n"
+"          ~~^~~\n"
+"ZeroDivisionError: division by zero\n"
+"\n"
+"During handling of the above exception, another exception occurred:\n"
+"\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 4, in <module>\n"
+"    raise RuntimeError(\"Something bad happened\")\n"
+"RuntimeError: Something bad happened"
 
 #: ../../reference/simple_stmts.rst:652
 msgid ""
-"Exception chaining can be explicitly suppressed by specifying "
-":const:`None` in the ``from`` clause:"
+"Exception chaining can be explicitly suppressed by specifying :const:`None` "
+"in the ``from`` clause:"
 msgstr ""
+"Reťazování výjimek lze explicitně potlačit zadáním :const:`None` v klauzuli "
+"``from``:"
 
 #: ../../reference/simple_stmts.rst:655
 msgid ""
@@ -742,218 +1013,298 @@ msgid ""
 "  File \"<stdin>\", line 4, in <module>\n"
 "RuntimeError: Something bad happened"
 msgstr ""
+">>> try:\n"
+"...     print(1 / 0)\n"
+"... except:\n"
+"...     raise RuntimeError(\"Something bad happened\") from None\n"
+"...\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 4, in <module>\n"
+"RuntimeError: Something bad happened"
 
 #: ../../reference/simple_stmts.rst:666
 msgid ""
 "Additional information on exceptions can be found in section "
-":ref:`exceptions`, and information about handling exceptions is in "
-"section :ref:`try`."
+":ref:`exceptions`, and information about handling exceptions is in section "
+":ref:`try`."
 msgstr ""
+"Další informace o výjimkách naleznete v oddíle :ref:`exceptions`, a "
+"informace o zpracování výjimek jsou v oddíle :ref:`try`."
 
 #: ../../reference/simple_stmts.rst:669
 msgid ":const:`None` is now permitted as ``Y`` in ``raise X from Y``."
-msgstr ""
+msgstr ":const:`None` je nyní povoleno jako ``Y`` v ``raise X from Y``."
 
 #: ../../reference/simple_stmts.rst:672
 msgid ""
-"Added the :attr:`~BaseException.__suppress_context__` attribute to "
-"suppress automatic display of the exception context."
+"Added the :attr:`~BaseException.__suppress_context__` attribute to suppress "
+"automatic display of the exception context."
 msgstr ""
+"Přdán atribut :attr:`~BaseException.__suppress_context__` pro potlačení "
+"automatického zobrazení kontextu výjimky."
 
 #: ../../reference/simple_stmts.rst:675
 msgid ""
-"If the traceback of the active exception is modified in an "
-":keyword:`except` clause, a subsequent ``raise`` statement re-raises the "
-"exception with the modified traceback. Previously, the exception was re-"
-"raised with the traceback it had when it was caught."
+"If the traceback of the active exception is modified in an :keyword:`except`"
+" clause, a subsequent ``raise`` statement re-raises the exception with the "
+"modified traceback. Previously, the exception was re-raised with the "
+"traceback it had when it was caught."
 msgstr ""
+"Pokud je trasování aktivní výjimky změněno v klauzuli :keyword:`except`, "
+"následující příkaz ``raise`` opět vyvolá výjimku s modifikovaným trasováním."
+" Dříve byla výjimka opět vyvolána s trasováním, které měla, když byla "
+"zacházena."
 
 #: ../../reference/simple_stmts.rst:684
 msgid "The :keyword:`!break` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!break`"
 
 #: ../../reference/simple_stmts.rst:695
 msgid ""
-":keyword:`break` may only occur syntactically nested in a :keyword:`for` "
-"or :keyword:`while` loop, but not nested in a function or class "
-"definition within that loop."
+":keyword:`break` may only occur syntactically nested in a :keyword:`for` or "
+":keyword:`while` loop, but not nested in a function or class definition "
+"within that loop."
 msgstr ""
+":keyword:`break` se může vyskytovat pouze syntakticky vnitřně ve smři "
+":keyword:`for` nebo :keyword:`while`, ale ne vnitřně v definiční funkci nebo"
+" tříċ v rámci té smřky."
 
 #: ../../reference/simple_stmts.rst:702
 msgid ""
 "It terminates the nearest enclosing loop, skipping the optional "
 ":keyword:`!else` clause if the loop has one."
 msgstr ""
+"Ukončí nejbližší obklopující smysluplný cýkl, přeskakující volitelnou "
+"klauzuli :keyword:`!else`, pokud jí má."
 
 #: ../../reference/simple_stmts.rst:705
 msgid ""
-"If a :keyword:`for` loop is terminated by :keyword:`break`, the loop "
-"control target keeps its current value."
+"If a :keyword:`for` loop is terminated by :keyword:`break`, the loop control"
+" target keeps its current value."
 msgstr ""
+"Pokud je smř :keyword:`for` ukončena :keyword:`break`, cíl řízení smyky si "
+"zachová svou aktuální hodnotu."
 
 #: ../../reference/simple_stmts.rst:710
 msgid ""
-"When :keyword:`break` passes control out of a :keyword:`try` statement "
-"with a :keyword:`finally` clause, that :keyword:`!finally` clause is "
-"executed before really leaving the loop."
+"When :keyword:`break` passes control out of a :keyword:`try` statement with "
+"a :keyword:`finally` clause, that :keyword:`!finally` clause is executed "
+"before really leaving the loop."
 msgstr ""
+"Když :keyword:`break` předává řízení mimo příkaz :keyword:`try` s klauzulí "
+":keyword:`finally`, ta klauzule :keyword:`!finally` se provédí dříve, než "
+"opravdu opustí smyku."
 
 #: ../../reference/simple_stmts.rst:718
 msgid "The :keyword:`!continue` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!continue`"
 
 #: ../../reference/simple_stmts.rst:730
 msgid ""
-":keyword:`continue` may only occur syntactically nested in a "
-":keyword:`for` or :keyword:`while` loop, but not nested in a function or "
-"class definition within that loop.  It continues with the next cycle of "
-"the nearest enclosing loop."
+":keyword:`continue` may only occur syntactically nested in a :keyword:`for` "
+"or :keyword:`while` loop, but not nested in a function or class definition "
+"within that loop.  It continues with the next cycle of the nearest enclosing"
+" loop."
 msgstr ""
+":keyword:`continue` se může vyskytovat pouze syntakticky vnitřně ve smři "
+":keyword:`for` nebo :keyword:`while`, ale ne vnitřně v definiční funkci nebo"
+" tříċ v rámci té smřky. Pokračuje s následujícím cyklem nejbližší "
+"obklopující smřy."
 
 #: ../../reference/simple_stmts.rst:734
 msgid ""
-"When :keyword:`continue` passes control out of a :keyword:`try` statement"
-" with a :keyword:`finally` clause, that :keyword:`!finally` clause is "
+"When :keyword:`continue` passes control out of a :keyword:`try` statement "
+"with a :keyword:`finally` clause, that :keyword:`!finally` clause is "
 "executed before really starting the next loop cycle."
 msgstr ""
+"Když :keyword:`continue` předává řízení mimo příkaz :keyword:`try` s "
+"klauzulí :keyword:`finally`, ta klauzule :keyword:`!finally` se provédí "
+"dříve, než opravdu zahąjit následující cyklus smřy."
 
 #: ../../reference/simple_stmts.rst:743
 msgid "The :keyword:`!import` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!import`"
 
 #: ../../reference/simple_stmts.rst:764
 msgid ""
-"The basic import statement (no :keyword:`from` clause) is executed in two"
-" steps:"
+"The basic import statement (no :keyword:`from` clause) is executed in two "
+"steps:"
 msgstr ""
+"Základní příkaz import (bez klauzule :keyword:`from`) je provečen ve dvou "
+"krocích:"
 
 #: ../../reference/simple_stmts.rst:767
 msgid "find a module, loading and initializing it if necessary"
-msgstr ""
+msgstr "nalézt modul, zatíjit a inicializovat jej, pokud je potřeba"
 
 #: ../../reference/simple_stmts.rst:768
 msgid ""
 "define a name or names in the local namespace for the scope where the "
 ":keyword:`import` statement occurs."
 msgstr ""
+"definovat jméno nebo jména v místním jmenném prostoru pro rozsah, kde se "
+"příkaz :keyword:`import` vyskytuje."
 
 #: ../../reference/simple_stmts.rst:771
 msgid ""
-"When the statement contains multiple clauses (separated by commas) the "
-"two steps are carried out separately for each clause, just as though the "
-"clauses had been separated out into individual import statements."
+"When the statement contains multiple clauses (separated by commas) the two "
+"steps are carried out separately for each clause, just as though the clauses"
+" had been separated out into individual import statements."
 msgstr ""
+"Pokud příkaz obsahuje více klauzulí (oddělených čárkami), jsou tyto dva "
+"kroky provečeny samostatně pro každou klauzuli, jako by klauzule byly "
+"odděleny do jednotlivých příkazů import."
 
 #: ../../reference/simple_stmts.rst:776
 msgid ""
-"The details of the first step, finding and loading modules, are described"
-" in greater detail in the section on the :ref:`import system "
-"<importsystem>`, which also describes the various types of packages and "
-"modules that can be imported, as well as all the hooks that can be used "
-"to customize the import system. Note that failures in this step may "
-"indicate either that the module could not be located, *or* that an error "
-"occurred while initializing the module, which includes execution of the "
-"module's code."
+"The details of the first step, finding and loading modules, are described in"
+" greater detail in the section on the :ref:`import system <importsystem>`, "
+"which also describes the various types of packages and modules that can be "
+"imported, as well as all the hooks that can be used to customize the import "
+"system. Note that failures in this step may indicate either that the module "
+"could not be located, *or* that an error occurred while initializing the "
+"module, which includes execution of the module's code."
 msgstr ""
+"Podrobnosti prvního kroku, hledání a zatéžení modulů, jsou popsány větším "
+"detailem v oddíle o :ref:`systému import <importsystem>`, který také "
+"popisuje různé typy balíků a modulů, které lze importovat, a také všechny "
+"zápchy, které lze použít k přizpůsobení systému import. Poznamenejme, že "
+"selhání v tomto kroku může naznazovat buď, že modul nemohl být nalezen, "
+"*nebo* že došlo k chybě při inicializaci modulu, která zahrnuje provedl kódu"
+" modulu."
 
 #: ../../reference/simple_stmts.rst:784
 msgid ""
-"If the requested module is retrieved successfully, it will be made "
-"available in the local namespace in one of three ways:"
+"If the requested module is retrieved successfully, it will be made available"
+" in the local namespace in one of three ways:"
 msgstr ""
+"Pokud je požadovaný modul úspěšně získán, bude dostupný v místním jmenném "
+"prostoru jedním ze tří způsobů:"
 
 #: ../../reference/simple_stmts.rst:789
 msgid ""
-"If the module name is followed by :keyword:`!as`, then the name following"
-" :keyword:`!as` is bound directly to the imported module."
+"If the module name is followed by :keyword:`!as`, then the name following "
+":keyword:`!as` is bound directly to the imported module."
 msgstr ""
+"Pokud je jméno modulu následováno :keyword:`!as`, pak jméno následující "
+":keyword:`!as` je vázáno přísmě na importovaný modul."
 
 #: ../../reference/simple_stmts.rst:791
 msgid ""
-"If no other name is specified, and the module being imported is a top "
-"level module, the module's name is bound in the local namespace as a "
-"reference to the imported module"
+"If no other name is specified, and the module being imported is a top level "
+"module, the module's name is bound in the local namespace as a reference to "
+"the imported module"
 msgstr ""
+"Pokud není zadáno žádné jiné jméno a modul, který je importován, je modul "
+"nejvrchní úrovně, jméno modulu je vázáno v místním jmenném prostoru jako "
+"odkaz na importovaný modul"
 
 #: ../../reference/simple_stmts.rst:794
 msgid ""
-"If the module being imported is *not* a top level module, then the name "
-"of the top level package that contains the module is bound in the local "
-"namespace as a reference to the top level package. The imported module "
-"must be accessed using its full qualified name rather than directly"
+"If the module being imported is *not* a top level module, then the name of "
+"the top level package that contains the module is bound in the local "
+"namespace as a reference to the top level package. The imported module must "
+"be accessed using its full qualified name rather than directly"
 msgstr ""
+"Pokud je modul, který je importován *není* modul nejvrchní úrovně, pak jméno"
+" balíku nejvrchní úrovně, který obsahuje modul, je vázáno v místním jmenném "
+"prostoru jako odkaz na balík nejvrchní úrovně. Importovaný modul musí být "
+"přístupné pomocí jeho plnho kvalifikového jména, ne přímo."
 
 #: ../../reference/simple_stmts.rst:804
 msgid "The :keyword:`from` form uses a slightly more complex process:"
-msgstr ""
+msgstr "Forma :keyword:`from` používá míle komplexnější proces:"
 
 #: ../../reference/simple_stmts.rst:806
 msgid ""
 "find the module specified in the :keyword:`from` clause, loading and "
 "initializing it if necessary;"
 msgstr ""
+"nalézt modul zadaný v klauzuli :keyword:`from`, zatéžení a inicializaci, "
+"pokud je potřeba;"
 
 #: ../../reference/simple_stmts.rst:808
-msgid "for each of the identifiers specified in the :keyword:`import` clauses:"
-msgstr ""
+msgid ""
+"for each of the identifiers specified in the :keyword:`import` clauses:"
+msgstr "pro každý z identifikátorů uvedených v klauzulích :keyword:`import`:"
 
 #: ../../reference/simple_stmts.rst:810
 msgid "check if the imported module has an attribute by that name"
-msgstr ""
+msgstr "ověřit, zda importovaný modul má atribut s tímto jménem"
 
 #: ../../reference/simple_stmts.rst:811
 msgid ""
 "if not, attempt to import a submodule with that name and then check the "
 "imported module again for that attribute"
 msgstr ""
+"pokud ne, pokuste se importovat submodul s tímto jménem a pák zopakuje "
+"importovaný modul pro atribut"
 
 #: ../../reference/simple_stmts.rst:813
 msgid "if the attribute is not found, :exc:`ImportError` is raised."
-msgstr ""
+msgstr "pokud atribut nenajdete, je vyvolána :exc:`ImportError`."
 
 #: ../../reference/simple_stmts.rst:814
 msgid ""
-"otherwise, a reference to that value is stored in the local namespace, "
-"using the name in the :keyword:`!as` clause if it is present, otherwise "
-"using the attribute name"
+"otherwise, a reference to that value is stored in the local namespace, using"
+" the name in the :keyword:`!as` clause if it is present, otherwise using the"
+" attribute name"
 msgstr ""
+"jinak je odkaz na tuto hodnotu uložen v místním jmenném prostoru, použitím "
+"jména v klauzuli :keyword:`!as`, pokud je přítomna, jinak použitím jména "
+"atributu"
 
 #: ../../reference/simple_stmts.rst:818
 msgid "Examples::"
-msgstr ""
+msgstr "Příklady::"
 
 #: ../../reference/simple_stmts.rst:820
 msgid ""
 "import foo                 # foo imported and bound locally\n"
-"import foo.bar.baz         # foo, foo.bar, and foo.bar.baz imported, foo "
-"bound locally\n"
-"import foo.bar.baz as fbb  # foo, foo.bar, and foo.bar.baz imported, "
-"foo.bar.baz bound as fbb\n"
-"from foo.bar import baz    # foo, foo.bar, and foo.bar.baz imported, "
-"foo.bar.baz bound as baz\n"
+"import foo.bar.baz         # foo, foo.bar, and foo.bar.baz imported, foo bound locally\n"
+"import foo.bar.baz as fbb  # foo, foo.bar, and foo.bar.baz imported, foo.bar.baz bound as fbb\n"
+"from foo.bar import baz    # foo, foo.bar, and foo.bar.baz imported, foo.bar.baz bound as baz\n"
 "from foo import attr       # foo imported and foo.attr bound as attr"
 msgstr ""
+"import foo                 # foo importováno a vázáno místně\n"
+"import foo.bar.baz         # foo, foo.bar a foo.bar.baz importovány, foo vázáno místně\n"
+"import foo.bar.baz as fbb  # foo, foo.bar a foo.bar.baz importovány, foo.bar.baz vázáno jako fbb\n"
+"from foo.bar import baz    # foo, foo.bar a foo.bar.baz importovány, foo.bar.baz vázáno jako baz\n"
+"from foo import attr       # foo importováno a foo.attr vázáno jako attr"
 
 #: ../../reference/simple_stmts.rst:828
 msgid ""
-"If the list of identifiers is replaced by a star (``'*'``), all public "
-"names defined in the module are bound in the local namespace for the "
-"scope where the :keyword:`import` statement occurs."
+"If the list of identifiers is replaced by a star (``'*'``), all public names"
+" defined in the module are bound in the local namespace for the scope where "
+"the :keyword:`import` statement occurs."
 msgstr ""
+"Pokud je seznam identifikátorů nahrazen hvězdičkou (``'*'``), všechna "
+"veřejná jména definovaná v modulu jsou vázána v místním jmenném prostoru pro"
+" rozsah, kde se příkaz :keyword:`import` vyskytuje."
 
 #: ../../reference/simple_stmts.rst:837
 msgid ""
 "The *public names* defined by a module are determined by checking the "
-"module's namespace for a variable named ``__all__``; if defined, it must "
-"be a sequence of strings which are names defined or imported by that "
-"module.  The names given in ``__all__`` are all considered public and are"
-" required to exist.  If ``__all__`` is not defined, the set of public "
-"names includes all names found in the module's namespace which do not "
-"begin with an underscore character (``'_'``).  ``__all__`` should contain"
-" the entire public API. It is intended to avoid accidentally exporting "
-"items that are not part of the API (such as library modules which were "
-"imported and used within the module)."
+"module's namespace for a variable named ``__all__``; if defined, it must be "
+"a sequence of strings which are names defined or imported by that module.  "
+"The names given in ``__all__`` are all considered public and are required to"
+" exist.  If ``__all__`` is not defined, the set of public names includes all"
+" names found in the module's namespace which do not begin with an underscore"
+" character (``'_'``).  ``__all__`` should contain the entire public API. It "
+"is intended to avoid accidentally exporting items that are not part of the "
+"API (such as library modules which were imported and used within the "
+"module)."
 msgstr ""
+"*Veřejná jména* definovaná modulem jsou určena kontrolou jmenného prostoru "
+"modulu pro proměnou pojmenovanou ``__all__``; pokud je definována, musí to "
+"být sekvence řetězců, které jsou jmény definovaná nebo importovaná tím "
+"modulem. Jména uvedená v ``__all__`` jsou všechna vhodána za veřejná a "
+"požáduje se jejich existence. Pokud ``__all__`` není definováno, sada "
+"veřejných jmen obsahuje všechna jména nalezená v jmenném prostoru modulu, "
+"která nezahačují znakem podtržítka (``'_'``). ``__all__`` by mělo obsahovat "
+"celou veřejné API. Je to zaměřeno na zabáalení néhodného exportu prvků, "
+"které nejsou součástí API (jako jsou knihovní moduly, které byly importovány"
+" a používány v rámci modulu)."
 
 #: ../../reference/simple_stmts.rst:847
 msgid ""
@@ -961,29 +1312,46 @@ msgid ""
 "allowed at the module level.  Attempting to use it in class or function "
 "definitions will raise a :exc:`SyntaxError`."
 msgstr ""
+"Forma divoce karty importu --- ``from module import *`` --- je povolená "
+"pouze na úrovni modulu. Pokus o použití v definících třídy nebo funkce "
+"vyvolá :exc:`SyntaxError`."
 
 #: ../../reference/simple_stmts.rst:854
 msgid ""
 "When specifying what module to import you do not have to specify the "
-"absolute name of the module. When a module or package is contained within"
-" another package it is possible to make a relative import within the same"
-" top package without having to mention the package name. By using leading"
-" dots in the specified module or package after :keyword:`from` you can "
-"specify how high to traverse up the current package hierarchy without "
-"specifying exact names. One leading dot means the current package where "
-"the module making the import exists. Two dots means up one package level."
-" Three dots is up two levels, etc. So if you execute ``from . import "
-"mod`` from a module in the ``pkg`` package then you will end up importing"
-" ``pkg.mod``. If you execute ``from ..subpkg2 import mod`` from within "
-"``pkg.subpkg1`` you will import ``pkg.subpkg2.mod``. The specification "
-"for relative imports is contained in the :ref:`relativeimports` section."
+"absolute name of the module. When a module or package is contained within "
+"another package it is possible to make a relative import within the same top"
+" package without having to mention the package name. By using leading dots "
+"in the specified module or package after :keyword:`from` you can specify how"
+" high to traverse up the current package hierarchy without specifying exact "
+"names. One leading dot means the current package where the module making the"
+" import exists. Two dots means up one package level. Three dots is up two "
+"levels, etc. So if you execute ``from . import mod`` from a module in the "
+"``pkg`` package then you will end up importing ``pkg.mod``. If you execute "
+"``from ..subpkg2 import mod`` from within ``pkg.subpkg1`` you will import "
+"``pkg.subpkg2.mod``. The specification for relative imports is contained in "
+"the :ref:`relativeimports` section."
 msgstr ""
+"Pokud zadáte, který modul má být importován, nemáte zadávat absolutní jméno "
+"modulu. Pokud je modul nebo balík obsahu v rámci jiného balíku, je možné "
+"provést relativní import v rámci stejného top balíku bez nutnosti zmiňovat "
+"název balíku. Pomocí počátečních teček v zadaném modulu nebo balíku po "
+":keyword:`from` lze zadat, jak vysoko se má travers bere aktuální hierarchie"
+" balíku bez zadání přesných jmen. Jedna počáteční tečka znamená aktuální "
+"balík, kde je modul vytvāřející import. Dvě tečky znamenají až o jednu "
+"úroveň balíku výš. Tři tečky jsou dvě úrovně výš, atd. Pokud tedy provédíte "
+"``from . import mod`` z modulu v balíku ``pkg``, skončíte importem "
+"``pkg.mod``. Pokud provédíte ``from ..subpkg2 import mod`` z vámi "
+"``pkg.subpkg1``, importujete ``pkg.subpkg2.mod``. Specifikace relativních "
+"importů je obsažena v oddíle :ref:`relativeimports`."
 
 #: ../../reference/simple_stmts.rst:868
 msgid ""
 ":func:`importlib.import_module` is provided to support applications that "
 "determine dynamically the modules to be loaded."
 msgstr ""
+":func:`importlib.import_module` je poskytnuta pro podporu aplikací, které "
+"dynamicky určují moduly, které mají být načteny."
 
 #: ../../reference/simple_stmts.rst:871
 msgid ""
@@ -991,236 +1359,312 @@ msgid ""
 "``module``, ``filename``, ``sys.path``, ``sys.meta_path``, "
 "``sys.path_hooks``."
 msgstr ""
+"Vyvolá :ref:`auditční událost <auditing>` ``import`` s argumenty ``module``,"
+" ``filename``, ``sys.path``, ``sys.meta_path``, ``sys.path_hooks``."
 
 #: ../../reference/simple_stmts.rst:876
 msgid "Future statements"
-msgstr ""
+msgstr "Příkazy budó<šnosti"
 
 #: ../../reference/simple_stmts.rst:882
 msgid ""
-"A :dfn:`future statement` is a directive to the compiler that a "
-"particular module should be compiled using syntax or semantics that will "
-"be available in a specified future release of Python where the feature "
-"becomes standard."
+"A :dfn:`future statement` is a directive to the compiler that a particular "
+"module should be compiled using syntax or semantics that will be available "
+"in a specified future release of Python where the feature becomes standard."
 msgstr ""
+":dfn:`Příkaz budoucnosti` je směrnice pro kompilátor, že konkrétní modul by "
+"měl být kompilovan se syntaxí nebo sémentikou, které budou dostupné v zadané"
+" budoucní verzi Pythonu, kde se funkce stává standardní."
 
 #: ../../reference/simple_stmts.rst:886
 msgid ""
 "The future statement is intended to ease migration to future versions of "
-"Python that introduce incompatible changes to the language.  It allows "
-"use of the new features on a per-module basis before the release in which"
-" the feature becomes standard."
+"Python that introduce incompatible changes to the language.  It allows use "
+"of the new features on a per-module basis before the release in which the "
+"feature becomes standard."
 msgstr ""
+"Příkaz budoucnosti je zaměřen na usnadnení migrace na budoucí verze Pythonu,"
+" které zavedly nekompatibilní změny v jazyce. Umožňuje použití nových funkcí"
+" na bázi jednotlivého modulu, dříve než je vydána verze, v níž se funkce "
+"stává standardní."
 
 #: ../../reference/simple_stmts.rst:898
 msgid ""
-"A future statement must appear near the top of the module.  The only "
-"lines that can appear before a future statement are:"
+"A future statement must appear near the top of the module.  The only lines "
+"that can appear before a future statement are:"
 msgstr ""
+"Příkaz budoucnosti musí se objevit blízko horech modulu. Jediné řádky, které"
+" se mohou objevit dřýve příkazu budoucnosti, jsou:"
 
 #: ../../reference/simple_stmts.rst:901
 msgid "the module docstring (if any),"
-msgstr ""
+msgstr "dokumentační řetězec modulu (pokud je),"
 
 #: ../../reference/simple_stmts.rst:902
 msgid "comments,"
-msgstr ""
+msgstr "komentáře,"
 
 #: ../../reference/simple_stmts.rst:903
 msgid "blank lines, and"
-msgstr ""
+msgstr "prázdné řádky a"
 
 #: ../../reference/simple_stmts.rst:904
 msgid "other future statements."
-msgstr ""
+msgstr "další příkazy budoucnosti."
 
 #: ../../reference/simple_stmts.rst:906
 msgid ""
-"The only feature that requires using the future statement is "
-"``annotations`` (see :pep:`563`)."
+"The only feature that requires using the future statement is ``annotations``"
+" (see :pep:`563`)."
 msgstr ""
+"Jedinou funkcí, která vyžaduje použití příkazu budoucnosti, je "
+"``annotations`` (viz :pep:`563`)."
 
 #: ../../reference/simple_stmts.rst:909
 msgid ""
-"All historical features enabled by the future statement are still "
-"recognized by Python 3.  The list includes ``absolute_import``, "
-"``division``, ``generators``, ``generator_stop``, ``unicode_literals``, "
-"``print_function``, ``nested_scopes`` and ``with_statement``.  They are "
-"all redundant because they are always enabled, and only kept for "
-"backwards compatibility."
+"All historical features enabled by the future statement are still recognized"
+" by Python 3.  The list includes ``absolute_import``, ``division``, "
+"``generators``, ``generator_stop``, ``unicode_literals``, "
+"``print_function``, ``nested_scopes`` and ``with_statement``.  They are all "
+"redundant because they are always enabled, and only kept for backwards "
+"compatibility."
 msgstr ""
+"Všechny historické funkce povolené příkazem budoucnosti jsou stále "
+"rozpoznávány Pythonem 3. Seznam zahrnuje ``absolute_import``, ``division``, "
+"``generators``, ``generator_stop``, ``unicode_literals``, "
+"``print_function``, ``nested_scopes`` a ``with_statement``. Jsou všechny "
+"zbytečné, protože jsou vždy povolené a jsou udržovány pouze pro zpětné "
+"kompatibility."
 
 #: ../../reference/simple_stmts.rst:916
 msgid ""
 "A future statement is recognized and treated specially at compile time: "
 "Changes to the semantics of core constructs are often implemented by "
 "generating different code.  It may even be the case that a new feature "
-"introduces new incompatible syntax (such as a new reserved word), in "
-"which case the compiler may need to parse the module differently.  Such "
-"decisions cannot be pushed off until runtime."
+"introduces new incompatible syntax (such as a new reserved word), in which "
+"case the compiler may need to parse the module differently.  Such decisions "
+"cannot be pushed off until runtime."
 msgstr ""
+"Příkaz budoucnosti je rozpoznán a zprácován zvláštně při kompilaci: Změny "
+"sémantiky základních konstruktů jsouè casto implementovány generováním "
+"jiného kódu. Může se stát, že nová funkce zavádí novou nekompatibilní "
+"syntaxi (jako nové vyhrazené slovo), v némž případě může kompilátor "
+"potřebovat analyzovat modul jinak. Taková rozhodnutí nemohou být odložena do"
+" řebu."
 
 #: ../../reference/simple_stmts.rst:923
 msgid ""
 "For any given release, the compiler knows which feature names have been "
-"defined, and raises a compile-time error if a future statement contains a"
-" feature not known to it."
+"defined, and raises a compile-time error if a future statement contains a "
+"feature not known to it."
 msgstr ""
+"Pro libovolnou vydánou verzi, kompilátor zná, které názvy funkcí byly "
+"definovány a vyvolá chybu kompilace, pokud příkaz budoucnosti obsahuje "
+"funkci neznámou."
 
 #: ../../reference/simple_stmts.rst:927
 msgid ""
-"The direct runtime semantics are the same as for any import statement: "
-"there is a standard module :mod:`__future__`, described later, and it "
-"will be imported in the usual way at the time the future statement is "
-"executed."
+"The direct runtime semantics are the same as for any import statement: there"
+" is a standard module :mod:`__future__`, described later, and it will be "
+"imported in the usual way at the time the future statement is executed."
 msgstr ""
+"Přímé sémantika během běhu je stejná jako u jakhokoliv příkazu import: "
+"existuje standardní modul :mod:`__future__`, popsáný pozdějand bude "
+"importován zobýcejným způsobem v době, kdy je příkaz budoucnosti proveden."
 
 #: ../../reference/simple_stmts.rst:931
 msgid ""
-"The interesting runtime semantics depend on the specific feature enabled "
-"by the future statement."
+"The interesting runtime semantics depend on the specific feature enabled by "
+"the future statement."
 msgstr ""
+"Zajímavá sémantika během běhu závisí na konkrétní funkci povolené příkazem "
+"budoucnosti."
 
 #: ../../reference/simple_stmts.rst:934
 msgid "Note that there is nothing special about the statement::"
-msgstr ""
+msgstr "Vz počejem, že na příkazu není nic zvláštního::"
 
 #: ../../reference/simple_stmts.rst:936
 msgid "import __future__ [as name]"
-msgstr ""
+msgstr "import __future__ [as name]"
 
 #: ../../reference/simple_stmts.rst:938
 msgid ""
-"That is not a future statement; it's an ordinary import statement with no"
-" special semantics or syntax restrictions."
+"That is not a future statement; it's an ordinary import statement with no "
+"special semantics or syntax restrictions."
 msgstr ""
+"To není příkaz budoucnosti; je to obyčejný příkaz import bez zvláštní "
+"sémantiky nebo omezení syntaxe."
 
 #: ../../reference/simple_stmts.rst:941
 msgid ""
 "Code compiled by calls to the built-in functions :func:`exec` and "
 ":func:`compile` that occur in a module :mod:`!M` containing a future "
-"statement will, by default, use the new syntax or semantics associated "
-"with the future statement.  This can be controlled by optional arguments "
-"to :func:`compile` --- see the documentation of that function for "
-"details."
+"statement will, by default, use the new syntax or semantics associated with "
+"the future statement.  This can be controlled by optional arguments to "
+":func:`compile` --- see the documentation of that function for details."
 msgstr ""
+"Kód kompilovaný hovory na vestavěné funkce :func:`exec` a :func:`compile`, "
+"které se vyskytují v modulu :mod:`!M` obsahujícím příkaz budoucnosti, budou "
+"ve výchozím nastavení používat novou syntaxi nebo sémantiku spojenou s "
+"příkazem budoucnosti. To lze ovládat volitelnými argumenty na "
+":func:`compile` --- viz dokumentaci této funkce pro podrobnosti."
 
 #: ../../reference/simple_stmts.rst:947
 msgid ""
 "A future statement typed at an interactive interpreter prompt will take "
 "effect for the rest of the interpreter session.  If an interpreter is "
-"started with the :option:`-i` option, is passed a script name to execute,"
-" and the script includes a future statement, it will be in effect in the "
+"started with the :option:`-i` option, is passed a script name to execute, "
+"and the script includes a future statement, it will be in effect in the "
 "interactive session started after the script is executed."
 msgstr ""
+"Příkaz budoucnosti zadaný v interaktivním zvšem interpreteru bude mít "
+"činnost pro zbytek relace interprete. Pokud je interpret spuštěn s "
+"volitelným :option:`-i`, je mu předáno jméno skriptu k provedení a skript "
+"obsahuje příkaz budoucnosti, bude v činnosti v interaktivní relaci zahájené "
+"po provedení skriptu."
 
 #: ../../reference/simple_stmts.rst:955
 msgid ":pep:`236` - Back to the __future__"
-msgstr ""
+msgstr ":pep:`236` - Back to the __future__"
 
 #: ../../reference/simple_stmts.rst:956
 msgid "The original proposal for the __future__ mechanism."
-msgstr ""
+msgstr "Původní návrh mechanismu __future__."
 
 #: ../../reference/simple_stmts.rst:962
 msgid "The :keyword:`!global` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!global`"
 
 #: ../../reference/simple_stmts.rst:972
 msgid ""
 "The :keyword:`global` statement causes the listed identifiers to be "
 "interpreted as globals. It would be impossible to assign to a global "
-"variable without :keyword:`!global`, although free variables may refer to"
-" globals without being declared global."
+"variable without :keyword:`!global`, although free variables may refer to "
+"globals without being declared global."
 msgstr ""
+"Příkaz :keyword:`global` zapříciní seznamené identifikátory by byly "
+"interpretovány jako globální. Bylo by nemožné přiřadit globální proměnnou "
+"bez :keyword:`!global`, ačkoliv volné proměnné mohou odkazovat na globály "
+"bez deklarace globální."
 
 #: ../../reference/simple_stmts.rst:977
 msgid ""
 "The :keyword:`!global` statement applies to the entire current scope "
-"(module, function body or class definition). A :exc:`SyntaxError` is "
-"raised if a variable is used or assigned to prior to its global "
-"declaration in the scope."
+"(module, function body or class definition). A :exc:`SyntaxError` is raised "
+"if a variable is used or assigned to prior to its global declaration in the "
+"scope."
 msgstr ""
+"Příkaz :keyword:`!global` se vztahuje na celý aktuální rozsah (modul, tělo "
+"funkce nebo definice třídy). :exc:`SyntaxError` je vyvolán, pokud je "
+"proměnná použita nebo jei přiřazena dříve jeho globální deklarace v rozsahu."
 
 #: ../../reference/simple_stmts.rst:982
 msgid ""
 "At the module level, all variables are global, so a :keyword:`!global` "
 "statement has no effect. However, variables must still not be used or "
-"assigned to prior to their :keyword:`!global` declaration. This "
-"requirement is relaxed in the interactive prompt (:term:`REPL`)."
+"assigned to prior to their :keyword:`!global` declaration. This requirement "
+"is relaxed in the interactive prompt (:term:`REPL`)."
 msgstr ""
+"Na úrovni modulu jsou všechny proměnné globální, takže příkaz "
+":keyword:`!global` nemá žádný efekt. Však proměnné stále musí být používány "
+"nebo jim přiřazovány dříve jejich :keyword:`!global` deklarace. Tato "
+"požadavek je uvolnen v interaktivním zvšem (:term:`REPL`)."
 
 #: ../../reference/simple_stmts.rst:993
 msgid ""
-"**Programmer's note:** :keyword:`global` is a directive to the parser.  "
-"It applies only to code parsed at the same time as the :keyword:`!global`"
-" statement. In particular, a :keyword:`!global` statement contained in a "
-"string or code object supplied to the built-in :func:`exec` function does"
-" not affect the code block *containing* the function call, and code "
-"contained in such a string is unaffected by :keyword:`!global` statements"
-" in the code containing the function call.  The same applies to the "
-":func:`eval` and :func:`compile` functions."
+"**Programmer's note:** :keyword:`global` is a directive to the parser.  It "
+"applies only to code parsed at the same time as the :keyword:`!global` "
+"statement. In particular, a :keyword:`!global` statement contained in a "
+"string or code object supplied to the built-in :func:`exec` function does "
+"not affect the code block *containing* the function call, and code contained"
+" in such a string is unaffected by :keyword:`!global` statements in the code"
+" containing the function call.  The same applies to the :func:`eval` and "
+":func:`compile` functions."
 msgstr ""
+"**Poznámka programovatátora:** :keyword:`global` je směrnice pro parser. "
+"Vztahuje se pouze na kód analyzovaný ve stejné době jako příkaz "
+":keyword:`!global`. Konkrétně příkaz :keyword:`!global` obsažený v řetězci "
+"nebo objektu kódu poskytnutému vestavěné funkci :func:`exec` nemá vliv na "
+"blok kódu *obsahující* volání funkce a kód obsažený v takovém řetězci není "
+"ovlivněn příkazy :keyword:`!global` v kódu obsahujícím volání funkce. Stejné"
+" platí pro funkce :func:`eval` a :func:`compile`."
 
 #: ../../reference/simple_stmts.rst:1005
 msgid "The :keyword:`!nonlocal` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!nonlocal`"
 
 #: ../../reference/simple_stmts.rst:1013
 msgid ""
-"When the definition of a function or class is nested (enclosed) within "
-"the definitions of other functions, its nonlocal scopes are the local "
-"scopes of the enclosing functions. The :keyword:`nonlocal` statement "
-"causes the listed identifiers to refer to names previously bound in "
-"nonlocal scopes. It allows encapsulated code to rebind such nonlocal "
-"identifiers.  If a name is bound in more than one nonlocal scope, the "
-"nearest binding is used. If a name is not bound in any nonlocal scope, or"
-" if there is no nonlocal scope, a :exc:`SyntaxError` is raised."
+"When the definition of a function or class is nested (enclosed) within the "
+"definitions of other functions, its nonlocal scopes are the local scopes of "
+"the enclosing functions. The :keyword:`nonlocal` statement causes the listed"
+" identifiers to refer to names previously bound in nonlocal scopes. It "
+"allows encapsulated code to rebind such nonlocal identifiers.  If a name is "
+"bound in more than one nonlocal scope, the nearest binding is used. If a "
+"name is not bound in any nonlocal scope, or if there is no nonlocal scope, a"
+" :exc:`SyntaxError` is raised."
 msgstr ""
+"Když je definice funkce nebo třídy vnořena (uzavřena) v definících jiných "
+"funkcí, její nonlokální rozsahy jsou místními rozsahy obklopujících funkcí. "
+"Příkaz :keyword:`nonlocal` zapříciní seznamené identifikátory odkazovat na "
+"jména předchozí však v nonlokálních rozsazích. Umožňuje zakirovanému kódu "
+"znovu vázat takové nonlokální identifikátory. Pokud je jméno vázáno víc než "
+"v jednom nonlokálním rozsahu, je použita nejbližší vázání. Pokud jméno není "
+"vázáno v žádném nonlokálním rozsahu nebo pokud neexistuje nonlokální rozsah,"
+" :exc:`SyntaxError` je vyvolán."
 
 #: ../../reference/simple_stmts.rst:1022
 msgid ""
-"The :keyword:`nonlocal` statement applies to the entire scope of a "
-"function or class body. A :exc:`SyntaxError` is raised if a variable is "
-"used or assigned to prior to its nonlocal declaration in the scope."
+"The :keyword:`nonlocal` statement applies to the entire scope of a function "
+"or class body. A :exc:`SyntaxError` is raised if a variable is used or "
+"assigned to prior to its nonlocal declaration in the scope."
 msgstr ""
+"Příkaz :keyword:`nonlocal` se vztahuje na celý rozsah těla funkce nebo "
+"třídy. :exc:`SyntaxError` je vyvolán, pokud je proměnná použita nebo ji je "
+"přiřazena dříve její nonlokální deklarace v rozsahu."
 
 #: ../../reference/simple_stmts.rst:1028
 msgid ":pep:`3104` - Access to Names in Outer Scopes"
-msgstr ""
+msgstr ":pep:`3104` - Prístup k jmenům v vnějších rozsazch"
 
 #: ../../reference/simple_stmts.rst:1029
 msgid "The specification for the :keyword:`nonlocal` statement."
-msgstr ""
+msgstr "Specifikace přýkazu :keyword:`nonlocal`."
 
 #: ../../reference/simple_stmts.rst:1031
 msgid ""
-"**Programmer's note:** :keyword:`nonlocal` is a directive to the parser "
-"and applies only to code parsed along with it.  See the note for the "
+"**Programmer's note:** :keyword:`nonlocal` is a directive to the parser and "
+"applies only to code parsed along with it.  See the note for the "
 ":keyword:`global` statement."
 msgstr ""
+"**Poznámka programatorátora:** :keyword:`nonlocal` je směrnice pro parser a "
+"vztahuje se pouze na kód analyzovaný spolu s ním. Viz poznámka pro přýkaz "
+":keyword:`global`."
 
 #: ../../reference/simple_stmts.rst:1039
 msgid "The :keyword:`!type` statement"
-msgstr ""
+msgstr "Příkaz :keyword:`!type`"
 
 #: ../../reference/simple_stmts.rst:1046
 msgid ""
-"The :keyword:`!type` statement declares a type alias, which is an "
-"instance of :class:`typing.TypeAliasType`."
+"The :keyword:`!type` statement declares a type alias, which is an instance "
+"of :class:`typing.TypeAliasType`."
 msgstr ""
+"Příkaz :keyword:`!type` deklaruje alias typu, který je instancí "
+":class:`typing.TypeAliasType`."
 
 #: ../../reference/simple_stmts.rst:1049
 msgid "For example, the following statement creates a type alias::"
-msgstr ""
+msgstr "Napříkład následující příkaz vytváří alias typu::"
 
 #: ../../reference/simple_stmts.rst:1051
 msgid "type Point = tuple[float, float]"
-msgstr ""
+msgstr "type Point = tuple[float, float]"
 
 #: ../../reference/simple_stmts.rst:1053
 msgid "This code is roughly equivalent to::"
-msgstr ""
+msgstr "Tento kód je přibližně ekvivalentní::"
 
 #: ../../reference/simple_stmts.rst:1055
 msgid ""
@@ -1228,46 +1672,57 @@ msgid ""
 "    return tuple[float, float]\n"
 "Point = typing.TypeAliasType(\"Point\", VALUE_OF_Point())"
 msgstr ""
+"annotation-def VALUE_OF_Point():\n"
+"    return tuple[float, float]\n"
+"Point = typing.TypeAliasType(\"Point\", VALUE_OF_Point())"
 
 #: ../../reference/simple_stmts.rst:1059
 msgid ""
-"``annotation-def`` indicates an :ref:`annotation scope <annotation-"
-"scopes>`, which behaves mostly like a function, but with several small "
-"differences."
+"``annotation-def`` indicates an :ref:`annotation scope <annotation-scopes>`,"
+" which behaves mostly like a function, but with several small differences."
 msgstr ""
+"``annotation-def`` oznamuje :ref:`rozsah anotací <annotation-scopes>`, který"
+" se chová většínou jako funkce, ale s několika malými rozdíly."
 
 #: ../../reference/simple_stmts.rst:1062
 msgid ""
-"The value of the type alias is evaluated in the annotation scope. It is "
-"not evaluated when the type alias is created, but only when the value is "
-"accessed through the type alias's :attr:`!__value__` attribute (see :ref"
-":`lazy-evaluation`). This allows the type alias to refer to names that "
+"The value of the type alias is evaluated in the annotation scope. It is not "
+"evaluated when the type alias is created, but only when the value is "
+"accessed through the type alias's :attr:`!__value__` attribute (see "
+":ref:`lazy-evaluation`). This allows the type alias to refer to names that "
 "are not yet defined."
 msgstr ""
+"Hodnota aliasu typu je vyhodnocena v rozsahu anotací. Není vyhodnocena, když"
+" je alias typu vytvořen, ale pouze když je hodnota přístupna prostřednictvím"
+" atributu :attr:`!__value__` aliasu typu (viz :ref:`lazy-evaluation`). To "
+"umožňuje aliasu typu odkazovat na jména, která zatím nejsou definována."
 
 #: ../../reference/simple_stmts.rst:1068
 msgid ""
 "Type aliases may be made generic by adding a :ref:`type parameter list "
 "<type-params>` after the name. See :ref:`generic-type-aliases` for more."
 msgstr ""
+"Aliasy typů mohou být udělány generickými přidáním :ref:`seznamu parametrů "
+"typu <type-params>` za jménem. Viz :ref:`generic-type-aliases` pro více."
 
 #: ../../reference/simple_stmts.rst:1071
 msgid ":keyword:`!type` is a :ref:`soft keyword <soft-keywords>`."
-msgstr ""
+msgstr ":keyword:`!type` je :ref:`soft keyword <soft-keywords>`."
 
 #: ../../reference/simple_stmts.rst:1077
 msgid ":pep:`695` - Type Parameter Syntax"
-msgstr ""
+msgstr ":pep:`695` - Syntaxe parametrů typu"
 
 #: ../../reference/simple_stmts.rst:1078
 msgid ""
-"Introduced the :keyword:`!type` statement and syntax for generic classes "
-"and functions."
+"Introduced the :keyword:`!type` statement and syntax for generic classes and"
+" functions."
 msgstr ""
+"Zavédl přýkaz :keyword:`!type` a syntaxi pro generíkové třídy a funkce."
 
 #: ../../reference/simple_stmts.rst:8
 msgid "simple"
-msgstr ""
+msgstr "jednoduchý"
 
 #: ../../reference/simple_stmts.rst:8 ../../reference/simple_stmts.rst:39
 #: ../../reference/simple_stmts.rst:75 ../../reference/simple_stmts.rst:263
@@ -1280,465 +1735,464 @@ msgstr ""
 #: ../../reference/simple_stmts.rst:964 ../../reference/simple_stmts.rst:1007
 #: ../../reference/simple_stmts.rst:1041
 msgid "statement"
-msgstr ""
+msgstr "příkaz"
 
 #: ../../reference/simple_stmts.rst:39 ../../reference/simple_stmts.rst:42
 msgid "expression"
-msgstr ""
+msgstr "výraz"
 
 #: ../../reference/simple_stmts.rst:39 ../../reference/simple_stmts.rst:42
 #: ../../reference/simple_stmts.rst:105 ../../reference/simple_stmts.rst:116
 #: ../../reference/simple_stmts.rst:196 ../../reference/simple_stmts.rst:449
 msgid "list"
-msgstr ""
+msgstr "seznam"
 
 #: ../../reference/simple_stmts.rst:56 ../../reference/simple_stmts.rst:988
 msgid "built-in function"
-msgstr ""
+msgstr "vestavěná funkce"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "repr"
-msgstr ""
+msgstr "repr"
 
 #: ../../reference/simple_stmts.rst:56 ../../reference/simple_stmts.rst:75
 #: ../../reference/simple_stmts.rst:187 ../../reference/simple_stmts.rst:196
 #: ../../reference/simple_stmts.rst:207 ../../reference/simple_stmts.rst:583
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "string"
-msgstr ""
+msgstr "řetězec"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "conversion"
-msgstr ""
+msgstr "konverze"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "output"
-msgstr ""
+msgstr "výstup"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "standard"
-msgstr ""
+msgstr "standardní"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "writing"
-msgstr ""
+msgstr "zápis"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "values"
-msgstr ""
+msgstr "hodnoty"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "procedure"
-msgstr ""
+msgstr "procedura"
 
 #: ../../reference/simple_stmts.rst:56
 msgid "call"
-msgstr ""
+msgstr "volání"
 
 #: ../../reference/simple_stmts.rst:75
 msgid "= (equals)"
-msgstr ""
+msgstr "= (rovná)"
 
 #: ../../reference/simple_stmts.rst:75
 msgid "assignment statement"
-msgstr ""
+msgstr "příkaz přiřazení"
 
 #: ../../reference/simple_stmts.rst:75 ../../reference/simple_stmts.rst:116
 #: ../../reference/simple_stmts.rst:159 ../../reference/simple_stmts.rst:187
 #: ../../reference/simple_stmts.rst:220 ../../reference/simple_stmts.rst:263
 #: ../../reference/simple_stmts.rst:322
 msgid "assignment"
-msgstr ""
+msgstr "přiřazení"
 
 #: ../../reference/simple_stmts.rst:75 ../../reference/simple_stmts.rst:745
 #: ../../reference/simple_stmts.rst:800 ../../reference/simple_stmts.rst:964
 msgid "binding"
-msgstr ""
+msgstr "vázání"
 
 #: ../../reference/simple_stmts.rst:75 ../../reference/simple_stmts.rst:462
 #: ../../reference/simple_stmts.rst:745 ../../reference/simple_stmts.rst:800
 #: ../../reference/simple_stmts.rst:964
 msgid "name"
-msgstr ""
+msgstr "jméno"
 
 #: ../../reference/simple_stmts.rst:75
 msgid "rebinding"
-msgstr ""
+msgstr "opětovné vázání"
 
 #: ../../reference/simple_stmts.rst:75 ../../reference/simple_stmts.rst:187
 msgid "mutable"
-msgstr ""
+msgstr "měnitelá"
 
 #: ../../reference/simple_stmts.rst:75 ../../reference/simple_stmts.rst:159
 #: ../../reference/simple_stmts.rst:471
 msgid "attribute"
-msgstr ""
+msgstr "atribut"
 
 #: ../../reference/simple_stmts.rst:105 ../../reference/simple_stmts.rst:116
 #: ../../reference/simple_stmts.rst:449 ../../reference/simple_stmts.rst:699
 msgid "target"
-msgstr ""
+msgstr "cíl"
 
 #: ../../reference/simple_stmts.rst:116 ../../reference/simple_stmts.rst:384
 #: ../../reference/simple_stmts.rst:745 ../../reference/simple_stmts.rst:964
 #: ../../reference/simple_stmts.rst:1007
 msgid ", (comma)"
-msgstr ""
+msgstr ", (čárka)"
 
 #: ../../reference/simple_stmts.rst:116
 msgid "in target list"
-msgstr ""
+msgstr "v seznamu cíle"
 
 #: ../../reference/simple_stmts.rst:116 ../../reference/simple_stmts.rst:826
 msgid "* (asterisk)"
-msgstr ""
+msgstr "* (hvězdička)"
 
 #: ../../reference/simple_stmts.rst:116
 msgid "in assignment target list"
-msgstr ""
+msgstr "v seznamu cílů přiřazení"
 
 #: ../../reference/simple_stmts.rst:116
 msgid "[] (square brackets)"
-msgstr ""
+msgstr "[] (hrnaté závorky)"
 
 #: ../../reference/simple_stmts.rst:116
 msgid "() (parentheses)"
-msgstr ""
+msgstr "() (závorky)"
 
 #: ../../reference/simple_stmts.rst:153
 msgid "destructor"
-msgstr ""
+msgstr "destruktor"
 
 #: ../../reference/simple_stmts.rst:187
 msgid "subscription"
-msgstr ""
+msgstr "předplatné"
 
 #: ../../reference/simple_stmts.rst:196
 msgid "sequence"
-msgstr ""
+msgstr "sekvence"
 
 #: ../../reference/simple_stmts.rst:207
 msgid "mapping"
-msgstr ""
+msgstr "mapování"
 
 #: ../../reference/simple_stmts.rst:207
 msgid "dictionary"
-msgstr ""
+msgstr "slovník"
 
 #: ../../reference/simple_stmts.rst:220
 msgid "slicing"
-msgstr ""
+msgstr "řezání"
 
 #: ../../reference/simple_stmts.rst:263
 msgid "augmented"
-msgstr ""
+msgstr "zvětšené"
 
 #: ../../reference/simple_stmts.rst:263
 msgid "assignment, augmented"
-msgstr ""
+msgstr "přiřazení, zvětšené"
 
 #: ../../reference/simple_stmts.rst:263
 msgid "+="
-msgstr ""
+msgstr "+="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "augmented assignment"
-msgstr ""
+msgstr "zvětšené přiřazení"
 
 #: ../../reference/simple_stmts.rst:263
 msgid "-="
-msgstr ""
+msgstr "-="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "*="
-msgstr ""
+msgstr "*="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "/="
-msgstr ""
+msgstr "/="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "%="
-msgstr ""
+msgstr "%="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "&="
-msgstr ""
+msgstr "&="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "^="
-msgstr ""
+msgstr "^="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "|="
-msgstr ""
+msgstr "|="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "**="
-msgstr ""
+msgstr "**="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "//="
-msgstr ""
+msgstr "//="
 
 #: ../../reference/simple_stmts.rst:263
 msgid ">>="
-msgstr ""
+msgstr ">>="
 
 #: ../../reference/simple_stmts.rst:263
 msgid "<<="
-msgstr ""
+msgstr "<<="
 
 #: ../../reference/simple_stmts.rst:322
 msgid "annotated"
-msgstr ""
+msgstr "anotované"
 
 #: ../../reference/simple_stmts.rst:322
 msgid "assignment, annotated"
-msgstr ""
+msgstr "přiřazení, anotované"
 
 #: ../../reference/simple_stmts.rst:322
 msgid ": (colon)"
-msgstr ""
+msgstr ": (dvojtečka)"
 
 #: ../../reference/simple_stmts.rst:322
 msgid "annotated variable"
-msgstr ""
+msgstr "anotovaná proměnná"
 
 #: ../../reference/simple_stmts.rst:384
 msgid "assert"
-msgstr ""
+msgstr "assert"
 
 #: ../../reference/simple_stmts.rst:384
 msgid "debugging"
-msgstr ""
+msgstr "ladění"
 
 #: ../../reference/simple_stmts.rst:384
 msgid "assertions"
-msgstr ""
+msgstr "tvrzenia"
 
 #: ../../reference/simple_stmts.rst:384
 msgid "expression list"
-msgstr ""
+msgstr "seznam výrazů"
 
 #: ../../reference/simple_stmts.rst:405
 msgid "__debug__"
-msgstr ""
+msgstr "__debug__"
 
 #: ../../reference/simple_stmts.rst:405 ../../reference/simple_stmts.rst:525
 #: ../../reference/simple_stmts.rst:561 ../../reference/simple_stmts.rst:593
 #: ../../reference/simple_stmts.rst:745
 msgid "exception"
-msgstr ""
+msgstr "výjimka"
 
 #: ../../reference/simple_stmts.rst:405
 msgid "AssertionError"
-msgstr ""
+msgstr "AssertionError"
 
 #: ../../reference/simple_stmts.rst:427
 msgid "pass"
-msgstr ""
+msgstr "pass"
 
 #: ../../reference/simple_stmts.rst:427
 msgid "null"
-msgstr ""
+msgstr "názv"
 
 #: ../../reference/simple_stmts.rst:427
 msgid "operation"
-msgstr ""
+msgstr "operace"
 
 #: ../../reference/simple_stmts.rst:449
 msgid "del"
-msgstr ""
+msgstr "del"
 
 #: ../../reference/simple_stmts.rst:449 ../../reference/simple_stmts.rst:471
 msgid "deletion"
-msgstr ""
+msgstr "smazání"
 
 #: ../../reference/simple_stmts.rst:462 ../../reference/simple_stmts.rst:964
 msgid "global"
-msgstr ""
+msgstr "globální"
 
 #: ../../reference/simple_stmts.rst:462
 msgid "unbinding"
-msgstr ""
+msgstr "ruzení vázání"
 
 #: ../../reference/simple_stmts.rst:488
 msgid "return"
-msgstr ""
+msgstr "return"
 
 #: ../../reference/simple_stmts.rst:488 ../../reference/simple_stmts.rst:525
 msgid "function"
-msgstr ""
+msgstr "funkce"
 
 #: ../../reference/simple_stmts.rst:488
 msgid "definition"
-msgstr ""
+msgstr "definice"
 
 #: ../../reference/simple_stmts.rst:488
 msgid "class"
-msgstr ""
+msgstr "třída"
 
 #: ../../reference/simple_stmts.rst:504 ../../reference/simple_stmts.rst:699
 #: ../../reference/simple_stmts.rst:708 ../../reference/simple_stmts.rst:720
 #: ../../reference/simple_stmts.rst:745
 msgid "keyword"
-msgstr ""
+msgstr "klíčové slovo"
 
 #: ../../reference/simple_stmts.rst:504 ../../reference/simple_stmts.rst:708
 #: ../../reference/simple_stmts.rst:720
 msgid "finally"
-msgstr ""
+msgstr "finally"
 
 #: ../../reference/simple_stmts.rst:525
 msgid "yield"
-msgstr ""
+msgstr "yield"
 
 #: ../../reference/simple_stmts.rst:525
 msgid "generator"
-msgstr ""
+msgstr "generátor"
 
 #: ../../reference/simple_stmts.rst:525
 msgid "iterator"
-msgstr ""
+msgstr "iterátor"
 
 #: ../../reference/simple_stmts.rst:525
 msgid "StopIteration"
-msgstr ""
+msgstr "StopIteration"
 
 #: ../../reference/simple_stmts.rst:561
 msgid "raise"
-msgstr ""
+msgstr "raise"
 
 #: ../../reference/simple_stmts.rst:561
 msgid "raising"
-msgstr ""
+msgstr "vyvolání"
 
 #: ../../reference/simple_stmts.rst:561
 msgid "__traceback__ (exception attribute)"
-msgstr ""
+msgstr "__traceback__ (atribut výjimky)"
 
 #: ../../reference/simple_stmts.rst:583
 msgid "traceback"
-msgstr ""
+msgstr "trasování"
 
 #: ../../reference/simple_stmts.rst:593
 msgid "chaining"
-msgstr ""
+msgstr "rětězování"
 
 #: ../../reference/simple_stmts.rst:593
 msgid "__cause__ (exception attribute)"
-msgstr ""
+msgstr "__cause__ (atribut výjimky)"
 
 #: ../../reference/simple_stmts.rst:593
 msgid "__context__ (exception attribute)"
-msgstr ""
+msgstr "__context__ (atribut výjimky)"
 
 #: ../../reference/simple_stmts.rst:686
 msgid "break"
-msgstr ""
+msgstr "break"
 
 #: ../../reference/simple_stmts.rst:686 ../../reference/simple_stmts.rst:720
 msgid "for"
-msgstr ""
+msgstr "for"
 
 #: ../../reference/simple_stmts.rst:686 ../../reference/simple_stmts.rst:720
 msgid "while"
-msgstr ""
+msgstr "while"
 
 #: ../../reference/simple_stmts.rst:686 ../../reference/simple_stmts.rst:720
 msgid "loop"
-msgstr ""
+msgstr "smyka"
 
 #: ../../reference/simple_stmts.rst:699
 msgid "else"
-msgstr ""
+msgstr "else"
 
 #: ../../reference/simple_stmts.rst:699
 msgid "loop control"
-msgstr ""
+msgstr "ovládání smyky"
 
 #: ../../reference/simple_stmts.rst:720
 msgid "continue"
-msgstr ""
+msgstr "continue"
 
 #: ../../reference/simple_stmts.rst:745 ../../reference/simple_stmts.rst:851
 msgid "import"
-msgstr ""
+msgstr "import"
 
 #: ../../reference/simple_stmts.rst:745
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../reference/simple_stmts.rst:745
 msgid "importing"
-msgstr ""
+msgstr "importování"
 
 #: ../../reference/simple_stmts.rst:745 ../../reference/simple_stmts.rst:800
 msgid "from"
-msgstr ""
+msgstr "from"
 
 #: ../../reference/simple_stmts.rst:745 ../../reference/simple_stmts.rst:787
 msgid "as"
-msgstr ""
+msgstr "as"
 
 #: ../../reference/simple_stmts.rst:745
 msgid "ImportError"
-msgstr ""
+msgstr "ImportError"
 
 #: ../../reference/simple_stmts.rst:745 ../../reference/simple_stmts.rst:787
 #: ../../reference/simple_stmts.rst:800 ../../reference/simple_stmts.rst:826
 msgid "import statement"
-msgstr ""
+msgstr "příkaz import"
 
 #: ../../reference/simple_stmts.rst:832
 msgid "__all__ (optional module attribute)"
-msgstr ""
+msgstr "__all__ (volitelný atribut modulu)"
 
 #: ../../reference/simple_stmts.rst:851
 msgid "relative"
-msgstr ""
+msgstr "relativní"
 
 #: ../../reference/simple_stmts.rst:878
 msgid "future"
-msgstr ""
+msgstr "budoucí"
 
 #: ../../reference/simple_stmts.rst:878
 msgid "__future__"
-msgstr ""
+msgstr "__future__"
 
 #: ../../reference/simple_stmts.rst:878
 msgid "future statement"
-msgstr ""
+msgstr "příkaz budoucnosti"
 
 #: ../../reference/simple_stmts.rst:964 ../../reference/simple_stmts.rst:1007
 msgid "identifier list"
-msgstr ""
+msgstr "seznam identifikátorů"
 
 #: ../../reference/simple_stmts.rst:988
 msgid "exec"
-msgstr ""
+msgstr "exec"
 
 #: ../../reference/simple_stmts.rst:988
 msgid "eval"
-msgstr ""
+msgstr "eval"
 
 #: ../../reference/simple_stmts.rst:988
 msgid "compile"
-msgstr ""
+msgstr "compile"
 
 #: ../../reference/simple_stmts.rst:1007
 msgid "nonlocal"
-msgstr ""
+msgstr "nonlocal"
 
 #: ../../reference/simple_stmts.rst:1041
 msgid "type"
-msgstr ""
-
+msgstr "type"
