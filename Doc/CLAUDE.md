@@ -46,9 +46,11 @@ Or ask Claude to "use po-translator to translate some entries".
 
 **Parallel agents**: When running multiple po-translator agents in parallel, each agent should work on a different file to avoid duplicate work. Specify the file explicitly for each agent, e.g., "translate tutorial/classes.po" and "translate tutorial/modules.po".
 
-The agent uses MCP server (`scripts/po_mcp_server.py`) with two tools:
+The agent uses MCP server (`scripts/po_mcp_server.py`) with these tools:
 - `get_entries_to_translate` - fetches untranslated entries with context
-- `submit_translations` - applies translations with validation
+- `submit_translations` - applies translations with validation (atomic save)
+- `list_translations` - lists existing translations (paginated), useful for reviewing already translated entries
+- `status` - returns server script path and PID (for debugging)
 
 The MCP server requires `mcp` and `polib` packages:
 ```bash
