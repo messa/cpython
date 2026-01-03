@@ -2,7 +2,9 @@
 
 Note: "Translate a .po file" means adding Czech translations to msgstr fields using the workflow below, not compiling .po to .mo.
 
-## Translation workflow using po_tool.py
+## Translation workflow using `po_tool.py`
+
+All commands should be run from the `Doc/` directory (the directory where this CLAUDE.md file is located).
 
 ```bash
 # 1. Find files to translate (sorted by size, shows untranslated files)
