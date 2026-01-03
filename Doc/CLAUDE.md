@@ -52,6 +52,11 @@ make _ensure-package PACKAGE=polib
 make _ensure-package PACKAGE=mcp
 ```
 
+After modifying the MCP server, run its tests:
+```bash
+venv/bin/python scripts/test_po_mcp_server.py
+```
+
 ## Translation guidelines
 
 See `/.claude/agents/po-translator.md` for detailed translation rules:
@@ -99,3 +104,8 @@ To build without treating warnings as errors (useful for debugging):
 ```bash
 make html SPHINXOPTS="-D language=cs" SPHINXERRORHANDLING=""
 ```
+
+## Python code style
+
+When writing or editing Python scripts in this directory:
+- Prefer `from A import B` over `import A` (e.g., `from pathlib import Path` instead of `import pathlib`)

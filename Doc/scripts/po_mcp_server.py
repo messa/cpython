@@ -19,7 +19,7 @@ import json
 import logging
 from logging.handlers import WatchedFileHandler
 from pathlib import Path
-from subprocess import run
+from subprocess import run, TimeoutExpired
 from typing import Any
 
 import polib
@@ -32,6 +32,9 @@ from mcp.types import TextContent, Tool
 _SCRIPT_DIR = Path(__file__).resolve().parent
 _DOC_DIR = _SCRIPT_DIR.parent.resolve()
 LOCALE_DIR = (_DOC_DIR / "locales" / "cs" / "LC_MESSAGES").resolve()
+
+# Limits
+MAX_ENTRIES_COUNT = 50  # Maximum entries to return in one request
 
 # Ensure LOCALE_DIR is within DOC_DIR (sanity check)
 if not str(LOCALE_DIR).startswith(str(_DOC_DIR)):
@@ -186,12 +189,18 @@ def format_entry_context(entry: polib.POEntry) -> dict:
     return result
 
 
-def run_msgfmt_check(po_path: Path) -> tuple[bool, list[str]]:
-    """Run msgfmt --check on a .po file. Returns (success, errors)."""
+def run_msgfmt_check(po_path: Path, timeout: float = 30.0) -> tuple[bool, list[str]]:
+    """
+    Run msgfmt --check on a .po file. Returns (success, errors).
+
+    Raises:
+        TimeoutExpired: If msgfmt takes longer than timeout seconds.
+    """
     result = run(
         ["msgfmt", "--check", "-o", "/dev/null", str(po_path)],
         capture_output=True,
-        text=True
+        text=True,
+        timeout=timeout,
     )
     # Filter out warnings, only return errors
     errors = [line for line in result.stderr.splitlines() if "warning:" not in line]
@@ -299,7 +308,7 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
 async def handle_get_entries(arguments: dict[str, Any]) -> list[TextContent]:
     """Handle get_entries_to_translate tool call."""
     file_arg = arguments.get("file")
-    count = arguments.get("count", 5)
+    count = min(arguments.get("count", 5), MAX_ENTRIES_COUNT)
     logger.debug("get_entries: file=%s, count=%d", file_arg, count)
 
     # If no file specified, find one with fewest untranslated entries
@@ -455,7 +464,11 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
         logger.info("Saved %d translations to %s", len(applied), file_arg)
 
         # Run validation
-        valid, errors = run_msgfmt_check(po_path)
+        try:
+            valid, errors = run_msgfmt_check(po_path)
+        except TimeoutExpired:
+            logger.error("msgfmt timed out for %s", file_arg)
+            valid, errors = False, ["msgfmt validation timed out"]
         if not valid:
             logger.warning("Validation failed for %s: %s", file_arg, errors)
 
