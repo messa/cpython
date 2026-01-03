@@ -65,6 +65,7 @@ If a tool call returns an error saying the result is too large:
   - "parser" (keep as is)
   - "issue tracker" (keep as is, NOT "sledovač problémů" or "správce problémů")
   - "tracker" when referring to issue tracker → use full "issue tracker"
+  - "FAQ" (keep as is, NOT "ČKD")
 - When unsure, prefer keeping the English term
 
 ### Format Strings
