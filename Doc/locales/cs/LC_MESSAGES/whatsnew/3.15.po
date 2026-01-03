@@ -11,158 +11,195 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../whatsnew/3.15.rst:4
 msgid "What's new in Python 3.15"
-msgstr ""
+msgstr "Novinkám v Pythonu 3.15"
 
 #: ../../whatsnew/3.15.rst
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: ../../whatsnew/3.15.rst:6
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../whatsnew/3.15.rst:48
-msgid "This article explains the new features in Python 3.15, compared to 3.14."
+msgid ""
+"This article explains the new features in Python 3.15, compared to 3.14."
 msgstr ""
+"Tento článek vysvětluje nové funkce v Pythonu 3.15 v porovnání s verzí 3.14."
 
 #: ../../whatsnew/3.15.rst:50
 msgid "For full details, see the :ref:`changelog <changelog>`."
-msgstr ""
+msgstr "Úplné podrobnosti naleznete v části :ref:`changelog <changelog>`."
 
 #: ../../whatsnew/3.15.rst:54
 msgid ""
-"Prerelease users should be aware that this document is currently in draft"
-" form. It will be updated substantially as Python 3.15 moves towards "
-"release, so it's worth checking back even after reading earlier versions."
+"Prerelease users should be aware that this document is currently in draft "
+"form. It will be updated substantially as Python 3.15 moves towards release,"
+" so it's worth checking back even after reading earlier versions."
 msgstr ""
+"Uživatelé předběžné verze by měli být informováni, že tento dokument je v "
+"současnosti v návrhu. Bude podstatně aktualizován s tím, jak se Python 3.15 "
+"přibližuje vydání, takže se vyplatí se vrátit i po přečtení starších verzí."
 
 #: ../../whatsnew/3.15.rst:60
 msgid "Summary -- Release highlights"
-msgstr ""
+msgstr "Shrnutí -- Hlavní body vydání"
 
 #: ../../whatsnew/3.15.rst:68
 msgid ""
 ":pep:`799`: :ref:`A dedicated profiling package for organizing Python "
 "profiling tools <whatsnew315-profiling-package>`"
 msgstr ""
+":pep:`799`: :ref:`Vyhrazený balíček pro profilování pro organizaci nástrojů "
+"profilování Pythonu <whatsnew315-profiling-package>`"
 
 #: ../../whatsnew/3.15.rst:70
 msgid ""
 ":pep:`799`: :ref:`Tachyon: High frequency statistical sampling profiler "
 "profiling tools <whatsnew315-sampling-profiler>`"
 msgstr ""
+":pep:`799`: :ref:`Tachyon: Nástroj pro profilování s vysokou frekvencí "
+"statistického vzorkování <whatsnew315-sampling-profiler>`"
 
 #: ../../whatsnew/3.15.rst:72
 msgid ""
 ":pep:`686`: :ref:`Python now uses UTF-8 as the default encoding "
 "<whatsnew315-utf8-default>`"
 msgstr ""
+":pep:`686`: :ref:`Python nyní používá UTF-8 jako výchozí kódování "
+"<whatsnew315-utf8-default>`"
 
 #: ../../whatsnew/3.15.rst:74
 msgid ""
-":pep:`782`: :ref:`A new PyBytesWriter C API to create a Python bytes "
-"object <whatsnew315-pep782>`"
+":pep:`782`: :ref:`A new PyBytesWriter C API to create a Python bytes object "
+"<whatsnew315-pep782>`"
 msgstr ""
+":pep:`782`: :ref:`Nové C API PyBytesWriter pro vytvoření objektu bytes "
+"Pythonu <whatsnew315-pep782>`"
 
 #: ../../whatsnew/3.15.rst:76
-msgid ":ref:`The JIT compiler has been significantly upgraded <whatsnew315-jit>`"
-msgstr ""
+msgid ""
+":ref:`The JIT compiler has been significantly upgraded <whatsnew315-jit>`"
+msgstr ":ref:`JIT kompilátor byl výrazně upgradován <whatsnew315-jit>`"
 
 #: ../../whatsnew/3.15.rst:77
 msgid ":ref:`Improved error messages <whatsnew315-improved-error-messages>`"
-msgstr ""
+msgstr ":ref:`Vylepšené chybové zprávy <whatsnew315-improved-error-messages>`"
 
 #: ../../whatsnew/3.15.rst:81 ../../whatsnew/3.15.rst:1181
 msgid "New features"
-msgstr ""
+msgstr "Nové funkce"
 
 #: ../../whatsnew/3.15.rst:86
 msgid ":pep:`799`: A dedicated profiling package"
-msgstr ""
+msgstr ":pep:`799`: Vyhrazený balíček pro profilování"
 
 #: ../../whatsnew/3.15.rst:88
 msgid ""
-"A new :mod:`profiling` module has been added to organize Python's built-"
-"in profiling tools under a single, coherent namespace. This module "
-"contains:"
+"A new :mod:`profiling` module has been added to organize Python's built-in "
+"profiling tools under a single, coherent namespace. This module contains:"
 msgstr ""
+"Nový modul :mod:`profiling` byl přidán k uspořádání vstavěných nástrojů "
+"profilování Pythonu pod jedným koherentním oborem názvů. Tento modul "
+"obsahuje:"
 
 #: ../../whatsnew/3.15.rst:91
 msgid ""
 ":mod:`profiling.tracing`: deterministic function-call tracing (relocated "
 "from ``cProfile``)."
 msgstr ""
+":mod:`profiling.tracing`: deterministické trasování volání funkcí (přesunuto"
+" z ``cProfile``)."
 
 #: ../../whatsnew/3.15.rst:93
 msgid ""
 ":mod:`profiling.sampling`: a new statistical sampling profiler (named "
 "Tachyon)."
 msgstr ""
+":mod:`profiling.sampling`: nový profilér statistického vzorkování "
+"(pojmenován Tachyon)."
 
 #: ../../whatsnew/3.15.rst:95
 msgid ""
-"The ``cProfile`` module remains as an alias for backwards compatibility. "
-"The :mod:`profile` module is deprecated and will be removed in Python "
-"3.17."
+"The ``cProfile`` module remains as an alias for backwards compatibility. The"
+" :mod:`profile` module is deprecated and will be removed in Python 3.17."
 msgstr ""
+"Modul ``cProfile`` zůstává jako alias pro zpětné kompatibility. Modul "
+":mod:`profile` je zastaralý a bude odebrán v Pythonu 3.17."
 
 #: ../../whatsnew/3.15.rst:98
 msgid ":pep:`799` for further details."
-msgstr ""
+msgstr ":pep:`799` pro další podrobnosti."
 
 #: ../../whatsnew/3.15.rst:100
 msgid "(Contributed by Pablo Galindo and László Kiss Kollár in :gh:`138122`.)"
-msgstr ""
+msgstr "(Přispělo Pablo Galindo a László Kiss Kollár v :gh:`138122`.)"
 
 #: ../../whatsnew/3.15.rst:106
 msgid "Tachyon: High frequency statistical sampling profiler"
-msgstr ""
+msgstr "Tachyon: Profilér statistického vzorkování s vysokou frekvencí"
 
 #: ../../whatsnew/3.15.rst:108
 msgid "Tachyon profiler logo"
-msgstr ""
+msgstr "Logo profiléru Tachyon"
 
 #: ../../whatsnew/3.15.rst:113
 msgid ""
 "A new statistical sampling profiler (Tachyon) has been added as "
-":mod:`profiling.sampling`. This profiler enables low-overhead performance"
-" analysis of running Python processes without requiring code modification"
-" or process restart."
+":mod:`profiling.sampling`. This profiler enables low-overhead performance "
+"analysis of running Python processes without requiring code modification or "
+"process restart."
 msgstr ""
+"Nový profilér statistického vzorkování (Tachyon) byl přidán jako "
+":mod:`profiling.sampling`. Tento profilér umožňuje analýzu výkonu "
+"spouštěných procesů Pythonu s nízkou rekvizít bez nut nosti měněnit kód nebo"
+" restartovat proces."
 
 #: ../../whatsnew/3.15.rst:117
 msgid ""
 "Unlike deterministic profilers (such as :mod:`profiling.tracing`) that "
-"instrument every function call, the sampling profiler periodically "
-"captures stack traces from running processes.  This approach provides "
-"virtually zero overhead while achieving sampling rates of **up to "
-"1,000,000 Hz**, making it the fastest sampling profiler available for "
-"Python (at the time of its contribution) and ideal for debugging "
-"performance issues in production environments. This capability is "
-"particularly valuable for debugging performance issues in production "
-"systems where traditional profiling approaches would be too intrusive."
+"instrument every function call, the sampling profiler periodically captures "
+"stack traces from running processes.  This approach provides virtually zero "
+"overhead while achieving sampling rates of **up to 1,000,000 Hz**, making it"
+" the fastest sampling profiler available for Python (at the time of its "
+"contribution) and ideal for debugging performance issues in production "
+"environments. This capability is particularly valuable for debugging "
+"performance issues in production systems where traditional profiling "
+"approaches would be too intrusive."
 msgstr ""
+"Na rozdíle od deterministických profilérů (jako :mod:`profiling.tracing`), "
+"které instrumentují každé volání funkce, vzorkovací profilér periódicky "
+"zachycuje zásobník trasového zázámu ze spouštěných procesů. Tento přístup "
+"poskytuje prakticky nulovou rekvizít během dosažení vzorkovacích frekvencí "
+"až **1 000 000 Hz**, zčež je nejrychlejším vzorkovacím profilérem dostupným "
+"pro Python (v době jeho přispění) a ideálním pro ladění problémů s výkonem "
+"v produčních prostředích. Tato schopnost je obzvláště cenná pro ladění "
+"problémů s výkonem v produčních systémech, kde by tradionální přístupy "
+"profilování byly příliš návašivé."
 
 #: ../../whatsnew/3.15.rst:126
 msgid "Key features include:"
-msgstr ""
+msgstr "Klíčové funkce zahrnují:"
 
 #: ../../whatsnew/3.15.rst:128
 msgid ""
-"**Zero-overhead profiling**: Attach to any running Python process without"
-" affecting its performance. Ideal for production debugging where you "
-"can't afford to restart or slow down your application."
+"**Zero-overhead profiling**: Attach to any running Python process without "
+"affecting its performance. Ideal for production debugging where you can't "
+"afford to restart or slow down your application."
 msgstr ""
+"**Profilování s nulovou rekvizitou**: Připojte se k jakémukoli spuštěnému "
+"procesu Pythonu bez dopadu na jeho výkon. Ideální pro ladění v produkci, kde"
+" si nemůžete dovolit restartovat nebo zpomalit vaší aplikaci."
 
 #: ../../whatsnew/3.15.rst:132
 msgid ""
@@ -170,76 +207,104 @@ msgid ""
 "restart. Simply point the profiler at a running process by PID and start "
 "collecting data."
 msgstr ""
+"**Bez nutnosti měnit kód**: Profilujte existující aplikace bez restartu. "
+"Stačí nastolil profiler na spuštěný proces podle PID a začít sbírat data."
 
 #: ../../whatsnew/3.15.rst:135
 msgid "**Flexible target modes**:"
-msgstr ""
+msgstr "**Flexibilní cílové režimy**:"
 
 #: ../../whatsnew/3.15.rst:137
 msgid ""
-"Profile running processes by PID (``attach``) - attach to already-running"
-" applications"
+"Profile running processes by PID (``attach``) - attach to already-running "
+"applications"
 msgstr ""
+"Profilujte spuštěné procesy podle PID (``attach``) - připojte se k již "
+"spuštěným aplikacím"
 
 #: ../../whatsnew/3.15.rst:138
 msgid ""
-"Run and profile scripts directly (``run``) - profile from the very start "
-"of execution"
+"Run and profile scripts directly (``run``) - profile from the very start of "
+"execution"
 msgstr ""
+"Spusťte a profilujte skripty přímo (``run``) - profilujte od samého začátku "
+"spuštění"
 
 #: ../../whatsnew/3.15.rst:139
 msgid ""
-"Execute and profile modules (``run -m``) - profile packages run as "
-"``python -m module``"
+"Execute and profile modules (``run -m``) - profile packages run as ``python "
+"-m module``"
 msgstr ""
+"Spusťte a profilujte moduly (``run -m``) - profilujte balíčky spuštěné jako "
+"``python -m modul``"
 
 #: ../../whatsnew/3.15.rst:141
 msgid ""
 "**Multiple profiling modes**: Choose what to measure based on your "
 "performance investigation:"
 msgstr ""
+"**Více režimů profilování**: Vyberte si, co máte měřit na základě své "
+"analýzy výkonu:"
 
 #: ../../whatsnew/3.15.rst:143
 msgid ""
-"**Wall-clock time** (``--mode wall``, default): Measures real elapsed "
-"time including I/O, network waits, and blocking operations. Use this to "
-"understand where your program spends calendar time, including when "
-"waiting for external resources."
+"**Wall-clock time** (``--mode wall``, default): Measures real elapsed time "
+"including I/O, network waits, and blocking operations. Use this to "
+"understand where your program spends calendar time, including when waiting "
+"for external resources."
 msgstr ""
+"**Stinné časy** (``--mode wall``, výchozí): Měří skutečný uplynulý čas "
+"včetně vstupů/výstupů, čekání v síti a blokujících operací. Použijte to k "
+"pochopení, kde váš program tráví čas, včetně situací, kdy čeká na externí "
+"zdroje."
 
 #: ../../whatsnew/3.15.rst:146
 msgid ""
 "**CPU time** (``--mode cpu``): Measures only active CPU execution time, "
-"excluding I/O waits and blocking. Use this to identify CPU-bound "
-"bottlenecks and optimize computational work."
+"excluding I/O waits and blocking. Use this to identify CPU-bound bottlenecks"
+" and optimize computational work."
 msgstr ""
+"**Procesorový čas** (``--mode cpu``): Měří pouze aktivní dobu provádění "
+"procesoru, vylučuje čekání na vstup/výstup a blokáž. Použijte to k "
+"identifikaci úzkých hrdel procesoru a optimalizaci výpočetní práce."
 
 #: ../../whatsnew/3.15.rst:148
 msgid ""
-"**GIL-holding time** (``--mode gil``): Measures time spent holding "
-"Python's Global Interpreter Lock. Use this to identify which threads "
-"dominate GIL usage in multi-threaded applications."
+"**GIL-holding time** (``--mode gil``): Measures time spent holding Python's "
+"Global Interpreter Lock. Use this to identify which threads dominate GIL "
+"usage in multi-threaded applications."
 msgstr ""
+"**Doba držení GIL** (``--mode gil``): Měří čas strávený držením Pythonova "
+"globálního zámku interpretátoru. Použijte to k identifikaci, která vlákna "
+"dominují užívání GIL v aplikacích s více vlákny."
 
 #: ../../whatsnew/3.15.rst:150
 msgid ""
-"**Exception handling time** (``--mode exception``): Captures samples only"
-" from threads with an active exception. Use this to analyze exception "
+"**Exception handling time** (``--mode exception``): Captures samples only "
+"from threads with an active exception. Use this to analyze exception "
 "handling overhead."
 msgstr ""
+"**Doba zprácování výjimek** (``--mode exception``): Zachycuje vzorky pouze z"
+" vláken s aktivní výjimkou. Použijte to k analýze rekvizity zprácování "
+"výjimek."
 
 #: ../../whatsnew/3.15.rst:153
 msgid ""
-"**Thread-aware profiling**: Option to profile all threads (``-a``) or "
-"just the main thread, essential for understanding multi-threaded "
-"application behavior."
+"**Thread-aware profiling**: Option to profile all threads (``-a``) or just "
+"the main thread, essential for understanding multi-threaded application "
+"behavior."
 msgstr ""
+"**Profilování vědomé vláknů**: Možnost profilovat všechna vlákna (``-a``) "
+"nebo jen hlavní vlákno, neoÛebuté pro pochopení chování aplikace s vícé "
+"vlákny."
 
 #: ../../whatsnew/3.15.rst:156
 msgid ""
-"**Multiple output formats**: Choose the visualization that best fits your"
-" workflow:"
+"**Multiple output formats**: Choose the visualization that best fits your "
+"workflow:"
 msgstr ""
+"**Více formátů výstupů**: Zvolte vizualizaci, která nejlépe vyhovuje vašemu "
+"pracovnímu postupu:"
 
 #: ../../whatsnew/3.15.rst:158
 msgid ""
@@ -247,21 +312,32 @@ msgid ""
 "Shows function-level timing with direct and cumulative samples. Best for "
 "detailed analysis and integration with existing Python profiling tools."
 msgstr ""
+"``--pstats``: Podrobné tabulkové statistiky kompatibilní s :mod:`pstats`. "
+"Zobrazuje časování na úrovni funkcí s přímými a kumulativními vzorky. "
+"Nejlepší pro podrobnou analýzu a integraci s existujícími Python "
+"profilačními nástroji."
 
 #: ../../whatsnew/3.15.rst:161
 msgid ""
-"``--collapsed``: Generates collapsed stack traces (one line per stack). "
-"This format is specifically designed for creating flamegraphs with "
-"external tools like Brendan Gregg's FlameGraph scripts or speedscope."
+"``--collapsed``: Generates collapsed stack traces (one line per stack). This"
+" format is specifically designed for creating flamegraphs with external "
+"tools like Brendan Gregg's FlameGraph scripts or speedscope."
 msgstr ""
+"``--collapsed``: Generuje sbalene stopy zásobníků (jeden řádek na zásobnik)."
+" Tento formát je specificky navržen pro vytváření flamegrafů s externími "
+"nástroji jako jsou skripty FlameGraph od Brendana Gregga nebo speedscope."
 
 #: ../../whatsnew/3.15.rst:164
 msgid ""
 "``--flamegraph``: Generates a self-contained interactive HTML flamegraph "
-"using D3.js. Opens directly in your browser for immediate visual "
-"analysis. Flamegraphs show the call hierarchy where width represents time"
-" spent, making it easy to spot bottlenecks at a glance."
+"using D3.js. Opens directly in your browser for immediate visual analysis. "
+"Flamegraphs show the call hierarchy where width represents time spent, "
+"making it easy to spot bottlenecks at a glance."
 msgstr ""
+"``--flamegraph``: Generuje samostatný interaktivní HTML flamegraf pomocí "
+"D3.js. Otevře se přímo v provāzču pro okamžitou vizuelní analýzu. "
+"Flamegraffní grafy zobrazují volací hierarchii, kde šíkřka představuje "
+"strávený čas, což usnadní identifikaci úzkých hrdel na první pohled."
 
 #: ../../whatsnew/3.15.rst:167
 msgid ""
@@ -270,28 +346,42 @@ msgid ""
 "Profiler for advanced timeline-based analysis with features like stack "
 "charts, markers, and network activity."
 msgstr ""
+"``--gecko``: Generuje formát Gecko Profiler kompatibilní s Firefox "
+"Profilerem (https://profiler.firefox.com). Nahrájte výstup do Firefox "
+"Profiler pro pokročilou analýzu založenou na časové řadě s funkcemi jako "
+"jsou grafy zásobníků, značky a aktivita sítě."
 
 #: ../../whatsnew/3.15.rst:170
 msgid ""
 "``--heatmap``: Generates an interactive HTML heatmap visualization with "
-"line-level sample counts. Creates a directory with per-file heatmaps "
-"showing exactly where time is spent at the source code level."
+"line-level sample counts. Creates a directory with per-file heatmaps showing"
+" exactly where time is spent at the source code level."
 msgstr ""
+"``--heatmap``: Generuje interaktivní vizualizaci HTML tepelné mapy s počty "
+"vzorek na řádku. Vytváří adresář s tepelnými mapami pro jednotlivé soubory "
+"ukazujícími, kde se čas stráví na úrovni zdrojového kódu."
 
 #: ../../whatsnew/3.15.rst:174
 msgid ""
-"**Live interactive mode**: Real-time TUI profiler with a top-like "
-"interface (``--live``). Monitor performance as your application runs with"
-" interactive sorting and filtering."
+"**Live interactive mode**: Real-time TUI profiler with a top-like interface "
+"(``--live``). Monitor performance as your application runs with interactive "
+"sorting and filtering."
 msgstr ""
+"**Interaktivní režim v reale**: Profiletr TUI v reálném čase s rozhraním "
+"podobným topě (``--live``). Monitorujte výkon během provādění aplikace s "
+"interaktivním tříenień a filtrouwáním."
 
 #: ../../whatsnew/3.15.rst:177
 msgid ""
-"**Async-aware profiling**: Profile async/await code with task-based stack"
-" reconstruction (``--async-aware``). See which coroutines are consuming "
-"time, with options to show only running tasks or all tasks including "
-"those waiting."
+"**Async-aware profiling**: Profile async/await code with task-based stack "
+"reconstruction (``--async-aware``). See which coroutines are consuming time,"
+" with options to show only running tasks or all tasks including those "
+"waiting."
 msgstr ""
+"**Profilování vědomé async**: Profilujte async/await kód s rekonst rukcí "
+"zásobníku založené na úlohách (``--async-aware``). Vidějte, které korutiny "
+"spotrebávají čas, s možností zobrazit pouze spouštěné úlohý nebo všechny "
+"úlohý včetně těch, které čekají."
 
 #: ../../whatsnew/3.15.rst:181
 msgid ""
@@ -300,37 +390,48 @@ msgid ""
 "instructions are executing, including specializations from the adaptive "
 "interpreter."
 msgstr ""
+"**Profilování na úrovni opcode**: Sbějte informace o opcodech bajtkodu pro "
+"profilování na úrovni instrukcí (``--opcodes``). Zobrazuje, které instrukce "
+"bajtkodu se provádějí, včetně specializací z adaptivního interpretátoru."
 
 #: ../../whatsnew/3.15.rst:185
 msgid ""
-"See :mod:`profiling.sampling` for the complete documentation, including "
-"all available output formats, profiling modes, and configuration options."
+"See :mod:`profiling.sampling` for the complete documentation, including all "
+"available output formats, profiling modes, and configuration options."
 msgstr ""
+"Viz :mod:`profiling.sampling` pro úplné dokumentaci, včetně všech dostupných"
+" formátů výstupů, režimů profilování a voleb konfigurace."
 
 #: ../../whatsnew/3.15.rst:188
 msgid ""
 "(Contributed by Pablo Galindo and László Kiss Kollár in :gh:`135953` and "
 ":gh:`138122`.)"
 msgstr ""
+"(Přispělo Pablo Galindo a László Kiss Kollár v :gh:`135953` a :gh:`138122`.)"
 
 #: ../../whatsnew/3.15.rst:194
 msgid "Improved error messages"
-msgstr ""
+msgstr "Vylepšené chybové zprávy"
 
 #: ../../whatsnew/3.15.rst:196
 msgid ""
 "The interpreter now provides more helpful suggestions in "
-":exc:`AttributeError` exceptions when accessing an attribute on an object"
-" that does not exist, but a similar attribute is available through one of"
-" its members."
+":exc:`AttributeError` exceptions when accessing an attribute on an object "
+"that does not exist, but a similar attribute is available through one of its"
+" members."
 msgstr ""
+"Interpretátor nyní poskytuje užitevnější návrhy v výjimkách "
+":exc:`AttributeError` při přístupu k atributu na objektu, který neexistuje, "
+"ale podobný atribut je k dispozici přes jeden z jeho členů."
 
 #: ../../whatsnew/3.15.rst:200
 msgid ""
 "For example, if the object has an attribute that itself exposes the "
-"requested name, the error message will suggest accessing it via that "
-"inner attribute:"
+"requested name, the error message will suggest accessing it via that inner "
+"attribute:"
 msgstr ""
+"Například, pokud má objekt atribut, který sám zviditelnus žádané jméno, "
+"chybová zpráva navřhne přístup přes tento vnitřní atribut:"
 
 #: ../../whatsnew/3.15.rst:203
 msgid ""
@@ -350,10 +451,25 @@ msgid ""
 "container = Container(circle)\n"
 "print(container.area)"
 msgstr ""
+"@dataclass\n"
+"class Circle:\n"
+"   radius: float\n"
+"\n"
+"   @property\n"
+"   def area(self) -> float:\n"
+"      return pi * self.radius**2\n"
+"\n"
+"class Container:\n"
+"   def __init__(self, inner: Circle) -> None:\n"
+"      self.inner = inner\n"
+"\n"
+"circle = Circle(radius=4.0)\n"
+"container = Container(circle)\n"
+"print(container.area)"
 
 #: ../../whatsnew/3.15.rst:221
 msgid "Running this code now produces a clearer suggestion:"
-msgstr ""
+msgstr "Spouštění tohoto kódu nyní dává jasnajnší návrh:"
 
 #: ../../whatsnew/3.15.rst:223
 msgid ""
@@ -361,65 +477,89 @@ msgid ""
 "File \"/home/pablogsal/github/python/main/lel.py\", line 42, in <module>\n"
 "   print(container.area)\n"
 "         ^^^^^^^^^^^^^^\n"
-"AttributeError: 'Container' object has no attribute 'area'. Did you mean:"
-" 'inner.area'?"
+"AttributeError: 'Container' object has no attribute 'area'. Did you mean: 'inner.area'?"
 msgstr ""
+"Traceback (most recent call last):\n"
+"File \"/home/pablogsal/github/python/main/lel.py\", line 42, in <module>\n"
+"   print(container.area)\n"
+"         ^^^^^^^^^^^^^^\n"
+"AttributeError: Objekt \"Container\" nemá atribut \"area\". Měl jste na mysli: \"inner.area\"?"
 
 #: ../../whatsnew/3.15.rst:233
 msgid "Other language changes"
-msgstr ""
+msgstr "Další změny jazyka"
 
 #: ../../whatsnew/3.15.rst:237
 msgid ""
-"Python now uses UTF-8_ as the default encoding, independent of the "
-"system's environment. This means that I/O operations without an explicit "
-"encoding, for example, ``open('flying-circus.txt')``, will use UTF-8. "
-"UTF-8 is a widely-supported Unicode_ character encoding that has become a"
-" *de facto* standard for representing text, including nearly every "
-"webpage on the internet, many common file formats, programming languages,"
-" and more."
+"Python now uses UTF-8_ as the default encoding, independent of the system's "
+"environment. This means that I/O operations without an explicit encoding, "
+"for example, ``open('flying-circus.txt')``, will use UTF-8. UTF-8 is a "
+"widely-supported Unicode_ character encoding that has become a *de facto* "
+"standard for representing text, including nearly every webpage on the "
+"internet, many common file formats, programming languages, and more."
 msgstr ""
+"Python nyní používá UTF-8_ jako výchozí kódování, nezávisle na prostředí "
+"systému. To znamená, že operace vstup/výstup bez explicitního kódování, "
+"například ``open('flying-circus.txt')``, budou používat UTF-8. UTF-8 je "
+"širokě podporováné kódování znaků Unicode_, které se stalo *de facto* "
+"standardem pro reprezentaci textu, včetně skoro každé webové stránky na "
+"internetu, mnoha běžných formátů souborů, programátorských jazyků a dalších."
 
 #: ../../whatsnew/3.15.rst:244
 msgid ""
 "This only applies when no ``encoding`` argument is given. For best "
 "compatibility between versions of Python, ensure that an explicit "
-"``encoding`` argument is always provided. The :ref:`opt-in encoding "
-"warning <io-encoding-warning>` can be used to identify code that may be "
-"affected by this change. The special ``encoding='locale'`` argument uses "
-"the current locale encoding, and has been supported since Python 3.10."
+"``encoding`` argument is always provided. The :ref:`opt-in encoding warning "
+"<io-encoding-warning>` can be used to identify code that may be affected by "
+"this change. The special ``encoding='locale'`` argument uses the current "
+"locale encoding, and has been supported since Python 3.10."
 msgstr ""
+"To se vztahuje pouze na případ, kdy není zadán žádný argument ``encoding``. "
+"Pro nejlepší kompatibilitu mezi verzemi Pythonu se ujistěte, že je vždy "
+"zadán explicitní argument ``encoding``. Odkaz :ref:`opt-in encoding warning "
+"<io-encoding-warning>` lze použít k identifikaci kódu, který může být této "
+"změnou ovlivněn. Speciální argument ``encoding='locale'`` používá současné "
+"kódování lokality a je podporován od Pythonu 3.10."
 
 #: ../../whatsnew/3.15.rst:251
 msgid ""
-"To retain the previous behaviour, Python's UTF-8 mode may be disabled "
-"with the :envvar:`PYTHONUTF8=0 <PYTHONUTF8>` environment variable or the "
+"To retain the previous behaviour, Python's UTF-8 mode may be disabled with "
+"the :envvar:`PYTHONUTF8=0 <PYTHONUTF8>` environment variable or the "
 ":option:`-X utf8=0 <-X>` command-line option."
 msgstr ""
+"Chcete-li si zachovat předchozí chování, může být režim UTF-8 Pythonu "
+"zakázán pomocí proměnné prostředí :envvar:`PYTHONUTF8=0 <PYTHONUTF8>` nebo "
+"volby příkazové řádky :option:`-X utf8=0 <-X>`."
 
 #: ../../whatsnew/3.15.rst:255
 msgid ":pep:`686` for further details."
-msgstr ""
+msgstr ":pep:`686` pro další podrobnosti."
 
 #: ../../whatsnew/3.15.rst:260
 msgid ""
 "(Contributed by Adam Turner in :gh:`133711`; PEP 686 written by Inada "
 "Naoki.)"
-msgstr ""
+msgstr "(Přispělo Adam Turner v :gh:`133711`; PEP 686 napsal Inada Naoki.)"
 
 #: ../../whatsnew/3.15.rst:262
 msgid ""
 "Several error messages incorrectly using the term \"argument\" have been "
 "corrected. (Contributed by Stan Ulbrych in :gh:`133382`.)"
 msgstr ""
+"Několik chybových zpráv, které nesprávně používaly termín \"argument\", bylo"
+" opraveno. (Přispělo Stan Ulbrych v :gh:`133382`.)"
 
 #: ../../whatsnew/3.15.rst:265
 msgid ""
-"The interpreter now tries to provide a suggestion when :func:`delattr` "
-"fails due to a missing attribute. When an attribute name that closely "
-"resembles an existing attribute is used, the interpreter will suggest the"
-" correct attribute name in the error message. For example:"
+"The interpreter now tries to provide a suggestion when :func:`delattr` fails"
+" due to a missing attribute. When an attribute name that closely resembles "
+"an existing attribute is used, the interpreter will suggest the correct "
+"attribute name in the error message. For example:"
 msgstr ""
+"Interpretátor se nyní pokusí poskytnout návrh, pokud :func:`delattr` selha z"
+" důvodu chybějícího atributu. Pokud je použito jméno atributu, které si je "
+"velmi podobné existujícímu atributu, interpretátor navřhne správné jméno "
+"atributu v chybové zprávě. Například:"
 
 #: ../../whatsnew/3.15.rst:271
 msgid ""
@@ -430,85 +570,119 @@ msgid ""
 ">>> del a.abcdf\n"
 "Traceback (most recent call last):\n"
 "...\n"
-"AttributeError: 'A' object has no attribute 'abcdf'. Did you mean: "
-"'abcde'?"
+"AttributeError: 'A' object has no attribute 'abcdf'. Did you mean: 'abcde'?"
 msgstr ""
+">>> class A:\n"
+"...     pass\n"
+">>> a = A()\n"
+">>> a.abcde = 1\n"
+">>> del a.abcdf\n"
+"Traceback (most recent call last):\n"
+"...\n"
+"AttributeError: Objekt \"A\" nemá atribut \"abcdf\". Měl jste na mysli: \"abcde\"?"
 
 #: ../../whatsnew/3.15.rst:282
 msgid "(Contributed by Nikita Sobolev and Pranjal Prajapati in :gh:`136588`.)"
-msgstr ""
+msgstr "(Přispělo Nikita Sobolev a Pranjal Prajapati v :gh:`136588`.)"
 
 #: ../../whatsnew/3.15.rst:284
 msgid ""
-"Unraisable exceptions are now highlighted with color by default. This can"
-" be controlled by :ref:`environment variables <using-on-controlling-"
-"color>`. (Contributed by Peter Bierma in :gh:`134170`.)"
+"Unraisable exceptions are now highlighted with color by default. This can be"
+" controlled by :ref:`environment variables <using-on-controlling-color>`. "
+"(Contributed by Peter Bierma in :gh:`134170`.)"
 msgstr ""
+"Nevyvolavé výjimky jsou nyní standardně zvýhledeny barvou. To lze "
+"kontrolovat pomocí :ref:`proměnných prostředí <using-on-controlling-color>`."
+" (Přispělo Peter Bierma v :gh:`134170`.)"
 
 #: ../../whatsnew/3.15.rst:288
 msgid ""
 "The :meth:`~object.__repr__` of :class:`ImportError` and "
 ":class:`ModuleNotFoundError` now shows \"name\" and \"path\" as "
-"``name=<name>`` and ``path=<path>`` if they were given as keyword "
-"arguments at construction time. (Contributed by Serhiy Storchaka, Oleg "
-"Iarygin, and Yoav Nir in :gh:`74185`.)"
+"``name=<name>`` and ``path=<path>`` if they were given as keyword arguments "
+"at construction time. (Contributed by Serhiy Storchaka, Oleg Iarygin, and "
+"Yoav Nir in :gh:`74185`.)"
 msgstr ""
+"Metoda :meth:`~object.__repr__` tříd :class:`ImportError` a "
+":class:`ModuleNotFoundError` nyní zobrazuje \"name\" a \"path\" jako "
+"``name=<name>`` a ``path=<path>``, pokud byly zadány jako pojmenované "
+"argumenty v čase vytváření. (Přispělo Serhiy Storchaka, Oleg Iarygin a Yoav "
+"Nir v :gh:`74185`.)"
 
 #: ../../whatsnew/3.15.rst:293
 msgid ""
-"The :attr:`~object.__dict__` and :attr:`!__weakref__` descriptors now use"
-" a single descriptor instance per interpreter, shared across all types "
-"that need them. This speeds up class creation, and helps avoid reference "
-"cycles. (Contributed by Petr Viktorin in :gh:`135228`.)"
+"The :attr:`~object.__dict__` and :attr:`!__weakref__` descriptors now use a "
+"single descriptor instance per interpreter, shared across all types that "
+"need them. This speeds up class creation, and helps avoid reference cycles. "
+"(Contributed by Petr Viktorin in :gh:`135228`.)"
 msgstr ""
+"Popisovače :attr:`~object.__dict__` a :attr:`!__weakref__` nyní používají "
+"jednu instanci popisovače na interpretátor, sdílenou mezi všemi typy, které "
+"je potřebují. To zrychluje vytváření tříėd a pomáhá vyhýbaovat se cyklům "
+"odkazů. (Přispělo Petr Viktorin v :gh:`135228`.)"
 
 #: ../../whatsnew/3.15.rst:299
 msgid ""
 "The :option:`-W` option and the :envvar:`PYTHONWARNINGS` environment "
-"variable can now specify regular expressions instead of literal strings "
-"to match the warning message and the module name, if the corresponding "
-"field starts and ends with a forward slash (``/``). (Contributed by "
-"Serhiy Storchaka in :gh:`134716`.)"
+"variable can now specify regular expressions instead of literal strings to "
+"match the warning message and the module name, if the corresponding field "
+"starts and ends with a forward slash (``/``). (Contributed by Serhiy "
+"Storchaka in :gh:`134716`.)"
 msgstr ""
+"Volba :option:`-W` a proměnná prostředí :envvar:`PYTHONWARNINGS` mohou nyní "
+"zadat regulární výrazy místo doslova zadáných řetězců, aby se shodovaly se "
+"zprávou varování a jménem modulu, pokud odpovídající pole začíná a končí s "
+"kósem (``/``). (Přispělo Serhiy Storchaka v :gh:`134716`.)"
 
 #: ../../whatsnew/3.15.rst:305
 msgid ""
 "Functions that take timestamp or timeout arguments now accept any real "
 "numbers (such as :class:`~decimal.Decimal` and "
-":class:`~fractions.Fraction`), not only integers or floats, although this"
-" does not improve precision. (Contributed by Serhiy Storchaka in "
+":class:`~fractions.Fraction`), not only integers or floats, although this "
+"does not improve precision. (Contributed by Serhiy Storchaka in "
 ":gh:`67795`.)"
 msgstr ""
+"Funkce, které berou argumenty časového razítka nebo časového limitu, nyní "
+"přijímají jakékoli reálné čísla (jakož :class:`~decimal.Decimal` a "
+":class:`~fractions.Fraction`), nejen celá čísla nebo desítková čísla, ačkoli"
+" to nezlepšuje přesnost. (Přispělo Serhiy Storchaka v :gh:`67795`.)"
 
 #: ../../whatsnew/3.15.rst:312
 msgid ""
-"Added :meth:`bytearray.take_bytes(n=None, /) <bytearray.take_bytes>` to "
-"take bytes out of a :class:`bytearray` without copying. This enables "
-"optimizing code which must return :class:`bytes` after working with a "
-"mutable buffer of bytes such as data buffering, network protocol parsing,"
-" encoding, decoding, and compression. Common code patterns which can be "
-"optimized with :func:`~bytearray.take_bytes` are listed below."
+"Added :meth:`bytearray.take_bytes(n=None, /) <bytearray.take_bytes>` to take"
+" bytes out of a :class:`bytearray` without copying. This enables optimizing "
+"code which must return :class:`bytes` after working with a mutable buffer of"
+" bytes such as data buffering, network protocol parsing, encoding, decoding,"
+" and compression. Common code patterns which can be optimized with "
+":func:`~bytearray.take_bytes` are listed below."
 msgstr ""
+"Přidána metoda :meth:`bytearray.take_bytes(n=None, /) "
+"<bytearray.take_bytes>` k vytáhání bajtů ze třídy :class:`bytearray` bez "
+"kopírování. To umožňuje optimalizaci kódu, který musí vrátit :class:`bytes` "
+"po práci se změným buf feren bájtů, jakož puffering dat, parsání síťových "
+"protokolů, kódování, dekodávání a kompresi. Casto používané vzory kódu, "
+"které lze optimalizovat pomocí :func:`~bytearray.take_bytes`, jsou uvedeny "
+"níže."
 
 #: ../../whatsnew/3.15.rst:319
 msgid "Suggested optimizing refactors"
-msgstr ""
+msgstr "Navržené optimalizace refakcionián"
 
 #: ../../whatsnew/3.15.rst:322
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: ../../whatsnew/3.15.rst:323
 msgid "Old"
-msgstr ""
+msgstr "Staré"
 
 #: ../../whatsnew/3.15.rst:324
 msgid "New"
-msgstr ""
+msgstr "Nové"
 
 #: ../../whatsnew/3.15.rst:326
 msgid "Return :class:`bytes` after working with :class:`bytearray`"
-msgstr ""
+msgstr "Vráťení :class:`bytes` po práci s :class:`bytearray`"
 
 #: ../../whatsnew/3.15.rst:327
 msgid ""
@@ -517,6 +691,10 @@ msgid ""
 "    ...\n"
 "    return bytes(buffer)"
 msgstr ""
+"def read() -> bytes:\n"
+"    buffer = bytearray(1024)\n"
+"    ...\n"
+"    return bytes(buffer)"
 
 #: ../../whatsnew/3.15.rst:334
 msgid ""
@@ -525,10 +703,14 @@ msgid ""
 "    ...\n"
 "    return buffer.take_bytes()"
 msgstr ""
+"def read() -> bytes:\n"
+"    buffer = bytearray(1024)\n"
+"    ...\n"
+"    return buffer.take_bytes()"
 
 #: ../../whatsnew/3.15.rst:341
 msgid "Empty a buffer getting the bytes"
-msgstr ""
+msgstr "Vyprázdnění bufferu záskáním bajtů"
 
 #: ../../whatsnew/3.15.rst:342
 msgid ""
@@ -537,6 +719,10 @@ msgid ""
 "data = bytes(buffer)\n"
 "buffer.clear()"
 msgstr ""
+"buffer = bytearray(1024)\n"
+"...\n"
+"data = bytes(buffer)\n"
+"buffer.clear()"
 
 #: ../../whatsnew/3.15.rst:349
 msgid ""
@@ -544,10 +730,13 @@ msgid ""
 "...\n"
 "data = buffer.take_bytes()"
 msgstr ""
+"buffer = bytearray(1024)\n"
+"...\n"
+"data = buffer.take_bytes()"
 
 #: ../../whatsnew/3.15.rst:355
 msgid "Split a buffer at a specific separator"
-msgstr ""
+msgstr "Rozdelení bufferu na konkrétním oddělovači"
 
 #: ../../whatsnew/3.15.rst:356
 msgid ""
@@ -558,6 +747,12 @@ msgid ""
 "assert data == b'abc'\n"
 "assert buffer == bytearray(b'def')"
 msgstr ""
+"buffer = bytearray(b'abc\\ndef')\n"
+"n = buffer.find(b'\\n')\n"
+"data = bytes(buffer[:n + 1])\n"
+"del buffer[:n + 1]\n"
+"assert data == b'abc'\n"
+"assert buffer == bytearray(b'def')"
 
 #: ../../whatsnew/3.15.rst:365
 msgid ""
@@ -565,10 +760,13 @@ msgid ""
 "n = buffer.find(b'\\n')\n"
 "data = buffer.take_bytes(n + 1)"
 msgstr ""
+"buffer = bytearray(b'abc\\ndef')\n"
+"n = buffer.find(b'\\n')\n"
+"data = buffer.take_bytes(n + 1)"
 
 #: ../../whatsnew/3.15.rst:371
 msgid "Split a buffer at a specific separator; discard after the separator"
-msgstr ""
+msgstr "Rozdělení bufferu na konkrétním oddělovači; zahodení za oddělovačem"
 
 #: ../../whatsnew/3.15.rst:372
 msgid ""
@@ -579,6 +777,12 @@ msgid ""
 "assert data == b'abc'\n"
 "assert len(buffer) == 0"
 msgstr ""
+"buffer = bytearray(b'abc\\ndef')\n"
+"n = buffer.find(b'\\n')\n"
+"data = bytes(buffer[:n])\n"
+"buffer.clear()\n"
+"assert data == b'abc'\n"
+"assert len(buffer) == 0"
 
 #: ../../whatsnew/3.15.rst:381
 msgid ""
@@ -587,10 +791,14 @@ msgid ""
 "buffer.resize(n)\n"
 "data = buffer.take_bytes()"
 msgstr ""
+"buffer = bytearray(b'abc\\ndef')\n"
+"n = buffer.find(b'\\n')\n"
+"buffer.resize(n)\n"
+"data = buffer.take_bytes()"
 
 #: ../../whatsnew/3.15.rst:388
 msgid "(Contributed by Cody Maloney in :gh:`139871`.)"
-msgstr ""
+msgstr "(Přispělo Cody Maloney v :gh:`139871`.)"
 
 #: ../../whatsnew/3.15.rst:390
 msgid ""
@@ -598,82 +806,106 @@ msgid ""
 ":func:`compile`, :func:`ast.parse`, :func:`symtable.symtable`, and "
 ":func:`importlib.abc.InspectLoader.source_to_code`, now allow the module "
 "name to be passed. It is needed to unambiguously :ref:`filter <warning-"
-"filter>` syntax warnings by module name. (Contributed by Serhiy Storchaka"
-" in :gh:`135801`.)"
+"filter>` syntax warnings by module name. (Contributed by Serhiy Storchaka in"
+" :gh:`135801`.)"
 msgstr ""
+"Mnoho funkcí souvisejících se kompilací nebo parsáním kódu Pythonu, jakož "
+":func:`compile`, :func:`ast.parse`, :func:`symtable.symtable` a "
+":func:`importlib.abc.InspectLoader.source_to_code`, nyní umožňuje předání "
+"jména modulu. Je potřebné jednoznačně :ref:`filtrovat <warning-filter>` "
+"varování syntaxe podle jména modulu. (Přispělo Serhiy Storchaka v "
+":gh:`135801`.)"
 
 #: ../../whatsnew/3.15.rst:397
 msgid ""
-"Allowed defining the *__dict__* and *__weakref__* :ref:`__slots__ "
-"<slots>` for any class. (Contributed by Serhiy Storchaka in :gh:`41779`.)"
+"Allowed defining the *__dict__* and *__weakref__* :ref:`__slots__ <slots>` "
+"for any class. (Contributed by Serhiy Storchaka in :gh:`41779`.)"
 msgstr ""
+"Povoleno definování *__dict__* a *__weakref__* :ref:`__slots__ <slots>` pro "
+"libovolnou třídu. (Přispělo Serhiy Storchaka v :gh:`41779`.)"
 
 #: ../../whatsnew/3.15.rst:403
 msgid "New modules"
-msgstr ""
+msgstr "Nové moduly"
 
 #: ../../whatsnew/3.15.rst:406
 msgid "math.integer"
-msgstr ""
+msgstr "math.integer"
 
 #: ../../whatsnew/3.15.rst:408
 msgid ""
 "This module provides access to the mathematical functions for integer "
 "arguments (:pep:`791`). (Contributed by Serhiy Storchaka in :gh:`81313`.)"
 msgstr ""
+"Tento modul poskytuje přístup k matematickým funkcím pro argumenty celé "
+"číslo (:pep:`791`). (Přispělo Serhiy Storchaka v :gh:`81313`.)"
 
 #: ../../whatsnew/3.15.rst:414
 msgid "Improved modules"
-msgstr ""
+msgstr "Vylepšené moduly"
 
 #: ../../whatsnew/3.15.rst:417
 msgid "argparse"
-msgstr ""
+msgstr "argparse"
 
 #: ../../whatsnew/3.15.rst:419
 msgid ""
-"The :class:`~argparse.BooleanOptionalAction` action supports now single-"
-"dash long options and alternate prefix characters. (Contributed by Serhiy"
-" Storchaka in :gh:`138525`.)"
+"The :class:`~argparse.BooleanOptionalAction` action supports now single-dash"
+" long options and alternate prefix characters. (Contributed by Serhiy "
+"Storchaka in :gh:`138525`.)"
 msgstr ""
+"Akce :class:`~argparse.BooleanOptionalAction` nyní podporuje dlouhé volby s "
+"jedným pomlčkem a alternativní znaky prefix. (Přispělo Serhiy Storchaka v "
+":gh:`138525`.)"
 
 #: ../../whatsnew/3.15.rst:423
 msgid ""
-"Changed the *suggest_on_error* parameter of "
-":class:`argparse.ArgumentParser` to default to ``True``. This enables "
-"suggestions for mistyped arguments by default. (Contributed by Jakob "
-"Schluse in :gh:`140450`.)"
+"Changed the *suggest_on_error* parameter of :class:`argparse.ArgumentParser`"
+" to default to ``True``. This enables suggestions for mistyped arguments by "
+"default. (Contributed by Jakob Schluse in :gh:`140450`.)"
 msgstr ""
+"Změn parametr *suggest_on_error* třídy :class:`argparse.ArgumentParser` na "
+"výchozí hodnotu ``True``. To umožňuje zástupné návrhy na chybně zadané "
+"argumenty. (Přispělo Jakob Schluse v :gh:`140450`.)"
 
 #: ../../whatsnew/3.15.rst:427
 msgid ""
-"Added backtick markup support in description and epilog text to highlight"
-" inline code when color output is enabled. (Contributed by Savannah "
-"Ostrowski in :gh:`142390`.)"
+"Added backtick markup support in description and epilog text to highlight "
+"inline code when color output is enabled. (Contributed by Savannah Ostrowski"
+" in :gh:`142390`.)"
 msgstr ""
+"Přidána podpora zpětných uvozovacích markú v popisu a epilogu k zvýhlednění "
+"vloženého kódu při zapnutý barevnóm výstup. (Přispělo Savannah Ostrowski v "
+":gh:`142390`.)"
 
 #: ../../whatsnew/3.15.rst:432
 msgid "base64 & binascii"
-msgstr ""
+msgstr "base64 & binascii"
 
 #: ../../whatsnew/3.15.rst:434
 msgid ""
-"CPython's underlying base64 implementation now encodes 2x faster and "
-"decodes 3x faster thanks to simple CPU pipelining optimizations. "
-"(Contributed by Gregory P. Smith & Serhiy Storchaka in :gh:`143262`.)"
+"CPython's underlying base64 implementation now encodes 2x faster and decodes"
+" 3x faster thanks to simple CPU pipelining optimizations. (Contributed by "
+"Gregory P. Smith & Serhiy Storchaka in :gh:`143262`.)"
 msgstr ""
+"Podkladová implementace base64 v CPythonu nyní kóduje 2x rychleji a dekoduje"
+" 3x rychleji dík jednoduchém optimalizacím pipeliningů CPU. (Přispělo "
+"Gregory P. Smith & Serhiy Storchaka v :gh:`143262`.)"
 
 #: ../../whatsnew/3.15.rst:439
 msgid "calendar"
-msgstr ""
+msgstr "calendar"
 
 #: ../../whatsnew/3.15.rst:441
 msgid ""
 "Calendar pages generated by the :class:`calendar.HTMLCalendar` class now "
-"support dark mode and have been migrated to the HTML5 standard for "
-"improved accessibility. (Contributed by Jiahao Li and Hugo van Kemenade "
-"in :gh:`137634`.)"
+"support dark mode and have been migrated to the HTML5 standard for improved "
+"accessibility. (Contributed by Jiahao Li and Hugo van Kemenade in "
+":gh:`137634`.)"
 msgstr ""
+"Stránky kalendáře vygenerované třídou :class:`calendar.HTMLCalendar` nyní "
+"podporují tmavý režim a byly migrovány na standard HTML5 pro zlepovenou "
+"přístupnost. (Přispělo Jiahao Li a Hugo van Kemenade v :gh:`137634`.)"
 
 #: ../../whatsnew/3.15.rst:445
 msgid ""
@@ -681,57 +913,73 @@ msgid ""
 "accepts the year-month option: ``python -m calendar -t html 2009 06``. "
 "(Contributed by Pål Grønås Drange in :gh:`140212`.)"
 msgstr ""
+"Výstup HTML modul :mod:`calendar` z příkázové řádky nyní přijímá volbu rok-"
+"měsíc: ``python -m calendar -t html 2009 06``. (Přispělo Pål Grønås Drange v"
+" :gh:`140212`.)"
 
 #: ../../whatsnew/3.15.rst:451
 msgid "collections"
-msgstr ""
+msgstr "collections"
 
 #: ../../whatsnew/3.15.rst:453
 msgid ""
 "Added :meth:`!collections.Counter.__xor__` and "
-":meth:`!collections.Counter.__ixor__` to compute the symmetric difference"
-" between :class:`~collections.Counter` objects. (Contributed by Raymond "
+":meth:`!collections.Counter.__ixor__` to compute the symmetric difference "
+"between :class:`~collections.Counter` objects. (Contributed by Raymond "
 "Hettinger in :gh:`138682`.)"
 msgstr ""
+"Přidány metody :meth:`!collections.Counter.__xor__` a "
+":meth:`!collections.Counter.__ixor__` k výpočtu symetrického rozdílu mezi "
+"objekty :class:`~collections.Counter`. (Přispělo Raymond Hettinger v "
+":gh:`138682`.)"
 
 #: ../../whatsnew/3.15.rst:459
 msgid "collections.abc"
-msgstr ""
+msgstr "collections.abc"
 
 #: ../../whatsnew/3.15.rst:461
 msgid ""
 ":class:`collections.abc.ByteString` has been removed from "
-"``collections.abc.__all__``. :class:`!collections.abc.ByteString` has "
-"been deprecated since Python 3.12, and is scheduled for removal in Python"
-" 3.17."
+"``collections.abc.__all__``. :class:`!collections.abc.ByteString` has been "
+"deprecated since Python 3.12, and is scheduled for removal in Python 3.17."
 msgstr ""
+":class:`collections.abc.ByteString` byla odebrána z "
+"``collections.abc.__all__``. :class:`!collections.abc.ByteString` je "
+"zastaralá od Pythonu 3.12 a je naplanována její odebrání v Pythonu 3.17."
 
 #: ../../whatsnew/3.15.rst:465 ../../whatsnew/3.15.rst:1070
 msgid ""
-"The following statements now cause ``DeprecationWarning``\\ s to be "
-"emitted at runtime:"
+"The following statements now cause ``DeprecationWarning``\\ s to be emitted "
+"at runtime:"
 msgstr ""
+"Následující výroky nyní způsobuji vyzrózení ``DeprecationWarning`` výstrah v"
+" době spuštění:"
 
 #: ../../whatsnew/3.15.rst:468
 msgid "``from collections.abc import ByteString``"
-msgstr ""
+msgstr "``from collections.abc import ByteString``"
 
 #: ../../whatsnew/3.15.rst:469
 msgid "``import collections.abc; collections.abc.ByteString``."
-msgstr ""
+msgstr "``import collections.abc; collections.abc.ByteString``."
 
 #: ../../whatsnew/3.15.rst:471
 msgid ""
 "``DeprecationWarning``\\ s were already emitted if "
 ":class:`collections.abc.ByteString` was subclassed or used as the second "
-"argument to :func:`isinstance` or :func:`issubclass`, but warnings were "
-"not previously emitted if it was merely imported or accessed from the "
+"argument to :func:`isinstance` or :func:`issubclass`, but warnings were not "
+"previously emitted if it was merely imported or accessed from the "
 ":mod:`!collections.abc` module."
 msgstr ""
+"``DeprecationWarning`` výsтrahy byly již zprózorény, pokud byla třída "
+":class:`collections.abc.ByteString` podtřídou nebo použita jako druhý "
+"argument pro :func:`isinstance` nebo :func:`issubclass`, ale varování nebyla"
+" předtcm zprózoréna, pokud byla pouze importována nebo přístupná z modulu "
+":mod:`!collections.abc`."
 
 #: ../../whatsnew/3.15.rst:479
 msgid "concurrent.futures"
-msgstr ""
+msgstr "concurrent.futures"
 
 #: ../../whatsnew/3.15.rst:481
 msgid ""
@@ -740,20 +988,26 @@ msgid ""
 "resulting traceback will now tell you the PID and exit code of the "
 "terminated process. (Contributed by Jonathan Berg in :gh:`139486`.)"
 msgstr ""
+"Vylepovné zprávšování chyb při neoeknaném ukončení podprocesu v třídě "
+":class:`concurrent.futures.ProcessPoolExecutor`. Výsledný záznam trasového "
+"zázámu vám nyní řekne PID a kód ukončení terminávajícího procesu. (Přispělo "
+"Jonathan Berg v :gh:`139486`.)"
 
 #: ../../whatsnew/3.15.rst:489
 msgid "dataclasses"
-msgstr ""
+msgstr "dataclasses"
 
 #: ../../whatsnew/3.15.rst:491
 msgid ""
-"Annotations for generated ``__init__`` methods no longer include internal"
-" type names."
+"Annotations for generated ``__init__`` methods no longer include internal "
+"type names."
 msgstr ""
+"Anotace pro generované metody ``__init__`` již neobsahují názvy vnútorních "
+"typů."
 
 #: ../../whatsnew/3.15.rst:496
 msgid "dbm"
-msgstr ""
+msgstr "dbm"
 
 #: ../../whatsnew/3.15.rst:498
 msgid ""
@@ -762,19 +1016,25 @@ msgid ""
 "occupied by deleted entries. (Contributed by Andrea Oliveri in "
 ":gh:`134004`.)"
 msgstr ""
+"Přidány nové metody :meth:`!reorganize` k :mod:`dbm.dumb` a "
+":mod:`dbm.sqlite3`, které umožňují zobření používáno volného prostoru předtm"
+" obsazeného smaranými záznamy. (Přispělo Andrea Oliveri v :gh:`134004`.)"
 
 #: ../../whatsnew/3.15.rst:505
 msgid "difflib"
-msgstr ""
+msgstr "difflib"
 
 #: ../../whatsnew/3.15.rst:509
 msgid ""
-"Introduced the optional *color* parameter to "
-":func:`difflib.unified_diff`, enabling color output similar to "
-":program:`git diff`. This can be controlled by :ref:`environment "
-"variables <using-on-controlling-color>`. (Contributed by Douglas Thor in "
-":gh:`133725`.)"
+"Introduced the optional *color* parameter to :func:`difflib.unified_diff`, "
+"enabling color output similar to :program:`git diff`. This can be controlled"
+" by :ref:`environment variables <using-on-controlling-color>`. (Contributed "
+"by Douglas Thor in :gh:`133725`.)"
 msgstr ""
+"Představen parametr *color* pro funkci :func:`difflib.unified_diff`, "
+"umožňující barevný výstup podobný :program:`git diff`. To lze kontrolovat "
+"pomocí :ref:`proměnných prostředí <using-on-controlling-color>`. (Přispělo "
+"Douglas Thor v :gh:`133725`.)"
 
 #: ../../whatsnew/3.15.rst:515
 msgid ""
@@ -782,178 +1042,228 @@ msgid ""
 ":class:`difflib.HtmlDiff` class, and migrated the output to the HTML5 "
 "standard. (Contributed by Jiahao Li in :gh:`134580`.)"
 msgstr ""
+"Vylepovány styl HTML stránek s rozdíly vygenerované třídou "
+":class:`difflib.HtmlDiff` a výstup migrován na standard HTML5. (Přispělo "
+"Jiahao Li v :gh:`134580`.)"
 
 #: ../../whatsnew/3.15.rst:521
 msgid "functools"
-msgstr ""
+msgstr "functools"
 
 #: ../../whatsnew/3.15.rst:523
 msgid ""
-":func:`~functools.singledispatchmethod` now supports "
-"non-:term:`descriptor` callables. (Contributed by Serhiy Storchaka in "
-":gh:`140873`.)"
+":func:`~functools.singledispatchmethod` now supports non-:term:`descriptor` "
+"callables. (Contributed by Serhiy Storchaka in :gh:`140873`.)"
 msgstr ""
+":func:`~functools.singledispatchmethod` nyní podporuje volatelnost mimo "
+":term:`descriptor`. (Přispělo Serhiy Storchaka v :gh:`140873`.)"
 
 #: ../../whatsnew/3.15.rst:529
 msgid "hashlib"
-msgstr ""
+msgstr "hashlib"
 
 #: ../../whatsnew/3.15.rst:531
 msgid ""
 "Ensure that hash functions guaranteed to be always *available* exist as "
-"attributes of :mod:`hashlib` even if they will not work at runtime due to"
-" missing backend implementations. For instance, ``hashlib.md5`` will no "
-"longer raise :exc:`AttributeError` if OpenSSL is not available and Python"
-" has been built without MD5 support. (Contributed by Bénédikt Tran in "
+"attributes of :mod:`hashlib` even if they will not work at runtime due to "
+"missing backend implementations. For instance, ``hashlib.md5`` will no "
+"longer raise :exc:`AttributeError` if OpenSSL is not available and Python "
+"has been built without MD5 support. (Contributed by Bénédikt Tran in "
 ":gh:`136929`.)"
 msgstr ""
+"Zajistěte, aby hash funkce zaruereně vždy *dostupné* existovaly jako "
+"atributy :mod:`hashlib`, i když nebudou pracovat v době spuštění kvůli "
+"chybějícím implementacím backendů. Například, ``hashlib.md5`` již nevyvolá "
+":exc:`AttributeError`, pokud OpenSSL není dostupné a Python byl sestaven bez"
+" podpory MD5. (Přispělo Bénédikt Tran v :gh:`136929`.)"
 
 #: ../../whatsnew/3.15.rst:540
 msgid "http.client"
-msgstr ""
+msgstr "http.client"
 
 #: ../../whatsnew/3.15.rst:542
 msgid ""
 "A new *max_response_headers* keyword-only parameter has been added to "
 ":class:`~http.client.HTTPConnection` and "
-":class:`~http.client.HTTPSConnection` constructors. This parameter "
-"overrides the default maximum number of allowed response headers. "
-"(Contributed by Alexander Enrique Urieles Nieto in :gh:`131724`.)"
+":class:`~http.client.HTTPSConnection` constructors. This parameter overrides"
+" the default maximum number of allowed response headers. (Contributed by "
+"Alexander Enrique Urieles Nieto in :gh:`131724`.)"
 msgstr ""
+"Nový parametr *max_response_headers* pouze s klíčovým sluvem byl přidán ke "
+"konstruktorům :class:`~http.client.HTTPConnection` a "
+":class:`~http.client.HTTPSConnection`. Tento parametr přepisuje výchozí "
+"maximální počet povolench záhlaví odpovědi. (Přispělo Alexander Enrique "
+"Urieles Nieto v :gh:`131724`.)"
 
 #: ../../whatsnew/3.15.rst:550
 msgid "http.cookies"
-msgstr ""
+msgstr "http.cookies"
 
 #: ../../whatsnew/3.15.rst:552
 msgid ""
-"Allow '``\"``' double quotes in cookie values. (Contributed by Nick Burns"
-" and Senthil Kumaran in :gh:`92936`.)"
+"Allow '``\"``' double quotes in cookie values. (Contributed by Nick Burns "
+"and Senthil Kumaran in :gh:`92936`.)"
 msgstr ""
+"Povolte '``\"``' dvojité uvozovací známky v hodnotách cookies. (Přispělo "
+"Nick Burns a Senthil Kumaran v :gh:`92936`.)"
 
 #: ../../whatsnew/3.15.rst:557
 msgid "inspect"
-msgstr ""
+msgstr "inspect"
 
 #: ../../whatsnew/3.15.rst:559
 msgid ""
 "Add parameters *inherit_class_doc* and *fallback_to_class_doc* for "
-":func:`~inspect.getdoc`. (Contributed by Serhiy Storchaka in "
-":gh:`132686`.)"
+":func:`~inspect.getdoc`. (Contributed by Serhiy Storchaka in :gh:`132686`.)"
 msgstr ""
+"Přidejte parametry *inherit_class_doc* a *fallback_to_class_doc* pro "
+":func:`~inspect.getdoc`. (Přispělo Serhiy Storchaka v :gh:`132686`.)"
 
 #: ../../whatsnew/3.15.rst:565
 msgid "locale"
-msgstr ""
+msgstr "locale"
 
 #: ../../whatsnew/3.15.rst:567
 msgid ""
-":func:`~locale.setlocale` now supports language codes with "
-"``@``-modifiers. ``@``-modifiers are no longer silently removed in "
-":func:`~locale.getlocale`, but included in the language code. "
-"(Contributed by Serhiy Storchaka in :gh:`137729`.)"
+":func:`~locale.setlocale` now supports language codes with ``@``-modifiers. "
+"``@``-modifiers are no longer silently removed in :func:`~locale.getlocale`,"
+" but included in the language code. (Contributed by Serhiy Storchaka in "
+":gh:`137729`.)"
 msgstr ""
+":func:`~locale.setlocale` nyní podporuje jazykove kódy s ``@``-modifikátory."
+" ``@``-modifikátory již nejsou v tichů odstraněny v "
+":func:`~locale.getlocale`, ale zahrnuty v jazykovém kódu. (Přispělo Serhiy "
+"Storchaka v :gh:`137729`.)"
 
 #: ../../whatsnew/3.15.rst:572
 msgid ""
-"Undeprecate the :func:`locale.getdefaultlocale` function. (Contributed by"
-" Victor Stinner in :gh:`130796`.)"
+"Undeprecate the :func:`locale.getdefaultlocale` function. (Contributed by "
+"Victor Stinner in :gh:`130796`.)"
 msgstr ""
+"Vratte :func:`locale.getdefaultlocale` funkci bez zastaralení. (Přispělo "
+"Victor Stinner v :gh:`130796`.)"
 
 #: ../../whatsnew/3.15.rst:577
 msgid "math"
-msgstr ""
+msgstr "math"
 
 #: ../../whatsnew/3.15.rst:579
 msgid ""
 "Add :func:`math.isnormal` and :func:`math.issubnormal` functions. "
 "(Contributed by Sergey B Kirpichev in :gh:`132908`.)"
 msgstr ""
+"Přidejte funkce :func:`math.isnormal` a :func:`math.issubnormal`. (Přispělo "
+"Sergey B Kirpichev v :gh:`132908`.)"
 
 #: ../../whatsnew/3.15.rst:582
 msgid ""
-"Add :func:`math.fmax`, :func:`math.fmin` and :func:`math.signbit` "
-"functions. (Contributed by Bénédikt Tran in :gh:`135853`.)"
+"Add :func:`math.fmax`, :func:`math.fmin` and :func:`math.signbit` functions."
+" (Contributed by Bénédikt Tran in :gh:`135853`.)"
 msgstr ""
+"Přidejte funkce :func:`math.fmax`, :func:`math.fmin` a :func:`math.signbit`."
+" (Přispělo Bénédikt Tran v :gh:`135853`.)"
 
 #: ../../whatsnew/3.15.rst:587
 msgid "mimetypes"
-msgstr ""
+msgstr "mimetypes"
 
 #: ../../whatsnew/3.15.rst:589
 msgid ""
-"Add ``application/node`` MIME type for ``.cjs`` extension. (Contributed "
-"by John Franey in :gh:`140937`.)"
+"Add ``application/node`` MIME type for ``.cjs`` extension. (Contributed by "
+"John Franey in :gh:`140937`.)"
 msgstr ""
+"Přidejte typ MIME ``application/node`` pro příponu ``.cjs``. (Přispělo John "
+"Franey v :gh:`140937`.)"
 
 #: ../../whatsnew/3.15.rst:590
-msgid "Add ``application/toml``. (Contributed by Gil Forcada in :gh:`139959`.)"
-msgstr ""
+msgid ""
+"Add ``application/toml``. (Contributed by Gil Forcada in :gh:`139959`.)"
+msgstr "Přidejte ``application/toml``. (Přispělo Gil Forcada v :gh:`139959`.)"
 
 #: ../../whatsnew/3.15.rst:591
 msgid ""
-"Rename ``application/x-texinfo`` to ``application/texinfo``. (Contributed"
-" by Charlie Lin in :gh:`140165`.)"
+"Rename ``application/x-texinfo`` to ``application/texinfo``. (Contributed by"
+" Charlie Lin in :gh:`140165`.)"
 msgstr ""
+"Přejmenujte ``application/x-texinfo`` na ``application/texinfo``. (Přispělo "
+"Charlie Lin v :gh:`140165`.)"
 
 #: ../../whatsnew/3.15.rst:593
 msgid ""
-"Changed the MIME type for ``.ai`` files to ``application/pdf``. "
-"(Contributed by Stan Ulbrych in :gh:`141239`.)"
+"Changed the MIME type for ``.ai`` files to ``application/pdf``. (Contributed"
+" by Stan Ulbrych in :gh:`141239`.)"
 msgstr ""
+"Zmenenova typ MIME pro soubory ``.ai`` na ``application/pdf``. (Přispělo "
+"Stan Ulbrych v :gh:`141239`.)"
 
 #: ../../whatsnew/3.15.rst:598
 msgid "mmap"
-msgstr ""
+msgstr "mmap"
 
 #: ../../whatsnew/3.15.rst:600
 msgid ""
 ":class:`mmap.mmap` now has a *trackfd* parameter on Windows; if it is "
-"``False``, the file handle corresponding to *fileno* will not be "
-"duplicated. (Contributed by Serhiy Storchaka in :gh:`78502`.)"
+"``False``, the file handle corresponding to *fileno* will not be duplicated."
+" (Contributed by Serhiy Storchaka in :gh:`78502`.)"
 msgstr ""
+":class:`mmap.mmap` má nyní parametr *trackfd* v systému Windows; pokud je "
+"``False``, deskriptor souboru odpovídající *fileno* nebude duplikován. "
+"(Přispělo Serhiy Storchaka v :gh:`78502`.)"
 
 #: ../../whatsnew/3.15.rst:605
 msgid ""
-"Added the :meth:`mmap.mmap.set_name` method to annotate an anonymous "
-"memory mapping if Linux kernel supports :manpage:`PR_SET_VMA_ANON_NAME "
-"<PR_SET_VMA(2const)>` (Linux 5.17 or newer). (Contributed by Donghee Na "
-"in :gh:`142419`.)"
+"Added the :meth:`mmap.mmap.set_name` method to annotate an anonymous memory "
+"mapping if Linux kernel supports :manpage:`PR_SET_VMA_ANON_NAME "
+"<PR_SET_VMA(2const)>` (Linux 5.17 or newer). (Contributed by Donghee Na in "
+":gh:`142419`.)"
 msgstr ""
+"Přidána metoda :meth:`mmap.mmap.set_name` k anotaci anonymního mapování "
+"paměti, pokud jádro Linuxu podporuje :manpage:`PR_SET_VMA_ANON_NAME "
+"<PR_SET_VMA(2const)>` (Linux 5.17 nebo novější). (Přispělo Donghee Na v "
+":gh:`142419`.)"
 
 #: ../../whatsnew/3.15.rst:612
 msgid "os"
-msgstr ""
+msgstr "os"
 
 #: ../../whatsnew/3.15.rst:614
 msgid ""
 "Add :func:`os.statx` on Linux kernel versions 4.11 and later with glibc "
-"versions 2.28 and later. (Contributed by Jeffrey Bosboom and Victor "
-"Stinner in :gh:`83714`.)"
+"versions 2.28 and later. (Contributed by Jeffrey Bosboom and Victor Stinner "
+"in :gh:`83714`.)"
 msgstr ""
+"Přidejte :func:`os.statx` na jádra Linuxu verze 4.11 a novější s verzí glibc"
+" 2.28 a novější. (Přispělo Jeffrey Bosboom a Victor Stinner v :gh:`83714`.)"
 
 #: ../../whatsnew/3.15.rst:620
 msgid "os.path"
-msgstr ""
+msgstr "os.path"
 
 #: ../../whatsnew/3.15.rst:622
 msgid ""
 "Add support of the all-but-last mode in :func:`~os.path.realpath`. "
 "(Contributed by Serhiy Storchaka in :gh:`71189`.)"
 msgstr ""
+"Přidejte podporu režimu všeho mimo poslední v :func:`~os.path.realpath`. "
+"(Přispělo Serhiy Storchaka v :gh:`71189`.)"
 
 #: ../../whatsnew/3.15.rst:625
 msgid ""
 "The *strict* parameter to :func:`os.path.realpath` accepts a new value, "
 ":data:`os.path.ALLOW_MISSING`. If used, errors other than "
 ":exc:`FileNotFoundError` will be re-raised; the resulting path can be "
-"missing but it will be free of symlinks. (Contributed by Petr Viktorin "
-"for :cve:`2025-4517`.)"
+"missing but it will be free of symlinks. (Contributed by Petr Viktorin for "
+":cve:`2025-4517`.)"
 msgstr ""
+"Parametr *strict* funkce :func:`os.path.realpath` přijímá novou hodnotu "
+":data:`os.path.ALLOW_MISSING`. Pokud se použije, chyby jiné než "
+":exc:`FileNotFoundError` budou znovu vyvolány; výsledná cesta může chybět, "
+"ale bude osvobojena od symbolických odkazů. (Přispělo Petr Viktorin pro "
+":cve:`2025-4517`.)"
 
 #: ../../whatsnew/3.15.rst:633
 msgid "resource"
-msgstr ""
+msgstr "resource"
 
 #: ../../whatsnew/3.15.rst:635
 msgid ""
@@ -962,58 +1272,74 @@ msgid ""
 ":data:`~resource.RLIM_SAVED_CUR`, and :data:`~resource.RLIM_SAVED_MAX`. "
 "(Contributed by Serhiy Storchaka in :gh:`137512`.)"
 msgstr ""
+"Přidejte nové konstanty: :data:`~resource.RLIMIT_NTHR`, "
+":data:`~resource.RLIMIT_UMTXP`, :data:`~resource.RLIMIT_THREADS`, "
+":data:`~resource.RLIM_SAVED_CUR` a :data:`~resource.RLIM_SAVED_MAX`. "
+"(Přispělo Serhiy Storchaka v :gh:`137512`.)"
 
 #: ../../whatsnew/3.15.rst:642
 msgid "shelve"
-msgstr ""
+msgstr "shelve"
 
 #: ../../whatsnew/3.15.rst:644
 msgid ""
-"Added new :meth:`!reorganize` method to :mod:`shelve` used to recover "
-"unused free space previously occupied by deleted entries. (Contributed by"
-" Andrea Oliveri in :gh:`134004`.)"
+"Added new :meth:`!reorganize` method to :mod:`shelve` used to recover unused"
+" free space previously occupied by deleted entries. (Contributed by Andrea "
+"Oliveri in :gh:`134004`.)"
 msgstr ""
+"Přidána nová metoda :meth:`!reorganize` k :mod:`shelve` používaná k zotavení"
+" volného prostoru dříve obsazeného smazanými záznam. (Přispělo Andrea "
+"Oliveri v :gh:`134004`.)"
 
 #: ../../whatsnew/3.15.rst:650
 msgid "socket"
-msgstr ""
+msgstr "socket"
 
 #: ../../whatsnew/3.15.rst:652
 msgid ""
-"Add constants for the ISO-TP CAN protocol. (Contributed by Patrick "
-"Menschel and Stefan Tatschner in :gh:`86819`.)"
+"Add constants for the ISO-TP CAN protocol. (Contributed by Patrick Menschel "
+"and Stefan Tatschner in :gh:`86819`.)"
 msgstr ""
+"Přidejte konstanty pro protokol ISO-TP CAN. (Přispělo Patrick Menschel a "
+"Stefan Tatschner v :gh:`86819`.)"
 
 #: ../../whatsnew/3.15.rst:657
 msgid "sqlite3"
-msgstr ""
+msgstr "sqlite3"
 
 #: ../../whatsnew/3.15.rst:659
-msgid "The :ref:`command-line interface <sqlite3-cli>` has several new features:"
+msgid ""
+"The :ref:`command-line interface <sqlite3-cli>` has several new features:"
 msgstr ""
+"Rozhraní :ref:`příkazové řádky <sqlite3-cli>` má několik nových vlastností:"
 
 #: ../../whatsnew/3.15.rst:661
 msgid ""
-"SQL keyword completion on <tab>. (Contributed by Long Tan in "
-":gh:`133393`.)"
+"SQL keyword completion on <tab>. (Contributed by Long Tan in :gh:`133393`.)"
 msgstr ""
+"Dokončení klíčového slova SQL na <tab>. (Přispělo Long Tan v :gh:`133393`.)"
 
 #: ../../whatsnew/3.15.rst:664
 msgid ""
-"Prompts, error messages, and help text are now colored. This is enabled "
-"by default, see :ref:`using-on-controlling-color` for details. "
-"(Contributed by Stan Ulbrych and Łukasz Langa in :gh:`133461`.)"
+"Prompts, error messages, and help text are now colored. This is enabled by "
+"default, see :ref:`using-on-controlling-color` for details. (Contributed by "
+"Stan Ulbrych and Łukasz Langa in :gh:`133461`.)"
 msgstr ""
+"Výzvy, chybové zprávy a text nápovědy jsou nyní zbarveny. To je ve výchozím "
+"nastavení povoleno, podrobnosti najdete v :ref:`using-on-controlling-color`."
+" (Přispělo Stan Ulbrych a Łukasz Langa v :gh:`133461`.)"
 
 #: ../../whatsnew/3.15.rst:669
 msgid ""
 "Table, index, trigger, view, column, function, and schema completion on "
 "<tab>. (Contributed by Long Tan in :gh:`136101`.)"
 msgstr ""
+"Dokončení tabulky, indexu, spouštěče, zobrazení, sloupce, funkce a schématu "
+"na <tab>. (Přispělo Long Tan v :gh:`136101`.)"
 
 #: ../../whatsnew/3.15.rst:674
 msgid "ssl"
-msgstr ""
+msgstr "ssl"
 
 #: ../../whatsnew/3.15.rst:676
 msgid ""
@@ -1021,10 +1347,14 @@ msgid ""
 "supports \"External PSKs\" in TLSv1.3, as described in RFC 9258. "
 "(Contributed by Will Childs-Klein in :gh:`133624`.)"
 msgstr ""
+"Oznamte pomocí :data:`ssl.HAS_PSK_TLS13`, zda modul :mod:`ssl` podporuje "
+"\"Externí PSK\" v TLSv1.3, jak je popsáno v RFC 9258. (Přispělo Will Childs-"
+"Klein v :gh:`133624`.)"
 
 #: ../../whatsnew/3.15.rst:680
 msgid "Added new methods for managing groups used for SSL key agreement"
 msgstr ""
+"Přidány nové metody pro správu skupin používaných pro dohodu o klíči SSL"
 
 #: ../../whatsnew/3.15.rst:682
 msgid ""
@@ -1032,16 +1362,25 @@ msgid ""
 "agreement, extending the previous :meth:`ssl.SSLContext.set_ecdh_curve` "
 "method. This new API provides the ability to list multiple groups and "
 "supports fixed-field and post-quantum groups in addition to ECDH curves. "
-"This method can also be used to control what key shares are sent in the "
-"TLS handshake."
+"This method can also be used to control what key shares are sent in the TLS "
+"handshake."
 msgstr ""
+":meth:`ssl.SSLContext.set_groups` nastavuje skupiny povolene pro dohodu o "
+"klíči, která rozširčuje předchozí metodu "
+":meth:`ssl.SSLContext.set_ecdh_curve`. Toto nové API poskytuje schopnost "
+"vypsat více skupin a podporuje skupiny s fixným polem a post-kvantové "
+"skupiny kromě ECDH křivek. Tato metoda může být také použita k řízení, jaké "
+"dély klíčů jsou odeslány při handshaku TLS."
 
 #: ../../whatsnew/3.15.rst:689
 msgid ""
 ":meth:`ssl.SSLSocket.group` returns the group selected for doing key "
-"agreement on the current connection after the TLS handshake completes. "
-"This call requires OpenSSL 3.2 or later."
+"agreement on the current connection after the TLS handshake completes. This "
+"call requires OpenSSL 3.2 or later."
 msgstr ""
+":meth:`ssl.SSLSocket.group` vrací skupinu vybrano pro dohodu o klíči v "
+"aktuálním spojení po dokončení handshaku TLS. Toto volaní vyžaduje OpenSSL "
+"3.2 nebo novější."
 
 #: ../../whatsnew/3.15.rst:692
 msgid ""
@@ -1049,130 +1388,173 @@ msgid ""
 "agreement groups compatible with the minimum and maximum TLS versions "
 "currently set in the context. This call requires OpenSSL 3.5 or later."
 msgstr ""
+":meth:`ssl.SSLContext.get_groups` vrací seznam všech dostupných skupin pro "
+"dohodu o klíči kompatibilných s minimálními a maximálními verzemi TLS "
+"aktuálně nastavenymi v kontextu. Toto volaní vyžaduje OpenSSL 3.5 nebo "
+"novější."
 
 #: ../../whatsnew/3.15.rst:696
 msgid "(Contributed by Ron Frederick in :gh:`136306`.)"
-msgstr ""
+msgstr "(Přispělo Ron Frederick v :gh:`136306`.)"
 
 #: ../../whatsnew/3.15.rst:698
 msgid ""
-"Added a new method :meth:`ssl.SSLContext.set_ciphersuites` for setting "
-"TLS 1.3 ciphers. For TLS 1.2 or earlier, "
-":meth:`ssl.SSLContext.set_ciphers` should continue to be used. Both calls"
-" can be made on the same context and the selected cipher suite will "
-"depend on the TLS version negotiated when a connection is made. "
-"(Contributed by Ron Frederick in :gh:`137197`.)"
+"Added a new method :meth:`ssl.SSLContext.set_ciphersuites` for setting TLS "
+"1.3 ciphers. For TLS 1.2 or earlier, :meth:`ssl.SSLContext.set_ciphers` "
+"should continue to be used. Both calls can be made on the same context and "
+"the selected cipher suite will depend on the TLS version negotiated when a "
+"connection is made. (Contributed by Ron Frederick in :gh:`137197`.)"
 msgstr ""
+"Přidána nová metoda :meth:`ssl.SSLContext.set_ciphersuites` pro nastavení "
+"šifer TLS 1.3. Pro TLS 1.2 nebo starší by měla být i nadále používána "
+":meth:`ssl.SSLContext.set_ciphers`. Vé volaní mohou být provédéna na stejném"
+" kontextu a vybraná šiferská sada bude záviset na verzi TLS vyjednané při na"
+" vázvání spojení. (Přispělo Ron Frederick v :gh:`137197`.)"
 
 #: ../../whatsnew/3.15.rst:705
 msgid "Added new methods for managing signature algorithms:"
-msgstr ""
+msgstr "Přidány nové metody pro správu algoritmů podpisu:"
 
 #: ../../whatsnew/3.15.rst:707
 msgid ""
 ":func:`ssl.get_sigalgs` returns a list of all available TLS signature "
 "algorithms. This call requires OpenSSL 3.4 or later."
 msgstr ""
+":func:`ssl.get_sigalgs` vrací seznam všech dostupných algoritmů podpisu TLS."
+" Toto volaní vyžaduje OpenSSL 3.4 nebo novější."
 
 #: ../../whatsnew/3.15.rst:709
 msgid ""
 ":meth:`ssl.SSLContext.set_client_sigalgs` sets the signature algorithms "
 "allowed for certificate-based client authentication."
 msgstr ""
+":meth:`ssl.SSLContext.set_client_sigalgs` nastavuje algoritmy podpisu "
+"povolene pro autentizaci klienta založnou na certifikátu."
 
 #: ../../whatsnew/3.15.rst:711
 msgid ""
 ":meth:`ssl.SSLContext.set_server_sigalgs` sets the signature algorithms "
 "allowed for the server to complete the TLS handshake."
 msgstr ""
+":meth:`ssl.SSLContext.set_server_sigalgs` nastavuje algoritmy podpisu "
+"povolene pro server k dokončení handshaku TLS."
 
 #: ../../whatsnew/3.15.rst:713
 msgid ""
-":meth:`ssl.SSLSocket.client_sigalg` returns the signature algorithm "
-"selected for client authentication on the current connection. This call "
-"requires OpenSSL 3.5 or later."
+":meth:`ssl.SSLSocket.client_sigalg` returns the signature algorithm selected"
+" for client authentication on the current connection. This call requires "
+"OpenSSL 3.5 or later."
 msgstr ""
+":meth:`ssl.SSLSocket.client_sigalg` vrací algoritmus podpisu vybraný pro "
+"autentizaci klienta v aktuálním spojení. Toto volaní vyžaduje OpenSSL 3.5 "
+"nebo novější."
 
 #: ../../whatsnew/3.15.rst:716
 msgid ""
-":meth:`ssl.SSLSocket.server_sigalg` returns the signature algorithm "
-"selected for the server to complete the TLS handshake on the current "
-"connection. This call requires OpenSSL 3.5 or later."
+":meth:`ssl.SSLSocket.server_sigalg` returns the signature algorithm selected"
+" for the server to complete the TLS handshake on the current connection. "
+"This call requires OpenSSL 3.5 or later."
 msgstr ""
+":meth:`ssl.SSLSocket.server_sigalg` vrací algoritmus podpisu vybraný pro "
+"server k dokončení handshaku TLS v aktuálním spojení. Toto volaní vyžaduje "
+"OpenSSL 3.5 nebo novější."
 
 #: ../../whatsnew/3.15.rst:720
 msgid "(Contributed by Ron Frederick in :gh:`138252`.)"
-msgstr ""
+msgstr "(Přispělo Ron Frederick v :gh:`138252`.)"
 
 #: ../../whatsnew/3.15.rst:724
 msgid "sys"
-msgstr ""
+msgstr "sys"
 
 #: ../../whatsnew/3.15.rst:726
 msgid ""
 "Add :data:`sys.abi_info` namespace to improve access to ABI information. "
 "(Contributed by Klaus Zimmermann in :gh:`137476`.)"
 msgstr ""
+"Přidejte obor názvů :data:`sys.abi_info` ke zlepšení přístupu k informacím "
+"ABI. (Přispělo Klaus Zimmermann v :gh:`137476`.)"
 
 #: ../../whatsnew/3.15.rst:731
 msgid "tarfile"
-msgstr ""
+msgstr "tarfile"
 
 #: ../../whatsnew/3.15.rst:733
 msgid ""
-":func:`~tarfile.data_filter` now normalizes symbolic link targets in "
-"order to avoid path traversal attacks. (Contributed by Petr Viktorin in "
+":func:`~tarfile.data_filter` now normalizes symbolic link targets in order "
+"to avoid path traversal attacks. (Contributed by Petr Viktorin in "
 ":gh:`127987` and :cve:`2025-4138`.)"
 msgstr ""
+":func:`~tarfile.data_filter` nyní normalizuje cíle symbolických odkazů, aby "
+"se vyhébly útokům na cesty. (Přispělo Petr Viktorin v :gh:`127987` a "
+":cve:`2025-4138`.)"
 
 #: ../../whatsnew/3.15.rst:736
 msgid ""
-":func:`~tarfile.TarFile.extractall` now skips fixing up directory "
-"attributes when a directory was removed or replaced by another kind of "
-"file. (Contributed by Petr Viktorin in :gh:`127987` and "
-":cve:`2024-12718`.)"
+":func:`~tarfile.TarFile.extractall` now skips fixing up directory attributes"
+" when a directory was removed or replaced by another kind of file. "
+"(Contributed by Petr Viktorin in :gh:`127987` and :cve:`2024-12718`.)"
 msgstr ""
+":func:`~tarfile.TarFile.extractall` nyní přeskočí opravy atributů adresáře, "
+"pokud byl adresář odstraněn nebo nahrazen jiným typem souboru. (Přispělo "
+"Petr Viktorin v :gh:`127987` a :cve:`2024-12718`.)"
 
 #: ../../whatsnew/3.15.rst:739
 msgid ""
-":func:`~tarfile.TarFile.extract` and :func:`~tarfile.TarFile.extractall` "
-"now (re-)apply the extraction filter when substituting a link (hard or "
+":func:`~tarfile.TarFile.extract` and :func:`~tarfile.TarFile.extractall` now"
+" (re-)apply the extraction filter when substituting a link (hard or "
 "symbolic) with a copy of another archive member, and when fixing up "
 "directory attributes. The former raises a new exception, "
 ":exc:`~tarfile.LinkFallbackError`. (Contributed by Petr Viktorin for "
 ":cve:`2025-4330` and :cve:`2024-12718`.)"
 msgstr ""
+":func:`~tarfile.TarFile.extract` a :func:`~tarfile.TarFile.extractall` nyní "
+"(znovu) aplikují filtr extrakcije při nahrazení odkazu (hard nebo symbolic) "
+"kopii jiného členu archivu a při opravě atributů adresáře. Ten první "
+"vyvolává novou výjimku :exc:`~tarfile.LinkFallbackError`. (Přispělo Petr "
+"Viktorin pro :cve:`2025-4330` a :cve:`2024-12718`.)"
 
 #: ../../whatsnew/3.15.rst:745
 msgid ""
-":func:`~tarfile.TarFile.extract` and :func:`~tarfile.TarFile.extractall` "
-"no longer extract rejected members when "
-":func:`~tarfile.TarFile.errorlevel` is zero. (Contributed by Matt Prodani"
-" and Petr Viktorin in :gh:`112887` and :cve:`2025-4435`.)"
+":func:`~tarfile.TarFile.extract` and :func:`~tarfile.TarFile.extractall` no "
+"longer extract rejected members when :func:`~tarfile.TarFile.errorlevel` is "
+"zero. (Contributed by Matt Prodani and Petr Viktorin in :gh:`112887` and "
+":cve:`2025-4435`.)"
 msgstr ""
+":func:`~tarfile.TarFile.extract` a :func:`~tarfile.TarFile.extractall` již "
+"neextrahují zamítnute členy, pokud je :func:`~tarfile.TarFile.errorlevel` "
+"nula. (Přispělo Matt Prodani a Petr Viktorin v :gh:`112887` a "
+":cve:`2025-4435`.)"
 
 #: ../../whatsnew/3.15.rst:750
 msgid ""
-":func:`~tarfile.TarFile.extract` and :func:`~tarfile.TarFile.extractall` "
-"now replace slashes by backslashes in symlink targets on Windows to "
-"prevent creation of corrupted links. (Contributed by Christoph Walcher in"
-" :gh:`57911`.)"
+":func:`~tarfile.TarFile.extract` and :func:`~tarfile.TarFile.extractall` now"
+" replace slashes by backslashes in symlink targets on Windows to prevent "
+"creation of corrupted links. (Contributed by Christoph Walcher in "
+":gh:`57911`.)"
 msgstr ""
+":func:`~tarfile.TarFile.extract` a :func:`~tarfile.TarFile.extractall` nyní "
+"nahrazují lomitka zpětnými lomitky v cílech symbolických odkazů v systému "
+"Windows, aby se zabránilo vytváření poškozených odkazů. (Přispělo Christoph "
+"Walcher v :gh:`57911`.)"
 
 #: ../../whatsnew/3.15.rst:757
 msgid "timeit"
-msgstr ""
+msgstr "timeit"
 
 #: ../../whatsnew/3.15.rst:759
 msgid ""
-"The command-line interface now colorizes error tracebacks by default. "
-"This can be controlled with :ref:`environment variables <using-on-"
-"controlling-color>`. (Contributed by Yi Hong in :gh:`139374`.)"
+"The command-line interface now colorizes error tracebacks by default. This "
+"can be controlled with :ref:`environment variables <using-on-controlling-"
+"color>`. (Contributed by Yi Hong in :gh:`139374`.)"
 msgstr ""
+"Rozhraní příkázové řádky nyní ve výchozím nastavení barví trasové záznamy "
+"chyb. To lze kontrolovat pomocí :ref:`proměnných prostředí <using-on-"
+"controlling-color>`. (Přispělo Yi Hong v :gh:`139374`.)"
 
 #: ../../whatsnew/3.15.rst:765
 msgid "tkinter"
-msgstr ""
+msgstr "tkinter"
 
 #: ../../whatsnew/3.15.rst:767
 msgid ""
@@ -1181,6 +1563,10 @@ msgid ""
 "boundaries; and *strictlimits* which restricts the search to within the "
 "specified range. (Contributed by Rihaan Meher in :gh:`130848`)"
 msgstr ""
+"Metoda :meth:`!tkinter.Text.search` nyní podporuje dva další argumenty: "
+"*nolinestop*, který umožňuje vyhledávání pokračovat přes hranice řádků; a "
+"*strictlimits*, který omezuje vyhledávání v ramicí zadaného rozsahu. "
+"(Přispělo Rihaan Meher v :gh:`130848`)"
 
 #: ../../whatsnew/3.15.rst:773
 msgid ""
@@ -1189,10 +1575,13 @@ msgid ""
 "``-all`` and ``-overlap`` options. (Contributed by Rihaan Meher in "
 ":gh:`130848`)"
 msgstr ""
+"Nová metoda :meth:`!tkinter.Text.search_all` byla uvedena. Tato metoda "
+"umožňuje vyhledávání všech shod vzoru pomocí voleb Tcl ``-all`` a "
+"``-overlap``. (Přispělo Rihaan Meher v :gh:`130848`)"
 
 #: ../../whatsnew/3.15.rst:779
 msgid "types"
-msgstr ""
+msgstr "types"
 
 #: ../../whatsnew/3.15.rst:781
 msgid ""
@@ -1200,14 +1589,17 @@ msgid ""
 ":data:`types.FrameLocalsProxyType`. This represents the type of the "
 ":attr:`frame.f_locals` attribute, as described in :pep:`667`."
 msgstr ""
+"Zverejněnujte typ proxy :func:`locals` s přesměrováním do zapsání jako "
+":data:`types.FrameLocalsProxyType`. To reprezentuje typ atributu "
+":attr:`frame.f_locals`, jak je popsáno v :pep:`667`."
 
 #: ../../whatsnew/3.15.rst:788
 msgid "unicodedata"
-msgstr ""
+msgstr "unicodedata"
 
 #: ../../whatsnew/3.15.rst:790
 msgid "The Unicode database has been updated to Unicode 17.0.0."
-msgstr ""
+msgstr "Databaze Unicode byla aktualizovana na Unicode 17.0.0."
 
 #: ../../whatsnew/3.15.rst:792
 msgid ""
@@ -1216,60 +1608,80 @@ msgid ""
 "Standard Annex #31 <https://www.unicode.org/reports/tr31/>`_ identifier. "
 "(Contributed by Stan Ulbrych in :gh:`129117`.)"
 msgstr ""
+"Pridejte funkce :func:`unicodedata.isxidstart` a "
+":func:`unicodedata.isxidcontinue` ke kontrole, zda muze znak zacit nebo "
+"pokracovat v `Unicode Standard Annex #31 "
+"<https://www.unicode.org/reports/tr31/>`_ identifikatoru. (Prispelo Stan "
+"Ulbrych v :gh:`129117`.)"
 
 #: ../../whatsnew/3.15.rst:799
 msgid "unittest"
-msgstr ""
+msgstr "unittest"
 
 #: ../../whatsnew/3.15.rst:801
 msgid ""
-":func:`unittest.TestCase.assertLogs` will now accept a formatter to "
-"control how messages are formatted. (Contributed by Garry Cairns in "
-":gh:`134567`.)"
+":func:`unittest.TestCase.assertLogs` will now accept a formatter to control "
+"how messages are formatted. (Contributed by Garry Cairns in :gh:`134567`.)"
 msgstr ""
+":func:`unittest.TestCase.assertLogs` nyní prijme formater pro kontrolu, jak "
+"jsou zpravy formatovany. (Prispelo Garry Cairns v :gh:`134567`.)"
 
 #: ../../whatsnew/3.15.rst:807
 msgid "venv"
-msgstr ""
+msgstr "venv"
 
 #: ../../whatsnew/3.15.rst:809
 msgid ""
 "On POSIX platforms, platlib directories will be created if needed when "
-"creating virtual environments, instead of using ``lib64 -> lib`` symlink."
-" This means purelib and platlib of virtual environments no longer share "
-"the same ``lib`` directory on platforms where :data:`sys.platlibdir` is "
-"not equal to ``lib``. (Contributed by Rui Xi in :gh:`133951`.)"
+"creating virtual environments, instead of using ``lib64 -> lib`` symlink. "
+"This means purelib and platlib of virtual environments no longer share the "
+"same ``lib`` directory on platforms where :data:`sys.platlibdir` is not "
+"equal to ``lib``. (Contributed by Rui Xi in :gh:`133951`.)"
 msgstr ""
+"Na platformach POSIX budou adresare platlib vytvoreny podle potreby pri "
+"vytvarani virtualnich prostredi miste pouziti symlinku ``lib64 -> lib``. To "
+"znamena, ze purelib a platlib virtualnich prostredi jiz nesdilejii stejny "
+"adresar ``lib`` na platformach, kde :data:`sys.platlibdir` se nerovna "
+"``lib``. (Prispelo Rui Xi v :gh:`133951`.)"
 
 #: ../../whatsnew/3.15.rst:818
 msgid "warnings"
-msgstr ""
+msgstr "warnings"
 
 #: ../../whatsnew/3.15.rst:820
 msgid ""
-"Improve filtering by module in :func:`warnings.warn_explicit` if no "
-"*module* argument is passed. It now tests the module regular expression "
-"in the warnings filter not only against the filename with ``.py`` "
-"stripped, but also against module names constructed starting from "
-"different parent directories of the filename (with ``/__init__.py``, "
-"``.py`` and, on Windows, ``.pyw`` stripped). (Contributed by Serhiy "
-"Storchaka in :gh:`135801`.)"
+"Improve filtering by module in :func:`warnings.warn_explicit` if no *module*"
+" argument is passed. It now tests the module regular expression in the "
+"warnings filter not only against the filename with ``.py`` stripped, but "
+"also against module names constructed starting from different parent "
+"directories of the filename (with ``/__init__.py``, ``.py`` and, on Windows,"
+" ``.pyw`` stripped). (Contributed by Serhiy Storchaka in :gh:`135801`.)"
 msgstr ""
+"Zlepsete filtrovani podle modulu v :func:`warnings.warn_explicit`, pokud "
+"neni zadan argument *module*. Nyní testuje regularni vyraz modulu ve filtru "
+"varovani nejen proti nazvu souboru bez ``.py``, ale taky proti namzvům "
+"modulů vytvorenm zapocnutim z ruznych nadrizench adresaru nazvu souboru (s "
+"``/__init__.py``, ``.py`` a v systemu Windows ``.pyw`` odebranem). (Prispelo"
+" Serhiy Storchaka v :gh:`135801`.)"
 
 #: ../../whatsnew/3.15.rst:830
 msgid "xml.parsers.expat"
-msgstr ""
+msgstr "xml.parsers.expat"
 
 #: ../../whatsnew/3.15.rst:832
 msgid ""
-"Add "
-":meth:`~xml.parsers.expat.xmlparser.SetAllocTrackerActivationThreshold` "
-"and "
-":meth:`~xml.parsers.expat.xmlparser.SetAllocTrackerMaximumAmplification` "
-"to :ref:`xmlparser <xmlparser-objects>` objects to tune protections "
-"against disproportional amounts of dynamic memory usage from within an "
-"Expat parser. (Contributed by Bénédikt Tran in :gh:`90949`.)"
+"Add :meth:`~xml.parsers.expat.xmlparser.SetAllocTrackerActivationThreshold` "
+"and :meth:`~xml.parsers.expat.xmlparser.SetAllocTrackerMaximumAmplification`"
+" to :ref:`xmlparser <xmlparser-objects>` objects to tune protections against"
+" disproportional amounts of dynamic memory usage from within an Expat "
+"parser. (Contributed by Bénédikt Tran in :gh:`90949`.)"
 msgstr ""
+"Pridejte "
+":meth:`~xml.parsers.expat.xmlparser.SetAllocTrackerActivationThreshold` a "
+":meth:`~xml.parsers.expat.xmlparser.SetAllocTrackerMaximumAmplification` k "
+":ref:`xmlparser <xmlparser-objects>` objektům pro naladeni ochrany proti "
+"nepomercnim mnozstvim dynamicke pametmezi parsem Expat. (Prispelo Benedikt "
+"Tran v :gh:`90949`.)"
 
 #: ../../whatsnew/3.15.rst:838
 msgid ""
@@ -1277,297 +1689,381 @@ msgid ""
 ":meth:`~xml.parsers.expat.xmlparser.SetBillionLaughsAttackProtectionActivationThreshold`"
 " and "
 ":meth:`~xml.parsers.expat.xmlparser.SetBillionLaughsAttackProtectionMaximumAmplification`"
-" to :ref:`xmlparser <xmlparser-objects>` objects to tune protections "
-"against `billion laughs`_ attacks. (Contributed by Bénédikt Tran in "
-":gh:`90949`.)"
+" to :ref:`xmlparser <xmlparser-objects>` objects to tune protections against"
+" `billion laughs`_ attacks. (Contributed by Bénédikt Tran in :gh:`90949`.)"
 msgstr ""
+"Pridejte "
+":meth:`~xml.parsers.expat.xmlparser.SetBillionLaughsAttackProtectionActivationThreshold`"
+" a "
+":meth:`~xml.parsers.expat.xmlparser.SetBillionLaughsAttackProtectionMaximumAmplification`"
+" k :ref:`xmlparser <xmlparser-objects>` objektům pro naladeni ochrany proti "
+"`billion laughs`_ útokům. (Prispelo Benedikt Tran v :gh:`90949`.)"
 
 #: ../../whatsnew/3.15.rst:848
 msgid "zlib"
-msgstr ""
+msgstr "zlib"
 
 #: ../../whatsnew/3.15.rst:850
 msgid ""
-"Allow combining two Adler-32 checksums via :func:`~zlib.adler32_combine`."
-" (Contributed by Callum Attryde and Bénédikt Tran in :gh:`134635`.)"
+"Allow combining two Adler-32 checksums via :func:`~zlib.adler32_combine`. "
+"(Contributed by Callum Attryde and Bénédikt Tran in :gh:`134635`.)"
 msgstr ""
+"Umozněte kombinovani dvou kontrolnich součtů Adler-32 pomoci "
+":func:`~zlib.adler32_combine`. (Prispelo Callum Attryde a Benedikt Tran v "
+":gh:`134635`.)"
 
 #: ../../whatsnew/3.15.rst:853
 msgid ""
 "Allow combining two CRC-32 checksums via :func:`~zlib.crc32_combine`. "
 "(Contributed by Bénédikt Tran in :gh:`134635`.)"
 msgstr ""
+"Umozněte kombinovani dvou kontrolnich souctu CRC-32 pomoci "
+":func:`~zlib.crc32_combine`. (Prispelo Benedikt Tran v :gh:`134635`.)"
 
 #: ../../whatsnew/3.15.rst:860
 msgid "Optimizations"
-msgstr ""
+msgstr "Optimalizace"
 
 #: ../../whatsnew/3.15.rst:862
 #, python-format
 msgid ""
 "Builds using Visual Studio 2026 (MSVC 18) may now use the new :ref:`tail-"
-"calling interpreter <whatsnew314-tail-call-interpreter>`. Results on "
-"Visual Studio 18.1.1 report between `15-20% <https://github.com/faster-"
+"calling interpreter <whatsnew314-tail-call-interpreter>`. Results on Visual "
+"Studio 18.1.1 report between `15-20% <https://github.com/faster-"
 "cpython/ideas/blob/main/results/5800X-msvc.pgo2-vs-msvc.pgo.tc.svg>`__ "
-"speedup on the geometric mean of pyperformance on Windows x86-64 over the"
-" switch-case interpreter on an AMD Ryzen 7 5800X. We have observed "
-"speedups ranging from 14% for large pure-Python libraries to 40% for "
-"long-running small pure-Python scripts on Windows. This was made possible"
-" by a new feature introduced in MSVC 18. (Contributed by Chris Eibl, Ken "
-"Jin, and Brandt Bucher in :gh:`143068`. Special thanks to the MSVC team "
-"including Hulon Jenkins.)"
+"speedup on the geometric mean of pyperformance on Windows x86-64 over the "
+"switch-case interpreter on an AMD Ryzen 7 5800X. We have observed speedups "
+"ranging from 14% for large pure-Python libraries to 40% for long-running "
+"small pure-Python scripts on Windows. This was made possible by a new "
+"feature introduced in MSVC 18. (Contributed by Chris Eibl, Ken Jin, and "
+"Brandt Bucher in :gh:`143068`. Special thanks to the MSVC team including "
+"Hulon Jenkins.)"
 msgstr ""
+"Soubory pouzivajici Visual Studio 2026 (MSVC 18) mohou nyni pouzivat novi "
+":ref:`tail-calling interpreter <whatsnew314-tail-call-interpreter>`. "
+"Vysledky v systému Visual Studio 18.1.1 ulozují mezi `15-20% "
+"<https://github.com/faster-"
+"cpython/ideas/blob/main/results/5800X-msvc.pgo2-vs-msvc.pgo.tc.svg>`__ "
+"zrychleni na geometrickm prumeru pyperformance na Windows x86-64 oproti "
+"switch-case interpretátoru na AMD Ryzen 7 5800X. Pozorovali jsme zrychleni "
+"se pohybujici od 14% pro velke knihovny pure-Python až 40% pro "
+"dlouhotrvajici male skripty pure-Python v systému Windows. To bylo mozne "
+"diky nove funkci zavedenej v MSVC 18. (Prispelo Chris Eibl, Ken Jin a Brandt"
+" Bucher v :gh:`143068`. Special diky tyému MSVC vcetně Hulona Jenkinsa.)"
 
 #: ../../whatsnew/3.15.rst:875
 msgid "csv"
-msgstr ""
+msgstr "csv"
 
 #: ../../whatsnew/3.15.rst:877
 msgid ""
 ":meth:`csv.Sniffer.sniff` delimiter detection is now up to 1.6x faster. "
 "(Contributed by Maurycy Pawłowski-Wieroński in :gh:`137628`.)"
 msgstr ""
+":meth:`csv.Sniffer.sniff` detekce oddelovace je nyni až 1,6x rychlejsi. "
+"(Prispelo Maurycy Pawlowski-Wierinski v :gh:`137628`.)"
 
 #: ../../whatsnew/3.15.rst:884
 msgid "Upgraded JIT compiler"
-msgstr ""
+msgstr "Upgradovany JIT kompilator"
 
 #: ../../whatsnew/3.15.rst:886
 #, python-format
 msgid ""
-"Results from the `pyperformance "
-"<https://github.com/python/pyperformance>`__ benchmark suite report `3-4%"
-" <https://github.com/facebookexperimental/free-threading-"
-"benchmarking/blob/main/results/bm-20251214-3.15.0a2%2B-"
-"6cddf04-JIT/bm-20251214-vultr-x86_64-python-6cddf04344a1e8ca9df5-3.15.0a2"
-"%2B-6cddf04-vs-base.svg>`__ geometric mean performance improvement for "
-"the JIT over the standard CPython interpreter built with all "
-"optimizations enabled. The speedups for JIT builds versus no JIT builds "
-"range from roughly 20% slowdown to over 100% speedup (ignoring the "
-"``unpack_sequence`` microbenchmark) on x86-64 Linux and AArch64 macOS "
-"systems."
+"Results from the `pyperformance <https://github.com/python/pyperformance>`__"
+" benchmark suite report `3-4% <https://github.com/facebookexperimental/free-"
+"threading-"
+"benchmarking/blob/main/results/bm-20251214-3.15.0a2%2B-6cddf04-JIT/bm-20251214-vultr-x86_64-python-6cddf04344a1e8ca9df5-3.15.0a2%2B-6cddf04-vs-"
+"base.svg>`__ geometric mean performance improvement for the JIT over the "
+"standard CPython interpreter built with all optimizations enabled. The "
+"speedups for JIT builds versus no JIT builds range from roughly 20% slowdown"
+" to over 100% speedup (ignoring the ``unpack_sequence`` microbenchmark) on "
+"x86-64 Linux and AArch64 macOS systems."
 msgstr ""
+"Výsledky z sady :bench:`pyperformance "
+"<https://github.com/python/pyperformance>`__ ulozují `3-4% "
+"<https://github.com/facebookexperimental/free-threading-"
+"benchmarking/blob/main/results/bm-20251214-3.15.0a2%2B-6cddf04-JIT/bm-20251214-vultr-x86_64-python-6cddf04344a1e8ca9df5-3.15.0a2%2B-6cddf04-vs-"
+"base.svg>`__ geometrickho prumeru zlepsení vykonnosti pro JIT oproti "
+"standardnimu interpretátoru CPython vzdilanem se všemi optimalizacemi "
+"zapnutymi. Zrychleni pro vstavby JIT vs bez JIT se pohybuje z priblizne 20% "
+"zpomaleni až pres 100% zrychleni (ignorujici benchmark ``unpack_sequence``) "
+"v systemech x86-64 Linux a AArch64 macOS."
 
 #: ../../whatsnew/3.15.rst:896
 msgid "These results are not yet final."
-msgstr ""
+msgstr "Tyto vysledky jeste nejsou konecne."
 
 #: ../../whatsnew/3.15.rst:898
 msgid "The major upgrades to the JIT are:"
-msgstr ""
+msgstr "Hlavni upgrady JIT jsou:"
 
 #: ../../whatsnew/3.15.rst:900 ../../whatsnew/3.15.rst:907
 msgid "LLVM 21 build-time dependency"
-msgstr ""
+msgstr "LLVM 21 zavislost na dobu stavby"
 
 #: ../../whatsnew/3.15.rst:901
 msgid "New tracing frontend"
-msgstr ""
+msgstr "Novy frontend sledovani"
 
 #: ../../whatsnew/3.15.rst:902 ../../whatsnew/3.15.rst:931
 msgid "Basic register allocation in the JIT"
-msgstr ""
+msgstr "Zakladni prideleni registru v JIT"
 
 #: ../../whatsnew/3.15.rst:903 ../../whatsnew/3.15.rst:940
 msgid "More JIT optimizations"
-msgstr ""
+msgstr "Vise optimalizaci JIT"
 
 #: ../../whatsnew/3.15.rst:904 ../../whatsnew/3.15.rst:954
 msgid "Better machine code generation"
-msgstr ""
+msgstr "Lepsi generovani strojoveho kodu"
 
 #: ../../whatsnew/3.15.rst:908
 msgid ""
 "The JIT compiler now uses LLVM 21 for build-time stencil generation. As "
-"always, LLVM is only needed when building CPython with the JIT enabled; "
-"end users running Python do not need LLVM installed. Instructions for "
-"installing LLVM can be found in the `JIT compiler documentation "
-"<https://github.com/python/cpython/blob/main/Tools/jit/README.md>`__ for "
-"all supported platforms."
+"always, LLVM is only needed when building CPython with the JIT enabled; end "
+"users running Python do not need LLVM installed. Instructions for installing"
+" LLVM can be found in the `JIT compiler documentation "
+"<https://github.com/python/cpython/blob/main/Tools/jit/README.md>`__ for all"
+" supported platforms."
 msgstr ""
+"JIT kompilator nyní pouziva LLVM 21 pro generovani sablon v dobe stavby. "
+"Jako vzády, LLVM je potrebny pouze pþ stavbe CPython s povolenym JIT; "
+"konecni uživatelé poustiteljici Python nepotrebují instalovane LLVM. Pokyny "
+"pro instalaci LLVM naleznete v `dokumentaci JIT kompilator "
+"<https://github.com/python/cpython/blob/main/Tools/jit/README.md>`__ pro "
+"všechny podporovane platformy."
 
 #: ../../whatsnew/3.15.rst:915
 msgid "(Contributed by Savannah Ostrowski in :gh:`140973`.)"
-msgstr ""
+msgstr "(Prispelo Savannah Ostrowski v :gh:`140973`.)"
 
 #: ../../whatsnew/3.15.rst:918
 msgid "A new tracing frontend"
-msgstr ""
+msgstr "Novy frontend sledovani"
 
 #: ../../whatsnew/3.15.rst:919
 msgid ""
 "The JIT compiler now supports significantly more bytecode operations and "
-"control flow than in Python 3.14, enabling speedups on a wider variety of"
-" code. For example, simple Python object creation is now understood by "
-"the 3.15 JIT compiler. Overloaded operations and generators are also "
-"partially supported. This was made possible by an overhauled JIT tracing "
-"frontend that records actual execution paths through code, rather than "
-"estimating them as the previous implementation did."
+"control flow than in Python 3.14, enabling speedups on a wider variety of "
+"code. For example, simple Python object creation is now understood by the "
+"3.15 JIT compiler. Overloaded operations and generators are also partially "
+"supported. This was made possible by an overhauled JIT tracing frontend that"
+" records actual execution paths through code, rather than estimating them as"
+" the previous implementation did."
 msgstr ""
+"JIT kompilator nyní podporuje vyrazne vice operaci bajtkodu a toku ridici "
+"nez v Pythonu 3.14, umoznujici zrychleni na sirší skale kodu. Napriklad "
+"jednoduche vytvoreni Python objektu je nyní chapano JIT kompilator 3.15. "
+"Pretizene operace a generatory jsou tez caste podporovany. To bylo mozne "
+"diky vylepseneho JIT sledovace frontendu, ktery zaznamenava skutecne cesty "
+"provedeni skrz kod, spise nez je odhad jako to predchozi implementace."
 
 #: ../../whatsnew/3.15.rst:927
 msgid ""
-"(Contributed by Ken Jin in :gh:`139109`. Support for Windows added by "
-"Mark Shannon in :gh:`141703`.)"
+"(Contributed by Ken Jin in :gh:`139109`. Support for Windows added by Mark "
+"Shannon in :gh:`141703`.)"
 msgstr ""
+"(Prispelo Ken Jin v :gh:`139109`. Podpora pro Windows pridana Mark Shannon v"
+" :gh:`141703`.)"
 
 #: ../../whatsnew/3.15.rst:932
 msgid ""
 "A basic form of register allocation has been added to the JIT compiler's "
-"optimizer. This allows the JIT compiler to avoid certain stack operations"
-" altogether and instead operate on registers. This allows the JIT to "
-"produce more efficient traces by avoiding reads and writes to memory."
+"optimizer. This allows the JIT compiler to avoid certain stack operations "
+"altogether and instead operate on registers. This allows the JIT to produce "
+"more efficient traces by avoiding reads and writes to memory."
 msgstr ""
+"Zakladni forma prideleni registru byla pridana do optimalizacni hostedu JIT "
+"kompilator. To umoznuje JIT kompilator vyhnout se jistym operacim stacku "
+"uplne a miste toho pracovat s registry. To umoznuje JIT vytvarit "
+"efektivnejsi stopy vyhybanim se ctenim a zapisy do pameti."
 
 #: ../../whatsnew/3.15.rst:937
 msgid "(Contributed by Mark Shannon in :gh:`135379`.)"
-msgstr ""
+msgstr "(Prispelo Mark Shannon v :gh:`135379`.)"
 
 #: ../../whatsnew/3.15.rst:941
 msgid ""
 "More `constant-propagation "
-"<https://en.wikipedia.org/wiki/Constant_folding>`__ is now performed. "
-"This means when the JIT compiler detects that certain user code results "
-"in constants, the code can be simplified by the JIT."
+"<https://en.wikipedia.org/wiki/Constant_folding>`__ is now performed. This "
+"means when the JIT compiler detects that certain user code results in "
+"constants, the code can be simplified by the JIT."
 msgstr ""
+"Vice `sireeni-konstant <https://en.wikipedia.org/wiki/Constant_folding>`__ "
+"je nyní provedeno. To znamena, ze kdyz JIT kompilator zjisti, ze jisty kod "
+"uzivatele vyvola v konstanty, kod muze byt zjednodus JIT."
 
 #: ../../whatsnew/3.15.rst:945
 msgid "(Contributed by Ken Jin and Savannah Ostrowski in :gh:`132732`.)"
-msgstr ""
+msgstr "(Prispelo Ken Jin a Savannah Ostrowski v :gh:`132732`.)"
 
 #: ../../whatsnew/3.15.rst:947
 msgid ""
-"The JIT avoids :term:`reference count`\\ s where possible. This generally"
-" reduces the cost of most operations in Python."
+"The JIT avoids :term:`reference count`\\ s where possible. This generally "
+"reduces the cost of most operations in Python."
 msgstr ""
+"JIT se vyhýba :term:`reference count` kde je to mozne. To obecne snizuje "
+"cenu vetsiny operaci v Pythonu."
 
 #: ../../whatsnew/3.15.rst:950
 msgid ""
-"(Contributed by Ken Jin, Donghee Na, Zheao Li, Hai Zhu, Savannah "
-"Ostrowski, Noam Cohen, Tomas Roun, and PuQing in :gh:`134584`.)"
+"(Contributed by Ken Jin, Donghee Na, Zheao Li, Hai Zhu, Savannah Ostrowski, "
+"Noam Cohen, Tomas Roun, and PuQing in :gh:`134584`.)"
 msgstr ""
+"(Prispelo Ken Jin, Donghee Na, Zheao Li, Hai Zhu, Savannah Ostrowski, Noam "
+"Cohen, Tomas Roun a PuQing v :gh:`134584`.)"
 
 #: ../../whatsnew/3.15.rst:955
 msgid ""
-"The JIT compiler's machine code generator now produces better machine "
-"code for x86-64 and AArch64 macOS and Linux targets. In general, users "
-"should experience lower memory usage for generated machine code and more "
-"efficient machine code versus the old JIT."
+"The JIT compiler's machine code generator now produces better machine code "
+"for x86-64 and AArch64 macOS and Linux targets. In general, users should "
+"experience lower memory usage for generated machine code and more efficient "
+"machine code versus the old JIT."
 msgstr ""
+"Generator strojoveho kodu JIT kompilator nyní vytvarí lepsi strojovy kod pro"
+" x86-64 a AArch64 macOS a Linux cíle. Obecne by uzivatele meli zazivatsi "
+"použiti pameti pro vygenerovany strojovy kod a efektivnejší strojovy kod "
+"proti stareu JIT."
 
 #: ../../whatsnew/3.15.rst:960
 msgid ""
 "(Contributed by Brandt Bucher in :gh:`136528` and :gh:`136528`. "
 "Implementation for AArch64 contributed by Mark Shannon in :gh:`139855`. "
-"Additional optimizations for AArch64 contributed by Mark Shannon and "
-"Diego Russo in :gh:`140683` and :gh:`142305`.)"
+"Additional optimizations for AArch64 contributed by Mark Shannon and Diego "
+"Russo in :gh:`140683` and :gh:`142305`.)"
 msgstr ""
+"(Prispelo Brandt Bucher v :gh:`136528` a :gh:`136528`. Implementace pro "
+"AArch64 prisena Mark Shannon v :gh:`139855`. Dodatecne optimalizace pro "
+"AArch64 priseny Mark Shannon a Diego Russo v :gh:`140683` a :gh:`142305`.)"
 
 #: ../../whatsnew/3.15.rst:967
 msgid "Removed"
-msgstr ""
+msgstr "Odstranen"
 
 #: ../../whatsnew/3.15.rst:970
 msgid "ctypes"
-msgstr ""
+msgstr "ctypes"
 
 #: ../../whatsnew/3.15.rst:972
 msgid ""
-"Removed the undocumented function :func:`!ctypes.SetPointerType`, which "
-"has been deprecated since Python 3.13. (Contributed by Bénédikt Tran in "
+"Removed the undocumented function :func:`!ctypes.SetPointerType`, which has "
+"been deprecated since Python 3.13. (Contributed by Bénédikt Tran in "
 ":gh:`133866`.)"
 msgstr ""
+"Odstranen nedokumentovana funkce :func:`!ctypes.SetPointerType`, ktera byla "
+"zastarala od Pythonu 3.13. (Prispelo Benedikt Tran v :gh:`133866`.)"
 
 #: ../../whatsnew/3.15.rst:978
 msgid "glob"
-msgstr ""
+msgstr "glob"
 
 #: ../../whatsnew/3.15.rst:980
 msgid ""
 "Removed the undocumented :func:`!glob.glob0` and :func:`!glob.glob1` "
 "functions, which have been deprecated since Python 3.13. Use "
-":func:`glob.glob` and pass a directory to its *root_dir* argument "
-"instead. (Contributed by Barney Gale in :gh:`137466`.)"
+":func:`glob.glob` and pass a directory to its *root_dir* argument instead. "
+"(Contributed by Barney Gale in :gh:`137466`.)"
 msgstr ""
+"Odstranen nedokumentovane funkce :func:`!glob.glob0` a :func:`!glob.glob1`, "
+"ktere byly zastaraly od Pythonu 3.13. Pouzijte :func:`glob.glob` a miste "
+"toho prejdete adresar do argumentu *root_dir*. (Prispelo Barney Gale v "
+":gh:`137466`.)"
 
 #: ../../whatsnew/3.15.rst:987
 msgid "http.server"
-msgstr ""
+msgstr "http.server"
 
 #: ../../whatsnew/3.15.rst:989
 msgid ""
 "Removed the :class:`!CGIHTTPRequestHandler` class and the ``--cgi`` flag "
-"from the :program:`python -m http.server` command-line interface. They "
-"were deprecated in Python 3.13. (Contributed by Bénédikt Tran in "
-":gh:`133810`.)"
+"from the :program:`python -m http.server` command-line interface. They were "
+"deprecated in Python 3.13. (Contributed by Bénédikt Tran in :gh:`133810`.)"
 msgstr ""
+"Odstranen třída :class:`!CGIHTTPRequestHandler` a prапor ``--cgi`` z "
+"rozhrani příkázové řádky :program:`python -m http.server`. Byly zastaraly v "
+"Pythonu 3.13. (Prispelo Benedikt Tran v :gh:`133810`.)"
 
 #: ../../whatsnew/3.15.rst:996
 msgid "importlib.resources"
-msgstr ""
+msgstr "importlib.resources"
 
 #: ../../whatsnew/3.15.rst:998
 msgid ""
 "Removed deprecated ``package`` parameter from "
-":func:`importlib.resources.files` function. (Contributed by Semyon Moroz "
-"in :gh:`138044`)"
+":func:`importlib.resources.files` function. (Contributed by Semyon Moroz in "
+":gh:`138044`)"
 msgstr ""
+"Odstranen zastaraly parametr ``package`` z funkce "
+":func:`importlib.resources.files`. (Prispelo Semyon Moroz v :gh:`138044`)"
 
 #: ../../whatsnew/3.15.rst:1004
 msgid "pathlib"
-msgstr ""
+msgstr "pathlib"
 
 #: ../../whatsnew/3.15.rst:1006
 msgid ""
 "Removed deprecated :meth:`!pathlib.PurePath.is_reserved`. Use "
-":func:`os.path.isreserved` to detect reserved paths on Windows. "
-"(Contributed by Nikita Sobolev in :gh:`133875`.)"
+":func:`os.path.isreserved` to detect reserved paths on Windows. (Contributed"
+" by Nikita Sobolev in :gh:`133875`.)"
 msgstr ""
+"Odstranen zastaraly :meth:`!pathlib.PurePath.is_reserved`. Pouzijte "
+":func:`os.path.isreserved` pro detekci vyhrazenych cest v systému Windows. "
+"(Prispelo Nikita Sobolev v :gh:`133875`.)"
 
 #: ../../whatsnew/3.15.rst:1012
 msgid "platform"
-msgstr ""
+msgstr "platform"
 
 #: ../../whatsnew/3.15.rst:1014
 msgid ""
-"Removed the :func:`!platform.java_ver` function, which was deprecated "
-"since Python 3.13. (Contributed by Alexey Makridenko in :gh:`133604`.)"
+"Removed the :func:`!platform.java_ver` function, which was deprecated since "
+"Python 3.13. (Contributed by Alexey Makridenko in :gh:`133604`.)"
 msgstr ""
+"Odstranen funkce :func:`!platform.java_ver`, ktera byla zastarala od Pythonu"
+" 3.13. (Prispelo Alexey Makridenko v :gh:`133604`.)"
 
 #: ../../whatsnew/3.15.rst:1020
 msgid "sre_*"
-msgstr ""
+msgstr "sre_*"
 
 #: ../../whatsnew/3.15.rst:1022
 msgid ""
 "Removed :mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` "
 "modules. (Contributed by Stan Ulbrych in :gh:`135994`.)"
 msgstr ""
+"Odstranen moduly :mod:`!sre_compile`, :mod:`!sre_constants` a "
+":mod:`!sre_parse`. (Prispelo Stan Ulbrych v :gh:`135994`.)"
 
 #: ../../whatsnew/3.15.rst:1027
 msgid "sysconfig"
-msgstr ""
+msgstr "sysconfig"
 
 #: ../../whatsnew/3.15.rst:1029
 msgid ""
 "Removed the *check_home* parameter of :func:`sysconfig.is_python_build`. "
 "(Contributed by Filipe Laíns in :gh:`92897`.)"
 msgstr ""
+"Odstranen parametr *check_home* z :func:`sysconfig.is_python_build`. Prispel"
+" Filipe Lains."
 
 #: ../../whatsnew/3.15.rst:1034
 msgid "threading"
-msgstr ""
+msgstr "threading"
 
 #: ../../whatsnew/3.15.rst:1036
 msgid ""
 "Remove support for arbitrary positional or keyword arguments in the C "
-"implementation of :class:`~threading.RLock` objects. This was deprecated "
-"in Python 3.14. (Contributed by Bénédikt Tran in :gh:`134087`.)"
+"implementation of :class:`~threading.RLock` objects. This was deprecated in "
+"Python 3.14. (Contributed by Bénédikt Tran in :gh:`134087`.)"
 msgstr ""
+"Odstrante podporu pro libovolne poziicni nebo pojmenovane argumenty v "
+"implementaci C objektu :class:`~threading.RLock`. To bylo zastaralo v "
+"Pythonu 3.14. (Prispelo Benedikt Tran v :gh:`134087`.)"
 
 #: ../../whatsnew/3.15.rst:1043
 msgid "typing"
-msgstr ""
+msgstr "typing"
 
 #: ../../whatsnew/3.15.rst:1045
 msgid ""
@@ -1577,30 +2073,44 @@ msgid ""
 "class-based syntax or the functional syntax instead. (Contributed by "
 "Bénédikt Tran in :gh:`133817`.)"
 msgstr ""
+"Nedokumentovana syntaxe pojmenovanych argumentu pro vytvareni "
+":class:`~typing.NamedTuple` tříd (napriklad ``Point = NamedTuple(\"Point\", "
+"x=int, y=int)``) jiz neni podporovana. Pouzijte syntaxi založenou na třídě "
+"nebo funkcni syntaxi. (Prispelo Benedikt Tran v :gh:`133817`.)"
 
 #: ../../whatsnew/3.15.rst:1051
 #, python-brace-format
 msgid ""
 "Using ``TD = TypedDict(\"TD\")`` or ``TD = TypedDict(\"TD\", None)`` to "
-"construct a :class:`~typing.TypedDict` type with zero fields is no longer"
-" supported. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\","
-" {})`` instead. (Contributed by Bénédikt Tran in :gh:`133823`.)"
+"construct a :class:`~typing.TypedDict` type with zero fields is no longer "
+"supported. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", "
+"{})`` instead. (Contributed by Bénédikt Tran in :gh:`133823`.)"
 msgstr ""
+"Pouziti ``TD = TypedDict(\"TD\")`` nebo ``TD = TypedDict(\"TD\", None)`` na "
+"vytvoreni typu :class:`~typing.TypedDict` s nula poli jiz neni podporovano. "
+"Pouzijte ``class TD(TypedDict): pass`` nebo ``TD = TypedDict(\"TD\", {})`` "
+"miste toho. (Prispelo Benedikt Tran v :gh:`133823`.)"
 
 #: ../../whatsnew/3.15.rst:1057
 msgid ""
-"Code like ``class ExtraTypeVars(P1[S], Protocol[T, T2]): ...`` now raises"
-" a :exc:`TypeError`, because ``S`` is not listed in ``Protocol`` "
-"parameters. (Contributed by Nikita Sobolev in :gh:`137191`.)"
+"Code like ``class ExtraTypeVars(P1[S], Protocol[T, T2]): ...`` now raises a "
+":exc:`TypeError`, because ``S`` is not listed in ``Protocol`` parameters. "
+"(Contributed by Nikita Sobolev in :gh:`137191`.)"
 msgstr ""
+"Kod jako ``class ExtraTypeVars(P1[S], Protocol[T, T2]): ...`` nyní vyvola "
+":exc:`TypeError`, protoze ``S`` neni uvedeno v parametrech ``Protocol``. "
+"(Prispelo Nikita Sobolev v :gh:`137191`.)"
 
 #: ../../whatsnew/3.15.rst:1061
 msgid ""
-"Code like ``class B2(A[T2], Protocol[T1, T2]): ...`` now correctly "
-"handles type parameters order: it is ``(T1, T2)``, not ``(T2, T1)`` as it"
-" was incorrectly inferred in runtime before. (Contributed by Nikita "
-"Sobolev in :gh:`137191`.)"
+"Code like ``class B2(A[T2], Protocol[T1, T2]): ...`` now correctly handles "
+"type parameters order: it is ``(T1, T2)``, not ``(T2, T1)`` as it was "
+"incorrectly inferred in runtime before. (Contributed by Nikita Sobolev in "
+":gh:`137191`.)"
 msgstr ""
+"Kod jako ``class B2(A[T2], Protocol[T1, T2]): ...`` nyní spravne zpracovává "
+"poradi typu parametru: je to ``(T1, T2)``, ne ``(T2, T1)`` jako to bylo "
+"spatne odvodeno za behu pred. (Prispelo Nikita Sobolev v :gh:`137191`.)"
 
 #: ../../whatsnew/3.15.rst:1066
 msgid ""
@@ -1608,242 +2118,272 @@ msgid ""
 ":class:`!typing.ByteString` has been deprecated since Python 3.9, and is "
 "scheduled for removal in Python 3.17."
 msgstr ""
+":class:`typing.ByteString` byla odstranen z ``typing.__all__``. "
+":class:`!typing.ByteString` je zastarala od Pythonu 3.9 a je naplanovana "
+"jejh odebraní v Pythonu 3.17."
 
 #: ../../whatsnew/3.15.rst:1073
 msgid "``from typing import ByteString``"
-msgstr ""
+msgstr "``from typing import ByteString``"
 
 #: ../../whatsnew/3.15.rst:1074
 msgid "``import typing; typing.ByteString``."
-msgstr ""
+msgstr "``import typing; typing.ByteString``."
 
 #: ../../whatsnew/3.15.rst:1076
 msgid ""
 "``DeprecationWarning``\\ s were already emitted if "
-":class:`typing.ByteString` was subclassed or used as the second argument "
-"to :func:`isinstance` or :func:`issubclass`, but warnings were not "
-"previously emitted if it was merely imported or accessed from the "
-":mod:`!typing` module."
+":class:`typing.ByteString` was subclassed or used as the second argument to "
+":func:`isinstance` or :func:`issubclass`, but warnings were not previously "
+"emitted if it was merely imported or accessed from the :mod:`!typing` "
+"module."
 msgstr ""
+"``DeprecationWarning`` vystupy byli jiz zprózorény, pokud byla "
+":class:`typing.ByteString` podtrida nebo použita jako druhy argument pro "
+":func:`isinstance` nebo :func:`issubclass`, ale vystupy nebyly drive "
+"emitovany, pokud byla pouze importovana nebo zpróstupý z modulu "
+":mod:`!typing`."
 
 #: ../../whatsnew/3.15.rst:1081
 msgid ""
 "Deprecated :func:`!typing.no_type_check_decorator` has been removed. "
 "(Contributed by Nikita Sobolev in :gh:`133601`.)"
 msgstr ""
+"Zastaraly :func:`!typing.no_type_check_decorator` byl odstranen. (Prispelo "
+"Nikita Sobolev v :gh:`133601`.)"
 
 #: ../../whatsnew/3.15.rst:1086
 msgid "wave"
-msgstr ""
+msgstr "wave"
 
 #: ../../whatsnew/3.15.rst:1088
 msgid ""
-"Removed the ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of "
-"the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, which"
-" were deprecated since Python 3.13. (Contributed by Bénédikt Tran in "
+"Removed the ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of the"
+" :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, which were "
+"deprecated since Python 3.13. (Contributed by Bénédikt Tran in "
 ":gh:`133873`.)"
 msgstr ""
+"Odstranen metody ``getmark()``, ``setmark()`` a ``getmarkers()`` tříd "
+":class:`~wave.Wave_read` a :class:`~wave.Wave_write`, ktere byly zastaraly "
+"od Pythonu 3.13. (Prispelo Benedikt Tran v :gh:`133873`.)"
 
 #: ../../whatsnew/3.15.rst:1095
 msgid "zipimport"
-msgstr ""
+msgstr "zipimport"
 
 #: ../../whatsnew/3.15.rst:1097
 msgid ""
 "Remove deprecated :meth:`!zipimport.zipimporter.load_module`. Use "
-":meth:`zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao"
-" Li in :gh:`133656`.)"
+":meth:`zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao Li"
+" in :gh:`133656`.)"
 msgstr ""
+"Odstrante zastaralý :meth:`!zipimport.zipimporter.load_module`. Pouzijte "
+":meth:`zipimport.zipimporter.exec_module` miste toho. (Prispelo Jiahao Li v "
+":gh:`133656`.)"
 
 #: ../../whatsnew/3.15.rst:1103
 msgid "Deprecated"
-msgstr ""
+msgstr "Zastaralo"
 
 #: ../../whatsnew/3.15.rst:1106
 msgid "New deprecations"
-msgstr ""
+msgstr "Nové zastaralení"
 
 #: ../../whatsnew/3.15.rst:1108
 msgid "CLI:"
-msgstr ""
+msgstr "CLI:"
 
 #: ../../whatsnew/3.15.rst:1110
 msgid ""
-"Deprecate :option:`-b` and :option:`!-bb` command-line options and "
-"schedule them to become no-ops in Python 3.17. These were primarily "
-"helpers for the Python 2 -> 3 transition. Starting with Python 3.17, no "
-":exc:`BytesWarning` will be raised for these cases; use a type checker "
-"instead."
+"Deprecate :option:`-b` and :option:`!-bb` command-line options and schedule "
+"them to become no-ops in Python 3.17. These were primarily helpers for the "
+"Python 2 -> 3 transition. Starting with Python 3.17, no :exc:`BytesWarning` "
+"will be raised for these cases; use a type checker instead."
 msgstr ""
+"Zastaruste :option:`-b` a :option:`!-bb` volby příkázové řádky a naplanuíte "
+"je se stát no-ops v Pythonu 3.17. Tyto byly primare pomocnici pro prechod "
+"Python 2 -> 3. Pocincajic s Pythonem 3.17, nebude :exc:`BytesWarning` "
+"vyvolána pro tyto pripady; pouzijte miste toho typovy checker."
 
 #: ../../whatsnew/3.15.rst:1116
 msgid "(Contributed by Nikita Sobolev in :gh:`136355`.)"
-msgstr ""
+msgstr "(Prispelo Nikita Sobolev v :gh:`136355`.)"
 
 #: ../../deprecations/pending-removal-in-3.19.rst:10
 #: ../../whatsnew/3.15.rst:1118
 msgid ":mod:`hashlib`:"
-msgstr ""
+msgstr ":mod:`hashlib`:"
 
 #: ../../whatsnew/3.15.rst:1120
 msgid ""
 "In hash function constructors such as :func:`~hashlib.new` or the direct "
 "hash-named constructors such as :func:`~hashlib.md5` and "
-":func:`~hashlib.sha256`, the optional initial data parameter could also "
-"be passed as a keyword argument named ``data=`` or ``string=`` in various"
-" :mod:`hashlib` implementations."
+":func:`~hashlib.sha256`, the optional initial data parameter could also be "
+"passed as a keyword argument named ``data=`` or ``string=`` in various "
+":mod:`hashlib` implementations."
 msgstr ""
+"V konstruktorech hashovaci funkce jako :func:`~hashlib.new` nebo primy hash "
+"pojmenovani konstruktory jako :func:`~hashlib.md5` a "
+":func:`~hashlib.sha256`, volitelny parametr pocatecnich dat mohl byt take "
+"preslany jako pojmenovany argument pojmenovat ``data=`` nebo ``string=`` v "
+"ruznych implementacich :mod:`hashlib`."
 
 #: ../../whatsnew/3.15.rst:1126
 msgid ""
-"Support for the ``string`` keyword argument name is now deprecated and is"
-" slated for removal in Python 3.19. Prefer passing the initial data as a "
+"Support for the ``string`` keyword argument name is now deprecated and is "
+"slated for removal in Python 3.19. Prefer passing the initial data as a "
 "positional argument for maximum backwards compatibility."
 msgstr ""
+"Podpora pro ``string`` jmeno pojmenovaneho argumentu je nyní zastarala a je "
+"naplanovana jejh odebraní v Pythonu 3.19. Uprednostnete preslani pocatecnich"
+" dat jako poziicny argument pro nejvetssi spatnou kompatibilitu."
 
 #: ../../whatsnew/3.15.rst:1130
 msgid "(Contributed by Bénédikt Tran in :gh:`134978`.)"
-msgstr ""
+msgstr "(Prispelo Benedikt Tran v :gh:`134978`.)"
 
 #: ../../whatsnew/3.15.rst:1132
 msgid "``__version__``"
-msgstr ""
+msgstr "``__version__``"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:4
 #: ../../whatsnew/3.15.rst:1134
 msgid ""
 "The ``__version__``, ``version`` and ``VERSION`` attributes have been "
-"deprecated in these standard library modules and will be removed in "
-"Python 3.20. Use :py:data:`sys.version_info` instead."
+"deprecated in these standard library modules and will be removed in Python "
+"3.20. Use :py:data:`sys.version_info` instead."
 msgstr ""
+"Atributy ``__version__``, ``version`` a ``VERSION`` byli zastarali v tychto "
+"standardnich knihovnich modulech a budou odstranen v Pythonu 3.20. Pouzijte "
+":py:data:`sys.version_info` miste toho."
 
 #: ../../deprecations/pending-removal-in-3.20.rst:8
 #: ../../whatsnew/3.15.rst:1138
 msgid ":mod:`argparse`"
-msgstr ""
+msgstr ":mod:`argparse`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:9
 #: ../../whatsnew/3.15.rst:1139
 msgid ":mod:`csv`"
-msgstr ""
+msgstr ":mod:`csv`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:10
 #: ../../whatsnew/3.15.rst:1140
 msgid ":mod:`ctypes`"
-msgstr ""
+msgstr ":mod:`ctypes`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:11
 #: ../../whatsnew/3.15.rst:1141
 msgid ":mod:`!ctypes.macholib`"
-msgstr ""
+msgstr ":mod:`!ctypes.macholib`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:12
 #: ../../whatsnew/3.15.rst:1142
 msgid ":mod:`decimal` (use :data:`decimal.SPEC_VERSION` instead)"
-msgstr ""
+msgstr ":mod:`decimal` (pouzijte :data:`decimal.SPEC_VERSION` miste toho)"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:13
 #: ../../whatsnew/3.15.rst:1143
 msgid ":mod:`http.server`"
-msgstr ""
+msgstr ":mod:`http.server`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:14
 #: ../../whatsnew/3.15.rst:1144
 msgid ":mod:`imaplib`"
-msgstr ""
+msgstr ":mod:`imaplib`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:15
 #: ../../whatsnew/3.15.rst:1145
 msgid ":mod:`ipaddress`"
-msgstr ""
+msgstr ":mod:`ipaddress`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:16
 #: ../../whatsnew/3.15.rst:1146
 msgid ":mod:`json`"
-msgstr ""
+msgstr ":mod:`json`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:17
 #: ../../whatsnew/3.15.rst:1147
 msgid ":mod:`logging` (``__date__`` also deprecated)"
-msgstr ""
+msgstr ":mod:`logging` (``__date__`` take zastarala)"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:18
 #: ../../whatsnew/3.15.rst:1148
 msgid ":mod:`optparse`"
-msgstr ""
+msgstr ":mod:`optparse`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:19
 #: ../../whatsnew/3.15.rst:1149
 msgid ":mod:`pickle`"
-msgstr ""
+msgstr ":mod:`pickle`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:20
 #: ../../whatsnew/3.15.rst:1150
 msgid ":mod:`platform`"
-msgstr ""
+msgstr ":mod:`platform`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:21
 #: ../../whatsnew/3.15.rst:1151
 msgid ":mod:`re`"
-msgstr ""
+msgstr ":mod:`re`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:22
 #: ../../whatsnew/3.15.rst:1152
 msgid ":mod:`socketserver`"
-msgstr ""
+msgstr ":mod:`socketserver`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:23
 #: ../../whatsnew/3.15.rst:1153
 msgid ":mod:`tabnanny`"
-msgstr ""
+msgstr ":mod:`tabnanny`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:24
 #: ../../whatsnew/3.15.rst:1154
 msgid ":mod:`tkinter.font`"
-msgstr ""
+msgstr ":mod:`tkinter.font`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:25
 #: ../../whatsnew/3.15.rst:1155
 msgid ":mod:`tkinter.ttk`"
-msgstr ""
+msgstr ":mod:`tkinter.ttk`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:26
 #: ../../whatsnew/3.15.rst:1156
 msgid ":mod:`wsgiref.simple_server`"
-msgstr ""
+msgstr ":mod:`wsgiref.simple_server`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:27
 #: ../../whatsnew/3.15.rst:1157
 msgid ":mod:`xml.etree.ElementTree`"
-msgstr ""
+msgstr ":mod:`xml.etree.ElementTree`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:28
 #: ../../whatsnew/3.15.rst:1158
 msgid ":mod:`!xml.sax.expatreader`"
-msgstr ""
+msgstr ":mod:`!xml.sax.expatreader`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:29
 #: ../../whatsnew/3.15.rst:1159
 msgid ":mod:`xml.sax.handler`"
-msgstr ""
+msgstr ":mod:`xml.sax.handler`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:30
 #: ../../whatsnew/3.15.rst:1160
 msgid ":mod:`zlib`"
-msgstr ""
+msgstr ":mod:`zlib`"
 
 #: ../../deprecations/pending-removal-in-3.20.rst:32
 #: ../../whatsnew/3.15.rst:1162
 msgid "(Contributed by Hugo van Kemenade and Stan Ulbrych in :gh:`76007`.)"
-msgstr ""
+msgstr "(Prispelo Hugo van Kemenade a Stan Ulbrych v :gh:`76007`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:2
 msgid "Pending removal in Python 3.16"
-msgstr ""
+msgstr "Bude odstranen v Pythonu 3.16"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:4
 msgid "The import system:"
-msgstr ""
+msgstr "System importu:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:6
 msgid ""
@@ -1852,10 +2392,14 @@ msgid ""
 "deprecated. In Python 3.16, :attr:`!__loader__` will cease to be set or "
 "taken into consideration by the import system or the standard library."
 msgstr ""
+"Nastaveni :attr:`~module.__loader__` na modul zatimco selhani pri nastaveni "
+":attr:`__spec__.loader <importlib.machinery.ModuleSpec.loader>` je "
+"zastaralo. V Pythonu 3.16 prestane byt :attr:`!__loader__` nastaven nebo "
+"bran v uvahuim sistema importu nebo standardni knihovny."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:11
 msgid ":mod:`array`:"
-msgstr ""
+msgstr ":mod:`array`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:13
 msgid ""
@@ -1863,57 +2407,69 @@ msgid ""
 "documentation since Python 3.3 and at runtime since Python 3.13. Use the "
 "``'w'`` format code (:c:type:`Py_UCS4`) for Unicode characters instead."
 msgstr ""
+"Kod formatu ``'u'`` (:c:type:`wchar_t`) byl zastaraly v dokumentaci od "
+"Pythonu 3.3 a pri behu od Pythonu 3.13. Pouzijte kod formatu ``'w'`` "
+"(:c:type:`Py_UCS4`) pro znaky Unicode miste toho."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:19
 msgid ":mod:`asyncio`:"
-msgstr ""
+msgstr ":mod:`asyncio`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:21
 msgid ""
-":func:`!asyncio.iscoroutinefunction` is deprecated and will be removed in"
-" Python 3.16; use :func:`inspect.iscoroutinefunction` instead. "
-"(Contributed by Jiahao Li and Kumar Aditya in :gh:`122875`.)"
+":func:`!asyncio.iscoroutinefunction` is deprecated and will be removed in "
+"Python 3.16; use :func:`inspect.iscoroutinefunction` instead. (Contributed "
+"by Jiahao Li and Kumar Aditya in :gh:`122875`.)"
 msgstr ""
+":func:`!asyncio.iscoroutinefunction` je zastarala a bude odstranen v Pythonu"
+" 3.16; pouzijte :func:`inspect.iscoroutinefunction` miste toho. (Prispelo "
+"Jiahao Li a Kumar Aditya v :gh:`122875`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:26
 msgid ""
 ":mod:`asyncio` policy system is deprecated and will be removed in Python "
 "3.16. In particular, the following classes and functions are deprecated:"
 msgstr ""
+"System politiky :mod:`asyncio` je zastaraly a bude odstranen v Pythonu 3.16."
+" Zvlaste jsou nasledujici tridy a funkce zastaraly:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:29
 msgid ":class:`asyncio.AbstractEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.AbstractEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:30
 msgid ":class:`asyncio.DefaultEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.DefaultEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:31
 msgid ":class:`asyncio.WindowsSelectorEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.WindowsSelectorEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:32
 msgid ":class:`asyncio.WindowsProactorEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.WindowsProactorEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:33
 msgid ":func:`asyncio.get_event_loop_policy`"
-msgstr ""
+msgstr ":func:`asyncio.get_event_loop_policy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:34
 msgid ":func:`asyncio.set_event_loop_policy`"
-msgstr ""
+msgstr ":func:`asyncio.set_event_loop_policy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:36
 msgid ""
 "Users should use :func:`asyncio.run` or :class:`asyncio.Runner` with "
 "*loop_factory* to use the desired event loop implementation."
 msgstr ""
+"Uzivatele meli by pouzivat :func:`asyncio.run` nebo :class:`asyncio.Runner` "
+"s *loop_factory* k pouziti pozadovane implementace smycky udalosti."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:39
 msgid "For example, to use :class:`asyncio.SelectorEventLoop` on Windows::"
 msgstr ""
+"Napriklad, pro pouziti :class:`asyncio.SelectorEventLoop` v systému "
+"Windows::"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:41
 msgid ""
@@ -1924,29 +2480,39 @@ msgid ""
 "\n"
 "asyncio.run(main(), loop_factory=asyncio.SelectorEventLoop)"
 msgstr ""
+"import asyncio\n"
+"\n"
+"async def main():\n"
+"    ...\n"
+"\n"
+"asyncio.run(main(), loop_factory=asyncio.SelectorEventLoop)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:48
 msgid "(Contributed by Kumar Aditya in :gh:`127949`.)"
-msgstr ""
+msgstr "(Prispelo Kumar Aditya v :gh:`127949`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:50
 #: ../../deprecations/pending-removal-in-future.rst:16
 msgid ":mod:`builtins`:"
-msgstr ""
+msgstr ":mod:`builtins`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:52
 msgid ""
 "Bitwise inversion on boolean types, ``~True`` or ``~False`` has been "
 "deprecated since Python 3.12, as it produces surprising and unintuitive "
-"results (``-2`` and ``-1``). Use ``not x`` instead for the logical "
-"negation of a Boolean. In the rare case that you need the bitwise "
-"inversion of the underlying integer, convert to ``int`` explicitly "
-"(``~int(x)``)."
+"results (``-2`` and ``-1``). Use ``not x`` instead for the logical negation "
+"of a Boolean. In the rare case that you need the bitwise inversion of the "
+"underlying integer, convert to ``int`` explicitly (``~int(x)``)."
 msgstr ""
+"Bitova inverze na boolean typu, ``~True`` nebo ``~False`` je zastarala od "
+"Pythonu 3.12, protoze vytvar prekvapive a neintuitivni vysledky (``-2`` a "
+"``-1``). Pouzijte ``not x`` miste toho pro logickou negaci Boolean. V ridkem"
+" pripade, ze potrebujete bitovou inverzi podkladoveho celoci, převeste na "
+"``int`` explicitne (``~int(x)``)."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:59
 msgid ":mod:`functools`:"
-msgstr ""
+msgstr ":mod:`functools`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:61
 msgid ""
@@ -1954,256 +2520,333 @@ msgid ""
 "*function* or *sequence* as keyword arguments has been deprecated since "
 "Python 3.14."
 msgstr ""
+"Volan Python implementace :func:`functools.reduce` s *function* nebo "
+"*sequence* jako pojmenovane argumenty je zastarala od Pythonu 3.14."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:64
 msgid ":mod:`logging`:"
-msgstr ""
+msgstr ":mod:`logging`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:66
 msgid ""
-"Support for custom logging handlers with the *strm* argument is "
-"deprecated and scheduled for removal in Python 3.16. Define handlers with"
-" the *stream* argument instead. (Contributed by Mariusz Felisiak in "
-":gh:`115032`.)"
+"Support for custom logging handlers with the *strm* argument is deprecated "
+"and scheduled for removal in Python 3.16. Define handlers with the *stream* "
+"argument instead. (Contributed by Mariusz Felisiak in :gh:`115032`.)"
 msgstr ""
+"Podpora pro vlastni handler loggovani s argumentem *strm* je zastarala a "
+"naplanovana na odebrani v Pythonu 3.16. Miste toho definujte handlery s "
+"argumentem *stream*. (Prispelo Mariusz Felisiak v :gh:`115032`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:70
 msgid ":mod:`mimetypes`:"
-msgstr ""
+msgstr ":mod:`mimetypes`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:72
 msgid ""
 "Valid extensions start with a '.' or are empty for "
-":meth:`mimetypes.MimeTypes.add_type`. Undotted extensions are deprecated "
-"and will raise a :exc:`ValueError` in Python 3.16. (Contributed by Hugo "
-"van Kemenade in :gh:`75223`.)"
+":meth:`mimetypes.MimeTypes.add_type`. Undotted extensions are deprecated and"
+" will raise a :exc:`ValueError` in Python 3.16. (Contributed by Hugo van "
+"Kemenade in :gh:`75223`.)"
 msgstr ""
+"Platne rozireni zacina s '.' nebo jsou prazdna pro "
+":meth:`mimetypes.MimeTypes.add_type`. Bezbodkove rozireni je zastaralo a "
+"vyvola :exc:`ValueError` v Pythonu 3.16. (Prispelo Hugo van Kemenade v "
+":gh:`75223`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:78
 msgid ":mod:`shutil`:"
-msgstr ""
+msgstr ":mod:`shutil`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:80
 msgid ""
-"The :class:`!ExecError` exception has been deprecated since Python 3.14. "
-"It has not been used by any function in :mod:`!shutil` since Python 3.4, "
-"and is now an alias of :exc:`RuntimeError`."
+"The :class:`!ExecError` exception has been deprecated since Python 3.14. It "
+"has not been used by any function in :mod:`!shutil` since Python 3.4, and is"
+" now an alias of :exc:`RuntimeError`."
 msgstr ""
+"Vyjimka :class:`!ExecError` je zastarala od Pythonu 3.14. Nebyla pouzita "
+"zadnou funkciz :mod:`!shutil` od Pythonu 3.4 a je nyní alias "
+":exc:`RuntimeError`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:85
 msgid ":mod:`symtable`:"
-msgstr ""
+msgstr ":mod:`symtable`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:87
 msgid ""
-"The :meth:`Class.get_methods <symtable.Class.get_methods>` method has "
-"been deprecated since Python 3.14."
+"The :meth:`Class.get_methods <symtable.Class.get_methods>` method has been "
+"deprecated since Python 3.14."
 msgstr ""
+"Metoda :meth:`Class.get_methods <symtable.Class.get_methods>` je zastarala "
+"od Pythonu 3.14."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:90
 msgid ":mod:`sys`:"
-msgstr ""
+msgstr ":mod:`sys`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:92
 msgid ""
-"The :func:`~sys._enablelegacywindowsfsencoding` function has been "
-"deprecated since Python 3.13. Use the "
-":envvar:`PYTHONLEGACYWINDOWSFSENCODING` environment variable instead."
+"The :func:`~sys._enablelegacywindowsfsencoding` function has been deprecated"
+" since Python 3.13. Use the :envvar:`PYTHONLEGACYWINDOWSFSENCODING` "
+"environment variable instead."
 msgstr ""
+"Funkce :func:`~sys._enablelegacywindowsfsencoding` je zastarala od Pythonu "
+"3.13. Pouzijte miste toho promenné prostředí "
+":envvar:`PYTHONLEGACYWINDOWSFSENCODING`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:96
 msgid ":mod:`sysconfig`:"
-msgstr ""
+msgstr ":mod:`sysconfig`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:98
 msgid ""
 "The :func:`!sysconfig.expand_makefile_vars` function has been deprecated "
-"since Python 3.14. Use the ``vars`` argument of "
-":func:`sysconfig.get_paths` instead."
+"since Python 3.14. Use the ``vars`` argument of :func:`sysconfig.get_paths` "
+"instead."
 msgstr ""
+"Funkce :func:`!sysconfig.expand_makefile_vars` je zastarala od Pythonu 3.14."
+" Pouzijte miste toho argument ``vars`` funkce :func:`sysconfig.get_paths`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:102
 msgid ":mod:`tarfile`:"
-msgstr ""
+msgstr ":mod:`tarfile`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:104
 msgid ""
 "The undocumented and unused :attr:`!TarFile.tarfile` attribute has been "
 "deprecated since Python 3.13."
 msgstr ""
+"Nedokumentovany a nepoužívany atribut :attr:`!TarFile.tarfile` je zastaraly "
+"od Pythonu 3.13."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:2
 msgid "Pending removal in Python 3.17"
-msgstr ""
+msgstr "Bude odstranen v Pythonu 3.17"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:4
 msgid ":mod:`collections.abc`:"
-msgstr ""
+msgstr ":mod:`collections.abc`:"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:6
 msgid ""
-":class:`collections.abc.ByteString` is scheduled for removal in Python "
-"3.17."
+":class:`collections.abc.ByteString` is scheduled for removal in Python 3.17."
 msgstr ""
+":class:`collections.abc.ByteString` je naplanovana na odebrani v Pythonu "
+"3.17."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:8
 #: ../../deprecations/pending-removal-in-3.17.rst:42
 msgid ""
 "Use ``isinstance(obj, collections.abc.Buffer)`` to test if ``obj`` "
-"implements the :ref:`buffer protocol <bufferobjects>` at runtime. For use"
-" in type annotations, either use :class:`~collections.abc.Buffer` or a "
-"union that explicitly specifies the types your code supports (e.g., "
-"``bytes | bytearray | memoryview``)."
+"implements the :ref:`buffer protocol <bufferobjects>` at runtime. For use in"
+" type annotations, either use :class:`~collections.abc.Buffer` or a union "
+"that explicitly specifies the types your code supports (e.g., ``bytes | "
+"bytearray | memoryview``)."
 msgstr ""
+"Pouzijte ``isinstance(obj, collections.abc.Buffer)`` k testovani, zda "
+"``obj`` implementuje :ref:`buffer protocol <bufferobjects>` za behu. Pro "
+"pouziti v anotacich typu, pouzijte :class:`~collections.abc.Buffer` nebo "
+"unii, ktera explicitne specifikuje typy, ktere vam kod podporuje (např. "
+"``bytes | bytearray | memoryview``)."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:14
 #: ../../deprecations/pending-removal-in-3.17.rst:48
 msgid ""
-":class:`!ByteString` was originally intended to be an abstract class that"
-" would serve as a supertype of both :class:`bytes` and "
-":class:`bytearray`. However, since the ABC never had any methods, knowing"
-" that an object was an instance of :class:`!ByteString` never actually "
-"told you anything useful about the object. Other common buffer types such"
-" as :class:`memoryview` were also never understood as subtypes of "
-":class:`!ByteString` (either at runtime or by static type checkers)."
+":class:`!ByteString` was originally intended to be an abstract class that "
+"would serve as a supertype of both :class:`bytes` and :class:`bytearray`. "
+"However, since the ABC never had any methods, knowing that an object was an "
+"instance of :class:`!ByteString` never actually told you anything useful "
+"about the object. Other common buffer types such as :class:`memoryview` were"
+" also never understood as subtypes of :class:`!ByteString` (either at "
+"runtime or by static type checkers)."
 msgstr ""
+":class:`!ByteString` byla pùvodně zamýšlena jako abstraktní třída, která by "
+"sloužila jako nadtyp obou :class:`bytes` a :class:`bytearray`. Však protoze "
+"ABC nikdy neměla zadne metody, vědět, že objekt byl instancí "
+":class:`!ByteString` nikdy skutecne nevim vám nic uzitecneho o objektu. Jine"
+" caste typy buffer jako :class:`memoryview` takte nikdy nebyly chapány jako "
+"podtypy :class:`!ByteString` (ne jak za behu, tak i podle statickych type "
+"checkers)."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:22
 #: ../../deprecations/pending-removal-in-3.17.rst:56
 msgid ""
-"See :pep:`PEP 688 <688#current-options>` for more details. (Contributed "
-"by Shantanu Jain in :gh:`91896`.)"
+"See :pep:`PEP 688 <688#current-options>` for more details. (Contributed by "
+"Shantanu Jain in :gh:`91896`.)"
 msgstr ""
+"Podrobnosti naleznete v :pep:`PEP 688 <688#current-options>`. (Prispelo "
+"Shantanu Jain v :gh:`91896`.)"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:26
 msgid ":mod:`encodings`:"
-msgstr ""
+msgstr ":mod:`encodings`:"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:28
 msgid ""
-"Passing non-ascii *encoding* names to "
-":func:`encodings.normalize_encoding` is deprecated and scheduled for "
-"removal in Python 3.17. (Contributed by Stan Ulbrych in :gh:`136702`)"
+"Passing non-ascii *encoding* names to :func:`encodings.normalize_encoding` "
+"is deprecated and scheduled for removal in Python 3.17. (Contributed by Stan"
+" Ulbrych in :gh:`136702`)"
 msgstr ""
+"Preslani jmen *encoding* bez ascii na :func:`encodings.normalize_encoding` "
+"je zastaralo a naplanovano na odebrani v Pythonu 3.17. (Prispelo Stan "
+"Ulbrych v :gh:`136702`)"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:32
 msgid ":mod:`typing`:"
-msgstr ""
+msgstr ":mod:`typing`:"
 
 #: ../../deprecations/pending-removal-in-3.17.rst:34
 msgid ""
 "Before Python 3.14, old-style unions were implemented using the private "
-"class ``typing._UnionGenericAlias``. This class is no longer needed for "
-"the implementation, but it has been retained for backward compatibility, "
-"with removal scheduled for Python 3.17. Users should use documented "
-"introspection helpers like :func:`typing.get_origin` and "
-":func:`typing.get_args` instead of relying on private implementation "
-"details."
+"class ``typing._UnionGenericAlias``. This class is no longer needed for the "
+"implementation, but it has been retained for backward compatibility, with "
+"removal scheduled for Python 3.17. Users should use documented introspection"
+" helpers like :func:`typing.get_origin` and :func:`typing.get_args` instead "
+"of relying on private implementation details."
 msgstr ""
+"Pred Pythonem 3.14 byly unii se starou zemou implementovany pomoci soukrome "
+"tridy ``typing._UnionGenericAlias``. Tato trida jiz neni potrebna pro "
+"implementaci, ale byla uschodovana pro zpetnou kompatibilitu se sejmutim "
+"naplanovano na Python 3.17. Uzivatele meli by pouzivat dokumentovane "
+"introspektovaci pomocniky jako :func:`typing.get_origin` a "
+":func:`typing.get_args` miste spouhania se na soukrome detaily implementace."
 
 #: ../../deprecations/pending-removal-in-3.17.rst:39
 msgid ""
-":class:`typing.ByteString`, deprecated since Python 3.9, is scheduled for"
-" removal in Python 3.17."
+":class:`typing.ByteString`, deprecated since Python 3.9, is scheduled for "
+"removal in Python 3.17."
 msgstr ""
+":class:`typing.ByteString`, zastarala od Pythonu 3.9, je naplanovana na "
+"odebrani v Pythonu 3.17."
 
 #: ../../deprecations/pending-removal-in-3.19.rst:2
 msgid "Pending removal in Python 3.19"
-msgstr ""
+msgstr "Bude odstranen v Pythonu 3.19"
 
 #: ../../deprecations/pending-removal-in-3.19.rst:4
 msgid ":mod:`ctypes`:"
-msgstr ""
+msgstr ":mod:`ctypes`:"
 
 #: ../../deprecations/pending-removal-in-3.19.rst:6
 msgid ""
 "Implicitly switching to the MSVC-compatible struct layout by setting "
-":attr:`~ctypes.Structure._pack_` but not "
-":attr:`~ctypes.Structure._layout_` on non-Windows platforms."
+":attr:`~ctypes.Structure._pack_` but not :attr:`~ctypes.Structure._layout_` "
+"on non-Windows platforms."
 msgstr ""
+"Ticha zmena na MSVC-kompatibilni rozvrzeni struct nastavenim "
+":attr:`~ctypes.Structure._pack_` ale ne :attr:`~ctypes.Structure._layout_` "
+"na platformach mimo Windows."
 
 #: ../../deprecations/pending-removal-in-3.19.rst:12
 msgid ""
 "In hash function constructors such as :func:`~hashlib.new` or the direct "
 "hash-named constructors such as :func:`~hashlib.md5` and "
-":func:`~hashlib.sha256`, their optional initial data parameter could also"
-" be passed a keyword argument named ``data=`` or ``string=`` in various "
+":func:`~hashlib.sha256`, their optional initial data parameter could also be"
+" passed a keyword argument named ``data=`` or ``string=`` in various "
 ":mod:`!hashlib` implementations."
 msgstr ""
+"V konstruktorech hashovaci funkce jako :func:`~hashlib.new` nebo primy hash "
+"pojmenovani konstruktory jako :func:`~hashlib.md5` a "
+":func:`~hashlib.sha256`, jejich volitelny parametr pocatecnich dat mohl byt "
+"take preslany pojmenovany argument pojmenovat ``data=`` nebo ``string=`` v "
+"ruznych implementacich :mod:`!hashlib`."
 
 #: ../../deprecations/pending-removal-in-3.19.rst:18
 msgid ""
 "Support for the ``string`` keyword argument name is now deprecated and "
 "slated for removal in Python 3.19."
 msgstr ""
+"Podpora pro ``string`` jmeno pojmenovaneho argumentu je nyní zastarala a je "
+"naplanovana na odebrani v Pythonu 3.19."
 
 #: ../../deprecations/pending-removal-in-3.19.rst:21
 msgid ""
 "Before Python 3.13, the ``string`` keyword parameter was not correctly "
-"supported depending on the backend implementation of hash functions. "
-"Prefer passing the initial data as a positional argument for maximum "
-"backwards compatibility."
+"supported depending on the backend implementation of hash functions. Prefer "
+"passing the initial data as a positional argument for maximum backwards "
+"compatibility."
 msgstr ""
+"Pred Pythonem 3.13 nebyl parametr ``string`` spravne podporovan v zavislosti"
+" na implementaci backendu hashovacich funkcí. Uprednostnu preslani "
+"pocatecnich dat jako poziicny argument pro maximalní spate kompatibilitu."
 
 #: ../../deprecations/pending-removal-in-3.20.rst:2
 msgid "Pending removal in Python 3.20"
-msgstr ""
+msgstr "Bude odstranen v Pythonu 3.20"
 
 #: ../../deprecations/pending-removal-in-future.rst:2
 msgid "Pending removal in future versions"
-msgstr ""
+msgstr "Bude odstranen v budoucnch verzich"
 
 #: ../../deprecations/pending-removal-in-future.rst:4
 msgid ""
 "The following APIs will be removed in the future, although there is "
 "currently no date scheduled for their removal."
 msgstr ""
+"Nasledujici API budou odstranen v budoucnu, ackoli v soucasnosti neni "
+"naplanovano zadne datum jejich odebrani."
 
 #: ../../deprecations/pending-removal-in-future.rst:7
 msgid ":mod:`argparse`:"
-msgstr ""
+msgstr ":mod:`argparse`:"
 
 #: ../../deprecations/pending-removal-in-future.rst:9
 msgid ""
 "Nesting argument groups and nesting mutually exclusive groups are "
 "deprecated."
 msgstr ""
+"Vnírhovani skupin argumentu a vnřovani vzajemne vylucujicich se skupin je "
+"zastaralo."
 
 #: ../../deprecations/pending-removal-in-future.rst:11
 msgid ""
 "Passing the undocumented keyword argument *prefix_chars* to "
 ":meth:`~argparse.ArgumentParser.add_argument_group` is now deprecated."
 msgstr ""
+"Preslani nedokumentovaneho pojmenovaneho argumentu *prefix_chars* k "
+":meth:`~argparse.ArgumentParser.add_argument_group` je nyní zastaralo."
 
 #: ../../deprecations/pending-removal-in-future.rst:14
 msgid "The :class:`argparse.FileType` type converter is deprecated."
-msgstr ""
+msgstr "Konvertor typu :class:`argparse.FileType` je zastaraly."
 
 #: ../../deprecations/pending-removal-in-future.rst:18
 msgid ""
-"Generators: ``throw(type, exc, tb)`` and ``athrow(type, exc, tb)`` "
-"signature is deprecated: use ``throw(exc)`` and ``athrow(exc)`` instead, "
-"the single argument signature."
+"Generators: ``throw(type, exc, tb)`` and ``athrow(type, exc, tb)`` signature"
+" is deprecated: use ``throw(exc)`` and ``athrow(exc)`` instead, the single "
+"argument signature."
 msgstr ""
+"Generatory: podpis ``throw(type, exc, tb)`` a ``athrow(type, exc, tb)`` je "
+"zastaraly: pouzijte ``throw(exc)`` a ``athrow(exc)`` miste toho, podpis "
+"jedineho argumentu."
 
 #: ../../deprecations/pending-removal-in-future.rst:21
 msgid ""
-"Currently Python accepts numeric literals immediately followed by "
-"keywords, for example ``0in x``, ``1or x``, ``0if 1else 2``.  It allows "
-"confusing and ambiguous expressions like ``[0x1for x in y]`` (which can "
-"be interpreted as ``[0x1 for x in y]`` or ``[0x1f or x in y]``).  A "
-"syntax warning is raised if the numeric literal is immediately followed "
-"by one of keywords :keyword:`and`, :keyword:`else`, :keyword:`for`, "
-":keyword:`if`, :keyword:`in`, :keyword:`is` and :keyword:`or`.  In a "
-"future release it will be changed to a syntax error. (:gh:`87999`)"
+"Currently Python accepts numeric literals immediately followed by keywords, "
+"for example ``0in x``, ``1or x``, ``0if 1else 2``.  It allows confusing and "
+"ambiguous expressions like ``[0x1for x in y]`` (which can be interpreted as "
+"``[0x1 for x in y]`` or ``[0x1f or x in y]``).  A syntax warning is raised "
+"if the numeric literal is immediately followed by one of keywords "
+":keyword:`and`, :keyword:`else`, :keyword:`for`, :keyword:`if`, "
+":keyword:`in`, :keyword:`is` and :keyword:`or`.  In a future release it will"
+" be changed to a syntax error. (:gh:`87999`)"
 msgstr ""
+"V soucasnosti Python prijimarmeradne literaly bezprostredne sledovane "
+"klicovymi slovy, napriklad ``0in x``, ``1or x``, ``0if 1else 2``. Umoznuje "
+"matouci a nejednoznacne vyrazy jako ``[0x1for x in y]`` (ktere mohou byt "
+"interpretovany jako ``[0x1 for x in y]`` nebo ``[0x1f or x in y]``). "
+"Upozorneni syntaxe je vyvozeno, pokud je numericky literal bezprostredne "
+"sledovan jednim z klicovych slov :keyword:`and`, :keyword:`else`, "
+":keyword:`for`, :keyword:`if`, :keyword:`in`, :keyword:`is` a :keyword:`or`."
+" V budoucim vydani bude zmenen na chybu syntaxe. (:gh:`87999`)"
 
 #: ../../deprecations/pending-removal-in-future.rst:29
 msgid ""
-"Support for ``__index__()`` and ``__int__()`` method returning non-int "
-"type: these methods will be required to return an instance of a strict "
-"subclass of :class:`int`."
+"Support for ``__index__()`` and ``__int__()`` method returning non-int type:"
+" these methods will be required to return an instance of a strict subclass "
+"of :class:`int`."
 msgstr ""
+"Podpora ``__index__()`` a ``__int__()`` metody vracejici ne-int typ: tyto "
+"metody budou vyzvany aby vracely instanci striktni podtridy :class:`int`."
 
 #: ../../deprecations/pending-removal-in-future.rst:32
 msgid ""
@@ -2211,402 +2854,476 @@ msgid ""
 ":class:`float`: these methods will be required to return an instance of "
 ":class:`float`."
 msgstr ""
+"Podpora ``__float__()`` metody vracejici striktni podtridu :class:`float`: "
+"tyto metody budou vyzvany aby vracely instanci :class:`float`."
 
 #: ../../deprecations/pending-removal-in-future.rst:35
 msgid ""
 "Support for ``__complex__()`` method returning a strict subclass of "
-":class:`complex`: these methods will be required to return an instance of"
-" :class:`complex`."
+":class:`complex`: these methods will be required to return an instance of "
+":class:`complex`."
 msgstr ""
+"Podpora ``__complex__()`` metody vracejici striktni podtridu "
+":class:`complex`: tyto metody budou vyzvany aby vracely instanci "
+":class:`complex`."
 
 #: ../../deprecations/pending-removal-in-future.rst:38
 msgid "Delegation of ``int()`` to ``__trunc__()`` method."
-msgstr ""
+msgstr "Delegace ``int()`` metody ``__trunc__()``."
 
 #: ../../deprecations/pending-removal-in-future.rst:39
 msgid ""
 "Passing a complex number as the *real* or *imag* argument in the "
-":func:`complex` constructor is now deprecated; it should only be passed "
-"as a single positional argument. (Contributed by Serhiy Storchaka in "
+":func:`complex` constructor is now deprecated; it should only be passed as a"
+" single positional argument. (Contributed by Serhiy Storchaka in "
 ":gh:`109218`.)"
 msgstr ""
+"Preslani komplexniho cisla jako argumentu *real* nebo *imag* v konstruktoru "
+":func:`complex` je nyní zastaralo; mel by byt predan pouze jako jediny "
+"poziicny argument. (Prispelo Serhiy Storchaka v :gh:`109218`.)"
 
 #: ../../deprecations/pending-removal-in-future.rst:44
 msgid ""
-":mod:`calendar`: ``calendar.January`` and ``calendar.February`` constants"
-" are deprecated and replaced by :data:`calendar.JANUARY` and "
-":data:`calendar.FEBRUARY`. (Contributed by Prince Roshan in "
-":gh:`103636`.)"
+":mod:`calendar`: ``calendar.January`` and ``calendar.February`` constants "
+"are deprecated and replaced by :data:`calendar.JANUARY` and "
+":data:`calendar.FEBRUARY`. (Contributed by Prince Roshan in :gh:`103636`.)"
 msgstr ""
+":mod:`calendar`: konstanty ``calendar.January`` a ``calendar.February`` jsou"
+" zastaraly a nahrazeny :data:`calendar.JANUARY` a :data:`calendar.FEBRUARY`."
+" (Prispelo Prince Roshan v :gh:`103636`.)"
 
 #: ../../deprecations/pending-removal-in-future.rst:49
 msgid ""
 ":mod:`codecs`: use :func:`open` instead of :func:`codecs.open`. "
 "(:gh:`133038`)"
 msgstr ""
+":mod:`codecs`: pouzijte :func:`open` miste :func:`codecs.open`. "
+"(:gh:`133038`)"
 
 #: ../../deprecations/pending-removal-in-future.rst:51
 msgid ""
 ":attr:`codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method "
 "instead."
 msgstr ""
+":attr:`codeobject.co_lnotab`: pouzijte miste toho metodu "
+":meth:`codeobject.co_lines`."
 
 #: ../../deprecations/pending-removal-in-future.rst:54
 msgid ":mod:`datetime`:"
-msgstr ""
+msgstr ":mod:`datetime`:"
 
 #: ../../deprecations/pending-removal-in-future.rst:56
 msgid ""
 ":meth:`~datetime.datetime.utcnow`: use "
 "``datetime.datetime.now(tz=datetime.UTC)``."
 msgstr ""
+":meth:`~datetime.datetime.utcnow`: pouzijte "
+"``datetime.datetime.now(tz=datetime.UTC)``."
 
 #: ../../deprecations/pending-removal-in-future.rst:58
 msgid ""
 ":meth:`~datetime.datetime.utcfromtimestamp`: use "
 "``datetime.datetime.fromtimestamp(timestamp, tz=datetime.UTC)``."
 msgstr ""
+":meth:`~datetime.datetime.utcfromtimestamp`: pouzijte "
+"``datetime.datetime.fromtimestamp(timestamp, tz=datetime.UTC)``."
 
 #: ../../deprecations/pending-removal-in-future.rst:61
 msgid ":mod:`gettext`: Plural value must be an integer."
-msgstr ""
+msgstr ":mod:`gettext`: Pluralni hodnota musi byt celocislova."
 
 #: ../../deprecations/pending-removal-in-future.rst:63
 msgid ":mod:`importlib`:"
-msgstr ""
+msgstr ":mod:`importlib`:"
 
 #: ../../deprecations/pending-removal-in-future.rst:65
 msgid ""
 ":func:`~importlib.util.cache_from_source` *debug_override* parameter is "
 "deprecated: use the *optimization* parameter instead."
 msgstr ""
+":func:`~importlib.util.cache_from_source` parametr *debug_override* je "
+"zastaraly: pouzijte miste toho parametr *optimization*."
 
 #: ../../deprecations/pending-removal-in-future.rst:68
 msgid ":mod:`importlib.metadata`:"
-msgstr ""
+msgstr ":mod:`importlib.metadata`:"
 
 #: ../../deprecations/pending-removal-in-future.rst:70
 msgid "``EntryPoints`` tuple interface."
-msgstr ""
+msgstr "``EntryPoints`` rozhrani tuple."
 
 #: ../../deprecations/pending-removal-in-future.rst:71
 msgid "Implicit ``None`` on return values."
-msgstr ""
+msgstr "Implicitni ``None`` pri navratu hodnot."
 
 #: ../../deprecations/pending-removal-in-future.rst:73
 msgid ""
-":mod:`logging`: the ``warn()`` method has been deprecated since Python "
-"3.3, use :meth:`~logging.warning` instead."
+":mod:`logging`: the ``warn()`` method has been deprecated since Python 3.3, "
+"use :meth:`~logging.warning` instead."
 msgstr ""
+":mod:`logging`: metoda ``warn()`` je zastarala od Pythonu 3.3, pouzijte "
+"miste toho :meth:`~logging.warning`."
 
 #: ../../deprecations/pending-removal-in-future.rst:76
 msgid ""
 ":mod:`mailbox`: Use of StringIO input and text mode is deprecated, use "
 "BytesIO and binary mode instead."
 msgstr ""
+":mod:`mailbox`: Pouziti vstupu StringIO a textoveho rezimu je zastaralo, "
+"pouzijte miste toho BytesIO a binarni rezim."
 
 #: ../../deprecations/pending-removal-in-future.rst:79
 msgid ""
-":mod:`os`: Calling :func:`os.register_at_fork` in a multi-threaded "
-"process."
-msgstr ""
+":mod:`os`: Calling :func:`os.register_at_fork` in a multi-threaded process."
+msgstr ":mod:`os`: Volan :func:`os.register_at_fork` v procesu s vice vlakny."
 
 #: ../../deprecations/pending-removal-in-future.rst:81
 msgid ""
-":class:`!pydoc.ErrorDuringImport`: A tuple value for *exc_info* parameter"
-" is deprecated, use an exception instance."
+":class:`!pydoc.ErrorDuringImport`: A tuple value for *exc_info* parameter is"
+" deprecated, use an exception instance."
 msgstr ""
+":class:`!pydoc.ErrorDuringImport`: Hodnota tuple pro parametr *exc_info* je "
+"zastarala, pouzijte instanci vyjimky."
 
 #: ../../deprecations/pending-removal-in-future.rst:84
 msgid ""
-":mod:`re`: More strict rules are now applied for numerical group "
-"references and group names in regular expressions.  Only sequence of "
-"ASCII digits is now accepted as a numerical reference.  The group name in"
-" bytes patterns and replacement strings can now only contain ASCII "
-"letters and digits and underscore. (Contributed by Serhiy Storchaka in "
-":gh:`91760`.)"
+":mod:`re`: More strict rules are now applied for numerical group references "
+"and group names in regular expressions.  Only sequence of ASCII digits is "
+"now accepted as a numerical reference.  The group name in bytes patterns and"
+" replacement strings can now only contain ASCII letters and digits and "
+"underscore. (Contributed by Serhiy Storchaka in :gh:`91760`.)"
 msgstr ""
+":mod:`re`: Prisnejsich pravidel se nyni aplikuji pro numericke odkazy skupin"
+" a jmena skupin v regularnich vyrazech. Pouze sekvence ASCII cislic jsou "
+"nyni prijimany jako numericke odkazy. Jmeno skupiny v vzoracich bajtu a "
+"nahradnich retezech muze nyn obsahovat pouze ASCII pismenka, cislic a "
+"podtrzitko. (Prispelo Serhiy Storchaka v :gh:`91760`.)"
 
 #: ../../deprecations/pending-removal-in-future.rst:91
 msgid ""
-":mod:`shutil`: :func:`~shutil.rmtree`'s *onerror* parameter is deprecated"
-" in Python 3.12; use the *onexc* parameter instead."
+":mod:`shutil`: :func:`~shutil.rmtree`'s *onerror* parameter is deprecated in"
+" Python 3.12; use the *onexc* parameter instead."
 msgstr ""
+":mod:`shutil`: parametr *onerror* :func:`~shutil.rmtree` je zastaraly v "
+"Pythonu 3.12; pouzijte miste toho parametr *onexc*."
 
 #: ../../deprecations/pending-removal-in-future.rst:94
 msgid ":mod:`ssl` options and protocols:"
-msgstr ""
+msgstr ":mod:`ssl` moznosti a protokoly:"
 
 #: ../../deprecations/pending-removal-in-future.rst:96
 msgid ":class:`ssl.SSLContext` without protocol argument is deprecated."
-msgstr ""
+msgstr ":class:`ssl.SSLContext` bez argumentu protokolu je zastaraly."
 
 #: ../../deprecations/pending-removal-in-future.rst:97
 msgid ""
 ":class:`ssl.SSLContext`: :meth:`~ssl.SSLContext.set_npn_protocols` and "
 ":meth:`!selected_npn_protocol` are deprecated: use ALPN instead."
 msgstr ""
+":class:`ssl.SSLContext`: :meth:`~ssl.SSLContext.set_npn_protocols` a "
+":meth:`!selected_npn_protocol` jsou zastaraly: pouzijte miste toho ALPN."
 
 #: ../../deprecations/pending-removal-in-future.rst:100
 msgid "``ssl.OP_NO_SSL*`` options"
-msgstr ""
+msgstr "``ssl.OP_NO_SSL*`` moznosti"
 
 #: ../../deprecations/pending-removal-in-future.rst:101
 msgid "``ssl.OP_NO_TLS*`` options"
-msgstr ""
+msgstr "``ssl.OP_NO_TLS*`` moznosti"
 
 #: ../../deprecations/pending-removal-in-future.rst:102
 msgid "``ssl.PROTOCOL_SSLv3``"
-msgstr ""
+msgstr "``ssl.PROTOCOL_SSLv3``"
 
 #: ../../deprecations/pending-removal-in-future.rst:103
 msgid "``ssl.PROTOCOL_TLS``"
-msgstr ""
+msgstr "``ssl.PROTOCOL_TLS``"
 
 #: ../../deprecations/pending-removal-in-future.rst:104
 msgid "``ssl.PROTOCOL_TLSv1``"
-msgstr ""
+msgstr "``ssl.PROTOCOL_TLSv1``"
 
 #: ../../deprecations/pending-removal-in-future.rst:105
 msgid "``ssl.PROTOCOL_TLSv1_1``"
-msgstr ""
+msgstr "``ssl.PROTOCOL_TLSv1_1``"
 
 #: ../../deprecations/pending-removal-in-future.rst:106
 msgid "``ssl.PROTOCOL_TLSv1_2``"
-msgstr ""
+msgstr "``ssl.PROTOCOL_TLSv1_2``"
 
 #: ../../deprecations/pending-removal-in-future.rst:107
 msgid "``ssl.TLSVersion.SSLv3``"
-msgstr ""
+msgstr "``ssl.TLSVersion.SSLv3``"
 
 #: ../../deprecations/pending-removal-in-future.rst:108
 msgid "``ssl.TLSVersion.TLSv1``"
-msgstr ""
+msgstr "``ssl.TLSVersion.TLSv1``"
 
 #: ../../deprecations/pending-removal-in-future.rst:109
 msgid "``ssl.TLSVersion.TLSv1_1``"
-msgstr ""
+msgstr "``ssl.TLSVersion.TLSv1_1``"
 
 #: ../../deprecations/pending-removal-in-future.rst:111
 msgid ":mod:`threading` methods:"
-msgstr ""
+msgstr ":mod:`threading` metody:"
 
 #: ../../deprecations/pending-removal-in-future.rst:113
 msgid ""
 ":meth:`!threading.Condition.notifyAll`: use "
 ":meth:`~threading.Condition.notify_all`."
 msgstr ""
+":meth:`!threading.Condition.notifyAll`: pouzijte "
+":meth:`~threading.Condition.notify_all`."
 
 #: ../../deprecations/pending-removal-in-future.rst:114
 msgid ":meth:`!threading.Event.isSet`: use :meth:`~threading.Event.is_set`."
 msgstr ""
+":meth:`!threading.Event.isSet`: pouzijte :meth:`~threading.Event.is_set`."
 
 #: ../../deprecations/pending-removal-in-future.rst:115
 msgid ""
-":meth:`!threading.Thread.isDaemon`, :meth:`threading.Thread.setDaemon`: "
-"use :attr:`threading.Thread.daemon` attribute."
+":meth:`!threading.Thread.isDaemon`, :meth:`threading.Thread.setDaemon`: use "
+":attr:`threading.Thread.daemon` attribute."
 msgstr ""
+":meth:`!threading.Thread.isDaemon`, :meth:`threading.Thread.setDaemon`: "
+"pouzijte atribut :attr:`threading.Thread.daemon`."
 
 #: ../../deprecations/pending-removal-in-future.rst:117
 msgid ""
 ":meth:`!threading.Thread.getName`, :meth:`threading.Thread.setName`: use "
 ":attr:`threading.Thread.name` attribute."
 msgstr ""
+":meth:`!threading.Thread.getName`, :meth:`threading.Thread.setName`: "
+"pouzijte atribut :attr:`threading.Thread.name`."
 
 #: ../../deprecations/pending-removal-in-future.rst:119
-msgid ":meth:`!threading.currentThread`: use :meth:`threading.current_thread`."
+msgid ""
+":meth:`!threading.currentThread`: use :meth:`threading.current_thread`."
 msgstr ""
+":meth:`!threading.currentThread`: pouzijte :meth:`threading.current_thread`."
 
 #: ../../deprecations/pending-removal-in-future.rst:120
 msgid ":meth:`!threading.activeCount`: use :meth:`threading.active_count`."
 msgstr ""
+":meth:`!threading.activeCount`: pouzijte :meth:`threading.active_count`."
 
 #: ../../deprecations/pending-removal-in-future.rst:122
 msgid ":class:`typing.Text` (:gh:`92332`)."
-msgstr ""
+msgstr ":class:`typing.Text` (:gh:`92332`)."
 
 #: ../../deprecations/pending-removal-in-future.rst:124
 msgid ""
 "The internal class ``typing._UnionGenericAlias`` is no longer used to "
-"implement :class:`typing.Union`. To preserve compatibility with users "
-"using this private class, a compatibility shim will be provided until at "
-"least Python 3.17. (Contributed by Jelle Zijlstra in :gh:`105499`.)"
+"implement :class:`typing.Union`. To preserve compatibility with users using "
+"this private class, a compatibility shim will be provided until at least "
+"Python 3.17. (Contributed by Jelle Zijlstra in :gh:`105499`.)"
 msgstr ""
+"Vnitrni trida ``typing._UnionGenericAlias`` jiz neni pouzita k implementaci "
+":class:`typing.Union`. Aby se zachovala kompatibilita s uzivateli "
+"pouzivajicimi tuto soukromou tridu, bude poskytnuta shim kompatibility az do"
+" Pythonu 3.17. (Prispelo Jelle Zijlstra v :gh:`105499`.)"
 
 #: ../../deprecations/pending-removal-in-future.rst:129
 msgid ""
 ":class:`unittest.IsolatedAsyncioTestCase`: it is deprecated to return a "
 "value that is not ``None`` from a test case."
 msgstr ""
+":class:`unittest.IsolatedAsyncioTestCase`: je zastaralo vratiit hodnotu, "
+"ktera neni ``None`` z testovacaho pripadu."
 
 #: ../../deprecations/pending-removal-in-future.rst:132
 msgid ""
 ":mod:`urllib.parse` deprecated functions: :func:`~urllib.parse.urlparse` "
 "instead"
 msgstr ""
+":mod:`urllib.parse` zastaraly funkce: :func:`~urllib.parse.urlparse` miste "
+"toho"
 
 #: ../../deprecations/pending-removal-in-future.rst:134
 msgid "``splitattr()``"
-msgstr ""
+msgstr "``splitattr()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:135
 msgid "``splithost()``"
-msgstr ""
+msgstr "``splithost()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:136
 msgid "``splitnport()``"
-msgstr ""
+msgstr "``splitnport()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:137
 msgid "``splitpasswd()``"
-msgstr ""
+msgstr "``splitpasswd()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:138
 msgid "``splitport()``"
-msgstr ""
+msgstr "``splitport()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:139
 msgid "``splitquery()``"
-msgstr ""
+msgstr "``splitquery()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:140
 msgid "``splittag()``"
-msgstr ""
+msgstr "``splittag()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:141
 msgid "``splittype()``"
-msgstr ""
+msgstr "``splittype()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:142
 msgid "``splituser()``"
-msgstr ""
+msgstr "``splituser()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:143
 msgid "``splitvalue()``"
-msgstr ""
+msgstr "``splitvalue()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:144
 msgid "``to_bytes()``"
-msgstr ""
+msgstr "``to_bytes()``"
 
 #: ../../deprecations/pending-removal-in-future.rst:146
 msgid ""
 ":mod:`wsgiref`: ``SimpleHandler.stdout.write()`` should not do partial "
 "writes."
 msgstr ""
+":mod:`wsgiref`: ``SimpleHandler.stdout.write()`` by nemela delat castecne "
+"zapisy."
 
 #: ../../deprecations/pending-removal-in-future.rst:149
 msgid ""
 ":mod:`xml.etree.ElementTree`: Testing the truth value of an "
-":class:`~xml.etree.ElementTree.Element` is deprecated. In a future "
-"release it will always return ``True``. Prefer explicit ``len(elem)`` or "
-"``elem is not None`` tests instead."
+":class:`~xml.etree.ElementTree.Element` is deprecated. In a future release "
+"it will always return ``True``. Prefer explicit ``len(elem)`` or ``elem is "
+"not None`` tests instead."
 msgstr ""
+":mod:`xml.etree.ElementTree`: Testovani pravdy hodnoty "
+":class:`~xml.etree.ElementTree.Element` je zastaralo. V budoucim vydani bude"
+" vzdy vracet ``True``. Uprednostne explicitne ``len(elem)`` nebo ``elem is "
+"not None`` testy miste toho."
 
 #: ../../deprecations/pending-removal-in-future.rst:154
 msgid ""
 ":func:`sys._clear_type_cache` is deprecated: use "
 ":func:`sys._clear_internal_caches` instead."
 msgstr ""
+":func:`sys._clear_type_cache` je zastarala: pouzijte "
+":func:`sys._clear_internal_caches` miste toho."
 
 #: ../../whatsnew/3.15.rst:1178
 msgid "C API changes"
-msgstr ""
+msgstr "Zmeny C API"
 
 #: ../../whatsnew/3.15.rst:1183
 msgid ""
 "Add :c:func:`PySys_GetAttr`, :c:func:`PySys_GetAttrString`, "
-":c:func:`PySys_GetOptionalAttr`, and "
-":c:func:`PySys_GetOptionalAttrString` functions as replacements for "
-":c:func:`PySys_GetObject`. (Contributed by Serhiy Storchaka in "
-":gh:`108512`.)"
+":c:func:`PySys_GetOptionalAttr`, and :c:func:`PySys_GetOptionalAttrString` "
+"functions as replacements for :c:func:`PySys_GetObject`. (Contributed by "
+"Serhiy Storchaka in :gh:`108512`.)"
 msgstr ""
+"Pridejte funkce :c:func:`PySys_GetAttr`, :c:func:`PySys_GetAttrString`, "
+":c:func:`PySys_GetOptionalAttr` a :c:func:`PySys_GetOptionalAttrString` jako"
+" nahrazeni pro :c:func:`PySys_GetObject`. (Prispelo Serhiy Storchaka v "
+":gh:`108512`.)"
 
 #: ../../whatsnew/3.15.rst:1188
 msgid ""
-"Add :c:type:`PyUnstable_Unicode_GET_CACHED_HASH` to get the cached hash "
-"of a string. See the documentation for caveats. (Contributed by Petr "
-"Viktorin in :gh:`131510`.)"
+"Add :c:type:`PyUnstable_Unicode_GET_CACHED_HASH` to get the cached hash of a"
+" string. See the documentation for caveats. (Contributed by Petr Viktorin in"
+" :gh:`131510`.)"
 msgstr ""
+"Pridejte :c:type:`PyUnstable_Unicode_GET_CACHED_HASH` k ziskani ulozenej "
+"hash retezce. Podrobnosti naleznete v dokumentaci. (Prispelo Petr Viktorin v"
+" :gh:`131510`.)"
 
 #: ../../whatsnew/3.15.rst:1192
 msgid ""
 "Add API for checking an extension module's ABI compatibility: "
-":c:data:`Py_mod_abi`, :c:func:`PyABIInfo_Check`, :c:macro:`PyABIInfo_VAR`"
-" and :c:data:`Py_mod_abi`. (Contributed by Petr Viktorin in "
-":gh:`137210`.)"
+":c:data:`Py_mod_abi`, :c:func:`PyABIInfo_Check`, :c:macro:`PyABIInfo_VAR` "
+"and :c:data:`Py_mod_abi`. (Contributed by Petr Viktorin in :gh:`137210`.)"
 msgstr ""
+"Pridejte API pro kontrolu kompatibility ABI rozsirenho modulu: "
+":c:data:`Py_mod_abi`, :c:func:`PyABIInfo_Check`, :c:macro:`PyABIInfo_VAR` a "
+":c:data:`Py_mod_abi`. (Prispelo Petr Viktorin v :gh:`137210`.)"
 
 #: ../../whatsnew/3.15.rst:1199
 msgid ""
 "Implement :pep:`782`, the :ref:`PyBytesWriter API <pybyteswriter>`. Add "
 "functions:"
 msgstr ""
+"Implementujte :pep:`782`, :ref:`PyBytesWriter API <pybyteswriter>`. Pridejte"
+" funkce:"
 
 #: ../../whatsnew/3.15.rst:1202
 msgid ":c:func:`PyBytesWriter_Create`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_Create`"
 
 #: ../../whatsnew/3.15.rst:1203
 msgid ":c:func:`PyBytesWriter_Discard`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_Discard`"
 
 #: ../../whatsnew/3.15.rst:1204
 msgid ":c:func:`PyBytesWriter_FinishWithPointer`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_FinishWithPointer`"
 
 #: ../../whatsnew/3.15.rst:1205
 msgid ":c:func:`PyBytesWriter_FinishWithSize`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_FinishWithSize`"
 
 #: ../../whatsnew/3.15.rst:1206
 msgid ":c:func:`PyBytesWriter_Finish`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_Finish`"
 
 #: ../../whatsnew/3.15.rst:1207
 msgid ":c:func:`PyBytesWriter_Format`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_Format`"
 
 #: ../../whatsnew/3.15.rst:1208
 msgid ":c:func:`PyBytesWriter_GetData`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_GetData`"
 
 #: ../../whatsnew/3.15.rst:1209
 msgid ":c:func:`PyBytesWriter_GetSize`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_GetSize`"
 
 #: ../../whatsnew/3.15.rst:1210
 msgid ":c:func:`PyBytesWriter_GrowAndUpdatePointer`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_GrowAndUpdatePointer`"
 
 #: ../../whatsnew/3.15.rst:1211
 msgid ":c:func:`PyBytesWriter_Grow`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_Grow`"
 
 #: ../../whatsnew/3.15.rst:1212
 msgid ":c:func:`PyBytesWriter_Resize`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_Resize`"
 
 #: ../../whatsnew/3.15.rst:1213
 msgid ":c:func:`PyBytesWriter_WriteBytes`"
-msgstr ""
+msgstr ":c:func:`PyBytesWriter_WriteBytes`"
 
 #: ../../whatsnew/3.15.rst:1215
 msgid "(Contributed by Victor Stinner in :gh:`129813`.)"
-msgstr ""
+msgstr "(Prispelo Victor Stinner v :gh:`129813`.)"
 
 #: ../../whatsnew/3.15.rst:1217
 msgid ""
-"Add a new :c:func:`PyImport_CreateModuleFromInitfunc` C-API for creating "
-"a module from a *spec* and *initfunc*. (Contributed by Itamar Oren in "
+"Add a new :c:func:`PyImport_CreateModuleFromInitfunc` C-API for creating a "
+"module from a *spec* and *initfunc*. (Contributed by Itamar Oren in "
 ":gh:`116146`.)"
 msgstr ""
+"Pridejte nove C-API :c:func:`PyImport_CreateModuleFromInitfunc` pro "
+"vytvoreni modulu z *spec* a *initfunc*. (Prispelo Itamar Oren v "
+":gh:`116146`.)"
 
 #: ../../whatsnew/3.15.rst:1221
 msgid ""
-"Add :c:func:`PyTuple_FromArray` to create a :class:`tuple` from an array."
-" (Contributed by Victor Stinner in :gh:`111489`.)"
+"Add :c:func:`PyTuple_FromArray` to create a :class:`tuple` from an array. "
+"(Contributed by Victor Stinner in :gh:`111489`.)"
 msgstr ""
+"Pridejte :c:func:`PyTuple_FromArray` k vytvoreni :class:`tuple` z pole. "
+"(Prispelo Victor Stinner v :gh:`111489`.)"
 
 #: ../../whatsnew/3.15.rst:1224
 msgid ""
@@ -2614,18 +3331,25 @@ msgid ""
 "should only be used for debugging. (Contributed by Victor Stinner in "
 ":gh:`141070`.)"
 msgstr ""
+"Pridejte :c:func:`PyUnstable_Object_Dump` k vypisu objektu na ``stderr``. "
+"Mel by byt pouzit pouze pro ladeni. (Prispelo Victor Stinner v "
+":gh:`141070`.)"
 
 #: ../../whatsnew/3.15.rst:1228
 msgid ""
 "Add :c:func:`PyUnstable_ThreadState_SetStackProtection` and "
-":c:func:`PyUnstable_ThreadState_ResetStackProtection` functions to set "
-"the stack protection base address and stack protection size of a Python "
-"thread state. (Contributed by Victor Stinner in :gh:`139653`.)"
+":c:func:`PyUnstable_ThreadState_ResetStackProtection` functions to set the "
+"stack protection base address and stack protection size of a Python thread "
+"state. (Contributed by Victor Stinner in :gh:`139653`.)"
 msgstr ""
+"Pridejte funkce :c:func:`PyUnstable_ThreadState_SetStackProtection` a "
+":c:func:`PyUnstable_ThreadState_ResetStackProtection` k nastaveni zakladni "
+"adresy ochrany zasobniku a velikosti ochrany zasobniku stavu vlakna Python. "
+"(Prispelo Victor Stinner v :gh:`139653`.)"
 
 #: ../../whatsnew/3.15.rst:1236
 msgid "Changed C APIs"
-msgstr ""
+msgstr "Zmenen C API"
 
 #: ../../whatsnew/3.15.rst:1238
 msgid ""
@@ -2634,58 +3358,71 @@ msgid ""
 ":c:macro:`Py_TPFLAGS_HAVE_GC` must be set too. (Contributed by Sergey "
 "Miryanov in :gh:`134786`)"
 msgstr ""
+"Pokud je nastaven prapor :c:macro:`Py_TPFLAGS_MANAGED_DICT` nebo "
+":c:macro:`Py_TPFLAGS_MANAGED_WEAKREF`, pak musi byt nastaven take "
+":c:macro:`Py_TPFLAGS_HAVE_GC`. (Prispelo Sergey Miryanov v :gh:`134786`)"
 
 #: ../../whatsnew/3.15.rst:1244 ../../whatsnew/3.15.rst:1393
 msgid "Porting to Python 3.15"
-msgstr ""
+msgstr "Port do Pythonu 3.15"
 
 #: ../../whatsnew/3.15.rst:1246
 msgid "Private functions promoted to public C APIs:"
-msgstr ""
+msgstr "Soukrome funkce povyseny na verejne C API:"
 
 #: ../../whatsnew/3.15.rst:1248
 msgid ""
 "The |pythoncapi_compat_project| can be used to get most of these new "
 "functions on Python 3.14 and older."
 msgstr ""
+"|pythoncapi_compat_project| lze pouzit k ziskani vetsiny techto novych "
+"funkci v Pythonu 3.14 a starsich."
 
 #: ../../whatsnew/3.15.rst:1253
 msgid "Removed C APIs"
-msgstr ""
+msgstr "Odstranen C API"
 
 #: ../../whatsnew/3.15.rst:1255
 msgid "Remove deprecated ``PyUnicode`` functions:"
-msgstr ""
+msgstr "Odstrante zastarala ``PyUnicode`` funkci:"
 
 #: ../../whatsnew/3.15.rst:1257
 msgid ""
-":c:func:`!PyUnicode_AsDecodedObject`: Use :c:func:`PyCodec_Decode` "
-"instead."
+":c:func:`!PyUnicode_AsDecodedObject`: Use :c:func:`PyCodec_Decode` instead."
 msgstr ""
+":c:func:`!PyUnicode_AsDecodedObject`: Pouzijte :c:func:`PyCodec_Decode` "
+"miste toho."
 
 #: ../../whatsnew/3.15.rst:1259
 msgid ""
-":c:func:`!PyUnicode_AsDecodedUnicode`: Use :c:func:`PyCodec_Decode` "
-"instead; Note that some codecs (for example, \"base64\") may return a "
-"type other than :class:`str`, such as :class:`bytes`."
+":c:func:`!PyUnicode_AsDecodedUnicode`: Use :c:func:`PyCodec_Decode` instead;"
+" Note that some codecs (for example, \"base64\") may return a type other "
+"than :class:`str`, such as :class:`bytes`."
 msgstr ""
+":c:func:`!PyUnicode_AsDecodedUnicode`: Pouzijte :c:func:`PyCodec_Decode` "
+"miste toho; Poznamka: nektere kodeci (napriklad \"base64\") mohou vracet typ"
+" jiny nez :class:`str`, jako :class:`bytes`."
 
 #: ../../whatsnew/3.15.rst:1262
 msgid ""
-":c:func:`!PyUnicode_AsEncodedObject`: Use :c:func:`PyCodec_Encode` "
-"instead."
+":c:func:`!PyUnicode_AsEncodedObject`: Use :c:func:`PyCodec_Encode` instead."
 msgstr ""
+":c:func:`!PyUnicode_AsEncodedObject`: Pouzijte :c:func:`PyCodec_Encode` "
+"miste toho."
 
 #: ../../whatsnew/3.15.rst:1264
 msgid ""
-":c:func:`!PyUnicode_AsEncodedUnicode`: Use :c:func:`PyCodec_Encode` "
-"instead; Note that some codecs (for example, \"base64\") may return a "
-"type other than :class:`bytes`, such as :class:`str`."
+":c:func:`!PyUnicode_AsEncodedUnicode`: Use :c:func:`PyCodec_Encode` instead;"
+" Note that some codecs (for example, \"base64\") may return a type other "
+"than :class:`bytes`, such as :class:`str`."
 msgstr ""
+":c:func:`!PyUnicode_AsEncodedUnicode`: Pouzijte :c:func:`PyCodec_Encode` "
+"miste toho; Poznamka: nektere kodeci (napriklad \"base64\") mohou vracet typ"
+" jiny nez :class:`bytes`, jako :class:`str`."
 
 #: ../../whatsnew/3.15.rst:1268
 msgid "(Contributed by Stan Ulbrych in :gh:`133612`.)"
-msgstr ""
+msgstr "(Prispelo Stan Ulbrych v :gh:`133612`.)"
 
 #: ../../whatsnew/3.15.rst:1270
 msgid ""
@@ -2693,197 +3430,273 @@ msgid ""
 ":c:func:`PyImport_ImportModule`. (Contributed by Bénédikt Tran in "
 ":gh:`133644`.)"
 msgstr ""
+":c:func:`!PyImport_ImportModuleNoBlock`: zastaraly alias "
+":c:func:`PyImport_ImportModule`. (Prispelo Benedikt Tran v :gh:`133644`.)"
 
 #: ../../whatsnew/3.15.rst:1274
 msgid ""
 ":c:func:`!PyWeakref_GetObject` and :c:macro:`!PyWeakref_GET_OBJECT`: use "
-":c:func:`PyWeakref_GetRef` instead. The |pythoncapi_compat_project| can "
-"be used to get :c:func:`!PyWeakref_GetRef` on Python 3.12 and older. "
+":c:func:`PyWeakref_GetRef` instead. The |pythoncapi_compat_project| can be "
+"used to get :c:func:`!PyWeakref_GetRef` on Python 3.12 and older. "
 "(Contributed by Bénédikt Tran in :gh:`133644`.)"
 msgstr ""
+":c:func:`!PyWeakref_GetObject` a :c:macro:`!PyWeakref_GET_OBJECT`: pouzijte "
+":c:func:`PyWeakref_GetRef` miste toho. |pythoncapi_compat_project| lze "
+"pouzit k ziskani :c:func:`!PyWeakref_GetRef` v Pythonu 3.12 a starsich. "
+"(Prispelo Benedikt Tran v :gh:`133644`.)"
 
 #: ../../whatsnew/3.15.rst:1279
 msgid ""
 "Remove deprecated :c:func:`!PySys_ResetWarnOptions`. Clear "
 ":data:`sys.warnoptions` and :data:`!warnings.filters` instead."
 msgstr ""
+"Odstrante zastarala :c:func:`!PySys_ResetWarnOptions`. Vycistete miste toho "
+":data:`sys.warnoptions` a :data:`!warnings.filters`."
 
 #: ../../whatsnew/3.15.rst:1282
 msgid "(Contributed by Nikita Sobolev in :gh:`138886`.)"
-msgstr ""
+msgstr "(Prispelo Nikita Sobolev v :gh:`138886`.)"
 
 #: ../../whatsnew/3.15.rst:1284
 msgid ""
-"The following functions are removed in favor of :c:func:`PyConfig_Get`. "
-"The |pythoncapi_compat_project| can be used to get "
-":c:func:`!PyConfig_Get` on Python 3.13 and older."
+"The following functions are removed in favor of :c:func:`PyConfig_Get`. The "
+"|pythoncapi_compat_project| can be used to get :c:func:`!PyConfig_Get` on "
+"Python 3.13 and older."
 msgstr ""
+"Nasledujici funkce jsou odstranen ve prospěch :c:func:`PyConfig_Get`. "
+"|pythoncapi_compat_project| lze pouzit k ziskani :c:func:`!PyConfig_Get` v "
+"Pythonu 3.13 a starsich."
 
 #: ../../whatsnew/3.15.rst:1288
 msgid "Python initialization functions:"
-msgstr ""
+msgstr "Funkce inicializace Pythonu:"
 
 #: ../../whatsnew/3.15.rst:1290
 msgid ""
-":c:func:`!Py_GetExecPrefix`: use "
-":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
-"(:data:`sys.base_exec_prefix`) instead. Use "
+":c:func:`!Py_GetExecPrefix`: use :c:func:`PyConfig_Get(\"base_exec_prefix\")"
+" <PyConfig_Get>` (:data:`sys.base_exec_prefix`) instead. Use "
 ":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
-"(:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need "
-"to be handled."
+"(:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to "
+"be handled."
 msgstr ""
+":c:func:`!Py_GetExecPrefix`: pouzijte "
+":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
+"(:data:`sys.base_exec_prefix`) miste toho. Pouzijte "
+":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
+"(:data:`sys.exec_prefix`) pokud je potreba zpracovat :ref:`virtualní "
+"prostredi <venv-def>`."
 
 #: ../../whatsnew/3.15.rst:1296
 msgid ""
-":c:func:`!Py_GetPath`: use :c:func:`PyConfig_Get(\"module_search_paths\")"
-" <PyConfig_Get>` (:data:`sys.path`) instead."
+":c:func:`!Py_GetPath`: use :c:func:`PyConfig_Get(\"module_search_paths\") "
+"<PyConfig_Get>` (:data:`sys.path`) instead."
 msgstr ""
+":c:func:`!Py_GetPath`: pouzijte "
+":c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` "
+"(:data:`sys.path`) miste toho."
 
 #: ../../whatsnew/3.15.rst:1299
 msgid ""
 ":c:func:`!Py_GetPrefix`: use :c:func:`PyConfig_Get(\"base_prefix\") "
 "<PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use "
-":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if"
-" :ref:`virtual environments <venv-def>` need to be handled."
+":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if "
+":ref:`virtual environments <venv-def>` need to be handled."
 msgstr ""
+":c:func:`!Py_GetPrefix`: pouzijte :c:func:`PyConfig_Get(\"base_prefix\") "
+"<PyConfig_Get>` (:data:`sys.base_prefix`) miste toho. Pouzijte "
+":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) pokud"
+" je potreba zpracovat :ref:`virtualní prostredi <venv-def>`."
 
 #: ../../whatsnew/3.15.rst:1305
 msgid ""
-":c:func:`!Py_GetProgramFullPath`: use "
-":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
-"(:data:`sys.executable`) instead."
+":c:func:`!Py_GetProgramFullPath`: use :c:func:`PyConfig_Get(\"executable\") "
+"<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
+":c:func:`!Py_GetProgramFullPath`: pouzijte "
+":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
+"(:data:`sys.executable`) miste toho."
 
 #: ../../whatsnew/3.15.rst:1308
 msgid ""
 ":c:func:`!Py_GetProgramName`: use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
+":c:func:`!Py_GetProgramName`: pouzijte :c:func:`PyConfig_Get(\"executable\")"
+" <PyConfig_Get>` (:data:`sys.executable`) miste toho."
 
 #: ../../whatsnew/3.15.rst:1311
 msgid ""
 ":c:func:`!Py_GetPythonHome`: use :c:func:`PyConfig_Get(\"home\") "
 "<PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ""
+":c:func:`!Py_GetPythonHome`: pouzijte :c:func:`PyConfig_Get(\"home\") "
+"<PyConfig_Get>` nebo promenne prostredi :envvar:`PYTHONHOME` miste toho."
 
 #: ../../whatsnew/3.15.rst:1315
 msgid "(Contributed by Bénédikt Tran in :gh:`133644`.)"
-msgstr ""
+msgstr "(Prispelo Benedikt Tran v :gh:`133644`.)"
 
 #: ../../whatsnew/3.15.rst:1323
 msgid "Deprecated C APIs"
-msgstr ""
+msgstr "Zastarala C API"
 
 #: ../../whatsnew/3.15.rst:1325
 msgid ""
-"For unsigned integer formats in :c:func:`PyArg_ParseTuple`, accepting "
-"Python integers with value that is larger than the maximal value for the "
-"C type or less than the minimal value for the corresponding signed "
-"integer type of the same size is now deprecated. (Contributed by Serhiy "
-"Storchaka in :gh:`132629`.)"
+"For unsigned integer formats in :c:func:`PyArg_ParseTuple`, accepting Python"
+" integers with value that is larger than the maximal value for the C type or"
+" less than the minimal value for the corresponding signed integer type of "
+"the same size is now deprecated. (Contributed by Serhiy Storchaka in "
+":gh:`132629`.)"
 msgstr ""
+"Pro formaty nepodepsanych celych cisel v :c:func:`PyArg_ParseTuple`, "
+"prijimare celych cisel Python s hodnotou, ktera je vetsi nez maximalni "
+"hodnota pro typ C nebo mensi nez minimalni hodnota pro odpovidadájící "
+"podepsany typ celeho cisla stejne velikosti je nyni zastaralo. (Prispelo "
+"Serhiy Storchaka v :gh:`132629`.)"
 
 #: ../../whatsnew/3.15.rst:1331
 msgid ""
-":c:func:`PyBytes_FromStringAndSize(NULL, len) "
-"<PyBytes_FromStringAndSize>` and :c:func:`_PyBytes_Resize` are "
-":term:`soft deprecated`, use the :c:type:`PyBytesWriter` API instead. "
-"(Contributed by Victor Stinner in :gh:`129813`.)"
+":c:func:`PyBytes_FromStringAndSize(NULL, len) <PyBytes_FromStringAndSize>` "
+"and :c:func:`_PyBytes_Resize` are :term:`soft deprecated`, use the "
+":c:type:`PyBytesWriter` API instead. (Contributed by Victor Stinner in "
+":gh:`129813`.)"
 msgstr ""
+":c:func:`PyBytes_FromStringAndSize(NULL, len) <PyBytes_FromStringAndSize>` a"
+" :c:func:`_PyBytes_Resize` jsou :term:`soft deprecated`, pouzijte miste toho"
+" :c:type:`PyBytesWriter` API. (Prispelo Victor Stinner v :gh:`129813`.)"
 
 #: ../../whatsnew/3.15.rst:1336
 msgid ""
 ":c:func:`!_PyObject_CallMethodId`, :c:func:`!_PyObject_GetAttrId` and "
-":c:func:`!_PyUnicode_FromId` are deprecated since 3.15 and will be "
-"removed in 3.20. Instead, use :c:func:`PyUnicode_InternFromString()` and "
-"cache the result in the module state, then call "
-":c:func:`PyObject_CallMethod` or :c:func:`PyObject_GetAttr`. (Contributed"
-" by Victor Stinner in :gh:`141049`.)"
+":c:func:`!_PyUnicode_FromId` are deprecated since 3.15 and will be removed "
+"in 3.20. Instead, use :c:func:`PyUnicode_InternFromString()` and cache the "
+"result in the module state, then call :c:func:`PyObject_CallMethod` or "
+":c:func:`PyObject_GetAttr`. (Contributed by Victor Stinner in :gh:`141049`.)"
 msgstr ""
+":c:func:`!_PyObject_CallMethodId`, :c:func:`!_PyObject_GetAttrId` a "
+":c:func:`!_PyUnicode_FromId` jsou zastaraly od 3.15 a budou odstranen v "
+"3.20. Miste toho pouzijte :c:func:`PyUnicode_InternFromString()` a ulozte "
+"vysledek v stavu modulu, pak zavol :c:func:`PyObject_CallMethod` nebo "
+":c:func:`PyObject_GetAttr`. (Prispelo Victor Stinner v :gh:`141049`.)"
 
 #: ../../whatsnew/3.15.rst:1343
 msgid ""
 "Deprecate :c:member:`~PyComplexObject.cval` field of the "
 ":c:type:`PyComplexObject` type. Use :c:func:`PyComplex_AsCComplex` and "
-":c:func:`PyComplex_FromCComplex` to convert a Python complex number "
-"to/from the C :c:type:`Py_complex` representation. (Contributed by Sergey"
-" B Kirpichev in :gh:`128813`.)"
+":c:func:`PyComplex_FromCComplex` to convert a Python complex number to/from "
+"the C :c:type:`Py_complex` representation. (Contributed by Sergey B "
+"Kirpichev in :gh:`128813`.)"
 msgstr ""
+"Zastaralize :c:member:`~PyComplexObject.cval` pole typu "
+":c:type:`PyComplexObject`. Pouzijte :c:func:`PyComplex_AsCComplex` a "
+":c:func:`PyComplex_FromCComplex` pro konverzi komplexniho cisla Python na/z "
+"reprezentace :c:type:`Py_complex`. (Prispelo Sergey B Kirpichev v "
+":gh:`128813`.)"
 
 #: ../../whatsnew/3.15.rst:1350
 msgid ""
-"Functions :c:func:`_Py_c_sum`, :c:func:`_Py_c_diff`, :c:func:`_Py_c_neg`,"
-" :c:func:`_Py_c_prod`, :c:func:`_Py_c_quot`, :c:func:`_Py_c_pow` and "
-":c:func:`_Py_c_abs` are :term:`soft deprecated`. (Contributed by Sergey B"
-" Kirpichev in :gh:`128813`.)"
+"Functions :c:func:`_Py_c_sum`, :c:func:`_Py_c_diff`, :c:func:`_Py_c_neg`, "
+":c:func:`_Py_c_prod`, :c:func:`_Py_c_quot`, :c:func:`_Py_c_pow` and "
+":c:func:`_Py_c_abs` are :term:`soft deprecated`. (Contributed by Sergey B "
+"Kirpichev in :gh:`128813`.)"
 msgstr ""
+"Funkce :c:func:`_Py_c_sum`, :c:func:`_Py_c_diff`, :c:func:`_Py_c_neg`, "
+":c:func:`_Py_c_prod`, :c:func:`_Py_c_quot`, :c:func:`_Py_c_pow` a "
+":c:func:`_Py_c_abs` jsou :term:`soft deprecated`. (Prispelo Sergey B "
+"Kirpichev v :gh:`128813`.)"
 
 #: ../../whatsnew/3.15.rst:1355
 msgid ""
 ":c:member:`~PyConfig.bytes_warning` is deprecated since 3.15 and will be "
 "removed in 3.17. (Contributed by Nikita Sobolev in :gh:`136355`.)"
 msgstr ""
+":c:member:`~PyConfig.bytes_warning` je zastarala od 3.15 a bude odstranen v "
+"3.17. (Prispelo Nikita Sobolev v :gh:`136355`.)"
 
 #: ../../whatsnew/3.15.rst:1359
 msgid ""
 ":c:macro:`!Py_INFINITY` macro is :term:`soft deprecated`, use the C11 "
-"standard ``<math.h>`` :c:macro:`!INFINITY` instead. (Contributed by "
-"Sergey B Kirpichev in :gh:`141004`.)"
+"standard ``<math.h>`` :c:macro:`!INFINITY` instead. (Contributed by Sergey B"
+" Kirpichev in :gh:`141004`.)"
 msgstr ""
+"Makro :c:macro:`!Py_INFINITY` je :term:`soft deprecated`, pouzijte miste "
+"toho C11 standard ``<math.h>`` :c:macro:`!INFINITY`. (Prispelo Sergey B "
+"Kirpichev v :gh:`141004`.)"
 
 #: ../../whatsnew/3.15.rst:1363
 msgid ""
-":c:macro:`!Py_MATH_El` and :c:macro:`!Py_MATH_PIl` are deprecated since "
-"3.15 and will be removed in 3.20. (Contributed by Sergey B Kirpichev in "
+":c:macro:`!Py_MATH_El` and :c:macro:`!Py_MATH_PIl` are deprecated since 3.15"
+" and will be removed in 3.20. (Contributed by Sergey B Kirpichev in "
 ":gh:`141004`.)"
 msgstr ""
+":c:macro:`!Py_MATH_El` a :c:macro:`!Py_MATH_PIl` jsou zastaraly od 3.15 a "
+"budou odstranen v 3.20. (Prispelo Sergey B Kirpichev v :gh:`141004`.)"
 
 #: ../../whatsnew/3.15.rst:1372
 msgid "Build changes"
-msgstr ""
+msgstr "Zmeny stavby"
 
 #: ../../whatsnew/3.15.rst:1374
 msgid ""
-"Removed implicit fallback to the bundled copy of the ``libmpdec`` "
-"library. Now this should be explicitly enabled with :option:`--with-"
-"system-libmpdec` set to ``no`` or with :option:`!--without-system-"
-"libmpdec`. (Contributed by Sergey B Kirpichev in :gh:`115119`.)"
+"Removed implicit fallback to the bundled copy of the ``libmpdec`` library. "
+"Now this should be explicitly enabled with :option:`--with-system-libmpdec` "
+"set to ``no`` or with :option:`!--without-system-libmpdec`. (Contributed by "
+"Sergey B Kirpichev in :gh:`115119`.)"
 msgstr ""
+"Odstranen implicitni navraty k pribalenej kopii knihovny ``libmpdec``. Nyni "
+"by to mely byt explicitne povoleno nastavenim :option:`--with-system-"
+"libmpdec` na ``no`` nebo s :option:`!--without-system-libmpdec`. (Prispelo "
+"Sergey B Kirpichev v :gh:`115119`.)"
 
 #: ../../whatsnew/3.15.rst:1379
 msgid ""
-"The new configure option :option:`--with-missing-stdlib-config=FILE` "
-"allows distributors to pass a `JSON <https://www.json.org/json-en.html>`_"
-" configuration file containing custom error messages for :term:`standard "
-"library` modules that are missing or packaged separately. (Contributed by"
-" Stan Ulbrych and Petr Viktorin in :gh:`139707`.)"
+"The new configure option :option:`--with-missing-stdlib-config=FILE` allows "
+"distributors to pass a `JSON <https://www.json.org/json-en.html>`_ "
+"configuration file containing custom error messages for :term:`standard "
+"library` modules that are missing or packaged separately. (Contributed by "
+"Stan Ulbrych and Petr Viktorin in :gh:`139707`.)"
 msgstr ""
+"Nova moznost configure :option:`--with-missing-stdlib-config=FILE` umoznuje "
+"distributorim prejit `JSON <https://www.json.org/json-en.html>`_ soubor "
+"konfigurace obsahujici vlastni chybove zpravy pro moduly :term:`standardni "
+"knihovny`, ktere chybi nebo jsou zabaleny oddelene. (Prispelo Stan Ulbrych a"
+" Petr Viktorin v :gh:`139707`.)"
 
 #: ../../whatsnew/3.15.rst:1385
 msgid ""
-"Annotating anonymous mmap usage is now supported if Linux kernel supports"
-" :manpage:`PR_SET_VMA_ANON_NAME <PR_SET_VMA(2const)>` (Linux 5.17 or "
-"newer). Annotations are visible in ``/proc/<pid>/maps`` if the kernel "
-"supports the feature and :option:`-X dev <-X>` is passed to the Python or"
-" Python is built in :ref:`debug mode <debug-build>`. (Contributed by "
-"Donghee Na in :gh:`141770`)"
+"Annotating anonymous mmap usage is now supported if Linux kernel supports "
+":manpage:`PR_SET_VMA_ANON_NAME <PR_SET_VMA(2const)>` (Linux 5.17 or newer). "
+"Annotations are visible in ``/proc/<pid>/maps`` if the kernel supports the "
+"feature and :option:`-X dev <-X>` is passed to the Python or Python is built"
+" in :ref:`debug mode <debug-build>`. (Contributed by Donghee Na in "
+":gh:`141770`)"
 msgstr ""
+"Anotace pouziti anonymniho mmap je nyn podporovana, pokud ja dro Linux "
+"podporuje :manpage:`PR_SET_VMA_ANON_NAME <PR_SET_VMA(2const)>` (Linux 5.17 "
+"nebo nove). Anotace jsou viditelne v ``/proc/<pid>/maps``, pokud ja dro "
+"podporuje funkci a :option:`-X dev <-X>` je poslano Pythonu nebo je Python "
+"sestaven v :ref:`debug mode <debug-build>`. (Prispelo Donghee Na v "
+":gh:`141770`)"
 
 #: ../../whatsnew/3.15.rst:1395
 msgid ""
-"This section lists previously described changes and other bugfixes that "
-"may require changes to your code."
+"This section lists previously described changes and other bugfixes that may "
+"require changes to your code."
 msgstr ""
+"Tato sekce seznam driveiosi popsane zmeny a jine opravy chyb, ktere mohou "
+"vyzadovat zmeny va seho kodu."
 
 #: ../../whatsnew/3.15.rst:1398
 msgid ":class:`sqlite3.Connection` APIs have been cleaned up."
-msgstr ""
+msgstr "API :class:`sqlite3.Connection` byla vycistena."
 
 #: ../../whatsnew/3.15.rst:1400
 msgid ""
-"All parameters of :func:`sqlite3.connect` except *database* are now "
-"keyword-only."
+"All parameters of :func:`sqlite3.connect` except *database* are now keyword-"
+"only."
 msgstr ""
+"Vsechny parametry :func:`sqlite3.connect` krome *database* jsou nyni pouze "
+"pojmenovane."
 
 #: ../../whatsnew/3.15.rst:1401
 msgid ""
@@ -2891,50 +3704,71 @@ msgid ""
 ":meth:`~sqlite3.Connection.create_function` and "
 ":meth:`~sqlite3.Connection.create_aggregate` are now positional-only."
 msgstr ""
+"Prvni tri parametry metod :meth:`~sqlite3.Connection.create_function` a "
+":meth:`~sqlite3.Connection.create_aggregate` jsou nyni pouze pozialni."
 
 #: ../../whatsnew/3.15.rst:1403
 msgid ""
-"The first parameter of methods "
-":meth:`~sqlite3.Connection.set_authorizer`, "
+"The first parameter of methods :meth:`~sqlite3.Connection.set_authorizer`, "
 ":meth:`~sqlite3.Connection.set_progress_handler` and "
 ":meth:`~sqlite3.Connection.set_trace_callback` is now positional-only."
 msgstr ""
+"Prvni parametr metod :meth:`~sqlite3.Connection.set_authorizer`, "
+":meth:`~sqlite3.Connection.set_progress_handler` a "
+":meth:`~sqlite3.Connection.set_trace_callback` je nyni pouze pozialni."
 
 #: ../../whatsnew/3.15.rst:1407
 msgid "(Contributed by Serhiy Storchaka in :gh:`133595`.)"
-msgstr ""
+msgstr "(Prispelo Serhiy Storchaka v :gh:`133595`.)"
 
 #: ../../whatsnew/3.15.rst:1409
 msgid ""
-":data:`resource.RLIM_INFINITY` is now always positive. Passing a negative"
-" integer value that corresponded to its old value (such as ``-1`` or "
-"``-3``, depending on platform) to :func:`resource.setrlimit` and "
-":func:`resource.prlimit` is now deprecated. (Contributed by Serhiy "
-"Storchaka in :gh:`137044`.)"
+":data:`resource.RLIM_INFINITY` is now always positive. Passing a negative "
+"integer value that corresponded to its old value (such as ``-1`` or ``-3``, "
+"depending on platform) to :func:`resource.setrlimit` and "
+":func:`resource.prlimit` is now deprecated. (Contributed by Serhiy Storchaka"
+" in :gh:`137044`.)"
 msgstr ""
+":data:`resource.RLIM_INFINITY` je nyni vzdy pozitivni. Preslani negativni "
+"celociselne hodnoty, ktera odpovida sve stare hodnote (jako ``-1`` nebo "
+"``-3``, v zavislosti na platforme) na :func:`resource.setrlimit` a "
+":func:`resource.prlimit` je nyni zastaralo. (Prispelo Serhiy Storchaka v "
+":gh:`137044`.)"
 
 #: ../../whatsnew/3.15.rst:1415
 msgid ""
-":meth:`~mmap.mmap.resize` has been removed on platforms that don't "
-"support the underlying syscall, instead of raising a :exc:`SystemError`."
+":meth:`~mmap.mmap.resize` has been removed on platforms that don't support "
+"the underlying syscall, instead of raising a :exc:`SystemError`."
 msgstr ""
+":meth:`~mmap.mmap.resize` byla odstranena na platformach, ktere nepodporuji "
+"podkladovy syscall, miste vyvolan :exc:`SystemError`."
 
 #: ../../whatsnew/3.15.rst:1418
 msgid ""
 "A resource warning is now emitted for an unclosed "
-":func:`xml.etree.ElementTree.iterparse` iterator if it opened a file. Use"
-" its :meth:`!close` method or the :func:`contextlib.closing` context "
-"manager to close it. (Contributed by Osama Abdelkader and Serhiy "
-"Storchaka in :gh:`140601`.)"
+":func:`xml.etree.ElementTree.iterparse` iterator if it opened a file. Use "
+"its :meth:`!close` method or the :func:`contextlib.closing` context manager "
+"to close it. (Contributed by Osama Abdelkader and Serhiy Storchaka in "
+":gh:`140601`.)"
 msgstr ""
+"Varovan zdroju je nyni vyslano pro neuzavreny "
+":func:`xml.etree.ElementTree.iterparse` iterator, pokud otevrela soubor. "
+"Pouzijte jej :meth:`!close` metodu nebo :func:`contextlib.closing` spravce "
+"kontextu k zavreni. (Prispelo Osama Abdelkader a Serhiy Storchaka v "
+":gh:`140601`.)"
 
 #: ../../whatsnew/3.15.rst:1424
 msgid ""
 "If a short option and a single-dash long option are passed to "
-":meth:`argparse.ArgumentParser.add_argument`, *dest* is now inferred from"
-" the single-dash long option. For example, in ``add_argument('-f', "
-"'-foo')``, *dest* is now ``'foo'`` instead of ``'f'``. Pass an explicit "
-"*dest* argument to preserve the old behavior. (Contributed by Serhiy "
-"Storchaka in :gh:`138697`.)"
+":meth:`argparse.ArgumentParser.add_argument`, *dest* is now inferred from "
+"the single-dash long option. For example, in ``add_argument('-f', '-foo')``,"
+" *dest* is now ``'foo'`` instead of ``'f'``. Pass an explicit *dest* "
+"argument to preserve the old behavior. (Contributed by Serhiy Storchaka in "
+":gh:`138697`.)"
 msgstr ""
-
+"Pokud je kratka moznost a moznost dlouhe cary se jednou carou presl ana "
+":meth:`argparse.ArgumentParser.add_argument`, *dest* je nyni odvozeno z "
+"moznosti dlouhe cary se jednou carou. Napriklad, v ``add_argument('-f', "
+"'-foo')``, *dest* je nyni ``'foo'`` miste ``'f'``. Prejdete explicitny "
+"argument *dest* k zachovani stareho chovan. (Prispelo Serhiy Storchaka v "
+":gh:`138697`.)"
