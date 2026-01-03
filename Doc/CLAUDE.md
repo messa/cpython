@@ -88,6 +88,23 @@ Common issues:
 make _ensure-package PACKAGE=sphinx-intl
 ```
 
+## Update .po files from current .rst sources
+
+When the original English documentation (.rst files) changes, you need to update the .po files to include new/changed strings:
+
+```bash
+# 1. Generate .pot files from .rst sources
+make gettext
+
+# 2. Update .po files from .pot files
+./venv/bin/sphinx-intl update -p build/gettext -l cs
+```
+
+This will:
+- Add new translatable strings to .po files
+- Mark changed strings as fuzzy (needing review)
+- Keep existing translations intact
+
 ## Build Czech documentation
 
 ```bash
