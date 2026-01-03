@@ -188,13 +188,13 @@ msgstr ""
 "běhhu <typing.runtime_checkable>` se urychly 2 až 20 krát"
 
 #: ../../whatsnew/3.12.rst:119
-#, python-format
+#, no-python-format
 msgid ""
 "The :mod:`asyncio` package has had a number of performance improvements, "
 "with some benchmarks showing a 75% speed up."
 msgstr ""
-"Balík :mod:`asyncio` prošel řadou zlepšení výkonu, kde některé benchmarky "
-"ukazaly zrychlení 75% speed up."
+"Balík :mod:`asyncio` prošel řadou vylepšení výkonu, přičemž některé "
+"benchmarky ukazují zrychlení o 75 %."
 
 #: ../../whatsnew/3.12.rst:121
 msgid ""
@@ -204,13 +204,13 @@ msgstr ""
 "K modulu :mod:`uuid` bylo přidáno :ref:`rozhraní příkazové řádky <uuid-cli>`"
 
 #: ../../whatsnew/3.12.rst:123
-#, python-format
+#, no-python-format
 msgid ""
 "Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`, producing tokens "
 "via the :mod:`tokenize` module is up to 64% faster."
 msgstr ""
-"Kvůli změnám v :ref:`PEP 701 <whatsnew312-pep701>` je vytváření tokenů "
-"prostřednictvím modulu :mod:`tokenize` až 64% faster."
+"Díky změnám v :ref:`PEP 701 <whatsnew312-pep701>` je vytváření tokenů pomocí"
+" modulu :mod:`tokenize` až o 64 % rychlejší."
 
 #: ../../whatsnew/3.12.rst:126
 msgid "Security improvements:"
@@ -1960,6 +1960,22 @@ msgid ""
 ">>> isinstance(f, HasX)  # unchanged, even though HasX now also has a \"y\" attribute\n"
 "True"
 msgstr ""
+">>> from typing import Protocol, runtime_checkable\n"
+">>> @runtime_checkable\n"
+"... class HasX(Protocol):\n"
+"...     x = 1\n"
+"...\n"
+">>> class Foo: ...\n"
+"...\n"
+">>> f = Foo()\n"
+">>> isinstance(f, HasX)\n"
+"False\n"
+">>> f.x = 1\n"
+">>> isinstance(f, HasX)\n"
+"True\n"
+">>> HasX.y = 2\n"
+">>> isinstance(f, HasX)  # beze změny, přestože HasX nyní má také atribut \"y\"\n"
+"True"
 
 #: ../../whatsnew/3.12.rst:1009
 msgid ""
@@ -2045,6 +2061,19 @@ msgid ""
 "\n"
 "OK (skipped=3)"
 msgstr ""
+"python3 -m unittest --durations=3 lib.tests.test_threading\n"
+".....\n"
+"Nejpomalejší testy\n"
+"----------------------------------------------------------------------\n"
+"1.210s     test_timeout (Lib.test.test_threading.BarrierTests)\n"
+"1.003s     test_default_timeout (Lib.test.test_threading.BarrierTests)\n"
+"0.518s     test_timeout (Lib.test.test_threading.EventTests)\n"
+"\n"
+"(0.000 doby spuštění skryto.  Zobrazit pomocí -v.)\n"
+"----------------------------------------------------------------------\n"
+"Spuštěno 158 testů za 9.869s\n"
+"\n"
+"OK (přeskočeno=3)"
 
 #: ../../whatsnew/3.12.rst:1052
 msgid "(Contributed by Giampaolo Rodola in :gh:`48330`)"
@@ -4437,6 +4466,8 @@ msgid ""
 "If a shared cache must be used, open the database in URI mode using the "
 "``cache=shared`` query parameter."
 msgstr ""
+"Pokud je nutné použít sdílenou cache, otevřete databázi v režimu URI pomocí "
+"parametru dotazu ``cache=shared``."
 
 #: ../../whatsnew/3.12.rst:1571
 msgid ""
@@ -4445,14 +4476,18 @@ msgid ""
 "``OptimizedUnicode`` can either use ``str`` explicitly, or rely on the "
 "default value which is also ``str``."
 msgstr ""
+"Textová továrna ``sqlite3.OptimizedUnicode`` je od Pythonu 3.3 aliasem pro "
+":class:`str`. Kód, který dříve nastavoval textovou továrnu na "
+"``OptimizedUnicode``, může buď použít ``str`` explicitně, nebo se spolehnout"
+" na výchozí hodnotu, kterou je také ``str``."
 
 #: ../../whatsnew/3.12.rst:1576
 msgid "(Contributed by Erlend E. Aasland in :gh:`92548`.)"
-msgstr ""
+msgstr "(Přispěl Erlend E. Aasland v :gh:`92548`.)"
 
 #: ../../whatsnew/3.12.rst:1579
 msgid "ssl"
-msgstr ""
+msgstr "ssl"
 
 #: ../../whatsnew/3.12.rst:1581
 msgid ""
@@ -4460,6 +4495,9 @@ msgid ""
 "Python 3.6: use :func:`os.urandom` or :func:`ssl.RAND_bytes` instead. "
 "(Contributed by Victor Stinner in :gh:`94199`.)"
 msgstr ""
+"Odstraňte funkci :func:`!ssl.RAND_pseudo_bytes` modulu :mod:`ssl`, "
+"zastaralou od Pythonu 3.6: místo ní použijte :func:`os.urandom` nebo "
+":func:`ssl.RAND_bytes`. (Přispěl Victor Stinner v :gh:`94199`.)"
 
 #: ../../whatsnew/3.12.rst:1585
 msgid ""
@@ -4468,6 +4506,10 @@ msgid ""
 "uses the :func:`!ssl.match_hostname` function. (Contributed by Victor "
 "Stinner in :gh:`94199`.)"
 msgstr ""
+"Odstraňte funkci :func:`!ssl.match_hostname`. Byla zastaralá od Pythonu 3.7."
+" OpenSSL provádí ověřování názvu hostitele od Pythonu 3.7, Python již "
+"nepoužívá funkci :func:`!ssl.match_hostname`. (Přispěl Victor Stinner v "
+":gh:`94199`.)"
 
 #: ../../whatsnew/3.12.rst:1591
 msgid ""
@@ -4479,156 +4521,166 @@ msgid ""
 ":cwe:`295` (Improper Certificate Validation). (Contributed by Victor Stinner"
 " in :gh:`94199`.)"
 msgstr ""
+"Odstraňte funkci :func:`!ssl.wrap_socket`, zastaralou od Pythonu 3.7: místo "
+"ní vytvořte objekt :class:`ssl.SSLContext` a zavolejte jeho metodu "
+":class:`ssl.SSLContext.wrap_socket`. Jakýkoli balíček, který stále používá "
+":func:`!ssl.wrap_socket`, je porušený a nebezpečný. Funkce neodesílá "
+"rozšíření SNI TLS ani neověřuje název serveru. Kód podléhá :cwe:`295` "
+"(Nesprávné ověřování certifikátu). (Přispěl Victor Stinner v :gh:`94199`.)"
 
 #: ../../whatsnew/3.12.rst:1602
 msgid "Remove many long-deprecated :mod:`unittest` features:"
-msgstr ""
+msgstr "Odstraňte mnoho dlouho zastaralých funkcí :mod:`unittest`:"
 
 #: ../../whatsnew/3.12.rst:1606
 msgid "A number of :class:`~unittest.TestCase` method aliases:"
-msgstr ""
+msgstr "Počet aliasů metody :class:`~unittest.TestCase`:"
 
 #: ../../whatsnew/3.12.rst:1609
 msgid "Deprecated alias"
-msgstr ""
+msgstr "Zastaralý alias"
 
 #: ../../whatsnew/3.12.rst:1609
 msgid "Method Name"
-msgstr ""
+msgstr "Název metody"
 
 #: ../../whatsnew/3.12.rst:1609
 msgid "Deprecated in"
-msgstr ""
+msgstr "Zastaralé v"
 
 #: ../../whatsnew/3.12.rst:1611
 msgid "``failUnless``"
-msgstr ""
+msgstr "``failUnless``"
 
 #: ../../whatsnew/3.12.rst:1611 ../../whatsnew/3.12.rst:1618
 msgid ":meth:`.assertTrue`"
-msgstr ""
+msgstr ":meth:`.assertTrue`"
 
 #: ../../whatsnew/3.12.rst:1611 ../../whatsnew/3.12.rst:1612
 #: ../../whatsnew/3.12.rst:1613 ../../whatsnew/3.12.rst:1614
 #: ../../whatsnew/3.12.rst:1615 ../../whatsnew/3.12.rst:1616
 #: ../../whatsnew/3.12.rst:1617
 msgid "3.1"
-msgstr ""
+msgstr "3.1"
 
 #: ../../whatsnew/3.12.rst:1612
 msgid "``failIf``"
-msgstr ""
+msgstr "``failIf``"
 
 #: ../../whatsnew/3.12.rst:1612
 msgid ":meth:`.assertFalse`"
-msgstr ""
+msgstr ":meth:`.assertFalse`"
 
 #: ../../whatsnew/3.12.rst:1613
 msgid "``failUnlessEqual``"
-msgstr ""
+msgstr "``failUnlessEqual``"
 
 #: ../../whatsnew/3.12.rst:1613 ../../whatsnew/3.12.rst:1619
 msgid ":meth:`.assertEqual`"
-msgstr ""
+msgstr ":meth:`.assertEqual`"
 
 #: ../../whatsnew/3.12.rst:1614
 msgid "``failIfEqual``"
-msgstr ""
+msgstr "``failIfEqual``"
 
 #: ../../whatsnew/3.12.rst:1614 ../../whatsnew/3.12.rst:1620
 msgid ":meth:`.assertNotEqual`"
-msgstr ""
+msgstr ":meth:`.assertNotEqual`"
 
 #: ../../whatsnew/3.12.rst:1615
 msgid "``failUnlessAlmostEqual``"
-msgstr ""
+msgstr "``failUnlessAlmostEqual``"
 
 #: ../../whatsnew/3.12.rst:1615 ../../whatsnew/3.12.rst:1621
 msgid ":meth:`.assertAlmostEqual`"
-msgstr ""
+msgstr ":meth:`.assertAlmostEqual`"
 
 #: ../../whatsnew/3.12.rst:1616
 msgid "``failIfAlmostEqual``"
-msgstr ""
+msgstr "``failIfAlmostEqual``"
 
 #: ../../whatsnew/3.12.rst:1616 ../../whatsnew/3.12.rst:1622
 msgid ":meth:`.assertNotAlmostEqual`"
-msgstr ""
+msgstr ":meth:`.assertNotAlmostEqual`"
 
 #: ../../whatsnew/3.12.rst:1617
 msgid "``failUnlessRaises``"
-msgstr ""
+msgstr "``failUnlessRaises``"
 
 #: ../../whatsnew/3.12.rst:1617
 msgid ":meth:`.assertRaises`"
-msgstr ""
+msgstr ":meth:`.assertRaises`"
 
 #: ../../whatsnew/3.12.rst:1618
 msgid "``assert_``"
-msgstr ""
+msgstr "``assert_``"
 
 #: ../../whatsnew/3.12.rst:1618 ../../whatsnew/3.12.rst:1619
 #: ../../whatsnew/3.12.rst:1620 ../../whatsnew/3.12.rst:1621
 #: ../../whatsnew/3.12.rst:1622 ../../whatsnew/3.12.rst:1623
 #: ../../whatsnew/3.12.rst:1624
 msgid "3.2"
-msgstr ""
+msgstr "3.2"
 
 #: ../../whatsnew/3.12.rst:1619
 msgid "``assertEquals``"
-msgstr ""
+msgstr "``assertEquals``"
 
 #: ../../whatsnew/3.12.rst:1620
 msgid "``assertNotEquals``"
-msgstr ""
+msgstr "``assertNotEquals``"
 
 #: ../../whatsnew/3.12.rst:1621
 msgid "``assertAlmostEquals``"
-msgstr ""
+msgstr "``assertAlmostEquals``"
 
 #: ../../whatsnew/3.12.rst:1622
 msgid "``assertNotAlmostEquals``"
-msgstr ""
+msgstr "``assertNotAlmostEquals``"
 
 #: ../../whatsnew/3.12.rst:1623
 msgid "``assertRegexpMatches``"
-msgstr ""
+msgstr "``assertRegexpMatches``"
 
 #: ../../whatsnew/3.12.rst:1623
 msgid ":meth:`.assertRegex`"
-msgstr ""
+msgstr ":meth:`.assertRegex`"
 
 #: ../../whatsnew/3.12.rst:1624
 msgid "``assertRaisesRegexp``"
-msgstr ""
+msgstr "``assertRaisesRegexp``"
 
 #: ../../whatsnew/3.12.rst:1624
 msgid ":meth:`.assertRaisesRegex`"
-msgstr ""
+msgstr ":meth:`.assertRaisesRegex`"
 
 #: ../../whatsnew/3.12.rst:1625
 msgid "``assertNotRegexpMatches``"
-msgstr ""
+msgstr "``assertNotRegexpMatches``"
 
 #: ../../whatsnew/3.12.rst:1625
 msgid ":meth:`.assertNotRegex`"
-msgstr ""
+msgstr ":meth:`.assertNotRegex`"
 
 #: ../../whatsnew/3.12.rst:1625
 msgid "3.5"
-msgstr ""
+msgstr "3.5"
 
 #: ../../whatsnew/3.12.rst:1628
 msgid ""
 "You can use https://github.com/isidentical/teyit to automatically modernise "
 "your unit tests."
 msgstr ""
+"Můžete použít https://github.com/isidentical/teyit k automatickému "
+"modernizování vašich unit testů."
 
 #: ../../whatsnew/3.12.rst:1631
 msgid ""
 "Undocumented and broken :class:`~unittest.TestCase` method "
 "``assertDictContainsSubset`` (deprecated in Python 3.2)."
 msgstr ""
+"Nedokumentovaná a porušená metoda :class:`~unittest.TestCase` "
+"``assertDictContainsSubset`` (zastaralá od Pythonu 3.2)."
 
 #: ../../whatsnew/3.12.rst:1634
 msgid ""
@@ -4636,20 +4688,25 @@ msgid ""
 "<unittest.TestLoader.loadTestsFromModule>` parameter *use_load_tests* "
 "(deprecated and ignored since Python 3.5)."
 msgstr ""
+"Nedokumentovaný parametr :meth:`TestLoader.loadTestsFromModule "
+"<unittest.TestLoader.loadTestsFromModule>` *use_load_tests* (zastaralý a "
+"ignorován od Pythonu 3.5)."
 
 #: ../../whatsnew/3.12.rst:1638
 msgid ""
 "An alias of the :class:`~unittest.TextTestResult` class: ``_TextTestResult``"
 " (deprecated in Python 3.2)."
 msgstr ""
+"Alias třídy :class:`~unittest.TextTestResult`: ``_TextTestResult`` "
+"(zastaralý od Pythonu 3.2)."
 
 #: ../../whatsnew/3.12.rst:1641
 msgid "(Contributed by Serhiy Storchaka in :gh:`89325`.)"
-msgstr ""
+msgstr "(Přispěl Serhiy Storchaka v :gh:`89325`.)"
 
 #: ../../whatsnew/3.12.rst:1644
 msgid "webbrowser"
-msgstr ""
+msgstr "webbrowser"
 
 #: ../../whatsnew/3.12.rst:1646
 msgid ""
@@ -4657,10 +4714,13 @@ msgid ""
 "browsers include: Grail, Mosaic, Netscape, Galeon, Skipstone, Iceape, "
 "Firebird, and Firefox versions 35 and below (:gh:`102871`)."
 msgstr ""
+"Odstraňte podporu zastaralých prohléžečů z :mod:`webbrowser`. Odebrané "
+"prohléžeče zahrnují: Grail, Mosaic, Netscape, Galeon, Skipstone, Iceape, "
+"Firebird a Firefox verze 35 a nižší (:gh:`102871`)."
 
 #: ../../whatsnew/3.12.rst:1651
 msgid "xml.etree.ElementTree"
-msgstr ""
+msgstr "xml.etree.ElementTree"
 
 #: ../../whatsnew/3.12.rst:1653
 msgid ""
@@ -4670,10 +4730,15 @@ msgid ""
 "no ``copy()`` method, only a ``__copy__()`` method. (Contributed by Victor "
 "Stinner in :gh:`94383`.)"
 msgstr ""
+"Odstraňte metodu ``ElementTree.Element.copy()`` čistě pythonové "
+"implementace, zastaralou od Pythonu 3.10, míste toho použijte funkci "
+":func:`copy.copy`. C implementace :mod:`xml.etree.ElementTree` nemá metodu "
+"``copy()``, pouze metodu ``__copy__()``. (Přispěl Victor Stinner v "
+":gh:`94383`.)"
 
 #: ../../whatsnew/3.12.rst:1660
 msgid "zipimport"
-msgstr ""
+msgstr "zipimport"
 
 #: ../../whatsnew/3.12.rst:1662
 msgid ""
@@ -4682,10 +4747,14 @@ msgid ""
 ":pep:`451` for the rationale. (Contributed by Victor Stinner in "
 ":gh:`94379`.)"
 msgstr ""
+"Odstraňte metody ``find_loader()`` a ``find_module()`` modulu "
+":mod:`zipimport`, zastaraly od Pythonu 3.10: míste toho použijte metodu "
+"``find_spec()``. Viz :pep:`451` pro zdůvodnění. (Přispěl Victor Stinner v "
+":gh:`94379`.)"
 
 #: ../../whatsnew/3.12.rst:1668
 msgid "Others"
-msgstr ""
+msgstr "Ostatní"
 
 #: ../../whatsnew/3.12.rst:1670
 msgid ""
@@ -4694,6 +4763,10 @@ msgid ""
 "<https://github.com/sphinx-contrib/sphinx-lint>`_. (Contributed by Julien "
 "Palard in :gh:`98179`.)"
 msgstr ""
+"Odstraňte pravidlo ``suspicious`` z dokumentace :file:`Makefile` a "
+":file:`Doc/tools/rstlint.py`, obě ve prospěch `sphinx-lint "
+"<https://github.com/sphinx-contrib/sphinx-lint>`_. (Přispěl Julien Palard v "
+":gh:`98179`.)"
 
 #: ../../whatsnew/3.12.rst:1675
 msgid ""
@@ -4704,32 +4777,43 @@ msgid ""
 "*context* parameter (*ssl_context* in :mod:`imaplib`) instead. (Contributed "
 "by Victor Stinner in :gh:`94172`.)"
 msgstr ""
+"Odstraňte parametry *keyfile* a *certfile* z modulů :mod:`ftplib`, "
+":mod:`imaplib`, :mod:`poplib` a :mod:`smtplib`, a parametry *key_file*, "
+"*cert_file* a *check_hostname* z modulu :mod:`http.client`, všechny "
+"zastaraly od Pythonu 3.6. Míste toho použijte parametr *context* "
+"(*ssl_context* v :mod:`imaplib`). (Přispěl Victor Stinner v :gh:`94172`.)"
 
 #: ../../whatsnew/3.12.rst:1683
 msgid ""
 "Remove ``Jython`` compatibility hacks from several stdlib modules and tests."
 " (Contributed by Nikita Sobolev in :gh:`99482`.)"
 msgstr ""
+"Odstraňte hacky pro kompatibilitu ``Jython`` z několika modulů stdlib a "
+"testů. (Přispěl Nikita Sobolev v :gh:`99482`.)"
 
 #: ../../whatsnew/3.12.rst:1686
 msgid ""
 "Remove ``_use_broken_old_ctypes_structure_semantics_`` flag from "
 ":mod:`ctypes` module. (Contributed by Nikita Sobolev in :gh:`99285`.)"
 msgstr ""
+"Odstraňte příznak ``_use_broken_old_ctypes_structure_semantics_`` z modulu "
+":mod:`ctypes`. (Přispěl Nikita Sobolev v :gh:`99285`.)"
 
 #: ../../whatsnew/3.12.rst:1694 ../../whatsnew/3.12.rst:2018
 msgid "Porting to Python 3.12"
-msgstr ""
+msgstr "Portování na Python 3.12"
 
 #: ../../whatsnew/3.12.rst:1696
 msgid ""
 "This section lists previously described changes and other bugfixes that may "
 "require changes to your code."
 msgstr ""
+"Tato sekce obsahuje dříve popsané změny a další opravy chyb, které mohou "
+"vyžadovat změny vášeho kódu."
 
 #: ../../whatsnew/3.12.rst:1700
 msgid "Changes in the Python API"
-msgstr ""
+msgstr "Změny v Python API"
 
 #: ../../whatsnew/3.12.rst:1702
 msgid ""
@@ -4739,6 +4823,11 @@ msgid ""
 "strings can now only contain ASCII letters and digits and underscore. "
 "(Contributed by Serhiy Storchaka in :gh:`91760`.)"
 msgstr ""
+"Nové přísnější pravidla se nyní aplikují na skupiny číselných odkazů a jména"
+" skupin v regulárních výrazech. Pouze sekvence ASCII číslic je nyní přijata "
+"jako čéskoselný odkaz. Název skupiny v byte patternů a náhradních řetězcích "
+"může obsahovat pouze ASCII písmena, číslice a podtržítko. (Přispěl Serhiy "
+"Storchaka v :gh:`91760`.)"
 
 #: ../../whatsnew/3.12.rst:1709
 msgid ""
@@ -4751,6 +4840,13 @@ msgid ""
 "``randrange(10**25)``. (Originally suggested by Serhiy Storchaka "
 ":gh:`86388`.)"
 msgstr ""
+"Odstraňte funkcionalitu ``randrange()`` zastaralou od Pythonu 3.10. Dříve se"
+" ``randrange(10.0)`` bez ztráty převedl na ``randrange(10)``. Nyní vyvolá "
+":exc:`TypeError`. Také se výjimka vyvoláná pro necíselné hodnoty jako "
+"``randrange(10.5)`` nebo ``randrange('10')`` změnila z :exc:`ValueError` na "
+":exc:`TypeError`. To také zabrání chybám, kdy by ``randrange(1e25)`` tichě "
+"vybrala z většího rozsahu než ``randrange(10**25)``. (Původně navrhnuté "
+"Serhiy Storchaka :gh:`86388`.)"
 
 #: ../../whatsnew/3.12.rst:1717
 msgid ""
@@ -4761,6 +4857,12 @@ msgid ""
 "handler`. Argument files should be encoded in UTF-8 instead of ANSI Codepage"
 " on Windows."
 msgstr ""
+":class:`argparse.ArgumentParser` změnila kódování a obsluhování chyb pro "
+"čtení argumentů ze souboru (např. možnost ``fromfile_prefix_chars``) z "
+"výchozího kódování textu (např. :func:`locale.getpreferredencoding(False) "
+"<locale.getpreferredencoding>`) na :term:`kódování systému souborů a "
+"obsluhování chyb`. Soubory s argumenty by měly být kódovány v UTF-8 místo "
+"ANSI Codepage na Windows."
 
 #: ../../whatsnew/3.12.rst:1723
 msgid ""
@@ -4768,6 +4870,9 @@ msgid ""
 "and 3.5.4.  A recommended replacement is the :mod:`asyncio`-based "
 ":pypi:`aiosmtpd` PyPI module."
 msgstr ""
+"Odstraňte modul ``smtpd`` založený na ``asyncore``, zastaralý v Pythonu "
+"3.4.7 a 3.5.4. Doporučenou náhradou je modul :mod:`asyncio`-based "
+":pypi:`aiosmtpd` PyPI."
 
 #: ../../whatsnew/3.12.rst:1727
 msgid ""
@@ -4775,6 +4880,9 @@ msgid ""
 "exception, rather than reading :data:`sys.stdin`. The feature was deprecated"
 " in Python 3.9. (Contributed by Victor Stinner in :gh:`94352`.)"
 msgstr ""
+":func:`shlex.split`: Předání ``None`` pro argument *s* nyní vyvolá výjimku, "
+"místo aby se četl :data:`sys.stdin`. Funkce byla zastaralá v Pythonu 3.9. "
+"(Přispěl Victor Stinner v :gh:`94352`.)"
 
 #: ../../whatsnew/3.12.rst:1732
 msgid ""
@@ -4783,6 +4891,9 @@ msgid ""
 ":class:`bytes` type is accepted for bytes strings. (Contributed by Victor "
 "Stinner in :gh:`98393`.)"
 msgstr ""
+"Modul :mod:`os` již nepřijímá cesty podobné bajtům, jako jsou typy "
+":class:`bytearray` a :class:`memoryview`: pro bytové řetězce je přijímán "
+"pouze přesný typ :class:`bytes`. (Přispěl Victor Stinner v :gh:`98393`.)"
 
 #: ../../whatsnew/3.12.rst:1737
 msgid ""
@@ -4795,6 +4906,14 @@ msgid ""
 "process-global resources, which are best managed from the main interpreter. "
 "(Contributed by Donghee Na in :gh:`99127`.)"
 msgstr ""
+":func:`syslog.openlog` a :func:`syslog.closelog` nyní selžou, pokud se "
+"použijí v podinterpretrech. :func:`syslog.syslog` může stále použít v "
+"podinterpretru, ale pouze pokud je :func:`syslog.openlog` již volána v "
+"hlavním interpretru. Tato nová omezení se nevztahují na hlavní interpret, "
+"takže jen velmi malá sada uživatelů může být dotčena. Tato změna pomáhá s "
+"izolací interpretrů. Dále :mod:`syslog` je wrapper kolem zdrojů globálních "
+"pro proces, které jsou nejlépe spravovány z hlavního interpretru. (Přispěl "
+"Donghee Na v :gh:`99127`.)"
 
 #: ../../whatsnew/3.12.rst:1746
 msgid ""
@@ -4807,6 +4926,14 @@ msgid ""
 "fine.  If synchronization is needed, implement locking within the cached "
 "property getter function or around multi-threaded access points."
 msgstr ""
+"Nedokumentované chování blokování :func:`~functools.cached_property` je "
+"odstánuto, protože blokoval všechny instance třídy, což vedlo k vysokému "
+"lock contention. To znamená, že funkce cached property getter by nyní mohla "
+"spustit více než jednou pro jednu instanci, pokud dva vlákna soutěží. Pro "
+"vĕtšinu jednoduchých cached properties (např. ty, které jsou idempotence a "
+"jednoduše vypočítávají hodnotu na základě jiných atributů instance) bude to "
+"v pořádku. Pokud je potřebná synchronizace, implementujte blokování v cached"
+" property getter funkci nebo kolem přístupů pro více vláken."
 
 #: ../../whatsnew/3.12.rst:1759
 msgid ""
@@ -4815,6 +4942,10 @@ msgid ""
 "that may be surprising or dangerous. See :ref:`tarfile-extraction-filter` "
 "for details."
 msgstr ""
+"Při extrahování tar souborů pomocí :mod:`tarfile` nebo "
+":func:`shutil.unpack_archive` předávejte argument *filter* pro omezení "
+"funkcí, které mohou být překvapivé nebo nebezpečné. Viz :ref:`tarfile-"
+"extraction-filter` pro detaily."
 
 #: ../../whatsnew/3.12.rst:1764
 #, python-brace-format
@@ -4829,15 +4960,22 @@ msgid ""
 "the f-string ``f\"start {1+1} end\"`` the old version of the tokenizer "
 "emitted::"
 msgstr ""
+"Výstup funkcí :func:`tokenize.tokenize` a :func:`tokenize.generate_tokens` "
+"je nyní změněn v důsledku změn zavědených v :pep:`701`. To znamená, že "
+"tokeny ``STRING`` se již neesílají pro f-strings a místo toho se nyní "
+"produkují tokeny popsané v :pep:`701`: ``FSTRING_START``, ``FSTRING_MIDDLE``"
+" a ``FSTRING_END`` se nyní odesilají pro části \"string\" f-string v "
+"příslušé tokenizaci v komponentách výrazu. Například pro f-string ``f\"start"
+" {1+1} end\"`` stará verze tokenizátoru wydala::"
 
 #: ../../whatsnew/3.12.rst:1773
 #, python-brace-format
 msgid "1,0-1,18:           STRING         'f\"start {1+1} end\"'"
-msgstr ""
+msgstr "1,0-1,18:           STRING         'f\"start {1+1} end\"'"
 
 #: ../../whatsnew/3.12.rst:1775
 msgid "while the new version emits::"
-msgstr ""
+msgstr "zatímco nová verze měšĕ odeslá:"
 
 #: ../../whatsnew/3.12.rst:1777
 #, python-brace-format
@@ -4852,36 +4990,56 @@ msgid ""
 "1,13-1,17:          FSTRING_MIDDLE ' end'\n"
 "1,17-1,18:          FSTRING_END    '\"'"
 msgstr ""
+"1,0-1,2:            FSTRING_START  'f\"'\n"
+"1,2-1,8:            FSTRING_MIDDLE 'start '\n"
+"1,8-1,9:            OP             '{'\n"
+"1,9-1,10:           NUMBER         '1'\n"
+"1,10-1,11:          OP             '+'\n"
+"1,11-1,12:          NUMBER         '1'\n"
+"1,12-1,13:          OP             '}'\n"
+"1,13-1,17:          FSTRING_MIDDLE ' end'\n"
+"1,17-1,18:          FSTRING_END    '\"'"
 
 #: ../../whatsnew/3.12.rst:1787
 msgid ""
 "Additionally, there may be some minor behavioral changes as a consequence of"
 " the changes required to support :pep:`701`. Some of these changes include:"
 msgstr ""
+"Dále, mohou existovat některé drobné změny chování v důsledku změn "
+"potřebných pro podporu :pep:`701`. Některé z těchto změn zahrnují:"
 
 #: ../../whatsnew/3.12.rst:1790
 msgid ""
 "The ``type`` attribute of the tokens emitted when tokenizing some invalid "
 "Python characters such as ``!`` has changed from ``ERRORTOKEN`` to ``OP``."
 msgstr ""
+"Atribut ``type`` tokenů vygenerovaných při tokenizaci některých neplatných "
+"Pythoných znaků jako ``!`` se změnila z ``ERRORTOKEN`` na ``OP``."
 
 #: ../../whatsnew/3.12.rst:1793
 msgid ""
 "Incomplete single-line strings now also raise :exc:`tokenize.TokenError` as "
 "incomplete multiline strings do."
 msgstr ""
+"Neúplné jednořádkové řetězce nyní také vyvolají :exc:`tokenize.TokenError` "
+"stejně jako neúplné víceřádkové řetězce."
 
 #: ../../whatsnew/3.12.rst:1796
 msgid ""
 "Some incomplete or invalid Python code now raises :exc:`tokenize.TokenError`"
 " instead of returning arbitrary ``ERRORTOKEN`` tokens when tokenizing it."
 msgstr ""
+"Některý neúplný nebo neplatný kód Python nyní vyvolá "
+":exc:`tokenize.TokenError` místo vrácení libovolných tokenů ``ERRORTOKEN`` "
+"při jeho tokenizaci."
 
 #: ../../whatsnew/3.12.rst:1799
 msgid ""
 "Mixing tabs and spaces as indentation in the same file is not supported "
 "anymore and will raise a :exc:`TabError`."
 msgstr ""
+"Smíchání tabů a mezer jako odsazení ve stejném souboru již není podporováno "
+"a vyvolá :exc:`TabError`."
 
 #: ../../whatsnew/3.12.rst:1802
 msgid ""
@@ -4889,16 +5047,21 @@ msgid ""
 "an ``_is_main_interpreter`` attribute.  It is a function with no arguments "
 "that returns ``True`` if the current interpreter is the main interpreter."
 msgstr ""
+"Modul :mod:`threading` nyní očekává, že modul :mod:`!_thread` má atribut "
+"``_is_main_interpreter``. Je to funkce bez argumentů, která vrací ``True``, "
+"pokud je aktuální interpret hlavním interpretem."
 
 #: ../../whatsnew/3.12.rst:1807
 msgid ""
 "Any library or application that provides a custom ``_thread`` module should "
 "provide ``_is_main_interpreter()``. (See :gh:`112826`.)"
 msgstr ""
+"Kterákoli knihovna nebo aplikace, která poskytuje vlastní modul ``_thread``,"
+" by měla poskytnout ``_is_main_interpreter()``. (Viz :gh:`112826`.)"
 
 #: ../../whatsnew/3.12.rst:1812
 msgid "Build Changes"
-msgstr ""
+msgstr "Změny v sestavení"
 
 #: ../../whatsnew/3.12.rst:1814
 msgid ""
@@ -4908,6 +5071,11 @@ msgid ""
 "config`` and fall back to manual detection. (Contributed by Christian Heimes"
 " in :gh:`93939`.)"
 msgstr ""
+"Python již nepoužívá :file:`setup.py` k sestavení sdílených C rozšíření. "
+"Parametry sestavení jako hlavičky a knihovny jsou detekovány v skriptu "
+"``configure``. Rozšíření jsou sestavána :file:`Makefile`. Většina rozšíření "
+"používá ``pkg-config`` a vrhá se na ruční detekci. (Přispěl Christian Heimes"
+" v :gh:`93939`.)"
 
 #: ../../whatsnew/3.12.rst:1820
 msgid ""
@@ -4915,6 +5083,9 @@ msgid ""
 "required to build Python. ``va_start()`` is no longer called with a single "
 "parameter. (Contributed by Kumar Aditya in :gh:`93207`.)"
 msgstr ""
+"``va_start()`` se dvěma parametry, jako ``va_start(args, format),`` je nyní "
+"vyžadováno k sestavení Python. ``va_start()`` již není volán s jedním "
+"parametrem. (Přispěl Kumar Aditya v :gh:`93207`.)"
 
 #: ../../whatsnew/3.12.rst:1825
 msgid ""
@@ -4922,6 +5093,9 @@ msgid ""
 "policy if the Clang compiler accepts the flag. (Contributed by Donghee Na in"
 " :gh:`89536`.)"
 msgstr ""
+"CPython nyní používá možnost ThinLTO jako výchozí zasítok zasítavého "
+"optimalizátoru, pokud Clang kompilatr přijímá příznak. (Přispěl Donghee Na v"
+" :gh:`89536`.)"
 
 #: ../../whatsnew/3.12.rst:1829
 msgid ""
@@ -4931,45 +5105,54 @@ msgid ""
 "files for all optimization levels (0, 1, 2) at once. (Contributed by Victor "
 "Stinner in :gh:`99289`.)"
 msgstr ""
+"Přidejte proměnnou ``COMPILEALL_OPTS`` v :file:`Makefile` pro přepsání voleb"
+" :mod:`compileall` (výchozí: ``-j0``) v ``make install``. Také sloučilo 3 "
+"příkazy ``compileall`` do jednoho příkazu k sestavení .pyc souborů pro "
+"všechny úrovně optimalizáce (0, 1, 2) najednou. (Přispěl Victor Stinner v "
+":gh:`99289`.)"
 
 #: ../../whatsnew/3.12.rst:1835
 msgid "Add platform triplets for 64-bit LoongArch:"
-msgstr ""
+msgstr "Přidejte třídělné platformy pro 64bitové LoongArch:"
 
 #: ../../whatsnew/3.12.rst:1837
 msgid "loongarch64-linux-gnusf"
-msgstr ""
+msgstr "loongarch64-linux-gnusf"
 
 #: ../../whatsnew/3.12.rst:1838
 msgid "loongarch64-linux-gnuf32"
-msgstr ""
+msgstr "loongarch64-linux-gnuf32"
 
 #: ../../whatsnew/3.12.rst:1839
 msgid "loongarch64-linux-gnu"
-msgstr ""
+msgstr "loongarch64-linux-gnu"
 
 #: ../../whatsnew/3.12.rst:1841
 msgid "(Contributed by Zhang Na in :gh:`90656`.)"
-msgstr ""
+msgstr "(Přispěl Zhang Na v :gh:`90656`.)"
 
 #: ../../whatsnew/3.12.rst:1843
 msgid "``PYTHON_FOR_REGEN`` now require Python 3.10 or newer."
-msgstr ""
+msgstr "``PYTHON_FOR_REGEN`` nyní vyžaduje Python 3.10 nebo novější."
 
 #: ../../whatsnew/3.12.rst:1845
 msgid ""
 "Autoconf 2.71 and aclocal 1.16.4 is now required to regenerate "
 ":file:`configure`. (Contributed by Christian Heimes in :gh:`89886`.)"
 msgstr ""
+"Autoconf 2.71 a aclocal 1.16.4 jsou nyní vyžadovány pro regeneraci "
+":file:`configure`. (Přispěl Christian Heimes v :gh:`89886`.)"
 
 #: ../../whatsnew/3.12.rst:1849
 msgid ""
 "Windows builds and macOS installers from python.org now use OpenSSL 3.0."
 msgstr ""
+"Sestavení Windows a instační programy macOS z python.org nyní používají "
+"OpenSSL 3.0."
 
 #: ../../whatsnew/3.12.rst:1853
 msgid "C API Changes"
-msgstr ""
+msgstr "Změny C API"
 
 #: ../../whatsnew/3.12.rst:1860
 msgid ""
@@ -4978,66 +5161,80 @@ msgid ""
 "change in each minor release of CPython without deprecation warnings. Its "
 "contents are marked by the ``PyUnstable_`` prefix in names."
 msgstr ""
+":pep:`697`: Představení :ref:`Nestabilní C API vrstvy <unstable-c-api>`, "
+"určeno pro nízkoúrovňové nástroje jako debuggery a JIT kompilátory. Toto API"
+" se může změnit v každé druhé verzi CPython bez varování zastaralősti. Jeho "
+"obsah je označen příznakem ``PyUnstable_`` v názvech."
 
 #: ../../whatsnew/3.12.rst:1866
 msgid "Code object constructors:"
-msgstr ""
+msgstr "Konstruktory objektu kódu:"
 
 #: ../../whatsnew/3.12.rst:1868
 msgid "``PyUnstable_Code_New()`` (renamed from ``PyCode_New``)"
-msgstr ""
+msgstr "``PyUnstable_Code_New()`` (přejmenován z ``PyCode_New``)"
 
 #: ../../whatsnew/3.12.rst:1869
 msgid ""
 "``PyUnstable_Code_NewWithPosOnlyArgs()`` (renamed from "
 "``PyCode_NewWithPosOnlyArgs``)"
 msgstr ""
+"``PyUnstable_Code_NewWithPosOnlyArgs()`` (přejmenován z "
+"``PyCode_NewWithPosOnlyArgs``)"
 
 #: ../../whatsnew/3.12.rst:1871
 msgid "Extra storage for code objects (:pep:`523`):"
-msgstr ""
+msgstr "Extra últrova pro objekty kódu (:pep:`523`):"
 
 #: ../../whatsnew/3.12.rst:1873
 msgid ""
 "``PyUnstable_Eval_RequestCodeExtraIndex()`` (renamed from "
 "``_PyEval_RequestCodeExtraIndex``)"
 msgstr ""
+"``PyUnstable_Eval_RequestCodeExtraIndex()`` (přejmenován z "
+"``_PyEval_RequestCodeExtraIndex``)"
 
 #: ../../whatsnew/3.12.rst:1874
 msgid "``PyUnstable_Code_GetExtra()`` (renamed from ``_PyCode_GetExtra``)"
-msgstr ""
+msgstr "``PyUnstable_Code_GetExtra()`` (přejmenován z ``_PyCode_GetExtra``)"
 
 #: ../../whatsnew/3.12.rst:1875
 msgid "``PyUnstable_Code_SetExtra()`` (renamed from ``_PyCode_SetExtra``)"
-msgstr ""
+msgstr "``PyUnstable_Code_SetExtra()`` (přejmenován z ``_PyCode_SetExtra``)"
 
 #: ../../whatsnew/3.12.rst:1877
 msgid ""
 "The original names will continue to be available until the respective API "
 "changes."
-msgstr ""
+msgstr "Původní názvy budou nadále dostupné až do příslušných změn API."
 
 #: ../../whatsnew/3.12.rst:1880
 msgid "(Contributed by Petr Viktorin in :gh:`101101`.)"
-msgstr ""
+msgstr "(Přispěl Petr Viktorin v :gh:`101101`.)"
 
 #: ../../whatsnew/3.12.rst:1882
 msgid ""
 ":pep:`697`: Add an API for extending types whose instance memory layout is "
 "opaque:"
 msgstr ""
+":pep:`697`: Přidejte API pro rozšıřování typů, jejichž rozložení paměťi "
+"instance je neprůhledné:"
 
 #: ../../whatsnew/3.12.rst:1885
 msgid ""
 ":c:member:`PyType_Spec.basicsize` can be zero or negative to specify "
 "inheriting or extending the base class size."
 msgstr ""
+":c:member:`PyType_Spec.basicsize` může být nula nebo záporná pro zadání "
+"dědění nebo rozšíření velikosti třídy."
 
 #: ../../whatsnew/3.12.rst:1887
 msgid ""
 ":c:func:`PyObject_GetTypeData` and :c:func:`PyType_GetTypeDataSize` added to"
 " allow access to subclass-specific instance data."
 msgstr ""
+":c:func:`PyObject_GetTypeData` a :c:func:`PyType_GetTypeDataSize` přidány, "
+"aby umožnily přístup k datům instance specifickým pro podtřĩdu."
 
 #: ../../whatsnew/3.12.rst:1889
 msgid ""
@@ -5045,16 +5242,22 @@ msgid ""
 "to allow safely extending certain variable-sized types, including "
 ":c:var:`PyType_Type`."
 msgstr ""
+":c:macro:`Py_TPFLAGS_ITEMS_AT_END` a :c:func:`PyObject_GetItemData` přidány,"
+" aby bezpečně umožnily rozšíření určitých typů proměnné velikosti, včetně "
+":c:var:`PyType_Type`."
 
 #: ../../whatsnew/3.12.rst:1892
 msgid ""
 ":c:macro:`Py_RELATIVE_OFFSET` added to allow defining :c:type:`members "
 "<PyMemberDef>` in terms of a subclass-specific struct."
 msgstr ""
+":c:macro:`Py_RELATIVE_OFFSET` přidána, aby umožnila definování "
+":c:type:`memberů <PyMemberDef>` z hlediska struktury specifické pro "
+"podtřĩdu."
 
 #: ../../whatsnew/3.12.rst:1895
 msgid "(Contributed by Petr Viktorin in :gh:`103509`.)"
-msgstr ""
+msgstr "(Přispěl Petr Viktorin v :gh:`103509`.)"
 
 #: ../../whatsnew/3.12.rst:1897
 msgid ""
@@ -5063,28 +5266,34 @@ msgid ""
 ":c:func:`PyType_FromModuleAndSpec` using an additional metaclass argument. "
 "(Contributed by Wenzel Jakob in :gh:`93012`.)"
 msgstr ""
+"Přidejte novou funkci :ref:`limited C API <limited-c-api>` "
+":c:func:`PyType_FromMetaclass`, která generalizuje existující "
+":c:func:`PyType_FromModuleAndSpec` pomocí dalšího argumentu metahead. "
+"(Přispěl Wenzel Jakob v :gh:`93012`.)"
 
 #: ../../whatsnew/3.12.rst:1902
 msgid ""
 "API for creating objects that can be called using :ref:`the vectorcall "
 "protocol <vectorcall>` was added to the :ref:`Limited API <stable>`:"
 msgstr ""
+"API pro vytváření objektů, které mohou být volány pomocí :ref:`vektorového "
+"protokolu volání <vectorcall>` byl přidán do :ref:`Omezeného API <stable>`:"
 
 #: ../../whatsnew/3.12.rst:1906
 msgid ":c:macro:`Py_TPFLAGS_HAVE_VECTORCALL`"
-msgstr ""
+msgstr ":c:macro:`Py_TPFLAGS_HAVE_VECTORCALL`"
 
 #: ../../whatsnew/3.12.rst:1907
 msgid ":c:func:`PyVectorcall_NARGS`"
-msgstr ""
+msgstr ":c:func:`PyVectorcall_NARGS`"
 
 #: ../../whatsnew/3.12.rst:1908
 msgid ":c:func:`PyVectorcall_Call`"
-msgstr ""
+msgstr ":c:func:`PyVectorcall_Call`"
 
 #: ../../whatsnew/3.12.rst:1909
 msgid ":c:type:`vectorcallfunc`"
-msgstr ""
+msgstr ":c:type:`vectorcallfunc`"
 
 #: ../../whatsnew/3.12.rst:1911
 msgid ""
@@ -5096,6 +5305,12 @@ msgid ""
 "``Py_TPFLAGS_HAVE_VECTORCALL`` flag. (Contributed by Petr Viktorin in "
 ":gh:`93274`.)"
 msgstr ""
+"Příznak :c:macro:`Py_TPFLAGS_HAVE_VECTORCALL` je nyní odebrán z třídy, když "
+"je metoda třídy :py:meth:`~object.__call__` přepsat. Tímto je vektorové "
+"volání bezpečné použít se mennými typy (tzn. typy hromady bez neměnného "
+"příznaku, :c:macro:`Py_TPFLAGS_IMMUTABLETYPE`). Měnné typy, které "
+"nepřepisují :c:member:`~PyTypeObject.tp_call` nyní dědí příznak "
+"``Py_TPFLAGS_HAVE_VECTORCALL``. (Přispěl Petr Viktorin v :gh:`93274`.)"
 
 #: ../../whatsnew/3.12.rst:1919
 msgid ""
@@ -5104,12 +5319,18 @@ msgid ""
 "extensions classes to support object :attr:`~object.__dict__` and weakrefs "
 "with less bookkeeping, using less memory and with faster access."
 msgstr ""
+"Příznaky :c:macro:`Py_TPFLAGS_MANAGED_DICT` a "
+":c:macro:`Py_TPFLAGS_MANAGED_WEAKREF` byly přidány. To umožňuje třídám "
+"rozšíření podporovat objekt :attr:`~object.__dict__` a slabé odkazy s menší "
+"knihovnou, pomocí menší paměti a s rychlejším přístupem."
 
 #: ../../whatsnew/3.12.rst:1924
 msgid ""
 "API for performing calls using :ref:`the vectorcall protocol <vectorcall>` "
 "was added to the :ref:`Limited API <stable>`:"
 msgstr ""
+"API pro provádění volání pomocí :ref:`vektorového protokolu volání "
+"<vectorcall>` bylo přidáno do :ref:`Omezeného API <stable>`:"
 
 #: ../../whatsnew/3.12.rst:1928
 msgid ":c:func:`PyObject_Vectorcall`"
