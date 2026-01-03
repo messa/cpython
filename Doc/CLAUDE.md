@@ -34,6 +34,8 @@ rm tutorial_whatnow_todo.txt
 
 ## Alternative: Using po-translator agent
 
+**Important**: Always prefer using the MCP tools (`get_entries_to_translate`, `submit_translations`) over direct .po file editing. The MCP server handles escaping and validation automatically.
+
 For automated translation using Claude, use the `po-translator` agent:
 
 ```
