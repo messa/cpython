@@ -17,6 +17,8 @@ Possible future improvements:
 """
 
 from asyncio import run as asyncio_run
+from base64 import b64encode
+from hashlib import sha1
 from json import dumps as json_dumps
 from logging import getLogger, Formatter, StreamHandler, DEBUG, WARNING
 from logging.handlers import WatchedFileHandler
@@ -99,6 +101,19 @@ def get_untranslated_stats() -> list[dict]:
     return sorted(stats, key=lambda x: x["untranslated"])
 
 
+def compute_msgidhash(msgid: str) -> str:
+    """
+    Compute a short hash identifier for msgid.
+
+    Returns msgid if shorter than 10 chars, otherwise first 9 chars
+    of base64-encoded SHA1 hash. Used to reduce token count in MCP calls.
+    """
+    if len(msgid) < 10:
+        return msgid
+    hash_bytes = sha1(msgid.encode("utf-8")).digest()
+    return b64encode(hash_bytes).decode("ascii")[:9]
+
+
 class PathSecurityError(Exception):
     """Raised when a path fails security validation."""
     pass
@@ -171,6 +186,7 @@ def format_entry_context(entry: POEntry) -> dict:
 
     Returns a dict with:
     - msgid: original text (always present)
+    - msgidhash: short hash of msgid for compact API calls
     - msgid_plural: plural form (if present)
     - context: msgctxt value (if present)
     - references: list of "file:line" source references (up to 3)
@@ -180,6 +196,7 @@ def format_entry_context(entry: POEntry) -> dict:
     """
     result = {
         "msgid": entry.msgid,
+        "msgidhash": compute_msgidhash(entry.msgid),
     }
 
     # Add msgid_plural if present
@@ -288,12 +305,16 @@ async def list_tools() -> list[Tool]:
                                     "type": "string",
                                     "description": "Original English text (must match exactly)",
                                 },
+                                "msgidhash": {
+                                    "type": "string",
+                                    "description": "Short hash of msgid (alternative to msgid)",
+                                },
                                 "msgstr": {
                                     "type": "string",
                                     "description": "Czech translation",
                                 },
                             },
-                            "required": ["msgid", "msgstr"],
+                            "required": ["msgstr"],
                         },
                     },
                     "overwrite": {
@@ -468,10 +489,12 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
 
     Arguments:
         file: path to .po file (required)
-        translations: list of {msgid, msgstr} dicts
+        translations: list of {msgid, msgstr} or {msgidhash, msgstr} dicts
         overwrite: if False, skip already translated entries (default True)
 
-    Applies translations, runs msgfmt validation, returns results.
+    Each translation can identify the entry by either msgid (exact match)
+    or msgidhash (short hash). Applies translations, runs msgfmt validation,
+    returns results.
     """
     file_arg = arguments.get("file")
     translations = arguments.get("translations", [])
@@ -527,28 +550,37 @@ async def handle_submit_translations(arguments: dict[str, Any]) -> list[TextCont
 
     for trans in translations:
         msgid = trans.get("msgid", "")
+        msgidhash = trans.get("msgidhash", "")
         msgstr = trans.get("msgstr", "")
 
-        if not msgid or not msgstr:
+        if (not msgid and not msgidhash) or not msgstr:
             continue
 
-        # Find matching entry
+        # Find matching entry by msgid or msgidhash
         found = False
         for entry in po:
-            if entry.msgid == msgid:
+            # Match by exact msgid or by msgidhash
+            if msgid:
+                match = (entry.msgid == msgid)
+            else:
+                match = (compute_msgidhash(entry.msgid) == msgidhash)
+
+            if match:
                 found = True
+                display_id = entry.msgid[:50] + "..." if len(entry.msgid) > 50 else entry.msgid
                 if entry.msgstr and not overwrite:
-                    already_translated.append(msgid[:50] + "..." if len(msgid) > 50 else msgid)
+                    already_translated.append(display_id)
                 else:
                     entry.msgstr = msgstr
                     # Remove fuzzy flag if present
                     if "fuzzy" in entry.flags:
                         entry.flags.remove("fuzzy")
-                    applied.append(msgid[:50] + "..." if len(msgid) > 50 else msgid)
+                    applied.append(display_id)
                 break
 
         if not found:
-            not_found.append(msgid[:50] + "..." if len(msgid) > 50 else msgid)
+            lookup_key = msgid if msgid else f"hash:{msgidhash}"
+            not_found.append(lookup_key[:50] + "..." if len(lookup_key) > 50 else lookup_key)
 
     # Save if any translations were applied
     if applied:
@@ -619,7 +651,7 @@ async def handle_list_translations(arguments: dict[str, Any]) -> list[TextConten
         count: number of entries per page (default 20, max 50)
         page: page number starting from 1 (default 1)
 
-    Returns JSON with paginated list of {msgid, msgstr} entries.
+    Returns JSON with paginated list of {msgid, msgidhash, msgstr} entries.
     """
     file_arg = arguments.get("file")
     count = min(arguments.get("count", 20), MAX_ENTRIES_COUNT)
@@ -668,9 +700,13 @@ async def handle_list_translations(arguments: dict[str, Any]) -> list[TextConten
     end_idx = start_idx + count
     page_entries = all_entries[start_idx:end_idx]
 
-    # Format entries as simple {msgid, msgstr} dicts
+    # Format entries as simple {msgid, msgidhash, msgstr} dicts
     formatted_entries = [
-        {"msgid": entry.msgid, "msgstr": entry.msgstr}
+        {
+            "msgid": entry.msgid,
+            "msgidhash": compute_msgidhash(entry.msgid),
+            "msgstr": entry.msgstr,
+        }
         for entry in page_entries
     ]
 
