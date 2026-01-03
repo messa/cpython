@@ -1,8 +1,34 @@
 # Czech Translation of Python Documentation
 
+## Translation workflow using po_tool.py
+
+```bash
+# 1. Find files to translate (sorted by size, shows untranslated files)
+scripts/analyze_po.py
+
+# 2. Check status of a specific file
+scripts/po_tool.py status tutorial/whatnow.po
+
+# 3. Export untranslated entries to a template file
+scripts/po_tool.py export tutorial/whatnow.po           # exports first 15
+scripts/po_tool.py export tutorial/whatnow.po -n 20     # exports first 20
+
+# 4. Fill in translations in the generated *_todo.txt file
+
+# 5. Apply translations back to .po file (also runs msgfmt --check)
+scripts/po_tool.py apply tutorial/whatnow.po tutorial_whatnow_todo.txt
+
+# 6. Build and verify
+make html SPHINXOPTS="-D language=cs"
+```
+
 ## Check .po files for syntax errors
 
 ```bash
+# Check single file
+scripts/po_tool.py check tutorial/whatnow.po
+
+# Check all files
 find locales/cs/LC_MESSAGES -name "*.po" -exec msgfmt --check -o /dev/null {} \; 2>&1 | grep -v "warning:"
 ```
 
