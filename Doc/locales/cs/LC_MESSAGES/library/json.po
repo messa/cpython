@@ -11,55 +11,70 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/json.rst:2
 msgid ":mod:`!json` --- JSON encoder and decoder"
-msgstr ""
+msgstr ":mod:`!json` --- kodér a dekodér JSON"
 
 #: ../../library/json.rst:10
 msgid "**Source code:** :source:`Lib/json/__init__.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/json/__init__.py`"
 
 #: ../../library/json.rst:14
 msgid ""
 "`JSON (JavaScript Object Notation) <https://json.org>`_, specified by "
 ":rfc:`7159` (which obsoletes :rfc:`4627`) and by `ECMA-404 <https://ecma-"
-"international.org/publications-and-standards/standards/ecma-404/>`_, is a"
-" lightweight data interchange format inspired by `JavaScript "
-"<https://en.wikipedia.org/wiki/JavaScript>`_ object literal syntax "
-"(although it is not a strict subset of JavaScript [#rfc-errata]_ )."
+"international.org/publications-and-standards/standards/ecma-404/>`_, is a "
+"lightweight data interchange format inspired by `JavaScript "
+"<https://en.wikipedia.org/wiki/JavaScript>`_ object literal syntax (although"
+" it is not a strict subset of JavaScript [#rfc-errata]_ )."
 msgstr ""
+"`JSON (JavaScript Object Notation) <https://json.org>`_, specifikovaný "
+":rfc:`7159` (který nahrazuje :rfc:`4627`) a :rfc:`ECMA-404 <https://ecma-"
+"international.org/publications-and-standards/standards/ecma-404/>`_, je "
+"lehký formát pro výměnu dat inspirovaný syntaxí objektových literálů v "
+"`JavaScriptu <https://en.wikipedia.org/wiki/JavaScript>`_ (přestože to není "
+"přísná podmnožina JavaScriptu [#rfc-errata]_ )."
 
 #: ../../library/json.rst:22
 msgid ""
 "The term \"object\" in the context of JSON processing in Python can be "
-"ambiguous. All values in Python are objects. In JSON, an object refers to"
-" any data wrapped in curly braces, similar to a Python dictionary."
+"ambiguous. All values in Python are objects. In JSON, an object refers to "
+"any data wrapped in curly braces, similar to a Python dictionary."
 msgstr ""
+"Pojem \"objekt\" v kontextu zpracování JSON v Pythonu může být "
+"nejednoznačný. Všechny hodnoty v Pythonu jsou objekty. V JSON objekt "
+"odkazuje na libovolná data uzavřená v složených závorkách, podobně jako v "
+"Pythonu slovník."
 
 #: ../../library/json.rst:27
 msgid ""
-"Be cautious when parsing JSON data from untrusted sources. A malicious "
-"JSON string may cause the decoder to consume considerable CPU and memory "
+"Be cautious when parsing JSON data from untrusted sources. A malicious JSON "
+"string may cause the decoder to consume considerable CPU and memory "
 "resources. Limiting the size of data to be parsed is recommended."
 msgstr ""
+"Buďte opatrní při analýze JSON dat z nedůvěryhodných zdrojů. Škodlivý JSON "
+"řetězec může způsobit, že dekodér bude konzumovat značné zdroje CPU a "
+"paměti. Doporučuje se omezit velikost dat k analýze."
 
 #: ../../library/json.rst:31
 msgid ""
 "This module exposes an API familiar to users of the standard library "
 ":mod:`marshal` and :mod:`pickle` modules."
 msgstr ""
+"Tento modul zpřístupňuje API známé uživatelům standardních modulů "
+":mod:`marshal` a :mod:`pickle`."
 
 #: ../../library/json.rst:34
 msgid "Encoding basic Python object hierarchies::"
-msgstr ""
+msgstr "Kódování základních hierarchií objektů Pythonu::"
 
 #: ../../library/json.rst:36
 #, python-brace-format
@@ -81,10 +96,26 @@ msgid ""
 ">>> io.getvalue()\n"
 "'[\"streaming API\"]'"
 msgstr ""
+">>> import json\n"
+">>> json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])\n"
+"'[\"foo\", {\"bar\": [\"baz\", null, 1.0, 2]}]'\n"
+">>> print(json.dumps(\"\\\"foo\\bar\"))\n"
+"\"\\\"foo\\bar\"\n"
+">>> print(json.dumps('\\u1234'))\n"
+"\"\\u1234\"\n"
+">>> print(json.dumps('\\\\'))\n"
+"\"\\\\\"\n"
+">>> print(json.dumps({\"c\": 0, \"b\": 0, \"a\": 0}, sort_keys=True))\n"
+"{\"a\": 0, \"b\": 0, \"c\": 0}\n"
+">>> from io import StringIO\n"
+">>> io = StringIO()\n"
+">>> json.dump(['streaming API'], io)\n"
+">>> io.getvalue()\n"
+"'[\"streaming API\"]'"
 
 #: ../../library/json.rst:53
 msgid "Compact encoding::"
-msgstr ""
+msgstr "Kompaktní kódování::"
 
 #: ../../library/json.rst:55
 #, python-brace-format
@@ -93,10 +124,13 @@ msgid ""
 ">>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))\n"
 "'[1,2,3,{\"4\":5,\"6\":7}]'"
 msgstr ""
+">>> import json\n"
+">>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))\n"
+"'[1,2,3,{\"4\":5,\"6\":7}]'"
 
 #: ../../library/json.rst:59
 msgid "Pretty printing::"
-msgstr ""
+msgstr "Pěkné formátování::"
 
 #: ../../library/json.rst:61
 #, python-brace-format
@@ -108,10 +142,16 @@ msgid ""
 "    \"6\": 7\n"
 "}"
 msgstr ""
+">>> import json\n"
+">>> print(json.dumps({'6': 7, '4': 5}, sort_keys=True, indent=4))\n"
+"{\n"
+"    \"4\": 5,\n"
+"    \"6\": 7\n"
+"}"
 
 #: ../../library/json.rst:68
 msgid "Customizing JSON object encoding::"
-msgstr ""
+msgstr "Vlastní kódování objektu JSON::"
 
 #: ../../library/json.rst:70
 #, python-brace-format
@@ -119,17 +159,24 @@ msgid ""
 ">>> import json\n"
 ">>> def custom_json(obj):\n"
 "...     if isinstance(obj, complex):\n"
-"...         return {'__complex__': True, 'real': obj.real, 'imag': "
-"obj.imag}\n"
+"...         return {'__complex__': True, 'real': obj.real, 'imag': obj.imag}\n"
 "...     raise TypeError(f'Cannot serialize object of {type(obj)}')\n"
 "...\n"
 ">>> json.dumps(1 + 2j, default=custom_json)\n"
 "'{\"__complex__\": true, \"real\": 1.0, \"imag\": 2.0}'"
 msgstr ""
+">>> import json\n"
+">>> def custom_json(obj):\n"
+"...     if isinstance(obj, complex):\n"
+"...         return {'__complex__': True, 'real': obj.real, 'imag': obj.imag}\n"
+"...     raise TypeError(f'Cannot serialize object of {type(obj)}')\n"
+"...\n"
+">>> json.dumps(1 + 2j, default=custom_json)\n"
+"'{\"__complex__\": true, \"real\": 1.0, \"imag\": 2.0}'"
 
 #: ../../library/json.rst:79
 msgid "Decoding JSON::"
-msgstr ""
+msgstr "Dekodování JSON::"
 
 #: ../../library/json.rst:81
 #, python-brace-format
@@ -144,10 +191,19 @@ msgid ""
 ">>> json.load(io)\n"
 "['streaming API']"
 msgstr ""
+">>> import json\n"
+">>> json.loads('[\"foo\", {\"bar\":[\"baz\", null, 1.0, 2]}]')\n"
+"['foo', {'bar': ['baz', None, 1.0, 2]}]\n"
+">>> json.loads('\"\\\\\"foo\\\\bar\"')\n"
+"'\"foo\\x08ar'\n"
+">>> from io import StringIO\n"
+">>> io = StringIO('[\"streaming API\"]')\n"
+">>> json.load(io)\n"
+"['streaming API']"
 
 #: ../../library/json.rst:91
 msgid "Customizing JSON object decoding::"
-msgstr ""
+msgstr "Vlastní dekodování objektu JSON::"
 
 #: ../../library/json.rst:93
 #, python-brace-format
@@ -165,10 +221,22 @@ msgid ""
 ">>> json.loads('1.1', parse_float=decimal.Decimal)\n"
 "Decimal('1.1')"
 msgstr ""
+">>> import json\n"
+">>> def as_complex(dct):\n"
+"...     if '__complex__' in dct:\n"
+"...         return complex(dct['real'], dct['imag'])\n"
+"...     return dct\n"
+"...\n"
+">>> json.loads('{\"__complex__\": true, \"real\": 1, \"imag\": 2}',\n"
+"...     object_hook=as_complex)\n"
+"(1+2j)\n"
+">>> import decimal\n"
+">>> json.loads('1.1', parse_float=decimal.Decimal)\n"
+"Decimal('1.1')"
 
 #: ../../library/json.rst:106
 msgid "Extending :class:`JSONEncoder`::"
-msgstr ""
+msgstr "Rozšíření :class:`JSONEncoder`::"
 
 #: ../../library/json.rst:108
 msgid ""
@@ -187,10 +255,25 @@ msgid ""
 ">>> list(ComplexEncoder().iterencode(2 + 1j))\n"
 "['[2.0', ', 1.0', ']']"
 msgstr ""
+">>> import json\n"
+">>> class ComplexEncoder(json.JSONEncoder):\n"
+"...     def default(self, obj):\n"
+"...         if isinstance(obj, complex):\n"
+"...             return [obj.real, obj.imag]\n"
+"...         # Let the base class default method raise the TypeError\n"
+"...         return super().default(obj)\n"
+"...\n"
+">>> json.dumps(2 + 1j, cls=ComplexEncoder)\n"
+"'[2.0, 1.0]'\n"
+">>> ComplexEncoder().encode(2 + 1j)\n"
+"'[2.0, 1.0]'\n"
+">>> list(ComplexEncoder().iterencode(2 + 1j))\n"
+"['[2.0', ', 1.0', ']']"
 
 #: ../../library/json.rst:124
 msgid "Using :mod:`json` from the shell to validate and pretty-print:"
 msgstr ""
+"Použití :mod:`json` z příkazového řádku k validaci a pěknému formátování:"
 
 #: ../../library/json.rst:126
 #, python-brace-format
@@ -200,478 +283,615 @@ msgid ""
 "    \"json\": \"obj\"\n"
 "}\n"
 "$ echo '{1.2:3.4}' | python -m json\n"
-"Expecting property name enclosed in double quotes: line 1 column 2 (char "
-"1)"
+"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
 msgstr ""
+"$ echo '{\"json\":\"obj\"}' | python -m json\n"
+"{\n"
+"    \"json\": \"obj\"\n"
+"}\n"
+"$ echo '{1.2:3.4}' | python -m json\n"
+"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
 
 #: ../../library/json.rst:135
 msgid "See :ref:`json-commandline` for detailed documentation."
-msgstr ""
+msgstr "Podrobné informace naleznete v :ref:`json-commandline`."
 
 #: ../../library/json.rst:139
 msgid ""
-"JSON is a subset of `YAML <https://yaml.org/>`_ 1.2.  The JSON produced "
-"by this module's default settings (in particular, the default "
-"*separators* value) is also a subset of YAML 1.0 and 1.1.  This module "
-"can thus also be used as a YAML serializer."
+"JSON is a subset of `YAML <https://yaml.org/>`_ 1.2.  The JSON produced by "
+"this module's default settings (in particular, the default *separators* "
+"value) is also a subset of YAML 1.0 and 1.1.  This module can thus also be "
+"used as a YAML serializer."
 msgstr ""
+"JSON je podmnožina `YAML <https://yaml.org/>`_ 1.2. JSON vytvořený výchozími"
+" nastaveními tohoto modulu (zejména výchozí hodnota *separators*) je také "
+"podmnožinou YAML 1.0 a 1.1. Tento modul lze tedy použít i jako serializace "
+"YAML."
 
 #: ../../library/json.rst:146
 msgid ""
 "This module's encoders and decoders preserve input and output order by "
 "default.  Order is only lost if the underlying containers are unordered."
 msgstr ""
+"Kodery a dekodery tohoto modulu zachovávají pořadí vstupu a výstupu "
+"standardně. Pořadí se ztrácí pouze tehdy, pokud jsou podstatné kontejnery "
+"neuspořádány."
 
 #: ../../library/json.rst:151
 msgid "Basic Usage"
-msgstr ""
+msgstr "Základní použití"
 
 #: ../../library/json.rst:158
 msgid ""
 "Serialize *obj* as a JSON formatted stream to *fp* (a "
-"``.write()``-supporting :term:`file-like object`) using this :ref"
-":`Python-to-JSON conversion table <py-to-json-table>`."
+"``.write()``-supporting :term:`file-like object`) using this :ref:`Python-"
+"to-JSON conversion table <py-to-json-table>`."
 msgstr ""
+"Serializuje *obj* jako JSON formátovaný proud do *fp* (objekt jako "
+"``.write()`` podporující :term:`file-like object`) pomocí této :ref:`tabulky"
+" konverze Python-na-JSON <py-to-json-table>`."
 
 #: ../../library/json.rst:164
 msgid ""
-"Unlike :mod:`pickle` and :mod:`marshal`, JSON is not a framed protocol, "
-"so trying to serialize multiple objects with repeated calls to "
-":func:`dump` using the same *fp* will result in an invalid JSON file."
+"Unlike :mod:`pickle` and :mod:`marshal`, JSON is not a framed protocol, so "
+"trying to serialize multiple objects with repeated calls to :func:`dump` "
+"using the same *fp* will result in an invalid JSON file."
 msgstr ""
+"Na rozdíl od :mod:`pickle` a :mod:`marshal` není JSON protokol se rámci, "
+"takže pokus serializovat více objektů opakovanými voláním :func:`dump` s "
+"použitím stejného *fp* vede k neválidenému JSON souboru."
 
 #: ../../library/json.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Parametry"
 
 #: ../../library/json.rst:168
 msgid "The Python object to be serialized."
-msgstr ""
+msgstr "Pythonový objekt, který má být serializován."
 
 #: ../../library/json.rst:171
 msgid ""
-"The file-like object *obj* will be serialized to. The :mod:`!json` module"
-" always produces :class:`str` objects, not :class:`bytes` objects, "
-"therefore ``fp.write()`` must support :class:`str` input."
+"The file-like object *obj* will be serialized to. The :mod:`!json` module "
+"always produces :class:`str` objects, not :class:`bytes` objects, therefore "
+"``fp.write()`` must support :class:`str` input."
 msgstr ""
+"Objekt podobný souboru *obj*, na který bude serializován. Modul :mod:`!json`"
+" vždy vytváří objekty :class:`str`, nikoli objekty :class:`bytes`, proto "
+"``fp.write()`` musí podporovat vstup :class:`str`."
 
 #: ../../library/json.rst:178
 msgid ""
-"If ``True``, keys that are not of a basic type (:class:`str`, "
-":class:`int`, :class:`float`, :class:`bool`, ``None``) will be skipped "
-"instead of raising a :exc:`TypeError`. Default ``False``."
+"If ``True``, keys that are not of a basic type (:class:`str`, :class:`int`, "
+":class:`float`, :class:`bool`, ``None``) will be skipped instead of raising "
+"a :exc:`TypeError`. Default ``False``."
 msgstr ""
+"Pokud ``True``, klíče, které není základního typu (:class:`str`, "
+":class:`int`, :class:`float`, :class:`bool`, ``None``) budou přeskočeny "
+"místo vyvolání :exc:`TypeError`. Výchozí ``False``."
 
 #: ../../library/json.rst:184
 msgid ""
 "If ``True`` (the default), the output is guaranteed to have all incoming "
-"non-ASCII and non-printable characters escaped. If ``False``, all "
-"characters will be outputted as-is, except for the characters that must "
-"be escaped: quotation mark, reverse solidus, and the control characters "
-"U+0000 through U+001F."
+"non-ASCII and non-printable characters escaped. If ``False``, all characters"
+" will be outputted as-is, except for the characters that must be escaped: "
+"quotation mark, reverse solidus, and the control characters U+0000 through "
+"U+001F."
 msgstr ""
+"Pokud ``True`` (výchozí), výstup má zaručeně všechny příchozí znaky mimo "
+"ASCII a tiskátelny z kódovány. Pokud ``False``, všechny znaky budou výstupem"
+" tak, jak jsou, kromě znaků, které musí být kódovány: uvozovky, zpěnęný "
+"zprůvodce a ridičské znaky U+0000 až U+001F."
 
 #: ../../library/json.rst:191
 msgid ""
-"If ``False``, the circular reference check for container types is skipped"
-" and a circular reference will result in a :exc:`RecursionError` (or "
-"worse). Default ``True``."
+"If ``False``, the circular reference check for container types is skipped "
+"and a circular reference will result in a :exc:`RecursionError` (or worse). "
+"Default ``True``."
 msgstr ""
+"Pokud ``False``, kontrola kruhovitého odkazu pro typy kontejneru se přeskočí"
+" a kruhový odkaz vede k :exc:`RecursionError` (nebo horší). Výchozí "
+"``True``."
 
 #: ../../library/json.rst:196
 msgid ""
-"If ``False``, serialization of out-of-range :class:`float` values "
-"(``nan``, ``inf``, ``-inf``) will result in a :exc:`ValueError`, in "
-"strict compliance with the JSON specification. If ``True`` (the default),"
-" their JavaScript equivalents (``NaN``, ``Infinity``, ``-Infinity``) are "
-"used."
+"If ``False``, serialization of out-of-range :class:`float` values (``nan``, "
+"``inf``, ``-inf``) will result in a :exc:`ValueError`, in strict compliance "
+"with the JSON specification. If ``True`` (the default), their JavaScript "
+"equivalents (``NaN``, ``Infinity``, ``-Infinity``) are used."
 msgstr ""
+"Pokud ``False``, serializace hodnot :class:`float` mimo rozsah (``nan``, "
+"``inf``, ``-inf``) vede k :exc:`ValueError`, v přísném souladu se "
+"specifikací JSON. Pokud ``True`` (výchozí), používá se jejich ekvivalenty "
+"JavaScriptu (``NaN``, ``Infinity``, ``-Infinity``)."
 
 #: ../../library/json.rst:203
 msgid ""
-"If set, a custom JSON encoder with the :meth:`~JSONEncoder.default` "
-"method overridden, for serializing into custom datatypes. If ``None`` "
-"(the default), :class:`!JSONEncoder` is used."
+"If set, a custom JSON encoder with the :meth:`~JSONEncoder.default` method "
+"overridden, for serializing into custom datatypes. If ``None`` (the "
+"default), :class:`!JSONEncoder` is used."
 msgstr ""
+"Pokud je nastaven, vlastní kódér JSON s přepisatéč metodou "
+":meth:`~JSONEncoder.default` pro serializaci do vlastních datových typů. "
+"Pokud ``None`` (výchozí), používá se :class:`!JSONEncoder`."
 
 #: ../../library/json.rst:210
 msgid ""
-"If a positive integer or string, JSON array elements and object members "
-"will be pretty-printed with that indent level. A positive integer indents"
-" that many spaces per level; a string (such as ``\"\\t\"``) is used to "
-"indent each level. If zero, negative, or ``\"\"`` (the empty string), "
-"only newlines are inserted. If ``None`` (the default), the most compact "
-"representation is used."
+"If a positive integer or string, JSON array elements and object members will"
+" be pretty-printed with that indent level. A positive integer indents that "
+"many spaces per level; a string (such as ``\"\\t\"``) is used to indent each"
+" level. If zero, negative, or ``\"\"`` (the empty string), only newlines are"
+" inserted. If ``None`` (the default), the most compact representation is "
+"used."
 msgstr ""
+"Pokud je kladné celé číslo nebo řetězec, prvky pole JSON a členové objektu "
+"budou pěkně vytisknuti s tímto stupněm odsazení. Kladné celé číslo odsazuje "
+"tolik mezer na úroveň; řetězec (jakož ``\"\\t\"``) se používá k odsazení "
+"každé úrovně. Pokud je nula, záporná nebo ``\"\"`` (prázdný řetězec), "
+"vkládájí se pouze nové řádky. Pokud ``None`` (výchozí), používá se "
+"nejkompaktnější reprezentace."
 
 #: ../../library/json.rst:220
 msgid ""
-"A two-tuple: ``(item_separator, key_separator)``. If ``None`` (the "
-"default), *separators* defaults to ``(', ', ': ')`` if *indent* is "
-"``None``, and ``(',', ': ')`` otherwise. For the most compact JSON, "
-"specify ``(',', ':')`` to eliminate whitespace."
+"A two-tuple: ``(item_separator, key_separator)``. If ``None`` (the default),"
+" *separators* defaults to ``(', ', ': ')`` if *indent* is ``None``, and "
+"``(',', ': ')`` otherwise. For the most compact JSON, specify ``(',', ':')``"
+" to eliminate whitespace."
 msgstr ""
+"Dva-tice: ``(item_separator, key_separator)``. Pokud ``None`` (výchozí), "
+"výchozí *separators* je ``(', ', ': ')`` pokud *indent* je ``None``, a "
+"``(',', ': ')`` jinak. Pro nejkompaktnější JSON zadejte ``(',', ':')`` k "
+"eliminaci bílého prostoru."
 
 #: ../../library/json.rst:229
 msgid ""
-"A function that is called for objects that can't otherwise be serialized."
-" It should return a JSON encodable version of the object or raise a "
+"A function that is called for objects that can't otherwise be serialized. It"
+" should return a JSON encodable version of the object or raise a "
 ":exc:`TypeError`. If ``None`` (the default), :exc:`!TypeError` is raised."
 msgstr ""
+"Funkce, která je volána pro objekty, které nelze jinak serializovat. Měla by"
+" vrátit verzi objektu kódovatelnou JSON nebo vyvolat :exc:`TypeError`. Pokud"
+" ``None`` (výchozí), je vyvolano :exc:`!TypeError`."
 
 #: ../../library/json.rst:236
 msgid ""
 "If ``True``, dictionaries will be outputted sorted by key. Default "
 "``False``."
 msgstr ""
+"Pokud ``True``, slovníky budou výstupem seřazeny podle klíče. Výchozí "
+"``False``."
 
 #: ../../library/json.rst:240 ../../library/json.rst:527
 msgid "Allow strings for *indent* in addition to integers."
-msgstr ""
+msgstr "Povolte řetězce pro *indent* navíc k celým číslům."
 
 #: ../../library/json.rst:243 ../../library/json.rst:535
 msgid "Use ``(',', ': ')`` as default if *indent* is not ``None``."
-msgstr ""
+msgstr "Použj ``(',', ': ')`` jako výchozí, pokud *indent* není ``None``."
 
 #: ../../library/json.rst:246 ../../library/json.rst:345
 msgid ""
 "All optional parameters are now :ref:`keyword-only <keyword-"
 "only_parameter>`."
 msgstr ""
+"Všechny volitelné parametry jsou nyní :ref:`pouze klíčové <keyword-"
+"only_parameter>`."
 
 #: ../../library/json.rst:255
 msgid ""
-"Serialize *obj* to a JSON formatted :class:`str` using this "
-":ref:`conversion table <py-to-json-table>`.  The arguments have the same "
-"meaning as in :func:`dump`."
+"Serialize *obj* to a JSON formatted :class:`str` using this :ref:`conversion"
+" table <py-to-json-table>`.  The arguments have the same meaning as in "
+":func:`dump`."
 msgstr ""
+"Serializuje *obj* na JSON formátovaný :class:`str` pomocí této :ref:`tabulky"
+" konverze <py-to-json-table>`. Argumenty mají stejný výz nam jako v "
+":func:`dump`."
 
 #: ../../library/json.rst:261
 msgid ""
-"Keys in key/value pairs of JSON are always of the type :class:`str`. When"
-" a dictionary is converted into JSON, all the keys of the dictionary are "
-"coerced to strings. As a result of this, if a dictionary is converted "
-"into JSON and then back into a dictionary, the dictionary may not equal "
-"the original one. That is, ``loads(dumps(x)) != x`` if x has non-string "
-"keys."
+"Keys in key/value pairs of JSON are always of the type :class:`str`. When a "
+"dictionary is converted into JSON, all the keys of the dictionary are "
+"coerced to strings. As a result of this, if a dictionary is converted into "
+"JSON and then back into a dictionary, the dictionary may not equal the "
+"original one. That is, ``loads(dumps(x)) != x`` if x has non-string keys."
 msgstr ""
+"Klíče v párech klíč/hodnota JSON jsou vždy typu :class:`str`. Pokud je "
+"slovník převeden na JSON, všechny klíče slovníku jsou převytvářeny na "
+"řetězce. V důsledku toho, pokud je slovník převeden na JSON a pak zpět na "
+"slovník, slovník nemusejjí být roven původnímu. To je ``loads(dumps(x)) != "
+"x`` pokud x má neřetězce klíče."
 
 #: ../../library/json.rst:272
 msgid ""
 "Deserialize *fp* to a Python object using the :ref:`JSON-to-Python "
 "conversion table <json-to-py-table>`."
 msgstr ""
+"Deserializuje *fp* na Pythonový objekt pomocí :ref:`tabulky konverze JSON-"
+"na-Python <json-to-py-table>`."
 
 #: ../../library/json.rst:275
 msgid ""
-"A ``.read()``-supporting :term:`text file` or :term:`binary file` "
-"containing the JSON document to be deserialized."
+"A ``.read()``-supporting :term:`text file` or :term:`binary file` containing"
+" the JSON document to be deserialized."
 msgstr ""
+"Soubor s podporou ``.read()`` :term:`text file` nebo :term:`binary file` "
+"obsahující JSON dokument k dezerializaci."
 
 #: ../../library/json.rst:280
 msgid ""
-"If set, a custom JSON decoder. Additional keyword arguments to "
-":func:`!load` will be passed to the constructor of *cls*. If ``None`` "
-"(the default), :class:`!JSONDecoder` is used."
+"If set, a custom JSON decoder. Additional keyword arguments to :func:`!load`"
+" will be passed to the constructor of *cls*. If ``None`` (the default), "
+":class:`!JSONDecoder` is used."
 msgstr ""
+"Pokud je nastaven, vlastní dekodér JSON. Další argument klavěsového slova "
+":func:`!load` budou předány konstruktoru *cls*. Pokud ``None`` (výchozí), "
+"používá se :class:`!JSONDecoder`."
 
 #: ../../library/json.rst:287
 msgid ""
-"If set, a function that is called with the result of any JSON object "
-"literal decoded (a :class:`dict`). The return value of this function will"
-" be used instead of the :class:`dict`. This feature can be used to "
-"implement custom decoders, for example `JSON-RPC "
-"<https://www.jsonrpc.org>`_ class hinting. Default ``None``."
+"If set, a function that is called with the result of any JSON object literal"
+" decoded (a :class:`dict`). The return value of this function will be used "
+"instead of the :class:`dict`. This feature can be used to implement custom "
+"decoders, for example `JSON-RPC <https://www.jsonrpc.org>`_ class hinting. "
+"Default ``None``."
 msgstr ""
+"Pokud je nastaven, funkce, která je volána s výsledkem libovolného "
+"dekodovaného objektového literálu JSON (:class:`dict`). Návratná hodnota "
+"této funkce se bude používat místo :class:`dict`. Tato funkce se má použít k"
+" implementaci vlastních dekodérů, napříkőad `JSON-RPC "
+"<https://www.jsonrpc.org>`_ náhint trídy. Výchozí ``None``."
 
 #: ../../library/json.rst:297
 msgid ""
-"If set, a function that is called with the result of any JSON object "
-"literal decoded with an ordered list of pairs. The return value of this "
-"function will be used instead of the :class:`dict`. This feature can be "
-"used to implement custom decoders. If *object_hook* is also set, "
-"*object_pairs_hook* takes priority. Default ``None``."
+"If set, a function that is called with the result of any JSON object literal"
+" decoded with an ordered list of pairs. The return value of this function "
+"will be used instead of the :class:`dict`. This feature can be used to "
+"implement custom decoders. If *object_hook* is also set, *object_pairs_hook*"
+" takes priority. Default ``None``."
 msgstr ""
+"Pokud je nastaven, funkce, která je volána s výsledkem libovolného "
+"dekodovaného objektového literálu JSON se seřezeným seznamem párů. Návratná "
+"hodnota této funkce se bude používat místo :class:`dict`. Tato funkce se má "
+"použít k implementaci vlastních dekodérů. Pokud je *object_hook* také "
+"nastaven, *object_pairs_hook* má prioritu. Výchozí ``None``."
 
 #: ../../library/json.rst:307
 msgid ""
-"If set, a function that is called with the string of every JSON float to "
-"be decoded. If ``None`` (the default), it is equivalent to "
-"``float(num_str)``. This can be used to parse JSON floats into custom "
-"datatypes, for example :class:`decimal.Decimal`."
+"If set, a function that is called with the string of every JSON float to be "
+"decoded. If ``None`` (the default), it is equivalent to ``float(num_str)``. "
+"This can be used to parse JSON floats into custom datatypes, for example "
+":class:`decimal.Decimal`."
 msgstr ""
+"Pokud je nastaven, funkce, která je volána s řetězcem každého JSON float k "
+"dekodování. Pokud ``None`` (výchozí), je ekvivalentní ``float(num_str)``. To"
+" se má použít k analýze JSON floatů do vlastních datových typů, napříkőad "
+":class:`decimal.Decimal`."
 
 #: ../../library/json.rst:315
 msgid ""
-"If set, a function that is called with the string of every JSON int to be"
-" decoded. If ``None`` (the default), it is equivalent to "
-"``int(num_str)``. This can be used to parse JSON integers into custom "
-"datatypes, for example :class:`float`."
+"If set, a function that is called with the string of every JSON int to be "
+"decoded. If ``None`` (the default), it is equivalent to ``int(num_str)``. "
+"This can be used to parse JSON integers into custom datatypes, for example "
+":class:`float`."
 msgstr ""
+"Pokud je nastaven, funkce, která je volána s řetězcem každého JSON int k "
+"dekodování. Pokud ``None`` (výchozí), je ekvivalentní ``int(num_str)``. To "
+"se má použít k analýze JSON intů do vlastních datových typů, napříkőad "
+":class:`float`."
 
 #: ../../library/json.rst:323
 msgid ""
 "If set, a function that is called with one of the following strings: "
-"``'-Infinity'``, ``'Infinity'``, or ``'NaN'``. This can be used to raise "
-"an exception if invalid JSON numbers are encountered. Default ``None``."
+"``'-Infinity'``, ``'Infinity'``, or ``'NaN'``. This can be used to raise an "
+"exception if invalid JSON numbers are encountered. Default ``None``."
 msgstr ""
+"Pokud je nastaven, funkce, která je volána s jedním z následujících řetězců:"
+" ``'-Infinity'``, ``'Infinity'`` nebo ``'NaN'``. To se má použít k vyvolání "
+"výj imky, pokud jsou nalezena neválidená čísla JSON. Výchozí ``None``."
 
 #: ../../library/json.rst
 msgid "Raises"
-msgstr ""
+msgstr "Vyvolá"
 
 #: ../../library/json.rst:331
 msgid "When the data being deserialized is not a valid JSON document."
-msgstr ""
+msgstr "Když data, která jsou dezerializávána, nejsou platné dokumentem JSON."
 
 #: ../../library/json.rst:334
 msgid ""
-"When the data being deserialized does not contain UTF-8, UTF-16 or UTF-32"
-" encoded data."
+"When the data being deserialized does not contain UTF-8, UTF-16 or UTF-32 "
+"encoded data."
 msgstr ""
+"Když data, která jsou dezerializávána, neobsahují data kódovaná UTF-8, "
+"UTF-16 nebo UTF-32."
 
 #: ../../library/json.rst:340
 msgid "Added the optional *object_pairs_hook* parameter."
-msgstr ""
+msgstr "Přidán volitelný parametr *object_pairs_hook*."
 
 #: ../../library/json.rst:341
-msgid "*parse_constant* doesn't get called on 'null', 'true', 'false' anymore."
-msgstr ""
+msgid ""
+"*parse_constant* doesn't get called on 'null', 'true', 'false' anymore."
+msgstr "*parse_constant* se již nevolá na 'null', 'true', 'false'."
 
 #: ../../library/json.rst:346
 msgid ""
-"*fp* can now be a :term:`binary file`. The input encoding should be "
-"UTF-8, UTF-16 or UTF-32."
+"*fp* can now be a :term:`binary file`. The input encoding should be UTF-8, "
+"UTF-16 or UTF-32."
 msgstr ""
+"*fp* může být nyní :term:`binary file`. Vstupní kódování by mělo být UTF-8, "
+"UTF-16 nebo UTF-32."
 
 #: ../../library/json.rst:349
 msgid ""
-"The default *parse_int* of :func:`int` now limits the maximum length of "
-"the integer string via the interpreter's :ref:`integer string conversion "
-"length limitation <int_max_str_digits>` to help avoid denial of service "
-"attacks."
+"The default *parse_int* of :func:`int` now limits the maximum length of the "
+"integer string via the interpreter's :ref:`integer string conversion length "
+"limitation <int_max_str_digits>` to help avoid denial of service attacks."
 msgstr ""
+"Výchozí *parse_int* z :func:`int` nyní omezuje maximální délku řetězce "
+"celého čísla prostřednictvím :ref:`omezení délky konverze řetězce celého "
+"čísla <int_max_str_digits>` interpretru, aby se zabránilo átokům v typu "
+"denial of service."
 
 #: ../../library/json.rst:357
 msgid ""
-"Identical to :func:`load`, but instead of a file-like object, deserialize"
-" *s* (a :class:`str`, :class:`bytes` or :class:`bytearray` instance "
-"containing a JSON document) to a Python object using this "
-":ref:`conversion table <json-to-py-table>`."
+"Identical to :func:`load`, but instead of a file-like object, deserialize "
+"*s* (a :class:`str`, :class:`bytes` or :class:`bytearray` instance "
+"containing a JSON document) to a Python object using this :ref:`conversion "
+"table <json-to-py-table>`."
 msgstr ""
+"Identické s :func:`load`, ale místo objektu podobného souboru, deserializuje"
+" *s* (instance :class:`str`, :class:`bytes` nebo :class:`bytearray` "
+"obsahující JSON dokument) na Pythonový objekt pomocí této :ref:`tabulky "
+"konverze <json-to-py-table>`."
 
 #: ../../library/json.rst:362
 msgid ""
 "*s* can now be of type :class:`bytes` or :class:`bytearray`. The input "
 "encoding should be UTF-8, UTF-16 or UTF-32."
 msgstr ""
+"*s* může být nyní typu :class:`bytes` nebo :class:`bytearray`. Vstupní "
+"kódování by mělo být UTF-8, UTF-16 nebo UTF-32."
 
 #: ../../library/json.rst:366
 msgid "The keyword argument *encoding* has been removed."
-msgstr ""
+msgstr "Argument klavěsového slova *encoding* byl odebrán."
 
 #: ../../library/json.rst:371
 msgid "Encoders and Decoders"
-msgstr ""
+msgstr "Kódéry a dekodéry"
 
 #: ../../library/json.rst:375
 msgid "Simple JSON decoder."
-msgstr ""
+msgstr "Jednoduchý dekodér JSON."
 
 #: ../../library/json.rst:377
 msgid "Performs the following translations in decoding by default:"
-msgstr ""
+msgstr "Standardně provedené následující převodymw při dekodování:"
 
 #: ../../library/json.rst:382 ../../library/json.rst:470
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #: ../../library/json.rst:382 ../../library/json.rst:470
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../library/json.rst:384 ../../library/json.rst:472
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../library/json.rst:384 ../../library/json.rst:472
 msgid "dict"
-msgstr ""
+msgstr "dict"
 
 #: ../../library/json.rst:386 ../../library/json.rst:474
 msgid "array"
-msgstr ""
+msgstr "pole"
 
 #: ../../library/json.rst:386
 msgid "list"
-msgstr ""
+msgstr "seznam"
 
 #: ../../library/json.rst:388 ../../library/json.rst:476
 msgid "string"
-msgstr ""
+msgstr "řetězec"
 
 #: ../../library/json.rst:388 ../../library/json.rst:476
 msgid "str"
-msgstr ""
+msgstr "str"
 
 #: ../../library/json.rst:390
 msgid "number (int)"
-msgstr ""
+msgstr "číslo (int)"
 
 #: ../../library/json.rst:390
 msgid "int"
-msgstr ""
+msgstr "int"
 
 #: ../../library/json.rst:392
 msgid "number (real)"
-msgstr ""
+msgstr "číslo (reálné)"
 
 #: ../../library/json.rst:392
 msgid "float"
-msgstr ""
+msgstr "float"
 
 #: ../../library/json.rst:394 ../../library/json.rst:480
 msgid "true"
-msgstr ""
+msgstr "true"
 
 #: ../../library/json.rst:394 ../../library/json.rst:480
 msgid "True"
-msgstr ""
+msgstr "True"
 
 #: ../../library/json.rst:396 ../../library/json.rst:482
 msgid "false"
-msgstr ""
+msgstr "false"
 
 #: ../../library/json.rst:396 ../../library/json.rst:482
 msgid "False"
-msgstr ""
+msgstr "False"
 
 #: ../../library/json.rst:398 ../../library/json.rst:484
 msgid "null"
-msgstr ""
+msgstr "null"
 
 #: ../../library/json.rst:398 ../../library/json.rst:484
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: ../../library/json.rst:401
 msgid ""
 "It also understands ``NaN``, ``Infinity``, and ``-Infinity`` as their "
 "corresponding ``float`` values, which is outside the JSON spec."
 msgstr ""
+"Také rozumí ``NaN``, ``Infinity`` a ``-Infinity`` jako jejich odpovïdající "
+"hodnoty ``float``, což je mimo specifikaci JSON."
 
 #: ../../library/json.rst:404
 msgid ""
-"*object_hook* is an optional function that will be called with the result"
-" of every JSON object decoded and its return value will be used in place "
-"of the given :class:`dict`.  This can be used to provide custom "
-"deserializations (e.g. to support `JSON-RPC <https://www.jsonrpc.org>`_ "
-"class hinting)."
+"*object_hook* is an optional function that will be called with the result of"
+" every JSON object decoded and its return value will be used in place of the"
+" given :class:`dict`.  This can be used to provide custom deserializations "
+"(e.g. to support `JSON-RPC <https://www.jsonrpc.org>`_ class hinting)."
 msgstr ""
+"*object_hook* je volitelná funkce, která bude volána s výsledkem každého "
+"dekodovaného objektu JSON a její návrat bude použit místo daného "
+":class:`dict`. To se má použít k poskytnutí vlastních dezerializací "
+"(napříkőad k podporunáhintů trídy `JSON-RPC <https://www.jsonrpc.org>`_)."
 
 #: ../../library/json.rst:409
 msgid ""
 "*object_pairs_hook* is an optional function that will be called with the "
 "result of every JSON object decoded with an ordered list of pairs.  The "
 "return value of *object_pairs_hook* will be used instead of the "
-":class:`dict`.  This feature can be used to implement custom decoders.  "
-"If *object_hook* is also defined, the *object_pairs_hook* takes priority."
+":class:`dict`.  This feature can be used to implement custom decoders.  If "
+"*object_hook* is also defined, the *object_pairs_hook* takes priority."
 msgstr ""
+"*object_pairs_hook* je volitelná funkce, která bude volána s výsledkem "
+"každého dekodovaného objektu JSON s seřezeným seznamem párů. Návratná "
+"hodnota *object_pairs_hook* bude použita místo :class:`dict`. Tato funkce se"
+" má použít k implementaci vlastních dekodérů. Pokud je také definován "
+"*object_hook*, má *object_pairs_hook* prioritu."
 
 #: ../../library/json.rst:415
 msgid "Added support for *object_pairs_hook*."
-msgstr ""
+msgstr "Přidána podpora *object_pairs_hook*."
 
 #: ../../library/json.rst:418
 msgid ""
-"*parse_float* is an optional function that will be called with the string"
-" of every JSON float to be decoded.  By default, this is equivalent to "
-"``float(num_str)``.  This can be used to use another datatype or parser "
-"for JSON floats (e.g. :class:`decimal.Decimal`)."
+"*parse_float* is an optional function that will be called with the string of"
+" every JSON float to be decoded.  By default, this is equivalent to "
+"``float(num_str)``.  This can be used to use another datatype or parser for "
+"JSON floats (e.g. :class:`decimal.Decimal`)."
 msgstr ""
+"*parse_float* je volitelná funkce, která bude volána s řetězcem každého JSON"
+" float k dekodování. Ve výchozím nastavení je to ekvivalentní "
+"``float(num_str)``. To se má použít k použití jiného datového typu nebo "
+"parseru pro JSON floatů (napříkőad :class:`decimal.Decimal`)."
 
 #: ../../library/json.rst:423
 msgid ""
-"*parse_int* is an optional function that will be called with the string "
-"of every JSON int to be decoded.  By default, this is equivalent to "
-"``int(num_str)``.  This can be used to use another datatype or parser for"
-" JSON integers (e.g. :class:`float`)."
+"*parse_int* is an optional function that will be called with the string of "
+"every JSON int to be decoded.  By default, this is equivalent to "
+"``int(num_str)``.  This can be used to use another datatype or parser for "
+"JSON integers (e.g. :class:`float`)."
 msgstr ""
+"*parse_int* je volitelná funkce, která bude volána s řetězcem každého JSON "
+"int k dekodování. Ve výchozím nastavení je to ekvivalentní ``int(num_str)``."
+" To se má použít k použití jiného datového typu nebo parseru pro JSON "
+"integery (napříkőad :class:`float`)."
 
 #: ../../library/json.rst:428
 msgid ""
-"*parse_constant* is an optional function that will be called with one of "
-"the following strings: ``'-Infinity'``, ``'Infinity'``, ``'NaN'``.  This "
-"can be used to raise an exception if invalid JSON numbers are "
-"encountered."
+"*parse_constant* is an optional function that will be called with one of the"
+" following strings: ``'-Infinity'``, ``'Infinity'``, ``'NaN'``.  This can be"
+" used to raise an exception if invalid JSON numbers are encountered."
 msgstr ""
+"*parse_constant* je volitelná funkce, která bude volána s jedním z "
+"následujících řetězců: ``'-Infinity'``, ``'Infinity'``, ``'NaN'``. To se má "
+"použít k vyvolání výjimky, pokud jsou nalezena neválidená čísla JSON."
 
 #: ../../library/json.rst:432
 msgid ""
-"If *strict* is false (``True`` is the default), then control characters "
-"will be allowed inside strings.  Control characters in this context are "
-"those with character codes in the 0--31 range, including ``'\\t'`` (tab),"
-" ``'\\n'``, ``'\\r'`` and ``'\\0'``."
+"If *strict* is false (``True`` is the default), then control characters will"
+" be allowed inside strings.  Control characters in this context are those "
+"with character codes in the 0--31 range, including ``'\\t'`` (tab), "
+"``'\\n'``, ``'\\r'`` and ``'\\0'``."
 msgstr ""
+"Pokud je *strict* false (``True`` je výchozí), pak budou znaky ovládání "
+"povoleny v řetězcích. Znaky ovládání v tomto kontextu jsou ty s kódy znaku v"
+" rozsahu 0-31, včetně ``'\\t'`` (tab), ``'\\n'``, ``'\\r'`` a ``'\\0'``."
 
 #: ../../library/json.rst:437
 msgid ""
 "If the data being deserialized is not a valid JSON document, a "
 ":exc:`JSONDecodeError` will be raised."
 msgstr ""
+"Pokud data, která jsou dezerializávána, nejsou platné dokumentem JSON, bude "
+"vyvolána :exc:`JSONDecodeError`."
 
 #: ../../library/json.rst:440 ../../library/json.rst:543
 msgid "All parameters are now :ref:`keyword-only <keyword-only_parameter>`."
 msgstr ""
+"Všechny parametry jsou nyní :ref:`pouze klíčové <keyword-only_parameter>`."
 
 #: ../../library/json.rst:445
 msgid ""
-"Return the Python representation of *s* (a :class:`str` instance "
-"containing a JSON document)."
+"Return the Python representation of *s* (a :class:`str` instance containing "
+"a JSON document)."
 msgstr ""
+"Vrátí Pythonovu reprezentaci *s* (instance :class:`str` obsahující JSON "
+"dokument)."
 
 #: ../../library/json.rst:448
 msgid ""
 ":exc:`JSONDecodeError` will be raised if the given JSON document is not "
 "valid."
 msgstr ""
+":exc:`JSONDecodeError` bude vyvolána, pokud daný JSON dokument není platný."
 
 #: ../../library/json.rst:453
 msgid ""
 "Decode a JSON document from *s* (a :class:`str` beginning with a JSON "
-"document) and return a 2-tuple of the Python representation and the index"
-" in *s* where the document ended."
+"document) and return a 2-tuple of the Python representation and the index in"
+" *s* where the document ended."
 msgstr ""
+"Dekoduje JSON dokument z *s* (instance :class:`str` začínájící JSON "
+"dokumentem) a vrátí 2-tici Pythonovy reprezentace a indexu v *s*, kde "
+"dokument skončíl."
 
 #: ../../library/json.rst:457
 msgid ""
 "This can be used to decode a JSON document from a string that may have "
 "extraneous data at the end."
 msgstr ""
+"To se má použít k dekodování JSON dokumentu z řetězce, který má na konci "
+"exterosní data."
 
 #: ../../library/json.rst:463
 msgid "Extensible JSON encoder for Python data structures."
-msgstr ""
+msgstr "Rozšiřitelný kódér JSON pro datové struktury Pythonu."
 
 #: ../../library/json.rst:465
 msgid "Supports the following objects and types by default:"
-msgstr ""
+msgstr "Standardně podporuje následující objekty a typy:"
 
 #: ../../library/json.rst:474
 msgid "list, tuple"
-msgstr ""
+msgstr "seznam, tuple"
 
 #: ../../library/json.rst:478
 msgid "int, float, int- & float-derived Enums"
-msgstr ""
+msgstr "int, float, int- a float-derived Enum"
 
 #: ../../library/json.rst:478
 msgid "number"
-msgstr ""
+msgstr "číslo"
 
 #: ../../library/json.rst:487
 msgid "Added support for int- and float-derived Enum classes."
-msgstr ""
+msgstr "Přidána podpora pro int- a float-derived třídy Enum."
 
 #: ../../library/json.rst:490
 msgid ""
@@ -680,75 +900,110 @@ msgid ""
 "serializable object for ``o`` if possible, otherwise it should call the "
 "superclass implementation (to raise :exc:`TypeError`)."
 msgstr ""
+"Aby se to rozsáhlo na rozpoznávání jiných objektů, podřízujte a "
+"implementujte metodu :meth:`~JSONEncoder.default` s jinou metodou, která "
+"vrátí serializovatelný objekt pro ``o``, pokud je to možné, jinak by měla "
+"zavolat implementaci nadřázené třídy (aby vyvolá :exc:`TypeError`)."
 
 #: ../../library/json.rst:495
 msgid ""
-"If *skipkeys* is false (the default), a :exc:`TypeError` will be raised "
-"when trying to encode keys that are not :class:`str`, :class:`int`, "
+"If *skipkeys* is false (the default), a :exc:`TypeError` will be raised when"
+" trying to encode keys that are not :class:`str`, :class:`int`, "
 ":class:`float`, :class:`bool` or ``None``.  If *skipkeys* is true, such "
 "items are simply skipped."
 msgstr ""
+"Pokud je *skipkeys* false (výchozí), bude vyvolána :exc:`TypeError` při "
+"pokusu kódování klíčů, které není :class:`str`, :class:`int`, "
+":class:`float`, :class:`bool` nebo ``None``. Pokud je *skipkeys* true, jsou "
+"takové položky jednoduše přeskočeny."
 
 #: ../../library/json.rst:499
 msgid ""
-"If *ensure_ascii* is true (the default), the output is guaranteed to have"
-" all incoming non-ASCII and non-printable characters escaped. If "
-"*ensure_ascii* is false, all characters will be output as-is, except for "
-"the characters that must be escaped: quotation mark, reverse solidus, and"
-" the control characters U+0000 through U+001F."
+"If *ensure_ascii* is true (the default), the output is guaranteed to have "
+"all incoming non-ASCII and non-printable characters escaped. If "
+"*ensure_ascii* is false, all characters will be output as-is, except for the"
+" characters that must be escaped: quotation mark, reverse solidus, and the "
+"control characters U+0000 through U+001F."
 msgstr ""
+"Pokud je *ensure_ascii* true (výchozí), výstup je zaručen k má všechny "
+"příchozí znaky mimo ASCII a tiskátelny z kódovány. Pokud je *ensure_ascii* "
+"false, všechny znaky budou výstupem tak, jak jsou, kromě znaků, které musí "
+"být kódovány: uvozovka, zpěnęný zprůvodce a ridičské znaky U+0000 až U+001F."
 
 #: ../../library/json.rst:505
 msgid ""
 "If *check_circular* is true (the default), then lists, dicts, and custom "
-"encoded objects will be checked for circular references during encoding "
-"to prevent an infinite recursion (which would cause a "
-":exc:`RecursionError`). Otherwise, no such check takes place."
+"encoded objects will be checked for circular references during encoding to "
+"prevent an infinite recursion (which would cause a :exc:`RecursionError`). "
+"Otherwise, no such check takes place."
 msgstr ""
+"Pokud je *check_circular* true (výchozí), pak seznamy, slovníky a vlastně "
+"kódované objekty budou kontrolovány na kruhové odkazy při kódování, aby se "
+"zabránilo neékončenému rekurzi (což by vyvolálo :exc:`RecursionError`). "
+"Jinak se taková kontrola neprovádí."
 
 #: ../../library/json.rst:510
 msgid ""
 "If *allow_nan* is true (the default), then ``NaN``, ``Infinity``, and "
 "``-Infinity`` will be encoded as such.  This behavior is not JSON "
 "specification compliant, but is consistent with most JavaScript based "
-"encoders and decoders.  Otherwise, it will be a :exc:`ValueError` to "
-"encode such floats."
+"encoders and decoders.  Otherwise, it will be a :exc:`ValueError` to encode "
+"such floats."
 msgstr ""
+"Pokud je *allow_nan* true (výchozí), pak ``NaN``, ``Infinity`` a "
+"``-Infinity`` budou kódovány jako takové. Toto chování není v souladu se "
+"specifikací JSON, ale je konzistentní s vétšinou kodeků založených na "
+"JavaScriptu. Jinak bude :exc:`ValueError` kódování takových floatů."
 
 #: ../../library/json.rst:516
 msgid ""
-"If *sort_keys* is true (default: ``False``), then the output of "
-"dictionaries will be sorted by key; this is useful for regression tests "
-"to ensure that JSON serializations can be compared on a day-to-day basis."
+"If *sort_keys* is true (default: ``False``), then the output of dictionaries"
+" will be sorted by key; this is useful for regression tests to ensure that "
+"JSON serializations can be compared on a day-to-day basis."
 msgstr ""
+"Pokud je *sort_keys* true (výchozí: ``False``), pak bude výstup slovníků "
+"seřazen podle klíče; to je užtečné pro regresní testy, aby se zajistilo, že "
+"serializace JSON lze porovnávat den za dnem."
 
 #: ../../library/json.rst:520
 msgid ""
-"If *indent* is a non-negative integer or string, then JSON array elements"
-" and object members will be pretty-printed with that indent level.  An "
-"indent level of 0, negative, or ``\"\"`` will only insert newlines.  "
-"``None`` (the default) selects the most compact representation. Using a "
-"positive integer indent indents that many spaces per level.  If *indent* "
-"is a string (such as ``\"\\t\"``), that string is used to indent each "
-"level."
+"If *indent* is a non-negative integer or string, then JSON array elements "
+"and object members will be pretty-printed with that indent level.  An indent"
+" level of 0, negative, or ``\"\"`` will only insert newlines.  ``None`` (the"
+" default) selects the most compact representation. Using a positive integer "
+"indent indents that many spaces per level.  If *indent* is a string (such as"
+" ``\"\\t\"``), that string is used to indent each level."
 msgstr ""
+"Pokud je *indent* záporné celé číslo nebo řetězec, pak budou prvky pole JSON"
+" a členové objektu pěkně vytisknuti s tímto stupněm odsazení. Úroveň "
+"odsazení 0, záporná nebo ``\"\"`` vloží pouze nové řádky. ``None`` (výchozí)"
+" vybere nejkompaktnější reprezentaci. Použití kladného celého čísla odsazuje"
+" tolik mezer na úroveň. Pokud je *indent* řetězec (jakož ``\"\\t\"``), tento"
+" řetězec se používá k odsazení každé úrovně."
 
 #: ../../library/json.rst:530
 msgid ""
-"If specified, *separators* should be an ``(item_separator, "
-"key_separator)`` tuple.  The default is ``(', ', ': ')`` if *indent* is "
-"``None`` and ``(',', ': ')`` otherwise.  To get the most compact JSON "
-"representation, you should specify ``(',', ':')`` to eliminate "
-"whitespace."
+"If specified, *separators* should be an ``(item_separator, key_separator)`` "
+"tuple.  The default is ``(', ', ': ')`` if *indent* is ``None`` and ``(',', "
+"': ')`` otherwise.  To get the most compact JSON representation, you should "
+"specify ``(',', ':')`` to eliminate whitespace."
 msgstr ""
+"Pokud je zadán, *separators* by měl být ``(item_separator, key_separator)`` "
+"tuplr. Výchozí je ``(', ', ': ')`` pokud je *indent* ``None`` a ``(',', ': "
+"')`` jinak. Aby se získala nejkompaktnější reprezentace JSON, měli byste "
+"zadat ``(',', ':')`` k eliminaci bílého prostoru."
 
 #: ../../library/json.rst:538
 msgid ""
-"If specified, *default* should be a function that gets called for objects"
-" that can't otherwise be serialized.  It should return a JSON encodable "
+"If specified, *default* should be a function that gets called for objects "
+"that can't otherwise be serialized.  It should return a JSON encodable "
 "version of the object or raise a :exc:`TypeError`.  If not specified, "
 ":exc:`TypeError` is raised."
 msgstr ""
+"Pokud je zadán, *default* by měl být funkce, která je volána pro objekty, "
+"které nelze jinak serializovat. Měla by vrátit verzi objektu kódovatelnou "
+"JSON nebo vyvolat :exc:`TypeError`. Pokud není zadán, je vyvolano "
+":exc:`TypeError`."
 
 #: ../../library/json.rst:549
 msgid ""
@@ -756,12 +1011,17 @@ msgid ""
 "object for *o*, or calls the base implementation (to raise a "
 ":exc:`TypeError`)."
 msgstr ""
+"Implementujte tuto metodu v podřízujte tak, aby vrátila serializovatelný "
+"objekt pro *o* nebo zavolala implementaci základu (aby vyvolala "
+":exc:`TypeError`)."
 
 #: ../../library/json.rst:553
 msgid ""
 "For example, to support arbitrary iterators, you could implement "
 ":meth:`~JSONEncoder.default` like this::"
 msgstr ""
+"Aby se napříkőad podporovaly libovolné iteratory, měli byste implementovat "
+":meth:`~JSONEncoder.default` takto::"
 
 #: ../../library/json.rst:556
 msgid ""
@@ -775,12 +1035,22 @@ msgid ""
 "   # Let the base class default method raise the TypeError\n"
 "   return super().default(o)"
 msgstr ""
+"def default(self, o):\n"
+"   try:\n"
+"       iterable = iter(o)\n"
+"   except TypeError:\n"
+"       pass\n"
+"   else:\n"
+"       return list(iterable)\n"
+"   # Let the base class default method raise the TypeError\n"
+"   return super().default(o)"
 
 #: ../../library/json.rst:569
 msgid ""
-"Return a JSON string representation of a Python data structure, *o*.  For"
-" example::"
+"Return a JSON string representation of a Python data structure, *o*.  For "
+"example::"
 msgstr ""
+"Vrátí JSON řetězec reprezentace datové struktury Pythonu, *o*. Napříkőad::"
 
 #: ../../library/json.rst:572
 #, python-brace-format
@@ -788,88 +1058,107 @@ msgid ""
 ">>> json.JSONEncoder().encode({\"foo\": [\"bar\", \"baz\"]})\n"
 "'{\"foo\": [\"bar\", \"baz\"]}'"
 msgstr ""
+">>> json.JSONEncoder().encode({\"foo\": [\"bar\", \"baz\"]})\n"
+"'{\"foo\": [\"bar\", \"baz\"]}'"
 
 #: ../../library/json.rst:578
 msgid ""
 "Encode the given object, *o*, and yield each string representation as "
 "available.  For example::"
 msgstr ""
+"Kóduje daný objekt, *o*, a poskytuje každá reprezentaci řetězce podle "
+"dostupnosti. Napříkőad::"
 
 #: ../../library/json.rst:581
 msgid ""
 "for chunk in json.JSONEncoder().iterencode(bigobject):\n"
 "    mysocket.write(chunk)"
 msgstr ""
+"for chunk in json.JSONEncoder().iterencode(bigobject):\n"
+"    mysocket.write(chunk)"
 
 #: ../../library/json.rst:586
 msgid "Exceptions"
-msgstr ""
+msgstr "Výjimky"
 
 #: ../../library/json.rst:590
-msgid "Subclass of :exc:`ValueError` with the following additional attributes:"
-msgstr ""
+msgid ""
+"Subclass of :exc:`ValueError` with the following additional attributes:"
+msgstr "Podřízustřída :exc:`ValueError` s následujícími dalšími atributy:"
 
 #: ../../library/json.rst:594
 msgid "The unformatted error message."
-msgstr ""
+msgstr "Neformátovaná chybová zpráva."
 
 #: ../../library/json.rst:598
 msgid "The JSON document being parsed."
-msgstr ""
+msgstr "JSON dokument při analýze."
 
 #: ../../library/json.rst:602
 msgid "The start index of *doc* where parsing failed."
-msgstr ""
+msgstr "Startovníindex *doc*, kde analýza selhala."
 
 #: ../../library/json.rst:606
 msgid "The line corresponding to *pos*."
-msgstr ""
+msgstr "Řádek odpovídající *pos*."
 
 #: ../../library/json.rst:610
 msgid "The column corresponding to *pos*."
-msgstr ""
+msgstr "Sloupec odpovídající *pos*."
 
 #: ../../library/json.rst:616
 msgid "Standard Compliance and Interoperability"
-msgstr ""
+msgstr "Soulad se standardem a vzájemná kompatibilita"
 
 #: ../../library/json.rst:618
 msgid ""
-"The JSON format is specified by :rfc:`7159` and by `ECMA-404 <https"
-"://ecma-international.org/publications-and-"
-"standards/standards/ecma-404/>`_. This section details this module's "
-"level of compliance with the RFC. For simplicity, :class:`JSONEncoder` "
-"and :class:`JSONDecoder` subclasses, and parameters other than those "
-"explicitly mentioned, are not considered."
+"The JSON format is specified by :rfc:`7159` and by `ECMA-404 <https://ecma-"
+"international.org/publications-and-standards/standards/ecma-404/>`_. This "
+"section details this module's level of compliance with the RFC. For "
+"simplicity, :class:`JSONEncoder` and :class:`JSONDecoder` subclasses, and "
+"parameters other than those explicitly mentioned, are not considered."
 msgstr ""
+"Formát JSON je specifikován :rfc:`7159` a :rfc:`ECMA-404 <https://ecma-"
+"international.org/publications-and-standards/standards/ecma-404/>`_. Tato "
+"sekce podrobně popisuje úroveň shody tohoto modulu se RFC. Z důvodů "
+"jednoduchosti nejsou budečí pododídy :class:`JSONEncoder` a "
+":class:`JSONDecoder` a parametry jiné než ty, které jsou výsądně zmíněny, "
+"nejsou brány v úhadu."
 
 #: ../../library/json.rst:624
 msgid ""
-"This module does not comply with the RFC in a strict fashion, "
-"implementing some extensions that are valid JavaScript but not valid "
-"JSON.  In particular:"
+"This module does not comply with the RFC in a strict fashion, implementing "
+"some extensions that are valid JavaScript but not valid JSON.  In "
+"particular:"
 msgstr ""
+"Tento modul se přísně neodévá RFC, implementováním některých rozšíření, "
+"která jsou platná JavaScript, ale ne platná JSON. Zejména:"
 
 #: ../../library/json.rst:627
 msgid "Infinite and NaN number values are accepted and output;"
-msgstr ""
+msgstr "Přijímají se a vyvádějí neékončené a NaN hodnoty čísel;"
 
 #: ../../library/json.rst:628
 msgid ""
-"Repeated names within an object are accepted, and only the value of the "
-"last name-value pair is used."
+"Repeated names within an object are accepted, and only the value of the last"
+" name-value pair is used."
 msgstr ""
+"Přijímají se opakovaná jména v objektu a používá se pouze hodnota posledního"
+" páru název-hodnota."
 
 #: ../../library/json.rst:631
 msgid ""
-"Since the RFC permits RFC-compliant parsers to accept input texts that "
-"are not RFC-compliant, this module's deserializer is technically RFC-"
-"compliant under default settings."
+"Since the RFC permits RFC-compliant parsers to accept input texts that are "
+"not RFC-compliant, this module's deserializer is technically RFC-compliant "
+"under default settings."
 msgstr ""
+"Protože RFC povoluje RFC-kompaibilním parseriš přijmout vstupní texty, které"
+" není RFC-kompatibilné, je deserializace tohoto modulu technicky RFC-"
+"kompatibilná vý Výchozích nastaveních."
 
 #: ../../library/json.rst:636
 msgid "Character Encodings"
-msgstr ""
+msgstr "Kódování znaků"
 
 #: ../../library/json.rst:638
 msgid ""
@@ -877,57 +1166,76 @@ msgid ""
 "UTF-32, with UTF-8 being the recommended default for maximum "
 "interoperability."
 msgstr ""
+"RFC vyžaduje, aby byl JSON představen pomocí UTF-8, UTF-16 nebo UTF-32, s "
+"UTF-8 jako doporučené výchozím pro maximální vzájemnou kompatibilitu."
 
 #: ../../library/json.rst:641
 msgid ""
-"As permitted, though not required, by the RFC, this module's serializer "
-"sets *ensure_ascii=True* by default, thus escaping the output so that the"
-" resulting strings only contain printable ASCII characters."
+"As permitted, though not required, by the RFC, this module's serializer sets"
+" *ensure_ascii=True* by default, thus escaping the output so that the "
+"resulting strings only contain printable ASCII characters."
 msgstr ""
+"Jak povoleno, i když není povinno podle RFC, serializer tohoto modulu "
+"nastavuje *ensure_ascii=True* standardně, takže výstup, aby výsledné řetězce"
+" obsahovaly pouze tiskátelny znaky ASCII."
 
 #: ../../library/json.rst:645
 msgid ""
-"Other than the *ensure_ascii* parameter, this module is defined strictly "
-"in terms of conversion between Python objects and :class:`Unicode strings"
-" <str>`, and thus does not otherwise directly address the issue of "
-"character encodings."
+"Other than the *ensure_ascii* parameter, this module is defined strictly in "
+"terms of conversion between Python objects and :class:`Unicode strings "
+"<str>`, and thus does not otherwise directly address the issue of character "
+"encodings."
 msgstr ""
+"Kromě parametru *ensure_ascii* je tento modul střict definován z hlediska "
+"konverze mezi objekty Pythonu a :class:`Unicode řetězci <str>` a proto "
+"nereší přímo otázku kódování znaků."
 
 #: ../../library/json.rst:650
 msgid ""
 "The RFC prohibits adding a byte order mark (BOM) to the start of a JSON "
-"text, and this module's serializer does not add a BOM to its output. The "
-"RFC permits, but does not require, JSON deserializers to ignore an "
-"initial BOM in their input.  This module's deserializer raises a "
-":exc:`ValueError` when an initial BOM is present."
+"text, and this module's serializer does not add a BOM to its output. The RFC"
+" permits, but does not require, JSON deserializers to ignore an initial BOM "
+"in their input.  This module's deserializer raises a :exc:`ValueError` when "
+"an initial BOM is present."
 msgstr ""
+"RFC zakazuje přidávání značky pořadí bajtů (BOM) na začátek JSON textu a "
+"serializer tohoto modulu nepřidává BOM na své výstupu. RFC povoluje, ale ne "
+"vyžaduje, aby deserializátory JSON ignorovaly počáteční BOM ve svém vstupu. "
+"Deserializátor tohoto modulu vyvolá :exc:`ValueError`, když je k dispozici "
+"počáteční BOM."
 
 #: ../../library/json.rst:656
 msgid ""
-"The RFC does not explicitly forbid JSON strings which contain byte "
-"sequences that don't correspond to valid Unicode characters (e.g. "
-"unpaired UTF-16 surrogates), but it does note that they may cause "
-"interoperability problems. By default, this module accepts and outputs "
-"(when present in the original :class:`str`) code points for such "
-"sequences."
+"The RFC does not explicitly forbid JSON strings which contain byte sequences"
+" that don't correspond to valid Unicode characters (e.g. unpaired UTF-16 "
+"surrogates), but it does note that they may cause interoperability problems."
+" By default, this module accepts and outputs (when present in the original "
+":class:`str`) code points for such sequences."
 msgstr ""
+"RFC výsłovně nezakazuje JSON řetězce obsahující posloupnosti bajtů, které "
+"neodpovídají platným znakům Unicode (např. nespárované UTF-16 surrogáty), "
+"ale poznamená, že mohou způsobit problémy se vzájemnou kompatibilitou. Ve "
+"výchozím nastavení tento modul přijímá a vytváří (je-li přítomno v původním "
+":class:`str`) body kódu pro takové sekvence."
 
 #: ../../library/json.rst:664
 msgid "Infinite and NaN Number Values"
-msgstr ""
+msgstr "Neékončené a NaN hodnoty čísel"
 
 #: ../../library/json.rst:666
 msgid ""
-"The RFC does not permit the representation of infinite or NaN number "
-"values. Despite that, by default, this module accepts and outputs "
-"``Infinity``, ``-Infinity``, and ``NaN`` as if they were valid JSON "
-"number literal values::"
+"The RFC does not permit the representation of infinite or NaN number values."
+" Despite that, by default, this module accepts and outputs ``Infinity``, "
+"``-Infinity``, and ``NaN`` as if they were valid JSON number literal "
+"values::"
 msgstr ""
+"RFC neumožňuje reprezentaci neékončených nebo NaN hodnot čísel. Navzdory "
+"tomu, ve výchozím nastavení, tento modul přijímá a vytváří ``Infinity``, "
+"``-Infinity`` a ``NaN``, jako by šlo o platné literály čísla JSON::"
 
 #: ../../library/json.rst:670
 msgid ""
-">>> # Neither of these calls raises an exception, but the results are not"
-" valid JSON\n"
+">>> # Neither of these calls raises an exception, but the results are not valid JSON\n"
 ">>> json.dumps(float('-inf'))\n"
 "'-Infinity'\n"
 ">>> json.dumps(float('nan'))\n"
@@ -938,25 +1246,42 @@ msgid ""
 ">>> json.loads('NaN')\n"
 "nan"
 msgstr ""
+">>> # Neither of these calls raises an exception, but the results are not valid JSON\n"
+">>> json.dumps(float('-inf'))\n"
+"'-Infinity'\n"
+">>> json.dumps(float('nan'))\n"
+"'NaN'\n"
+">>> # Same when deserializing\n"
+">>> json.loads('-Infinity')\n"
+"-inf\n"
+">>> json.loads('NaN')\n"
+"nan"
 
 #: ../../library/json.rst:681
 msgid ""
 "In the serializer, the *allow_nan* parameter can be used to alter this "
-"behavior.  In the deserializer, the *parse_constant* parameter can be "
-"used to alter this behavior."
+"behavior.  In the deserializer, the *parse_constant* parameter can be used "
+"to alter this behavior."
 msgstr ""
+"V serializer může být parametr *allow_nan* použit k úpravě tohoto chování. V"
+" deserializerę může být parametr *parse_constant* použit k úpravě tohoto "
+"chování."
 
 #: ../../library/json.rst:687
 msgid "Repeated Names Within an Object"
-msgstr ""
+msgstr "Opakovaná jména v objektu"
 
 #: ../../library/json.rst:689
 msgid ""
-"The RFC specifies that the names within a JSON object should be unique, "
-"but does not mandate how repeated names in JSON objects should be "
-"handled.  By default, this module does not raise an exception; instead, "
-"it ignores all but the last name-value pair for a given name::"
+"The RFC specifies that the names within a JSON object should be unique, but "
+"does not mandate how repeated names in JSON objects should be handled.  By "
+"default, this module does not raise an exception; instead, it ignores all "
+"but the last name-value pair for a given name::"
 msgstr ""
+"RFC určídá, že jména v objektu JSON by měla být jedinečná, ale neurčuje, jak"
+" by měla být zpracována opakovaná jména v objektech JSON. Ve výchozím "
+"nastavení tento modul nevyvolá výjimku; místo toho ignoruje všechny páry "
+"název-hodnota, kromě posledního pro daný název::"
 
 #: ../../library/json.rst:694
 #, python-brace-format
@@ -965,92 +1290,117 @@ msgid ""
 ">>> json.loads(weird_json)\n"
 "{'x': 3}"
 msgstr ""
+">>> weird_json = '{\"x\": 1, \"x\": 2, \"x\": 3}'\n"
+">>> json.loads(weird_json)\n"
+"{'x': 3}"
 
 #: ../../library/json.rst:698
 msgid "The *object_pairs_hook* parameter can be used to alter this behavior."
-msgstr ""
+msgstr "Parametr *object_pairs_hook* může být použit k úpravě tohoto chování."
 
 #: ../../library/json.rst:702
 msgid "Top-level Non-Object, Non-Array Values"
-msgstr ""
+msgstr "Hodnoty na nejvlečjší úroveN ne-objekt, ne-pole"
 
 #: ../../library/json.rst:704
 msgid ""
-"The old version of JSON specified by the obsolete :rfc:`4627` required "
-"that the top-level value of a JSON text must be either a JSON object or "
-"array (Python :class:`dict` or :class:`list`), and could not be a JSON "
-"null, boolean, number, or string value.  :rfc:`7159` removed that "
-"restriction, and this module does not and has never implemented that "
-"restriction in either its serializer or its deserializer."
+"The old version of JSON specified by the obsolete :rfc:`4627` required that "
+"the top-level value of a JSON text must be either a JSON object or array "
+"(Python :class:`dict` or :class:`list`), and could not be a JSON null, "
+"boolean, number, or string value.  :rfc:`7159` removed that restriction, and"
+" this module does not and has never implemented that restriction in either "
+"its serializer or its deserializer."
 msgstr ""
+"Stará verze JSON specifikována zastaralaným :rfc:`4627` vyžadovala, aby "
+"nejvlečjší hodnota JSON textu byla buď JSON objekt nebo pole (Python "
+":class:`dict` nebo :class:`list`) a nemůže být JSON null, boolean, číslo "
+"nebo řetězec. :rfc:`7159` toto omezení odstranilo a tento modul nikdy "
+"neučinilo a nema ani implementace toto omezení ani v svém serializerû ani v "
+"svém deserializerû."
 
 #: ../../library/json.rst:711
 msgid ""
-"Regardless, for maximum interoperability, you may wish to voluntarily "
-"adhere to the restriction yourself."
+"Regardless, for maximum interoperability, you may wish to voluntarily adhere"
+" to the restriction yourself."
 msgstr ""
+"I tak byste mohli chtít dobrovolně se ríddit omezením sami pro maximální "
+"vzájemnou kompatibilitu."
 
 #: ../../library/json.rst:716
 msgid "Implementation Limitations"
-msgstr ""
+msgstr "Omezení implementace"
 
 #: ../../library/json.rst:718
 msgid "Some JSON deserializer implementations may set limits on:"
-msgstr ""
+msgstr "Některé implementace deserializátorů JSON mohou nastavit omezení na:"
 
 #: ../../library/json.rst:720
 msgid "the size of accepted JSON texts"
-msgstr ""
+msgstr "velikost přijatého textu JSON"
 
 #: ../../library/json.rst:721
 msgid "the maximum level of nesting of JSON objects and arrays"
-msgstr ""
+msgstr "maximální áúroveň vnořeného objektu JSON a pole"
 
 #: ../../library/json.rst:722
 msgid "the range and precision of JSON numbers"
-msgstr ""
+msgstr "rozsah a přesnost čísel JSON"
 
 #: ../../library/json.rst:723
 msgid "the content and maximum length of JSON strings"
-msgstr ""
+msgstr "obsah a maximální délka řetězců JSON"
 
 #: ../../library/json.rst:725
 msgid ""
 "This module does not impose any such limits beyond those of the relevant "
 "Python datatypes themselves or the Python interpreter itself."
 msgstr ""
+"Tento modul nepďuštěuje žádná taková omezení mimo hranice samotiv datových "
+"typů Pythonu nebo samotného interpretru Pythonu."
 
 #: ../../library/json.rst:728
 msgid ""
-"When serializing to JSON, beware any such limitations in applications "
-"that may consume your JSON.  In particular, it is common for JSON numbers"
-" to be deserialized into IEEE 754 double precision numbers and thus "
-"subject to that representation's range and precision limitations.  This "
-"is especially relevant when serializing Python :class:`int` values of "
-"extremely large magnitude, or when serializing instances of \"exotic\" "
-"numerical types such as :class:`decimal.Decimal`."
+"When serializing to JSON, beware any such limitations in applications that "
+"may consume your JSON.  In particular, it is common for JSON numbers to be "
+"deserialized into IEEE 754 double precision numbers and thus subject to that"
+" representation's range and precision limitations.  This is especially "
+"relevant when serializing Python :class:`int` values of extremely large "
+"magnitude, or when serializing instances of \"exotic\" numerical types such "
+"as :class:`decimal.Decimal`."
 msgstr ""
+"Při serializaci na JSON si davájte pozor na taková omezení v aplikacích, "
+"které mohou konzumovat váš JSON. Zejména je běžné, že čísla JSON budou "
+"dezerializávána na čísla s dvojitá přesnost IEEE 754 a tedy podléhají "
+"rozsahu a omezením přesnosti té reprezentace. To je zejména rele vantdouble "
+"při serializaci hodnot Pythonu :class:`int` extrémně velkého rozsahu nebo "
+"při serializaci instancí \"exotických\" numerických typů, jakož "
+":class:`decimal.Decimal`."
 
 #: ../../library/json.rst:741
 msgid "Command-line interface"
-msgstr ""
+msgstr "Rozhraní příkazového řádku"
 
 #: ../../library/json.rst:746
 msgid "**Source code:** :source:`Lib/json/tool.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/json/tool.py`"
 
 #: ../../library/json.rst:750
 msgid ""
-"The :mod:`json` module can be invoked as a script via ``python -m json`` "
-"to validate and pretty-print JSON objects. The :mod:`json.tool` submodule"
-" implements this interface."
+"The :mod:`json` module can be invoked as a script via ``python -m json`` to "
+"validate and pretty-print JSON objects. The :mod:`json.tool` submodule "
+"implements this interface."
 msgstr ""
+"Modul :mod:`json` může být vyvolán jako skript prostřednictvím ``python -m "
+"json`` k validaci a pěknému formátování objektů JSON. Submodul "
+":mod:`json.tool` implementuje toto rozhraní."
 
 #: ../../library/json.rst:754
 msgid ""
 "If the optional ``infile`` and ``outfile`` arguments are not specified, "
 ":data:`sys.stdin` and :data:`sys.stdout` will be used respectively:"
 msgstr ""
+"Pokud nejsou zadány volitelné argumenty ``infile`` a ``outfile``, budou "
+"použity :data:`sys.stdin` a :data:`sys.stdout`:"
 
 #: ../../library/json.rst:757
 #, python-brace-format
@@ -1060,31 +1410,40 @@ msgid ""
 "    \"json\": \"obj\"\n"
 "}\n"
 "$ echo '{1.2:3.4}' | python -m json\n"
-"Expecting property name enclosed in double quotes: line 1 column 2 (char "
-"1)"
+"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
 msgstr ""
+"$ echo '{\"json\": \"obj\"}' | python -m json\n"
+"{\n"
+"    \"json\": \"obj\"\n"
+"}\n"
+"$ echo '{1.2:3.4}' | python -m json\n"
+"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
 
 #: ../../library/json.rst:766
 msgid ""
-"The output is now in the same order as the input. Use the :option"
-":`--sort-keys` option to sort the output of dictionaries alphabetically "
-"by key."
+"The output is now in the same order as the input. Use the :option:`--sort-"
+"keys` option to sort the output of dictionaries alphabetically by key."
 msgstr ""
+"Výstup je nyní ve stejném pořadí jako vstup. Použité :option:`--sort-keys` "
+"možnost k seřazení výstupu slovníků abecedy podle klíče."
 
 #: ../../library/json.rst:771
 msgid ""
-"The :mod:`json` module may now be directly executed as ``python -m "
-"json``. For backwards compatibility, invoking the CLI as ``python -m "
-"json.tool`` remains supported."
+"The :mod:`json` module may now be directly executed as ``python -m json``. "
+"For backwards compatibility, invoking the CLI as ``python -m json.tool`` "
+"remains supported."
 msgstr ""
+"Modul :mod:`json` může být nyní přímo vyvolán jako ``python -m json``. Z "
+"důvodů zpátné kompatibility zůstává volba CLI jako ``python -m json.tool`` "
+"podporována."
 
 #: ../../library/json.rst:778
 msgid "Command-line options"
-msgstr ""
+msgstr "Možnosti příkazového řádku"
 
 #: ../../library/json.rst:782
 msgid "The JSON file to be validated or pretty-printed:"
-msgstr ""
+msgstr "Soubor JSON k validaci nebo pěknému formátování:"
 
 #: ../../library/json.rst:784
 #, python-brace-format
@@ -1101,48 +1460,66 @@ msgid ""
 "    }\n"
 "]"
 msgstr ""
+"$ python -m json mp_films.json\n"
+"[\n"
+"    {\n"
+"        \"title\": \"And Now for Something Completely Different\",\n"
+"        \"year\": 1971\n"
+"    },\n"
+"    {\n"
+"        \"title\": \"Monty Python and the Holy Grail\",\n"
+"        \"year\": 1975\n"
+"    }\n"
+"]"
 
 #: ../../library/json.rst:798
 msgid "If *infile* is not specified, read from :data:`sys.stdin`."
-msgstr ""
+msgstr "Pokud *infile* není zadán, čteč z :data:`sys.stdin`."
 
 #: ../../library/json.rst:802
 msgid ""
-"Write the output of the *infile* to the given *outfile*. Otherwise, write"
-" it to :data:`sys.stdout`."
+"Write the output of the *infile* to the given *outfile*. Otherwise, write it"
+" to :data:`sys.stdout`."
 msgstr ""
+"Zapíšet výstup *infile* do daného *outfile*. Jinak zapíšet do "
+":data:`sys.stdout`."
 
 #: ../../library/json.rst:807
 msgid "Sort the output of dictionaries alphabetically by key."
-msgstr ""
+msgstr "Seřaď výstup slovníků abecedy podle klíče."
 
 #: ../../library/json.rst:813
 msgid ""
-"Disable escaping of non-ascii characters, see :func:`json.dumps` for more"
-" information."
+"Disable escaping of non-ascii characters, see :func:`json.dumps` for more "
+"information."
 msgstr ""
+"Zakážit kódování znaků mimo ASCII, viz :func:`json.dumps` pro více "
+"informací."
 
 #: ../../library/json.rst:819
 msgid "Parse every input line as separate JSON object."
-msgstr ""
+msgstr "Analýza každého vstupního řádku jako odděleného objektu JSON."
 
 #: ../../library/json.rst:825
 msgid "Mutually exclusive options for whitespace control."
-msgstr ""
+msgstr "Vzájemně vyloučovmocné možnosti pro kontrolu bílého prostoru."
 
 #: ../../library/json.rst:831
 msgid "Show the help message."
-msgstr ""
+msgstr "Zobrazit zprávu nápovědy."
 
 #: ../../library/json.rst:835
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../library/json.rst:836
 msgid ""
 "As noted in `the errata for RFC 7159 <https://www.rfc-"
-"editor.org/errata_search.php?rfc=7159>`_, JSON permits literal U+2028 "
-"(LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) characters in strings, "
-"whereas JavaScript (as of ECMAScript Edition 5.1) does not."
+"editor.org/errata_search.php?rfc=7159>`_, JSON permits literal U+2028 (LINE "
+"SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) characters in strings, whereas "
+"JavaScript (as of ECMAScript Edition 5.1) does not."
 msgstr ""
-
+"Jak je uvedeno v `errata pro RFC 7159 <https://www.rfc-"
+"editor.org/errata_search.php?rfc=7159>`_, JSON dovoluje literální znaky "
+"U+2028 (LINE SEPARATOR) a U+2029 (PARAGRAPH SEPARATOR) v řetězcích, zatímco "
+"JavaScript (od ECMAScript Edition 5.1) ne."
