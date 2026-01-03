@@ -21,17 +21,19 @@ msgstr ""
 
 #: ../../library/heapq.rst:2
 msgid ":mod:`!heapq` --- Heap queue algorithm"
-msgstr ""
+msgstr ":mod:`!heapq` --- Algoritmus haldové fronty"
 
 #: ../../library/heapq.rst:12
 msgid "**Source code:** :source:`Lib/heapq.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/heapq.py`"
 
 #: ../../library/heapq.rst:16
 msgid ""
 "This module provides an implementation of the heap queue algorithm, also "
 "known as the priority queue algorithm."
 msgstr ""
+"Tento modul poskytuje implementaci algoritmu haldové fronty, známého také "
+"jako algoritmus prioritní fronty."
 
 #: ../../library/heapq.rst:19
 msgid ""
@@ -39,6 +41,9 @@ msgid ""
 "than or equal to any of its children. We refer to this condition as the "
 "heap invariant."
 msgstr ""
+"Min-haldy jsou binární stromy, ve kterých má každý rodičovský uzel hodnotu "
+"menší nebo rovnou hodnotám všech svých potomků. Tuto podmínku nazýváme "
+"haldový invariant."
 
 #: ../../library/heapq.rst:23
 msgid ""
@@ -48,6 +53,10 @@ msgid ""
 "interesting property of a min-heap is that its smallest element is always"
 " the root, ``heap[0]``."
 msgstr ""
+"Pro min-haldy tato implementace používá seznamy, pro které platí ``heap[k] <= "
+"heap[2*k+1]`` a ``heap[k] <= heap[2*k+2]`` pro všechna *k*, pro která "
+"porovnávané prvky existují. Prvky jsou číslovány od nuly. Zajímavou "
+"vlastností min-haldy je, že její nejmenší prvek je vždy kořen, ``heap[0]``."
 
 #: ../../library/heapq.rst:29
 msgid ""
@@ -58,6 +67,12 @@ msgid ""
 " ``maxheap[0]``, contains the *largest* element; "
 "``heap.sort(reverse=True)`` maintains the max-heap invariant."
 msgstr ""
+"Max-haldy splňují obrácený invariant: každý rodičovský uzel má hodnotu "
+"*větší* než kterýkoli z jeho potomků. Ty jsou implementovány jako seznamy, "
+"pro které platí ``maxheap[2*k+1] <= maxheap[k]`` a ``maxheap[2*k+2] <= "
+"maxheap[k]`` pro všechna *k*, pro která porovnávané prvky existují. Kořen "
+"``maxheap[0]`` obsahuje *největší* prvek; ``heap.sort(reverse=True)`` "
+"zachovává max-haldový invariant."
 
 #: ../../library/heapq.rst:36
 msgid ""
@@ -69,6 +84,12 @@ msgid ""
 "place sorting. Our implementation favors min-heaps as they better "
 "correspond to Python :class:`lists <list>`."
 msgstr ""
+"API :mod:`!heapq` se liší od učebnicových haldových algoritmů ve dvou "
+"aspektech: (a) Používáme indexování od nuly. To činí vztah mezi indexem "
+"uzlu a indexy jeho potomků o něco méně zřejmým, ale je vhodnější, protože "
+"Python používá indexování od nuly. (b) Učebnice se často zaměřují na max-haldy "
+"kvůli jejich vhodnosti pro in-place řazení. Naše implementace upřednostňuje "
+"min-haldy, protože lépe odpovídají Pythonovým :class:`seznamům <list>`."
 
 #: ../../library/heapq.rst:43
 msgid ""
@@ -76,12 +97,17 @@ msgid ""
 "list without surprises: ``heap[0]`` is the smallest item, and "
 "``heap.sort()`` maintains the heap invariant!"
 msgstr ""
+"Tyto dva aspekty umožňují nahlížet na haldu jako na běžný Pythonovský "
+"seznam bez překvapení: ``heap[0]`` je nejmenší prvek a "
+"``heap.sort()`` zachovává haldový invariant!"
 
 #: ../../library/heapq.rst:47
 msgid ""
 "Like :meth:`list.sort`, this implementation uses only the ``<`` operator "
 "for comparisons, for both min-heaps and max-heaps."
 msgstr ""
+"Podobně jako :meth:`list.sort`, tato implementace používá pro porovnávání "
+"pouze operátor ``<``, a to jak pro min-haldy, tak pro max-haldy."
 
 #: ../../library/heapq.rst:50
 msgid ""
@@ -89,6 +115,9 @@ msgid ""
 "generally refers to a min-heap. The API for max-heaps is named using a "
 "``_max``  suffix."
 msgstr ""
+"V níže uvedeném API a v této dokumentaci se nekvalifikovaný termín *heap* "
+"obecně vztahuje na min-haldu. API pro max-haldy je pojmenováno pomocí "
+"přípony ``_max``."
 
 #: ../../library/heapq.rst:54
 msgid ""
@@ -96,18 +125,21 @@ msgid ""
 "existing list into a min-heap or max-heap using the :func:`heapify` or "
 ":func:`heapify_max` functions, respectively."
 msgstr ""
+"Pro vytvoření haldy použijte seznam inicializovaný jako ``[]``, nebo "
+"transformujte existující seznam na min-haldu nebo max-haldu pomocí funkcí "
+":func:`heapify` nebo :func:`heapify_max`."
 
 #: ../../library/heapq.rst:58
 msgid "The following functions are provided for min-heaps:"
-msgstr ""
+msgstr "Pro min-haldy jsou poskytovány následující funkce:"
 
 #: ../../library/heapq.rst:63
 msgid "Transform list *x* into a min-heap, in-place, in linear time."
-msgstr ""
+msgstr "Transformuje seznam *x* na min-haldu, in-place, v lineárním čase."
 
 #: ../../library/heapq.rst:68
 msgid "Push the value *item* onto the *heap*, maintaining the min-heap invariant."
-msgstr ""
+msgstr "Přidá hodnotu *item* na *heap*, přičemž zachovává min-haldový invariant."
 
 #: ../../library/heapq.rst:73
 msgid ""
@@ -115,6 +147,9 @@ msgid ""
 "heap invariant.  If the heap is empty, :exc:`IndexError` is raised.  To "
 "access the smallest item without popping it, use ``heap[0]``."
 msgstr ""
+"Odebere a vrátí nejmenší prvek z *heap*, přičemž zachovává min-haldový "
+"invariant. Pokud je halda prázdná, vyvolá :exc:`IndexError`. Pro přístup "
+"k nejmenšímu prvku bez jeho odebrání použijte ``heap[0]``."
 
 #: ../../library/heapq.rst:80
 msgid ""
@@ -122,6 +157,9 @@ msgid ""
 "*heap*.  The combined action runs more efficiently than :func:`heappush` "
 "followed by a separate call to :func:`heappop`."
 msgstr ""
+"Přidá *item* na haldu, poté odebere a vrátí nejmenší prvek z *heap*. "
+"Kombinovaná operace běží efektivněji než :func:`heappush` následovaný "
+"samostatným voláním :func:`heappop`."
 
 #: ../../library/heapq.rst:87
 msgid ""
@@ -129,6 +167,8 @@ msgid ""
 "*item*. The heap size doesn't change. If the heap is empty, "
 ":exc:`IndexError` is raised."
 msgstr ""
+"Odebere a vrátí nejmenší prvek z *heap* a zároveň přidá nový *item*. "
+"Velikost haldy se nemění. Pokud je halda prázdná, vyvolá :exc:`IndexError`."
 
 #: ../../library/heapq.rst:90
 msgid ""
@@ -137,6 +177,9 @@ msgid ""
 "heap. The pop/push combination always returns an element from the heap "
 "and replaces it with *item*."
 msgstr ""
+"Tato jednokroková operace je efektivnější než :func:`heappop` následovaný "
+":func:`heappush` a může být vhodnější při použití haldy s pevnou velikostí. "
+"Kombinace pop/push vždy vrátí prvek z haldy a nahradí ho *item*."
 
 #: ../../library/heapq.rst:95
 msgid ""
@@ -145,20 +188,25 @@ msgid ""
 "combination returns the smaller of the two values, leaving the larger "
 "value on the heap."
 msgstr ""
+"Vrácená hodnota může být větší než přidaný *item*. Pokud to není žádoucí, "
+"zvažte místo toho použití :func:`heappushpop`. Jeho kombinace push/pop "
+"vrátí menší ze dvou hodnot a větší hodnotu ponechá na haldě."
 
 #: ../../library/heapq.rst:101
 msgid "For max-heaps, the following functions are provided:"
-msgstr ""
+msgstr "Pro max-haldy jsou poskytovány následující funkce:"
 
 #: ../../library/heapq.rst:106
 msgid "Transform list *x* into a max-heap, in-place, in linear time."
-msgstr ""
+msgstr "Transformuje seznam *x* na max-haldu, in-place, v lineárním čase."
 
 #: ../../library/heapq.rst:113
 msgid ""
 "Push the value *item* onto the max-heap *heap*, maintaining the max-heap "
 "invariant."
 msgstr ""
+"Přidá hodnotu *item* na max-haldu *heap*, přičemž zachovává max-haldový "
+"invariant."
 
 #: ../../library/heapq.rst:121
 msgid ""
@@ -167,6 +215,9 @@ msgid ""
 "raised. To access the largest item without popping it, use "
 "``maxheap[0]``."
 msgstr ""
+"Odebere a vrátí největší prvek z max-haldy *heap*, přičemž zachovává "
+"max-haldový invariant. Pokud je max-halda prázdná, vyvolá :exc:`IndexError`. "
+"Pro přístup k největšímu prvku bez jeho odebrání použijte ``maxheap[0]``."
 
 #: ../../library/heapq.rst:130
 msgid ""
@@ -174,6 +225,9 @@ msgid ""
 "from *heap*. The combined action runs more efficiently than "
 ":func:`heappush_max` followed by a separate call to :func:`heappop_max`."
 msgstr ""
+"Přidá *item* na max-haldu *heap*, poté odebere a vrátí největší prvek z "
+"*heap*. Kombinovaná operace běží efektivněji než :func:`heappush_max` "
+"následovaný samostatným voláním :func:`heappop_max`."
 
 #: ../../library/heapq.rst:140
 msgid ""
@@ -181,16 +235,21 @@ msgid ""
 "the new *item*. The max-heap size doesn't change. If the max-heap is "
 "empty, :exc:`IndexError` is raised."
 msgstr ""
+"Odebere a vrátí největší prvek z max-haldy *heap* a zároveň přidá nový "
+"*item*. Velikost max-haldy se nemění. Pokud je max-halda prázdná, vyvolá "
+":exc:`IndexError`."
 
 #: ../../library/heapq.rst:145
 msgid ""
 "The value returned may be smaller than the *item* added.  Refer to the "
 "analogous function :func:`heapreplace` for detailed usage notes."
 msgstr ""
+"Vrácená hodnota může být menší než přidaný *item*. Viz analogická funkce "
+":func:`heapreplace` pro podrobné poznámky k použití."
 
 #: ../../library/heapq.rst:151
 msgid "The module also offers three general purpose functions based on heaps."
-msgstr ""
+msgstr "Modul také nabízí tři funkce pro obecné účely založené na haldách."
 
 #: ../../library/heapq.rst:156
 msgid ""
@@ -198,6 +257,9 @@ msgid ""
 "merge timestamped entries from multiple log files).  Returns an "
 ":term:`iterator` over the sorted values."
 msgstr ""
+"Sloučí více seřazených vstupů do jednoho seřazeného výstupu (například "
+"sloučí časově označené záznamy z více log souborů). Vrací :term:`iterator` "
+"přes seřazené hodnoty."
 
 #: ../../library/heapq.rst:160
 msgid ""
@@ -205,10 +267,13 @@ msgid ""
 "iterable, does not pull the data into memory all at once, and assumes "
 "that each of the input streams is already sorted (smallest to largest)."
 msgstr ""
+"Podobné ``sorted(itertools.chain(*iterables))``, ale vrací iterovatelný "
+"objekt, nenačítá data do paměti najednou a předpokládá, že každý ze "
+"vstupních toků je již seřazený (od nejmenšího k největšímu)."
 
 #: ../../library/heapq.rst:164
 msgid "Has two optional arguments which must be specified as keyword arguments."
-msgstr ""
+msgstr "Má dva volitelné argumenty, které musí být specifikovány jako pojmenované argumenty."
 
 #: ../../library/heapq.rst:166
 msgid ""
@@ -216,6 +281,9 @@ msgid ""
 "extract a comparison key from each input element.  The default value is "
 "``None`` (compare the elements directly)."
 msgstr ""
+"*key* specifikuje :term:`klíčovou funkci <key function>` s jedním argumentem, "
+"která se používá k extrakci porovnávacího klíče z každého vstupního prvku. "
+"Výchozí hodnota je ``None`` (porovnává prvky přímo)."
 
 #: ../../library/heapq.rst:170
 msgid ""
@@ -224,10 +292,14 @@ msgid ""
 "behavior similar to ``sorted(itertools.chain(*iterables), "
 "reverse=True)``, all iterables must be sorted from largest to smallest."
 msgstr ""
+"*reverse* je logická hodnota. Pokud je nastavena na ``True``, pak jsou "
+"vstupní prvky sloučeny, jako by bylo každé porovnání obrácené. Pro dosažení "
+"chování podobného ``sorted(itertools.chain(*iterables), reverse=True)`` musí "
+"být všechny iterovatelné objekty seřazeny od největšího k nejmenšímu."
 
 #: ../../library/heapq.rst:175
 msgid "Added the optional *key* and *reverse* parameters."
-msgstr ""
+msgstr "Přidány volitelné parametry *key* a *reverse*."
 
 #: ../../library/heapq.rst:181
 msgid ""
@@ -237,6 +309,11 @@ msgid ""
 "(for example, ``key=str.lower``).  Equivalent to:  ``sorted(iterable, "
 "key=key, reverse=True)[:n]``."
 msgstr ""
+"Vrátí seznam s *n* největšími prvky z datové sady definované *iterable*. "
+"*key*, pokud je poskytnut, specifikuje funkci s jedním argumentem, která se "
+"používá k extrakci porovnávacího klíče z každého prvku v *iterable* "
+"(například ``key=str.lower``). Ekvivalentní: ``sorted(iterable, "
+"key=key, reverse=True)[:n]``."
 
 #: ../../library/heapq.rst:190
 msgid ""
@@ -246,6 +323,11 @@ msgid ""
 "(for example, ``key=str.lower``).  Equivalent to:  ``sorted(iterable, "
 "key=key)[:n]``."
 msgstr ""
+"Vrátí seznam s *n* nejmenšími prvky z datové sady definované *iterable*. "
+"*key*, pokud je poskytnut, specifikuje funkci s jedním argumentem, která se "
+"používá k extrakci porovnávacího klíče z každého prvku v *iterable* "
+"(například ``key=str.lower``). Ekvivalentní: ``sorted(iterable, "
+"key=key)[:n]``."
 
 #: ../../library/heapq.rst:196
 msgid ""
@@ -255,10 +337,15 @@ msgid ""
 " and :func:`max` functions.  If repeated usage of these functions is "
 "required, consider turning the iterable into an actual heap."
 msgstr ""
+"Poslední dvě funkce fungují nejlépe pro menší hodnoty *n*. Pro větší hodnoty "
+"je efektivnější použít funkci :func:`sorted`. Také když ``n==1``, je "
+"efektivnější použít vestavěné funkce :func:`min` a :func:`max`. Pokud je "
+"vyžadováno opakované použití těchto funkcí, zvažte převedení iterovatelného "
+"objektu na skutečnou haldu."
 
 #: ../../library/heapq.rst:204
 msgid "Basic Examples"
-msgstr ""
+msgstr "Základní příklady"
 
 #: ../../library/heapq.rst:206
 msgid ""
@@ -266,6 +353,9 @@ msgid ""
 " by pushing all values onto a heap and then popping off the smallest "
 "values one at a time::"
 msgstr ""
+"`Heapsort <https://en.wikipedia.org/wiki/Heapsort>`_ lze implementovat "
+"přidáním všech hodnot na haldu a následným odebíráním nejmenších hodnot "
+"po jedné::"
 
 #: ../../library/heapq.rst:210
 msgid ""
@@ -284,6 +374,8 @@ msgid ""
 "This is similar to ``sorted(iterable)``, but unlike :func:`sorted`, this "
 "implementation is not stable."
 msgstr ""
+"To je podobné ``sorted(iterable)``, ale na rozdíl od :func:`sorted` není "
+"tato implementace stabilní."
 
 #: ../../library/heapq.rst:222
 msgid ""
@@ -291,6 +383,8 @@ msgid ""
 "values (such as task priorities) alongside the main record being "
 "tracked::"
 msgstr ""
+"Prvky haldy mohou být n-tice. To je užitečné pro přiřazení porovnávacích "
+"hodnot (jako jsou priority úloh) vedle hlavního záznamu, který je sledován::"
 
 #: ../../library/heapq.rst:225
 msgid ""
@@ -305,37 +399,45 @@ msgstr ""
 
 #: ../../library/heapq.rst:235
 msgid "Priority Queue Implementation Notes"
-msgstr ""
+msgstr "Poznámky k implementaci prioritní fronty"
 
 #: ../../library/heapq.rst:237
 msgid ""
 "A `priority queue <https://en.wikipedia.org/wiki/Priority_queue>`_ is "
 "common use for a heap, and it presents several implementation challenges:"
 msgstr ""
+"`Prioritní fronta <https://en.wikipedia.org/wiki/Priority_queue>`_ je běžné "
+"použití haldy a představuje několik implementačních výzev:"
 
 #: ../../library/heapq.rst:240
 msgid ""
 "Sort stability:  how do you get two tasks with equal priorities to be "
 "returned in the order they were originally added?"
 msgstr ""
+"Stabilita řazení: jak zajistit, aby dvě úlohy se stejnou prioritou byly "
+"vráceny v pořadí, ve kterém byly původně přidány?"
 
 #: ../../library/heapq.rst:243
 msgid ""
 "Tuple comparison breaks for (priority, task) pairs if the priorities are "
 "equal and the tasks do not have a default comparison order."
 msgstr ""
+"Porovnávání n-tic selže pro dvojice (priorita, úloha), pokud jsou priority "
+"stejné a úlohy nemají výchozí pořadí porovnávání."
 
 #: ../../library/heapq.rst:246
 msgid ""
 "If the priority of a task changes, how do you move it to a new position "
 "in the heap?"
 msgstr ""
+"Pokud se změní priorita úlohy, jak ji přesunout na novou pozici v haldě?"
 
 #: ../../library/heapq.rst:249
 msgid ""
 "Or if a pending task needs to be deleted, how do you find it and remove "
 "it from the queue?"
 msgstr ""
+"Nebo pokud je potřeba smazat čekající úlohu, jak ji najít a odstranit z fronty?"
 
 #: ../../library/heapq.rst:252
 msgid ""
@@ -346,6 +448,11 @@ msgid ""
 "are the same, the tuple comparison will never attempt to directly compare"
 " two tasks."
 msgstr ""
+"Řešením prvních dvou výzev je ukládat záznamy jako 3-prvkové seznamy "
+"obsahující prioritu, čítač záznamů a úlohu. Čítač záznamů slouží jako "
+"rozhodující faktor, takže dvě úlohy se stejnou prioritou jsou vráceny "
+"v pořadí, ve kterém byly přidány. A protože žádné dva čítače záznamů "
+"nejsou stejné, porovnávání n-tic se nikdy nepokusí přímo porovnat dvě úlohy."
 
 #: ../../library/heapq.rst:258
 msgid ""
@@ -353,6 +460,8 @@ msgid ""
 "wrapper class that ignores the task item and only compares the priority "
 "field::"
 msgstr ""
+"Dalším řešením problému neporovnatelných úloh je vytvořit obalovací třídu, "
+"která ignoruje položku úlohy a porovnává pouze pole priority::"
 
 #: ../../library/heapq.rst:261
 msgid ""
@@ -371,6 +480,9 @@ msgid ""
 " changes to its priority or removing it entirely.  Finding a task can be "
 "done with a dictionary pointing to an entry in the queue."
 msgstr ""
+"Zbývající výzvy se točí kolem hledání čekající úlohy a provádění změn její "
+"priority nebo jejího úplného odstranění. Nalezení úlohy lze provést pomocí "
+"slovníku ukazujícího na záznam ve frontě."
 
 #: ../../library/heapq.rst:273
 msgid ""
@@ -379,6 +491,9 @@ msgid ""
 " mark the entry as removed and add a new entry with the revised "
 "priority::"
 msgstr ""
+"Odstranění záznamu nebo změna jeho priority je obtížnější, protože by to "
+"porušilo invarianty struktury haldy. Možným řešením je tedy označit záznam "
+"jako odstraněný a přidat nový záznam s upravenou prioritou::"
 
 #: ../../library/heapq.rst:277
 #, python-brace-format
@@ -415,7 +530,7 @@ msgstr ""
 
 #: ../../library/heapq.rst:307
 msgid "Theory"
-msgstr ""
+msgstr "Teorie"
 
 #: ../../library/heapq.rst:309
 msgid ""
@@ -424,6 +539,10 @@ msgid ""
 "existing elements are considered to be infinite.  The interesting "
 "property of a heap is that ``a[0]`` is always its smallest element."
 msgstr ""
+"Haldy jsou pole, pro která platí ``a[k] <= a[2*k+1]`` a ``a[k] <= a[2*k+2]`` "
+"pro všechna *k*, přičemž prvky se počítají od 0. Pro účely porovnání jsou "
+"neexistující prvky považovány za nekonečné. Zajímavou vlastností haldy je, "
+"že ``a[0]`` je vždy její nejmenší prvek."
 
 #: ../../library/heapq.rst:314
 msgid ""
@@ -431,6 +550,8 @@ msgid ""
 "representation for a tournament.  The numbers below are *k*, not "
 "``a[k]``::"
 msgstr ""
+"Výše uvedený podivný invariant je určen jako efektivní paměťová reprezentace "
+"pro turnaj. Čísla níže jsou *k*, ne ``a[k]``::"
 
 #: ../../library/heapq.rst:317
 msgid ""
@@ -457,6 +578,14 @@ msgid ""
 " two cells it tops contain three different items, but the top cell "
 "\"wins\" over the two topped cells."
 msgstr ""
+"Ve výše uvedeném stromu každá buňka *k* je nad ``2*k+1`` a ``2*k+2``. V obvyklém "
+"binárním turnaji, jak ho vidíme ve sportu, je každá buňka vítězem nad dvěma "
+"buňkami, nad kterými je, a můžeme sledovat vítěze dolů stromem, abychom viděli "
+"všechny soupeře, které měl. V mnoha počítačových aplikacích takových turnajů "
+"však nepotřebujeme sledovat historii vítěze. Pro větší paměťovou efektivitu, "
+"když je vítěz povýšen, pokusíme se ho nahradit něčím jiným na nižší úrovni, "
+"a pravidlo se stává, že buňka a dvě buňky, nad kterými je, obsahují tři různé "
+"položky, ale horní buňka \"vyhrává\" nad dvěma spodními buňkami."
 
 #: ../../library/heapq.rst:336
 msgid ""
@@ -468,6 +597,13 @@ msgid ""
 " logarithmic on the total number of items in the tree. By iterating over "
 "all items, you get an *O*\\ (*n* log *n*) sort."
 msgstr ""
+"Pokud je tento haldový invariant neustále chráněn, index 0 je jednoznačně "
+"celkovým vítězem. Nejjednodušší algoritmický způsob, jak ho odstranit a najít "
+"\"dalšího\" vítěze, je přesunout nějakého poraženého (řekněme buňku 30 ve výše "
+"uvedeném diagramu) na pozici 0 a pak tento nový 0 probublat dolů stromem, "
+"vyměňovat hodnoty, dokud není invariant obnoven. To je zjevně logaritmické "
+"vzhledem k celkovému počtu položek ve stromu. Iterací přes všechny položky "
+"získáte řazení *O*\\ (*n* log *n*)."
 
 #: ../../library/heapq.rst:343
 msgid ""
@@ -481,6 +617,14 @@ msgid ""
 "structure for implementing schedulers (this is what I used for my MIDI "
 "sequencer :-)."
 msgstr ""
+"Pěknou vlastností tohoto řazení je, že můžete efektivně vkládat nové položky, "
+"zatímco řazení probíhá, za předpokladu, že vložené položky nejsou \"lepší\" "
+"než poslední 0. prvek, který jste extrahovali. To je obzvláště užitečné v "
+"simulačních kontextech, kde strom drží všechny příchozí události a podmínka "
+"\"výhry\" znamená nejmenší naplánovaný čas. Když událost naplánuje další "
+"události k provedení, jsou naplánovány do budoucnosti, takže mohou snadno "
+"jít do haldy. Takže halda je dobrá struktura pro implementaci plánovačů "
+"(to jsem použil pro svůj MIDI sekvenční :-)."
 
 #: ../../library/heapq.rst:352
 msgid ""
@@ -490,6 +634,11 @@ msgid ""
 "the average case. However, there are other representations which are more"
 " efficient overall, yet the worst cases might be terrible."
 msgstr ""
+"Různé struktury pro implementaci plánovačů byly rozsáhle studovány a haldy "
+"jsou pro to dobré, protože jsou přiměřeně rychlé, rychlost je téměř konstantní "
+"a nejhorší případ se příliš neliší od průměrného případu. Existují však jiné "
+"reprezentace, které jsou celkově efektivnější, ale jejich nejhorší případy "
+"mohou být hrozné."
 
 #: ../../library/heapq.rst:358
 msgid ""
@@ -504,6 +653,16 @@ msgid ""
 "you'll produce runs which are twice the size of the memory for random "
 "input, and much better for input fuzzily ordered."
 msgstr ""
+"Haldy jsou také velmi užitečné při velkých diskových tříděních. Pravděpodobně "
+"všichni víte, že velké třídění zahrnuje produkci \"běhů\" (runs) (což jsou "
+"předtříděné sekvence, jejichž velikost obvykle souvisí s množstvím paměti CPU), "
+"následované průchody slučování těchto běhů, které je často velmi chytře "
+"organizováno [#]_. Je velmi důležité, aby počáteční třídění produkovalo co "
+"nejdelší možné běhy. Turnaje jsou dobrým způsobem, jak toho dosáhnout. Pokud "
+"použijete veškerou dostupnou paměť pro uchování turnaje a nahrazujete a "
+"prosazujete položky, které se hodí do aktuálního běhu, vyprodukujete běhy, "
+"které jsou dvakrát větší než paměť pro náhodný vstup, a mnohem lepší pro vstup "
+"s fuzzy uspořádáním."
 
 #: ../../library/heapq.rst:368
 msgid ""
@@ -515,6 +674,13 @@ msgid ""
 "rate the first heap is melting.  When the first heap completely vanishes,"
 " you switch heaps and start a new run.  Clever and quite effective!"
 msgstr ""
+"Navíc, pokud vypíšete 0. položku na disk a dostanete vstup, který se nemusí "
+"hodit do aktuálního turnaje (protože hodnota \"vyhrává\" nad poslední výstupní "
+"hodnotou), nemůže se vejít do haldy, takže se velikost haldy zmenšuje. "
+"Uvolněná paměť by mohla být chytře okamžitě znovu použita pro postupné budování "
+"druhé haldy, která roste přesně stejnou rychlostí, jakou se první halda "
+"zmenšuje. Když první halda úplně zmizí, přepnete haldy a spustíte nový běh. "
+"Chytré a docela efektivní!"
 
 #: ../../library/heapq.rst:376
 msgid ""
@@ -522,10 +688,13 @@ msgid ""
 "few applications, and I think it is good to keep a 'heap' module around. "
 ":-)"
 msgstr ""
+"Stručně řečeno, haldy jsou užitečné paměťové struktury, které je dobré znát. "
+"Používám je v několika aplikacích a myslím, že je dobré mít modul 'heap' "
+"k dispozici. :-)"
 
 #: ../../library/heapq.rst:380
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../library/heapq.rst:381
 msgid ""
@@ -540,6 +709,15 @@ msgid ""
 "quite spectacular to watch! From all times, sorting has always been a "
 "Great Art! :-)"
 msgstr ""
+"Algoritmy pro vyvažování disků, které jsou v současnosti aktuální, jsou spíše "
+"otravné než chytré, a to je důsledek schopností vyhledávání disků. Na "
+"zařízeních, která nemohou vyhledávat, jako jsou velké páskové jednotky, byl "
+"příběh docela jiný a člověk musel být velmi chytrý, aby zajistil (hodně "
+"dopředu), že každý pohyb pásky bude co nejefektivnější (to znamená, že se bude "
+"nejlépe podílet na \"postupu\" slučování). Některé pásky dokázaly dokonce číst "
+"dozadu a to se také používalo, aby se předešlo času na přetáčení. Věřte mi, "
+"opravdu dobré páskové třídění bylo docela velkolepé k sledování! Od nepaměti "
+"bylo třídění vždy Velkým Uměním! :-)"
 
 #~ msgid "Other Applications"
 #~ msgstr ""
