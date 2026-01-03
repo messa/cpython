@@ -52,6 +52,13 @@ make _ensure-package PACKAGE=polib
 make _ensure-package PACKAGE=mcp
 ```
 
+## Translation guidelines
+
+See `/.claude/agents/po-translator.md` for detailed translation rules:
+- Which terms to translate vs. keep in English
+- Czech language conventions
+- RST markup and format string handling
+
 ## Check .po files for syntax errors
 
 ```bash
