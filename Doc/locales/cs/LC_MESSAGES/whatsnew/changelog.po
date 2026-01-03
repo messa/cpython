@@ -6682,24 +6682,34 @@ msgid ""
 ":keyword:`async with` (resp. :keyword:`with`) instead of :keyword:`with` "
 "(resp. :keyword:`async with`). Patch by Bénédikt Tran."
 msgstr ""
+":gh:`128398`: Vylepšit chybovou zprávu, když je objekt podporující "
+"synchronní (resp. asynchronní) protokol správce kontextu vstupován pomocí "
+":keyword:`async with` (resp. :keyword:`with`) místo :keyword:`with` (resp. "
+":keyword:`async with`). Patch od Bénédikta Trana."
 
 #: ../NEWS:2953
 msgid ""
 ":gh:`131798`: Allow the JIT to remove unicode guards after "
 "``_BINARY_OP_SUBSCR_STR_INT`` by setting the return type to string."
 msgstr ""
+":gh:`131798`: Umožnit JIT odstraňovat ochranné prvky Unicode po "
+"``_BINARY_OP_SUBSCR_STR_INT`` nastavením typu návratu na řetězec."
 
 #: ../NEWS:2956
 msgid ""
 ":gh:`131878`: Handle uncaught exceptions in the main input loop for the new "
 "REPL."
 msgstr ""
+":gh:`131878`: Zpracovat neodchycené výjimky v hlavní vstupní smyčce pro nový"
+" REPL."
 
 #: ../NEWS:2959
 msgid ""
 ":gh:`131878`: Fix support of unicode characters with two or more codepoints "
 "on Windows in the new REPL."
 msgstr ""
+":gh:`131878`: Opravit podporu znaků Unicode se dvěma nebo více kódovými body"
+" v systému Windows v novém REPL."
 
 #: ../NEWS:2962
 msgid ""
@@ -6709,17 +6719,26 @@ msgid ""
 "(_PyAST_Optimize -> _PyAST_Preprocess, _PyCompile_AstOptimize -> "
 "_PyCompile_AstPreprocess)."
 msgstr ""
+":gh:`126835`: Přesunout skládání konstant do optimizátoru peephole. "
+"Přejmenovat soubory související s optimalizací AST (Python/ast_opt.c -> "
+"Python/ast_preprocess.c), struktury (_PyASTOptimizeState -> "
+"_PyASTPreprocessState) a funkce (_PyAST_Optimize -> _PyAST_Preprocess, "
+"_PyCompile_AstOptimize -> _PyCompile_AstPreprocess)."
 
 #: ../NEWS:2968
 msgid ""
 ":gh:`114809`: Add support for macOS multi-arch builds with the JIT enabled"
 msgstr ""
+":gh:`114809`: Přidat podporu pro sestavení macOS s více architekturami s "
+"povoleným JIT"
 
 #: ../NEWS:2970
 msgid ""
 ":gh:`131507`: PyREPL now supports syntax highlighting. Contributed by Łukasz"
 " Langa."
 msgstr ""
+":gh:`131507`: PyREPL nyní podporuje zvýraňování syntaxe. Přispěl Łukasz "
+"Langa."
 
 #: ../NEWS:2973
 msgid ""
@@ -6727,6 +6746,9 @@ msgid ""
 "while the module is executing, return the annotations that have been defined"
 " so far, without caching them."
 msgstr ""
+":gh:`130907`: Pokud jsou ``__annotations__`` objektu modulu přístupné během "
+"provádění modulu, vrátí anotace, které byly dosud definovány, bez jejich "
+"ukládání do mezipaměti."
 
 #: ../NEWS:2977
 msgid ""
@@ -6734,32 +6756,42 @@ msgid ""
 ":meth:`~object.__rpow__` if necessary. Previously it was only called in two-"
 "argument :func:`!pow` and the binary power operator."
 msgstr ""
+":gh:`130104`: Tříargumentová :func:`pow` nyní se pokouší volat "
+":meth:`~object.__rpow__` v případě potřeby. Dříve byla volaná pouze v "
+"dvouargumentové :func:`!pow` a binárním operátoru mocniny."
 
 #: ../NEWS:2981
 msgid ""
 ":gh:`130070`: Fixed an assertion error for :func:`exec` passed a string "
 "``source`` and a non-``None`` ``closure``. Patch by Bartosz Sławecki."
 msgstr ""
+":gh:`130070`: Opravena chyba kontrolního výrazu pro :func:`exec` s řetězcem "
+"``source`` a non-``None`` ``closure``. Patch od Bartosza Sławeckého."
 
 #: ../NEWS:2984
 msgid ""
 ":gh:`129958`: Fix a bug that was allowing newlines inconsistently in format "
 "specifiers for single-quoted f-strings. Patch by Pablo Galindo."
 msgstr ""
+":gh:`129958`: Opravit chybu, která umožňovala nekonzistentné nové řádky v "
+"specifikačních fstring s jedním uvozovacím znakem. Patch od Pabla Galindo."
 
 #: ../NEWS:2987
 msgid ""
 ":gh:`129858`: ``elif`` statements that follow an ``else`` block now have a "
 "specific error message."
 msgstr ""
+":gh:`129858`: Příkázy ``elif`` následující blok ``else`` nyní mají "
+"specifickou chybovou zprávu."
 
 #: ../NEWS:2990
 msgid ":gh:`69605`: Add module autocomplete to PyREPL."
-msgstr ""
+msgstr ":gh:`69605`: Přidat doplnování modulu do PyREPL."
 
 #: ../NEWS:2992
 msgid ":gh:`128555`: Add the :data:`sys.flags.thread_inherit_context` flag."
 msgstr ""
+":gh:`128555`: Přidat příznak :data:`sys.flags.thread_inherit_context`."
 
 #: ../NEWS:2994
 msgid ""
@@ -6769,6 +6801,11 @@ msgid ""
 ":class:`contextvars.Context` from the caller of "
 ":meth:`threading.Thread.start` rather than using an empty context."
 msgstr ""
+"Tento příznak je ve výchozím nastavení nastaven na true při sestavení bez "
+"vláken a false jinak. Pokud je příznak true, spuštění nového vlákna pomocí "
+":class:`threading.Thread` bude ve výchozím nastavení použít kopii "
+":class:`contextvars.Context` z volajícího :meth:`threading.Thread.start` "
+"místo použití prázdného kontextu."
 
 #: ../NEWS:3000
 msgid ""
@@ -6776,22 +6813,30 @@ msgid ""
 ":envvar:`PYTHON_THREAD_INHERIT_CONTEXT` environment variable, which set the "
 ":data:`~sys.flags.thread_inherit_context` flag."
 msgstr ""
+"Přidat volbu příkazového řádku :option:`-X thread_inherit_context <-X>` a "
+"proměnné prostředí :envvar:`PYTHON_THREAD_INHERIT_CONTEXT`, které nastavují "
+"příznak :data:`~sys.flags.thread_inherit_context`."
 
 #: ../NEWS:3004
 msgid ""
 "Add the ``context`` keyword parameter to :class:`~threading.Thread`.  It can"
 " be used to explicitly pass a context value to be used by a new thread."
 msgstr ""
+"Přidat parametr klíčove slova ``context`` do :class:`~threading.Thread`. "
+"Může se použít k explicitnímu překázání hodnoty kontextu, která bude použita"
+" novým vláknem."
 
 #: ../NEWS:3007
 msgid "Make the ``_contextvars`` module built-in."
-msgstr ""
+msgstr "Udělat modul ``_contextvars`` vstavěným."
 
 #: ../NEWS:3009
 msgid ""
 ":gh:`123539`: Improve :exc:`SyntaxError` message for using ``import ... as``"
 " and ``from ... import ... as`` with not a name."
 msgstr ""
+":gh:`123539`: Vylepšit zprávu :exc:`SyntaxError` při používání ``import ... "
+"as`` a ``from ... import ... as`` s nĜjakou hodnotou, která není název."
 
 #: ../NEWS:3012
 msgid ""
@@ -6799,12 +6844,17 @@ msgid ""
 "indicates that an ``importtime`` entry should also be printed if an imported"
 " module has already been loaded. Patch by Noah Kim and Adam Turner."
 msgstr ""
+":gh:`102567`: :option:`-X importtime <-X>` nyní přijímá hodnotu ``2``, která"
+" uvede, že položka ``importtime`` by měla být vytisknuta také v případě, že "
+"byl importovaný modul již načten. Patch od Noaha Kima a Adama Turnera."
 
 #: ../NEWS:3017
 msgid ""
 ":gh:`116436`: Improve error message when :exc:`TypeError` occurs during "
 ":meth:`dict.update`"
 msgstr ""
+":gh:`116436`: Vylepšit chybovou zprávu, když k :exc:`TypeError` dojde během "
+":meth:`dict.update`"
 
 #: ../NEWS:3020
 msgid ""
@@ -6813,16 +6863,23 @@ msgid ""
 "invocations to be indented in shell scripts without causing indentation "
 "errors. (Patch by Jon Crall and Steven Sun)"
 msgstr ""
+":gh:`103997`: Řetězce argumenty předejdané do \"-c\" jsou nyní automaticky "
+"odesunuty jako :func:`textwrap.dedent`. To umožňuje \"python -c\" volání být"
+" odsazena v shellských skriptech bez způsobení chyb odsazení. (Patch od Jona"
+" Cralla a Stevena Suna)"
 
 #: ../NEWS:3028
 msgid ":gh:`89562`: Remove ``hostflags`` member from ``PySSLContext`` struct."
 msgstr ""
+":gh:`89562`: Odebrat člen ``hostflags`` ze struktury ``PySSLContext``."
 
 #: ../NEWS:3033
 msgid ""
 ":gh:`133166`: Fix regression where :c:func:`PyType_GetModuleByDef` returns "
 "NULL without setting :exc:`TypeError` when a static type is passed."
 msgstr ""
+":gh:`133166`: Opravit regresi, kdy :c:func:`PyType_GetModuleByDef` vrátí "
+"NULL bez nastavení :exc:`TypeError`, když je předána statická typu."
 
 #: ../NEWS:3036
 msgid ""
@@ -6833,6 +6890,12 @@ msgid ""
 "determine if it's safe to modify a Python object in-place with no visible "
 "side effects."
 msgstr ""
+":gh:`133164`: Přidat funkci "
+":c:func:`PyUnstable_Object_IsUniqueReferencedTemporary` pro určení, zda "
+"objekt existuje jako jedinečná dočasná proměnná na zásobníku interpřeteru. "
+"Toto je náhrada pro některé případy, kdy kontrola toho, že "
+":c:func:`Py_REFCNT` je jedna již není dostatočná k určení, zda je bezpečné "
+"upravit objektu Pythonu na místě bez viditelných vedlejších efektů."
 
 #: ../NEWS:3043
 msgid ""
@@ -6840,6 +6903,9 @@ msgid ""
 "replacement for ``Py_REFNCT(op) == 1`` on :term:`free threaded <free "
 "threading>` builds of Python."
 msgstr ""
+":gh:`133140`: Přidat :c:func:`PyUnstable_Object_IsUniquelyReferenced` jako "
+"náhradu za ``Py_REFNCT(op) == 1`` na :term:`sestavené bez vázání vláken "
+"<free threading>` Pythonu."
 
 #: ../NEWS:3047
 msgid ""
@@ -6848,6 +6914,10 @@ msgid ""
 "Windows platforms. The layout should be specified explicitly by setting "
 ":attr:`ctypes.Structure._layout_` to ``'ms'``."
 msgstr ""
+":gh:`131747`: Na platformch mimo Windows, zastaralost používání "
+":attr:`ctypes.Structure._pack_` pro použití rozložení kompatibilného s "
+"Windows na platformch mimo Windows. Rozložení by mělo být zadáno explicitně "
+"nastavením :attr:`ctypes.Structure._layout_` na ``'ms'``."
 
 #: ../NEWS:3052
 msgid ""
@@ -6856,6 +6926,10 @@ msgid ""
 "structure is not part of stable ABI and so its memory layout is *guaranteed*"
 " to remain stable.)"
 msgstr ""
+":gh:`128972`: Pro sestavení bez bezplatného vlákna je páměťové rozložení "
+":c:struct:`PyASCIIObject` nahrazeno tak, aby odpovídalo Pythonu 3.13. "
+"(Poznámka: struktura není součást stabilního ABI a její páměťové rozložení "
+"je *zaručené* zůstat stabilné.)"
 
 #: ../NEWS:3057
 msgid ""
@@ -6863,6 +6937,9 @@ msgid ""
 ":c:member:`!PyThreadState.c_recursion_remaining`, added in 3.13, are removed"
 " without a deprecation period."
 msgstr ""
+":gh:`133079`: Nedokumentovaná rozhraní :c:macro:`!Py_C_RECURSION_LIMIT` a "
+":c:member:`!PyThreadState.c_recursion_remaining`, přidaná v 3.13, jsou "
+"odebřány bez období zastaralosťi."
 
 #: ../NEWS:3061
 msgid ""
@@ -6870,12 +6947,17 @@ msgid ""
 "support the :meth:`~object.__index__` special method, like all other integer"
 " formats."
 msgstr ""
+":gh:`132987`: Formáty ``k`` a ``K`` v :c:func:`PyArg_Parse` nyní podporují "
+"speciální metodu :meth:`~object.__index__`, jako všechny ostatní formáty "
+"celých čísel."
 
 #: ../NEWS:3065
 msgid ""
 ":gh:`132909`: Fix an overflow when handling the :ref:`K <capi-py-buildvalue-"
 "format-K>` format in :c:func:`Py_BuildValue`. Patch by Bénédikt Tran."
 msgstr ""
+":gh:`132909`: Opravit přetečení při zprávě formátu :ref:`K <capi-py-"
+"buildvalue-format-K>` v :c:func:`Py_BuildValue`. Patch od Bénédikta Trana."
 
 #: ../NEWS:3069
 msgid ""
@@ -6884,6 +6966,10 @@ msgid ""
 ":c:func:`!PyUnicode_AsEncodedUnicode` and "
 ":c:func:`!PyUnicode_AsDecodedUnicode` are scheduled for removal in 3.15."
 msgstr ""
+":gh:`132798`: Zastaralé a nedokumentované funkce "
+":c:func:`!PyUnicode_AsEncodedObject`, :c:func:`!PyUnicode_AsDecodedObject`, "
+":c:func:`!PyUnicode_AsEncodedUnicode` a "
+":c:func:`!PyUnicode_AsDecodedUnicode` jsou naplnény k odebrání v 3.15."
 
 #: ../NEWS:3075
 msgid ""
@@ -6891,6 +6977,9 @@ msgid ""
 " not match the actual type size now raises a :exc:`ValueError` instead of "
 "crashing the interpreter."
 msgstr ""
+":gh:`132470`: Vytvoření :class:`ctypes.CField` s *byte_size*, které "
+"neodpovída skutečné velikosti typu, nyní vyvolá :exc:`ValueError` místo "
+"havarijící interpret."
 
 #: ../NEWS:3079
 msgid ""
@@ -6898,6 +6987,9 @@ msgid ""
 "in :c:func:`PyArg_Parse` and similar functions. Adding ``?`` after any "
 "format unit makes ``None`` be accepted as a value."
 msgstr ""
+":gh:`112068`: [Vráceno v :gh:`136991`] Přidat podporu nulových argumentů v "
+":c:func:`PyArg_Parse` a podobných funkcích. Přidaní ``?`` za jakýkoli formát"
+" jednotky umožňuje ``None`` být přijato jako hodnota."
 
 #: ../NEWS:3083
 msgid ""
@@ -6907,6 +6999,11 @@ msgid ""
 "units which store a :ref:`borrowed buffer <c-arg-borrowed-buffer>` or a "
 ":term:`borrowed reference`."
 msgstr ""
+":gh:`50333`: Non-tuple sekvence jsou zastaralé jako argument pro jednotku "
+"formátu ``(items)`` v :c:func:`PyArg_ParseTuple` a ostatních funkcích "
+":ref:`parsávání argumentů <arg-parsing>`, pokud *items* obsahuje formát "
+"jednotky, které ukládají :ref:`vypoujčenou buffer <c-arg-borrowed-buffer>` "
+"nebo :term:`vypoujčenou referenci`."
 
 #: ../NEWS:3092
 msgid ""
@@ -6914,34 +7011,47 @@ msgid ""
 "LLVM dependency management. Installing LLVM manually is no longer necessary "
 "for Windows JIT builds."
 msgstr ""
+":gh:`113464`: Použít repo cpython-bin-deps \"externals\" pro správu "
+"závislostí Windows LLVM. Ručná instalace LLVM již není nezbytnou pro "
+"sestavení Windows JIT."
 
 #: ../NEWS:3096
 msgid ""
 ":gh:`133183`: iOS compiler shims now include ``IPHONEOS_DEPLOYMENT_TARGET`` "
 "in target triples, ensuring that SDK version minimums are honored."
 msgstr ""
+":gh:`133183`: Shimery překladače iOS nyní zahrnují "
+"``IPHONEOS_DEPLOYMENT_TARGET`` v cílových trojicích, čínž je zajištěno, že "
+"jsou splňovány minimální verze SDK."
 
 #: ../NEWS:3099
 msgid ""
 ":gh:`133167`: Fix compilation process with ``--enable-optimizations`` and "
 "``--without-docstrings``."
 msgstr ""
+":gh:`133167`: Opravit proces kompilace s ``--enable-optimizations`` a "
+"``--without-docstrings``."
 
 #: ../NEWS:3102
 msgid ""
 ":gh:`133171`: Since free-threaded builds do not support the experimental JIT"
 " compiler, prevent these configurations from being combined."
 msgstr ""
+":gh:`133171`: Vzhledem k tomu, že sestavení bez vláken nepodporují "
+"experimentální kompalér JIT, zabránět těmto konfiguracím v kombinaci."
 
 #: ../NEWS:3105
 msgid ":gh:`132758`: Fix building with tail call interpreter and pystats."
 msgstr ""
+":gh:`132758`: Opravit sestavení s interpretérem koncového volání a pystats."
 
 #: ../NEWS:3107
 msgid ""
 ":gh:`132649`: The :file:`PC\\layout` script now allows passing ``--include-"
 "tcltk`` on Windows ARM64."
 msgstr ""
+":gh:`132649`: Skript :file:`PC\\layout` nyní umožňuje předání ``--include-"
+"tcltk`` na Windows ARM64."
 
 #: ../NEWS:3110
 msgid ""
@@ -6950,34 +7060,42 @@ msgid ""
 "GCC, this has a multiple factor speedup for LTO build times, with no "
 "noticeable loss in performance."
 msgstr ""
+":gh:`132257`: Změnit výchozí příznáky LTO na GCC na nepředávání ``-flto-"
+"partition=none`` a umožnit paralelizaci LTO. Pro novější GNU make a GCC to "
+"má násobek zrychlení pro doby sestavení LTO, bez výrazné ztráty výkonu."
 
 #: ../NEWS:3115
 msgid ""
 ":gh:`132026`: Fix use of undefined identifiers in platform triplet detection"
 " on MIPS Linux platforms."
 msgstr ""
+":gh:`132026`: Opravit používání nedefinovaných identifikátorů v detekci "
+"platformy triplet na MIPS Linux platformách."
 
 #: ../NEWS:3120
 msgid "Python 3.14.0 alpha 7"
-msgstr ""
+msgstr "Python 3.14.0 alpha 7"
 
 #: ../NEWS:3122
 msgid "*Release date: 2025-04-08*"
-msgstr ""
+msgstr "*Datum vydání: 2025-04-08*"
 
 #: ../NEWS:3127
 msgid ":gh:`124111`: Update macOS installer to use Tcl/Tk 8.6.16."
-msgstr ""
+msgstr ":gh:`124111`: Aktualizovat instalaci macOS na použitie Tcl/Tk 8.6.16."
 
 #: ../NEWS:3129
 msgid ""
 ":gh:`131423`: Update macOS installer to use OpenSSL 3.0.16. Patch by "
 "Bénédikt Tran."
 msgstr ""
+":gh:`131423`: Aktualizovat instalaci macOS na OpenSSL 3.0.16. Patch od "
+"Bénédikta Trana."
 
 #: ../NEWS:3132
 msgid ":gh:`131025`: Update macOS installer to ship with SQLite 3.49.1."
 msgstr ""
+":gh:`131025`: Aktualizovat instalaci macOS na odškodnit SQLite 3.49.1."
 
 #: ../NEWS:3137
 msgid ""
@@ -6985,34 +7103,45 @@ msgid ""
 "also disables uplink support, which may be relevant to embedders but has no "
 "impact on normal use."
 msgstr ""
+":gh:`131423`: Aktualizovat bundled verzi OpenSSL na 3.0.16. Nové sestavení "
+"také zakáže podporu uplink, která má výžn do embedderů, ale nemá vliv na "
+"normální používání."
 
 #: ../NEWS:3141
 msgid ""
 ":gh:`131453`: Some :data:`!SND_*` and :data:`!MB_*` constants are added to "
 ":mod:`winsound`."
 msgstr ""
+":gh:`131453`: Některé konstanty :data:`!SND_*` a :data:`!MB_*` jsou přidány "
+"do :mod:`winsound`."
 
 #: ../NEWS:3144
 msgid ""
 ":gh:`91349`: Replaces our copy of ``zlib`` with ``zlib-ng``, for performance"
 " improvements in :mod:`zlib`."
 msgstr ""
+":gh:`91349`: Nahrazuje naši kopii ``zlib`` ``zlib-ng`` pro zlepšení výkonu v"
+" :mod:`zlib`."
 
 #: ../NEWS:3147
 msgid ":gh:`131025`: Update Windows installer to ship with SQLite 3.49.1."
 msgstr ""
+":gh:`131025`: Aktualizovat instalaci Windows na odškodnit SQLite 3.49.1."
 
 #: ../NEWS:3152
 msgid ""
 ":gh:`132121`: Always escape non-printable Unicode characters in "
 ":program:`pygettext`."
 msgstr ""
+":gh:`132121`: Vždy escapovat tisky Unicode znaky v :program:`pygettext`."
 
 #: ../NEWS:3155
 msgid ""
 ":gh:`131852`: :program:`msgfmt` no longer adds the ``POT-Creation-Date`` to "
 "generated ``.mo`` files for consistency with GNU ``msgfmt``."
 msgstr ""
+":gh:`131852`: :program:`msgfmt` již nepřidává ``POT-Creation-Date`` do "
+"generovaných ``.mo`` souborů pro konzistenci s GNU ``msgfmt``."
 
 #: ../NEWS:3161
 msgid ""
@@ -7020,20 +7149,26 @@ msgid ""
 ":meth:`EnvironmentVarGuard.unset() "
 "<test.support.os_helper.EnvironmentVarGuard.unset>`. Patch by Bénédikt Tran."
 msgstr ""
+":gh:`131277`: Umožnit zruení jednoho nebo více proměnných prostředí najednou"
+" prostřednictvím :meth:`EnvironmentVarGuard.unset() "
+"<test.support.os_helper.EnvironmentVarGuard.unset>`. Patch od Bénédikta "
+"Trana."
 
 #: ../NEWS:3166
 msgid ""
 ":gh:`131050`: ``test_ssl.test_dh_params`` is skipped if the underlying TLS "
 "library does not support finite-field ephemeral Diffie-Hellman."
 msgstr ""
+":gh:`131050`: ``test_ssl.test_dh_params`` je přeskokčen, pokud podkladová "
+"knihovna TLS nepodporuje časné ephemeral Diffie-Hellman s konečným polem."
 
 #: ../NEWS:3172
 msgid ":gh:`131809`: Update bundled libexpat to 2.7.1"
-msgstr ""
+msgstr ":gh:`131809`: Aktualizovat bundled libexpat na 2.7.1"
 
 #: ../NEWS:3174
 msgid ":gh:`131261`: Upgrade to libexpat 2.7.0"
-msgstr ""
+msgstr ":gh:`131261`: Upgradovat na libexpat 2.7.0"
 
 #: ../NEWS:3176
 msgid ""
@@ -7045,18 +7180,29 @@ msgid ""
 " be used to spoof header lines using a carefully constructed encoded-word if"
 " the resulting rendered email was transmitted or re-parsed."
 msgstr ""
+":gh:`121284`: Opravit chybu v skládání rfc2047 kódovaných slov při spláchné "
+"e-mailové zprávy pomocí moderní politiky e-mailů. Dříve, když bylo kódované "
+"slovo příliš dlouhé pro řádek, bylo dekódáno, rozděleno přes řádky a znovu "
+"kódáno. Ale čárky a další speciální znaky v původním textu mohly zůstat "
+"nekočovány a neznaky. To by teoreticky mohlo být použito k podvrhu řádků "
+"zahláví pomocí pečlivě sestrojovaného kódovaného slova, pokud by byl "
+"výsledný renderovania e-mail předán nebo znovu analyzován."
 
 #: ../NEWS:3187
 msgid ""
 ":gh:`132174`: Fix function name in error message of "
 "``_interpreters.run_string``."
 msgstr ""
+":gh:`132174`: Opravit název funkce v chybové zprávě "
+"``_interpreters.run_string``."
 
 #: ../NEWS:3190
 msgid ""
 ":gh:`132171`: Fix crash of ``_interpreters.run_string`` on string "
 "subclasses."
 msgstr ""
+":gh:`132171`: Opravit havárii ``_interpreters.run_string`` na podtřídách "
+"řetězců."
 
 #: ../NEWS:3192
 msgid ""
@@ -7064,18 +7210,25 @@ msgid ""
 "environment variable knob in :mod:`subprocess` to control the use of "
 ":func:`os.posix_spawn`."
 msgstr ""
+":gh:`129204`: Zavedení nové proměnné prostředí "
+"``_PYTHON_SUBPROCESS_USE_POSIX_SPAWN`` v :mod:`subprocess` pro kontrolu "
+"použití :func:`os.posix_spawn`."
 
 #: ../NEWS:3196
 msgid ""
 ":gh:`132159`: Do not shadow user arguments in generated :meth:`!__new__` by "
 "decorator :class:`warnings.deprecated`. Patch by Xuehai Pan."
 msgstr ""
+":gh:`132159`: Netieň argumenty uživatele v generovaném :meth:`!__new__` "
+"pomocí dekorátoru :class:`warnings.deprecated`. Patch od Xuehaia Pana."
 
 #: ../NEWS:3199
 msgid ""
 ":gh:`132168`: The :class:`ctypes.py_object` type now supports subscription, "
 "making it a :term:`generic type`."
 msgstr ""
+":gh:`132168`: Typ :class:`ctypes.py_object` nyní podporuje subscripci, čínž "
+"z něj je :term:`generérován typ`."
 
 #: ../NEWS:3202
 msgid ""
@@ -7085,6 +7238,10 @@ msgid ""
 "``'x'`` and the underlying file does not support ``tell()``, the value will "
 "be ``None`` instead."
 msgstr ""
+":gh:`84481`: Přidat atribut :attr:`!zipfile.ZipFile.data_offset`, který "
+"ukládá offset na začátek dat ZIP v souboru, je-li dostupné. Pokud je "
+":class:`zipfile.ZipFile` otevřen v módu ``'w'`` nebo ``'x'`` a podkladový "
+"soubor nepodporuje ``tell()``, bude hodnota ``None``."
 
 #: ../NEWS:3208
 msgid ""
@@ -7092,24 +7249,33 @@ msgid ""
 "uninitialized members. Now all structure members are initialized with zeroes"
 " by default."
 msgstr ""
+":gh:`132075`: Opravit možné použití struktur adresy :mod:`socket` s "
+"neinicializovanými členy. Nyní jsou všichni členové struktury inicializováni"
+" nulami ve výchozím nastavení."
 
 #: ../NEWS:3212
 msgid ""
 ":gh:`118761`: Improve import times by up to 27x for the :mod:`string` "
 "module. Patch by Adam Turner."
 msgstr ""
+":gh:`118761`: Zlepšit časy importu až 27x pro modul :mod:`string`. Patch od "
+"Adama Turnera."
 
 #: ../NEWS:3215
 msgid ""
 ":gh:`125434`: Display thread name in :mod:`faulthandler`. Patch by Victor "
 "Stinner."
 msgstr ""
+":gh:`125434`: Zobrazit název vlákna v :mod:`faulthandler`. Patch od Victora "
+"Stinnera."
 
 #: ../NEWS:3218
 msgid ""
 ":gh:`132002`: Fix crash when deallocating :class:`contextvars.ContextVar` "
 "with weird unahashable string names."
 msgstr ""
+":gh:`132002`: Opravit havárii při dealokaci :class:`contextvars.ContextVar` "
+"s podivnou né hašovanými jmény řetězců."
 
 #: ../NEWS:3221
 msgid ""
@@ -7118,6 +7284,10 @@ msgid ""
 "<xml.etree.ElementTree.Element.remove>` is not found. Patch by Bénédikt "
 "Tran."
 msgstr ""
+":gh:`131938`: :mod:`xml.etree.ElementTree`: aktualizovat chybovou zprávu, "
+"pokud prvek k odebrání prostřednictvím :meth:`Element.remove "
+"<xml.etree.ElementTree.Element.remove>` nené nalezen. Patch od Bénédikta "
+"Trana."
 
 #: ../NEWS:3226
 msgid ""
@@ -7127,24 +7297,35 @@ msgid ""
 ":meth:`multiprocessing.managers.SyncManager.RLock` to proxy ``locked()`` "
 "call."
 msgstr ""
+":gh:`115942`: Přidat :meth:`threading.RLock.locked`, "
+":meth:`multiprocessing.Lock.locked`, :meth:`multiprocessing.RLock.locked`, a"
+" umožnit :meth:`multiprocessing.managers.SyncManager.Lock` a "
+":meth:`multiprocessing.managers.SyncManager.RLock` proxy volání "
+"``locked()``."
 
 #: ../NEWS:3232
 msgid ""
 ":gh:`131974`: Fix several thread-safety issues in :mod:`ctypes` on the "
 ":term:`free threaded <free threading>` build."
 msgstr ""
+":gh:`131974`: Opravit několik problémů s bezpečností vláken v :mod:`ctypes` "
+"na sestavení :term:`bez vláken <free threading>`."
 
 #: ../NEWS:3235
 msgid ""
 ":gh:`118761`: Improve the import time of the :mod:`ast` module by extracting"
 " the :func:`~ast.unparse` function to a helper module."
 msgstr ""
+":gh:`118761`: Zlepšit čas importu modulu :mod:`ast` ekstrahéním funkce "
+":func:`~ast.unparse` do pomocného modulu."
 
 #: ../NEWS:3238
 msgid ""
 ":gh:`107369`: Improved performance of :func:`textwrap.indent` by an average "
 "of ~1.3x. Patch by Adam Turner."
 msgstr ""
+":gh:`107369`: Zlepšen výkon :func:`textwrap.indent` v průměru ~1.3x. Patch "
+"od Adama Turnera."
 
 #: ../NEWS:3241
 msgid ""
@@ -7154,15 +7335,22 @@ msgid ""
 "tab were not normalised to the newline. Patch by Adam Turner, Marius Juston,"
 " and Pieter Eendebak."
 msgstr ""
+":gh:`131792`: Zlepšen výkon :func:`textwrap.dedent` v průměru ~2.4x (s "
+"zlepšením až 4x pro velké vstupy), a opravena chyba, kdy prázdné řádky s "
+"jednotlivými znaky mimo mezery nebo horizontální tabulace nebyly "
+"normalizovány na nový řádek. Patch od Adama Turnera, Maria Justona a Pietera"
+" Eendebaka."
 
 #: ../NEWS:3247
 msgid ""
 ":gh:`131668`: :mod:`socket`: Fix code parsing AF_BLUETOOTH socket addresses."
 msgstr ""
+":gh:`131668`: :mod:`socket`: Opravit kód parsávání AF_BLUETOOTH adresy "
+"socketu."
 
 #: ../NEWS:3249
 msgid ":gh:`60115`: Support frozen modules for :func:`linecache.getline`."
-msgstr ""
+msgstr ":gh:`60115`: Podpora zmrazených modulů pro :func:`linecache.getline`."
 
 #: ../NEWS:3251
 msgid ""
@@ -7170,17 +7358,22 @@ msgid ""
 " with a filename fails, for example when passing an invalid "
 "``compresslevel``."
 msgstr ""
+":gh:`131492`: Opravit nevracenou prostředek při konstrukci "
+":class:`gzip.GzipFile` se jménem souboru se nezdaenv, například při předání "
+"neplatného ``compresslevel``."
 
 #: ../NEWS:3255
 msgid ""
 ":gh:`131435`: 10-20% performance improvement of :func:`random.randint`."
-msgstr ""
+msgstr ":gh:`131435`: Zlepšen výkonu :func:`random.randint` 10-20%."
 
 #: ../NEWS:3257
 msgid ""
 ":gh:`131461`: Fix :exc:`ResourceWarning` when constructing a "
 ":class:`gzip.GzipFile` in write mode with a broken file object."
 msgstr ""
+":gh:`131461`: Opravit :exc:`ResourceWarning` při konstrukci "
+":class:`gzip.GzipFile` v režimu zápisu s rozbitou souborem."
 
 #: ../NEWS:3260
 msgid ""
@@ -7188,6 +7381,9 @@ msgid ""
 ":func:`urllib.request.url2pathname` and :func:`~urllib.request.pathname2url`"
 " instead."
 msgstr ""
+":gh:`125866`: Zastaralost modulu :mod:`!nturl2path`. Volání "
+":func:`urllib.request.url2pathname` a :func:`~urllib.request.pathname2url` "
+"místo toho."
 
 #: ../NEWS:3264
 msgid ""
@@ -7195,6 +7391,10 @@ msgid ""
 ":exc:`OSError` when given a Windows URI containing a colon character not "
 "following a drive letter, such as before an NTFS alternate data stream."
 msgstr ""
+":gh:`126367`: Opravit problém, kdy :func:`urllib.request.url2pathname` "
+"vyvolala :exc:`OSError` při zadání URI Windows obsahující znak čárky, které "
+"nensledují písmeno jednotky, například před alternativním datovým proudem "
+"NTFS."
 
 #: ../NEWS:3268
 msgid ""
@@ -7202,71 +7402,95 @@ msgid ""
 " when we don't need any new events on the code object to get a better "
 "performance."
 msgstr ""
+":gh:`120144`: Zakládat ``CALL`` událost v :mod:`bdb` v ``monitoring`` "
+"backendu, když nepotřebujeme žádné nové události na objektu kódu pro lepší "
+"výkon."
 
 #: ../NEWS:3272
 msgid ""
 ":gh:`131358`: Register ``cseuckr`` as an encoding alias for ``euc_kr``."
 msgstr ""
+":gh:`131358`: Zaregistrovat ``cseuckr`` jako alias kódování pro ``euc_kr``."
 
 #: ../NEWS:3274
 msgid ""
 ":gh:`131325`: Fix sendfile fallback implementation to drain data after "
 "writing to transport in :mod:`asyncio`."
 msgstr ""
+":gh:`131325`: Opravit implementaci návratu sendfile pro vylijíč data po "
+"zápisu do transportu v :mod:`asyncio`."
 
 #: ../NEWS:3277
 msgid ""
 ":gh:`90548`: :func:`platform.libc_ver` can now detect and report the version"
 " of ``musl`` on Alpine Linux."
 msgstr ""
+":gh:`90548`: :func:`platform.libc_ver` nyní může detekovat a oznámit verzi "
+"``musl`` na Alpine Linux."
 
 #: ../NEWS:3280
 msgid ""
 ":gh:`129843`: Fix incorrect argument passing in "
 ":func:`warnings.warn_explicit`."
 msgstr ""
+":gh:`129843`: Opravit nesprávné předávání argumentů v "
+":func:`warnings.warn_explicit`."
 
 #: ../NEWS:3283
 msgid ""
 ":gh:`70647`: When creating a :mod:`datetime` object with an out of range "
 "date a more informative error is raised."
 msgstr ""
+":gh:`70647`: Při vytváření objektu :mod:`datetime` s datem mimo rozsah je "
+"vyvolána informativnější chyba."
 
 #: ../NEWS:3286
 msgid ""
 ":gh:`130914`: Allow :meth:`graphlib.TopologicalSorter.prepare` to be called "
 "more than once as long as sorting has not started. Patch by Daniel Pope."
 msgstr ""
+":gh:`130914`: Umožnit volání :meth:`graphlib.TopologicalSorter.prepare` "
+"vícekrát, pokud ještě se třídní nezahájilo. Patch od Daniela Popea."
 
 #: ../NEWS:3289
 msgid ""
 ":gh:`131236`: Allow to generate multiple UUIDs at once via :option:`python "
 "-m uuid --count <uuid --count>`."
 msgstr ""
+":gh:`131236`: Umožnit generování nákolika UUID najednou prostřednictvím "
+":option:`python -m uuid --count <uuid --count>`."
 
 #: ../NEWS:3292
 msgid ""
 ":gh:`126895`: Fix :mod:`readline` in :term:`free-threaded <free threading>` "
 "build."
 msgstr ""
+":gh:`126895`: Opravit :mod:`readline` v sestavení :term:`bez vláken <free "
+"threading>`."
 
 #: ../NEWS:3295
 msgid ""
 ":gh:`121468`: ``$_asynctask`` is added as a :mod:`pdb` convenience variable "
 "to access the current asyncio task if applicable."
 msgstr ""
+":gh:`121468`: ``$_asynctask`` je přidána jako prošŃovná proměnná :mod:`pdb` "
+"pro přístup k aktuálnímu asyncio tasku, jsou-li vztahy."
 
 #: ../NEWS:3298
 msgid ""
 ":gh:`118761`: Improve import time of :mod:`locale` using lazy import ``re``."
 " Patch by Semyon Moroz."
 msgstr ""
+":gh:`118761`: Zlepšit čas importu :mod:`locale` pomocí léného importu "
+"``re``. Patch od Semyona Moroza."
 
 #: ../NEWS:3301
 msgid ""
 ":gh:`129598`: Fix :func:`ast.unparse` when :class:`ast.Interactive` contains"
 " multiple statements."
 msgstr ""
+":gh:`129598`: Opravit :func:`ast.unparse`, pokud :class:`ast.Interactive` "
+"obsahuje více příkázů."
 
 #: ../NEWS:3304
 msgid ""
@@ -7276,6 +7500,11 @@ msgid ""
 "http.server``) through the ``--tls-cert``, ``--tls-key`` and ``--tls-"
 "password-file`` options. Patch by Semyon Moroz."
 msgstr ""
+":gh:`85162`: Modul :mod:`http.server` nyní zahrnuje vstavbanou podporu pro "
+"HTTPS servery vystaveny :class:`http.server.HTTPSServer`. Tato funkce je "
+"vystavena rozhraním příkazového řádku (``python -m http.server``) "
+"prostřednictvím voleb ``--tls-cert``, ``--tls-key`` a ``--tls-password-"
+"file``. Patch od Semyona Moroza."
 
 #: ../NEWS:3310
 msgid ""
@@ -7283,6 +7512,10 @@ msgid ""
 ":class:`annotationlib.ForwardRef` now use all attributes on the object. Two "
 ":class:`!ForwardRef` objects are equal only if all attributes are equal."
 msgstr ""
+":gh:`129463`: Implementace rovnosti a hashóvání pro "
+":class:`annotationlib.ForwardRef` nyní používají všechny atributy na "
+"objektu. Dva objekty :class:`!ForwardRef` jsou si rovny pouze pokud jsou si "
+"rovny všechny atributy."
 
 #: ../NEWS:3315
 msgid ""
@@ -7290,6 +7523,9 @@ msgid ""
 "their value when they are successfully evaluated. Successive calls to "
 ":meth:`annotationlib.ForwardRef.evaluate` may return different values."
 msgstr ""
+":gh:`128593`: Objekty :class:`annotationlib.ForwardRef` již necachují svou "
+"hodnotu, pokud jsou úspěšně vyhodnoceny. Po sobě jdoucí volání "
+":meth:`annotationlib.ForwardRef.evaluate` mohou vrátit různé hodnoty."
 
 #: ../NEWS:3319
 msgid ""
@@ -7297,6 +7533,9 @@ msgid ""
 "Reading duplicated entries (except the last one) by ``ZipInfo`` now emits a "
 "warning instead of raising an exception."
 msgstr ""
+":gh:`117779`: Opravit čtení duplikovaných záznamů v :mod:`zipfile` podle "
+"jména. Čtení duplikovaných záznamů (kromě posledního) podle ``ZipInfo`` nyní"
+" vyvolá varování místo vyvolení výjimky."
 
 #: ../NEWS:3323
 msgid ""
@@ -7304,12 +7543,18 @@ msgid ""
 " field descriptors is now available as :class:`~ctypes.CField`, and has new "
 "attributes to aid debugging and introspection."
 msgstr ""
+":gh:`128715`: Třída popisů polícka "
+":class:`~ctypes.Structure`/:class:`~ctypes.Union` je nyní dostupná jako "
+":class:`~ctypes.CField` a má nové atributy pro pomoc při ladění a "
+"introspekci."
 
 #: ../NEWS:3327
 msgid ""
 ":gh:`128055`: Fix ``test.test_sysconfig.test_sysconfigdata_json`` when "
 "running outside the build directory (eg. after installing)."
 msgstr ""
+":gh:`128055`: Opravit ``test.test_sysconfig.test_sysconfigdata_json`` při "
+"spuštění mimo sestavný adresář (např. po instalaci)."
 
 #: ../NEWS:3330
 msgid ""
@@ -7320,6 +7565,12 @@ msgid ""
 " to find implements an :meth:`~object.__eq__` method mutating the element "
 "being queried. Patch by Bénédikt Tran."
 msgstr ""
+":gh:`126037`: :mod:`xml.etree.ElementTree`: Opravit pad v "
+":meth:`Element.find <xml.etree.ElementTree.Element.find>`, "
+":meth:`Element.findtext <xml.etree.ElementTree.Element.findtext>` a "
+":meth:`Element.findall <xml.etree.ElementTree.Element.findall>`, kdy tag k "
+"zajáštění implementuje metodu :meth:`~object.__eq__` mutace prvku "
+"dotazovaného. Patch od Bénédikta Trana."
 
 #: ../NEWS:3337
 msgid ""
@@ -7330,12 +7581,20 @@ msgid ""
 ":exc:`ValueError` is raised if the field name contains any invalid "
 "characters."
 msgstr ""
+":gh:`127794`: Pokud jsou záhlaví přidány k objektum "
+":class:`email.message.Message`, buď prostřednictvím "
+":meth:`email.message.Message.__setitem__` nebo "
+":meth:`email.message.Message.add_header`, je název pole nyní ověřen podle "
+":rfc:`RFC 5322, Sekce 2.2 <5322#section-2.2>` a je vyvolana "
+":exc:`ValueError`, pokud název pole obsahuje neplatné znaky."
 
 #: ../NEWS:3344
 msgid ""
 ":gh:`123599`: Deprecate :meth:`!pathlib.PurePath.as_uri`; use "
 ":meth:`pathlib.Path.as_uri` instead."
 msgstr ""
+":gh:`123599`: Zastaralost :meth:`!pathlib.PurePath.as_uri`; místo toho "
+"použít :meth:`pathlib.Path.as_uri`."
 
 #: ../NEWS:3347
 msgid ""
@@ -7343,51 +7602,68 @@ msgid ""
 ":meth:`Element.remove <xml.etree.ElementTree.Element.remove>` when the "
 "element is concurrently mutated. Patch by Bénédikt Tran."
 msgstr ""
+":gh:`126033`: :mod:`xml.etree.ElementTree`: Opravit pad v "
+":meth:`Element.remove <xml.etree.ElementTree.Element.remove>`, pokud je "
+"prvek během podků mutován. Patch od Bénédikta Trana."
 
 #: ../NEWS:3351
 msgid ""
 ":gh:`120144`: Add the optional backend of ``sys.monitoring`` to :mod:`bdb` "
 "and use it for :mod:`pdb`."
 msgstr ""
+":gh:`120144`: Přidat volné backend ``sys.monitoring`` do :mod:`bdb` a použít"
+" ho pro :mod:`pdb`."
 
 #: ../NEWS:3354
 msgid ""
 ":gh:`74598`: Add :func:`fnmatch.filterfalse` for excluding names matching a "
 "pattern. Patch by Bénédikt Tran."
 msgstr ""
+":gh:`74598`: Přidat :func:`fnmatch.filterfalse` pro vyloučení jmen "
+"odpovíjajících vzoru. Patch od Bénédikta Trana."
 
 #: ../NEWS:3357
 msgid ":gh:`114917`: Add support for AI_NUMERICSERV in getaddrinfo emulation"
-msgstr ""
+msgstr ":gh:`114917`: Přidat podporu pro AI_NUMERICSERV v emulaci getaddrinfo"
 
 #: ../NEWS:3359
 msgid ""
 ":issue:`17254`: Added aliases for Thai Language using Microsoft Code Pages."
 msgstr ""
+":issue:`17254`: Přidány aliasy pro thajštinu používající kódové stránky "
+"společnosti Microsoft."
 
 #: ../NEWS:3364
 msgid ""
 ":gh:`131417`: Mention :class:`asyncio.Future` and :class:`asyncio.Task` in "
 "generic classes list."
 msgstr ""
+":gh:`131417`: Zmiňování :class:`asyncio.Future` a :class:`asyncio.Task` v "
+"seznamu generérováných tříd."
 
 #: ../NEWS:3370
 msgid ""
 ":gh:`131798`: Allow the JIT to remove an extra ``_TO_BOOL_BOOL`` instruction"
 " after ``_CONTAINS_OP_SET`` by setting the return type to bool."
 msgstr ""
+":gh:`131798`: Umožnit JIT odstraňovat další instrukci ``_TO_BOOL_BOOL`` po "
+"``_CONTAINS_OP_SET`` nastavením typu návratu na bool."
 
 #: ../NEWS:3373
 msgid ""
 ":gh:`132011`: Fix crash when calling :meth:`list.append` as an unbound "
 "method."
 msgstr ""
+":gh:`132011`: Opravit pad při volání :meth:`list.append` jako nevazané "
+"metody."
 
 #: ../NEWS:3376
 msgid ""
 ":gh:`131998`: Fix a crash when using an unbound method :term:`descriptor` "
 "object in a function where a bound method descriptor was used."
 msgstr ""
+":gh:`131998`: Opravit pad při použití nevazané metody :term:`descriptor` "
+"objektu ve funkci, kde byl použit descriptor vazané metody."
 
 #: ../NEWS:3379
 msgid ""
@@ -7396,18 +7672,26 @@ msgid ""
 "module. This function schedules the execution of a Python file in a separate"
 " process. Patch by Pablo Galindo, Matt Wozniski and Ivona Stojanovic."
 msgstr ""
+":gh:`131591`: Implementace :pep:`768` (Bezpečné externí ladici rozhraní pro "
+"CPython). Přidat novou funkci :func:`sys.remote_exec` do modulu :mod:`sys`. "
+"Tato funkce naplná provedléní souboru Python v samostatném procesu. Patch od"
+" Pabla Galindo, Matt Wozniski a Ivony Stojanovic."
 
 #: ../NEWS:3385
 msgid ""
 ":gh:`131798`: Allow JIT to omit str guard in truthiness test when str type "
 "is known."
 msgstr ""
+":gh:`131798`: Umožnit JIT vynechat střědní str ve teste veracity, kdy je "
+"znám typ str."
 
 #: ../NEWS:3388
 msgid ""
 ":gh:`131833`: Add support for optionally dropping grouping parentheses when "
 "using multiple exception types as per :pep:`758`. Patch by Pablo Galindo"
 msgstr ""
+":gh:`131833`: Přidat podporu pro volitelné vynechání závorek seskupování při"
+" používání nékolika typů výjimky podle :pep:`758`. Patch od Pabla Galindo"
 
 #: ../NEWS:3391
 msgid ""
@@ -7415,40 +7699,53 @@ msgid ""
 "triggers creation of a cell for that variable. This fixes a regression in "
 "earlier alphas of Python 3.14."
 msgstr ""
+":gh:`130924`: Použití názvu v anotaci rozsahu funkce již nespouvádí "
+"vytváření buňky pro tuto proměnnnou. To opravuje regresi v dřívějších alpha "
+"verzích Pythonu 3.14."
 
 #: ../NEWS:3395
 msgid ""
 ":gh:`131800`: Improve the experimental JIT's ability to remove type checks "
 "for certain subscripting operations."
 msgstr ""
+":gh:`131800`: Vylepšit schopnost experimentálního JIT odstraňovat kontroly "
+"typů pro určité operace subscriptu."
 
 #: ../NEWS:3398
 msgid ""
 ":gh:`131738`: Compiler emits optimized code for builtin any/all/tuple calls "
 "over a generator expression."
 msgstr ""
+":gh:`131738`: Kompilátor vydává optimalizovaný kód pro volání vestavěných "
+"any/all/tuple přes výraz generátoru."
 
 #: ../NEWS:3401
 msgid ""
 ":gh:`131719`: Fix missing NULL check in ``_PyMem_FreeDelayed`` in "
 ":term:`free-threaded <free threading>` build."
 msgstr ""
+":gh:`131719`: Opravit chybějící NULL kontrolu v ``_PyMem_FreeDelayed`` v "
+"sestavení :term:`bez vláken <free threading>`."
 
 #: ../NEWS:3404
 msgid ""
 ":gh:`131670`: Fix :func:`anext` failing on sync :meth:`~object.__anext__` "
 "raising an exception."
 msgstr ""
+":gh:`131670`: Opravit :func:`anext` selhavání na sync "
+":meth:`~object.__anext__` vyvolávájícího výjimku."
 
 #: ../NEWS:3407
 msgid ""
 ":gh:`131666`: Fix signature of ``anext_awaitable.close`` objects. Patch by "
 "Bénédikt Tran."
 msgstr ""
+":gh:`131666`: Opravit podpis ``anext_awaitable.close`` objektu. Patch od "
+"Bénédikta Trana."
 
 #: ../NEWS:3410
 msgid ":gh:`130415`: Optimize comparison of two constants in JIT builds"
-msgstr ""
+msgstr ":gh:`130415`: Optimalizace porovnání dvou konstant v sestaveních JIT"
 
 #: ../NEWS:3412
 msgid ""
@@ -7457,24 +7754,34 @@ msgid ""
 ":c:func:`PyLong_FromInt64` and :c:func:`PyLong_FromUInt64`. Patch by Chris "
 "Eibl."
 msgstr ""
+":gh:`129149`: Přidat rychlou cestu pro malá a středná celá čísla v "
+":c:func:`PyLong_FromInt32`, :c:func:`PyLong_FromUInt32`, "
+":c:func:`PyLong_FromInt64` a :c:func:`PyLong_FromUInt64`. Patch od Chrise "
+"Eibla."
 
 #: ../NEWS:3417
 msgid ""
 ":gh:`130887`: Optimize the AArch64 code generation for the JIT. Patch by "
 "Diego Russo"
 msgstr ""
+":gh:`130887`: Optimalizace generávání kódu AArch64 pro JIT. Patch od Diega "
+"Russa"
 
 #: ../NEWS:3420
 msgid ""
 ":gh:`130956`: Optimize the AArch64 code generation for the JIT. Patch by "
 "Diego Russo"
 msgstr ""
+":gh:`130956`: Optimalizace generávání kódu AArch64 pro JIT. Patch od Diega "
+"Russa"
 
 #: ../NEWS:3423
 msgid ""
 ":gh:`130928`: Fix error message when formatting bytes using the ``'i'`` "
 "flag. Patch by Maxim Ageev."
 msgstr ""
+":gh:`130928`: Opravit chybovou zprávu při formátování bytů s použitím "
+"příznak ``'i'``. Patch od Maxima Ageeva."
 
 #: ../NEWS:3426
 msgid ""
@@ -7482,12 +7789,17 @@ msgid ""
 "conditionally defined are now only reflected in ``__annotations__`` if the "
 "block they are in is executed. Patch by Jelle Zijlstra."
 msgstr ""
+":gh:`130935`: Anotace na úročení třídy a modulu, které jsou podmíněně "
+"definovány, jsou nyní pouze odraženy v ``__annotations__``, pokud je blok, "
+"ve kterém jsou, proveden. Patch od Jella Zijlstry."
 
 #: ../NEWS:3430
 msgid ""
 ":gh:`130775`: Do not crash on negative ``column`` and ``end_column`` in "
 ":mod:`ast` locations."
 msgstr ""
+":gh:`130775`: Nehavarovat na záporném ``column`` a ``end_column`` v "
+":mod:`ast` místech."
 
 #: ../NEWS:3433
 msgid ""
@@ -7497,36 +7809,49 @@ msgid ""
 "prove that the reference in the frame outlives the reference loaded onto the"
 " stack."
 msgstr ""
+":gh:`130704`: Optimalizace ``LOAD_FAST`` a jejíf superin strukci pro snížení"
+" náklady na spočtení odkazu. Tyto instrukce jsou nahrazeny rychlejšími "
+"variantami, které naktádají vypujčené odkazy na zásobník operandů, když "
+"můžeme dokázat, že odkaz v rámci překročí odkaz na zásobník."
 
 #: ../NEWS:3439
 msgid ""
 ":gh:`88887`: Fixing multiprocessing Resource Tracker process leaking, "
 "usually observed when running Python as PID 1."
 msgstr ""
+":gh:`88887`: Opravy multi-procesy Resource Tracker procesu vyčívání, zpřavné"
+" při spuštění Pythonu jako PID 1."
 
 #: ../NEWS:3442
 msgid ""
 ":gh:`130115`: Fix an issue with thread identifiers being sign-extended on "
 "some platforms."
 msgstr ""
+":gh:`130115`: Opravit problém s identifikátory vláken běžícími se na "
+"některých platformách."
 
 #: ../NEWS:3448
 msgid ""
 ":gh:`99108`: Add support for built-in implementation of HMAC (:rfc:`2104`) "
 "based on HACL*. Patch by Bénédikt Tran."
 msgstr ""
+":gh:`99108`: Přidat podporu pro zabudovanou implementaci HMAC (:rfc:`2104`) "
+"založené na HACL*. Patch od Bénédikta Trana."
 
 #: ../NEWS:3454
 msgid ""
 ":gh:`130080`: Implement PEP 765: Disallow return/break/continue that exit a "
 "finally block."
 msgstr ""
+":gh:`130080`: Implementace PEP 765: Zakázání návratu/break/continue, které "
+"vyjít z konečného bloku."
 
 #: ../NEWS:3457
 msgid ""
 ":gh:`129900`: Fix return codes inside :exc:`SystemExit` not getting returned"
 " by the REPL."
 msgstr ""
+":gh:`129900`: Opravit návraty kódů uvnitř :exc:`SystemExit` nevrácené REPL."
 
 #: ../NEWS:3460
 msgid ""
@@ -7534,42 +7859,52 @@ msgid ""
 "Using this name would previously crash the interpreter in some "
 "circumstances."
 msgstr ""
+":gh:`128632`: Zakázání ``__classdict__`` jako názvu parametru typu. Použití "
+"tohoto jména by dříve zpáchalo interpret v některých okolčnostech."
 
 #: ../NEWS:3464
 msgid ""
 ":gh:`126703`: Improve performance of builtin methods by using a freelist."
-msgstr ""
+msgstr ":gh:`126703`: Zlepšit výkon zabudovaných metod pomocí freelist."
 
 #: ../NEWS:3466
 msgid ""
 ":gh:`126703`: Improve performance of  :class:`range` by using a freelist."
-msgstr ""
+msgstr ":gh:`126703`: Zlepšit výkon :class:`range` pomocí freelist."
 
 #: ../NEWS:3471
 msgid ":gh:`131740`: Update PyUnstable_GC_VisitObjects to traverse perm gen."
 msgstr ""
+":gh:`131740`: Aktualizovat PyUnstable_GC_VisitObjects na průchod perm gen."
 
 #: ../NEWS:3473
 msgid ""
 ":gh:`131525`: The PyTupleObject now caches the computed hash value in the "
 "new field ob_hash."
 msgstr ""
+":gh:`131525`: PyTupleObject nyní cachuje vypočítanou hodnotu hash v novém "
+"poli ob_hash."
 
 #: ../NEWS:3479
 msgid ""
 ":gh:`131865`: The DTrace build now properly passes the ``CC`` and ``CFLAGS``"
 " variables to the ``dtrace`` command when utilizing SystemTap on Linux."
 msgstr ""
+":gh:`131865`: Sestavení DTrace nyní správně předává proměnné ``CC`` a "
+"``CFLAGS`` k příkazu ``dtrace`` při používání SystemTap na Linuxu."
 
 #: ../NEWS:3482
 msgid ":gh:`131675`: Fix mimalloc library builds for 32-bit ARM targets."
 msgstr ""
+":gh:`131675`: Opravit sestavení knihovny mimalloc pro 32bitové ARM cíle."
 
 #: ../NEWS:3484
 msgid ""
 ":gh:`131691`: clang-cl on Windows needs option ``/EHa`` to support SEH "
 "(structured exception handling) correctly. Fix by Chris Eibl."
 msgstr ""
+":gh:`131691`: clang-cl v Windows potřebuje volbu ``/EHa`` pro správné "
+"podporu SEH (struk turované zpracování výjimek). Oprava od Chrise Eibla."
 
 #: ../NEWS:3487
 msgid ""
@@ -7577,44 +7912,57 @@ msgid ""
 "for when using a compiler that supports it (currently clang-cl). Patch by "
 "Chris Eibl."
 msgstr ""
+":gh:`131278`: Přidat optimalizaci příznak ``WITH_COMPUTED_GOTOS`` do "
+"sestavení Windows pro použití s kompalérem, který jej podporuje (momentálně "
+"clang-cl). Patch od Chrise Eibla."
 
 #: ../NEWS:3491
 msgid ""
 ":gh:`130213`: Update the vendored HACL* library to fix build issues with "
 "older clang compilers."
 msgstr ""
+":gh:`130213`: Aktualizovat prodejnovou knihovnu HACL* k opravě problémů se "
+"sestavením se staršími kompaléry clang."
 
 #: ../NEWS:3494
 msgid ""
 ":gh:`130673`: Fix potential ``KeyError`` when handling object sections "
 "during JIT building process."
 msgstr ""
+":gh:`130673`: Opravit potenciální ``KeyError`` při zprávě oddílů objektu "
+"během procesu příkazu JIT."
 
 #: ../NEWS:3499
 msgid "Python 3.14.0 alpha 6"
-msgstr ""
+msgstr "Python 3.14.0 alpha 6"
 
 #: ../NEWS:3501
 msgid "*Release date: 2025-03-14*"
-msgstr ""
+msgstr "*Datum vydání: 2025-03-14*"
 
 #: ../NEWS:3506
 msgid ""
 ":gh:`128540`: Ensure web browser is launched by :func:`webbrowser.open` on "
 "macOS, even for ``file://`` URLs."
 msgstr ""
+":gh:`128540`: Ujistěte, že se webový prohléžeč spouští pomocí "
+":func:`webbrowser.open` v macOS, až i pro ``file://`` adresy URL."
 
 #: ../NEWS:3512
 msgid ""
 ":gh:`131020`: :source:`pylauncher <PC/launcher2.c>` correctly detects a BOM "
 "when searching for the shebang. Fix by Chris Eibl."
 msgstr ""
+":gh:`131020`: :source:`pylauncher <PC/launcher2.c>` správně detekuje BOM při"
+" vyhledávání shebang. Oprava od Chrise Eibla."
 
 #: ../NEWS:3518
 msgid ""
 ":gh:`130453`: Make it possible to override default keywords in "
 ":program:`pygettext`."
 msgstr ""
+":gh:`130453`: Umožnit přepisování výchozích klíčových slov v "
+":program:`pygettext`."
 
 #: ../NEWS:3521
 msgid ""

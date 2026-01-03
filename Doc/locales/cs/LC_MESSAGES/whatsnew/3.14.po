@@ -6669,12 +6669,19 @@ msgid ""
 "new :c:func:`Py_fclose` function should be used to close a file. "
 "(Contributed by Victor Stinner in :gh:`127350`.)"
 msgstr ""
+"Přidej funkci :c:func:`Py_fopen` pro otevření souboru. Funguje podobně jako "
+"standardní funkce C :c:func:`!fopen`, ale místo toho přijímá objekt Python "
+"pro parametr *path* a nastavuje výjimku při chybě. Odpovídající nová funkce "
+":c:func:`Py_fclose` by měla být použita pro zavření souboru. (Přispěl Victor"
+" Stinner v :gh:`127350`.)"
 
 #: ../../whatsnew/3.14.rst:2892
 msgid ""
 "Add :c:func:`Py_HashBuffer` to compute and return the hash value of a "
 "buffer. (Contributed by Antoine Pitrou and Victor Stinner in :gh:`122854`.)"
 msgstr ""
+"Přidej :c:func:`Py_HashBuffer` pro výpočet a návrat hodnoty hash bufferu. "
+"(Přispěli Antoine Pitrou a Victor Stinner v :gh:`122854`.)"
 
 #: ../../whatsnew/3.14.rst:2895
 msgid ""
@@ -6683,6 +6690,9 @@ msgid ""
 "module and get an attribute of the module. (Contributed by Victor Stinner in"
 " :gh:`128911`.)"
 msgstr ""
+"Přidej pomocné funkce :c:func:`PyImport_ImportModuleAttr` a "
+":c:func:`PyImport_ImportModuleAttrString` pro import modulu a získání "
+"atributu modulu. (Přispěl Victor Stinner v :gh:`128911`.)"
 
 #: ../../whatsnew/3.14.rst:2900
 msgid ""
@@ -6690,12 +6700,17 @@ msgid ""
 " ambiguous return value. (Contributed by Irit Katriel and Erlend Aasland in "
 ":gh:`105201`.)"
 msgstr ""
+"Přidej :c:func:`PyIter_NextItem` pro nahrazení :c:func:`PyIter_Next`, která "
+"má nešŇastné návratové hodnoty. (Přispěli Irit Katriel a Erlend Aasland v "
+":gh:`105201`.)"
 
 #: ../../whatsnew/3.14.rst:2904
 msgid ""
 "Add :c:func:`PyLong_GetSign` function to get the sign of :class:`int` "
 "objects. (Contributed by Sergey B Kirpichev in :gh:`116560`.)"
 msgstr ""
+"Přidej funkci :c:func:`PyLong_GetSign` pro získání znaménka objektů "
+":class:`int`. (Přispěl Sergey B Kirpichev v :gh:`116560`.)"
 
 #: ../../whatsnew/3.14.rst:2907
 msgid ""
@@ -6704,83 +6719,90 @@ msgid ""
 "negative, or zero, respectively. (Contributed by James Roy and Sergey B "
 "Kirpichev in :gh:`126061`.)"
 msgstr ""
+"Přidej :c:func:`PyLong_IsPositive`, :c:func:`PyLong_IsNegative` a "
+":c:func:`PyLong_IsZero` pro kontrolu, zda je :c:type:`PyLongObject` kladné, "
+"záporné nebo nula. (Přispěli James Roy a Sergey B Kirpichev v :gh:`126061`.)"
 
 #: ../../whatsnew/3.14.rst:2912
 msgid ""
 "Add new functions to convert C ``<stdint.h>`` numbers to/from Python "
 ":class:`int` objects:"
 msgstr ""
+"Přidej nové funkce pro konverzi čísel z ``<stdint.h>`` na/z objektů Python "
+":class:`int`:"
 
 #: ../../whatsnew/3.14.rst:2915
 msgid ":c:func:`PyLong_AsInt32`"
-msgstr ""
+msgstr ":c:func:`PyLong_AsInt32`"
 
 #: ../../whatsnew/3.14.rst:2916
 msgid ":c:func:`PyLong_AsInt64`"
-msgstr ""
+msgstr ":c:func:`PyLong_AsInt64`"
 
 #: ../../whatsnew/3.14.rst:2917
 msgid ":c:func:`PyLong_AsUInt32`"
-msgstr ""
+msgstr ":c:func:`PyLong_AsUInt32`"
 
 #: ../../whatsnew/3.14.rst:2918
 msgid ":c:func:`PyLong_AsUInt64`"
-msgstr ""
+msgstr ":c:func:`PyLong_AsUInt64`"
 
 #: ../../whatsnew/3.14.rst:2919
 msgid ":c:func:`PyLong_FromInt32`"
-msgstr ""
+msgstr ":c:func:`PyLong_FromInt32`"
 
 #: ../../whatsnew/3.14.rst:2920
 msgid ":c:func:`PyLong_FromInt64`"
-msgstr ""
+msgstr ":c:func:`PyLong_FromInt64`"
 
 #: ../../whatsnew/3.14.rst:2921
 msgid ":c:func:`PyLong_FromUInt32`"
-msgstr ""
+msgstr ":c:func:`PyLong_FromUInt32`"
 
 #: ../../whatsnew/3.14.rst:2922
 msgid ":c:func:`PyLong_FromUInt64`"
-msgstr ""
+msgstr ":c:func:`PyLong_FromUInt64`"
 
 #: ../../whatsnew/3.14.rst:2924
 msgid "(Contributed by Victor Stinner in :gh:`120389`.)"
-msgstr ""
+msgstr "(Přispěl Victor Stinner v :gh:`120389`.)"
 
 #: ../../whatsnew/3.14.rst:2926
 msgid ""
 "Add a new import and export API for Python :class:`int` objects "
 "(:pep:`757`):"
 msgstr ""
+"Přidej nové API pro import a export objektů Python :class:`int` "
+"(:pep:`757`):"
 
 #: ../../whatsnew/3.14.rst:2929
 msgid ":c:func:`PyLong_GetNativeLayout`"
-msgstr ""
+msgstr ":c:func:`PyLong_GetNativeLayout`"
 
 #: ../../whatsnew/3.14.rst:2930
 msgid ":c:func:`PyLong_Export`"
-msgstr ""
+msgstr ":c:func:`PyLong_Export`"
 
 #: ../../whatsnew/3.14.rst:2931
 msgid ":c:func:`PyLong_FreeExport`"
-msgstr ""
+msgstr ":c:func:`PyLong_FreeExport`"
 
 #: ../../whatsnew/3.14.rst:2932
 msgid ":c:func:`PyLongWriter_Create`"
-msgstr ""
+msgstr ":c:func:`PyLongWriter_Create`"
 
 #: ../../whatsnew/3.14.rst:2933
 msgid ":c:func:`PyLongWriter_Finish`"
-msgstr ""
+msgstr ":c:func:`PyLongWriter_Finish`"
 
 #: ../../whatsnew/3.14.rst:2934
 msgid ":c:func:`PyLongWriter_Discard`"
-msgstr ""
+msgstr ":c:func:`PyLongWriter_Discard`"
 
 #: ../../whatsnew/3.14.rst:2936
 msgid ""
 "(Contributed by Sergey B Kirpichev and Victor Stinner in :gh:`102471`.)"
-msgstr ""
+msgstr "(Přispěli Sergey B Kirpichev a Victor Stinner v :gh:`102471`.)"
 
 #: ../../whatsnew/3.14.rst:2938
 msgid ""
@@ -6789,12 +6811,18 @@ msgid ""
 "event:`BRANCH_LEFT` and :monitoring-event:`BRANCH_RIGHT` events, "
 "respectively. (Contributed by Mark Shannon in :gh:`122548`.)"
 msgstr ""
+"Přidej :c:func:`PyMonitoring_FireBranchLeftEvent` a "
+":c:func:`PyMonitoring_FireBranchRightEvent` pro generování událostí "
+":monitoring-event:`BRANCH_LEFT` a :monitoring-event:`BRANCH_RIGHT`. (Přispěl"
+" Mark Shannon v :gh:`122548`.)"
 
 #: ../../whatsnew/3.14.rst:2944
 msgid ""
 "Add :c:func:`PyType_Freeze` function to make a type immutable. (Contributed "
 "by Victor Stinner in :gh:`121654`.)"
 msgstr ""
+"Přidej funkci :c:func:`PyType_Freeze` pro zestnávní typu. (Přispěl Victor "
+"Stinner v :gh:`121654`.)"
 
 #: ../../whatsnew/3.14.rst:2947
 msgid ""
@@ -6803,6 +6831,10 @@ msgid ""
 "checking issue mentioned in :pep:`PEP 630 <630#type-checking>`. (Contributed"
 " in :gh:`124153`.)"
 msgstr ""
+"Přidej :c:func:`PyType_GetBaseByToken` a slot :c:data:`Py_tp_token` pro "
+"snadnější identifikaci nadtfíy, která se pokuší vypořádat problém kontroly "
+"typů zmínouvaný v :pep:`PEP 630 <630#type-checking>`. (Přispěl v "
+":gh:`124153`.)"
 
 #: ../../whatsnew/3.14.rst:2952
 msgid ""
@@ -6810,68 +6842,73 @@ msgid ""
 "equal. The function is also added to the Limited C API. (Contributed by "
 "Victor Stinner in :gh:`124502`.)"
 msgstr ""
+"Přidej novou funkci :c:func:`PyUnicode_Equal` pro testování, zda jsou dva "
+"řetězce stejné. Funkce je také přidána do omezeného C API. (Přispěl Victor "
+"Stinner v :gh:`124502`.)"
 
 #: ../../whatsnew/3.14.rst:2957
 msgid ""
 "Add a new :c:type:`PyUnicodeWriter` API to create a Python :class:`str` "
 "object, with the following functions:"
 msgstr ""
+"Přidej nové API :c:type:`PyUnicodeWriter` pro vytváření objektu Python "
+":class:`str` s následujícími funkcemi:"
 
 #: ../../whatsnew/3.14.rst:2960
 msgid ":c:func:`PyUnicodeWriter_Create`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_Create`"
 
 #: ../../whatsnew/3.14.rst:2961
 msgid ":c:func:`PyUnicodeWriter_DecodeUTF8Stateful`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_DecodeUTF8Stateful`"
 
 #: ../../whatsnew/3.14.rst:2962
 msgid ":c:func:`PyUnicodeWriter_Discard`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_Discard`"
 
 #: ../../whatsnew/3.14.rst:2963
 msgid ":c:func:`PyUnicodeWriter_Finish`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_Finish`"
 
 #: ../../whatsnew/3.14.rst:2964
 msgid ":c:func:`PyUnicodeWriter_Format`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_Format`"
 
 #: ../../whatsnew/3.14.rst:2965
 msgid ":c:func:`PyUnicodeWriter_WriteASCII`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteASCII`"
 
 #: ../../whatsnew/3.14.rst:2966
 msgid ":c:func:`PyUnicodeWriter_WriteChar`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteChar`"
 
 #: ../../whatsnew/3.14.rst:2967
 msgid ":c:func:`PyUnicodeWriter_WriteRepr`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteRepr`"
 
 #: ../../whatsnew/3.14.rst:2968
 msgid ":c:func:`PyUnicodeWriter_WriteStr`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteStr`"
 
 #: ../../whatsnew/3.14.rst:2969
 msgid ":c:func:`PyUnicodeWriter_WriteSubstring`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteSubstring`"
 
 #: ../../whatsnew/3.14.rst:2970
 msgid ":c:func:`PyUnicodeWriter_WriteUCS4`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteUCS4`"
 
 #: ../../whatsnew/3.14.rst:2971
 msgid ":c:func:`PyUnicodeWriter_WriteUTF8`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteUTF8`"
 
 #: ../../whatsnew/3.14.rst:2972
 msgid ":c:func:`PyUnicodeWriter_WriteWideChar`"
-msgstr ""
+msgstr ":c:func:`PyUnicodeWriter_WriteWideChar`"
 
 #: ../../whatsnew/3.14.rst:2974
 msgid "(Contributed by Victor Stinner in :gh:`119182`.)"
-msgstr ""
+msgstr "(Přispěl Victor Stinner v :gh:`119182`.)"
 
 #: ../../whatsnew/3.14.rst:2976
 msgid ""
@@ -6879,6 +6916,9 @@ msgid ""
 "functions now use :meth:`~object.__index__` if available, like all other "
 "integer formats. (Contributed by Serhiy Storchaka in :gh:`112068`.)"
 msgstr ""
+"Formáty ``k`` a ``K`` v :c:func:`PyArg_ParseTuple` a podobné funkce nyní "
+"používají :meth:`~object.__index__` pokud je dostupné, jako všechny ostatní "
+"celoselé formáty. (Přispěl Serhiy Storchaka v :gh:`112068`.)"
 
 #: ../../whatsnew/3.14.rst:2981
 msgid ""
@@ -6886,6 +6926,9 @@ msgid ""
 "produces a Python :class:`bool` object from a C integer. (Contributed by "
 "Pablo Galindo in :issue:`45325`.)"
 msgstr ""
+"Přidej podporu pro novou jednotku formátu ``p`` v :c:func:`Py_BuildValue`, "
+"která vytváří objekt Python :class:`bool` z celočísla v C. (Přispěl Pablo "
+"Galindo v :issue:`45325`.)"
 
 #: ../../whatsnew/3.14.rst:2985
 msgid ""
@@ -6893,12 +6936,17 @@ msgid ""
 ":term:`immortal`, for debugging purposes. (Contributed by Peter Bierma in "
 ":gh:`128509`.)"
 msgstr ""
+"Přidej :c:func:`PyUnstable_IsImmortal` pro zjištění, zda je objekt "
+":term:`immortal`, pro zaměření na ladění. (Přispěl Peter Bierma v "
+":gh:`128509`.)"
 
 #: ../../whatsnew/3.14.rst:2989
 msgid ""
 "Add :c:func:`PyUnstable_Object_EnableDeferredRefcount` for enabling deferred"
 " reference counting, as outlined in :pep:`703`."
 msgstr ""
+"Přidej :c:func:`PyUnstable_Object_EnableDeferredRefcount` pro povolení "
+"odloženého počítání odkazů, jak je uvedeno v :pep:`703`."
 
 #: ../../whatsnew/3.14.rst:2992
 msgid ""
@@ -6906,6 +6954,9 @@ msgid ""
 "``Py_REFCNT(op) == 1`` on :term:`free threaded <free threading>` builds. "
 "(Contributed by Peter Bierma in :gh:`133140`.)"
 msgstr ""
+"Přidej :c:func:`PyUnstable_Object_IsUniquelyReferenced` jako nahrazení "
+"``Py_REFCNT(op) == 1`` na sestaveném :term:`free threaded <free threading>`."
+" (Přispěl Peter Bierma v :gh:`133140`.)"
 
 #: ../../whatsnew/3.14.rst:2997
 msgid ""
@@ -6915,10 +6966,15 @@ msgid ""
 ":c:func:`Py_REFCNT` is ``1`` for Python objects passed as arguments to C API"
 " functions. (Contributed by Sam Gross in :gh:`133164`.)"
 msgstr ""
+"Přidej :c:func:`PyUnstable_Object_IsUniqueReferencedTemporary` pro zjištění,"
+" zda je objekt jedinečným dčasným objektem na stackě operandů "
+"interpretátoru. To lze v některých případech použít jako nahrazení kontroly,"
+" zda je :c:func:`Py_REFCNT` ``1`` pro objekty Python předané jako argumenty "
+"funkcemi C API. (Přispěl Sam Gross v :gh:`133164`.)"
 
 #: ../../whatsnew/3.14.rst:3007
 msgid "Limited C API changes"
-msgstr ""
+msgstr "Změny omezeného C API"
 
 #: ../../whatsnew/3.14.rst:3009
 msgid ""
@@ -6927,6 +6983,10 @@ msgid ""
 "implementation details. (Contributed by Victor Stinner in :gh:`120600` and "
 ":gh:`124127`.)"
 msgstr ""
+"V omezeném C API verze 3.14 a novější jsou :c:func:`Py_TYPE` a "
+":c:func:`Py_REFCNT` nyní implementovány jako neprozpachované volaní funkce "
+"pro skrytí podrobností implementace. (Přispěli Victor Stinner v :gh:`120600`"
+" a :gh:`124127`.)"
 
 #: ../../whatsnew/3.14.rst:3014
 msgid ""
@@ -6935,10 +6995,14 @@ msgid ""
 "macros from the limited C API, since they have always been broken in the "
 "limited C API. (Contributed by Victor Stinner in :gh:`91417`.)"
 msgstr ""
+"Odstraň makra :c:macro:`PySequence_Fast_GET_SIZE`, "
+":c:macro:`PySequence_Fast_GET_ITEM` a :c:macro:`PySequence_Fast_ITEMS` z "
+"omezeného C API, protože vždy byla v omezeném C API poškozena. (Přispěl "
+"Victor Stinner v :gh:`91417`.)"
 
 #: ../../whatsnew/3.14.rst:3025
 msgid "Removed C APIs"
-msgstr ""
+msgstr "Odstraněné C API"
 
 #: ../../whatsnew/3.14.rst:3027
 msgid ""
@@ -6946,6 +7010,9 @@ msgid ""
 "bases was deprecated in Python 3.12, and now raises a :exc:`TypeError`. "
 "(Contributed by Nikita Sobolev in :gh:`119775`.)"
 msgstr ""
+"Vytváření :c:data:`nemených typů <Py_TPFLAGS_IMMUTABLETYPE>` s měnitelnou "
+"základína bylo zastaralé v Pythonu 3.12, a nyní vyvolá :exc:`TypeError`. "
+"(Přispěl Nikita Sobolev v :gh:`119775`.)"
 
 #: ../../whatsnew/3.14.rst:3032
 msgid ""
@@ -6953,6 +7020,9 @@ msgid ""
 "Python 3.12. Use the :c:func:`PyDict_AddWatcher` API instead. (Contributed "
 "by Sam Gross in :gh:`124296`.)"
 msgstr ""
+"Odstraň člen ``PyDictObject.ma_version_tag``, který byl zastaralý v Pythonu "
+"3.12. Místo toho použij API :c:func:`PyDict_AddWatcher`. (Přispěl Sam Gross "
+"v :gh:`124296`.)"
 
 #: ../../whatsnew/3.14.rst:3037
 msgid ""
@@ -6960,6 +7030,9 @@ msgid ""
 ":term:`provisional API` added to Python 3.8 by :pep:`587`. (Contributed by "
 "Victor Stinner in :gh:`129033`.)"
 msgstr ""
+"Odstraň privtní funkci ``_Py_InitializeMain()``. Byla to :term:`provisional "
+"API` přidána do Pythonu 3.8 podle :pep:`587`. (Přispěl Victor Stinner v "
+":gh:`129033`.)"
 
 #: ../../whatsnew/3.14.rst:3041
 msgid ""
@@ -6969,10 +7042,15 @@ msgid ""
 ":c:func:`Py_EnterRecursiveCall` to guard against runaway recursion in C "
 "code. (Removed by Petr Viktorin in :gh:`133079`, see also :gh:`130396`.)"
 msgstr ""
+"Odstraň nedokumentovaná API :c:macro:`!Py_C_RECURSION_LIMIT` a "
+":c:member:`!PyThreadState.c_recursion_remaining`. Byla přidána v 3.13 a byla"
+" odebrána bez zastarání. Použij :c:func:`Py_EnterRecursiveCall` pro ochranu "
+"proti neřédům rekurze v kódu C. (Odebráno Petrem Viktorinem v :gh:`133079`, "
+"viz také :gh:`130396`.)"
 
 #: ../../whatsnew/3.14.rst:3052
 msgid "Deprecated C APIs"
-msgstr ""
+msgstr "Zastaralé C API"
 
 #: ../../whatsnew/3.14.rst:3054
 msgid ""
@@ -6980,6 +7058,8 @@ msgid ""
 ":c:macro:`!Py_INFINITY` instead. (Contributed by Sergey B Kirpichev in "
 ":gh:`120026`.)"
 msgstr ""
+"Makro :c:macro:`!Py_HUGE_VAL` je nyní :term:`soft deprecated`. Použij místo "
+"toho :c:macro:`!Py_INFINITY`. (Přispěl Sergey B Kirpichev v :gh:`120026`.)"
 
 #: ../../whatsnew/3.14.rst:3058
 msgid ""
@@ -6989,6 +7069,10 @@ msgid ""
 "available from :file:`math.h` since C99. (Contributed by Sergey B Kirpichev "
 "in :gh:`119613`.)"
 msgstr ""
+"Makra :c:macro:`!Py_IS_NAN`, :c:macro:`!Py_IS_INFINITY` a "
+":c:macro:`!Py_IS_FINITE` jsou nyní :term:`soft deprecated`. Místo toho "
+"použij :c:macro:`!isnan`, :c:macro:`!isinf` a :c:macro:`!isfinite`, dostupné"
+" z :file:`math.h` od C99. (Přispěl Sergey B Kirpichev v :gh:`119613`.)"
 
 #: ../../whatsnew/3.14.rst:3064
 msgid ""
@@ -6998,6 +7082,11 @@ msgid ""
 ":ref:`borrowed buffer <c-arg-borrowed-buffer>` or a :term:`borrowed "
 "reference`. (Contributed by Serhiy Storchaka in :gh:`50333`.)"
 msgstr ""
+"Netuple sekvence jsou nyní zastaralé jako argument pro jednotku formátu "
+"``(items)`` v :c:func:`PyArg_ParseTuple` a dalších funkcích :ref:`analýzy "
+"argumentů <arg-parsing>`, pokud *items* obsahuje jednotky formátu, které "
+"ukládají :ref:`půýjčený buffer <c-arg-borrowed-buffer>` nebo :term:`půřčený "
+"odkaz`. (Přispěl Serhiy Storchaka v :gh:`50333`.)"
 
 #: ../../whatsnew/3.14.rst:3071
 msgid ""
@@ -7005,6 +7094,9 @@ msgid ""
 "be replaced with calls to :c:func:`PyMonitoring_FireBranchLeftEvent` and "
 ":c:func:`PyMonitoring_FireBranchRightEvent`."
 msgstr ""
+"Funkce ``_PyMonitoring_FireBranchEvent`` je nyní zastaralá a měla by být "
+"nahrazena volánímí :c:func:`PyMonitoring_FireBranchLeftEvent` a "
+":c:func:`PyMonitoring_FireBranchRightEvent`."
 
 #: ../../whatsnew/3.14.rst:3076
 msgid ""
@@ -7012,12 +7104,17 @@ msgid ""
 ":term:`soft deprecated`. Use :c:func:`PySequence_Contains` instead. "
 "(Contributed by Yuki Kobayashi in :gh:`127896`.)"
 msgstr ""
+"Příve nedokumentovaná funkce :c:func:`PySequence_In` je nyní :term:`soft "
+"deprecated`. Použij místo toho :c:func:`PySequence_Contains`. (Přispěl Yuki "
+"Kobayashi v :gh:`127896`.)"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:4
 msgid ""
 "The :c:func:`PyImport_ImportModuleNoBlock`: Use "
 ":c:func:`PyImport_ImportModule` instead."
 msgstr ""
+"Funkce :c:func:`PyImport_ImportModuleNoBlock`: Použij místo toho "
+":c:func:`PyImport_ImportModule`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:6
 msgid ""
@@ -7026,17 +7123,25 @@ msgid ""
 "<https://github.com/python/pythoncapi-compat/>`__ can be used to get "
 ":c:func:`PyWeakref_GetRef` on Python 3.12 and older."
 msgstr ""
+":c:func:`PyWeakref_GetObject` a :c:func:`PyWeakref_GET_OBJECT`: Použij místo"
+" toho :c:func:`PyWeakref_GetRef`. Projekt `pythoncapi-compat "
+"<https://github.com/python/pythoncapi-compat/>`__ lze použít k získání "
+":c:func:`PyWeakref_GetRef` na Pythonu 3.12 a starších verzích."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:10
 msgid ""
 ":c:type:`Py_UNICODE` type and the :c:macro:`!Py_UNICODE_WIDE` macro: Use "
 ":c:type:`wchar_t` instead."
 msgstr ""
+"Typ :c:type:`Py_UNICODE` a makro :c:macro:`!Py_UNICODE_WIDE`: Použij místo "
+"toho :c:type:`wchar_t`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:12
 msgid ""
 ":c:func:`!PyUnicode_AsDecodedObject`: Use :c:func:`PyCodec_Decode` instead."
 msgstr ""
+":c:func:`!PyUnicode_AsDecodedObject`: Použij místo toho "
+":c:func:`PyCodec_Decode`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:14
 msgid ""
@@ -7044,11 +7149,16 @@ msgid ""
 " Note that some codecs (for example, \"base64\") may return a type other "
 "than :class:`str`, such as :class:`bytes`."
 msgstr ""
+":c:func:`!PyUnicode_AsDecodedUnicode`: Použij místo toho "
+":c:func:`PyCodec_Decode`; Poznámka, že některé kodéry (například \"base64\")"
+" mohou vrátit jiný typ než :class:`str`, jakož :class:`bytes`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:17
 msgid ""
 ":c:func:`!PyUnicode_AsEncodedObject`: Use :c:func:`PyCodec_Encode` instead."
 msgstr ""
+":c:func:`!PyUnicode_AsEncodedObject`: Použij místo toho "
+":c:func:`PyCodec_Encode`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:19
 msgid ""
@@ -7056,16 +7166,22 @@ msgid ""
 " Note that some codecs (for example, \"base64\") may return a type other "
 "than :class:`bytes`, such as :class:`str`."
 msgstr ""
+":c:func:`!PyUnicode_AsEncodedUnicode`: Použij míste toho "
+":c:func:`PyCodec_Encode`; Poznámka, že některé kodéry (například \"base64\")"
+" mohou vrátit jiný typ než :class:`bytes`, jakož :class:`str`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:22
 msgid "Python initialization functions, deprecated in Python 3.13:"
-msgstr ""
+msgstr "Funk ce inicializa ce Pythonu, zastaralé v Pythonu 3.13:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:24
 msgid ""
 ":c:func:`Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") "
 "<PyConfig_Get>` (:data:`sys.path`) instead."
 msgstr ""
+":c:func:`Py_GetPath`: Použij místo toho "
+":c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` "
+"(:data:`sys.path`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:27
 msgid ""
@@ -7074,6 +7190,11 @@ msgid ""
 ":c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if "
 ":ref:`virtual environments <venv-def>` need to be handled."
 msgstr ""
+":c:func:`Py_GetPrefix`: Použij míste toho "
+":c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` "
+"(:data:`sys.base_prefix`). Použij :c:func:`PyConfig_Get(\"prefix\") "
+"<PyConfig_Get>` (:data:`sys.prefix`) pokud je třeba zacházet s "
+":ref:`virtuálními prostředími <venv-def>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:32
 msgid ""
@@ -7083,24 +7204,39 @@ msgid ""
 "(:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to "
 "be handled."
 msgstr ""
+":c:func:`Py_GetExecPrefix`: Použij míste toho "
+":c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` "
+"(:data:`sys.base_exec_prefix`). Použij "
+":c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` "
+"(:data:`sys.exec_prefix`) pokud je třeba zacházet s :ref:`virtuálními "
+"prostředími <venv-def>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:38
 msgid ""
 ":c:func:`Py_GetProgramFullPath`: Use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
+":c:func:`Py_GetProgramFullPath`: Použij míste toho "
+":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
+"(:data:`sys.executable`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:41
 msgid ""
 ":c:func:`Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") "
 "<PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ""
+":c:func:`Py_GetProgramName`: Použij míste toho "
+":c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` "
+"(:data:`sys.executable`)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:44
 msgid ""
 ":c:func:`Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") "
 "<PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ""
+":c:func:`Py_GetPythonHome`: Použij míste toho "
+":c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` nebo proměnnou prostředí "
+":envvar:`PYTHONHOME`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:48
 msgid ""
@@ -7108,111 +7244,152 @@ msgid ""
 "compat/>`__ can be used to get :c:func:`PyConfig_Get` on Python 3.13 and "
 "older."
 msgstr ""
+"Projekt `pythoncapi-compat <https://github.com/python/pythoncapi-compat/>`__"
+" lze použít k získání :c:func:`PyConfig_Get` na Pythonu 3.13 a starších "
+"verzích."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:52
 msgid ""
 "Functions to configure Python's initialization, deprecated in Python 3.11:"
 msgstr ""
+"Funkce pro konfiguraci inicializa ce Pythonu, zastaralé v Pythonu 3.11:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:54
 msgid ":c:func:`!PySys_SetArgvEx()`: Set :c:member:`PyConfig.argv` instead."
 msgstr ""
+":c:func:`!PySys_SetArgvEx()`: Nastav míste toho :c:member:`PyConfig.argv`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:56
 msgid ":c:func:`!PySys_SetArgv()`: Set :c:member:`PyConfig.argv` instead."
 msgstr ""
+":c:func:`!PySys_SetArgv()`: Nastav míste toho :c:member:`PyConfig.argv`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:58
 msgid ""
 ":c:func:`!Py_SetProgramName()`: Set :c:member:`PyConfig.program_name` "
 "instead."
 msgstr ""
+":c:func:`!Py_SetProgramName()`: Nastav míste toho "
+":c:member:`PyConfig.program_name`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:60
 msgid ":c:func:`!Py_SetPythonHome()`: Set :c:member:`PyConfig.home` instead."
 msgstr ""
+":c:func:`!Py_SetPythonHome()`: Nastav míste toho :c:member:`PyConfig.home`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:62
 msgid ""
 ":c:func:`PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and "
 ":data:`!warnings.filters` instead."
 msgstr ""
+":c:func:`PySys_ResetWarnOptions`: Vyčisti :data:`sys.warnoptions` a "
+":data:`!warnings.filters` míste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:65
 msgid ""
 "The :c:func:`Py_InitializeFromConfig` API should be used with "
 ":c:type:`PyConfig` instead."
 msgstr ""
+"Má být použitó API :c:func:`Py_InitializeFromConfig` s :c:type:`PyConfig` "
+"míste toho."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:68
 msgid "Global configuration variables:"
-msgstr ""
+msgstr "Globální proměnné konfigurace:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:70
 msgid ""
 ":c:var:`Py_DebugFlag`: Use :c:member:`PyConfig.parser_debug` or "
 ":c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_DebugFlag`: Použij míste toho :c:member:`PyConfig.parser_debug` "
+"nebo :c:func:`PyConfig_Get(\"parser_debug\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:73
 msgid ""
 ":c:var:`Py_VerboseFlag`: Use :c:member:`PyConfig.verbose` or "
 ":c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_VerboseFlag`: Použij mýste toho :c:member:`PyConfig.verbose` nebo"
+" :c:func:`PyConfig_Get(\"verbose\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:76
 msgid ""
 ":c:var:`Py_QuietFlag`: Use :c:member:`PyConfig.quiet` or "
 ":c:func:`PyConfig_Get(\"quiet\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_QuietFlag`: Použij mýste toho :c:member:`PyConfig.quiet` nebo "
+":c:func:`PyConfig_Get(\"quiet\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:79
 msgid ""
 ":c:var:`Py_InteractiveFlag`: Use :c:member:`PyConfig.interactive` or "
 ":c:func:`PyConfig_Get(\"interactive\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_InteractiveFlag`: Použij mýste toho "
+":c:member:`PyConfig.interactive` nebo :c:func:`PyConfig_Get(\"interactive\")"
+" <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:82
 msgid ""
 ":c:var:`Py_InspectFlag`: Use :c:member:`PyConfig.inspect` or "
 ":c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_InspectFlag`: Použij mýste toho :c:member:`PyConfig.inspect` nebo"
+" :c:func:`PyConfig_Get(\"inspect\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:85
 msgid ""
 ":c:var:`Py_OptimizeFlag`: Use :c:member:`PyConfig.optimization_level` or "
 ":c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_OptimizeFlag`: Použij mýste toho "
+":c:member:`PyConfig.optimization_level` nebo "
+":c:func:`PyConfig_Get(\"optimization_level\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:88
 msgid ""
 ":c:var:`Py_NoSiteFlag`: Use :c:member:`PyConfig.site_import` or "
 ":c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_NoSiteFlag`: Použij mýste toho :c:member:`PyConfig.site_import` "
+"nebo :c:func:`PyConfig_Get(\"site_import\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:91
 msgid ""
 ":c:var:`Py_BytesWarningFlag`: Use :c:member:`PyConfig.bytes_warning` or "
 ":c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_BytesWarningFlag`: Použij mýste toho "
+":c:member:`PyConfig.bytes_warning` nebo "
+":c:func:`PyConfig_Get(\"bytes_warning\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:94
 msgid ""
 ":c:var:`Py_FrozenFlag`: Use :c:member:`PyConfig.pathconfig_warnings` or "
 ":c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_FrozenFlag`: Použij mýste toho "
+":c:member:`PyConfig.pathconfig_warnings` nebo "
+":c:func:`PyConfig_Get(\"pathconfig_warnings\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:97
 msgid ""
 ":c:var:`Py_IgnoreEnvironmentFlag`: Use :c:member:`PyConfig.use_environment` "
 "or :c:func:`PyConfig_Get(\"use_environment\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_IgnoreEnvironmentFlag`: Použij mýste toho "
+":c:member:`PyConfig.use_environment` nebo "
+":c:func:`PyConfig_Get(\"use_environment\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:100
 msgid ""
 ":c:var:`Py_DontWriteBytecodeFlag`: Use :c:member:`PyConfig.write_bytecode` "
 "or :c:func:`PyConfig_Get(\"write_bytecode\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_DontWriteBytecodeFlag`: Použij mýste toho "
+":c:member:`PyConfig.write_bytecode` nebo "
+":c:func:`PyConfig_Get(\"write_bytecode\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:103
 msgid ""
@@ -7220,12 +7397,18 @@ msgid ""
 ":c:member:`PyConfig.user_site_directory` or "
 ":c:func:`PyConfig_Get(\"user_site_directory\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_NoUserSiteDirectory`: Použij mýste toho "
+":c:member:`PyConfig.user_site_directory` nebo "
+":c:func:`PyConfig_Get(\"user_site_directory\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:106
 msgid ""
 ":c:var:`Py_UnbufferedStdioFlag`: Use :c:member:`PyConfig.buffered_stdio` or "
 ":c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_UnbufferedStdioFlag`: Použij mýste toho "
+":c:member:`PyConfig.buffered_stdio` nebo "
+":c:func:`PyConfig_Get(\"buffered_stdio\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:109
 msgid ""
@@ -7233,12 +7416,17 @@ msgid ""
 "and :c:member:`PyConfig.hash_seed` or :c:func:`PyConfig_Get(\"hash_seed\") "
 "<PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_HashRandomizationFlag`: Použij mýste toho "
+":c:member:`PyConfig.use_hash_seed` a :c:member:`PyConfig.hash_seed` nebo "
+":c:func:`PyConfig_Get(\"hash_seed\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:113
 msgid ""
 ":c:var:`Py_IsolatedFlag`: Use :c:member:`PyConfig.isolated` or "
 ":c:func:`PyConfig_Get(\"isolated\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_IsolatedFlag`: Použij mýste toho :c:member:`PyConfig.isolated` "
+"nebo :c:func:`PyConfig_Get(\"isolated\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:116
 msgid ""
@@ -7247,6 +7435,9 @@ msgid ""
 ":c:func:`PyConfig_Get(\"legacy_windows_fs_encoding\") <PyConfig_Get>` "
 "instead."
 msgstr ""
+":c:var:`Py_LegacyWindowsFSEncodingFlag`: Použij mýste toho "
+":c:member:`PyPreConfig.legacy_windows_fs_encoding` nebo "
+":c:func:`PyConfig_Get(\"legacy_windows_fs_encoding\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:119
 msgid ""
@@ -7254,6 +7445,9 @@ msgid ""
 ":c:member:`PyConfig.legacy_windows_stdio` or "
 ":c:func:`PyConfig_Get(\"legacy_windows_stdio\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`Py_LegacyWindowsStdioFlag`: Použij mýste toho "
+":c:member:`PyConfig.legacy_windows_stdio` nebo "
+":c:func:`PyConfig_Get(\"legacy_windows_stdio\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:122
 msgid ""
@@ -7262,6 +7456,10 @@ msgid ""
 ":c:member:`PyConfig.filesystem_encoding` or "
 ":c:func:`PyConfig_Get(\"filesystem_encoding\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`!Py_FileSystemDefaultEncoding`, "
+":c:var:`!Py_HasFileSystemDefaultEncoding`: Použij mýste toho "
+":c:member:`PyConfig.filesystem_encoding` nebo "
+":c:func:`PyConfig_Get(\"filesystem_encoding\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:125
 msgid ""
@@ -7269,6 +7467,9 @@ msgid ""
 ":c:member:`PyConfig.filesystem_errors` or "
 ":c:func:`PyConfig_Get(\"filesystem_errors\") <PyConfig_Get>` instead."
 msgstr ""
+":c:var:`!Py_FileSystemDefaultEncodeErrors`: Použij mýste toho "
+":c:member:`PyConfig.filesystem_errors` nebo "
+":c:func:`PyConfig_Get(\"filesystem_errors\") <PyConfig_Get>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:128
 msgid ""
@@ -7276,6 +7477,9 @@ msgid ""
 ":c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>` instead. (see "
 ":c:func:`Py_PreInitialize`)"
 msgstr ""
+":c:var:`!Py_UTF8Mode`: Použij mýste toho :c:member:`PyPreConfig.utf8_mode` "
+"nebo :c:func:`PyConfig_Get(\"utf8_mode\") <PyConfig_Get>`. (viz "
+":c:func:`Py_PreInitialize`)"
 
 #: ../../deprecations/c-api-pending-removal-in-3.15.rst:133
 msgid ""
@@ -7283,60 +7487,73 @@ msgid ""
 ":c:type:`PyConfig` to set these options. Or :c:func:`PyConfig_Get` can be "
 "used to get these options at runtime."
 msgstr ""
+"Má být použitó API :c:func:`Py_InitializeFromConfig` s :c:type:`PyConfig` "
+"pro nastavení těchto možností. Nebo lze použít :c:func:`PyConfig_Get` k "
+"získání těchto voleb za běhu."
 
 #: ../../deprecations/c-api-pending-removal-in-3.16.rst:4
 msgid "The bundled copy of ``libmpdec``."
-msgstr ""
+msgstr "Balík kopie ``libmpdec``."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:2
 msgid "Pending removal in Python 3.18"
-msgstr ""
+msgstr "Bude odebráno v Pythonu 3.18"
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:4
 msgid ""
 "The following private functions are deprecated and planned for removal in "
 "Python 3.18:"
 msgstr ""
+"Následující privtní funkce jsou zastaralé a naplanovány k odebrání v Pythonu"
+" 3.18:"
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:7
 msgid ":c:func:`!_PyBytes_Join`: use :c:func:`PyBytes_Join`."
-msgstr ""
+msgstr ":c:func:`!_PyBytes_Join`: použij :c:func:`PyBytes_Join`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:8
 msgid ""
 ":c:func:`!_PyDict_GetItemStringWithError`: use "
 ":c:func:`PyDict_GetItemStringRef`."
 msgstr ""
+":c:func:`!_PyDict_GetItemStringWithError`: použij "
+":c:func:`PyDict_GetItemStringRef`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:9
 msgid ":c:func:`!_PyDict_Pop()`: use :c:func:`PyDict_Pop`."
-msgstr ""
+msgstr ":c:func:`!_PyDict_Pop()`: použij :c:func:`PyDict_Pop`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:10
 msgid ":c:func:`!_PyLong_Sign()`: use :c:func:`PyLong_GetSign`."
-msgstr ""
+msgstr ":c:func:`!_PyLong_Sign()`: použij :c:func:`PyLong_GetSign`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:11
 msgid ""
 ":c:func:`!_PyLong_FromDigits` and :c:func:`!_PyLong_New`: use "
 ":c:func:`PyLongWriter_Create`."
 msgstr ""
+":c:func:`!_PyLong_FromDigits` a :c:func:`!_PyLong_New`: použij "
+":c:func:`PyLongWriter_Create`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:13
 msgid ""
 ":c:func:`!_PyThreadState_UncheckedGet`: use "
 ":c:func:`PyThreadState_GetUnchecked`."
 msgstr ""
+":c:func:`!_PyThreadState_UncheckedGet`: použij "
+":c:func:`PyThreadState_GetUnchecked`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:14
 msgid ":c:func:`!_PyUnicode_AsString`: use :c:func:`PyUnicode_AsUTF8`."
-msgstr ""
+msgstr ":c:func:`!_PyUnicode_AsString`: použij :c:func:`PyUnicode_AsUTF8`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:15
 msgid ""
 ":c:func:`!_PyUnicodeWriter_Init`: replace ``_PyUnicodeWriter_Init(&writer)``"
 " with :c:func:`writer = PyUnicodeWriter_Create(0) <PyUnicodeWriter_Create>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_Init`: nahrad ``_PyUnicodeWriter_Init(&writer)`` "
+"s :c:func:`writer = PyUnicodeWriter_Create(0) <PyUnicodeWriter_Create>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:18
 msgid ""
@@ -7344,6 +7561,9 @@ msgid ""
 "``_PyUnicodeWriter_Finish(&writer)`` with "
 ":c:func:`PyUnicodeWriter_Finish(writer) <PyUnicodeWriter_Finish>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_Finish`: nahrad "
+"``_PyUnicodeWriter_Finish(&writer)`` s "
+":c:func:`PyUnicodeWriter_Finish(writer) <PyUnicodeWriter_Finish>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:21
 msgid ""
@@ -7351,6 +7571,9 @@ msgid ""
 "``_PyUnicodeWriter_Dealloc(&writer)`` with "
 ":c:func:`PyUnicodeWriter_Discard(writer) <PyUnicodeWriter_Discard>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_Dealloc`: nahrad "
+"``_PyUnicodeWriter_Dealloc(&writer)`` s "
+":c:func:`PyUnicodeWriter_Discard(writer) <PyUnicodeWriter_Discard>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:24
 msgid ""
@@ -7358,6 +7581,9 @@ msgid ""
 "``_PyUnicodeWriter_WriteChar(&writer, ch)`` with "
 ":c:func:`PyUnicodeWriter_WriteChar(writer, ch) <PyUnicodeWriter_WriteChar>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_WriteChar`: nahrad "
+"``_PyUnicodeWriter_WriteChar(&writer, ch)`` s "
+":c:func:`PyUnicodeWriter_WriteChar(writer, ch) <PyUnicodeWriter_WriteChar>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:27
 msgid ""
@@ -7365,6 +7591,9 @@ msgid ""
 "``_PyUnicodeWriter_WriteStr(&writer, str)`` with "
 ":c:func:`PyUnicodeWriter_WriteStr(writer, str) <PyUnicodeWriter_WriteStr>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_WriteStr`: nahrad "
+"``_PyUnicodeWriter_WriteStr(&writer, str)`` s "
+":c:func:`PyUnicodeWriter_WriteStr(writer, str) <PyUnicodeWriter_WriteStr>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:30
 msgid ""
@@ -7373,6 +7602,10 @@ msgid ""
 ":c:func:`PyUnicodeWriter_WriteSubstring(writer, str, start, end) "
 "<PyUnicodeWriter_WriteSubstring>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_WriteSubstring`: nahrad "
+"``_PyUnicodeWriter_WriteSubstring(&writer, str, start, end)`` s "
+":c:func:`PyUnicodeWriter_WriteSubstring(writer, str, start, end) "
+"<PyUnicodeWriter_WriteSubstring>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:33
 msgid ""
@@ -7381,6 +7614,10 @@ msgid ""
 ":c:func:`PyUnicodeWriter_WriteASCII(writer, str) "
 "<PyUnicodeWriter_WriteASCII>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_WriteASCIIString`: nahrad "
+"``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` s "
+":c:func:`PyUnicodeWriter_WriteASCII(writer, str) "
+"<PyUnicodeWriter_WriteASCII>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:36
 msgid ""
@@ -7389,22 +7626,26 @@ msgid ""
 ":c:func:`PyUnicodeWriter_WriteUTF8(writer, str) "
 "<PyUnicodeWriter_WriteUTF8>`."
 msgstr ""
+":c:func:`!_PyUnicodeWriter_WriteLatin1String`: nahrad "
+"``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` s "
+":c:func:`PyUnicodeWriter_WriteUTF8(writer, str) "
+"<PyUnicodeWriter_WriteUTF8>`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:39
 msgid ":c:func:`!_PyUnicodeWriter_Prepare`: (no replacement)."
-msgstr ""
+msgstr ":c:func:`!_PyUnicodeWriter_Prepare`: (bez nahrazení)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:40
 msgid ":c:func:`!_PyUnicodeWriter_PrepareKind`: (no replacement)."
-msgstr ""
+msgstr ":c:func:`!_PyUnicodeWriter_PrepareKind`: (bez nahrazení)."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:41
 msgid ":c:func:`!_Py_HashPointer`: use :c:func:`Py_HashPointer`."
-msgstr ""
+msgstr ":c:func:`!_Py_HashPointer`: použij :c:func:`Py_HashPointer`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:42
 msgid ":c:func:`!_Py_fopen_obj`: use :c:func:`Py_fopen`."
-msgstr ""
+msgstr ":c:func:`!_Py_fopen_obj`: použij :c:func:`Py_fopen`."
 
 #: ../../deprecations/c-api-pending-removal-in-3.18.rst:44
 msgid ""
@@ -7412,16 +7653,21 @@ msgid ""
 "compat/>`__ can be used to get these new public functions on Python 3.13 and"
 " older. (Contributed by Victor Stinner in :gh:`128863`.)"
 msgstr ""
+"Projekt `pythoncapi-compat <https://github.com/python/pythoncapi-compat/>`__"
+" lze použít k získání těchto nových veřejných funkcí na Pythonu 3.13 a "
+"starších verzích. (Přispěl Victor Stinner v :gh:`128863`.)"
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:4
 msgid ""
 "The following APIs are deprecated and will be removed, although there is "
 "currently no date scheduled for their removal."
 msgstr ""
+"Následující API jsou zastaralá a budou odebrána, ačkoli v současnosti není "
+"naplanováno žádné datum jejich odebrání."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:7
 msgid ":c:macro:`Py_TPFLAGS_HAVE_FINALIZE`: Unneeded since Python 3.8."
-msgstr ""
+msgstr ":c:macro:`Py_TPFLAGS_HAVE_FINALIZE`: Nepotřebné od Pythonu 3.8."
 
 #: ../../deprecations/c-api-pending-removal-in-future.rst:9
 msgid ":c:func:`PyErr_Fetch`: Use :c:func:`PyErr_GetRaisedException` instead."

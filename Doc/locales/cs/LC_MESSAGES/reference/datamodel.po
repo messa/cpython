@@ -1694,28 +1694,39 @@ msgid ""
 "which attributes retrieved from a class may differ from those actually "
 "contained in its :attr:`~object.__dict__`."
 msgstr ""
+"Když by odkaz na atribut třídy (pro třídu :class:`!C`) vrátil objekt metody "
+"třídy, je transformován na objekt metody instance, jehož atribut "
+":attr:`~method.__self__` je :class:`!C`. Když by vrátil objekt "
+":class:`staticmethod`, je transformován na objekt obalený statickou metodou."
+" Viz sekce :ref:`descriptors` pro další způsob, jak se mohou atributy "
+"získané ze třídy lišit od těch, které jsou skutečně obsaženy v jejím "
+":attr:`~object.__dict__`."
 
 #: ../../reference/datamodel.rst:1169
 msgid ""
 "Class attribute assignments update the class's dictionary, never the "
 "dictionary of a base class."
 msgstr ""
+"Přiřazení atributů třídy aktualizují slovník třídy, nikdy slovník základní "
+"třídy."
 
 #: ../../reference/datamodel.rst:1174
 msgid ""
 "A class object can be called (see above) to yield a class instance (see "
 "below)."
 msgstr ""
+"Objekt třídy lze volat (viz výše) k vytvoření instance třídy (viz níže)."
 
 #: ../../reference/datamodel.rst:1177 ../../reference/datamodel.rst:1353
 msgid "Special attributes"
-msgstr ""
+msgstr "Speciální atributy"
 
 #: ../../reference/datamodel.rst:1199
 msgid ""
 "The class's name. See also: :attr:`__name__ attributes "
 "<definition.__name__>`."
 msgstr ""
+"Název třídy. Viz také: :attr:`__name__ attributes <definition.__name__>`."
 
 #: ../../reference/datamodel.rst:1203
 msgid ""
