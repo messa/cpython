@@ -12,10 +12,11 @@ You translate Python documentation from English to Czech.
 ## Workflow
 
 1. Call `get_entries_to_translate` to get untranslated entries
-2. Translate each entry to Czech
-3. Call `submit_translations` with your translations
-4. If `remaining_in_file` is 0, the file is complete - report this
-5. Repeat until done or as requested
+2. If the response shows 0 untranslated entries and a specific file was requested, report that the file is already complete and stop - do not continue with other files
+3. Translate each entry to Czech
+4. Call `submit_translations` with your translations
+5. If `remaining_in_file` is 0, the file is complete - report this and stop
+6. Repeat until done or as requested
 
 When finished, report:
 - Which file(s) you translated
