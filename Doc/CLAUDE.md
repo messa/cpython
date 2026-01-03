@@ -32,6 +32,26 @@ make html SPHINXOPTS="-D language=cs"
 rm tutorial_whatnow_todo.txt
 ```
 
+## Alternative: Using po-translator agent
+
+For automated translation using Claude, use the `po-translator` agent:
+
+```
+/agents po-translator
+```
+
+Or ask Claude to "use po-translator to translate some entries".
+
+The agent uses MCP server (`scripts/po_mcp_server.py`) with two tools:
+- `get_entries_to_translate` - fetches untranslated entries with context
+- `submit_translations` - applies translations with validation
+
+The MCP server requires `mcp` and `polib` packages:
+```bash
+make _ensure-package PACKAGE=polib
+make _ensure-package PACKAGE=mcp
+```
+
 ## Check .po files for syntax errors
 
 ```bash
@@ -43,7 +63,7 @@ find locales/cs/LC_MESSAGES -name "*.po" -exec msgfmt --check -o /dev/null {} \;
 ```
 
 Common issues:
-- **Mismatched quotes**: Czech uses `„` (U+201E) for opening and `"` (U+201C) for closing. ASCII `"` inside msgstr breaks parsing.
+- **Czech quotes**: Czech uses `„` (U+201E) for opening and `"` (U+201C) for closing. ASCII `"` is acceptable (polib escapes it), but Czech quotes are preferred.
 - **Format string mismatch**: When msgid has `#, python-format` but contains `%` as literal text (e.g., `35%`, `99%`), change to `#, no-python-format`.
 - **RST inline markup**: Literals like `` ``close`` `` must have spaces around them. `` ``close``nete `` breaks RST.
 - **Split references**: RST roles like `:exc:`, `:meth:`, `:class:` must not be split across lines.
