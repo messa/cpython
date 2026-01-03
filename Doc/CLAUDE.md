@@ -70,6 +70,12 @@ See `/.claude/agents/po-translator.md` for detailed translation rules:
 - Czech language conventions
 - RST markup and format string handling
 
+**Note**: Agent definition files in `/.claude/agents/` are in `.gitignore`. When modifying them, commit using `git add -f`:
+```bash
+git add -f ../.claude/agents/po-translator.md
+git commit -m "Update po-translator agent"
+```
+
 ## Check .po files for syntax errors
 
 ```bash
