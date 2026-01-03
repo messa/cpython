@@ -11,365 +11,395 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/cmath.rst:2
 msgid ":mod:`!cmath` --- Mathematical functions for complex numbers"
-msgstr ""
+msgstr ":mod:`!cmath` --- Matematické funkce pro komplexní čísla"
 
 #: ../../library/cmath.rst:9
 msgid ""
-"This module provides access to mathematical functions for complex "
-"numbers.  The functions in this module accept integers, floating-point "
-"numbers or complex numbers as arguments. They will also accept any Python"
-" object that has either a :meth:`~object.__complex__` or a "
-":meth:`~object.__float__` method: these methods are used to convert the "
-"object to a complex or floating-point number, respectively, and the "
-"function is then applied to the result of the conversion."
+"This module provides access to mathematical functions for complex numbers.  "
+"The functions in this module accept integers, floating-point numbers or "
+"complex numbers as arguments. They will also accept any Python object that "
+"has either a :meth:`~object.__complex__` or a :meth:`~object.__float__` "
+"method: these methods are used to convert the object to a complex or "
+"floating-point number, respectively, and the function is then applied to the"
+" result of the conversion."
 msgstr ""
+"Tento modul poskytuje přístup k matematickým funkcím pro komplexní čísla. "
+"Funkce v tomto modulu přijímají celočíselné hodnoty, čísla s pohyblivou "
+"řádovou čárkou nebo komplexní čísla jako argumenty. Přijmou také libovolný "
+"objekt Pythonu, který má metodu :meth:`~object.__complex__` nebo "
+":meth:`~object.__float__`: tyto metody slouží k převodu objektu na komplexní"
+" nebo číslo s pohyblivou řádovou čárkou a funkce je pak aplikována na "
+"výsledek převodu."
 
 #: ../../library/cmath.rst:18
 msgid ""
-"For functions involving branch cuts, we have the problem of deciding how "
-"to define those functions on the cut itself. Following Kahan's \"Branch "
-"cuts for complex elementary functions\" paper, as well as Annex G of C99 "
-"and later C standards, we use the sign of zero to distinguish one side of"
-" the branch cut from the other: for a branch cut along (a portion of) the"
-" real axis we look at the sign of the imaginary part, while for a branch "
-"cut along the imaginary axis we look at the sign of the real part."
+"For functions involving branch cuts, we have the problem of deciding how to "
+"define those functions on the cut itself. Following Kahan's \"Branch cuts "
+"for complex elementary functions\" paper, as well as Annex G of C99 and "
+"later C standards, we use the sign of zero to distinguish one side of the "
+"branch cut from the other: for a branch cut along (a portion of) the real "
+"axis we look at the sign of the imaginary part, while for a branch cut along"
+" the imaginary axis we look at the sign of the real part."
 msgstr ""
+"Pro funkce zahrnující řezy větví máme problém rozhodovat, jak tyto funkce "
+"definovat. V souladu s články Kahana a standardem C99 používáme znaménko "
+"nuly k rozlišení stran řezu větve."
 
 #: ../../library/cmath.rst:26
 msgid ""
 "For example, the :func:`cmath.sqrt` function has a branch cut along the "
-"negative real axis. An argument of ``-2-0j`` is treated as though it lies"
-" *below* the branch cut, and so gives a result on the negative imaginary "
+"negative real axis. An argument of ``-2-0j`` is treated as though it lies "
+"*below* the branch cut, and so gives a result on the negative imaginary "
 "axis::"
 msgstr ""
+"Například funkce :func:`cmath.sqrt` má řez větve podél záporné reálné osy."
 
 #: ../../library/cmath.rst:31
 msgid ""
 ">>> cmath.sqrt(-2-0j)\n"
 "-1.4142135623730951j"
 msgstr ""
+">>> cmath.sqrt(-2-0j)\n"
+"-1.4142135623730951j"
 
 #: ../../library/cmath.rst:34
 msgid ""
-"But an argument of ``-2+0j`` is treated as though it lies above the "
-"branch cut::"
-msgstr ""
+"But an argument of ``-2+0j`` is treated as though it lies above the branch "
+"cut::"
+msgstr "Argument ``-2+0j`` je však chápán jako by ležel nad řezem větve::"
 
 #: ../../library/cmath.rst:37
 msgid ""
 ">>> cmath.sqrt(-2+0j)\n"
 "1.4142135623730951j"
 msgstr ""
+">>> cmath.sqrt(-2+0j)\n"
+"1.4142135623730951j"
 
 #: ../../library/cmath.rst:42
 msgid "**Conversions to and from polar coordinates**"
-msgstr ""
+msgstr "**Převody na a z polárních souřadnic**"
 
 #: ../../library/cmath.rst:44
 msgid ":func:`phase(z) <phase>`"
-msgstr ""
+msgstr ":func:`phase(z) <phase>`"
 
 #: ../../library/cmath.rst:44
 msgid "Return the phase of *z*"
-msgstr ""
+msgstr "Vrátí fázi čísla *z*"
 
 #: ../../library/cmath.rst:45
 msgid ":func:`polar(z) <polar>`"
-msgstr ""
+msgstr ":func:`polar(z) <polar>`"
 
 #: ../../library/cmath.rst:45
 msgid "Return the representation of *z* in polar coordinates"
-msgstr ""
+msgstr "Vrátí reprezentaci *z* v polárních souřadnicích"
 
 #: ../../library/cmath.rst:46
 msgid ":func:`rect(r, phi) <rect>`"
-msgstr ""
+msgstr ":func:`rect(r, phi) <rect>`"
 
 #: ../../library/cmath.rst:46
 msgid "Return the complex number *z* with polar coordinates *r* and *phi*"
-msgstr ""
+msgstr "Vrátí komplexní číslo *z* s polárními souřadnicemi *r* a *phi*"
 
 #: ../../library/cmath.rst:48
 msgid "**Power and logarithmic functions**"
-msgstr ""
+msgstr "**Mocninné a logaritmické funkce**"
 
 #: ../../library/cmath.rst:50
 msgid ":func:`exp(z) <exp>`"
-msgstr ""
+msgstr ":func:`exp(z) <exp>`"
 
 #: ../../library/cmath.rst:50
 msgid "Return *e* raised to the power *z*"
-msgstr ""
+msgstr "Vrátí *e* umocněné na místo *z*"
 
 #: ../../library/cmath.rst:51
 msgid ":func:`log(z[, base]) <log>`"
-msgstr ""
+msgstr ":func:`log(z[, base]) <log>`"
 
 #: ../../library/cmath.rst:51
 msgid "Return the logarithm of *z* to the given *base* (*e* by default)"
-msgstr ""
+msgstr "Vrátí logaritmus *z* s daným základem (*e* ve výchozím případě)"
 
 #: ../../library/cmath.rst:52
 msgid ":func:`log10(z) <log10>`"
-msgstr ""
+msgstr ":func:`log10(z) <log10>`"
 
 #: ../../library/cmath.rst:52
 msgid "Return the base-10 logarithm of *z*"
-msgstr ""
+msgstr "Vrátí desitetný logaritmus *z*"
 
 #: ../../library/cmath.rst:53
 msgid ":func:`sqrt(z) <sqrt>`"
-msgstr ""
+msgstr ":func:`sqrt(z) <sqrt>`"
 
 #: ../../library/cmath.rst:53
 msgid "Return the square root of *z*"
-msgstr ""
+msgstr "Vrátí druhou odmocninu *z*"
 
 #: ../../library/cmath.rst:55
 msgid "**Trigonometric functions**"
-msgstr ""
+msgstr "**Trigonometrické funkce**"
 
 #: ../../library/cmath.rst:57
 msgid ":func:`acos(z) <acos>`"
-msgstr ""
+msgstr ":func:`acos(z) <acos>`"
 
 #: ../../library/cmath.rst:57
 msgid "Return the arc cosine of *z*"
-msgstr ""
+msgstr "Vrátí arkuskosinus *z*"
 
 #: ../../library/cmath.rst:58
 msgid ":func:`asin(z) <asin>`"
-msgstr ""
+msgstr ":func:`asin(z) <asin>`"
 
 #: ../../library/cmath.rst:58
 msgid "Return the arc sine of *z*"
-msgstr ""
+msgstr "Vrátí arkussinus *z*"
 
 #: ../../library/cmath.rst:59
 msgid ":func:`atan(z) <atan>`"
-msgstr ""
+msgstr ":func:`atan(z) <atan>`"
 
 #: ../../library/cmath.rst:59
 msgid "Return the arc tangent of *z*"
-msgstr ""
+msgstr "Vrátí arkustangens *z*"
 
 #: ../../library/cmath.rst:60
 msgid ":func:`cos(z) <cos>`"
-msgstr ""
+msgstr ":func:`cos(z) <cos>`"
 
 #: ../../library/cmath.rst:60
 msgid "Return the cosine of *z*"
-msgstr ""
+msgstr "Vrátí kosinus *z*"
 
 #: ../../library/cmath.rst:61
 msgid ":func:`sin(z) <sin>`"
-msgstr ""
+msgstr ":func:`sin(z) <sin>`"
 
 #: ../../library/cmath.rst:61
 msgid "Return the sine of *z*"
-msgstr ""
+msgstr "Vrátí sinus *z*"
 
 #: ../../library/cmath.rst:62
 msgid ":func:`tan(z) <tan>`"
-msgstr ""
+msgstr ":func:`tan(z) <tan>`"
 
 #: ../../library/cmath.rst:62
 msgid "Return the tangent of *z*"
-msgstr ""
+msgstr "Vrátí tangens *z*"
 
 #: ../../library/cmath.rst:64
 msgid "**Hyperbolic functions**"
-msgstr ""
+msgstr "**Hyperbolické funkce**"
 
 #: ../../library/cmath.rst:66
 msgid ":func:`acosh(z) <acosh>`"
-msgstr ""
+msgstr ":func:`acosh(z) <acosh>`"
 
 #: ../../library/cmath.rst:66
 msgid "Return the inverse hyperbolic cosine of *z*"
-msgstr ""
+msgstr "Vrátí inverzní hyperbolický kosinus *z*"
 
 #: ../../library/cmath.rst:67
 msgid ":func:`asinh(z) <asinh>`"
-msgstr ""
+msgstr ":func:`asinh(z) <asinh>`"
 
 #: ../../library/cmath.rst:67
 msgid "Return the inverse hyperbolic sine of *z*"
-msgstr ""
+msgstr "Vrátí inverzní hyperbolický sinus *z*"
 
 #: ../../library/cmath.rst:68
 msgid ":func:`atanh(z) <atanh>`"
-msgstr ""
+msgstr ":func:`atanh(z) <atanh>`"
 
 #: ../../library/cmath.rst:68
 msgid "Return the inverse hyperbolic tangent of *z*"
-msgstr ""
+msgstr "Vrátí inverzní hyperbolický tangens *z*"
 
 #: ../../library/cmath.rst:69
 msgid ":func:`cosh(z) <cosh>`"
-msgstr ""
+msgstr ":func:`cosh(z) <cosh>`"
 
 #: ../../library/cmath.rst:69
 msgid "Return the hyperbolic cosine of *z*"
-msgstr ""
+msgstr "Vrátí hyperbolický kosinus *z*"
 
 #: ../../library/cmath.rst:70
 msgid ":func:`sinh(z) <sinh>`"
-msgstr ""
+msgstr ":func:`sinh(z) <sinh>`"
 
 #: ../../library/cmath.rst:70
 msgid "Return the hyperbolic sine of *z*"
-msgstr ""
+msgstr "Vrátí hyperbolický sinus *z*"
 
 #: ../../library/cmath.rst:71
 msgid ":func:`tanh(z) <tanh>`"
-msgstr ""
+msgstr ":func:`tanh(z) <tanh>`"
 
 #: ../../library/cmath.rst:71
 msgid "Return the hyperbolic tangent of *z*"
-msgstr ""
+msgstr "Vrátí hyperbolický tangens *z*"
 
 #: ../../library/cmath.rst:73
 msgid "**Classification functions**"
-msgstr ""
+msgstr "**Klasifikační funkce**"
 
 #: ../../library/cmath.rst:75
 msgid ":func:`isfinite(z) <isfinite>`"
-msgstr ""
+msgstr ":func:`isfinite(z) <isfinite>`"
 
 #: ../../library/cmath.rst:75
 msgid "Check if all components of *z* are finite"
-msgstr ""
+msgstr "Ověřte, zda jsou všechny složky *z* konečné"
 
 #: ../../library/cmath.rst:76
 msgid ":func:`isinf(z) <isinf>`"
-msgstr ""
+msgstr ":func:`isinf(z) <isinf>`"
 
 #: ../../library/cmath.rst:76
 msgid "Check if any component of *z* is infinite"
-msgstr ""
+msgstr "Ověřte, zda je některá složka *z* nekonečná"
 
 #: ../../library/cmath.rst:77
 msgid ":func:`isnan(z) <isnan>`"
-msgstr ""
+msgstr ":func:`isnan(z) <isnan>`"
 
 #: ../../library/cmath.rst:77
 msgid "Check if any component of *z* is a NaN"
-msgstr ""
+msgstr "Ověřte, zda je některá složka *z* NaN"
 
 #: ../../library/cmath.rst:78
 msgid ":func:`isclose(a, b, *, rel_tol, abs_tol) <isclose>`"
-msgstr ""
+msgstr ":func:`isclose(a, b, *, rel_tol, abs_tol) <isclose>`"
 
 #: ../../library/cmath.rst:78
 msgid "Check if the values *a* and *b* are close to each other"
-msgstr ""
+msgstr "Ověřte, zda jsou hodnoty *a* a *b* blízké sobě"
 
 #: ../../library/cmath.rst:80
 msgid "**Constants**"
-msgstr ""
+msgstr "**Konstante**"
 
 #: ../../library/cmath.rst:82
 msgid ":data:`pi`"
-msgstr ""
+msgstr ":data:`pi`"
 
 #: ../../library/cmath.rst:82
 msgid "*π* = 3.141592..."
-msgstr ""
+msgstr "*π* = 3.141592..."
 
 #: ../../library/cmath.rst:83
 msgid ":data:`e`"
-msgstr ""
+msgstr ":data:`e`"
 
 #: ../../library/cmath.rst:83
 msgid "*e* = 2.718281..."
-msgstr ""
+msgstr "*e* = 2.718281..."
 
 #: ../../library/cmath.rst:84
 msgid ":data:`tau`"
-msgstr ""
+msgstr ":data:`tau`"
 
 #: ../../library/cmath.rst:84
 msgid "*τ* = 2\\ *π* = 6.283185..."
-msgstr ""
+msgstr "*τ* = 2\\ *π* = 6.283185..."
 
 #: ../../library/cmath.rst:85
 msgid ":data:`inf`"
-msgstr ""
+msgstr ":data:`inf`"
 
 #: ../../library/cmath.rst:85
 msgid "Positive infinity"
-msgstr ""
+msgstr "Kladné nekonečno"
 
 #: ../../library/cmath.rst:86
 msgid ":data:`infj`"
-msgstr ""
+msgstr ":data:`infj`"
 
 #: ../../library/cmath.rst:86
 msgid "Pure imaginary infinity"
-msgstr ""
+msgstr "Čistě imaginárné nekonečno"
 
 #: ../../library/cmath.rst:87
 msgid ":data:`nan`"
-msgstr ""
+msgstr ":data:`nan`"
 
 #: ../../library/cmath.rst:87
 msgid "\"Not a number\" (NaN)"
-msgstr ""
+msgstr "\"Není číslo\" (NaN)"
 
 #: ../../library/cmath.rst:88
 msgid ":data:`nanj`"
-msgstr ""
+msgstr ":data:`nanj`"
 
 #: ../../library/cmath.rst:88
 msgid "Pure imaginary NaN"
-msgstr ""
+msgstr "Čistě imaginární NaN"
 
 #: ../../library/cmath.rst:93
 msgid "Conversions to and from polar coordinates"
-msgstr ""
+msgstr "Převody na a z polárních souřadnic"
 
 #: ../../library/cmath.rst:95
 msgid ""
-"A Python complex number ``z`` is stored internally using *rectangular* or"
-" *Cartesian* coordinates.  It is completely determined by its *real part*"
-" ``z.real`` and its *imaginary part* ``z.imag``."
+"A Python complex number ``z`` is stored internally using *rectangular* or "
+"*Cartesian* coordinates.  It is completely determined by its *real part* "
+"``z.real`` and its *imaginary part* ``z.imag``."
 msgstr ""
+"Komplexné číslo Pythonu ``z`` je v intertu ukončéno pomocí *obdélníkého* "
+"nebo *kartézského* souřadnicového systému. Je zcela určeno jeho *reálnou "
+"částí* ``z.real`` a jeho *imaginární částí* ``z.imag``."
 
 #: ../../library/cmath.rst:99
 msgid ""
-"*Polar coordinates* give an alternative way to represent a complex "
-"number.  In polar coordinates, a complex number *z* is defined by the "
-"modulus *r* and the phase angle *phi*. The modulus *r* is the distance "
-"from *z* to the origin, while the phase *phi* is the counterclockwise "
-"angle, measured in radians, from the positive x-axis to the line segment "
-"that joins the origin to *z*."
+"*Polar coordinates* give an alternative way to represent a complex number.  "
+"In polar coordinates, a complex number *z* is defined by the modulus *r* and"
+" the phase angle *phi*. The modulus *r* is the distance from *z* to the "
+"origin, while the phase *phi* is the counterclockwise angle, measured in "
+"radians, from the positive x-axis to the line segment that joins the origin "
+"to *z*."
 msgstr ""
+"*Polární souřadnice* poskytují alternativní způsob reprezentace komplexního "
+"čísla. V polárních souřadnicích je komplexné číslo *z* definováno modulem "
+"*r* a fázovým úhlem *phi*. Modul *r* je vzdálenost od *z* k počátku, zatímco"
+" fázový úhel *phi* je úhel měřený v radiánech proti směru hodinových ručiček"
+" od kladné osy x k úsčečce, která spojuje počátek s *z*."
 
 #: ../../library/cmath.rst:106
 msgid ""
-"The following functions can be used to convert from the native "
-"rectangular coordinates to polar coordinates and back."
+"The following functions can be used to convert from the native rectangular "
+"coordinates to polar coordinates and back."
 msgstr ""
+"Následující funkce mohou být použity k převodu z přirozených obdélníkých "
+"souřadnic na polární souřadnice a zpět."
 
 #: ../../library/cmath.rst:111
 msgid ""
-"Return the phase of *z* (also known as the *argument* of *z*), as a "
-"float. ``phase(z)`` is equivalent to ``math.atan2(z.imag, z.real)``.  The"
-" result lies in the range [-\\ *π*, *π*], and the branch cut for this "
-"operation lies along the negative real axis.  The sign of the result is "
-"the same as the sign of ``z.imag``, even when ``z.imag`` is zero::"
+"Return the phase of *z* (also known as the *argument* of *z*), as a float. "
+"``phase(z)`` is equivalent to ``math.atan2(z.imag, z.real)``.  The result "
+"lies in the range [-\\ *π*, *π*], and the branch cut for this operation lies"
+" along the negative real axis.  The sign of the result is the same as the "
+"sign of ``z.imag``, even when ``z.imag`` is zero::"
 msgstr ""
+"Vrátí fázi čísla *z* (také známá jako *argument* *z*), jako float. "
+"``phase(z)`` je ekvivalentní ``math.atan2(z.imag, z.real)``. Výsledek leží v"
+" rozsahu [-\\ *π*, *π*], a řez větve této operace leží podol záporné reálné "
+"osy. Znaménko výsledku je stejné jako znaménko ``z.imag``, i když ``z.imag``"
+" je nula::"
 
 #: ../../library/cmath.rst:117
 msgid ""
@@ -378,266 +408,340 @@ msgid ""
 ">>> phase(-1-0j)\n"
 "-3.141592653589793"
 msgstr ""
+">>> phase(-1+0j)\n"
+"3.141592653589793\n"
+">>> phase(-1-0j)\n"
+"-3.141592653589793"
 
 #: ../../library/cmath.rst:125
 msgid ""
-"The modulus (absolute value) of a complex number *z* can be computed "
-"using the built-in :func:`abs` function.  There is no separate "
-":mod:`cmath` module function for this operation."
+"The modulus (absolute value) of a complex number *z* can be computed using "
+"the built-in :func:`abs` function.  There is no separate :mod:`cmath` module"
+" function for this operation."
 msgstr ""
+"Modul (absolutní hodnota) komplexního čísla *z* lze spočítat pomocí "
+"vstavenné funkce :func:`abs`. V modulu :mod:`cmath` není pro tuto operaci "
+"oddělená funkce."
 
 #: ../../library/cmath.rst:132
 msgid ""
-"Return the representation of *z* in polar coordinates.  Returns a pair "
-"``(r, phi)`` where *r* is the modulus of *z* and *phi* is the phase of "
-"*z*.  ``polar(z)`` is equivalent to ``(abs(z), phase(z))``."
+"Return the representation of *z* in polar coordinates.  Returns a pair ``(r,"
+" phi)`` where *r* is the modulus of *z* and *phi* is the phase of *z*.  "
+"``polar(z)`` is equivalent to ``(abs(z), phase(z))``."
 msgstr ""
+"Vrátí reprezentaci *z* v polárních souřadnicích. Vrátí pár ``(r, phi)``, kde"
+" *r* je modul *z* a *phi* je fáze *z*. ``polar(z)`` je ekvivalentní "
+"``(abs(z), phase(z))``."
 
 #: ../../library/cmath.rst:140
 msgid ""
 "Return the complex number *z* with polar coordinates *r* and *phi*. "
 "Equivalent to ``complex(r * math.cos(phi), r * math.sin(phi))``."
 msgstr ""
+"Vrátí komplexné číslo *z* s polárními souřadnicemi *r* a *phi*. Ekvivalentní"
+" ``complex(r * math.cos(phi), r * math.sin(phi))``."
 
 #: ../../library/cmath.rst:145
 msgid "Power and logarithmic functions"
-msgstr ""
+msgstr "Mocninné a logaritmické funkce"
 
 #: ../../library/cmath.rst:149
 msgid ""
 "Return *e* raised to the power *z*, where *e* is the base of natural "
 "logarithms."
-msgstr ""
+msgstr "Vrátí *e* umocněné na *z*, kde *e* je základ přirozených logaritmů."
 
 #: ../../library/cmath.rst:155
 msgid ""
 "Return the logarithm of *z* to the given *base*. If the *base* is not "
-"specified, returns the natural logarithm of *z*. There is one branch cut,"
-" from 0 along the negative real axis to -∞."
+"specified, returns the natural logarithm of *z*. There is one branch cut, "
+"from 0 along the negative real axis to -∞."
 msgstr ""
+"Vrátí logaritmus *z* s daným základem. Pokud není základ specifikován, vrátí"
+" přirozený logaritmus *z*. Je jeden řez větve, od 0 podol záporné reálné osy"
+" k -∞."
 
 #: ../../library/cmath.rst:162
 msgid ""
 "Return the base-10 logarithm of *z*. This has the same branch cut as "
 ":func:`log`."
-msgstr ""
+msgstr "Vrátí desitetný logaritmus *z*. Má stejný řez větve jako :func:`log`."
 
 #: ../../library/cmath.rst:168
 msgid ""
-"Return the square root of *z*. This has the same branch cut as "
-":func:`log`."
-msgstr ""
+"Return the square root of *z*. This has the same branch cut as :func:`log`."
+msgstr "Vrátí druhou odmocninu *z*. Má stejný řez větve jako :func:`log`."
 
 #: ../../library/cmath.rst:172
 msgid "Trigonometric functions"
-msgstr ""
+msgstr "Trigonometrické funkce"
 
 #: ../../library/cmath.rst:176
 msgid ""
-"Return the arc cosine of *z*. There are two branch cuts: One extends "
-"right from 1 along the real axis to ∞. The other extends left from -1 "
-"along the real axis to -∞."
+"Return the arc cosine of *z*. There are two branch cuts: One extends right "
+"from 1 along the real axis to ∞. The other extends left from -1 along the "
+"real axis to -∞."
 msgstr ""
+"Vrátí arkuskosinus *z*. Jsou dva řezy větví: Jeden se rozpínaje doprava od 1"
+" podol reálné osy k ∞. Druhý se rozpínaje doleva od -1 podol reálné osy k "
+"-∞."
 
 #: ../../library/cmath.rst:183
-msgid "Return the arc sine of *z*. This has the same branch cuts as :func:`acos`."
-msgstr ""
+msgid ""
+"Return the arc sine of *z*. This has the same branch cuts as :func:`acos`."
+msgstr "Vrátí arkussinus *z*. Má stejné řezy větví jako :func:`acos`."
 
 #: ../../library/cmath.rst:188
 msgid ""
-"Return the arc tangent of *z*. There are two branch cuts: One extends "
-"from ``1j`` along the imaginary axis to ``∞j``. The other extends from "
-"``-1j`` along the imaginary axis to ``-∞j``."
+"Return the arc tangent of *z*. There are two branch cuts: One extends from "
+"``1j`` along the imaginary axis to ``∞j``. The other extends from ``-1j`` "
+"along the imaginary axis to ``-∞j``."
 msgstr ""
+"Vrátí arkustangens *z*. Jsou dva řezy větví: Jeden se rozpínaje od ``1j`` "
+"podol imaginárné osy k ``∞j``. Druhý se rozpínaje od ``-1j`` podol "
+"imaginárné osy k ``-∞j``."
 
 #: ../../library/cmath.rst:195
 msgid "Return the cosine of *z*."
-msgstr ""
+msgstr "Vrátí kosinus *z*."
 
 #: ../../library/cmath.rst:200
 msgid "Return the sine of *z*."
-msgstr ""
+msgstr "Vrátí sinus *z*."
 
 #: ../../library/cmath.rst:205
 msgid "Return the tangent of *z*."
-msgstr ""
+msgstr "Vrátí tangens *z*."
 
 #: ../../library/cmath.rst:209
 msgid "Hyperbolic functions"
-msgstr ""
+msgstr "Hyperbolické funkce"
 
 #: ../../library/cmath.rst:213
 msgid ""
 "Return the inverse hyperbolic cosine of *z*. There is one branch cut, "
 "extending left from 1 along the real axis to -∞."
 msgstr ""
+"Vrátí inverzní hyperbolický kosinus *z*. Je jeden řez větve, rozpínající se "
+"doleva od 1 podol reálné osy k -∞."
 
 #: ../../library/cmath.rst:219
 msgid ""
-"Return the inverse hyperbolic sine of *z*. There are two branch cuts: One"
-" extends from ``1j`` along the imaginary axis to ``∞j``.  The other "
-"extends from ``-1j`` along the imaginary axis to ``-∞j``."
+"Return the inverse hyperbolic sine of *z*. There are two branch cuts: One "
+"extends from ``1j`` along the imaginary axis to ``∞j``.  The other extends "
+"from ``-1j`` along the imaginary axis to ``-∞j``."
 msgstr ""
+"Vrátí inverzní hyperbolický sinus *z*. Jsou dva řezy větví: Jeden se "
+"rozpínaje od ``1j`` podol imaginárné osy k ``∞j``. Druhý se rozpínaje od "
+"``-1j`` podol imaginárné osy k ``-∞j``."
 
 #: ../../library/cmath.rst:226
 msgid ""
-"Return the inverse hyperbolic tangent of *z*. There are two branch cuts: "
-"One extends from ``1`` along the real axis to ``∞``. The other extends "
-"from ``-1`` along the real axis to ``-∞``."
+"Return the inverse hyperbolic tangent of *z*. There are two branch cuts: One"
+" extends from ``1`` along the real axis to ``∞``. The other extends from "
+"``-1`` along the real axis to ``-∞``."
 msgstr ""
+"Vrátí inverzní hyperbolický tangens *z*. Jsou dva řezy větví: Jeden se "
+"rozpínaje od ``1`` podol reálné osy k ``∞``. Druhý se rozpínaje od ``-1`` "
+"podol reálné osy k ``-∞``."
 
 #: ../../library/cmath.rst:233
 msgid "Return the hyperbolic cosine of *z*."
-msgstr ""
+msgstr "Vrátí hyperbolický kosinus *z*."
 
 #: ../../library/cmath.rst:238
 msgid "Return the hyperbolic sine of *z*."
-msgstr ""
+msgstr "Vrátí hyperbolický sinus *z*."
 
 #: ../../library/cmath.rst:243
 msgid "Return the hyperbolic tangent of *z*."
-msgstr ""
+msgstr "Vrátí hyperbolický tangens *z*."
 
 #: ../../library/cmath.rst:247
 msgid "Classification functions"
-msgstr ""
+msgstr "Klasifikační funkce"
 
 #: ../../library/cmath.rst:251
 msgid ""
-"Return ``True`` if both the real and imaginary parts of *z* are finite, "
-"and ``False`` otherwise."
+"Return ``True`` if both the real and imaginary parts of *z* are finite, and "
+"``False`` otherwise."
 msgstr ""
+"Vrátí ``True``, pokud jsou reálná i imaginární část *z* konečné, a ``False``"
+" jinak."
 
 #: ../../library/cmath.rst:259
 msgid ""
 "Return ``True`` if either the real or the imaginary part of *z* is an "
 "infinity, and ``False`` otherwise."
 msgstr ""
+"Vrátí ``True``, pokud je reálná nebo imaginární část *z* nekonečna, a "
+"``False`` jinak."
 
 #: ../../library/cmath.rst:265
 msgid ""
-"Return ``True`` if either the real or the imaginary part of *z* is a NaN,"
-" and ``False`` otherwise."
+"Return ``True`` if either the real or the imaginary part of *z* is a NaN, "
+"and ``False`` otherwise."
 msgstr ""
+"Vrátí ``True``, pokud je reálná nebo imaginární část *z* NaN, a ``False`` "
+"jinak."
 
 #: ../../library/cmath.rst:271
 msgid ""
 "Return ``True`` if the values *a* and *b* are close to each other and "
 "``False`` otherwise."
 msgstr ""
+"Vrátí ``True``, pokud jsou hodnoty *a* a *b* blízké sobě a ``False`` jinak."
 
 #: ../../library/cmath.rst:274
 msgid ""
-"Whether or not two values are considered close is determined according to"
-" given absolute and relative tolerances.  If no errors occur, the result "
-"will be: ``abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)``."
+"Whether or not two values are considered close is determined according to "
+"given absolute and relative tolerances.  If no errors occur, the result will"
+" be: ``abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)``."
 msgstr ""
+"Zda jsou nebo nejsou dvě hodnoty považovány za blízké, se určuje podle "
+"daných absolutních a relativních tolerancí. Pokud nedojde k chybám, bude "
+"výsledek: ``abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)``."
 
 #: ../../library/cmath.rst:278
 msgid ""
-"*rel_tol* is the relative tolerance -- it is the maximum allowed "
-"difference between *a* and *b*, relative to the larger absolute value of "
-"*a* or *b*. For example, to set a tolerance of 5%, pass ``rel_tol=0.05``."
-"  The default tolerance is ``1e-09``, which assures that the two values "
-"are the same within about 9 decimal digits.  *rel_tol* must be "
-"nonnegative and less than ``1.0``."
+"*rel_tol* is the relative tolerance -- it is the maximum allowed difference "
+"between *a* and *b*, relative to the larger absolute value of *a* or *b*. "
+"For example, to set a tolerance of 5%, pass ``rel_tol=0.05``.  The default "
+"tolerance is ``1e-09``, which assures that the two values are the same "
+"within about 9 decimal digits.  *rel_tol* must be nonnegative and less than "
+"``1.0``."
 msgstr ""
+"*rel_tol* je relativní tolerance -- je to maximální povolený rozdíl mezi *a*"
+" a *b*, relativní k větší absolutní hodnotě *a* nebo *b*. Například, chcete-"
+"li nastavit toleranci 5%, přejděte ``rel_tol=0.05``. Výchozí tolerance je "
+"``1e-09``, která zajistí, že se obě hodnoty budou shodovat v rámci přibližně"
+" 9 desétiných míst. *rel_tol* musí být negativní a menší než ``1.0``."
 
 #: ../../library/cmath.rst:285
 msgid ""
-"*abs_tol* is the absolute tolerance; it defaults to ``0.0`` and it must "
-"be nonnegative.  When comparing ``x`` to ``0.0``, ``isclose(x, 0)`` is "
-"computed as ``abs(x) <= rel_tol  * abs(x)``, which is ``False`` for any "
-"``x`` and rel_tol less than ``1.0``.  So add an appropriate positive "
-"abs_tol argument to the call."
+"*abs_tol* is the absolute tolerance; it defaults to ``0.0`` and it must be "
+"nonnegative.  When comparing ``x`` to ``0.0``, ``isclose(x, 0)`` is computed"
+" as ``abs(x) <= rel_tol  * abs(x)``, which is ``False`` for any ``x`` and "
+"rel_tol less than ``1.0``.  So add an appropriate positive abs_tol argument "
+"to the call."
 msgstr ""
+"*abs_tol* je absolutní tolerance; jeho výchozí hodnota je ``0.0`` a musí být"
+" záporné. Pokud porovnáváte ``x`` s ``0.0``, ``isclose(x, 0)`` je spočítáno "
+"jako ``abs(x) <= rel_tol * abs(x)``, což je ``False`` pro jakýkoli ``x`` a "
+"rel_tol menší než ``1.0``. V tom případě přidejte do volání vhodný kladný "
+"argument abs_tol."
 
 #: ../../library/cmath.rst:291
 msgid ""
 "The IEEE 754 special values of ``NaN``, ``inf``, and ``-inf`` will be "
-"handled according to IEEE rules.  Specifically, ``NaN`` is not considered"
-" close to any other value, including ``NaN``.  ``inf`` and ``-inf`` are "
-"only considered close to themselves."
+"handled according to IEEE rules.  Specifically, ``NaN`` is not considered "
+"close to any other value, including ``NaN``.  ``inf`` and ``-inf`` are only "
+"considered close to themselves."
 msgstr ""
+"Speciální hodnoty IEEE 754 ``NaN``, ``inf`` a ``-inf`` budou zpřácovány "
+"podle pravidel IEEE. Konkrétně ``NaN`` není považováno za blízké žádné jiné "
+"hodnotě, včetně ``NaN``. ``inf`` a ``-inf`` jsou považovány za blízké pouze "
+"samě sobě."
 
 #: ../../library/cmath.rst:300
 msgid ":pep:`485` -- A function for testing approximate equality"
-msgstr ""
+msgstr ":pep:`485` -- Funkce pro testování přibližné rovnosti"
 
 #: ../../library/cmath.rst:304
 msgid "Constants"
-msgstr ""
+msgstr "Konstanty"
 
 #: ../../library/cmath.rst:308
 msgid "The mathematical constant *π*, as a float."
-msgstr ""
+msgstr "Matematická konstanta *π*, jako float."
 
 #: ../../library/cmath.rst:313
 msgid "The mathematical constant *e*, as a float."
-msgstr ""
+msgstr "Matematická konstanta *e*, jako float."
 
 #: ../../library/cmath.rst:318
 msgid "The mathematical constant *τ*, as a float."
-msgstr ""
+msgstr "Matematická konstanta *τ*, jako float."
 
 #: ../../library/cmath.rst:325
 msgid "Floating-point positive infinity. Equivalent to ``float('inf')``."
 msgstr ""
+"Kladné nekonečno v pohyblivé řádové čárce. Ekvivalentní ``float('inf')``."
 
 #: ../../library/cmath.rst:332
 msgid ""
 "Complex number with zero real part and positive infinity imaginary part. "
 "Equivalent to ``complex(0.0, float('inf'))``."
 msgstr ""
+"Komplexné číslo s nulovou reálnou částí a kladným nekonečým imginární částí."
+" Ekvivalentní ``complex(0.0, float('inf'))``."
 
 #: ../../library/cmath.rst:340
 msgid ""
 "A floating-point \"not a number\" (NaN) value.  Equivalent to "
 "``float('nan')``. See also :data:`math.nan`."
 msgstr ""
+"Hodnota pohyblivé řádové čárky \"not a number\" (NaN). Ekvivalentní "
+"``float('nan')``. Viz také :data:`math.nan`."
 
 #: ../../library/cmath.rst:348
 msgid ""
 "Complex number with zero real part and NaN imaginary part. Equivalent to "
 "``complex(0.0, float('nan'))``."
 msgstr ""
+"Komplexné číslo s nulovou reálnou částí a NaN imaginární částí. Ekvivalentní"
+" ``complex(0.0, float('nan'))``."
 
 #: ../../library/cmath.rst:356
 msgid ""
-"Note that the selection of functions is similar, but not identical, to "
-"that in module :mod:`math`.  The reason for having two modules is that "
-"some users aren't interested in complex numbers, and perhaps don't even "
-"know what they are.  They would rather have ``math.sqrt(-1)`` raise an "
-"exception than return a complex number. Also note that the functions "
-"defined in :mod:`cmath` always return a complex number, even if the "
-"answer can be expressed as a real number (in which case the complex "
-"number has an imaginary part of zero)."
+"Note that the selection of functions is similar, but not identical, to that "
+"in module :mod:`math`.  The reason for having two modules is that some users"
+" aren't interested in complex numbers, and perhaps don't even know what they"
+" are.  They would rather have ``math.sqrt(-1)`` raise an exception than "
+"return a complex number. Also note that the functions defined in "
+":mod:`cmath` always return a complex number, even if the answer can be "
+"expressed as a real number (in which case the complex number has an "
+"imaginary part of zero)."
 msgstr ""
+"Vezměte na vědomí, že výběr funkcí je podobný, ale ne zcela identický s "
+"funkcem v modulu :mod:`math`. Důvodem má dva moduly je, že někteří uživatelé"
+" se nezajímají o komplexní čísla a možná ani nevědí, co to je. Raději by "
+"chtěli, aby ``math.sqrt(-1)`` vyvolala výjimku než aby vrátila komplexné "
+"číslo. Také vezměte na vědomí, že funkce definované v :mod:`cmath` vzdy "
+"vracejí komplexné číslo, i když lze odpověď vyjádřit jako reálné číslo (v "
+"tom případě má komplexné číslo nulovou imaginární část)."
 
 #: ../../library/cmath.rst:364
 msgid ""
-"A note on branch cuts: They are curves along which the given function "
-"fails to be continuous.  They are a necessary feature of many complex "
-"functions.  It is assumed that if you need to compute with complex "
-"functions, you will understand about branch cuts.  Consult almost any "
-"(not too elementary) book on complex variables for enlightenment.  For "
-"information of the proper choice of branch cuts for numerical purposes, a"
-" good reference should be the following:"
+"A note on branch cuts: They are curves along which the given function fails "
+"to be continuous.  They are a necessary feature of many complex functions.  "
+"It is assumed that if you need to compute with complex functions, you will "
+"understand about branch cuts.  Consult almost any (not too elementary) book "
+"on complex variables for enlightenment.  For information of the proper "
+"choice of branch cuts for numerical purposes, a good reference should be the"
+" following:"
 msgstr ""
+"Poznámka o řezech větví: Jsou to křivky, podél kterých daná funkce není "
+"spojitá. Jsou to nezbytná vlastnost mnohých komplexních funkcí. Předpokládá "
+"se, že pokud potřebujete pracovat s komplexními funkcemi, budete rozumět "
+"řezům větví. Naleznete informace v skoro každém (ne příliš elementárním) "
+"učebním textu o komplexních proměnných. Pro informace o správné volbě řezů "
+"větví pro numerické účely, dobrym referenčním zdrojem by bylo:"
 
 #: ../../library/cmath.rst:374
 msgid ""
-"Kahan, W:  Branch cuts for complex elementary functions; or, Much ado "
-"about nothing's sign bit.  In Iserles, A., and Powell, M. (eds.), The "
-"state of the art in numerical analysis. Clarendon Press (1987) pp165--"
-"211."
+"Kahan, W:  Branch cuts for complex elementary functions; or, Much ado about "
+"nothing's sign bit.  In Iserles, A., and Powell, M. (eds.), The state of the"
+" art in numerical analysis. Clarendon Press (1987) pp165--211."
 msgstr ""
+"Kahan, W: Branch cuts for complex elementary functions; or, Much ado about "
+"nothing's sign bit. In Iserles, A., and Powell, M. (eds.), The state of the "
+"art in numerical analysis. Clarendon Press (1987) pp165--211."
 
 #: ../../library/cmath.rst:354
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../library/cmath.rst:354
 msgid "math"
-msgstr ""
-
+msgstr "math"

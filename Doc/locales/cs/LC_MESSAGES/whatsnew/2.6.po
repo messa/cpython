@@ -199,13 +199,13 @@ msgid ""
 "LaTeX to reStructuredText."
 msgstr ""
 "Během výtěu 2.6 se vývojový proces Pythonu přestal vyvinout dvě významné "
-"změny: přesměrovali jsme z sledovatele problémů SourceForge na přizpůsobenou"
-" instalaci Roundup a dokumentace byla převedená z LaTeXu do "
+"změny: přesměrovali jsme z issue trackeru SourceForge na přizpůsobenou "
+"instalaci Roundup a dokumentace byla převedená z LaTeXu do "
 "reStructuredTextu."
 
 #: ../../whatsnew/2.6.rst:143
 msgid "New Issue Tracker: Roundup"
-msgstr "Nový sledovač problémů: Roundup"
+msgstr "Nový issue tracker: Roundup"
 
 #: ../../whatsnew/2.6.rst:145
 msgid ""
@@ -254,10 +254,10 @@ msgid ""
 msgstr ""
 "Po zveřejnění vývřoje pro dobrovolé, byla nová instalace Roundup nastavena "
 "na https://bugs.python.org. Jedná instalace Roundup může hostovat více "
-"sledovačů a tento server nyní také hostuje sledovateše problémů pro Jython a"
-" webové stránky Pythonu. Určitě bude mít další použití v budoucnosti. Kde je"
-" to možené, toto vydání \"Nového v Pythonu\" odkazuje na položku "
-"chyby/záplaty pro každé změně."
+"trackerů a tento server nyní také hostuje issue trackery pro Jython a webové"
+" stránky Pythonu. Určitě bude mít další použití v budoucnosti. Kde je to "
+"možené, toto vydání \"Nového v Pythonu\" odkazuje na položku chyby/záplaty "
+"pro každé změně."
 
 #: ../../whatsnew/2.6.rst:172
 msgid ""
@@ -1433,6 +1433,14 @@ msgid ""
 "...    last_login = \"5 Mar 2008 07:20\")\n"
 "'User ID: root   Last seen: 5 Mar 2008 07:20'"
 msgstr ""
+">>> # Nahradit poziční argument 0 do řetězce.\n"
+">>> \"User ID: {0}\".format(\"root\")\n"
+"'User ID: root'\n"
+">>> # Použít pojmenované argumenty klíčů\n"
+">>> \"User ID: {uid}   Last seen: {last_login}\".format(\n"
+"...    uid=\"root\",\n"
+"...    last_login = \"5 Mar 2008 07:20\")\n"
+"'User ID: root   Last seen: 5 Mar 2008 07:20'"
 
 #: ../../whatsnew/2.6.rst:743
 msgid "Curly brackets can be escaped by doubling them::"
@@ -1444,6 +1452,8 @@ msgid ""
 ">>> \"Empty dict: {{}}\".format()\n"
 "\"Empty dict: {}\""
 msgstr ""
+">>> \"Empty dict: {{}}\".format()\n"
+"\"Empty dict: {}\""
 
 #: ../../whatsnew/2.6.rst:748
 #, python-brace-format
@@ -1468,6 +1478,15 @@ msgid ""
 ">>> 'Content-type: {0[.mp4]}'.format(mimetypes.types_map)\n"
 "'Content-type: video/mp4'"
 msgstr ""
+">>> import sys\n"
+">>> print 'Platform: {0.platform}\\nPython version: {0.version}'.format(sys)\n"
+"Platform: darwin\n"
+"Python version: 2.6a1+ (trunk:61261M, Mar  5 2008, 20:29:41)\n"
+"[GCC 4.0.1 (Apple Computer, Inc. build 5367)]'\n"
+"\n"
+">>> import mimetypes\n"
+">>> 'Content-type: {0[.mp4]}'.format(mimetypes.types_map)\n"
+"'Content-type: video/mp4'"
 
 #: ../../whatsnew/2.6.rst:762
 msgid ""
@@ -1503,6 +1522,15 @@ msgid ""
 ">>> fmt.format('Banquet', 125)\n"
 "'Banquet         $   125'"
 msgstr ""
+">>> # Pole 0: zarovnání vlevo, doplnit na 15 znaků\n"
+">>> # Pole 1: zarovnání vpravo, doplnit na 6 znaků\n"
+">>> fmt = '{0:15} ${1:>6}'\n"
+">>> fmt.format('Registration', 35)\n"
+"'Registration    $    35'\n"
+">>> fmt.format('Tutorial', 50)\n"
+"'Tutorial        $    50'\n"
+">>> fmt.format('Banquet', 125)\n"
+"'Banquet         $   125'"
 
 #: ../../whatsnew/2.6.rst:782
 msgid "Format specifiers can reference other fields through nesting::"
@@ -1520,6 +1548,13 @@ msgid ""
 ">>> fmt.format('Invoice #1234', width)\n"
 "'Invoice #1234                      '"
 msgstr ""
+">>> fmt = '{0:{1}}'\n"
+">>> width = 15\n"
+">>> fmt.format('Invoice #1234', width)\n"
+"'Invoice #1234  '\n"
+">>> width = 35\n"
+">>> fmt.format('Invoice #1234', width)\n"
+"'Invoice #1234                      '"
 
 #: ../../whatsnew/2.6.rst:792
 msgid "The alignment of a field within the desired width can be specified:"
@@ -1583,6 +1618,10 @@ msgid ""
 ">>> '{0:e}'.format(3.75)\n"
 "'3.750000e+00'"
 msgstr ""
+">>> '{0:g}'.format(3.75)\n"
+"'3.75'\n"
+">>> '{0:e}'.format(3.75)\n"
+"'3.750000e+00'"
 
 #: ../../whatsnew/2.6.rst:812
 msgid ""
@@ -1984,6 +2023,12 @@ msgid ""
 "\n"
 "print len(s)               # 12 Unicode characters"
 msgstr ""
+"from __future__ import unicode_literals\n"
+"\n"
+"s = ('\\u751f\\u3080\\u304e\\u3000\\u751f\\u3054'\n"
+"     '\\u3081\\u3000\\u751f\\u305f\\u307e\\u3054')\n"
+"\n"
+"print len(s)               # 12 znaků Unicode"
 
 #: ../../whatsnew/2.6.rst:985
 msgid ""
@@ -2021,6 +2066,16 @@ msgid ""
 ">>> unicode(str(b), 'utf-8')\n"
 "u'\\u31ef \\u3244'"
 msgstr ""
+">>> bytearray([65, 66, 67])\n"
+"bytearray(b'ABC')\n"
+">>> b = bytearray(u'\\u21ef\\u3244', 'utf-8')\n"
+">>> b\n"
+"bytearray(b'\\xe2\\x87\\xaf\\xe3\\x89\\x84')\n"
+">>> b[0] = '\\xe3'\n"
+">>> b\n"
+"bytearray(b'\\xe3\\x87\\xaf\\xe3\\x89\\x84')\n"
+">>> unicode(str(b), 'utf-8')\n"
+"u'\\u31ef \\u3244'"
 
 #: ../../whatsnew/2.6.rst:1007
 msgid ""
@@ -2044,6 +2099,11 @@ msgid ""
 ">>> b\n"
 "bytearray(b'ABCde')"
 msgstr ""
+">>> b = bytearray('ABC')\n"
+">>> b.append('d')\n"
+">>> b.append(ord('e'))\n"
+">>> b\n"
+"bytearray(b'ABCde')"
 
 #: ../../whatsnew/2.6.rst:1021
 msgid ""
@@ -2055,15 +2115,16 @@ msgstr ""
 
 #: ../../whatsnew/2.6.rst:1028
 msgid ":pep:`3112` - Bytes literals in Python 3000"
-msgstr ""
+msgstr ":pep:`3112` - Bajtolové literaly v Pythonu 3000"
 
 #: ../../whatsnew/2.6.rst:1029
 msgid "PEP written by Jason Orendorff; backported to 2.6 by Christian Heimes."
 msgstr ""
+"PEP napsán Jasonem Orendorffem; zpornavráceno do 2.6 Christianem Heimesem."
 
 #: ../../whatsnew/2.6.rst:1036
 msgid "PEP 3116: New I/O Library"
-msgstr ""
+msgstr "PEP 3116: Nová knihovna I/O"
 
 #: ../../whatsnew/2.6.rst:1038
 msgid ""
@@ -2074,12 +2135,18 @@ msgid ""
 " in the :mod:`io` module that separates buffering and text-handling features"
 " from the fundamental read and write operations."
 msgstr ""
+"Vestavěné objekty souborů Pythonu podporují několik metod, ale objekty "
+"podobné souborům nemusí podporovat všechny z nich. Objekty, které napodobují"
+" soubory, obvykle podporují :meth:`!read` a :meth:`!write`, ale nemusí "
+"podporovat :meth:`!readline`, například. Python 3.0 zavádí vrstvenou "
+"knihovnu I/O v modulu :mod:`io`, která odděluje funkce ukládání do "
+"vyrovnávací paměti a zpracování textu od základních operací čtení a zápisu."
 
 #: ../../whatsnew/2.6.rst:1046
 msgid ""
 "There are three levels of abstract base classes provided by the :mod:`io` "
 "module:"
-msgstr ""
+msgstr "Modul :mod:`io` poskytuje tři úroveň abstraktních základních tříd:"
 
 #: ../../whatsnew/2.6.rst:1049
 msgid ""
@@ -2098,6 +2165,9 @@ msgid ""
 "Python 3.0 has concrete implementations of this class for files and sockets,"
 " but Python 2.6 hasn't restructured its file and socket objects in this way."
 msgstr ""
+"Python 3.0 má konkrétní implementace této třídy pro soubory a sokety, ale "
+"Python 2.6 si své objekty souborů a soketů tímto způsobem "
+"neprestruktovávají."
 
 #: ../../whatsnew/2.6.rst:1062
 msgid ""
@@ -2158,7 +2228,7 @@ msgstr ""
 
 #: ../../whatsnew/2.6.rst:1108
 msgid ":pep:`3116` - New I/O"
-msgstr ""
+msgstr ":pep:`3116` - Nové I/O"
 
 #: ../../whatsnew/2.6.rst:1109
 msgid ""
@@ -2169,7 +2239,7 @@ msgstr ""
 
 #: ../../whatsnew/2.6.rst:1118
 msgid "PEP 3118: Revised Buffer Protocol"
-msgstr ""
+msgstr "PEP 3118: Revidovaný protokol bufferu"
 
 #: ../../whatsnew/2.6.rst:1120
 msgid ""
@@ -2206,15 +2276,19 @@ msgid ""
 "The *flags* argument to :c:func:`PyObject_GetBuffer` specifies constraints "
 "upon the memory returned.  Some examples are:"
 msgstr ""
+"Argument *flags* na :c:func:`PyObject_GetBuffer` určuje omezení na vrácenou "
+"paměť. Některé příklady jsou:"
 
 #: ../../whatsnew/2.6.rst:1146
 msgid ":c:macro:`PyBUF_WRITABLE` indicates that the memory must be writable."
-msgstr ""
+msgstr ":c:macro:`PyBUF_WRITABLE` oznacuje, ze pamet musi byt zapisovatelna."
 
 #: ../../whatsnew/2.6.rst:1148
 msgid ""
 ":c:macro:`PyBUF_LOCK` requests a read-only or exclusive lock on the memory."
 msgstr ""
+":c:macro:`PyBUF_LOCK` zada zamek jen pro cteni nebo exkluzivni zamek na "
+"pamet."
 
 #: ../../whatsnew/2.6.rst:1150
 msgid ""
@@ -2222,26 +2296,32 @@ msgid ""
 "C-contiguous (last dimension varies the fastest) or Fortran-contiguous "
 "(first dimension varies the fastest) array layout."
 msgstr ""
+":c:macro:`PyBUF_C_CONTIGUOUS` a :c:macro:`PyBUF_F_CONTIGUOUS` zadaji "
+"C-souvisle nebo Fortran-souvisle pristup pole."
 
 #: ../../whatsnew/2.6.rst:1154
 msgid ""
 "Two new argument codes for :c:func:`PyArg_ParseTuple`, ``s*`` and ``z*``, "
 "return locked buffer objects for a parameter."
 msgstr ""
+"Dva nove kody argumentu pro :c:func:`PyArg_ParseTuple`, ``s*`` a ``z*``, "
+"vracejou zamykane objekty bufferu pro parametr."
 
 #: ../../whatsnew/2.6.rst:1159
 msgid ":pep:`3118` - Revising the buffer protocol"
-msgstr ""
+msgstr ":pep:`3118` - Revize protokolu bufferu"
 
 #: ../../whatsnew/2.6.rst:1160
 msgid ""
 "PEP written by Travis Oliphant and Carl Banks; implemented by Travis "
 "Oliphant."
 msgstr ""
+"PEP napsan Travisem Oliphantem a Carlem Banksem; implementovano Travisem "
+"Oliphantem."
 
 #: ../../whatsnew/2.6.rst:1169
 msgid "PEP 3119: Abstract Base Classes"
-msgstr ""
+msgstr "PEP 3119: Abstraktni zakladni tridy"
 
 #: ../../whatsnew/2.6.rst:1171
 msgid ""
@@ -2282,6 +2362,8 @@ msgid ""
 "You can derive your own classes from a particular ABC to indicate they "
 "support that ABC's interface::"
 msgstr ""
+"Muzete odvodit sve vlastni tridy z konkretni ABC k oznameni, ze podporuji "
+"rozhrani te ABC::"
 
 #: ../../whatsnew/2.6.rst:1201
 msgid ""
@@ -2290,6 +2372,10 @@ msgid ""
 "class Storage(collections.MutableMapping):\n"
 "    ..."
 msgstr ""
+"import collections\n"
+"\n"
+"class Storage(collections.MutableMapping):\n"
+"    ..."
 
 #: ../../whatsnew/2.6.rst:1207
 msgid ""
@@ -2297,6 +2383,8 @@ msgid ""
 "ABC and instead register the class by calling the ABC's "
 ":meth:`~abc.ABCMeta.register` method::"
 msgstr ""
+"Vas mril vas psali trida bez vasho odvozeni od zadane ABC a mistoho "
+"zaregistrovat tridu volanim metody :meth:`~abc.ABCMeta.register` ABC::"
 
 #: ../../whatsnew/2.6.rst:1211
 msgid ""
@@ -2307,6 +2395,12 @@ msgid ""
 "\n"
 "collections.MutableMapping.register(Storage)"
 msgstr ""
+"import collections\n"
+"\n"
+"class Storage:\n"
+"    ...\n"
+"\n"
+"collections.MutableMapping.register(Storage)"
 
 #: ../../whatsnew/2.6.rst:1218
 msgid ""
@@ -2316,6 +2410,11 @@ msgid ""
 "that some third-party class implements an ABC. For example, if you defined a"
 " :class:`!PrintableType` ABC, it's legal to do::"
 msgstr ""
+"Pro třídy, které píšete, odvozování z ABC je pravděpodobně jasnější. Metoda "
+":meth:`~abc.ABCMeta.register` je užitečná, když jste napsali nový ABC, který"
+" může popsat existující typ nebo třídu, nebo pokud chcete deklarovat, že "
+"nějaká třetí strana třída implementuje ABC. Například, pokud jste definovali"
+" :class:`!PrintableType` ABC, je zákonné::"
 
 #: ../../whatsnew/2.6.rst:1225
 msgid ""
@@ -2324,6 +2423,10 @@ msgid ""
 "PrintableType.register(float)\n"
 "PrintableType.register(str)"
 msgstr ""
+"# Register Python's types\n"
+"PrintableType.register(int)\n"
+"PrintableType.register(float)\n"
+"PrintableType.register(str)"
 
 #: ../../whatsnew/2.6.rst:1230
 msgid ""
@@ -2331,12 +2434,17 @@ msgid ""
 "check this; it's up to the class author to understand the ABC's requirements"
 " and to implement the code accordingly."
 msgstr ""
+"Třídy by měly dodržovat sémantiku specifikovanou ABC, ale Python to nemůže "
+"zkontrolovat; je na autorovi třídy pochopit požadavky ABC a implementovat "
+"kód odpovídajícím způsobem."
 
 #: ../../whatsnew/2.6.rst:1234
 msgid ""
 "To check whether an object supports a particular interface, you can now "
 "write::"
 msgstr ""
+"Chcete-li zkontrolovat, zda objekt podporuje konkrétní rozhraní, můžete nyní"
+" napsat::"
 
 #: ../../whatsnew/2.6.rst:1237
 #, python-format
@@ -2345,6 +2453,9 @@ msgid ""
 "    if not isinstance(d, collections.MutableMapping):\n"
 "        raise ValueError(\"Mapping object expected, not %r\" % d)"
 msgstr ""
+"def func(d):\n"
+"    if not isinstance(d, collections.MutableMapping):\n"
+"        raise ValueError(\"Mapping object expected, not %r\" % d)"
 
 #: ../../whatsnew/2.6.rst:1241
 msgid ""
@@ -2355,12 +2466,19 @@ msgid ""
 "Be judicious in checking for ABCs and only do it where it's absolutely "
 "necessary."
 msgstr ""
+"Necítejte se povinni nyní začít psát spoustu kontrol, jak je v příkladu "
+"výše. Python má silnou tradici duck-typingu, kde se nikdy neprovádí "
+"explicitní kontrola typů a kód jednoduše volá metody na objektu a důvěřuje, "
+"že ty metody budou k dispozici a vyvolá výjimku, pokud ne. Buďte uvážliví "
+"při kontrole ABC a dělejte to pouze tam, kde je to naprosto nezbytné."
 
 #: ../../whatsnew/2.6.rst:1248
 msgid ""
 "You can write your own ABCs by using ``abc.ABCMeta`` as the metaclass in a "
 "class definition::"
 msgstr ""
+"Můžete napsat své vlastní ABC pomocí ``abc.ABCMeta`` jako metaklas v "
+"definici třídy::"
 
 #: ../../whatsnew/2.6.rst:1251
 msgid ""
@@ -2381,6 +2499,22 @@ msgid ""
 "    def draw(self, x, y, scale):\n"
 "        ..."
 msgstr ""
+"from abc import ABCMeta, abstractmethod\n"
+"\n"
+"class Drawable():\n"
+"    __metaclass__ = ABCMeta\n"
+"\n"
+"    @abstractmethod\n"
+"    def draw(self, x, y, scale=1.0):\n"
+"        pass\n"
+"\n"
+"    def draw_doubled(self, x, y):\n"
+"        self.draw(x, y, scale=2.0)\n"
+"\n"
+"\n"
+"class Square(Drawable):\n"
+"    def draw(self, x, y, scale):\n"
+"        ..."
 
 #: ../../whatsnew/2.6.rst:1269
 msgid ""
@@ -2392,6 +2526,12 @@ msgid ""
 ":meth:`!draw` is necessary, though; the ABC can't provide a useful generic "
 "implementation."
 msgstr ""
+"V ABC :class:`!Drawable` výše, metoda :meth:`!draw_doubled` vykresluje "
+"objekt na dvojnásobnou velikost a lze ji implementovat z hlediska jiných "
+"metod popsaných v :class:`!Drawable`. Třídy implementující tuto ABC proto "
+"nemusí poskytnout vlastní implementaci :meth:`!draw_doubled`, ačkoli to "
+"mohou. Implementace :meth:`!draw` je však nezbytná; ABC nemůže poskytnout "
+"užitečnou generickou implementaci."
 
 #: ../../whatsnew/2.6.rst:1277
 msgid ""
@@ -2401,6 +2541,10 @@ msgid ""
 "raised when you actually try to create an instance of a subclass lacking the"
 " method::"
 msgstr ""
+"Můžete aplikovat dekorátor :deco:`~abc.abstractmethod` na metody, jako je "
+":meth:`!draw`, které musí být implementovány; Python poté vyvolá výjimku pro"
+" třídy, které metodu nedefinují. Upozornění: výjimka je vyvolána pouze pokud"
+" se pokusíte vytvořit instanci podtřídy postrádající metodu::"
 
 #: ../../whatsnew/2.6.rst:1283
 msgid ""
@@ -2413,12 +2557,22 @@ msgid ""
 "TypeError: Can't instantiate abstract class Circle with abstract methods draw\n"
 ">>>"
 msgstr ""
+">>> class Circle(Drawable):\n"
+"...     pass\n"
+"...\n"
+">>> c = Circle()\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"TypeError: Can't instantiate abstract class Circle with abstract methods draw\n"
+">>>"
 
 #: ../../whatsnew/2.6.rst:1292
 msgid ""
 "Abstract data attributes can be declared using the ``@abstractproperty`` "
 "decorator::"
 msgstr ""
+"Abstraktní datové atributy lze deklarovat pomocí dekoratoru "
+"``@abstractproperty``::"
 
 #: ../../whatsnew/2.6.rst:1295
 msgid ""
@@ -2429,24 +2583,32 @@ msgid ""
 "def readonly(self):\n"
 "   return self._x"
 msgstr ""
+"from abc import abstractproperty\n"
+"...\n"
+"\n"
+"@abstractproperty\n"
+"def readonly(self):\n"
+"   return self._x"
 
 #: ../../whatsnew/2.6.rst:1302
 msgid "Subclasses must then define a ``readonly`` property."
-msgstr ""
+msgstr "Podtřídy musí poté definovat vlastnost ``readonly``."
 
 #: ../../whatsnew/2.6.rst:1306
 msgid ":pep:`3119` - Introducing Abstract Base Classes"
-msgstr ""
+msgstr ":pep:`3119` - Zavedení abstraktních základních tříd"
 
 #: ../../whatsnew/2.6.rst:1307
 msgid ""
 "PEP written by Guido van Rossum and Talin. Implemented by Guido van Rossum. "
 "Backported to 2.6 by Benjamin Aranguren, with Alex Martelli."
 msgstr ""
+"PEP napsán Guido van Rossumem a Talinem. Implementován Guido van Rossumem. "
+"Zpornavrácen do 2.6 Benjaminem Arangurenem, s Alexem Martelim."
 
 #: ../../whatsnew/2.6.rst:1316
 msgid "PEP 3127: Integer Literal Support and Syntax"
-msgstr ""
+msgstr "PEP 3127: Podpora a syntaxe celočíselného literálu"
 
 #: ../../whatsnew/2.6.rst:1318
 msgid ""
@@ -2454,12 +2616,18 @@ msgid ""
 " them with \"0o\" or \"0O\" instead of a leading zero, and adds support for "
 "binary (base-2) integer literals, signalled by a \"0b\" or \"0B\" prefix."
 msgstr ""
+"Python 3.0 změní syntaxi pro osmičkové (základ-8) celočíselné literály, "
+"prefixem je \"0o\" nebo \"0O\" místo úvodní nuly, a přidá podporu pro "
+"binární (základní-2) celočíselné literály, signalizované prefixem \"0b\" "
+"nebo \"0B\"."
 
 #: ../../whatsnew/2.6.rst:1323
 msgid ""
 "Python 2.6 doesn't drop support for a leading 0 signalling an octal number, "
 "but it does add support for \"0o\" and \"0b\"::"
 msgstr ""
+"Python 2.6 neodstraňuje podporu úvodní 0 signalizující osmičkové číslo, ale "
+"přidává podporu pro \"0o\" a \"0b\"::"
 
 #: ../../whatsnew/2.6.rst:1326
 msgid ""
@@ -2468,6 +2636,10 @@ msgid ""
 ">>> 0b101111\n"
 "47"
 msgstr ""
+">>> 0o21, 2*8 + 1\n"
+"(17, 17)\n"
+">>> 0b101111\n"
+"47"
 
 #: ../../whatsnew/2.6.rst:1331
 msgid ""
@@ -2475,6 +2647,8 @@ msgid ""
 "and a new :func:`bin` builtin returns the binary representation for a "
 "number::"
 msgstr ""
+"Vstavaná funkce :func:`oct` stále vrací čísla s předponou úvodní nuly a nová"
+" vstavaná funkce :func:`bin` vrací binární reprezentaci čísla::"
 
 #: ../../whatsnew/2.6.rst:1335
 msgid ""
@@ -2485,6 +2659,12 @@ msgid ""
 ">>> bin(173)\n"
 "'0b10101101'"
 msgstr ""
+">>> oct(42)\n"
+"'052'\n"
+">>> future_builtins.oct(42)\n"
+"'0o52'\n"
+">>> bin(173)\n"
+"'0b10101101'"
 
 #: ../../whatsnew/2.6.rst:1342
 msgid ""
@@ -2493,6 +2673,9 @@ msgid ""
 "argument is zero (signalling that the base used should be determined from "
 "the string)::"
 msgstr ""
+"Vstavěné funkce :func:`int` a :func:`long` nyní přijímají prefixy \"0o\" a "
+"\"0b\" když jsou požadovány základ-8 nebo základ-2, nebo když je argument "
+"*base* nula (signalizující, že by měl být určen základ z řetězce)::"
 
 #: ../../whatsnew/2.6.rst:1347
 msgid ""
@@ -2505,24 +2688,32 @@ msgid ""
 ">>> int('0b1101', 0)\n"
 "13"
 msgstr ""
+">>> int ('0o52', 0)\n"
+"42\n"
+">>> int('1101', 2)\n"
+"13\n"
+">>> int('0b1101', 2)\n"
+"13\n"
+">>> int('0b1101', 0)\n"
+"13"
 
 #: ../../whatsnew/2.6.rst:1359
 msgid ":pep:`3127` - Integer Literal Support and Syntax"
-msgstr ""
+msgstr ":pep:`3127` - Podpora a syntaxe celočíselného literálu"
 
 #: ../../whatsnew/2.6.rst:1360
 msgid "PEP written by Patrick Maupin; backported to 2.6 by Eric Smith."
-msgstr ""
+msgstr "PEP napsán Patrickem Maupinem; zpornavrácen do 2.6 Ericem Smithem."
 
 #: ../../whatsnew/2.6.rst:1368
 msgid "PEP 3129: Class Decorators"
-msgstr ""
+msgstr "PEP 3129: Dekoratéry třídy"
 
 #: ../../whatsnew/2.6.rst:1370
 msgid ""
 "Decorators have been extended from functions to classes.  It's now legal to "
 "write::"
-msgstr ""
+msgstr "Dekoratéry byly rozšířeny z funkcí na třídy. Nyní je zákonné napsat::"
 
 #: ../../whatsnew/2.6.rst:1373
 msgid ""
@@ -2531,10 +2722,14 @@ msgid ""
 "class A:\n"
 "  pass"
 msgstr ""
+"@foo\n"
+"@bar\n"
+"class A:\n"
+"  pass"
 
 #: ../../whatsnew/2.6.rst:1378
 msgid "This is equivalent to::"
-msgstr ""
+msgstr "To je ekvivalentní::"
 
 #: ../../whatsnew/2.6.rst:1380
 msgid ""
@@ -2543,18 +2738,22 @@ msgid ""
 "\n"
 "A = foo(bar(A))"
 msgstr ""
+"class A:\n"
+"  pass\n"
+"\n"
+"A = foo(bar(A))"
 
 #: ../../whatsnew/2.6.rst:1387
 msgid ":pep:`3129` - Class Decorators"
-msgstr ""
+msgstr ":pep:`3129` - Dekoratéry třídy"
 
 #: ../../whatsnew/2.6.rst:1388
 msgid "PEP written by Collin Winter."
-msgstr ""
+msgstr "PEP napsán Collinem Winterem."
 
 #: ../../whatsnew/2.6.rst:1395
 msgid "PEP 3141: A Type Hierarchy for Numbers"
-msgstr ""
+msgstr "PEP 3141: Hierarchie typu pro čísla"
 
 #: ../../whatsnew/2.6.rst:1397
 msgid ""
@@ -2562,6 +2761,9 @@ msgid ""
 "Scheme's numeric tower.  These classes were backported to 2.6 as the "
 ":mod:`numbers` module."
 msgstr ""
+"Python 3.0 přidává několik abstraktních základních tříd pro numerické typy "
+"inspirované Schemeho numerickou věží. Tyto třídy byly zpornavr​​áceny do 2.6"
+" jako modul :mod:`numbers`."
 
 #: ../../whatsnew/2.6.rst:1401
 msgid ""
@@ -2569,6 +2771,9 @@ msgid ""
 "and only exists to allow checking if an object is a number by doing "
 "``isinstance(obj, Number)``."
 msgstr ""
+"Nejobecnější ABC je :class:`Number`. Nedefinuje žádné operace vůbec a "
+"existuje pouze aby bylo možné zkontrolovat, zda je objekt číslo tím, že se "
+"dělá ``isinstance(obj, Number)``."
 
 #: ../../whatsnew/2.6.rst:1405
 msgid ""
@@ -2578,6 +2783,10 @@ msgid ""
 "parts and obtain a number's conjugate.  Python's built-in complex type is an"
 " implementation of :class:`Complex`."
 msgstr ""
+":class:`Complex` je podtřída :class:`Number`. Komplexní čísla mohou podléhat"
+" základním operacím sčítání, odčítání, násobení, dělení a exponenciace a "
+"můžete získat skutečné a imaginární části a získat konjugát čísla. Vestavěný"
+" typ complex Pythonu je implementace :class:`Complex`."
 
 #: ../../whatsnew/2.6.rst:1411
 msgid ""
@@ -2585,6 +2794,9 @@ msgid ""
 "that only work on real numbers: :func:`floor`, :func:`trunc`, rounding, "
 "taking the remainder mod N, floor division, and comparisons."
 msgstr ""
+":class:`Real` dále pochází z :class:`Complex` a přidává operace, které "
+"fungují pouze na reálných číslech: :func:`floor`, :func:`trunc`, "
+"zaokrouhlování, zbytek mod N, dělení podlahy a srovnání."
 
 #: ../../whatsnew/2.6.rst:1416
 msgid ""
@@ -2594,6 +2806,11 @@ msgid ""
 ":mod:`fractions` module.  (It's called :class:`Fraction` instead of "
 ":class:`Rational` to avoid a name clash with :class:`numbers.Rational`.)"
 msgstr ""
+":class:`Rational` čísla pocházejí z :class:`Real`, mají vlastnosti "
+":attr:`numerator` a :attr:`denominator` a lze je konvertovat na float. "
+"Python 2.6 přidává jednoduchou třídu racionálních čísel, :class:`Fraction`, "
+"v modulu :mod:`fractions`. (Nazývá se :class:`Fraction` místo "
+":class:`Rational` aby se zabránilo kolizi jmen s :class:`numbers.Rational`.)"
 
 #: ../../whatsnew/2.6.rst:1423
 msgid ""
@@ -2602,6 +2819,9 @@ msgid ""
 "such as ``&`` and ``|``, and can be used as array indexes and slice "
 "boundaries."
 msgstr ""
+":class:`Integral` čísla pocházejí z :class:`Rational` a mohou být posunuta "
+"doleva a doprava s ``<<`` a ``>>``, kombinována pomocí bitových operací, "
+"jako je ``&`` a ``|`` a mohou být použita jako indexy pole a hranice řezu."
 
 #: ../../whatsnew/2.6.rst:1428
 msgid ""
@@ -2611,14 +2831,19 @@ msgid ""
 " rounds toward zero, returning the closest :class:`Integral` that's between "
 "the function's argument and zero."
 msgstr ""
+"V Pythonu 3.0 PEP mírně předefinuje existující vestavěné funkce "
+":func:`round`, :func:`math.floor`, :func:`math.ceil` a přidává novou "
+":func:`math.trunc`, která byla zpornavr​​ácena do Pythonu 2.6. "
+":func:`math.trunc` zaokrouhluje směrem k nule, vrací nejbližší "
+":class:`Integral`, který je mezi argumentem funkce a nulou."
 
 #: ../../whatsnew/2.6.rst:1436
 msgid ":pep:`3141` - A Type Hierarchy for Numbers"
-msgstr ""
+msgstr ":pep:`3141` - Hierarchie typu pro čísla"
 
 #: ../../whatsnew/2.6.rst:1437
 msgid "PEP written by Jeffrey Yasskin."
-msgstr ""
+msgstr "PEP napsán Jeffreyem Yasskin."
 
 #: ../../whatsnew/2.6.rst:1439
 msgid ""
@@ -2626,6 +2851,9 @@ msgid ""
 "<https://www.gnu.org/software/guile/manual/html_node/Numerical-"
 "Tower.html#Numerical-Tower>`__, from the Guile manual."
 msgstr ""
+"`Schemeho numerická věž "
+"<https://www.gnu.org/software/guile/manual/html_node/Numerical-"
+"Tower.html#Numerical-Tower>`__ z manuálu Guile."
 
 #: ../../whatsnew/2.6.rst:1441
 msgid ""
@@ -2633,10 +2861,13 @@ msgid ""
 "<https://conservatory.scheme.org/schemers/Documents/Standards/R5RS/HTML/r5rs-"
 "Z-H-9.html#%_sec_6.2>`__ from the R5RS Scheme specification."
 msgstr ""
+"`Datové typy Schemeho čísla "
+"<https://conservatory.scheme.org/schemers/Documents/Standards/R5RS/HTML/r5rs-"
+"Z-H-9.html#%_sec_6.2>`__ ze specifikace R5RS Scheme."
 
 #: ../../whatsnew/2.6.rst:1445
 msgid "The :mod:`fractions` Module"
-msgstr ""
+msgstr "Modul :mod:`fractions`"
 
 #: ../../whatsnew/2.6.rst:1447
 msgid ""
@@ -2645,12 +2876,18 @@ msgid ""
 "numerator and denominator forming a fraction, and can exactly represent "
 "numbers such as ``2/3`` that floating-point numbers can only approximate."
 msgstr ""
+"K vyplnění hierarchie numerických typů poskytuje modul :mod:`fractions` "
+"třídu racionálního čísla. Racionální čísla ukládají své hodnoty jako čitatel"
+" a jmenovatel tvořící zlomek a mohou přesně reprezentovat čísla, jako je "
+"``2/3``, která mohou čísla s pohyblivou řádkou pouze aproximovat."
 
 #: ../../whatsnew/2.6.rst:1453
 msgid ""
 "The :class:`Fraction` constructor takes two :class:`Integral` values that "
 "will be the numerator and denominator of the resulting fraction. ::"
 msgstr ""
+"Konstruktor :class:`Fraction` vezme dvě hodnoty :class:`Integral`, které "
+"budou čitatel a jmenovatel výsledného zlomku. ::"
 
 #: ../../whatsnew/2.6.rst:1456
 msgid ""
@@ -2671,6 +2908,9 @@ msgid ""
 "an :meth:`as_integer_ratio` method that returns the numerator and "
 "denominator for a fraction that evaluates to the same floating-point value::"
 msgstr ""
+"Pro převod čísel s pohyblivou řádkou na racionální čísla má typ float nyní "
+"metodu :meth:`as_integer_ratio`, která vrací čitatel a jmenovatel zlomku, "
+"který se evaluuje na stejnou hodnotu s pohyblivou řádkou::"
 
 #: ../../whatsnew/2.6.rst:1471
 msgid ""
@@ -2688,6 +2928,9 @@ msgid ""
 "such as 1./3, are not simplified to the number being approximated; the "
 "fraction attempts to match the floating-point value **exactly**."
 msgstr ""
+"Všimněte si, že hodnoty, které mohou být aproximovány pouze čísly s "
+"pohyblivou řádkou, jako je 1./3, nejsou zjednodušeny na aproximované číslo; "
+"zlomek se pokouší přesně odpovídat hodnotě s pohyblivou řádkou."
 
 #: ../../whatsnew/2.6.rst:1483
 msgid ""

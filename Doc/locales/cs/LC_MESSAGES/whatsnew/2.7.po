@@ -1845,7 +1845,7 @@ msgstr "Optimalizace"
 
 #: ../../whatsnew/2.7.rst:932
 msgid "Several performance enhancements have been added:"
-msgstr ""
+msgstr "Bylo pridano nektere vylepseni vykonu:"
 
 #: ../../whatsnew/2.7.rst:934
 msgid ""
@@ -1853,6 +1853,8 @@ msgid ""
 "statements, looking up the :meth:`~object.__enter__` and "
 ":meth:`~object.__exit__` methods.  (Contributed by Benjamin Peterson.)"
 msgstr ""
+"Novy opcode byl pridan k inicialni setupu prikazu :keyword:`with`. (Prispela"
+" Benjamin Peterson.)"
 
 #: ../../whatsnew/2.7.rst:938
 #, python-format
@@ -1878,6 +1880,8 @@ msgid ""
 "be considered and traversed by the collector. (Contributed by Antoine "
 "Pitrou; :issue:`4688`.)"
 msgstr ""
+"Garbage collector se pokusi vyhnout sledovani jednoduchych kontejneru. "
+"(Prispelu Antoine Pitrou; :issue:`4688`.)"
 
 #: ../../whatsnew/2.7.rst:958
 msgid ""
@@ -1889,7 +1893,7 @@ msgid ""
 "on 64-bit machines and base ``2**15`` on 32-bit machines; on Unix, there's a"
 " new configure option :option:`!--enable-big-digits` that can be used to "
 "override this default."
-msgstr ""
+msgstr "Long integery jsou nyn ulozeny internu v base 2**15 nebo 2**30."
 
 #: ../../whatsnew/2.7.rst:967
 msgid ""
@@ -1899,6 +1903,8 @@ msgid ""
 "internal format, giving the number of bits per digit and the size in bytes "
 "of the C type used to store each digit::"
 msgstr ""
+"Mimo vylepseni vykonu by tato zmena mela byt pro koncove uzivately "
+"neviditelna."
 
 #: ../../whatsnew/2.7.rst:974
 msgid ""
@@ -1906,10 +1912,13 @@ msgid ""
 ">>> sys.long_info\n"
 "sys.long_info(bits_per_digit=30, sizeof_digit=4)"
 msgstr ""
+">>> import sys\n"
+">>> sys.long_info\n"
+"sys.long_info(bits_per_digit=30, sizeof_digit=4)"
 
 #: ../../whatsnew/2.7.rst:978
 msgid "(Contributed by Mark Dickinson; :issue:`4258`.)"
-msgstr ""
+msgstr "(Prispelu Mark Dickinson; :issue:`4258`.)"
 
 #: ../../whatsnew/2.7.rst:980
 msgid ""
@@ -1917,6 +1926,8 @@ msgid ""
 "smaller on 32-bit systems and 6 bytes on 64-bit. (Contributed by Mark "
 "Dickinson; :issue:`5260`.)"
 msgstr ""
+"Dalsi sada zmeny ucinila dlouhe objekty mensimi. (Prispelu Mark Dickinson; "
+":issue:`5260`.)"
 
 #: ../../whatsnew/2.7.rst:984
 #, python-format
@@ -1928,6 +1939,8 @@ msgid ""
 "Mark Dickinson; :issue:`5512`.) Bitwise operations are also significantly "
 "faster (initial patch by Gregory Smith; :issue:`1087418`)."
 msgstr ""
+"Algoritmus deleni pro long integery byl zrychlen. (Prispelu Mark Dickinson; "
+":issue:`5512`.)"
 
 #: ../../whatsnew/2.7.rst:993
 msgid ""
@@ -1936,6 +1949,9 @@ msgid ""
 "for applications that frequently use ``%`` with strings, such as templating "
 "libraries. (Implemented by Collin Winter; :issue:`5176`.)"
 msgstr ""
+"Implementace znaku kontroluje, zda je levostranny operand Python retezec a "
+"zvlastnuje jej; vsledne se zvetsuje vykona o nektilk procent. "
+"(Implementovano Collin Winter; :issue:`5176`.)"
 
 #: ../../whatsnew/2.7.rst:999
 msgid ""
@@ -1943,6 +1959,8 @@ msgid ""
 "bytecode.  (Patch by Antoine Pitrou, back-ported to 2.7 by Jeffrey Yasskin; "
 ":issue:`4715`.)"
 msgstr ""
+"Seznamova porozumeni s podminka jsou kompilovana do rychlejsiho bytekodu. "
+"(Zastavka Antoine Pitrou; :issue:`4715`.)"
 
 #: ../../whatsnew/2.7.rst:1003
 msgid ""
@@ -1950,6 +1968,8 @@ msgid ""
 " special-casing base 10 instead of using a generalized conversion function "
 "that supports arbitrary bases. (Patch by Gawain Bolton; :issue:`6713`.)"
 msgstr ""
+"Konverze integeru na retezec byla urychlena specialnim pripad. (Zastavka "
+"Gawain Bolton; :issue:`6713`.)"
 
 #: ../../whatsnew/2.7.rst:1008
 msgid ""
@@ -1959,6 +1979,8 @@ msgid ""
 "instead of a character-by-character scan.  This is sometimes faster by a "
 "factor of 10.  (Added by Florent Xicluna; :issue:`7462` and :issue:`7622`.)"
 msgstr ""
+"Metody split, replace, rindex, rpartition a rsplit typu string-like nyn "
+"pouzivaji rychly reverse-search algoritmus. (Prispelu Florent Xicluna.)"
 
 #: ../../whatsnew/2.7.rst:1015
 msgid ""
@@ -1966,6 +1988,8 @@ msgid ""
 "strings used for attribute names, reducing memory usage of the objects "
 "resulting from unpickling.  (Contributed by Jake McGuire; :issue:`5084`.)"
 msgstr ""
+"Moduly :mod:`pickle` a :mod:`!cPickle` nyn automaticky internalizuji "
+"retezce. (Prispelu Jake McGuire; :issue:`5084`.)"
 
 #: ../../whatsnew/2.7.rst:1020
 msgid ""
@@ -1973,10 +1997,12 @@ msgid ""
 "the time required to pickle them. (Contributed by Collin Winter; "
 ":issue:`5670`.)"
 msgstr ""
+"Modul :mod:`!cPickle` nyn zvlastnuje slovniky. (Prispelu Collin Winter; "
+":issue:`5670`.)"
 
 #: ../../whatsnew/2.7.rst:1027
 msgid "New and Improved Modules"
-msgstr ""
+msgstr "Nove a vylepsene moduly"
 
 #: ../../whatsnew/2.7.rst:1029
 msgid ""
@@ -1986,6 +2012,8 @@ msgid ""
 " file in the source tree for a more complete list of changes, or look "
 "through the Subversion logs for all the details."
 msgstr ""
+"Jako v kazde vydani, standardni knihovna Pythonu obdrzi pocet vylepseii a "
+"oprav chyb."
 
 #: ../../whatsnew/2.7.rst:1035
 msgid ""
@@ -1996,6 +2024,8 @@ msgid ""
 "(Contributed by Maru Newby after a suggestion by Senthil Kumaran; "
 ":issue:`5142`.)"
 msgstr ""
+"Modul :mod:`bdb` nyn ma moznost skipnout moduly. (Prispelu Maru Newby; "
+":issue:`5142`.)"
 
 #: ../../whatsnew/2.7.rst:1043
 msgid ""
@@ -2003,6 +2033,8 @@ msgid ""
 "with :class:`memoryview` instances and other similar buffer objects. "
 "(Backported from 3.x by Florent Xicluna; :issue:`7703`.)"
 msgstr ""
+"Modul :mod:`binascii` nyn podporuje buffer API. (Vraceeno z 3.x Florent "
+"Xicluna; :issue:`7703`.)"
 
 #: ../../whatsnew/2.7.rst:1047
 msgid ""
@@ -2014,6 +2046,8 @@ msgid ""
 "The pybsddb changelog can be read at "
 "https://hg.jcea.es/pybsddb/file/tip/ChangeLog.)"
 msgstr ""
+"Aktualizovany modul: modul :mod:`!bsddb` byl aktualizovan na verzi 4.8.4. "
+"(Aktualizovano Jesus Cea Avion; :issue:`8156`.)"
 
 #: ../../whatsnew/2.7.rst:1055
 msgid ""
@@ -2021,6 +2055,8 @@ msgid ""
 "management protocol, so you can write ``with bz2.BZ2File(...) as f:``. "
 "(Contributed by Hagen Fürstenau; :issue:`3860`.)"
 msgstr ""
+"Modul :mod:`bz2` nyn podporuje context management protokol. (Prispelu Hagen "
+"Furstenau; :issue:`3860`.)"
 
 #: ../../whatsnew/2.7.rst:1059
 msgid ""
@@ -2028,7 +2064,7 @@ msgid ""
 " module is useful for tallying data.  :class:`~collections.Counter` "
 "instances behave mostly like dictionaries but return zero for missing keys "
 "instead of raising a :exc:`KeyError`:"
-msgstr ""
+msgstr "Nova trida: :class:`~collections.Counter` je uzitecna pro soucet dat."
 
 #: ../../whatsnew/2.7.rst:1064
 #, python-brace-format
@@ -2047,6 +2083,10 @@ msgid ""
 ">>> c['z']\n"
 "0"
 msgstr ""
+">>> from collections import Counter\n"
+">>> c = Counter()\n"
+">>> for letter in 'here is a sample of english text':\n"
+"...   c[letter] += 1"
 
 #: ../../whatsnew/2.7.rst:1081
 msgid ""
@@ -2057,7 +2097,7 @@ msgid ""
 "count. :meth:`~collections.Counter.subtract` takes an iterable and subtracts"
 " one for each element instead of adding; if the argument is a dictionary or "
 "another :class:`Counter`, the counts are subtracted. ::"
-msgstr ""
+msgstr "Existuji tri dal metody :class:`~collections.Counter`."
 
 #: ../../whatsnew/2.7.rst:1091
 msgid ""
@@ -2074,16 +2114,18 @@ msgid ""
 ">>> c['e']    # Count is now lower\n"
 "-1"
 msgstr ""
+">>> c.most_common(5)\n"
+"[(' ', 6), ('e', 5), ('s', 3), ('a', 2), ('i', 2)]"
 
 #: ../../whatsnew/2.7.rst:1104
 msgid "Contributed by Raymond Hettinger; :issue:`1696199`."
-msgstr ""
+msgstr "Prispel Raymond Hettinger; :issue:`1696199`."
 
 #: ../../whatsnew/2.7.rst:1108
 msgid ""
 "New class: :class:`~collections.OrderedDict` is described in the earlier "
 "section :ref:`pep-0372`."
-msgstr ""
+msgstr "Nova trida: :class:`~collections.OrderedDict` je popsana vyse."
 
 #: ../../whatsnew/2.7.rst:1111
 msgid ""
@@ -2095,6 +2137,7 @@ msgid ""
 " as the read-only :attr:`~collections.deque.maxlen` attribute. (Both "
 "features added by Raymond Hettinger.)"
 msgstr ""
+"Nova metoda: :class:`~collections.deque` ma novou metodu count a reverse."
 
 #: ../../whatsnew/2.7.rst:1119
 msgid ""
@@ -2103,10 +2146,11 @@ msgid ""
 " been repeated or aren't legal Python identifiers will be renamed to legal "
 "names that are derived from the field's position within the list of fields:"
 msgstr ""
+"Trida :class:`~collections.namedtuple` ma novy volitelny parametr rename."
 
 #: ../../whatsnew/2.7.rst:1130
 msgid "(Added by Raymond Hettinger; :issue:`1818`.)"
-msgstr ""
+msgstr "(Pridal Raymond Hettinger; :issue:`1818`.)"
 
 #: ../../whatsnew/2.7.rst:1132
 msgid ""
@@ -2114,6 +2158,8 @@ msgid ""
 "returns :data:`NotImplemented` if a mapping is compared to another type that"
 " isn't a :class:`Mapping`. (Fixed by Daniel Stutzbach; :issue:`8729`.)"
 msgstr ""
+"Trida :class:`~collections.abc.Mapping` vraci NotImplemented pri porovnani. "
+"(Opraveno Daniel Stutzbach; :issue:`8729`.)"
 
 #: ../../whatsnew/2.7.rst:1137
 msgid ""
@@ -2121,6 +2167,8 @@ msgid ""
 "<configparser>` module now take an *allow_no_value* parameter, defaulting to"
 " false; if true, options without values will be allowed.  For example::"
 msgstr ""
+"Konstruktory :mod:`ConfigParser <configparser>` nyn prijimaji "
+"allow_no_value."
 
 #: ../../whatsnew/2.7.rst:1141
 msgid ""
@@ -2142,10 +2190,13 @@ msgid ""
 "  ...\n"
 "NoOptionError: No option 'unknown' in section: 'mysqld'"
 msgstr ""
+">>> import ConfigParser, StringIO\n"
+">>> sample_config = \"\"\"\n"
+"... [mysqld]"
 
 #: ../../whatsnew/2.7.rst:1159
 msgid "(Contributed by Mats Kindahl; :issue:`7005`.)"
-msgstr ""
+msgstr "(Prispel Mats Kindahl; :issue:`7005`.)"
 
 #: ../../whatsnew/2.7.rst:1161
 msgid ""
@@ -2153,7 +2204,7 @@ msgid ""
 "than one context manager with a single :keyword:`with` statement, has been "
 "deprecated, because the :keyword:`!with` statement now supports multiple "
 "context managers."
-msgstr ""
+msgstr "Zastarala funkce: :func:`!contextlib.nested` je zastarala."
 
 #: ../../whatsnew/2.7.rst:1166
 msgid ""
@@ -2161,6 +2212,8 @@ msgid ""
 "an invalid version field, one that doesn't contain an integer value.  (Fixed"
 " by John J. Lee; :issue:`3924`.)"
 msgstr ""
+"Modul :mod:`cookielib <http.cookiejar>` ignoruje spatne cookies. (Opraveno "
+"John J. Lee; :issue:`3924`.)"
 
 #: ../../whatsnew/2.7.rst:1170
 msgid ""
@@ -2168,6 +2221,8 @@ msgid ""
 "copy bound instance methods.  (Implemented by Robert Collins; "
 ":issue:`1515`.)"
 msgstr ""
+"Modul :mod:`copy` nyn spravne kopiruje bound metody. (Implementovano Robert "
+"Collins; :issue:`1515`.)"
 
 #: ../../whatsnew/2.7.rst:1174
 msgid ""
@@ -2178,6 +2233,8 @@ msgid ""
 "containing various fixes for different platforms.  (Updated by Matthias "
 "Klose; :issue:`8142`.)"
 msgstr ""
+"Modul :mod:`ctypes` nyn vzdy konvertuje None na NULL. (Zmenen Thomas Heller;"
+" :issue:`4606`.)"
 
 #: ../../whatsnew/2.7.rst:1181
 msgid ""
@@ -2186,6 +2243,8 @@ msgid ""
 "number of seconds in the duration.  (Contributed by Brian Quinlan; "
 ":issue:`5788`.)"
 msgstr ""
+"Nova metoda: :class:`~datetime.timedelta` ma metodu total_seconds. (Prispel "
+"Brian Quinlan; :issue:`5788`.)"
 
 #: ../../whatsnew/2.7.rst:1185
 msgid ""
@@ -2199,6 +2258,8 @@ msgid ""
 "``Decimal('0.1000000000000000055511151231257827021181583404541015625')``. "
 "(Implemented by Raymond Hettinger; :issue:`4796`.)"
 msgstr ""
+"Nova metoda: :class:`~decimal.Decimal` ma metodu from_float. (Implementovano"
+" Raymond Hettinger; :issue:`4796`.)"
 
 #: ../../whatsnew/2.7.rst:1196
 msgid ""
@@ -2211,6 +2272,8 @@ msgid ""
 "how to convert between float and :class:`!Decimal`.  (Fixed by Mark "
 "Dickinson; :issue:`2531`.)"
 msgstr ""
+"Porovnani instanci :class:`~decimal.Decimal` s floaty nyn pracuje. (Opraveno"
+" Mark Dickinson; :issue:`2531`.)"
 
 #: ../../whatsnew/2.7.rst:1205
 msgid ""
@@ -2219,6 +2282,8 @@ msgid ""
 " characters such as Arabic-Indic digits (contributed by Mark Dickinson; "
 ":issue:`6595`)."
 msgstr ""
+"Konstruktor :class:`~decimal.Decimal` akceptuje float a Unicode. (Raymond "
+"Hettinger; :issue:`8257`.)"
 
 #: ../../whatsnew/2.7.rst:1210
 msgid ""
@@ -2228,6 +2293,8 @@ msgid ""
 ":meth:`~decimal.Context.is_canonical` methods.  (Patch by Juan José Conti; "
 ":issue:`7633`.)"
 msgstr ""
+"Metody :class:`~decimal.Context` nyni prijimaji integery. (Juan Jose Conti; "
+":issue:`7633`.)"
 
 #: ../../whatsnew/2.7.rst:1215
 msgid ""
@@ -2236,6 +2303,8 @@ msgid ""
 "alignment.  This has been changed to right-alignment, which is more sensible"
 " for numeric types.  (Changed by Mark Dickinson; :issue:`6857`.)"
 msgstr ""
+"Zarovnani :class:`~decimal.Decimal` s format je nyn vpravo. (Mark Dickinson;"
+" :issue:`6857`.)"
 
 #: ../../whatsnew/2.7.rst:1220 ../../whatsnew/2.7.rst:2482
 msgid ""
@@ -2244,6 +2313,8 @@ msgid ""
 "false value depending on the comparison operator.  Quiet NaN values (or "
 "``NaN``) are now hashable.  (Fixed by Mark Dickinson; :issue:`7279`.)"
 msgstr ""
+"Porovnani s NaN nyn signalizuje InvalidOperation. (Mark Dickinson; "
+":issue:`7279`.)"
 
 #: ../../whatsnew/2.7.rst:1226
 msgid ""
@@ -2252,6 +2323,8 @@ msgid ""
 "using a tab character instead of spaces as a separator in the header giving "
 "the filename.  (Fixed by Anatoly Techtonik; :issue:`7585`.)"
 msgstr ""
+"Modul :mod:`difflib` vyvstupuje kompatibilnejsi format. (Anatoly Techtonik; "
+":issue:`7585`.)"
 
 #: ../../whatsnew/2.7.rst:1232
 msgid ""
@@ -2260,6 +2333,7 @@ msgid ""
 "haven't been modified, the user might have created some new files that "
 "should be included. (Fixed by Tarek Ziadé; :issue:`8688`.)"
 msgstr ""
+"Prikaz Distutils sdist regeneruje MANIFEST. (Tarek Ziade; :issue:`8688`.)"
 
 #: ../../whatsnew/2.7.rst:1238
 msgid ""
@@ -2267,6 +2341,8 @@ msgid ""
 "will now ignore the name of the module containing the exception being "
 "tested.  (Patch by Lennart Regebro; :issue:`7490`.)"
 msgstr ""
+"Prrapor :const:`~doctest.IGNORE_EXCEPTION_DETAIL` ignoruje modul. (Lennart "
+"Regebro; :issue:`7490`.)"
 
 #: ../../whatsnew/2.7.rst:1242
 msgid ""
@@ -2275,6 +2351,8 @@ msgid ""
 " encoding specified by :attr:`!output_charset`. (Added by R. David Murray; "
 ":issue:`1368247`.)"
 msgstr ""
+"Trida :mod:`email` Message nyni prijima Unicode payload. (R. David Murray; "
+":issue:`1368247`.)"
 
 #: ../../whatsnew/2.7.rst:1247
 msgid ""
@@ -2283,13 +2361,15 @@ msgid ""
 " its constructor.  (Implemented by Mark Dickinson; rationals added in "
 ":issue:`5812`, and float/decimal in :issue:`8294`.)"
 msgstr ""
+"Trida :class:`~fractions.Fraction` nyni prijima float a Decimal. (Mark "
+"Dickinson.)"
 
 #: ../../whatsnew/2.7.rst:1253
 msgid ""
 "Ordering comparisons (``<``, ``<=``, ``>``, ``>=``) between fractions and "
 "complex numbers now raise a :exc:`TypeError`. This fixes an oversight, "
 "making the :class:`~fractions.Fraction` match the other numeric types."
-msgstr ""
+msgstr "Porovnavani mezi frakcemi a komplexnimi cisly nyn vyvola TypeError."
 
 #: ../../whatsnew/2.7.rst:1260
 msgid ""
@@ -2298,6 +2378,8 @@ msgid ""
 "subsequent control and data transfers. (Contributed by Giampaolo Rodola; "
 ":issue:`2054`.)"
 msgstr ""
+"Nova trida: :class:`~ftplib.FTP_TLS` v modulu :mod:`ftplib`. (Giampaolo "
+"Rodola; :issue:`2054`.)"
 
 #: ../../whatsnew/2.7.rst:1266
 msgid ""
@@ -2305,6 +2387,8 @@ msgid ""
 " uploads thanks to an added *rest* parameter (patch by Pablo Mouzo; "
 ":issue:`6845`.)"
 msgstr ""
+"Metoda :meth:`~ftplib.FTP.storbinary` muze nyn restartovat uploady. (Pablo "
+"Mouzo; :issue:`6845`.)"
 
 #: ../../whatsnew/2.7.rst:1270
 msgid ""
@@ -2316,6 +2400,8 @@ msgid ""
 "in Python 3.x, this decorator makes it easier to define ordered classes. "
 "(Added by Raymond Hettinger; :issue:`5479`.)"
 msgstr ""
+"Novy dekorator: :func:`~functools.total_ordering` generuje chybejici metody."
+" (Raymond Hettinger; :issue:`5479`.)"
 
 #: ../../whatsnew/2.7.rst:1278
 msgid ""
@@ -2325,6 +2411,8 @@ msgid ""
 " :func:`min` and :func:`max`, etc.  The primary intended use is to help with"
 " making code compatible with Python 3.x. (Added by Raymond Hettinger.)"
 msgstr ""
+"Nova funkce: :func:`~functools.cmp_to_key` konvertuje starou funkci. "
+"(Raymond Hettinger.)"
 
 #: ../../whatsnew/2.7.rst:1285
 msgid ""
@@ -2332,6 +2420,8 @@ msgid ""
 "a given instance is tracked by the garbage collector, false otherwise. "
 "(Contributed by Antoine Pitrou; :issue:`4688`.)"
 msgstr ""
+"Nova funkce: :func:`~gc.is_tracked` vraci, je-li objekt sledovan. (Antoine "
+"Pitrou; :issue:`4688`.)"
 
 #: ../../whatsnew/2.7.rst:1289
 msgid ""
@@ -2344,6 +2434,8 @@ msgid ""
 "recorded in a gzipped file by providing an optional timestamp to the "
 "constructor.  (Contributed by Jacques Frechet; :issue:`4272`.)"
 msgstr ""
+"Trida :class:`~gzip.GzipFile` podporuje context management. (Hagen "
+"Furstenau; :issue:`3860`.)"
 
 #: ../../whatsnew/2.7.rst:1299
 msgid ""
@@ -2351,6 +2443,8 @@ msgid ""
 " module will now consume these trailing bytes.  (Fixed by Tadek Pietraszek "
 "and Brian Curtin; :issue:`2846`.)"
 msgstr ""
+"Soubory gzip mohou mit koncove nuly; modul je konzumuje. (Tadek Pietraszek; "
+":issue:`2846`.)"
 
 #: ../../whatsnew/2.7.rst:1303
 msgid ""
@@ -2359,6 +2453,8 @@ msgid ""
 " ``hashlib.algorithms`` contains ``('md5', 'sha1', 'sha224', 'sha256', "
 "'sha384', 'sha512')``. (Contributed by Carl Chenet; :issue:`7418`.)"
 msgstr ""
+"Atribut: :attr:`!algorithms` obsahuje podporovane algoritmy. (Carl Chenet; "
+":issue:`7418`.)"
 
 #: ../../whatsnew/2.7.rst:1309
 msgid ""
@@ -2367,6 +2463,8 @@ msgid ""
 "faster reading of HTTP responses. (Contributed by Kristján Valur Jónsson; "
 ":issue:`4879`.)"
 msgstr ""
+"Trida :class:`~http.client.HTTPResponse` podporuje buffering. (Kristjan "
+"Valur Jonsson; :issue:`4879`.)"
 
 #: ../../whatsnew/2.7.rst:1313
 msgid ""
@@ -2375,6 +2473,8 @@ msgid ""
 " parameter, a ``(host, port)`` 2-tuple giving the source address that will "
 "be used for the connection. (Contributed by Eldon Ziegler; :issue:`3972`.)"
 msgstr ""
+"Trid :class:`~http.client.HTTPConnection` podporuje source_address. (Eldon "
+"Ziegler; :issue:`3972`.)"
 
 #: ../../whatsnew/2.7.rst:1318
 msgid ""
@@ -2382,13 +2482,13 @@ msgid ""
 ":mod:`!ihooks` is an older module for customizing imports, superseded by the"
 " :mod:`!imputil` module added in Python 2.0. (Relative import support added "
 "by Neil Schemenauer.)"
-msgstr ""
+msgstr "Modul :mod:`!ihooks` podporuje relativni importy. (Neil Schemenauer.)"
 
 #: ../../whatsnew/2.7.rst:1325
 msgid ""
 "The :mod:`imaplib` module now supports IPv6 addresses. (Contributed by Derek"
 " Morr; :issue:`1655`.)"
-msgstr ""
+msgstr "Modul :mod:`imaplib` podporuje IPv6. (Derek Morr; :issue:`1655`.)"
 
 #: ../../whatsnew/2.7.rst:1328
 msgid ""
@@ -2396,7 +2496,7 @@ msgid ""
 " a callable and its positional and keyword arguments, and figures out which "
 "of the callable's parameters will receive each argument, returning a "
 "dictionary mapping argument names to their values.  For example::"
-msgstr ""
+msgstr "Nova funkce: :func:`~inspect.getcallargs` ziskava argument mapping."
 
 #: ../../whatsnew/2.7.rst:1333
 #, python-brace-format
@@ -2417,7 +2517,7 @@ msgstr ""
 
 #: ../../whatsnew/2.7.rst:1346
 msgid "Contributed by George Sakkis; :issue:`3135`."
-msgstr ""
+msgstr "George Sakkis; :issue:`3135`."
 
 #: ../../whatsnew/2.7.rst:1348
 msgid ""
@@ -2426,6 +2526,7 @@ msgid ""
 " C and is 2 to 20 times faster depending on the task being performed.  The "
 "original Python version was renamed to the :mod:`!_pyio` module."
 msgstr ""
+"Aktualizovany modul: :mod:`io` byla aktualizovana na verzi z Python 3.1."
 
 #: ../../whatsnew/2.7.rst:1353
 msgid ""
@@ -2433,7 +2534,7 @@ msgid ""
 ":attr:`~io.TextIOBase.errors` attribute giving the error setting used for "
 "encoding and decoding errors (one of ``'strict'``, ``'replace'``, "
 "``'ignore'``)."
-msgstr ""
+msgstr "Trida :class:`io.TextIOBase` ma atribut errors."
 
 #: ../../whatsnew/2.7.rst:1358
 msgid ""
@@ -2443,19 +2544,20 @@ msgid ""
 "previously it would change the file position to the end of the new file.  "
 "(Fixed by Pascal Chambon; :issue:`6939`.)"
 msgstr ""
+"Trida :class:`io.FileIO` vyvola OSError. (Benjamin Peterson; :issue:`4991`.)"
 
 #: ../../whatsnew/2.7.rst:1364
 msgid ""
 "New function: ``itertools.compress(data, selectors)`` takes two iterators.  "
 "Elements of *data* are returned if the corresponding value in *selectors* is"
 " true::"
-msgstr ""
+msgstr "Nova funkce: ``itertools.compress`` bere dva iteratory."
 
 #: ../../whatsnew/2.7.rst:1368
 msgid ""
 "itertools.compress('ABCDEF', [1,0,1,0,1,1]) =>\n"
 "  A, C, E, F"
-msgstr ""
+msgstr "itertools.compress('ABCDEF', [1,0,1,0,1,1])"
 
 #: ../../whatsnew/2.7.rst:1373
 msgid ""
@@ -2464,19 +2566,20 @@ msgid ""
 "*iter*.  Unlike :func:`~itertools.combinations`, individual elements can be "
 "repeated in the generated combinations::"
 msgstr ""
+"Nova funkce: ``itertools.combinations_with_replacement`` vraci kombinace."
 
 #: ../../whatsnew/2.7.rst:1378
 msgid ""
 "itertools.combinations_with_replacement('abc', 2) =>\n"
 "  ('a', 'a'), ('a', 'b'), ('a', 'c'),\n"
 "  ('b', 'b'), ('b', 'c'), ('c', 'c')"
-msgstr ""
+msgstr "itertools.combinations_with_replacement('abc', 2)"
 
 #: ../../whatsnew/2.7.rst:1382
 msgid ""
 "Note that elements are treated as unique depending on their position in the "
 "input, not their actual values."
-msgstr ""
+msgstr "Prvky jsou poskytovany podle pozice."
 
 #: ../../whatsnew/2.7.rst:1385
 msgid ""
@@ -2486,6 +2589,8 @@ msgid ""
 ":class:`~decimal.Decimal` instances.  (Implemented by Raymond Hettinger; "
 ":issue:`5032`.)"
 msgstr ""
+"Funkce :func:`itertools.count` ma novy step parametr. (Raymond Hettinger; "
+":issue:`5032`.)"
 
 #: ../../whatsnew/2.7.rst:1391
 msgid ""
@@ -2494,6 +2599,8 @@ msgid ""
 "This was deemed a specification error, so they now return an empty iterator."
 "  (Fixed by Raymond Hettinger; :issue:`4816`.)"
 msgstr ""
+"Funkce :func:`itertools.combinations` a :func:`itertools.product` nyn "
+"vracejici prazdny iterator. (Raymond Hettinger; :issue:`4816`.)"
 
 #: ../../whatsnew/2.7.rst:1396
 msgid ""
@@ -2501,6 +2608,8 @@ msgid ""
 "simplejson package, which includes a C extension that makes encoding and "
 "decoding faster. (Contributed by Bob Ippolito; :issue:`4136`.)"
 msgstr ""
+"Aktualizovany modul: :mod:`json` byl aktualizovan na verzi 2.0.9. (Bob "
+"Ippolito; :issue:`4136`.)"
 
 #: ../../whatsnew/2.7.rst:1401
 msgid ""
@@ -2509,6 +2618,8 @@ msgid ""
 "any object literal that decodes to a list of pairs. (Contributed by Raymond "
 "Hettinger; :issue:`5381`.)"
 msgstr ""
+"Funkce :func:`json.load` ma volitelny object_pairs_hook. (Raymond Hettinger;"
+" :issue:`5381`.)"
 
 #: ../../whatsnew/2.7.rst:1406
 msgid ""
@@ -2518,6 +2629,8 @@ msgid ""
 "avoiding unneeded directory scans.  (Fixed by A.M. Kuchling and Antoine "
 "Pitrou; :issue:`1607951`, :issue:`6896`.)"
 msgstr ""
+"Trida :mod:`mailbox` :class:`~mailbox.Maildir` zaznamenava cas. (A.M. "
+"Kuchling; :issue:`1607951`.)"
 
 #: ../../whatsnew/2.7.rst:1412
 msgid ""
@@ -2529,6 +2642,8 @@ msgid ""
 " natural log of the Gamma function. (Contributed by Mark Dickinson and "
 "nirinA raseliarison; :issue:`3366`.)"
 msgstr ""
+"Nove funkce: modul :mod:`math` ma erf, erfc, expm1, gamma a lgamma. (Mark "
+"Dickinson; :issue:`3366`.)"
 
 #: ../../whatsnew/2.7.rst:1420
 msgid ""
@@ -2537,6 +2652,8 @@ msgid ""
 "along with a set of arguments that will be passed to the callable. "
 "(Contributed by lekma; :issue:`5585`.)"
 msgstr ""
+"Modul :mod:`multiprocessing` Manager* tridy prijimaji callable. (lekma; "
+":issue:`5585`.)"
 
 #: ../../whatsnew/2.7.rst:1426
 msgid ""
@@ -2547,12 +2664,14 @@ msgid ""
 "memory or other resources, or if some tasks will cause the worker to become "
 "very large. (Contributed by Charles Cazabon; :issue:`6963`.)"
 msgstr ""
+"Trida :class:`~multiprocessing.pool.Pool` ma parametr maxtasksperchild. "
+"(Charles Cazabon; :issue:`6963`.)"
 
 #: ../../whatsnew/2.7.rst:1434
 msgid ""
 "The :mod:`!nntplib` module now supports IPv6 addresses. (Contributed by "
 "Derek Morr; :issue:`1664`.)"
-msgstr ""
+msgstr "Modul :mod:`!nntplib` podporuje IPv6. (Derek Morr; :issue:`1664`.)"
 
 #: ../../whatsnew/2.7.rst:1437
 msgid ""
@@ -2565,6 +2684,8 @@ msgid ""
 ":issue:`6508`.  Support for initgroups added by Jean-Paul Calderone; "
 ":issue:`7333`.)"
 msgstr ""
+"Nove funkce: modul :mod:`os` ma getresgid, getresuid, setresgid a setresuid."
+" (Travis H.; :issue:`6508`.)"
 
 #: ../../whatsnew/2.7.rst:1447
 msgid ""
@@ -2572,6 +2693,7 @@ msgid ""
 " process; this fixes problems on Solaris when :func:`~os.fork` is called "
 "from a thread.  (Fixed by Zsolt Cserna; :issue:`7242`.)"
 msgstr ""
+"Funkce :func:`os.fork` reinicializuje lock. (Zsolt Cserna; :issue:`7242`.)"
 
 #: ../../whatsnew/2.7.rst:1451
 msgid ""
@@ -2581,20 +2703,22 @@ msgid ""
 "(:meth:`~os.path.normpath` fixed by Matt Giuca in :issue:`5827`; "
 ":meth:`~os.path.abspath` fixed by Ezio Melotti in :issue:`3426`.)"
 msgstr ""
+"Funkce :func:`~os.path.normpath` a :func:`~os.path.abspath` zachovavaji "
+"Unicode. (Matt Giuca; :issue:`5827`.)"
 
 #: ../../whatsnew/2.7.rst:1457
 msgid ""
 "The :mod:`pydoc` module now has help for the various symbols that Python "
 "uses.  You can now do ``help('<<')`` or ``help('@')``, for example. "
 "(Contributed by David Laban; :issue:`4739`.)"
-msgstr ""
+msgstr "Modul :mod:`pydoc` ma help pro symboly. (David Laban; :issue:`4739`.)"
 
 #: ../../whatsnew/2.7.rst:1461
 msgid ""
 "The :mod:`re` module's :func:`~re.split`, :func:`~re.sub`, and "
 ":func:`~re.subn` now accept an optional *flags* argument, for consistency "
 "with the other functions in the module.  (Added by Gregory P. Smith.)"
-msgstr ""
+msgstr "Modul :mod:`re` funkce prijimaji flags parametr. (Gregory P. Smith.)"
 
 #: ../../whatsnew/2.7.rst:1465
 msgid ""
@@ -2611,6 +2735,8 @@ msgid ""
 "Python's command line processes an explicit path name. (Added by Nick "
 "Coghlan; :issue:`6816`.)"
 msgstr ""
+"Nova funkce: :func:`~runpy.run_path` spustí kod. (Nick Coghlan; "
+":issue:`6816`.)"
 
 #: ../../whatsnew/2.7.rst:1479
 msgid ""
@@ -2619,6 +2745,7 @@ msgid ""
 "and creates an archive containing the directory's contents. (Added by Tarek "
 "Ziadé.)"
 msgstr ""
+"Nova funkce: :func:`~shutil.make_archive` vytvorí archiv. (Tarek Ziade.)"
 
 #: ../../whatsnew/2.7.rst:1484
 msgid ""
@@ -2628,6 +2755,8 @@ msgid ""
 "regular file by opening them for reading, and this would block indefinitely."
 "  (Fixed by Antoine Pitrou; :issue:`3002`.)"
 msgstr ""
+"Funkce :func:`~shutil.copyfile` a :func:`~shutil.copytree` vyvaji "
+"SpecialFileError. (Antoine Pitrou; :issue:`3002`.)"
 
 #: ../../whatsnew/2.7.rst:1490
 msgid ""
@@ -2636,6 +2765,8 @@ msgid ""
 "catch the EINTR signal robustly.  (Fixed by Charles-Francois Natali; "
 ":issue:`8354`.)"
 msgstr ""
+"Modul :mod:`signal` znovu neinstalovuje handler. (Charles-Francois Natali; "
+":issue:`8354`.)"
 
 #: ../../whatsnew/2.7.rst:1495
 msgid ""
@@ -2648,6 +2779,9 @@ msgid ""
 " that can be used to store data. (Contributed by Tarek Ziadé; "
 ":issue:`6693`.)"
 msgstr ""
+"Nove funkce: :func:`~site.getsitepackages`, "
+":func:`~site.getusersitepackages` a :func:`~site.getuserbase`. (Tarek Ziade;"
+" :issue:`6693`.)"
 
 #: ../../whatsnew/2.7.rst:1506
 msgid ""
@@ -2656,6 +2790,8 @@ msgid ""
 "swallow the :exc:`KeyboardInterrupt` exception.  (Fixed by Victor Stinner; "
 ":issue:`3137`.)"
 msgstr ""
+"Modul :mod:`site` hlasi vyjimky pri imporfu sitecustomize. (Victor Stinner; "
+":issue:`3137`.)"
 
 #: ../../whatsnew/2.7.rst:1511
 msgid ""
@@ -2663,6 +2799,8 @@ msgid ""
 "parameter, a ``(host, port)`` 2-tuple giving the source address that will be"
 " used for the connection. (Contributed by Eldon Ziegler; :issue:`3972`.)"
 msgstr ""
+"Funkce :func:`~socket.create_connection` ma source_address. (Eldon Ziegler; "
+":issue:`3972`.)"
 
 #: ../../whatsnew/2.7.rst:1516
 msgid ""
@@ -2672,6 +2810,9 @@ msgid ""
 ":class:`memoryview` objects.  (Implemented by Antoine Pitrou; "
 ":issue:`8104`.)"
 msgstr ""
+"Metody :meth:`~socket.socket.recv_into` a "
+":meth:`~socket.socket.recvfrom_into` pisu do bytearray. (Antoine Pitrou; "
+":issue:`8104`.)"
 
 #: ../../whatsnew/2.7.rst:1521
 msgid ""
@@ -2688,6 +2829,8 @@ msgid ""
 "return. (Contributed by Kristján Valur Jónsson; :issue:`6192` and "
 ":issue:`6267`.)"
 msgstr ""
+"Modul :mod:`SocketServer <socketserver>` trida TCPServer podporuje timeout. "
+"(Kristjan Valur Jonsson; :issue:`6192`.)"
 
 #: ../../whatsnew/2.7.rst:1533
 msgid ""
@@ -2699,6 +2842,8 @@ msgid ""
 ":meth:`~sqlite3.Connection.load_extension` to load a particular shared "
 "library. (Updated by Gerhard Häring.)"
 msgstr ""
+"Aktualizovany modul: :mod:`sqlite3` byla aktualizovana na verzi 2.6.0. "
+"(Gerhard Haring.)"
 
 #: ../../whatsnew/2.7.rst:1540
 msgid ""
@@ -2709,6 +2854,8 @@ msgid ""
 "returned from :meth:`!recv` operations that trigger an SSL renegotiation "
 "(fix by Antoine Pitrou; :issue:`8222`)."
 msgstr ""
+"Objekty :class:`~ssl.SSLSocket` podporuji buffer API. (Antoine Pitrou; "
+":issue:`7133`.)"
 
 #: ../../whatsnew/2.7.rst:1547
 msgid ""
@@ -2872,20 +3019,20 @@ msgstr ""
 
 #: ../../whatsnew/2.7.rst:1666 ../../whatsnew/2.7.rst:2525
 msgid "Python 2.7 (and Python 2.6.5) will return:"
-msgstr ""
+msgstr "Python 2.7 vraci:"
 
 #: ../../whatsnew/2.7.rst:1668 ../../whatsnew/2.7.rst:2527
 msgid ""
 ">>> import urlparse\n"
 ">>> urlparse.urlsplit('invented://host/filename?query')\n"
 "('invented', 'host', '/filename?query', '', '')"
-msgstr ""
+msgstr ">>> import urlparse"
 
 #: ../../whatsnew/2.7.rst:1675 ../../whatsnew/2.7.rst:2534
 msgid ""
 "(Python 2.7 actually produces slightly different output, since it returns a "
 "named tuple instead of a standard tuple.)"
-msgstr ""
+msgstr "Python 2.7 vraci pojmenovany tuple."
 
 #: ../../whatsnew/2.7.rst:1678
 msgid ""
@@ -2893,13 +3040,14 @@ msgid ""
 "addresses as defined by :rfc:`2732` (contributed by Senthil Kumaran; "
 ":issue:`2987`)."
 msgstr ""
+"Modul :mod:`urlparse` podporuje IPv6. (Senthil Kumaran; :issue:`2987`.)"
 
 #: ../../whatsnew/2.7.rst:1681
 msgid ""
 ">>> urlparse.urlparse('http://[1080::8:800:200C:417A]/foo')\n"
 "ParseResult(scheme='http', netloc='[1080::8:800:200C:417A]',\n"
 "            path='/foo', params='', query='', fragment='')"
-msgstr ""
+msgstr ">>> urlparse.urlparse"
 
 #: ../../whatsnew/2.7.rst:1688
 msgid ""
@@ -2909,6 +3057,8 @@ msgid ""
 "implemented in Python 3.x by Raymond Hettinger, and backported to 2.7 by "
 "Michael Foord.)"
 msgstr ""
+"Nova trida: :class:`~weakref.WeakSet` drzi slabe reference. (Raymond "
+"Hettinger.)"
 
 #: ../../whatsnew/2.7.rst:1694
 msgid ""
@@ -2917,6 +3067,8 @@ msgid ""
 "like ``<?xml-stylesheet href=\"#style1\"?>``) or comment (which looks like "
 "``<!-- comment -->``). (Patch by Neil Muller; :issue:`2746`.)"
 msgstr ""
+"Knihovna :mod:`xml.etree.ElementTree` neescape znaky. (Neil Muller; "
+":issue:`2746`.)"
 
 #: ../../whatsnew/2.7.rst:1700
 msgid ""
@@ -2928,7 +3080,7 @@ msgid ""
 ":class:`~xmlrpc.server.SimpleXMLRPCRequestHandler`, which contains a size in"
 " bytes; responses larger than this will be compressed. (Contributed by "
 "Kristján Valur Jónsson; :issue:`6267`.)"
-msgstr ""
+msgstr "XML-RPC ma vylepsen vykona. (Kristjan Valur Jonsson; :issue:`6267`.)"
 
 #: ../../whatsnew/2.7.rst:1709
 msgid ""
@@ -2936,6 +3088,8 @@ msgid ""
 "context management protocol, so you can write ``with zipfile.ZipFile(...) as"
 " f:``. (Contributed by Brian Curtin; :issue:`5511`.)"
 msgstr ""
+"Modul :mod:`zipfile` :class:`~zipfile.ZipFile` podporuje context. (Brian "
+"Curtin; :issue:`5511`.)"
 
 #: ../../whatsnew/2.7.rst:1713
 msgid ""
@@ -2945,6 +3099,8 @@ msgid ""
 "<io.BufferedIOBase.read>` and :meth:`readline() <io.IOBase.readline>` now "
 "works correctly. (Contributed by Nir Aides; :issue:`7610`.)"
 msgstr ""
+"Modul :mod:`zipfile` archivuje prazdne adresare. (Kuba Wieczorek; "
+":issue:`4710`.)"
 
 #: ../../whatsnew/2.7.rst:1720
 msgid ""
@@ -2952,6 +3108,8 @@ msgid ""
 "addition to the path names accepted in earlier versions.  (Contributed by "
 "Gabriel Genellina; :issue:`4756`.)"
 msgstr ""
+"Funkce :func:`~zipfile.is_zipfile` prijima file objekt. (Gabriel Genellina; "
+":issue:`4756`.)"
 
 #: ../../whatsnew/2.7.rst:1724
 msgid ""
@@ -2960,10 +3118,12 @@ msgid ""
 "method specified in the :class:`~zipfile.ZipFile` constructor.  (Contributed"
 " by Ronald Oussoren; :issue:`6003`.)"
 msgstr ""
+"Metoda :meth:`~zipfile.ZipFile.writestr` ma compress_type. (Ronald Oussoren;"
+" :issue:`6003`.)"
 
 #: ../../whatsnew/2.7.rst:1737
 msgid "New module: importlib"
-msgstr ""
+msgstr "Novy modul: importlib"
 
 #: ../../whatsnew/2.7.rst:1739
 msgid ""
@@ -2974,7 +3134,7 @@ msgid ""
 "doesn't contain the complete :mod:`importlib` package, but instead has a "
 "tiny subset that contains a single function, "
 ":func:`~importlib.import_module`."
-msgstr ""
+msgstr "Modul :mod:`importlib` je reimplementace import logiky."
 
 #: ../../whatsnew/2.7.rst:1747
 msgid ""
@@ -2985,11 +3145,11 @@ msgid ""
 "provided and is the name of the package that will be used as the anchor for "
 "the relative import.  :func:`~importlib.import_module` both inserts the "
 "imported module into ``sys.modules`` and returns the module object."
-msgstr ""
+msgstr "Funkce ``import_module`` importuje modul."
 
 #: ../../whatsnew/2.7.rst:1756
 msgid "Here are some examples::"
-msgstr ""
+msgstr "Zde jsou nektere priklad"
 
 #: ../../whatsnew/2.7.rst:1758
 msgid ""
@@ -3001,17 +3161,17 @@ msgid ""
 ">>> file_util = import_module('..file_util', 'distutils.command')\n"
 ">>> file_util\n"
 "<module 'distutils.file_util' from '/python/Lib/distutils/file_util.pyc'>"
-msgstr ""
+msgstr ">>> from importlib import import_module"
 
 #: ../../whatsnew/2.7.rst:1767
 msgid ""
 ":mod:`importlib` was implemented by Brett Cannon and introduced in Python "
 "3.1."
-msgstr ""
+msgstr ":mod:`importlib` implementoval Brett Cannon."
 
 #: ../../whatsnew/2.7.rst:1772
 msgid "New module: sysconfig"
-msgstr ""
+msgstr "Novy modul: sysconfig"
 
 #: ../../whatsnew/2.7.rst:1774
 msgid ""
@@ -3020,42 +3180,42 @@ msgid ""
 "functions for getting information about Python's build process: compiler "
 "switches, installation paths, the platform name, and whether Python is "
 "running from its source directory."
-msgstr ""
+msgstr "Modul :mod:`sysconfig` poskytuje informace o Pythonu."
 
 #: ../../whatsnew/2.7.rst:1781
 msgid "Some of the functions in the module are:"
-msgstr ""
+msgstr "Nektere funkce v modulu jsou:"
 
 #: ../../whatsnew/2.7.rst:1783
 msgid ""
 ":func:`~sysconfig.get_config_var` returns variables from Python's Makefile "
 "and the :file:`pyconfig.h` file."
-msgstr ""
+msgstr "Funkce :func:`~sysconfig.get_config_var` vraci promenne."
 
 #: ../../whatsnew/2.7.rst:1785
 msgid ""
 ":func:`~sysconfig.get_config_vars` returns a dictionary containing all of "
 "the configuration variables."
-msgstr ""
+msgstr "Funkce :func:`~sysconfig.get_config_vars` vraci slovnik."
 
 #: ../../whatsnew/2.7.rst:1787
 msgid ""
 ":func:`~sysconfig.get_path` returns the configured path for a particular "
 "type of module: the standard library, site-specific modules, platform-"
 "specific modules, etc."
-msgstr ""
+msgstr "Funkce :func:`~sysconfig.get_path` vraci cestu."
 
 #: ../../whatsnew/2.7.rst:1790
 msgid ""
 ":func:`~sysconfig.is_python_build` returns true if you're running a binary "
 "from a Python source tree, and false otherwise."
-msgstr ""
+msgstr "Funkce :func:`~sysconfig.is_python_build` vraci bool."
 
 #: ../../whatsnew/2.7.rst:1793
 msgid ""
 "Consult the :mod:`sysconfig` documentation for more details and for a "
 "complete list of functions."
-msgstr ""
+msgstr "Konzultujte dokumentaci :mod:`sysconfig`."
 
 #: ../../whatsnew/2.7.rst:1796
 msgid ""
@@ -3063,11 +3223,11 @@ msgid ""
 "Ziadé, who has also started a Distutils2 package (source repository at "
 "https://hg.python.org/distutils2/) for developing a next-generation version "
 "of Distutils."
-msgstr ""
+msgstr "Distutils a :mod:`sysconfig` spravuje Tarek Ziade."
 
 #: ../../whatsnew/2.7.rst:1803
 msgid "ttk: Themed Widgets for Tk"
-msgstr ""
+msgstr "ttk: Upravene prvky pro Tk"
 
 #: ../../whatsnew/2.7.rst:1805
 msgid ""
@@ -3077,6 +3237,7 @@ msgid ""
 "originally called Tile, but was renamed to Ttk (for \"themed Tk\") on being "
 "added to Tcl/Tck release 8.5."
 msgstr ""
+"Tcl/Tk 8.5 obsahuje upravene prvky. Byly puvodneb nazv Tile, nyni Ttk."
 
 #: ../../whatsnew/2.7.rst:1811
 msgid ""
@@ -3085,7 +3246,7 @@ msgid ""
 "available at https://www.tcl.tk/man/tcl8.5/TkCmd/ttk_intro.html. Some "
 "screenshots of the Python/Ttk code in use are at "
 "https://code.google.com/archive/p/python-ttk/wikis/Screenshots.wiki."
-msgstr ""
+msgstr "Naucte se vice o :mod:`~tkinter.ttk`. Videojte na dokumentaci."
 
 #: ../../whatsnew/2.7.rst:1818
 msgid ""
@@ -3095,10 +3256,12 @@ msgid ""
 ":issue:`2618`, but the authors argued that Guilherme Polo's work was more "
 "comprehensive."
 msgstr ""
+"Modul :mod:`tkinter.ttk` napsali Guilherme Polo. (Guilherme Polo; "
+":issue:`2983`.)"
 
 #: ../../whatsnew/2.7.rst:1828
 msgid "Updated module: unittest"
-msgstr ""
+msgstr "Aktualizovany modul: unittest"
 
 #: ../../whatsnew/2.7.rst:1830
 msgid ""
@@ -3107,7 +3270,7 @@ msgid ""
 "otherwise noted.  The enhanced version of the module is downloadable "
 "separately for use with Python versions 2.4 to 2.6, packaged as the "
 ":mod:`!unittest2` package, from :pypi:`unittest2`."
-msgstr ""
+msgstr "Modul :mod:`unittest` byl vylepseny. Vetsina je od Michaela Foorda."
 
 #: ../../whatsnew/2.7.rst:1836
 msgid ""
@@ -3117,21 +3280,21 @@ msgid ""
 "kept within a set of package directories.  For example, the following "
 "command will search the :file:`test/` subdirectory for any importable test "
 "files named ``test*.py``::"
-msgstr ""
+msgstr "Modul zjistuje automaticky testy. To neni tak pokrocile jako py.test."
 
 #: ../../whatsnew/2.7.rst:1843
 msgid "python -m unittest discover -s test"
-msgstr ""
+msgstr "python -m unittest discover -s test"
 
 #: ../../whatsnew/2.7.rst:1845
 msgid ""
 "Consult the :mod:`unittest` module documentation for more details. "
 "(Developed in :issue:`6001`.)"
-msgstr ""
+msgstr "Konzultujte dokumentaci :mod:`unittest`. (:issue:`6001`.)"
 
 #: ../../whatsnew/2.7.rst:1848
 msgid "The :func:`~unittest.main` function supports some other new options:"
-msgstr ""
+msgstr "Funkce :func:`~unittest.main` podporuje dal novsci."
 
 #: ../../whatsnew/2.7.rst:1850
 msgid ""
@@ -3140,6 +3303,8 @@ msgid ""
 " resulting output will be discarded; on failure, the buffered output will be"
 " displayed."
 msgstr ""
+"Moznost -b bufferuje standartni vystup. Pokud test selhe, vysledny vystup se"
+" zobrazi."
 
 #: ../../whatsnew/2.7.rst:1855
 msgid ""
@@ -3149,6 +3314,7 @@ msgid ""
 "the partial results up to the interruption will be reported. If you're "
 "impatient, a second press of control-C will cause an immediate interruption."
 msgstr ""
+"Moznost -c zpracovava control-C lepe. Aktualne bezici test se dokoncuje."
 
 #: ../../whatsnew/2.7.rst:1862
 msgid ""
@@ -3159,6 +3325,8 @@ msgid ""
 "that can be used to mark tests that should have the control-C handling "
 "disabled."
 msgstr ""
+"Handler control-C se pokusi vyhnout problemum. K dispozici je "
+":func:`~unittest.removeHandler` dekorator."
 
 #: ../../whatsnew/2.7.rst:1869
 msgid ""
@@ -3167,19 +3335,23 @@ msgid ""
 "tests.  (Suggested by Cliff Dyer and implemented by Michael Foord; "
 ":issue:`8074`.)"
 msgstr ""
+"Moznost -f zastavi test prazinu pri prvni chybe. (Cliff Dyer; "
+":issue:`8074`.)"
 
 #: ../../whatsnew/2.7.rst:1874
 msgid ""
 "The progress messages now show 'x' for expected failures and 'u' for "
 "unexpected successes when run in verbose mode. (Contributed by Benjamin "
 "Peterson.)"
-msgstr ""
+msgstr "Zpravy pokroku zobrazuji x pro ocekavane chyby. (Benjamin Peterson.)"
 
 #: ../../whatsnew/2.7.rst:1878
 msgid ""
 "Test cases can raise the :exc:`~unittest.SkipTest` exception to skip a test "
 "(:issue:`1034053`)."
 msgstr ""
+"Testovaci pripady mohou vyvolarit :exc:`~unittest.SkipTest`. "
+"(:issue:`1034053`.)"
 
 #: ../../whatsnew/2.7.rst:1881
 msgid ""
@@ -3191,24 +3363,26 @@ msgid ""
 "standard error message and any additional message you provide will be "
 "printed for failures.  (Added by Michael Foord; :issue:`5663`.)"
 msgstr ""
+"Chybove zpravy pro assertEq poskytuj vice informaci. (Michael Foord; "
+":issue:`5663`.)"
 
 #: ../../whatsnew/2.7.rst:1888
 msgid ""
 "The :meth:`~unittest.TestCase.assertRaises` method now returns a context "
 "handler when called without providing a callable object to run.  For "
 "example, you can write this::"
-msgstr ""
+msgstr "Metoda :meth:`~unittest.TestCase.assertRaises` vraci context handler."
 
 #: ../../whatsnew/2.7.rst:1892
 #, python-brace-format
 msgid ""
 "with self.assertRaises(KeyError):\n"
 "    {}['foo']"
-msgstr ""
+msgstr "with self.assertRaises(KeyError):"
 
 #: ../../whatsnew/2.7.rst:1895
 msgid "(Implemented by Antoine Pitrou; :issue:`4444`.)"
-msgstr ""
+msgstr "(Antoine Pitrou; :issue:`4444`.)"
 
 #: ../../whatsnew/2.7.rst:1899
 msgid ""
@@ -3220,7 +3394,7 @@ msgid ""
 "class methods (using ``@classmethod`` or equivalent).  These functions and "
 "methods are invoked when the test runner switches to a test case in a "
 "different module or class."
-msgstr ""
+msgstr "Setup a teardown na urovni modulu a tridy jsou podporovany."
 
 #: ../../whatsnew/2.7.rst:1907
 msgid ""
@@ -3232,6 +3406,8 @@ msgid ""
 ":meth:`~unittest.TestCase.tearDown`). This allows for much simpler resource "
 "allocation and deallocation during tests (:issue:`5679`)."
 msgstr ""
+"Metody :meth:`~unittest.TestCase.addCleanup` dovolujici cleanup. "
+"(:issue:`5679`.)"
 
 #: ../../whatsnew/2.7.rst:1915
 msgid ""
@@ -3239,14 +3415,14 @@ msgid ""
 "Many of these methods were written by Google engineers for use in their test"
 " suites; Gregory P. Smith, Michael Foord, and GvR worked on merging them "
 "into Python's version of :mod:`unittest`."
-msgstr ""
+msgstr "Mnoho nových metod bylo pridano. Napsalo je Google."
 
 #: ../../whatsnew/2.7.rst:1920
 msgid ""
 ":meth:`~unittest.TestCase.assertIsNone` and "
 ":meth:`~unittest.TestCase.assertIsNotNone` take one expression and verify "
 "that the result is or is not ``None``."
-msgstr ""
+msgstr "Metody :meth:`~unittest.TestCase.assertIsNone` overuji None."
 
 #: ../../whatsnew/2.7.rst:1923
 msgid ""
@@ -3255,6 +3431,8 @@ msgid ""
 " two values evaluate to the same object or not. (Added by Michael Foord; "
 ":issue:`2578`.)"
 msgstr ""
+"Metody :meth:`~unittest.TestCase.assertIs` kontroluji identitu. (Michael "
+"Foord; :issue:`2578`.)"
 
 #: ../../whatsnew/2.7.rst:1927
 msgid ""
@@ -3263,6 +3441,8 @@ msgid ""
 "object is an instance of a particular class, or of one of a tuple of "
 "classes.  (Added by Georg Brandl; :issue:`7031`.)"
 msgstr ""
+"Metody :meth:`~unittest.TestCase.assertIsInstance` kontroluji typ. (Georg "
+"Brandl; :issue:`7031`.)"
 
 #: ../../whatsnew/2.7.rst:1932
 msgid ""
@@ -3270,7 +3450,7 @@ msgid ""
 ":meth:`~unittest.TestCase.assertGreaterEqual`, "
 ":meth:`~unittest.TestCase.assertLess`, and "
 ":meth:`~unittest.TestCase.assertLessEqual` compare two quantities."
-msgstr ""
+msgstr "Metody :meth:`~unittest.TestCase.assertGreater` porovnavaji cisla."
 
 #: ../../whatsnew/2.7.rst:1936
 msgid ""
@@ -3279,6 +3459,7 @@ msgid ""
 "differences in the two strings.  This comparison is now used by default when"
 " Unicode strings are compared with :meth:`~unittest.TestCase.assertEqual`."
 msgstr ""
+"Metoda :meth:`~unittest.TestCase.assertMultiLineEqual` porovnava retezce."
 
 #: ../../whatsnew/2.7.rst:1941
 msgid ""
@@ -3286,7 +3467,7 @@ msgid ""
 ":meth:`assertNotRegexpMatches() <unittest.TestCase.assertNotRegex>` checks "
 "whether the first argument is a string matching or not matching the regular "
 "expression provided as the second argument (:issue:`8038`)."
-msgstr ""
+msgstr "Metody :meth:`assertRegexpMatches` kontroluji regex. (:issue:`8038`.)"
 
 #: ../../whatsnew/2.7.rst:1946
 msgid ""
@@ -3294,26 +3475,26 @@ msgid ""
 "whether a particular exception is raised, and then also checks that the "
 "string representation of the exception matches the provided regular "
 "expression."
-msgstr ""
+msgstr "Metoda :meth:`assertRaisesRegexp` kontroluje vyjimku a regex."
 
 #: ../../whatsnew/2.7.rst:1951
 msgid ""
 ":meth:`~unittest.TestCase.assertIn` and "
 ":meth:`~unittest.TestCase.assertNotIn` tests whether *first* is or is not in"
 "  *second*."
-msgstr ""
+msgstr "Metody :meth:`~unittest.TestCase.assertIn` kontroluji pripadnost."
 
 #: ../../whatsnew/2.7.rst:1954
 msgid ""
 ":meth:`assertItemsEqual() <unittest.TestCase.assertCountEqual>` tests "
 "whether two provided sequences contain the same elements."
-msgstr ""
+msgstr "Metoda :meth:`assertItemsEqual` kontroluje prvky v sekvenci."
 
 #: ../../whatsnew/2.7.rst:1957
 msgid ""
 ":meth:`~unittest.TestCase.assertSetEqual` compares whether two sets are "
 "equal, and only reports the differences between the sets in case of error."
-msgstr ""
+msgstr "Metoda :meth:`~unittest.TestCase.assertSetEqual` porovnava sady."
 
 #: ../../whatsnew/2.7.rst:1960
 msgid ""
@@ -3325,6 +3506,8 @@ msgid ""
 ":meth:`~unittest.TestCase.assertSequenceEqual` compares two sequences and "
 "can optionally check whether both sequences are of a particular type."
 msgstr ""
+"Metody :meth:`~unittest.TestCase.assertListEqual` a "
+":meth:`~unittest.TestCase.assertTupleEqual` porovnavaji typy."
 
 #: ../../whatsnew/2.7.rst:1968
 msgid ""
@@ -3333,7 +3516,7 @@ msgid ""
 "dictionaries using :meth:`~unittest.TestCase.assertEqual`.  "
 ":meth:`!assertDictContainsSubset` checks whether all of the key/value pairs "
 "in *first* are found in *second*."
-msgstr ""
+msgstr "Metoda :meth:`~unittest.TestCase.assertDictEqual` porovnava slovniky."
 
 #: ../../whatsnew/2.7.rst:1973
 msgid ""
@@ -3344,6 +3527,8 @@ msgid ""
 "and compare it to zero, or require the difference to be smaller than a "
 "supplied *delta* value."
 msgstr ""
+"Metody :meth:`~unittest.TestCase.assertAlmostEqual` testuje priblizne "
+"rovnost."
 
 #: ../../whatsnew/2.7.rst:1979
 msgid ""
@@ -3351,6 +3536,8 @@ msgid ""
 ":attr:`~unittest.TestLoader.suiteClass` attribute of the "
 ":class:`~unittest.TestLoader`. (Fixed by Mark Roddy; :issue:`6866`.)"
 msgstr ""
+"Metoda :meth:`~unittest.TestLoader.loadTestsFromName` cti suiteClass. (Mark "
+"Roddy; :issue:`6866`.)"
 
 #: ../../whatsnew/2.7.rst:1983
 msgid ""
@@ -3363,6 +3550,8 @@ msgid ""
 " function to provide additional information about why the two objects aren't"
 " matching, much as the new sequence comparison methods do."
 msgstr ""
+"Nove haki pro :meth:`~unittest.TestCase.assertEqual`. "
+":meth:`~unittest.TestCase.addTypeEqualityFunc`."
 
 #: ../../whatsnew/2.7.rst:1992
 msgid ""
@@ -3371,6 +3560,8 @@ msgid ""
 ":func:`~unittest.main` to be used from the interactive interpreter. "
 "(Contributed by J. Pablo Fernández; :issue:`3379`.)"
 msgstr ""
+":func:`unittest.main` prima parametr exit. (J. Pablo Fernandez; "
+":issue:`3379`.)"
 
 #: ../../whatsnew/2.7.rst:1997
 msgid ""
@@ -3380,6 +3571,8 @@ msgid ""
 " before and after a test run.  (Contributed by Robert Collins; "
 ":issue:`5728`.)"
 msgstr ""
+":class:`~unittest.TestResult` ma nove metody. (Robert Collins; "
+":issue:`5728`.)"
 
 #: ../../whatsnew/2.7.rst:2001
 msgid ""
@@ -3387,48 +3580,48 @@ msgid ""
 "large, so the module was turned into a package and the code split into "
 "several files (by Benjamin Peterson).  This doesn't affect how the module is"
 " imported or used."
-msgstr ""
+msgstr "Modul se stal package. (Benjamin Peterson.)"
 
 #: ../../whatsnew/2.7.rst:2008
 msgid ""
 "https://web.archive.org/web/20210619163128/http://www.voidspace.org.uk/python/articles/unittest2.shtml"
-msgstr ""
+msgstr "https://web.archive.org/web/20210619163128"
 
 #: ../../whatsnew/2.7.rst:2009
 msgid ""
 "Describes the new features, how to use them, and the rationale for various "
 "design decisions.  (By Michael Foord.)"
-msgstr ""
+msgstr "Popisuje nove funkce a jejich vyu ziti. (Michael Foord.)"
 
 #: ../../whatsnew/2.7.rst:2015
 msgid "Updated module: ElementTree 1.3"
-msgstr ""
+msgstr "Aktualizovany modul: ElementTree 1.3"
 
 #: ../../whatsnew/2.7.rst:2017
 msgid ""
 "The version of the ElementTree library included with Python was updated to "
 "version 1.3.  Some of the new features are:"
-msgstr ""
+msgstr "ElementTree byla aktualizovana na verzi 1.3."
 
 #: ../../whatsnew/2.7.rst:2020
 msgid ""
 "The various parsing functions now take a *parser* keyword argument giving an"
 " :class:`~xml.etree.ElementTree.XMLParser` instance that will be used.  This"
 " makes it possible to override the file's internal encoding::"
-msgstr ""
+msgstr "Funkce parsovani prima parser parametr."
 
 #: ../../whatsnew/2.7.rst:2024
 msgid ""
 "p = ET.XMLParser(encoding='utf-8')\n"
 "t = ET.XML(\"\"\"<root/>\"\"\", parser=p)"
-msgstr ""
+msgstr "p = ET.XMLParser(encoding='utf-8')"
 
 #: ../../whatsnew/2.7.rst:2027
 msgid ""
 "Errors in parsing XML now raise a :exc:`~xml.etree.ElementTree.ParseError` "
 "exception, whose instances have a :attr:`!position` attribute containing a "
 "(*line*, *column*) tuple giving the location of the problem."
-msgstr ""
+msgstr "Chyby parserovani vyvolaji ParseError s pozici."
 
 #: ../../whatsnew/2.7.rst:2031
 msgid ""
@@ -3444,6 +3637,7 @@ msgid ""
 "the tree is written out, so you don't need to do more extensive "
 "rearrangement to remove a single element."
 msgstr ""
+"Kod pro konverzi stromu byl vylepseny. Metody pouzivaji method parametr."
 
 #: ../../whatsnew/2.7.rst:2044
 msgid ""
@@ -3453,7 +3647,7 @@ msgid ""
 "the :attr:`!default_namespace` attribute and can register new prefixes with "
 ":meth:`~xml.etree.ElementTree.register_namespace`.  In XML mode, you can use"
 " the true/false *xml_declaration* parameter to suppress the XML declaration."
-msgstr ""
+msgstr "Namespace zpracovani bylo vylepseno."
 
 #: ../../whatsnew/2.7.rst:2052
 msgid ""
@@ -3462,6 +3656,8 @@ msgid ""
 "sequence to the element's children.  Elements themselves behave like "
 "sequences, so it's easy to move children from one element to another::"
 msgstr ""
+"Nova metoda: :meth:`~xml.etree.ElementTree.Element.extend` pripojuje "
+"polozky."
 
 #: ../../whatsnew/2.7.rst:2058
 msgid ""
@@ -3475,7 +3671,7 @@ msgid ""
 "\n"
 "# Outputs <root><item>1</item>...</root>\n"
 "print ET.tostring(new)"
-msgstr ""
+msgstr "from xml.etree import ElementTree as ET"
 
 #: ../../whatsnew/2.7.rst:2069
 msgid ""
@@ -3486,6 +3682,7 @@ msgid ""
 ":meth:`!getiterator` is now deprecated, as is :meth:`!getchildren` which "
 "constructs and returns a list of children."
 msgstr ""
+"Nova metoda: :meth:`~xml.etree.ElementTree.Element.iter` vraci generator."
 
 #: ../../whatsnew/2.7.rst:2076
 msgid ""
@@ -3493,6 +3690,7 @@ msgid ""
 ":meth:`~xml.etree.ElementTree.Element.itertext` yields all chunks of text "
 "that are descendants of the element.  For example::"
 msgstr ""
+"Nova metoda: :meth:`~xml.etree.ElementTree.Element.itertext` vraci text."
 
 #: ../../whatsnew/2.7.rst:2080
 msgid ""
@@ -3502,7 +3700,7 @@ msgid ""
 "\n"
 "# Outputs ['\\n  ', '1', ' ', '2', '  ', '3', '\\n']\n"
 "print list(t.itertext())"
-msgstr ""
+msgstr "t = ET.XML"
 
 #: ../../whatsnew/2.7.rst:2087
 msgid ""
@@ -3512,7 +3710,7 @@ msgid ""
 "element? -- so it will now trigger a :exc:`FutureWarning`.  In your code, "
 "you should be explicit: write ``len(elem) != 0`` if you're interested in the"
 " number of children, or ``elem is not None``."
-msgstr ""
+msgstr "Zastarala pouziti prvku jako Boolean. Pouzijte ``len(elem) != 0``."
 
 #: ../../whatsnew/2.7.rst:2095
 msgid ""
@@ -3522,14 +3720,16 @@ msgid ""
 " Florent Xicluna updated the version included with Python, after discussions"
 " on python-dev and in :issue:`6472`.)"
 msgstr ""
+"Fredrik Lundh vyvija ElementTree. Florent Xicluna aktualizoval. (Florent "
+"Xicluna; :issue:`6472`.)"
 
 #: ../../whatsnew/2.7.rst:2105
 msgid "Build and C API Changes"
-msgstr ""
+msgstr "Build a C API zmeny"
 
 #: ../../whatsnew/2.7.rst:2107
 msgid "Changes to Python's build process and to the C API include:"
-msgstr ""
+msgstr "Zmeny v Python build procesu."
 
 #: ../../whatsnew/2.7.rst:2109
 msgid ""
@@ -3544,6 +3744,8 @@ msgid ""
 "``py-print`` prints the value of a Python variable, and ``py-bt`` prints the"
 " Python stack trace.  (Added as a result of :issue:`8032`.)"
 msgstr ""
+"GDB 7 muze byt skriptovano Pythonem. python-gdb.py pridava prikazy. (Victor "
+"Stinner; :issue:`8032`.)"
 
 #: ../../whatsnew/2.7.rst:2121
 msgid ""
@@ -3552,6 +3754,7 @@ msgid ""
 "doesn't hold the GIL; the macro now acquires it before printing. "
 "(Contributed by Victor Stinner; :issue:`3632`.)"
 msgstr ""
+"Makro pyo nyni pracuje spravne bez GIL. (Victor Stinner; :issue:`3632`.)"
 
 #: ../../whatsnew/2.7.rst:2126
 msgid ""
@@ -3560,6 +3763,8 @@ msgid ""
 " for asynchronous IO operations. (Contributed by Kristján Valur Jónsson; "
 ":issue:`4293`.)"
 msgstr ""
+"Funkce :c:func:`Py_AddPendingCall` je thread-safe. (Kristjan Valur Jonsson; "
+":issue:`4293`.)"
 
 #: ../../whatsnew/2.7.rst:2131
 msgid ""
@@ -3570,6 +3775,7 @@ msgid ""
 ":c:func:`!PyCode_New`, which had many more arguments.  (Added by Jeffrey "
 "Yasskin.)"
 msgstr ""
+"Nova funkce: :c:func:`PyCode_NewEmpty` vytvar przdny kod. (Jeffrey Yasskin.)"
 
 #: ../../whatsnew/2.7.rst:2138
 msgid ""
@@ -3578,6 +3784,8 @@ msgid ""
 "extra ``char *`` argument containing the docstring for the new exception "
 "class.  (Added by 'lekma' on the Python bug tracker; :issue:`7033`.)"
 msgstr ""
+"Nova funkce: :c:func:`PyErr_NewExceptionWithDoc` vytvar vyjimku s "
+"docstringem. (lekma; :issue:`7033`.)"
 
 #: ../../whatsnew/2.7.rst:2144
 msgid ""
@@ -3587,6 +3795,8 @@ msgid ""
 "executing, and then look up the line number corresponding to that address.  "
 "(Added by Jeffrey Yasskin.)"
 msgstr ""
+"Nova funkce: :c:func:`PyFrame_GetLineNumber` vraci cislo radky. (Jeffrey "
+"Yasskin.)"
 
 #: ../../whatsnew/2.7.rst:2150
 msgid ""
@@ -3596,6 +3806,8 @@ msgid ""
 "fit into the output type, an *overflow* flag is set and returned to the "
 "caller. (Contributed by Case Van Horsen; :issue:`7528` and :issue:`7767`.)"
 msgstr ""
+"Nove funkce: :c:func:`PyLong_AsLongAndOverflow` aproximuje Python long. "
+"(Case Van Horsen; :issue:`7528`.)"
 
 #: ../../whatsnew/2.7.rst:2157
 msgid ""
@@ -3604,6 +3816,7 @@ msgid ""
 ":c:func:`!PyOS_ascii_strtod` and :c:func:`!PyOS_ascii_atof` functions are "
 "now deprecated."
 msgstr ""
+"Nova funkce: :c:func:`PyOS_string_to_double`. Stare funkce jsou zastaraly."
 
 #: ../../whatsnew/2.7.rst:2162
 msgid ""
@@ -3611,7 +3824,7 @@ msgid ""
 "can optionally update ``sys.path`` to include the directory containing the "
 "script named by ``sys.argv[0]`` depending on the value of an *updatepath* "
 "parameter."
-msgstr ""
+msgstr "Nova funkce: :c:func:`!PySys_SetArgvEx` nastavi sys.argv."
 
 #: ../../whatsnew/2.7.rst:2167
 msgid ""
@@ -3623,6 +3836,8 @@ msgid ""
 "(say, a file named :file:`os.py`) that your application would then import "
 "and run."
 msgstr ""
+"Funkce se pridala kvuli bezpecnosti. Stara funkce :c:func:`!PySys_SetArgv` "
+"byla problem."
 
 #: ../../whatsnew/2.7.rst:2175
 msgid ""
@@ -3631,12 +3846,15 @@ msgid ""
 "application should be using :c:func:`!PySys_SetArgvEx` with *updatepath* set"
 " to false."
 msgstr ""
+"Pokud udrzujete aplikaci s Pythonem, zkontrolujte volani "
+":c:func:`!PySys_SetArgv`."
 
 #: ../../whatsnew/2.7.rst:2180
 msgid ""
 "Security issue reported as :cve:`2008-5983`; discussed in :issue:`5753`, and"
 " fixed by Antoine Pitrou."
 msgstr ""
+"Problem s bezpecnosti :cve:`2008-5983`. (Antoine Pitrou; :issue:`5753`.)"
 
 #: ../../whatsnew/2.7.rst:2183
 msgid ""
@@ -3649,6 +3867,8 @@ msgid ""
 "several places Python needs to analyze characters in a locale-independent "
 "way.  (Added by Eric Smith; :issue:`5793`.)"
 msgstr ""
+"Nove makra: :c:macro:`Py_ISALNUM` a dalsi makra pro tridu znaku. (Eric "
+"Smith; :issue:`5793`.)"
 
 #: ../../whatsnew/2.7.rst:2199
 msgid ""
@@ -3657,6 +3877,8 @@ msgid ""
 "compatibility, but that was in 1997; it can certainly be deleted by now.  "
 "(Removed by Antoine Pitrou; :issue:`8276`.)"
 msgstr ""
+"Odstranen funkce: :c:func:`!PyEval_CallObject` je nyn pouze makro. (Antoine "
+"Pitrou; :issue:`8276`.)"
 
 #: ../../whatsnew/2.7.rst:2204
 msgid ""
@@ -3665,6 +3887,8 @@ msgid ""
 "accept ``%lld`` and ``%llu`` format codes for displaying C's :c:expr:`long "
 "long` types. (Contributed by Mark Dickinson; :issue:`7228`.)"
 msgstr ""
+"Nove kody formatu: :c:func:`!PyString_FromFormat` podporuje lld. (Mark "
+"Dickinson; :issue:`7228`.)"
 
 #: ../../whatsnew/2.7.rst:2210
 msgid ""
@@ -3678,6 +3902,8 @@ msgid ""
 "replicated, and the child process would no longer be able to perform "
 "imports."
 msgstr ""
+"Interakce mezi vlakny a fork byla zmenen. Proces po fork muze mit problemy "
+"se zamky."
 
 #: ../../whatsnew/2.7.rst:2220
 msgid ""
@@ -3686,10 +3912,12 @@ msgid ""
 "  C extension modules that have internal locks, or that call "
 ":c:func:`fork()` themselves, will not benefit from this clean-up."
 msgstr ""
+"Python 2.7 zdobiha import lock pred fork a cisty zamky. (Thomas Wouters; "
+":issue:`1590864`.)"
 
 #: ../../whatsnew/2.7.rst:2226
 msgid "(Fixed by Thomas Wouters; :issue:`1590864`.)"
-msgstr ""
+msgstr "(Thomas Wouters; :issue:`1590864`.)"
 
 #: ../../whatsnew/2.7.rst:2228
 msgid ""
@@ -3698,19 +3926,23 @@ msgid ""
 "being raised when an interpreter shuts down. (Patch by Adam Olsen; "
 ":issue:`1722344`.)"
 msgstr ""
+"Funkce :c:func:`Py_Finalize` vola threading._shutdown. (Adam Olsen; "
+":issue:`1722344`.)"
 
 #: ../../whatsnew/2.7.rst:2233
 msgid ""
 "When using the :c:type:`PyMemberDef` structure to define attributes of a "
 "type, Python will no longer let you try to delete or set a "
 ":c:macro:`!T_STRING_INPLACE` attribute."
-msgstr ""
+msgstr "Pomocí :c:type:`PyMemberDef` neni mozne mazat T_STRING_INPLACE."
 
 #: ../../whatsnew/2.7.rst:2239
 msgid ""
 "Global symbols defined by the :mod:`ctypes` module are now prefixed with "
 "``Py``, or with ``_ctypes``.  (Implemented by Thomas Heller; :issue:`3102`.)"
 msgstr ""
+"Globalni symboly :mod:`ctypes` jsou nyn prefixovany Py. (Thomas Heller; "
+":issue:`3102`.)"
 
 #: ../../whatsnew/2.7.rst:2243
 msgid ""
@@ -3719,6 +3951,8 @@ msgid ""
 "Expat library. (Contributed by Arfrever Frehtes Taifersar Arahesis; "
 ":issue:`7609`.)"
 msgstr ""
+"Nova volba configure: :option:`!--with-system-expat` pouziva system Expat. "
+"(Arfrever Frehtes; :issue:`7609`.)"
 
 #: ../../whatsnew/2.7.rst:2247
 msgid ""
@@ -3728,6 +3962,8 @@ msgid ""
 "detecting memory leaks and overruns. (Contributed by James Henstridge; "
 ":issue:`2422`.)"
 msgstr ""
+"Nova volba configure: :option:`!--with-valgrind` vypina pymalloc. (James "
+"Henstridge; :issue:`2422`.)"
 
 #: ../../whatsnew/2.7.rst:2254
 msgid ""
@@ -3735,6 +3971,8 @@ msgid ""
 "with-dbmliborder=` in order to disable all of the various DBM modules.  "
 "(Added by Arfrever Frehtes Taifersar Arahesis; :issue:`6491`.)"
 msgstr ""
+"Nova volba configure: :option:`!--with-dbmliborder=` s prazdnym stringem. "
+"(Arfrever Frehtes; :issue:`6491`.)"
 
 #: ../../whatsnew/2.7.rst:2259
 msgid ""
@@ -3744,6 +3982,8 @@ msgid ""
 "available if anyone wishes to use it. (Added by Mark Dickinson; "
 ":issue:`2937`.)"
 msgstr ""
+"Konfiguracni skript hleda floating-point problemy. (Mark Dickinson; "
+":issue:`2937`.)"
 
 #: ../../whatsnew/2.7.rst:2265
 msgid ""
@@ -3751,22 +3991,26 @@ msgid ""
 "variable for supporting C++ linking.  (Contributed by Arfrever Frehtes "
 "Taifersar Arahesis; :issue:`1222585`.)"
 msgstr ""
+"Configure nyn nastavi LDCXXSHARED. (Arfrever Frehtes; :issue:`1222585`.)"
 
 #: ../../whatsnew/2.7.rst:2269
 msgid ""
 "The build process now creates the necessary files for pkg-config support.  "
 "(Contributed by Clinton Roy; :issue:`3585`.)"
 msgstr ""
+"Proces vytvareni nyn podporuje pkg-config. (Clinton Roy; :issue:`3585`.)"
 
 #: ../../whatsnew/2.7.rst:2272
 msgid ""
 "The build process now supports Subversion 1.7.  (Contributed by Arfrever "
 "Frehtes Taifersar Arahesis; :issue:`6094`.)"
 msgstr ""
+"Proces vytvareni podporuje Subversion 1.7. (Arfrever Frehtes; "
+":issue:`6094`.)"
 
 #: ../../whatsnew/2.7.rst:2279
 msgid "Capsules"
-msgstr ""
+msgstr "Kapsuley"
 
 #: ../../whatsnew/2.7.rst:2281
 msgid ""
@@ -3779,6 +4023,7 @@ msgid ""
 "the ``void *`` pointer, which will usually point to an array of pointers to "
 "the module's various API functions."
 msgstr ""
+"Python 3.1 pridava :c:type:`PyCapsule` pro C API rozsirejicich modulu."
 
 #: ../../whatsnew/2.7.rst:2290
 msgid ""
@@ -3789,6 +4034,7 @@ msgid ""
 "Capsules know their own name, and getting the pointer requires providing the"
 " name:"
 msgstr ""
+"Existuje :c:type:`!PyCObject`, ale nema type safety. Kapsuley jsou lepsi."
 
 #: ../../whatsnew/2.7.rst:2297
 #, python-brace-format
@@ -3801,7 +4047,7 @@ msgid ""
 "}\n"
 "\n"
 "vtable = PyCapsule_GetPointer(capsule, \"mymodule.CAPI\");"
-msgstr ""
+msgstr "void *vtable;"
 
 #: ../../whatsnew/2.7.rst:2308
 msgid ""
@@ -3810,6 +4056,7 @@ msgid ""
 "the mismatched name and return false.  Refer to :ref:`using-capsules` for "
 "more information on using these objects."
 msgstr ""
+"Pokud jina kapsula byla prevedena, :c:func:`PyCapsule_IsValid` vraci false."
 
 #: ../../whatsnew/2.7.rst:2313
 msgid ""
@@ -3819,6 +4066,8 @@ msgid ""
 ":c:type:`!PyCObject` interface.  Use of :c:func:`!PyCObject_AsVoidPtr` will "
 "signal a :exc:`PendingDeprecationWarning`, which is silent by default."
 msgstr ""
+"Python 2.7 pouziva kapsuley internu. Funkce :c:func:`!PyCObject_AsVoidPtr` "
+"byla upravena."
 
 #: ../../whatsnew/2.7.rst:2320
 msgid ""

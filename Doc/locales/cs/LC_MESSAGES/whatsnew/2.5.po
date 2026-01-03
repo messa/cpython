@@ -114,8 +114,7 @@ msgid ""
 "please e-mail them to the author or open a bug in the Python bug tracker."
 msgstr ""
 "Komentáře, návrhy a zprávy o chybách v tomto dokumentu jsou vítané; zprávy o"
-" chybách prosím pošlete autorovi nebo otevřete chybu v Python sledovačovi "
-"chyb."
+" chybách prosím pošlete autorovi nebo otevřete chybu v Python issue trackeru."
 
 #: ../../whatsnew/2.5.rst:54
 msgid "PEP 308: Conditional Expressions"
@@ -1422,19 +1421,23 @@ msgid ""
 "``True`` will result in suppressing it.  You'll only rarely want to suppress"
 " the exception, because if you do the author of the code containing the "
 "':keyword:`with`' statement will never realize anything went wrong."
-msgstr ""
+msgstr "Pokud BLOCK vyvolal vyjimku, __exit__ je volana s detaily vyjimky."
 
 #: ../../whatsnew/2.5.rst:672
 msgid ""
 "If *BLOCK* didn't raise an exception,  the :meth:`~object.__exit__` method "
 "is still called, but *type*, *value*, and *traceback* are all ``None``."
 msgstr ""
+"Pokud BLOCK nevyvolal vyjimku, metoda __exit__ je stale volana, ale type, "
+"value a traceback jsou None."
 
 #: ../../whatsnew/2.5.rst:675
 msgid ""
 "Let's think through an example.  I won't present detailed code but will only"
 " sketch the methods necessary for a database that supports transactions."
 msgstr ""
+"Pojdme si predstavit priklad. Neprezentuju podrobny kod, ale pouze skicuju "
+"metody nutne pro databazi, ktera podporuje transakce."
 
 #: ../../whatsnew/2.5.rst:678
 msgid ""
@@ -1444,12 +1447,17 @@ msgid ""
 "rolled back, meaning that the changes are all discarded and the database is "
 "unchanged.  See any database textbook for more information.)"
 msgstr ""
+"Pro lidi, ktere nejsou seznameni s terminologii databazi: sada zmen v "
+"databazi je seskupena do transakce. Transakce mohou byt bud potvrzen nebo "
+"vracenym. Viz jakakoliv ucebnice databazi pro vice informaci."
 
 #: ../../whatsnew/2.5.rst:684
 msgid ""
 "Let's assume there's an object representing a database connection. Our goal "
 "will be to let the user write code like this::"
 msgstr ""
+"Zajisime, ze existuje objekt reprezentujici spojeni s databazi. Nasim cilem "
+"bude dovolit uzivateli psat kod jako tento::"
 
 #: ../../whatsnew/2.5.rst:687
 msgid ""
@@ -1459,6 +1467,11 @@ msgid ""
 "    cursor.execute('delete from ...')\n"
 "    # ... more operations ..."
 msgstr ""
+"db_connection = DatabaseConnection()\n"
+"with db_connection as cursor:\n"
+"    cursor.execute('insert into ...')\n"
+"    cursor.execute('delete from ...')\n"
+"    # ... more operations ..."
 
 #: ../../whatsnew/2.5.rst:693
 msgid ""
@@ -1466,6 +1479,8 @@ msgid ""
 " or rolled back if there's an exception. Here's the basic interface for "
 ":class:`DatabaseConnection` that I'll assume::"
 msgstr ""
+"Transakce by mela byt potvrzena, pokud kod v bloku beží bezchybne, nebo "
+"vracena, pokud se vyskytn vyjimka. Zde je zakladni rozhrani::"
 
 #: ../../whatsnew/2.5.rst:697
 msgid ""
@@ -1478,6 +1493,14 @@ msgid ""
 "    def rollback (self):\n"
 "        \"Rolls back current transaction\""
 msgstr ""
+"class DatabaseConnection:\n"
+"    # Database interface\n"
+"    def cursor (self):\n"
+"        \"Returns a cursor object and starts a new transaction\"\n"
+"    def commit (self):\n"
+"        \"Commits current transaction\"\n"
+"    def rollback (self):\n"
+"        \"Rolls back current transaction\""
 
 #: ../../whatsnew/2.5.rst:706
 msgid ""
@@ -1487,6 +1510,7 @@ msgid ""
 "cursor`` to their ':keyword:`with`' statement to bind the cursor to a "
 "variable name. ::"
 msgstr ""
+"Metoda __enter__ je pomerne snadna, staci pouze zahajit novou transakci."
 
 #: ../../whatsnew/2.5.rst:711
 msgid ""
@@ -1497,6 +1521,12 @@ msgid ""
 "        cursor = self.cursor()\n"
 "        return cursor"
 msgstr ""
+"class DatabaseConnection:\n"
+"    ...\n"
+"    def __enter__ (self):\n"
+"        # Code to start a new transaction\n"
+"        cursor = self.cursor()\n"
+"        return cursor"
 
 #: ../../whatsnew/2.5.rst:718
 msgid ""
@@ -1505,6 +1535,10 @@ msgid ""
 "exception occurred.  If there was no exception, the transaction is "
 "committed.  The transaction is rolled back if there was an exception."
 msgstr ""
+"Metoda __exit__ je nejsloitejsi, protoze to je miste, kde se musi provest "
+"vetsina prace. Metoda musi zkontrolovat, zda doslo k vyjimce. Pokud nebyla "
+"vyjimka, je transakce potvrzena. Transakce je vracena, pokud doslo k "
+"vyjimce."
 
 #: ../../whatsnew/2.5.rst:723
 msgid ""
@@ -1513,6 +1547,9 @@ msgid ""
 "exception will be re-raised automatically.  If you wished, you could be more"
 " explicit and add a :keyword:`return` statement at the marked location. ::"
 msgstr ""
+"V nize uvedenem kodu bude provedeni jen klouzat na konci funkce, vracet "
+"vychoziho None. None je nepravda, takze vyjimka bude automaticky znovu "
+"vyvolana."
 
 #: ../../whatsnew/2.5.rst:728
 msgid ""
@@ -1527,10 +1564,20 @@ msgid ""
 "            self.rollback()\n"
 "            # return False"
 msgstr ""
+"class DatabaseConnection:\n"
+"    ...\n"
+"    def __exit__ (self, type, value, tb):\n"
+"        if tb is None:\n"
+"            # No exception, so commit\n"
+"            self.commit()\n"
+"        else:\n"
+"            # Exception occurred, so rollback.\n"
+"            self.rollback()\n"
+"            # return False"
 
 #: ../../whatsnew/2.5.rst:743
 msgid "The contextlib module"
-msgstr ""
+msgstr "Modul contextlib"
 
 #: ../../whatsnew/2.5.rst:745
 msgid ""
@@ -1538,6 +1585,8 @@ msgid ""
 "that are useful for writing objects for use with the ':keyword:`with`' "
 "statement."
 msgstr ""
+"Novy modul contextlib poskytuje nektere funkce a dekorator, ktere jsou "
+"uzitecne pro psani objektu k pouziti s prikazem with."
 
 #: ../../whatsnew/2.5.rst:748
 msgid ""
@@ -1551,12 +1600,16 @@ msgid ""
 "method.  Any exception raised in the block will be raised by the "
 ":keyword:`!yield` statement."
 msgstr ""
+"Dekorator se nazyva contextmanager a umoznuje vam psayt jednoduchou funkci "
+"generatoru miste definovani nove tridy."
 
 #: ../../whatsnew/2.5.rst:757
 msgid ""
 "Our database example from the previous section could be written  using this "
 "decorator as::"
 msgstr ""
+"Nas priklad databaze z predchozi casti muze byt napsan pomoci tohoto "
+"dekoratoru jako::"
 
 #: ../../whatsnew/2.5.rst:760
 msgid ""
@@ -1577,6 +1630,22 @@ msgid ""
 "with db_transaction(db) as cursor:\n"
 "    ..."
 msgstr ""
+"from contextlib import contextmanager\n"
+"\n"
+"@contextmanager\n"
+"def db_transaction (connection):\n"
+"    cursor = connection.cursor()\n"
+"    try:\n"
+"        yield cursor\n"
+"    except:\n"
+"        connection.rollback()\n"
+"        raise\n"
+"    else:\n"
+"        connection.commit()\n"
+"\n"
+"db = DatabaseConnection()\n"
+"with db_transaction(db) as cursor:\n"
+"    ..."
 
 #: ../../whatsnew/2.5.rst:777
 msgid ""
@@ -1586,6 +1655,8 @@ msgid ""
 "':keyword:`!with`' statement both starts a database transaction and acquires"
 " a thread lock::"
 msgstr ""
+"Modul contextlib ma take funkci nested(mgr1, mgr2, ...) ktera kombinuje radu"
+" spravcu kontextu, aby jste nemuseli psat vnorene prikazy with."
 
 #: ../../whatsnew/2.5.rst:782
 msgid ""
@@ -1593,12 +1664,17 @@ msgid ""
 "with nested (db_transaction(db), lock) as (cursor, locked):\n"
 "    ..."
 msgstr ""
+"lock = threading.Lock()\n"
+"with nested (db_transaction(db), lock) as (cursor, locked):\n"
+"    ..."
 
 #: ../../whatsnew/2.5.rst:786
 msgid ""
 "Finally, the ``closing(object)`` function returns *object* so that it can be"
 " bound to a variable, and calls ``object.close`` at the end of the block. ::"
 msgstr ""
+"Konecne funkce closing(object) vrati *object*, aby muze byt vazan na "
+"promennou, a vola object.close na konci bloku. ::"
 
 #: ../../whatsnew/2.5.rst:789
 msgid ""
@@ -1609,10 +1685,16 @@ msgid ""
 "    for line in f:\n"
 "        sys.stdout.write(line)"
 msgstr ""
+"import urllib, sys\n"
+"from contextlib import closing\n"
+"\n"
+"with closing(urllib.urlopen('http://www.yahoo.com')) as f:\n"
+"    for line in f:\n"
+"        sys.stdout.write(line)"
 
 #: ../../whatsnew/2.5.rst:799
 msgid ":pep:`343` - The \"with\" statement"
-msgstr ""
+msgstr ":pep:`343` - Prikaz with"
 
 #: ../../whatsnew/2.5.rst:800
 msgid ""
@@ -1621,14 +1703,16 @@ msgid ""
 " ':keyword:`with`' statement, which can be helpful in learning how the "
 "statement works."
 msgstr ""
+"PEP napsano Guidem van Rossumem a Nick Coghlannem; implementovano Mikem "
+"Blandem, Guidem van Rossumem a Nealem Norwitzem."
 
 #: ../../whatsnew/2.5.rst:805
 msgid "The documentation  for the :mod:`contextlib` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`contextlib`."
 
 #: ../../whatsnew/2.5.rst:813
 msgid "PEP 352: Exceptions as New-Style Classes"
-msgstr ""
+msgstr "PEP 352: Vyjimky jako nove tridy"
 
 #: ../../whatsnew/2.5.rst:815
 msgid ""
@@ -1637,12 +1721,16 @@ msgid ""
 "exceptions (:exc:`NameError`, :exc:`ValueError`, etc.) are now new-style "
 "classes."
 msgstr ""
+"Tridy vyjimek mohou byt nove tridy, ne jen klasicke tridy, a vstavene tride "
+"Exception a vse standardni vstavene vyjimky jsou novy styl tridy."
 
 #: ../../whatsnew/2.5.rst:819
 msgid ""
 "The inheritance hierarchy for exceptions has been rearranged a bit. In 2.5, "
 "the inheritance relationships are::"
 msgstr ""
+"Hierarchie dedicnosti pro vyjimky byla trochu reorganizovana. V 2.5 jsou "
+"vztahy dedicnosti::"
 
 #: ../../whatsnew/2.5.rst:822
 msgid ""
@@ -1652,6 +1740,11 @@ msgid ""
 "|- Exception\n"
 "   |- (all other current built-in exceptions)"
 msgstr ""
+"BaseException       # New in Python 2.5\n"
+"|- KeyboardInterrupt\n"
+"|- SystemExit\n"
+"|- Exception\n"
+"   |- (all other current built-in exceptions)"
 
 #: ../../whatsnew/2.5.rst:828
 msgid ""
@@ -1663,6 +1756,9 @@ msgid ""
 "commonly need to list :exc:`KeyboardInterrupt` and :exc:`SystemExit` in "
 "order to re-raise them.  The usual pattern is::"
 msgstr ""
+"Tato reorganizace byla provedena, protože lide casto chteji chytit vsetky "
+"vyjimky, ktere ukazují na programove chyby. KeyboardInterrupt a SystemExit "
+"nejsou chyby, vsak, a obvykle predstavuji explicitni cinnost."
 
 #: ../../whatsnew/2.5.rst:835
 msgid ""
@@ -1674,6 +1770,13 @@ msgid ""
 "    # Log error...\n"
 "    # Continue running program..."
 msgstr ""
+"try:\n"
+"    ...\n"
+"except (KeyboardInterrupt, SystemExit):\n"
+"    raise\n"
+"except:\n"
+"    # Log error...\n"
+"    # Continue running program..."
 
 #: ../../whatsnew/2.5.rst:843
 msgid ""
@@ -1682,6 +1785,9 @@ msgid ""
 "leaving :exc:`KeyboardInterrupt` and :exc:`SystemExit` alone.  As in "
 "previous versions, a bare ``except:`` still catches all exceptions."
 msgstr ""
+"V Pythonu 2.5 muzes nynni psat except Exception k dosazeni stejneho "
+"vysledku, chytajici vsechny vyjimky, ktere obvykle naznacuji chyby, ale "
+"nechat KeyboardInterrupt a SystemExit sami."
 
 #: ../../whatsnew/2.5.rst:848
 msgid ""
@@ -1693,6 +1799,9 @@ msgid ""
 "``except:`` form should be removed in Python 3.0, but Guido van Rossum "
 "hasn't decided whether to do this or not."
 msgstr ""
+"Cilem pro Python 3.0 je vyzadovat, aby libovolna trida vyvolana jako vyjimka"
+" se odvozovala z BaseException. Doporucuji ci zacnete cinit vsetky sve "
+"vyjimky odvozovany z Exception nyni."
 
 #: ../../whatsnew/2.5.rst:856
 msgid ""
@@ -1700,20 +1809,25 @@ msgid ""
 "occurred\"``, is deprecated in Python 2.5 and will trigger a warning.  The "
 "aim is to be able to remove the string-exception feature in a few releases."
 msgstr ""
+"Vyvolani retezcu jako vyjimky je zastarale v Pythonu 2.5 a spusti "
+"upozorneni. Cilem je byt schopen odstranit funkcnost retezcu-vyjimky v "
+"nektere vydani."
 
 #: ../../whatsnew/2.5.rst:863
 msgid ":pep:`352` - Required Superclass for Exceptions"
-msgstr ""
+msgstr ":pep:`352` - Pozadovana nadtrida pro vyjimky"
 
 #: ../../whatsnew/2.5.rst:864
 msgid ""
 "PEP written by  Brett Cannon and Guido van Rossum; implemented by Brett "
 "Cannon."
 msgstr ""
+"PEP napsano Brettem Cannonem a Guidem van Rossumem; implementovano Brettem "
+"Cannonem."
 
 #: ../../whatsnew/2.5.rst:872
 msgid "PEP 353: Using ssize_t as the index type"
-msgstr ""
+msgstr "PEP 353: Pouzivani ssize_t jako typu indexu"
 
 #: ../../whatsnew/2.5.rst:874
 msgid ""
@@ -1722,6 +1836,8 @@ msgid ""
 "handle more data on 64-bit platforms. This change doesn't affect Python's "
 "capacity on 32-bit platforms."
 msgstr ""
+"Sirokorozsahla zmena na Python C API, pouzivajici novy typ Py_ssize_t miste "
+"int, umozni interpreteru spravovat vice dat na 64-bitovych platformach."
 
 #: ../../whatsnew/2.5.rst:879
 msgid ""
@@ -1734,6 +1850,9 @@ msgid ""
 "https://unix.org/version2/whatsnew/lp64_wp.html for a discussion -- but the "
 "most commonly available model leaves :c:expr:`int` as 32 bits.)"
 msgstr ""
+"Ruzne casti interpretu Pythonu pouzivaly typ int jazyka C k ukladani "
+"velikosti nebo poctu; napriklad pocet prvku v seznamu nebo tuple byl ulozeny"
+" v int."
 
 #: ../../whatsnew/2.5.rst:888
 msgid ""
@@ -1743,6 +1862,8 @@ msgid ""
 ":c:type:`PyObject` representing the item.  2147483647\\*4 is already more "
 "bytes than a 32-bit address space can contain."
 msgstr ""
+"Limit 2147483647 polozek se neopravdu zajima na 32-bitove platforme, protoze"
+" se dostanete bez pameti pred dotknutim se limitu delky."
 
 #: ../../whatsnew/2.5.rst:894
 msgid ""
@@ -1756,6 +1877,9 @@ msgid ""
 "users is still relatively small. (In 5 or 10 years, we may *all* be on "
 "64-bit machines, and the transition would be more painful then.)"
 msgstr ""
+"Je mozne resit tolik pameti na 64-bitove platforme. Ukazovatele pro seznam "
+"takove velikosti by vyzadovaly pouze 16 GiB prostoru, takze neni rozumne, ze"
+" Python programatori by mohli postavit tak velke seznamy."
 
 #: ../../whatsnew/2.5.rst:904
 msgid ""
@@ -1766,6 +1890,9 @@ msgid ""
 "modules may therefore need to have some variables changed to "
 ":c:type:`Py_ssize_t`."
 msgstr ""
+"Tato zmena nejvice ovlivnuje autory C rozsirujicich modulu. Retezce a typy "
+"kontejneru Python, jako jsou seznamy a tuple, nyni pouzivaji Py_ssize_t k "
+"ukladani jejich velikosti."
 
 #: ../../whatsnew/2.5.rst:910
 msgid ""
@@ -1775,24 +1902,28 @@ msgid ""
 " default, but you can define the macro  :c:macro:`PY_SSIZE_T_CLEAN` before "
 "including :file:`Python.h`  to make them return :c:type:`Py_ssize_t`."
 msgstr ""
+"Funkce PyArg_ParseTuple a Py_BuildValue maji novy kod konverze, n, pro "
+"Py_ssize_t."
 
 #: ../../whatsnew/2.5.rst:916
 msgid ""
 ":pep:`353` has a section on conversion guidelines that  extension authors "
 "should read to learn about supporting 64-bit platforms."
 msgstr ""
+":pep:`353` ma sekci o pokynech pro konverzi, ktere by autori rozsireni mely "
+"cist, aby se naucili podporovat 64-bitove platformy."
 
 #: ../../whatsnew/2.5.rst:922
 msgid ":pep:`353` - Using ssize_t as the index type"
-msgstr ""
+msgstr ":pep:`353` - Pouzivani ssize_t jako typu indexu"
 
 #: ../../whatsnew/2.5.rst:923
 msgid "PEP written and implemented by Martin von Löwis."
-msgstr ""
+msgstr "PEP napsano a implementovano Martinem von Lowisem."
 
 #: ../../whatsnew/2.5.rst:931
 msgid "PEP 357: The '__index__' method"
-msgstr ""
+msgstr "PEP 357: Metoda __index__"
 
 #: ../../whatsnew/2.5.rst:933
 msgid ""
@@ -1804,6 +1935,10 @@ msgid ""
 "8, 16, 32, and 64 bits, but there was no way to signal that these types "
 "could be used as slice indexes."
 msgstr ""
+"Vyvijejici NumPy meli problem, ktery mohl byt vyresenym pouze pridanim nove "
+"specialni metody, __index__. Pri pouzivani notace rezuvu, jako v "
+"[start:stop:step], hodnoty start, stop a step indexu musi byt cela cisla "
+"nebo dlouha cela cisla."
 
 #: ../../whatsnew/2.5.rst:941
 msgid ""
@@ -1812,6 +1947,10 @@ msgid ""
 ":meth:`__int__`, floating-point numbers would also become legal slice "
 "indexes and that's clearly an undesirable behaviour."
 msgstr ""
+"Rezuv nemoze pouzivat existujici metodu __int__, protoze ta metoda se take "
+"pouziva k implementaci donuceni do celych cisel. Pokud by rezuv pouzival "
+"__int__, cislice s plovouci desetinnou carkou by se staly legalnymi indexy "
+"rezuvu a to je jasne nezadouci chovanim."
 
 #: ../../whatsnew/2.5.rst:946
 msgid ""
@@ -1819,6 +1958,8 @@ msgid ""
 "no arguments and returns an integer giving the slice index to use.  For "
 "example::"
 msgstr ""
+"Miste toho byla pridana nova specialni metoda nazyvana __index__. Neprijima "
+"zadne argumenty a vraci cele cislo dajici rezuv indexu k pouziti."
 
 #: ../../whatsnew/2.5.rst:949
 msgid ""
@@ -1826,6 +1967,9 @@ msgid ""
 "    def __index__ (self):\n"
 "        return self.value"
 msgstr ""
+"class C:\n"
+"    def __index__ (self):\n"
+"        return self.value"
 
 #: ../../whatsnew/2.5.rst:953
 msgid ""
@@ -1833,6 +1977,8 @@ msgid ""
 "interpreter will check that the type returned is correct, and raises a "
 ":exc:`TypeError` if this requirement isn't met."
 msgstr ""
+"Navratova hodnota musi byt bud Python cele cislo nebo dlouhe cele cislo. "
+"Interpreter bude kontrolovat, ze vraceny typ je spravny."
 
 #: ../../whatsnew/2.5.rst:957
 msgid ""
@@ -1841,24 +1987,27 @@ msgid ""
 "this protocol. ``PyNumber_Index(obj)`` can be used in extension code to call"
 " the :meth:`__index__` function and retrieve its result."
 msgstr ""
+"Odpovidajici slot nb_index byl pridan do struktury PyNumberMethods na "
+"C-urovni, aby umoznila C rozsirenim implementovat tento protokol."
 
 #: ../../whatsnew/2.5.rst:965
 msgid ":pep:`357` - Allowing Any Object to be Used for Slicing"
-msgstr ""
+msgstr ":pep:`357` - Povoleni jakehokoli objektu, aby byl pouzit pro rezuv"
 
 #: ../../whatsnew/2.5.rst:966
 msgid "PEP written  and implemented by Travis Oliphant."
-msgstr ""
+msgstr "PEP napsano a implementovano Travisem Oliphantom."
 
 #: ../../whatsnew/2.5.rst:974
 msgid "Other Language Changes"
-msgstr ""
+msgstr "Jine zmeny jazyka"
 
 #: ../../whatsnew/2.5.rst:976
 msgid ""
 "Here are all of the changes that Python 2.5 makes to the core Python "
 "language."
 msgstr ""
+"Zde jsou vsechny zmeny, ktere Python 2.5 cinit k jadrovemu jazyku Python."
 
 #: ../../whatsnew/2.5.rst:978
 msgid ""
@@ -1869,6 +2018,9 @@ msgid ""
 ":mod:`collections` module.  The following example defines a dictionary  that"
 " returns zero for any missing key::"
 msgstr ""
+"Typ dict ma novy hook pro umozneni podtrid poskytnout vychoziho hodnotu, "
+"kdyz klic neni v slovniku. Kdyz klic neni nalezen, bude volana metoda "
+"__missing__(key) slovniku."
 
 #: ../../whatsnew/2.5.rst:985
 #, python-brace-format
@@ -1881,12 +2033,21 @@ msgid ""
 "print d[1], d[2]   # Prints 1, 2\n"
 "print d[3], d[4]   # Prints 0, 0"
 msgstr ""
+"class zerodict (dict):\n"
+"    def __missing__ (self, key):\n"
+"        return 0\n"
+"\n"
+"d = zerodict({1:1, 2:2})\n"
+"print d[1], d[2]   # Prints 1, 2\n"
+"print d[3], d[4]   # Prints 0, 0"
 
 #: ../../whatsnew/2.5.rst:993
 msgid ""
 "Both 8-bit and Unicode strings have new ``partition(sep)``  and "
 "``rpartition(sep)`` methods that simplify a common use case."
 msgstr ""
+"Jak 8-bitove tak Unicode retezce maji nove metody partition(sep) a "
+"rpartition(sep), ktere zjednodusuje caste pouziti."
 
 #: ../../whatsnew/2.5.rst:996
 msgid ""
@@ -1900,10 +2061,15 @@ msgid ""
 "3-tuple but starts searching from the end of the string; the ``r`` stands "
 "for 'reverse'."
 msgstr ""
+"Metoda find(S) se casto pouziva k ziskani indexu, ktery se pote pouziva k "
+"rezuv retezce a ziskani kousku, ktere jsou pred a za oddelovacem. "
+"partition(sep) zkonkretizuje tento vzorek do jedineho volani metody, ktere "
+"vraci 3-tuple obsahujici podretezec pred oddelovacem, samotny oddelovac a "
+"podretezec za oddelovacem."
 
 #: ../../whatsnew/2.5.rst:1005
 msgid "Some examples::"
-msgstr ""
+msgstr "Nektere priklady::"
 
 #: ../../whatsnew/2.5.rst:1007
 msgid ""
@@ -1918,27 +2084,42 @@ msgid ""
 ">>> 'www.python.org'.rpartition(':')\n"
 "('', '', 'www.python.org')"
 msgstr ""
+">>> ('http://www.python.org').partition('://')\n"
+"('http', '://', 'www.python.org')\n"
+">>> ('file:/usr/share/doc/index.html').partition('://')\n"
+"('file:/usr/share/doc/index.html', '', '')\n"
+">>> (u'Subject: a quick question').partition(':')\n"
+"(u'Subject', u':', u' a quick question')\n"
+">>> 'www.python.org'.rpartition('.')\n"
+"('www.python', '.', 'org')\n"
+">>> 'www.python.org'.rpartition(':')\n"
+"('', '', 'www.python.org')"
 
 #: ../../whatsnew/2.5.rst:1018
 msgid ""
 "(Implemented by Fredrik Lundh following a suggestion by Raymond Hettinger.)"
 msgstr ""
+"Implementovano Fredrikem Lundhem nasledovanim navrhu od Raymonda Hettingera."
 
 #: ../../whatsnew/2.5.rst:1020
 msgid ""
 "The :meth:`startswith` and :meth:`endswith` methods of string types now "
 "accept tuples of strings to check for. ::"
 msgstr ""
+"Metody startswith a endswith typu retezce nyni prijimaji tuple retezcu ke "
+"kontrole. ::"
 
 #: ../../whatsnew/2.5.rst:1023
 msgid ""
 "def is_image_file (filename):\n"
 "    return filename.endswith(('.gif', '.jpg', '.tiff'))"
 msgstr ""
+"def is_image_file (filename):\n"
+"    return filename.endswith(('.gif', '.jpg', '.tiff'))"
 
 #: ../../whatsnew/2.5.rst:1026
 msgid "(Implemented by Georg Brandl following a suggestion by Tom Lynn.)"
-msgstr ""
+msgstr "Implementovano Georgem Brandlem nasledovanim navrhu od Toma Lynna."
 
 #: ../../whatsnew/2.5.rst:1030
 msgid ""
@@ -1949,6 +2130,8 @@ msgid ""
 "with the smallest/largest return value from this function. For example, to "
 "find the longest string in a list, you can do::"
 msgstr ""
+"Vstavene funkce min a max ziskaly parametr klic klicoveho slova obdobny jako"
+" je argument klic pro sort."
 
 #: ../../whatsnew/2.5.rst:1037
 msgid ""
@@ -1958,10 +2141,15 @@ msgid ""
 "# Prints 'short', because lexicographically 'short' has the largest value\n"
 "print max(L)"
 msgstr ""
+"L = ['medium', 'longest', 'short']\n"
+"# Prints 'longest'\n"
+"print max(L, key=len)\n"
+"# Prints 'short', because lexicographically 'short' has the largest value\n"
+"print max(L)"
 
 #: ../../whatsnew/2.5.rst:1043
 msgid "(Contributed by Steven Bethard and Raymond Hettinger.)"
-msgstr ""
+msgstr "Prispeno Steven Bethardem a Raymondem Hettingerem."
 
 #: ../../whatsnew/2.5.rst:1045
 msgid ""
@@ -1972,6 +2160,8 @@ msgid ""
 "of the values returned by the iterator evaluate as true. (Suggested by Guido"
 " van Rossum, and implemented by Raymond Hettinger.)"
 msgstr ""
+"Dve nove vstavene funkce, any a all, vyhodnocuji, zda obsahuje iterator "
+"nejakou pravdivou nebo nepravdivou hodnotu."
 
 #: ../../whatsnew/2.5.rst:1052
 msgid ""
@@ -1982,6 +2172,9 @@ msgid ""
 "return non-negative numbers, and users often seem to use ``id(self)`` in "
 ":meth:`__hash__` methods (though this is discouraged)."
 msgstr ""
+"Vysledek metody __hash__ tridy muze byt nyn bud dlouhe cele cislo nebo "
+"pravidelne cele cislo. Pokud je vracenym dlouhe cele cislo, je brana hash "
+"teto hodnoty."
 
 #: ../../whatsnew/2.5.rst:1061
 msgid ""
@@ -1991,10 +2184,12 @@ msgid ""
 "error.  See :pep:`263`  for how to declare a module's encoding; for example,"
 " you might add  a line like this near the top of the source file::"
 msgstr ""
+"ASCII je nyn vychozim kodovanim pro moduly. Je nyn syntakticka chyba, pokud "
+"modul obsahuje retezci s 8-bitovymi znaky, ale nema deklaraci kodovani."
 
 #: ../../whatsnew/2.5.rst:1067
 msgid "# -*- coding: latin1 -*-"
-msgstr ""
+msgstr "# -*- coding: latin1 -*-"
 
 #: ../../whatsnew/2.5.rst:1069
 msgid ""
@@ -2003,6 +2198,9 @@ msgid ""
 "Unicode using the default ASCII encoding.   The result of the comparison is "
 "false::"
 msgstr ""
+"Nove upozorneni UnicodeWarning je spusteno, kdyz se pokusate porovnat "
+"Unicode retezec a 8-bitovy retezec, ktere nemohou byt konvertovany na "
+"Unicode pomoci vychozi kodovani ASCII."
 
 #: ../../whatsnew/2.5.rst:1073
 msgid ""
@@ -2014,6 +2212,13 @@ msgid ""
 ">>> chr(127) == unichr(127)   # chr(127) can be converted\n"
 "True"
 msgstr ""
+">>> chr(128) == unichr(128)   # Can't convert chr(128) to Unicode\n"
+"__main__:1: UnicodeWarning: Unicode equal comparison failed\n"
+"  to convert both arguments to Unicode - interpreting them\n"
+"  as being unequal\n"
+"False\n"
+">>> chr(127) == unichr(127)   # chr(127) can be converted\n"
+"True"
 
 #: ../../whatsnew/2.5.rst:1081
 msgid ""
@@ -2024,6 +2229,8 @@ msgid ""
 "resulted in this exception being raised instead of suppressed by the code in"
 " :file:`dictobject.c` that implements dictionaries."
 msgstr ""
+"Driv by to vyvolalo vyjimku UnicodeDecodeError, ale v 2.5 by to mohlo "
+"vysledovat v matoucich problemech pri pristupu do slovniku."
 
 #: ../../whatsnew/2.5.rst:1088
 msgid ""
@@ -2031,10 +2238,12 @@ msgid ""
 "change might have broken code, so instead  :class:`UnicodeWarning` was "
 "introduced."
 msgstr ""
+"Vyvolani vyjimky pro takove porovnani je striktne spravne, ale zmena mohla "
+"zlomit kod, tak miste toho bylo zavedeno UnicodeWarning."
 
 #: ../../whatsnew/2.5.rst:1091
 msgid "(Implemented by Marc-André Lemburg.)"
-msgstr ""
+msgstr "Implementovano Marc-Andrem Lembergem."
 
 #: ../../whatsnew/2.5.rst:1093
 msgid ""
@@ -2048,26 +2257,36 @@ msgid ""
 "option when running the Python executable to display the warning message. "
 "(Implemented by Thomas Wouters.)"
 msgstr ""
+"Jedna chyba, kterou si Python programatori nekdy delaji, je zapominani "
+"zahrnout modul __init__.py do adresare baliku. Ladeni teto chyby muze byt "
+"matouci a obvykle vyzaduje spusteni Pythonu s prepinaciem -v aby "
+"protokolovalo vsechny cesty vyhledavane. V Pythonu 2.5 je nove upozorneni "
+"ImportWarning spusteno, kdyz by import byl vyzvedl adresar jako balik, ale "
+"nebyl nalezen __init__.py."
 
 #: ../../whatsnew/2.5.rst:1102
 msgid ""
 "The list of base classes in a class definition can now be empty.   As an "
 "example, this is now legal::"
 msgstr ""
+"Seznam zakladnich trid v definici tridy muze byt nynni prazdny. Jako "
+"priklad, toto je nynni legalne::"
 
 #: ../../whatsnew/2.5.rst:1105
 msgid ""
 "class C():\n"
 "    pass"
 msgstr ""
+"class C():\n"
+"    pass"
 
 #: ../../whatsnew/2.5.rst:1108
 msgid "(Implemented by Brett Cannon.)"
-msgstr ""
+msgstr "Implementovano Brettem Cannonem."
 
 #: ../../whatsnew/2.5.rst:1116
 msgid "Interactive Interpreter Changes"
-msgstr ""
+msgstr "Zmeny interaktivniho interpretu"
 
 #: ../../whatsnew/2.5.rst:1118
 msgid ""
@@ -2075,12 +2294,16 @@ msgid ""
 "strings so that new users get a somewhat helpful message when they try to "
 "quit::"
 msgstr ""
+"V interaktivnim interpretu byli quit a exit dlouho retezce tak aby novi "
+"uzivatele dostali trochu uzitecneho zpravy."
 
 #: ../../whatsnew/2.5.rst:1121
 msgid ""
 ">>> quit\n"
 "'Use Ctrl-D (i.e. EOF) to exit.'"
 msgstr ""
+">>> quit\n"
+"'Use Ctrl-D (i.e. EOF) to exit.'"
 
 #: ../../whatsnew/2.5.rst:1124
 msgid ""
@@ -2089,6 +2312,8 @@ msgid ""
 " ``quit()`` or ``exit()`` will now exit the interpreter as they expect.  "
 "(Implemented by Georg Brandl.)"
 msgstr ""
+"V Pythonu 2.5 jsou quit a exit nynni objekty, ktere stale vytvareji retezce,"
+" ale jsou take volatelne."
 
 #: ../../whatsnew/2.5.rst:1129
 msgid ""
@@ -2097,10 +2322,12 @@ msgid ""
 ":option:`/? <-?>` option for displaying a help message. (Implemented by "
 "Georg Brandl.)"
 msgstr ""
+"Spustitelny Python nynni prijima standardni dlouhe moznosti --help a "
+"--version; na Windowsu, take prijima moznost /? pro zobrazeni zpravy pomoci."
 
 #: ../../whatsnew/2.5.rst:1139
 msgid "Optimizations"
-msgstr ""
+msgstr "Optimalizace"
 
 #: ../../whatsnew/2.5.rst:1141
 msgid ""
@@ -2110,6 +2337,8 @@ msgid ""
 "LLC with local support from CCP Games.  Those optimizations added at this "
 "sprint are specially marked in the following list."
 msgstr ""
+"Nektere optimalizace byly vyvinuty na NeedForSpeed sprintu, akce "
+"probihajaici v Reykjaviku, Islandsku od 21. kvetna do 28. roku 2006."
 
 #: ../../whatsnew/2.5.rst:1147
 msgid ""
@@ -2119,6 +2348,9 @@ msgid ""
 "and as a result sets will use a third less memory and are somewhat faster. "
 "(Implemented by Raymond Hettinger.)"
 msgstr ""
+"Kdyz byli zavedeni v Pythonu 2.4, vstavene typy set a frozenset byly "
+"postaveny na vrcholu slovniku Pythonu. V 2.5 byla vnitrni datova struktura "
+"prilagodena pro implementaci mnozin."
 
 #: ../../whatsnew/2.5.rst:1153
 msgid ""
@@ -2128,6 +2360,8 @@ msgid ""
 " Andrew Dalke at the NeedForSpeed sprint. Character maps were improved by "
 "Walter Dörwald and Martin von Löwis.)"
 msgstr ""
+"Rychlost nekterych Unicode operaci, jako je nalezeni podretezcu, rozdeleni "
+"retezcu a kodovani dekodovani tabulky znaku, byla zlepsena."
 
 #: ../../whatsnew/2.5.rst:1161
 msgid ""
@@ -2136,6 +2370,8 @@ msgid ""
 "around 800--1000 digits where  the function is 6 times faster. (Contributed "
 "by Alan McIntyre and committed at the NeedForSpeed sprint.)"
 msgstr ""
+"Funkce long(str, base) je nynni rychlejsi na dlouhych retezech cislice, "
+"protoze se vypocita mene mezivysledku."
 
 #: ../../whatsnew/2.5.rst:1168
 msgid ""
@@ -2147,6 +2383,8 @@ msgid ""
 "iteration and these methods will now trigger a :exc:`ValueError` from the "
 ":meth:`!read\\*` method. (Implemented by Thomas Wouters.)"
 msgstr ""
+"Je nynni nelegalne misat iteraci nad souborem s for line in file a volani "
+"metod read/readline/readlines objektu souboru."
 
 #: ../../whatsnew/2.5.rst:1178
 #, python-format
@@ -2155,6 +2393,9 @@ msgid ""
 "internal representation and caches this representation, yielding a 20% "
 "speedup. (Contributed by Bob Ippolito at the NeedForSpeed sprint.)"
 msgstr ""
+"Modul :mod:`struct` nyní kompiluje řetězce formátu struktury do interní "
+"reprezentace a ukládá ji do cache, čímž dosahuje zrychlení o 20% s. (Přispěl"
+" Bob Ippolito na sprintu NeedForSpeed.)"
 
 #: ../../whatsnew/2.5.rst:1182
 #, python-format
@@ -2163,6 +2404,9 @@ msgid ""
 "allocator functions instead of the system's  :c:func:`malloc` and "
 ":c:func:`free`. (Contributed by Jack Diederich at the NeedForSpeed sprint.)"
 msgstr ""
+"Modul :mod:`re` dosáhl zrychlení o 1 nebo 2% spedup přechodem na funkce "
+"alokatoru Pythonu místo systémových funkcí :c:func:`malloc` a "
+":c:func:`free`. (Přispěl Jack Diederich na sprintu NeedForSpeed.)"
 
 #: ../../whatsnew/2.5.rst:1186
 msgid ""
@@ -2171,6 +2415,9 @@ msgid ""
 "generator will do the arithmetic and produce code corresponding to ``a = "
 "5``.  (Proposed and implemented  by Raymond Hettinger.)"
 msgstr ""
+"Generátor kódu peephole optimalizace nyní provadí jednoduché constant "
+"folding ve výrazy. Pokud napsat něco jako ``a = 2+3``, generátor kódu bude "
+"délat aritmetiku."
 
 #: ../../whatsnew/2.5.rst:1191
 msgid ""
@@ -2182,6 +2429,8 @@ msgid ""
 "smaller, which may improve cache locality and reduce memory usage a bit.  "
 "(Contributed by Neal Norwitz.)"
 msgstr ""
+"Volání funkcí jsou nyní rychlejší, protože objekty kódu nyní drkží nejnověč "
+"skánčený frame. Objekty frame jsou také trochu menší."
 
 #: ../../whatsnew/2.5.rst:1201
 #, python-format
@@ -2191,6 +2440,10 @@ msgid ""
 "therefore about 30% faster than in 2.4. (Contributed by Richard Jones, Georg"
 " Brandl and Sean Reifschneider at the NeedForSpeed sprint.)"
 msgstr ""
+"Vestavěné výjimky Pythonu jsou nyní třídy nového stylu, což výrazně "
+"zrychluje instanciaci. Zpracování výjimek v Pythonu 2.5 je proto přibližně o"
+" 30% fast. (Přispěl Richard Jones, Georg Brandl a Sean Reifschneider na "
+"sprintu NeedForSpeed.)"
 
 #: ../../whatsnew/2.5.rst:1206
 msgid ""
@@ -2198,10 +2451,12 @@ msgid ""
 "so that the interpreter makes fewer  :c:func:`open` and :c:func:`stat` calls"
 " on startup. (Contributed by Martin von Löwis and Georg Brandl.)"
 msgstr ""
+"Import nyní cachuje cesty pokusěny, zaznamenává, zda existují či nikoli tak "
+"interpretru dělá méně open a stat volání při spustení."
 
 #: ../../whatsnew/2.5.rst:1218
 msgid "New, Improved, and Removed Modules"
-msgstr ""
+msgstr "Nové, vylepšené a odstranné moduly"
 
 #: ../../whatsnew/2.5.rst:1220
 msgid ""
@@ -2211,12 +2466,15 @@ msgid ""
 "more complete list of changes, or look through the SVN logs for all the "
 "details."
 msgstr ""
+"Standardní knihovna obdržela mnohá vylepšení a opravy chyb v Pythonu 2.5."
 
 #: ../../whatsnew/2.5.rst:1225
 msgid ""
 "The :mod:`!audioop` module now supports the a-LAW encoding, and the code for"
 " u-LAW encoding has been improved.  (Contributed by Lars Immisch.)"
 msgstr ""
+"Modul :mod:`!audioop` nyní podporuje a-LAW kódování a kód pro u-LAW kódování"
+" byl vylepšen."
 
 #: ../../whatsnew/2.5.rst:1228
 msgid ""
@@ -2231,6 +2489,8 @@ msgid ""
 ":mod:`codecs` module documentation for details. (Designed and implemented by"
 " Walter Dörwald.)"
 msgstr ""
+"Modul :mod:`codecs` získal podporu pro inkrementlní kódování. Funkce "
+":func:`codec.lookup` nyní vrátí instanci :class:`CodecInfo` místo tuple."
 
 #: ../../whatsnew/2.5.rst:1240
 msgid ""
@@ -2239,6 +2499,8 @@ msgid ""
 "like a dictionary but constructs a default value when a key isn't present, "
 "automatically adding it to the dictionary for the requested key value."
 msgstr ""
+"Modul :mod:`collections` získal nový typ, :class:`defaultdict`, který je "
+"podtridou standardního typu :class:`dict`."
 
 #: ../../whatsnew/2.5.rst:1245
 msgid ""
@@ -2248,6 +2510,8 @@ msgid ""
 "constructors such as :func:`list` or :func:`int`.  For example,  you can "
 "make an index of words based on their initial letter like this::"
 msgstr ""
+"První argument konstruktoru :class:`defaultdict` je tovární funkce, která je"
+" volána, kdykoli je klíč požadován, ale nenalezen."
 
 #: ../../whatsnew/2.5.rst:1251
 msgid ""
@@ -2261,10 +2525,19 @@ msgid ""
 "    init_letter = w[0]\n"
 "    index[init_letter].append(w)"
 msgstr ""
+"words = \"\"\"Nel mezzo del cammin di nostra vita\n"
+"mi ritrovai per una selva oscura\n"
+"che la diritta via era smarrita\"\"\".lower().split()\n"
+"\n"
+"index = defaultdict(list)\n"
+"\n"
+"for w in words:\n"
+"    init_letter = w[0]\n"
+"    index[init_letter].append(w)"
 
 #: ../../whatsnew/2.5.rst:1261
 msgid "Printing ``index`` results in the following output::"
-msgstr ""
+msgstr "Tisk ``index`` vede k následujícímu výstupu::"
 
 #: ../../whatsnew/2.5.rst:1263
 #, python-brace-format
@@ -2275,10 +2548,15 @@ msgid ""
 "        'p': ['per'], 's': ['selva', 'smarrita'],\n"
 "        'r': ['ritrovai'], 'u': ['una'], 'v': ['vita', 'via']}"
 msgstr ""
+"defaultdict(<type 'list'>, {'c': ['cammin', 'che'], 'e': ['era'],\n"
+"        'd': ['del', 'di', 'diritta'], 'm': ['mezzo', 'mi'],\n"
+"        'l': ['la'], 'o': ['oscura'], 'n': ['nel', 'nostra'],\n"
+"        'p': ['per'], 's': ['selva', 'smarrita'],\n"
+"        'r': ['ritrovai'], 'u': ['una'], 'v': ['vita', 'via']}"
 
 #: ../../whatsnew/2.5.rst:1269
 msgid "(Contributed by Guido van Rossum.)"
-msgstr ""
+msgstr "Přispěno Guidem van Rossumem."
 
 #: ../../whatsnew/2.5.rst:1271
 msgid ""
@@ -2287,6 +2565,9 @@ msgid ""
 "the first occurrence of *value* in the queue, raising :exc:`ValueError` if "
 "the value isn't found. (Contributed by Raymond Hettinger.)"
 msgstr ""
+"Typ :class:`deque` double-ended queue poskytnutý modulem :mod:`collections` "
+"nyní má metodu ``remove(value)``, která odstraní první výskyt vásnhé hodnoty"
+" v fronte."
 
 #: ../../whatsnew/2.5.rst:1276
 msgid ""
@@ -2294,6 +2575,8 @@ msgid ""
 "with the new ':keyword:`with`' statement.  See section :ref:`contextlibmod` "
 "for more about this module."
 msgstr ""
+"Nový modul: Modul :mod:`contextlib` obsahuje pomocné funkce pro použití s "
+"novým příkazem ':keyword:`with`'."
 
 #: ../../whatsnew/2.5.rst:1280
 msgid ""
@@ -2305,6 +2588,8 @@ msgid ""
 "the :mod:`profile` module's interface, will continue to be maintained in "
 "future versions of Python.  (Contributed by Armin Rigo.)"
 msgstr ""
+"Nový modul: Modul :mod:`cProfile` je C implementace existujícího modulu "
+":mod:`profile`, který má mnohem níží výkony."
 
 #: ../../whatsnew/2.5.rst:1288
 msgid ""
@@ -2313,6 +2598,8 @@ msgid ""
 " *stream* argument to the :class:`Stats` constructor. (Contributed by Skip "
 "Montanaro.)"
 msgstr ""
+"Modul :mod:`pstats` pro analyzúprávud dat mĕðeného profilerem nyní podporuje"
+" směrování výstupu do jakéhokoli objektu souboru."
 
 #: ../../whatsnew/2.5.rst:1292
 msgid ""
@@ -2325,6 +2612,8 @@ msgid ""
 "read from the source; records can span multiple physical lines, so "
 ":attr:`line_num` is not the same as the number of records read."
 msgstr ""
+"Modul :mod:`csv`, který parsév soubory ve formátu comma-separated value, "
+"obdržel několik vylepšení a číslo oprav chyb."
 
 #: ../../whatsnew/2.5.rst:1301
 msgid ""
@@ -2336,11 +2625,11 @@ msgid ""
 "without inserting newlines. As a consequence, if newlines embedded within "
 "fields are important, the input should be split into lines in a manner that "
 "preserves the newline characters."
-msgstr ""
+msgstr "Parser CSV je nyní přísnjší ohledně multi-line quótovaných polí."
 
 #: ../../whatsnew/2.5.rst:1309
 msgid "(Contributed by Skip Montanaro and Andrew McNamara.)"
-msgstr ""
+msgstr "Přispěno Skip Montanarou a Andrew McNamara."
 
 #: ../../whatsnew/2.5.rst:1311
 msgid ""
@@ -2349,6 +2638,8 @@ msgid ""
 "contributed by Josh Spoerri. It uses the same format characters as "
 ":func:`time.strptime` and :func:`time.strftime`::"
 msgstr ""
+"Trida :class:`~datetime.datetime` v modulu :mod:`datetime` nynni ma metodu "
+"strptime(string, format) pro parsovani retezcu data."
 
 #: ../../whatsnew/2.5.rst:1316
 #, python-format
@@ -2358,6 +2649,10 @@ msgid ""
 "ts = datetime.strptime('10:13:15 2006-03-07',\n"
 "                       '%H:%M:%S %Y-%m-%d')"
 msgstr ""
+"from datetime import datetime\n"
+"\n"
+"ts = datetime.strptime('10:13:15 2006-03-07',\n"
+"                       '%H:%M:%S %Y-%m-%d')"
 
 #: ../../whatsnew/2.5.rst:1321
 msgid ""
@@ -2367,6 +2662,9 @@ msgid ""
 " block of matching elements into two list entries. (Enhancement by Tim "
 "Peters.)"
 msgstr ""
+"Metoda :meth:`SequenceMatcher.get_matching_blocks` v modulu :mod:`difflib` "
+"nynni garantuje vraceni minimalni seznamu bloku popisujicich shodujici se "
+"podsekvence."
 
 #: ../../whatsnew/2.5.rst:1326
 msgid ""
@@ -2374,6 +2672,8 @@ msgid ""
 "from being executed at all.  This is intended for code snippets that are "
 "usage examples intended for the reader and aren't actually test cases."
 msgstr ""
+"Modul :mod:`doctest` ziskal moznost SKIP, ktera udrzuje priklad od spusteni "
+"vubec."
 
 #: ../../whatsnew/2.5.rst:1330
 msgid ""
@@ -2382,12 +2682,14 @@ msgid ""
 "easier to use non-ASCII characters in  tests contained within a docstring. "
 "(Contributed by Bjorn Tillenius.)"
 msgstr ""
+"Parametr encoding byl pridan ke funkci :func:`testfile` a tride "
+":class:`DocFileSuite` k specifikaci kodovani souboru."
 
 #: ../../whatsnew/2.5.rst:1337
 msgid ""
 "The :mod:`email` package has been updated to version 4.0. (Contributed by "
 "Barry Warsaw.)"
-msgstr ""
+msgstr "Balik :mod:`email` byl aktualizovan na verzi 4.0."
 
 #: ../../whatsnew/2.5.rst:1345
 msgid ""
@@ -2400,6 +2702,9 @@ msgid ""
 ":meth:`~fileinput.fileno` returns the file descriptor for the currently "
 "opened file. (Contributed by Georg Brandl.)"
 msgstr ""
+"Modul :mod:`fileinput` byl ucinil flexibilnejsi. Unicode jmena souboru jsou "
+"nynni podporovana, a parametr mode, ktery se nastavuje jako \"r\" byl pridan"
+" ke funkci :func:`input`."
 
 #: ../../whatsnew/2.5.rst:1354
 msgid ""
@@ -2411,6 +2716,8 @@ msgid ""
 "*generation* argument of 0, 1, or 2 to specify which generation to collect. "
 "(Contributed by Barry Warsaw.)"
 msgstr ""
+"V modulu :mod:`gc` nova funkce :func:`get_count` vraci 3-tuple obsahujici "
+"soucasne pocty sberu pro tri generace GC."
 
 #: ../../whatsnew/2.5.rst:1361
 msgid ""
@@ -2419,6 +2726,9 @@ msgid ""
 "by the :func:`min`/:func:`max` functions and the :meth:`sort` methods.  For "
 "example::"
 msgstr ""
+"Funkce :func:`nsmallest` a :func:`nlargest` v modulu :mod:`heapq` nynni "
+"podporuji parametr klic klicoveho slova podobny jako je poskytnut funkcemi "
+":func:`min`/:func:`max`."
 
 #: ../../whatsnew/2.5.rst:1366
 msgid ""
@@ -2429,10 +2739,16 @@ msgid ""
 ">>> heapq.nsmallest(2, L, key=len)   # Return two shortest elements\n"
 "['short', 'medium']"
 msgstr ""
+">>> import heapq\n"
+">>> L = [\"short\", 'medium', 'longest', 'longer still']\n"
+">>> heapq.nsmallest(2, L)  # Return two lowest elements, lexicographically\n"
+"['longer still', 'longest']\n"
+">>> heapq.nsmallest(2, L, key=len)   # Return two shortest elements\n"
+"['short', 'medium']"
 
 #: ../../whatsnew/2.5.rst:1373 ../../whatsnew/2.5.rst:1382
 msgid "(Contributed by Raymond Hettinger.)"
-msgstr ""
+msgstr "Prispeno Raymondem Hettingerem."
 
 #: ../../whatsnew/2.5.rst:1375
 msgid ""
@@ -2440,12 +2756,16 @@ msgid ""
 " step arguments.  This makes it more compatible with the attributes of slice"
 " objects, so that you can now write the following::"
 msgstr ""
+"Funkce :func:`itertools.islice` nynni prijima None pro start a step "
+"argumenty."
 
 #: ../../whatsnew/2.5.rst:1379
 msgid ""
 "s = slice(5)     # Create slice object\n"
 "itertools.islice(iterable, s.start, s.stop, s.step)"
 msgstr ""
+"s = slice(5)     # Create slice object\n"
+"itertools.islice(iterable, s.start, s.stop, s.step)"
 
 #: ../../whatsnew/2.5.rst:1384
 msgid ""
@@ -2453,6 +2773,8 @@ msgid ""
 "and two new functions were added, :func:`format_string` and "
 ":func:`currency`."
 msgstr ""
+"Funkce :func:`format` v modulu :mod:`locale` byla upravena a dve nove funkce"
+" byly pridany, :func:`format_string` a :func:`currency`."
 
 #: ../../whatsnew/2.5.rst:1387
 #, python-format
@@ -2464,6 +2786,12 @@ msgid ""
 "locale's rules for formatting currency in placing a separator between groups"
 " of three digits."
 msgstr ""
+"Parametr *val* funkce :func:`format` mohl být dříve řetězec pokud se v něm "
+"vyskytoval maximálně jeden specifikátor %char a; nyní musí být parametr "
+"přesně jeden specifikátor %char bez okolního textu. Byl také přidán "
+"volitelný parametr *monetary*, který v případě hodnoty ``True`` použije "
+"pravidla lokality pro formátování měny při umisťování separátoru mezi "
+"skupinami tří číslic."
 
 #: ../../whatsnew/2.5.rst:1393
 #, python-format
@@ -2472,16 +2800,21 @@ msgid ""
 ":func:`format_string` function that works like :func:`format` but also "
 "supports mixing %char specifiers with arbitrary text."
 msgstr ""
+"Pro formátování řetězců s více specifikátory %char p, použijte novou funkci "
+":func:`format_string`, která funguje jako :func:`format`, ale také podporuje"
+" kombinování specifikátorů %char s libovolným textem."
 
 #: ../../whatsnew/2.5.rst:1397
 msgid ""
 "A new :func:`currency` function was also added that formats a number "
 "according to the current locale's settings."
 msgstr ""
+"Nova funkce :func:`currency` byla take pridana, ktera formmatuje cislo podle"
+" aktualnich nastaveni jazyka."
 
 #: ../../whatsnew/2.5.rst:1400
 msgid "(Contributed by Georg Brandl.)"
-msgstr ""
+msgstr "Prispeno Georg Brandlem."
 
 #: ../../whatsnew/2.5.rst:1404
 msgid ""
@@ -2493,6 +2826,8 @@ msgid ""
 "lock/unlock the mailbox. The following example converts a maildir-format "
 "mailbox into an mbox-format one::"
 msgstr ""
+"Modul :mod:`mailbox` prodella masivni prepis pro pridani schopnosti upravit "
+"postaovni schrankycek."
 
 #: ../../whatsnew/2.5.rst:1412
 msgid ""
@@ -2506,12 +2841,23 @@ msgid ""
 "for msg in src:\n"
 "    dest.add(msg)"
 msgstr ""
+"import mailbox\n"
+"\n"
+"# 'factory=None' uses email.Message.Message as the class representing\n"
+"# individual messages.\n"
+"src = mailbox.Maildir('maildir', factory=None)\n"
+"dest = mailbox.mbox('/tmp/mbox')\n"
+"\n"
+"for msg in src:\n"
+"    dest.add(msg)"
 
 #: ../../whatsnew/2.5.rst:1422
 msgid ""
 "(Contributed by Gregory K. Johnson.  Funding was provided by Google's 2005 "
 "Summer of Code.)"
 msgstr ""
+"Prispeno Gregory K. Johnsonem. Financovani bylo poskytnuto Google 2005 "
+"Summer of Code."
 
 #: ../../whatsnew/2.5.rst:1425
 msgid ""
@@ -2519,6 +2865,8 @@ msgid ""
 ":file:`.msi` files and CAB files.  Some support for reading the :file:`.msi`"
 " database is also included. (Contributed by Martin von Löwis.)"
 msgstr ""
+"Novy modul: modul :mod:`!msilib` umoznuje vytvoreni Microsoft Installer .msi"
+" souboru a CAB souboru."
 
 #: ../../whatsnew/2.5.rst:1429
 msgid ""
@@ -2526,6 +2874,8 @@ msgid ""
 "default domain by supplying a *domain* argument to the :func:`!nis.match` "
 "and :func:`!nis.maps` functions. (Contributed by Ben Bell.)"
 msgstr ""
+"Modul :mod:`!nis` nynni podporuje pristup k domanam jine nez je vychozi "
+"domenu systemu pomoci poskytovani parametru domain."
 
 #: ../../whatsnew/2.5.rst:1433
 msgid ""
@@ -2536,6 +2886,8 @@ msgid ""
 ":meth:`sort` method's ``key`` parameter  lets you easily sort lists using "
 "multiple fields. (Contributed by Raymond Hettinger.)"
 msgstr ""
+"Funkce :func:`itemgetter` a :func:`attrgetter` modulu :mod:`operator` nynni "
+"podporuji viceterne pole."
 
 #: ../../whatsnew/2.5.rst:1440
 msgid ""
@@ -2544,7 +2896,7 @@ msgid ""
 " a string that will be printed after the help message, and a :meth:`destroy`"
 " method to break reference cycles created by the object. (Contributed by "
 "Greg Ward.)"
-msgstr ""
+msgstr "Modul :mod:`optparse` byl aktualizovan na verzi 1.5.1 knihovny Optik."
 
 #: ../../whatsnew/2.5.rst:1445
 msgid ""
@@ -2554,6 +2906,9 @@ msgid ""
 "necessarily mean that :func:`os.stat` will return times that are precise to "
 "fractions of a second; not all systems support such precision.)"
 msgstr ""
+"Modul :mod:`os` prodel nektere zmeny. Promenna :attr:`stat_float_times` "
+"nynni defaultne true, znamena ze :func:`os.stat` nynni vraci casove hodnoty "
+"jako floats."
 
 #: ../../whatsnew/2.5.rst:1451
 msgid ""
@@ -2562,6 +2917,8 @@ msgid ""
 ":func:`os.lseek` function.  Two new constants for locking are "
 ":const:`os.O_SHLOCK` and :const:`os.O_EXLOCK`."
 msgstr ""
+"Konstanty pojmenovane :const:`os.SEEK_SET`, :const:`os.SEEK_CUR` a "
+":const:`os.SEEK_END` byly pridany."
 
 #: ../../whatsnew/2.5.rst:1456
 msgid ""
@@ -2574,6 +2931,8 @@ msgid ""
 "*resource-usage* as returned from the :func:`resource.getrusage` function. "
 "``wait4(pid)`` does take a process ID. (Contributed by Chad J. Schroeder.)"
 msgstr ""
+"Dve nove funkce, :func:`wait3` a :func:`wait4`, byly pridany. Jsou podobne "
+"funkci :func:`waitpid`, ktera ceka na ukonceni procesu potomka."
 
 #: ../../whatsnew/2.5.rst:1465
 msgid ""
@@ -2582,6 +2941,8 @@ msgid ""
 ":attr:`st_birthtime`. The :attr:`st_flags` attribute is also available, if "
 "the platform supports it. (Contributed by Antti Louko and  Diego Pettenò.)"
 msgstr ""
+"Na FreeBSD vraci funkce :func:`os.stat` nynni cas s nanosekundovym rozlisen,"
+" a vrativany objekt nynni ma :attr:`st_gen` a :attr:`st_birthtime`."
 
 #: ../../whatsnew/2.5.rst:1472
 msgid ""
@@ -2592,6 +2953,8 @@ msgid ""
 "can include commands that resume execution, such as ``continue`` or "
 "``next``. (Contributed by Grégoire Dooms.)"
 msgstr ""
+"Python debugger poskytnuty modulem :mod:`pdb` muze nynni ukladat seznamy "
+"prikazu, ktere se provadeji, kdyz je dosazena zaraza a provedeni se zastavi."
 
 #: ../../whatsnew/2.5.rst:1481
 msgid ""
@@ -2600,6 +2963,8 @@ msgid ""
 "must return a tuple of arguments instead.  The ability to return ``None`` "
 "was deprecated in Python 2.4, so this completes the removal of the feature."
 msgstr ""
+"Moduly :mod:`pickle` a :mod:`!cPickle` uz neprijimaji navratovou hodnotu "
+"None z metody :meth:`~object.__reduce__`."
 
 #: ../../whatsnew/2.5.rst:1486
 msgid ""
@@ -2608,6 +2973,8 @@ msgid ""
 "works for packages stored in ZIP-format archives. (Contributed by Phillip J."
 " Eby.)"
 msgstr ""
+"Modul :mod:`pkgutil`, obsahujici rozlicne utilitni funkce pro nalezeni "
+"baliku, byl vylepsem pro podporu PEP 302 import haku."
 
 #: ../../whatsnew/2.5.rst:1490
 msgid ""
@@ -2619,12 +2986,14 @@ msgid ""
 "numeric operations, instead of performing many different operations and "
 "reducing the result to a single number as :file:`pystone.py` does."
 msgstr ""
+"Benchmarka pybench od Marc-Anderea Lemburga je nynni zahrnuta v adresari "
+":file:`Tools/pybench`."
 
 #: ../../whatsnew/2.5.rst:1498
 msgid ""
 "The :mod:`pyexpat` module now uses version 2.0 of the Expat parser. "
 "(Contributed by Trent Mick.)"
-msgstr ""
+msgstr "Modul :mod:`pyexpat` nynni pouziva verzi 2.0 parseru Expat."
 
 #: ../../whatsnew/2.5.rst:1501
 msgid ""
@@ -2635,6 +3004,8 @@ msgid ""
 " processing for an item has been completed.  (Contributed by Raymond "
 "Hettinger.)"
 msgstr ""
+"Trida :class:`~queue.Queue` poskytovana modulem :mod:`Queue` ziskala dve "
+"nove metody."
 
 #: ../../whatsnew/2.5.rst:1507
 msgid ""
@@ -2642,6 +3013,8 @@ msgid ""
 "ever since Python 2.0, have finally been deleted.   Other deleted modules: "
 ":mod:`statcache`, :mod:`tzparse`, :mod:`whrandom`."
 msgstr ""
+"Stare moduly :mod:`regex` a :mod:`regsub`, ktere jsou zastarale od Pythonu "
+"2.0, byli konecne smazany."
 
 #: ../../whatsnew/2.5.rst:1511
 msgid ""
@@ -2650,6 +3023,8 @@ msgid ""
 " the default ``sys.path``, so unless your programs explicitly added the "
 "directory to ``sys.path``, this removal shouldn't affect your code."
 msgstr ""
+"Take smazano: adresar :file:`lib-old`, ktery zahrnuje stare moduly jako "
+":mod:`dircmp` a :mod:`ni`, byl odstran."
 
 #: ../../whatsnew/2.5.rst:1516
 msgid ""
@@ -2657,6 +3032,8 @@ msgid ""
 ":mod:`readline` module and therefore now works on non-Unix platforms. (Patch"
 " from Robert Kiendl.)"
 msgstr ""
+"Modul :mod:`rlcompleter` uz neni zavisle na importovani modulu "
+":mod:`readline` a proto ted pracuje na non-Unix platformach."
 
 #: ../../whatsnew/2.5.rst:1522
 msgid ""
@@ -2666,6 +3043,8 @@ msgid ""
 "to allow only ``'/'`` and ``'/RPC2'``.  Setting :attr:`rpc_paths` to "
 "``None`` or an empty tuple disables  this path checking."
 msgstr ""
+"Tridy :mod:`SimpleXMLRPCServer` a :mod:`DocXMLRPCServer` nynni maji atribut "
+":attr:`rpc_paths`, ktery omezuje operace XML-RPC."
 
 #: ../../whatsnew/2.5.rst:1529
 msgid ""
@@ -2676,6 +3055,7 @@ msgid ""
 "https://www.linuxjournal.com/article/7356. In Python code, netlink addresses"
 " are represented as a tuple of 2 integers, ``(pid, group_mask)``."
 msgstr ""
+"Modul :mod:`socket` nynni podporuje :const:`AF_NETLINK` sockety na Linuxu."
 
 #: ../../whatsnew/2.5.rst:1536
 msgid ""
@@ -2685,6 +3065,9 @@ msgid ""
 "This means you can put the data directly into an array or a memory-mapped "
 "file."
 msgstr ""
+"Dve nove metody na socket objektech, recv_into(buffer) a "
+"recvfrom_into(buffer), skladuji prijate data v objektu, ktery podporuje "
+"protokol buffer."
 
 #: ../../whatsnew/2.5.rst:1541
 msgid ""
@@ -2692,12 +3075,16 @@ msgid ""
 ":meth:`getproto` accessor methods to retrieve the family, type, and protocol"
 " values for the socket."
 msgstr ""
+"Socket objekty take ziskaly :meth:`getfamily`, :meth:`gettype` a "
+":meth:`getproto` accessor metody."
 
 #: ../../whatsnew/2.5.rst:1545
 msgid ""
 "New module: the :mod:`!spwd` module provides functions for accessing the "
 "shadow password database on systems that support  shadow passwords."
 msgstr ""
+"Novy modul: modul :mod:`!spwd` poskytuje funkce pro pristup k shadow "
+"password databazi."
 
 #: ../../whatsnew/2.5.rst:1548
 msgid ""
@@ -2708,6 +3095,8 @@ msgid ""
 ":func:`unpack` functions; they'll create  :class:`Struct` objects and cache "
 "them.  Or you can use  :class:`Struct` instances directly::"
 msgstr ""
+"Modul :mod:`struct` je nynni rychlejsi, protoze kompiluje retezce formatu do"
+" objektu :class:`Struct` s metodami :meth:`pack` a :meth:`unpack`."
 
 #: ../../whatsnew/2.5.rst:1555
 msgid ""
@@ -2716,6 +3105,10 @@ msgid ""
 "data = s.pack(1972, 187, 'abc')\n"
 "year, number, name = s.unpack(data)"
 msgstr ""
+"s = struct.Struct('ih3s')\n"
+"\n"
+"data = s.pack(1972, 187, 'abc')\n"
+"year, number, name = s.unpack(data)"
 
 #: ../../whatsnew/2.5.rst:1560
 msgid ""
@@ -2724,6 +3117,8 @@ msgid ""
 "offset)`` methods.  This lets you store data directly into an array or a "
 "memory-mapped file."
 msgstr ""
+"Muzes take zabalit a rozbalit data do a z objektu buffer primo pouzitim "
+"metod pack_into(buffer, offset, v1, v2, ...) a unpack_from(buffer, offset)."
 
 #: ../../whatsnew/2.5.rst:1565
 msgid ""
@@ -2731,6 +3126,8 @@ msgid ""
 "NeedForSpeed sprint.  Support for buffer objects was added by Martin Blais, "
 "also at the NeedForSpeed sprint.)"
 msgstr ""
+"Objekty :class:`Struct` byly implementovany Bob Ippolittem na NeedForSpeed "
+"sprintu. Podpora pro objekty buffer byla pridana Martinem Blaissem."
 
 #: ../../whatsnew/2.5.rst:1569
 msgid ""
@@ -2740,6 +3137,9 @@ msgid ""
 "branch-name, revision-range)``.  For example, at the time of writing my copy"
 " of 2.5 was reporting ``('CPython', 'trunk', '45313:45315')``."
 msgstr ""
+"Python vyvijejici prepnuli z CVS na Subversion behem procesu vyvoje 2.5. "
+"Informace o presne verzi budovani jsou dostupne jako promenna "
+"sys.subversion."
 
 #: ../../whatsnew/2.5.rst:1575
 msgid ""
@@ -2748,6 +3148,8 @@ msgid ""
 "information like this: ``\"trunk:45355:45356M, Apr 13 2006, 07:42:19\"``.   "
 "(Contributed by Barry Warsaw.)"
 msgstr ""
+"Tato informace je take dostupna pro C rozsireni pomoci funkce "
+":c:func:`Py_GetBuildInfo`, ktera vraci retezec informaci budovani."
 
 #: ../../whatsnew/2.5.rst:1580
 msgid ""
@@ -2756,6 +3158,8 @@ msgid ""
 "to the topmost stack frame currently active in that thread at the time the "
 "function is called.  (Contributed by Tim Peters.)"
 msgstr ""
+"Dalsi nova funkce, :func:`sys._current_frames`, vraci soucasne stack frames "
+"pro vsechny bezici vlakna jako slovnik mapovani identifikatoru vlaken."
 
 #: ../../whatsnew/2.5.rst:1585
 msgid ""
@@ -2765,12 +3169,17 @@ msgid ""
 "directory as the extraction target, and to unpack only a subset of the "
 "archive's members."
 msgstr ""
+"Trida :class:`TarFile` v modulu :mod:`tarfile` nynni ma metodu "
+":meth:`extractall`, ktera vybiraje vsechny cleny z archivu do soucasneho "
+"pracovniho adresare."
 
 #: ../../whatsnew/2.5.rst:1590
 msgid ""
 "The compression used for a tarfile opened in stream mode can now be "
 "autodetected using the mode ``'r|*'``. (Contributed by Lars Gustäbel.)"
 msgstr ""
+"Komprese pouzivana pro tarfile otevreny v rezimu stream muze byt nynni "
+"autodetekovan pomoci rezimu 'r|*'."
 
 #: ../../whatsnew/2.5.rst:1595
 msgid ""
@@ -2781,6 +3190,8 @@ msgid ""
 "Windows, POSIX threading, and OS/2 all do. (Contributed by Andrew "
 "MacIntyre.)"
 msgstr ""
+"Modul :mod:`threading` nynni vam umoznuje nastavit velikost stacku pouzitou "
+"pri vytvareni novych vlaken."
 
 #: ../../whatsnew/2.5.rst:1603
 msgid ""
@@ -2788,6 +3199,8 @@ msgid ""
 "Unicode character database.  Version 3.2.0 is required  by some "
 "specifications, so it's still available as  :data:`unicodedata.ucd_3_2_0`."
 msgstr ""
+"Modul :mod:`unicodedata` byl aktualizovan na pouzivani verze 4.1.0 databaze "
+"znaku Unicode."
 
 #: ../../whatsnew/2.5.rst:1607
 msgid ""
@@ -2799,6 +3212,8 @@ msgid ""
 "and  :func:`uuid5` to generate different versions of UUID.  (Version 2 UUIDs"
 "  are not specified in :rfc:`4122` and are not supported by this module.) ::"
 msgstr ""
+"Novy modul: modul :mod:`uuid` generuje univerzalne jedinecne identifikatory "
+"(UUIDs) podle RFC 4122."
 
 #: ../../whatsnew/2.5.rst:1615
 msgid ""
@@ -2819,10 +3234,26 @@ msgid ""
 ">>> uuid.uuid5(uuid.NAMESPACE_DNS, 'python.org')\n"
 "UUID('886313e1-3b8a-5372-9b90-0c9aee199e5d')"
 msgstr ""
+">>> import uuid\n"
+">>> # make a UUID based on the host ID and current time\n"
+">>> uuid.uuid1()\n"
+"UUID('a8098c1a-f86e-11da-bd1a-00112444be1e')\n"
+"\n"
+">>> # make a UUID using an MD5 hash of a namespace UUID and a name\n"
+">>> uuid.uuid3(uuid.NAMESPACE_DNS, 'python.org')\n"
+"UUID('6fa459ea-ee8a-3ca4-894e-db77e160355e')\n"
+"\n"
+">>> # make a random UUID\n"
+">>> uuid.uuid4()\n"
+"UUID('16fd2706-8baf-433b-82eb-8c7fada847da')\n"
+"\n"
+">>> # make a UUID using a SHA-1 hash of a namespace UUID and a name\n"
+">>> uuid.uuid5(uuid.NAMESPACE_DNS, 'python.org')\n"
+"UUID('886313e1-3b8a-5372-9b90-0c9aee199e5d')"
 
 #: ../../whatsnew/2.5.rst:1632
 msgid "(Contributed by Ka-Ping Yee.)"
-msgstr ""
+msgstr "Prispeno Ka-Ping Yeeem."
 
 #: ../../whatsnew/2.5.rst:1634
 msgid ""
@@ -2833,6 +3264,8 @@ msgid ""
 ":meth:`itervaluerefs` and :meth:`valuerefs` were added to "
 ":class:`WeakValueDictionary`.  (Contributed by Fred L. Drake, Jr.)"
 msgstr ""
+"Modul :mod:`weakref` :class:`WeakKeyDictionary` a "
+":class:`WeakValueDictionary` typy ziskaly nove metody pro iterovani."
 
 #: ../../whatsnew/2.5.rst:1641
 msgid ""
@@ -2846,7 +3279,7 @@ msgid ""
 "the open window when possible. A number of additional browsers were added to"
 " the supported list such as Firefox, Opera, Konqueror, and elinks.  "
 "(Contributed by Oleg Broytmann and Georg Brandl.)"
-msgstr ""
+msgstr "Modul :mod:`webbrowser` obdrzel pocet vylepsen."
 
 #: ../../whatsnew/2.5.rst:1653
 msgid ""
@@ -2856,13 +3289,15 @@ msgid ""
 ":class:`!Unmarshaller` class to enable this feature. (Contributed by Skip "
 "Montanaro.)"
 msgstr ""
+"Modul :mod:`xmlrpclib` nynni podporuje vraceni objektu "
+":class:`~datetime.datetime` pro typ XML-RPC date."
 
 #: ../../whatsnew/2.5.rst:1660
 msgid ""
 "The :mod:`zipfile` module now supports the ZIP64 version of the  format, "
 "meaning that a .zip archive can now be larger than 4 GiB and can contain "
 "individual files larger than 4 GiB.  (Contributed by Ronald Oussoren.)"
-msgstr ""
+msgstr "Modul :mod:`zipfile` nynni podporuje ZIP64 verzi formatu."
 
 #: ../../whatsnew/2.5.rst:1666
 msgid ""
@@ -2871,10 +3306,12 @@ msgid ""
 "internal state and returns a new  :class:`Compress` or :class:`Decompress` "
 "object. (Contributed by Chris AtLee.)"
 msgstr ""
+"Objekty :class:`Compress` a :class:`Decompress` modulu :mod:`zlib` nynni "
+"podporuji metodu :meth:`copy`."
 
 #: ../../whatsnew/2.5.rst:1679
 msgid "The ctypes package"
-msgstr ""
+msgstr "Balik ctypes"
 
 #: ../../whatsnew/2.5.rst:1681
 msgid ""
@@ -2884,6 +3321,8 @@ msgid ""
 "module, which provides functions for loading shared libraries and calling "
 "functions in them. The :mod:`ctypes` package is much fancier."
 msgstr ""
+"Balik :mod:`ctypes`, napsan Thomas Hellerem, byl pridan do standardni "
+"knihovny."
 
 #: ../../whatsnew/2.5.rst:1687
 msgid ""
@@ -2892,6 +3331,8 @@ msgid ""
 "DLL. Once that's done, you can call arbitrary functions by accessing them as"
 " attributes of the :class:`CDLL` object.   ::"
 msgstr ""
+"Chcete-li nahrat sdilenou knihovnu nebo DLL, musit vytvorit instanci tridy "
+":class:`CDLL` a poskytnout jmeno nebo cestu sdilene knihovny nebo DLL."
 
 #: ../../whatsnew/2.5.rst:1692
 msgid ""
@@ -2900,6 +3341,10 @@ msgid ""
 "libc = ctypes.CDLL('libc.so.6')\n"
 "result = libc.printf(\"Line of output\\n\")"
 msgstr ""
+"import ctypes\n"
+"\n"
+"libc = ctypes.CDLL('libc.so.6')\n"
+"result = libc.printf(\"Line of output\\n\")"
 
 #: ../../whatsnew/2.5.rst:1697
 msgid ""
@@ -2912,6 +3357,8 @@ msgid ""
 "the correct type constructor.  (And I mean *must*;  getting it wrong will "
 "often result in the interpreter crashing with a segmentation fault.)"
 msgstr ""
+"Konstruktory typu pro ruzne typy C jsou poskytovany: :func:`c_int`, "
+":func:`c_float`, :func:`c_double`, :func:`c_char_p` a podobne."
 
 #: ../../whatsnew/2.5.rst:1706
 msgid ""
@@ -2920,6 +3367,8 @@ msgid ""
 "be immutable; breaking this rule will cause puzzling bugs.  When you need a "
 "modifiable memory area, use :func:`create_string_buffer`::"
 msgstr ""
+"Nemel bys pouzivat :func:`c_char_p` s Python retezcem, kdyz C funkce bude "
+"upravovat oblast pameti."
 
 #: ../../whatsnew/2.5.rst:1711
 msgid ""
@@ -2927,12 +3376,17 @@ msgid ""
 "buf = ctypes.create_string_buffer(s)\n"
 "libc.strfry(buf)"
 msgstr ""
+"s = \"this is a string\"\n"
+"buf = ctypes.create_string_buffer(s)\n"
+"libc.strfry(buf)"
 
 #: ../../whatsnew/2.5.rst:1715
 msgid ""
 "C functions are assumed to return integers, but you can set the "
 ":attr:`restype` attribute of the function object to  change this::"
 msgstr ""
+"C funkce se predpoklada, ze vracejicilyho celacisla, ale muzes nastavit "
+"atribut :attr:`restype` objektu funkce, aby se zmena to:"
 
 #: ../../whatsnew/2.5.rst:1718
 msgid ""
@@ -2942,6 +3396,11 @@ msgid ""
 ">>> libc.atof('2.71828')\n"
 "2.71828"
 msgstr ""
+">>> libc.atof('2.71828')\n"
+"-1783957616\n"
+">>> libc.atof.restype = ctypes.c_double\n"
+">>> libc.atof('2.71828')\n"
+"2.71828"
 
 #: ../../whatsnew/2.5.rst:1724
 msgid ""
@@ -2952,6 +3411,8 @@ msgid ""
 ":class:`~ctypes.py_object` type constructor that will create a  "
 ":c:expr:`PyObject *` pointer.  A simple usage::"
 msgstr ""
+":mod:`ctypes` take poskytuje obalie pro Python C API jako objekt "
+"``ctypes.pythonapi``."
 
 #: ../../whatsnew/2.5.rst:1730
 #, python-brace-format
@@ -2963,12 +3424,20 @@ msgid ""
 "          ctypes.py_object(\"abc\"),  ctypes.py_object(1))\n"
 "# d is now {'abc', 1}."
 msgstr ""
+"import ctypes\n"
+"\n"
+"d = {}\n"
+"ctypes.pythonapi.PyObject_SetItem(ctypes.py_object(d),\n"
+"          ctypes.py_object(\"abc\"),  ctypes.py_object(1))\n"
+"# d is now {'abc', 1}."
 
 #: ../../whatsnew/2.5.rst:1737
 msgid ""
 "Don't forget to use :func:`~ctypes.py_object`; if it's omitted you end  up "
 "with a segmentation fault."
 msgstr ""
+"Nezapomen pouzit :func:`~ctypes.py_object`; pokud je vynechan, dostanes "
+"segmentation fault."
 
 #: ../../whatsnew/2.5.rst:1740
 msgid ""
@@ -2978,23 +3447,27 @@ msgid ""
 "wrappers atop a library accessed through :mod:`ctypes` instead of extension "
 "modules, now that :mod:`ctypes` is included with core Python."
 msgstr ""
+":mod:`ctypes` je existoval chvili, ale lide stale pisi a distribuuji hand-"
+"coded rozsirujici moduly, protoze se nelze spolehat na existenci "
+":mod:`ctypes`."
 
 #: ../../whatsnew/2.5.rst:1749
 msgid ""
 "https://web.archive.org/web/20180410025338/http://starship.python.net/crew/theller/ctypes/"
 msgstr ""
+"https://web.archive.org/web/20180410025338/http://starship.python.net/crew/theller/ctypes/"
 
 #: ../../whatsnew/2.5.rst:1750
 msgid "The pre-stdlib ctypes web page, with a tutorial, reference, and FAQ."
-msgstr ""
+msgstr "Web stranka pre-stdlib ctypes, s tutorialem, referencimi a FAQ."
 
 #: ../../whatsnew/2.5.rst:1752
 msgid "The documentation  for the :mod:`ctypes` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`ctypes`."
 
 #: ../../whatsnew/2.5.rst:1760
 msgid "The ElementTree package"
-msgstr ""
+msgstr "Balik ElementTree"
 
 #: ../../whatsnew/2.5.rst:1762
 msgid ""
@@ -3004,6 +3477,8 @@ msgid ""
 "ElementTree 1.2.6.    The :mod:`cElementTree` accelerator module is also "
 "included."
 msgstr ""
+"Podmnozina knihovny ElementTree od Fredrika Lundhho pro zpracovani XML byla "
+"pridana do standardni knihovny jako :mod:`xml.etree`."
 
 #: ../../whatsnew/2.5.rst:1768
 msgid ""
@@ -3012,6 +3487,10 @@ msgid ""
 "https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
 "index.htm."
 msgstr ""
+"Zbytek teto sekce poskytne kratky prebled pouzivani ElementTree. Plna "
+"dokumentace pro ElementTree je dostupna na "
+"https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
+"index.htm."
 
 #: ../../whatsnew/2.5.rst:1772
 msgid ""
@@ -3021,6 +3500,8 @@ msgid ""
 " the Document Object Model; in the DOM there are many different types of "
 "node, including :class:`TextNode`.)"
 msgstr ""
+"ElementTree predstavuje XML dokument jako strom uzlu prvku. Textovy obsah "
+"dokumentu je ulozem jako :attr:`text` a :attr:`tail` atributy."
 
 #: ../../whatsnew/2.5.rst:1778
 msgid ""
@@ -3028,6 +3509,9 @@ msgid ""
 "a string (assumed to contain a filename) or a file-like object and returns "
 "an :class:`ElementTree` instance::"
 msgstr ""
+"Nejcasteji pouzivana parsovaci funkce je :func:`parse`, ktera vezme bud "
+"retezec (predpoklada se, ze obsahuje nazev souboru) nebo objektu podobny "
+"souboru."
 
 #: ../../whatsnew/2.5.rst:1782
 msgid ""
@@ -3039,12 +3523,21 @@ msgid ""
 "          'http://planet.python.org/rss10.xml')\n"
 "tree = ET.parse(feed)"
 msgstr ""
+"from xml.etree import ElementTree as ET\n"
+"\n"
+"tree = ET.parse('ex-1.xml')\n"
+"\n"
+"feed = urllib.urlopen(\n"
+"          'http://planet.python.org/rss10.xml')\n"
+"tree = ET.parse(feed)"
 
 #: ../../whatsnew/2.5.rst:1790
 msgid ""
 "Once you have an :class:`ElementTree` instance, you can call its "
 ":meth:`getroot` method to get the root :class:`Element` node."
 msgstr ""
+"Jakmile mate instanci :class:`ElementTree`, muzes volat jeho metodu "
+":meth:`getroot` pro ziskani korene uzlu :class:`Element`."
 
 #: ../../whatsnew/2.5.rst:1793
 msgid ""
@@ -3053,6 +3546,8 @@ msgid ""
 "provides a tidy way to incorporate XML fragments, approaching the "
 "convenience of an XML literal::"
 msgstr ""
+"Je zde take funkce :func:`XML`, ktera vezme retezec literalu a vraci uzel "
+":class:`Element`."
 
 #: ../../whatsnew/2.5.rst:1798
 msgid ""
@@ -3061,6 +3556,10 @@ msgid ""
 "svg.set('height', '320px')\n"
 "svg.append(elem1)"
 msgstr ""
+"svg = ET.XML(\"\"\"<svg width=\"10px\" version=\"1.0\">\n"
+"             </svg>\"\"\")\n"
+"svg.set('height', '320px')\n"
+"svg.append(elem1)"
 
 #: ../../whatsnew/2.5.rst:1803
 msgid ""
@@ -3068,110 +3567,112 @@ msgid ""
 "methods.  Dictionary-like operations are used to access attribute values, "
 "and list-like operations are used to access child nodes."
 msgstr ""
+"Kazdy XML prvek podporuje nektere slovnikovite a nektere seznamovite metody "
+"pristupu."
 
 #: ../../whatsnew/2.5.rst:1808
 msgid "Operation"
-msgstr ""
+msgstr "Operace"
 
 #: ../../whatsnew/2.5.rst:1808
 msgid "Result"
-msgstr ""
+msgstr "Vysledek"
 
 #: ../../whatsnew/2.5.rst:1810
 msgid "``elem[n]``"
-msgstr ""
+msgstr "``elem[n]``"
 
 #: ../../whatsnew/2.5.rst:1810
 msgid "Returns n'th child element."
-msgstr ""
+msgstr "Vraci n-ty prvek dite."
 
 #: ../../whatsnew/2.5.rst:1812
 msgid "``elem[m:n]``"
-msgstr ""
+msgstr "``elem[m:n]``"
 
 #: ../../whatsnew/2.5.rst:1812
 msgid "Returns list of m'th through n'th child elements."
-msgstr ""
+msgstr "Vraci seznam prvku ditete od m-teho az n-teho."
 
 #: ../../whatsnew/2.5.rst:1815
 msgid "``len(elem)``"
-msgstr ""
+msgstr "``len(elem)``"
 
 #: ../../whatsnew/2.5.rst:1815
 msgid "Returns number of child elements."
-msgstr ""
+msgstr "Vraci pocet prvku ditete."
 
 #: ../../whatsnew/2.5.rst:1817
 msgid "``list(elem)``"
-msgstr ""
+msgstr "``list(elem)``"
 
 #: ../../whatsnew/2.5.rst:1817
 msgid "Returns list of child elements."
-msgstr ""
+msgstr "Vraci seznam prvku ditete."
 
 #: ../../whatsnew/2.5.rst:1819
 msgid "``elem.append(elem2)``"
-msgstr ""
+msgstr "``elem.append(elem2)``"
 
 #: ../../whatsnew/2.5.rst:1819
 msgid "Adds *elem2* as a child."
-msgstr ""
+msgstr "Prida *elem2* jako dite."
 
 #: ../../whatsnew/2.5.rst:1821
 msgid "``elem.insert(index, elem2)``"
-msgstr ""
+msgstr "``elem.insert(index, elem2)``"
 
 #: ../../whatsnew/2.5.rst:1821
 msgid "Inserts *elem2* at the specified location."
-msgstr ""
+msgstr "Vlozi *elem2* na zadane miste."
 
 #: ../../whatsnew/2.5.rst:1823
 msgid "``del elem[n]``"
-msgstr ""
+msgstr "``del elem[n]``"
 
 #: ../../whatsnew/2.5.rst:1823
 msgid "Deletes n'th child element."
-msgstr ""
+msgstr "Odstrani n-ty prvek dite."
 
 #: ../../whatsnew/2.5.rst:1825
 msgid "``elem.keys()``"
-msgstr ""
+msgstr "``elem.keys()``"
 
 #: ../../whatsnew/2.5.rst:1825
 msgid "Returns list of attribute names."
-msgstr ""
+msgstr "Vraci seznam nazvu atributu."
 
 #: ../../whatsnew/2.5.rst:1827
 msgid "``elem.get(name)``"
-msgstr ""
+msgstr "``elem.get(name)``"
 
 #: ../../whatsnew/2.5.rst:1827
 msgid "Returns value of attribute *name*."
-msgstr ""
+msgstr "Vraci hodnotu atributu *name*."
 
 #: ../../whatsnew/2.5.rst:1829
 msgid "``elem.set(name, value)``"
-msgstr ""
+msgstr "``elem.set(name, value)``"
 
 #: ../../whatsnew/2.5.rst:1829
 msgid "Sets new value for attribute *name*."
-msgstr ""
+msgstr "Nastavi novou hodnotu pro atribut *name*."
 
 #: ../../whatsnew/2.5.rst:1831
 msgid "``elem.attrib``"
-msgstr ""
+msgstr "``elem.attrib``"
 
 #: ../../whatsnew/2.5.rst:1831
 msgid "Retrieves the dictionary containing attributes."
-msgstr ""
+msgstr "Ziskava slovnik obsahujici atributy."
 
 #: ../../whatsnew/2.5.rst:1834
 msgid "``del elem.attrib[name]``"
-msgstr ""
+msgstr "``del elem.attrib[name]``"
 
 #: ../../whatsnew/2.5.rst:1834
 msgid "Deletes attribute *name*."
-msgstr ""
+msgstr "Odstrani atribut *name*."
 
 #: ../../whatsnew/2.5.rst:1837
 msgid ""
@@ -3179,6 +3680,8 @@ msgid ""
 ":class:`Element` nodes.  To check if a node is a comment or processing "
 "instructions::"
 msgstr ""
+"Komentare a pokyny ke zpracovani jsou take predstaveny jako uzly "
+":class:`Element`."
 
 #: ../../whatsnew/2.5.rst:1840
 msgid ""
@@ -3187,6 +3690,10 @@ msgid ""
 "elif elem.tag is ET.ProcessingInstruction:\n"
 "    ..."
 msgstr ""
+"if elem.tag is ET.Comment:\n"
+"    ...\n"
+"elif elem.tag is ET.ProcessingInstruction:\n"
+"    ..."
 
 #: ../../whatsnew/2.5.rst:1845
 msgid ""
@@ -3194,6 +3701,7 @@ msgid ""
 "method. Like :func:`parse`, it can take either a string or a file-like "
 "object::"
 msgstr ""
+"Pro generovani XML vystupu, mate volat metodu :meth:`ElementTree.write`."
 
 #: ../../whatsnew/2.5.rst:1848
 msgid ""
@@ -3204,6 +3712,12 @@ msgid ""
 "f = open('output.xml', 'w')\n"
 "tree.write(f, encoding='utf-8')"
 msgstr ""
+"# Encoding is US-ASCII\n"
+"tree.write('output.xml')\n"
+"\n"
+"# Encoding is UTF-8\n"
+"f = open('output.xml', 'w')\n"
+"tree.write(f, encoding='utf-8')"
 
 #: ../../whatsnew/2.5.rst:1855
 msgid ""
@@ -3214,26 +3728,33 @@ msgid ""
 "Therefore, it's best to specify a different encoding such as UTF-8 that can "
 "handle any Unicode character.)"
 msgstr ""
+"Vyzva: vychozi kodovani pouzivane pro vystup je ASCII. Pro obecne prace s "
+"XML, kde jmeno prvku muze obsahovat libovolne znaky Unicode, ASCII neni "
+"velmi uzitecnym kodovanim."
 
 #: ../../whatsnew/2.5.rst:1862
 msgid ""
 "This section is only a partial description of the ElementTree interfaces. "
 "Please read the package's official documentation for more details."
 msgstr ""
+"Tato sekce je jen cast popisu rozhrani ElementTree. Prosím, precti si "
+"oficialni dokumentaci baliku pro vice detailu."
 
 #: ../../whatsnew/2.5.rst:1868
 msgid ""
 "https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
 "index.htm"
 msgstr ""
+"https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
+"index.htm"
 
 #: ../../whatsnew/2.5.rst:1869
 msgid "Official documentation for ElementTree."
-msgstr ""
+msgstr "Oficialni dokumentace pro ElementTree."
 
 #: ../../whatsnew/2.5.rst:1877
 msgid "The hashlib package"
-msgstr ""
+msgstr "Balik hashlib"
 
 #: ../../whatsnew/2.5.rst:1879
 msgid ""
@@ -3243,6 +3764,8 @@ msgid ""
 "SHA-512). When available, the module uses OpenSSL for fast platform "
 "optimized implementations of algorithms."
 msgstr ""
+"Novy modul :mod:`hashlib`, napsan Gregory P. Smith, byl pridan k nahrade "
+"modulu :mod:`!md5` a :mod:`!sha`."
 
 #: ../../whatsnew/2.5.rst:1885
 msgid ""
@@ -3252,6 +3775,8 @@ msgid ""
 "significant difference is that the constructor functions for creating new "
 "hashing objects are named differently. ::"
 msgstr ""
+"Stare moduly :mod:`!md5` a :mod:`!sha` stale existuji jako obalie kolem "
+"hashlib, aby se zachovala zpetna kompatibilita."
 
 #: ../../whatsnew/2.5.rst:1891
 msgid ""
@@ -3278,6 +3803,28 @@ msgid ""
 "# Alternative form\n"
 "h = hashlib.new('md5')          # Provide algorithm as a string"
 msgstr ""
+"# Old versions\n"
+"h = md5.md5()\n"
+"h = md5.new()\n"
+"\n"
+"# New version\n"
+"h = hashlib.md5()\n"
+"\n"
+"# Old versions\n"
+"h = sha.sha()\n"
+"h = sha.new()\n"
+"\n"
+"# New version\n"
+"h = hashlib.sha1()\n"
+"\n"
+"# Hash that weren't previously available\n"
+"h = hashlib.sha224()\n"
+"h = hashlib.sha256()\n"
+"h = hashlib.sha384()\n"
+"h = hashlib.sha512()\n"
+"\n"
+"# Alternative form\n"
+"h = hashlib.new('md5')          # Provide algorithm as a string"
 
 #: ../../whatsnew/2.5.rst:1914
 msgid ""
@@ -3287,14 +3834,15 @@ msgid ""
 "binary string or a string of hex digits, and :meth:`copy` returns a new "
 "hashing object with the same digest state."
 msgstr ""
+"Jakmile objekt hash byl vytvoren, jeho metody jsou stejne jako predtim."
 
 #: ../../whatsnew/2.5.rst:1923
 msgid "The documentation  for the :mod:`hashlib` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`hashlib`."
 
 #: ../../whatsnew/2.5.rst:1931
 msgid "The sqlite3 package"
-msgstr ""
+msgstr "Balik sqlite3"
 
 #: ../../whatsnew/2.5.rst:1933
 msgid ""
@@ -3302,6 +3850,9 @@ msgid ""
 "embedded database, has been added to the standard library under the package "
 "name :mod:`sqlite3`."
 msgstr ""
+"Modul pysqlite (https://www.pysqlite.org), obalie pro SQLite integrovanou "
+"databází, byl pridan do standardní knihovny pod názven balíků "
+":mod:`sqlite3`."
 
 #: ../../whatsnew/2.5.rst:1937
 msgid ""
@@ -3312,12 +3863,16 @@ msgid ""
 "application using SQLite and then port the code to a larger database such as"
 " PostgreSQL or Oracle."
 msgstr ""
+"SQLite je knihovna C, která poskytuje low-weight disk-based databází, která "
+"nevyzaduje výrazný proces serveru."
 
 #: ../../whatsnew/2.5.rst:1944
 msgid ""
 "pysqlite was written by Gerhard Häring and provides a SQL interface "
 "compliant with the DB-API 2.0 specification described by :pep:`249`."
 msgstr ""
+"pysqlite byl napsan Gerhardem Häringem a poskytuje rozhraní SQL kompatibilní"
+" se specifikací DB-API 2.0."
 
 #: ../../whatsnew/2.5.rst:1947
 msgid ""
@@ -3327,6 +3882,8 @@ msgid ""
 " the build process will compile the module when the necessary headers are "
 "available."
 msgstr ""
+"Pokud sami kompilujete zdrojový kód Pythonu, poznamemenejte, že zdrojový "
+"strom neobsahuje kód SQLite, pouze obalie modul."
 
 #: ../../whatsnew/2.5.rst:1952
 msgid ""
@@ -3334,22 +3891,28 @@ msgid ""
 "represents the database.  Here the data will be stored in the "
 ":file:`/tmp/example` file::"
 msgstr ""
+"Chcete-li použít modul, musíte nejprve vytvořit objekt :class:`Connection`, "
+"který reprezentuje databázi."
 
 #: ../../whatsnew/2.5.rst:1956
 msgid "conn = sqlite3.connect('/tmp/example')"
-msgstr ""
+msgstr "conn = sqlite3.connect('/tmp/example')"
 
 #: ../../whatsnew/2.5.rst:1958
 msgid ""
 "You can also supply the special name ``:memory:`` to create a database in "
 "RAM."
 msgstr ""
+"Můžete také poskytnout speciální název `:memory:` k vytvoření databáze v "
+"RAM."
 
 #: ../../whatsnew/2.5.rst:1960
 msgid ""
 "Once you have a :class:`Connection`, you can create a :class:`Cursor`  "
 "object and call its :meth:`execute` method to perform SQL commands::"
 msgstr ""
+"Jakmile máte :class:`Connection`, můžete vytvořit objekt :class:`Cursor` a "
+"volat jeho metodu :meth:`execute` k provedení příkazů SQL::"
 
 #: ../../whatsnew/2.5.rst:1963
 msgid ""
@@ -3364,6 +3927,16 @@ msgid ""
 "c.execute(\"\"\"insert into stocks\n"
 "          values ('2006-01-05','BUY','RHAT',100,35.14)\"\"\")"
 msgstr ""
+"c = conn.cursor()\n"
+"\n"
+"# Create table\n"
+"c.execute('''create table stocks\n"
+"(date text, trans text, symbol text,\n"
+" qty real, price real)''')\n"
+"\n"
+"# Insert a row of data\n"
+"c.execute(\"\"\"insert into stocks\n"
+"          values ('2006-01-05','BUY','RHAT',100,35.14)\"\"\")"
 
 #: ../../whatsnew/2.5.rst:1974
 msgid ""
@@ -3372,6 +3945,8 @@ msgid ""
 "doing so is insecure; it makes your program vulnerable to an SQL injection "
 "attack."
 msgstr ""
+"Obvykle budou vaše příkazy SQL potřebovat použít hodnoty z proměnných "
+"Pythonu."
 
 #: ../../whatsnew/2.5.rst:1978
 #, python-format
@@ -3382,6 +3957,11 @@ msgid ""
 "(Other database modules may use a different placeholder, such as ``%s`` or "
 "``:1``.) For example::"
 msgstr ""
+"Místo toho použijte substituci parametrů API DB. Umístěte ``?`` jako "
+"zástupný symbol všude, kde chcete použít hodnotu, a pak poskytnete n-tici "
+"hodnot jako druhý argument metodě :meth:`execute` kurzoru. (Jiné databázové "
+"moduly mohou použít jiný zástupný symbol, například ``%s`` nebo ``:1``.) "
+"Například::"
 
 #: ../../whatsnew/2.5.rst:1983
 #, python-format
@@ -3401,6 +3981,20 @@ msgid ""
 "         ):\n"
 "    c.execute('insert into stocks values (?,?,?,?,?)', t)"
 msgstr ""
+"# Nikdy to nedělejte -- není bezpečné!\n"
+"symbol = 'IBM'\n"
+"c.execute(\"... where symbol = '%s'\" % symbol)\n"
+"\n"
+"# Místo toho postupujte takto\n"
+"t = (symbol,)\n"
+"c.execute('select * from stocks where symbol=?', t)\n"
+"\n"
+"# Větší příklad\n"
+"for t in (('2006-03-28', 'BUY', 'IBM', 1000, 45.00),\n"
+"          ('2006-04-05', 'BUY', 'MSOFT', 1000, 72.00),\n"
+"          ('2006-04-06', 'SELL', 'IBM', 500, 53.00),\n"
+"         ):\n"
+"    c.execute('insert into stocks values (?,?,?,?,?)', t)"
 
 #: ../../whatsnew/2.5.rst:1998
 msgid ""
@@ -3409,10 +4003,12 @@ msgid ""
 "retrieve a single matching row,  or call :meth:`fetchall` to get a list of "
 "the matching rows."
 msgstr ""
+"Chcete-li získat data po spuštění příkázu SELECT, můžete buď zpracovat "
+"kurzor jako iterátor."
 
 #: ../../whatsnew/2.5.rst:2003
 msgid "This example uses the iterator form::"
-msgstr ""
+msgstr "Tento příklad používá formu iterátoru::"
 
 #: ../../whatsnew/2.5.rst:2005
 msgid ""
@@ -3427,46 +4023,59 @@ msgid ""
 "(u'2006-04-05', u'BUY', u'MSOFT', 1000, 72.0)\n"
 ">>>"
 msgstr ""
+">>> c = conn.cursor()\n"
+">>> c.execute('select * from stocks order by price')\n"
+">>> for row in c:\n"
+"...    print row\n"
+"...\n"
+"(u'2006-01-05', u'BUY', u'RHAT', 100, 35.140000000000001)\n"
+"(u'2006-03-28', u'BUY', u'IBM', 1000, 45.0)\n"
+"(u'2006-04-06', u'SELL', u'IBM', 500, 53.0)\n"
+"(u'2006-04-05', u'BUY', u'MSOFT', 1000, 72.0)\n"
+">>>"
 
 #: ../../whatsnew/2.5.rst:2016
 msgid ""
 "For more information about the SQL dialect supported by SQLite, see "
 "https://www.sqlite.org."
 msgstr ""
+"Pro více informací o dialektu SQL podporovaném SQLite, viz "
+"https://www.sqlite.org."
 
 #: ../../whatsnew/2.5.rst:2022
 msgid "https://www.pysqlite.org"
-msgstr ""
+msgstr "https://www.pysqlite.org"
 
 #: ../../whatsnew/2.5.rst:2023
 msgid "The pysqlite web page."
-msgstr ""
+msgstr "Webová stránka pysqlite."
 
 #: ../../whatsnew/2.5.rst:2025
 msgid "https://www.sqlite.org"
-msgstr ""
+msgstr "https://www.sqlite.org"
 
 #: ../../whatsnew/2.5.rst:2026
 msgid ""
 "The SQLite web page; the documentation describes the syntax and the "
 "available data types for the supported SQL dialect."
 msgstr ""
+"Webová stránka SQLite; dokumentace popisuje syntaxi a dostupné datové typy."
 
 #: ../../whatsnew/2.5.rst:2029
 msgid "The documentation  for the :mod:`sqlite3` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`sqlite3`."
 
 #: ../../whatsnew/2.5.rst:2031
 msgid ":pep:`249` - Database API Specification 2.0"
-msgstr ""
+msgstr ":pep:`249` - Specifikace rozhraní databáze 2.0"
 
 #: ../../whatsnew/2.5.rst:2032
 msgid "PEP written by Marc-André Lemburg."
-msgstr ""
+msgstr "PEP napsáno Marc-Andréem Lemburgem."
 
 #: ../../whatsnew/2.5.rst:2040
 msgid "The wsgiref package"
-msgstr ""
+msgstr "Balik wsgiref"
 
 #: ../../whatsnew/2.5.rst:2042
 msgid ""
@@ -3475,6 +4084,8 @@ msgid ""
 ":pep:`333`. The :mod:`wsgiref` package is a reference implementation of the "
 "WSGI specification."
 msgstr ""
+"Web Server Gateway Interface (WSGI) v1.0 definuje standardní rozhraní mezi "
+"webovými servery a Python webovými aplikacemi."
 
 #: ../../whatsnew/2.5.rst:2049
 msgid ""
@@ -3482,6 +4093,8 @@ msgid ""
 "this server is useful for debugging but isn't intended for  production use."
 "  Setting up a server takes only a few lines of code::"
 msgstr ""
+"Balík obsahuje základní HTTP server, který spustí aplikaci WSGI; tento "
+"server je užitečný pro ladění, ale není urzěn pro produkční použití."
 
 #: ../../whatsnew/2.5.rst:2053
 msgid ""
@@ -3494,31 +4107,40 @@ msgid ""
 "httpd = simple_server.make_server(host, port, wsgi_app)\n"
 "httpd.serve_forever()"
 msgstr ""
+"from wsgiref import simple_server\n"
+"\n"
+"wsgi_app = ...\n"
+"\n"
+"host = ''\n"
+"port = 8000\n"
+"httpd = simple_server.make_server(host, port, wsgi_app)\n"
+"httpd.serve_forever()"
 
 #: ../../whatsnew/2.5.rst:2068
 msgid ""
 "https://web.archive.org/web/20160331090247/http://wsgi.readthedocs.org/en/latest/"
 msgstr ""
+"https://web.archive.org/web/20160331090247/http://wsgi.readthedocs.org/en/latest/"
 
 #: ../../whatsnew/2.5.rst:2069
 msgid "A central web site for WSGI-related resources."
-msgstr ""
+msgstr "Centrální webová stránka pro prostředky související s WSGI."
 
 #: ../../whatsnew/2.5.rst:2071
 msgid ":pep:`333` - Python Web Server Gateway Interface v1.0"
-msgstr ""
+msgstr ":pep:`333` - Python Web Server Gateway Interface v1.0"
 
 #: ../../whatsnew/2.5.rst:2072
 msgid "PEP written by Phillip J. Eby."
-msgstr ""
+msgstr "PEP napsáno Phillipem J. Ebym."
 
 #: ../../whatsnew/2.5.rst:2080
 msgid "Build and C API Changes"
-msgstr ""
+msgstr "Změny v sestavě a C API"
 
 #: ../../whatsnew/2.5.rst:2082
 msgid "Changes to Python's build process and to the C API include:"
-msgstr ""
+msgstr "Změny v procesu sestavě Pythonu a v C API zahrnují:"
 
 #: ../../whatsnew/2.5.rst:2084
 msgid ""
@@ -3526,6 +4148,8 @@ msgid ""
 "migration procedure that was supervised and flawlessly carried out by Martin"
 " von Löwis.  The procedure was developed as :pep:`347`."
 msgstr ""
+"Zdrojový strom Pythonu byl převeden z CVS na Subversion v složitém postupu "
+"migrace."
 
 #: ../../whatsnew/2.5.rst:2088
 msgid ""
@@ -3535,6 +4159,8 @@ msgid ""
 "were refcounting problems, often occurring in error-handling code.  See "
 "https://scan.coverity.com for the statistics."
 msgstr ""
+"Společnost Coverity poskytla výsledky svého zkoušení zdrojového kódu "
+"Pythonu."
 
 #: ../../whatsnew/2.5.rst:2094
 msgid ""
@@ -3543,6 +4169,8 @@ msgid ""
 ":c:expr:`int`.  See the earlier section :ref:`pep-353` for a discussion of "
 "this change."
 msgstr ""
+"Největší změna C API pochází z :pep:`353`, která méní interpret k použití "
+"typu :c:type:`Py_ssize_t`."
 
 #: ../../whatsnew/2.5.rst:2099
 msgid ""
@@ -3551,6 +4179,8 @@ msgid ""
 " converted to an abstract syntax tree (or AST), and it is  the abstract "
 "syntax tree that's traversed to produce the bytecode."
 msgstr ""
+"Návrh kompilátoru bytekódu se změnil značně, už ne generuje bytekód při "
+"travení syntaktického stromu."
 
 #: ../../whatsnew/2.5.rst:2104
 msgid ""
@@ -3558,6 +4188,8 @@ msgid ""
 ":func:`compile` built-in and specifying ``_ast.PyCF_ONLY_AST`` as the value "
 "of the  *flags* parameter::"
 msgstr ""
+"Je možné pro kód Pythonu získat objekty AST použitím vstavováného "
+":func:`compile` a zadáním ``_ast.PyCF_ONLY_AST``::"
 
 #: ../../whatsnew/2.5.rst:2108
 msgid ""
@@ -3570,6 +4202,14 @@ msgid ""
 "assignment = ast.body[0]\n"
 "for_loop = ast.body[1]"
 msgstr ""
+"from _ast import PyCF_ONLY_AST\n"
+"ast = compile(\"\"\"a=0\n"
+"for i in range(10):\n"
+"    a += i\n"
+"\"\"\", \"<string>\", 'exec', PyCF_ONLY_AST)\n"
+"\n"
+"assignment = ast.body[0]\n"
+"for_loop = ast.body[1]"
 
 #: ../../whatsnew/2.5.rst:2117
 msgid ""
@@ -3584,6 +4224,9 @@ msgid ""
 ":c:func:`!PyAST_Compile`.  For more information, read the source code, and "
 "then ask questions on python-dev."
 msgstr ""
+"Zatim neni zadna oficialni dokumentace pro kod AST, ale :pep:`339` diskutuje"
+" design. Pro zacatek naucit se o kodu, cti definici rozlicnych AST nod u v "
+":file:`Parser/Python.asdl`."
 
 #: ../../whatsnew/2.5.rst:2127
 msgid ""
@@ -3593,6 +4236,8 @@ msgid ""
 "Schemenauer, plus the participants in a number of AST sprints at conferences"
 " such as PyCon."
 msgstr ""
+"Kod AST byl vyvijen pod spravou Jeremy Hylton a implementovan (v abecednim "
+"poradi) Brett Cannonem, Nick Coghlannem, Grant Edwardsem a dalsimi."
 
 #: ../../whatsnew/2.5.rst:2136
 msgid ""
@@ -3604,6 +4249,8 @@ msgid ""
 "the memory may be returned to the operating system.  (Implemented by Evan "
 "Jones, and reworked by Tim Peters.)"
 msgstr ""
+"Evan Jonesova oprava do obmalloc, prvne popsana v prednase na PyCon DC 2005,"
+" byla aplikovana."
 
 #: ../../whatsnew/2.5.rst:2144
 msgid ""
@@ -3615,6 +4262,8 @@ msgid ""
 ":c:func:`PyObject_Realloc`, and :c:func:`PyObject_Free` are another family "
 "that's supposed to be used for creating Python objects."
 msgstr ""
+"Poznamejte, ze tato zmena znamena, ze rozsirujici moduly musi byt opatrnajsi"
+" pri alokaci pameti."
 
 #: ../../whatsnew/2.5.rst:2152
 msgid ""
@@ -3626,6 +4275,8 @@ msgid ""
 "probably result in a segfault.  You should carefully test your C extension "
 "modules with Python 2.5."
 msgstr ""
+"Driv se vsechny tyto rodiny redukovaly na platformu :c:func:`malloc` a "
+":c:func:`free` funkce."
 
 #: ../../whatsnew/2.5.rst:2159
 msgid ""
@@ -3635,6 +4286,8 @@ msgid ""
 ":c:func:`PySet_Contains` and :c:func:`PySet_Size` to examine the set's "
 "state. (Contributed by Raymond Hettinger.)"
 msgstr ""
+"Vstavene sady typu maji nynni oficialni C API. Volej :c:func:`PySet_New` a "
+":c:func:`PyFrozenSet_New` k vytvoreni nove sady."
 
 #: ../../whatsnew/2.5.rst:2165
 msgid ""
@@ -3643,6 +4296,8 @@ msgid ""
 "a string of build information like this: ``\"trunk:45355:45356M, Apr 13 "
 "2006, 07:42:19\"``.   (Contributed by Barry Warsaw.)"
 msgstr ""
+"Kod C muze nynni ziskat informace o presne revizi interpretu Pythonu volanim"
+" funkce :c:func:`Py_GetBuildInfo`."
 
 #: ../../whatsnew/2.5.rst:2170
 msgid ""
@@ -3657,12 +4312,16 @@ msgid ""
 "these optimizations actually make the code faster.  (Contributed by Fredrik "
 "Lundh at the NeedForSpeed sprint.)"
 msgstr ""
+"Dve nove makra mohou byt pouzita k indicanu funkc C, ktere jsou lokalni "
+"soucasnemu souboru."
 
 #: ../../whatsnew/2.5.rst:2181
 msgid ""
 "``PyErr_NewException(name, base, dict)`` can now accept a tuple of base "
 "classes as its *base* argument.  (Contributed by Georg Brandl.)"
 msgstr ""
+"``PyErr_NewException(name, base, dict)`` muze nynni prijet tuple zakladnich "
+"trid jako svuj argument *base*."
 
 #: ../../whatsnew/2.5.rst:2184
 msgid ""
@@ -3672,6 +4331,8 @@ msgid ""
 "  A *stacklevel* of 1 is the function calling :c:func:`PyErr_WarnEx`, 2 is "
 "the function above that, and so forth.  (Added by Neal Norwitz.)"
 msgstr ""
+"Funkce :c:func:`!PyErr_Warn` pro vydavani upozorneni je nynni zastarala ve "
+"prospechu ``PyErr_WarnEx(category, message, stacklevel)``."
 
 #: ../../whatsnew/2.5.rst:2190
 msgid ""
@@ -3679,6 +4340,8 @@ msgid ""
 "compiled with a C++ compiler without errors.   (Implemented by Anthony "
 "Baxter, Martin von Löwis, Skip Montanaro.)"
 msgstr ""
+"Interpret CPython je stale napsan v jazyce C, ale kod muze byt nynni "
+"kompilovan s kompiler C++ bez chyb."
 
 #: ../../whatsnew/2.5.rst:2194
 msgid ""
@@ -3687,22 +4350,28 @@ msgid ""
 " unlikely case that your extensions were using it, you can replace it by "
 "something like the following::"
 msgstr ""
+"Funkce :c:func:`!PyRange_New` byla odstranena. Nikdy nebyla dokumentovana, "
+"nikdy nebyla pouzivana v jadrovem kodu."
 
 #: ../../whatsnew/2.5.rst:2199
 msgid ""
 "range = PyObject_CallFunction((PyObject*) &PyRange_Type, \"lll\",\n"
 "                              start, stop, step);"
 msgstr ""
+"range = PyObject_CallFunction((PyObject*) &PyRange_Type, \"lll\",\n"
+"                              start, stop, step);"
 
 #: ../../whatsnew/2.5.rst:2208
 msgid "Port-Specific Changes"
-msgstr ""
+msgstr "Zmeny specifickych portu"
 
 #: ../../whatsnew/2.5.rst:2210
 msgid ""
 "MacOS X (10.3 and higher): dynamic loading of modules now uses the "
 ":c:func:`dlopen` function instead of MacOS-specific functions."
 msgstr ""
+"MacOS X (10.3 a vyz): dynamicke nacitani modulu nyni pouziva funkci "
+":c:func:`dlopen` miste MacOS-specifickych funkc."
 
 #: ../../whatsnew/2.5.rst:2213
 msgid ""
@@ -3711,6 +4380,8 @@ msgid ""
 "binary able to run on both PowerPC and Intel processors. (Contributed by "
 "Ronald Oussoren; :issue:`2573`.)"
 msgstr ""
+"MacOS X: prepina :option:`!--enable-universalsdk` byla pridana k skriptu "
+":program:`configure`."
 
 #: ../../whatsnew/2.5.rst:2218
 msgid ""
@@ -3718,16 +4389,21 @@ msgid ""
 "extension modules.  :file:`.pyd` is now the only filename extension that "
 "will be searched for."
 msgstr ""
+"Windows: :file:`.dll` uz neni podporovano jako pripona nazvu souboru pro "
+"rozsirujici moduly. :file:`.pyd` je nyni jedina pripona jmena, ktera bude "
+"vyhledavana."
 
 #: ../../whatsnew/2.5.rst:2228
 msgid "Porting to Python 2.5"
-msgstr ""
+msgstr "Prenositelnost do Pythonu 2.5"
 
 #: ../../whatsnew/2.5.rst:2230
 msgid ""
 "This section lists previously described changes that may require changes to "
 "your code:"
 msgstr ""
+"Tato sekce vypocitava drive popsane zmeny, ktere mohou vymadat zmeny ve "
+"vasem kodu:"
 
 #: ../../whatsnew/2.5.rst:2233
 msgid ""
@@ -3736,6 +4412,8 @@ msgid ""
 "encoding declaration.  In Python 2.4 this triggered a warning, not a syntax "
 "error."
 msgstr ""
+"ASCII je nyni vychozi kodovani pro moduly. Je nyni chyba syntaxe, pokud "
+"modul obsahuje retezce s 8-bitovymi znaky, ale nema deklaraci kodovani."
 
 #: ../../whatsnew/2.5.rst:2238
 msgid ""
@@ -3743,6 +4421,8 @@ msgid ""
 " object.  Because of the :pep:`342` changes described in section "
 ":ref:`pep-342`, it's now possible for :attr:`gi_frame` to be ``None``."
 msgstr ""
+"Drive byl atribut :attr:`gi_frame` generatoru vzdy objektem frame. Kvuli "
+"zmename :pep:`342` je nyni mozne, aby :attr:`gi_frame` byl ``None``."
 
 #: ../../whatsnew/2.5.rst:2242
 msgid ""
@@ -3751,6 +4431,8 @@ msgid ""
 "Unicode using the default ASCII encoding.  Previously such comparisons would"
 " raise a :class:`UnicodeDecodeError` exception."
 msgstr ""
+"Nove upozorneni :class:`UnicodeWarning` je spusteno, kdyz se pokusate "
+"porovnat Unicode retezec a 8-bitovy retezec."
 
 #: ../../whatsnew/2.5.rst:2247
 msgid ""
@@ -3759,6 +4441,7 @@ msgid ""
 "should be split into lines in a manner which preserves the newline "
 "characters."
 msgstr ""
+"Knihovna: modul :mod:`csv` je nynni prisnejsi o multi-line quoted pole."
 
 #: ../../whatsnew/2.5.rst:2251
 #, python-format
@@ -3768,6 +4451,10 @@ msgid ""
 "appeared.  In Python 2.5, the argument must be exactly one %char specifier "
 "with no surrounding text."
 msgstr ""
+"Knihovna: funkce :func:`format` modulu :mod:`locale` by dříve přijala "
+"libovolný řetězec pokud se v něm vyskytoval maximálně jeden specifikátor "
+"%char a. V Pythonu 2.5 musí být argument přesně jeden specifikátor %char bez"
+" okolního textu."
 
 #: ../../whatsnew/2.5.rst:2256
 msgid ""
@@ -3776,6 +4463,8 @@ msgid ""
 "method must return a tuple of arguments instead.  The modules also no longer"
 " accept the deprecated *bin* keyword parameter."
 msgstr ""
+"Knihovna: Moduly :mod:`pickle` a :mod:`!cPickle` nyni uz neprijimaji "
+"navratovou hodnotu ``None`` z metody :meth:`~object.__reduce__`."
 
 #: ../../whatsnew/2.5.rst:2261
 msgid ""
@@ -3786,6 +4475,8 @@ msgid ""
 ":attr:`rpc_paths` to ``None`` or an empty tuple disables  this path "
 "checking."
 msgstr ""
+"Knihovna: Tridy :mod:`SimpleXMLRPCServer` a :mod:`DocXMLRPCServer` nynni "
+"maji atribut :attr:`rpc_paths`."
 
 #: ../../whatsnew/2.5.rst:2267
 msgid ""
@@ -3794,6 +4485,8 @@ msgid ""
 "to make the same change to avoid warnings and to support 64-bit machines.  "
 "See the earlier section :ref:`pep-353` for a discussion of this change."
 msgstr ""
+"C API: Mnoho funkc nyni pouziva :c:type:`Py_ssize_t` miste :c:expr:`int` k "
+"umozneni zpracovani vice dat na 64-bitovych strojich."
 
 #: ../../whatsnew/2.5.rst:2272
 msgid ""
@@ -3802,10 +4495,12 @@ msgid ""
 "allocated with  one family's ``*_Malloc`` must be  freed with the "
 "corresponding family's ``*_Free`` function."
 msgstr ""
+"C API: Zmeny obmalloc znamenaji, ze mus byt opatren, aby nedosl k smichani "
+"pouziti ``PyMem_*`` a ``PyObject_*`` rodin funkc."
 
 #: ../../whatsnew/2.5.rst:2281
 msgid "Acknowledgements"
-msgstr ""
+msgstr "Priznavani"
 
 #: ../../whatsnew/2.5.rst:2283
 msgid ""
@@ -3817,14 +4512,16 @@ msgid ""
 "Paul Prescod, James Pryor, Mike Rovner, Scott Weikart, Barry Warsaw, Thomas "
 "Wouters."
 msgstr ""
+"Autor by chtel podekovat nasledujicim lidem za nabidky navrhot, opravy a "
+"pomoc s rozlisnymi verze tohoto clunku."
 
 #: ../../whatsnew/2.5.rst:1342
 msgid "universal newlines"
-msgstr ""
+msgstr "univerzalne nove radky"
 
 #: ../../whatsnew/2.5.rst:1342
 msgid "What's new"
-msgstr ""
+msgstr "Co je noveho"
 
 #~ msgid ""
 #~ "New module: The :mod:`!cProfile` module is a C implementation of  the "

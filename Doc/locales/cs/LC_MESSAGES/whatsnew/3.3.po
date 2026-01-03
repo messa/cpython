@@ -2374,48 +2374,52 @@ msgid ""
 "the expensive thread local context machinery. In this case, the variable "
 ":const:`~decimal.HAVE_THREADS` is set to ``False``."
 msgstr ""
+"Pokud je Python prekladan bez vlaken, verze C automaticky zakazuje drahou "
+"lokalnimu kontextu vlakna. V tomto pripade je promenna "
+":const:`~decimal.HAVE_THREADS` nastavena na ``False``."
 
 #: ../../whatsnew/3.3.rst:1137
 msgid ""
 "The C module has the following context limits, depending on the machine "
 "architecture:"
 msgstr ""
+"C modul ma nasledujici limit kontextu, v zavislosti na architekture stroje:"
 
 #: ../../whatsnew/3.3.rst:1141
 msgid "32-bit"
-msgstr ""
+msgstr "32-bit"
 
 #: ../../whatsnew/3.3.rst:1141
 msgid "64-bit"
-msgstr ""
+msgstr "64-bit"
 
 #: ../../whatsnew/3.3.rst:1143
 msgid ":const:`~decimal.MAX_PREC`"
-msgstr ""
+msgstr ":const:`~decimal.MAX_PREC`"
 
 #: ../../whatsnew/3.3.rst:1143 ../../whatsnew/3.3.rst:1145
 msgid "``425000000``"
-msgstr ""
+msgstr "``425000000``"
 
 #: ../../whatsnew/3.3.rst:1143 ../../whatsnew/3.3.rst:1145
 msgid "``999999999999999999``"
-msgstr ""
+msgstr "``999999999999999999``"
 
 #: ../../whatsnew/3.3.rst:1145
 msgid ":const:`~decimal.MAX_EMAX`"
-msgstr ""
+msgstr ":const:`~decimal.MAX_EMAX`"
 
 #: ../../whatsnew/3.3.rst:1147
 msgid ":const:`~decimal.MIN_EMIN`"
-msgstr ""
+msgstr ":const:`~decimal.MIN_EMIN`"
 
 #: ../../whatsnew/3.3.rst:1147
 msgid "``-425000000``"
-msgstr ""
+msgstr "``-425000000``"
 
 #: ../../whatsnew/3.3.rst:1147
 msgid "``-999999999999999999``"
-msgstr ""
+msgstr "``-999999999999999999``"
 
 #: ../../whatsnew/3.3.rst:1150
 msgid ""
@@ -2424,6 +2428,10 @@ msgid ""
 "magnitude of :attr:`~decimal.Context.Emax` and :attr:`~decimal.Context.Emin`"
 " has changed to ``999999``."
 msgstr ""
+"V sablonach kontextu (:const:`~decimal.DefaultContext`, "
+":const:`~decimal.BasicContext` a :const:`~decimal.ExtendedContext`) se "
+"velkost :attr:`~decimal.Context.Emax` a :attr:`~decimal.Context.Emin` "
+"zmenila na ``999999``."
 
 #: ../../whatsnew/3.3.rst:1155
 msgid ""
@@ -2436,6 +2444,13 @@ msgid ""
 ":meth:`~decimal.Context.create_decimal` in order to obtain a rounded or "
 "inexact value."
 msgstr ""
+"Konstruktor :class:`~decimal.Decimal` v decimal.py nepozoruje limit kontextu"
+" a konvertuje hodnoty s libovolnym exponentem nebo presnosti presne. Protoze"
+" verze C ma interni limity, pouziva se schema: Pokud je mozne, hodnoty jsou "
+"konvertovany presne, jinak :exc:`~decimal.InvalidOperation` je vyhozena a "
+"vysledek je NaN. V potomnim pripade je vzdy mozne pouzit "
+":meth:`~decimal.Context.create_decimal` za ucelem ziskani zaokrouhle nebo "
+"nepresne hodnoty."
 
 #: ../../whatsnew/3.3.rst:1164
 msgid ""
@@ -2444,6 +2459,10 @@ msgid ""
 ":meth:`~decimal.Decimal.exp` and :meth:`~decimal.Decimal.ln` functions, but "
 "the final result is only \"almost always correctly rounded\"."
 msgstr ""
+"Funkce power v decimal.py je vzdy spravne zaokrouhlena. V C verzi je "
+"definovana v podminkach spravne zaokrouhle :meth:`~decimal.Decimal.exp` a "
+":meth:`~decimal.Decimal.ln` funkce, ale konecny vysledek je pouze \"skoro "
+"vzdy spravne zaokrouhleny\"."
 
 #: ../../whatsnew/3.3.rst:1170
 msgid ""
@@ -2455,32 +2474,45 @@ msgid ""
 ":attr:`~decimal.Context.flags` and :attr:`~decimal.Context.traps` are "
 "updated with the new values, but they do not reference the RHS dictionary."
 msgstr ""
+"V C verzi je kontextovy slovnik obsahujici signaly "
+":class:`~collections.abc.MutableMapping`. Z duvodu rychlosti, "
+":attr:`~decimal.Context.flags` a :attr:`~decimal.Context.traps` vzdy "
+"odkazuji na stejny :class:`~collections.abc.MutableMapping`, se kterym byl "
+"kontext inicializovan. Pokud je novy signal slovnik prirazen, "
+":attr:`~decimal.Context.flags` a :attr:`~decimal.Context.traps` jsou "
+"aktualizovany s novymi hodnotami, ale neodkazuji na RHS slovnik."
 
 #: ../../whatsnew/3.3.rst:1180
 msgid ""
 "Pickling a :class:`~decimal.Context` produces a different output in order to"
 " have a common interchange format for the Python and C versions."
 msgstr ""
+"Pickling :class:`~decimal.Context` vyraba rozdilny vystup, aby byl spolecny "
+"formatu vymeny pro Python a C verze."
 
 #: ../../whatsnew/3.3.rst:1184
 msgid ""
 "The order of arguments in the :class:`~decimal.Context` constructor has been"
 " changed to match the order displayed by :func:`repr`."
 msgstr ""
+"Poradi argumentu v konstruktoru :class:`~decimal.Context` bylo zmeneno tak, "
+"aby se shodovalo s poradi zobrazenym :func:`repr`."
 
 #: ../../whatsnew/3.3.rst:1188
 msgid ""
 "The ``watchexp`` parameter in the :meth:`~decimal.Decimal.quantize` method "
 "is deprecated."
 msgstr ""
+"Parametr ``watchexp`` v metode :meth:`~decimal.Decimal.quantize` je "
+"zastaraly."
 
 #: ../../whatsnew/3.3.rst:1195
 msgid "email"
-msgstr ""
+msgstr "email"
 
 #: ../../whatsnew/3.3.rst:1198
 msgid "Policy Framework"
-msgstr ""
+msgstr "Ramec politiky"
 
 #: ../../whatsnew/3.3.rst:1200
 msgid ""
@@ -2497,34 +2529,51 @@ msgid ""
 " the policy of the ``Message`` object it is serializing.  The default policy"
 " is :data:`~email.policy.compat32`."
 msgstr ""
+"Balick email nyni ma framework :mod:`~email.policy`. "
+":class:`~email.policy.Policy` je objekt s vicesolymi metodami a vlastnostmi,"
+" ktere ridi chovat se balicku email. Primarna politika pro Python 3.3 je "
+":class:`~email.policy.Compat32` politika, ktera poskytuje zpetnou "
+"kompatibilitu s balickem email v Pythonu 3.2. ``policy`` lze specifikovat "
+"kdyz je email zprava analyzovana :mod:`~email.parser`, nebo kdyz je objekt "
+":class:`~email.message.Message` vytvoren, nebo kdyz je email serializovan "
+"pouzitim :mod:`~email.generator`. Pokud neni prebito, politika predana "
+"``parser`` je zedena vsem ``Message`` objektu a sub-objekty vytvorene "
+"``parser``. Ve vychozim stavu ``generator`` bude pouzivat politiku "
+"``Message`` objektu, ktery je serializovany. Vychozi politika je "
+":data:`~email.policy.compat32`."
 
 #: ../../whatsnew/3.3.rst:1213
 msgid "The minimum set of controls implemented by all ``policy`` objects are:"
 msgstr ""
+"Minimalnim souborom ovladacich implementovany vsemi objekty ``policy`` jsou:"
 
 #: ../../whatsnew/3.3.rst:1218
 msgid "max_line_length"
-msgstr ""
+msgstr "max_line_length"
 
 #: ../../whatsnew/3.3.rst:1218
 msgid ""
 "The maximum length, excluding the linesep character(s), individual lines may"
 " have when a ``Message`` is serialized.  Defaults to 78."
 msgstr ""
+"Maximalni delka, vyjimajici znaky linesep, jednotlive radky mohou mit, kdyz "
+"je ``Message`` serializovano. Vychozi hodnota je 78."
 
 #: ../../whatsnew/3.3.rst:1222
 msgid "linesep"
-msgstr ""
+msgstr "linesep"
 
 #: ../../whatsnew/3.3.rst:1222
 msgid ""
 "The character used to separate individual lines when a ``Message`` is "
 "serialized.  Defaults to ``\\n``."
 msgstr ""
+"Znak pouzivany k oddeleni jednotlivych radku kdyz je ``Message`` "
+"serializovano. Vychozi hodnota je ``\\n``."
 
 #: ../../whatsnew/3.3.rst:1225
 msgid "cte_type"
-msgstr ""
+msgstr "cte_type"
 
 #: ../../whatsnew/3.3.rst:1225
 msgid ""
@@ -2532,16 +2581,21 @@ msgid ""
 "and means that non-ASCII may be used where allowed by the protocol (or where"
 " it exists in the original input)."
 msgstr ""
+"``7bit`` nebo ``8bit``. ``8bit`` se vztahuje pouze na ``Bytes`` "
+"``generator`` a znamena, ze non-ASCII muze byt pouzivana kde je povolena "
+"protokolem (nebo kde existuje v puvodnim vstupu)."
 
 #: ../../whatsnew/3.3.rst:1230
 msgid "raise_on_defect"
-msgstr ""
+msgstr "raise_on_defect"
 
 #: ../../whatsnew/3.3.rst:1230
 msgid ""
 "Causes a ``parser`` to raise error when defects are encountered instead of "
 "adding them to the ``Message`` object's ``defects`` list."
 msgstr ""
+"Zpusobuje, ze ``parser`` vyvola chybu, kdyz jsou zjisteny defekty miste "
+"jejich pridavani do seznamu ``defects`` objektu ``Message``."
 
 #: ../../whatsnew/3.3.rst:1235
 msgid ""
@@ -2551,10 +2605,15 @@ msgid ""
 "specified in the call retains its default value.  Thus you can create a "
 "policy that uses ``\\r\\n`` linesep characters like this::"
 msgstr ""
+"Nova instance politiky s novymi nastavenimi je vytvorena pouzitim metody "
+":meth:`~email.policy.Policy.clone` objektu politiky. ``clone`` bere "
+"libovolny z vyznamoveho kontrolu jako argument klicoveho slova. Jakykoli "
+"ovladaci neuvedeny v volani si zachova sou vychozi hodnotu. Tak muzes "
+"vytvorit politiku, ktera pouziva znaky linesep ``\\r\\n`` takto::"
 
 #: ../../whatsnew/3.3.rst:1241
 msgid "mypolicy = compat32.clone(linesep='\\r\\n')"
-msgstr ""
+msgstr "mypolicy = compat32.clone(linesep='\\r\\n')"
 
 #: ../../whatsnew/3.3.rst:1243
 msgid ""
@@ -2568,10 +2627,19 @@ msgid ""
 "can have custom policy instances for your different cases, and pass those in"
 " when you create the ``generator``."
 msgstr ""
+"Politiky mohou byt pouzivany aby ucinily generovani zprav v formatu "
+"potrebnym pro vasi aplikaci jednodussi. Miste aby si pamatoval specificky "
+"``linesep='\\r\\n'`` na vsech mistech kde volas ``generator``, muzes to "
+"specifikovat jednou, kdyz nastavis politiku pouzitou ``parser`` nebo "
+"``Message``, kterou program pouziva k vytvoreni ``Message`` objektu. Na "
+"druhe strane, pokud potrebujes generovat zpravy v vicerem forme, muzes stale"
+" specifikovat parametry v prisluszny ``generator`` volani. Nebo muzes mit "
+"customni politiky instance pro sve rozdilne pripady a predat ty v kdyz "
+"vytvoris ``generator``."
 
 #: ../../whatsnew/3.3.rst:1255
 msgid "Provisional Policy with New Header API"
-msgstr ""
+msgstr "Zazalobe politika s novym Header API"
 
 #: ../../whatsnew/3.3.rst:1257
 msgid ""
@@ -2584,16 +2652,25 @@ msgid ""
 "changes (up to and including removal of the code) may occur if deemed "
 "necessary by the core developers."
 msgstr ""
+"Zatimco framework politiky je v sobe sam zaslouzeny, hlavnim motivem jeho "
+"zavedeni je umoznit vytvoreni novych politik, ktere implementuji nove funkce"
+" pro balick email zpusobem, ktery udrzuje zpetnou kompatibilitu pro ty, "
+"kteri nepoznivi nove politiky. Protoze nove politiky vkladaji nove API, "
+"vydavame je v Pythonu 3.3 jako :term:`zazalobe politika <provisional "
+"package>`. Zpetne nekompatibilni zmeny (az do a vcetne odstraneni kodu) se "
+"mohou vyskytnout pokud budou shledany potrebnymi jadernem vyvojare."
 
 #: ../../whatsnew/3.3.rst:1265
 msgid ""
 "The new policies are instances of :class:`~email.policy.EmailPolicy`, and "
 "add the following additional controls:"
 msgstr ""
+"Nove politiky jsou instance :class:`~email.policy.EmailPolicy` a pridavaji "
+"nasledujici dalsim kontrolu:"
 
 #: ../../whatsnew/3.3.rst:1271
 msgid "refold_source"
-msgstr ""
+msgstr "refold_source"
 
 #: ../../whatsnew/3.3.rst:1271
 msgid ""
@@ -2603,16 +2680,22 @@ msgid ""
 "line longer than ``max_line_length`` get refolded.  ``none`` means no line "
 "get refolded, and ``all`` means that all lines get refolded."
 msgstr ""
+"Kontroluje, zda hlavicky analyzovane :mod:`~email.parser` jsou prelamovany "
+":mod:`~email.generator`. Muze byt ``none``, ``long`` nebo ``all``. Vychozi "
+"je ``long``, coz znamena, ze zdrojove hlavicky s radkem delsi nez "
+"``max_line_length`` se prelamovaji. ``none`` znamena, ze se zadne radky "
+"neprelamouji a ``all`` znamena, ze se prelamouji vsechny radky."
 
 #: ../../whatsnew/3.3.rst:1280
 msgid "header_factory"
-msgstr ""
+msgstr "header_factory"
 
 #: ../../whatsnew/3.3.rst:1280
 msgid ""
 "A callable that take a ``name`` and ``value`` and produces a custom header "
 "object."
 msgstr ""
+"Vyzvitelna, ktera bere ``name`` a ``value`` a vyraba custom header objekt."
 
 #: ../../whatsnew/3.3.rst:1284
 msgid ""
@@ -2625,6 +2708,13 @@ msgid ""
 "that give you access to the parsed data of the header.  This means you can "
 "now do things like this::"
 msgstr ""
+"``header_factory`` je klic k novym funkcim poskytovanym novymi politikami. "
+"Kdyz se pouzije jedna z novych politik, jakakoli hlavicka ziskana z objektu "
+"``Message`` je objekt vyrobeny ``header_factory`` a kazdy cas kdyz nastavis "
+"hlavicku na ``Message`` se stane objektem vyrobenym ``header_factory``. "
+"Vsechny takove objekty hlavicky maji atribut ``name`` rovny nazvu hlavicky. "
+"Adresa a Date hlavicky maji dodatecne atributy, ktere vam daji pristup k "
+"analyticnym datum hlavicky. To znamena, ze nyni muzes delat veci jako toto::"
 
 #: ../../whatsnew/3.3.rst:1293
 msgid ""
@@ -2647,6 +2737,24 @@ msgid ""
 "To: =?utf-8?q?=C3=89ric?= <foo@example.com>\n"
 "Date: Fri, 25 May 2012 21:44:27 -0400"
 msgstr ""
+">>> m = Message(policy=SMTP)\n"
+">>> m['To'] = 'Éric <foo@example.com>'\n"
+">>> m['to']\n"
+"'Éric <foo@example.com>'\n"
+">>> m['to'].addresses\n"
+"(Address(display_name='Éric', username='foo', domain='example.com'),)\n"
+">>> m['to'].addresses[0].username\n"
+"'foo'\n"
+">>> m['to'].addresses[0].display_name\n"
+"'Éric'\n"
+">>> m['Date'] = email.utils.localtime()\n"
+">>> m['Date'].datetime\n"
+"datetime.datetime(2012, 5, 25, 21, 39, 24, 465484, tzinfo=datetime.timezone(datetime.timedelta(-1, 72000), 'EDT'))\n"
+">>> m['Date']\n"
+"'Fri, 25 May 2012 21:44:27 -0400'\n"
+">>> print(m)\n"
+"To: =?utf-8?q?=C3=89ric?= <foo@example.com>\n"
+"Date: Fri, 25 May 2012 21:44:27 -0400"
 
 #: ../../whatsnew/3.3.rst:1312
 msgid ""
@@ -2656,10 +2764,15 @@ msgid ""
 " deal with the :mod:`email.header` :meth:`~email.header.decode_header` or "
 ":meth:`~email.header.make_header` functions."
 msgstr ""
+"Pozorujete, ze unicode vyzvani jmeno je automaticky kodovano jako ``utf-8`` "
+"kdyz je zprava serializovana, ale kdyz je hlavicka pristupena primo, "
+"dostanes unicode verzi. To eliminuje jakoukoliv potrebu zmapovat se na "
+"funkce :mod:`email.header` :meth:`~email.header.decode_header` nebo "
+":meth:`~email.header.make_header`."
 
 #: ../../whatsnew/3.3.rst:1318
 msgid "You can also create addresses from parts::"
-msgstr ""
+msgstr "Muzes take vytvorit adresy z casti::"
 
 #: ../../whatsnew/3.3.rst:1320
 msgid ""
@@ -2671,10 +2784,17 @@ msgid ""
 "Date: Fri, 25 May 2012 21:44:27 -0400\n"
 "cc: pals: Bob <bob@example.com>, Sally <sally@example.com>;, Bonzo <bonz@laugh.com>"
 msgstr ""
+">>> m['cc'] = [Group('pals', [Address('Bob', 'bob', 'example.com'),\n"
+"...                           Address('Sally', 'sally', 'example.com')]),\n"
+"...            Address('Bonzo', addr_spec='bonz@laugh.com')]\n"
+">>> print(m)\n"
+"To: =?utf-8?q?=C3=89ric?= <foo@example.com>\n"
+"Date: Fri, 25 May 2012 21:44:27 -0400\n"
+"cc: pals: Bob <bob@example.com>, Sally <sally@example.com>;, Bonzo <bonz@laugh.com>"
 
 #: ../../whatsnew/3.3.rst:1328
 msgid "Decoding to unicode is done automatically::"
-msgstr ""
+msgstr "Dekodovani do unicode se provadi automaticky::"
 
 #: ../../whatsnew/3.3.rst:1330
 msgid ""
@@ -2682,6 +2802,9 @@ msgid ""
 ">>> m2['to']\n"
 "'Éric <foo@example.com>'"
 msgstr ""
+">>> m2 = message_from_string(str(m))\n"
+">>> m2['to']\n"
+"'Éric <foo@example.com>'"
 
 #: ../../whatsnew/3.3.rst:1334
 msgid ""
@@ -2689,6 +2812,8 @@ msgid ""
 "attributes of the header objects to access the groups and individual "
 "addresses::"
 msgstr ""
+"Kdyz analizujes zpravy, muzes pouzit ``addresses`` a ``groups`` atributy "
+"objektu hlavicky pro pristup ke skupinam a jednotlivym adresam::"
 
 #: ../../whatsnew/3.3.rst:1338
 msgid ""
@@ -2697,6 +2822,10 @@ msgid ""
 ">>> m2['cc'].groups\n"
 "(Group(display_name='pals', addresses=(Address(display_name='Bob', username='bob', domain='example.com'), Address(display_name='Sally', username='sally', domain='example.com')), Group(display_name=None, addresses=(Address(display_name='Bonzo', username='bonz', domain='laugh.com'),))"
 msgstr ""
+">>> m2['cc'].addresses\n"
+"(Address(display_name='Bob', username='bob', domain='example.com'), Address(display_name='Sally', username='sally', domain='example.com'), Address(display_name='Bonzo', username='bonz', domain='laugh.com'))\n"
+">>> m2['cc'].groups\n"
+"(Group(display_name='pals', addresses=(Address(display_name='Bob', username='bob', domain='example.com'), Address(display_name='Sally', username='sally', domain='example.com')), Group(display_name=None, addresses=(Address(display_name='Bonzo', username='bonz', domain='laugh.com'),))"
 
 #: ../../whatsnew/3.3.rst:1343
 msgid ""
@@ -2705,10 +2834,14 @@ msgid ""
 "email package transparently encodes and decodes the unicode to and from the "
 "RFC standard Content Transfer Encodings."
 msgstr ""
+"Souhrnem, pokud pouzives jednu z novych politik, manipulace hlavicky pracuje"
+" tak jak by mela: vasi aplikace pracuje s unicode retezci a balick email "
+"transparentne koduje a dekoduje unicode z RFC standartniho Content Transfer "
+"Encodings."
 
 #: ../../whatsnew/3.3.rst:1349
 msgid "Other API Changes"
-msgstr ""
+msgstr "Ostatni zmeny API"
 
 #: ../../whatsnew/3.3.rst:1351
 msgid ""
@@ -2716,16 +2849,21 @@ msgid ""
 ":mod:`~email.parser` module to complement "
 ":class:`~email.parser.HeaderParser` and complete the Bytes API."
 msgstr ""
+"Nova :class:`~email.parser.BytesHeaderParser`, pridana do modulu "
+":mod:`~email.parser` pro doplneni :class:`~email.parser.HeaderParser` a "
+"dokonceni Bytes API."
 
 #: ../../whatsnew/3.3.rst:1355
 msgid "New utility functions:"
-msgstr ""
+msgstr "Nove vyuzne funkce:"
 
 #: ../../whatsnew/3.3.rst:1357
 msgid ""
 ":func:`~email.utils.format_datetime`: given a :class:`~datetime.datetime`, "
 "produce a string formatted for use in an email header."
 msgstr ""
+":func:`~email.utils.format_datetime`: dana :class:`~datetime.datetime`, "
+"vytvori retezec formatovany k pouziti v hlavicce emailu."
 
 #: ../../whatsnew/3.3.rst:1360
 msgid ""
@@ -2733,6 +2871,9 @@ msgid ""
 "email header, convert it into an aware :class:`~datetime.datetime`, or a "
 "naive :class:`~datetime.datetime` if the offset is ``-0000``."
 msgstr ""
+":func:`~email.utils.parsedate_to_datetime`: dana datumovy retezec z hlavicky"
+" emailu, konvertuj ho na vedome :class:`~datetime.datetime`, nebo naivni "
+":class:`~datetime.datetime` pokud je offset ``-0000``."
 
 #: ../../whatsnew/3.3.rst:1364
 msgid ""
@@ -2742,10 +2883,15 @@ msgid ""
 "converts it into an aware :class:`~datetime.datetime` using the local "
 ":class:`~datetime.timezone`."
 msgstr ""
+":func:`~email.utils.localtime`: Bez argumentu, vraci aktualni lokalni cas "
+"jako vedome :class:`~datetime.datetime` pouzitim lokalni "
+":class:`~datetime.timezone`. Dana vedome :class:`~datetime.datetime`, "
+"konvertuj to na vedome :class:`~datetime.datetime` pouzitim lokalni "
+":class:`~datetime.timezone`."
 
 #: ../../whatsnew/3.3.rst:1372
 msgid "ftplib"
-msgstr ""
+msgstr "ftplib"
 
 #: ../../whatsnew/3.3.rst:1374
 msgid ""
@@ -2754,6 +2900,10 @@ msgid ""
 "when creating the outgoing socket.  (Contributed by Giampaolo Rodolà in "
 ":issue:`8594`.)"
 msgstr ""
+":class:`ftplib.FTP` nyni prijima parametr ``source_address`` klicoveho slova"
+" pro specifikaci ``(host, port)`` k pouziti jako source adresa ve volani "
+"bind pri vytvareni odchozim socketu. (Prispel Giampaolo Rodola v "
+":issue:`8594`.)"
 
 #: ../../whatsnew/3.3.rst:1379
 msgid ""
@@ -2763,6 +2913,11 @@ msgid ""
 "to handle NAT with non-secure FTP without opening fixed ports.  (Contributed"
 " by Giampaolo Rodolà in :issue:`12139`.)"
 msgstr ""
+"Trida :class:`~ftplib.FTP_TLS` nyni poskytuje novou funkci "
+":func:`~ftplib.FTP_TLS.ccc` pro navrh kanalu ovladani zpet do plaintext. To "
+"muze byt uzitecne k vyuziti firewallu, ktery vi, jak pouzivat NAT s ne-"
+"secure FTP bez otevreni fixnich portu. (Prispel Giampaolo Rodola v "
+":issue:`12139`.)"
 
 #: ../../whatsnew/3.3.rst:1385
 msgid ""
@@ -2771,10 +2926,13 @@ msgid ""
 ":meth:`ftplib.FTP.dir`.  (Contributed by Giampaolo Rodolà in "
 ":issue:`11072`.)"
 msgstr ""
+"Pridana metoda :meth:`ftplib.FTP.mlsd`, ktera poskytuje parse vytvorenym "
+"formatem vypisu adresare a zastarala :meth:`ftplib.FTP.nlst` a "
+":meth:`ftplib.FTP.dir`. (Prispel Giampaolo Rodola v :issue:`11072`.)"
 
 #: ../../whatsnew/3.3.rst:1391
 msgid "functools"
-msgstr ""
+msgstr "functools"
 
 #: ../../whatsnew/3.3.rst:1393
 msgid ""
@@ -2783,20 +2941,26 @@ msgid ""
 "different types that compare equal in separate cache slots.  (Contributed by"
 " Raymond Hettinger in :issue:`13227`.)"
 msgstr ""
+"Dekorator :func:`functools.lru_cache` nyni prijima parametr ``typed`` "
+"klicoveho slova (ktery se defaultne na ``False`` aby zajistil, ze cacuje "
+"hodnoty rozdilnych typu, ktere se rovnaji v oddelene cache sloty. (Prispel "
+"Raymond Hettinger v :issue:`13227`.)"
 
 #: ../../whatsnew/3.3.rst:1400
 msgid "gc"
-msgstr ""
+msgstr "gc"
 
 #: ../../whatsnew/3.3.rst:1402
 msgid ""
 "It is now possible to register callbacks invoked by the garbage collector "
 "before and after collection using the new :data:`~gc.callbacks` list."
 msgstr ""
+"Je nyni mozne registrovat callbacks vyvolvane garbage collektorem pred a po "
+"shromadovani pouzitim noveho seznamu :data:`~gc.callbacks`."
 
 #: ../../whatsnew/3.3.rst:1407
 msgid "hmac"
-msgstr ""
+msgstr "hmac"
 
 #: ../../whatsnew/3.3.rst:1409
 msgid ""
@@ -2804,10 +2968,13 @@ msgid ""
 "channel attacks on digests through timing analysis.  (Contributed by Nick "
 "Coghlan and Christian Heimes in :issue:`15061`.)"
 msgstr ""
+"Nova funkce :func:`~hmac.compare_digest` byla pridana k zabraneni side "
+"channel utoku na digest skrz analyzu casovani. (Prispel Nick Coghlan a "
+"Christian Heimes v :issue:`15061`.)"
 
 #: ../../whatsnew/3.3.rst:1415
 msgid "http"
-msgstr ""
+msgstr "http"
 
 #: ../../whatsnew/3.3.rst:1417
 msgid ""
@@ -2818,12 +2985,20 @@ msgid ""
 " to directly manage when the accumulated headers are sent. (Contributed by "
 "Andrew Schaaf in :issue:`3709`.)"
 msgstr ""
+":class:`http.server.BaseHTTPRequestHandler` nyni ukladá hlavicky a zapisuje "
+"je vsechny najednou, kdyz je volana "
+":meth:`~http.server.BaseHTTPRequestHandler.end_headers`. Nova metoda "
+":meth:`~http.server.BaseHTTPRequestHandler.flush_headers` muze byt pouzita "
+"pro primenejsi rihzu kdy jsou kumulovane hlavicky poslany. (Prispel Andrew "
+"Schaaf v :issue:`3709`.)"
 
 #: ../../whatsnew/3.3.rst:1423
 msgid ""
 ":class:`http.server` now produces valid ``HTML 4.01 strict`` output. "
 "(Contributed by Ezio Melotti in :issue:`13295`.)"
 msgstr ""
+":class:`http.server` nyni vytvari validni ``HTML 4.01 strict`` vystup. "
+"(Prispel Ezio Melotti v :issue:`13295`.)"
 
 #: ../../whatsnew/3.3.rst:1426
 msgid ""
@@ -2832,10 +3007,13 @@ msgid ""
 "used as an :class:`io.RawIOBase` class.  (Contributed by John Kuhn in "
 ":issue:`13464`.)"
 msgstr ""
+":class:`http.client.HTTPResponse` nyni ma metodu "
+":meth:`~http.client.HTTPResponse.readinto`, coz znamena, ze muze byt pouzita"
+" jako :class:`io.RawIOBase` trida. (Prispel John Kuhn v :issue:`13464`.)"
 
 #: ../../whatsnew/3.3.rst:1433
 msgid "html"
-msgstr ""
+msgstr "html"
 
 #: ../../whatsnew/3.3.rst:1435
 msgid ""
@@ -2849,6 +3027,15 @@ msgid ""
 ":issue:`13357`, :issue:`12629`, :issue:`1200313`, :issue:`670664`, "
 ":issue:`13273`, :issue:`12888`, :issue:`7311`.)"
 msgstr ""
+":class:`html.parser.HTMLParser` je nyni schopen analyzovat rozbitou znacku "
+"bez vyhozeni chyb, proto je argument *strict* konstruktoru a vyjimka "
+":exc:`!HTMLParseError` nyni zastarala. Schopnost analyzovat rozbitou znacku "
+"je vysledkem poctu oprav chyb, ktere jsou take dostupne na posledni oprave "
+"vydani Pythonu 2.7/3.2. (Prispel Ezio Melotti v :issue:`15114` a "
+":issue:`14538`, :issue:`13993`, :issue:`13960`, :issue:`13358`, "
+":issue:`1745761`, :issue:`755670`, :issue:`13357`, :issue:`12629`, "
+":issue:`1200313`, :issue:`670664`, :issue:`13273`, :issue:`12888`, "
+":issue:`7311`.)"
 
 #: ../../whatsnew/3.3.rst:1445
 msgid ""
@@ -2858,24 +3045,31 @@ msgid ""
 "  The dictionary is now also used by :class:`~html.parser.HTMLParser`.  "
 "(Contributed by Ezio Melotti in :issue:`11113` and :issue:`15156`.)"
 msgstr ""
+"Novy slovnik :data:`~html.entities.html5`, ktery mapuje pojmenovane znakove "
+"odkazy HTML5 na ekvivalentni Unicode znak (znaky) (nap. ``html5['gt;'] == "
+"'>'``) byl pridan do modulu :mod:`html.entities`. Slovnik je nyni take "
+"pouzivan :class:`~html.parser.HTMLParser`. (Prispel Ezio Melotti v "
+":issue:`11113` a :issue:`15156`.)"
 
 #: ../../whatsnew/3.3.rst:1453
 msgid "imaplib"
-msgstr ""
+msgstr "imaplib"
 
 #: ../../whatsnew/3.3.rst:1455
 msgid ""
 "The :class:`~imaplib.IMAP4_SSL` constructor now accepts an SSLContext "
 "parameter to control parameters of the secure channel."
 msgstr ""
+"Konstruktor :class:`~imaplib.IMAP4_SSL` nyni prijima parametr SSLContext pro"
+" kontrolu parametru bezpecneho kanalu."
 
 #: ../../whatsnew/3.3.rst:1458
 msgid "(Contributed by Sijin Joseph in :issue:`8808`.)"
-msgstr ""
+msgstr "(Prispel Sijin Joseph v :issue:`8808`.)"
 
 #: ../../whatsnew/3.3.rst:1462
 msgid "inspect"
-msgstr ""
+msgstr "inspect"
 
 #: ../../whatsnew/3.3.rst:1464
 msgid ""
@@ -2884,10 +3078,14 @@ msgid ""
 "and where those names were resolved, making it easier to verify correct "
 "internal state when testing code that relies on stateful closures."
 msgstr ""
+"Nova funkce :func:`~inspect.getclosurevars` byla pridana. Tato funkce "
+"hlasuje aktualni vazbu vsech jmen odkazovanych z tela funkce a kde byla tato"
+" jmena vyresena, cinit je snazsim overit spravny vnitrnini stav pri "
+"testovani kodu, ktery se spolehá na stavove zavery."
 
 #: ../../whatsnew/3.3.rst:1469
 msgid "(Contributed by Meador Inge and Nick Coghlan in :issue:`13062`.)"
-msgstr ""
+msgstr "(Prispel Meador Inge a Nick Coghlan v :issue:`13062`.)"
 
 #: ../../whatsnew/3.3.rst:1471
 msgid ""
@@ -2896,14 +3094,17 @@ msgid ""
 "stack frame, making it easier to verify correct internal state when testing "
 "generators."
 msgstr ""
+"Nova funkce :func:`~inspect.getgeneratorlocals` byla pridana. Tato funkce "
+"hlasuje aktualni vazbu lokalnich promennych v stack frame generatoru, cinit "
+"je snazsim overit spravny vnitrnini stav pri testovani generatoru."
 
 #: ../../whatsnew/3.3.rst:1476
 msgid "(Contributed by Meador Inge in :issue:`15153`.)"
-msgstr ""
+msgstr "(Prispel Meador Inge v :issue:`15153`.)"
 
 #: ../../whatsnew/3.3.rst:1479
 msgid "io"
-msgstr ""
+msgstr "io"
 
 #: ../../whatsnew/3.3.rst:1481
 msgid ""
@@ -2911,10 +3112,13 @@ msgid ""
 "exclusively create a new file, and raise a :exc:`FileExistsError` if the "
 "file already exists. It is based on the C11 'x' mode to fopen()."
 msgstr ""
+"Funkce :func:`~io.open` ma novy rezim ``'x'`` ktery muze byt pouzit k "
+"vylucne vytvoreni noveho souboru a vyhovit :exc:`FileExistsError` pokud "
+"soubor jiz existuje. Je zalozen na C11 'x' mode na fopen()."
 
 #: ../../whatsnew/3.3.rst:1485
 msgid "(Contributed by David Townshend in :issue:`12760`.)"
-msgstr ""
+msgstr "(Prispel David Townshend v :issue:`12760`.)"
 
 #: ../../whatsnew/3.3.rst:1487
 msgid ""
@@ -2924,20 +3128,27 @@ msgid ""
 ":class:`~io.TextIOWrapper` object is immediately handled to its underlying "
 "binary buffer."
 msgstr ""
+"Konstruktor :class:`~io.TextIOWrapper` tridy ma novy *write_through* "
+"volitelny argument. Pokud je *write_through* ``True`` volani :meth:`!write` "
+"jsou zarucena nema byt ukladana: jakakoli data zapsana na "
+":class:`~io.TextIOWrapper` objekt je okamzite zpracovana jeho podkladni "
+"binarni buffer."
 
 #: ../../whatsnew/3.3.rst:1495
 msgid "itertools"
-msgstr ""
+msgstr "itertools"
 
 #: ../../whatsnew/3.3.rst:1497
 msgid ""
 ":func:`~itertools.accumulate` now takes an optional ``func`` argument for "
 "providing a user-supplied binary function."
 msgstr ""
+":func:`~itertools.accumulate` nyni bere volitelny ``func`` argument pro "
+"poskytovani uzivatele-dodana binarnni funkce."
 
 #: ../../whatsnew/3.3.rst:1502
 msgid "logging"
-msgstr ""
+msgstr "logging"
 
 #: ../../whatsnew/3.3.rst:1504
 msgid ""
@@ -2945,6 +3156,8 @@ msgid ""
 "``handlers`` argument taking an iterable of handlers to be added to the root"
 " logger."
 msgstr ""
+"Funkce :func:`~logging.basicConfig` nyni podporuje volitelny ``handlers`` "
+"argument berajici iterator manipulatoru, aby byli pridani do root logger."
 
 #: ../../whatsnew/3.3.rst:1507
 msgid ""
@@ -2953,24 +3166,30 @@ msgid ""
 "of the ``NUL`` (``\\000``) byte to syslog records, since for some daemons it"
 " is required while for others it is passed through to the log."
 msgstr ""
+"Atribut na urovni tridy :attr:`!append_nul` byl pridan k "
+":class:`~logging.handlers.SysLogHandler` aby dovolil kontrolu pripojovani "
+"``NUL`` (``\\000``) byte na syslog zaznamy, protoze pro nektere daemon to je"
+" vyzadovane zatimco pro ostatni je prochazeno do logy."
 
 #: ../../whatsnew/3.3.rst:1515
 msgid "math"
-msgstr ""
+msgstr "math"
 
 #: ../../whatsnew/3.3.rst:1517
 msgid ""
 "The :mod:`math` module has a new function, :func:`~math.log2`,  which "
 "returns the base-2 logarithm of *x*."
 msgstr ""
+"Modul :mod:`math` ma novou funkci :func:`~math.log2`, ktera vraci base-2 "
+"logaritmus *x*."
 
 #: ../../whatsnew/3.3.rst:1520
 msgid "(Written by Mark Dickinson in :issue:`11888`.)"
-msgstr ""
+msgstr "(Napsano Mark Dickinson v :issue:`11888`.)"
 
 #: ../../whatsnew/3.3.rst:1524
 msgid "mmap"
-msgstr ""
+msgstr "mmap"
 
 #: ../../whatsnew/3.3.rst:1526
 msgid ""
@@ -2979,10 +3198,14 @@ msgid ""
 "returns the bytes from the current file position to the end of the mapping."
 "  (Contributed by Petri Lehtinen in :issue:`12021`.)"
 msgstr ""
+"Metoda :meth:`~mmap.mmap.read` je nyni vice kompatibilni s ostatnimi objekty"
+" podobnymi souborům: pokud je argument vynechan nebo specifikovan jako "
+"``None``, vraci byty z aktualni pozice souboru do konce mapovani. (Prispel "
+"Petri Lehtinen v :issue:`12021`.)"
 
 #: ../../whatsnew/3.3.rst:1533
 msgid "multiprocessing"
-msgstr ""
+msgstr "multiprocessing"
 
 #: ../../whatsnew/3.3.rst:1535
 msgid ""
@@ -2990,6 +3213,9 @@ msgid ""
 "multiple objects (such as connections, sockets and pipes) with a timeout. "
 "(Contributed by Richard Oudkerk in :issue:`12328`.)"
 msgstr ""
+"Nova funkce :func:`multiprocessing.connection.wait` umoznuje hlasovani "
+"viceho objektu (jako jsou spojeni, sockety a pipe) s timeout. (Prispel "
+"Richard Oudkerk v :issue:`12328`.)"
 
 #: ../../whatsnew/3.3.rst:1539
 msgid ""
@@ -2997,6 +3223,9 @@ msgid ""
 "transferred over multiprocessing connections. (Contributed by Richard "
 "Oudkerk in :issue:`4892`.)"
 msgstr ""
+"Objekty :class:`multiprocessing.connection.Connection` mohou byt nyni "
+"preneseny pres multiprocessing spojeni. (Prispel Richard Oudkerk v "
+":issue:`4892`.)"
 
 #: ../../whatsnew/3.3.rst:1543
 msgid ""
@@ -3004,6 +3233,9 @@ msgid ""
 "to override the default behavior of inheriting the ``daemon`` flag from the "
 "parent process (:issue:`6064`)."
 msgstr ""
+":class:`multiprocessing.Process` nyni prijima ``daemon`` argument klicoveho "
+"slova, aby prepsal vychozi chovanis dedicne ``daemon`` vlajku z procesu "
+"parenta (:issue:`6064`)."
 
 #: ../../whatsnew/3.3.rst:1547
 msgid ""
@@ -3012,6 +3244,9 @@ msgid ""
 " the appropriate OS primitives (for example, :mod:`select` on posix "
 "systems)."
 msgstr ""
+"Novy atribut :data:`multiprocessing.Process.sentinel` umoznuje programu "
+"cekat na viceho :class:`~multiprocessing.Process` objektu najednou pouzitim "
+"vhodnych OS primitiv (napriklad :mod:`select` na posix systemech)."
 
 #: ../../whatsnew/3.3.rst:1552
 msgid ""
@@ -3022,10 +3257,16 @@ msgid ""
 ":meth:`~multiprocessing.pool.Pool.map_async` functions.  (Contributed by "
 "Hynek Schlawack in :issue:`12708`.)"
 msgstr ""
+"Nove metody :meth:`multiprocessing.pool.Pool.starmap` a "
+":meth:`~multiprocessing.pool.Pool.starmap_async` poskytuji "
+":func:`itertools.starmap` ekvivalenty do existujicich "
+":meth:`multiprocessing.pool.Pool.map` a "
+":meth:`~multiprocessing.pool.Pool.map_async` funkci. (Prispel Hynek "
+"Schlawack v :issue:`12708`.)"
 
 #: ../../whatsnew/3.3.rst:1561
 msgid "nntplib"
-msgstr ""
+msgstr "nntplib"
 
 #: ../../whatsnew/3.3.rst:1563
 msgid ""
@@ -3033,6 +3274,9 @@ msgid ""
 "protocol to unconditionally consume :exc:`socket.error` exceptions and to "
 "close the NNTP connection when done::"
 msgstr ""
+"Trida :class:`!nntplib.NNTP` nyni podporuje protokol spravce kontextu k "
+"bezpodminem spotRebe :exc:`socket.error` vyjimek a k uzavreni NNTP spojeni "
+"kdyz je hotovo::"
 
 #: ../../whatsnew/3.3.rst:1567
 msgid ""
@@ -3043,14 +3287,20 @@ msgid ""
 "('211 1755 1 1755 gmane.comp.python.committers', 1755, 1, 1755, 'gmane.comp.python.committers')\n"
 ">>>"
 msgstr ""
+">>> from nntplib import NNTP\n"
+">>> with NNTP('news.gmane.org') as n:\n"
+"...     n.group('gmane.comp.python.committers')\n"
+"...\n"
+"('211 1755 1 1755 gmane.comp.python.committers', 1755, 1, 1755, 'gmane.comp.python.committers')\n"
+">>>"
 
 #: ../../whatsnew/3.3.rst:1574
 msgid "(Contributed by Giampaolo Rodolà in :issue:`9795`.)"
-msgstr ""
+msgstr "(Prispel Giampaolo Rodola v :issue:`9795`.)"
 
 #: ../../whatsnew/3.3.rst:1578
 msgid "os"
-msgstr ""
+msgstr "os"
 
 #: ../../whatsnew/3.3.rst:1580
 msgid ""
@@ -3059,6 +3309,10 @@ msgid ""
 ":const:`~os.O_NONBLOCK` flags set atomically. This is especially useful to "
 "avoid race conditions in multi-threaded programs."
 msgstr ""
+"Modul :mod:`os` ma novou funkci :func:`~os.pipe2`, ktera umoznuje vytvoreni "
+"pipe s vlajkami :const:`~os.O_CLOEXEC` nebo :const:`~os.O_NONBLOCK` "
+"nastavenyma atomove. To je obzvlaste uzitecne aby se vyhnulo race conditions"
+" v multi-threaded programech."
 
 #: ../../whatsnew/3.3.rst:1585
 msgid ""
@@ -3070,11 +3324,19 @@ msgid ""
 " can be used to efficiently copy data from a file on disk to a network "
 "socket, e.g. for downloading a file."
 msgstr ""
+"Modul :mod:`os` ma novou funkci :func:`~os.sendfile`, ktera poskytuje "
+"efektivni \"zero-copy\" zpusob pro kopirovani dat z jednoho souboru (nebo "
+"socket) deskriptoru na dalsi. Fraze \"zero-copy\" odkazuje na skutecnost, ze"
+" vsechny kopirovanim dat mezi dvema deskriptory je udelano zcela jadrem bez "
+"kopirovanim dat do userspace bufferu. :func:`~os.sendfile` muze byt pouzita "
+"pro efektivne kopirovani dat ze souboru na disku na sitovy socket, napr. pro"
+" stazeni souboru."
 
 #: ../../whatsnew/3.3.rst:1593
 msgid ""
 "(Patch submitted by Ross Lagerwall and Giampaolo Rodolà in :issue:`10882`.)"
 msgstr ""
+"(Patch predlozeny Ross Lagerwall a Giampaolo Rodola v :issue:`10882`.)"
 
 #: ../../whatsnew/3.3.rst:1595
 msgid ""
@@ -3084,6 +3346,11 @@ msgid ""
 "functions and introduces new functions to work on file descriptors "
 "(:issue:`4761`, :issue:`10755` and :issue:`14626`)."
 msgstr ""
+"Aby se vyhnuly race conditions jako symlink utoky a problemy s docasnym "
+"soubory a adresarem, je spolehlivejsi (a take rychlejsi) manipulace souborem"
+" deskriptory miste jmen souboru. Python 3.3 vylepsuje existujici funkce a "
+"uvadi nove funkce pro praci s deskriptory souboru (:issue:`4761`, "
+":issue:`10755` a :issue:`14626`)."
 
 #: ../../whatsnew/3.3.rst:1601
 msgid ""
@@ -3091,6 +3358,9 @@ msgid ""
 ":func:`~os.walk` except that it also yields file descriptors referring to "
 "the directories visited. This is especially useful to avoid symlink races."
 msgstr ""
+"Modul :mod:`os` ma novou funkci :func:`~os.fwalk` podobnou :func:`~os.walk` "
+"s vyjimkou, ze take vraci deskriptory souboru odkazujici na navstevovane "
+"adresare. To je obzvlaste uzitecne aby se vyhnuly symlink races."
 
 #: ../../whatsnew/3.3.rst:1605
 msgid ""
@@ -3106,6 +3376,16 @@ msgid ""
 "parameters can be checked via the sets :data:`os.supports_dir_fd` and "
 ":data:`os.supports_follow_symlinks`."
 msgstr ""
+"Nasledujici funkce dostaly nove volitelne *dir_fd* (:ref:`cesty relativni k "
+"deskriptoru adresare <dir_fd>`) a/nebo *follow_symlinks* (:ref:`nesledovani "
+"symlinku <follow_symlinks>`): :func:`~os.access`, :func:`~os.chflags`, "
+":func:`~os.chmod`, :func:`~os.chown`, :func:`~os.link`, :func:`~os.lstat`, "
+":func:`~os.mkdir`, :func:`~os.mkfifo`, :func:`~os.mknod`, :func:`~os.open`, "
+":func:`~os.readlink`, :func:`~os.remove`, :func:`~os.rename`, "
+":func:`~os.replace`, :func:`~os.rmdir`, :func:`~os.stat`, "
+":func:`~os.symlink`, :func:`~os.unlink`, :func:`~os.utime`. Podpora "
+"platformy pro pouziti techto parametru muze byt zkontrolovana pomoci sady "
+":data:`os.supports_dir_fd` a :data:`os.supports_follow_symlinks`."
 
 #: ../../whatsnew/3.3.rst:1616
 msgid ""
@@ -3116,6 +3396,12 @@ msgid ""
 ":func:`~os.utime`.  Platform support for this can be checked via the "
 ":data:`os.supports_fd` set."
 msgstr ""
+"Nasledujici funkce nyni podporuji deskriptor souboru pro jejich argumentu "
+"cesty: :func:`~os.chdir`, :func:`~os.chmod`, :func:`~os.chown`, "
+":func:`~os.execve`, :func:`~os.listdir`, :func:`~os.pathconf`, "
+":func:`~os.path.exists`, :func:`~os.stat`, :func:`~os.statvfs`, "
+":func:`~os.utime`. Podporu platformy pro to muze byt zkontrolovana pomoci "
+"sady :data:`os.supports_fd`."
 
 #: ../../whatsnew/3.3.rst:1622
 msgid ""
@@ -3124,6 +3410,10 @@ msgid ""
 "check. Platform support for this can be checked via the "
 ":data:`~os.supports_effective_ids` set."
 msgstr ""
+":func:`~os.access` prijima ``effective_ids`` argument klicoveho slova pro "
+"zapnuti pouziti efektivni uid/gid spise nez realny uid/gid v kontrole "
+"pristupu. Podpora platformy pro to muze byt zkontrolovana pomoci sady "
+":data:`~os.supports_effective_ids`."
 
 #: ../../whatsnew/3.3.rst:1627
 msgid ""
@@ -3132,10 +3422,14 @@ msgid ""
 "niceness/priority in a fashion similar to :func:`os.nice` but extended to "
 "all processes instead of just the current one."
 msgstr ""
+"Modul :mod:`os` ma dve nove funkce: :func:`~os.getpriority` a "
+":func:`~os.setpriority`. Mohou byt pouzivany k ziskani nebo nastaveni "
+"nice/priority procesu v zpusobu podobnem :func:`os.nice` ale rozsireny na "
+"vsechny procesy miste jen aktualniho."
 
 #: ../../whatsnew/3.3.rst:1632
 msgid "(Patch submitted by Giampaolo Rodolà in :issue:`10784`.)"
-msgstr ""
+msgstr "(Patch predlozeny Giampaolo Rodola v :issue:`10784`.)"
 
 #: ../../whatsnew/3.3.rst:1634
 msgid ""
@@ -3144,6 +3438,10 @@ msgid ""
 "destination file is overwritten under POSIX, but raises an error under "
 "Windows. (Contributed by Antoine Pitrou in :issue:`8828`.)"
 msgstr ""
+"Nova funkce :func:`os.replace` dovoluje cross-platform preimenovani souboru "
+"s prepisy cile. S :func:`os.rename`, existujici soubor cile je prepsan pod "
+"POSIX, ale vyvola chybu pod Windows. (Prispel Antoine Pitrou v "
+":issue:`8828`.)"
 
 #: ../../whatsnew/3.3.rst:1640
 msgid ""
@@ -3153,6 +3451,10 @@ msgid ""
 "with nanosecond precision.  (Contributed by Larry Hastings in "
 ":issue:`14127`.)"
 msgstr ""
+"Rodina stat funkci (:func:`~os.stat`, :func:`~os.fstat` a :func:`~os.lstat`)"
+" nyni podporuji cteni cas souboru s presnosti nanosekundy. Symetricky, "
+":func:`~os.utime` muze nyni psani cas souboru s presnosti nanosekundy. "
+"(Prispel Larry Hastings v :issue:`14127`.)"
 
 #: ../../whatsnew/3.3.rst:1646
 msgid ""
@@ -3161,6 +3463,10 @@ msgid ""
 ":func:`shutil.get_terminal_size`. (Contributed by Zbigniew Jędrzejewski-"
 "Szmek in :issue:`13609`.)"
 msgstr ""
+"Nova funkce :func:`os.get_terminal_size` se ptá na velikost terminalu "
+"pripojeneho k deskriptoru souboru. Viz take "
+":func:`shutil.get_terminal_size`. (Prispel Zbigniew Jedrzejewski-Szmek v "
+":issue:`13609`.)"
 
 #: ../../whatsnew/3.3.rst:1653
 msgid ""
@@ -3168,6 +3474,9 @@ msgid ""
 ":func:`~os.getxattr`, :func:`~os.listxattr`, :func:`~os.removexattr`, "
 ":func:`~os.setxattr`."
 msgstr ""
+"Nove funkce k podpore Linux rozsirenemu atributu (:issue:`12720`): "
+":func:`~os.getxattr`, :func:`~os.listxattr`, :func:`~os.removexattr`, "
+":func:`~os.setxattr`."
 
 #: ../../whatsnew/3.3.rst:1657
 msgid ""
@@ -3179,89 +3488,119 @@ msgid ""
 ":func:`~os.sched_setaffinity`, :func:`~os.sched_setparam`, "
 ":func:`~os.sched_setscheduler`, :func:`~os.sched_yield`,"
 msgstr ""
+"Nove rozhrani pro scheduler. Tyto funkce ridi jak proces je alokan CPU cas "
+"operacnim systemem. Nove funkce: :func:`~os.sched_get_priority_max`, "
+":func:`~os.sched_get_priority_min`, :func:`~os.sched_getaffinity`, "
+":func:`~os.sched_getparam`, :func:`~os.sched_getscheduler`, "
+":func:`~os.sched_rr_get_interval`, :func:`~os.sched_setaffinity`, "
+":func:`~os.sched_setparam`, :func:`~os.sched_setscheduler`, "
+":func:`~os.sched_yield`,"
 
 #: ../../whatsnew/3.3.rst:1666
 msgid "New functions to control the file system:"
-msgstr ""
+msgstr "Nove funkce pro kontrolu souboroveho systemu:"
 
 #: ../../whatsnew/3.3.rst:1668
 msgid ""
 ":func:`~os.posix_fadvise`: Announces an intention to access data in a "
 "specific pattern thus allowing the kernel to make optimizations."
 msgstr ""
+":func:`~os.posix_fadvise`: Oznamuje zameri pristupovat data v konkretnim "
+"vzoru, tedy umoznuje jadru provest optimizace."
 
 #: ../../whatsnew/3.3.rst:1670
 msgid ""
 ":func:`~os.posix_fallocate`: Ensures that enough disk space is allocated for"
 " a file."
 msgstr ""
+":func:`~os.posix_fallocate`: Zajistuje, ze dostatek diskovych prostor je "
+"alokan pro soubor."
 
 #: ../../whatsnew/3.3.rst:1672
 msgid ":func:`~os.sync`: Force write of everything to disk."
-msgstr ""
+msgstr ":func:`~os.sync`: Force zapis vsechno na disk."
 
 #: ../../whatsnew/3.3.rst:1674
 msgid "Additional new  posix functions:"
-msgstr ""
+msgstr "Dodatecne nove posix funkce:"
 
 #: ../../whatsnew/3.3.rst:1676
 msgid ""
 ":func:`~os.lockf`: Apply, test or remove a POSIX lock on an open file "
 "descriptor."
 msgstr ""
+":func:`~os.lockf`: Aplikovat, testovat nebo odstranit POSIX zamek na "
+"otevrenem deskriptoru souboru."
 
 #: ../../whatsnew/3.3.rst:1677
 msgid ""
 ":func:`~os.pread`: Read from a file descriptor at an offset, the file offset"
 " remains unchanged."
 msgstr ""
+":func:`~os.pread`: Cist ze deskriptoru souboru v offsetu, posun souboru "
+"zustan nezmeneny."
 
 #: ../../whatsnew/3.3.rst:1679
 msgid ""
 ":func:`~os.pwrite`: Write to a file descriptor from an offset, leaving the "
 "file offset unchanged."
 msgstr ""
+":func:`~os.pwrite`: Psani do deskriptoru souboru z offsetu, zanechani posunu"
+" souboru nezmeneny."
 
 #: ../../whatsnew/3.3.rst:1681
 msgid ""
 ":func:`~os.readv`: Read from a file descriptor into a number of writable "
 "buffers."
 msgstr ""
+":func:`~os.readv`: Cist ze deskriptoru souboru do poctu zapisovatelnych "
+"bufferu."
 
 #: ../../whatsnew/3.3.rst:1682
 msgid ""
 ":func:`~os.truncate`: Truncate the file corresponding to *path*, so that it "
 "is at most *length* bytes in size."
 msgstr ""
+":func:`~os.truncate`: Zkratit soubor odpovajici *path*, aby byl nejvyse "
+"*length* bajtu na velikost."
 
 #: ../../whatsnew/3.3.rst:1684
 msgid ""
 ":func:`~os.waitid`: Wait for the completion of one or more child processes."
 msgstr ""
+":func:`~os.waitid`: Cekej na dokonceni jednoho nebo vice deti procesy."
 
 #: ../../whatsnew/3.3.rst:1685
 msgid ""
 ":func:`~os.writev`: Write the contents of *buffers* to a file descriptor, "
 "where *buffers* is an arbitrary sequence of buffers."
 msgstr ""
+":func:`~os.writev`: Zapisat obsah *buffers* do deskriptoru souboru, kde "
+"*buffers* je libovolna sekvence bufferu."
 
 #: ../../whatsnew/3.3.rst:1687
 msgid ""
 ":func:`~os.getgrouplist` (:issue:`9344`): Return list of group ids that "
 "specified user belongs to."
 msgstr ""
+":func:`~os.getgrouplist` (:issue:`9344`): Vraci seznam ID skupin, ktere se "
+"na zadany uzivatel patri."
 
 #: ../../whatsnew/3.3.rst:1690
 msgid ""
 ":func:`~os.times` and :func:`~os.uname`: Return type changed from a tuple to"
 " a tuple-like object with named attributes."
 msgstr ""
+":func:`~os.times` a :func:`~os.uname`: Typ vraceni se zmenil z tuple na "
+"tuple-like objekt s pojmenovanyma atributy."
 
 #: ../../whatsnew/3.3.rst:1693
 msgid ""
 "Some platforms now support additional constants for the :func:`~os.lseek` "
 "function, such as ``os.SEEK_HOLE`` and ``os.SEEK_DATA``."
 msgstr ""
+"Nektere platformy nyni podporuji dodatecne konstanty pro funkci "
+":func:`~os.lseek`, jako ``os.SEEK_HOLE`` a ``os.SEEK_DATA``."
 
 #: ../../whatsnew/3.3.rst:1696
 msgid ""
@@ -3273,16 +3612,26 @@ msgid ""
 "supersede the similar constants defined in :mod:`ctypes` and :mod:`!DLFCN`."
 "  (Contributed by Victor Stinner in :issue:`13226`.)"
 msgstr ""
+"Nove konstanty :const:`~os.RTLD_LAZY`, :const:`~os.RTLD_NOW`, "
+":const:`~os.RTLD_GLOBAL`, :const:`~os.RTLD_LOCAL`, "
+":const:`~os.RTLD_NODELETE`, :const:`~os.RTLD_NOLOAD` a "
+":const:`~os.RTLD_DEEPBIND` jsou dostupne na platformach, ktere je podporuji."
+" Ty jsou k pouziti s funkcí :func:`sys.setdlopenflags`, a nahrazuji podobne "
+"konstanty definovane v :mod:`ctypes` a :mod:`!DLFCN`. (Prispel Victor "
+"Stinner v :issue:`13226`.)"
 
 #: ../../whatsnew/3.3.rst:1704
 msgid ""
 ":func:`os.symlink` now accepts (and ignores) the ``target_is_directory`` "
 "keyword argument on non-Windows platforms, to ease cross-platform support."
 msgstr ""
+":func:`os.symlink` nyni prijima (a ignoruje) ``target_is_directory`` "
+"argument klicoveho slova na non-Windows platformach, aby usnadnil cross-"
+"platform podporu."
 
 #: ../../whatsnew/3.3.rst:1709
 msgid "pdb"
-msgstr ""
+msgstr "pdb"
 
 #: ../../whatsnew/3.3.rst:1711
 msgid ""
@@ -3290,14 +3639,17 @@ msgid ""
 "arguments.  For example, for the ``break`` command, function and file names "
 "are completed."
 msgstr ""
+"Tab-doplnovani je nyni dostupne ne pouze pro jmena prikazu, ale take jejich "
+"argumenty. Napriklad pro prikaz ``break``, jmena funkci a souboru jsou "
+"doplnovana."
 
 #: ../../whatsnew/3.3.rst:1715
 msgid "(Contributed by Georg Brandl in :issue:`14210`)"
-msgstr ""
+msgstr "(Prispel Georg Brandl v :issue:`14210`)"
 
 #: ../../whatsnew/3.3.rst:1719
 msgid "pickle"
-msgstr ""
+msgstr "pickle"
 
 #: ../../whatsnew/3.3.rst:1721
 msgid ""
@@ -3305,14 +3657,17 @@ msgid ""
 ":attr:`~pickle.Pickler.dispatch_table` attribute allowing per-pickler "
 "reduction functions to be set."
 msgstr ""
+"Objekty :class:`pickle.Pickler` nyni maji volitelny atribut "
+":attr:`~pickle.Pickler.dispatch_table` umoznujici per-pickler redukce funkci"
+" byt nastaveny."
 
 #: ../../whatsnew/3.3.rst:1725
 msgid "(Contributed by Richard Oudkerk in :issue:`14166`.)"
-msgstr ""
+msgstr "(Prispel Richard Oudkerk v :issue:`14166`.)"
 
 #: ../../whatsnew/3.3.rst:1729
 msgid "pydoc"
-msgstr ""
+msgstr "pydoc"
 
 #: ../../whatsnew/3.3.rst:1731
 msgid ""
@@ -3320,22 +3675,24 @@ msgid ""
 ":mod:`pydoc` module: ``pydoc -g`` and :func:`!serve` have been deprecated in"
 " Python 3.2."
 msgstr ""
+"Tk GUI a funkce :func:`!serve` byly odstrany z modulu :mod:`pydoc`: ``pydoc "
+"-g`` a :func:`!serve` byly zastaraly v Pythonu 3.2."
 
 #: ../../whatsnew/3.3.rst:1737
 msgid "re"
-msgstr ""
+msgstr "re"
 
 #: ../../whatsnew/3.3.rst:1739
 msgid ":class:`str` regular expressions now support ``\\u`` and ``\\U`` escapes."
-msgstr ""
+msgstr "Regularni vyrazy :class:`str` nyni podporuji escape ``\\u`` a ``\\U``."
 
 #: ../../whatsnew/3.3.rst:1741
 msgid "(Contributed by Serhiy Storchaka in :issue:`3665`.)"
-msgstr ""
+msgstr "(Prispel Serhiy Storchaka v :issue:`3665`.)"
 
 #: ../../whatsnew/3.3.rst:1745
 msgid "sched"
-msgstr ""
+msgstr "sched"
 
 #: ../../whatsnew/3.3.rst:1747
 msgid ""
@@ -3345,6 +3702,11 @@ msgid ""
 "want to use the :class:`~sched.scheduler` in non-blocking applications.  "
 "(Contributed by Giampaolo Rodolà in :issue:`13449`.)"
 msgstr ""
+":meth:`~sched.scheduler.run` nyni prijima parametr *blocking*, ktery kdyz je"
+" nastaven na false udela metodu spustit naplanovane události se expire brzy "
+"(pokud je nektere) a pak se vrati okamzite. To je uzitecne v pripade, ze "
+"chcete pouzit :class:`~sched.scheduler` v non-blocking aplikacich. (Prispel "
+"Giampaolo Rodola v :issue:`13449`.)"
 
 #: ../../whatsnew/3.3.rst:1753
 msgid ""
@@ -3352,6 +3714,9 @@ msgid ""
 "environments.  (Contributed by Josiah Carlson and Giampaolo Rodolà in "
 ":issue:`8684`.)"
 msgstr ""
+"Trida :class:`~sched.scheduler` muze byt nyni bezpecne pouzita v multi-"
+"threaded prostredi. (Prispel Josiah Carlson a Giampaolo Rodola v "
+":issue:`8684`.)"
 
 #: ../../whatsnew/3.3.rst:1757
 msgid ""
@@ -3360,6 +3725,9 @@ msgid ""
 ":func:`time.sleep` respectively.  (Contributed by Chris Clark in "
 ":issue:`13245`.)"
 msgstr ""
+"Parametry *timefunc* a *delayfunct* konstruktoru :class:`~sched.scheduler` "
+"tridy jsou nyni volitelne a defaultne na :func:`time.time` a "
+":func:`time.sleep` respektive. (Prispel Chris Clark v :issue:`13245`.)"
 
 #: ../../whatsnew/3.3.rst:1762
 msgid ""
@@ -3367,6 +3735,8 @@ msgid ""
 "*argument* parameter is now optional.  (Contributed by Chris Clark in "
 ":issue:`13245`.)"
 msgstr ""
+":meth:`~sched.scheduler.enter` a :meth:`~sched.scheduler.enterabs` parametr "
+"*argument* je nyni volitelne. (Prispel Chris Clark v :issue:`13245`.)"
 
 #: ../../whatsnew/3.3.rst:1766
 msgid ""
@@ -3374,10 +3744,12 @@ msgid ""
 "accept a *kwargs* parameter.  (Contributed by Chris Clark in "
 ":issue:`13245`.)"
 msgstr ""
+":meth:`~sched.scheduler.enter` a :meth:`~sched.scheduler.enterabs` nyni "
+"prijimaji parametr *kwargs*. (Prispel Chris Clark v :issue:`13245`.)"
 
 #: ../../whatsnew/3.3.rst:1772
 msgid "select"
-msgstr ""
+msgstr "select"
 
 #: ../../whatsnew/3.3.rst:1774
 msgid ""
@@ -3385,10 +3757,13 @@ msgid ""
 "for high performance asynchronous sockets via :file:`/dev/poll`. "
 "(Contributed by Jesús Cea Avión in :issue:`6397`.)"
 msgstr ""
+"Solaris a derivative platformy maji novou tridu :class:`select.devpoll` pro "
+"vysoky vykon asynchronnich socketu pomoci :file:`/dev/poll`. (Prispel Jesus "
+"Cea Avion v :issue:`6397`.)"
 
 #: ../../whatsnew/3.3.rst:1780
 msgid "shlex"
-msgstr ""
+msgstr "shlex"
 
 #: ../../whatsnew/3.3.rst:1782
 msgid ""
@@ -3397,20 +3772,26 @@ msgid ""
 ":func:`~shlex.quote` properly escapes all characters in a string that might "
 "be otherwise given special meaning by the shell."
 msgstr ""
+"Drivejsi nedokumentovana pomocna funkce ``quote`` z modulu :mod:`!pipes` "
+"byla prenesena do modulu :mod:`shlex` a dokumentovana. :func:`~shlex.quote` "
+"spravne uciti vsechny znaky v retezci, ktere by mohly byt jinak dany "
+"specialni vyznam shellem."
 
 #: ../../whatsnew/3.3.rst:1789
 msgid "shutil"
-msgstr ""
+msgstr "shutil"
 
 #: ../../whatsnew/3.3.rst:1791
 msgid "New functions:"
-msgstr ""
+msgstr "Nove funkce:"
 
 #: ../../whatsnew/3.3.rst:1793
 msgid ""
 ":func:`~shutil.disk_usage`: provides total, used and free disk space "
 "statistics.  (Contributed by Giampaolo Rodolà in :issue:`12442`.)"
 msgstr ""
+":func:`~shutil.disk_usage`: poskytuje statistiku celkoveho, pouziteho a "
+"volneho diskoveho prostoru. (Prispel Giampaolo Rodola v :issue:`12442`.)"
 
 #: ../../whatsnew/3.3.rst:1795
 msgid ""
@@ -3418,6 +3799,9 @@ msgid ""
 "path also specifying the user/group names and not only their numeric ids.  "
 "(Contributed by Sandro Tosi in :issue:`12191`.)"
 msgstr ""
+":func:`~shutil.chown`: umoznuje zmenu uzivatele a/nebo skupiny dane cesty "
+"take specifikovanim jmen uzivatel/skupin a ne pouze jejich numerickych id. "
+"(Prispel Sandro Tosi v :issue:`12191`.)"
 
 #: ../../whatsnew/3.3.rst:1798
 msgid ""
@@ -3425,6 +3809,9 @@ msgid ""
 " which the interpreter is attached.  (Contributed by Zbigniew Jędrzejewski-"
 "Szmek in :issue:`13609`.)"
 msgstr ""
+":func:`shutil.get_terminal_size`: vraci velikost okna terminalu, ke kteremu "
+"je interpreter pripojen. (Prispel Zbigniew Jedrzejewski-Szmek v "
+":issue:`13609`.)"
 
 #: ../../whatsnew/3.3.rst:1802
 msgid ""
@@ -3433,6 +3820,10 @@ msgid ""
 " preserve file \"extended attributes\" on Linux.  (Contributed by Larry "
 "Hastings in :issue:`14127` and  :issue:`15238`.)"
 msgstr ""
+":func:`~shutil.copy2` a :func:`~shutil.copystat` nyni uchovavaji cas souboru"
+" s presnosti nanosekundy na platformach, ktere to podporuji. Jsou take "
+"uchovavaji file \"extended attributes\" na Linuxu. (Prispel Larry Hastings v"
+" :issue:`14127` a :issue:`15238`.)"
 
 #: ../../whatsnew/3.3.rst:1807
 msgid ""
@@ -3441,6 +3832,10 @@ msgid ""
 "acts on the symlink itself (or creates one, if relevant). (Contributed by "
 "Hynek Schlawack in :issue:`12715`.)"
 msgstr ""
+"Nektere funkce nyni prijimaji volitelny ``symlinks`` argument: kdyz je tento"
+" parametr pravda, symlinky nejsou dereferencovane a operace miste toho "
+"jednajici na samotnem symlinku (nebo vytvoriti jeden, pokud je relevantni). "
+"(Prispel Hynek Schlawack v :issue:`12715`.)"
 
 #: ../../whatsnew/3.3.rst:1812
 msgid ""
@@ -3450,6 +3845,11 @@ msgid ""
 "Jonathan Niehof in :issue:`9993`.)  :func:`~shutil.move` now also returns "
 "the ``dst`` argument as its result."
 msgstr ""
+"Kdyz kopirujeme soubory na jiny souborovy system, :func:`~shutil.move` nyni "
+"zpracovava symlinky tak jak to dela posix ``mv`` prikaz, recreation symlinku"
+" spise nez koprovani obsahu ciloveho souboru. (Prispel Jonathan Niehof v "
+":issue:`9993`.) :func:`~shutil.move` nyni take vraci ``dst`` argument jako "
+"jeho vysledek."
 
 #: ../../whatsnew/3.3.rst:1818
 msgid ""
@@ -3458,44 +3858,53 @@ msgid ""
 ":func:`os.unlink`.  (Contributed by Martin von Löwis and Hynek Schlawack in "
 ":issue:`4489`.)"
 msgstr ""
+":func:`~shutil.rmtree` je nyni odolna proti symlink utokum na platformach, "
+"ktere podporuji novy ``dir_fd`` parametr v :func:`os.open` a "
+":func:`os.unlink`. (Prispel Martin von Lewis a Hynek Schlawack v "
+":issue:`4489`.)"
 
 #: ../../whatsnew/3.3.rst:1825
 msgid "signal"
-msgstr ""
+msgstr "signal"
 
 #: ../../whatsnew/3.3.rst:1827
 msgid "The :mod:`signal` module has new functions:"
-msgstr ""
+msgstr "Modul :mod:`signal` ma nove funkce:"
 
 #: ../../whatsnew/3.3.rst:1829
 msgid ""
 ":func:`~signal.pthread_sigmask`: fetch and/or change the signal mask of the "
 "calling thread (Contributed by Jean-Paul Calderone in :issue:`8407`);"
 msgstr ""
+":func:`~signal.pthread_sigmask`: ziskej a/nebo zmeni signalovou masku "
+"volajiciho vlakna (Prispel Jean-Paul Calderone v :issue:`8407`);"
 
 #: ../../whatsnew/3.3.rst:1831
 msgid ":func:`~signal.pthread_kill`: send a signal to a thread;"
-msgstr ""
+msgstr ":func:`~signal.pthread_kill`: posli signal do vlakna;"
 
 #: ../../whatsnew/3.3.rst:1832
 msgid ":func:`~signal.sigpending`: examine pending functions;"
-msgstr ""
+msgstr ":func:`~signal.sigpending`: zkumej vstavajici funkce;"
 
 #: ../../whatsnew/3.3.rst:1833
 msgid ":func:`~signal.sigwait`: wait a signal;"
-msgstr ""
+msgstr ":func:`~signal.sigwait`: cekat signal;"
 
 #: ../../whatsnew/3.3.rst:1834
 msgid ""
 ":func:`~signal.sigwaitinfo`: wait for a signal, returning detailed "
 "information about it;"
 msgstr ""
+":func:`~signal.sigwaitinfo`: cekat signal, vraci detailne informace o nem;"
 
 #: ../../whatsnew/3.3.rst:1836
 msgid ""
 ":func:`~signal.sigtimedwait`: like :func:`~signal.sigwaitinfo` but with a "
 "timeout."
 msgstr ""
+":func:`~signal.sigtimedwait`: jako :func:`~signal.sigwaitinfo` ale s "
+"timeout."
 
 #: ../../whatsnew/3.3.rst:1839
 msgid ""
@@ -3503,16 +3912,21 @@ msgid ""
 "nul byte into the wakeup file descriptor. So it is possible to wait more "
 "than one signal and know which signals were raised."
 msgstr ""
+"Handler signalu zapisuje cislo signalu jako jeden bajt namiste nul bajt do "
+"wake-up deskriptoru souboru. Takze je mozne cekat vice nez jeden signal a "
+"vedet ktere signaly byly vyvolvany."
 
 #: ../../whatsnew/3.3.rst:1843
 msgid ""
 ":func:`signal.signal` and :func:`signal.siginterrupt` raise an OSError, "
 "instead of a RuntimeError: OSError has an errno attribute."
 msgstr ""
+":func:`signal.signal` a :func:`signal.siginterrupt` vyhodit OSError, miste "
+"RuntimeError: OSError ma errno atribut."
 
 #: ../../whatsnew/3.3.rst:1848
 msgid "smtpd"
-msgstr ""
+msgstr "smtpd"
 
 #: ../../whatsnew/3.3.rst:1850
 msgid ""
@@ -3521,6 +3935,9 @@ msgid ""
 "enabled if and only if the client initiates the session with an ``EHLO`` "
 "command."
 msgstr ""
+"Modul :mod:`!smtpd` nyni podporuje :rfc:`5321` (rozsirena SMTP) a "
+":rfc:`1870` (rozsirovani velikosti). Per standart, tato rozsireni jsou "
+"povolena, jen a jen pokud klient zacinaci session s ``EHLO`` prikazem."
 
 #: ../../whatsnew/3.3.rst:1854
 msgid ""
@@ -3528,10 +3945,13 @@ msgid ""
 "Jauhiainen.  Substantial additional work on the patch contributed by Michele"
 " Orrù and Dan Boswell.  :issue:`8739`)"
 msgstr ""
+"(Pocatecni ``ELHO`` podpora od Alberto Trevino. Rozsirovani velikosti od "
+"Juhana Jauhiainen. Podstatna dodatecna prace na patchi prispeji Michele Orru"
+" a Dan Boswell. :issue:`8739`)"
 
 #: ../../whatsnew/3.3.rst:1860
 msgid "smtplib"
-msgstr ""
+msgstr "smtplib"
 
 #: ../../whatsnew/3.3.rst:1862
 msgid ""
@@ -3541,6 +3961,11 @@ msgid ""
 " bind call when creating the outgoing socket.  (Contributed by Paulo "
 "Scardine in :issue:`11281`.)"
 msgstr ""
+"Tridy :class:`~smtplib.SMTP`, :class:`~smtplib.SMTP_SSL` a "
+":class:`~smtplib.LMTP` nyni prijimaji ``source_address`` argument klicoveho "
+"slova k specifikaci ``(host, port)`` k pouziti jako source adresa v volani "
+"bind pri vytvareni outgoing socketu. (Prispel Paulo Scardine v "
+":issue:`11281`.)"
 
 #: ../../whatsnew/3.3.rst:1868
 msgid ""
@@ -3548,6 +3973,9 @@ msgid ""
 "allowing an ``SMTP`` instance to be used in a ``with`` statement.  "
 "(Contributed by Giampaolo Rodolà in :issue:`11289`.)"
 msgstr ""
+":class:`~smtplib.SMTP` nyni podporuje protokol spravce kontextu, umoznujici "
+"instanci ``SMTP`` byt pouzivana v ``with`` vyrazu. (Prispel Giampaolo Rodola"
+" v :issue:`11289`.)"
 
 #: ../../whatsnew/3.3.rst:1872
 msgid ""
@@ -3556,34 +3984,42 @@ msgid ""
 "control parameters of the secure channel.  (Contributed by Kasun Herath in "
 ":issue:`8809`.)"
 msgstr ""
+"Konstruktor :class:`~smtplib.SMTP_SSL` a metoda "
+":meth:`~smtplib.SMTP.starttls` nyni prijimaji parametr SSLContext pro "
+"kontrolu parametru bezpecneho kanalu. (Prispel Kasun Herath v "
+":issue:`8809`.)"
 
 #: ../../whatsnew/3.3.rst:1878
 msgid "socket"
-msgstr ""
+msgstr "socket"
 
 #: ../../whatsnew/3.3.rst:1880
 msgid ""
 "The :class:`~socket.socket` class now exposes additional methods to process "
 "ancillary data when supported by the underlying platform:"
 msgstr ""
+"Trida :class:`~socket.socket` nyni vystavuje dodatecne metody ke zpracovani "
+"pomocneho data kdyz jsou podporovany podkladni platformou:"
 
 #: ../../whatsnew/3.3.rst:1883
 msgid ":func:`~socket.socket.sendmsg`"
-msgstr ""
+msgstr ":func:`~socket.socket.sendmsg`"
 
 #: ../../whatsnew/3.3.rst:1884
 msgid ":func:`~socket.socket.recvmsg`"
-msgstr ""
+msgstr ":func:`~socket.socket.recvmsg`"
 
 #: ../../whatsnew/3.3.rst:1885
 msgid ":func:`~socket.socket.recvmsg_into`"
-msgstr ""
+msgstr ":func:`~socket.socket.recvmsg_into`"
 
 #: ../../whatsnew/3.3.rst:1887
 msgid ""
 "(Contributed by David Watson in :issue:`6560`, based on an earlier patch by "
 "Heiko Wundram)"
 msgstr ""
+"(Prispel David Watson v :issue:`6560`, zalozeno na drivejsim patchi od Heiko"
+" Wundram)"
 
 #: ../../whatsnew/3.3.rst:1890
 msgid ""
@@ -3591,12 +4027,16 @@ msgid ""
 "(https://en.wikipedia.org/wiki/Socketcan), on Linux "
 "(https://lwn.net/Articles/253425)."
 msgstr ""
+"Trida :class:`~socket.socket` nyni podporuje rodinu protokolu PF_CAN "
+"(https://en.wikipedia.org/wiki/Socketcan), na Linuxu "
+"(https://lwn.net/Articles/253425)."
 
 #: ../../whatsnew/3.3.rst:1894
 msgid ""
 "(Contributed by Matthias Fuchs, updated by Tiago Gonçalves in "
 ":issue:`10141`.)"
 msgstr ""
+"(Prispel Matthias Fuchs, aktualizovano Tiago Goncalves v :issue:`10141`.)"
 
 #: ../../whatsnew/3.3.rst:1896
 msgid ""
@@ -3605,12 +4045,18 @@ msgid ""
 "`https://oss.oracle.com/projects/rds "
 "<https://web.archive.org/web/20130115155505/https://oss.oracle.com/projects/rds/>`__)."
 msgstr ""
+"Trida :class:`~socket.socket` nyni podporuje rodinu protokolu PF_RDS "
+"(https://en.wikipedia.org/wiki/Reliable_Datagram_Sockets a "
+"`https://oss.oracle.com/projects/rds "
+"<https://web.archive.org/web/20130115155505/https://oss.oracle.com/projects/rds/>`__)."
 
 #: ../../whatsnew/3.3.rst:1900
 msgid ""
 "The :class:`~socket.socket` class now supports the ``PF_SYSTEM`` protocol "
 "family on OS X.  (Contributed by Michael Goderbauer in :issue:`13777`.)"
 msgstr ""
+"Trida :class:`~socket.socket` nyni podporuje rodinu protokolu ``PF_SYSTEM`` "
+"na OS X. (Prispel Michael Goderbauer v :issue:`13777`.)"
 
 #: ../../whatsnew/3.3.rst:1903
 msgid ""
@@ -3618,10 +4064,13 @@ msgid ""
 "Unix systems if the calling process has sufficient privileges. (Contributed "
 "by Ross Lagerwall in :issue:`10866`.)"
 msgstr ""
+"Nova funkce :func:`~socket.sethostname` dovoluje nazev pocitace byt nastaven"
+" na Unix systemech, pokud volajici proces ma dostatecna privilegia. (Prispel"
+" Ross Lagerwall v :issue:`10866`.)"
 
 #: ../../whatsnew/3.3.rst:1909
 msgid "socketserver"
-msgstr ""
+msgstr "socketserver"
 
 #: ../../whatsnew/3.3.rst:1911
 msgid ""
@@ -3631,10 +4080,15 @@ msgid ""
 ":class:`~socketserver.ForkingMixIn` now uses this to clean up zombie child "
 "processes.  (Contributed by Justin Warkentin in :issue:`11109`.)"
 msgstr ""
+":class:`~socketserver.BaseServer` nyni ma prepisovatelnou metodu "
+":meth:`~socketserver.BaseServer.service_actions`, ktera je volana "
+":meth:`~socketserver.BaseServer.serve_forever` metodou v smycce sluzby. "
+":class:`~socketserver.ForkingMixIn` nyni to pouziva k cisteni zombie "
+"detskych procesu. (Prispel Justin Warkentin v :issue:`11109`.)"
 
 #: ../../whatsnew/3.3.rst:1919
 msgid "sqlite3"
-msgstr ""
+msgstr "sqlite3"
 
 #: ../../whatsnew/3.3.rst:1921
 msgid ""
@@ -3643,28 +4097,33 @@ msgid ""
 "trace of all sql commands processed by sqlite.  (Contributed by Torsten "
 "Landschoff in :issue:`11688`.)"
 msgstr ""
+"Nova metoda :class:`sqlite3.Connection` "
+":meth:`~sqlite3.Connection.set_trace_callback` muze byt pouzita k zachyceni "
+"stopu vsech sql prikazu zpracovanych sqlite. (Prispel Torsten Landschoff v "
+":issue:`11688`.)"
 
 #: ../../whatsnew/3.3.rst:1928
 msgid "ssl"
-msgstr ""
+msgstr "ssl"
 
 #: ../../whatsnew/3.3.rst:1930
 msgid "The :mod:`ssl` module has two new random generation functions:"
-msgstr ""
+msgstr "Modul :mod:`ssl` ma dve nove funkce nahodneho generovani:"
 
 #: ../../whatsnew/3.3.rst:1932
 msgid ""
 ":func:`~ssl.RAND_bytes`: generate cryptographically strong pseudo-random "
 "bytes."
 msgstr ""
+":func:`~ssl.RAND_bytes`: generuj kryptograficky silne pseudo-nahodne bajty."
 
 #: ../../whatsnew/3.3.rst:1934
 msgid ":func:`!RAND_pseudo_bytes`: generate pseudo-random bytes."
-msgstr ""
+msgstr ":func:`!RAND_pseudo_bytes`: generuj pseudo-nahodne bajty."
 
 #: ../../whatsnew/3.3.rst:1936
 msgid "(Contributed by Victor Stinner in :issue:`12049`.)"
-msgstr ""
+msgstr "(Prispel Victor Stinner v :issue:`12049`.)"
 
 #: ../../whatsnew/3.3.rst:1938
 msgid ""
@@ -3672,6 +4131,9 @@ msgid ""
 "order to make it easier to inspect the various kinds of errors. (Contributed"
 " by Antoine Pitrou in :issue:`11183`.)"
 msgstr ""
+"Modul :mod:`ssl` nyni vystavuje jemnejsi-zrnita vyjimka hierarchie, aby se "
+"snadneji inspektovat ruzne druhy chyb. (Prispel Antoine Pitrou v "
+":issue:`11183`.)"
 
 #: ../../whatsnew/3.3.rst:1942
 msgid ""
@@ -3679,6 +4141,9 @@ msgid ""
 " be used if the private key is encrypted. (Contributed by Adam Simpkins in "
 ":issue:`12803`.)"
 msgstr ""
+":meth:`~ssl.SSLContext.load_cert_chain` nyni prijima *password* argument, "
+"aby byl pouzit, pokud je privatni klic sifrovany. (Prispel Adam Simpkins v "
+":issue:`12803`.)"
 
 #: ../../whatsnew/3.3.rst:1946
 msgid ""
@@ -3687,6 +4152,11 @@ msgid ""
 ":meth:`~ssl.SSLContext.set_ecdh_curve` methods. (Contributed by Antoine "
 "Pitrou in :issue:`13626` and :issue:`13627`.)"
 msgstr ""
+"Diffie-Hellman vyomena klice, jak regularni tak Elliptic Curve-based, je "
+"nyni podporovana prostrednictvim metod "
+":meth:`~ssl.SSLContext.load_dh_params` a "
+":meth:`~ssl.SSLContext.set_ecdh_curve`. (Prispel Antoine Pitrou v "
+":issue:`13626` a :issue:`13627`.)"
 
 #: ../../whatsnew/3.3.rst:1951
 msgid ""
@@ -3694,6 +4164,9 @@ msgid ""
 "allowing the implementation of certain authentication mechanisms such as "
 "SCRAM-SHA-1-PLUS.  (Contributed by Jacek Konieczny in :issue:`12551`.)"
 msgstr ""
+"SSL sockety maji novou metodu :meth:`~ssl.SSLSocket.get_channel_binding` "
+"umoznujici implementaci určitych mechanismu overeni jako SCRAM-SHA-1-PLUS. "
+"(Prispel Jacek Konieczny v :issue:`12551`.)"
 
 #: ../../whatsnew/3.3.rst:1955
 msgid ""
@@ -3702,6 +4175,10 @@ msgid ""
 ":const:`~ssl.OP_NO_COMPRESSION` can be used to disable compression. "
 "(Contributed by Antoine Pitrou in :issue:`13634`.)"
 msgstr ""
+"Muzes se ptat na SSL kompresi algoritmu pouziteho SSL socketem, diky jeho "
+"nove metode :meth:`~ssl.SSLSocket.compression`. Novy atribut "
+":const:`~ssl.OP_NO_COMPRESSION` muze byt pouzit k zakazani komprese. "
+"(Prispel Antoine Pitrou v :issue:`13634`.)"
 
 #: ../../whatsnew/3.3.rst:1960
 msgid ""
@@ -3709,6 +4186,9 @@ msgid ""
 " :meth:`ssl.SSLContext.set_npn_protocols` method. (Contributed by Colin Marc"
 " in :issue:`14204`.)"
 msgstr ""
+"Podpora byla pridana pro Next Protocol Negotiation rozsirovani pomoci metody"
+" :meth:`ssl.SSLContext.set_npn_protocols`. (Prispel Colin Marc v "
+":issue:`14204`.)"
 
 #: ../../whatsnew/3.3.rst:1964
 msgid ""
@@ -3716,12 +4196,17 @@ msgid ""
 ":attr:`~ssl.SSLError.library` and :attr:`~ssl.SSLError.reason` attributes. "
 "(Contributed by Antoine Pitrou in :issue:`14837`.)"
 msgstr ""
+"SSL chyby mohou byt nyni inspektovany snazeji diky atributum "
+":attr:`~ssl.SSLError.library` a :attr:`~ssl.SSLError.reason`. (Prispel "
+"Antoine Pitrou v :issue:`14837`.)"
 
 #: ../../whatsnew/3.3.rst:1968
 msgid ""
 "The :func:`~ssl.get_server_certificate` function now supports IPv6. "
 "(Contributed by Charles-François Natali in :issue:`11811`.)"
 msgstr ""
+"Funkce :func:`~ssl.get_server_certificate` nyni podporuje IPv6. (Prispel "
+"Charles-Francois Natali v :issue:`11811`.)"
 
 #: ../../whatsnew/3.3.rst:1971
 msgid ""
@@ -3729,10 +4214,13 @@ msgid ""
 " server sockets to use the server's cipher ordering preference rather than "
 "the client's (:issue:`13635`)."
 msgstr ""
+"Novy atribut :const:`~ssl.OP_CIPHER_SERVER_PREFERENCE` umoznuje nastaveni "
+"SSLv3 server socketu k pouziti preference poradi sifroveho serveru miste "
+"klienta (:issue:`13635`)."
 
 #: ../../whatsnew/3.3.rst:1977
 msgid "stat"
-msgstr ""
+msgstr "stat"
 
 #: ../../whatsnew/3.3.rst:1979
 msgid ""
@@ -3740,14 +4228,17 @@ msgid ""
 ":func:`stat.filemode`. It can be used to convert a file's mode to a string "
 "of the form '-rwxrwxrwx'."
 msgstr ""
+"Nedokumentovana funkce tarfile.filemode byla prenesena do "
+":func:`stat.filemode`. Muze byt pouzita ke konverzi regima souboru do "
+"retezce tvaru '-rwxrwxrwx'."
 
 #: ../../whatsnew/3.3.rst:1983
 msgid "(Contributed by Giampaolo Rodolà in :issue:`14807`.)"
-msgstr ""
+msgstr "(Prispel Giampaolo Rodola v :issue:`14807`.)"
 
 #: ../../whatsnew/3.3.rst:1987
 msgid "struct"
-msgstr ""
+msgstr "struct"
 
 #: ../../whatsnew/3.3.rst:1989
 msgid ""
@@ -3755,16 +4246,21 @@ msgid ""
 " via the new codes ``n`` and ``N``, respectively.  (Contributed by Antoine "
 "Pitrou in :issue:`3163`.)"
 msgstr ""
+"Modul :mod:`struct` nyni podporuje :c:type:`ssize_t` a :c:type:`size_t` "
+"pomoci novych kodu ``n`` a ``N``, respektive. (Prispel Antoine Pitrou v "
+":issue:`3163`.)"
 
 #: ../../whatsnew/3.3.rst:1995
 msgid "subprocess"
-msgstr ""
+msgstr "subprocess"
 
 #: ../../whatsnew/3.3.rst:1997
 msgid ""
 "Command strings can now be bytes objects on posix platforms.  (Contributed "
 "by Victor Stinner in :issue:`8513`.)"
 msgstr ""
+"Retezce prikazu mohou nyni byt bytes objekty na posix platformach. (Prispel "
+"Victor Stinner v :issue:`8513`.)"
 
 #: ../../whatsnew/3.3.rst:2000
 msgid ""
@@ -3772,40 +4268,48 @@ msgid ""
 "platform-independent fashion.  (Contributed by Ross Lagerwall in "
 ":issue:`5870`.)"
 msgstr ""
+"Nova konstanta :const:`~subprocess.DEVNULL` umoznuje potlaceni vystupu v "
+"platforme-nemavisly zpusob. (Prispel Ross Lagerwall v :issue:`5870`.)"
 
 #: ../../whatsnew/3.3.rst:2006
 msgid "sys"
-msgstr ""
+msgstr "sys"
 
 #: ../../whatsnew/3.3.rst:2008
 msgid ""
 "The :mod:`sys` module has a new :data:`~sys.thread_info` :term:`named tuple`"
 " holding information about the thread implementation (:issue:`11223`)."
 msgstr ""
+"Modul :mod:`sys` ma novy :data:`~sys.thread_info` :term:`pojmenovanou tuple`"
+" drzi informace o implementaci vlakna (:issue:`11223`)."
 
 #: ../../whatsnew/3.3.rst:2014
 msgid "tarfile"
-msgstr ""
+msgstr "tarfile"
 
 #: ../../whatsnew/3.3.rst:2016
 msgid ""
 ":mod:`tarfile` now supports ``lzma`` encoding via the :mod:`lzma` module. "
 "(Contributed by Lars Gustäbel in :issue:`5689`.)"
 msgstr ""
+":mod:`tarfile` nyni podporuje ``lzma`` kodovani pomoci modulu :mod:`lzma`. "
+"(Prispel Lars Gustabal v :issue:`5689`.)"
 
 #: ../../whatsnew/3.3.rst:2021
 msgid "tempfile"
-msgstr ""
+msgstr "tempfile"
 
 #: ../../whatsnew/3.3.rst:2023
 msgid ""
 ":class:`tempfile.SpooledTemporaryFile`\\'s :meth:`!truncate` method now "
 "accepts a ``size`` parameter.  (Contributed by Ryan Kelly in :issue:`9957`.)"
 msgstr ""
+":class:`tempfile.SpooledTemporaryFile`\\'s metoda :meth:`!truncate` nyni "
+"prijima parametr ``size``. (Prispel Ryan Kelly v :issue:`9957`.)"
 
 #: ../../whatsnew/3.3.rst:2028
 msgid "textwrap"
-msgstr ""
+msgstr "textwrap"
 
 #: ../../whatsnew/3.3.rst:2030
 msgid ""
@@ -3813,10 +4317,13 @@ msgid ""
 "straightforward to add a common prefix to selected lines in a block of text"
 "  (:issue:`13857`)."
 msgstr ""
+"Modul :mod:`textwrap` ma novy :func:`~textwrap.indent`, ktery cinit je "
+"primocare pridat spolecnou predponu k vybranym radkum v bloku textu "
+"(:issue:`13857`)."
 
 #: ../../whatsnew/3.3.rst:2036
 msgid "threading"
-msgstr ""
+msgstr "threading"
 
 #: ../../whatsnew/3.3.rst:2038
 msgid ""
@@ -3826,6 +4333,11 @@ msgid ""
 "returning a class instance, are now classes and may be subclassed.  "
 "(Contributed by Éric Araujo in :issue:`10968`.)"
 msgstr ""
+":class:`threading.Condition`, :class:`threading.Semaphore`, "
+":class:`threading.BoundedSemaphore`, :class:`threading.Event` a "
+":class:`threading.Timer`, ktere z nich byly tovare funkce vracejici instanci"
+" tridy, jsou nyni tridy a mohou byt dedikovany. (Prispel Eric Araujo v "
+":issue:`10968`.)"
 
 #: ../../whatsnew/3.3.rst:2044
 msgid ""
@@ -3833,6 +4345,9 @@ msgid ""
 "argument to override the default behavior of inheriting the ``daemon`` flag "
 "value from the parent thread (:issue:`6064`)."
 msgstr ""
+"Konstruktor :class:`threading.Thread` nyni prijima ``daemon`` argument "
+"klicoveho slova pro prepis vychozi chovanis dedicne ``daemon`` vlajku "
+"hodnotu z parenta vlakna (:issue:`6064`)."
 
 #: ../../whatsnew/3.3.rst:2048
 msgid ""
@@ -3842,40 +4357,51 @@ msgid ""
 "that used ``_thread.get_ident`` should likewise be changed to use the new "
 "public interface."
 msgstr ""
+"Drive-privat funkce ``_thread.get_ident`` je nyni dostupna jako verejne "
+"funkce :func:`threading.get_ident`. To eliminuje several pripady primeho "
+"pristupu k modulu ``_thread`` v stdlib. Kod od trecich stran, ktery pouzival"
+" ``_thread.get_ident`` by obdobne mel byt zmenen, aby pouzival nove verejne "
+"rozhrani."
 
 #: ../../whatsnew/3.3.rst:2056
 msgid "time"
-msgstr ""
+msgstr "time"
 
 #: ../../whatsnew/3.3.rst:2058
 msgid "The :pep:`418` added new functions to the :mod:`time` module:"
-msgstr ""
+msgstr ":pep:`418` pridano nove funkce k modulu :mod:`time`:"
 
 #: ../../whatsnew/3.3.rst:2060
 msgid ":func:`~time.get_clock_info`: Get information on a clock."
-msgstr ""
+msgstr ":func:`~time.get_clock_info`: Ziskej informace na hodinach."
 
 #: ../../whatsnew/3.3.rst:2061
 msgid ""
 ":func:`~time.monotonic`: Monotonic clock (cannot go backward), not affected "
 "by system clock updates."
 msgstr ""
+":func:`~time.monotonic`: Monotonic hodiny (nemohou jit zpet), nebyl "
+"ovlivneny updaty systemovych hodin."
 
 #: ../../whatsnew/3.3.rst:2063
 msgid ""
 ":func:`~time.perf_counter`: Performance counter with the highest available "
 "resolution to measure a short duration."
 msgstr ""
+":func:`~time.perf_counter`: Citac vykonu s nejvyssi dostupnou rezoluci k "
+"mereni kratke doby."
 
 #: ../../whatsnew/3.3.rst:2065
 msgid ""
 ":func:`~time.process_time`: Sum of the system and user CPU time of the "
 "current process."
 msgstr ""
+":func:`~time.process_time`: Soucet systemoveho a uzivatelske CPU casu "
+"soucasneho procesu."
 
 #: ../../whatsnew/3.3.rst:2068
 msgid "Other new functions:"
-msgstr ""
+msgstr "Ostatni nove funkce:"
 
 #: ../../whatsnew/3.3.rst:2070
 #, python-brace-format
@@ -3884,6 +4410,9 @@ msgid ""
 ":func:`~time.clock_settime` functions with :samp:`CLOCK_{xxx}` constants. "
 "(Contributed by Victor Stinner in :issue:`10278`.)"
 msgstr ""
+"Funkce :func:`~time.clock_getres`, :func:`~time.clock_gettime` a "
+":func:`~time.clock_settime` s konstantami :samp:`CLOCK_{xxx}`. (Prispel "
+"Victor Stinner v :issue:`10278`.)"
 
 #: ../../whatsnew/3.3.rst:2074
 msgid ""
@@ -3891,16 +4420,21 @@ msgid ""
 ":exc:`ValueError` when passed a negative sleep value.  Previously this was "
 "an error on posix, but produced an infinite sleep on Windows."
 msgstr ""
+"Pro zlepseni konzistence cross-platformy, :func:`~time.sleep` nyni vyvola "
+":exc:`ValueError` kdyz je predan negativni hodnota sleep. Driv to bylo chyba"
+" na posix, ale vyprodukoval nekonecny sleep na Windows."
 
 #: ../../whatsnew/3.3.rst:2080
 msgid "types"
-msgstr ""
+msgstr "types"
 
 #: ../../whatsnew/3.3.rst:2082
 msgid ""
 "Add a new :class:`types.MappingProxyType` class: Read-only proxy of a "
 "mapping. (:issue:`14386`)"
 msgstr ""
+"Pridat novou tridu :class:`types.MappingProxyType`: Pouze pro cteni proxy "
+"mapovani. (:issue:`14386`)"
 
 #: ../../whatsnew/3.3.rst:2086
 msgid ""
@@ -3908,10 +4442,13 @@ msgid ""
 "provide support for :pep:`3115` compliant dynamic type creation. "
 "(:issue:`14588`)"
 msgstr ""
+"Nove funkce :func:`types.new_class` a :func:`types.prepare_class` poskytou "
+"podporu pro :pep:`3115` kompatibilni dynamicke vytvoreni typu. "
+"(:issue:`14588`)"
 
 #: ../../whatsnew/3.3.rst:2091
 msgid "unittest"
-msgstr ""
+msgstr "unittest"
 
 #: ../../whatsnew/3.3.rst:2093
 msgid ""
@@ -3920,16 +4457,22 @@ msgid ""
 "context managers.  (Contributed by Ezio Melotti and Winston Ewert in "
 ":issue:`10775`.)"
 msgstr ""
+":meth:`.assertRaises`, :meth:`.assertRaisesRegex`, :meth:`.assertWarns` a "
+":meth:`.assertWarnsRegex` nyni prijimaji argument klicoveho slova *msg*, "
+"kdyz jsou pouzity jako spravci kontextu. (Prispel Ezio Melotti a Winston "
+"Ewert v :issue:`10775`.)"
 
 #: ../../whatsnew/3.3.rst:2098
 msgid ""
 ":meth:`unittest.TestCase.run` now returns the :class:`~unittest.TestResult` "
 "object."
 msgstr ""
+":meth:`unittest.TestCase.run` nyni vraci objekt "
+":class:`~unittest.TestResult`."
 
 #: ../../whatsnew/3.3.rst:2103
 msgid "urllib"
-msgstr ""
+msgstr "urllib"
 
 #: ../../whatsnew/3.3.rst:2105
 msgid ""
@@ -3937,18 +4480,21 @@ msgid ""
 "used by :meth:`~urllib.request.Request.get_method` to determine what HTTP "
 "method should be used.  For example, this will send a ``'HEAD'`` request::"
 msgstr ""
+"Trida :class:`~urllib.request.Request` nyni prijima argument *method* "
+"pouzivany :meth:`~urllib.request.Request.get_method` k urceni ktere HTTP "
+"metody by melo byt pouzito. Napriklad, to posle ``'HEAD'`` pozadavek::"
 
 #: ../../whatsnew/3.3.rst:2109
 msgid ">>> urlopen(Request('https://www.python.org', method='HEAD'))"
-msgstr ""
+msgstr ">>> urlopen(Request('https://www.python.org', method='HEAD'))"
 
 #: ../../whatsnew/3.3.rst:2111
 msgid "(:issue:`1673007`)"
-msgstr ""
+msgstr "(:issue:`1673007`)"
 
 #: ../../whatsnew/3.3.rst:2115
 msgid "webbrowser"
-msgstr ""
+msgstr "webbrowser"
 
 #: ../../whatsnew/3.3.rst:2117
 msgid ""
@@ -3960,10 +4506,17 @@ msgid ""
 "GNOME 3.  (The former contributed by Arnaud Calmettes in :issue:`13620`, the"
 " latter by Matthias Klose in :issue:`14493`.)"
 msgstr ""
+"Modul :mod:`webbrowser` podporuje vice \"prohlizece\": Google Chrome "
+"(pojmenovany :program:`chrome`, :program:`chromium`, :program:`chrome-"
+"browser` nebo :program:`chromium-browser` v zavislosti na verzi a operacnim "
+"systemu) a genericky launchery :program:`xdg-open` z projektu "
+"FreeDesktop.org a :program:`gvfs-open`, jimz je vychozi handler URI pro "
+"GNOME 3. (Prvni prispel Arnaud Calmettes v :issue:`13620`, druhy od Matthias"
+" Klose v :issue:`14493`.)"
 
 #: ../../whatsnew/3.3.rst:2127
 msgid "xml.etree.ElementTree"
-msgstr ""
+msgstr "xml.etree.ElementTree"
 
 #: ../../whatsnew/3.3.rst:2129
 msgid ""
@@ -3975,10 +4528,17 @@ msgid ""
 "(rewritten in C). The module's documentation has also been greatly improved "
 "with added examples and a more detailed reference."
 msgstr ""
+"Modul :mod:`xml.etree.ElementTree` nyni importuje jeho C akcelerator ve "
+"vychozim stavu; neni dale potreba explicitne importovat "
+":mod:`!xml.etree.cElementTree` (tento modul zustan pro zpetnou "
+"kompatibilitu, ale je nyni zastaraly). Navic, rodina ``iter`` metod "
+":class:`~xml.etree.ElementTree.Element` byla optimalizovana (prepisana v C)."
+" Dokumentace modulu byla take velmi zlepsen s pridanymi priklad a vice "
+"detailni reference."
 
 #: ../../whatsnew/3.3.rst:2139
 msgid "zlib"
-msgstr ""
+msgstr "zlib"
 
 #: ../../whatsnew/3.3.rst:2141
 msgid ""
@@ -3986,6 +4546,9 @@ msgid ""
 "between a properly formed compressed stream and an incomplete or truncated "
 "one. (Contributed by Nadeem Vawda in :issue:`12646`.)"
 msgstr ""
+"Novy atribut :attr:`zlib.Decompress.eof` cinit je mozne rozlisit mezi "
+"pravidlne vytvorenym komprimovany stream a nekompletnim nebo zkracenym. "
+"(Prispel Nadeem Vawda v :issue:`12646`.)"
 
 #: ../../whatsnew/3.3.rst:2145
 msgid ""
@@ -3993,130 +4556,142 @@ msgid ""
 "of the underlying ``zlib`` library that is loaded at runtime.  (Contributed "
 "by Torsten Landschoff in :issue:`12306`.)"
 msgstr ""
+"Novy atribut :const:`zlib.ZLIB_RUNTIME_VERSION` hlasuje retezec verze "
+"podkladni knihovny ``zlib``, ktera je nalozena v runtime. (Prispel Torsten "
+"Landschoff v :issue:`12306`.)"
 
 #: ../../whatsnew/3.3.rst:2151
 msgid "Optimizations"
-msgstr ""
+msgstr "Optimalizace"
 
 #: ../../whatsnew/3.3.rst:2153
 msgid "Major performance enhancements have been added:"
-msgstr ""
+msgstr "Hlavni vykonnostni vylepsen byla pridana:"
 
 #: ../../whatsnew/3.3.rst:2155
 msgid ""
 "Thanks to :pep:`393`, some operations on Unicode strings have been "
 "optimized:"
 msgstr ""
+"Diky :pep:`393`, nektere operace na Unicode retezci byly optimalizovany:"
 
 #: ../../whatsnew/3.3.rst:2157
 msgid "the memory footprint is divided by 2 to 4 depending on the text"
-msgstr ""
+msgstr "podzemna stopa je delena 2-4 v zavislosti na textu"
 
 #: ../../whatsnew/3.3.rst:2158
 msgid ""
 "encode an ASCII string to UTF-8 doesn't need to encode characters anymore, "
 "the UTF-8 representation is shared with the ASCII representation"
 msgstr ""
+"kodit ASCII retezec na UTF-8 nema potrebu kodit znaky jiz, UTF-8 "
+"reprezentace je sdilena s ASCII reprezentaci"
 
 #: ../../whatsnew/3.3.rst:2160
 msgid "the UTF-8 encoder has been optimized"
-msgstr ""
+msgstr "UTF-8 encoder byl optimalizovan"
 
 #: ../../whatsnew/3.3.rst:2161
 msgid ""
 "repeating a single ASCII letter and getting a substring of an ASCII string "
 "is 4 times faster"
 msgstr ""
+"opakovani jedineho ASCII pismenem a ziskani podretezce ASCII retezce je 4x "
+"rychlejsi"
 
 #: ../../whatsnew/3.3.rst:2164
 msgid ""
 "UTF-8 is now 2x to 4x faster.  UTF-16 encoding is now up to 10x faster."
 msgstr ""
+"UTF-8 je nyni 2x az 4x rychlejsi. UTF-16 kodovani je nyni az 10x rychlejsi."
 
 #: ../../whatsnew/3.3.rst:2166
 msgid ""
 "(Contributed by Serhiy Storchaka, :issue:`14624`, :issue:`14738` and "
 ":issue:`15026`.)"
 msgstr ""
+"(Prispel Serhiy Storchaka, :issue:`14624`, :issue:`14738` a :issue:`15026`.)"
 
 #: ../../whatsnew/3.3.rst:2171
 msgid "Build and C API Changes"
-msgstr ""
+msgstr "Zmeny Build a C API"
 
 #: ../../whatsnew/3.3.rst:2173
 msgid "Changes to Python's build process and to the C API include:"
-msgstr ""
+msgstr "Zmeny do procesu budovani Pythonu a C API zahrnuje:"
 
 #: ../../whatsnew/3.3.rst:2175
 msgid "New :pep:`3118` related function:"
-msgstr ""
+msgstr "Nova funkce :pep:`3118`:"
 
 #: ../../whatsnew/3.3.rst:2177
 msgid ":c:func:`PyMemoryView_FromMemory`"
-msgstr ""
+msgstr ":c:func:`PyMemoryView_FromMemory`"
 
 #: ../../whatsnew/3.3.rst:2179
 msgid ":pep:`393` added new Unicode types, macros and functions:"
-msgstr ""
+msgstr ":pep:`393` pridano nove Unicode typy, makra a funkce:"
 
 #: ../../whatsnew/3.3.rst:2181
 msgid "High-level API:"
-msgstr ""
+msgstr "Vysoko-urovnova API:"
 
 #: ../../whatsnew/3.3.rst:2183
 msgid ":c:func:`PyUnicode_CopyCharacters`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_CopyCharacters`"
 
 #: ../../whatsnew/3.3.rst:2184
 msgid ":c:func:`PyUnicode_FindChar`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_FindChar`"
 
 #: ../../whatsnew/3.3.rst:2185
 msgid ":c:func:`PyUnicode_GetLength`, :c:macro:`PyUnicode_GET_LENGTH`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_GetLength`, :c:macro:`PyUnicode_GET_LENGTH`"
 
 #: ../../whatsnew/3.3.rst:2186
 msgid ":c:func:`PyUnicode_New`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_New`"
 
 #: ../../whatsnew/3.3.rst:2187
 msgid ":c:func:`PyUnicode_Substring`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_Substring`"
 
 #: ../../whatsnew/3.3.rst:2188
 msgid ":c:func:`PyUnicode_ReadChar`, :c:func:`PyUnicode_WriteChar`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_ReadChar`, :c:func:`PyUnicode_WriteChar`"
 
 #: ../../whatsnew/3.3.rst:2190
 msgid "Low-level API:"
-msgstr ""
+msgstr "Nizko-urovnova API:"
 
 #: ../../whatsnew/3.3.rst:2192
 msgid ":c:type:`Py_UCS1`, :c:type:`Py_UCS2`, :c:type:`Py_UCS4` types"
-msgstr ""
+msgstr ":c:type:`Py_UCS1`, :c:type:`Py_UCS2`, :c:type:`Py_UCS4` typy"
 
 #: ../../whatsnew/3.3.rst:2193
 msgid ""
 ":c:type:`PyASCIIObject` and :c:type:`PyCompactUnicodeObject` structures"
-msgstr ""
+msgstr ":c:type:`PyASCIIObject` a :c:type:`PyCompactUnicodeObject` struktury"
 
 #: ../../whatsnew/3.3.rst:2194
 msgid ":c:macro:`PyUnicode_READY`"
-msgstr ""
+msgstr ":c:macro:`PyUnicode_READY`"
 
 #: ../../whatsnew/3.3.rst:2195
 msgid ":c:func:`PyUnicode_FromKindAndData`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_FromKindAndData`"
 
 #: ../../whatsnew/3.3.rst:2196
 msgid ":c:func:`PyUnicode_AsUCS4`, :c:func:`PyUnicode_AsUCS4Copy`"
-msgstr ""
+msgstr ":c:func:`PyUnicode_AsUCS4`, :c:func:`PyUnicode_AsUCS4Copy`"
 
 #: ../../whatsnew/3.3.rst:2197
 msgid ""
 ":c:macro:`PyUnicode_DATA`, :c:macro:`PyUnicode_1BYTE_DATA`, "
 ":c:macro:`PyUnicode_2BYTE_DATA`, :c:macro:`PyUnicode_4BYTE_DATA`"
 msgstr ""
+":c:macro:`PyUnicode_DATA`, :c:macro:`PyUnicode_1BYTE_DATA`, "
+":c:macro:`PyUnicode_2BYTE_DATA`, :c:macro:`PyUnicode_4BYTE_DATA`"
 
 #: ../../whatsnew/3.3.rst:2199
 msgid ""
@@ -4124,54 +4699,65 @@ msgid ""
 ":c:data:`!PyUnicode_WCHAR_KIND`, :c:data:`PyUnicode_1BYTE_KIND`, "
 ":c:data:`PyUnicode_2BYTE_KIND`, :c:data:`PyUnicode_4BYTE_KIND`"
 msgstr ""
+":c:macro:`PyUnicode_KIND` s :c:enum:`!PyUnicode_Kind` enum: "
+":c:data:`!PyUnicode_WCHAR_KIND`, :c:data:`PyUnicode_1BYTE_KIND`, "
+":c:data:`PyUnicode_2BYTE_KIND`, :c:data:`PyUnicode_4BYTE_KIND`"
 
 #: ../../whatsnew/3.3.rst:2202
 msgid ""
 ":c:macro:`PyUnicode_READ`, :c:macro:`PyUnicode_READ_CHAR`, "
 ":c:macro:`PyUnicode_WRITE`"
 msgstr ""
+":c:macro:`PyUnicode_READ`, :c:macro:`PyUnicode_READ_CHAR`, "
+":c:macro:`PyUnicode_WRITE`"
 
 #: ../../whatsnew/3.3.rst:2203
 msgid ":c:macro:`PyUnicode_MAX_CHAR_VALUE`"
-msgstr ""
+msgstr ":c:macro:`PyUnicode_MAX_CHAR_VALUE`"
 
 #: ../../whatsnew/3.3.rst:2205
 msgid ""
 ":c:macro:`PyArg_ParseTuple` now accepts a :class:`bytearray` for the ``c`` "
 "format (:issue:`12380`)."
 msgstr ""
+":c:macro:`PyArg_ParseTuple` nyni prijima :class:`bytearray` pro format ``c``"
+" (:issue:`12380`)."
 
 #: ../../whatsnew/3.3.rst:2211
 msgid "Deprecated"
-msgstr ""
+msgstr "Zastaralom"
 
 #: ../../whatsnew/3.3.rst:2214
 msgid "Unsupported Operating Systems"
-msgstr ""
+msgstr "Nepodporovane operacni systemy"
 
 #: ../../whatsnew/3.3.rst:2216
 msgid "OS/2 and VMS are no longer supported due to the lack of a maintainer."
-msgstr ""
+msgstr "OS/2 a VMS uz nejsou podporovany z duvodu nedostatecneho spravce."
 
 #: ../../whatsnew/3.3.rst:2218
 msgid ""
 "Windows 2000 and Windows platforms which set ``COMSPEC`` to ``command.com`` "
 "are no longer supported due to maintenance burden."
 msgstr ""
+"Windows 2000 a Windows platformy, ktere nastavuji ``COMSPEC`` na "
+"``command.com`` jiz nejsou podporovany z duvodu burzhni sprave."
 
 #: ../../whatsnew/3.3.rst:2221
 msgid "OSF support, which was deprecated in 3.2, has been completely removed."
-msgstr ""
+msgstr "Podpora OSF, ktera byla zastarala v 3.2, byla zcela odstranena."
 
 #: ../../whatsnew/3.3.rst:2225
 msgid "Deprecated Python modules, functions and methods"
-msgstr ""
+msgstr "Zastarala Python moduly, funkce a metody"
 
 #: ../../whatsnew/3.3.rst:2227
 msgid ""
 "Passing a non-empty string to ``object.__format__()`` is deprecated, and "
 "will produce a :exc:`TypeError` in Python 3.4 (:issue:`9856`)."
 msgstr ""
+"Pruchod ne-prazdneho retezce do ``object.__format__()`` je zastaraly a bude "
+"vyrabet :exc:`TypeError` v Pythonu 3.4 (:issue:`9856`)."
 
 #: ../../whatsnew/3.3.rst:2229
 msgid ""
@@ -4179,18 +4765,25 @@ msgid ""
 ":pep:`393`, use UTF-8, UTF-16 (``utf-16-le`` or ``utf-16-be``), or UTF-32 "
 "(``utf-32-le`` or ``utf-32-be``)"
 msgstr ""
+"Kodek ``unicode_internal`` byl zastaraly z duvodu :pep:`393`, pouzij UTF-8, "
+"UTF-16 (``utf-16-le`` nebo ``utf-16-be``), nebo UTF-32 (``utf-32-le`` nebo "
+"``utf-32-be``)"
 
 #: ../../whatsnew/3.3.rst:2232
 msgid ""
 ":meth:`ftplib.FTP.nlst` and :meth:`ftplib.FTP.dir`: use "
 ":meth:`ftplib.FTP.mlsd`"
 msgstr ""
+":meth:`ftplib.FTP.nlst` a :meth:`ftplib.FTP.dir`: pouzij "
+":meth:`ftplib.FTP.mlsd`"
 
 #: ../../whatsnew/3.3.rst:2234
 msgid ""
 ":func:`!platform.popen`: use the :mod:`subprocess` module. Check especially "
 "the :ref:`subprocess-replacements` section (:issue:`11377`)."
 msgstr ""
+":func:`!platform.popen`: pouzij modul :mod:`subprocess`. Zkontroluj "
+"obzvlaste :ref:`subprocess-replacements` sekci (:issue:`11377`)."
 
 #: ../../whatsnew/3.3.rst:2236
 msgid ""
@@ -4198,12 +4791,17 @@ msgid ""
 "module. Use Unicode filenames, instead of bytes filenames, to not depend on "
 "the ANSI code page anymore and to support any filename."
 msgstr ""
+":issue:`13374`: Windows bytes API byl zastaraly v modulu :mod:`os`. Pouzij "
+"Unicode jmena souboru, miste bytes jmen souboru, aby se nezavisli na ANSI "
+"code page a podporu jakekoli jmeno souboru."
 
 #: ../../whatsnew/3.3.rst:2239
 msgid ""
 ":issue:`13988`: The :mod:`!xml.etree.cElementTree` module is deprecated.  "
 "The accelerator is used automatically whenever available."
 msgstr ""
+":issue:`13988`: Modul :mod:`!xml.etree.cElementTree` je zastaraly. "
+"Akcelerator je pouzivany automaticky kdyz je dostupny."
 
 #: ../../whatsnew/3.3.rst:2241
 msgid ""
@@ -4211,18 +4809,21 @@ msgid ""
 ":func:`time.perf_counter` or :func:`time.process_time` function instead, "
 "depending on your requirements, to have a well defined behaviour."
 msgstr ""
+"Chovanis :func:`!time.clock` zavis na platforme: pouzij novou funkci "
+":func:`time.perf_counter` nebo :func:`time.process_time` namiste, v "
+"zavislosti na vaseho pozadavky, na dobry definovany chovanis."
 
 #: ../../whatsnew/3.3.rst:2244
 msgid "The :func:`!os.stat_float_times` function is deprecated."
-msgstr ""
+msgstr "Funkce :func:`!os.stat_float_times` je zastarala."
 
 #: ../../whatsnew/3.3.rst:2245
 msgid ":mod:`abc` module:"
-msgstr ""
+msgstr "Modul :mod:`abc`:"
 
 #: ../../whatsnew/3.3.rst:2254
 msgid ":mod:`importlib` package:"
-msgstr ""
+msgstr "Balik :mod:`importlib`:"
 
 #: ../../whatsnew/3.3.rst:2256
 msgid ""
@@ -4231,28 +4832,38 @@ msgid ""
 "both the modification time and size of the source file the bytecode file was"
 " compiled from."
 msgstr ""
+":meth:`importlib.abc.SourceLoader.path_mtime` je nyni zastarala ve prospech "
+":meth:`importlib.abc.SourceLoader.path_stats` jako bytecode soubory nyni "
+"skladiste jak cas zmeny tak velikost zdrojoveho souboru bytecode soubor byl "
+"prelozen od."
 
 #: ../../whatsnew/3.3.rst:2266
 msgid "Deprecated functions and types of the C API"
-msgstr ""
+msgstr "Zastaraly funkce a typy C API"
 
 #: ../../whatsnew/3.3.rst:2268
 msgid ""
 "The :c:type:`Py_UNICODE` has been deprecated by :pep:`393` and will be "
 "removed in Python 4. All functions using this type are deprecated:"
 msgstr ""
+":c:type:`Py_UNICODE` byla zastarala :pep:`393` a bude odstranena v Pythonu "
+"4. Vsechny funkce pouzivajici tento typ jsou zastaraly:"
 
 #: ../../whatsnew/3.3.rst:2271
 msgid ""
 "Unicode functions and methods using :c:type:`Py_UNICODE` and "
 ":c:expr:`Py_UNICODE*` types:"
 msgstr ""
+"Unicode funkce a metody pouzivajici :c:type:`Py_UNICODE` a "
+":c:expr:`Py_UNICODE*` typy:"
 
 #: ../../whatsnew/3.3.rst:2274
 msgid ""
 ":c:macro:`!PyUnicode_FromUnicode`: use :c:func:`PyUnicode_FromWideChar` or "
 ":c:func:`PyUnicode_FromKindAndData`"
 msgstr ""
+":c:macro:`!PyUnicode_FromUnicode`: pouzij :c:func:`PyUnicode_FromWideChar` "
+"nebo :c:func:`PyUnicode_FromKindAndData`"
 
 #: ../../whatsnew/3.3.rst:2276
 msgid ""
@@ -4260,50 +4871,65 @@ msgid ""
 ":c:func:`!PyUnicode_AsUnicodeAndSize`: use "
 ":c:func:`PyUnicode_AsWideCharString`"
 msgstr ""
+":c:macro:`!PyUnicode_AS_UNICODE`, :c:func:`!PyUnicode_AsUnicode`, "
+":c:func:`!PyUnicode_AsUnicodeAndSize`: pouzij "
+":c:func:`PyUnicode_AsWideCharString`"
 
 #: ../../whatsnew/3.3.rst:2278
 msgid ""
 ":c:macro:`!PyUnicode_AS_DATA`: use :c:macro:`PyUnicode_DATA` with "
 ":c:macro:`PyUnicode_READ` and :c:macro:`PyUnicode_WRITE`"
 msgstr ""
+":c:macro:`!PyUnicode_AS_DATA`: pouzij :c:macro:`PyUnicode_DATA` s "
+":c:macro:`PyUnicode_READ` a :c:macro:`PyUnicode_WRITE`"
 
 #: ../../whatsnew/3.3.rst:2280
 msgid ""
 ":c:macro:`!PyUnicode_GET_SIZE`, :c:func:`!PyUnicode_GetSize`: use "
 ":c:macro:`PyUnicode_GET_LENGTH` or :c:func:`PyUnicode_GetLength`"
 msgstr ""
+":c:macro:`!PyUnicode_GET_SIZE`, :c:func:`!PyUnicode_GetSize`: pouzij "
+":c:macro:`PyUnicode_GET_LENGTH` nebo :c:func:`PyUnicode_GetLength`"
 
 #: ../../whatsnew/3.3.rst:2282
 msgid ""
 ":c:macro:`!PyUnicode_GET_DATA_SIZE`: use ``PyUnicode_GET_LENGTH(str) * "
 "PyUnicode_KIND(str)`` (only work on ready strings)"
 msgstr ""
+":c:macro:`!PyUnicode_GET_DATA_SIZE`: pouzij ``PyUnicode_GET_LENGTH(str) * "
+"PyUnicode_KIND(str)`` (pouze pracuje na pripravenych retezci)"
 
 #: ../../whatsnew/3.3.rst:2285
 msgid ""
 ":c:func:`!PyUnicode_AsUnicodeCopy`: use :c:func:`PyUnicode_AsUCS4Copy` or "
 ":c:func:`PyUnicode_AsWideCharString`"
 msgstr ""
+":c:func:`!PyUnicode_AsUnicodeCopy`: pouzij :c:func:`PyUnicode_AsUCS4Copy` "
+"nebo :c:func:`PyUnicode_AsWideCharString`"
 
 #: ../../whatsnew/3.3.rst:2287
 msgid ":c:func:`!PyUnicode_GetMax`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_GetMax`"
 
 #: ../../whatsnew/3.3.rst:2290
 msgid "Functions and macros manipulating Py_UNICODE* strings:"
-msgstr ""
+msgstr "Funkce a makra manipulujici Py_UNICODE* retezci:"
 
 #: ../../whatsnew/3.3.rst:2292
 msgid ""
 ":c:macro:`!Py_UNICODE_strlen()`: use :c:func:`PyUnicode_GetLength` or "
 ":c:macro:`PyUnicode_GET_LENGTH`"
 msgstr ""
+":c:macro:`!Py_UNICODE_strlen()`: pouzij :c:func:`PyUnicode_GetLength` nebo "
+":c:macro:`PyUnicode_GET_LENGTH`"
 
 #: ../../whatsnew/3.3.rst:2294
 msgid ""
 ":c:macro:`!Py_UNICODE_strcat()`: use :c:func:`PyUnicode_CopyCharacters` or "
 ":c:func:`PyUnicode_FromFormat`"
 msgstr ""
+":c:macro:`!Py_UNICODE_strcat()`: pouzij :c:func:`PyUnicode_CopyCharacters` "
+"nebo :c:func:`PyUnicode_FromFormat`"
 
 #: ../../whatsnew/3.3.rst:2296
 msgid ""
@@ -4311,100 +4937,119 @@ msgid ""
 ":c:macro:`!Py_UNICODE_COPY()`: use :c:func:`PyUnicode_CopyCharacters` or "
 ":c:func:`PyUnicode_Substring`"
 msgstr ""
+":c:macro:`!Py_UNICODE_strcpy()`, :c:macro:`!Py_UNICODE_strncpy()`, "
+":c:macro:`!Py_UNICODE_COPY()`: pouzij :c:func:`PyUnicode_CopyCharacters` "
+"nebo :c:func:`PyUnicode_Substring`"
 
 #: ../../whatsnew/3.3.rst:2299
 msgid ":c:macro:`!Py_UNICODE_strcmp()`: use :c:func:`PyUnicode_Compare`"
-msgstr ""
+msgstr ":c:macro:`!Py_UNICODE_strcmp()`: pouzij :c:func:`PyUnicode_Compare`"
 
 #: ../../whatsnew/3.3.rst:2300
 msgid ":c:macro:`!Py_UNICODE_strncmp()`: use :c:func:`PyUnicode_Tailmatch`"
 msgstr ""
+":c:macro:`!Py_UNICODE_strncmp()`: pouzij :c:func:`PyUnicode_Tailmatch`"
 
 #: ../../whatsnew/3.3.rst:2301
 msgid ""
 ":c:macro:`!Py_UNICODE_strchr()`, :c:macro:`!Py_UNICODE_strrchr()`: use "
 ":c:func:`PyUnicode_FindChar`"
 msgstr ""
+":c:macro:`!Py_UNICODE_strchr()`, :c:macro:`!Py_UNICODE_strrchr()`: pouzij "
+":c:func:`PyUnicode_FindChar`"
 
 #: ../../whatsnew/3.3.rst:2303
 msgid ":c:macro:`!Py_UNICODE_FILL()`: use :c:func:`PyUnicode_Fill`"
-msgstr ""
+msgstr ":c:macro:`!Py_UNICODE_FILL()`: pouzij :c:func:`PyUnicode_Fill`"
 
 #: ../../whatsnew/3.3.rst:2304
 msgid ":c:macro:`!Py_UNICODE_MATCH`"
-msgstr ""
+msgstr ":c:macro:`!Py_UNICODE_MATCH`"
 
 #: ../../whatsnew/3.3.rst:2306
 msgid "Encoders:"
-msgstr ""
+msgstr "Enkodery:"
 
 #: ../../whatsnew/3.3.rst:2308
 msgid ":c:func:`!PyUnicode_Encode`: use :c:func:`!PyUnicode_AsEncodedObject`"
 msgstr ""
+":c:func:`!PyUnicode_Encode`: pouzij :c:func:`!PyUnicode_AsEncodedObject`"
 
 #: ../../whatsnew/3.3.rst:2309
 msgid ":c:func:`!PyUnicode_EncodeUTF7`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_EncodeUTF7`"
 
 #: ../../whatsnew/3.3.rst:2310
 msgid ""
 ":c:func:`!PyUnicode_EncodeUTF8`: use :c:func:`PyUnicode_AsUTF8` or "
 ":c:func:`PyUnicode_AsUTF8String`"
 msgstr ""
+":c:func:`!PyUnicode_EncodeUTF8`: pouzij :c:func:`PyUnicode_AsUTF8` nebo "
+":c:func:`PyUnicode_AsUTF8String`"
 
 #: ../../whatsnew/3.3.rst:2312
 msgid ":c:func:`!PyUnicode_EncodeUTF32`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_EncodeUTF32`"
 
 #: ../../whatsnew/3.3.rst:2313
 msgid ":c:func:`!PyUnicode_EncodeUTF16`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_EncodeUTF16`"
 
 #: ../../whatsnew/3.3.rst:2314
 msgid ""
 ":c:func:`!PyUnicode_EncodeUnicodeEscape` use "
 ":c:func:`PyUnicode_AsUnicodeEscapeString`"
 msgstr ""
+":c:func:`!PyUnicode_EncodeUnicodeEscape` pouzij "
+":c:func:`PyUnicode_AsUnicodeEscapeString`"
 
 #: ../../whatsnew/3.3.rst:2316
 msgid ""
 ":c:func:`!PyUnicode_EncodeRawUnicodeEscape` use "
 ":c:func:`PyUnicode_AsRawUnicodeEscapeString`"
 msgstr ""
+":c:func:`!PyUnicode_EncodeRawUnicodeEscape` pouzij "
+":c:func:`PyUnicode_AsRawUnicodeEscapeString`"
 
 #: ../../whatsnew/3.3.rst:2318
 msgid ""
 ":c:func:`!PyUnicode_EncodeLatin1`: use :c:func:`PyUnicode_AsLatin1String`"
 msgstr ""
+":c:func:`!PyUnicode_EncodeLatin1`: pouzij :c:func:`PyUnicode_AsLatin1String`"
 
 #: ../../whatsnew/3.3.rst:2319
 msgid ""
 ":c:func:`!PyUnicode_EncodeASCII`: use :c:func:`PyUnicode_AsASCIIString`"
 msgstr ""
+":c:func:`!PyUnicode_EncodeASCII`: pouzij :c:func:`PyUnicode_AsASCIIString`"
 
 #: ../../whatsnew/3.3.rst:2320
 msgid ":c:func:`!PyUnicode_EncodeCharmap`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_EncodeCharmap`"
 
 #: ../../whatsnew/3.3.rst:2321
 msgid ":c:func:`!PyUnicode_TranslateCharmap`"
-msgstr ""
+msgstr ":c:func:`!PyUnicode_TranslateCharmap`"
 
 #: ../../whatsnew/3.3.rst:2322
 msgid ""
 ":c:func:`!PyUnicode_EncodeMBCS`: use :c:func:`PyUnicode_AsMBCSString` or "
 ":c:func:`PyUnicode_EncodeCodePage` (with ``CP_ACP`` code_page)"
 msgstr ""
+":c:func:`!PyUnicode_EncodeMBCS`: pouzij :c:func:`PyUnicode_AsMBCSString` "
+"nebo :c:func:`PyUnicode_EncodeCodePage` (s ``CP_ACP`` code_page)"
 
 #: ../../whatsnew/3.3.rst:2324
 msgid ""
 ":c:func:`!PyUnicode_EncodeDecimal`, "
 ":c:func:`!PyUnicode_TransformDecimalToASCII`"
 msgstr ""
+":c:func:`!PyUnicode_EncodeDecimal`, "
+":c:func:`!PyUnicode_TransformDecimalToASCII`"
 
 #: ../../whatsnew/3.3.rst:2329
 msgid "Deprecated features"
-msgstr ""
+msgstr "Zastarala vlastnosti"
 
 #: ../../whatsnew/3.3.rst:2331
 msgid ""
@@ -4412,20 +5057,24 @@ msgid ""
 "removed in Python 4 together with the rest of the (:c:type:`Py_UNICODE`) "
 "API."
 msgstr ""
+"Modul :mod:`array` s ``'u'`` format kodem je nyni zastaraly a bude odstranen"
+" v Pythonu 4 spolecne se zbytkem (:c:type:`Py_UNICODE`) API."
 
 #: ../../whatsnew/3.3.rst:2336
 msgid "Porting to Python 3.3"
-msgstr ""
+msgstr "Preneseni na Python 3.3"
 
 #: ../../whatsnew/3.3.rst:2338
 msgid ""
 "This section lists previously described changes and other bugfixes that may "
 "require changes to your code."
 msgstr ""
+"Tato sekce uvadi drive popsane zmeny a jine bugfixy, ktere mohou vyzadovat "
+"zmeny vaseho kodu."
 
 #: ../../whatsnew/3.3.rst:2344
 msgid "Porting Python code"
-msgstr ""
+msgstr "Preneseni Python kodu"
 
 #: ../../whatsnew/3.3.rst:2346
 msgid ""
@@ -4433,6 +5082,9 @@ msgid ""
 "environment variable to ``0`` to disable hash randomization. See also the "
 ":meth:`object.__hash__` method."
 msgstr ""
+"Randomizace hesu je povolena ve vychozim stavu. Nastavte promennou prostredi"
+" :envvar:`PYTHONHASHSEED` na ``0`` pro vypnuti randomizace hesu. Viz take "
+"metodu :meth:`object.__hash__`."
 
 #: ../../whatsnew/3.3.rst:2350
 msgid ""
@@ -4442,6 +5094,11 @@ msgid ""
 " with sys.platform.startswith('linux'), or directly sys.platform == 'linux' "
 "if you don't need to support older Python versions."
 msgstr ""
+":issue:`12326`: Na Linuxu sys.platform neobsahuje vetsi verzi jiz. Je to "
+"nyni vzdy 'linux', namiste 'linux2' nebo 'linux3' v zavislosti na verzi "
+"Linuxu pouzite k buildovani Pythonu. Nahradj sys.platform == 'linux2' s "
+"sys.platform.startswith('linux'), nebo primo sys.platform == 'linux' pokud "
+"nepotrebujes podporovat starsi verze Pythonu."
 
 #: ../../whatsnew/3.3.rst:2356
 msgid ""
@@ -4450,6 +5107,10 @@ msgid ""
 "timestamp is out of range. :exc:`OSError` is now raised if C functions "
 ":c:func:`gmtime` or :c:func:`localtime` failed."
 msgstr ""
+":issue:`13847`, :issue:`14180`: :mod:`time` a :mod:`datetime`: "
+":exc:`OverflowError` je nyni vyvolen namiste :exc:`ValueError` pokud je "
+"casove razitko mimo rozsah. :exc:`OSError` je nyni vyvolen pokud C funkce "
+":c:func:`gmtime` nebo :c:func:`localtime` selhala."
 
 #: ../../whatsnew/3.3.rst:2361
 msgid ""
@@ -4459,6 +5120,11 @@ msgid ""
 ":func:`importlib.invalidate_caches` to clear out the cache for the finders "
 "to notice the new file."
 msgstr ""
+"Vychodiste findery pouzivane importem nyni pouzivaji cache toho, co je "
+"obsazeno v specifickym adresari. Pokud vytvoris Python zdrojovy soubor nebo "
+"bytecode soubor bez zdroje, nezapomene volat "
+":func:`importlib.invalidate_caches` pro vycisteni cache pro findery k "
+"povsimnuti si noveho souboru."
 
 #: ../../whatsnew/3.3.rst:2366
 msgid ""
@@ -4467,6 +5133,9 @@ msgid ""
 "updated to use the full name of the module instead of just the tail of the "
 "name."
 msgstr ""
+":exc:`ImportError` nyni pouziva plenho jmena modulu, ktery byl pokousen "
+"importovat. Doctesty, ktere kontroluji ImportErrors zprava budou potreba "
+"aktualizovany na pouziti plenho jmena modulu namiste jenom konec jmena."
 
 #: ../../whatsnew/3.3.rst:2371
 msgid ""
@@ -4479,12 +5148,21 @@ msgid ""
 ":func:`importlib.import_module` rather than call :func:`__import__` "
 "directly."
 msgstr ""
+"Argument *index* na :func:`__import__` nyni defaultne na 0 namiste -1 a jiz "
+"nedelam podporu negativni hodnoty. To bylo prasek kdyz :pep:`328` byla "
+"implementovana, ze vychozi hodnota zustala -1. Pokud potrebujes pokracovat "
+"provest relativni import za kterym nasleduje absolutni import, potom provest"
+" relativni import pomoci index 1, nasledovany dalsim importem pouzitim index"
+" 0. Je to vhodnejsi, ale, ze pouzivas :func:`importlib.import_module` spise "
+"nez volaji :func:`__import__` primo."
 
 #: ../../whatsnew/3.3.rst:2379
 msgid ""
 ":func:`__import__` no longer allows one to use an index value other than 0 "
 "for top-level modules. E.g. ``__import__('sys', level=1)`` is now an error."
 msgstr ""
+":func:`__import__` jiz nepovoluje pouziti index hodnotu jinou nez 0 pro top-"
+"level moduly. Nap. ``__import__('sys', level=1)`` je nyni chyba."
 
 #: ../../whatsnew/3.3.rst:2382
 msgid ""
@@ -4492,6 +5170,9 @@ msgid ""
 " them by default, you will most likely want to use :meth:`list.insert` "
 "instead of :meth:`list.append` to add to those lists."
 msgstr ""
+"Protoze :data:`sys.meta_path` a :data:`sys.path_hooks` nyni maji findery na "
+"nich ve vychozim stavu, budes pravdepodobne chtit pouzit :meth:`list.insert`"
+" namiste :meth:`list.append` pro pridani do tech seznamu."
 
 #: ../../whatsnew/3.3.rst:2386
 msgid ""
@@ -4503,6 +5184,13 @@ msgid ""
 ":data:`sys.path_importer_cache` where it represents the use of implicit "
 "finders, but semantically it should not change anything."
 msgstr ""
+"Protoze ``None`` je nyni vlozeno do :data:`sys.path_importer_cache`, pokud "
+"cistis vyhody v slovniku cest, ktere nemaji finder, buzes potreba odstranit "
+"klice spovane s hodnotami ``None`` **a** :class:`!imp.NullImporter` aby byl "
+"zpetne-kompatibilni. To vede k extra nakladum na starsimu verzim Pythonu, "
+"ktere znovu-vlozi ``None`` do :data:`sys.path_importer_cache` kde "
+"predstavuje pouziti implicitniho finderu, ale semanticky by to nemelo zmenit"
+" nic."
 
 #: ../../whatsnew/3.3.rst:2394
 msgid ""
@@ -4512,6 +5200,12 @@ msgid ""
 "first. You will probably want to check for ``find_loader()`` first, though, "
 "in the case of working with :term:`path entry finders <path entry finder>`."
 msgstr ""
+":class:`!importlib.abc.Finder` jiz nespecifikuje ``find_module()`` "
+"abstraktni metodu, ktera musi byt implementovana. Pokud jsi se spolehali na "
+"podtridy k implementaci te metody, ujisti se, ze se nejprve zkontroluje "
+"existence metody. Buds pravdepodobne chtit zkontrolovat ``find_loader()`` "
+"nejprve, ale, v pripade prace s :term:`path entry finders <path entry "
+"finder>`."
 
 #: ../../whatsnew/3.3.rst:2400
 msgid ""
@@ -4523,6 +5217,13 @@ msgid ""
 "special case the standard import hooks so they are still supported even "
 "though they do not provide the non-standard ``iter_modules()`` method."
 msgstr ""
+":mod:`pkgutil` byla konvertovana na pouziti :mod:`importlib` interniho. To "
+"eliminuje mnoho edge cases, kde se chovanis :pep:`302` import emulace "
+"selhalo se shodovalo s chovanim skutecneho import systemu. Samotna import "
+"emulace je stale pritemne, ale nyni je zastarala. Funkce "
+":func:`pkgutil.iter_importers` a :func:`pkgutil.walk_packages` specialni "
+"pripad standardni import hacky, takze jsou stale podporovany, i kdyz "
+"neskytnou ne-standartni metodu ``iter_modules()``."
 
 #: ../../whatsnew/3.3.rst:2408
 msgid ""
@@ -4537,6 +5238,16 @@ msgid ""
 " to add whitespace between ``ASCII`` and non-``ASCII`` sections if it is not"
 " already present in the input strings."
 msgstr ""
+"Longstanding RFC-compliance chyby (:issue:`1079`) v analyze udelane "
+":func:`email.header.decode_header` byl opraven. Kod, ktery pouziva "
+"standardni idiom k prevodu zakodovanych hlavicek do unicode "
+"(``str(make_header(decode_header(h))``) bude videt zadna zmena, ale kod, "
+"ktery vyhleda jednotlive tuples vracene decode_header bude videt, ze "
+"whitespace, ktery precede nebo nasleduje ``ASCII`` sekce je nyni zahrnuta v "
+"``ASCII`` sekci. Kod, ktery staveby hlavicky pomoci ``make_header`` by take "
+"mel pokracovat bez zmeny, od doby ``make_header`` pokracuje v pridavani "
+"whitespace mezi ``ASCII`` a non-``ASCII`` sekcemi, pokud to neni jiz "
+"pritemne v vstupnich retezci."
 
 #: ../../whatsnew/3.3.rst:2419
 msgid ""
@@ -4545,6 +5256,11 @@ msgid ""
 " the previous buggy behavior that preserved the non-``ASCII`` unicode in the"
 " formatted output string will need to be changed (:issue:`1690608`)."
 msgstr ""
+":func:`email.utils.formataddr` nyni provadi korektni content transfer "
+"kodovani, kdyz je predano non-``ASCII`` displej jmena. Jakykoli kod, ktery "
+"se spolehali na prvniji buggy chovanis, ktere zachovano non-``ASCII`` "
+"unicode v formatovanych vysvit retezci, bude potreba zmenen "
+"(:issue:`1690608`)."
 
 #: ../../whatsnew/3.3.rst:2424
 msgid ""
@@ -4553,22 +5269,29 @@ msgid ""
 ":exc:`poplib.error_proto` errors may need to be changed if errors on "
 "``quit`` are encountered by a particular application (:issue:`11291`)."
 msgstr ""
+":meth:`poplib.POP3.quit` muze nyni vyvola protokol chyby jako vsechny "
+"ostatni ``poplib`` metody. Kod, ktery predpoklada ``quit`` ne vyvola "
+":exc:`poplib.error_proto` chyby muze byt potreba zmenen pokud chyby na "
+"``quit`` jsou setkavane konkretni aplikaci (:issue:`11291`)."
 
 #: ../../whatsnew/3.3.rst:2429
 msgid ""
 "The ``strict`` argument to :class:`email.parser.Parser`, deprecated since "
 "Python 2.4, has finally been removed."
 msgstr ""
+"Argument ``strict`` na :class:`email.parser.Parser`, zastaraly od Pythonu "
+"2.4, konecne byl odstranen."
 
 #: ../../whatsnew/3.3.rst:2432
 msgid ""
 "The deprecated method ``unittest.TestCase.assertSameElements`` has been "
 "removed."
 msgstr ""
+"Zastarala metoda ``unittest.TestCase.assertSameElements`` byla odstranena."
 
 #: ../../whatsnew/3.3.rst:2435
 msgid "The deprecated variable ``time.accept2dyear`` has been removed."
-msgstr ""
+msgstr "Zastarala promenna ``time.accept2dyear`` byla odstranena."
 
 #: ../../whatsnew/3.3.rst:2437
 msgid ""
@@ -4576,6 +5299,9 @@ msgid ""
 ":mod:`decimal` module.  It was previously replaced by the public attribute "
 ":attr:`~decimal.Context.clamp`.  (See :issue:`8540`.)"
 msgstr ""
+"Zastaraly atribut ``Context._clamp`` byl odstraneny z modulu :mod:`decimal`."
+" Byl driv nahrazen verejnym atributem :attr:`~decimal.Context.clamp`. (Viz "
+":issue:`8540`.)"
 
 #: ../../whatsnew/3.3.rst:2441
 msgid ""
@@ -4583,12 +5309,17 @@ msgid ""
 " :mod:`smtplib`, since its functionality has long been provided directly by "
 ":meth:`socket.socket.makefile`."
 msgstr ""
+"Nedokumentovana interni pomocna trida ``SSLFakeFile`` byla odstranena z "
+":mod:`smtplib`, protoze jeho funkcnost byla dlouho poskytovana primo "
+":meth:`socket.socket.makefile`."
 
 #: ../../whatsnew/3.3.rst:2445
 msgid ""
 "Passing a negative value to :func:`time.sleep` on Windows now raises an "
 "error instead of sleeping forever.  It has always raised an error on posix."
 msgstr ""
+"Pruchod negativni hodnoty do :func:`time.sleep` na Windows nyni vyvola chybu"
+" miste spani navzdy. Vzdy to vyvola chybu na posix."
 
 #: ../../whatsnew/3.3.rst:2448
 msgid ""
@@ -4596,6 +5327,9 @@ msgid ""
 "decisions affected by the AST version, use :data:`sys.version_info` to make "
 "the decision."
 msgstr ""
+"Konstanta ``ast.__version__`` byla odstranena. Pokud potrebujes ucinit "
+"rozhodnutia ovlivnena verzci AST, pouzij :data:`sys.version_info` aby se "
+"rozhodnutim."
 
 #: ../../whatsnew/3.3.rst:2452
 msgid ""
@@ -4603,6 +5337,9 @@ msgid ""
 " factory functions by subclassing the private classes will need to change to"
 " subclass the now-public classes."
 msgstr ""
+"Kod, ktery se pouzival obejit se fakt, ze modul :mod:`threading` pouzival "
+"toverenni funkce subclassing privatnich trid bude potreba zmenen subclassing"
+" nyni-verejny tridy."
 
 #: ../../whatsnew/3.3.rst:2456
 msgid ""
@@ -4611,10 +5348,14 @@ msgid ""
 "code, but is mentioned here in case any application debug frameworks were "
 "interacting with it (:issue:`13550`)."
 msgstr ""
+"Nedokumentovana ladeni machinery v modulu threading byla odstranena, "
+"zjednoduseni kod. To by melo zadny efekt na vyrobu kod, ale je zmineno zde v"
+" pripade, ze jakakoli aplikace ladeni ramci byly interakcni s tim "
+"(:issue:`13550`)."
 
 #: ../../whatsnew/3.3.rst:2463
 msgid "Porting C code"
-msgstr ""
+msgstr "Preneseni C kodu"
 
 #: ../../whatsnew/3.3.rst:2465
 msgid ""
@@ -4622,12 +5363,17 @@ msgid ""
 ":c:member:`!smalltable` member of the :c:type:`Py_buffer` structure has been"
 " removed and the layout of the :c:type:`!PyMemoryViewObject` has changed."
 msgstr ""
+"V prubehu zmeny na buffer API nedokumentovany :c:member:`!smalltable` clan "
+":c:type:`Py_buffer` struktura byla odstranena a rozvrh "
+":c:type:`!PyMemoryViewObject` se zmenly."
 
 #: ../../whatsnew/3.3.rst:2470
 msgid ""
 "All extensions relying on the relevant parts in ``memoryobject.h`` or "
 "``object.h`` must be rebuilt."
 msgstr ""
+"Vsechny rozsireni spolehajici se na relevantni casti v ``memoryobject.h`` "
+"nebo ``object.h`` musi byt znovu postaveny."
 
 #: ../../whatsnew/3.3.rst:2473
 msgid ""
@@ -4638,6 +5384,11 @@ msgid ""
 "reduction provided by :pep:`393`, you have to convert your code to the new "
 ":doc:`Unicode API <../c-api/unicode>`."
 msgstr ""
+"Z duvodu :ref:`PEP 393 <pep-393>`, :c:type:`Py_UNICODE` typ a vsechny funkce"
+" pouzivajici tento typ jsou zastaraly (ale zustan dostupny minimalne pet "
+"let). Pokud jsi pouzival nizko-urovne Unicode API ke konstrukci a pristupu "
+"unicode objektu a chces prospet snizeni pamet nozky poskytovane :pep:`393`, "
+"musis konvertovat tvuj kod do noveho :doc:`Unicode API <../c-api/unicode>`."
 
 #: ../../whatsnew/3.3.rst:2480
 msgid ""
@@ -4646,10 +5397,14 @@ msgid ""
 ":c:func:`PyUnicode_FromFormat()`, your code will automatically take "
 "advantage of the new unicode representations."
 msgstr ""
+"Vsak, pokud jsi pouze pouzival vysoko-urovneve funkce jako "
+":c:func:`PyUnicode_Concat()`, :c:func:`PyUnicode_Join` nebo "
+":c:func:`PyUnicode_FromFormat()`, tvuj kod bude automaticky vzit vyhod nove "
+"reprezentaci unicode."
 
 #: ../../whatsnew/3.3.rst:2485
 msgid ":c:func:`PyImport_GetMagicNumber` now returns ``-1`` upon failure."
-msgstr ""
+msgstr ":c:func:`PyImport_GetMagicNumber` nyni vraci ``-1`` pri selhani."
 
 #: ../../whatsnew/3.3.rst:2487
 msgid ""
@@ -4658,10 +5413,14 @@ msgid ""
 "This also means that the value of *level* used by "
 ":c:func:`PyImport_ImportModuleEx` is now ``0`` instead of ``-1``."
 msgstr ""
+"Jako negativni hodnota pro argument *level* na :func:`__import__` jiz neni "
+"platna, sameho nyni drzi pro :c:func:`PyImport_ImportModuleLevel`. To take "
+"znamena, ze hodnota *level* pouzivana :c:func:`PyImport_ImportModuleEx` je "
+"nyni ``0`` namiste ``-1``."
 
 #: ../../whatsnew/3.3.rst:2494
 msgid "Building C extensions"
-msgstr ""
+msgstr "Budovani C rozsireni"
 
 #: ../../whatsnew/3.3.rst:2496
 msgid ""
@@ -4672,24 +5431,32 @@ msgid ""
 "generating such files, you have to switch to the other spellings (i.e., "
 "remove the ``module`` string from the file names)."
 msgstr ""
+"Rozsah moznych jmen souboru pro C rozsireni byl zuzeny. Velmi vzacne "
+"pouzivane zpusob byly potlaceny: pod POSIX, soubory pojmenovane "
+"``xxxmodule.so``, ``xxxmodule.abi3.so`` a ``xxxmodule.cpython-*.so`` jsou "
+"jiz neiznane jako implementovani ``xxx`` modulu. Pokud jsi byl generovani "
+"takove soubory, musis prejit na ostatni zpusoby (tj. odstranit ``module`` "
+"retezec z jmen souboru)."
 
 #: ../../whatsnew/3.3.rst:2504
 msgid "(implemented in :issue:`14040`.)"
-msgstr ""
+msgstr "(implementovano v :issue:`14040`.)"
 
 #: ../../whatsnew/3.3.rst:2508
 msgid "Command Line Switch Changes"
-msgstr ""
+msgstr "Zmeny prikazu Kommand Line"
 
 #: ../../whatsnew/3.3.rst:2510
 msgid ""
 "The -Q command-line flag and related artifacts have been removed.  Code "
 "checking sys.flags.division_warning will need updating."
 msgstr ""
+"Vlajka -Q prikazu a souvisejici artefakty byly odstraneny. Kod kontrolovani "
+"sys.flags.division_warning bude potreba aktualizace."
 
 #: ../../whatsnew/3.3.rst:2513
 msgid "(:issue:`10998`, contributed by Éric Araujo.)"
-msgstr ""
+msgstr "(:issue:`10998`, prispel Eric Araujo.)"
 
 #: ../../whatsnew/3.3.rst:2515
 msgid ""
@@ -4697,19 +5464,22 @@ msgid ""
 " longer add site-specific paths to the module search paths.  In previous "
 "versions, it did."
 msgstr ""
+"Kdyz :program:`python` je zacin s :option:`-S`, ``import site`` jiz nebude "
+"pridat site-specificke cesty do modulu search cest. V predchozi verzim to "
+"udelala."
 
 #: ../../whatsnew/3.3.rst:2519
 msgid ""
 "(:issue:`11591`, contributed by Carl Meyer with editions by Éric Araujo.)"
-msgstr ""
+msgstr "(:issue:`11591`, prispel Carl Meyer s editaci Eric Araujo.)"
 
 #: ../../whatsnew/3.3.rst:396
 msgid "yield"
-msgstr ""
+msgstr "yield"
 
 #: ../../whatsnew/3.3.rst:396
 msgid "yield from (in What's New)"
-msgstr ""
+msgstr "yield from (v What's New)"
 
 #~ msgid ""
 #~ "Previous versions of CPython have always relied on a global import lock. "

@@ -2619,7 +2619,7 @@ msgstr ""
 
 #: ../../whatsnew/3.6.rst:1363
 msgid "readline"
-msgstr ""
+msgstr "readline"
 
 #: ../../whatsnew/3.6.rst:1365
 msgid ""
@@ -2627,10 +2627,13 @@ msgid ""
 "addition of input to the history list.  (Contributed by Tyler Crompton in "
 ":issue:`26870`.)"
 msgstr ""
+"Přidána funkce :func:`~readline.set_auto_history` k povolení nebo zákazu "
+"automatického přidání vstupu do seznamu historie. (Vzneseno Tylerem "
+"Cromptonem v :issue:`26870`.)"
 
 #: ../../whatsnew/3.6.rst:1371
 msgid "rlcompleter"
-msgstr ""
+msgstr "rlcompleter"
 
 #: ../../whatsnew/3.6.rst:1373
 msgid ""
@@ -2639,10 +2642,14 @@ msgid ""
 "keywords. (Contributed by Serhiy Storchaka in :issue:`25011` and "
 ":issue:`25209`.)"
 msgstr ""
+"Soukromé a speciální názvy atributů jsou nyní vynechány, pokud předpona "
+"nezahájí podtržítky. Mezera nebo dvojtečka je přidána po některých "
+"dokončených klíčů. (Vzneseno Serhijem Storchakou v :issue:`25011` a "
+":issue:`25209`.)"
 
 #: ../../whatsnew/3.6.rst:1379
 msgid "shlex"
-msgstr ""
+msgstr "shlex"
 
 #: ../../whatsnew/3.6.rst:1381
 msgid ""
@@ -2651,10 +2658,14 @@ msgid ""
 " to control which characters are treated as punctuation. (Contributed by "
 "Vinay Sajip in :issue:`1521950`.)"
 msgstr ""
+":class:`~shlex.shlex` má podstatně :ref:`zlepšenou kompatibilitu shelu "
+"<improved-shell-compatibility>` prostřednictvím nového argumentu "
+"*punctuation_chars* k řízení, které znaky jsou zpracovávány jako "
+"interpunkce. (Vzneseno Vinayem Sajipem v :issue:`1521950`.)"
 
 #: ../../whatsnew/3.6.rst:1389
 msgid "site"
-msgstr ""
+msgstr "site"
 
 #: ../../whatsnew/3.6.rst:1391
 msgid ""
@@ -2662,20 +2673,25 @@ msgid ""
 " now specify file paths on top of directories (e.g. zip files). (Contributed"
 " by Wolfgang Langner in :issue:`26587`)."
 msgstr ""
+"Pokud zadáte cesty k přidání do :data:`sys.path` v souboru `.pth`, můžete "
+"nyní zadat cesty souborů na vrcholu adresářů (např. zip soubory). (Vzneseno "
+"Wolfgangem Langnerem v :issue:`26587`)."
 
 #: ../../whatsnew/3.6.rst:1397
 msgid "sqlite3"
-msgstr ""
+msgstr "sqlite3"
 
 #: ../../whatsnew/3.6.rst:1399
 msgid ""
 ":attr:`sqlite3.Cursor.lastrowid` now supports the ``REPLACE`` statement. "
 "(Contributed by Alex LordThorsen in :issue:`16864`.)"
 msgstr ""
+":attr:`sqlite3.Cursor.lastrowid` nyní podporuje příkaz ``REPLACE``. "
+"(Vzneseno Alexem LordThorsenem v :issue:`16864`.)"
 
 #: ../../whatsnew/3.6.rst:1404
 msgid "socket"
-msgstr ""
+msgstr "socket"
 
 #: ../../whatsnew/3.6.rst:1406
 msgid ""
@@ -2683,6 +2699,9 @@ msgid ""
 ":const:`~socket.SIO_LOOPBACK_FAST_PATH` control code. (Contributed by Daniel"
 " Stokes in :issue:`26536`.)"
 msgstr ""
+"Funkce :func:`~socket.socket.ioctl` nyní podporuje kód ovládání "
+":const:`~socket.SIO_LOOPBACK_FAST_PATH`. (Vzneseno Danielem Stokesem v "
+":issue:`26536`.)"
 
 #: ../../whatsnew/3.6.rst:1410
 msgid ""
@@ -2690,6 +2709,9 @@ msgid ""
 "``SO_PROTOCOL``, ``SO_PEERSEC``, and ``SO_PASSSEC`` are now supported. "
 "(Contributed by Christian Heimes in :issue:`26907`.)"
 msgstr ""
+"Konstanty :meth:`~socket.socket.getsockopt` ``SO_DOMAIN``, ``SO_PROTOCOL``, "
+"``SO_PEERSEC`` a ``SO_PASSSEC`` jsou nyní podporovány. (Vzneseno Christian "
+"Heimesem v :issue:`26907`.)"
 
 #: ../../whatsnew/3.6.rst:1414
 msgid ""
@@ -2697,6 +2719,9 @@ msgid ""
 "optname, None, optlen: int)`` form. (Contributed by Christian Heimes in "
 ":issue:`27744`.)"
 msgstr ""
+":meth:`~socket.socket.setsockopt` nyní podporuje formu ``setsockopt(level, "
+"optname, None, optlen: int)``. (Vzneseno Christian Heimesem v "
+":issue:`27744`.)"
 
 #: ../../whatsnew/3.6.rst:1418
 msgid ""
@@ -2705,16 +2730,22 @@ msgid ""
 ":meth:`~socket.socket.sendmsg_afalg` were added. (Contributed by Christian "
 "Heimes in :issue:`27744` with support from Victor Stinner.)"
 msgstr ""
+"Modul socket nyní podporuje rodiné adres :const:`~socket.AF_ALG` k rozhraní "
+"s API krypta jádra Linux. ``ALG_*``, ``SOL_ALG`` a "
+":meth:`~socket.socket.sendmsg_afalg` byly přidány. (Vzneseno Christian "
+"Heimesem v :issue:`27744` s podporou od Victora Stinnera.)"
 
 #: ../../whatsnew/3.6.rst:1424
 msgid ""
 "New Linux constants ``TCP_USER_TIMEOUT`` and ``TCP_CONGESTION`` were added. "
 "(Contributed by Omar Sandoval, :issue:`26273`)."
 msgstr ""
+"Nové konstanty Linux ``TCP_USER_TIMEOUT`` a ``TCP_CONGESTION`` byly přidány."
+" (Vzneseno Omarem Sandovalem, :issue:`26273`)."
 
 #: ../../whatsnew/3.6.rst:1429
 msgid "socketserver"
-msgstr ""
+msgstr "socketserver"
 
 #: ../../whatsnew/3.6.rst:1431
 msgid ""
@@ -2723,6 +2754,10 @@ msgid ""
 "now support the :term:`context manager` protocol. (Contributed by Aviv "
 "Palivoda in :issue:`26404`.)"
 msgstr ""
+"Servery založené na modulu :mod:`socketserver`, včetně těch definovaných v "
+":mod:`http.server`, :mod:`xmlrpc.server` a :mod:`wsgiref.simple_server`, "
+"nyní podporují protokol :term:`context manager`. (Vzneseno Aviv Palivodou v "
+":issue:`26404`.)"
 
 #: ../../whatsnew/3.6.rst:1437
 msgid ""
@@ -2732,16 +2767,23 @@ msgid ""
 ":meth:`~io.BufferedIOBase.write` is now guaranteed to send the data in full."
 "  (Contributed by Martin Panter in :issue:`26721`.)"
 msgstr ""
+"Atribut :attr:`wfile <socketserver.DatagramRequestHandler.wfile>` tříč "
+":class:`~socketserver.StreamRequestHandler` nyní implementuje zapisovatelné "
+"rozhraní :class:`io.BufferedIOBase`. Zejména volání "
+":meth:`~io.BufferedIOBase.write` je nyní zarueno, že všechny data budou "
+"odeslána. (Vzneseno Martinem Panterem v :issue:`26721`.)"
 
 #: ../../whatsnew/3.6.rst:1445 ../../whatsnew/3.6.rst:2037
 msgid "ssl"
-msgstr ""
+msgstr "ssl"
 
 #: ../../whatsnew/3.6.rst:1447
 msgid ""
 ":mod:`ssl` supports OpenSSL 1.1.0.  The minimum recommend version is 1.0.2. "
 "(Contributed by Christian Heimes in :issue:`26470`.)"
 msgstr ""
+":mod:`ssl` podporuje OpenSSL 1.1.0. Minimálně doporučenou verzí je 1.0.2. "
+"(Vzneseno Christian Heimesem v :issue:`26470`.)"
 
 #: ../../whatsnew/3.6.rst:1450
 msgid ""
@@ -2749,12 +2791,17 @@ msgid ""
 "cipher suites have been added. (Contributed by Christian Heimes in "
 ":issue:`27850` and :issue:`27766`.)"
 msgstr ""
+"3DES byl odstraněn z výchozích šifrovacích apartmánů a byly přidány "
+"šifrovací apartmány ChaCha20 Poly1305. (Vzneseno Christian Heimesem v "
+":issue:`27850` a :issue:`27766`.)"
 
 #: ../../whatsnew/3.6.rst:1454
 msgid ""
 ":class:`~ssl.SSLContext` has better default configuration for options and "
 "ciphers. (Contributed by Christian Heimes in :issue:`28043`.)"
 msgstr ""
+":class:`~ssl.SSLContext` má lepší výchozí konfiguraci voleb a šifer. "
+"(Vzneseno Christian Heimesem v :issue:`28043`.)"
 
 #: ../../whatsnew/3.6.rst:1458
 msgid ""
@@ -2763,24 +2810,34 @@ msgid ""
 " the initial handshake, reduce latency and improve performance (Contributed "
 "by Christian Heimes in :issue:`19500` based on a draft by Alex Warhawk.)"
 msgstr ""
+"Sezení SSL může být zkopíráno z jedné spoje na straně klienta na druhou s "
+"nové třídou :class:`~ssl.SSLSession`. Obnovení sezení TLS může zrychlit "
+"počáteční handshake, snížit latenci a zlepšit výkon (Vzneseno Christian "
+"Heimesem v :issue:`19500` na základě návrhu od Alex Warhawka.)"
 
 #: ../../whatsnew/3.6.rst:1464
 msgid ""
 "The new :meth:`~ssl.SSLContext.get_ciphers` method can be used to get a list"
 " of enabled ciphers in order of cipher priority."
 msgstr ""
+"Nová metoda :meth:`~ssl.SSLContext.get_ciphers` může být použita k získání "
+"seznamu povolených šifer v pořadí priority šifry."
 
 #: ../../whatsnew/3.6.rst:1467
 msgid ""
 "All constants and flags have been converted to :class:`~enum.IntEnum` and "
 ":class:`~enum.IntFlag`. (Contributed by Christian Heimes in :issue:`28025`.)"
 msgstr ""
+"Všechny konstanty a přístupy byly převedeny na :class:`~enum.IntEnum` a "
+":class:`~enum.IntFlag`. (Vzneseno Christian Heimesem v :issue:`28025`.)"
 
 #: ../../whatsnew/3.6.rst:1471
 msgid ""
 "Server and client-side specific TLS protocols for :class:`~ssl.SSLContext` "
 "were added. (Contributed by Christian Heimes in :issue:`28085`.)"
 msgstr ""
+"Byly přidány protokoly TLS specifické pro server a klienta "
+":class:`~ssl.SSLContext`. (Vzneseno Christian Heimesem v :issue:`28085`.)"
 
 #: ../../whatsnew/3.6.rst:1475
 msgid ""
@@ -2788,20 +2845,25 @@ msgid ""
 ":meth:`ssl.SSLSocket.verify_client_post_handshake` to initiate TLS 1.3 post-"
 "handshake authentication. (Contributed by Christian Heimes in :gh:`78851`.)"
 msgstr ""
+"Přidáno :attr:`ssl.SSLContext.post_handshake_auth` k povolení a "
+":meth:`ssl.SSLSocket.verify_client_post_handshake` k zahájení ověřování "
+"post-handshake TLS 1.3. (Vzneseno Christian Heimesem v :gh:`78851`.)"
 
 #: ../../whatsnew/3.6.rst:1481
 msgid "statistics"
-msgstr ""
+msgstr "statistics"
 
 #: ../../whatsnew/3.6.rst:1483
 msgid ""
 "A new :func:`~statistics.harmonic_mean` function has been added. "
 "(Contributed by Steven D'Aprano in :issue:`27181`.)"
 msgstr ""
+"Nová funkce :func:`~statistics.harmonic_mean` byla přidána. (Vzneseno "
+"Stevenem D'Apranem v :issue:`27181`.)"
 
 #: ../../whatsnew/3.6.rst:1488
 msgid "struct"
-msgstr ""
+msgstr "struct"
 
 #: ../../whatsnew/3.6.rst:1490
 msgid ""
@@ -2809,10 +2871,13 @@ msgid ""
 "format specifier. (Contributed by Eli Stevens, Mark Dickinson in "
 ":issue:`11734`.)"
 msgstr ""
+":mod:`struct` nyní podporuje IEEE 754 half-precision plovoucí čárky "
+"prostřednictvím specifikátoru formátu ``'e'``. (Vzneseno Eli Stevensem, "
+"Markem Dickinsonem v :issue:`11734`.)"
 
 #: ../../whatsnew/3.6.rst:1496
 msgid "subprocess"
-msgstr ""
+msgstr "subprocess"
 
 #: ../../whatsnew/3.6.rst:1498
 msgid ""
@@ -2822,6 +2887,11 @@ msgid ""
 ":meth:`~subprocess.Popen.wait` method to read the exit status of the child "
 "process. (Contributed by Victor Stinner in :issue:`26741`.)"
 msgstr ""
+"Destruktor :class:`subprocess.Popen` nyní vyvolá varování "
+":exc:`ResourceWarning`, pokud je podproces stále spouštěn. Použití protokolu"
+" spávce kontextu (``with proc: ...``) nebo explicitné volání metody "
+":meth:`~subprocess.Popen.wait` ke čtení stavu ukončení podprocesu. (Vzneseno"
+" Victorem Stinnerem v :issue:`26741`.)"
 
 #: ../../whatsnew/3.6.rst:1504
 msgid ""
@@ -2830,10 +2900,14 @@ msgid ""
 "Specifying either of these will enable text mode for the *stdin*, *stdout* "
 "and *stderr* streams. (Contributed by Steve Dower in :issue:`6135`.)"
 msgstr ""
+"Konstruktor :class:`subprocess.Popen` a všechny funkce, které předávají "
+"argumenty prostřednictvím, nyní přijmají argumenty *encoding* a *errors*. "
+"Zadání jedné z nich umožní režim textu pro proudý *stdin*, *stdout* a "
+"*stderr*. (Vzneseno Steve Dowerem v :issue:`6135`.)"
 
 #: ../../whatsnew/3.6.rst:1511
 msgid "sys"
-msgstr ""
+msgstr "sys"
 
 #: ../../whatsnew/3.6.rst:1513
 msgid ""
@@ -2841,6 +2915,9 @@ msgid ""
 "the error mode used to convert between Unicode filenames and bytes "
 "filenames. (Contributed by Steve Dower in :issue:`27781`.)"
 msgstr ""
+"Nová funkce :func:`~sys.getfilesystemencodeerrors` vrací název módu chyby "
+"používaného k převodu mezi názvy souborů Unicode a bajty souborů. (Vzneseno "
+"Steve Dowerem v :issue:`27781`.)"
 
 #: ../../whatsnew/3.6.rst:1517
 msgid ""
@@ -2850,30 +2927,39 @@ msgid ""
 "rather than the version that is being emulated for the process (Contributed "
 "by Steve Dower in :issue:`27932`.)"
 msgstr ""
+"V Systému Windows návratová hodnota funkce :func:`~sys.getwindowsversion` "
+"nyní obsahuje pole *platform_version*, které obsahuje přesné číslo hlavní "
+"verze, číslo vedlejší verze a číslo sestavení aktuálního operačního systému,"
+" namístem verze, která je emulóvána pro proces (Vzneseno Steve Dowerem v "
+":issue:`27932`.)"
 
 #: ../../whatsnew/3.6.rst:1525
 msgid "telnetlib"
-msgstr ""
+msgstr "telnetlib"
 
 #: ../../whatsnew/3.6.rst:1527
 msgid ""
 ":class:`!telnetlib.Telnet` is now a context manager (contributed by Stéphane"
 " Wirtel in :issue:`25485`)."
 msgstr ""
+":class:`!telnetlib.Telnet` je nyní spávcem kontextu (vzneseno Stéphanem "
+"Wirtelem v :issue:`25485`)."
 
 #: ../../whatsnew/3.6.rst:1532
 msgid "time"
-msgstr ""
+msgstr "time"
 
 #: ../../whatsnew/3.6.rst:1534
 msgid ""
 "The :class:`~time.struct_time` attributes :attr:`!tm_gmtoff` and "
 ":attr:`!tm_zone` are now available on all platforms."
 msgstr ""
+"Atributy :class:`~time.struct_time` :attr:`!tm_gmtoff` a :attr:`!tm_zone` "
+"jsou nyní dostupné na všech platformách."
 
 #: ../../whatsnew/3.6.rst:1539
 msgid "timeit"
-msgstr ""
+msgstr "timeit"
 
 #: ../../whatsnew/3.6.rst:1541
 msgid ""
@@ -2882,16 +2968,23 @@ msgid ""
 "repeatedly so that the total run time is greater or equal to 200 "
 "milliseconds. (Contributed by Steven D'Aprano in :issue:`6422`.)"
 msgstr ""
+"Nová metoda pohodlí :meth:`Timer.autorange() <timeit.Timer.autorange>` byla "
+"přidána k volání :meth:`Timer.timeit() <timeit.Timer.timeit>` opakovaně tak,"
+" aby celková doba běhu byla větší nebo rovna 200 milisekund. (Vzneseno "
+"Stevenem D'Apranem v :issue:`6422`.)"
 
 #: ../../whatsnew/3.6.rst:1546
 msgid ""
 ":mod:`timeit` now warns when there is substantial (4x) variance between best"
 " and worst times. (Contributed by Serhiy Storchaka in :issue:`23552`.)"
 msgstr ""
+":mod:`timeit` nyní vyvę varování, je-li podstatná (4x) odchylka mezi "
+"nejlepším a nejhorším časem. (Vzneseno Serhijem Storchakou v "
+":issue:`23552`.)"
 
 #: ../../whatsnew/3.6.rst:1552 ../../whatsnew/3.6.rst:2054
 msgid "tkinter"
-msgstr ""
+msgstr "tkinter"
 
 #: ../../whatsnew/3.6.rst:1554
 msgid ""
@@ -2902,10 +2995,16 @@ msgid ""
 "commands and might not work in future versions of Tcl. (Contributed by "
 "Serhiy Storchaka in :issue:`22115`)."
 msgstr ""
+"Přidány metody :meth:`!Variable.trace_add`, :meth:`!Variable.trace_remove` a"
+" :meth:`!trace_info` v třídě :class:`!tkinter.Variable`. Nahrazují staré "
+"metody :meth:`!trace_variable`, :meth:`!trace`, :meth:`!trace_vdelete` a "
+":meth:`!trace_vinfo`, které používají zastaralé příkazy Tcl a mohly by "
+"nefungovat v budoucích verzích Tcl. (Vzneseno Serhijem Storchakou v "
+":issue:`22115`)."
 
 #: ../../whatsnew/3.6.rst:1567
 msgid "traceback"
-msgstr ""
+msgstr "traceback"
 
 #: ../../whatsnew/3.6.rst:1569
 msgid ""
@@ -2913,6 +3012,9 @@ msgid ""
 "now abbreviate long sequences of repeated lines in tracebacks as shown in "
 "the following example::"
 msgstr ""
+"Jak modul traceback, tak vestavenné zobrazení výjimky interpreteru nyní "
+"zkrátají dlouhé sekvence opakovaných linií v trasováních, jak je uvedeno v "
+"následujícím příkladu::"
 
 #: ../../whatsnew/3.6.rst:1573
 msgid ""
@@ -2927,40 +3029,57 @@ msgid ""
 "  [Previous line repeated 995 more times]\n"
 "RecursionError: maximum recursion depth exceeded"
 msgstr ""
+">>> def f(): f()\n"
+"...\n"
+">>> f()\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"  File \"<stdin>\", line 1, in f\n"
+"  File \"<stdin>\", line 1, in f\n"
+"  File \"<stdin>\", line 1, in f\n"
+"  [Previous line repeated 995 more times]\n"
+"RecursionError: maximum recursion depth exceeded"
 
 #: ../../whatsnew/3.6.rst:1584
 msgid "(Contributed by Emanuel Barry in :issue:`26823`.)"
-msgstr ""
+msgstr "(Vzneseno Emanuelou Barrym v :issue:`26823`.)"
 
 #: ../../whatsnew/3.6.rst:1588
 msgid "tracemalloc"
-msgstr ""
+msgstr "tracemalloc"
 
 #: ../../whatsnew/3.6.rst:1590
 msgid ""
 "The :mod:`tracemalloc` module now supports tracing memory allocations in "
 "multiple different address spaces."
 msgstr ""
+"Modul :mod:`tracemalloc` nyní podporuje trasování alokací paměti ve více "
+"různých adresních prostorech."
 
 #: ../../whatsnew/3.6.rst:1593
 msgid ""
 "The new :class:`~tracemalloc.DomainFilter` filter class has been added to "
 "filter block traces by their address space (domain)."
 msgstr ""
+"Nová třída filtru :class:`~tracemalloc.DomainFilter` byla přidána k "
+"filtrování trasování bloků podle jejich adresního prostoru (domény)."
 
 #: ../../whatsnew/3.6.rst:1596
 msgid "(Contributed by Victor Stinner in :issue:`26588`.)"
-msgstr ""
+msgstr "(Vzneseno Victorem Stinnerem v :issue:`26588`.)"
 
 #: ../../whatsnew/3.6.rst:1602
 msgid "typing"
-msgstr ""
+msgstr "typing"
 
 #: ../../whatsnew/3.6.rst:1604
 msgid ""
 "Since the :mod:`typing` module is :term:`provisional <provisional API>`, all"
 " changes introduced in Python 3.6 have also been backported to Python 3.5.x."
 msgstr ""
+"Protože modul :mod:`typing` je :term:`experimentální <provisional API>`, "
+"všechny změny zavédené v Pythonu 3.6 byly také zpět portővány na Python "
+"3.5.x."
 
 #: ../../whatsnew/3.6.rst:1608
 msgid ""
@@ -2969,6 +3088,10 @@ msgid ""
 "annotation. (Contributed by Guido van Rossum in `Github #195 "
 "<https://github.com/python/typing/pull/195>`_.)"
 msgstr ""
+"Modul :mod:`typing` má mnohem zlepšenou podporu pro generálnuij álnies typu."
+" Například ``Dict[str, Tuple[S, T]]`` je nyní platná anotace typu. (Vzneseno"
+" Guidem van Rossumem v `Github #195 "
+"<https://github.com/python/typing/pull/195>`_.)"
 
 #: ../../whatsnew/3.6.rst:1614
 msgid ""
@@ -2976,6 +3099,9 @@ msgid ""
 ":class:`contextlib.AbstractContextManager`. (Contributed by Brett Cannon in "
 ":issue:`25609`.)"
 msgstr ""
+"Třída :class:`typing.ContextManager` byla přidána k reprezentaci "
+":class:`contextlib.AbstractContextManager`. (Vzneseno Brettem Cannonem v "
+":issue:`25609`.)"
 
 #: ../../whatsnew/3.6.rst:1618
 msgid ""
@@ -2983,6 +3109,9 @@ msgid ""
 ":class:`collections.abc.Collection`. (Contributed by Ivan Levkivskyi in "
 ":issue:`27598`.)"
 msgstr ""
+"Třída :class:`typing.Collection` byla přidána k reprezentaci "
+":class:`collections.abc.Collection`. (Vzneseno Ivanem Levkivským v "
+":issue:`27598`.)"
 
 #: ../../whatsnew/3.6.rst:1622
 msgid ""
@@ -2993,6 +3122,11 @@ msgid ""
 "Ivan Levkivskyi in `Github #280 "
 "<https://github.com/python/typing/pull/280>`_.)"
 msgstr ""
+"Konstrukt typu :const:`typing.ClassVar` byl přidán k označení proměnných "
+"třídy. Jaké bylo zavédeno :pep:`526`, anotace proměnné zabalené v ClassVar "
+"označuje, že daný atribut je zaměřen na použití jako proměnná třídy a neměl "
+"by být nastaven na instancích té třídy. (Vzneseno Ivanem Levkivským v "
+"`Github #280 <https://github.com/python/typing/pull/280>`_.)"
 
 #: ../../whatsnew/3.6.rst:1629
 msgid ""
@@ -3001,12 +3135,18 @@ msgid ""
 "Guido van Rossum in `Github #230 "
 "<https://github.com/python/typing/issues/230>`_.)"
 msgstr ""
+"Nová konstanta :const:`~typing.TYPE_CHECKING`, která je předpokládána jako "
+"``True`` statickými typovými kontroly, ale je ``False`` za běhu. (Vzneseno "
+"Guidem van Rossumem v `Github #230 "
+"<https://github.com/python/typing/issues/230>`_.)"
 
 #: ../../whatsnew/3.6.rst:1634
 msgid ""
 "A new :func:`~typing.NewType` helper function has been added to create "
 "lightweight distinct types for annotations::"
 msgstr ""
+"Nová pomocná funkce :func:`~typing.NewType` byla přidána k vytvoření lehkých"
+" odlišných typů pro anotace::"
 
 #: ../../whatsnew/3.6.rst:1637
 msgid ""
@@ -3015,6 +3155,10 @@ msgid ""
 "UserId = NewType('UserId', int)\n"
 "some_id = UserId(524313)"
 msgstr ""
+"from typing import NewType\n"
+"\n"
+"UserId = NewType('UserId', int)\n"
+"some_id = UserId(524313)"
 
 #: ../../whatsnew/3.6.rst:1642
 msgid ""
@@ -3022,10 +3166,13 @@ msgid ""
 "the original type.  (Contributed by Ivan Levkivskyi in `Github #189 "
 "<https://github.com/python/typing/issues/189>`_.)"
 msgstr ""
+"Statický typový kontrola bude zacházet s novým typem, jako by byl "
+"podskupinou původního typu. (Vzneseno Ivanem Levkivským v `Github #189 "
+"<https://github.com/python/typing/issues/189>`_.)"
 
 #: ../../whatsnew/3.6.rst:1648
 msgid "unicodedata"
-msgstr ""
+msgstr "unicodedata"
 
 #: ../../whatsnew/3.6.rst:1650
 msgid ""
@@ -3033,14 +3180,17 @@ msgid ""
 "<https://unicode.org/versions/Unicode9.0.0/>`_. (Contributed by Benjamin "
 "Peterson.)"
 msgstr ""
+"Modul :mod:`unicodedata` nyní používá data z `Unicode 9.0.0 "
+"<https://unicode.org/versions/Unicode9.0.0/>`_. (Vzneseno Benjaminem "
+"Petersonem.)"
 
 #: ../../whatsnew/3.6.rst:1656
 msgid "unittest.mock"
-msgstr ""
+msgstr "unittest.mock"
 
 #: ../../whatsnew/3.6.rst:1658
 msgid "The :class:`~unittest.mock.Mock` class has the following improvements:"
-msgstr ""
+msgstr "Třída :class:`~unittest.mock.Mock` má následující vylepenen:"
 
 #: ../../whatsnew/3.6.rst:1660
 msgid ""
@@ -3049,6 +3199,10 @@ msgid ""
 "<unittest.mock.Mock.assert_called_once>` to check if the mock object was "
 "called. (Contributed by Amit Saha in :issue:`26323`.)"
 msgstr ""
+"Dvě nové metody, :meth:`Mock.assert_called() "
+"<unittest.mock.Mock.assert_called>` a :meth:`Mock.assert_called_once() "
+"<unittest.mock.Mock.assert_called_once>` ke kontrole, zda byl objekt mock "
+"volán. (Vzneseno Amit Sahau v :issue:`26323`.)"
 
 #: ../../whatsnew/3.6.rst:1666
 msgid ""
@@ -3056,10 +3210,13 @@ msgid ""
 " two optional keyword only arguments: *return_value* and *side_effect*. "
 "(Contributed by Kushal Das in :issue:`21271`.)"
 msgstr ""
+"Metoda :meth:`Mock.reset_mock() <unittest.mock.Mock.reset_mock>` nyní má dva"
+" voliteelné argumenty pouze klíč: *return_value* a *side_effect*. (Vzneseno "
+"Kushalem Dasem v :issue:`21271`.)"
 
 #: ../../whatsnew/3.6.rst:1673
 msgid "urllib.request"
-msgstr ""
+msgstr "urllib.request"
 
 #: ../../whatsnew/3.6.rst:1675
 msgid ""
@@ -3069,10 +3226,15 @@ msgid ""
 "use chunked transfer encoding. (Contributed by Demian Brecht and Rolf Krahl "
 "in :issue:`12319`.)"
 msgstr ""
+"Pokud HTTP požadavek má tělo souboru nebo iterátoru (jinýho než objekt "
+"bytes), ale bez hlavičky ``Content-Length``, namístem hodání chyby "
+":class:`AbstractHTTPHandler <urllib.request.HTTPHandler>` nyní spadne zpět "
+"na použití kódování chunked transfer. (Vzneseno Demianem Brechtem a Rolfem "
+"Kahlem v :issue:`12319`.)"
 
 #: ../../whatsnew/3.6.rst:1683
 msgid "urllib.robotparser"
-msgstr ""
+msgstr "urllib.robotparser"
 
 #: ../../whatsnew/3.6.rst:1685
 msgid ""
@@ -3080,10 +3242,13 @@ msgid ""
 "delay`` and ``Request-rate`` extensions. (Contributed by Nikolay Bogoychev "
 "in :issue:`16099`.)"
 msgstr ""
+":class:`~urllib.robotparser.RobotFileParser` nyní podporuje rozšíření "
+"``Crawl-delay`` a ``Request-rate``. (Vzneseno Nikolay Bogoychevem v "
+":issue:`16099`.)"
 
 #: ../../whatsnew/3.6.rst:1691 ../../whatsnew/3.6.rst:2062
 msgid "venv"
-msgstr ""
+msgstr "venv"
 
 #: ../../whatsnew/3.6.rst:1693
 msgid ""
@@ -3091,10 +3256,13 @@ msgid ""
 " alternative prefix for the virtual environment. (Proposed by Łukasz "
 "Balcerzak and ported to 3.6 by Stéphane Wirtel in :issue:`22829`.)"
 msgstr ""
+":mod:`venv` přijmá nový parametr ``--prompt``. Tento parametr poskytuje "
+"alternativní předponu pro virtuální prostředí. (Navrženo Łukaszem "
+"Balcerzakem a portováno na 3.6 Stéphanem Wirtelem v :issue:`22829`.)"
 
 #: ../../whatsnew/3.6.rst:1699
 msgid "warnings"
-msgstr ""
+msgstr "warnings"
 
 #: ../../whatsnew/3.6.rst:1701
 msgid ""
@@ -3104,6 +3272,11 @@ msgid ""
 ":class:`!warnings.WarningMessage` (contributed by Victor Stinner in "
 ":issue:`26568` and :issue:`26567`)."
 msgstr ""
+"Nový volitelný parametr *source* byl přidán do funkce "
+":func:`warnings.warn_explicit`: zničený objekt, který vyvolá "
+":exc:`ResourceWarning`. Atribut *source* byl také přidán do "
+":class:`!warnings.WarningMessage` (vzneseno Victorem Stinnerem v "
+":issue:`26568` a :issue:`26567`)."
 
 #: ../../whatsnew/3.6.rst:1707
 msgid ""
@@ -3111,10 +3284,12 @@ msgid ""
 "module is now used to try to retrieve the traceback where the destroyed "
 "object was allocated."
 msgstr ""
+"Je-li zaznamenáno varování :exc:`ResourceWarning`, modul :mod:`tracemalloc` "
+"je nyní používán k pokusu získát trasování, kde byl zničený objekt alokáván."
 
 #: ../../whatsnew/3.6.rst:1710
 msgid "Example with the script ``example.py``::"
-msgstr ""
+msgstr "Příklad se skriptem ``example.py``:"
 
 #: ../../whatsnew/3.6.rst:1712
 msgid ""
@@ -3126,10 +3301,17 @@ msgid ""
 "f = func()\n"
 "f = None"
 msgstr ""
+"import warnings\n"
+"\n"
+"def func():\n"
+"    return open(__file__)\n"
+"\n"
+"f = func()\n"
+"f = None"
 
 #: ../../whatsnew/3.6.rst:1720
 msgid "Output of the command ``python3.6 -Wd -X tracemalloc=5 example.py``::"
-msgstr ""
+msgstr "Výstupy příkazu ``python3.6 -Wd -X tracemalloc=5 example.py``:"
 
 #: ../../whatsnew/3.6.rst:1722
 msgid ""
@@ -3141,6 +3323,13 @@ msgid ""
 "  File \"example.py\", lineno 6\n"
 "    f = func()"
 msgstr ""
+"example.py:7: ResourceWarning: unclosed file <_io.TextIOWrapper name='example.py' mode='r' encoding='UTF-8'>\n"
+"  f = None\n"
+"Object allocated at (most recent call first):\n"
+"  File \"example.py\", lineno 4\n"
+"    return open(__file__)\n"
+"  File \"example.py\", lineno 6\n"
+"    f = func()"
 
 #: ../../whatsnew/3.6.rst:1730
 msgid ""
@@ -3148,20 +3337,25 @@ msgid ""
 ":mod:`tracemalloc` is tracing Python memory allocations and if the "
 ":mod:`warnings` module was already imported."
 msgstr ""
+"\"Object allocated at\" trasování je nové a je zobřazeno pouze, pokud "
+":mod:`tracemalloc` trasuje alokace paměti Pythonu a pokud byl modul "
+":mod:`warnings` již importován."
 
 #: ../../whatsnew/3.6.rst:1736
 msgid "winreg"
-msgstr ""
+msgstr "winreg"
 
 #: ../../whatsnew/3.6.rst:1738
 msgid ""
 "Added the 64-bit integer type :data:`REG_QWORD <winreg.REG_QWORD>`. "
 "(Contributed by Clement Rouault in :issue:`23026`.)"
 msgstr ""
+"Přidán typ 64-bitového celého čísla :data:`REG_QWORD <winreg.REG_QWORD>`. "
+"(Vzneseno Clementem Rouaultem v :issue:`23026`.)"
 
 #: ../../whatsnew/3.6.rst:1743
 msgid "winsound"
-msgstr ""
+msgstr "winsound"
 
 #: ../../whatsnew/3.6.rst:1745
 msgid ""
@@ -3169,10 +3363,13 @@ msgid ""
 ":func:`MessageBeep <winsound.MessageBeep>`, and :func:`PlaySound "
 "<winsound.PlaySound>` (:issue:`27982`)."
 msgstr ""
+"Povolovany argumenty klíčů, které mamá být předány :func:`Beep "
+"<winsound.Beep>`, :func:`MessageBeep <winsound.MessageBeep>` a "
+":func:`PlaySound <winsound.PlaySound>` (:issue:`27982`)."
 
 #: ../../whatsnew/3.6.rst:1751
 msgid "xmlrpc.client"
-msgstr ""
+msgstr "xmlrpc.client"
 
 #: ../../whatsnew/3.6.rst:1753
 msgid ""
@@ -3180,10 +3377,13 @@ msgid ""
 "types used by the Apache XML-RPC implementation for numerics and ``None``. "
 "(Contributed by Serhiy Storchaka in :issue:`26885`.)"
 msgstr ""
+"Modul :mod:`xmlrpc.client` nyní podporuje rozbalení dalších typů dat "
+"používaných implementací Apache XML-RPC pro numeré a ``None``. (Vzneseno "
+"Serhijem Storchakou v :issue:`26885`.)"
 
 #: ../../whatsnew/3.6.rst:1760
 msgid "zipfile"
-msgstr ""
+msgstr "zipfile"
 
 #: ../../whatsnew/3.6.rst:1762
 msgid ""
@@ -3193,6 +3393,11 @@ msgid ""
 " check if the :class:`~zipfile.ZipInfo` instance represents a directory. "
 "(Contributed by Thomas Kluyver in :issue:`26039`.)"
 msgstr ""
+"Nová metoda třídy :meth:`ZipInfo.from_file() <zipfile.ZipInfo.from_file>` "
+"umožňuje vytvoření instance :class:`~zipfile.ZipInfo` ze souboru systému "
+"souborů. Nová metoda :meth:`ZipInfo.is_dir() <zipfile.ZipInfo.is_dir>` může "
+"být použita ke kontrole, zda instance :class:`~zipfile.ZipInfo` reprezentuje"
+" adresář. (Vzneseno Thomasem Kluyverem v :issue:`26039`.)"
 
 #: ../../whatsnew/3.6.rst:1768
 msgid ""
@@ -3200,10 +3405,13 @@ msgid ""
 "write data into a ZIP file, as well as for extracting data. (Contributed by "
 "Thomas Kluyver in :issue:`26039`.)"
 msgstr ""
+"Metoda :meth:`ZipFile.open() <zipfile.ZipFile.open>` nyní může být použita k"
+" zápisu dat do souboru ZIP a také k extrahování dat. (Vzneseno Thomasem "
+"Kluyverem v :issue:`26039`.)"
 
 #: ../../whatsnew/3.6.rst:1774
 msgid "zlib"
-msgstr ""
+msgstr "zlib"
 
 #: ../../whatsnew/3.6.rst:1776
 msgid ""
@@ -3211,10 +3419,13 @@ msgid ""
 " keyword arguments. (Contributed by Aviv Palivoda in :issue:`26243` and "
 "Xiang Zhang in :issue:`16764` respectively.)"
 msgstr ""
+"Funkce :func:`~zlib.compress` a :func:`~zlib.decompress` nyní přijmají "
+"argumenty klíčů. (Vzneseno Aviv Palivodou v :issue:`26243` a Xiangem Zhangem"
+" v :issue:`16764` resp.)"
 
 #: ../../whatsnew/3.6.rst:1783
 msgid "Optimizations"
-msgstr ""
+msgstr "Optimalizace"
 
 #: ../../whatsnew/3.6.rst:1785
 msgid ""
@@ -3223,18 +3434,24 @@ msgid ""
 "with input and reviews from Serhiy Storchaka and Victor Stinner in "
 ":issue:`26647` and :issue:`28050`.)"
 msgstr ""
+"Interpret Pythonu nyní používá 16-bitové slovo místo bytecode. (Vzneseno "
+"Demur Rumedem v :issue:`26647` a :issue:`28050`.)"
 
 #: ../../whatsnew/3.6.rst:1790
 msgid ""
 "The :class:`asyncio.Future` class now has an optimized C implementation. "
 "(Contributed by Yury Selivanov and INADA Naoki in :issue:`26081`.)"
 msgstr ""
+"Třída :class:`asyncio.Future` nyní má optimalizovanou C implementaci. "
+"(Vzneseno Yurym Selivanovem a INADA Naoki v :issue:`26081`.)"
 
 #: ../../whatsnew/3.6.rst:1793
 msgid ""
 "The :class:`asyncio.Task` class now has an optimized C implementation. "
 "(Contributed by Yury Selivanov in :issue:`28544`.)"
 msgstr ""
+"Třída :class:`asyncio.Task` nyní má optimalizovanou C implementaci. "
+"(Vzneseno Yurym Selivanovem v :issue:`28544`.)"
 
 #: ../../whatsnew/3.6.rst:1796
 msgid ""
@@ -3242,6 +3459,8 @@ msgid ""
 "caching of generic types) allow up to 30 times performance improvements and "
 "reduced memory footprint."
 msgstr ""
+"Různá vylepšení implementace v modulu :mod:`typing` umožňují až 30násobné "
+"zlepšení výkonu. (Vzneseno v ragištěch modulech.)"
 
 #: ../../whatsnew/3.6.rst:1800
 msgid ""
@@ -3249,6 +3468,8 @@ msgid ""
 "``surrogateescape``, ``ignore`` and ``replace`` (Contributed by Victor "
 "Stinner in :issue:`24870`)."
 msgstr ""
+"Dekodér ASCII je nyní až 60krát rychlejší. (Vzneseno Victorem Stinnerem v "
+":issue:`24870`.)"
 
 #: ../../whatsnew/3.6.rst:1804
 msgid ""
@@ -3256,6 +3477,8 @@ msgid ""
 "error handler ``surrogateescape`` (Contributed by Victor Stinner in "
 ":issue:`25227`)."
 msgstr ""
+"Kodek ASCII a Latin1 jsou nyní až 3krát rychlejší. (Vzneseno Victorem "
+"Stinnerem v :issue:`25227`.)"
 
 #: ../../whatsnew/3.6.rst:1808
 msgid ""
@@ -3263,6 +3486,8 @@ msgid ""
 "``ignore``, ``replace``, ``surrogateescape``, ``surrogatepass`` (Contributed"
 " by Victor Stinner in :issue:`25267`)."
 msgstr ""
+"Kodek UTF-8 je nyní až 75krát rychlejší. (Vzneseno Victorem Stinnerem v "
+":issue:`25267`.)"
 
 #: ../../whatsnew/3.6.rst:1812
 msgid ""
@@ -3270,18 +3495,24 @@ msgid ""
 "``ignore``, ``replace`` and ``surrogateescape`` (Contributed by Victor "
 "Stinner in :issue:`25301`)."
 msgstr ""
+"Dekodér UTF-8 je nyní až 15krát rychlejší. (Vzneseno Victorem Stinnerem v "
+":issue:`25301`.)"
 
 #: ../../whatsnew/3.6.rst:1816
 msgid ""
 "``bytes % args`` is now up to 2 times faster. (Contributed by Victor Stinner"
 " in :issue:`25349`)."
 msgstr ""
+"bytes % args je nyní až 2krát rychlejší. (Vzneseno Victorem Stinnerem v "
+":issue:`25349`.)"
 
 #: ../../whatsnew/3.6.rst:1819
 msgid ""
 "``bytearray % args`` is now between 2.5 and 5 times faster. (Contributed by "
 "Victor Stinner in :issue:`25399`)."
 msgstr ""
+"bytearray % args je nyní mezi 2.5 a 5krát rychlejší. (Vzneseno Victorem "
+"Stinnerem v :issue:`25399`.)"
 
 #: ../../whatsnew/3.6.rst:1822
 msgid ""
@@ -3289,6 +3520,8 @@ msgid ""
 "between 2x and 3.5x faster. (Contributed by Victor Stinner in "
 ":issue:`25401`)."
 msgstr ""
+"Optimalizujte bytes.fromhex: jsou nyní mezi 2x a 3.5x rychlejší. (Vzneseno "
+"Victorem Stinnerem v :issue:`25401`.)"
 
 #: ../../whatsnew/3.6.rst:1825
 #, no-python-format
@@ -3296,6 +3529,8 @@ msgid ""
 "Optimize ``bytes.replace(b'', b'.')`` and ``bytearray.replace(b'', b'.')``: "
 "up to 80% faster. (Contributed by Josh Snider in :issue:`26574`)."
 msgstr ""
+"Optimalizujte bytes.replace: až 80% rychlejší. (Vzneseno Josh Sniderem v "
+":issue:`26574`.)"
 
 #: ../../whatsnew/3.6.rst:1828
 msgid ""
@@ -3306,6 +3541,8 @@ msgid ""
 "with a short lifetime, and use :c:func:`malloc` for larger memory blocks. "
 "(Contributed by Victor Stinner in :issue:`26249`)."
 msgstr ""
+"Funkce alokátoru domény PyMem_Malloc nyní používají alokátor paměti "
+"pymalloc. (Vzneseno Victorem Stinnerem v :issue:`26249`.)"
 
 #: ../../whatsnew/3.6.rst:1835
 #, no-python-format
@@ -3314,6 +3551,8 @@ msgid ""
 "deserializing many small objects (Contributed by Victor Stinner in "
 ":issue:`27056`)."
 msgstr ""
+":func:`pickle.load` a :func:`pickle.loads` jsou nyní až o 10% rychlejší. "
+"(Vzneseno Victorem Stinnerem v :issue:`27056`.)"
 
 #: ../../whatsnew/3.6.rst:1839
 msgid ""
@@ -3323,6 +3562,8 @@ msgid ""
 "Clinic this overhead is significantly decreased. (Contributed by Serhiy "
 "Storchaka in :issue:`27574`)."
 msgstr ""
+"Předávání argumentů klíčů do funkce jsou nyní rychlejší. (Vzneseno Serhijem "
+"Storchakou v :issue:`27574`.)"
 
 #: ../../whatsnew/3.6.rst:1845
 msgid ""
@@ -3330,6 +3571,9 @@ msgid ""
 ":mod:`glob` module; they are now about 3--6 times faster. (Contributed by "
 "Serhiy Storchaka in :issue:`25596`)."
 msgstr ""
+"Optimalizovany :func:`~glob.glob` a :func:`~glob.iglob` v modulu :mod:`glob`"
+" jsou nyní 3--6krát rychlejší. (Vzneseno Serhijem Storchakou v "
+":issue:`25596`.)"
 
 #: ../../whatsnew/3.6.rst:1849
 msgid ""
@@ -3337,6 +3581,8 @@ msgid ""
 "about 1.5--4 times faster. (Contributed by Serhiy Storchaka in "
 ":issue:`26032`)."
 msgstr ""
+"Optimalizované globbing v :mod:`pathlib` je nyní 1.5--4krát rychlejší. "
+"(Vzneseno Serhijem Storchakou v :issue:`26032`.)"
 
 #: ../../whatsnew/3.6.rst:1853
 msgid ""
@@ -3344,6 +3590,8 @@ msgid ""
 "has been significantly improved. (Contributed by Serhiy Storchaka in "
 ":issue:`25638`, :issue:`25873`, and :issue:`25869`.)"
 msgstr ""
+"Výkon :class:`xml.etree.ElementTree` byl významně zlepšen. (Vzneseno "
+"Serhijem Storchakou v :issue:`25638`, :issue:`25873` a :issue:`25869`.)"
 
 #: ../../whatsnew/3.6.rst:1858
 msgid ""
@@ -3351,10 +3599,12 @@ msgid ""
 "is now 2 to 3 times faster. (Contributed by Serhiy Storchaka in "
 ":issue:`25971`.)"
 msgstr ""
+"Vytváření instancí :class:`fractions.Fraction` je nyní 2 až 3krát rychlejší."
+" (Vzneseno Serhijem Storchakou v :issue:`25971`.)"
 
 #: ../../whatsnew/3.6.rst:1864
 msgid "Build and C API Changes"
-msgstr ""
+msgstr "Změny sestavení a C API"
 
 #: ../../whatsnew/3.6.rst:1866
 msgid ""
@@ -3363,6 +3613,7 @@ msgid ""
 "custom macros like ``PY_LONG_LONG``. For more information, see :pep:`7` and "
 ":issue:`17884`."
 msgstr ""
+"Python nyní vyžaduje nějakou podporu C99. (Viz :pep:`7` a :issue:`17884`.)"
 
 #: ../../whatsnew/3.6.rst:1871
 msgid ""
@@ -3372,6 +3623,8 @@ msgid ""
 "emulator with only about 16 tests failures. See the Android meta-issue "
 ":issue:`26865`."
 msgstr ""
+"Cross-kompilování CPythonu s Android NDK spustit úspěšně. (Viz "
+":issue:`26865`.)"
 
 #: ../../whatsnew/3.6.rst:1876
 msgid ""
@@ -3379,6 +3632,8 @@ msgid ""
 "will activate expensive optimizations like PGO. (Original patch by "
 "Alecsandru Patrascu of Intel in :issue:`26359`.)"
 msgstr ""
+"Byl přidán ``--enable-optimizations``. (Vzneseno Alecsandru Patrascu z "
+"Intelu v :issue:`26359`.)"
 
 #: ../../whatsnew/3.6.rst:1880
 msgid ""
@@ -3387,12 +3642,18 @@ msgid ""
 " :c:macro:`PYMEM_DOMAIN_MEM` (ex: :c:func:`PyMem_Malloc`) domains are "
 "called."
 msgstr ""
+":term:`GIL <global interpreter lock>` musí být nyní zadržen, když jsou "
+"volány funkce alokátoru domén :c:macro:`PYMEM_DOMAIN_OBJ` (např. "
+":c:func:`PyObject_Malloc`) a :c:macro:`PYMEM_DOMAIN_MEM` (např. "
+":c:func:`PyMem_Malloc`)."
 
 #: ../../whatsnew/3.6.rst:1884
 msgid ""
 "New :c:func:`Py_FinalizeEx` API which indicates if flushing buffered data "
 "failed. (Contributed by Martin Panter in :issue:`5319`.)"
 msgstr ""
+"Nové API :c:func:`Py_FinalizeEx`, které označuje, zda se neúsnělo "
+"vypraždnění data. (Vzneseno Martinem Panterem v :issue:`5319`.)"
 
 #: ../../whatsnew/3.6.rst:1888
 msgid ""
@@ -3400,6 +3661,9 @@ msgid ""
 "parameters <positional-only_parameter>`.  Positional-only parameters are "
 "defined by empty names. (Contributed by Serhiy Storchaka in :issue:`26282`)."
 msgstr ""
+":c:func:`PyArg_ParseTupleAndKeywords` nyní podporuje :ref:`parametry pouze "
+"pozicí <positional-only_parameter>`. Parametry pouze pozicí jsou definovány "
+"prázdnými názvy. (Vzneseno Serhijem Storchakou v :issue:`26282`.)"
 
 #: ../../whatsnew/3.6.rst:1893
 #, python-brace-format
@@ -3408,6 +3672,9 @@ msgid ""
 "lines as ``\"[Previous line repeated {count} more times]\"``. (Contributed "
 "by Emanuel Barry in :issue:`26823`.)"
 msgstr ""
+"Metoda ``PyTraceback_Print`` nyní zkrátá dlouhé sekvence opakovaných linií "
+"jako \"[Předchozí linie zopakovaná {count} více krát]\". (Vzneseno Emanuelou"
+" Barrym v :issue:`26823`.)"
 
 #: ../../whatsnew/3.6.rst:1897
 msgid ""
@@ -3415,6 +3682,9 @@ msgid ""
 "specifying a subclass of :exc:`ImportError` to raise. (Contributed by Eric "
 "Snow in :issue:`15767`.)"
 msgstr ""
+"Nová funkce :c:func:`PyErr_SetImportErrorSubclass` umožňuje zadání "
+"podskupiny :exc:`ImportError` k vyvolání. (Vzneseno Ericem Snowem v "
+":issue:`15767`.)"
 
 #: ../../whatsnew/3.6.rst:1901
 msgid ""
@@ -3422,6 +3692,9 @@ msgid ""
 ":exc:`ResourceWarning` providing the source of the resource allocation. "
 "(Contributed by Victor Stinner in :issue:`26567`.)"
 msgstr ""
+"Nová funkce :c:func:`PyErr_ResourceWarning` může být použita k vyvolání "
+":exc:`ResourceWarning` poskytující zdroj alokace prostředků. (Vzneseno "
+"Victorem Stinnerem v :issue:`26567`.)"
 
 #: ../../whatsnew/3.6.rst:1905
 msgid ""
@@ -3429,22 +3702,29 @@ msgid ""
 "representation of a :term:`path-like object`. (Contributed by Brett Cannon "
 "in :issue:`27186`.)"
 msgstr ""
+"Nová funkce :c:func:`PyOS_FSPath` vrací reprezentaci souborového systému "
+"objektu :term:`path-like object`. (Vzneseno Brettem Cannonem v "
+":issue:`27186`.)"
 
 #: ../../whatsnew/3.6.rst:1909
 msgid ""
 "The :c:func:`PyUnicode_FSConverter` and :c:func:`PyUnicode_FSDecoder` "
 "functions will now accept :term:`path-like objects <path-like object>`."
 msgstr ""
+"Funkce :c:func:`PyUnicode_FSConverter` a :c:func:`PyUnicode_FSDecoder` nyní "
+"přijmají objekty :term:`path-like objects <path-like object>`."
 
 #: ../../whatsnew/3.6.rst:1914
 msgid "Other Improvements"
-msgstr ""
+msgstr "Další zlepšení"
 
 #: ../../whatsnew/3.6.rst:1916
 msgid ""
 "When :option:`--version` (short form: :option:`-V`) is supplied twice, "
 "Python prints :data:`sys.version` for detailed information."
 msgstr ""
+"Když je zadán :option:`--version` (krátká forma: :option:`-V`) dvakrát, "
+"Python tiskne :data:`sys.version` pro detailní informace."
 
 #: ../../whatsnew/3.6.rst:1919
 msgid ""
@@ -3452,14 +3732,17 @@ msgid ""
 "Python 3.6.0b4+ (3.6:223967b49e49+, Nov 21 2016, 20:55:04)\n"
 "[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)]"
 msgstr ""
+"$ ./python -VV\n"
+"Python 3.6.0b4+ (3.6:223967b49e49+, Nov 21 2016, 20:55:04)\n"
+"[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)]"
 
 #: ../../whatsnew/3.6.rst:1927
 msgid "Deprecated"
-msgstr ""
+msgstr "Zastaralé"
 
 #: ../../whatsnew/3.6.rst:1930
 msgid "New Keywords"
-msgstr ""
+msgstr "Nové klíčová slova"
 
 #: ../../whatsnew/3.6.rst:1932
 msgid ""
@@ -3468,10 +3751,14 @@ msgid ""
 " become proper keywords in Python 3.7.  Starting in Python 3.6, the use of "
 "``async`` or ``await`` as names will generate a :exc:`DeprecationWarning`."
 msgstr ""
+"``async`` a ``await`` se nedoporučují používat jako názvy proměnných, tříd, "
+"funkcí nebo modulů. Zavedeny :pep:`492` v Pythonu 3.5, stanou se v Pythonu "
+"3.7 vlastním klíčovými slovy. Od Pythonu 3.6 použití ``async`` nebo "
+"``await`` jako názy generuje :exc:`DeprecationWarning`."
 
 #: ../../whatsnew/3.6.rst:1939
 msgid "Deprecated Python behavior"
-msgstr ""
+msgstr "Zastaralé chování Pythonu"
 
 #: ../../whatsnew/3.6.rst:1941
 msgid ""
@@ -3479,6 +3766,9 @@ msgid ""
 "generate a :exc:`DeprecationWarning`, and will trigger a :exc:`RuntimeError`"
 " in Python 3.7.  See :ref:`whatsnew-pep-479` for details."
 msgstr ""
+"Vyvolání :exc:`StopIteration` výjimky v generátoru nyní generuje "
+":exc:`DeprecationWarning` a spustí :exc:`RuntimeError` v Pythonu 3.7. Viz "
+":ref:`whatsnew-pep-479` pro detaily."
 
 #: ../../whatsnew/3.6.rst:1945
 msgid ""
@@ -3488,6 +3778,10 @@ msgid ""
 "Backward compatibility will be removed in Python 3.7. (Contributed by Yury "
 "Selivanov in :issue:`27243`.)"
 msgstr ""
+"Od metody :meth:`~object.__aiter__` se nyní očekává vrácení asynchronního "
+"iterátoru přímo. Dělání opaku bude aktivovat :exc:`DeprecationWarning`. "
+"Zpětná kompatibilita bude odstraněna v Pythonu 3.7. (Vzneseno Yurym "
+"Selivanovem v :issue:`27243`.)"
 
 #: ../../whatsnew/3.6.rst:1951
 msgid ""
@@ -3496,6 +3790,10 @@ msgid ""
 ":exc:`SyntaxError`, that will not be for several Python releases. "
 "(Contributed by Emanuel Barry in :issue:`27364`.)"
 msgstr ""
+"Pár znaků backslash, který není platnou escape sekvencí, nyní generuje "
+":exc:`DeprecationWarning`. Ačkoliv se to nakonec stane :exc:`SyntaxError`, "
+"nebude to pro několik verzí Pythonu. (Vzneseno Emanuelou Barrym v "
+":issue:`27364`.)"
 
 #: ../../whatsnew/3.6.rst:1956
 msgid ""
@@ -3504,34 +3802,41 @@ msgid ""
 "are not defined now raises an :exc:`ImportWarning`. (Contributed by Rose "
 "Ames in :issue:`25791`.)"
 msgstr ""
+"Při relativním importu, vrácení se k ``__name__`` a ``__path__`` z "
+"volajícího modulu, když ``__spec__`` nebo ``__package__`` nejsou definovány,"
+" nyní vyvolá :exc:`ImportWarning`. (Vzneseno Rose Ames v :issue:`25791`.)"
 
 #: ../../whatsnew/3.6.rst:1963
 msgid "Deprecated Python modules, functions and methods"
-msgstr ""
+msgstr "Zastaralé moduly, funkce a metody Pythonu"
 
 #: ../../whatsnew/3.6.rst:1966
 msgid "asynchat"
-msgstr ""
+msgstr "asynchat"
 
 #: ../../whatsnew/3.6.rst:1968
 msgid ""
 "The :mod:`!asynchat` has been deprecated in favor of :mod:`asyncio`. "
 "(Contributed by Mariatta in :issue:`25002`.)"
 msgstr ""
+"Modul :mod:`!asynchat` je nyní zastarán ve prospěch :mod:`asyncio`. "
+"(Vzneseno Mariatty v :issue:`25002`.)"
 
 #: ../../whatsnew/3.6.rst:1973
 msgid "asyncore"
-msgstr ""
+msgstr "asyncore"
 
 #: ../../whatsnew/3.6.rst:1975
 msgid ""
 "The :mod:`!asyncore` has been deprecated in favor of :mod:`asyncio`. "
 "(Contributed by Mariatta in :issue:`25002`.)"
 msgstr ""
+"Modul :mod:`!asyncore` je nyní zastarán ve prospěch :mod:`asyncio`. "
+"(Vzneseno Mariatty v :issue:`25002`.)"
 
 #: ../../whatsnew/3.6.rst:1980
 msgid "dbm"
-msgstr ""
+msgstr "dbm"
 
 #: ../../whatsnew/3.6.rst:1982
 msgid ""
@@ -3540,6 +3845,10 @@ msgid ""
 "with the ``'r'`` mode.  This behavior is now deprecated and will be removed "
 "in 3.8. (Contributed by Serhiy Storchaka in :issue:`21708`.)"
 msgstr ""
+"Na rozdíl od ostatních implementací :mod:`dbm`, modul :mod:`dbm.dumb` "
+"vytváří databáze v režimu ``'rw'`` a umožňuje úpravu databáze otevřené v "
+"režimu ``'r'``. Toto chování je nyní zastaralé a bude odstraněno v 3.8. "
+"(Vzneseno Serhijem Storchakou v :issue:`21708`.)"
 
 #: ../../whatsnew/3.6.rst:1992
 msgid ""
@@ -3548,16 +3857,22 @@ msgid ""
 "Support for this parameter will be removed in a future Python release.  See "
 ":issue:`27919` for details."
 msgstr ""
+"Nedokumentovaný argument ``extra_path`` konstruktoru "
+"``distutils.Distribution`` je nyní považován za zastarát a vydá varování, "
+"pokud je nastaven. Podpora tohoto parametru bude odstraněna v budoucí verzi "
+"Pythonu. Viz :issue:`27919` pro detaily."
 
 #: ../../whatsnew/3.6.rst:1999
 msgid "grp"
-msgstr ""
+msgstr "grp"
 
 #: ../../whatsnew/3.6.rst:2001
 msgid ""
 "The support of non-integer arguments in :func:`~grp.getgrgid` has been "
 "deprecated. (Contributed by Serhiy Storchaka in :issue:`26129`.)"
 msgstr ""
+"Podpora non-celočíselných argumentů v :func:`~grp.getgrgid` je zastaralá. "
+"(Vzneseno Serhijem Storchakou v :issue:`26129`.)"
 
 #: ../../whatsnew/3.6.rst:2009
 msgid ""
@@ -3568,6 +3883,12 @@ msgid ""
 "been deprecated in previous versions of Python in favour of "
 ":meth:`importlib.abc.Loader.exec_module`."
 msgstr ""
+"Metody :meth:`importlib.machinery.SourceFileLoader.load_module` a "
+":meth:`importlib.machinery.SourcelessFileLoader.load_module` jsou nyní "
+"zastaralé. Byly jedinou zbývající implementací "
+":meth:`importlib.abc.Loader.load_module` v :mod:`importlib`, která nebyla "
+"zastaralá v předchozích verzích Pythonu ve prospěch "
+":meth:`importlib.abc.Loader.exec_module`."
 
 #: ../../whatsnew/3.6.rst:2016
 msgid ""
@@ -3575,6 +3896,9 @@ msgid ""
 "deprecated. As of 3.6.0, it is still added to :data:`sys.meta_path` by "
 "default (on Windows), but this may change in future releases."
 msgstr ""
+"Třída :class:`importlib.machinery.WindowsRegistryFinder` je nyní zastaralá. "
+"Od 3.6.0 je stále přidána do :data:`sys.meta_path` ve výchozím nastavení (na"
+" Windows), ale to se v budoucích vydáních může změnit."
 
 #: ../../whatsnew/3.6.rst:2023
 msgid ""
@@ -3583,6 +3907,10 @@ msgid ""
 "functions is now deprecated. (Contributed by Serhiy Storchaka in "
 ":issue:`25791` and :issue:`26754`.)"
 msgstr ""
+"Nedokumentovaná podpora obecných :term:`bytes-like objects <bytes-like "
+"object>` jako cest v :mod:`os` funkcích, :func:`compile` a podobných "
+"funkcích je nyní zastaralá. (Vzneseno Serhijem Storchakou v :issue:`25791` a"
+" :issue:`26754`.)"
 
 #: ../../whatsnew/3.6.rst:2031
 msgid ""
@@ -3591,6 +3919,10 @@ msgid ""
 "version.  Flags at the start of a regular expression are still allowed. "
 "(Contributed by Serhiy Storchaka in :issue:`22493`.)"
 msgstr ""
+"Podpora vloženého příznaku ``(?letters)`` uprostřed regulárního výrazu je "
+"zastaralá a bude odstraněna v budoucí verzi Pythonu. Příznaky na začátku "
+"regulárního výrazu jsou stále povoleny. (Vzneseno Serhijem Storchakou v "
+":issue:`22493`.)"
 
 #: ../../whatsnew/3.6.rst:2039
 msgid ""
@@ -3598,6 +3930,8 @@ msgid ""
 "the future the :mod:`ssl` module will require at least OpenSSL 1.0.2 or "
 "1.1.0."
 msgstr ""
+"OpenSSL 0.9.8, 1.0.0 a 1.0.1 jsou zastaralé a již nejsou podporovány. V "
+"budoucnu modul :mod:`ssl` bude vyžadovat alespoň OpenSSL 1.0.2 nebo 1.1.0."
 
 #: ../../whatsnew/3.6.rst:2043
 msgid ""
@@ -3606,6 +3940,10 @@ msgid ""
 ":mod:`smtplib` have been deprecated in favor of ``context``. (Contributed by"
 " Christian Heimes in :issue:`28022`.)"
 msgstr ""
+"SSL-související argumenty jako ``certfile``, ``keyfile`` a "
+"``check_hostname`` v :mod:`ftplib`, :mod:`http.client`, :mod:`imaplib`, "
+":mod:`poplib` a :mod:`smtplib` jsou zastaralé ve prospěch ``context``. "
+"(Vzneseno Christian Heimesem v :issue:`28022`.)"
 
 #: ../../whatsnew/3.6.rst:2048
 msgid ""
@@ -3614,12 +3952,18 @@ msgid ""
 "OpenSSL. Other features are deprecated in favor of a different API. "
 "(Contributed by Christian Heimes in :issue:`28022` and :issue:`26470`.)"
 msgstr ""
+"Několik protokolů a funkcí modulu :mod:`ssl` je nyní zastaralých. Některé "
+"funkce nebudou v budoucích verzích OpenSSL dostupné. Ostatní funkce jsou "
+"zastaralé ve prospěch jiného API. (Vzneseno Christian Heimesem v "
+":issue:`28022` a :issue:`26470`.)"
 
 #: ../../whatsnew/3.6.rst:2056
 msgid ""
 "The :mod:`!tkinter.tix` module is now deprecated.  :mod:`tkinter` users "
 "should use :mod:`tkinter.ttk` instead."
 msgstr ""
+"Modul :mod:`!tkinter.tix` je nyní zastarán. Uživatelé :mod:`tkinter` by měli"
+" místo toho používat :mod:`tkinter.ttk`."
 
 #: ../../whatsnew/3.6.rst:2064
 msgid ""
@@ -3628,10 +3972,14 @@ msgid ""
 "connected to and thus what Python interpreter will be used by the virtual "
 "environment.  (Contributed by Brett Cannon in :issue:`25154`.)"
 msgstr ""
+"Skript ``pyvenv`` je zastarán ve prospěch ``python3 -m venv``. To zabraňuje "
+"zmatkům o tom, ke kterému interpretu Pythonu je ``pyvenv`` připojen a tedy "
+"který interpret Pythonu bude použit virtuálním prostředím. (Vzneseno Brettem"
+" Cannonem v :issue:`25154`.)"
 
 #: ../../whatsnew/3.6.rst:2071
 msgid "xml"
-msgstr ""
+msgstr "xml"
 
 #: ../../whatsnew/3.6.rst:2073
 msgid ""
@@ -3639,10 +3987,13 @@ msgid ""
 ":mod:`xml.dom.minidom` and :mod:`xml.sax` modules no longer process external"
 " entities by default. (Contributed by Christian Heimes in :gh:`61441`.)"
 msgstr ""
+"Jako zmírnění proti DTD a externímu načítání entit, moduly "
+":mod:`xml.dom.minidom` a :mod:`xml.sax` již ve výchozím nastavení "
+"nezpracovávají externí entity. (Vzneseno Christian Heimesem v :gh:`61441`.)"
 
 #: ../../whatsnew/3.6.rst:2080
 msgid "Deprecated functions and types of the C API"
-msgstr ""
+msgstr "Zastaralé funkce a typy rozhraní C API"
 
 #: ../../whatsnew/3.6.rst:2082
 msgid ""
@@ -3651,10 +4002,14 @@ msgid ""
 "and :c:func:`!PyUnicode_AsDecodedUnicode` are deprecated now. Use the "
 ":ref:`generic codec based API <codec-registry>` instead."
 msgstr ""
+"Nedokumentované funkce :c:func:`!PyUnicode_AsEncodedObject`, "
+":c:func:`!PyUnicode_AsDecodedObject`, :c:func:`!PyUnicode_AsEncodedUnicode` "
+"a :c:func:`!PyUnicode_AsDecodedUnicode` jsou nyní zastaralé. Místo toho "
+"použijte :ref:`generické API založené na kodeku <codec-registry>`."
 
 #: ../../whatsnew/3.6.rst:2089
 msgid "Deprecated Build Options"
-msgstr ""
+msgstr "Zastaralé možnosti sestavení"
 
 #: ../../whatsnew/3.6.rst:2091
 msgid ""
@@ -3664,14 +4019,19 @@ msgid ""
 "is unaffected by this change.  Note that many OS distributors already use "
 "the ``--with-system-ffi`` flag when building their system Python."
 msgstr ""
+"Příznak configure ``--with-system-ffi`` je nyní ve výchozím nastavení "
+"povolený na non-macOS UNIX platformách. Lze jej zakázat pomocí ``--without-"
+"system-ffi``, ale použití příznaku je zastaralé a nebude přijato v Pythonu "
+"3.7. macOS není touto změnou ovlivněn. Poznámka: mnoho distributorů OS již "
+"při budování svého Pythonu používá příznak ``--with-system-ffi``."
 
 #: ../../whatsnew/3.6.rst:2099
 msgid "Removed"
-msgstr ""
+msgstr "Odstraněno"
 
 #: ../../whatsnew/3.6.rst:2102
 msgid "API and Feature Removals"
-msgstr ""
+msgstr "Odstraněny API a funkce"
 
 #: ../../whatsnew/3.6.rst:2104
 msgid ""
@@ -3680,6 +4040,10 @@ msgid ""
 ":func:`re.sub` they are still allowed, but deprecated. The "
 ":const:`re.LOCALE` flag can now only be used with binary patterns."
 msgstr ""
+"Neznámé escape sekvence skládající se z ``'\\\\'`` a ASCII písmene v "
+"regulárních výrazech nyní způsobí chybu. V šablonách nahrazení pro "
+":func:`re.sub` jsou stále povoleny, ale zastaralé. Příznak "
+":const:`re.LOCALE` lze nyní používat pouze s binárními vzory."
 
 #: ../../whatsnew/3.6.rst:2109
 msgid ""
@@ -3687,6 +4051,9 @@ msgid ""
 ":func:`inspect.getmodulename` should be used for obtaining the module name "
 "for a given path. (Contributed by Yury Selivanov in :issue:`13248`.)"
 msgstr ""
+"``inspect.getmoduleinfo()`` bylo odstraněno (bylo zastaralé od CPython 3.3)."
+" :func:`inspect.getmodulename` by měl být používán k získání názvu modulu "
+"pro danou cestu. (Vzneseno Yurym Selivanovem v :issue:`13248`.)"
 
 #: ../../whatsnew/3.6.rst:2114
 msgid ""
@@ -3697,6 +4064,12 @@ msgid ""
 ":mod:`traceback` module. They were undocumented methods deprecated since "
 "Python 3.2 and equivalent functionality is available from private methods."
 msgstr ""
+"Třída ``traceback.Ignore`` a metody ``traceback.usage``, "
+"``traceback.modname``, ``traceback.fullmodname``, "
+"``traceback.find_lines_from_code``, ``traceback.find_lines``, "
+"``traceback.find_strings``, ``traceback.find_executable_lines`` byly "
+"odstraněny z modulu :mod:`traceback`. Byly nedokumentované metody zastaralé "
+"od Pythonu 3.2 a ekvivalentní funkčnost je dostupná z privátních metod."
 
 #: ../../whatsnew/3.6.rst:2121
 msgid ""
@@ -3704,6 +4077,9 @@ msgid ""
 ":mod:`tkinter` widget classes were removed (corresponding Tk commands were "
 "obsolete since Tk 4.0)."
 msgstr ""
+"Dummy metody ``tk_menuBar()`` a ``tk_bindForTraversal()`` v třídách widgetů "
+":mod:`tkinter` byly odstraněny (odpovídající příkazy Tk byly zastarálé od Tk"
+" 4.0)."
 
 #: ../../whatsnew/3.6.rst:2125
 msgid ""
@@ -3712,6 +4088,10 @@ msgid ""
 " Use :class:`io.TextIOWrapper` for reading compressed text files in "
 ":term:`universal newlines` mode."
 msgstr ""
+"Metoda :meth:`~zipfile.ZipFile.open` třídy :class:`zipfile.ZipFile` již "
+"nepodporuje režim ``'U'`` (zastarán od Pythonu 3.4). Použijte "
+":class:`io.TextIOWrapper` pro čtení komprimovaných textových souborů v "
+"režimu :term:`universal newlines`."
 
 #: ../../whatsnew/3.6.rst:2130
 msgid ""
@@ -3723,24 +4103,32 @@ msgid ""
 "distribution at `Tools/scripts/h2py.py "
 "<https://github.com/python/cpython/blob/v3.6.15/Tools/scripts/h2py.py>`_."
 msgstr ""
+"Nedokumentované moduly ``IN``, ``CDROM``, ``DLFCN``, ``TYPES``, ``CDIO`` a "
+"``STROPTS`` byly odstraněny. Byly dostupné v adresářích ``Lib/plat-*/`` "
+"specifických pro platformu, ale byly chronicky zastaralé, nekonzistentně "
+"dostupné across platforma a neudržované. Skript, který tyto moduly vytvořil,"
+" je stále dostupný ve zdrojové distribuci na `Tools/scripts/h2py.py "
+"<https://github.com/python/cpython/blob/v3.6.15/Tools/scripts/h2py.py>`_."
 
 #: ../../whatsnew/3.6.rst:2138
 msgid "The deprecated ``asynchat.fifo`` class has been removed."
-msgstr ""
+msgstr "Zastaralá třída ``asynchat.fifo`` byla odstraněna."
 
 #: ../../whatsnew/3.6.rst:2142
 msgid "Porting to Python 3.6"
-msgstr ""
+msgstr "Přenos na Python 3.6"
 
 #: ../../whatsnew/3.6.rst:2144
 msgid ""
 "This section lists previously described changes and other bugfixes that may "
 "require changes to your code."
 msgstr ""
+"Tato sekce uvádí dříve popsané změny a další opravy chyb, které mohou "
+"vyžadovat změny vašeho kódu."
 
 #: ../../whatsnew/3.6.rst:2148
 msgid "Changes in 'python' Command Behavior"
-msgstr ""
+msgstr "Zmeny v chování příkazu python"
 
 #: ../../whatsnew/3.6.rst:2150
 msgid ""
@@ -3750,10 +4138,12 @@ msgid ""
 "to ``stderr`` instead of ``stdout``. (Contributed by Serhiy Storchaka in "
 ":issue:`23034`.)"
 msgstr ""
+"Výstupu speciálního Pythonu je nyní defaultně vypnut. Může být znovu "
+"povolen. (Vzneseno Serhijem Storchakou v :issue:`23034`.)"
 
 #: ../../whatsnew/3.6.rst:2158
 msgid "Changes in the Python API"
-msgstr ""
+msgstr "Zmeny v Python API"
 
 #: ../../whatsnew/3.6.rst:2160
 msgid ""
@@ -3761,30 +4151,39 @@ msgid ""
 "with ``'+'``. (Contributed by Jeff Balogh and John O'Connor in "
 ":issue:`2091`.)"
 msgstr ""
+":func:`open() <open>` již neumoživuje kombinovat praporek U s +. (Vzneseno "
+"Jeffem Balogh v :issue:`2091`.)"
 
 #: ../../whatsnew/3.6.rst:2164
 msgid ""
 ":mod:`sqlite3` no longer implicitly commits an open transaction before DDL "
 "statements."
 msgstr ""
+":mod:`sqlite3` již nezdvojuje implicitně otevřenou transakci před DDL "
+"příkazy."
 
 #: ../../whatsnew/3.6.rst:2167
 msgid ""
 "On Linux, :func:`os.urandom` now blocks until the system urandom entropy "
 "pool is initialized to increase the security."
 msgstr ""
+"Na Linuxu nyní :func:`os.urandom` čeká až do inicializace fondu entropie."
 
 #: ../../whatsnew/3.6.rst:2170
 msgid ""
 "When :meth:`importlib.abc.Loader.exec_module` is defined, "
 ":meth:`importlib.abc.Loader.create_module` must also be defined."
 msgstr ""
+"Je-li definována :meth:`importlib.abc.Loader.exec_module`, musí být také "
+"definována :meth:`importlib.abc.Loader.create_module`."
 
 #: ../../whatsnew/3.6.rst:2173
 msgid ""
 ":c:func:`PyErr_SetImportError` now sets :exc:`TypeError` when its **msg** "
 "argument is not set. Previously only ``NULL`` was returned."
 msgstr ""
+":c:func:`PyErr_SetImportError` nyní nastaví :exc:`TypeError`, když jej "
+"argument není nastaven."
 
 #: ../../whatsnew/3.6.rst:2176
 msgid ""
@@ -3799,6 +4198,8 @@ msgid ""
 " :attr:`!co_lnotab` format and how to decode it, and see the :pep:`511` for "
 "the rationale."
 msgstr ""
+"Formát atributu :attr:`~codeobject.co_lnotab` objektů kódu se změnil aby "
+"podporoval záporné číslo. Viz :pep:`511` pro důvody."
 
 #: ../../whatsnew/3.6.rst:2187
 msgid ""
@@ -3807,6 +4208,8 @@ msgid ""
 "booleans being a subclass of integers, this should only be an issue if you "
 "were doing identity checks for ``1`` or ``0``. See :issue:`25768`."
 msgstr ""
+"Funkce v modulu :mod:`compileall` nyní vrací logické hodnoty místo 1 nebo 0."
+" Viz :issue:`25768`."
 
 #: ../../whatsnew/3.6.rst:2192
 msgid ""
@@ -3814,12 +4217,14 @@ msgid ""
 ":func:`~urllib.parse.urlparse` results now raises :exc:`ValueError` for out-"
 "of-range values, rather than returning :const:`None`.  See :issue:`20059`."
 msgstr ""
+"Ctení atributu :attr:`!port` nyní vyvolá :exc:`ValueError` pro hodnoty mimo "
+"rozsah. Viz :issue:`20059`."
 
 #: ../../whatsnew/3.6.rst:2197
 msgid ""
 "The :mod:`!imp` module now raises a :exc:`DeprecationWarning` instead of "
 ":exc:`PendingDeprecationWarning`."
-msgstr ""
+msgstr "Modul :mod:`!imp` nyní vyvolá :exc:`DeprecationWarning`."
 
 #: ../../whatsnew/3.6.rst:2200
 msgid ""
@@ -3832,6 +4237,8 @@ msgid ""
 ":mod:`wave`.  This means they will export new symbols when ``import *`` is "
 "used. (Contributed by Joel Taddei and Jacek Kołodziej in :issue:`23883`.)"
 msgstr ""
+"Následující moduly měly přidiny chybějící do jejich atributů. (Vzneseno "
+"Joelem Taddei v :issue:`23883`.)"
 
 #: ../../whatsnew/3.6.rst:2211
 msgid ""
@@ -3839,6 +4246,9 @@ msgid ""
 " to ``__spec__.parent`` then :exc:`ImportWarning` is raised. (Contributed by"
 " Brett Cannon in :issue:`25791`.)"
 msgstr ""
+"Při provedení relativního importu se ``__package__`` neróvná "
+"``__spec__.parent``, pak :exc:`ImportWarning` bude vyvolán. (Vzneseno "
+"Brettem Cannonem v :issue:`25791`.)"
 
 #: ../../whatsnew/3.6.rst:2215
 msgid ""
@@ -3846,6 +4256,9 @@ msgid ""
 ":exc:`ImportError` will be raised. Previously, :exc:`SystemError` could be "
 "raised. (Contributed by Brett Cannon in :issue:`18018`.)"
 msgstr ""
+"Když je proveden relativní import a žádný nadřazený balík není znám, pak "
+":exc:`ImportError` bude vyvolán. (Vzneseno Brettem Cannonem v "
+":issue:`18018`.)"
 
 #: ../../whatsnew/3.6.rst:2219
 msgid ""
@@ -3857,12 +4270,16 @@ msgid ""
 "no longer called, and the exception will stop a single-threaded server. "
 "(Contributed by Martin Panter in :issue:`23430`.)"
 msgstr ""
+"Servery založené na modulu :mod:`socketserver` nyní zachycují pouze výjimky "
+"odvozené z :exc:`Exception`. (Vzneseno Martinem Panterem v :issue:`23430`.)"
 
 #: ../../whatsnew/3.6.rst:2228
 msgid ""
 ":func:`!spwd.getspnam` now raises a :exc:`PermissionError` instead of "
 ":exc:`KeyError` if the user doesn't have privileges."
 msgstr ""
+":func:`!spwd.getspnam` nyní vyvolá :exc:`PermissionError` pokud uživatel "
+"nemá oprávnění."
 
 #: ../../whatsnew/3.6.rst:2231
 msgid ""
@@ -3870,6 +4287,8 @@ msgid ""
 "(e.g. ``EBADF``) was reported by the underlying system call. (Contributed by"
 " Martin Panter in :issue:`26685`.)"
 msgstr ""
+"Metoda :meth:`socket.socket.close` nyní vyvolá výjimku pokud byla chyba. "
+"(Vzneseno Martinem Panterem v :issue:`26685`.)"
 
 #: ../../whatsnew/3.6.rst:2235
 msgid ""
@@ -3880,6 +4299,8 @@ msgid ""
 "arguments. Code that has already been updated in accordance with the "
 "deprecation warning generated by 3.5 will not be affected."
 msgstr ""
+"Argument *decode_data* je nyní ve výchozím nastavení ``False``. (Vzneseno v "
+":issue:`26722`.)"
 
 #: ../../whatsnew/3.6.rst:2243
 msgid ""
@@ -3889,12 +4310,17 @@ msgid ""
 " in the :mod:`json` module are now :ref:`keyword-only <keyword-"
 "only_parameter>`. (Contributed by Serhiy Storchaka in :issue:`18726`.)"
 msgstr ""
+"Všechny volitelné argumenty v modulu :mod:`json` jsou nyní :ref:`pouze "
+"klíčové <keyword-only_parameter>`. (Vzneseno Serhijem Storchakou v "
+":issue:`18726`.)"
 
 #: ../../whatsnew/3.6.rst:2250
 msgid ""
 "Subclasses of :class:`type` which don't override ``type.__new__`` may no "
 "longer use the one-argument form to get the type of an object."
 msgstr ""
+"Podskupiny :class:`type` které neprekrýdávají ``type.__new__`` nemohou "
+"většinou již používat formu s jedním argumentem k získání typu objektu."
 
 #: ../../whatsnew/3.6.rst:2253
 msgid ""
@@ -3909,6 +4335,8 @@ msgid ""
 ":meth:`type.__new__ <object.__new__>` (whether direct or via :class:`super`)"
 " accordingly."
 msgstr ""
+"Zpracování argumentů klíčů je nyní konzistentně delegováno. (Podle "
+":pep:`487`)"
 
 #: ../../whatsnew/3.6.rst:2264
 msgid ""
@@ -3919,18 +4347,22 @@ msgid ""
 "distributions are required, configure the project with a ``setup.cfg`` file "
 "containing the following:"
 msgstr ""
+"V ``distutils.command.sdist.sdist``, atribut ``default_format`` byl "
+"odstraněn. Formát gzip tarfile je nyní výchozím na všech platformách."
 
 #: ../../whatsnew/3.6.rst:2272
 msgid ""
 "[sdist]\n"
 "formats=zip"
 msgstr ""
+"[sdist]\n"
+"formats=zip"
 
 #: ../../whatsnew/3.6.rst:2277
 msgid ""
 "This behavior has also been backported to earlier Python versions by "
 "Setuptools 26.0.0."
-msgstr ""
+msgstr "Toto chování bylo také zpět portováno Setuptools 26.0.0."
 
 #: ../../whatsnew/3.6.rst:2280
 msgid ""
@@ -3942,6 +4374,9 @@ msgid ""
 "caller. (Contributed by Demian Brecht and Rolf Krahl with tweaks from Martin"
 " Panter in :issue:`12319`.)"
 msgstr ""
+"Pokud není specifikována hlavička Content-Length a tělo požadavku je soubor,"
+" je nyní odesláno s HTTP 1.1 chunked kódováním. (Vzneseno Demianem Brechtem "
+"v :issue:`12319`.)"
 
 #: ../../whatsnew/3.6.rst:2289
 msgid ""
@@ -3949,6 +4384,9 @@ msgid ""
 ":class:`~collections.OrderedDict`. (Contributed by Steve Holden in "
 ":issue:`27842`.)"
 msgstr ""
+":class:`~csv.DictReader` nyní vrací řádky typu "
+":class:`~collections.OrderedDict`. (Vzneseno Steve Holdenem v "
+":issue:`27842`.)"
 
 #: ../../whatsnew/3.6.rst:2293
 msgid ""
@@ -3956,12 +4394,16 @@ msgid ""
 "``crypt.methods`` if unsupported by the platform. (Contributed by Victor "
 "Stinner in :issue:`25287`.)"
 msgstr ""
+":const:`!crypt.METHOD_CRYPT` již nebude přidáno do ``crypt.methods`` pokud "
+"není podporováno platformou. (Vzneseno Victorem Stinnerem v :issue:`25287`.)"
 
 #: ../../whatsnew/3.6.rst:2301
 msgid ""
 "On Linux, :func:`ctypes.util.find_library` now looks in ``LD_LIBRARY_PATH`` "
 "for shared libraries. (Contributed by Vinay Sajip in :issue:`9998`.)"
 msgstr ""
+"Na Linuxu nyní :func:`ctypes.util.find_library` vyhlédává v "
+"``LD_LIBRARY_PATH``. (Vzneseno Vinayem Sajipem v :issue:`9998`.)"
 
 #: ../../whatsnew/3.6.rst:2305
 msgid ""
@@ -3969,12 +4411,16 @@ msgid ""
 "character in messages sent from the server to improve real-world "
 "compatibility. (Contributed by Lita Cho in :issue:`21815`.)"
 msgstr ""
+"Třída :class:`imaplib.IMAP4` nyní zpracovává příznaky. (Vzneseno Litou Cho v"
+" :issue:`21815`.)"
 
 #: ../../whatsnew/3.6.rst:2310
 msgid ""
 "The :func:`mmap.mmap.write` function now returns the number of bytes written"
 " like other write methods. (Contributed by Jakub Stasiak in :issue:`26335`.)"
 msgstr ""
+"Funkce :func:`mmap.mmap.write` nyní vrací počet zapsáných bajtů. (Vzneseno "
+"Jakubem Stasiákem v :issue:`26335`.)"
 
 #: ../../whatsnew/3.6.rst:2314
 msgid ""
@@ -3982,6 +4428,9 @@ msgid ""
 " now return :class:`~pkgutil.ModuleInfo` named tuples. (Contributed by "
 "Ramchandra Apte in :issue:`17211`.)"
 msgstr ""
+"Funkce :func:`pkgutil.iter_modules` a :func:`pkgutil.walk_packages` nyní "
+"vrací :class:`~pkgutil.ModuleInfo`. (Vzneseno Ramchandrau Aptem v "
+":issue:`17211`.)"
 
 #: ../../whatsnew/3.6.rst:2318
 msgid ""
@@ -3991,6 +4440,8 @@ msgid ""
 "the position of the reference. (Contributed by SilentGhost, Serhiy Storchaka"
 " in :issue:`25953`.)"
 msgstr ""
+":func:`re.sub` nyní vyvolá chybu pro neplatné skupiny. (Vzneseno Serhijem "
+"Storchakou v :issue:`25953`.)"
 
 #: ../../whatsnew/3.6.rst:2324
 msgid ""
@@ -4001,6 +4452,8 @@ msgid ""
 "ZipFile created with mode ``'r'`` will raise a :exc:`ValueError`. "
 "Previously, a :exc:`RuntimeError` was raised in those scenarios."
 msgstr ""
+":class:`zipfile.ZipFile` nyní vyvolá :exc:`NotImplementedError` pro neznámé "
+"komprese. (Vzneseno v :issue:`24774`.)"
 
 #: ../../whatsnew/3.6.rst:2331
 msgid ""
@@ -4011,6 +4464,9 @@ msgid ""
 " :exc:`DeprecationWarning` in Python 3.6 and a :exc:`RuntimeError` in Python"
 " 3.8."
 msgstr ""
+"Implicitní ``__classcell__`` musí být nyní předán ``type.__new__``. Selhání "
+"bude způsobit :exc:`DeprecationWarning` v Python 3.6 a :exc:`RuntimeError` v"
+" Python 3.8."
 
 #: ../../whatsnew/3.6.rst:2338
 msgid ""
@@ -4024,10 +4480,12 @@ msgid ""
 "plugins to the default import system shouldn't need to make any changes, as "
 "the default import system will raise the new subclass when appropriate."
 msgstr ""
+"Implementátoři alternativních import systémů budou muset aktualizovat "
+"implementace k vyzvednutí :exc:`ModuleNotFoundError`. (Viz :issue:`27659`)"
 
 #: ../../whatsnew/3.6.rst:2350
 msgid "Changes in the C API"
-msgstr ""
+msgstr "Zmeny v C API"
 
 #: ../../whatsnew/3.6.rst:2352
 msgid ""
@@ -4037,21 +4495,25 @@ msgid ""
 "the :envvar:`PYTHONMALLOC` environment variable to ``debug`` to validate the"
 " usage of memory allocators in your application. See :issue:`26249`."
 msgstr ""
+"Alokátor :c:func:`PyMem_Malloc` nyní používá :ref:`pymalloc alokátor "
+"<pymalloc>` místo systému. (Viz :issue:`26249`)"
 
 #: ../../whatsnew/3.6.rst:2358
 msgid ""
 ":c:func:`Py_Exit` (and the main interpreter) now override the exit status "
 "with 120 if flushing buffered data failed.  See :issue:`5319`."
 msgstr ""
+":c:func:`Py_Exit` nyní nastává státus východu 120 pokud vypraždnění selhalo."
+" (Viz :issue:`5319`)"
 
 #: ../../whatsnew/3.6.rst:2363
 msgid "CPython bytecode changes"
-msgstr ""
+msgstr "Zmeny bytecode CPythonu"
 
 #: ../../whatsnew/3.6.rst:2365
 msgid ""
 "There have been several major changes to the :term:`bytecode` in Python 3.6."
-msgstr ""
+msgstr "Více zásadných zmìn bylo v :term:`bytecode` v Python 3.6."
 
 #: ../../whatsnew/3.6.rst:2367
 msgid ""
@@ -4059,6 +4521,8 @@ msgid ""
 "(Contributed by Demur Rumed with input and reviews from Serhiy Storchaka and"
 " Victor Stinner in :issue:`26647` and :issue:`28050`.)"
 msgstr ""
+"Interpret Pythonu nyní používá 16-bitové slovo. (Vzneseno Demur Rumedem v "
+":issue:`26647`.)"
 
 #: ../../whatsnew/3.6.rst:2371
 msgid ""
@@ -4067,6 +4531,8 @@ msgid ""
 "(Contributed by Eric Smith in :issue:`25483` and Serhiy Storchaka in "
 ":issue:`27078`.)"
 msgstr ""
+"Nové opcode :opcode:`!FORMAT_VALUE` a :opcode:`BUILD_STRING`. (Vzneseno "
+"Ericem Smithem v :issue:`25483`.)"
 
 #: ../../whatsnew/3.6.rst:2376
 msgid ""
@@ -4074,6 +4540,8 @@ msgid ""
 "dictionaries with constant keys. (Contributed by Serhiy Storchaka in "
 ":issue:`27140`.)"
 msgstr ""
+"Nové opcode :opcode:`!BUILD_CONST_KEY_MAP` pro optimalizaci. (Vzneseno "
+"Serhijem Storchakou v :issue:`27140`.)"
 
 #: ../../whatsnew/3.6.rst:2380
 msgid ""
@@ -4086,6 +4554,9 @@ msgid ""
 "``MAKE_CLOSURE`` opcodes have been removed. (Contributed by Demur Rumed in "
 ":issue:`27095`, and Serhiy Storchaka in :issue:`27213`, :issue:`28257`.)"
 msgstr ""
+"Opcode volání funkcí byly přepracovány. Nové :opcode:`CALL_FUNCTION_EX` a "
+":opcode:`!BUILD_TUPLE_UNPACK_WITH_CALL`. (Vzneseno Demur Rumedem v "
+":issue:`27095`.)"
 
 #: ../../whatsnew/3.6.rst:2391
 msgid ""
@@ -4093,14 +4564,16 @@ msgid ""
 "have been added to support the new :term:`variable annotation` syntax. "
 "(Contributed by Ivan Levkivskyi in :issue:`27985`.)"
 msgstr ""
+"Nové opcode :opcode:`SETUP_ANNOTATIONS` a :opcode:`!STORE_ANNOTATION`. "
+"(Vzneseno Ivanem Levkivským v :issue:`27985`.)"
 
 #: ../../whatsnew/3.6.rst:2397
 msgid "Notable changes in Python 3.6.2"
-msgstr ""
+msgstr "Významné zmeny v Python 3.6.2"
 
 #: ../../whatsnew/3.6.rst:2400
 msgid "New ``make regen-all`` build target"
-msgstr ""
+msgstr "Nové ``make regen-all`` příkšaz"
 
 #: ../../whatsnew/3.6.rst:2402
 msgid ""
@@ -4109,6 +4582,8 @@ msgid ""
 "available, the autotools-based build system no longer attempts to implicitly"
 " recompile generated files based on file modification times."
 msgstr ""
+"Systém autotools již nepokoupuje implicitně re-kompilovat generované "
+"soubory."
 
 #: ../../whatsnew/3.6.rst:2407
 msgid ""
@@ -4116,20 +4591,23 @@ msgid ""
 "regeneration of these files when desired (e.g. after an initial version of "
 "Python has already been built based on the pregenerated versions)."
 msgstr ""
+"Nové ``make regen-all`` příkaz byl přidán k vynucení regenerace souborů."
 
 #: ../../whatsnew/3.6.rst:2411
 msgid ""
 "More selective regeneration targets are also defined - see "
 ":source:`Makefile.pre.in` for details."
 msgstr ""
+"Jsou také definovány více selektivní cíle regenerace - podrobnosti najdete v"
+" :source:`Makefile.pre.in`."
 
 #: ../../whatsnew/3.6.rst:2414 ../../whatsnew/3.6.rst:2427
 msgid "(Contributed by Victor Stinner in :issue:`23404`.)"
-msgstr ""
+msgstr "(Přispěl Victor Stinner v :issue:`23404`.)"
 
 #: ../../whatsnew/3.6.rst:2420
 msgid "Removal of ``make touch`` build target"
-msgstr ""
+msgstr "Odstranění cíle ``make touch`` v buildu"
 
 #: ../../whatsnew/3.6.rst:2422
 msgid ""
@@ -4137,14 +4615,17 @@ msgid ""
 "regeneration of generated files by updating their modification times has "
 "been removed."
 msgstr ""
+"Cíl ``make touch`` v buildu, který se dříve používal k vyžádání implicitní "
+"regenerace generovaných souborů aktualizací jejich času změny, byl "
+"odstraněn."
 
 #: ../../whatsnew/3.6.rst:2425
 msgid "It has been replaced by the new ``make regen-all`` target."
-msgstr ""
+msgstr "Byl nahrazen novým cílem ``make regen-all``."
 
 #: ../../whatsnew/3.6.rst:2433
 msgid "Notable changes in Python 3.6.4"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.6.4"
 
 #: ../../whatsnew/3.6.rst:2435
 msgid ""
@@ -4153,10 +4634,14 @@ msgid ""
 "during finalization of the interpreter. (Contributed by Xavier de Gaye in "
 ":issue:`22898` and :issue:`30697`.)"
 msgstr ""
+"Singleton ``PyExc_RecursionErrorInst``, který byl součástí veřejného API, "
+"byl odstraněn, protože jeho prvky nikdy nejsou vyčištěny, což by mohlo "
+"způsobit segfault během ukončování interpretu. (Přispěli Xavier de Gaye v "
+":issue:`22898` a :issue:`30697`.)"
 
 #: ../../whatsnew/3.6.rst:2442
 msgid "Notable changes in Python 3.6.5"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.6.5"
 
 #: ../../whatsnew/3.6.rst:2444
 msgid ""
@@ -4164,16 +4649,21 @@ msgid ""
 " locale to the ``LC_NUMERIC`` locale in some cases. (Contributed by Victor "
 "Stinner in :issue:`31900`.)"
 msgstr ""
+"Funkce :func:`locale.localeconv` nyní v některých případech dočasně "
+"nastavuje locale ``LC_CTYPE`` na locale ``LC_NUMERIC``. (Přispěl Victor "
+"Stinner v :issue:`31900`.)"
 
 #: ../../whatsnew/3.6.rst:2450
 msgid "Notable changes in Python 3.6.7"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.6.7"
 
 #: ../../whatsnew/3.6.rst:2452
 msgid ""
 ":mod:`xml.dom.minidom` and :mod:`xml.sax` modules no longer process external"
 " entities by default. See also :gh:`61441`."
 msgstr ""
+"Moduly :mod:`xml.dom.minidom` a :mod:`xml.sax` již ve výchozím nastavení "
+"nezpracovávají externí entity. Viz také :gh:`61441`."
 
 #: ../../whatsnew/3.6.rst:2455
 msgid ""
@@ -4182,10 +4672,14 @@ msgid ""
 "behavior now matches what the C tokenizer does internally. (Contributed by "
 "Ammar Askar in :issue:`33899`.)"
 msgstr ""
+"V 3.6.7 modul :mod:`tokenize` nyní implicitně emituje token ``NEWLINE``, je-"
+"li poskytnout vstup bez koncového nového řádku. Toto chování nyní odpovídá "
+"tomu, co dělá interně tokenizer jazyka C. (Přispěl Ammar Askar v "
+":issue:`33899`.)"
 
 #: ../../whatsnew/3.6.rst:2461
 msgid "Notable changes in Python 3.6.10"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.6.10"
 
 #: ../../whatsnew/3.6.rst:2463
 msgid ""
@@ -4196,10 +4690,15 @@ msgid ""
 "``loop.create_datagram_endpoint()``. (Contributed by Kyle Stanley, Antoine "
 "Pitrou, and Yury Selivanov in :issue:`37228`.)"
 msgstr ""
+"Z důvodu významných bezpečnostních obav parametr *reuse_address* funkce "
+":meth:`asyncio.loop.create_datagram_endpoint` již není podporován. Je to z "
+"důvodu chování možnosti socketu ``SO_REUSEADDR`` v UDP. Další podrobnosti "
+"najdete v dokumentaci k ``loop.create_datagram_endpoint()``. (Přispěli Kyle "
+"Stanley, Antoine Pitrou a Yury Selivanov v :issue:`37228`.)"
 
 #: ../../whatsnew/3.6.rst:2471
 msgid "Notable changes in Python 3.6.13"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.6.13"
 
 #: ../../whatsnew/3.6.rst:2473
 msgid ""
@@ -4213,10 +4712,19 @@ msgid ""
 "documentation. (Contributed by Adam Goldschmidt, Senthil Kumaran and Ken Jin"
 " in :issue:`42967`.)"
 msgstr ""
+"Starší verze Pythonu umožňovaly použití ``;`` a ``&`` jako separátorů "
+"parametrů dotazu v :func:`urllib.parse.parse_qs` a "
+":func:`urllib.parse.parse_qsl`. Z bezpečnostních důvodů a k souladu s "
+"novějšími doporučeními W3C byla tato funkce změněna tak, aby umožňovala "
+"pouze jeden klíč separátoru s ``&`` jako výchozím nastavením. Tato změna "
+"ovlivňuje také :func:`!cgi.parse` a :func:`!cgi.parse_multipart`, protože "
+"interně používají ovlivněné funkce. Další podrobnosti najdete v jejich "
+"příslušné dokumentaci. (Přispěli Adam Goldschmidt, Senthil Kumaran a Ken Jin"
+" v :issue:`42967`.)"
 
 #: ../../whatsnew/3.6.rst:2484
 msgid "Notable changes in Python 3.6.14"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.6.14"
 
 #: ../../whatsnew/3.6.rst:2486
 msgid ""
@@ -4226,6 +4734,12 @@ msgid ""
 "the old behavior, set a ``trust_server_pasv_ipv4_address`` attribute on your"
 " FTP instance to ``True``.  (See :gh:`87451`)"
 msgstr ""
+"Bezpečnostní oprava mění chování :class:`ftplib.FTP` tak, aby nedůvěřovala "
+"adrese IPv4 odeslané vzdáleným serverem při nastavování pasivního datového "
+"kanálu. Místo toho znovu používáme IP adresu serveru ftp. Pro neobvyklý kód "
+"vyžadující původní chování nastavte atribut "
+"``trust_server_pasv_ipv4_address`` na vaší instanci FTP na ``True``. (Viz "
+":gh:`87451`)"
 
 #: ../../whatsnew/3.6.rst:2492
 msgid ""
@@ -4236,6 +4750,12 @@ msgid ""
 "removal characters are controlled by a new module level variable "
 "``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (See :gh:`88048`)"
 msgstr ""
+"Přítomnost znaků nového řádku nebo tabelátoru v částech adresy URL umožňuje "
+"některé formy útoků. Podle specifikace WHATWG, která aktualizuje RFC 3986, "
+"jsou znaky ASCII nového řádku ``\\n``, ``\\r`` a tabelátoru ``\\t`` z adresy"
+" URL odstraněny parserem :func:`urllib.parse`, čímž se takovým útokům brání."
+" Odstraňované znaky jsou řízeny novou proměnnou na úrovni modulu "
+"``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (Viz :gh:`88048`)"
 
 #~ msgid ""
 #~ "The ``importlib.machinery.SourceFileLoader.load_module`` and "

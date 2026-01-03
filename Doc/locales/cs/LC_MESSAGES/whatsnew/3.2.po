@@ -199,6 +199,8 @@ msgid ""
 "An especially nice :mod:`argparse` feature is the ability to define "
 "subparsers, each with their own argument patterns and help displays::"
 msgstr ""
+"Obzvláště pěknou vlastností :mod:`argparse` je možnost definovat podparsery,"
+" každý s vlastními vzory argumentů a nápovědou::"
 
 #: ../../whatsnew/3.2.rst:153
 msgid ""
@@ -1999,11 +2001,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1146
 msgid "(Contributed by Antoine Pitrou in :issue:`5506`.)"
-msgstr ""
+msgstr "(Prispel Antoine Pitrou v :issue:`5506`.)"
 
 #: ../../whatsnew/3.2.rst:1149
 msgid "reprlib"
-msgstr ""
+msgstr "reprlib"
 
 #: ../../whatsnew/3.2.rst:1151
 msgid ""
@@ -2013,6 +2015,10 @@ msgid ""
 ":class:`set` handle self-reference by displaying \"...\" in the recursive "
 "part of the representation string."
 msgstr ""
+"Pri psani metody :meth:`~object.__repr__` pro vlastni kontejner je snadno "
+"zapomenout na pripad, kdy se clen vraci zpet na kontejner. Vestavene objekty"
+" Pythonu, jako :class:`list` a :class:`set`, se zajistuje sam-reference "
+"zobrazenim \"...\" v rekurzivni casti reprezentace retezce."
 
 #: ../../whatsnew/3.2.rst:1157
 msgid ""
@@ -2021,6 +2027,10 @@ msgid ""
 "recursive calls to :meth:`!__repr__` and substituting a placeholder string "
 "instead::"
 msgstr ""
+"Aby se pomohlo psat takove metody :meth:`~object.__repr__`, modul "
+":mod:`reprlib` ma novy dekorator :func:`~reprlib.recursive_repr` pro detekci"
+" rekurzivnich volani :meth:`!__repr__` a substituci retezce placeholder "
+"namiste::"
 
 #: ../../whatsnew/3.2.rst:1161
 msgid ""
@@ -2038,17 +2048,19 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1172
 msgid "(Contributed by Raymond Hettinger in :issue:`9826` and :issue:`9840`.)"
-msgstr ""
+msgstr "(Prispel Raymond Hettinger v :issue:`9826` a :issue:`9840`.)"
 
 #: ../../whatsnew/3.2.rst:1175
 msgid "logging"
-msgstr ""
+msgstr "logovani"
 
 #: ../../whatsnew/3.2.rst:1177
 msgid ""
 "In addition to dictionary-based configuration described above, the "
 ":mod:`logging` package has many other improvements."
 msgstr ""
+"Krome slovnikoveho konfigurace popsane vyse, baliky :mod:`logging` ma mnoho "
+"dalších vylepsen."
 
 #: ../../whatsnew/3.2.rst:1180
 msgid ""
@@ -2057,6 +2069,10 @@ msgid ""
 "tutorial>`\\, and a :ref:`cookbook <logging-cookbook>` of logging recipes.  "
 "These documents are the fastest way to learn about logging."
 msgstr ""
+"Dokumentace protokolovani byla doplnena :ref:`zkladnim tutorialem <logging-"
+"basic-tutorial>`\\, :ref:`pokrocilym tutorialem <logging-advanced-"
+"tutorial>`\\ a :ref:`kucharskou knihou <logging-cookbook>` receptu logovani."
+" Tyto dokumenty jsou nejrychlejsim zpusobem, jak se dozvidet o logovani."
 
 #: ../../whatsnew/3.2.rst:1185
 #, python-format
@@ -2068,6 +2084,11 @@ msgid ""
 "formatting provided by :class:`string.Template`.  The following three "
 "configurations are equivalent::"
 msgstr ""
+"Funkce :func:`logging.basicConfig` setup ziskala argument *style* na podporu"
+" tri ruznych typu formatu retezcu. Vychozi je \"%\" pro tradicicni "
+"%-formacovani, muze byt nastaven na \"{\" pro novy styl :meth:`str.format` "
+"nebo muze byt nastaven na \"$\" pro formacovani stylu shell poskytovane "
+":class:`string.Template`. Nasledujici tri konfigurace jsou ekvivalentni::"
 
 #: ../../whatsnew/3.2.rst:1191
 #, python-format
@@ -2088,6 +2109,13 @@ msgid ""
 ":data:`logging.raiseExceptions`.  The new default handler is stored in "
 ":data:`logging.lastResort`."
 msgstr ""
+"Pokud neni konfigurace nastavena pred vyvsolenim udalosti protokolovani, "
+"existuje nyni vychozi konfigurace pouzivajici "
+":class:`~logging.StreamHandler` smerujici na :data:`sys.stderr` pro udalosti"
+" urovne ``WARNING`` nebo vyssi. Drive by udalost vyskytujici se pred "
+"nastavenim konfigurace vyvolvala vyjimku nebo ticho zahazovala udalost v "
+"zavislosti na hodnote :data:`logging.raiseExceptions`. Nova vychozi "
+"obsluhova je ulozena v :data:`logging.lastResort`."
 
 #: ../../whatsnew/3.2.rst:1204
 msgid ""
@@ -2095,6 +2123,9 @@ msgid ""
 ":class:`~logging.Filter` object, the predicate can be any Python callable "
 "that returns ``True`` or ``False``."
 msgstr ""
+"Pouziti filtru bylo zjednodsuseno. Namiste vytvoreni objektu "
+":class:`~logging.Filter`, predikat muze byt jakakoli Python volajici "
+"proceduru, ktera vraci ``True`` nebo ``False``."
 
 #: ../../whatsnew/3.2.rst:1208
 msgid ""
@@ -2102,10 +2133,12 @@ msgid ""
 "configuration.  See the module documentation for a full listing of changes "
 "in Python 3.2."
 msgstr ""
+"Bylo mnoho dalších vylepsen, ktera pridavaji flexibilitu a zjednoducuji "
+"konfiguraci. Podrobne zmeny v Pythonu 3.2 naleznete v dokumentaci modulu."
 
 #: ../../whatsnew/3.2.rst:1213
 msgid "csv"
-msgstr ""
+msgstr "csv"
 
 #: ../../whatsnew/3.2.rst:1215
 msgid ""
@@ -2114,6 +2147,9 @@ msgid ""
 "traditional Unix style with ``'\\n'`` as the line terminator.  The "
 "registered dialect name is ``unix``."
 msgstr ""
+"Modul :mod:`csv` nyni podporuje novy dialekt :class:`~csv.unix_dialect`, "
+"ktery aplikuje citovani pro vsechna pole a tradicicni Unix styl s ``'\\n'`` "
+"jako terminatorem radky. Registrovane jmeno dialektu je ``unix``."
 
 #: ../../whatsnew/3.2.rst:1219
 msgid ""
@@ -2121,6 +2157,8 @@ msgid ""
 ":meth:`~csv.DictWriter.writeheader` for writing-out an initial row to "
 "document the field names::"
 msgstr ""
+":class:`csv.DictWriter` ma novou metodu :meth:`~csv.DictWriter.writeheader` "
+"pro vypis pocatecniho radku k dokumentaci nazvů poli::"
 
 #: ../../whatsnew/3.2.rst:1223
 #, python-brace-format
@@ -2141,10 +2179,12 @@ msgid ""
 "(New dialect suggested by Jay Talbot in :issue:`5975`, and the new method "
 "suggested by Ed Abraham in :issue:`1537721`.)"
 msgstr ""
+"(Novy dialekt navrzeny Jay Talbote v :issue:`5975` a nova metoda navrzena Ed"
+" Abraham v :issue:`1537721`.)"
 
 #: ../../whatsnew/3.2.rst:1237
 msgid "contextlib"
-msgstr ""
+msgstr "contextlib"
 
 #: ../../whatsnew/3.2.rst:1239
 msgid ""
@@ -2152,6 +2192,9 @@ msgid ""
 ":class:`~contextlib.ContextDecorator` that is helpful for creating a "
 ":term:`context manager` that does double duty as a function decorator."
 msgstr ""
+"Existuje novy a trocchu sablonovy nastroj "
+":class:`~contextlib.ContextDecorator`, ktery je uzitecny pro vytvoreni "
+":term:`spravce kontextu`, ktery delá dualni funkci jako funkcni dekorator."
 
 #: ../../whatsnew/3.2.rst:1243
 msgid ""
@@ -2159,6 +2202,8 @@ msgid ""
 ":func:`~contextlib.contextmanager` so that no extra effort is needed to "
 "support both roles."
 msgstr ""
+"Jako vhodnost je nova funkcnost pouzivana :func:`~contextlib.contextmanager`"
+" takze zadna extra usilí neni potrebna pro podporu obou roli."
 
 #: ../../whatsnew/3.2.rst:1247
 msgid ""
@@ -2169,6 +2214,11 @@ msgid ""
 "is a need to write a pre-action or post-action wrapper that can be used in "
 "either role."
 msgstr ""
+"Zakladni myslenko je, ze spravce kontextu a funkcni dekoratory mohou byt "
+"pouzivany pro pre-action a post-action wrappery. Spravce kontextu zabaluje "
+"skupinu prikazu pomoci :keyword:`with` prikazu a funkcni dekoratory zabaluj "
+"skupinu prikazu uzavrene ve funkci. Takze casto existuje potreba psat pre-"
+"action nebo post-action wrapper, ktery muze byt pouzit v jedne z roli."
 
 #: ../../whatsnew/3.2.rst:1253
 msgid ""
@@ -2178,6 +2228,10 @@ msgid ""
 "the task, the :func:`~contextlib.contextmanager` provides both capabilities "
 "in a single definition::"
 msgstr ""
+"Naprklad je nektedy uzitecne zabalit funkce nebo skupiny prikazu s loggerem,"
+" ktery muze sledovat cas vstupu a cas vychodu. Miste psani jak funkcniho "
+"dekoratoru tak spravce kontextu pro ukol, :func:`~contextlib.contextmanager`"
+" poskytuje obe moznosti v jedine definici::"
 
 #: ../../whatsnew/3.2.rst:1259
 #, python-format
@@ -2196,7 +2250,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1270
 msgid "Formerly, this would have only been usable as a context manager::"
-msgstr ""
+msgstr "Drive by bylo pouzitelne pouze jako spravce kontextu::"
 
 #: ../../whatsnew/3.2.rst:1272
 msgid ""
@@ -2207,7 +2261,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1276
 msgid "Now, it can be used as a decorator as well::"
-msgstr ""
+msgstr "Nyni muze byt pouzito jako dekorator take::"
 
 #: ../../whatsnew/3.2.rst:1278
 msgid ""
@@ -2224,6 +2278,10 @@ msgid ""
 "argument usable by a :keyword:`with` statement, but there is no parallel for"
 " function decorators."
 msgstr ""
+"Pokus o soupln dvou roli najednou klade nemektere omezeni na techniku. "
+"Spravce kontextu obykle maji flexibilitu vrátit argument pouzitelny "
+":keyword:`with` prikazu, ale neexistuje zadny paralelni pripad pro funkcni "
+"dekoratory."
 
 #: ../../whatsnew/3.2.rst:1287
 msgid ""
@@ -2231,14 +2289,17 @@ msgid ""
 "*track_entry_and_exit* context manager to return a logging instance for use "
 "in the body of enclosed statements."
 msgstr ""
+"Ve vysseukazanem prikladu neexistuje cistá cesta pro spravce kontextu "
+"*track_entry_and_exit* vratit instanci loggingu pro pouziti v tele uzavrene "
+"prikazu."
 
 #: ../../whatsnew/3.2.rst:1291
 msgid "(Contributed by Michael Foord in :issue:`9110`.)"
-msgstr ""
+msgstr "(Prispel Michael Foord v :issue:`9110`.)"
 
 #: ../../whatsnew/3.2.rst:1294
 msgid "decimal and fractions"
-msgstr ""
+msgstr "decimal a fractions"
 
 #: ../../whatsnew/3.2.rst:1296
 msgid ""
@@ -2246,12 +2307,17 @@ msgid ""
 "different numeric datatypes will have the same hash value whenever their "
 "actual values are equal (:issue:`8188`)::"
 msgstr ""
+"Mark Dickinson vytvořil elegantni a efektivni schemat pro ujisteni se, ze "
+"ruzne numericke datove typy budou mit stejnou hash hodnotu kdykoli jejich "
+"skutecne hodnoty jsou stejne (:issue:`8188`):"
 
 #: ../../whatsnew/3.2.rst:1300
 msgid ""
 "assert hash(Fraction(3, 2)) == hash(1.5) == \\\n"
 "       hash(Decimal(\"1.5\")) == hash(complex(1.5, 0))"
 msgstr ""
+"assert hash(Fraction(3, 2)) == hash(1.5) == \\\n"
+"       hash(Decimal(\"1.5\")) == hash(complex(1.5, 0))"
 
 #: ../../whatsnew/3.2.rst:1303
 msgid ""
@@ -2260,6 +2326,10 @@ msgid ""
 "prime modulus, the hash values for *infinity* and *nan*, and the multiplier "
 "used for the imaginary part of a number:"
 msgstr ""
+"Nektere detaily hashovani jsou zverejneny pres novy atribut "
+":data:`sys.hash_info`, ktery popisuje sirku bitu hash hodnoty, prvocislo "
+"modulu, hash hodnoty pro *nekonecno* a *nan* a nasobitel pouzity pro "
+"imaginarni cast cisla:"
 
 #: ../../whatsnew/3.2.rst:1311
 msgid ""
@@ -2271,6 +2341,14 @@ msgid ""
 " losslessly to either a decimal or rational representation, it makes sense "
 "to add them to the constructor and to support mixed-type comparisons."
 msgstr ""
+"Ranne rozhodnutie omezit interoperabilitu ruznych numerickych typu bylo "
+"uvolneno. Je stale nepodporovane (a spatne poradeno) mit implicitni "
+"smelovani v aritmetickych vyrazech, jako je ``Decimal('1.1') + "
+"float('1.1')``, protoze posledni ztraci informace v procesu vytvoreni "
+"binarniho floatu. Nicmene, vzhledem k tomu, ze existujici hodnoty floating-"
+"point mohou byt prevedeny bez ztraty na desitkou nebo racionalni "
+"reprezentaci, ma smysl je pridat do konstruktoru a podporovat smisene typove"
+" srovnani."
 
 #: ../../whatsnew/3.2.rst:1319
 msgid ""
@@ -2278,6 +2356,9 @@ msgid ""
 "directly so there in no longer a need to use the "
 ":meth:`~decimal.Decimal.from_float` method (:issue:`8257`)."
 msgstr ""
+"Konstruktor :class:`decimal.Decimal` nyni akceptuje :class:`float` objekty "
+"primo takze neni jiz potreba pouzivat metodu "
+":meth:`~decimal.Decimal.from_float` (:issue:`8257`)."
 
 #: ../../whatsnew/3.2.rst:1323
 msgid ""
@@ -2286,6 +2367,9 @@ msgid ""
 ":class:`float` and :class:`fractions.Fraction` (:issue:`2531` and "
 ":issue:`8188`)."
 msgstr ""
+"Smisena typova srovnani jsou nyni plne podporovana, takze objekty "
+":class:`~decimal.Decimal` mohou byt primo srovnavany s :class:`float` a "
+":class:`fractions.Fraction` (:issue:`2531` a :issue:`8188`)."
 
 #: ../../whatsnew/3.2.rst:1327
 msgid ""
@@ -2294,6 +2378,9 @@ msgid ""
 ":meth:`~fractions.Fraction.from_decimal` methods are no longer needed "
 "(:issue:`8294`):"
 msgstr ""
+"Podobne zmeny byly provedeny na :class:`fractions.Fraction`, aby metody "
+":meth:`~fractions.Fraction.from_float` a "
+":meth:`~fractions.Fraction.from_decimal` jiz nejsou potreby (:issue:`8294`):"
 
 #: ../../whatsnew/3.2.rst:1338
 msgid ""
@@ -2302,14 +2389,18 @@ msgid ""
 " is useful in creating contexts that correspond to the decimal interchange "
 "formats specified in IEEE 754 (see :issue:`8540`)."
 msgstr ""
+"Dalsi uzitecna zmena pro modul :mod:`decimal` je, ze atribut "
+":attr:`Context.clamp <decimal.Context.clamp>` je nyni verejna. To je "
+"uzitecne pri vytvareni kontextu, ktere odpovida desitkovym formatuim wymene "
+"specifikovane v IEEE 754 (viz :issue:`8540`)."
 
 #: ../../whatsnew/3.2.rst:1343
 msgid "(Contributed by Mark Dickinson and Raymond Hettinger.)"
-msgstr ""
+msgstr "(Prispeli Mark Dickinson a Raymond Hettinger.)"
 
 #: ../../whatsnew/3.2.rst:1346
 msgid "ftp"
-msgstr ""
+msgstr "ftp"
 
 #: ../../whatsnew/3.2.rst:1348
 msgid ""
@@ -2317,6 +2408,9 @@ msgid ""
 "to unconditionally consume :exc:`socket.error` exceptions and to close the "
 "FTP connection when done::"
 msgstr ""
+"Trida :class:`ftplib.FTP` nyni podporuje protokol spravce kontextu pro "
+"bezpodminecos konzumaci vyjimek :exc:`socket.error` a uzavreni FTP "
+"pripojeni, kdyz je hotovo::"
 
 #: ../../whatsnew/3.2.rst:1352
 msgid ""
@@ -2337,6 +2431,8 @@ msgid ""
 "Other file-like objects such as :class:`mmap.mmap` and "
 ":func:`fileinput.input` also grew auto-closing context managers::"
 msgstr ""
+"Jine objekty podobne souboru, jako je :class:`mmap.mmap` a "
+":func:`fileinput.input` take dostaly auto-uzavirajicich spravce kontextu::"
 
 #: ../../whatsnew/3.2.rst:1366
 msgid ""
@@ -2350,6 +2446,8 @@ msgid ""
 "(Contributed by Tarek Ziadé and Giampaolo Rodolà in :issue:`4972`, and by "
 "Georg Brandl in :issue:`8046` and :issue:`1286`.)"
 msgstr ""
+"(Prispeli Tarek Ziade a Giampaolo Rodola v :issue:`4972` a Georg Brandl v "
+":issue:`8046` a :issue:`1286`.)"
 
 #: ../../whatsnew/3.2.rst:1373
 msgid ""
@@ -2358,30 +2456,37 @@ msgid ""
 "options, certificates and private keys into a single (potentially long-"
 "lived) structure."
 msgstr ""
+"Trida :class:`~ftplib.FTP_TLS` nyni akceptuje parametr *context*, ktery je "
+"objekt :class:`ssl.SSLContext` umoznujici baleni SSL konfiguracnich moznosti"
+" certifikatu a soukromych klicu do jedine (potencialne dlouhohouve) "
+"struktury."
 
 #: ../../whatsnew/3.2.rst:1377
 msgid "(Contributed by Giampaolo Rodolà; :issue:`8806`.)"
-msgstr ""
+msgstr "(Prispel Giampaolo Rodola; :issue:`8806`.)"
 
 #: ../../whatsnew/3.2.rst:1380
 msgid "popen"
-msgstr ""
+msgstr "popen"
 
 #: ../../whatsnew/3.2.rst:1382
 msgid ""
 "The :func:`os.popen` and :func:`subprocess.Popen` functions now support "
 ":keyword:`with` statements for auto-closing of the file descriptors."
 msgstr ""
+"Funkce :func:`os.popen` a :func:`subprocess.Popen` nyni podporuji "
+":keyword:`with` prikazy pro auto-uzavreni popisovace souboru."
 
 #: ../../whatsnew/3.2.rst:1385
 msgid ""
 "(Contributed by Antoine Pitrou and Brian Curtin in :issue:`7461` and "
 ":issue:`10554`.)"
 msgstr ""
+"(Prispeli Antoine Pitrou a Brian Curtin v :issue:`7461` a :issue:`10554`.)"
 
 #: ../../whatsnew/3.2.rst:1389
 msgid "select"
-msgstr ""
+msgstr "select"
 
 #: ../../whatsnew/3.2.rst:1391
 msgid ""
@@ -2390,14 +2495,19 @@ msgid ""
 " guaranteed not to block when :func:`select.select` says a pipe is ready for"
 " writing."
 msgstr ""
+"Modul :mod:`select` nyni odhaluje novy konstantni atribut "
+":const:`~select.PIPE_BUF`, ktery udava minimalni pocet bajtu, ktery jsou "
+"zaruceni, aby nezastavily, kdyz :func:`select.select` rekne, ze rura je "
+"pripravena k psani."
 
 #: ../../whatsnew/3.2.rst:1400
 msgid "(Available on Unix systems. Patch by Sébastien Sablé in :issue:`9862`)"
 msgstr ""
+"(K dispozici v systemech Unix. Patch od Sebastiena Sabla v :issue:`9862`)"
 
 #: ../../whatsnew/3.2.rst:1403
 msgid "gzip and zipfile"
-msgstr ""
+msgstr "gzip a zipfile"
 
 #: ../../whatsnew/3.2.rst:1405
 msgid ""
@@ -2406,6 +2516,10 @@ msgid ""
 ":meth:`~gzip.GzipFile.peek` method and supports unseekable as well as zero-"
 "padded file objects."
 msgstr ""
+":class:`gzip.GzipFile` nyni implementuje :class:`io.BufferedIOBase` "
+":term:`abstraktni zakladni tridu` (krome ``truncate()``). Ma take metodu "
+":meth:`~gzip.GzipFile.peek` a podporuje nehledatelne i nulove-vyplnene "
+"objekty souboru."
 
 #: ../../whatsnew/3.2.rst:1410
 msgid ""
@@ -2414,6 +2528,10 @@ msgid ""
 "decompression.  Keep in mind that text needs to be encoded as :class:`bytes`"
 " before compressing and decompressing:"
 msgstr ""
+"Modul :mod:`gzip` take získava funkce :func:`~gzip.compress` a "
+":func:`~gzip.decompress` pro snadneji kompresi a dekompresi v pameti. Pamete"
+" na to, ze text musi byt enkodovan jako :class:`bytes` pred kompresí a "
+"dekompresi:"
 
 #: ../../whatsnew/3.2.rst:1427
 msgid ""
@@ -2421,6 +2539,8 @@ msgid ""
 " Aides and Brian Curtin in :issue:`9962`, :issue:`1675951`, :issue:`7471` "
 "and :issue:`2846`.)"
 msgstr ""
+"(Prispel Anand B. Pillai v :issue:`3488`; a Antoine Pitrou Nir Aides a Brian"
+" Curtin v :issue:`9962` :issue:`1675951` :issue:`7471` a :issue:`2846`.)"
 
 #: ../../whatsnew/3.2.rst:1431
 msgid ""
@@ -2431,14 +2551,19 @@ msgid ""
 "issue where interleaved calls to *read* and *readline* gave the wrong "
 "results."
 msgstr ""
+"Take trida :class:`zipfile.ZipExtFile <zipfile.ZipFile.open>` byla vnitretne"
+" pouzita k predstavovani souboru ulozeneho uvnitr archivu. Nova implementace"
+" je vyznamne rychlejsi a muze byt zabalena v objektu "
+":class:`io.BufferedReader` pro vets vykonnosti. Resi take problem, kde "
+"interleaved volani na *read* a *readline* dala sidelne vysledky."
 
 #: ../../whatsnew/3.2.rst:1437
 msgid "(Patch submitted by Nir Aides in :issue:`7610`.)"
-msgstr ""
+msgstr "(Patch predlozena Nir Aides v :issue:`7610`.)"
 
 #: ../../whatsnew/3.2.rst:1440
 msgid "tarfile"
-msgstr ""
+msgstr "tarfile"
 
 #: ../../whatsnew/3.2.rst:1442
 msgid ""
@@ -2447,6 +2572,10 @@ msgid ""
 "*filter*, that controls which files are added to the archive and allows the "
 "file metadata to be edited."
 msgstr ""
+"Trida :class:`~tarfile.TarFile` nyni muze byt pouzita jako spravce kontextu."
+" Navic jeho metoda :meth:`~tarfile.TarFile.add` ma novou volbu *filter* "
+"ktera kontroluje, ktere soubory jsou pridany do archivu a umoznuje upravit "
+"metadata souboru."
 
 #: ../../whatsnew/3.2.rst:1447
 msgid ""
@@ -2457,6 +2586,12 @@ msgid ""
 ":class:`~tarfile.TarInfo` object, or if it wants the file to be excluded, "
 "the function can return ``None``::"
 msgstr ""
+"Nova volba *filter* nahrazuje starsi mene flexibilne parametr *exclude*, "
+"ktery je nyni zastaral. Pokud je specifikovano, volitelny parametr *filter* "
+"potrebuje byt :term:`klicovy argument`. Funkcni filtr volany uzivateiem "
+"akceptuje objekt :class:`~tarfile.TarInfo` a vraci aktualizovany objekt "
+":class:`~tarfile.TarInfo` nebo pokud chce, aby byl soubor vyloucen, funkce "
+"muze vratit ``None``:: "
 
 #: ../../whatsnew/3.2.rst:1454
 msgid ""
@@ -2482,10 +2617,11 @@ msgstr ""
 msgid ""
 "(Proposed by Tarek Ziadé and implemented by Lars Gustäbel in :issue:`6856`.)"
 msgstr ""
+"(Navrzeno Tarek Ziade a implementovano Lars Gustabel v :issue:`6856`.)"
 
 #: ../../whatsnew/3.2.rst:1474
 msgid "hashlib"
-msgstr ""
+msgstr "hashlib"
 
 #: ../../whatsnew/3.2.rst:1476
 msgid ""
@@ -2493,6 +2629,9 @@ msgid ""
 "hashing algorithms guaranteed to be present in all implementations and those"
 " available on the current implementation::"
 msgstr ""
+"Modul :mod:`hashlib` ma dva nove konstantni atributy seznam algoritmu "
+"hashovani zarucene byt pritomny ve vsech implementacich a ty dostupne na "
+"soucasne implementaci::"
 
 #: ../../whatsnew/3.2.rst:1480
 #, python-brace-format
@@ -2511,11 +2650,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1491
 msgid "(Suggested by Carl Chenet in :issue:`7418`.)"
-msgstr ""
+msgstr "(Navrh Carl Chenet v :issue:`7418`.)"
 
 #: ../../whatsnew/3.2.rst:1494
 msgid "ast"
-msgstr ""
+msgstr "ast"
 
 #: ../../whatsnew/3.2.rst:1496
 msgid ""
@@ -2526,6 +2665,12 @@ msgid ""
 ":class:`bytes` and :class:`set` literals to the list of supported types: "
 "strings, bytes, numbers, tuples, lists, dicts, sets, booleans, and ``None``."
 msgstr ""
+"Modul :mod:`ast` ma uzasny obecny nastroj pro bezpecne vyhodnoceni expresni "
+"stringu pomoci Python literalne syntaxe. Funkce :func:`ast.literal_eval` "
+"slouzuje jako bezpecna alternativa k vestavene funkci :func:`eval`, ktera je"
+" snadno zneuzivana. Python 3.2 pridava :class:`bytes` a :class:`set` "
+"literaly k seznamu podporovanych typu: stringy bajty cisla n-tice seznamy "
+"slovniky sady booleovske hodnoty a ``None``."
 
 #: ../../whatsnew/3.2.rst:1505
 #, python-brace-format
@@ -2545,11 +2690,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1517
 msgid "(Implemented by Benjamin Peterson and Georg Brandl.)"
-msgstr ""
+msgstr "(Implementovano Benjamin Peterson a Georg Brandl.)"
 
 #: ../../whatsnew/3.2.rst:1520
 msgid "os"
-msgstr ""
+msgstr "os"
 
 #: ../../whatsnew/3.2.rst:1522
 msgid ""
@@ -2558,6 +2703,10 @@ msgid ""
 ":func:`~os.fsencode` and :func:`~os.fsdecode`, for encoding and decoding "
 "filenames:"
 msgstr ""
+"Ruzne operacni systemy pouzivaji ruzne kodovani pro nazvy souboru a "
+"promennych prostredi. Modul :mod:`os` poskytuje dve nove funkce "
+":func:`~os.fsencode` a :func:`~os.fsdecode` pro kodovani a dekodovani jmen "
+"souboru:"
 
 #: ../../whatsnew/3.2.rst:1532
 msgid ""
@@ -2565,6 +2714,9 @@ msgid ""
 "environment.  If so, the :const:`os.supports_bytes_environ` constant will be"
 " true."
 msgstr ""
+"Nektere operacni systemy umoznuji primy pristup ke kodovanym bajtum v "
+"prostredi. Pokud je tomu tak, konstanta :const:`os.supports_bytes_environ` "
+"bude pravda."
 
 #: ../../whatsnew/3.2.rst:1536
 msgid ""
@@ -2572,18 +2724,21 @@ msgid ""
 "new :func:`os.getenvb` function or use :data:`os.environb` which is a bytes "
 "version of :data:`os.environ`."
 msgstr ""
+"Pro primy pristup ke kodovanym promenneprostredim (pokud jsou dostupne) "
+"pouzijte novou funkci :func:`os.getenvb` nebo pouzijte :data:`os.environb` "
+"coz je verzebytes z :data:`os.environ`."
 
 #: ../../whatsnew/3.2.rst:1540
 msgid "(Contributed by Victor Stinner.)"
-msgstr ""
+msgstr "(Prispel Victor Stinner.)"
 
 #: ../../whatsnew/3.2.rst:1543
 msgid "shutil"
-msgstr ""
+msgstr "shutil"
 
 #: ../../whatsnew/3.2.rst:1545
 msgid "The :func:`shutil.copytree` function has two new options:"
-msgstr ""
+msgstr "Funkce :func:`shutil.copytree` ma dve nove volby:"
 
 #: ../../whatsnew/3.2.rst:1547
 msgid ""
@@ -2591,16 +2746,21 @@ msgid ""
 "copies a file pointed to by a symlink, not the symlink itself. This option "
 "will silence the error raised if the file doesn't exist."
 msgstr ""
+"*ignore_dangling_symlinks*: pokud ``symlinks=False`` aby funkce kopirovala "
+"soubor na ktery ukazuje symlink ne samotny symlink. Tato volba utisi chybu "
+"vyvolvanu, pokud soubor neexistuje."
 
 #: ../../whatsnew/3.2.rst:1551
 msgid ""
 "*copy_function*: is a callable that will be used to copy files. "
 ":func:`shutil.copy2` is used by default."
 msgstr ""
+"*copy_function*: je volajici procedura, ktera bude pouzita ke koprovani "
+"souboru. :func:`shutil.copy2` je pouzivana implicitne."
 
 #: ../../whatsnew/3.2.rst:1554 ../../whatsnew/3.2.rst:1592
 msgid "(Contributed by Tarek Ziadé.)"
-msgstr ""
+msgstr "(Přispěl Tarek Ziadé.)"
 
 #: ../../whatsnew/3.2.rst:1556
 msgid ""
@@ -2610,6 +2770,10 @@ msgid ""
 "registering additional archiving file formats (such as xz compressed "
 "tarfiles or custom formats)."
 msgstr ""
+"Navic modul :mod:`shutil` nyni podporuje :ref:`operace archivovani "
+"<archiving-operations>` pro soubory zip nezkomprimovane tarfiley gzipovane "
+"tarfiley a bzipovane tarfiely. A jsou funkce pro registraci dodatecnych "
+"formatu archivu (jako je xz zkomprimovany tarfiel nebo vlastni formaty)."
 
 #: ../../whatsnew/3.2.rst:1561
 msgid ""
@@ -2619,6 +2783,11 @@ msgid ""
 " The archive filename needs to be specified with a full pathname.  The "
 "archiving step is non-destructive (the original files are left unchanged)."
 msgstr ""
+"Hlavni funkce jsou :func:`~shutil.make_archive` a "
+":func:`~shutil.unpack_archive`. Implicitne obe pracuji na aktualnim adresari"
+" (ktery muze byt nastaven :func:`os.chdir`) a na jakychkoli podadresarech. "
+"Nazev archivu musi byt specifikovana s uplnou cestou. Krok archivovani je "
+"neunicitelny (originalni soubory zustavaji nezmenene)."
 
 #: ../../whatsnew/3.2.rst:1569
 msgid ""
@@ -2648,19 +2817,23 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1595
 msgid "sqlite3"
-msgstr ""
+msgstr "sqlite3"
 
 #: ../../whatsnew/3.2.rst:1597
 msgid ""
 "The :mod:`sqlite3` module was updated to pysqlite version 2.6.0.  It has two"
 " new capabilities."
 msgstr ""
+"Modul :mod:`sqlite3` byl aktualizovan na verzi pysqlite 2.6.0. Ma dve nove "
+"moznosti."
 
 #: ../../whatsnew/3.2.rst:1599
 msgid ""
 "The :attr:`!sqlite3.Connection.in_transit` attribute is true if there is an "
 "active transaction for uncommitted changes."
 msgstr ""
+"Atribut :attr:`!sqlite3.Connection.in_transit` je pravda, pokud je aktivni "
+"transakce pro nepotvrzene zmeny."
 
 #: ../../whatsnew/3.2.rst:1602
 msgid ""
@@ -2669,14 +2842,18 @@ msgid ""
 "extensions from \".so\" files.  One well-known extension is the fulltext-"
 "search extension distributed with SQLite."
 msgstr ""
+"Metody :meth:`sqlite3.Connection.enable_load_extension` a "
+":meth:`sqlite3.Connection.load_extension` vam umoznuji natezalit SQLite "
+"rozsireni ze souboru \".so\". Jedna zname rozsireni je rozsireni fulltext-"
+"search distribuovane se SQLite."
 
 #: ../../whatsnew/3.2.rst:1607
 msgid "(Contributed by R. David Murray and Shashwat Anand; :issue:`8845`.)"
-msgstr ""
+msgstr "(Prispeli R. David Murray a Shashwat Anand; :issue:`8845`.)"
 
 #: ../../whatsnew/3.2.rst:1610
 msgid "html"
-msgstr ""
+msgstr "html"
 
 #: ../../whatsnew/3.2.rst:1612
 msgid ""
@@ -2684,14 +2861,17 @@ msgid ""
 ":func:`~html.escape`, which is used for escaping reserved characters from "
 "HTML markup:"
 msgstr ""
+"Novy modul :mod:`html` byl predstaven s pouze jedinou funkci "
+":func:`~html.escape` ktera je pouzivana pro vymezeni rezervovanych znaku z "
+"HTML znackovani:"
 
 #: ../../whatsnew/3.2.rst:1621
 msgid "socket"
-msgstr ""
+msgstr "socket"
 
 #: ../../whatsnew/3.2.rst:1623
 msgid "The :mod:`socket` module has two new improvements."
-msgstr ""
+msgstr "Modul :mod:`socket` ma dve nove vylepseni."
 
 #: ../../whatsnew/3.2.rst:1625
 msgid ""
@@ -2700,6 +2880,10 @@ msgid ""
 "descriptor.  The latter can then be reused for other purposes. (Added by "
 "Antoine Pitrou; :issue:`8524`.)"
 msgstr ""
+"Objekty soketunyzavedily metodu :meth:`~socket.socket.detach` ktera vlozi "
+"soket do zavreneho stavu bez skutecneho uzavreni podkladoveho deskriptoru "
+"souboru. Posledne pak muze byt znovu pouzito pro ostatni ucely. (Pridano "
+"Antoine Pitrou; :issue:`8524`.)"
 
 #: ../../whatsnew/3.2.rst:1630
 msgid ""
@@ -2708,16 +2892,21 @@ msgid ""
 "close the socket when done. (Contributed by Giampaolo Rodolà; "
 ":issue:`9794`.)"
 msgstr ""
+":func:`socket.create_connection` nyní podporuje protokol správy kontextu pro"
+" bezpodmínečné spotřebování výjimek :exc:`socket.error` a zavření socketu. "
+"(Přispěl Giampaolo Rodolà; :issue:`9794`.)"
 
 #: ../../whatsnew/3.2.rst:1636
 msgid "ssl"
-msgstr ""
+msgstr "ssl"
 
 #: ../../whatsnew/3.2.rst:1638
 msgid ""
 "The :mod:`ssl` module added a number of features to satisfy common "
 "requirements for secure (encrypted, authenticated) internet connections:"
 msgstr ""
+"Modul :mod:`ssl` přidal řadu funkcí k uspokojení běžných požadavků na "
+"bezpečná (šifrovaná, ověřená) internetová připojení:"
 
 #: ../../whatsnew/3.2.rst:1641
 msgid ""
@@ -2726,6 +2915,10 @@ msgid ""
 " other options. It includes a :meth:`~ssl.SSLContext.wrap_socket` for "
 "creating an SSL socket from an SSL context."
 msgstr ""
+"Nová třída :class:`~ssl.SSLContext` slouží jako kontejner pro trvalá SSL "
+"data, jako jsou nastavení protokolu, certifikáty, privátní klíče a různé "
+"další možnosti. Obsahuje :meth:`~ssl.SSLContext.wrap_socket` pro vytvoření "
+"SSL socketu ze SSL kontextu."
 
 #: ../../whatsnew/3.2.rst:1646
 msgid ""
@@ -2733,6 +2926,9 @@ msgid ""
 "verification for higher-level protocols by implementing the rules of HTTPS "
 "(from :rfc:`2818`) which are also suitable for other protocols."
 msgstr ""
+"Nová funkce :func:`!ssl.match_hostname` podporuje ověřování identity serveru"
+" pro vyšší úrovňové protokoly implementací pravidel HTTPS (z :rfc:`2818`), "
+"která jsou také vhodná pro další protokoly."
 
 #: ../../whatsnew/3.2.rst:1650
 msgid ""
@@ -2742,6 +2938,10 @@ msgid ""
 "documentation <https://docs.openssl.org/1.0.2/man1/ciphers/#cipher-list-"
 "format>`__."
 msgstr ""
+"Konstruktor funkce :func:`ssl.wrap_socket() <ssl.SSLContext.wrap_socket>` "
+"nyní přijímá argument *ciphers*. Řetězec *ciphers* uvádí povolené šifrovací "
+"algoritmy ve formátu popsaném v `dokumentaci OpenSSL "
+"<https://docs.openssl.org/1.0.2/man1/ciphers/#cipher-list-format>`__."
 
 #: ../../whatsnew/3.2.rst:1655
 msgid ""
@@ -2752,6 +2952,11 @@ msgid ""
 "passing the *server_hostname* argument to "
 ":meth:`ssl.SSLContext.wrap_socket`."
 msgstr ""
+"Při propojení s nedávnými verzemi OpenSSL podporuje modul :mod:`ssl` nyní "
+"rozšíření Server Name Indication k protokolu TLS, což umožňuje více "
+"\"virtuálních hostitelů\" s různými certifikáty na jednom portu IP. Toto "
+"rozšíření je podporováno pouze v klientském režimu a aktivuje se předáním "
+"argumentu *server_hostname* do :meth:`ssl.SSLContext.wrap_socket`."
 
 #: ../../whatsnew/3.2.rst:1661
 msgid ""
@@ -2759,6 +2964,9 @@ msgid ""
 ":data:`~ssl.OP_NO_SSLv2` which disables the insecure and obsolete SSLv2 "
 "protocol."
 msgstr ""
+"Do modulu :mod:`ssl` byly přidány různé volby, například "
+":data:`~ssl.OP_NO_SSLv2`, která zakáže nezabezpečený a zastaralý protokol "
+"SSLv2."
 
 #: ../../whatsnew/3.2.rst:1665
 msgid ""
@@ -2766,6 +2974,9 @@ msgid ""
 "some SSL certificates cannot be verified, they are reported as an \"unknown "
 "algorithm\" error."
 msgstr ""
+"Rozšíření nyní načítá všechny šifry OpenSSL a algoritmy pro výpočet "
+"kontrolních součtů. Pokud nelze ověřit některé certifikáty SSL, jsou hlášeny"
+" jako chyba \"neznámý algoritmus\"."
 
 #: ../../whatsnew/3.2.rst:1669
 msgid ""
@@ -2774,6 +2985,9 @@ msgid ""
 ":const:`ssl.OPENSSL_VERSION_INFO` (a 5-tuple), and "
 ":const:`ssl.OPENSSL_VERSION_NUMBER` (an integer)."
 msgstr ""
+"Verze OpenSSL, která se používá, je nyní přístupná pomocí atributů modulu "
+":const:`ssl.OPENSSL_VERSION` (řetězec), :const:`ssl.OPENSSL_VERSION_INFO` "
+"(5prvková n-tice) a :const:`ssl.OPENSSL_VERSION_NUMBER` (celé číslo)."
 
 #: ../../whatsnew/3.2.rst:1674
 msgid ""
@@ -2781,10 +2995,12 @@ msgid ""
 ":issue:`8322`, :issue:`5639`, :issue:`4870`, :issue:`8484`, and "
 ":issue:`8321`.)"
 msgstr ""
+"(Přispěl Antoine Pitrou v :issue:`8850`, :issue:`1589`, :issue:`8322`, "
+":issue:`5639`, :issue:`4870`, :issue:`8484` a :issue:`8321`.)"
 
 #: ../../whatsnew/3.2.rst:1678
 msgid "nntp"
-msgstr ""
+msgstr "nntp"
 
 #: ../../whatsnew/3.2.rst:1680
 msgid ""
@@ -2793,6 +3009,10 @@ msgid ""
 " compatibility with the nntplib version in Python 3.1, which was partly "
 "dysfunctional in itself."
 msgstr ""
+"Modul :mod:`!nntplib` má přepracovanou implementaci s lepšími semanitkou "
+"bytů a textu a praktickějšími rozhraními API. Tato vylepšení porušují "
+"kompatibilitu s verzí nntplib v Pythonu 3.1, která byla sama o sobě částečně"
+" non-funkční."
 
 #: ../../whatsnew/3.2.rst:1685
 msgid ""
@@ -2800,16 +3020,20 @@ msgid ""
 ":class:`!nntplib.NNTP_SSL`) and explicit (using "
 ":meth:`!nntplib.NNTP.starttls`) TLS has also been added."
 msgstr ""
+"Podpora zabezpečených připojení prostřednictvím impliktní (použitím "
+":class:`!nntplib.NNTP_SSL`) a explicitní (použitím "
+":meth:`!nntplib.NNTP.starttls`) TLS byla také přidána."
 
 #: ../../whatsnew/3.2.rst:1689
 msgid ""
 "(Contributed by Antoine Pitrou in :issue:`9360` and Andrew Vant in "
 ":issue:`1926`.)"
 msgstr ""
+"(Přispěl Antoine Pitrou v :issue:`9360` a Andrew Vant v :issue:`1926`.)"
 
 #: ../../whatsnew/3.2.rst:1692
 msgid "certificates"
-msgstr ""
+msgstr "certifikáty"
 
 #: ../../whatsnew/3.2.rst:1694
 msgid ""
@@ -2818,28 +3042,34 @@ msgid ""
 "server certificate checking against a set of Certificate Authorities, as "
 "recommended in public uses of HTTPS."
 msgstr ""
+":class:`http.client.HTTPSConnection`, :class:`urllib.request.HTTPSHandler` a"
+" :func:`urllib.request.urlopen` nyní přijímají volitelné argumenty k "
+"umožnění kontroly certifikátu serveru vůči sadaĝ Certifikačních Útvaru "
+"(Certificate Authorities), jak je doporučeno ve veřejných použitích HTTPS."
 
 #: ../../whatsnew/3.2.rst:1699
 msgid "(Added by Antoine Pitrou, :issue:`9003`.)"
-msgstr ""
+msgstr "(Byla přidána Antoine Pitrou, :issue:`9003`.)"
 
 #: ../../whatsnew/3.2.rst:1702
 msgid "imaplib"
-msgstr ""
+msgstr "imaplib"
 
 #: ../../whatsnew/3.2.rst:1704
 msgid ""
 "Support for explicit TLS on standard IMAP4 connections has been added "
 "through the new :mod:`imaplib.IMAP4.starttls` method."
 msgstr ""
+"Podpora explicitního TLS na standardních spojeních IMAP4 byla přidána "
+"prostřednictvím nové metody :mod:`imaplib.IMAP4.starttls`."
 
 #: ../../whatsnew/3.2.rst:1707
 msgid "(Contributed by Lorenzo M. Catucci and Antoine Pitrou, :issue:`4471`.)"
-msgstr ""
+msgstr "(Přispěli Lorenzo M. Catucci a Antoine Pitrou, :issue:`4471`.)"
 
 #: ../../whatsnew/3.2.rst:1710
 msgid "http.client"
-msgstr ""
+msgstr "http.client"
 
 #: ../../whatsnew/3.2.rst:1712
 msgid ""
@@ -2847,6 +3077,9 @@ msgid ""
 "module. The old-style HTTP 0.9 simple responses are no longer supported and "
 "the *strict* parameter is deprecated in all classes."
 msgstr ""
+"V modulu :mod:`http.client` bylo několik malých vylepšení API. Staré "
+"jednoduché odpovědi HTTP 0.9 již nejsou podporovány a parametr *strict* je "
+"zastaralý ve všech třídách."
 
 #: ../../whatsnew/3.2.rst:1716
 msgid ""
@@ -2855,12 +3088,17 @@ msgid ""
 "parameter for a (host, port) tuple indicating where the HTTP connection is "
 "made from."
 msgstr ""
+"Třídy :class:`~http.client.HTTPConnection` a "
+":class:`~http.client.HTTPSConnection` nyní mají parametr *source_address* "
+"pro n-tici (host, port) označující, odkud je spojení HTTP realizováno."
 
 #: ../../whatsnew/3.2.rst:1721
 msgid ""
 "Support for certificate checking and HTTPS virtual hosts were added to "
 ":class:`~http.client.HTTPSConnection`."
 msgstr ""
+"Podpora pro kontrolu certifikátů a virtuální hostitele HTTPS byla přidána do"
+" :class:`~http.client.HTTPSConnection`."
 
 #: ../../whatsnew/3.2.rst:1724
 msgid ""
@@ -2871,6 +3109,12 @@ msgid ""
 "an explicit ``Content-Length`` header.  This extended interface is much more"
 " flexible than before."
 msgstr ""
+"Metoda :meth:`~http.client.HTTPConnection.request` na objektech spojení "
+"umožňovala volitelný argument *body*, aby bylo možné použít objektu "
+":term:`file object` k poskytnutí obsahu požadavku. Vhodně, argument *body* "
+"nyní také přijímá objekt :term:`iterable` tak dlouho, dokud obsahuje "
+"explicitní hlavičku ``Content-Length``. Toto rozšířené rozhraní je mnohem "
+"flexibilnější než předtm."
 
 #: ../../whatsnew/3.2.rst:1731
 msgid ""
@@ -2878,6 +3122,9 @@ msgid ""
 ":meth:`~http.client.HTTPConnection.set_tunnel` method that sets the host and"
 " port for HTTP Connect tunneling."
 msgstr ""
+"K navázání spojení HTTPS prostřednictvím proxy serveru je zde nová metoda "
+":meth:`~http.client.HTTPConnection.set_tunnel`, která nastavuje hostitele a "
+"port pro HTTP Connect tunelelní."
 
 #: ../../whatsnew/3.2.rst:1735
 msgid ""
@@ -2887,10 +3134,14 @@ msgid ""
 "incoming and outgoing traffic. (See work by Armin Ronacher in "
 ":issue:`10980`.)"
 msgstr ""
+"Aby odpovídal chování :mod:`http.server`, klientská knihovna HTTP nyní "
+"kóduje hlavičky s kódováním ISO-8859-1 (Latin-1). U příchozích hlaviček to "
+"již dělala, takže je chování konzistentní pro vycházející a příchozící "
+"provoz. (Viz práce Armina Ronachera v :issue:`10980`.)"
 
 #: ../../whatsnew/3.2.rst:1741
 msgid "unittest"
-msgstr ""
+msgstr "unittest"
 
 #: ../../whatsnew/3.2.rst:1743
 msgid ""
@@ -2899,6 +3150,9 @@ msgid ""
 " methods, improved diagnostic messages for test failures, and better method "
 "names."
 msgstr ""
+"Modul unittest má řadu vylepšení podporujících objev balíků, lehčí "
+"experimentální práci na interaktivním řádku, nové metody testovacího "
+"případu, zlepšené diagnostické zprávy pro selhani testů a lepší jména metod."
 
 #: ../../whatsnew/3.2.rst:1748
 msgid ""
@@ -2909,6 +3163,12 @@ msgid ""
 "specified with the ``-t`` option, a pattern for matching files with ``-p``, "
 "and a directory to start discovery with ``-s``:"
 msgstr ""
+"Volba příkazové řádky ``python -m unittest`` může nyní přijímout cesty "
+"souborů místo jmen modulů pro spuštění konkrétních testů (:issue:`10620`). "
+"Nový objev testů může najít testy v rámci balíků, lokalizování libovolného "
+"testu importovatelného z horní úročvího adresáře. Horní úročvý adresář lze "
+"zadat volbou ``-t``, vzor pro shodování souborů s ``-p`` a adresář začít "
+"objev s ``-s``:"
 
 #: ../../whatsnew/3.2.rst:1755
 msgid "$ python -m unittest discover -s my_proj_dir -p _test.py"
@@ -2917,13 +3177,15 @@ msgstr ""
 #: ../../whatsnew/3.2.rst:1759 ../../whatsnew/3.2.rst:1768
 #: ../../whatsnew/3.2.rst:1924
 msgid "(Contributed by Michael Foord.)"
-msgstr ""
+msgstr "(Přispěl Michael Foord.)"
 
 #: ../../whatsnew/3.2.rst:1761
 msgid ""
 "Experimentation at the interactive prompt is now easier because the "
 ":class:`unittest.TestCase` class can now be instantiated without arguments:"
 msgstr ""
+"Experimentální práce na interaktivním řádku je nyní lehčí, protože třída "
+":class:`unittest.TestCase` může být nyní vytvořena bez argumentů:"
 
 #: ../../whatsnew/3.2.rst:1770
 msgid ""
@@ -2932,6 +3194,10 @@ msgid ""
 ":meth:`~unittest.TestCase.assertWarnsRegex` to verify that a given warning "
 "type is triggered by the code under test::"
 msgstr ""
+"Modul :mod:`unittest` má dve nové metody "
+":meth:`~unittest.TestCase.assertWarns` a "
+":meth:`~unittest.TestCase.assertWarnsRegex` k ověření, že daný typ "
+"várovatelnó je vyvolam testiruemym kódem::"
 
 #: ../../whatsnew/3.2.rst:1775
 msgid ""
@@ -2941,7 +3207,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1778
 msgid "(Contributed by Antoine Pitrou, :issue:`9754`.)"
-msgstr ""
+msgstr "(Přispěl Antoine Pitrou, :issue:`9754`.)"
 
 #: ../../whatsnew/3.2.rst:1780
 msgid ""
@@ -2950,6 +3216,10 @@ msgid ""
 "(whether the same elements are present with the same number of occurrences "
 "regardless of order)::"
 msgstr ""
+"Další nová metoda :meth:`~unittest.TestCase.assertCountEqual` se používá k "
+"porovnání dvou iterovatelnosti k určení, zda jsou jejich počty prvků stejné "
+"(zda jsou přítomny stejné prvky se stejným počtem výskytů bez ohledu na "
+"pořadí)::"
 
 #: ../../whatsnew/3.2.rst:1785
 msgid ""
@@ -2966,12 +3236,18 @@ msgid ""
 "be voluminous, there is a new :attr:`~unittest.TestCase.maxDiff` attribute "
 "that sets maximum length of diffs displayed."
 msgstr ""
+"Hlavní vlastností modulu unittest je snažentí se vytvořit smyslušté "
+"diagnostické zprávy při selhání testu. Kde je to možné, je selhání "
+"zaznamenáno spolu s rozdolem výpisu. To je obzvláště užitečné pro analýzu "
+"protokolů selhání spustených testů. Avšak protože rozdoly mohou niekdy být "
+"rozsáhlé, existuje nový atribut :attr:`~unittest.TestCase.maxDiff`, který "
+"nastavuje maximální délku zobrazených rozdolů."
 
 #: ../../whatsnew/3.2.rst:1797
 msgid ""
 "In addition, the method names in the module have undergone a number of "
 "clean-ups."
-msgstr ""
+msgstr "Navíc jména metod v modulu prošla řadou čisčení."
 
 #: ../../whatsnew/3.2.rst:1799
 msgid ""
@@ -2983,74 +3259,85 @@ msgid ""
 " matches Python's old name for the :mod:`re` module, and it has unambiguous "
 "camel-casing."
 msgstr ""
+"Například :meth:`~unittest.TestCase.assertRegex` je nové jméno pro "
+":meth:`!assertRegexpMatches`, které bylo chybně pojmenováno, protože test "
+"používá :func:`re.search`, nikoli :func:`re.match`. Další metody používající"
+" regulární výrazy jsou nyní pojmenovány s užíváním kratší formy \"Regex\" "
+"místo \"Regexp\" -- to souladí s jmény používanými v jiných implementacích "
+"unittest, odpovídá starému jménu Pythonu pro modul :mod:`re` a má nezamění "
+"telné používání velkých písmenem."
 
 #: ../../whatsnew/3.2.rst:1807
 msgid "(Contributed by Raymond Hettinger and implemented by Ezio Melotti.)"
-msgstr ""
+msgstr "(Přispěl Raymond Hettinger a implementoval Ezio Melotti.)"
 
 #: ../../whatsnew/3.2.rst:1809
 msgid ""
 "To improve consistency, some long-standing method aliases are being "
 "deprecated in favor of the preferred names:"
 msgstr ""
+"Pro zlepšení konzistence jsou některé dlouhodobé aliasy metod zastařovány ve"
+" výhod upravený názvů:"
 
 #: ../../whatsnew/3.2.rst:1813
 msgid "Old Name"
-msgstr ""
+msgstr "Staré jméno"
 
 #: ../../whatsnew/3.2.rst:1813
 msgid "Preferred Name"
-msgstr ""
+msgstr "Preferované jméno"
 
 #: ../../whatsnew/3.2.rst:1815
 msgid ":meth:`!assert_`"
-msgstr ""
+msgstr ":meth:`!assert_`"
 
 #: ../../whatsnew/3.2.rst:1815
 msgid ":meth:`.assertTrue`"
-msgstr ""
+msgstr ":meth:`.assertTrue`"
 
 #: ../../whatsnew/3.2.rst:1816
 msgid ":meth:`!assertEquals`"
-msgstr ""
+msgstr ":meth:`!assertEquals`"
 
 #: ../../whatsnew/3.2.rst:1816
 msgid ":meth:`.assertEqual`"
-msgstr ""
+msgstr ":meth:`.assertEqual`"
 
 #: ../../whatsnew/3.2.rst:1817
 msgid ":meth:`!assertNotEquals`"
-msgstr ""
+msgstr ":meth:`!assertNotEquals`"
 
 #: ../../whatsnew/3.2.rst:1817
 msgid ":meth:`.assertNotEqual`"
-msgstr ""
+msgstr ":meth:`.assertNotEqual`"
 
 #: ../../whatsnew/3.2.rst:1818
 msgid ":meth:`!assertAlmostEquals`"
-msgstr ""
+msgstr ":meth:`!assertAlmostEquals`"
 
 #: ../../whatsnew/3.2.rst:1818
 msgid ":meth:`.assertAlmostEqual`"
-msgstr ""
+msgstr ":meth:`.assertAlmostEqual`"
 
 #: ../../whatsnew/3.2.rst:1819
 msgid ":meth:`!assertNotAlmostEquals`"
-msgstr ""
+msgstr ":meth:`!assertNotAlmostEquals`"
 
 #: ../../whatsnew/3.2.rst:1819
 msgid ":meth:`.assertNotAlmostEqual`"
-msgstr ""
+msgstr ":meth:`.assertNotAlmostEqual`"
 
 #: ../../whatsnew/3.2.rst:1822
 msgid ""
 "Likewise, the ``TestCase.fail*`` methods deprecated in Python 3.1 are "
 "expected to be removed in Python 3.3."
 msgstr ""
+"Podobně metody ``TestCase.fail*`` zastaralé v Pythonu 3.1 se očekává jejich "
+"odstranění v Pythonu 3.3."
 
 #: ../../whatsnew/3.2.rst:1825
 msgid "(Contributed by Ezio Melotti; :issue:`9424`.)"
-msgstr ""
+msgstr "(Přispěl Ezio Melotti; :issue:`9424`.)"
 
 #: ../../whatsnew/3.2.rst:1827
 #, python-brace-format
@@ -3060,10 +3347,14 @@ msgid ""
 "debug optical illusions where tests like "
 "``TestCase().assertDictContainsSubset({'a':1, 'b':2}, {'a':1})`` would fail."
 msgstr ""
+"Metoda :meth:`!assertDictContainsSubset` byla zastaralá, protože byla chybně"
+" implementována s argumenty všpatném pořadí. To vytvořilo obtížně laditelnou"
+" optické klamy, kdy by testy jako "
+"``TestCase().assertDictContainsSubset({'a':1, 'b':2}, {'a':1})`` selhaly."
 
 #: ../../whatsnew/3.2.rst:1835
 msgid "random"
-msgstr ""
+msgstr "random"
 
 #: ../../whatsnew/3.2.rst:1837
 msgid ""
@@ -3076,14 +3367,21 @@ msgid ""
 ":func:`~random.randint`, :func:`~random.choice`, :func:`~random.shuffle` and"
 " :func:`~random.sample`."
 msgstr ""
+"Celolose metody v modulu :mod:`random` nyní lépe vytářejí jednotná "
+"rozložení. Dříve vypočítaly výběry s ``int(n*random())``, což mělo málé "
+"vychý lení, kdykoli *n* nebyla mocninou dvou. Nyní se provede vícé výběrů z "
+"rozsahu až do další mocniny dvou a výběr je zadržen pouze, pokud se nachází "
+"v rozsahu ``0 <= x < n``. Ovlivněné funkce a metody jsou "
+":func:`~random.randrange`, :func:`~random.randint`, :func:`~random.choice`, "
+":func:`~random.shuffle` a :func:`~random.sample`."
 
 #: ../../whatsnew/3.2.rst:1846
 msgid "(Contributed by Raymond Hettinger; :issue:`9025`.)"
-msgstr ""
+msgstr "(Přispěl Raymond Hettinger; :issue:`9025`.)"
 
 #: ../../whatsnew/3.2.rst:1849
 msgid "poplib"
-msgstr ""
+msgstr "poplib"
 
 #: ../../whatsnew/3.2.rst:1851
 msgid ""
@@ -3092,14 +3390,17 @@ msgid ""
 "options, certificates and private keys into a single (potentially long-"
 "lived) structure."
 msgstr ""
+"Třída :class:`~poplib.POP3_SSL` nyní přijímá parametr *context*, což je "
+"objekt :class:`ssl.SSLContext` umožňující sloučení voleb konfigurace SSL, "
+"certifikátů a privátních klíčů do jedné (potenciálně dlouhodobé) struktury."
 
 #: ../../whatsnew/3.2.rst:1856
 msgid "(Contributed by Giampaolo Rodolà; :issue:`8807`.)"
-msgstr ""
+msgstr "(Přispěl Giampaolo Rodolà; :issue:`8807`.)"
 
 #: ../../whatsnew/3.2.rst:1859
 msgid "asyncore"
-msgstr ""
+msgstr "asyncore"
 
 #: ../../whatsnew/3.2.rst:1861
 msgid ""
@@ -3109,14 +3410,19 @@ msgid ""
 " used as a replacement for old :meth:`!handle_accept` and avoids the user  "
 "to call :meth:`!accept` directly."
 msgstr ""
+":class:`!asyncore.dispatcher` nyní poskytuje metodu "
+":meth:`!handle_accepted`, která vrací ``(sock, addr)`` n-tici, která je "
+"volána, když bylo spojení skutečně navázáno s novým vzdáleným koncovým "
+"bodem. To má být použito jako náhrada za starou :meth:`!handle_accept` a "
+"vyhne se uživateli volání :meth:`!accept` přímo."
 
 #: ../../whatsnew/3.2.rst:1868
 msgid "(Contributed by Giampaolo Rodolà; :issue:`6706`.)"
-msgstr ""
+msgstr "(Přispěl Giampaolo Rodolà; :issue:`6706`.)"
 
 #: ../../whatsnew/3.2.rst:1871
 msgid "tempfile"
-msgstr ""
+msgstr "tempfile"
 
 #: ../../whatsnew/3.2.rst:1873
 msgid ""
@@ -3124,6 +3430,9 @@ msgid ""
 ":class:`~tempfile.TemporaryDirectory` which provides easy deterministic "
 "cleanup of temporary directories::"
 msgstr ""
+"Modul :mod:`tempfile` má nový správce kontextu, "
+":class:`~tempfile.TemporaryDirectory`, který poskytuje snadné deterministíné"
+" čištění dočasných adresářů::"
 
 #: ../../whatsnew/3.2.rst:1877
 msgid ""
@@ -3133,11 +3442,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1880
 msgid "(Contributed by Neil Schemenauer and Nick Coghlan; :issue:`5178`.)"
-msgstr ""
+msgstr "(Přispěli Neil Schemenauer a Nick Coghlan; :issue:`5178`.)"
 
 #: ../../whatsnew/3.2.rst:1883
 msgid "inspect"
-msgstr ""
+msgstr "inspect"
 
 #: ../../whatsnew/3.2.rst:1885
 msgid ""
@@ -3145,6 +3454,8 @@ msgid ""
 ":func:`~inspect.getgeneratorstate` to easily identify the current state of a"
 " generator-iterator::"
 msgstr ""
+"Modul :mod:`inspect` má novou funkci :func:`~inspect.getgeneratorstate` k "
+"snadné identifikaci aktuálního stavu generátoru-iterátoru::"
 
 #: ../../whatsnew/3.2.rst:1889
 msgid ""
@@ -3166,7 +3477,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1904
 msgid "(Contributed by Rodolpho Eckhardt and Nick Coghlan, :issue:`10220`.)"
-msgstr ""
+msgstr "(Přispěli Rodolpho Eckhardt a Nick Coghlan, :issue:`10220`.)"
 
 #: ../../whatsnew/3.2.rst:1906
 msgid ""
@@ -3175,6 +3486,10 @@ msgid ""
 ":func:`~inspect.getattr_static`. Unlike :func:`hasattr`, this is a true "
 "read-only search, guaranteed not to change state while it is searching::"
 msgstr ""
+"Pro podporu vyhledávání bez možnosti aktivace dynamického atributu má modul "
+":mod:`inspect` novou funkci :func:`~inspect.getattr_static`. Na rozdíl od "
+":func:`hasattr` se jedná o skutečné vyhledávání pouze ke čtení, které je "
+"zarueno, že nemění stav během vyhledávání::"
 
 #: ../../whatsnew/3.2.rst:1911
 msgid ""
@@ -3194,7 +3509,7 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1927
 msgid "pydoc"
-msgstr ""
+msgstr "pydoc"
 
 #: ../../whatsnew/3.2.rst:1929
 msgid ""
@@ -3202,6 +3517,9 @@ msgid ""
 "as well as a new command-line option ``-b`` to automatically open a browser "
 "window to display that server:"
 msgstr ""
+"Modul :mod:`pydoc` nyní poskytuje vázně zlepšené webové rozhraní serveru a "
+"také novou volbu příkazové řádky ``-b`` k automatickému otevření okna "
+"prohléžeče pro zobrazení tohoto serveru:"
 
 #: ../../whatsnew/3.2.rst:1933
 msgid "$ pydoc3.2 -b"
@@ -3209,11 +3527,11 @@ msgstr ""
 
 #: ../../whatsnew/3.2.rst:1937
 msgid "(Contributed by Ron Adam; :issue:`2001`.)"
-msgstr ""
+msgstr "(Přispěl Ron Adam; :issue:`2001`.)"
 
 #: ../../whatsnew/3.2.rst:1940
 msgid "dis"
-msgstr ""
+msgstr "dis"
 
 #: ../../whatsnew/3.2.rst:1942
 msgid ""
@@ -3223,6 +3541,10 @@ msgid ""
 "string or code object.  The former returns a string and the latter prints "
 "it::"
 msgstr ""
+"Modul :mod:`dis` získal dvě nové funkce pro zkoumání kódu "
+":func:`~dis.code_info` a :func:`~dis.show_code`. Oba poskytují podrobné "
+"informace o objektu kódu pro poskytnutou funkci, metodu, řetězec zdrojového "
+"kódu nebo objekt kódu. První vrací řetězec a druhý jej tiskne::"
 
 #: ../../whatsnew/3.2.rst:1947
 msgid ""
@@ -3255,6 +3577,8 @@ msgid ""
 "that the common idiom ``dis(compile(s, '', 'eval'))`` can be shortened to "
 "``dis(s)``::"
 msgstr ""
+"Navnoavtě funkce :func:`~dis.dis` nyní přijímá řetězcové argumenty, aby bylo"
+" možné zkrátit obéhé ``dis(compile(s, '', 'eval'))`` na ``dis(s)``::"
 
 #: ../../whatsnew/3.2.rst:1973
 msgid ""
@@ -3283,61 +3607,75 @@ msgid ""
 "implemented and to see for yourself what the language syntax does under-the-"
 "hood."
 msgstr ""
+"Spolu vzaté, tato vylepšení usnadňují zkoumání, jak je CPython "
+"implementován, a vidět si sami, co jazyk syntaxe dělá pod kapotou."
 
 #: ../../whatsnew/3.2.rst:1995
 msgid "(Contributed by Nick Coghlan in :issue:`9147`.)"
-msgstr ""
+msgstr "(Přispěl Nick Coghlan v :issue:`9147`.)"
 
 #: ../../whatsnew/3.2.rst:1998
 msgid "dbm"
-msgstr ""
+msgstr "dbm"
 
 #: ../../whatsnew/3.2.rst:2000
 msgid ""
 "All database modules now support the :meth:`!get` and :meth:`!setdefault` "
 "methods."
 msgstr ""
+"Všechny databázové moduly nyní podporují metody :meth:`!get` a "
+":meth:`!setdefault`."
 
 #: ../../whatsnew/3.2.rst:2002
 msgid "(Suggested by Ray Allen in :issue:`9523`.)"
-msgstr ""
+msgstr "(Navrženo Ray Allen v :issue:`9523`.)"
 
 #: ../../whatsnew/3.2.rst:2005
 msgid "ctypes"
-msgstr ""
+msgstr "ctypes"
 
 #: ../../whatsnew/3.2.rst:2007
 msgid ""
 "A new type, :class:`ctypes.c_ssize_t` represents the C :c:type:`ssize_t` "
 "datatype."
 msgstr ""
+"Nový typ :class:`ctypes.c_ssize_t` reprezentuje datový typ C "
+":c:type:`ssize_t`."
 
 #: ../../whatsnew/3.2.rst:2010
 msgid "site"
-msgstr ""
+msgstr "site"
 
 #: ../../whatsnew/3.2.rst:2012
 msgid ""
 "The :mod:`site` module has three new functions useful for reporting on the "
 "details of a given Python installation."
 msgstr ""
+"Modul :mod:`site` má tři nové funkce užitečné pro zprávu detailů dané "
+"instalace Pythonu."
 
 #: ../../whatsnew/3.2.rst:2015
 msgid ""
 ":func:`~site.getsitepackages` lists all global site-packages directories."
 msgstr ""
+":func:`~site.getsitepackages` seznamí všechny globální adresáře site-"
+"packages."
 
 #: ../../whatsnew/3.2.rst:2017
 msgid ""
 ":func:`~site.getuserbase` reports on the user's base directory where data "
 "can be stored."
 msgstr ""
+":func:`~site.getuserbase` zpráví o základním adresáři uživatele, kde mohou "
+"být uložena data."
 
 #: ../../whatsnew/3.2.rst:2020
 msgid ""
 ":func:`~site.getusersitepackages` reveals the user-specific site-packages "
 "directory path."
 msgstr ""
+":func:`~site.getusersitepackages` zjišťuje cestu k adresáři site-packages "
+"specifickému pro uživatele."
 
 #: ../../whatsnew/3.2.rst:2025
 msgid ""

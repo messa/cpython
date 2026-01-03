@@ -4085,6 +4085,10 @@ msgid ""
 "<9562#section-6.10-3>`. This affects :func:`~uuid.uuid1` and "
 ":func:`~uuid.uuid6`."
 msgstr ""
+":gh:`135244`: :mod:`uuid`: když nelze určit MAC adresu, 48bitový ID uzlu je "
+"nyní generován pomocí kryptograficky bezpečného generátoru pseudonáhodných "
+"čísel (CSPRNG) v souladu s :rfc:`RFC 9562, §6.10.3 <9562#section-6.10-3>`. "
+"To ovlivňuje :func:`~uuid.uuid1` a :func:`~uuid.uuid6`."
 
 #: ../NEWS:1830
 msgid ""
@@ -6592,6 +6596,10 @@ msgid ""
 " will raise only when the generator expression is executed. This brings the "
 "behavior of generator expressions in line with other generators."
 msgstr ""
+":gh:`127682`: Již se nevolá ``__iter__`` dvakrát při vytváření a provádění "
+"výrazu generátoru. Vytvoření výrazu generátoru z non-iterable objektu vyvolá"
+" výjimku pouze při spuštění výrazu generátoru. To přibližuje chování výrazů "
+"generátorů chování ostatních generátorů."
 
 #: ../NEWS:2919
 msgid ""
@@ -6600,12 +6608,18 @@ msgid ""
 "various edge cases where access to the ``__annotate__`` and "
 "``__annotations__`` attributes would behave unpredictably."
 msgstr ""
+":gh:`132261`: Vnitřní úložiště pro anotace a funkce annotate na třídách nyní"
+" používá různé klíče ve slovníku třídy. To eliminuje různé hraniční případy,"
+" kde přístup k atributům ``__annotate__`` a ``__annotations__`` by se choval"
+" nepředvídatelně."
 
 #: ../NEWS:2924
 msgid ""
 ":gh:`132284`: Don't wrap base ``PyCFunction`` slots on class creation if not"
 " overridden."
 msgstr ""
+":gh:`132284`: Nezabalovat sloty ``PyCFunction`` při vytvoření třídy, pokud "
+"nejsou přepsány."
 
 #: ../NEWS:2927
 msgid ""
@@ -6613,24 +6627,33 @@ msgid ""
 "variable loads, and fix an issue where deallocating unused values could "
 "cause JIT code to crash or behave incorrectly."
 msgstr ""
+":gh:`130415`: Vylepšit schopnost JIT odstraňovat nepoužívané konstanty a "
+"zatížení lokálních proměnných a opravit problém, kdy by deallokace "
+"nepoužívaných hodnot mohla způsobit havárii nebo nesprávné chování kódu JIT."
 
 #: ../NEWS:2931
 msgid ""
 ":gh:`126703`: Fix possible use after free in cases where a method's "
 "definition has the same lifetime as its ``self``."
 msgstr ""
+":gh:`126703`: Opravit možné použití paměti po jejím osvobození v případech, "
+"kdy má definice metody stejnou dobu života jako její ``self``."
 
 #: ../NEWS:2934
 msgid ""
 ":gh:`132286`: Fix that :attr:`type.__annotate__` was not deleted, when "
 ":attr:`type.__annotations__` was deleted."
 msgstr ""
+":gh:`132286`: Opravit, že :attr:`type.__annotate__` nebyl smazán, když "
+":attr:`type.__annotations__` byl smazán."
 
 #: ../NEWS:2937
 msgid ""
 ":gh:`131798`: Allow the JIT to remove an extra ``_TO_BOOL_BOOL`` instruction"
 " after ``_CONTAINS_OP_DICT`` by setting the return type to bool."
 msgstr ""
+":gh:`131798`: Umožnit JIT odstraňovat další instanci ``_TO_BOOL_BOOL`` po "
+"``_CONTAINS_OP_DICT`` nastavením typy návratu na bool."
 
 #: ../NEWS:2940
 msgid ""
@@ -6639,12 +6662,18 @@ msgid ""
 " \"trashcan\" mechanism, as protection is now built into the "
 ":c:func:`Py_DECREF` macro."
 msgstr ""
+":gh:`124715`: Chrní před přetečením zásobníku při volání "
+":c:func:`Py_DECREF`. Objekty rozšíření třetích stran již nemusí používat "
+"mechanismus \"trashcan\", protože ochrana je nyní vstavena do makra "
+":c:func:`Py_DECREF`."
 
 #: ../NEWS:2945
 msgid ""
 ":gh:`131798`: Allow the JIT compiler to remove some type checks for "
 "operations on lists, tuples, dictionaries, and sets."
 msgstr ""
+":gh:`131798`: Umožnit kompaléru JIT odstraňovat některé kontroly typu pro "
+"operace na seznamech, tuple, slovnících a množinách."
 
 #: ../NEWS:2948
 msgid ""

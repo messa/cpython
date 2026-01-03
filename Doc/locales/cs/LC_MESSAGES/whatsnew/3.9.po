@@ -2417,10 +2417,15 @@ msgid ""
 " name is now normalized to ``\"latex_latin1\"``. (Contributed by Jordon Xu "
 "in :issue:`37751`.)"
 msgstr ""
+":func:`codecs.lookup` nyní normalizuje název kódování stejným způsobem jako "
+":func:`encodings.normalize_encoding`, s výjimkou, že :func:`codecs.lookup` "
+"také konvertuje název na malu formát. Například název kódování "
+"``\"latex+latin1\"`` je nyní normalizován na ``\"latex_latin1\"``. (Přispěl "
+"Jordon Xu v :issue:`37751`.)"
 
 #: ../../whatsnew/3.9.rst:1149
 msgid "Changes in the C API"
-msgstr ""
+msgstr "Změny v API C"
 
 #: ../../whatsnew/3.9.rst:1151
 msgid ""
@@ -2432,6 +2437,13 @@ msgid ""
 ":c:member:`~PyTypeObject.tp_traverse` function, ensure that all custom "
 "``tp_traverse`` functions of heap-allocated types visit the object's type."
 msgstr ""
+"Instance :ref:`heap-allocated tý pů <heap-types>` (jako ty vytvořené s "
+":c:func:`PyType_FromSpec` a podobnými API) obsahují odkaz na svůj objekt "
+"typu od Pythonu 3.8. Jak je uvedeno v \"Změnách v API C\" Pythonu 3.8, pro "
+"valnou většinu případů by nemělo být žádné vedlejšíčinky, ale pro typy, "
+"které mají vlastní funkci :c:member:`~PyTypeObject.tp_traverse`, ujistěte "
+"se, že všechny vlastní funkce ``tp_traverse`` heap-allocated typů navštěvují"
+" typ objektu."
 
 #: ../../whatsnew/3.9.rst:1161
 #, python-brace-format
@@ -2446,6 +2458,15 @@ msgid ""
 "#endif\n"
 "}"
 msgstr ""
+"int\n"
+"foo_traverse(PyObject *self, visitproc visit, void *arg)\n"
+"{\n"
+"// Rest of the traverse function\n"
+"#if PY_VERSION_HEX >= 0x03090000\n"
+"    // This was not needed before Python 3.9 (Python issue 35810 and 40217)\n"
+"    Py_VISIT(Py_TYPE(self));\n"
+"#endif\n"
+"}"
 
 #: ../../whatsnew/3.9.rst:1173
 msgid ""
@@ -2454,18 +2475,22 @@ msgid ""
 "that only :ref:`heap type <heap-types>` are expected to visit the type in "
 "``tp_traverse``."
 msgstr ""
+"Pokud vaše funkce traverse deleguje na ``tp_traverse`` své bázové třídy "
+"(nebo jiného typu), ujistěte se, že ``Py_TYPE(self)`` je navštěven pouze "
+"jednou. Poznámějte, že pouze :ref:`heap typ <heap-types>` se očekává, že v "
+"``tp_traverse`` navštíví typ."
 
 #: ../../whatsnew/3.9.rst:1178
 msgid "For example, if your ``tp_traverse`` function includes:"
-msgstr ""
+msgstr "Například, pokud vaše funkce ``tp_traverse`` obsahuje:"
 
 #: ../../whatsnew/3.9.rst:1180
 msgid "base->tp_traverse(self, visit, arg)"
-msgstr ""
+msgstr "base->tp_traverse(self, visit, arg)"
 
 #: ../../whatsnew/3.9.rst:1184
 msgid "then add:"
-msgstr ""
+msgstr "pak přidejte:"
 
 #: ../../whatsnew/3.9.rst:1186
 #, python-brace-format
@@ -2479,10 +2504,18 @@ msgid ""
 "    }\n"
 "#else"
 msgstr ""
+"#if PY_VERSION_HEX >= 0x03090000\n"
+"    // This was not needed before Python 3.9 (bpo-35810 and bpo-40217)\n"
+"    if (base->tp_flags & Py_TPFLAGS_HEAPTYPE) {\n"
+"        // a heap type's tp_traverse already visited Py_TYPE(self)\n"
+"    } else {\n"
+"        Py_VISIT(Py_TYPE(self));\n"
+"    }\n"
+"#else"
 
 #: ../../whatsnew/3.9.rst:1197
 msgid "(See :issue:`35810` and :issue:`40217` for more information.)"
-msgstr ""
+msgstr "(Viz :issue:`35810` a :issue:`40217` pro více informací.)"
 
 #: ../../whatsnew/3.9.rst:1199
 msgid ""
@@ -2491,10 +2524,14 @@ msgid ""
 "Use :c:func:`PyObject_Call` and its variants instead. (See more details in "
 ":issue:`29548`.)"
 msgstr ""
+"Funkce ``PyEval_CallObject``, ``PyEval_CallFunction``, ``PyEval_CallMethod``"
+" a ``PyEval_CallObjectWithKeywords`` jsou zastarály. Použijte míste toho "
+":c:func:`PyObject_Call` a jeho varianty. (Viz více detailů v "
+":issue:`29548`.)"
 
 #: ../../whatsnew/3.9.rst:1205
 msgid "CPython bytecode changes"
-msgstr ""
+msgstr "Změny bajtkodu CPython"
 
 #: ../../whatsnew/3.9.rst:1207
 msgid ""
@@ -2503,37 +2540,42 @@ msgid ""
 " correctly if the :exc:`AssertionError` exception was being shadowed. "
 "(Contributed by Zackery Spytz in :issue:`34880`.)"
 msgstr ""
+"Opcode :opcode:`!LOAD_ASSERTION_ERROR` byla přidána pro zpracování příkazu "
+":keyword:`assert`. Dříve by příkaz assert nefungoval správně, pokud by byla "
+"výjimka :exc:`AssertionError` v tou stínř. (Přispěl Zackery Spytz v "
+":issue:`34880`.)"
 
 #: ../../whatsnew/3.9.rst:1212
 msgid ""
 "The :opcode:`COMPARE_OP` opcode was split into four distinct instructions:"
-msgstr ""
+msgstr "Opcode :opcode:`COMPARE_OP` byl rozdelen na čtyři odlišné instrukce:"
 
 #: ../../whatsnew/3.9.rst:1214
 msgid "``COMPARE_OP`` for rich comparisons"
-msgstr ""
+msgstr "``COMPARE_OP`` pro bohaté porovnání"
 
 #: ../../whatsnew/3.9.rst:1215
 msgid "``IS_OP`` for 'is' and 'is not' tests"
-msgstr ""
+msgstr "``IS_OP`` pro 'is' a 'is not' testy"
 
 #: ../../whatsnew/3.9.rst:1216
 msgid "``CONTAINS_OP`` for 'in' and 'not in' tests"
-msgstr ""
+msgstr "``CONTAINS_OP`` pro 'in' a 'not in' testy"
 
 #: ../../whatsnew/3.9.rst:1217
 msgid ""
 "``JUMP_IF_NOT_EXC_MATCH`` for checking exceptions in 'try-except' "
 "statements."
 msgstr ""
+"``JUMP_IF_NOT_EXC_MATCH`` pro kontrolu výjimek v přík lazech 'try-except'."
 
 #: ../../whatsnew/3.9.rst:1220
 msgid "(Contributed by Mark Shannon in :issue:`39156`.)"
-msgstr ""
+msgstr "(Přispěl Mark Shannon v :issue:`39156`.)"
 
 #: ../../whatsnew/3.9.rst:1224
 msgid "Build Changes"
-msgstr ""
+msgstr "Změny sestavení"
 
 #: ../../whatsnew/3.9.rst:1226
 msgid ""
@@ -2543,12 +2585,18 @@ msgid ""
 "more information. (Contributed by Jan Matějek, Matěj Cepl, Charalampos "
 "Stratakis and Victor Stinner in :issue:`1294959`.)"
 msgstr ""
+"Přidána volba ``--with-platlibdir`` do skriptu ``configure``: název adresáře"
+" konkrétního balíku, uloženého v novém atributu :data:`sys.platlibdir`. Viz "
+"atribut :data:`sys.platlibdir` pro více informací. (Přispěli Jan Matěžek, "
+"Matěž Cepl, Charalampos Stratakis a Victor Stinner v :issue:`1294959`.)"
 
 #: ../../whatsnew/3.9.rst:1232
 msgid ""
 "The ``COUNT_ALLOCS`` special build macro has been removed. (Contributed by "
 "Victor Stinner in :issue:`39489`.)"
 msgstr ""
+"Speciální build makro ``COUNT_ALLOCS`` bylo odstraněno. (Přispěl Victor "
+"Stinner v :issue:`39489`.)"
 
 #: ../../whatsnew/3.9.rst:1235
 msgid ""
@@ -2556,12 +2604,18 @@ msgid ""
 "functions are now required to build Python. (Contributed by Victor Stinner "
 "in :issue:`39395`.)"
 msgstr ""
+"Na platformách bez Windows jsou funkce :c:func:`!setenv` a "
+":c:func:`!unsetenv` nyní vyžadovány k sestavení Pythonu. (Přispěl Victor "
+"Stinner v :issue:`39395`.)"
 
 #: ../../whatsnew/3.9.rst:1239
 msgid ""
 "On non-Windows platforms, creating ``bdist_wininst`` installers is now "
 "officially unsupported.  (See :issue:`10945` for more details.)"
 msgstr ""
+"Na platformách bez Windows není vytváření instalačních programů "
+"``bdist_wininst`` nyní oficiálně nepodporované. (Viz :issue:`10945` pro více"
+" detailů.)"
 
 #: ../../whatsnew/3.9.rst:1242
 msgid ""
@@ -2573,12 +2627,21 @@ msgid ""
 " behavior can still be overridden with ``--with-tcltk-includes`` and "
 "``--with-tcltk-libs``. (Contributed by Ned Deily in :issue:`34956`.)"
 msgstr ""
+"Při vytváření Pythonu na macOS ze zdrojů se ``_tkinter`` nyní odkaz uje s "
+"mimo systémovým Tcl a Tk frameworky, pokud jsou nainstalovány v "
+"``/Library/Frameworks``, jak tomu bylo v starších verzích macOS. Pokud je "
+"macOS SDK explicitně nakonfigurován, pomocí :option:`--enable-universalsdk` "
+"nebo ``-isysroot``, je prohledáván pouze SDK sám. Výchozí chování lze stále "
+"přepsat pomocí ``--with-tcltk-includes`` a ``--with-tcltk-libs``. (Přispěl "
+"Ned Deily v :issue:`34956`.)"
 
 #: ../../whatsnew/3.9.rst:1251
 msgid ""
 "Python can now be built for Windows 10 ARM64. (Contributed by Steve Dower in"
 " :issue:`33125`.)"
 msgstr ""
+"Python lze nyní sestavi t pro Windows 10 ARM64. (Přispěl Steve Dower v "
+":issue:`33125`.)"
 
 #: ../../whatsnew/3.9.rst:1254
 msgid ""
@@ -2595,10 +2658,22 @@ msgid ""
 " and compiler tool chain. (See :issue:`36044` and :issue:`37707` for more "
 "details.)"
 msgstr ""
+"Některé jednotlivé testy jsou nyní přeskočeny, pokud je používán ``--pgo``. "
+"Testy v otázce značně zvýličili dobu úlohy PGO a pravděpodobně nepomáhaly "
+"zlepšit optimalizaci fi nálního spustitelného souboru. To urychluje úlohu "
+"přibližně 15x. Spuštění úplné sady jednotkových testů je pomalé. Tato změna "
+"může způsobit méně optimalizované sestavení, protože nebude proveden tolik "
+"větví kódu. Pokud jste ochotni čekat na mnohem pomalejší sestavení, lze "
+"staré chování obnovit pomocí ``./configure [..] PROFILE_TASK=\"-m test "
+"--pgo-extended\"``. Nedáváme žádné záruky, jaká sada úloh PGO vytváří "
+"rychlejší sestavení. Uživatelé, kteří se zajumají, by měli spustit své "
+"vlastní relevanci benchmarky, protože výsledky mohou záviset na prostředí, "
+"pracovním zátěži a sadab nástrojů kompilátoru. (Viz :issue:`36044` a "
+":issue:`37707` pro více detailů.)"
 
 #: ../../whatsnew/3.9.rst:1269
 msgid "C API Changes"
-msgstr ""
+msgstr "Změny API C"
 
 #: ../../whatsnew/3.9.rst:1274
 msgid ""
@@ -2608,6 +2683,11 @@ msgid ""
 ":c:macro:`METH_METHOD` to allow a method to access the class it was defined "
 "in. (Contributed by Marcel Plch and Petr Viktorin in :issue:`38787`.)"
 msgstr ""
+":pep:`573`: Přidána :c:func:`PyType_FromModuleAndSpec` pro přidružení modulu"
+" s třídou; :c:func:`PyType_GetModule` a :c:func:`PyType_GetModuleState` k "
+"získání modulu a jeho stavu; a :c:type:`PyCMethod` a :c:macro:`METH_METHOD` "
+"k umožnění metod přistupovat třídě, ve které byla definována. (Přispěli "
+"Marcel Plch a Petr Viktorin v :issue:`38787`.)"
 
 #: ../../whatsnew/3.9.rst:1281
 msgid ""
@@ -2615,12 +2695,17 @@ msgid ""
 ":c:func:`PyFrame_GetBack` function: get the frame next outer frame. "
 "(Contributed by Victor Stinner in :issue:`40421`.)"
 msgstr ""
+"Přidána funkce :c:func:`PyFrame_GetCode`: získá kód rámu. Přidána funkce "
+":c:func:`PyFrame_GetBack`: získá rámec dalšího vnějšího rámu. (Přispěl "
+"Victor Stinner v :issue:`40421`.)"
 
 #: ../../whatsnew/3.9.rst:1285
 msgid ""
 "Added :c:func:`PyFrame_GetLineNumber` to the limited C API. (Contributed by "
 "Victor Stinner in :issue:`40421`.)"
 msgstr ""
+"Přidána funkce :c:func:`PyFrame_GetLineNumber` do omezeného C API. (Přispěl "
+"Victor Stinner v :issue:`40421`.)"
 
 #: ../../whatsnew/3.9.rst:1288
 msgid ""
@@ -2631,6 +2716,12 @@ msgid ""
 "unique identifier of a Python thread state. (Contributed by Victor Stinner "
 "in :issue:`39947`.)"
 msgstr ""
+"Přidány funkce :c:func:`PyThreadState_GetInterpreter` a "
+":c:func:`PyInterpreterState_Get` k získání interpretu. Přidána funkce "
+":c:func:`PyThreadState_GetFrame` k získání aktuálního rámu stavu vlákna "
+"Pythonu. Přidána funkce :c:func:`PyThreadState_GetID`: získá jedinečný "
+"identifikátor stavu vlákna Pythonu. (Přispěl Victor Stinner v "
+":issue:`39947`.)"
 
 #: ../../whatsnew/3.9.rst:1296
 msgid ""
@@ -2639,10 +2730,15 @@ msgid ""
 "efficient way to call a callable Python object without any argument. "
 "(Contributed by Victor Stinner in :issue:`37194`.)"
 msgstr ""
+"Přidána nová veřejná funkce :c:func:`PyObject_CallNoArgs` do C API, která "
+"vyzvá volatelny objekt Pythonu bez jakéhokoli argumentu. Je to "
+"nejefektivnější způsob volání volatelzch objektu Pythonu bez argumentu. "
+"(Přispěl Victor Stinner v :issue:`37194`.)"
 
 #: ../../whatsnew/3.9.rst:1301 ../../whatsnew/3.9.rst:1419
 msgid "Changes in the limited C API (if ``Py_LIMITED_API`` macro is defined):"
 msgstr ""
+"Změny v omezeném C API (pokud je definováno makro ``Py_LIMITED_API``):"
 
 #: ../../whatsnew/3.9.rst:1303
 msgid ""
@@ -2652,22 +2748,31 @@ msgid ""
 "access ``PyThreadState.recursion_depth`` field (the structure is opaque in "
 "the limited C API)."
 msgstr ""
+"Poskytujte :c:func:`Py_EnterRecursiveCall` a :c:func:`Py_LeaveRecursiveCall`"
+" jako regu lární funkce pro omezené API. Dříve byly definovány jako makra, "
+"ale tato makra se nekompilovala s omezeným C API, který nemůže přistupovat "
+"poli ``PyThreadState.recursion_depth`` (struktura je v omezeném C API "
+"neprůhledná)."
 
 #: ../../whatsnew/3.9.rst:1309
 msgid ""
 "``PyObject_INIT()`` and ``PyObject_INIT_VAR()`` become regular \"opaque\" "
 "function to hide implementation details."
 msgstr ""
+"``PyObject_INIT()`` a ``PyObject_INIT_VAR()`` se stávají regu lárné "
+"\"neprůhledné\" funkce, aby se skryly detaily implementace."
 
 #: ../../whatsnew/3.9.rst:1312 ../../whatsnew/3.9.rst:1446
 msgid "(Contributed by Victor Stinner in :issue:`38644` and :issue:`39542`.)"
-msgstr ""
+msgstr "(Přispěl Victor Stinner v :issue:`38644` a :issue:`39542`.)"
 
 #: ../../whatsnew/3.9.rst:1314
 msgid ""
 "The :c:func:`PyModule_AddType` function is added to help adding a type to a "
 "module. (Contributed by Donghee Na in :issue:`40024`.)"
 msgstr ""
+"Funkce :c:func:`PyModule_AddType` je přidána, aby pomohla přidat typ do "
+"modulu. (Přispěl Donghee Na v :issue:`40024`.)"
 
 #: ../../whatsnew/3.9.rst:1318
 msgid ""
@@ -2677,6 +2782,10 @@ msgid ""
 " the garbage collector respectively. (Contributed by Pablo Galindo Salgado "
 "in :issue:`40241`.)"
 msgstr ""
+"Přidány funkce :c:func:`PyObject_GC_IsTracked` a "
+":c:func:`PyObject_GC_IsFinalized` do veřejného API, aby bylo možné dotazovat"
+" se, zda jsou objekty Pythonu aktuálně sledovány nebo již byly finalizovány "
+"systémem sběru odpadu. (Přispěl Pablo Galindo Salgado v :issue:`40241`.)"
 
 #: ../../whatsnew/3.9.rst:1324
 msgid ""
@@ -2684,12 +2793,17 @@ msgid ""
 "representation of a function-like object. (Patch by Jeroen Demeyer in "
 ":issue:`37645`.)"
 msgstr ""
+"Přidána funkce :c:func:`!_PyObject_FunctionStr` pro získání uživatelského "
+"přátelského řetězce objektu podobnému funkci. (Patch od Jeroena Demeyera v "
+":issue:`37645`.)"
 
 #: ../../whatsnew/3.9.rst:1328
 msgid ""
 "Added :c:func:`PyObject_CallOneArg` for calling an object with one "
 "positional argument (Patch by Jeroen Demeyer in :issue:`37483`.)"
 msgstr ""
+"Přidána funkce :c:func:`PyObject_CallOneArg` pro volání objektu s jedním "
+"poziční argumentem (Patch od Jeroena Demeyera v :issue:`37483`.)"
 
 #: ../../whatsnew/3.9.rst:1336
 msgid ""
@@ -2697,6 +2811,9 @@ msgid ""
 "*tstate* parameter (``PyThreadState*``). (Contributed by Victor Stinner in "
 ":issue:`38500`.)"
 msgstr ""
+"``PyInterpreterState.eval_frame`` (:pep:`523`) nyní vyžaduje nový povinný "
+"parametr *tstate* (``PyThreadState*``). (Přispěl Victor Stinner v "
+":issue:`38500`.)"
 
 #: ../../whatsnew/3.9.rst:1340
 msgid ""
@@ -2709,11 +2826,18 @@ msgid ""
 "called if :c:member:`~PyModuleDef.m_size` is greater than 0 and the module "
 "state (as returned by :c:func:`PyModule_GetState`) is ``NULL``."
 msgstr ""
+"Rozšíření moduly: funkce :c:member:`~PyModuleDef.m_traverse`, "
+":c:member:`~PyModuleDef.m_clear` a :c:member:`~PyModuleDef.m_free` "
+":c:type:`PyModuleDef` už nejsou volány, pokud byl žádán stav modulu, ale "
+"ještě není přídelena. To je případ bezprostředně po vytvoření modulu a před "
+"spuštěním modulu (:c:data:`Py_mod_exec` funkce). Presněji řečeno, tyto "
+"funkce nejsou volány, pokud je :c:member:`~PyModuleDef.m_size` větší než 0 a"
+" stav modulu (vrácené :c:func:`PyModule_GetState`) je ``NULL``."
 
 #: ../../whatsnew/3.9.rst:1349
 msgid ""
 "Extension modules without module state (``m_size <= 0``) are not affected."
-msgstr ""
+msgstr "Rozšíření moduly bez stavu modulu (``m_size <= 0``) nejsou ovlivněny."
 
 #: ../../whatsnew/3.9.rst:1351
 msgid ""
@@ -2722,6 +2846,10 @@ msgid ""
 "called from the main interpreter. Each subinterpreter now has its own list "
 "of scheduled calls. (Contributed by Victor Stinner in :issue:`39984`.)"
 msgstr ""
+"Pokud je :c:func:`Py_AddPendingCall` voláno v sub-interpretu, funkce je nyní"
+" naplánována, aby byla volána z sub-interpretu, míste aby byla volána z "
+"hlavního interpretu. Každý sub-interp rátor nyní má svůj vlastní seznam "
+"naplánovaných volání. (Přispěl Victor Stinner v :issue:`39984`.)"
 
 #: ../../whatsnew/3.9.rst:1357
 msgid ""
@@ -2730,6 +2858,10 @@ msgid ""
 " ``0``). This is significant when embedding Python on Windows. (Contributed "
 "by Zackery Spytz in :issue:`8901`.)"
 msgstr ""
+"Registr Windows se už nepoužívá k inicializaci :data:`sys.path`, pokud je "
+"používána volba ``-E`` (pokud je :c:member:`PyConfig.use_environment` "
+"nastaveno na ``0``). To je významnické při vkládání Pythonu na Windows. "
+"(Přispěl Zackery Spytz v :issue:`8901`.)"
 
 #: ../../whatsnew/3.9.rst:1362
 msgid ""
@@ -2737,6 +2869,9 @@ msgid ""
 "constant and refers to a constant string. (Contributed by Serhiy Storchaka "
 "in :issue:`38650`.)"
 msgstr ""
+"Globální proměnná :c:data:`PyStructSequence_UnnamedField` je nyní konstanta "
+"a odkazuje na konstantní řetězec. (Přispěl Serhiy Storchaka v "
+":issue:`38650`.)"
 
 #: ../../whatsnew/3.9.rst:1366
 msgid ""
@@ -2744,6 +2879,8 @@ msgid ""
 "internal C API (``pycore_gc.h``). (Contributed by Victor Stinner in "
 ":issue:`40241`.)"
 msgstr ""
+"Struktura :c:type:`!PyGC_Head` je nyní neprůhledná. Je definována pouze v "
+"interním C API (``pycore_gc.h``). (Přispěl Victor Stinner v :issue:`40241`.)"
 
 #: ../../whatsnew/3.9.rst:1370
 msgid ""
@@ -2753,6 +2890,11 @@ msgid ""
 "marked as deprecated in C.  They have been deprecated by :pep:`393` since "
 "Python 3.3. (Contributed by Inada Naoki in :issue:`36346`.)"
 msgstr ""
+"``Py_UNICODE_COPY``, ``Py_UNICODE_FILL``, ``PyUnicode_WSTR_LENGTH``, "
+":c:func:`!PyUnicode_FromUnicode`, :c:func:`!PyUnicode_AsUnicode`, "
+"``_PyUnicode_AsUnicode`` a :c:func:`!PyUnicode_AsUnicodeAndSize` jsou v C "
+"označeny jako zastarálé. Byly zastarály :pep:`393` od Pythonu 3.3. (Přispěl "
+"Inada Naoki v :issue:`36346`.)"
 
 #: ../../whatsnew/3.9.rst:1377
 msgid ""
@@ -2761,21 +2903,26 @@ msgid ""
 "``Py_LIMITED_API`` macro is defined. (Contributed by Victor Stinner in "
 ":issue:`39882`.)"
 msgstr ""
+"Funkce :c:func:`Py_FatalError` je nahrazena makrem, které automaticky loguje"
+" název aktuální funkce, pokud není definováno makro ``Py_LIMITED_API``. "
+"(Přispěl Victor Stinner v :issue:`39882`.)"
 
 #: ../../whatsnew/3.9.rst:1382
 msgid ""
 "The vectorcall protocol now requires that the caller passes only strings as "
 "keyword names. (See :issue:`37540` for more information.)"
 msgstr ""
+"Protokol vectorcall nyní vyžaduje, aby volající předával pouze řetězce jako "
+"názvy klíčů. (Viz :issue:`37540` pro více informací.)"
 
 #: ../../whatsnew/3.9.rst:1385
 msgid ""
 "Implementation details of a number of macros and functions are now hidden:"
-msgstr ""
+msgstr "Detaily implementace řady maker a funkcí jsou nyní skryty:"
 
 #: ../../whatsnew/3.9.rst:1387
 msgid ":c:func:`PyObject_IS_GC` macro was converted to a function."
-msgstr ""
+msgstr "Makro :c:func:`PyObject_IS_GC` bylo konvertováno na funkci."
 
 #: ../../whatsnew/3.9.rst:1389
 msgid ""
@@ -2784,6 +2931,10 @@ msgid ""
 "becomes an alias to the :c:macro:`PyObject_NewVar` macro. They no longer "
 "access directly the :c:member:`PyTypeObject.tp_basicsize` member."
 msgstr ""
+"Makro :c:func:`!PyObject_NEW` se stává aliasem makra :c:macro:`PyObject_New`"
+" a makro :c:func:`!PyObject_NEW_VAR` se stává aliasem makra "
+":c:macro:`PyObject_NewVar`. Už ne přístupují přímo členu "
+":c:member:`PyTypeObject.tp_basicsize`."
 
 #: ../../whatsnew/3.9.rst:1394
 msgid ""
@@ -2791,12 +2942,16 @@ msgid ""
 "the macro accessed directly the :c:member:`PyTypeObject.tp_weaklistoffset` "
 "member."
 msgstr ""
+"Makro :c:func:`!PyObject_GET_WEAKREFS_LISTPTR` bylo konvertováno na funkci: "
+"makro přístupovalo přímo členu :c:member:`PyTypeObject.tp_weaklistoffset`."
 
 #: ../../whatsnew/3.9.rst:1398
 msgid ""
 ":c:func:`PyObject_CheckBuffer` macro was converted to a function: the macro "
 "accessed directly the :c:member:`PyTypeObject.tp_as_buffer` member."
 msgstr ""
+"Makro :c:func:`PyObject_CheckBuffer` bylo konvertováno na funkci: makro "
+"přístupovalo přímo členu :c:member:`PyTypeObject.tp_as_buffer`."
 
 #: ../../whatsnew/3.9.rst:1401
 msgid ""
@@ -2804,10 +2959,13 @@ msgid ""
 " implementation details: removed the ``PyIndex_Check()`` macro. The macro "
 "accessed directly the :c:member:`PyTypeObject.tp_as_number` member."
 msgstr ""
+":c:func:`PyIndex_Check` je nyní vždy deklarován jako neprůhledná funkce, aby"
+" se skryly detaily implementace: odstraněno makro ``PyIndex_Check()``. Makro"
+" přístupovalo přímo členu :c:member:`PyTypeObject.tp_as_number`."
 
 #: ../../whatsnew/3.9.rst:1405
 msgid "(See :issue:`40170` for more details.)"
-msgstr ""
+msgstr "(Viz :issue:`40170` pro více detailů.)"
 
 #: ../../whatsnew/3.9.rst:1410
 msgid ""
@@ -2815,6 +2973,8 @@ msgid ""
 "``pyfpe.h`` from the limited C API. (Contributed by Victor Stinner in "
 ":issue:`38835`.)"
 msgstr ""
+"Makra ``PyFPE_START_PROTECT()`` a ``PyFPE_END_PROTECT()`` ``pyfpe.h`` byla "
+"vyloučena z omezeného C API. (Přispěl Victor Stinner v :issue:`38835`.)"
 
 #: ../../whatsnew/3.9.rst:1414
 msgid ""
@@ -2823,88 +2983,93 @@ msgid ""
 " Since Python 3.0, it has been ignored and unused. (Contributed by Jeroen "
 "Demeyer in :issue:`36974`.)"
 msgstr ""
+"Slot ``tp_print`` :ref:`PyTypeObject <type-structs>` byl odstra něn. Byl "
+"používán pro tisk objektů do souborů v Pythonu 2.7 a starší. Od Pythonu 3.0 "
+"byl ignorován a nepoužíván. (Přispěl Jeroen Demeyer v :issue:`36974`.)"
 
 #: ../../whatsnew/3.9.rst:1421
 msgid "Excluded the following functions from the limited C API:"
-msgstr ""
+msgstr "Vylouchené následující funkce z omezeného C API:"
 
 #: ../../whatsnew/3.9.rst:1423
 msgid ""
 "``PyThreadState_DeleteCurrent()`` (Contributed by Joannah Nanjekye in "
 ":issue:`37878`.)"
 msgstr ""
+"``PyThreadState_DeleteCurrent()`` (Přispěl Joannah Nanjekye v "
+":issue:`37878`.)"
 
 #: ../../whatsnew/3.9.rst:1425
 msgid "``_Py_CheckRecursionLimit``"
-msgstr ""
+msgstr "``_Py_CheckRecursionLimit``"
 
 #: ../../whatsnew/3.9.rst:1426
 msgid "``_Py_NewReference()``"
-msgstr ""
+msgstr "``_Py_NewReference()``"
 
 #: ../../whatsnew/3.9.rst:1427
 msgid "``_Py_ForgetReference()``"
-msgstr ""
+msgstr "``_Py_ForgetReference()``"
 
 #: ../../whatsnew/3.9.rst:1428
 msgid "``_PyTraceMalloc_NewReference()``"
-msgstr ""
+msgstr "``_PyTraceMalloc_NewReference()``"
 
 #: ../../whatsnew/3.9.rst:1429
 msgid "``_Py_GetRefTotal()``"
-msgstr ""
+msgstr "``_Py_GetRefTotal()``"
 
 #: ../../whatsnew/3.9.rst:1430
 msgid "The trashcan mechanism which never worked in the limited C API."
-msgstr ""
+msgstr "Mechanismus koše, který nikdy nefungoval v omezeném C API."
 
 #: ../../whatsnew/3.9.rst:1431
 msgid "``PyTrash_UNWIND_LEVEL``"
-msgstr ""
+msgstr "``PyTrash_UNWIND_LEVEL``"
 
 #: ../../whatsnew/3.9.rst:1432
 msgid "``Py_TRASHCAN_BEGIN_CONDITION``"
-msgstr ""
+msgstr "``Py_TRASHCAN_BEGIN_CONDITION``"
 
 #: ../../whatsnew/3.9.rst:1433
 msgid "``Py_TRASHCAN_BEGIN``"
-msgstr ""
+msgstr "``Py_TRASHCAN_BEGIN``"
 
 #: ../../whatsnew/3.9.rst:1434
 msgid "``Py_TRASHCAN_END``"
-msgstr ""
+msgstr "``Py_TRASHCAN_END``"
 
 #: ../../whatsnew/3.9.rst:1435
 msgid "``Py_TRASHCAN_SAFE_BEGIN``"
-msgstr ""
+msgstr "``Py_TRASHCAN_SAFE_BEGIN``"
 
 #: ../../whatsnew/3.9.rst:1436
 msgid "``Py_TRASHCAN_SAFE_END``"
-msgstr ""
+msgstr "``Py_TRASHCAN_SAFE_END``"
 
 #: ../../whatsnew/3.9.rst:1438
 msgid "Moved following functions and definitions to the internal C API:"
-msgstr ""
+msgstr "Přesunuté následující funkce a definice na interní C API:"
 
 #: ../../whatsnew/3.9.rst:1440
 msgid "``_PyDebug_PrintTotalRefs()``"
-msgstr ""
+msgstr "``_PyDebug_PrintTotalRefs()``"
 
 #: ../../whatsnew/3.9.rst:1441
 msgid "``_Py_PrintReferences()``"
-msgstr ""
+msgstr "``_Py_PrintReferences()``"
 
 #: ../../whatsnew/3.9.rst:1442
 msgid "``_Py_PrintReferenceAddresses()``"
-msgstr ""
+msgstr "``_Py_PrintReferenceAddresses()``"
 
 #: ../../whatsnew/3.9.rst:1443
 msgid "``_Py_tracemalloc_config``"
-msgstr ""
+msgstr "``_Py_tracemalloc_config``"
 
 #: ../../whatsnew/3.9.rst:1444
 msgid "``_Py_AddToAllObjects()`` (specific to ``Py_TRACE_REFS`` build)"
-msgstr ""
+msgstr "``_Py_AddToAllObjects()`` (specifické pro ``Py_TRACE_REFS`` build)"
 
 #: ../../whatsnew/3.9.rst:1448
 msgid ""
@@ -2913,6 +3078,10 @@ msgid ""
 " by the internal C API. Removed also ``PyThreadFrameGetter`` type. "
 "(Contributed by Victor Stinner in :issue:`39946`.)"
 msgstr ""
+"Odstraněn háček ``_PyRuntime.getframe`` a odstraněno makro "
+"``_PyThreadState_GetFrame``, které bylo aliasem ``_PyRuntime.getframe``. "
+"Byly vystaveny pouze interním C API. Odstraněn také typ "
+"``PyThreadFrameGetter``. (Přispěl Victor Stinner v :issue:`39946`.)"
 
 #: ../../whatsnew/3.9.rst:1453
 msgid ""
@@ -2920,57 +3089,67 @@ msgid ""
 "explicitly to clear all free lists. (Contributed by Inada Naoki and Victor "
 "Stinner in :issue:`37340`, :issue:`38896` and :issue:`40428`.)"
 msgstr ""
+"Odstraněny následující funkce z C API. Volejte explicitně "
+":c:func:`PyGC_Collect` k vymazání všech volných seznamů. (Přispěli Inada "
+"Naoki a Victor Stinner v :issue:`37340`, :issue:`38896` a :issue:`40428`.)"
 
 #: ../../whatsnew/3.9.rst:1458
 msgid "``PyAsyncGen_ClearFreeLists()``"
-msgstr ""
+msgstr "``PyAsyncGen_ClearFreeLists()``"
 
 #: ../../whatsnew/3.9.rst:1459
 msgid "``PyContext_ClearFreeList()``"
-msgstr ""
+msgstr "``PyContext_ClearFreeList()``"
 
 #: ../../whatsnew/3.9.rst:1460
 msgid "``PyDict_ClearFreeList()``"
-msgstr ""
+msgstr "``PyDict_ClearFreeList()``"
 
 #: ../../whatsnew/3.9.rst:1461
 msgid "``PyFloat_ClearFreeList()``"
-msgstr ""
+msgstr "``PyFloat_ClearFreeList()``"
 
 #: ../../whatsnew/3.9.rst:1462
 msgid "``PyFrame_ClearFreeList()``"
-msgstr ""
+msgstr "``PyFrame_ClearFreeList()``"
 
 #: ../../whatsnew/3.9.rst:1463
 msgid "``PyList_ClearFreeList()``"
-msgstr ""
+msgstr "``PyList_ClearFreeList()``"
 
 #: ../../whatsnew/3.9.rst:1464
 msgid ""
 "``PyMethod_ClearFreeList()`` and ``PyCFunction_ClearFreeList()``: the free "
 "lists of bound method objects have been removed."
 msgstr ""
+"``PyMethod_ClearFreeList()`` a ``PyCFunction_ClearFreeList()``: volné "
+"seznamy vázaných objektů metod byly odstraněny."
 
 #: ../../whatsnew/3.9.rst:1466
 msgid ""
 "``PySet_ClearFreeList()``: the set free list has been removed in Python 3.4."
 msgstr ""
+"``PySet_ClearFreeList()``: seznam volného setu byl odstraněn v Pythonu 3.4."
 
 #: ../../whatsnew/3.9.rst:1468
 msgid "``PyTuple_ClearFreeList()``"
-msgstr ""
+msgstr "``PyTuple_ClearFreeList()``"
 
 #: ../../whatsnew/3.9.rst:1469
 msgid ""
 "``PyUnicode_ClearFreeList()``: the Unicode free list has been removed in "
 "Python 3.3."
 msgstr ""
+"``PyUnicode_ClearFreeList()``: seznam volného Unicodu byl odstraněn v "
+"Pythonu 3.3."
 
 #: ../../whatsnew/3.9.rst:1472
 msgid ""
 "Removed ``_PyUnicode_ClearStaticStrings()`` function. (Contributed by Victor"
 " Stinner in :issue:`39465`.)"
 msgstr ""
+"Odstraněna funkce ``_PyUnicode_ClearStaticStrings()``. (Přispěl Victor "
+"Stinner v :issue:`39465`.)"
 
 #: ../../whatsnew/3.9.rst:1475
 msgid ""
@@ -2978,6 +3157,9 @@ msgid ""
 "broken since Python 3.3. The :c:func:`PyUnicode_Tailmatch` function can be "
 "used instead. (Contributed by Inada Naoki in :issue:`36346`.)"
 msgstr ""
+"Odstraněno ``Py_UNICODE_MATCH``. Bylo zastaráno :pep:`393` a rozbitím od "
+"Pythonu 3.3. Místo toho lze použít funkci :c:func:`PyUnicode_Tailmatch`. "
+"(Přispěl Inada Naoki v :issue:`36346`.)"
 
 #: ../../whatsnew/3.9.rst:1480
 msgid ""
@@ -2991,10 +3173,18 @@ msgid ""
 "``PyNoArgsFunction``. (Contributed by Pablo Galindo Salgado in "
 ":issue:`39372`.)"
 msgstr ""
+"Vyčištěny soubory hlaviček rozhraní definované, ale bez implementace. "
+"Odstraňované symboly veřejného API jsou: "
+"``_PyBytes_InsertThousandsGroupingLocale``, "
+"``_PyBytes_InsertThousandsGrouping``, ``_Py_InitializeFromArgs``, "
+"``_Py_InitializeFromWideArgs``, ``_PyFloat_Repr``, ``_PyFloat_Digits``, "
+"``_PyFloat_DigitsInit``, ``PyFrame_ExtendStack``, ``_PyAIterWrapper_Type``, "
+"``PyNullImporter_Type``, ``PyCmpWrapper_Type``, ``PySortWrapper_Type``, "
+"``PyNoArgsFunction``. (Přispěl Pablo Galindo Salgado v :issue:`39372`.)"
 
 #: ../../whatsnew/3.9.rst:1491
 msgid "Notable changes in Python 3.9.1"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.9.1"
 
 #: ../../whatsnew/3.9.rst:1496
 msgid ""
@@ -3002,15 +3192,18 @@ msgid ""
 ":pep:`586` and to match the behavior of static type checkers specified in "
 "the PEP."
 msgstr ""
+"Chování :class:`typing.Literal` bylo změněno, aby odpovídalo :pep:`586` a "
+"aby odpovídalo chování statických kontrolorů typů specifikovaných v PEP."
 
 #: ../../whatsnew/3.9.rst:1499
 msgid "``Literal`` now de-duplicates parameters."
-msgstr ""
+msgstr "``Literal`` nyní odstraňuje duplikáty parametrů."
 
 #: ../../whatsnew/3.9.rst:1500
 msgid ""
 "Equality comparisons between ``Literal`` objects are now order independent."
 msgstr ""
+"Porovnání rovnosti mezi objekty ``Literal`` jsou nyní nezávislá na pořadí."
 
 #: ../../whatsnew/3.9.rst:1501
 msgid ""
@@ -3019,6 +3212,9 @@ msgid ""
 " support this change, the internally used type cache now supports "
 "differentiating types."
 msgstr ""
+"Porovnání ``Literal`` nyní respektují typy. Například ``Literal[0] == "
+"Literal[False]`` dříve vracelo ``True``. Nyní je ``False``. K podpoře této "
+"změny nyní interně používaná mezipaměť typů podporuje rozlišování typů."
 
 #: ../../whatsnew/3.9.rst:1505
 msgid ""
@@ -3027,6 +3223,9 @@ msgid ""
 "Note that declaring ``Literal`` with mutable parameters will not throw an "
 "error::"
 msgstr ""
+"Objekty ``Literal`` nyní vyvolají výjimku :exc:`TypeError` během porovnání "
+"rovnosti, pokud některý z jejich parametrů není :term:`hashable`. Všimněte "
+"si, že deklarace ``Literal`` s měnnými parametry nevyvolá chybu::"
 
 #: ../../whatsnew/3.9.rst:1510
 #, python-brace-format
@@ -3038,14 +3237,20 @@ msgid ""
 "  File \"<stdin>\", line 1, in <module>\n"
 "TypeError: unhashable type: 'set'"
 msgstr ""
+">>> from typing import Literal\n"
+">>> Literal[{0}]\n"
+">>> Literal[{0}] == Literal[{False}]\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"TypeError: unhashable type: 'set'"
 
 #: ../../whatsnew/3.9.rst:1517
 msgid "(Contributed by Yurii Karabas in :issue:`42345`.)"
-msgstr ""
+msgstr "(Přispěl Yurii Karabas v :issue:`42345`.)"
 
 #: ../../whatsnew/3.9.rst:1520
 msgid "macOS 11.0 (Big Sur) and Apple Silicon Mac support"
-msgstr ""
+msgstr "macOS 11.0 (Big Sur) a podpora Apple Silicon Mac"
 
 #: ../../whatsnew/3.9.rst:1522
 msgid ""
@@ -3058,19 +3263,28 @@ msgid ""
 "functions and options conditionally available based on the operating system "
 "version in use at runtime (\"weaklinking\")."
 msgstr ""
+"Od verze 3.9.1 nyní Python plně podporuje vytváření a spouštění na macOS "
+"11.0 (Big Sur) a na macOS počítačích Apple Silicon (založených na "
+"architektuře ``ARM64``). Nyní je dostupná nová variantní build "
+"``universal2``, která nativně podporuje ``ARM64`` i ``Intel 64`` v jedné "
+"sadě spustitelných souborů. Binární soubory lze nyní vytvářet na aktuálních "
+"verzích macOS, které se budou nasazovat na řadu starších verzí macOS "
+"(testováno na 10.9) a zároveň se podmíněně dostupnými novějšími funkcemi "
+"operačního systému na základě verze operačního systému v běhu "
+"(\"weaklinking\")."
 
 #: ../../whatsnew/3.9.rst:1531
 msgid ""
 "(Contributed by Ronald Oussoren and Lawrence D'Anna in :issue:`41100`.)"
-msgstr ""
+msgstr "(Přispěli Ronald Oussoren a Lawrence D'Anna v :issue:`41100`.)"
 
 #: ../../whatsnew/3.9.rst:1534
 msgid "Notable changes in Python 3.9.2"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.9.2"
 
 #: ../../whatsnew/3.9.rst:1537
 msgid "collections.abc"
-msgstr ""
+msgstr "collections.abc"
 
 #: ../../whatsnew/3.9.rst:1539
 msgid ""
@@ -3087,10 +3301,22 @@ msgid ""
 "silently in Python 3.9.1.  This :exc:`DeprecationWarning` will become a "
 ":exc:`TypeError` in Python 3.10. (Contributed by Ken Jin in :issue:`42195`.)"
 msgstr ""
+":class:`collections.abc.Callable` generic nyní zplošťuje parametry typu, "
+"podobně jako nyní dělá :data:`typing.Callable`. To znamená, že "
+"``collections.abc.Callable[[int, str], str]`` bude mít ``__args__`` z "
+"``(int, str, str)``; dříve to bylo ``([int, str], str)``. Aby byla tato "
+"změna možná, nyní lze :class:`types.GenericAlias` podtřídy a podtřída bude "
+"vrácena při subskripci typu :class:`collections.abc.Callable`. Kód, který "
+"přistupuje k argumentům prostřednictvím :func:`typing.get_args` nebo "
+"``__args__``, musí vzít v úvahu tuto změnu. Může být vydáno "
+":exc:`DeprecationWarning` pro neplatné formy parametrizace "
+":class:`collections.abc.Callable`, která by mohla v Pythonu 3.9.1 tiše "
+"projít. Toto :exc:`DeprecationWarning` se v Pythonu 3.10 stane "
+":exc:`TypeError`. (Přispěl Ken Jin v :issue:`42195`.)"
 
 #: ../../whatsnew/3.9.rst:1553 ../../whatsnew/3.9.rst:1578
 msgid "urllib.parse"
-msgstr ""
+msgstr "urllib.parse"
 
 #: ../../whatsnew/3.9.rst:1555
 msgid ""
@@ -3104,10 +3330,19 @@ msgid ""
 "documentation. (Contributed by Adam Goldschmidt, Senthil Kumaran and Ken Jin"
 " in :issue:`42967`.)"
 msgstr ""
+"Dřívější verze Pythonu umožňovaly používat jak ``;`` tak ``&`` jako "
+"oddělovače parametrů dotazu v :func:`urllib.parse.parse_qs` a "
+":func:`urllib.parse.parse_qsl`. Kvůli bezpečnostním obavám a aby se "
+"konformovalo s novějšími doporučeními W3C, byla tato změna provedena tak, "
+"aby umožňovaly pouze jeden oddělovací klíč, s ``&`` jako výchozím. Tato "
+"změna také ovlivňuje :func:`!cgi.parse` a :func:`!cgi.parse_multipart`, "
+"protože interně používají postižené funkce. Podrobnější informace naleznete "
+"v jejich příslušné dokumentaci. (Přispěli Adam Goldschmidt, Senthil Kumaran "
+"a Ken Jin v :issue:`42967`.)"
 
 #: ../../whatsnew/3.9.rst:1566
 msgid "Notable changes in Python 3.9.3"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.9.3"
 
 #: ../../whatsnew/3.9.rst:1568
 msgid ""
@@ -3117,10 +3352,15 @@ msgid ""
 "the old behavior, set a ``trust_server_pasv_ipv4_address`` attribute on your"
 " FTP instance to ``True``.  (See :gh:`87451`)"
 msgstr ""
+"Oprava zabezpečení mění chování :class:`ftplib.FTP` tak, aby nedůvěřoval "
+"adrese IPv4 odeslané vzdáleným serverem při nastavování pasivního datového "
+"kanálu. Místo toho znovu používáme IP adresu serveru FTP. Pro neobvyklý kód "
+"vyžadující staré chování nastavte atribut ``trust_server_pasv_ipv4_address``"
+" na vaší instanci FTP na ``True``. (Viz :gh:`87451`)"
 
 #: ../../whatsnew/3.9.rst:1575
 msgid "Notable changes in Python 3.9.5"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.9.5"
 
 #: ../../whatsnew/3.9.rst:1580
 msgid ""
@@ -3131,10 +3371,17 @@ msgid ""
 "attacks. The removal characters are controlled by a new module level "
 "variable ``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (See :gh:`88048`)"
 msgstr ""
+"Přítomnost znaků nového řádku nebo tabulátoru v částech adresy URL umožňuje "
+"některé formy útoků. Následuje specifikace WHATWG, která aktualizuje "
+":rfc:`3986`, znaky ASCII nový řádek ``\\n``, ``\\r`` a tabulátor ``\\t`` "
+"jsou odstraněny z adresy URL parserem v :mod:`urllib.parse`, aby se "
+"zabránilo takovým útokům. Odebrané znaky jsou řízeny novou proměnnou na "
+"úrovni modulu ``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (Viz "
+":gh:`88048`)"
 
 #: ../../whatsnew/3.9.rst:1588
 msgid "Notable security feature in 3.9.14"
-msgstr ""
+msgstr "Pozoruhodná funkce zabezpečení v 3.9.14"
 
 #: ../../whatsnew/3.9.rst:1590
 msgid ""
@@ -3148,14 +3395,23 @@ msgid ""
 "limitation <int_max_str_digits>` documentation.  The default limit is 4300 "
 "digits in string form."
 msgstr ""
+"Konverze mezi :class:`int` a :class:`str` v základech jiných než 2 "
+"(binární), 4, 8 (oktální), 16 (hexadecimální) nebo 32, jako je základ 10 "
+"(desítkový), nyní vyvolá :exc:`ValueError`, pokud počet číslic v řetězci "
+"formuláře přesahuje limit, aby se zabránilo potenciálnímu odmítnutí služby "
+"útoků kvůli algoritmické složitosti. Toto je zmírnění :cve:`2020-10735`. "
+"Tento limit lze nakonfigurovat nebo zakázat pomocí proměnné prostředí, "
+"příznaku příkazové řádky nebo :mod:`sys` API. Podívejte se na dokumentaci "
+":ref:`integer string conversion length limitation <int_max_str_digits>`. "
+"Výchozí limit je 4300 číslic v řetězci formuláře."
 
 #: ../../whatsnew/3.9.rst:1601
 msgid "Notable changes in 3.9.17"
-msgstr ""
+msgstr "Pozoruhodné změny v 3.9.17"
 
 #: ../../whatsnew/3.9.rst:1604
 msgid "tarfile"
-msgstr ""
+msgstr "tarfile"
 
 #: ../../whatsnew/3.9.rst:1606
 msgid ""
@@ -3167,3 +3423,10 @@ msgid ""
 " Python 3.14, the default will switch to ``'data'``. (Contributed by Petr "
 "Viktorin in :pep:`706`.)"
 msgstr ""
+"Metody extrakce v :mod:`tarfile` a :func:`shutil.unpack_archive` mají nový "
+"argument *filter*, který umožňuje omezení funkcí tar, které mohou být "
+"překvapivé nebo nebezpečné, jako je vytváření souborů mimo cílový adresář. "
+"Podrobnosti naleznete v :ref:`tarfile-extraction-filter`. V Pythonu 3.12 "
+"použití bez argumentu *filter* zobrazí :exc:`DeprecationWarning`. V Pythonu "
+"3.14 se výchozí hodnota změní na ``'data'``. (Přispěl Petr Viktorin v "
+":pep:`706`.)"

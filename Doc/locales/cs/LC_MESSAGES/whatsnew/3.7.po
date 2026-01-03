@@ -1737,6 +1737,9 @@ msgid ""
 "which allows listing the names of properties which should not become enum "
 "members. (Contributed by Ethan Furman in :issue:`31801`.)"
 msgstr ""
+":class:`Enum <enum.Enum>` se naučilo nové vlastnosti třídy ``_ignore_``, "
+"která umožňuje seznamé názvy vlastností, které by se neměly stát členy enum."
+" (Zapsáno Ethan Furman v :issue:`31801`.)"
 
 #: ../../whatsnew/3.7.rst:913
 msgid ""
@@ -1747,20 +1750,28 @@ msgid ""
 "Perm.RW``); currently, both operations return :const:`False` instead and are"
 " deprecated. (Contributed by Ethan Furman in :issue:`33217`.)"
 msgstr ""
+"V Pythonu 3.8 by se pokus kontrolovat ne-Enum objekty v třídach "
+":class:`~enum.Enum` vyvolal :exc:`TypeError` (např. ``1 in Color``); "
+"podobně, pokus kontrolovat ne-Flag objekty v členu :class:`~enum.Flag` "
+"vyvolal :exc:`TypeError` (např. ``1 in Perm.RW``); v současnosti oba operace"
+" vrátí :const:`False` míste a jsou zastaraly. (Zapsáno Ethan Furman v "
+":issue:`33217`.)"
 
 #: ../../whatsnew/3.7.rst:922
 msgid "functools"
-msgstr ""
+msgstr "functools"
 
 #: ../../whatsnew/3.7.rst:924
 msgid ""
 ":func:`functools.singledispatch` now supports registering implementations "
 "using type annotations. (Contributed by Łukasz Langa in :issue:`32227`.)"
 msgstr ""
+":func:`functools.singledispatch` nyní podporuje registraci implementací "
+"pomocí anotací typů. (Zapsáno Łukasz Langa v :issue:`32227`.)"
 
 #: ../../whatsnew/3.7.rst:930
 msgid "gc"
-msgstr ""
+msgstr "gc"
 
 #: ../../whatsnew/3.7.rst:932
 msgid ""
@@ -1772,10 +1783,16 @@ msgid ""
 "obtain the number of frozen objects. (Contributed by Li Zekun in "
 ":issue:`31558`.)"
 msgstr ""
+"Nová funkce :func:`gc.freeze` umožňuje zmrazíní všech objektů sledovaných "
+"správcem paměti a jejich vyloučení z budoucích kolekcí. To lze použít před "
+"POSIX ``fork()`` voláním, aby se GC stal copy-on-write přáte lém nebo "
+"zrychlit kolekci. Nová funkce :func:`gc.unfreeze` obrátí tuto operaci. Navíc"
+" lze :func:`gc.get_freeze_count` použít k získání počtu zmrazených objektů. "
+"(Zapsáno Li Zekun v :issue:`31558`.)"
 
 #: ../../whatsnew/3.7.rst:942
 msgid "hmac"
-msgstr ""
+msgstr "hmac"
 
 #: ../../whatsnew/3.7.rst:944
 msgid ""
@@ -1783,10 +1800,13 @@ msgid ""
 "function, which is up to three times faster than :func:`~hmac.HMAC`. "
 "(Contributed by Christian Heimes in :issue:`32433`.)"
 msgstr ""
+"Modul :mod:`hmac` má nyní optimalizovanou jednorázovou funkci "
+":func:`~hmac.digest`, která je až třikrát rychlejší než :func:`~hmac.HMAC`. "
+"(Zapsáno Christian Heimes v :issue:`32433`.)"
 
 #: ../../whatsnew/3.7.rst:950
 msgid "http.client"
-msgstr ""
+msgstr "http.client"
 
 #: ../../whatsnew/3.7.rst:952
 msgid ""
@@ -1795,10 +1815,13 @@ msgid ""
 "argument for improved upload throughput. (Contributed by Nir Soffer in "
 ":issue:`31945`.)"
 msgstr ""
+":class:`~http.client.HTTPConnection` a :class:`~http.client.HTTPSConnection`"
+" nyní podporují nový argument *blocksize* pro zlepšený přístavec. (Zapsáno "
+"Nir Soffer v :issue:`31945`.)"
 
 #: ../../whatsnew/3.7.rst:958
 msgid "http.server"
-msgstr ""
+msgstr "http.server"
 
 #: ../../whatsnew/3.7.rst:960
 msgid ""
@@ -1807,6 +1830,10 @@ msgid ""
 "target file was not modified after the time specified in the header. "
 "(Contributed by Pierre Quentel in :issue:`29654`.)"
 msgstr ""
+":class:`~http.server.SimpleHTTPRequestHandler` nyní podporuje HTTP hlavičku "
+"``If-Modified-Since``. Server vrátí stav odpovědi 304, pokud nebyl cílový "
+"soubor změněn po čase uvedeném v hlavičce. (Zapsáno Pierre Quentel v "
+":issue:`29654`.)"
 
 #: ../../whatsnew/3.7.rst:965
 msgid ""
@@ -1816,6 +1843,11 @@ msgid ""
 "uses the current working directory. (Contributed by Stéphane Wirtel and "
 "Julien Palard in :issue:`28707`.)"
 msgstr ""
+":class:`~http.server.SimpleHTTPRequestHandler` přijímá nový argument "
+"*directory*, vedle nového argumentu příkazového řádku ``--directory``. S "
+"tímto parametrem server serve zadaný adresář, ve výchozm nástupci používá "
+"aktuální pracovní adresář. (Zapsáno Stéphane Wirtel a Julien Palard v "
+":issue:`28707`.)"
 
 #: ../../whatsnew/3.7.rst:971
 msgid ""
@@ -1824,16 +1856,22 @@ msgid ""
 ":class:`~socketserver.ThreadingMixIn`. It is used when ``http.server`` is "
 "run with ``-m``. (Contributed by Julien Palard in :issue:`31639`.)"
 msgstr ""
+"Nová třída :class:`ThreadingHTTPServer <http.server.ThreadingHTTPServer>` "
+"používá vlákna pro zpracování požadavků pomocí "
+":class:`~socketserver.ThreadingMixIn`. Je používána, pokud je "
+"``http.server`` spuštěn s ``-m``. (Zapsáno Julien Palard v :issue:`31639`.)"
 
 #: ../../whatsnew/3.7.rst:978
 msgid "idlelib and IDLE"
-msgstr ""
+msgstr "idlelib a IDLE"
 
 #: ../../whatsnew/3.7.rst:980
 msgid ""
 "Multiple fixes for autocompletion. (Contributed by Louie Lu in "
 ":issue:`15786`.)"
 msgstr ""
+"Několik oprav pro automatické doplňování. (Zapsáno Louie Lu v "
+":issue:`15786`.)"
 
 #: ../../whatsnew/3.7.rst:982
 msgid ""
@@ -1842,6 +1880,10 @@ msgid ""
 " classes. (Contributed by Guilherme Polo, Cheryl Sabella, and Terry Jan "
 "Reedy in :issue:`1612262`.)"
 msgstr ""
+"Prolízač modulů (v menu Soubor, dříve se nazývalo Prolízač tříd) nyní "
+"zobrazuje vnořené funkce a třídy navíc k funkčím a třídám vyšší úrovně. "
+"(Zapsáno Guilherme Polo, Cheryl Sabella a Terry Jan Reedy v "
+":issue:`1612262`.)"
 
 #: ../../whatsnew/3.7.rst:988
 msgid ""
@@ -1849,6 +1891,9 @@ msgid ""
 "improve both appearance and function. (Contributed by Cheryl Sabella and "
 "Terry Jan Reedy in multiple issues.)"
 msgstr ""
+"Dialog Nastavení (Možnosti, Konfigurace IDLE) byl částečně přepsan, aby se "
+"zlepšila vzhled i funkčnost. (Zapsáno Cheryl Sabella a Terry Jan Reedy v "
+"několika problémech.)"
 
 #: ../../whatsnew/3.7.rst:992
 msgid ""
@@ -1857,6 +1902,10 @@ msgid ""
 " by Terry Jan Reedy in :issue:`13802`.) The sample can be edited to include "
 "other characters. (Contributed by Serhiy Storchaka in :issue:`31860`.)"
 msgstr ""
+"Vzorek fontu nyní obsahuje výběr ne-latinských znaků, aby uživatelé lépe "
+"viděli vliv výběru konkrétního fontu. (Zapsáno Terry Jan Reedy v "
+":issue:`13802`.) Vzorek lze editovat tak, aby obsahoval další znaky. "
+"(Zapsáno Serhiy Storchaka v :issue:`31860`.)"
 
 #: ../../whatsnew/3.7.rst:998
 msgid ""
@@ -1865,6 +1914,10 @@ msgid ""
 " to other dialog tabs. (Contributed by Charles Wohlganger and Terry Jan "
 "Reedy in :issue:`27099`.)"
 msgstr ""
+"Funkce IDLE dříve implementovány jako rozšíření byly znovu implementovány "
+"jako normální funkce. Jejich nastavení byla přesunuta z záložky Rozloučení "
+"na ostatní záložky dialogu. (Zapsáno Charles Wohlganger a Terry Jan Reedy v "
+":issue:`27099`.)"
 
 #: ../../whatsnew/3.7.rst:1003
 msgid ""
@@ -1874,6 +1927,11 @@ msgid ""
 "dialog. (Contributed by Cheryl Sabella and Terry Jan Reedy in "
 ":issue:`33642`, :issue:`33768`, and :issue:`33679`.)"
 msgstr ""
+"Volba kontextu kódu editoru byla revizována. Pole zobrazuje všechny "
+"kontextové řádky až do maxlines. Kliknutím na kontextový řádek skok editoru "
+"na tento řádek. Barvy kontextu pro vlastní motiv jsou přidány do záložky "
+"Zvýrazňování v dialogu Nastavení. (Zapsáno Cheryl Sabella a Terry Jan Reedy "
+"v :issue:`33642`, :issue:`33768` a :issue:`33679`.)"
 
 #: ../../whatsnew/3.7.rst:1009
 msgid ""
@@ -1883,10 +1941,15 @@ msgid ""
 "text and lines sharper.  It should otherwise have no effect. (Contributed by"
 " Terry Jan Reedy in :issue:`33656`.)"
 msgstr ""
+"Na Windowsüh nové volání API říká Windows, že tk máš tázy DPI. Na Windows "
+"8.1+ nebo 10, se DPI kompatibilitou vlastností binárního Pythonu nemajic se "
+"změněny a rozlišením monitoru větším než 96 DPI, by to mělo udělat text a "
+"čáry ostrejšími. Jinak by nemělo mít žádný vliv. (Zapsáno Terry Jan Reedy v "
+":issue:`33656`.)"
 
 #: ../../whatsnew/3.7.rst:1015
 msgid "New in 3.7.1:"
-msgstr ""
+msgstr "Nové v 3.7.1:"
 
 #: ../../whatsnew/3.7.rst:1017
 msgid ""
@@ -1897,14 +1960,20 @@ msgid ""
 " button or into the clipboard or a separate window by right-clicking the "
 "button.  (Contributed by Tal Einat in :issue:`1529353`.)"
 msgstr ""
+"Výstup nad N řádky (50 ve výchozm nástupci) je squished do tlačítka. N lze "
+"změnit v sekci PyShell stánky General stránky Nastavení. Méně, ale možná "
+"extra dlouhé, řádky mohou být squished kliknutím pravým tlačítkem na výstup."
+" Squished výstup lze rozšířit na mítě dvojitým kliknutím na tlačítko nebo do"
+" schránky nebo odděleného okna kliknutím pravým tlačítkem na tlačítko. "
+"(Zapsáno Tal Einat v :issue:`1529353`.)"
 
 #: ../../whatsnew/3.7.rst:1024
 msgid "The changes above have been backported to 3.6 maintenance releases."
-msgstr ""
+msgstr "Výše uvedené změny byly zpětovně přenesené do 3.6 udržovacích vydání."
 
 #: ../../whatsnew/3.7.rst:1026
 msgid "NEW in 3.7.4:"
-msgstr ""
+msgstr "NOVÉ v 3.7.4:"
 
 #: ../../whatsnew/3.7.rst:1028
 msgid ""
@@ -1914,10 +1983,15 @@ msgid ""
 "normal Shell main module restart.  (Contributed by Cheryl Sabella, Terry Jan"
 " Reedy, and others in :issue:`5680` and :issue:`37627`.)"
 msgstr ""
+"Přidejte \"Run Customized\" do menu Spuštění ke spuštění modulu s "
+"přizpůsobeným nastavením. Jakékoli argumenty příkazového řádku jsou přidány "
+"do sys.argv. Objeví se opět v poli pro další přizpůsobený běh. Můžete také "
+"potlačit normální spuštění hlavního modulu Shell. (Zapsáno Cheryl Sabella, "
+"Terry Jan Reedy a dalšími v :issue:`5680` a :issue:`37627`.)"
 
 #: ../../whatsnew/3.7.rst:1034
 msgid "New in 3.7.5:"
-msgstr ""
+msgstr "Nové v 3.7.5:"
 
 #: ../../whatsnew/3.7.rst:1036
 msgid ""
@@ -1927,10 +2001,15 @@ msgid ""
 "Options menu. (Contributed by Tal Einat and Saimadhav Heblikar in "
 ":issue:`17535`.)"
 msgstr ""
+"Přidejte volitelné čáslování řádků pro okna editoru IDLE. Okna se otevřou "
+"bez čáslování řádků, pokud není nastaveno jinak na záložce Všeobecné "
+"konfiguračního dialogu. Čáslování řádků pro existující okno se zobrazuje a "
+"skryvá v menu Možnosti. (Zapsáno Tal Einat a Saimadhav Heblikar v "
+":issue:`17535`.)"
 
 #: ../../whatsnew/3.7.rst:1044 ../../whatsnew/3.7.rst:2021
 msgid "importlib"
-msgstr ""
+msgstr "importlib"
 
 #: ../../whatsnew/3.7.rst:1046
 msgid ""
@@ -1939,12 +2018,17 @@ msgid ""
 ":ref:`whatsnew37_importlib_resources`. (Contributed by Barry Warsaw, Brett "
 "Cannon in :issue:`32248`.)"
 msgstr ""
+"ABC :class:`importlib.abc.ResourceReader` byl zaváděn pro podporu načítání "
+"zdrojů z balíčků. Viz také :ref:`whatsnew37_importlib_resources`. (Zapsáno "
+"Barry Warsaw, Brett Cannon v :issue:`32248`.)"
 
 #: ../../whatsnew/3.7.rst:1051
 msgid ""
 ":func:`importlib.reload` now raises :exc:`ModuleNotFoundError` if the module"
 " lacks a spec. (Contributed by Garvit Khatri in :issue:`29851`.)"
 msgstr ""
+":func:`importlib.reload` nyní vyvolá :exc:`ModuleNotFoundError`, pokud modul"
+" chybí spec. (Zapsáno Garvit Khatri v :issue:`29851`.)"
 
 #: ../../whatsnew/3.7.rst:1055
 msgid ""
@@ -1953,6 +2037,9 @@ msgid ""
 "package (i.e. lacks a ``__path__`` attribute). (Contributed by Milan "
 "Oberkirch in :issue:`30436`.)"
 msgstr ""
+":func:`importlib.util.find_spec` nyní vyvolá :exc:`ModuleNotFoundError` "
+"míste :exc:`AttributeError`, pokud zadaný paměťový modul není balíček (tj. "
+"chybí mu atribut ``__path__``). (Zapsáno Milan Oberkirch v :issue:`30436`.)"
 
 #: ../../whatsnew/3.7.rst:1060
 msgid ""
@@ -1960,10 +2047,13 @@ msgid ""
 "of the passed source.  A :ref:`hash-based .pyc file <whatsnew37-pep552>` "
 "embeds the value returned by this function."
 msgstr ""
+"Nová :func:`importlib.util.source_hash` může být použita k výpočtu hash "
+"prředaného zdroje. Soubor :ref:`hash-based .pyc <whatsnew37-pep552>` vloží "
+"hodnotu vrácenou touto funkcí."
 
 #: ../../whatsnew/3.7.rst:1066
 msgid "io"
-msgstr ""
+msgstr "io"
 
 #: ../../whatsnew/3.7.rst:1068
 msgid ""
@@ -1972,10 +2062,14 @@ msgid ""
 "(Contributed by Antoine Pitrou in :issue:`30526` and INADA Naoki in "
 ":issue:`15216`.)"
 msgstr ""
+"Nová metoda :meth:`TextIOWrapper.reconfigure() "
+"<io.TextIOWrapper.reconfigure>` může být použita k rekonfiguraci textového "
+"streamu s novým nastavením. (Zapsáno Antoine Pitrou v :issue:`30526` a INADA"
+" Naoki v :issue:`15216`.)"
 
 #: ../../whatsnew/3.7.rst:1075
 msgid "ipaddress"
-msgstr ""
+msgstr "ipaddress"
 
 #: ../../whatsnew/3.7.rst:1077
 msgid ""
@@ -1984,10 +2078,14 @@ msgid ""
 "used for network containment tests. (Contributed by Michel Albert and Cheryl"
 " Sabella in :issue:`20825`.)"
 msgstr ""
+"Nové metody ``subnet_of()`` a ``supernet_of()`` "
+":class:`ipaddress.IPv6Network` a :class:`ipaddress.IPv4Network` lze použít "
+"pro zkoušky obsahu sítě. (Zapsáno Michel Albert a Cheryl Sabella v "
+":issue:`20825`.)"
 
 #: ../../whatsnew/3.7.rst:1084
 msgid "itertools"
-msgstr ""
+msgstr "itertools"
 
 #: ../../whatsnew/3.7.rst:1086
 msgid ""
@@ -1995,10 +2093,13 @@ msgid ""
 "<object.__index__>` as start, stop, and slice arguments. (Contributed by "
 "Will Roberts in :issue:`30537`.)"
 msgstr ""
+":func:`itertools.islice` nyní přijímá :meth:`celokové objekty "
+"<object.__index__>` jako start, stop a narežy argumenty. (Zapsáno Will "
+"Roberts v :issue:`30537`.)"
 
 #: ../../whatsnew/3.7.rst:1093 ../../whatsnew/3.7.rst:2039
 msgid "locale"
-msgstr ""
+msgstr "locale"
 
 #: ../../whatsnew/3.7.rst:1095
 msgid ""
@@ -2006,6 +2107,9 @@ msgid ""
 "make the conversion use monetary thousands separators and grouping strings."
 "  (Contributed by Garvit in :issue:`10379`.)"
 msgstr ""
+"Nový argument *monetary* pro :func:`locale.format_string` lze použít k tomu,"
+" aby konverze používala monetární odde lévače tisíců a stréiní skupin. "
+"(Zapsáno Garvit v :issue:`10379`.)"
 
 #: ../../whatsnew/3.7.rst:1099
 msgid ""
@@ -2013,16 +2117,20 @@ msgid ""
 "``'UTF-8'`` on Android or when in the :ref:`forced UTF-8 mode "
 "<whatsnew37-pep540>`."
 msgstr ""
+"Funkce :func:`locale.getpreferredencoding` nyní vždy vrátí ``'UTF-8'`` na "
+"Androidu nebo pokud je v :ref:`vynuceném UTF-8 módu <whatsnew37-pep540>`."
 
 #: ../../whatsnew/3.7.rst:1104
 msgid "logging"
-msgstr ""
+msgstr "logging"
 
 #: ../../whatsnew/3.7.rst:1106
 msgid ""
 ":class:`~logging.Logger` instances can now be pickled. (Contributed by Vinay"
 " Sajip in :issue:`30520`.)"
 msgstr ""
+"Instance :class:`~logging.Logger` mohou být nyní picklovány. (Zapsáno Vinay "
+"Sajip v :issue:`30520`.)"
 
 #: ../../whatsnew/3.7.rst:1109
 msgid ""
@@ -2030,6 +2138,9 @@ msgid ""
 "method can be used to replace the logger stream after handler creation. "
 "(Contributed by Vinay Sajip in :issue:`30522`.)"
 msgstr ""
+"Nová metoda :meth:`StreamHandler.setStream() "
+"<logging.StreamHandler.setStream>` může být použita k nahrazení streamu "
+"loggeru po vytvoření handleru. (Zapsáno Vinay Sajip v :issue:`30522`.)"
 
 #: ../../whatsnew/3.7.rst:1113
 msgid ""
@@ -2037,40 +2148,49 @@ msgid ""
 "configuration passed to :func:`logging.config.fileConfig`. (Contributed by "
 "Preston Landers in :issue:`31080`.)"
 msgstr ""
+"Nyní je možné zadat argumenty klíčového slova pro konstruktory handleru v "
+"konfiguraci předané :func:`logging.config.fileConfig`. (Zapsáno Preston "
+"Landers v :issue:`31080`.)"
 
 #: ../../whatsnew/3.7.rst:1119
 msgid "math"
-msgstr ""
+msgstr "math"
 
 #: ../../whatsnew/3.7.rst:1121
 msgid ""
 "The new :func:`math.remainder` function implements the IEEE 754-style "
 "remainder operation.  (Contributed by Mark Dickinson in :issue:`29962`.)"
 msgstr ""
+"Nová funkce :func:`math.remainder` implementuje zbytkové operační IEEE 754. "
+"(Zapsáno Mark Dickinson v :issue:`29962`.)"
 
 #: ../../whatsnew/3.7.rst:1126
 msgid "mimetypes"
-msgstr ""
+msgstr "mimetypes"
 
 #: ../../whatsnew/3.7.rst:1128
 msgid ""
 "The MIME type of .bmp has been changed from ``'image/x-ms-bmp'`` to "
 "``'image/bmp'``. (Contributed by Nitish Chandra in :issue:`22589`.)"
 msgstr ""
+"MIME typ .bmp byl změněn z ``'image/x-ms-bmp'`` na ``'image/bmp'``. (Zapsáno"
+" Nitish Chandra v :issue:`22589`.)"
 
 #: ../../whatsnew/3.7.rst:1134
 msgid "msilib"
-msgstr ""
+msgstr "msilib"
 
 #: ../../whatsnew/3.7.rst:1136
 msgid ""
 "The new :meth:`!Database.Close` method can be used to close the :abbr:`MSI` "
 "database. (Contributed by Berker Peksag in :issue:`20486`.)"
 msgstr ""
+"Nová metoda :meth:`!Database.Close` lze použít k zavření databáze "
+":abbr:`MSI`. (Zapsáno Berker Peksag v :issue:`20486`.)"
 
 #: ../../whatsnew/3.7.rst:1142
 msgid "multiprocessing"
-msgstr ""
+msgstr "multiprocessing"
 
 #: ../../whatsnew/3.7.rst:1144
 msgid ""
@@ -2079,6 +2199,10 @@ msgid ""
 "with it.  :exc:`ValueError` is raised if the underlying process is still "
 "running. (Contributed by Antoine Pitrou in :issue:`30596`.)"
 msgstr ""
+"Nová metoda :meth:`Process.close() <multiprocessing.Process.close>` výsl "
+"ovně uzavří objekt procesu a uvolní všechny s ním spojené zdroje. "
+":exc:`ValueError` je vyvolana, pokud je podléhájící proces stále spuštěn. "
+"(Zapsáno Antoine Pitrou v :issue:`30596`.)"
 
 #: ../../whatsnew/3.7.rst:1150
 msgid ""
@@ -2086,28 +2210,37 @@ msgid ""
 "used to terminate the process using the :data:`~signal.SIGKILL` signal on "
 "Unix. (Contributed by Vitor Pereira in :issue:`30794`.)"
 msgstr ""
+"Nová metoda :meth:`Process.kill() <multiprocessing.Process.kill>` lze použít"
+" k ukončení procesu pomocí signálu :data:`~signal.SIGKILL` na Unix. (Zapsáno"
+" Vitor Pereira v :issue:`30794`.)"
 
 #: ../../whatsnew/3.7.rst:1154
 msgid ""
 "Non-daemonic threads created by :class:`~multiprocessing.Process` are now "
 "joined on process exit. (Contributed by Antoine Pitrou in :issue:`18966`.)"
 msgstr ""
+"Ne-demonícka vlákna vytvořená :class:`~multiprocessing.Process` jsou nyní "
+"spojena při výstavu procesu. (Zapsáno Antoine Pitrou v :issue:`18966`.)"
 
 #: ../../whatsnew/3.7.rst:1160
 msgid "os"
-msgstr ""
+msgstr "os"
 
 #: ../../whatsnew/3.7.rst:1162
 msgid ""
 ":func:`os.fwalk` now accepts the *path* argument as :class:`bytes`. "
 "(Contributed by Serhiy Storchaka in :issue:`28682`.)"
 msgstr ""
+":func:`os.fwalk` nyní přijímá argument *path* jako :class:`bytes`. (Zapsáno "
+"Serhiy Storchaka v :issue:`28682`.)"
 
 #: ../../whatsnew/3.7.rst:1165
 msgid ""
 ":func:`os.scandir` gained support for :ref:`file descriptors <path_fd>`. "
 "(Contributed by Serhiy Storchaka in :issue:`25996`.)"
 msgstr ""
+":func:`os.scandir` získal podporu pro :ref:`popisovače souborů <path_fd>`. "
+"(Zapsáno Serhiy Storchaka v :issue:`25996`.)"
 
 #: ../../whatsnew/3.7.rst:1168
 msgid ""
@@ -2115,6 +2248,9 @@ msgid ""
 "callbacks to be executed at process fork. (Contributed by Antoine Pitrou in "
 ":issue:`16500`.)"
 msgstr ""
+"Nová funkce :func:`~os.register_at_fork` umožňuje registraci zptného volání "
+"Pythonu, která se má spustit při fork procesu. (Zapsáno Antoine Pitrou v "
+":issue:`16500`.)"
 
 #: ../../whatsnew/3.7.rst:1172
 msgid ""
@@ -2123,6 +2259,10 @@ msgid ""
 "functionality of :func:`os.writev` and :func:`os.pwrite`). (Contributed by "
 "Pablo Galindo in :issue:`31368`.)"
 msgstr ""
+"Přidány :func:`os.preadv` (kombinace funkcionalitu :func:`os.readv` a "
+":func:`os.pread`) a funkce :func:`os.pwritev` (kombinace funkcionalitu "
+":func:`os.writev` a :func:`os.pwrite`). (Zapsáno Pablo Galindo v "
+":issue:`31368`.)"
 
 #: ../../whatsnew/3.7.rst:1177
 msgid ""
@@ -2130,12 +2270,17 @@ msgid ""
 "permission bits of newly created intermediate-level directories. "
 "(Contributed by Serhiy Storchaka in :issue:`19930`.)"
 msgstr ""
+"Argument módu :func:`os.makedirs` již neovlivní bitové opravnění souboru "
+"nevě dę vytvořených mezisoučástí. (Zapsáno Serhiy Storchaka v "
+":issue:`19930`.)"
 
 #: ../../whatsnew/3.7.rst:1181
 msgid ""
 ":func:`os.dup2` now returns the new file descriptor.  Previously, ``None`` "
 "was always returned. (Contributed by Benjamin Peterson in :issue:`32441`.)"
 msgstr ""
+":func:`os.dup2` nyní vrátí nový popisovač souboru. Dříve byla vždy vrácena "
+"``None``. (Zapsáno Benjamin Peterson v :issue:`32441`.)"
 
 #: ../../whatsnew/3.7.rst:1185
 msgid ""
@@ -2143,10 +2288,13 @@ msgid ""
 ":attr:`~os.stat_result.st_fstype` attribute on Solaris and its derivatives. "
 "(Contributed by Jesús Cea Avión in :issue:`32659`.)"
 msgstr ""
+"Struktura vrácená :func:`os.stat` nyní obsahuje atribut "
+":attr:`~os.stat_result.st_fstype` na Solarisu a jeho derivátech. (Zapsáno "
+"Jesús Cea Avión v :issue:`32659`.)"
 
 #: ../../whatsnew/3.7.rst:1191
 msgid "pathlib"
-msgstr ""
+msgstr "pathlib"
 
 #: ../../whatsnew/3.7.rst:1193
 msgid ""
@@ -2154,10 +2302,13 @@ msgid ""
 "available on POSIX systems and can be used to determine whether a path is a "
 "mount point. (Contributed by Cooper Ry Lees in :issue:`30897`.)"
 msgstr ""
+"Nová metoda :meth:`Path.is_mount() <pathlib.Path.is_mount>` je nyní dostupná"
+" na systémech POSIX a lze ji použít k určení, zda je cesta bod připojení. "
+"(Zapsáno Cooper Ry Lees v :issue:`30897`.)"
 
 #: ../../whatsnew/3.7.rst:1199
 msgid "pdb"
-msgstr ""
+msgstr "pdb"
 
 #: ../../whatsnew/3.7.rst:1201
 msgid ""
@@ -2165,16 +2316,21 @@ msgid ""
 "  If given, it is printed to the console just before debugging begins.  "
 "(Contributed by Barry Warsaw in :issue:`31389`.)"
 msgstr ""
+":func:`pdb.set_trace` nyní přijímá volitelný argument klíčového slova "
+"*header*. Je-li zadán, je vytisknut na konzolu právě před zahájením ladění. "
+"(Zapsáno Barry Warsaw v :issue:`31389`.)"
 
 #: ../../whatsnew/3.7.rst:1205
 msgid ""
 ":mod:`pdb` command line now accepts ``-m module_name`` as an alternative to "
 "script file.  (Contributed by Mario Corchero in :issue:`32206`.)"
 msgstr ""
+"Příkazový řádek :mod:`pdb` nyní přijímá ``-m module_name`` jako alternativu "
+"k souboru skriptu. (Zapsáno Mario Corchero v :issue:`32206`.)"
 
 #: ../../whatsnew/3.7.rst:1210
 msgid "py_compile"
-msgstr ""
+msgstr "py_compile"
 
 #: ../../whatsnew/3.7.rst:1212
 msgid ""
@@ -2185,10 +2341,16 @@ msgid ""
 "builds.org/>`_ of ``.pyc`` files when they are created eagerly. (Contributed"
 " by Bernhard M. Wiedemann in :issue:`29708`.)"
 msgstr ""
+":func:`py_compile.compile` -- a rozšířením :mod:`compileall` -- nyní "
+"respektuje promněnou prostředí :envvar:`SOURCE_DATE_EPOCH` bezpodméněně "
+"vytvářením ``.pyc`` souborů pro hash-based validaci. To umožňuje záruku "
+"`reproducibilných sestavení <https://reproducible-builds.org/>`_ ``.pyc`` "
+"souborů, jsou-li vytvářeny s agresívnosti. (Zapsáno Bernhard M. Wiedemann v "
+":issue:`29708`.)"
 
 #: ../../whatsnew/3.7.rst:1222
 msgid "pydoc"
-msgstr ""
+msgstr "pydoc"
 
 #: ../../whatsnew/3.7.rst:1224
 msgid ""
@@ -2196,20 +2358,25 @@ msgid ""
 "``-n`` command-line argument. (Contributed by Feanil Patel in "
 ":issue:`31128`.)"
 msgstr ""
+"Server pydoc může nyní vázat libovolné jméno hostitele určené novým "
+"argumentem příkazového řádku ``-n``. (Zapsáno Feanil Patel v "
+":issue:`31128`.)"
 
 #: ../../whatsnew/3.7.rst:1230
 msgid "queue"
-msgstr ""
+msgstr "queue"
 
 #: ../../whatsnew/3.7.rst:1232
 msgid ""
 "The new :class:`~queue.SimpleQueue` class is an unbounded :abbr:`FIFO` "
 "queue. (Contributed by Antoine Pitrou in :issue:`14976`.)"
 msgstr ""
+"Nová třída :class:`~queue.SimpleQueue` je neúplnité :abbr:`FIFO` fronty. "
+"(Zapsáno Antoine Pitrou v :issue:`14976`.)"
 
 #: ../../whatsnew/3.7.rst:1237
 msgid "re"
-msgstr ""
+msgstr "re"
 
 #: ../../whatsnew/3.7.rst:1239
 msgid ""
@@ -2217,6 +2384,8 @@ msgid ""
 "be set within the scope of a group. (Contributed by Serhiy Storchaka in "
 ":issue:`31690`.)"
 msgstr ""
+"Jen :const:`re.ASCII`, :const:`re.LOCALE` a :const:`re.UNICODE` mohou být "
+"nastaveny v rámci skupiny. (Zapsáno Serhiy Storchaka v :issue:`31690`.)"
 
 #: ../../whatsnew/3.7.rst:1243
 msgid ""
@@ -2224,6 +2393,9 @@ msgid ""
 "``'^$'`` or ``(?=-)`` that matches an empty string. (Contributed by Serhiy "
 "Storchaka in :issue:`25054`.)"
 msgstr ""
+":func:`re.split` nyní podporuje dělení na vzoru jako ``r'\\b'``, ``'^$'`` "
+"nebo ``(?=-)`` které se shoduje s prázdným řetězcem. (Zapsáno Serhiy "
+"Storchaka v :issue:`25054`.)"
 
 #: ../../whatsnew/3.7.rst:1247
 msgid ""
@@ -2232,6 +2404,10 @@ msgid ""
 " the compiled regular expression is used. (Contributed by Serhiy Storchaka "
 "in :issue:`30215`.)"
 msgstr ""
+"Regulární výrazy zkompilované s příznakem :const:`re.LOCALE` již nezávisí na"
+" locale v čase kompilace. Nastavení locale se aplikují pouze při použití "
+"zkompilovaného regulárního výrazu. (Zapsáno Serhiy Storchaka v "
+":issue:`30215`.)"
 
 #: ../../whatsnew/3.7.rst:1252
 msgid ""
@@ -2240,6 +2416,9 @@ msgid ""
 "as nested sets and set operations. (Contributed by Serhiy Storchaka in "
 ":issue:`30349`.)"
 msgstr ""
+":exc:`FutureWarning` je nyní emit ováno, pokud regulární výraz obsahuje "
+"konstrukce znakové sady, které se změní v budoucnosti, jako je vnořené sady "
+"a operace sady. (Zapsáno Serhiy Storchaka v :issue:`30349`.)"
 
 #: ../../whatsnew/3.7.rst:1257
 msgid ""
@@ -2247,10 +2426,13 @@ msgid ""
 ":func:`copy.copy` and :func:`copy.deepcopy`. (Contributed by Serhiy "
 "Storchaka in :issue:`10076`.)"
 msgstr ""
+"Zkompilované regulární výrazy a objekty shody mohou být nyní kopírovány "
+"pomocí :func:`copy.copy` a :func:`copy.deepcopy`. (Zapsáno Serhiy Storchaka "
+"v :issue:`10076`.)"
 
 #: ../../whatsnew/3.7.rst:1263
 msgid "signal"
-msgstr ""
+msgstr "signal"
 
 #: ../../whatsnew/3.7.rst:1265
 msgid ""
@@ -2259,10 +2441,13 @@ msgid ""
 "stderr when the wakeup buffer overflows. (Contributed by Nathaniel J. Smith "
 "in :issue:`30050`.)"
 msgstr ""
+"Nový argument *warn_on_full_buffer* pro funkci :func:`signal.set_wakeup_fd` "
+"umožňuje určit, zda Python vytiskne varování na stderr, pokud se buffer "
+"zbučení přetekuje. (Zapsáno Nathaniel J. Smith v :issue:`30050`.)"
 
 #: ../../whatsnew/3.7.rst:1272 ../../whatsnew/3.7.rst:2062
 msgid "socket"
-msgstr ""
+msgstr "socket"
 
 #: ../../whatsnew/3.7.rst:1274
 msgid ""
@@ -2270,6 +2455,9 @@ msgid ""
 "returns ``True`` if the socket is in blocking mode and ``False`` otherwise. "
 "(Contributed by Yury Selivanov in :issue:`32373`.)"
 msgstr ""
+"Nová metoda :func:`socket.getblocking() <socket.socket.getblocking>` vrátí "
+"``True``, pokud je socket v módu blokování, a ``False`` jinak. (Zapsáno Yury"
+" Selivanov v :issue:`32373`.)"
 
 #: ../../whatsnew/3.7.rst:1278
 msgid ""
@@ -2278,6 +2466,9 @@ msgid ""
 "better compatibility across platforms. (Contributed by Christian Heimes in "
 ":issue:`32454`.)"
 msgstr ""
+"Nová funkce :func:`socket.close` uzavřá popisovač souboru předaného socketu."
+" Tato funkce by měla být používána míste :func:`os.close` pro lepší "
+"kompatibilitu mezi platformami. (Zapsáno Christian Heimes v :issue:`32454`.)"
 
 #: ../../whatsnew/3.7.rst:1283
 msgid ""
@@ -2287,6 +2478,11 @@ msgid ""
 "<socket-unix-constants>` (Linux 3.12) constants. (Contributed by Omar "
 "Sandoval in :issue:`26273` and Nathaniel J. Smith in :issue:`29728`.)"
 msgstr ""
+"Modul :mod:`socket` nyní vyzkúší :ref:`socket.TCP_CONGESTION <socket-unix-"
+"constants>` (Linux 2.6.13), :ref:`socket.TCP_USER_TIMEOUT <socket-unix-"
+"constants>` (Linux 2.6.37) a :ref:`socket.TCP_NOTSENT_LOWAT <socket-unix-"
+"constants>` (Linux 3.12) konstanty. (Zapsáno Omar Sandoval v :issue:`26273` "
+"a Nathaniel J. Smith v :issue:`29728`.)"
 
 #: ../../whatsnew/3.7.rst:1290
 msgid ""
@@ -2294,16 +2490,21 @@ msgid ""
 "communication between virtual machines and their hosts. (Contributed by "
 "Cathy Avery in :issue:`27584`.)"
 msgstr ""
+"Byla přidána podpora pro sockety :const:`socket.AF_VSOCK`, aby bylo možné "
+"spolupráce mezi virtuálními stroji a jejich hostiteli. (Zapsáno Cathy Avery "
+"v :issue:`27584`.)"
 
 #: ../../whatsnew/3.7.rst:1294
 msgid ""
 "Sockets now auto-detect family, type and protocol from file descriptor by "
 "default. (Contributed by Christian Heimes in :issue:`28134`.)"
 msgstr ""
+"Sockety nyní automaticky detekují rodinu, typ a protokol z popisovače "
+"souboru ve výchozm nástupci. (Zapsáno Christian Heimes v :issue:`28134`.)"
 
 #: ../../whatsnew/3.7.rst:1300
 msgid "socketserver"
-msgstr ""
+msgstr "socketserver"
 
 #: ../../whatsnew/3.7.rst:1302
 msgid ""
@@ -2313,6 +2514,11 @@ msgid ""
 "<socketserver.BaseServer.server_close>` now waits until all child processes "
 "complete."
 msgstr ""
+":meth:`socketserver.ThreadingMixIn.server_close "
+"<socketserver.BaseServer.server_close>` nyní čeká až se všechna ne-demonýcka"
+" vlákna dokončí. :meth:`socketserver.ForkingMixIn.server_close "
+"<socketserver.BaseServer.server_close>` nyní čeká až se všechny dětné "
+"procesy dokončí."
 
 #: ../../whatsnew/3.7.rst:1308
 msgid ""
@@ -2321,10 +2527,14 @@ msgid ""
 ":class:`socketserver.ForkingMixIn` and :class:`socketserver.ThreadingMixIn` "
 "classes. Set the class attribute to ``False`` to get the pre-3.7 behaviour."
 msgstr ""
+"Přidejte nový atribut třídy :attr:`socketserver.ForkingMixIn.block_on_close "
+"<socketserver.ThreadingMixIn.block_on_close>` do tříd "
+":class:`socketserver.ForkingMixIn` a :class:`socketserver.ThreadingMixIn`. "
+"Nastavte atribut třídy na ``False`` pro záskání chování před 3.7."
 
 #: ../../whatsnew/3.7.rst:1315
 msgid "sqlite3"
-msgstr ""
+msgstr "sqlite3"
 
 #: ../../whatsnew/3.7.rst:1317
 msgid ""
@@ -2333,6 +2543,9 @@ msgid ""
 " is at version 3.6.11 or higher. (Contributed by Lele Gaifax in "
 ":issue:`27645`.)"
 msgstr ""
+":class:`sqlite3.Connection` nyní vyzkúší metodu "
+":meth:`~sqlite3.Connection.backup`, pokud je podléhájící knihovna SQLite "
+"verzí 3.6.11 nebo vyšší. (Zapsáno Lele Gaifax v :issue:`27645`.)"
 
 #: ../../whatsnew/3.7.rst:1321
 msgid ""
@@ -2340,10 +2553,13 @@ msgid ""
 ":term:`path-like object`, instead of just a string. (Contributed by Anders "
 "Lorentsen in :issue:`31843`.)"
 msgstr ""
+"Argument *database* :func:`sqlite3.connect` nyní přijímá libovolný "
+":term:`objekt podobný cestě`, míste jen řetězce. (Zapsáno Anders Lorentsen v"
+" :issue:`31843`.)"
 
 #: ../../whatsnew/3.7.rst:1327 ../../whatsnew/3.7.rst:2071
 msgid "ssl"
-msgstr ""
+msgstr "ssl"
 
 #: ../../whatsnew/3.7.rst:1329
 msgid ""
@@ -2357,6 +2573,15 @@ msgid ""
 "<ssl.SSLContext.hostname_checks_common_name>`. (Contributed by Christian "
 "Heimes in :issue:`31399`.)"
 msgstr ""
+"Modul :mod:`ssl` nyní používá OpenSSL vstavěné API míste "
+":func:`!match_hostname` pro kontrolu jména hostitele nebo IP adresy. Hodnoty"
+" jsou validovány během TLS handshake. Jakákoli chyba validace certifikátu, "
+"včetně selhéní kontroly jména hostitele, nyní vyvolá "
+":exc:`~ssl.SSLCertVerificationError` a přeruší handshake se správným zprávou"
+" TLS Alert. Nová výjimka obsahuje další informace. Validace jména hostitele "
+"lze přizpůsobit pomocí :attr:`SSLContext.hostname_checks_common_name "
+"<ssl.SSLContext.hostname_checks_common_name>`. (Zapsáno Christian Heimes v "
+":issue:`31399`.)"
 
 #: ../../whatsnew/3.7.rst:1340
 msgid ""
@@ -2365,12 +2590,19 @@ msgid ""
 "longer supported (see :ref:`37-platform-support-removals` for more details)."
 " The ssl module is mostly compatible with LibreSSL 2.7.2 and newer."
 msgstr ""
+"Zlepšená kontrola jména hostitele vyžaduje implementaci *libssl* "
+"kompatibilní s OpenSSL 1.0.2 nebo 1.1. Podle toho již není podporován "
+"OpenSSL 0.9.8 a 1.0.1 (viz :ref:`37-platform-support-removals` pro další "
+"podrobnosti). Modul ssl je většinou kompatibilní s LibreSSL 2.7.2 a nově "
+"jším."
 
 #: ../../whatsnew/3.7.rst:1345
 msgid ""
 "The ``ssl`` module no longer sends IP addresses in SNI TLS extension. "
 "(Contributed by Christian Heimes in :issue:`32185`.)"
 msgstr ""
+"Modul ``ssl`` již neposílá IP adresy v rozpoř TLS SNI. (Zapsáno Christian "
+"Heimes v :issue:`32185`.)"
 
 #: ../../whatsnew/3.7.rst:1348
 msgid ""
@@ -2378,6 +2610,9 @@ msgid ""
 "``www*.example.org``. (Contributed by Mandeep Singh in :issue:`23033` and "
 "Christian Heimes in :issue:`31399`.)"
 msgstr ""
+":func:`!match_hostname` již nepodporuje částečné zástupné znaky jako "
+"``www*.example.org``. (Zapsáno Mandeep Singh v :issue:`23033` a Christian "
+"Heimes v :issue:`31399`.)"
 
 #: ../../whatsnew/3.7.rst:1353
 msgid ""
@@ -2387,6 +2622,11 @@ msgid ""
 " cipher suite selection can be configured at compile time. (Contributed by "
 "Christian Heimes in :issue:`31429`.)"
 msgstr ""
+"Výběr čífrovace výchozí sady modulu ``ssl`` nyní používá přístup černé "
+"listiny míste druhé kódované bílé listiny. Python již znovu nepovoluje "
+"šifry, které byly zablokovány bezpečnostními aktualizacemi OpenSSL. Výběr "
+"čífrovace výchozí sady lze konfigurovat v čase kompilace. (Zapsáno Christian"
+" Heimes v :issue:`31429`.)"
 
 #: ../../whatsnew/3.7.rst:1359
 msgid ""
@@ -2397,6 +2637,12 @@ msgid ""
 "mua.org\"``), rather than the U-label form (``\"pythön.org\"``).  "
 "(Contributed by Nathaniel J. Smith and Christian Heimes in :issue:`28414`.)"
 msgstr ""
+"Validace serverových certifikátů obsahujících internacionalizovaná jména "
+"domén (IDNs) je nyní podporována. Jako súčást této změny atribut "
+":attr:`SSLSocket.server_hostname <ssl.SSLSocket.server_hostname>` nyní "
+"ukládá očekávané jméno v tvaru A-label (``\"xn--pythn-mua.org\"``), míste v "
+"tvaru U-label (``\"pythön.org\"``). (Zapsáno Nathaniel J. Smith a Christian "
+"Heimes v :issue:`28414`.)"
 
 #: ../../whatsnew/3.7.rst:1366
 msgid ""
@@ -2408,6 +2654,12 @@ msgid ""
 ":issue:`32947`, :issue:`20995`, :issue:`29136`, :issue:`30622` and "
 ":issue:`33618`)"
 msgstr ""
+"Modul ``ssl`` má preliminární a experimentlní podporu pro TLS 1.3 a OpenSSL "
+"1.1.1. V čase vydání Pythonu 3.7.0 je OpenSSL 1.1.1 stále ve vývoji a TLS "
+"1.3 ještě nebyl finalizován. Handshake TLS 1.3 a protokol se chová mírně "
+"lišě než TLS 1.2 a starší, viz :ref:`ssl-tlsv1_3`. (Zapsáno Christian Heimes"
+" v :issue:`32947`, :issue:`20995`, :issue:`29136`, :issue:`30622` a "
+":issue:`33618`)"
 
 #: ../../whatsnew/3.7.rst:1374
 msgid ""
@@ -2417,6 +2669,11 @@ msgid ""
 ":meth:`~ssl.SSLContext.wrap_socket` and :meth:`~ssl.SSLContext.wrap_bio`. "
 "(Contributed by Christian Heimes in :issue:`32951`)"
 msgstr ""
+":class:`~ssl.SSLSocket` a :class:`~ssl.SSLObject` již nemají veřejný "
+"konstruktor. Přímá instanciace nebyla nikdy dokumentovaná a podporovaná "
+"funkcí. Instance musí být vytvořeny pomocí metod :class:`~ssl.SSLContext` "
+":meth:`~ssl.SSLContext.wrap_socket` a :meth:`~ssl.SSLContext.wrap_bio`. "
+"(Zapsáno Christian Heimes v :issue:`32951`)"
 
 #: ../../whatsnew/3.7.rst:1380
 msgid ""
@@ -2427,6 +2684,12 @@ msgid ""
 "several new flags, such as :data:`~ssl.HAS_TLSv1_1`. (Contributed by "
 "Christian Heimes in :issue:`32609`.)"
 msgstr ""
+"OpenSSL 1.1 API pro nastavení minimální a maximální verze protokolu TLS jsou"
+" dostupné jako :attr:`SSLContext.minimum_version "
+"<ssl.SSLContext.minimum_version>` a :attr:`SSLContext.maximum_version "
+"<ssl.SSLContext.maximum_version>`. Podporované protokoly jsou označeny "
+"několika novými příznaký, jako je :data:`~ssl.HAS_TLSv1_1`. (Zapsáno "
+"Christian Heimes v :issue:`32609`.)"
 
 #: ../../whatsnew/3.7.rst:1387
 msgid ""
@@ -2434,10 +2697,13 @@ msgid ""
 ":meth:`ssl.SSLSocket.verify_client_post_handshake` to initiate TLS 1.3 post-"
 "handshake authentication. (Contributed by Christian Heimes in :gh:`78851`.)"
 msgstr ""
+"Přidán :attr:`ssl.SSLContext.post_handshake_auth` k povoleni a "
+":meth:`ssl.SSLSocket.verify_client_post_handshake` k iniciování autentizace "
+"po handshake TLS 1.3. (Zapsáno Christian Heimes v :gh:`78851`.)"
 
 #: ../../whatsnew/3.7.rst:1393
 msgid "string"
-msgstr ""
+msgstr "string"
 
 #: ../../whatsnew/3.7.rst:1395
 msgid ""
@@ -2445,10 +2711,13 @@ msgid ""
 "expression pattern for braced placeholders and non-braced placeholders "
 "separately.  (Contributed by Barry Warsaw in :issue:`1198569`.)"
 msgstr ""
+":class:`string.Template` nyní umožní volitelné změny regulární výraz vzoru "
+"pro zložené zástupné značky a ne-složené zástupné značky samostatně. "
+"(Zapsáno Barry Warsaw v :issue:`1198569`.)"
 
 #: ../../whatsnew/3.7.rst:1401
 msgid "subprocess"
-msgstr ""
+msgstr "subprocess"
 
 #: ../../whatsnew/3.7.rst:1403
 msgid ""
@@ -2457,6 +2726,10 @@ msgid ""
 "equivalent to passing :const:`subprocess.PIPE` as *stdout* and *stderr* "
 "arguments. (Contributed by Bo Bayles in :issue:`32102`.)"
 msgstr ""
+"Funkce :func:`subprocess.run` přijímá nový parametr klíčového slova "
+"*capture_output*. Pokud je pravdivé, budou zachyčeny stdout a stderr. To je "
+"ekvivalentní předání :const:`subprocess.PIPE` jako argumenty *stdout* a "
+"*stderr*. (Zapsáno Bo Bayles v :issue:`32102`.)"
 
 #: ../../whatsnew/3.7.rst:1409
 msgid ""
@@ -2464,6 +2737,9 @@ msgid ""
 "constructor now accept the *text* keyword argument as an alias to "
 "*universal_newlines*. (Contributed by Andrew Clegg in :issue:`31756`.)"
 msgstr ""
+"Funkce ``subprocess.run`` a konstruktor :class:`subprocess.Popen` nyní "
+"přijíjmají parametr klíčového slova *text* jako alias pro "
+"*universal_newlines*. (Zapsáno Andrew Clegg v :issue:`31756`.)"
 
 #: ../../whatsnew/3.7.rst:1414
 msgid ""
@@ -2474,6 +2750,11 @@ msgid ""
 "``True`` on all supported platforms. (Contributed by Segev Finer in "
 ":issue:`19764`.)"
 msgstr ""
+"Na Windows se výchozí hodnota *close_fds* změnila z ``False`` na ``True`` "
+"při přesměrování standardních uchačů. Nyní je možné nastavit *close_fds* na "
+"true při přesměrování standardních uchačů. Viz :class:`subprocess.Popen`. To"
+" znamená, že *close_fds* se nyní ve výchozm nástupci nastaví na ``True`` na "
+"všech podporovaných platformách. (Zapsáno Segev Finer v :issue:`19764`.)"
 
 #: ../../whatsnew/3.7.rst:1421
 msgid ""
@@ -2484,22 +2765,31 @@ msgid ""
 "continuing the handling of the ``KeyboardInterrupt`` exception. (Contributed"
 " by Gregory P. Smith in :issue:`25942`.)"
 msgstr ""
+"Modul subprocess je nyní lépe chová při zpracování :exc:`KeyboardInterrupt` "
+"během :func:`subprocess.call`, :func:`subprocess.run` nebo ve spravči "
+"kontextu :class:`~subprocess.Popen`. Nyní čeká chvíli na výstup dítěte, před"
+" pokračováním zpracování výjimky ``KeyboardInterrupt``. (Zapsáno Gregory P. "
+"Smith v :issue:`25942`.)"
 
 #: ../../whatsnew/3.7.rst:1431 ../../whatsnew/3.7.rst:2087
 msgid "sys"
-msgstr ""
+msgstr "sys"
 
 #: ../../whatsnew/3.7.rst:1433
 msgid ""
 "The new :func:`sys.breakpointhook` hook function is called by the built-in "
 ":func:`breakpoint`. (Contributed by Barry Warsaw in :issue:`31353`.)"
 msgstr ""
+"Nová funkce háčku :func:`sys.breakpointhook` je volána vestavěnou funkčí "
+":func:`breakpoint`. (Zapsáno Barry Warsaw v :issue:`31353`.)"
 
 #: ../../whatsnew/3.7.rst:1437
 msgid ""
 "On Android, the new :func:`sys.getandroidapilevel` returns the build-time "
 "Android API version. (Contributed by Victor Stinner in :issue:`28740`.)"
 msgstr ""
+"Na Androidu nová funkce :func:`sys.getandroidapilevel` vrátí verzi Android "
+"API v čase sestavění. (Zapsáno Victor Stinner v :issue:`28740`.)"
 
 #: ../../whatsnew/3.7.rst:1441
 msgid ""
@@ -2510,20 +2800,28 @@ msgid ""
 ":func:`!sys.set_coroutine_wrapper`. (Contributed by Nathaniel J. Smith in "
 ":issue:`32591`.)"
 msgstr ""
+"Nová funkce :func:`sys.get_coroutine_origin_tracking_depth` vrátí aktuální "
+"hloubku sledování původu korutiny, podle nastavení nové funkcí "
+":func:`sys.set_coroutine_origin_tracking_depth`. :mod:`asyncio` byla "
+"konvertována na použití tohoto nového API míste zastaralané "
+":func:`!sys.set_coroutine_wrapper`. (Zapsáno Nathaniel J. Smith v "
+":issue:`32591`.)"
 
 #: ../../whatsnew/3.7.rst:1450
 msgid "time"
-msgstr ""
+msgstr "time"
 
 #: ../../whatsnew/3.7.rst:1452
 msgid ""
 ":pep:`564` adds six new functions with nanosecond resolution to the "
 ":mod:`time` module:"
 msgstr ""
+":pep:`564` přidává šest nových funkcí s rozlišením nanosekundy do modulu "
+":mod:`time`:"
 
 #: ../../whatsnew/3.7.rst:1462
 msgid "New clock identifiers have been added:"
-msgstr ""
+msgstr "Byla přidána nová identifikátora hodin:"
 
 #: ../../whatsnew/3.7.rst:1464
 msgid ""
@@ -2531,12 +2829,17 @@ msgid ""
 ":const:`time.CLOCK_MONOTONIC`, except it also includes any time that the "
 "system is suspended."
 msgstr ""
+":const:`time.CLOCK_BOOTTIME` (Linux): Identické "
+":const:`time.CLOCK_MONOTONIC`, s výjimkou toho, že obsahuje také jakýkoli "
+"čas, kdy je systém zastařen."
 
 #: ../../whatsnew/3.7.rst:1467
 msgid ""
 ":const:`time.CLOCK_PROF` (FreeBSD, NetBSD and OpenBSD): High-resolution per-"
 "process CPU timer."
 msgstr ""
+":const:`time.CLOCK_PROF` (FreeBSD, NetBSD a OpenBSD): Vysokorozlišení pro-"
+"proces CPU timer."
 
 #: ../../whatsnew/3.7.rst:1469
 msgid ""
@@ -2544,6 +2847,8 @@ msgid ""
 "the time the system has been running and not suspended, providing accurate "
 "uptime measurement."
 msgstr ""
+":const:`time.CLOCK_UPTIME` (FreeBSD, OpenBSD): Čas, jehož absolutní hodnota "
+"je čas, kdy systém běží a není zastařen, poskytující přesné měření uptime."
 
 #: ../../whatsnew/3.7.rst:1473
 msgid ""
@@ -2551,26 +2856,33 @@ msgid ""
 "can be used to get per-thread CPU time measurements. (Contributed by Antoine"
 " Pitrou in :issue:`32025`.)"
 msgstr ""
+"Nové funkce :func:`time.thread_time` a :func:`time.thread_time_ns` lze "
+"použít k získání měření času CPU za vlákno. (Zapsáno Antoine Pitrou v "
+":issue:`32025`.)"
 
 #: ../../whatsnew/3.7.rst:1477
 msgid ""
 "The new :func:`time.pthread_getcpuclockid` function returns the clock ID of "
 "the thread-specific CPU-time clock."
 msgstr ""
+"Nová funkce :func:`time.pthread_getcpuclockid` vrátí ID hodin hodin "
+"specifického času CPU vlákna."
 
 #: ../../whatsnew/3.7.rst:1482
 msgid "tkinter"
-msgstr ""
+msgstr "tkinter"
 
 #: ../../whatsnew/3.7.rst:1484
 msgid ""
 "The new :class:`tkinter.ttk.Spinbox` class is now available. (Contributed by"
 " Alan Moore in :issue:`32585`.)"
 msgstr ""
+"Nová třída :class:`tkinter.ttk.Spinbox` je nyní dostupná. (Zapsáno Alan "
+"Moore v :issue:`32585`.)"
 
 #: ../../whatsnew/3.7.rst:1489
 msgid "tracemalloc"
-msgstr ""
+msgstr "tracemalloc"
 
 #: ../../whatsnew/3.7.rst:1491
 msgid ""
@@ -2581,10 +2893,16 @@ msgid ""
 "the new *most_recent_first* argument to ``Traceback.format()``. (Contributed"
 " by Jesse Bakker in :issue:`32121`.)"
 msgstr ""
+":class:`tracemalloc.Traceback` se chová více jako obyčejné tracebacky, "
+"řadící rámy od nejstaršího k nejnovějšímu. :meth:`Traceback.format() "
+"<tracemalloc.Traceback.format>` nyní přijímá negativní *limit*, zkracující "
+"výsledek na ``abs(limit)`` nejstarších rámů. Chcete-li záskat staré chování,"
+" použíte nový argument *most_recent_first* pro ``Traceback.format()``. "
+"(Zapsáno Jesse Bakker v :issue:`32121`.)"
 
 #: ../../whatsnew/3.7.rst:1501
 msgid "types"
-msgstr ""
+msgstr "types"
 
 #: ../../whatsnew/3.7.rst:1503
 msgid ""
@@ -2594,6 +2912,11 @@ msgid ""
 "(Contributed by Manuel Krebber and Guido van Rossum in :issue:`29377`, and "
 "Serhiy Storchaka in :issue:`32265`.)"
 msgstr ""
+"Nové třídy :class:`~types.WrapperDescriptorType`, "
+":class:`~types.MethodWrapperType`, :class:`~types.MethodDescriptorType` a "
+":class:`~types.ClassMethodDescriptorType` jsou nyní dostupné. (Zapsáno "
+"Manuel Krebber a Guido van Rossum v :issue:`29377` a Serhiy Storchaka v "
+":issue:`32265`.)"
 
 #: ../../whatsnew/3.7.rst:1509
 msgid ""
@@ -2601,10 +2924,12 @@ msgid ""
 "dynamically as specified by :pep:`560`. (Contributed by Ivan Levkivskyi in "
 ":issue:`32717`.)"
 msgstr ""
+"Nová funkce :func:`types.resolve_bases` dynamicky řeší zápisy MRO tak, jak "
+"je určeno :pep:`560`. (Zapsáno Ivan Levkivskyi v :issue:`32717`.)"
 
 #: ../../whatsnew/3.7.rst:1515
 msgid "unicodedata"
-msgstr ""
+msgstr "unicodedata"
 
 #: ../../whatsnew/3.7.rst:1517
 msgid ""
@@ -2612,10 +2937,13 @@ msgid ""
 "11 <https://www.unicode.org/versions/Unicode11.0.0/>`_. (Contributed by "
 "Benjamin Peterson.)"
 msgstr ""
+"Interní databáze :mod:`unicodedata` byla upgradudova na použití `Unicode 11 "
+"<https://www.unicode.org/versions/Unicode11.0.0/>`_. (Zapsáno Benjamin "
+"Peterson.)"
 
 #: ../../whatsnew/3.7.rst:1523
 msgid "unittest"
-msgstr ""
+msgstr "unittest"
 
 #: ../../whatsnew/3.7.rst:1525
 msgid ""
@@ -2626,10 +2954,15 @@ msgid ""
 "``bar_tests.FooTest.test_something``. (Contributed by Jonas Haag in "
 ":issue:`32071`.)"
 msgstr ""
+"Nová volba příkazového řádku ``-k`` umožní filtraci testů podle podstřinec "
+"jména nebo vzoru příbliného shells. Například ``python -m unittest -k foo`` "
+"spuště ``foo_tests.SomeTest.test_something``, "
+"``bar_tests.SomeTest.test_foo``, ale ne "
+"``bar_tests.FooTest.test_something``. (Zapsáno Jonas Haag v :issue:`32071`.)"
 
 #: ../../whatsnew/3.7.rst:1534
 msgid "unittest.mock"
-msgstr ""
+msgstr "unittest.mock"
 
 #: ../../whatsnew/3.7.rst:1536
 msgid ""
@@ -2637,6 +2970,9 @@ msgid ""
 "when they are :mod:`copied <copy>` or :mod:`pickled <pickle>`. (Contributed "
 "by Serhiy Storchaka in :issue:`20804`.)"
 msgstr ""
+"Atributy :const:`~unittest.mock.sentinel` nyní uchovávají svou identitu, "
+"když jsou :mod:`kopírovány <copy>` nebo :mod:`picklovány <pickle>`. (Zapsáno"
+" Serhiy Storchaka v :issue:`20804`.)"
 
 #: ../../whatsnew/3.7.rst:1540
 msgid ""
@@ -2645,10 +2981,14 @@ msgid ""
 " of attribute mocks.  The seal is applied recursively to all attributes that"
 " are themselves mocks. (Contributed by Mario Corchero in :issue:`30541`.)"
 msgstr ""
+"Nová funkce :func:`~unittest.mock.seal` umožní těsnění "
+":class:`~unittest.mock.Mock` instancí, což zakáže další vytváření mášinu "
+"atributů. Těsnění je rekurzivně aplikováno na všechny atributy, které jsou "
+"sámy o sobě mockuji. (Zapsáno Mario Corchero v :issue:`30541`.)"
 
 #: ../../whatsnew/3.7.rst:1548
 msgid "urllib.parse"
-msgstr ""
+msgstr "urllib.parse"
 
 #: ../../whatsnew/3.7.rst:1550
 msgid ""
@@ -2656,10 +2996,13 @@ msgid ""
 " adding ``~`` to the set of characters that are never quoted by default. "
 "(Contributed by Christian Theune and Ratnadeep Debnath in :issue:`16285`.)"
 msgstr ""
+":func:`urllib.parse.quote` byla aktualizována z :rfc:`2396` na :rfc:`3986`, "
+"přidává ``~`` do sady znaků, které jsou nikdy ve výchozm nástupci citovány. "
+"(Zapsáno Christian Theune a Ratnadeep Debnath v :issue:`16285`.)"
 
 #: ../../whatsnew/3.7.rst:1556
 msgid "uu"
-msgstr ""
+msgstr "uu"
 
 #: ../../whatsnew/3.7.rst:1558
 msgid ""
@@ -2667,10 +3010,13 @@ msgid ""
 "argument.  When it's true, zeros are represented by ``'`'`` instead of "
 "spaces.  (Contributed by Xiang Zhang in :issue:`30103`.)"
 msgstr ""
+"Funkce :func:`!uu.encode` nyní přijímá volitelný parametr klíčového slova "
+"*backtick*. Pokud je pravdivé, nuly jsou reprezentovány ``'`'`` míste mezer."
+" (Zapsáno Xiang Zhang v :issue:`30103`.)"
 
 #: ../../whatsnew/3.7.rst:1564
 msgid "uuid"
-msgstr ""
+msgstr "uuid"
 
 #: ../../whatsnew/3.7.rst:1566
 msgid ""
@@ -2679,6 +3025,9 @@ msgid ""
 "with a multiprocessing-safe method. (Contributed by Barry Warsaw in "
 ":issue:`22807`.)"
 msgstr ""
+"Nový atribut :attr:`UUID.is_safe <uuid.UUID.is_safe>` relají informace z "
+"platformy o tom, zda jsou vygenerované UUID generovány bezpečnoumetodou "
+"multiprocessingu. (Zapsáno Barry Warsaw v :issue:`22807`.)"
 
 #: ../../whatsnew/3.7.rst:1571
 msgid ""
@@ -2688,15 +3037,20 @@ msgid ""
 "locally administered MAC addresses are available, the first such one found "
 "is returned. (Contributed by Barry Warsaw in :issue:`32107`.)"
 msgstr ""
+":func:`uuid.getnode` nyní preferuje univerzálně spravované MAC adresy oproti"
+" místně spravovaným MAC adresám. To poskytuje lepší záruku globální "
+"jedinečnosti UUID vrácených :func:`uuid.uuid1`. Pokud jsou dostupné pouze "
+"místně spravované MAC adresy, bude vrácena první tak nalezená. (Zapsáno "
+"Barry Warsaw v :issue:`32107`.)"
 
 #: ../../whatsnew/3.7.rst:1580
 msgid "warnings"
-msgstr ""
+msgstr "warnings"
 
 #: ../../whatsnew/3.7.rst:1582
 msgid ""
 "The initialization of the default warnings filters has changed as follows:"
-msgstr ""
+msgstr "Inicializace výchozích filtrů varování se změnila takto:"
 
 #: ../../whatsnew/3.7.rst:1584
 msgid ""
@@ -2704,47 +3058,59 @@ msgid ""
 "and the new CPython-specific :option:`-X` ``dev`` option) are always passed "
 "to the warnings machinery via the :data:`sys.warnoptions` attribute."
 msgstr ""
+"Varování povolena prostřednictvím voleb příkazového řádku (četně těch pro "
+":option:`-b` a nové volby specifické pro CPython :option:`-X` ``dev``) jsou "
+"vždy předány stroji varování prostřednictvím atributu "
+":data:`sys.warnoptions`."
 
 #: ../../whatsnew/3.7.rst:1588
 msgid ""
 "warnings filters enabled via the command line or the environment now have "
 "the following order of precedence:"
 msgstr ""
+"Filtry varování povoleny prostřednictvím příkazového řádku nebo prostředí "
+"nyní mají následující pořadí priority:"
 
 #: ../../whatsnew/3.7.rst:1591
 msgid "the ``BytesWarning`` filter for :option:`-b` (or ``-bb``)"
-msgstr ""
+msgstr "filtr ``BytesWarning`` pro :option:`-b` (nebo ``-bb``)"
 
 #: ../../whatsnew/3.7.rst:1592
 msgid "any filters specified with the :option:`-W` option"
-msgstr ""
+msgstr "jakékoli filtry určené volbou :option:`-W`"
 
 #: ../../whatsnew/3.7.rst:1593
 msgid ""
 "any filters specified with the :envvar:`PYTHONWARNINGS` environment variable"
-msgstr ""
+msgstr "jakékoli filtry určené promněnou prostředí :envvar:`PYTHONWARNINGS`"
 
 #: ../../whatsnew/3.7.rst:1595
 msgid ""
 "any other CPython specific filters (e.g. the ``default`` filter added for "
 "the new ``-X dev`` mode)"
 msgstr ""
+"jakékoli další specifické filtry CPython (např. filtr ``default`` přidaný "
+"pro nový mód ``-X dev``)"
 
 #: ../../whatsnew/3.7.rst:1597
 msgid "any implicit filters defined directly by the warnings machinery"
-msgstr ""
+msgstr "jakékoli implicitní filtry definovány přímo strojem varování"
 
 #: ../../whatsnew/3.7.rst:1599
 msgid ""
 "in :ref:`CPython debug builds <debug-build>`, all warnings are now displayed"
 " by default (the implicit filter list is empty)"
 msgstr ""
+"v :ref:`CPython debug sestaveních <debug-build>` jsou nyní ve výchozm "
+"nástupci zobrazena všechna varování (seznam implicitních filtrů je prázdný)"
 
 #: ../../whatsnew/3.7.rst:1602
 msgid ""
 "(Contributed by Nick Coghlan and Victor Stinner in :issue:`20361`, "
 ":issue:`32043`, and :issue:`32230`.)"
 msgstr ""
+"(Zapsáno Nick Coghlan a Victor Stinner v :issue:`20361`, :issue:`32043` a "
+":issue:`32230`.)"
 
 #: ../../whatsnew/3.7.rst:1605
 msgid ""
@@ -2752,10 +3118,14 @@ msgid ""
 "and at the interactive prompt.  See :ref:`whatsnew37-pep565` for details. "
 "(Contributed by Nick Coghlan in :issue:`31975`.)"
 msgstr ""
+"Varování o zastaraló funkcích jsou opět zobrazena ve výchozm nástupci v "
+"jednoduchých skriptech a v interaktivním promptu. Viz "
+":ref:`whatsnew37-pep565` pro podrobnosti. (Zapsáno Nick Coghlan v "
+":issue:`31975`.)"
 
 #: ../../whatsnew/3.7.rst:1611
 msgid "xml"
-msgstr ""
+msgstr "xml"
 
 #: ../../whatsnew/3.7.rst:1613
 msgid ""
@@ -2763,10 +3133,13 @@ msgid ""
 ":mod:`xml.dom.minidom` and :mod:`xml.sax` modules no longer process external"
 " entities by default. (Contributed by Christian Heimes in :gh:`61441`.)"
 msgstr ""
+"Jako zmirnění proti DTD a záskání externích entit již moduly "
+":mod:`xml.dom.minidom` a :mod:`xml.sax` ve výchozm nástupci nezpracovávají "
+"externí entity. (Zapsáno Christian Heimes v :gh:`61441`.)"
 
 #: ../../whatsnew/3.7.rst:1620
 msgid "xml.etree"
-msgstr ""
+msgstr "xml.etree"
 
 #: ../../whatsnew/3.7.rst:1622
 msgid ""
@@ -2775,20 +3148,26 @@ msgid ""
 "not only text in children.  Predicates also allow adding spaces for better "
 "readability.  (Contributed by Stefan Behnel in :issue:`31648`.)"
 msgstr ""
+"Predikáty :ref:`ElementPath <elementtree-xpath>` v metodách :meth:`!find` "
+"nyní mohou porovnávat text aktuálního uzlu s ``[. = \"text\"]``, ne jen text"
+" dętí. Predikáty také umožňují přidávání mezery pro lepší čitelnost. "
+"(Zapsáno Stefan Behnel v :issue:`31648`.)"
 
 #: ../../whatsnew/3.7.rst:1629
 msgid "xmlrpc.server"
-msgstr ""
+msgstr "xmlrpc.server"
 
 #: ../../whatsnew/3.7.rst:1631
 msgid ""
 ":meth:`!SimpleXMLRPCDispatcher.register_function` can now be used as a "
 "decorator.  (Contributed by Xiang Zhang in :issue:`7769`.)"
 msgstr ""
+":meth:`!SimpleXMLRPCDispatcher.register_function` může nyní být používana "
+"jako dekorátor. (Zapsáno Xiang Zhang v :issue:`7769`.)"
 
 #: ../../whatsnew/3.7.rst:1637
 msgid "zipapp"
-msgstr ""
+msgstr "zipapp"
 
 #: ../../whatsnew/3.7.rst:1639
 msgid ""
@@ -2796,6 +3175,9 @@ msgid ""
 "argument to allow the user to select which files should be included in the "
 "archive.  (Contributed by Irmen de Jong in :issue:`31072`.)"
 msgstr ""
+"Funkce :func:`~zipapp.create_archive` nyní přijímá volitelný argument "
+"*filter*, aby uživatel mohl vybrat, které soubory by měly být zahrnuty v "
+"archivu. (Zapsáno Irmen de Jong v :issue:`31072`.)"
 
 #: ../../whatsnew/3.7.rst:1643
 msgid ""
@@ -2804,16 +3186,22 @@ msgid ""
 "``--compress`` has also been added to support compression. (Contributed by "
 "Zhiming Wang in :issue:`31638`.)"
 msgstr ""
+"Funkce :func:`~zipapp.create_archive` nyní přijímá volitelný argument "
+"*compressed* pro generaró komprimovaného archivu. Volba příkazového řádku "
+"``--compress`` byla také přidána pro podporu komprese. (Zapsáno Zhiming Wang"
+" v :issue:`31638`.)"
 
 #: ../../whatsnew/3.7.rst:1650
 msgid "zipfile"
-msgstr ""
+msgstr "zipfile"
 
 #: ../../whatsnew/3.7.rst:1652
 msgid ""
 ":class:`~zipfile.ZipFile` now accepts the new *compresslevel* parameter to "
 "control the compression level. (Contributed by Bo Bayles in :issue:`21417`.)"
 msgstr ""
+":class:`~zipfile.ZipFile` nyní přijímá nový parametr *compresslevel* pro "
+"kontrolu úrovně komprese. (Zapsáno Bo Bayles v :issue:`21417`.)"
 
 #: ../../whatsnew/3.7.rst:1656
 msgid ""
@@ -2821,10 +3209,12 @@ msgid ""
 "alphabetical order. (Contributed by Bernhard M. Wiedemann in "
 ":issue:`30693`.)"
 msgstr ""
+"Podsložky v archivech vytvořených ``ZipFile`` jsou nyní uloženy v "
+"alfabetickém pořadí. (Zapsáno Bernhard M. Wiedemann v :issue:`30693`.)"
 
 #: ../../whatsnew/3.7.rst:1662
 msgid "C API Changes"
-msgstr ""
+msgstr "Změny C API"
 
 #: ../../whatsnew/3.7.rst:1664
 msgid ""
@@ -2833,12 +3223,17 @@ msgid ""
 "api` for a complete reference. (Contributed by Masayuki Yamamoto in "
 ":issue:`25658`.)"
 msgstr ""
+"Bylo implementováno nové API pro lokalnoé úložování vláken. Viz "
+":ref:`whatsnew37-pep539` pro přehled a :ref:`thread-specific-storage-api` "
+"pro úplný odkaz. (Zapsáno Masayuki Yamamoto v :issue:`25658`.)"
 
 #: ../../whatsnew/3.7.rst:1669
 msgid ""
 "The new :ref:`context variables <whatsnew37-pep567>` functionality exposes a"
 " number of :ref:`new C APIs <contextvarsobjects>`."
 msgstr ""
+"Nová funkce :ref:`promnné kontextu <whatsnew37-pep567>` vyzkúší několik "
+":ref:`nových C API <contextvarsobjects>`."
 
 #: ../../whatsnew/3.7.rst:1672
 msgid ""
@@ -2846,18 +3241,24 @@ msgid ""
 "imported module with the given name. (Contributed by Eric Snow in "
 ":issue:`28411`.)"
 msgstr ""
+"Nová funkce :c:func:`PyImport_GetModule` vrátí dříve importovaný modul s "
+"daným názvem. (Zapsáno Eric Snow v :issue:`28411`.)"
 
 #: ../../whatsnew/3.7.rst:1676
 msgid ""
 "The new :c:macro:`Py_RETURN_RICHCOMPARE` macro eases writing rich comparison"
 " functions. (Contributed by Petr Victorin in :issue:`23699`.)"
 msgstr ""
+"Nové makro :c:macro:`Py_RETURN_RICHCOMPARE` usnadnit psanost funkcí "
+"zavřeného porovnání. (Zapsáno Petr Victorin v :issue:`23699`.)"
 
 #: ../../whatsnew/3.7.rst:1680
 msgid ""
 "The new :c:macro:`Py_UNREACHABLE` macro can be used to mark unreachable code"
 " paths. (Contributed by Barry Warsaw in :issue:`31338`.)"
 msgstr ""
+"Nové makro :c:macro:`Py_UNREACHABLE` lze použít k označení nedosažitelných "
+"cest kódu. (Zapsáno Barry Warsaw v :issue:`31338`.)"
 
 #: ../../whatsnew/3.7.rst:1684
 msgid ""
@@ -2865,6 +3266,9 @@ msgid ""
 ":c:func:`PyTraceMalloc_Track` and :c:func:`PyTraceMalloc_Untrack` functions."
 " (Contributed by Victor Stinner in :issue:`30054`.)"
 msgstr ""
+"Modul :mod:`tracemalloc` nyní vyzkúší C API prostřednictvím nových funkcí "
+":c:func:`PyTraceMalloc_Track` a :c:func:`PyTraceMalloc_Untrack`. (Zapsáno "
+"Victor Stinner v :issue:`30054`.)"
 
 #: ../../whatsnew/3.7.rst:1689
 msgid ""
@@ -2873,6 +3277,9 @@ msgid ""
 "to trace module imports. (Contributed by Christian Heimes in "
 ":issue:`31574`.)"
 msgstr ""
+"Nové statické značky :ref:`import__find__load__start <static-markers>` a "
+":ref:`import__find__load__done <static-markers>` lze použít ke sledování "
+"importů modulů. (Zapsáno Christian Heimes v :issue:`31574`.)"
 
 #: ../../whatsnew/3.7.rst:1694
 msgid ""
@@ -2882,6 +3289,11 @@ msgid ""
 ":c:struct:`!wrapperbase` are now of type ``const char *`` rather of ``char "
 "*``.  (Contributed by Serhiy Storchaka in :issue:`28761`.)"
 msgstr ""
+"Pole :c:member:`!name` a :c:member:`!doc` struktur :c:type:`PyMemberDef`, "
+":c:type:`PyGetSetDef`, :c:type:`PyStructSequence_Field`, "
+":c:type:`PyStructSequence_Desc` a :c:struct:`!wrapperbase` jsou nyní typu "
+"``const char *`` míste ``char *``. (Zapsáno Serhiy Storchaka v "
+":issue:`28761`.)"
 
 #: ../../whatsnew/3.7.rst:1700
 msgid ""
@@ -2889,6 +3301,9 @@ msgid ""
 ":c:func:`PyUnicode_AsUTF8` is now of type ``const char *`` rather of ``char "
 "*``. (Contributed by Serhiy Storchaka in :issue:`28769`.)"
 msgstr ""
+"Výsledek :c:func:`PyUnicode_AsUTF8AndSize` a :c:func:`PyUnicode_AsUTF8` je "
+"nyní typu ``const char *`` míste ``char *``. (Zapsáno Serhiy Storchaka v "
+":issue:`28769`.)"
 
 #: ../../whatsnew/3.7.rst:1704
 msgid ""
@@ -2896,6 +3311,9 @@ msgid ""
 ":c:func:`PyMapping_Items` is now always a list, rather than a list or a "
 "tuple. (Contributed by Oren Milman in :issue:`28280`.)"
 msgstr ""
+"Výsledek :c:func:`PyMapping_Keys`, :c:func:`PyMapping_Values` a "
+":c:func:`PyMapping_Items` je nyní vždy seznam, míste seznamu nebo n-tice. "
+"(Zapsáno Oren Milman v :issue:`28280`.)"
 
 #: ../../whatsnew/3.7.rst:1708
 msgid ""
@@ -2903,6 +3321,8 @@ msgid ""
 ":c:func:`PySlice_AdjustIndices`. (Contributed by Serhiy Storchaka in "
 ":issue:`27867`.)"
 msgstr ""
+"Přidány funkce :c:func:`PySlice_Unpack` a :c:func:`PySlice_AdjustIndices`. "
+"(Zapsáno Serhiy Storchaka v :issue:`27867`.)"
 
 #: ../../whatsnew/3.7.rst:1711
 msgid ""
@@ -2911,6 +3331,9 @@ msgid ""
 ":c:func:`PyOS_AfterFork_Child`.  (Contributed by Antoine Pitrou in "
 ":issue:`16500`.)"
 msgstr ""
+":c:func:`PyOS_AfterFork` je zastarala ve prospch nových funkcí "
+":c:func:`PyOS_BeforeFork`, :c:func:`PyOS_AfterFork_Parent` a "
+":c:func:`PyOS_AfterFork_Child`. (Zapsáno Antoine Pitrou v :issue:`16500`.)"
 
 #: ../../whatsnew/3.7.rst:1716
 msgid ""
@@ -2919,6 +3342,10 @@ msgid ""
 "during finalization of the interpreter. Contributed by Xavier de Gaye in "
 ":issue:`22898` and :issue:`30697`."
 msgstr ""
+"Singleton ``PyExc_RecursionErrorInst``, který byl súčástí veřejného API, byl"
+" odebrán, protože jeho člené nikdy čištění mohou způsobit segfault během "
+"finalizace interpreteru. Zapsáno Xavier de Gaye v :issue:`22898` a "
+":issue:`30697`."
 
 #: ../../whatsnew/3.7.rst:1721
 msgid ""
@@ -2927,6 +3354,10 @@ msgid ""
 "and access to the UTC singleton with :c:data:`PyDateTime_TimeZone_UTC`. "
 "Contributed by Paul Ganssle in :issue:`10381`."
 msgstr ""
+"Přidána C API podpora pro časové zóny s konstruktory časových zón "
+":c:func:`PyTimeZone_FromOffset` a :c:func:`PyTimeZone_FromOffsetAndName` a "
+"přístup k singletonemu UTC pomocí :c:data:`PyDateTime_TimeZone_UTC`. Zapsáno"
+" Paul Ganssle v :issue:`10381`."
 
 #: ../../whatsnew/3.7.rst:1726
 msgid ""
@@ -2935,6 +3366,10 @@ msgid ""
 ":c:func:`PyThreadState_SetAsyncExc` changed from :c:expr:`long` to "
 ":c:expr:`unsigned long`. (Contributed by Serhiy Storchaka in :issue:`6532`.)"
 msgstr ""
+"Typ výsledků :c:func:`!PyThread_start_new_thread` a "
+":c:func:`!PyThread_get_thread_ident` a parametr *id* "
+":c:func:`PyThreadState_SetAsyncExc` se změníly z :c:expr:`long` na "
+":c:expr:`unsigned long`. (Zapsáno Serhiy Storchaka v :issue:`6532`.)"
 
 #: ../../whatsnew/3.7.rst:1732
 msgid ""
@@ -2942,6 +3377,9 @@ msgid ""
 "second argument is ``NULL`` and the :c:expr:`wchar_t*` string contains null "
 "characters.  (Contributed by Serhiy Storchaka in :issue:`30708`.)"
 msgstr ""
+":c:func:`PyUnicode_AsWideCharString` nyní vyvolá :exc:`ValueError`, pokud je"
+" druhý argument ``NULL`` a řetězec :c:expr:`wchar_t*` obsahuje znaky null. "
+"(Zapsáno Serhiy Storchaka v :issue:`30708`.)"
 
 #: ../../whatsnew/3.7.rst:1736
 msgid ""
@@ -2953,12 +3391,20 @@ msgid ""
 "and the :ref:`pre-init-safe` section in the C API documentation for more "
 "details."
 msgstr ""
+"Změny v sekvenci spuštění a správě dynamických pametċních alokitórů "
+"znamenají, že dlouho dokumentovaná požadavek volat :c:func:`Py_Initialize` "
+"před voláním většiny funkcí C API je nyní vícè úlohu a selhání jeho "
+"dodržování může vést k segfault v aplikacích vnořených. Viz sekce "
+":ref:`porting-to-python-37` v tomto dokumentu a sekce :ref:`pre-init-safe` v"
+" dokumentaci C API pro další podrobnosti."
 
 #: ../../whatsnew/3.7.rst:1744
 msgid ""
 "The new :c:func:`PyInterpreterState_GetID` returns the unique ID for a given"
 " interpreter. (Contributed by Eric Snow in :issue:`29102`.)"
 msgstr ""
+"Nová funkce :c:func:`PyInterpreterState_GetID` vrátí jedinečné ID pro daný "
+"interpret. (Zapsáno Eric Snow v :issue:`29102`.)"
 
 #: ../../whatsnew/3.7.rst:1748
 msgid ""
@@ -2966,6 +3412,9 @@ msgid ""
 "encoding when the :ref:`UTF-8 mode <whatsnew37-pep540>` is enabled. "
 "(Contributed by Victor Stinner in :issue:`29240`.)"
 msgstr ""
+":c:func:`Py_DecodeLocale`, :c:func:`Py_EncodeLocale` nyní používají kódování"
+" UTF-8, pokud je povolen :ref:`UTF-8 mód <whatsnew37-pep540>`. (Zapsáno "
+"Victor Stinner v :issue:`29240`.)"
 
 #: ../../whatsnew/3.7.rst:1752
 msgid ""
@@ -2973,6 +3422,9 @@ msgid ""
 " now use the current locale encoding for ``surrogateescape`` error handler. "
 "(Contributed by Victor Stinner in :issue:`29240`.)"
 msgstr ""
+":c:func:`PyUnicode_DecodeLocaleAndSize` a :c:func:`PyUnicode_EncodeLocale` "
+"nyní používají aktuální kódování locale pro ``surrogateescape`` error "
+"handler. (Zapsáno Victor Stinner v :issue:`29240`.)"
 
 #: ../../whatsnew/3.7.rst:1756
 msgid ""
@@ -2980,10 +3432,13 @@ msgid ""
 "adjusted to behave like string slices. (Contributed by Xiang Zhang in "
 ":issue:`28822`.)"
 msgstr ""
+"Parametry *start* a *end* :c:func:`PyUnicode_FindChar` jsou nyní upraveny "
+"tak, aby se chovali jako sekčce řetězce. (Zapsáno Xiang Zhang v "
+":issue:`28822`.)"
 
 #: ../../whatsnew/3.7.rst:1762
 msgid "Build Changes"
-msgstr ""
+msgstr "Změny sestavení"
 
 #: ../../whatsnew/3.7.rst:1764
 msgid ""
@@ -2991,6 +3446,9 @@ msgid ""
 ":mod:`threading` module is now always available. (Contributed by Antoine "
 "Pitrou in :issue:`31370`.)."
 msgstr ""
+"Podpora pro sestavení ``--without-threads`` byla odebrána. Modul "
+":mod:`threading` je nyní vždy dostupný. (Zapsáno Antoine Pitrou v "
+":issue:`31370`.)"
 
 #: ../../whatsnew/3.7.rst:1768
 msgid ""
@@ -2999,6 +3457,10 @@ msgid ""
 " of libffi is now required when building ``_ctypes`` on such platforms. "
 "(Contributed by Zachary Ware in :issue:`27979`.)"
 msgstr ""
+"Plná kopie libffi již není zesvéžena pro použití při sestavení modulu "
+":mod:`_ctypes <ctypes>` na ne-OSX UNIX platformách. Nyní se vyžaduje "
+"nainstalováná kopie libffi při sestavení ``_ctypes`` na takových "
+"platformách. (Zapsáno Zachary Ware v :issue:`27979`.)"
 
 #: ../../whatsnew/3.7.rst:1773
 msgid ""
@@ -3008,6 +3470,11 @@ msgid ""
 "is used to download a copy of 32-bit Python for this purpose.  (Contributed "
 "by Zachary Ware in :issue:`30450`.)"
 msgstr ""
+"Proces sestavení Windows již nezvisí na Subversion k vytahování externích "
+"zdrojů, míste toho se používá Python skript ke stažení zipfile z GitHubu. "
+"Pokud Python 3.6 není nalezen v systému (pomocí ``py -3.6``), NuGet se "
+"používá ke stažení kopie 32-bitového Pythonu. (Zapsáno Zachary Ware v "
+":issue:`30450`.)"
 
 #: ../../whatsnew/3.7.rst:1779
 msgid ""
@@ -3016,10 +3483,14 @@ msgid ""
 "supported. LibreSSL is temporarily not supported as well. LibreSSL releases "
 "up to version 2.6.4 are missing required OpenSSL 1.0.2 APIs."
 msgstr ""
+"Modul :mod:`ssl` vyžaduje OpenSSL 1.0.2 nebo 1.1 kompatibilní libssl. "
+"OpenSSL 1.0.1 dosáhl konce života 31.12.2016 a již není podporován. LibreSSL"
+" je dočasně také nepodporovan. Vydání LibreSSL až verze 2.6.4 postrádají "
+"potřebné OpenSSL 1.0.2 API."
 
 #: ../../whatsnew/3.7.rst:1788
 msgid "Optimizations"
-msgstr ""
+msgstr "Optimalizačny"
 
 #: ../../whatsnew/3.7.rst:1790
 msgid ""
@@ -3028,6 +3499,10 @@ msgid ""
 "the ``METH_FASTCALL`` convention. (Contributed by Victor Stinner in "
 ":issue:`29300`, :issue:`29507`, :issue:`29452`, and :issue:`29286`.)"
 msgstr ""
+"Náklady na volání mnoha metod různých tříd standardní knihovny "
+"implementovaných v C byly významnmě sníženy portáním více kódu na použití "
+"konvence ``METH_FASTCALL``. (Zapsáno Victor Stinner v :issue:`29300`, "
+":issue:`29507`, :issue:`29452` a :issue:`29286`.)"
 
 #: ../../whatsnew/3.7.rst:1796
 #, no-python-format
@@ -3036,6 +3511,9 @@ msgid ""
 "up to 30% on macOS. (Contributed by Victor Stinner, INADA Naoki in "
 ":issue:`29585`, and Ivan Levkivskyi in :issue:`31333`.)"
 msgstr ""
+"Různé optimalizačny snizovaly dobu spustení Pythonu o 10% na Linuxu a až 30%"
+" na macOS. (Zapsáno Victor Stinner, INADA Naoki v :issue:`29585` a Ivan "
+"Levkivskyi v :issue:`31333`.)"
 
 #: ../../whatsnew/3.7.rst:1801
 #, no-python-format
@@ -3044,12 +3522,17 @@ msgid ""
 "avoid creating bound method instances. (Contributed by Yury Selivanov and "
 "INADA Naoki in :issue:`26110`.)"
 msgstr ""
+"Volání metod jsou nyní až 20% rychlejší v důsledku změn bytecode, které se "
+"vyhýbajon vytváření mážaných instancí metod. (Zapsáno Yury Selivanov a INADA"
+" Naoki v :issue:`26110`.)"
 
 #: ../../whatsnew/3.7.rst:1807
 msgid ""
 "The :mod:`asyncio` module received a number of notable optimizations for "
 "commonly used functions:"
 msgstr ""
+"Modul :mod:`asyncio` obdržel několik pozoruhodných optimalizačí pro časties "
+"používané funkce:"
 
 #: ../../whatsnew/3.7.rst:1810
 msgid ""
@@ -3057,12 +3540,16 @@ msgid ""
 "make it up to 15 times faster. (Contributed by Yury Selivanov in "
 ":issue:`32296`.)"
 msgstr ""
+"Funkce :func:`asyncio.get_event_loop` byla znovu implementována v C, aby ji "
+"byla až 15krát rychlejší. (Zapsáno Yury Selivanov v :issue:`32296`.)"
 
 #: ../../whatsnew/3.7.rst:1814
 msgid ""
 ":class:`asyncio.Future` callback management has been optimized. (Contributed"
 " by Yury Selivanov in :issue:`32348`.)"
 msgstr ""
+"Správa zptného volání :class:`asyncio.Future` byla optimalizóvána. (Zapsáno "
+"Yury Selivanov v :issue:`32348`.)"
 
 #: ../../whatsnew/3.7.rst:1817
 #, no-python-format
@@ -3070,18 +3557,24 @@ msgid ""
 ":func:`asyncio.gather` is now up to 15% faster. (Contributed by Yury "
 "Selivanov in :issue:`32355`.)"
 msgstr ""
+":func:`asyncio.gather` je nyní až 15% rychlejší. (Zapsáno Yury Selivanov v "
+":issue:`32355`.)"
 
 #: ../../whatsnew/3.7.rst:1820
 msgid ""
 ":func:`asyncio.sleep` is now up to 2 times faster when the *delay* argument "
 "is zero or negative. (Contributed by Andrew Svetlov in :issue:`32351`.)"
 msgstr ""
+":func:`asyncio.sleep` je nyní až 2krát rychlejší, pokud je argument *delay* "
+"nula nebo negativní. (Zapsáno Andrew Svetlov v :issue:`32351`.)"
 
 #: ../../whatsnew/3.7.rst:1824
 msgid ""
 "The performance overhead of asyncio debug mode has been reduced. "
 "(Contributed by Antoine Pitrou in :issue:`31970`.)"
 msgstr ""
+"Náklady na výkon módu asyncio debug byly sníženy. (Zapsáno Antoine Pitrou v "
+":issue:`31970`.)"
 
 #: ../../whatsnew/3.7.rst:1827
 msgid ""
@@ -3089,6 +3582,9 @@ msgid ""
 ":mod:`typing` has been reduced by a factor of 7, and many typing operations "
 "are now faster. (Contributed by Ivan Levkivskyi in :issue:`32226`.)"
 msgstr ""
+"V důsledku :ref:`PEP 560 prácí <whatsnew37-pep560>` byla doba importu "
+":mod:`typing` snížena sedemkrát a mnoho operácí typing je nyní rychlejší. "
+"(Zapsáno Ivan Levkivskyi v :issue:`32226`.)"
 
 #: ../../whatsnew/3.7.rst:1832
 #, no-python-format
@@ -3097,12 +3593,16 @@ msgid ""
 " be up to 40-75% faster. (Contributed by Elliot Gorokhovsky in "
 ":issue:`28685`.)"
 msgstr ""
+":func:`sorted` a :meth:`list.sort` byly optimalizóvány pro běžné případy, "
+"aby byly až 40-75% rychlejší. (Zapsáno Elliot Gorokhovsky v :issue:`28685`.)"
 
 #: ../../whatsnew/3.7.rst:1836
 msgid ""
 ":meth:`dict.copy` is now up to 5.5 times faster. (Contributed by Yury "
 "Selivanov in :issue:`31179`.)"
 msgstr ""
+":meth:`dict.copy` je nyní až 5,5krát rychlejší. (Zapsáno Yury Selivanov v "
+":issue:`31179`.)"
 
 #: ../../whatsnew/3.7.rst:1839
 msgid ""
@@ -3111,6 +3611,9 @@ msgid ""
 ":meth:`object.__getattribute__`. (Contributed by INADA Naoki in "
 ":issue:`32544`.)"
 msgstr ""
+":func:`hasattr` a :func:`getattr` jsou nyní asi 4krát rychlejší, pokud "
+"*name* nenalezen a *obj* neprekrytává :meth:`object.__getattr__` nebo "
+":meth:`object.__getattribute__`. (Zapsáno INADA Naoki v :issue:`32544`.)"
 
 #: ../../whatsnew/3.7.rst:1844
 msgid ""
@@ -3119,6 +3622,10 @@ msgid ""
 " now only 3 times slower in the worst case. (Contributed by Serhiy Storchaka"
 " in :issue:`24821`.)"
 msgstr ""
+"Vyhledávání určitých znaků Unicode (jako ukrajinské velké \"Є\") v řetězci "
+"bylo až 25krát pomalejší než vyhledávání jiných znaků. Nyní je to pouze "
+"3krát pomalejší v nejhorším případě. (Zapsáno Serhiy Storchaka v "
+":issue:`24821`.)"
 
 #: ../../whatsnew/3.7.rst:1849
 msgid ""
@@ -3127,6 +3634,10 @@ msgid ""
 "Zijlstra with further improvements by INADA Naoki, Serhiy Storchaka, and "
 "Raymond Hettinger in :issue:`28638`.)"
 msgstr ""
+"Fabrika :func:`collections.namedtuple` byla znovu implementována, aby se "
+"vytváření pojmenovaných n-tic stalo 4 až 6krát rychlejším. (Zapsáno Jelle "
+"Zijlstra s dalšími vylepšeními od INADA Naoki, Serhiy Storchaka a Raymond "
+"Hettinger v :issue:`28638`.)"
 
 #: ../../whatsnew/3.7.rst:1854
 #, no-python-format
@@ -3135,12 +3646,17 @@ msgid ""
 "are now up to 30% faster in the common case. (Contributed by Paul Ganssle in"
 " :issue:`32403`.)"
 msgstr ""
+":meth:`datetime.date.fromordinal` a :meth:`datetime.date.fromtimestamp` jsou"
+" nyní až 30% rychlejší v běžném případě. (Zapsáno Paul Ganssle v "
+":issue:`32403`.)"
 
 #: ../../whatsnew/3.7.rst:1858
 msgid ""
 "The :func:`os.fwalk` function is now up to 2 times faster thanks to the use "
 "of :func:`os.scandir`. (Contributed by Serhiy Storchaka in :issue:`25996`.)"
 msgstr ""
+"Funkce :func:`os.fwalk` je nyní až 2krát rychlejší díky použití "
+":func:`os.scandir`. (Zapsáno Serhiy Storchaka v :issue:`25996`.)"
 
 #: ../../whatsnew/3.7.rst:1862
 msgid ""
@@ -3148,6 +3664,8 @@ msgid ""
 " thanks to the use of the :func:`os.scandir` function. (Contributed by "
 "Serhiy Storchaka in :issue:`28564`.)"
 msgstr ""
+"Rychlost funkce :func:`shutil.rmtree` byla zlepšena o 20-40% díky použití "
+"funkce :func:`os.scandir`. (Zapsáno Serhiy Storchaka v :issue:`28564`.)"
 
 #: ../../whatsnew/3.7.rst:1866
 msgid ""
@@ -3155,6 +3673,9 @@ msgid ""
 "expressions <re>`.  Searching some patterns can now be up to 20 times "
 "faster. (Contributed by Serhiy Storchaka in :issue:`30285`.)"
 msgstr ""
+"Optimalizóvané porovnávání nerozlišujícího písmen a vyhledávání "
+":mod:`regulárních výrazů <re>`. Vyhledávání některých vzorů může být nyní až"
+" 20krát rychlejší. (Zapsáno Serhiy Storchaka v :issue:`30285`.)"
 
 #: ../../whatsnew/3.7.rst:1870
 #, no-python-format
@@ -3164,6 +3685,10 @@ msgid ""
 "by about 10% depending on the pattern. (Contributed by INADA Naoki in "
 ":issue:`31671`.)"
 msgstr ""
+":func:`re.compile` nyní konvertuje parametr ``flags`` na int objekt, je-li "
+"``RegexFlag``. Je nyní stejně rychlá jako Python 3.5 a rychlejší než Python "
+"3.6 o přibližně 10% v závislosti na vzoru. (Zapsáno INADA Naoki v "
+":issue:`31671`.)"
 
 #: ../../whatsnew/3.7.rst:1875
 #, no-python-format
@@ -3173,6 +3698,10 @@ msgid ""
 ":class:`selectors.DevpollSelector` may be around 10% faster under heavy "
 "loads.  (Contributed by Giampaolo Rodola' in :issue:`30014`)"
 msgstr ""
+"Metody :meth:`~selectors.BaseSelector.modify` tříd "
+":class:`selectors.EpollSelector`, :class:`selectors.PollSelector` a "
+":class:`selectors.DevpollSelector` mohou být přibližně 10% rychlejší při "
+"těžkou zátěži. (Zapsáno Giampaolo Rodola' v :issue:`30014`)"
 
 #: ../../whatsnew/3.7.rst:1880
 msgid ""
@@ -3181,6 +3710,9 @@ msgid ""
 "(Contributed by Eugene Toder and INADA Naoki in :issue:`29469` and "
 ":issue:`11549`.)"
 msgstr ""
+"Skládání konstant bylo přestnuto z optimalizeru peephole na nový optimizátor"
+" AST, který je schopen provádět optimalizačny konzistentněji. (Zapsáno "
+"Eugene Toder a INADA Naoki v :issue:`29469` a :issue:`11549`.)"
 
 #: ../../whatsnew/3.7.rst:1885
 msgid ""
@@ -3190,6 +3722,10 @@ msgid ""
 "time by up to 10%. (Contributed by Ivan Levkivskyi and INADA Naoki in "
 ":issue:`31333`)"
 msgstr ""
+"Většina funkcí a metod v :mod:`abc` byla znovu napsaná v C. To zánaméná "
+"vytváření abstraktních bázových tříd a volání :func:`isinstance` a "
+":func:`issubclass` na nich 1.5krát rychlejším. To také sníží dobu spustení "
+"Pythonu až o 10%. (Zapsáno Ivan Levkivskyi a INADA Naoki v :issue:`31333`)"
 
 #: ../../whatsnew/3.7.rst:1891
 msgid ""
@@ -3198,6 +3734,10 @@ msgid ""
 "constructors when not constructing subclasses. (Contributed by Paul Ganssle "
 "in :issue:`32403`)"
 msgstr ""
+"Významnmé zlepšení rychlosti alternativních konstruktorů "
+":class:`datetime.date` a :class:`datetime.datetime` pomocí konstruktorů "
+"rychlého křóžení, pokud se nekonstruují podskupiny. (Zapsáno Paul Ganssle v "
+":issue:`32403`)"
 
 #: ../../whatsnew/3.7.rst:1896
 msgid ""
@@ -3206,6 +3746,10 @@ msgid ""
 "comparing arrays holding values of the same integer type. (Contributed by "
 "Adrian Wielgosik in :issue:`24700`.)"
 msgstr ""
+"Rychlost porovnávání instancí :class:`array.array` byla v urkých případech "
+"významnmě zlepšena. Nyní je to 10x až 70x rychlejší při porovnávání pol, "
+"která drží hodnoty stejného celokového typu. (Zapsáno Adrian Wielgosik v "
+":issue:`24700`.)"
 
 #: ../../whatsnew/3.7.rst:1901
 msgid ""
@@ -3213,10 +3757,13 @@ msgid ""
 "library implementation on most platforms. (Contributed by Serhiy Storchaka "
 "in :issue:`26121`.)"
 msgstr ""
+"Funkce :func:`math.erf` a :func:`math.erfc` nyní na většinu platform "
+"používají (rychlejší) implementaci knihovny C. (Zapsáno Serhiy Storchaka v "
+":issue:`26121`.)"
 
 #: ../../whatsnew/3.7.rst:1907
 msgid "Other CPython Implementation Changes"
-msgstr ""
+msgstr "Další změny implementace CPython"
 
 #: ../../whatsnew/3.7.rst:1909
 msgid ""
@@ -3225,6 +3772,11 @@ msgid ""
 " :attr:`~frame.f_trace_lines` and :attr:`~frame.f_trace_opcodes` attributes "
 "on the frame being traced. (Contributed by Nick Coghlan in :issue:`31344`.)"
 msgstr ""
+"Trace hooks mohou nyní zvolnit přijímání události ``line`` a opt pro "
+"přijímání událostí ``opcode`` z interpreteru nastavením odpovídajících "
+"nových atributů :attr:`~frame.f_trace_lines` a "
+":attr:`~frame.f_trace_opcodes` na zvlstovaném rámu. (Zapsáno Nick Coghlan v "
+":issue:`31344`.)"
 
 #: ../../whatsnew/3.7.rst:1914
 msgid ""
@@ -3236,6 +3788,13 @@ msgid ""
 "``__loader__`` (previously, the former was set to ``None``).  See "
 ":issue:`32303`."
 msgstr ""
+"Bylo opraveno několik problémů konzistence s atributy modulu package oboru "
+"názů. Objekty modulů oboru názvů nyní mají ``__file__`` nastaven na ``None``"
+" (dříve nenastaven), a jejich ``__spec__.origin`` je také nastaven na "
+"``None`` (dříve řetězec ``\"namespace\"``). Viz :issue:`32305`. Také atribut"
+" ``__spec__.loader`` objektu modulu oboru názů je nastaven na stejnou "
+"hodnotu jako ``__loader__`` (dříve byl první nastaven na ``None``). Viz "
+":issue:`32303`."
 
 #: ../../whatsnew/3.7.rst:1922
 msgid ""
@@ -3243,6 +3802,9 @@ msgid ""
 "variables were defined.  Previously, the order was undefined. (Contributed "
 "by Raymond Hettinger in :issue:`32690`.)"
 msgstr ""
+"Slovník :func:`locals` nyní zobrazuje v lexikálním pořadí, v němž byly "
+"proměnné definovány. Dříve byl pořadí nedefinováno. (Zapsáno Raymond "
+"Hettinger v :issue:`32690`.)"
 
 #: ../../whatsnew/3.7.rst:1926
 msgid ""
@@ -3251,10 +3813,13 @@ msgid ""
 "ended with a byte equivalent to CR. (Contributed by Bo Bayles in "
 ":issue:`32304`.)"
 msgstr ""
+"Příkaz ``distutils`` ``upload`` již se nepołuje změnit znaky konce řádku CR "
+"na CRLF. To opravuje problém poškození u sdistov, které končily bajtem "
+"ekvivalentnímu CR. (Zapsáno Bo Bayles v :issue:`32304`.)"
 
 #: ../../whatsnew/3.7.rst:1933
 msgid "Deprecated Python Behavior"
-msgstr ""
+msgstr "Zastaralané chování Pythonu"
 
 #: ../../whatsnew/3.7.rst:1935
 msgid ""
@@ -3269,6 +3834,15 @@ msgid ""
 "in Python 3.8 this will be a :exc:`SyntaxError`. (Contributed by Serhiy "
 "Storchaka in :issue:`10544`.)"
 msgstr ""
+"Výrazy yield (jak kláuze ``yield`` tak ``yield from``) jsou nyní zastaraly v"
+" pochopeních a generátorů (kromě iterable výrazu v nejlevějším kláuži "
+":keyword:`!for`). Toto zajišťuje, že pochopení vždy okamžitě vrátí kontejner"
+" příslušného typu (míste potenciálnho vrácení objektu :term:`generator "
+"iterator`), zatímco generátorové výrazy se nebudou pokoušet proplétat jejich"
+" implicitní výstup s výstupem z jakéhokoli explicitního vrácení. V Pythonu "
+"3.7 takové výrazy štávají :exc:`DeprecationWarning` při kompilaci, v Pythonu"
+" 3.8 to bude :exc:`SyntaxError`. (Zapsáno Serhiy Storchaka v "
+":issue:`10544`.)"
 
 #: ../../whatsnew/3.7.rst:1946
 msgid ""
@@ -3278,14 +3852,18 @@ msgid ""
 ":meth:`object.__float__`. (Contributed by Serhiy Storchaka in "
 ":issue:`28894`.)"
 msgstr ""
+"Návrat podskupiny :class:`complex` z :meth:`object.__complex__` je zastaraly"
+" a bude chybou v budoucích verzích Pythonu. To zářadím ``__complex__()`` "
+"konzistentní s :meth:`object.__int__` a :meth:`object.__float__`. (Zapsáno "
+"Serhiy Storchaka v :issue:`28894`.)"
 
 #: ../../whatsnew/3.7.rst:1955
 msgid "Deprecated Python modules, functions and methods"
-msgstr ""
+msgstr "Zastaraly moduly, funkce a metody Pythonu"
 
 #: ../../whatsnew/3.7.rst:1958
 msgid "aifc"
-msgstr ""
+msgstr "aifc"
 
 #: ../../whatsnew/3.7.rst:1960
 msgid ""
@@ -3293,6 +3871,8 @@ msgid ""
 "Use :func:`!aifc.open` instead. (Contributed by Brian Curtin in "
 ":issue:`31985`.)"
 msgstr ""
+":func:`!aifc.openfp` byla zastarala a bude odebrána v Pythonu 3.9. Použítě "
+"míste toho :func:`!aifc.open`. (Zapsáno Brian Curtin v :issue:`31985`.)"
 
 #: ../../whatsnew/3.7.rst:1970
 msgid ""
@@ -3302,6 +3882,10 @@ msgid ""
 "the synchronization resource. (Contributed by Andrew Svetlov in "
 ":issue:`32253`.)"
 msgstr ""
+"Podpora přímého ``await``-ing instancí :class:`asyncio.Lock` a dalších "
+"primitivů synchronizace asyncio byla zastarala. Aby se synchronizace získalo"
+" a uvolnilo, musí se použít asynchronní spravč kontextu. (Zapsáno Andrew "
+"Svetlov v :issue:`32253`.)"
 
 #: ../../whatsnew/3.7.rst:1976
 msgid ""
@@ -3309,6 +3893,8 @@ msgid ""
 "methods have been deprecated. (Contributed by Andrew Svetlov in "
 ":issue:`32250`.)"
 msgstr ""
+"Metody :meth:`!asyncio.Task.current_task` a :meth:`!asyncio.Task.all_tasks` "
+"byly zastaraly. (Zapsáno Andrew Svetlov v :issue:`32250`.)"
 
 #: ../../whatsnew/3.7.rst:1984
 msgid ""
@@ -3317,6 +3903,10 @@ msgid ""
 "create a clearer distinction between the concrete classes and the abstract "
 "base classes. (Contributed by Serhiy Storchaka in :issue:`25988`.)"
 msgstr ""
+"V Pythonu 3.8 již abstraktní bázové třídy v :mod:`collections.abc` nebudou "
+"vystaveny v regulérním modulu :mod:`collections`. To pomůže vytvořit jasnjší"
+" rozlišení mezi konkrétnými třídami a abstraktními bázovými třídami. "
+"(Zapsáno Serhiy Storchaka v :issue:`25988`.)"
 
 #: ../../whatsnew/3.7.rst:1994
 msgid ""
@@ -3326,6 +3916,11 @@ msgid ""
 " (this will be an error in future Python releases). (Contributed by Serhiy "
 "Storchaka in :issue:`28847`.)"
 msgstr ""
+":mod:`dbm.dumb` nyní podporuje čtení souborů pouze pro čtení a již nezápiše "
+"soubor indexu, pokud se nezměnil. Varování o zastaralanó funkcích je nyní "
+"vyzvřováno, pokud chybí index a je znovu vytvořen v módech ``'r'`` a ``'w'``"
+" (to bude chyba v budoucích vydáních Pythonu). (Zapsáno Serhiy Storchaka v "
+":issue:`28847`.)"
 
 #: ../../whatsnew/3.7.rst:2004
 msgid ""
@@ -3336,10 +3931,15 @@ msgid ""
 "Perm.RW``); currently, both operations return :const:`False` instead. "
 "(Contributed by Ethan Furman in :issue:`33217`.)"
 msgstr ""
+"V Pythonu 3.8 by pokus kontrolovat ne-Enum objekty v třídach "
+":class:`~enum.Enum` vyvolal :exc:`TypeError` (např. ``1 in Color``); podobně"
+" pokus kontrolovat ne-Flag objekty v členu :class:`~enum.Flag` vyvolal "
+":exc:`TypeError` (např. ``1 in Perm.RW``); v současnosti oba vrhatí "
+":const:`False`. (Zapsáno Ethan Furman v :issue:`33217`.)"
 
 #: ../../whatsnew/3.7.rst:2013
 msgid "gettext"
-msgstr ""
+msgstr "gettext"
 
 #: ../../whatsnew/3.7.rst:2015
 msgid ""
@@ -3347,6 +3947,9 @@ msgid ""
 " deprecated.  It never correctly worked. (Contributed by Serhiy Storchaka in"
 " :issue:`28692`.)"
 msgstr ""
+"Použití ne-celokové hodnoty pro výběr pluralni formy v :mod:`gettext` je "
+"nyní zastaralo. Nikdy to správně nefungovalo. (Zapsáno Serhiy Storchaka v "
+":issue:`28692`.)"
 
 #: ../../whatsnew/3.7.rst:2023
 msgid ""
@@ -3358,32 +3961,45 @@ msgid ""
 "now emit :exc:`DeprecationWarning`. (Contributed by Matthias Bussonnier in "
 ":issue:`29576`.)"
 msgstr ""
+"Metody :meth:`!MetaPathFinder.find_module` (nahrazena "
+":meth:`MetaPathFinder.find_spec() <importlib.abc.MetaPathFinder.find_spec>`)"
+" a :meth:`!PathEntryFinder.find_loader` (nahrazena "
+":meth:`PathEntryFinder.find_spec() "
+"<importlib.abc.PathEntryFinder.find_spec>`) obě zastaraly v Pythonu 3.4 nyní"
+" štávají :exc:`DeprecationWarning`. (Zapsáno Matthias Bussonnier v "
+":issue:`29576`.)"
 
 #: ../../whatsnew/3.7.rst:2034
 msgid ""
 "The :class:`importlib.abc.ResourceLoader` ABC has been deprecated in favour "
 "of :class:`importlib.abc.ResourceReader`."
 msgstr ""
+"ABC :class:`importlib.abc.ResourceLoader` byla zastarala ve prospěch "
+":class:`importlib.abc.ResourceReader`."
 
 #: ../../whatsnew/3.7.rst:2041
 msgid ""
 ":func:`!locale.format` has been deprecated, use :meth:`locale.format_string`"
 " instead.  (Contributed by Garvit in :issue:`10379`.)"
 msgstr ""
+":func:`!locale.format` byla zastarala, použítě míste "
+":meth:`locale.format_string`. (Zapsáno Garvit v :issue:`10379`.)"
 
 #: ../../whatsnew/3.7.rst:2046
 msgid "macpath"
-msgstr ""
+msgstr "macpath"
 
 #: ../../whatsnew/3.7.rst:2048
 msgid ""
 "The :mod:`!macpath` is now deprecated and will be removed in Python 3.8. "
 "(Contributed by Chi Hsuan Yen in :issue:`9850`.)"
 msgstr ""
+":mod:`!macpath` je nyní zastarala a bude odebrána v Pythonu 3.8. (Zapsáno "
+"Chi Hsuan Yen v :issue:`9850`.)"
 
 #: ../../whatsnew/3.7.rst:2053
 msgid "threading"
-msgstr ""
+msgstr "threading"
 
 #: ../../whatsnew/3.7.rst:2055
 msgid ""
@@ -3391,6 +4007,9 @@ msgid ""
 "is no longer possible to build Python with threading disabled. Use "
 ":mod:`threading` instead. (Contributed by Antoine Pitrou in :issue:`31370`.)"
 msgstr ""
+":mod:`!dummy_threading` a :mod:`!_dummy_thread` byly zastaraly. Již není "
+"možné sestavení Pythonu se zákazem vlákna. Použítě :mod:`threading`. "
+"(Zapsáno Antoine Pitrou v :issue:`31370`.)"
 
 #: ../../whatsnew/3.7.rst:2064
 msgid ""
@@ -3399,6 +4018,9 @@ msgid ""
 "the passed argument is larger than 16 bits, an exception will be raised. "
 "(Contributed by Oren Milman in :issue:`28332`.)"
 msgstr ""
+"Tiché zkrácení argumentu v :func:`socket.htons` a :func:`socket.ntohs` bylo "
+"zastaralo. V budoucích verzích Pythonu, pokud je předaný argument větší než "
+"16 bitů, bude vyvolána výjimka. (Zapsáno Oren Milman v :issue:`28332`.)"
 
 #: ../../whatsnew/3.7.rst:2073
 msgid ""
@@ -3406,10 +4028,13 @@ msgid ""
 ":meth:`ssl.SSLContext.wrap_socket` instead. (Contributed by Christian Heimes"
 " in :issue:`28124`.)"
 msgstr ""
+":func:`!ssl.wrap_socket` je zastarala. Použítě "
+":meth:`ssl.SSLContext.wrap_socket`. (Zapsáno Christian Heimes v "
+":issue:`28124`.)"
 
 #: ../../whatsnew/3.7.rst:2079
 msgid "sunau"
-msgstr ""
+msgstr "sunau"
 
 #: ../../whatsnew/3.7.rst:2081
 msgid ""
@@ -3417,12 +4042,16 @@ msgid ""
 " Use :func:`!sunau.open` instead. (Contributed by Brian Curtin in "
 ":issue:`31985`.)"
 msgstr ""
+":func:`!sunau.openfp` byla zastarala a bude odebrána v Pythonu 3.9. Použítě "
+":func:`!sunau.open`. (Zapsáno Brian Curtin v :issue:`31985`.)"
 
 #: ../../whatsnew/3.7.rst:2089
 msgid ""
 "Deprecated :func:`!sys.set_coroutine_wrapper` and "
 ":func:`!sys.get_coroutine_wrapper`."
 msgstr ""
+"Zastaraly :func:`!sys.set_coroutine_wrapper` a "
+":func:`!sys.get_coroutine_wrapper`."
 
 #: ../../whatsnew/3.7.rst:2092
 msgid ""
@@ -3430,10 +4059,12 @@ msgid ""
 "be removed in a future Python version. (Contributed by Victor Stinner in "
 ":issue:`28799`.)"
 msgstr ""
+"Nedokumentovaná funkce ``sys.callstats()`` byla zastarala a bude odebrána v "
+"budoucí verzi Pythonu. (Zapsáno Victor Stinner v :issue:`28799`.)"
 
 #: ../../whatsnew/3.7.rst:2098
 msgid "wave"
-msgstr ""
+msgstr "wave"
 
 #: ../../whatsnew/3.7.rst:2100
 msgid ""
@@ -3441,10 +4072,12 @@ msgid ""
 "Use :func:`wave.open` instead. (Contributed by Brian Curtin in "
 ":issue:`31985`.)"
 msgstr ""
+":func:`!wave.openfp` byla zastarala a bude odebrána v Pythonu 3.9. Použítě "
+":func:`wave.open`. (Zapsáno Brian Curtin v :issue:`31985`.)"
 
 #: ../../whatsnew/3.7.rst:2106
 msgid "Deprecated functions and types of the C API"
-msgstr ""
+msgstr "Zastaraly funkce a typy C API"
 
 #: ../../whatsnew/3.7.rst:2108
 msgid ""
@@ -3454,6 +4087,10 @@ msgid ""
 "``0x03060100`` or higher.  (Contributed by Serhiy Storchaka in "
 ":issue:`27867`.)"
 msgstr ""
+"Funkce :c:func:`PySlice_GetIndicesEx` je zastarala a nahrazena makrem, pokud"
+" ``Py_LIMITED_API`` není nastavena nebo je nastavena na hodnotu v rozsahu "
+"mezi ``0x03050400`` a ``0x03060000`` (nevkladaně), nebo je ``0x03060100`` "
+"nebo vyšší. (Zapsáno Serhiy Storchaka v :issue:`27867`.)"
 
 #: ../../whatsnew/3.7.rst:2113
 msgid ""
@@ -3462,14 +4099,17 @@ msgid ""
 ":c:func:`PyOS_AfterFork_Child()` instead. (Contributed by Antoine Pitrou in "
 ":issue:`16500`.)"
 msgstr ""
+":c:func:`PyOS_AfterFork` byla zastarala. Použítě :c:func:`PyOS_BeforeFork`, "
+":c:func:`PyOS_AfterFork_Parent` nebo :c:func:`PyOS_AfterFork_Child()`. "
+"(Zapsáno Antoine Pitrou v :issue:`16500`.)"
 
 #: ../../whatsnew/3.7.rst:2121
 msgid "Platform Support Removals"
-msgstr ""
+msgstr "Odstranenj podpry platform"
 
 #: ../../whatsnew/3.7.rst:2123
 msgid "FreeBSD 9 and older are no longer officially supported."
-msgstr ""
+msgstr "FreeBSD 9 a starší již nejsou oficiálně podporovány."
 
 #: ../../whatsnew/3.7.rst:2124
 msgid ""
@@ -3478,6 +4118,10 @@ msgid ""
 "locale), ``C.utf8`` (full locale) or ``UTF-8`` (``LC_CTYPE``-only locale) as"
 " an alternative to the legacy ``ASCII``-based ``C`` locale."
 msgstr ""
+"Pro plné podpory Unicode, včetně v rozšířeních modulech, \\*nix platformy se"
+" nyní očekává poskytnút alespoň jeden z ``C.UTF-8`` (plná locale), "
+"``C.utf8`` (plná locale) nebo ``UTF-8`` (``LC_CTYPE``-only locale) jako "
+"alternativa k zastaralané ``ASCII``-based ``C`` locale."
 
 #: ../../whatsnew/3.7.rst:2128
 msgid ""
@@ -3486,6 +4130,10 @@ msgid ""
 "versions requires custom build options that link to a more recent version of"
 " OpenSSL."
 msgstr ""
+"OpenSSL 0.9.8 a 1.0.1 již nejsou podporovány, což znamená, že sestavení "
+"CPythonu 3.7 s podporou SSL/TLS na starších platformách, které stále "
+"používají tyto verze, vyžaduje vlastní volby sestavení, které odkazují na "
+"novější verzi OpenSSL."
 
 #: ../../whatsnew/3.7.rst:2132
 msgid ""
@@ -3493,6 +4141,9 @@ msgid ""
 "(aka \"Trusty\") LTS Linux distributions, as they still use OpenSSL 1.0.1 by"
 " default."
 msgstr ""
+"Pozoruhodně tato záležitost ovlivňuje Debian 8 (známý jako \"jessie\") a "
+"Ubuntu 14.04 (známý jako \"Trusty\") LTS Linux distribuce, které stále "
+"používají OpenSSL 1.0.1 ve výchozm nástupci."
 
 #: ../../whatsnew/3.7.rst:2136
 msgid ""
@@ -3501,6 +4152,10 @@ msgid ""
 "use OpenSSL 1.0.2 or later, and remain supported in the default build "
 "configuration."
 msgstr ""
+"Debian 9 (\"stretch\") a Ubuntu 16.04 (\"xenial\"), jakož i nedavé vydání "
+"jiných LTS Linux vydání (např. RHEL/CentOS 7.5, SLES 12-SP3), používají "
+"OpenSSL 1.0.2 nebo novější a zůstávají podporovány ve výchozí konfiguraci "
+"sestavení."
 
 #: ../../whatsnew/3.7.rst:2140
 msgid ""
@@ -3510,14 +4165,19 @@ msgid ""
 "<Tools/ssl/multissltests.py>` in CPython's test suite to build and link "
 "against OpenSSL 1.1.0 rather than an outdated system provided OpenSSL."
 msgstr ""
+"CPythonová vlastní `CI konfigurační soubor "
+"<https://github.com/python/cpython/blob/v3.7.13/.travis.yml>`_ poskytuje "
+"příklad použití infrastruktury testování kompatibility SSL v sadu testů "
+"CPython k sestavení a provzázání proti OpenSSL 1.1.0 míste zastaralaného "
+"systémového OpenSSL."
 
 #: ../../whatsnew/3.7.rst:2149
 msgid "API and Feature Removals"
-msgstr ""
+msgstr "Odstránení API a funkcí"
 
 #: ../../whatsnew/3.7.rst:2151
 msgid "The following features and APIs have been removed from Python 3.7:"
-msgstr ""
+msgstr "Následující funkce a API byly odebrány z Pythonu 3.7:"
 
 #: ../../whatsnew/3.7.rst:2153
 msgid ""
@@ -3525,6 +4185,8 @@ msgid ""
 "in Python 2.3 for backward compatibility with Python 2.2, and was deprecated"
 " since Python 3.1."
 msgstr ""
+"Funkce ``os.stat_float_times()`` byla odebrána. Byla zaváděna v Pythonu 2.3 "
+"pro zpětné kompatibilitu s Pythonem 2.2 a byla zastarala od Pythonu 3.1."
 
 #: ../../whatsnew/3.7.rst:2157
 msgid ""
@@ -3532,18 +4194,24 @@ msgid ""
 "templates for :func:`re.sub` were deprecated in Python 3.5, and will now "
 "cause an error."
 msgstr ""
+"Neznámé únikv se skóřého \"\\\\\" a ASCII písmenem v šablonách nahrazení pro"
+" :func:`re.sub` byly zastaraly v Pythonu 3.5 a nyní způsobí chybu."
 
 #: ../../whatsnew/3.7.rst:2161
 msgid ""
 "Removed support of the *exclude* argument in :meth:`tarfile.TarFile.add`. It"
 " was deprecated in Python 2.7 and 3.2.  Use the *filter* argument instead."
 msgstr ""
+"Odebrána podpora argumentu *exclude* v :meth:`tarfile.TarFile.add`. Byla "
+"zastarala v Pythonu 2.7 a 3.2. Použítě argument *filter*."
 
 #: ../../whatsnew/3.7.rst:2164
 msgid ""
 "The :func:`!ntpath.splitunc` function was deprecated in Python 3.1, and has "
 "now been removed.  Use :func:`~os.path.splitdrive` instead."
 msgstr ""
+"Funkce :func:`!ntpath.splitunc` byla zastarala v Pythonu 3.1 a nyní byla "
+"odebrána. Použítě :func:`~os.path.splitdrive`."
 
 #: ../../whatsnew/3.7.rst:2168
 msgid ""
@@ -3553,6 +4221,11 @@ msgid ""
 "creation.  (Contributed by Jelle Zijlstra with further improvements by INADA"
 " Naoki, Serhiy Storchaka, and Raymond Hettinger in :issue:`28638`.)"
 msgstr ""
+":func:`collections.namedtuple` již nepodporuje parametr *verbose* nebo "
+"atribut ``_source``, který zobrazoval generovaný zdrojový kód pro třídu "
+"pojmenované n-tice. Toto bylo súčástí optimalizačny navrhnouté k urychlení "
+"vytváření třídy. (Zapsáno Jelle Zijlstra s dalšími vylepšeními od INADA "
+"Naoki, Serhiy Storchaka a Raymond Hettinger v :issue:`28638`.)"
 
 #: ../../whatsnew/3.7.rst:2174
 msgid ""
@@ -3560,6 +4233,9 @@ msgid ""
 "longer take keyword arguments.  The first argument of :func:`int` can now be"
 " passed only as positional argument."
 msgstr ""
+"Funkce :func:`bool`, :func:`float`, :func:`list` a :func:`tuple` již "
+"nepřijíjmají argumenty klíčového slova. První argument :func:`int` může být "
+"nyní předán pouze jako pozicí argument."
 
 #: ../../whatsnew/3.7.rst:2178
 msgid ""
@@ -3569,6 +4245,10 @@ msgid ""
 "normal dicts.  You no longer can use attribute access to access items of "
 "these dictionaries."
 msgstr ""
+"Odebrány dříve zastaraly v Pythonu 2.4 třídy ``Plist``, ``Dict`` a "
+"``_InternalDict`` v modulu :mod:`plistlib`. Hodnoty Dict v výsledku funkcí "
+":func:`!readPlist` a :func:`!readPlistFromBytes` jsou nyní normální diky. "
+"Nelze již použít přístup k atributům pro přístup k polžškám těchto slovníků."
 
 #: ../../whatsnew/3.7.rst:2184
 msgid ""
@@ -3577,6 +4257,10 @@ msgid ""
 "platforms since Python 3.5. ``asyncio.windows_utils.socketpair`` was just an"
 " alias to ``socket.socketpair`` on Python 3.5 and newer."
 msgstr ""
+"Funkce ``asyncio.windows_utils.socketpair()`` byla odebrána. Použítě "
+":func:`socket.socketpair` funkci míste, je dostupná na všech platformách od "
+"Pythonu 3.5. ``asyncio.windows_utils.socketpair`` byl jen alias na "
+"``socket.socketpair`` v Pythonu 3.5 a novějším."
 
 #: ../../whatsnew/3.7.rst:2190
 msgid ""
@@ -3585,6 +4269,9 @@ msgid ""
 "``asyncio._overlapped``. Replace ``from asyncio import selectors`` with "
 "``import selectors``."
 msgstr ""
+":mod:`asyncio` již neexportuje moduly :mod:`selectors` a :mod:`!_overlapped`"
+" jako ``asyncio.selectors`` a ``asyncio._overlapped``. Nahradte ``from "
+"asyncio import selectors`` s ``import selectors``."
 
 #: ../../whatsnew/3.7.rst:2195
 msgid ""
@@ -3594,16 +4281,23 @@ msgid ""
 ":func:`!ssl.wrap_socket` or :class:`ssl.SSLContext`. (Contributed by "
 "Christian Heimes in :issue:`32951`.)"
 msgstr ""
+"Přímá instanciace :class:`ssl.SSLSocket` a :class:`ssl.SSLObject` objektů je"
+" nyní zakázána. Konstruktory nikdy nebyly dokumentovány, testovány, ani "
+"navrhnuta jako veřejné konstruktory. Uživatelě měli použít "
+":func:`!ssl.wrap_socket` nebo :class:`ssl.SSLContext`. (Zapsáno Christian "
+"Heimes v :issue:`32951`.)"
 
 #: ../../whatsnew/3.7.rst:2201
 msgid ""
 "The unused ``distutils`` ``install_misc`` command has been removed. "
 "(Contributed by Eric N. Vander Weele in :issue:`29218`.)"
 msgstr ""
+"Nepoužívaný příkaz ``distutils`` ``install_misc`` byl odebrán. (Zapsáno Eric"
+" N. Vander Weele v :issue:`29218`.)"
 
 #: ../../whatsnew/3.7.rst:2206
 msgid "Module Removals"
-msgstr ""
+msgstr "Odstranenj modulů"
 
 #: ../../whatsnew/3.7.rst:2208
 msgid ""
@@ -3612,10 +4306,14 @@ msgid ""
 " caused unexpected breakage of C extensions. (Contributed by Nathaniel J. "
 "Smith in :issue:`29137`.)"
 msgstr ""
+"Modul ``fpectl`` byl odebrán. Nikdy nebyl povolen ve výchozm nástupci, nikdy"
+" nefungoval správně na x86-64 a změnïd Python ABI způsobem, který "
+"zápidýchnemá nečekané přerušení rozloučení C. (Zapsáno Nathaniel J. Smith v "
+":issue:`29137`.)"
 
 #: ../../whatsnew/3.7.rst:2215 ../../whatsnew/3.7.rst:2494
 msgid "Windows-only Changes"
-msgstr ""
+msgstr "Změny pouze pro Windows"
 
 #: ../../whatsnew/3.7.rst:2217
 msgid ""
@@ -3626,6 +4324,12 @@ msgid ""
 "otherwise been used. If the specified version is not available py.exe will "
 "error exit. (Contributed by Steve Barnes in :issue:`30291`.)"
 msgstr ""
+"Spouštěč pythonu, (py.exe), může přijmout 32 a 64 bitové zpřesnění **bez** "
+"nutnosti zadávat také vedlejší verzi. Takže ``py -3-32`` a ``py -3-64`` se "
+"stávají platnými, jakož i ``py -3.7-32``, také formy -*m*-64 a -*m.n*-64 "
+"jsou nyní přijmuty k vynucení 64 bitového pythonu, i kdyby 32 bit by jinak "
+"byl použit. Pokud zadaná verze není dostupná, py.exe se běžev s chybou. "
+"(Zapsáno Steve Barnes v :issue:`30291`.)"
 
 #: ../../whatsnew/3.7.rst:2224
 msgid ""
@@ -3635,20 +4339,27 @@ msgid ""
 "matched it will also print the *short form* list of available specifiers. "
 "(Contributed by Steve Barnes in :issue:`30362`.)"
 msgstr ""
+"Spouštěč lze spustit jako ``py -0`` k vytváření seznamu nainstalováných "
+"pythonů, *s výchozím označeným hvězdičkou*. Spoulení ``py -0p`` bude "
+"obsahovat cesty. Pokud je py spoulen s verzí zpřesněním, které nemohou být "
+"sparen, bude také vytisknout *krátký tvar* seznam dostupných zpřesnění. "
+"(Zapsáno Steve Barnes v :issue:`30362`.)"
 
 #: ../../whatsnew/3.7.rst:2234
 msgid "Porting to Python 3.7"
-msgstr ""
+msgstr "Port na Python 3.7"
 
 #: ../../whatsnew/3.7.rst:2236
 msgid ""
 "This section lists previously described changes and other bugfixes that may "
 "require changes to your code."
 msgstr ""
+"Tato sekce vypisšť dříve popsné změny a další opravy chyb, které mohou "
+"vyžadovat změny všeho vašeho kódu."
 
 #: ../../whatsnew/3.7.rst:2241
 msgid "Changes in Python Behavior"
-msgstr ""
+msgstr "Změny v chování Pythonu"
 
 #: ../../whatsnew/3.7.rst:2243
 msgid ""
@@ -3656,6 +4367,9 @@ msgid ""
 "using these names as identifiers will now raise a :exc:`SyntaxError`. "
 "(Contributed by Jelle Zijlstra in :issue:`30406`.)"
 msgstr ""
+"Jména :keyword:`async` a :keyword:`await` jsou nyní rezervována klíčová "
+"slova. Kód používající tyto názvy jako identifikátory nyní vyvolají "
+":exc:`SyntaxError`. (Zapsáno Jelle Zijlstra v :issue:`30406`.)"
 
 #: ../../whatsnew/3.7.rst:2247
 msgid ""
@@ -3664,18 +4378,26 @@ msgid ""
 "and generators are transformed into :exc:`RuntimeError` exceptions. "
 "(Contributed by Yury Selivanov in :issue:`32670`.)"
 msgstr ""
+":pep:`479` je povolen pro všechen kód v Pythonu 3.7, což znamená, že výjimky"
+" :exc:`StopIteration` vyvolny přímo nebo nepřímo v koroutinách a "
+"generátorech jsou transformovány na :exc:`RuntimeError` výjimky. (Zapsáno "
+"Yury Selivanov v :issue:`32670`.)"
 
 #: ../../whatsnew/3.7.rst:2253
 msgid ""
 ":meth:`object.__aiter__` methods can no longer be declared as asynchronous."
 "  (Contributed by Yury Selivanov in :issue:`31709`.)"
 msgstr ""
+"Metody :meth:`object.__aiter__` již nemohou být deklarovány jako "
+"asynchronní. (Zapsáno Yury Selivanov v :issue:`31709`.)"
 
 #: ../../whatsnew/3.7.rst:2256
 msgid ""
 "Due to an oversight, earlier Python versions erroneously accepted the "
 "following syntax::"
 msgstr ""
+"V důsledku přehledu starší verze Pythonu fálešně přijaly následující "
+"syntaxi:"
 
 #: ../../whatsnew/3.7.rst:2259
 msgid ""
@@ -3684,6 +4406,10 @@ msgid ""
 "class C(1 for x in [1]):\n"
 "    pass"
 msgstr ""
+"f(1 for x in [1],)\n"
+"\n"
+"class C(1 for x in [1]):\n"
+"    pass"
 
 #: ../../whatsnew/3.7.rst:2264
 msgid ""
@@ -3693,6 +4419,10 @@ msgid ""
 "can be omitted only on calls. (Contributed by Serhiy Storchaka in "
 ":issue:`32012` and :issue:`32023`.)"
 msgstr ""
+"Python 3.7 nyní správně vyvolají :exc:`SyntaxError`, protože výraz "
+"generátoru vždy musí být přímo uvnitř sady závorek a nemohou mít čárky na "
+"obou stranách a duplikace závorek lze vynechat pouze na voláních. (Zapsáno "
+"Serhiy Storchaka v :issue:`32012` a :issue:`32023`.)"
 
 #: ../../whatsnew/3.7.rst:2270
 msgid ""
@@ -3705,10 +4435,17 @@ msgid ""
 "depending on why the code was checking for the empty string in the first "
 "place)."
 msgstr ""
+"Při použití přepínače :option:`-m` se nyní počáteční pracovní adresář "
+"přidává do :data:`sys.path`, místo prázdného řetězce (který dynamicky "
+"označoval aktuální pracovní adresář v čase každého importu). Všechny "
+"programy, které kontrolují prázdný řetězec, nebo se jinak spoléhají na "
+"předchozí chování, budou muset být aktualizovány (např. také kontrolou "
+":data:`os.getcwd()` nebo :data:`os.path.dirname(__main__.__file__)`, v "
+"závislosti na tom, proč kód kontroloval prázdný řetězec)."
 
 #: ../../whatsnew/3.7.rst:2280
 msgid "Changes in the Python API"
-msgstr ""
+msgstr "Změny v API Pythonu"
 
 #: ../../whatsnew/3.7.rst:2282
 msgid ""
@@ -3719,6 +4456,12 @@ msgid ""
 "``False`` to get the pre-3.7 behaviour. (Contributed by Victor Stinner in "
 ":issue:`31233` and :issue:`33540`.)"
 msgstr ""
+":meth:`socketserver.ThreadingMixIn.server_close "
+"<socketserver.BaseServer.server_close>` nyní čeká na dokončení všech vláken,"
+" která nejsou daemony. Nastavte nový atribut třídy "
+":attr:`socketserver.ThreadingMixIn.block_on_close` na ``False`` pro chování "
+"z verze před 3.7. (Zapsáno Victor Stinner v :issue:`31233` a "
+":issue:`33540`.)"
 
 #: ../../whatsnew/3.7.rst:2289
 msgid ""
@@ -3729,6 +4472,12 @@ msgid ""
 "to get the pre-3.7 behaviour. (Contributed by Victor Stinner in "
 ":issue:`31151` and :issue:`33540`.)"
 msgstr ""
+":meth:`socketserver.ForkingMixIn.server_close "
+"<socketserver.BaseServer.server_close>` nyní čeká na dokončení všech "
+"podprocesů. Nastavte nový atribut třídy "
+":attr:`socketserver.ForkingMixIn.block_on_close "
+"<socketserver.ThreadingMixIn.block_on_close>` na ``False`` pro chování z "
+"verze před 3.7. (Zapsáno Victor Stinner v :issue:`31151` a :issue:`33540`.)"
 
 #: ../../whatsnew/3.7.rst:2297
 msgid ""
@@ -3736,6 +4485,9 @@ msgid ""
 " locale to the value of ``LC_NUMERIC`` in some cases. (Contributed by Victor"
 " Stinner in :issue:`31900`.)"
 msgstr ""
+"Funkce :func:`locale.localeconv` nyní dočasně nastavuje lokálu ``LC_CTYPE`` "
+"na hodnotu ``LC_NUMERIC`` v některých případech. (Zapsáno Victor Stinner v "
+":issue:`31900`.)"
 
 #: ../../whatsnew/3.7.rst:2301
 msgid ""
@@ -3743,6 +4495,9 @@ msgid ""
 "string.  Previously an empty list was returned. (Contributed by Sanyam "
 "Khurana in :issue:`24744`.)"
 msgstr ""
+":meth:`pkgutil.walk_packages` nyní vyvolá :exc:`ValueError`, pokud je *path*"
+" řetězec. Dříve byl vrácen prázdný seznam. (Zapsáno Sanyam Khurana v "
+":issue:`24744`.)"
 
 #: ../../whatsnew/3.7.rst:2305
 msgid ""
@@ -3751,6 +4506,10 @@ msgid ""
 "argument was deprecated in Python 3.5. (Contributed by Serhiy Storchaka in "
 ":issue:`29193`.)"
 msgstr ""
+"Argument řetězce formátu pro :meth:`string.Formatter.format` je nyní "
+":ref:`pouze poziční <positional-only_parameter>`. Předání jako klíčový "
+"argument bylo zastaralé v Pythonu 3.5. (Zapsáno Serhiy Storchaka v "
+":issue:`29193`.)"
 
 #: ../../whatsnew/3.7.rst:2310
 msgid ""
@@ -3761,6 +4520,12 @@ msgid ""
 "deprecated in Python 3.5. Use the :meth:`~http.cookies.Morsel.set` method "
 "for setting them. (Contributed by Serhiy Storchaka in :issue:`29192`.)"
 msgstr ""
+"Atributy :attr:`~http.cookies.Morsel.key`, "
+":attr:`~http.cookies.Morsel.value` a "
+":attr:`~http.cookies.Morsel.coded_value` třídy :class:`http.cookies.Morsel` "
+"jsou nyní pouze pro čtení. Přiřazování do nich bylo zastaralé v Pythonu 3.5."
+" Pro nastavení použijte metodu :meth:`~http.cookies.Morsel.set`. (Zapsáno "
+"Serhiy Storchaka v :issue:`29192`.)"
 
 #: ../../whatsnew/3.7.rst:2318
 msgid ""
@@ -3769,12 +4534,18 @@ msgid ""
 "their file permission bits you can set the umask before invoking "
 "``makedirs()``. (Contributed by Serhiy Storchaka in :issue:`19930`.)"
 msgstr ""
+"Argument *mode* :func:`os.makedirs` již neovlivňuje bity oprávnění souborů "
+"nově vytvořených mezilehlých adresářů. Pro nastavení jejich bitů oprávnění "
+"můžete nastavit umask před voláním ``makedirs()``. (Zapsáno Serhiy Storchaka"
+" v :issue:`19930`.)"
 
 #: ../../whatsnew/3.7.rst:2324
 msgid ""
 "The :attr:`struct.Struct.format` type is now :class:`str` instead of "
 ":class:`bytes`. (Contributed by Victor Stinner in :issue:`21071`.)"
 msgstr ""
+"Typ :attr:`struct.Struct.format` je nyní :class:`str` místo :class:`bytes`. "
+"(Zapsáno Victor Stinner v :issue:`21071`.)"
 
 #: ../../whatsnew/3.7.rst:2327
 msgid ""
@@ -3783,6 +4554,10 @@ msgid ""
 "file fields, the value associated to a key is a list of strings, not bytes. "
 "(Contributed by Pierre Quentel in :issue:`29979`.)"
 msgstr ""
+":func:`!cgi.parse_multipart` nyní přijímá argumenty *encoding* a *errors* a "
+"vrací stejné výsledky jako :class:`!FieldStorage`: pro ne-souborová pole je "
+"hodnota přidružená ke klíči seznam řetězců, ne bajtů. (Zapsáno Pierre "
+"Quentel v :issue:`29979`.)"
 
 #: ../../whatsnew/3.7.rst:2333
 msgid ""
@@ -3790,6 +4565,9 @@ msgid ""
 "on a socket created by :func:`socket.share <socket.socket.share>` in older "
 "Python versions is not supported."
 msgstr ""
+"Kvůli interním změnám v :mod:`socket` není volání :func:`socket.fromshare` "
+"na socketu vytvořeném :func:`socket.share <socket.socket.share>` ve starších"
+" verzích Pythonu podporováno."
 
 #: ../../whatsnew/3.7.rst:2337
 msgid ""
@@ -3797,6 +4575,9 @@ msgid ""
 "comma.  Most exceptions are affected by this change. (Contributed by Serhiy "
 "Storchaka in :issue:`30399`.)"
 msgstr ""
+"Reprezentace ``repr`` pro :exc:`BaseException` se změnila tak, aby "
+"neobsahovala závěrečnou čárku. Většina výjimek je touto změnou ovlivněna. "
+"(Zapsáno Serhiy Storchaka v :issue:`30399`.)"
 
 #: ../../whatsnew/3.7.rst:2341
 msgid ""
@@ -3804,6 +4585,9 @@ msgid ""
 "arguments in the output. (Contributed by Utkarsh Upadhyay in "
 ":issue:`30302`.)"
 msgstr ""
+"Reprezentace ``repr`` pro :class:`datetime.timedelta` se změnila tak, aby "
+"zahrnovala klíčové argumenty ve výstupu. (Zapsáno Utkarsh Upadhyay v "
+":issue:`30302`.)"
 
 #: ../../whatsnew/3.7.rst:2344
 msgid ""
@@ -3812,6 +4596,10 @@ msgid ""
 "called with the first argument ``os.scandir`` instead of ``os.listdir`` when"
 " listing the directory is failed."
 msgstr ""
+"Protože :func:`shutil.rmtree` je nyní implementován pomocí funkce "
+":func:`os.scandir`, uživatelem specifikovaná obsluha *onerror* je nyní "
+"volána s prvním argumentem ``os.scandir`` místo ``os.listdir`` selhání "
+"výpisu adresáře."
 
 #: ../../whatsnew/3.7.rst:2349
 msgid ""
@@ -3823,6 +4611,13 @@ msgid ""
 "``'--'``, ``'&&'``, ``'~~'``, and ``'||'``.  To avoid a warning, escape them"
 " with a backslash. (Contributed by Serhiy Storchaka in :issue:`30349`.)"
 msgstr ""
+"Podpora vnořených sad a operací se sadami v regulárních výrazech, jak je v "
+"`Unicode Technical Standard #18`_, mohou být přidány v budoucnosti. To by "
+"změnilo syntaxi. Pro usnadnění budoucí změny bude :exc:`FutureWarning` "
+"vyvolán v nejednoznačných případech. To zahrnuje sady začínající doslova "
+"``'['`` nebo obsahující literální sekvence znaků ``'--'``, ``'&&'``, "
+"``'~~'`` a ``'||'``. Chcete-li se vyhnout upozornění, vykloňte je zpětným "
+"lomítkem. (Zapsáno Serhiy Storchaka v :issue:`30349`.)"
 
 #: ../../whatsnew/3.7.rst:2360
 msgid ""
@@ -3834,6 +4629,13 @@ msgid ""
 " pattern to ``r'\\s+'``.  A :exc:`FutureWarning` was emitted for such "
 "patterns since Python 3.5."
 msgstr ""
+"Výsledek rozdělení řetězce v :mod:`regulárním výrazu <re>`, který by mohl "
+"odpovídat prázdnému řetězci, se změnil. Například rozdělení na ``r'\\s*'`` "
+"nyní nebude rozdělovat pouze na prázdných znacích, jak to dělalo dříve, ale "
+"také na prázdných řetězcích před všemi znaky, které nejsou mezerami, a právě"
+" před koncem řetězce. Předchozí chování lze obnovit změnou vzoru na "
+"``r'\\s+'``. :exc:`FutureWarning` byl vyzván pro takové vzory od Pythonu "
+"3.5."
 
 #: ../../whatsnew/3.7.rst:2369
 msgid ""
@@ -3844,6 +4646,12 @@ msgid ""
 "positions 2--3.  To match only blank lines, the pattern should be rewritten "
 "as ``r'(?m)^[^\\S\\n]*$'``."
 msgstr ""
+"Pro vzory, které odpovídají prázdným i neprázdným řetězcům, se výsledek "
+"hledání všech shod může také změnit v jiných případech. Například v řetězci "
+"``'a\\n\\n'`` vzor ``r'(?m)^\\s*?$'`` nebude odpovídat pouze prázdným "
+"řetězcům na pozicích 2 a 3, ale také řetězec ``'\\n'`` na pozicích 2--3. Pro"
+" odpovídání pouze prázdných řádků by měl být vzor přepsán jako "
+"``r'(?m)^[^\\S\\n]*$'``."
 
 #: ../../whatsnew/3.7.rst:2376
 msgid ""
@@ -3852,11 +4660,15 @@ msgid ""
 " instead of ``'-a-b-d-'`` (the first minus between 'b' and 'd' replaces 'x',"
 " and the second minus replaces an empty string between 'x' and 'd')."
 msgstr ""
+":func:`re.sub` nyní nahrazuje prázdné shody sousedící s předchozí neprázdnou"
+" shodou. Například ``re.sub('x*', '-', 'abxd')`` nyní vrací ``'-a-b--d-'`` "
+"místo ``'-a-b-d-'`` (první mínus mezi 'b' a 'd' nahrazuje 'x' a druhý mínus "
+"nahrazuje prázdný řetězec mezi 'x' a 'd')."
 
 #: ../../whatsnew/3.7.rst:2382
 msgid ""
 "(Contributed by Serhiy Storchaka in :issue:`25054` and :issue:`32308`.)"
-msgstr ""
+msgstr "(Zapsáno Serhiy Storchaka v :issue:`25054` a :issue:`32308`.)"
 
 #: ../../whatsnew/3.7.rst:2384
 msgid ""
@@ -3864,6 +4676,9 @@ msgid ""
 "escaping all characters other than ASCII letters, numbers, and ``'_'``. "
 "(Contributed by Serhiy Storchaka in :issue:`29995`.)"
 msgstr ""
+"Změna :func:`re.escape` tak, aby se unikaly pouze speciální znaky "
+"regulárních výrazů místo úniku všech znaků jiných než ASCII písmena, čísla a"
+" ``'_'``. (Zapsáno Serhiy Storchaka v :issue:`29995`.)"
 
 #: ../../whatsnew/3.7.rst:2388
 msgid ""
@@ -3871,6 +4686,9 @@ msgid ""
 "recent to be more consistent with :mod:`traceback`. (Contributed by Jesse "
 "Bakker in :issue:`32121`.)"
 msgstr ""
+"Rámce :class:`tracemalloc.Traceback` jsou nyní seřazeny od nejstaršího po "
+"nejnovější, aby byly konzistentnější s :mod:`traceback`. (Zapsáno Jesse "
+"Bakker v :issue:`32121`.)"
 
 #: ../../whatsnew/3.7.rst:2392
 msgid ""
@@ -3880,6 +4698,11 @@ msgid ""
 "``if sock.type == socket.SOCK_STREAM`` work as expected on all platforms. "
 "(Contributed by Yury Selivanov in :issue:`32331`.)"
 msgstr ""
+"Na OS, které podporují příznaky :const:`socket.SOCK_NONBLOCK` nebo "
+":const:`socket.SOCK_CLOEXEC`, atribut :attr:`socket.type "
+"<socket.socket.type>` již nemá aplikovány. Proto kontroly jako ``if "
+"sock.type == socket.SOCK_STREAM`` pracují očekávaně na všech platformách. "
+"(Zapsáno Yury Selivanov v :issue:`32331`.)"
 
 #: ../../whatsnew/3.7.rst:2399
 msgid ""
@@ -3891,6 +4714,13 @@ msgid ""
 "previous behaviour, or use :attr:`STARTUPINFO.lpAttributeList "
 "<subprocess.STARTUPINFO.lpAttributeList>`."
 msgstr ""
+"Na Windows se výchozí nastavení argumentu *close_fds* "
+":class:`subprocess.Popen` změnilo z :const:`False` na :const:`True` při "
+"přesměrování standardních obsluh. Pokud jste dříve spoléhali na dědičnost "
+"obsluh při použití :class:`subprocess.Popen` se standardním přesměrováním "
+"V/V, budete muset projít ``close_fds=False``, abyste zachovali předchozí "
+"chování, nebo použijte :attr:`STARTUPINFO.lpAttributeList "
+"<subprocess.STARTUPINFO.lpAttributeList>`."
 
 #: ../../whatsnew/3.7.rst:2407
 msgid ""
@@ -3899,6 +4729,10 @@ msgid ""
 ":data:`sys.path_importer_cache` which are set to ``None``. (Contributed by "
 "Brett Cannon in :issue:`33169`.)"
 msgstr ""
+":meth:`importlib.machinery.PathFinder.invalidate_caches` -- která implicitně"
+" ovlivňuje :func:`importlib.invalidate_caches` -- nyní odstraňuje záznamy v "
+":data:`sys.path_importer_cache`, které jsou nastaveny na ``None``. (Zapsáno "
+"Brett Cannon v :issue:`33169`.)"
 
 #: ../../whatsnew/3.7.rst:2412
 msgid ""
@@ -3911,6 +4745,14 @@ msgid ""
 " methods returned :class:`asyncio.Future` instances. (Contributed by Yury "
 "Selivanov in :issue:`32327`.)"
 msgstr ""
+"V :mod:`asyncio` byly :meth:`loop.sock_recv() <asyncio.loop.sock_recv>`, "
+":meth:`loop.sock_sendall() <asyncio.loop.sock_sendall>`, "
+":meth:`loop.sock_accept() <asyncio.loop.sock_accept>`, "
+":meth:`loop.getaddrinfo() <asyncio.loop.getaddrinfo>`, "
+":meth:`loop.getnameinfo() <asyncio.loop.getnameinfo>` změněny na správné "
+"metody coroutines, aby odpovídaly jejich dokumentaci. Dříve tyto metody "
+"vracely :class:`asyncio.Future` instance. (Zapsáno Yury Selivanov v "
+":issue:`32327`.)"
 
 #: ../../whatsnew/3.7.rst:2423
 msgid ""
@@ -3918,6 +4760,9 @@ msgid ""
 "server sockets, instead of returning it directly. (Contributed by Yury "
 "Selivanov in :issue:`32662`.)"
 msgstr ""
+":attr:`asyncio.Server.sockets` nyní vrací kopii interního seznamu "
+"serverových soketů místo přímého vrácení. (Zapsáno Yury Selivanov v "
+":issue:`32662`.)"
 
 #: ../../whatsnew/3.7.rst:2427
 msgid ""
@@ -3925,6 +4770,8 @@ msgid ""
 "instead of a :class:`bytes` instance. (Contributed by Victor Stinner in "
 ":issue:`21071`.)"
 msgstr ""
+":attr:`Struct.format <struct.Struct.format>` je nyní instance :class:`str` "
+"místo instance :class:`bytes`. (Zapsáno Victor Stinner v :issue:`21071`.)"
 
 #: ../../whatsnew/3.7.rst:2431
 msgid ""
@@ -3933,6 +4780,10 @@ msgid ""
 "<argparse.ArgumentParser.add_subparsers>`. (Contributed by Anthony Sottile "
 "in :issue:`26510`.)"
 msgstr ""
+"Podparsery :mod:`argparse` mohou nyní být povinné předáním ``required=True``"
+" na :meth:`ArgumentParser.add_subparsers() "
+"<argparse.ArgumentParser.add_subparsers>`. (Zapsáno Anthony Sottile v "
+":issue:`26510`.)"
 
 #: ../../whatsnew/3.7.rst:2435
 msgid ""
@@ -3940,6 +4791,8 @@ msgid ""
 "arbitrary numbers are no longer allowed. (Contributed by Serhiy Storchaka in"
 " :issue:`31778`.)"
 msgstr ""
+":meth:`ast.literal_eval` je nyní přísnější. Přidání a odečítání libovolných "
+"čísel již nejsou povoleny. (Zapsáno Serhiy Storchaka v :issue:`31778`.)"
 
 #: ../../whatsnew/3.7.rst:2439
 msgid ""
@@ -3953,12 +4806,22 @@ msgid ""
 ":class:`datetime.date`. (Contributed by Alexander Belopolsky in "
 ":issue:`28292`.)"
 msgstr ""
+":meth:`Calendar.itermonthdates <calendar.Calendar.itermonthdates>` bude nyní"
+" konzistentně vyvolávat výjimku, pokud datum padne mimo rozsah "
+"``0001-01-01`` až ``9999-12-31``. Pro podporu aplikací, které nemohou "
+"tolerovat takové výjimky, mohou být použity nové "
+":meth:`Calendar.itermonthdays3 <calendar.Calendar.itermonthdays3>` a "
+":meth:`Calendar.itermonthdays4 <calendar.Calendar.itermonthdays4>`. Nové "
+"metody vracejí n-tice a nejsou omezeny rozsahem podporovaným "
+":class:`datetime.date`. (Zapsáno Alexander Belopolsky v :issue:`28292`.)"
 
 #: ../../whatsnew/3.7.rst:2449
 msgid ""
 ":class:`collections.ChainMap` now preserves the order of the underlying "
 "mappings.  (Contributed by Raymond Hettinger in :issue:`32792`.)"
 msgstr ""
+":class:`collections.ChainMap` nyní zachovává pořadí základních mapování. "
+"(Zapsáno Raymond Hettinger v :issue:`32792`.)"
 
 #: ../../whatsnew/3.7.rst:2452
 msgid ""
@@ -3967,6 +4830,10 @@ msgid ""
 ":exc:`RuntimeError` if called during interpreter shutdown. (Contributed by "
 "Mark Nemec in :issue:`33097`.)"
 msgstr ""
+"Metoda ``submit()`` :class:`concurrent.futures.ThreadPoolExecutor` a "
+":class:`concurrent.futures.ProcessPoolExecutor` nyní vyvolá "
+":exc:`RuntimeError`, pokud je volána během vypnutí interpretu. (Zapsáno Mark"
+" Nemec v :issue:`33097`.)"
 
 #: ../../whatsnew/3.7.rst:2457
 msgid ""
@@ -3976,6 +4843,11 @@ msgid ""
 "now being implicitly converted to strings. (Contributed by James Tocknell in"
 " :issue:`23835`.)"
 msgstr ""
+"Konstruktor :class:`configparser.ConfigParser` nyní používá ``read_dict()`` "
+"ke zpracování výchozích hodnot, čímž je jeho chování konzistentní se zbytkem"
+" parseru. Ne-řetězcové klíče a hodnoty ve slovníku výchozích jsou nyní "
+"implicitně konvertovány na řetězce. (Zapsáno James Tocknell v "
+":issue:`23835`.)"
 
 #: ../../whatsnew/3.7.rst:2463
 msgid ""
@@ -3984,10 +4856,14 @@ msgid ""
 "Note that such undocumented internal imports may be removed any time without"
 " notice, even in micro version releases."
 msgstr ""
+"Několik nedokumentovaných interních importů bylo odstraněno. Příkladem je, "
+"že ``os.errno`` již není dostupné; mějte na paměti použít ``import errno`` "
+"přímo. Nezapomeňte, že takové nedokumentované interní importy mohou být "
+"kdykoliv odstraněny bez výstrahy, až v mikro verzích."
 
 #: ../../whatsnew/3.7.rst:2471
 msgid "Changes in the C API"
-msgstr ""
+msgstr "Změny v C API"
 
 #: ../../whatsnew/3.7.rst:2473
 msgid ""
@@ -4000,10 +4876,18 @@ msgid ""
 "functions :c:func:`PySlice_Unpack` and :c:func:`PySlice_AdjustIndices`. "
 "(Contributed by Serhiy Storchaka in :issue:`27867`.)"
 msgstr ""
+"Funkce :c:func:`PySlice_GetIndicesEx` je považována za nebezpečnou pro "
+"měnitelné sekvence. Pokud indexy řezu nejsou instance :class:`int`, ale "
+"objekty, které implementují metodu :meth:`!__index__`, může být sekvence "
+"změněna poté, co bude její délka předána :c:func:`!PySlice_GetIndicesEx`. To"
+" může vést k vrácení indexů mimo délku sekvence. Chcete-li se vyhnout možným"
+" problémům, použijte nové funkce :c:func:`PySlice_Unpack` a "
+":c:func:`PySlice_AdjustIndices`. (Zapsáno Serhiy Storchaka v "
+":issue:`27867`.)"
 
 #: ../../whatsnew/3.7.rst:2484
 msgid "CPython bytecode changes"
-msgstr ""
+msgstr "Změny bytecode Pythonu"
 
 #: ../../whatsnew/3.7.rst:2486
 msgid ""
@@ -4011,12 +4895,16 @@ msgid ""
 ":opcode:`!CALL_METHOD`. (Contributed by Yury Selivanov and INADA Naoki in "
 ":issue:`26110`.)"
 msgstr ""
+"Existují dva nové opkódy: :opcode:`!LOAD_METHOD` a :opcode:`!CALL_METHOD`. "
+"(Zapsáno Yury Selivanov a INADA Naoki v :issue:`26110`.)"
 
 #: ../../whatsnew/3.7.rst:2489
 msgid ""
 "The :opcode:`!STORE_ANNOTATION` opcode has been removed. (Contributed by "
 "Mark Shannon in :issue:`32550`.)"
 msgstr ""
+"Opkód :opcode:`!STORE_ANNOTATION` byl odstraněn. (Zapsáno Mark Shannon v "
+":issue:`32550`.)"
 
 #: ../../whatsnew/3.7.rst:2496
 msgid ""
@@ -4025,10 +4913,13 @@ msgid ""
 ":ref:`windows_finding_modules` for more information. (Contributed by Steve "
 "Dower in :issue:`28137`.)"
 msgstr ""
+"Soubor používaný k přepsání :data:`sys.path` je nyní volán ``<python-"
+"executable>._pth`` místo ``'sys.path'``. Viz :ref:`windows_finding_modules` "
+"pro další informace. (Zapsáno Steve Dower v :issue:`28137`.)"
 
 #: ../../whatsnew/3.7.rst:2503
 msgid "Other CPython implementation changes"
-msgstr ""
+msgstr "Další změny implementace CPythonu"
 
 #: ../../whatsnew/3.7.rst:2505
 msgid ""
@@ -4044,6 +4935,17 @@ msgid ""
 "part of :issue:`22257`, and further updated by Nick, Eric, and Victor "
 "Stinner in a number of other issues). Some known details affected:"
 msgstr ""
+"V přípravě na potenciální budoucí změny ve veřejném API inicializace CPython"
+" běhu (viz :pep:`432` pro původní, ale něco zastaralou, verzi), byla logika "
+"interního spouštění a správy konfigurace CPythonu výšazně refaktorována. "
+"Zatímco jsou tyto aktualizace určeny k tomu, aby byly zcela transparentní "
+"jak pro vkládající aplikace, tak pro uživatele běžného CPython CLI, jsou zde"
+" změněny, protože refaktoring změní interní pořadí různých operací během "
+"spouštění interpretu, a tedy může odhalit dříve skryté defekty buď ve "
+"vkládajících aplikacích, nebo v samotnom CPythonu. (Původně přispěl Nick "
+"Coghlan a Eric Snow jako součást :issue:`22257`, a dále aktualizováno Nick, "
+"Eric a Victor Stinner v několika dalších problémech). Některé známé "
+"podrobnosti ovlivněny:"
 
 #: ../../whatsnew/3.7.rst:2518
 msgid ""
@@ -4051,6 +4953,10 @@ msgid ""
 "applications due to the requirement to create a Unicode object prior to "
 "calling ``Py_Initialize``. Use :c:func:`!PySys_AddWarnOption` instead."
 msgstr ""
+":c:func:`!PySys_AddWarnOptionUnicode` není v současné době použitelna "
+"vkládajícími aplikacemi z důvodu požadavku vytvořit objekt Unicode před "
+"voláním ``Py_Initialize``. Použijte místo toho "
+":c:func:`!PySys_AddWarnOption`."
 
 #: ../../whatsnew/3.7.rst:2522
 msgid ""
@@ -4058,6 +4964,9 @@ msgid ""
 ":c:func:`!PySys_AddWarnOption` should now more consistently take precedence "
 "over the default filters set by the interpreter"
 msgstr ""
+"Filtry upozornění přidané vkládající aplikací pomocí "
+":c:func:`!PySys_AddWarnOption` by se nyní měly konzistentněji přiřadit "
+"výchozím filtrům nastaveným interpretem"
 
 #: ../../whatsnew/3.7.rst:2526
 msgid ""
@@ -4068,6 +4977,12 @@ msgid ""
 "warnings to be emitted in the first place), and an explicit "
 "``error::BytesWarning`` warnings filter added to convert them to exceptions."
 msgstr ""
+"Kvůli změnám ve způsobu konfigurace výchozích filtrů upozornění není "
+"nastavení :c:data:`Py_BytesWarningFlag` na hodnotu větší než jedna již "
+"dostatečnou k zároveň vyvolání zpráv :exc:`BytesWarning` a jejich konverzi "
+"na výjimky. Místo toho musí být příznak nastaven (aby zprávy byly vyvozeny "
+"na prvním místě), a musí být přidán explicitní filtr upozornění "
+"``error::BytesWarning``, aby je byly konvertovány na výjimky."
 
 #: ../../whatsnew/3.7.rst:2533
 msgid ""
@@ -4076,6 +4991,10 @@ msgid ""
 " is now marked as occurring on the same line as the docstring, not on the "
 "function's header line."
 msgstr ""
+"Kvůli změně způsobu, jakým kompilátor zpracovává docstrings, je implicitní "
+"``return None`` v těle funkce skládající se pouze z docstringu nyní označeno"
+" jako vyskytující se na stejném řádku jako docstring, ne na řádku záhlaví "
+"funkce."
 
 #: ../../whatsnew/3.7.rst:2538
 msgid ""
@@ -4084,10 +5003,14 @@ msgid ""
 "caused by having swap exception state when entering or exiting a generator. "
 "(Contributed by Mark Shannon in :issue:`25612`.)"
 msgstr ""
+"Aktuální stav výjimky byl přesunut z objektu rámce na korutinu. To "
+"zjednoduilo interpret a opravilo pár obscurních chyb způsobených výměnou "
+"stavu výjimky při vstupu nebo výstup generátor. (Zapsáno Mark Shannon v "
+":issue:`25612`.)"
 
 #: ../../whatsnew/3.7.rst:2544
 msgid "Notable changes in Python 3.7.1"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.7.1"
 
 #: ../../whatsnew/3.7.rst:2546
 msgid ""
@@ -4099,6 +5022,13 @@ msgid ""
 ":c:data:`Py_IgnoreEnvironmentFlag` to 1 before calling "
 ":c:func:`Py_Initialize`."
 msgstr ""
+"Od verze 3.7.1, :c:func:`Py_Initialize` nyní konzistentně čte a respektuje "
+"všechna stejná nastavení prostředí jako :c:func:`Py_Main` (v dřívějších "
+"verzích Pythonu respektovala špatně definovanou podmnožinu těch proměnnych "
+"prostředí, zatímco v Pythonu 3.7.0 nečetla žádné z nich kvůli "
+":issue:`34247`). Pokud toto chování není žádoucí, nastavte "
+":c:data:`Py_IgnoreEnvironmentFlag` na 1 před voláním "
+":c:func:`Py_Initialize`."
 
 #: ../../whatsnew/3.7.rst:2553
 msgid ""
@@ -4106,6 +5036,9 @@ msgid ""
 "<contextvarsobjects_pointertype_change>` to use :c:type:`PyObject` pointers."
 "  See also :issue:`34762`."
 msgstr ""
+"V 3.7.1 bylo C API pro Context Variables :ref:`aktualizováno "
+"<contextvarsobjects_pointertype_change>` tak, aby používalo ukazatele "
+":c:type:`PyObject`. Viz také :issue:`34762`."
 
 #: ../../whatsnew/3.7.rst:2557
 msgid ""
@@ -4114,10 +5047,14 @@ msgid ""
 "behavior now matches what the C tokenizer does internally. (Contributed by "
 "Ammar Askar in :issue:`33899`.)"
 msgstr ""
+"V 3.7.1 modul :mod:`tokenize` nyní implicitně vyzývá token ``NEWLINE`` při "
+"poskytnutí vstupu, který nemá zavšit nový řádek. Toto chování se nyní "
+"shoduje s tím, co vnitřně dělá C tokenizer. (Zapsáno Ammar Askar v "
+":issue:`33899`.)"
 
 #: ../../whatsnew/3.7.rst:2563
 msgid "Notable changes in Python 3.7.2"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.7.2"
 
 #: ../../whatsnew/3.7.rst:2565
 msgid ""
@@ -4128,10 +5065,16 @@ msgid ""
 "note that this release will still require recreation of virtual environments"
 " in order to get the new scripts."
 msgstr ""
+"V 3.7.2, :mod:`venv` na Windows již nekopíruje původní binární soubory, ale "
+"vytváří skripty přesměrování pojmenované ``python.exe`` a ``pythonw.exe``. "
+"Toto vyřeší dlouhodobý problem, kdy by všechna virtuální prostředí musela "
+"být upgradována nebo znovu vytvořena s každou aktualizací Pythonu. Nicméně "
+"si všimněte, že tato verze stále vyžaduje obnovu virtuálních prostředí, aby "
+"se získaly nové skripty."
 
 #: ../../whatsnew/3.7.rst:2573
 msgid "Notable changes in Python 3.7.6"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.7.6"
 
 #: ../../whatsnew/3.7.rst:2575
 msgid ""
@@ -4142,10 +5085,15 @@ msgid ""
 "``loop.create_datagram_endpoint()``. (Contributed by Kyle Stanley, Antoine "
 "Pitrou, and Yury Selivanov in :issue:`37228`.)"
 msgstr ""
+"Kvůli vážným bezpečnostním obavám není parametr *reuse_address* "
+":meth:`asyncio.loop.create_datagram_endpoint` již podporován. To je z důvodu"
+" chování volby socketu ``SO_REUSEADDR`` v UDP. Další podrobnosti naleznete v"
+" dokumentaci ``loop.create_datagram_endpoint()``. (Zapsáno Kyle Stanley, "
+"Antoine Pitrou a Yury Selivanov v :issue:`37228`.)"
 
 #: ../../whatsnew/3.7.rst:2583
 msgid "Notable changes in Python 3.7.10"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.7.10"
 
 #: ../../whatsnew/3.7.rst:2585
 msgid ""
@@ -4159,10 +5107,19 @@ msgid ""
 "documentation. (Contributed by Adam Goldschmidt, Senthil Kumaran and Ken Jin"
 " in :issue:`42967`.)"
 msgstr ""
+"Dřívější verze Pythonu umožňovaly použít jak ``;`` tak ``&`` jako oddělovače"
+" parametrů dotazu v :func:`urllib.parse.parse_qs` a "
+":func:`urllib.parse.parse_qsl`. Kvůli bezpečnostním obavám a aby se "
+"shodovalo s novějšími doporučeními W3C, toto bylo změněno tak, aby bylo "
+"povoleno pouze jedno oddělující klíč, s ``&`` jako výchozím. Tato změna také"
+" ovlivňuje :func:`!cgi.parse` a :func:`!cgi.parse_multipart`, protože "
+"interně používají ovlivňované funkce. Další podrobnosti naleznete v jejich "
+"příslušné dokumentaci. (Zapsáno Adam Goldschmidt, Senthil Kumaran a Ken Jin "
+"v :issue:`42967`.)"
 
 #: ../../whatsnew/3.7.rst:2596
 msgid "Notable changes in Python 3.7.11"
-msgstr ""
+msgstr "Pozoruhodné změny v Pythonu 3.7.11"
 
 #: ../../whatsnew/3.7.rst:2598
 msgid ""
@@ -4172,6 +5129,11 @@ msgid ""
 "the old behavior, set a ``trust_server_pasv_ipv4_address`` attribute on your"
 " FTP instance to ``True``.  (See :gh:`87451`)"
 msgstr ""
+"Bezpečnostní oprava změní chování :class:`ftplib.FTP` tak, aby nevěřila IPv4"
+" adrese odeslané ze vzdáleného serveru při nastavení pasivního kanálu. Znovu"
+" používáme IP adresu serveru FTP. Pro neběžný kód vyžadující staré chování "
+"nastavte atribut ``trust_server_pasv_ipv4_address`` na vaší instanci FTP na "
+"``True``. (Viz :gh:`87451`)"
 
 #: ../../whatsnew/3.7.rst:2605
 msgid ""
@@ -4182,10 +5144,16 @@ msgid ""
 "removal characters are controlled by a new module level variable "
 "``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (See :gh:`88048`)"
 msgstr ""
+"Přítomnost znaků nového řádku nebo tabulátoru v částech URL umožňuje některé"
+" formy útoků. Podle specifikace WHATWG, která aktualizuje RFC 3986, jsou "
+"ASCII znaky nového řádku ``\\n``, ``\\r`` a tabulátoru ``\\t`` odstraňovány "
+"z URL parserem :func:`urllib.parse`, čímž se takové útoky předcházejí. "
+"Odstraňované znaky jsou řízeny novou proměnnou na úrovni modulu "
+"``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (Viz :gh:`88048`)"
 
 #: ../../whatsnew/3.7.rst:2613
 msgid "Notable security feature in 3.7.14"
-msgstr ""
+msgstr "Pozoruhodná bezpečnostní funkce v 3.7.14"
 
 #: ../../whatsnew/3.7.rst:2615
 msgid ""
@@ -4199,6 +5167,15 @@ msgid ""
 "limitation <int_max_str_digits>` documentation.  The default limit is 4300 "
 "digits in string form."
 msgstr ""
+"Konverze mezi :class:`int` a :class:`str` v základech jiných než 2 "
+"(binární), 4, 8 (oktal), 16 (hexa), nebo 32, jako například základ 10 "
+"(desítkový), nyní vyvoli :exc:`ValueError`, pokud je počet číslic v "
+"řetězcové formě nad limitem, aby se zabránilo potenciálním útokům zamítání "
+"služby kvůli algoritmické složitosti. Toto je zmírnění pro "
+":cve:`2020-10735`. Tento limit lze konfigurovat nebo zakázat pomocí proměnné"
+" prostředí, přepínače příkazového řádku nebo :mod:`sys` API. Viz dokumentace"
+" :ref:`omezení délky konverze celobého čísla na řetězec "
+"<int_max_str_digits>`. Výchozí limit je 4300 číslic v řetězcové formě."
 
 #~ msgid ""
 #~ "The :mod:`!cProfile` command line now accepts ``-m module_name`` as an "
