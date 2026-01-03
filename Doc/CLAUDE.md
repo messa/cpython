@@ -1,5 +1,7 @@
 # Czech Translation of Python Documentation
 
+Note: "Translate a .po file" means adding Czech translations to msgstr fields using the workflow below, not compiling .po to .mo.
+
 ## Translation workflow using po_tool.py
 
 ```bash
