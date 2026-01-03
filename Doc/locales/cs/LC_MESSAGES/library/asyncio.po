@@ -1,16 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation of Python Documentation - asyncio module
 # Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-01-03 10:00+0000\n"
+"Last-Translator: \n"
 "Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
@@ -21,23 +19,23 @@ msgstr ""
 
 #: ../../library/asyncio.rst:100
 msgid "High-level APIs"
-msgstr ""
+msgstr "High-level API"
 
 #: ../../library/asyncio.rst:113
 msgid "Low-level APIs"
-msgstr ""
+msgstr "Low-level API"
 
 #: ../../library/asyncio.rst:124
 msgid "Guides and Tutorials"
-msgstr ""
+msgstr "Průvodce a tutoriály"
 
 #: ../../library/asyncio.rst:2
 msgid ":mod:`!asyncio` --- Asynchronous I/O"
-msgstr ""
+msgstr ":mod:`!asyncio` --- Asynchronní I/O"
 
 #: ../../library/asyncio.rst:-1
 msgid "Hello World!"
-msgstr ""
+msgstr "Ahoj světe!"
 
 #: ../../library/asyncio.rst:13
 msgid ""
@@ -50,12 +48,22 @@ msgid ""
 "\n"
 "asyncio.run(main())"
 msgstr ""
+"import asyncio\n"
+"\n"
+"async def main():\n"
+"    print('Hello ...')\n"
+"    await asyncio.sleep(1)\n"
+"    print('... World!')\n"
+"\n"
+"asyncio.run(main())"
 
 #: ../../library/asyncio.rst:22
 msgid ""
 "asyncio is a library to write **concurrent** code using the "
 "**async/await** syntax."
 msgstr ""
+"asyncio je knihovna pro psaní **souběžného** kódu pomocí syntaxe "
+"**async/await**."
 
 #: ../../library/asyncio.rst:25
 msgid ""
@@ -63,52 +71,60 @@ msgid ""
 "frameworks that provide high-performance network and web-servers, "
 "database connection libraries, distributed task queues, etc."
 msgstr ""
+"asyncio se používá jako základ pro mnoho asynchronních frameworků v Pythonu, "
+"které poskytují vysoce výkonné síťové a webové servery, knihovny pro připojení "
+"k databázím, distribuované fronty úloh atd."
 
 #: ../../library/asyncio.rst:29
 msgid ""
 "asyncio is often a perfect fit for IO-bound and high-level **structured**"
 " network code."
 msgstr ""
+"asyncio je často ideální volbou pro kód vázaný na I/O a vysoce úrovňový "
+"**strukturovaný** síťový kód."
 
 #: ../../library/asyncio.rst:34
 msgid ":ref:`a-conceptual-overview-of-asyncio`"
-msgstr ""
+msgstr ":ref:`a-conceptual-overview-of-asyncio`"
 
 #: ../../library/asyncio.rst:35
 msgid "Explanation of the fundamentals of asyncio."
-msgstr ""
+msgstr "Vysvětlení základů asyncio."
 
 #: ../../library/asyncio.rst:37
 msgid "asyncio provides a set of **high-level** APIs to:"
-msgstr ""
+msgstr "asyncio poskytuje sadu **high-level** API pro:"
 
 #: ../../library/asyncio.rst:39
 msgid ""
 ":ref:`run Python coroutines <coroutine>` concurrently and have full "
 "control over their execution;"
 msgstr ""
+":ref:`spouštět Python korutiny <coroutine>` souběžně a mít plnou kontrolu "
+"nad jejich prováděním;"
 
 #: ../../library/asyncio.rst:42
 msgid "perform :ref:`network IO and IPC <asyncio-streams>`;"
-msgstr ""
+msgstr "provádět :ref:`síťové I/O a IPC <asyncio-streams>`;"
 
 #: ../../library/asyncio.rst:44
 msgid "control :ref:`subprocesses <asyncio-subprocess>`;"
-msgstr ""
+msgstr "řídit :ref:`subprocesy <asyncio-subprocess>`;"
 
 #: ../../library/asyncio.rst:46
 msgid "distribute tasks via :ref:`queues <asyncio-queues>`;"
-msgstr ""
+msgstr "distribuovat úlohy pomocí :ref:`front <asyncio-queues>`;"
 
 #: ../../library/asyncio.rst:48
 msgid ":ref:`synchronize <asyncio-sync>` concurrent code;"
-msgstr ""
+msgstr ":ref:`synchronizovat <asyncio-sync>` souběžný kód;"
 
 #: ../../library/asyncio.rst:50
 msgid ""
 "Additionally, there are **low-level** APIs for *library and framework "
 "developers* to:"
 msgstr ""
+"Navíc existují **low-level** API pro *vývojáře knihoven a frameworků* pro:"
 
 #: ../../library/asyncio.rst:53
 msgid ""
@@ -117,38 +133,49 @@ msgid ""
 ":ref:`subprocesses <loop_subprocess_exec>`, handling :ref:`OS signals "
 "<loop_add_signal_handler>`, etc;"
 msgstr ""
+"vytváření a správu :ref:`event loopů <asyncio-event-loop>`, které poskytují "
+"asynchronní API pro :ref:`síťování <loop_create_server>`, spouštění "
+":ref:`subprocesů <loop_subprocess_exec>`, zpracování :ref:`OS signálů "
+"<loop_add_signal_handler>` atd.;"
 
 #: ../../library/asyncio.rst:58
 msgid ""
 "implement efficient protocols using :ref:`transports <asyncio-transports-"
 "protocols>`;"
 msgstr ""
+"implementaci efektivních protokolů pomocí :ref:`transportů <asyncio-transports-"
+"protocols>`;"
 
 #: ../../library/asyncio.rst:61
 msgid ""
 ":ref:`bridge <asyncio-futures>` callback-based libraries and code with "
 "async/await syntax."
 msgstr ""
+":ref:`propojení <asyncio-futures>` knihoven a kódu založených na callbackech "
+"se syntaxí async/await."
 
 #: ../../includes/wasm-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-notavail.rst:5
 msgid ""
 "This module does not work or is not available on WebAssembly. See :ref"
 ":`wasm-availability` for more information."
 msgstr ""
+"Tento modul nefunguje nebo není dostupný na WebAssembly. Viz :ref"
+":`wasm-availability` pro více informací."
 
 #: ../../library/asyncio.rst:69
 msgid "asyncio REPL"
-msgstr ""
+msgstr "asyncio REPL"
 
 #: ../../library/asyncio.rst:70
 msgid ""
 "You can experiment with an ``asyncio`` concurrent context in the "
 ":term:`REPL`:"
 msgstr ""
+"Můžete experimentovat s ``asyncio`` souběžným kontextem v :term:`REPL`:"
 
 #: ../../library/asyncio.rst:72
 msgid ""
@@ -161,6 +188,14 @@ msgid ""
 ">>> await asyncio.sleep(10, result='hello')\n"
 "'hello'"
 msgstr ""
+"$ python -m asyncio\n"
+"asyncio REPL ...\n"
+"Use \"await\" directly instead of \"asyncio.run()\".\n"
+"Type \"help\", \"copyright\", \"credits\" or \"license\" for more "
+"information.\n"
+">>> import asyncio\n"
+">>> await asyncio.sleep(10, result='hello')\n"
+"'hello'"
 
 #: ../../library/asyncio.rst:82
 msgid ""
@@ -168,28 +203,33 @@ msgid ""
 ":envvar:`PYTHON_BASIC_REPL`. It is recommended that the default REPL is "
 "used for full functionality and the latest features."
 msgstr ""
+"Tento REPL poskytuje omezenou kompatibilitu s :envvar:`PYTHON_BASIC_REPL`. "
+"Doporučuje se používat výchozí REPL pro plnou funkčnost a nejnovější funkce."
 
 #: ../../library/asyncio.rst:86
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``cpython.run_stdin`` with no "
 "arguments."
 msgstr ""
+"Vyvolá :ref:`auditní událost <auditing>` ``cpython.run_stdin`` bez argumentů."
 
 #: ../../library/asyncio.rst:88
 msgid "(also 3.11.10, 3.10.15, 3.9.20, and 3.8.20) Emits audit events."
-msgstr ""
+msgstr "(také 3.11.10, 3.10.15, 3.9.20 a 3.8.20) Emituje auditní události."
 
 #: ../../library/asyncio.rst:91
 msgid ""
 "Uses PyREPL if possible, in which case :envvar:`PYTHONSTARTUP` is also "
 "executed. Emits audit events."
 msgstr ""
+"Používá PyREPL, pokud je to možné, v tom případě je také spuštěn "
+":envvar:`PYTHONSTARTUP`. Emituje auditní události."
 
 #: ../../library/asyncio.rst:99
 msgid "Reference"
-msgstr ""
+msgstr "Reference"
 
 #: ../../library/asyncio.rst:133
 msgid "The source code for asyncio can be found in :source:`Lib/asyncio/`."
-msgstr ""
+msgstr "Zdrojový kód pro asyncio naleznete v :source:`Lib/asyncio/`."
 
