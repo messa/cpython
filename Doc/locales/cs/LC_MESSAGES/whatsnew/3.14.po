@@ -876,7 +876,7 @@ msgid "A new type of interpreter"
 msgstr "Nový typ interpretru"
 
 #: ../../whatsnew/3.14.rst:443
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 "A new type of interpreter has been added to CPython. It uses tail calls "
 "between small C functions that implement individual Python opcodes, "
@@ -4446,7 +4446,7 @@ msgstr ""
 "Více podrobností naleznete v :ref:`níle <whatsnew314-refcount>`."
 
 #: ../../whatsnew/3.14.rst:2164
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 "Standard benchmark results have improved by 10-20% following the "
 "implementation of a new per-thread doubly linked list for :class:`native "
@@ -4577,7 +4577,7 @@ msgstr ""
 "škodlivý. Všechen ostatní kód bude fungovat správně."
 
 #: ../../whatsnew/3.14.rst:2242
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 "Opening and reading files now executes fewer system calls. Reading a "
 "small operating system cached file in full is up to 15% faster. "
@@ -4590,7 +4590,7 @@ msgstr ""
 ":gh:`90102`.)"
 
 #: ../../whatsnew/3.14.rst:2251
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 ":func:`Path.read_bytes <pathlib.Path.read_bytes>` now uses unbuffered "
 "mode to open files, which is between 9% and 17% faster to read in full. "
@@ -4634,7 +4634,7 @@ msgstr ""
 "tabulátorem."
 
 #: ../../whatsnew/3.14.rst:2280
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 ":func:`~uuid.uuid3` and :func:`~uuid.uuid5` are now both roughly 40% "
 "faster for 16-byte names and 20% faster for 1024-byte names. Performance "
@@ -4647,7 +4647,7 @@ msgstr ""
 ":gh:`128150`.)"
 
 #: ../../whatsnew/3.14.rst:2285
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 ":func:`~uuid.uuid4` is now c. 30% faster. (Contributed by Bénédikt Tran "
 "in :gh:`128150`.)"
@@ -8121,7 +8121,7 @@ msgid ""
 msgstr ""
 
 #: ../../whatsnew/3.14.rst:3229
-#, no-python-format, python-format
+#, no-python-format
 msgid ""
 "The JIT is at an early stage and still in active development. As such, "
 "the typical performance impact of enabling it can range from 10% slower "
