@@ -11,235 +11,300 @@ msgstr ""
 "POT-Creation-Date: 2026-01-08 16:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/importlib.resources.abc.rst:2
 msgid ":mod:`!importlib.resources.abc` -- Abstract base classes for resources"
 msgstr ""
+":mod:`!importlib.resources.abc` -- Abstraktni zakladni tridy pro zdroje"
 
 #: ../../library/importlib.resources.abc.rst:7
 msgid "**Source code:** :source:`Lib/importlib/resources/abc.py`"
-msgstr ""
+msgstr "**Zdrojovy kod:** :source:`Lib/importlib/resources/abc.py`"
 
 #: ../../library/importlib.resources.abc.rst:15
 msgid "*Superseded by TraversableResources*"
-msgstr ""
+msgstr "*Nahrazeno TraversableResources*"
 
 #: ../../library/importlib.resources.abc.rst:17
-msgid "An :term:`abstract base class` to provide the ability to read *resources*."
+msgid ""
+"An :term:`abstract base class` to provide the ability to read *resources*."
 msgstr ""
+":term:`Abstraktni zakladni triida` poskytujici schopnost cist *zdroje*."
 
 #: ../../library/importlib.resources.abc.rst:20
 msgid ""
-"From the perspective of this ABC, a *resource* is a binary artifact that "
-"is shipped within a package. Typically this is something like a data file"
-" that lives next to the ``__init__.py`` file of the package. The purpose "
-"of this class is to help abstract out the accessing of such data files so"
-" that it does not matter if the package and its data file(s) are stored "
-"e.g. in a zip file versus on the file system."
+"From the perspective of this ABC, a *resource* is a binary artifact that is "
+"shipped within a package. Typically this is something like a data file that "
+"lives next to the ``__init__.py`` file of the package. The purpose of this "
+"class is to help abstract out the accessing of such data files so that it "
+"does not matter if the package and its data file(s) are stored e.g. in a zip"
+" file versus on the file system."
 msgstr ""
+"Z pohledu teto ABC je *zdroj* binarni artefakt, ktery je dodavan v ramci "
+"baliku. Typicky se jedna o neco jako datovy soubor, ktery zije vedle "
+"``__init__.py`` souboru baliku. Ucel teto tridy je pomoci abstraktovat "
+"pristup k takovym datovym souborum tak, aby nezalezelo na tom, zda je balik "
+"a jeho datovy soubor(y) ulozeny napriklad v zip souboru versus v systemu "
+"souboru."
 
 #: ../../library/importlib.resources.abc.rst:28
 msgid ""
-"For any of methods of this class, a *resource* argument is expected to be"
-" a :term:`path-like object` which represents conceptually just a file "
-"name. This means that no subdirectory paths should be included in the "
-"*resource* argument. This is because the location of the package the "
-"reader is for, acts as the \"directory\". Hence the metaphor for "
-"directories and file names is packages and resources, respectively. This "
-"is also why instances of this class are expected to directly correlate to"
-" a specific package (instead of potentially representing multiple "
-"packages or a module)."
+"For any of methods of this class, a *resource* argument is expected to be a "
+":term:`path-like object` which represents conceptually just a file name. "
+"This means that no subdirectory paths should be included in the *resource* "
+"argument. This is because the location of the package the reader is for, "
+"acts as the \"directory\". Hence the metaphor for directories and file names"
+" is packages and resources, respectively. This is also why instances of this"
+" class are expected to directly correlate to a specific package (instead of "
+"potentially representing multiple packages or a module)."
 msgstr ""
+"Pro jakoukoli z metod teto tridy se ocekava, ze argument *resource* bude "
+":term:`cesta-jako objekt` ktery reprezentuje konceptualne jen nazev souboru."
+" To znamena, ze zadne podadresare cesty by mely byt zahrnuty v argumentu "
+"*resource*. Je to proto, ze umisteni baliku, pro ktere je ctecka, slouzj "
+"jako \"adresar\". Odtud je metafora pro adresare a nazvy souboru je baliky a"
+" zdroje. To je take duvod, proc se instance teto tridy ocekavaji, ze budou "
+"primo korespondovat s konkretnim balikem (miste potencialne zastupovani "
+"vicebalik nebo modulu)."
 
 #: ../../library/importlib.resources.abc.rst:39
 msgid ""
 "Loaders that wish to support resource reading are expected to provide a "
 "method called ``get_resource_reader(fullname)`` which returns an object "
-"implementing this ABC's interface. If the module specified by fullname is"
-" not a package, this method should return :const:`None`. An object "
-"compatible with this ABC should only be returned when the specified "
-"module is a package."
+"implementing this ABC's interface. If the module specified by fullname is "
+"not a package, this method should return :const:`None`. An object compatible"
+" with this ABC should only be returned when the specified module is a "
+"package."
 msgstr ""
+"Loadery, ktere chci podporovat cteni zdroju, se ocekava, ze poskytnout "
+"metodu nazvanou ``get_resource_reader(fullname)`` ktera vraci objekt "
+"implementujici rozhrani teto ABC. Pokud modul specifikovan fullname neni "
+"balik, tato metoda by mela vratit :const:`None`. Objekt kompatibilni s touto"
+" ABC by mel byt vracen pouze kdyz je specifikovany modul baliku."
 
 #: ../../library/importlib.resources.abc.rst:46
 msgid "Use :class:`importlib.resources.abc.TraversableResources` instead."
 msgstr ""
+"Miste toho pouzijte :class:`importlib.resources.abc.TraversableResources`."
 
 #: ../../library/importlib.resources.abc.rst:52
 msgid ""
 "Returns an opened, :term:`file-like object` for binary reading of the "
 "*resource*."
 msgstr ""
+"Vraci otevreny, :term:`objekt podobny souboru` pro binarni cteni *zdroje*."
 
 #: ../../library/importlib.resources.abc.rst:55
 msgid "If the resource cannot be found, :exc:`FileNotFoundError` is raised."
-msgstr ""
+msgstr "Pokud zdroj nelze najit, vyvola se :exc:`FileNotFoundError`."
 
 #: ../../library/importlib.resources.abc.rst:61
 msgid "Returns the file system path to the *resource*."
-msgstr ""
+msgstr "Vrací cestu v systému souborů k *prostředku*."
 
 #: ../../library/importlib.resources.abc.rst:63
 msgid ""
 "If the resource does not concretely exist on the file system, raise "
 ":exc:`FileNotFoundError`."
 msgstr ""
+"Pokud prostředek konkrétně neexistuje v systému souborů, vyvolá "
+":exc:`FileNotFoundError`."
 
 #: ../../library/importlib.resources.abc.rst:69
 msgid ""
 "Returns ``True`` if the named *path* is considered a resource. "
 ":exc:`FileNotFoundError` is raised if *path* does not exist."
 msgstr ""
+"Vrací ``True``, pokud je pojmenovaná *cesta* považována za prostředek. "
+":exc:`FileNotFoundError` je vyvolána, pokud *cesta* neexistuje."
 
 #: ../../library/importlib.resources.abc.rst:72
 msgid "The argument *name* was renamed to *path*."
-msgstr ""
+msgstr "Argument *name* byl přejmenován na *path*."
 
 #: ../../library/importlib.resources.abc.rst:78
 msgid ""
-"Returns an :term:`iterable` of strings over the contents of the package. "
-"Do note that it is not required that all names returned by the iterator "
-"be actual resources, e.g. it is acceptable to return names for which "
+"Returns an :term:`iterable` of strings over the contents of the package. Do "
+"note that it is not required that all names returned by the iterator be "
+"actual resources, e.g. it is acceptable to return names for which "
 ":meth:`is_resource` would be false."
 msgstr ""
+"Vrací :term:`iterovatelný objekt` řetězců nad obsahem balíčku. Všimněte si, "
+"že není vyžadováno, aby všechny názvy vrácené iterátorem byly skutečnými "
+"prostředky, např. je přijatelné vrátit názvy, pro které by "
+":meth:`is_resource` vrátila hodnotu false."
 
 #: ../../library/importlib.resources.abc.rst:84
 msgid ""
-"Allowing non-resource names to be returned is to allow for situations "
-"where how a package and its resources are stored are known a priori and "
-"the non-resource names would be useful. For instance, returning "
-"subdirectory names is allowed so that when it is known that the package "
-"and resources are stored on the file system then those subdirectory names"
-" can be used directly."
+"Allowing non-resource names to be returned is to allow for situations where "
+"how a package and its resources are stored are known a priori and the non-"
+"resource names would be useful. For instance, returning subdirectory names "
+"is allowed so that when it is known that the package and resources are "
+"stored on the file system then those subdirectory names can be used "
+"directly."
 msgstr ""
+"Povolení vrácení názvů bez prostředků je určeno pro situace, kdy je způsob "
+"uložení balíčku a jeho prostředků znám předem a názvy bez prostředků by byly"
+" užitečné. Například vrácení názvů podadresářů je povoleno, aby se mohl při "
+"znalosti, že balíček a prostředky jsou uloženy v systému souborů, přímo "
+"používat tyto názvy podadresářů."
 
 #: ../../library/importlib.resources.abc.rst:92
 msgid "The abstract method returns an iterable of no items."
-msgstr ""
+msgstr "Abstraktní metoda vrací iterovatelný objekt bez položek."
 
 #: ../../library/importlib.resources.abc.rst:97
 msgid ""
 "An object with a subset of :class:`pathlib.Path` methods suitable for "
 "traversing directories and opening files."
 msgstr ""
+"Objekt s podmnožinou metod :class:`pathlib.Path` vhodných pro procházení "
+"adresářů a otevírání souborů."
 
 #: ../../library/importlib.resources.abc.rst:100
 msgid ""
 "For a representation of the object on the file-system, use "
 ":meth:`importlib.resources.as_file`."
 msgstr ""
+"Pro reprezentaci objektu v systému souborů použijte "
+":meth:`importlib.resources.as_file`."
 
 #: ../../library/importlib.resources.abc.rst:105
 msgid "Abstract. The base name of this object without any parent references."
 msgstr ""
+"Abstraktní. Základní název tohoto objektu bez jakýchkoli odkazů na nadřazené"
+" prvky."
 
 #: ../../library/importlib.resources.abc.rst:110
 msgid "Yield Traversable objects in self."
-msgstr ""
+msgstr "Vrací objekty Traversable v self."
 
 #: ../../library/importlib.resources.abc.rst:115
 msgid "Return ``True`` if self is a directory."
-msgstr ""
+msgstr "Vrátí ``True``, pokud je self adresář."
 
 #: ../../library/importlib.resources.abc.rst:120
 msgid "Return ``True`` if self is a file."
-msgstr ""
+msgstr "Vrátí ``True``, pokud je self soubor."
 
 #: ../../library/importlib.resources.abc.rst:125
 msgid ""
-"Traverse directories according to *pathsegments* and return the result as"
-" :class:`!Traversable`."
+"Traverse directories according to *pathsegments* and return the result as "
+":class:`!Traversable`."
 msgstr ""
+"Procházet adresáře podle *pathsegments* a vrátit výsledek jako "
+":class:`!Traversable`."
 
 #: ../../library/importlib.resources.abc.rst:128
 msgid ""
-"Each *pathsegments* argument may contain multiple names separated by "
-"forward slashes (``/``, ``posixpath.sep`` ). For example, the following "
-"are equivalent::"
+"Each *pathsegments* argument may contain multiple names separated by forward"
+" slashes (``/``, ``posixpath.sep`` ). For example, the following are "
+"equivalent::"
 msgstr ""
+"Každý argument *pathsegments* může obsahovat více názvů oddělených lomítkem "
+"dopředu (``/``, ``posixpath.sep`` ). Například následující jsou "
+"ekvivalentní::"
 
 #: ../../library/importlib.resources.abc.rst:132
 msgid ""
 "files.joinpath('subdir', 'subsuddir', 'file.txt')\n"
 "files.joinpath('subdir/subsuddir/file.txt')"
 msgstr ""
+"files.joinpath('subdir', 'subsuddir', 'file.txt')\n"
+"files.joinpath('subdir/subsuddir/file.txt')"
 
 #: ../../library/importlib.resources.abc.rst:135
 msgid ""
-"Note that some :class:`!Traversable` implementations might not be updated"
-" to the latest version of the protocol. For compatibility with such "
-"implementations, provide a single argument without path separators to "
-"each call to ``joinpath``. For example::"
+"Note that some :class:`!Traversable` implementations might not be updated to"
+" the latest version of the protocol. For compatibility with such "
+"implementations, provide a single argument without path separators to each "
+"call to ``joinpath``. For example::"
 msgstr ""
+"Všimněte si, že některé implementace :class:`!Traversable` nemusí být "
+"aktualizovány na nejnovější verzi protokolu. Pro kompatibilitu s takými "
+"implementacemi poskytněte jediný argument bez separátorů cesty pro každé "
+"volání ``joinpath``. Například::"
 
 #: ../../library/importlib.resources.abc.rst:140
 msgid "files.joinpath('subdir').joinpath('subsubdir').joinpath('file.txt')"
-msgstr ""
+msgstr "files.joinpath('subdir').joinpath('subsubdir').joinpath('file.txt')"
 
 #: ../../library/importlib.resources.abc.rst:144
 msgid ""
-"``joinpath`` accepts multiple *pathsegments*, and these segments may "
-"contain forward slashes as path separators. Previously, only a single "
-"*child* argument was accepted."
+"``joinpath`` accepts multiple *pathsegments*, and these segments may contain"
+" forward slashes as path separators. Previously, only a single *child* "
+"argument was accepted."
 msgstr ""
+"``joinpath`` přijímá více *pathsegments*, a tyto segmenty mohou obsahovat "
+"lomítka jako separátory cesty. Dříve byl přijat pouze jeden argument "
+"*child*."
 
 #: ../../library/importlib.resources.abc.rst:151
 msgid "Return Traversable child in self. Equivalent to ``joinpath(child)``."
-msgstr ""
+msgstr "Vrátí potomka Traversable v self. Ekvivalentní ``joinpath(child)``."
 
 #: ../../library/importlib.resources.abc.rst:157
 msgid ""
 "*mode* may be 'r' or 'rb' to open as text or binary. Return a handle "
 "suitable for reading (same as :attr:`pathlib.Path.open`)."
 msgstr ""
+"*mode* může být 'r' nebo 'rb' pro otevření jako text nebo binární data. "
+"Vrátí popis vhodný pro čtení (stejné jako :attr:`pathlib.Path.open`)."
 
 #: ../../library/importlib.resources.abc.rst:160
 msgid ""
-"When opening as text, accepts encoding parameters such as those accepted "
-"by :class:`io.TextIOWrapper`."
+"When opening as text, accepts encoding parameters such as those accepted by "
+":class:`io.TextIOWrapper`."
 msgstr ""
+"Při otevření jako text přijímá parametry kódování, jako jsou ty, které "
+"přijímá :class:`io.TextIOWrapper`."
 
 #: ../../library/importlib.resources.abc.rst:165
 msgid "Read contents of self as bytes."
-msgstr ""
+msgstr "Přečít obsah self jako bajty."
 
 #: ../../library/importlib.resources.abc.rst:169
 msgid "Read contents of self as text."
-msgstr ""
+msgstr "Přečít obsah self jako text."
 
 #: ../../library/importlib.resources.abc.rst:174
 msgid ""
 "An abstract base class for resource readers capable of serving the "
 ":meth:`importlib.resources.files` interface. Subclasses "
 ":class:`ResourceReader` and provides concrete implementations of the "
-":class:`!ResourceReader`'s abstract methods. Therefore, any loader "
-"supplying :class:`!TraversableResources` also supplies "
-":class:`!ResourceReader`."
+":class:`!ResourceReader`'s abstract methods. Therefore, any loader supplying"
+" :class:`!TraversableResources` also supplies :class:`!ResourceReader`."
 msgstr ""
+"Abstraktní základní třída pro čtveky prostředků schopné slouvát rozřražení "
+":meth:`importlib.resources.files`. Podřází :class:`ResourceReader` a "
+"poskytuje konkrétní implementace abstraktních metod "
+":class:`!ResourceReader`. Proto každý nástuoj poskytující "
+":class:`!TraversableResources` také poskytuje :class:`!ResourceReader`."
 
 #: ../../library/importlib.resources.abc.rst:181
 msgid ""
-"Loaders that wish to support resource reading are expected to implement "
-"this interface."
+"Loaders that wish to support resource reading are expected to implement this"
+" interface."
 msgstr ""
+"Nástroje, které si přájí podporovat čtení prostředků, se očekává "
+"implementace tohoto rozřražení."
 
 #: ../../library/importlib.resources.abc.rst:187
 msgid ""
-"Returns a :class:`importlib.resources.abc.Traversable` object for the "
-"loaded package."
+"Returns a :class:`importlib.resources.abc.Traversable` object for the loaded"
+" package."
 msgstr ""
+"Vrátí objekt :class:`importlib.resources.abc.Traversable` pro načtený "
+"balíček."
 
 #~ msgid ""
-#~ "Returns ``True`` if the named *name* "
-#~ "is considered a resource. "
-#~ ":exc:`FileNotFoundError` is raised if *name*"
-#~ " does not exist."
+#~ "Returns ``True`` if the named *name* is considered a resource. "
+#~ ":exc:`FileNotFoundError` is raised if *name* does not exist."
 #~ msgstr ""
-
