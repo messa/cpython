@@ -6378,7 +6378,7 @@ msgstr "Sprava procesu"
 
 #: ../../library/os.rst:4260
 msgid "These functions may be used to create and manage processes."
-msgstr ""
+msgstr "Tyto funkce mohou byt pouzity k vytvoreni a sprave procesu."
 
 #: ../../library/os.rst:4262
 msgid ""
@@ -6390,6 +6390,13 @@ msgid ""
 "``os.execv('/bin/echo', ['foo', 'bar'])`` will only print ``bar`` on "
 "standard output; ``foo`` will seem to be ignored."
 msgstr ""
+"Ruzne funkce :func:`exec\\* <execl>` berou seznam argumentu pro novy program"
+" nacteny do procesu. V kazdem pripade je prvni z techto argumentu predan "
+"novemu programu jako jeho vlastni jmeno miste argumentu, ktery by uživiatel "
+"mohl napsat na prikazovem radku. Pro C programatora je to ``argv[0]`` "
+"predana programu :c:func:`main`. Napriklaid, ``os.execv('/bin/echo', ['foo',"
+" 'bar'])`` vytiskne pouze ``bar`` na standardnimu vystupu; ``foo`` se bude "
+"jevit jako ignorovany."
 
 #: ../../library/os.rst:4273
 msgid ""
@@ -6399,10 +6406,14 @@ msgid ""
 "function will not call the Python signal handler registered for "
 ":const:`SIGABRT` with :func:`signal.signal`."
 msgstr ""
+"Generuj signal :const:`SIGABRT` na aktualni proces. Na Unixu je vychozi chov"
+" vyvtvoren dump jader; na Windows proces okamzite vraci kod vyusku ``3``. "
+"Vezmetev na vedomí, ze volani teto funkce nebude volat obsluhovat signalu "
+"Pythonu zaregistrovany pro :const:`SIGABRT` s :func:`signal.signal`."
 
 #: ../../library/os.rst:4282
 msgid "Add a path to the DLL search path."
-msgstr ""
+msgstr "Pridej cestu do cesty hledani DLL."
 
 #: ../../library/os.rst:4284
 msgid ""
@@ -6410,12 +6421,17 @@ msgid ""
 "modules (the module itself is resolved through :data:`sys.path`), and also "
 "by :mod:`ctypes`."
 msgstr ""
+"Tato cesta hledani je pouzivana pri rozlisovani zavislosti pro importovane "
+"moduly rozsireni (samotny modul je rozlisen prez :data:`sys.path`) a taky "
+":mod:`ctypes`."
 
 #: ../../library/os.rst:4288
 msgid ""
 "Remove the directory by calling **close()** on the returned object or using "
 "it in a :keyword:`with` statement."
 msgstr ""
+"Odstran adresar volanim **close()** na vracenem objektu nebo pouzitim jej v "
+":keyword:`with` tvrdi."
 
 #: ../../library/os.rst:4291
 msgid ""
@@ -6423,12 +6439,17 @@ msgid ""
 "<https://msdn.microsoft.com/44228cf2-6306-466c-8f16-f513cd3ba8b5>`_ for more"
 " information about how DLLs are loaded."
 msgstr ""
+"Viz `Microsoft dokumentace "
+"<https://msdn.microsoft.com/44228cf2-6306-466c-8f16-f513cd3ba8b5>`_ pro vice"
+" informaci o tom, jak jsou DLL nacteny."
 
 #: ../../library/os.rst:4295
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.add_dll_directory`` with "
 "argument ``path``."
 msgstr ""
+"Vyvola :ref:`auditni udalost <auditing>` ``os.add_dll_directory`` s "
+"argumentem ``path``."
 
 #: ../../library/os.rst:4299
 msgid ""
@@ -6437,6 +6458,10 @@ msgid ""
 " searching :envvar:`PATH` or the current working directory, and OS functions"
 " such as ``AddDllDirectory`` having no effect."
 msgstr ""
+"Predchozi verze CPythonu by rozlisily DLL s pouzitim vychozi chovani pro "
+"aktualni proces. To vedlo k nekonzistencim, jako je jen nekdy hledani "
+":envvar:`PATH` nebo aktualni pracovni adresar a funkce OS jako "
+"``AddDllDirectory`` bez vlivu."
 
 #: ../../library/os.rst:4306
 msgid ""
@@ -6444,6 +6469,9 @@ msgid ""
 "process-wide behavior to ensure consistency. See the :ref:`porting notes "
 "<bpo-36085-whatsnew>` for information on updating libraries."
 msgstr ""
+"V 3.8 dva primarne zpusoby DLL jsou nacteny nyn explicitne prepisu chovani "
+"sireky procesu aby se zajistila konzistence. Viz :ref:`poznamky "
+"prenositelnosti <bpo-36085-whatsnew>` pro informace o aktualizaci knihoven."
 
 #: ../../library/os.rst:4321
 msgid ""
@@ -6452,6 +6480,10 @@ msgid ""
 "process, and will have the same process id as the caller.  Errors will be "
 "reported as :exc:`OSError` exceptions."
 msgstr ""
+"Tyto funkce se vykonaouji novy program a nahrazuji aktualni proces; "
+"nevraceji se. Na Unixu je novy spustitelny soubor nacten do aktualniho "
+"procesu a bude mit stejne ID procesu jako volajici. Chyby budou hlaseny jako"
+" :exc:`OSError` vyjimky."
 
 #: ../../library/os.rst:4326
 msgid ""
@@ -6460,6 +6492,10 @@ msgid ""
 "files, you should flush them using :func:`sys.stdout.flush` or "
 ":func:`os.fsync` before calling an :func:`exec\\* <execl>` function."
 msgstr ""
+"Aktualni proces je okamzite nahrazen. Otevrene objekty souboru a deskriptory"
+" nejsou vycisteny, takze pokud mohou byt data cachovana na techto otevrenych"
+" souborech, meli byste je vycistit pouzitim :func:`sys.stdout.flush` nebo "
+":func:`os.fsync` pred volanim funkce :func:`exec\\* <execl>`."
 
 #: ../../library/os.rst:4332
 msgid ""
@@ -6473,6 +6509,14 @@ msgid ""
 "child process should start with the name of the command being run, but this "
 "is not enforced."
 msgstr ""
+"Varianty \"l\" a \"v\" funkci :func:`exec\\* <execl>` se lisi v tom, jak "
+"jsou argumenty prikazoveho radku predany. Varianty \"l\" jsou snad nejlehci "
+"na praci, pokud je pocet parametru stanoven, kdyz je kod napsan; jednotlive "
+"parametry se stavanou dodatecnymi parametry funkci :func:`!execl\\*`. "
+"Varianty \"v\" jsou dobre, kdyz je pocet parametru promenny, s argumenty "
+"predanymi v seznamu nebo tuple jako parametr *args*. V obou pripadech by "
+"argumenty podprocesu mely zacinat jmenem provedenekeho prikazu, ale to neni "
+"vynucovano."
 
 #: ../../library/os.rst:4341
 msgid ""
@@ -6488,6 +6532,16 @@ msgid ""
 "include at least one slash, even on Windows, as plain names will not be "
 "resolved."
 msgstr ""
+"Varianty, ktere zahrnuji \"p\" blizko konce (:func:`execlp`, "
+":func:`execlpe`, :func:`execvp` a :func:`execvpe`) budou pouzivat promennou "
+"prostředí :envvar:`PATH` pro vyhledavani programu *file*. Kdyz se prostredi "
+"vymena (s pouzitim jedne z variantf :func:`exec\\*e <execl>`, diskutovane v "
+"nasledujici odestavci), nove prostredi je pouzivano jako zdroj promenne "
+":envvar:`PATH`. Ostatni varianty, :func:`execl`, :func:`execle`, "
+":func:`execv` a :func:`execve` nebudou pouzivat promennou :envvar:`PATH` pro"
+" vyhledavani spustitelneho souboru; *path* musi obsahovat vhodnou absolutni "
+"nebo relativni cestu. Relativni cesty musi obsahovat nejmene jednu lomitko, "
+"dokonce i na Windows, jako obycejne jmena nebudou rozlisena."
 
 #: ../../library/os.rst:4352
 msgid ""
@@ -6498,6 +6552,12 @@ msgid ""
 ":func:`execl`, :func:`execlp`, :func:`execv`, and :func:`execvp` all cause "
 "the new process to inherit the environment of the current process."
 msgstr ""
+"Pro :func:`execle`, :func:`execlpe`, :func:`execve` a :func:`execvpe` "
+"(vezmetev na vedomí, ze vsichni koncici na \"e\"), parametr *env* musi byt "
+"mapovani, ktere je pouzito k definovani promenny prostredi pro novy proces "
+"(ty jsou pouzity miste prostredi aktualniho procesu); funkce :func:`execl`, "
+":func:`execlp`, :func:`execv` a :func:`execvp` vse vyvyzuj novy proces "
+"dediclnova prostredi aktualniho procesu."
 
 #: ../../library/os.rst:4359
 msgid ""
@@ -6507,30 +6567,43 @@ msgid ""
 ":data:`os.supports_fd`. If it is unavailable, using it will raise a "
 ":exc:`NotImplementedError`."
 msgstr ""
+"Pro :func:`execve` na nektere platformach, *path* muze byt take "
+"specifikovana jako otevreny deskriptor souboru. Tato funkcnost nemuze byt "
+"podporovana na vasi platforme; muzete zkontrolovat, zda je dostupna pouzitim"
+" :data:`os.supports_fd`. Pokud je nedostupna, jeji pouziti bude vyvolan "
+":exc:`NotImplementedError`."
 
 #: ../../library/os.rst:4364
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.exec`` with arguments "
 "``path``, ``args``, ``env``."
 msgstr ""
+"Vyvola :ref:`auditni udalost <auditing>` ``os.exec`` s argumenty ``path``, "
+"``args``, ``env``."
 
 #: ../../library/os.rst:4368
 msgid ""
 "Added support for specifying *path* as an open file descriptor for "
 ":func:`execve`."
 msgstr ""
+"Pridana podpora pro specifikaci *path* jako otevrene deskriptor souboru pro "
+":func:`execve`."
 
 #: ../../library/os.rst:4377
 msgid ""
 "Exit the process with status *n*, without calling cleanup handlers, flushing"
 " stdio buffers, etc."
 msgstr ""
+"Ukonci proces s stavem *n* bez volani obsluhování cisticich, vyprazdneni "
+"vyrovnavace stdio atd."
 
 #: ../../library/os.rst:4382
 msgid ""
 "The standard way to exit is :func:`sys.exit(n) <sys.exit>`.  :func:`!_exit` "
 "should normally only be used in the child process after a :func:`fork`."
 msgstr ""
+"Standartni zpusob ukonceni je :func:`sys.exit(n) <sys.exit>`. :func:`!_exit`"
+" by normalne mel byt pouzit pouze v detskem procesu po :func:`fork`."
 
 #: ../../library/os.rst:4385
 msgid ""
@@ -6539,6 +6612,10 @@ msgid ""
 "programs written in Python, such as a mail server's external command "
 "delivery program."
 msgstr ""
+"Nasledujici kody vychodu jsou definovany a mohou byt pouzity s "
+":func:`_exit`, i kdyz nejsou povinne. Ty jsou typicky pouzivany pro "
+"systemove programy napsane v Pythonu, jako je program doruky vnejsich "
+"prikazu postavy e-mailu."
 
 #: ../../library/os.rst:4391
 msgid ""
@@ -6546,64 +6623,81 @@ msgid ""
 "some variation.  These constants are defined where they are defined by the "
 "underlying platform."
 msgstr ""
+"Nektere z nich nemuze byt dostupne na vsech Unix platformach, protoze je "
+"nektere zmene. Tyto konstanty jsou definovany, kde jsou definovany "
+"podkladovymi platformami."
 
 #: ../../library/os.rst:4398
 msgid ""
 "Exit code that means no error occurred. May be taken from the defined value "
 "of ``EXIT_SUCCESS`` on some platforms. Generally has a value of zero."
 msgstr ""
+"Kod vychodu, ktery znamena, ze nedoslo k zadne chybe. Muze byt prevzat z "
+"definovane hodnoty ``EXIT_SUCCESS`` na nektere platformach. Obecne ma "
+"hodnotu nula."
 
 #: ../../library/os.rst:4406
 msgid ""
 "Exit code that means the command was used incorrectly, such as when the "
 "wrong number of arguments are given."
 msgstr ""
+"Kod vychodu, ktery znamena, ze prikaz byl nepouzivan spravne, jako je zadani"
+" nespraveho poctu argumentu."
 
 #: ../../library/os.rst:4414
 msgid "Exit code that means the input data was incorrect."
-msgstr ""
+msgstr "Kod vychodu, ktery znamena, ze vstupni data byla nejednatne."
 
 #: ../../library/os.rst:4421
 msgid "Exit code that means an input file did not exist or was not readable."
 msgstr ""
+"Kod vychodu, ktery znamena, ze vstupni soubor neexistuje nebo neby citelny."
 
 #: ../../library/os.rst:4428
 msgid "Exit code that means a specified user did not exist."
-msgstr ""
+msgstr "Kod vychodu, ktery znamena, ze specifikovany uzivatel neexistuje."
 
 #: ../../library/os.rst:4435
 msgid "Exit code that means a specified host did not exist."
-msgstr ""
+msgstr "Kod vychodu, ktery znamena, ze specifikovany hostitel neexistuje."
 
 #: ../../library/os.rst:4442
 msgid "Exit code that means that a required service is unavailable."
-msgstr ""
+msgstr "Kod vychodu, ktery znamena, ze pozadovana sluzba je nedostupna."
 
 #: ../../library/os.rst:4449
 msgid "Exit code that means an internal software error was detected."
 msgstr ""
+"Kod vychodu, ktery znamena, ze byla detekovna vnitrni softwarova chyba."
 
 #: ../../library/os.rst:4456
 msgid ""
 "Exit code that means an operating system error was detected, such as the "
 "inability to fork or create a pipe."
 msgstr ""
+"Kod vychodu, ktery znamena, ze byla detekovna chyba operacniho systemu, jako"
+" je nemoznost fork nebo vytvoreni roury."
 
 #: ../../library/os.rst:4464
 msgid ""
 "Exit code that means some system file did not exist, could not be opened, or"
 " had some other kind of error."
 msgstr ""
+"Kod vychodu, ktery znamena, ze niektory systemovy soubor neexistuje, mohl "
+"byt otvoren nebo mel jinou chybu."
 
 #: ../../library/os.rst:4472
 msgid ""
 "Exit code that means a user specified output file could not be created."
 msgstr ""
+"Kod vychodu, ktery znamena, ze uzivatelsky specifikovany vystupi soubor "
+"nemoze byt vytvoren."
 
 #: ../../library/os.rst:4479
 msgid ""
 "Exit code that means that an error occurred while doing I/O on some file."
 msgstr ""
+"Kod vychodu, ktery znamena, ze doslo k chybe behem I/O na nektere souboru."
 
 #: ../../library/os.rst:4486
 msgid ""
@@ -6611,67 +6705,86 @@ msgid ""
 " that may not really be an error, such as a network connection that couldn't"
 " be made during a retryable operation."
 msgstr ""
+"Kod vychodu, ktery znamena, ze doslo k docasnemu selhani. To udava neco, co "
+"nemuze byt opravdu chyba, jako je sitove pripojeni, ktere se nepodarilo "
+"vytvuorit behem operace opakovatelne."
 
 #: ../../library/os.rst:4495
 msgid ""
 "Exit code that means that a protocol exchange was illegal, invalid, or not "
 "understood."
 msgstr ""
+"Kod vychodu, ktery znamena, ze vymena protokolu byla nelegalni, neplatna "
+"nebo neporozumena."
 
 #: ../../library/os.rst:4503
 msgid ""
 "Exit code that means that there were insufficient permissions to perform the"
 " operation (but not intended for file system problems)."
 msgstr ""
+"Kod vychodu, ktery znamena, ze byla nedostatecna oprávnění k provedeni "
+"operace (ale ne urcena pro problemy systému souboru)."
 
 #: ../../library/os.rst:4511
 msgid "Exit code that means that some kind of configuration error occurred."
-msgstr ""
+msgstr "Kod vychodu, ktery znamena, ze se vyskytla chyba konfigurace."
 
 #: ../../library/os.rst:4518
 msgid "Exit code that means something like \"an entry was not found\"."
-msgstr ""
+msgstr "Kod vychodu, ktery znamena neco jako \"polozka nebyla nalezena\"."
 
 #: ../../library/os.rst:4525
 msgid ""
 "Fork a child process.  Return ``0`` in the child and the child's process id "
 "in the parent.  If an error occurs :exc:`OSError` is raised."
 msgstr ""
+"Rozvetvi detskym procesem. Vrati ``0`` v detskym a ID procesu detske v "
+"rodicich. Pokud dojde k chybe :exc:`OSError` je vyvolana."
 
 #: ../../library/os.rst:4528
 msgid ""
 "Note that some platforms including FreeBSD <= 6.3 and Cygwin have known "
 "issues when using ``fork()`` from a thread."
 msgstr ""
+"Vezmetev na vedomí, ze nektere platformy vcetn FreeBSD <= 6.3 a Cygwin maji "
+"znamy problemy pri pouzivani ``fork()`` z vlakna."
 
 #: ../../library/os.rst:4531
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.fork`` with no arguments."
-msgstr ""
+msgstr "Vyvola :ref:`auditni udalost <auditing>` ``os.fork`` bez argumentu."
 
 #: ../../library/os.rst:4535
 msgid ""
 "If you use TLS sockets in an application calling ``fork()``, see the warning"
 " in the :mod:`ssl` documentation."
 msgstr ""
+"Pokud pouzijete TLS sockety v aplikaci volajici ``fork()``, podivejte se do "
+"varovani v dokumentaci :mod:`ssl`."
 
 #: ../../library/os.rst:4540 ../../library/os.rst:4584
 msgid ""
 "On macOS the use of this function is unsafe when mixed with using higher-"
 "level system APIs, and that includes using :mod:`urllib.request`."
 msgstr ""
+"Na macOS pouziti teto funkce neni bezpecne, kdyz se mesi s pouzitim vysoko-"
+"urovnoveho systemu API a to zahrnuje pouziti :mod:`urllib.request`."
 
 #: ../../library/os.rst:4543
 msgid ""
 "Calling ``fork()`` in a subinterpreter is no longer supported "
 "(:exc:`RuntimeError` is raised)."
 msgstr ""
+"Volani ``fork()`` v subinterpretu uz neni podporovano (je vyvolana "
+":exc:`RuntimeError`)."
 
 #: ../../library/os.rst:4547
 msgid ""
 "If Python is able to detect that your process has multiple threads, "
 ":func:`os.fork` now raises a :exc:`DeprecationWarning`."
 msgstr ""
+"Pokud je Python schopen detekovat, ze vas proces ma vicerou vlakna, "
+":func:`os.fork` nyn vyvolava :exc:`DeprecationWarning`."
 
 #: ../../library/os.rst:4551
 msgid ""
@@ -6683,6 +6796,13 @@ msgid ""
 "child process when threads existed in the parent (such as ``malloc`` and "
 "``free``)."
 msgstr ""
+"Rozhodli jsme se seznamit to jako varovani, kdyz je detekovatelne, aby bylo "
+"lepe informatorsano vypocetcum z problemu s navrhem, ktery POSIX platforma "
+"konkretne poznamena jako nepodporovany. I v kodu, ktery *se zda* pracovat, "
+"nikdy nebylo bezpecne mesit vlakna s :func:`os.fork` na POSIX platformach. "
+"Runtime CPython se vzdy provedl volani API, ktera nejsou bezpecna pro "
+"pouziti v detskem procesu, kdyz existovala vlakna v rodicich (jako "
+"``malloc`` a ``free``)."
 
 #: ../../library/os.rst:4560
 msgid ""
@@ -6690,6 +6810,9 @@ msgid ""
 "typically found in glibc to date are among those already more likely to "
 "experience deadlocks running such code."
 msgstr ""
+"Uzivatelne macOS nebo uzivatelne libc nebo malloc implementaci jine nez ty, "
+"ktere jsou typicky nalezeny v glibc zatim jsou mezi nimi, kteri jsou jiz "
+"vice pravdepodobne zakousi deadlocks, ktere spousti takovy kod."
 
 #: ../../library/os.rst:4564
 msgid ""
@@ -6697,6 +6820,9 @@ msgid ""
 "<https://discuss.python.org/t/33555>`_ for technical details of why we're "
 "surfacing this longstanding platform compatibility problem to developers."
 msgstr ""
+"Podivejte se na `diskusi o fork je nekompatibilni s vlakny "
+"<https://discuss.python.org/t/33555>`_ pro technicke detaily, proc "
+"predstavujeme dlouhotrvajici problem kompatibility platformy vyvojarem."
 
 #: ../../library/os.rst:4574
 msgid ""
@@ -6707,17 +6833,24 @@ msgid ""
 "approach, use the :mod:`pty` module.  If an error occurs :exc:`OSError` is "
 "raised."
 msgstr ""
+"Rozvetvi detskym procesem s pouzitim nove pseudo-terminalu jako kontrolujici"
+" terminalu detske. Vrati par ``(pid, fd)`` kde *pid* je ``0`` v detskym, "
+"novy ID procesu detskym v rodicich a *fd* je deskriptor souboru hlavni konci"
+" pseudo-terminalu. Pro prenositelneji pristu pouzijte :mod:`pty` modul. "
+"Pokud dojde k chybe :exc:`OSError` je vyvolana."
 
 #: ../../library/os.rst:4580
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.forkpty`` with no arguments."
-msgstr ""
+msgstr "Vyvolá :ref:`audit event <auditing>` ``os.forkpty`` bez argumentů."
 
 #: ../../library/os.rst:4587
 msgid ""
 "Calling ``forkpty()`` in a subinterpreter is no longer supported "
 "(:exc:`RuntimeError` is raised)."
 msgstr ""
+"Volání ``forkpty()`` v subinterpreteru již není podporováno "
+"(:exc:`RuntimeError` je vyvolána)."
 
 #: ../../library/os.rst:4591
 msgid ""
@@ -6725,12 +6858,16 @@ msgid ""
 " raises a :exc:`DeprecationWarning`. See the longer explanation on "
 ":func:`os.fork`."
 msgstr ""
+"Pokud Python zjistí, že váš proces má více vláken, nyní vyvolá "
+":exc:`DeprecationWarning`. Viz delší vysvětlení v :func:`os.fork`."
 
 #: ../../library/os.rst:4605
 msgid ""
 "Send signal *sig* to the process *pid*.  Constants for the specific signals "
 "available on the host platform are defined in the :mod:`signal` module."
 msgstr ""
+"Pošle signál *sig* procesu *pid*. Konstanty pro specifické signály dostupné "
+"na hostitelské platformě jsou definovány v modulu :mod:`signal`."
 
 #: ../../library/os.rst:4608
 msgid ""
@@ -6741,30 +6878,40 @@ msgid ""
 "unconditionally killed by the TerminateProcess API, and the exit code will "
 "be set to *sig*."
 msgstr ""
+"Windows: Signály :const:`signal.CTRL_C_EVENT` a "
+":const:`signal.CTRL_BREAK_EVENT` jsou speciální signály, které mohou být "
+"poslány pouze konzolovým procesům, které sdílí společné konsolové okno, "
+"např. některé podprocesy. Jakákoliv jiná hodnota pro *sig* způsobí, že "
+"proces bude bezpodmínečně ukončen API TerminateProcess a exit kód bude "
+"nastaven na *sig*."
 
 #: ../../library/os.rst:4615
 msgid "See also :func:`signal.pthread_kill`."
-msgstr ""
+msgstr "Viz také :func:`signal.pthread_kill`."
 
 #: ../../library/os.rst:4617
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.kill`` with arguments "
 "``pid``, ``sig``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.kill`` s argumenty ``pid``, "
+"``sig``."
 
 #: ../../library/os.rst:4631
 msgid "Send the signal *sig* to the process group *pgid*."
-msgstr ""
+msgstr "Pošle signál *sig* skupině procesů *pgid*."
 
 #: ../../library/os.rst:4633
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.killpg`` with arguments "
 "``pgid``, ``sig``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.killpg`` s argumenty ``pgid``, "
+"``sig``."
 
 #: ../../library/os.rst:4640
 msgid "Add *increment* to the process's \"niceness\".  Return the new niceness."
-msgstr ""
+msgstr "Přidá *increment* k \"niceness\" procesu. Vrací novou niceness."
 
 #: ../../library/os.rst:4647
 msgid ""
@@ -6772,10 +6919,12 @@ msgid ""
 "This descriptor can be used to perform process management without races and "
 "signals."
 msgstr ""
+"Vrací deskriptor souboru odkazující na proces *pid* s nastavenými *flags*. "
+"Tento deskriptor lze použít k provádění správy procesu bez závodů a signálů."
 
 #: ../../library/os.rst:4651
 msgid "See the :manpage:`pidfd_open(2)` man page for more details."
-msgstr ""
+msgstr "Viz stránka man :manpage:`pidfd_open(2)` pro více detailů."
 
 #: ../../library/os.rst:4658
 msgid ""
@@ -6784,12 +6933,18 @@ msgid ""
 "attempt to wait on the file descriptor using :manpage:`waitid(2)` will "
 "immediately return the error :const:`~errno.EAGAIN` rather than blocking."
 msgstr ""
+"Tento příznak udává, že deskriptor souboru bude neblokující. Pokud proces "
+"odkazovaný deskriptorem souboru ještě skončil, pak pokus o čekání na "
+"deskriptor souboru pomocí :manpage:`waitid(2)` okamžitě vrátí chybu "
+":const:`~errno.EAGAIN` místo blokování."
 
 #: ../../library/os.rst:4669
 msgid ""
 "Lock program segments into memory.  The value of *op* (defined in "
 "``<sys/lock.h>``) determines which segments are locked."
 msgstr ""
+"Zamkne segmenty programu v paměti. Hodnota *op* (definovaná v "
+"``<sys/lock.h>``) určuje, které segmenty jsou zamčeny."
 
 #: ../../library/os.rst:4677
 msgid ""
@@ -6800,6 +6955,11 @@ msgid ""
 ":func:`open` function. The returned file object reads or writes text strings"
 " rather than bytes."
 msgstr ""
+"Otevře rouru do nebo z příkazu *cmd*. Vrácená hodnota je otevřený objekt "
+"souboru připojený k rouru, který lze čít nebo psát v závislosti na tom, zda "
+"je *mode* ``'r'`` (výchozí) nebo ``'w'``. Argument *buffering* má stejný "
+"význam jako odpovídající argument vestavěné funkce :func:`open`. Vrácený "
+"objekt souboru čte nebo píše textové řetězce spíše než bajty."
 
 #: ../../library/os.rst:4685
 msgid ""
@@ -6812,6 +6972,13 @@ msgid ""
 "if the subprocess was killed.)  On Windows systems, the return value "
 "contains the signed integer return code from the child process."
 msgstr ""
+"Metoda ``close`` vrací :const:`None`, pokud byl podproces úspěšně ukončen, "
+"nebo exit kód podprocesu, pokud došlo k chybě. Na systémech POSIX, pokud je "
+"exit kód kladný, představuje vracenou hodnotu procesu posunutou vlevo o "
+"jeden bajt. Pokud je exit kód záporný, byl proces ukončen signálem daným "
+"negovanou hodnotou exit kódu. (Například vrácená hodnota může být ``- "
+"signal.SIGKILL``, pokud byl podproces zabit.) Na Windows systémech vrácená "
+"hodnota obsahuje podepsaný celočíselný exit kód z podprocesu."
 
 #: ../../library/os.rst:4695
 msgid ""
@@ -6820,6 +6987,9 @@ msgid ""
 "Windows, the ``close`` method result is directly the exit code (or "
 "``None``)."
 msgstr ""
+"Na Unixu lze :func:`waitstatus_to_exitcode` použít k převodu výsledku metody"
+" ``close`` (exit status) na exit kód, pokud není ``None``. Na Windows je "
+"výsledek metody ``close`` přímo exit kódem (nebo ``None``)."
 
 #: ../../library/os.rst:4700
 msgid ""
@@ -6827,12 +6997,16 @@ msgid ""
 "documentation for more powerful ways to manage and communicate with "
 "subprocesses."
 msgstr ""
+"To je implementováno pomocí :class:`subprocess.Popen`; viz dokumentace té "
+"třídy pro výkonnější způsoby správy a komunikace s podprocesy."
 
 #: ../../library/os.rst:4707
 msgid ""
 "The :ref:`Python UTF-8 Mode <utf8-mode>` affects encodings used for *cmd* "
 "and pipe contents."
 msgstr ""
+":ref:`Python UTF-8 Mode <utf8-mode>` ovlivňuje kódování používané pro *cmd* "
+"a obsah roury."
 
 #: ../../library/os.rst:4710
 msgid ""
@@ -6840,21 +7014,28 @@ msgid ""
 ":class:`subprocess.Popen` or :func:`subprocess.run` to control options like "
 "encodings."
 msgstr ""
+":func:`popen` je jednoduchý wrapper kolem :class:`subprocess.Popen`. "
+"Použijte :class:`subprocess.Popen` nebo :func:`subprocess.run` k řízení "
+"možností jako kódování."
 
 #: ../../library/os.rst:4714
 msgid ""
 "The function is :term:`soft deprecated` and should no longer be used to "
 "write new code. The :mod:`subprocess` module is recommended instead."
 msgstr ""
+"Funkce je :term:`soft deprecated` a neměla by být používána pro psaní nového"
+" kódu. Místo toho je doporučen modul :mod:`subprocess`."
 
 #: ../../library/os.rst:4723
 msgid "Wraps the :c:func:`!posix_spawn` C library API for use from Python."
-msgstr ""
+msgstr "Obaluje :c:func:`!posix_spawn` C library API pro použití z Pythonu."
 
 #: ../../library/os.rst:4725
 msgid ""
 "Most users should use :func:`subprocess.run` instead of :func:`posix_spawn`."
 msgstr ""
+"Většina uživatelů by měla místo :func:`posix_spawn` použít "
+":func:`subprocess.run`."
 
 #: ../../library/os.rst:4727
 msgid ""
@@ -6862,6 +7043,9 @@ msgid ""
 ":func:`execve`. *env* is allowed to be ``None``, in which case current "
 "process' environment is used."
 msgstr ""
+"Poziční-only argumenty *path*, *args* a *env* jsou podobné :func:`execve`. "
+"*env* může být ``None``, v takovém případě se použije prostředí aktuálního "
+"procesu."
 
 #: ../../library/os.rst:4731
 msgid ""
@@ -6869,6 +7053,9 @@ msgid ""
 "contain a directory.  Use :func:`posix_spawnp` to pass an executable file "
 "without directory."
 msgstr ""
+"Parametr *path* je cesta ke spustitelnému souboru. *path* by měl obsahovat "
+"adresář. Použijte :func:`posix_spawnp` k předání spustitelnému souboru bez "
+"adresáře."
 
 #: ../../library/os.rst:4735
 msgid ""
@@ -6878,38 +7065,43 @@ msgid ""
 "item in each tuple must be one of the three type indicator listed below "
 "describing the remaining tuple elements:"
 msgstr ""
+"Argument *file_actions* může být posloupnost n-tic popisujících akce, které "
+"se mají provést na konkrétních deskriptorech souborů v podprocesu mezi kroki"
+" C library implementace :c:func:`fork` a :c:func:`exec`. První položka v "
+"každé n-tici musí být jedním ze tří indikátorů typu uvedených níže "
+"popisujících zbývající prvky n-tice:"
 
 #: ../../library/os.rst:4743
 msgid "(``os.POSIX_SPAWN_OPEN``, *fd*, *path*, *flags*, *mode*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_OPEN``, *fd*, *path*, *flags*, *mode*)"
 
 #: ../../library/os.rst:4745
 msgid "Performs ``os.dup2(os.open(path, flags, mode), fd)``."
-msgstr ""
+msgstr "Provádí ``os.dup2(os.open(path, flags, mode), fd)``."
 
 #: ../../library/os.rst:4749
 msgid "(``os.POSIX_SPAWN_CLOSE``, *fd*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_CLOSE``, *fd*)"
 
 #: ../../library/os.rst:4751
 msgid "Performs ``os.close(fd)``."
-msgstr ""
+msgstr "Provádí ``os.close(fd)``."
 
 #: ../../library/os.rst:4755
 msgid "(``os.POSIX_SPAWN_DUP2``, *fd*, *new_fd*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_DUP2``, *fd*, *new_fd*)"
 
 #: ../../library/os.rst:4757
 msgid "Performs ``os.dup2(fd, new_fd)``."
-msgstr ""
+msgstr "Provádí ``os.dup2(fd, new_fd)``."
 
 #: ../../library/os.rst:4761
 msgid "(``os.POSIX_SPAWN_CLOSEFROM``, *fd*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_CLOSEFROM``, *fd*)"
 
 #: ../../library/os.rst:4763
 msgid "Performs ``os.closerange(fd, INF)``."
-msgstr ""
+msgstr "Provádí ``os.closerange(fd, INF)``."
 
 #: ../../library/os.rst:4765
 msgid ""
@@ -6920,6 +7112,12 @@ msgid ""
 ":c:func:`!posix_spawn_file_actions_addclosefrom_np` API calls used to "
 "prepare for the :c:func:`!posix_spawn` call itself."
 msgstr ""
+"Tyto n-tice odpovídají C library funkcím "
+":c:func:`!posix_spawn_file_actions_addopen`, "
+":c:func:`!posix_spawn_file_actions_addclose`, "
+":c:func:`!posix_spawn_file_actions_adddup2` a "
+":c:func:`!posix_spawn_file_actions_addclosefrom_np` API voláním použitým k "
+"přípravě na samotné volání :c:func:`!posix_spawn`."
 
 #: ../../library/os.rst:4772
 msgid ""
@@ -6929,6 +7127,11 @@ msgid ""
 "set, the child will inherit the parent's process group ID. This argument "
 "corresponds to the C library :c:macro:`!POSIX_SPAWN_SETPGROUP` flag."
 msgstr ""
+"Argument *setpgroup* nastaví skupinu procesů podprocesu na zadanou hodnotu. "
+"Pokud je zadaná hodnota 0, ID skupiny procesů podprocesu bude stejné jako ID"
+" jeho procesu. Pokud hodnota *setpgroup* není nastavena, podproces zdědí ID "
+"skupiny procesů rodiče. Tento argument odpovídá příznaku C library "
+":c:macro:`!POSIX_SPAWN_SETPGROUP`."
 
 #: ../../library/os.rst:4778
 msgid ""
@@ -6940,6 +7143,13 @@ msgid ""
 "setting of the effective UID and GID. This argument corresponds to the C "
 "library :c:macro:`!POSIX_SPAWN_RESETIDS` flag."
 msgstr ""
+"Pokud je argument *resetids* ``True``, resetuje efektivní UID a GID "
+"podprocesu na skutečný UID a GID nadřazeného procesu. Pokud je argument "
+"``False``, potom podproces si zachovává efektivní UID a GID rodiče. V obou "
+"případech, pokud jsou bity oprávnění set-user-ID a set-group-ID povoleny na "
+"spustitelnému souboru, jejich efekt přepíše nastavení efektivního UID a GID."
+" Tento argument odpovídá příznaku C library "
+":c:macro:`!POSIX_SPAWN_RESETIDS`."
 
 #: ../../library/os.rst:4786
 msgid ""
@@ -6948,6 +7158,10 @@ msgid ""
 ":c:macro:`!POSIX_SPAWN_SETSID_NP` flag. Otherwise, "
 ":exc:`NotImplementedError` is raised."
 msgstr ""
+"Pokud je argument *setsid* ``True``, vytvoří nové ID sezení pro "
+"``posix_spawn``. *setsid* vyžaduje příznak :c:macro:`!POSIX_SPAWN_SETSID` "
+"nebo :c:macro:`!POSIX_SPAWN_SETSID_NP`. Jinak je vyvolána "
+":exc:`NotImplementedError`."
 
 #: ../../library/os.rst:4791
 msgid ""
@@ -6956,6 +7170,9 @@ msgid ""
 "parent's signal mask. This argument corresponds to the C library "
 ":c:macro:`!POSIX_SPAWN_SETSIGMASK` flag."
 msgstr ""
+"Argument *setsigmask* nastaví masku signálu na zadanou sadu signálů. Pokud "
+"parametr není použit, podproces zdědí signálovou masku rodiče. Tento "
+"argument odpovídá příznaku C library :c:macro:`!POSIX_SPAWN_SETSIGMASK`."
 
 #: ../../library/os.rst:4796
 msgid ""
@@ -6963,6 +7180,8 @@ msgid ""
 "specified. This argument corresponds to the C library "
 ":c:macro:`!POSIX_SPAWN_SETSIGDEF` flag."
 msgstr ""
+"Argument *sigdef* resetuje dispositon všech signálů v zadané sadě. Tento "
+"argument odpovídá příznaku C library :c:macro:`!POSIX_SPAWN_SETSIGDEF`."
 
 #: ../../library/os.rst:4800
 msgid ""
@@ -6973,12 +7192,20 @@ msgid ""
 "C library :c:macro:`!POSIX_SPAWN_SETSCHEDPARAM` and "
 ":c:macro:`!POSIX_SPAWN_SETSCHEDULER` flags."
 msgstr ""
+"Argument *scheduler* musí být n-tice obsahující (volitelnou) politiku "
+"plánovače a instanci :class:`sched_param` s parametry plánovače. Hodnota "
+"``None`` místo politiky plánovače udává, že nebyla poskytnuta. Tento "
+"argument je kombinací příznaků C library "
+":c:macro:`!POSIX_SPAWN_SETSCHEDPARAM` a "
+":c:macro:`!POSIX_SPAWN_SETSCHEDULER`."
 
 #: ../../library/os.rst:4807 ../../library/os.rst:4828
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.posix_spawn`` with arguments"
 " ``path``, ``argv``, ``env``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.posix_spawn`` s argumenty "
+"``path``, ``argv``, ``env``."
 
 #: ../../library/os.rst:4811
 msgid ""
@@ -6986,10 +7213,13 @@ msgid ""
 "on platforms where :c:func:`!posix_spawn_file_actions_addclosefrom_np` "
 "exists."
 msgstr ""
+"Parametr *env* akceptuje ``None``. ``os.POSIX_SPAWN_CLOSEFROM`` je dostupná "
+"na platformách, kde existuje "
+":c:func:`!posix_spawn_file_actions_addclosefrom_np`."
 
 #: ../../library/os.rst:4822
 msgid "Wraps the :c:func:`!posix_spawnp` C library API for use from Python."
-msgstr ""
+msgstr "Obaluje :c:func:`!posix_spawnp` C library API pro použití z Pythonu."
 
 #: ../../library/os.rst:4824
 msgid ""
@@ -6997,10 +7227,13 @@ msgid ""
 "*executable* file in the list of directories specified by the :envvar:`PATH`"
 " environment variable (in the same way as for ``execvp(3)``)."
 msgstr ""
+"Podobné :func:`posix_spawn` s tím rozdílem, že systém hledá *executable* "
+"soubor v seznamu adresářů určených proměnnou prostředí :envvar:`PATH` "
+"(stejným způsobem jako pro ``execvp(3)``)."
 
 #: ../../library/os.rst:4834
 msgid "See :func:`posix_spawn` documentation."
-msgstr ""
+msgstr "Viz dokumentace :func:`posix_spawn`."
 
 #: ../../library/os.rst:4840
 msgid ""
@@ -7008,20 +7241,26 @@ msgid ""
 ":func:`os.fork` or similar process cloning APIs. The parameters are optional"
 " and keyword-only. Each specifies a different call point."
 msgstr ""
+"Registruje volatelné objekty, které mají být provedeny, když je nový "
+"podproces vytvořen pomocí :func:`os.fork` nebo podobného rozhraní klonování "
+"procesů. Parametry jsou volitelné a pouze pojmenované. Každý určuje jiný bod"
+" volání."
 
 #: ../../library/os.rst:4845
 msgid "*before* is a function called before forking a child process."
-msgstr ""
+msgstr "*before* je funkce volaná před forkem podprocesu."
 
 #: ../../library/os.rst:4846
 msgid ""
 "*after_in_parent* is a function called from the parent process after forking"
 " a child process."
 msgstr ""
+"*after_in_parent* je funkce volaná z nadřazeného procesu po vytvoření "
+"podprocesu."
 
 #: ../../library/os.rst:4848
 msgid "*after_in_child* is a function called from the child process."
-msgstr ""
+msgstr "*after_in_child* je funkce volaná z podprocesu."
 
 #: ../../library/os.rst:4850
 msgid ""
@@ -7029,6 +7268,9 @@ msgid ""
 "interpreter.  A typical :mod:`subprocess` launch will not trigger them as "
 "the child is not going to re-enter the interpreter."
 msgstr ""
+"Tato volání se provádějí pouze pokud se očekává návrat ovládání do "
+"interpretu Pythonu. Typické spuštění :mod:`subprocess` je nevyzveá, protože "
+"podproces se nebude znovu vkládat do interpretu."
 
 #: ../../library/os.rst:4854
 msgid ""
@@ -7036,6 +7278,9 @@ msgid ""
 "registration order.  Functions registered for execution after forking "
 "(either in the parent or in the child) are called in registration order."
 msgstr ""
+"Funkce registrované pro spuštění před forkem jsou volány v obráceném pořadí "
+"registrace. Funkce registrované pro spuštění po forku (buď v nadřazeném "
+"procesu nebo v podprocesu) jsou volány v pořadí registrace."
 
 #: ../../library/os.rst:4859
 msgid ""
@@ -7043,14 +7288,17 @@ msgid ""
 " functions, unless it explicitly calls :c:func:`PyOS_BeforeFork`, "
 ":c:func:`PyOS_AfterFork_Parent` and :c:func:`PyOS_AfterFork_Child`."
 msgstr ""
+"Vezměte na vědomí, že volání :c:func:`fork` ze střaný-party C kódu nemohou "
+"volat tyto funkce, pokud explicitně nevolají :c:func:`PyOS_BeforeFork`, "
+":c:func:`PyOS_AfterFork_Parent` a :c:func:`PyOS_AfterFork_Child`."
 
 #: ../../library/os.rst:4863
 msgid "There is no way to unregister a function."
-msgstr ""
+msgstr "Neexistuje způsob, jak zruené funkci registrovat."
 
 #: ../../library/os.rst:4879
 msgid "Execute the program *path* in a new process."
-msgstr ""
+msgstr "Spustí program *path* v novém procesu."
 
 #: ../../library/os.rst:4881
 msgid ""
@@ -7059,6 +7307,10 @@ msgid ""
 "is preferable to using these functions.  Check especially the "
 ":ref:`subprocess-replacements` section.)"
 msgstr ""
+"(Vezměte na vědomí, že modul :mod:`subprocess` poskytuje výkonnější způsoby "
+"pro spuštění nových procesů a získání jejich výsledků; použití tohoto modulu"
+" je lepší než použití těchto funkcí. Zejména si všimněte sekce "
+":ref:`subprocess-replacements`.)"
 
 #: ../../library/os.rst:4886
 msgid ""
@@ -7068,12 +7320,19 @@ msgid ""
 "killed the process.  On Windows, the process id will actually be the process"
 " handle, so can be used with the :func:`waitpid` function."
 msgstr ""
+"Pokud je *mode* :const:`P_NOWAIT`, tato funkce vrátí ID procesu nového "
+"procesu; pokud je *mode* :const:`P_WAIT`, vrátí exit kód procesu, pokud se "
+"normálně ukončí, nebo ``-signal``, kde *signal* je signál, který zabil "
+"proces. Na Windows bude ID procesu vlastně popišováno handle procesu, takže "
+"lze použít funkci :func:`waitpid`."
 
 #: ../../library/os.rst:4892
 msgid ""
 "Note on VxWorks, this function doesn't return ``-signal`` when the new "
 "process is killed. Instead it raises OSError exception."
 msgstr ""
+"Poznámka k VxWorks: tato funkce nevrátí ``-signal``, pokud je nový proces "
+"zabit. Místo toho vyvolá výjimku OSError."
 
 #: ../../library/os.rst:4895
 msgid ""
@@ -7086,6 +7345,13 @@ msgid ""
 "in a list or tuple as the *args* parameter.  In either case, the arguments "
 "to the child process must start with the name of the command being run."
 msgstr ""
+"Varianty \"l\" a \"v\" funkcí :func:`spawn\\* <spawnl>` se liší v způsobu, "
+"jakým jsou předávány argumenty příkazového řádku. Varianty \"l\" jsou snad "
+"nejladďjší, pokud je počet parametrů fixní, když je kód napsán; jednotlivé "
+"parametry se jednoduše stávají dalšími parametry funkcí :func:`!spawnl\\*`. "
+"Varianty \"v\" jsou dobré, pokud je počet parametrů proměnlivý, s argumenty "
+"předanými v seznamu nebo tuple jako parametr *args*. V obou případech musí "
+"argumenty podprocesu začínat názvem příkazu, který se sp ouští."
 
 #: ../../library/os.rst:4904
 msgid ""
@@ -7099,6 +7365,15 @@ msgid ""
 "not use the :envvar:`PATH` variable to locate the executable; *path* must "
 "contain an appropriate absolute or relative path."
 msgstr ""
+"Varianty, které obsahují druhé \"p\" blízko konce (:func:`spawnlp`, "
+":func:`spawnlpe`, :func:`spawnvp` a :func:`spawnvpe`) budou používat "
+"proměnnou prostředí :envvar:`PATH` k lokalizaci programu *file*. Když je "
+"prostředí zaměňováno (pomocí jedné z variant :func:`spawn\\*e <spawnl>`, "
+"diskutovaných v následujícím odstavci), nové prostředí se používá jako zdroj"
+" proměnny :envvar:`PATH`. Ostatní varianty :func:`spawnl`, :func:`spawnle`, "
+":func:`spawnv` a :func:`spawnve` nebudou používat proměnnou :envvar:`PATH` k"
+" lokalizaci spustitelného souboru; *path* musí obsahovat vhodné absolutní "
+"nebo relativní cesty."
 
 #: ../../library/os.rst:4914
 msgid ""
@@ -7112,12 +7387,22 @@ msgid ""
 "keys or values will cause the function to fail, with a return value of "
 "``127``."
 msgstr ""
+"Pro :func:`spawnle`, :func:`spawnlpe`, :func:`spawnve` a :func:`spawnvpe` "
+"(vezměte na vědomí, že všechny končí na \"e\"), parametr *env* musí být "
+"mapování, které se používá k definování proměnných prostředí nového procesu "
+"(jsou použity místo prostředí současného procesu); funkce :func:`spawnl`, "
+":func:`spawnlp`, :func:`spawnv` a :func:`spawnvp` všechny způsobí, že nový "
+"proces zdědí prostředí současného procesu. Vezměte na vědomí, že klíče a "
+"hodnoty v slovníku *env* musí být řetězce; neplatné klíče nebo hodnoty "
+"způsobí selhání funkce s návrat vrcenou hodnotou ``127``."
 
 #: ../../library/os.rst:4923
 msgid ""
 "As an example, the following calls to :func:`spawnlp` and :func:`spawnvpe` "
 "are equivalent::"
 msgstr ""
+"Jako příklad jsou následující volání :func:`spawnlp` a :func:`spawnvpe` "
+"ekvivalentní::"
 
 #: ../../library/os.rst:4926
 msgid ""
@@ -7127,12 +7412,19 @@ msgid ""
 "L = ['cp', 'index.html', '/dev/null']\n"
 "os.spawnvpe(os.P_WAIT, 'cp', L, os.environ)"
 msgstr ""
+"import os\n"
+"os.spawnlp(os.P_WAIT, 'cp', 'cp', 'index.html', '/dev/null')\n"
+"\n"
+"L = ['cp', 'index.html', '/dev/null']\n"
+"os.spawnvpe(os.P_WAIT, 'cp', L, os.environ)"
 
 #: ../../library/os.rst:4932
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.spawn`` with arguments "
 "``mode``, ``path``, ``args``, ``env``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.spawn`` s argumenty ``mode``, "
+"``path``, ``args``, ``env``."
 
 #: ../../library/os.rst:4936
 msgid ""
@@ -7141,12 +7433,17 @@ msgid ""
 "thread-safe on Windows; we advise you to use the :mod:`subprocess` module "
 "instead."
 msgstr ""
+":func:`spawnlp`, :func:`spawnlpe`, :func:`spawnvp` a :func:`spawnvpe` nejsou"
+" dostupné na Windows. :func:`spawnle` a :func:`spawnve` nejsou vláknově-"
+"bezpečné na Windows; doporučujeme použít modul :mod:`subprocess`."
 
 #: ../../library/os.rst:4944
 msgid ""
 "These functions are :term:`soft deprecated` and should no longer be used to "
 "write new code. The :mod:`subprocess` module is recommended instead."
 msgstr ""
+"Tyto funkce jsou :term:`soft deprecated` a neměly by být používány pro psaní"
+" nového kódu. Místo toho je doporučen modul :mod:`subprocess`."
 
 #: ../../library/os.rst:4952
 msgid ""
@@ -7155,6 +7452,10 @@ msgid ""
 ":func:`spawn\\* <spawnl>` functions will return as soon as the new process "
 "has been created, with the process id as the return value."
 msgstr ""
+"Možné hodnoty pro parametr *mode* rodiny funkcí :func:`spawn\\* <spawnl>`. "
+"Pokud je dána jedna z těchto hodnot, funkce :func:`spawn\\* <spawnl>` se "
+"vrátí hned poté, co byl nový proces vytvořen, s ID procesu jako vrácenou "
+"hodnotou."
 
 #: ../../library/os.rst:4962
 msgid ""
@@ -7164,6 +7465,10 @@ msgid ""
 "completion and will return the exit code of the process the run is "
 "successful, or ``-signal`` if a signal kills the process."
 msgstr ""
+"Možná hodnota pro parametr *mode* rodiny funkcí :func:`spawn\\* <spawnl>`. "
+"Pokud je dána jako *mode*, funkce :func:`spawn\\* <spawnl>` se nevrátí, "
+"dokud nový proces neběhem a vrátí exit kód procesu, pokud je spuštění "
+"úspěšné, nebo ``-signal``, pokud signál zabí proces."
 
 #: ../../library/os.rst:4974
 msgid ""
@@ -7174,10 +7479,15 @@ msgid ""
 "used, the current process will be replaced; the :func:`spawn\\* <spawnl>` "
 "function will not return."
 msgstr ""
+"Možné hodnoty pro parametr *mode* rodiny funkcí :func:`spawn\\* <spawnl>`. "
+"Ty jsou méně přenositelné než ty vyměňované výše. :const:`P_DETACH` je "
+"podobná :const:`P_NOWAIT`, ale nový proces je odpojen od konzoly volájícího "
+"procesu. Pokud je použita :const:`P_OVERLAY`, současný proces bude nahrazen;"
+" funkce :func:`spawn\\* <spawnl>` se nebude vracet."
 
 #: ../../library/os.rst:4985
 msgid "Start a file with its associated application."
-msgstr ""
+msgstr "Spustí soubor s jeho přidřulenou aplikací."
 
 #: ../../library/os.rst:4987
 msgid ""
@@ -7186,6 +7496,11 @@ msgid ""
 ":program:`start` command from the interactive command shell: the file is "
 "opened with whatever application (if any) its extension is associated."
 msgstr ""
+"Pokud je *operation* neurčen, chová se to jako dvojité kliknutí na soubor v "
+"Prohlečavači Windows (Windows Explorer) nebo dání názvu souboru jako "
+"argumentu do příkazu :program:`start` z interaktivního příkazového shellu: "
+"soubor se otevře s kteroukoliv aplikací (existuje-li) s kterou je jeho "
+"příponou spojena."
 
 #: ../../library/os.rst:4992
 msgid ""
@@ -7194,6 +7509,10 @@ msgid ""
 "Microsoft are ``'open'``, ``'print'`` and  ``'edit'`` (to be used on files) "
 "as well as ``'explore'`` and ``'find'`` (to be used on directories)."
 msgstr ""
+"Pokud je dána jiná *operation*, musí být \"command verb\", které určuje, co "
+"by mělo být s souborem děláno. Známé slovesa dokumentovaná Microsoftem jsou "
+"``'open'``, ``'print'`` a ``'edit'`` (má se použít na soubory) také "
+"``'explore'`` a ``'find'`` (má se použít na adresáře)."
 
 #: ../../library/os.rst:4997
 msgid ""
@@ -7201,6 +7520,9 @@ msgid ""
 "string. This argument may have no effect when using this function to launch "
 "a document."
 msgstr ""
+"Při spuštění aplikace určete *arguments* k předání jako jedinečný řetězec. "
+"Tento argument může mít žádný efekt při použití této funkce k spuštění "
+"dokumentu."
 
 #: ../../library/os.rst:5001
 msgid ""
@@ -7208,6 +7530,9 @@ msgid ""
 "*cwd* argument. This should be an absolute path. A relative *path* will be "
 "resolved against this argument."
 msgstr ""
+"Výchozí pracovní adresář je zděděn, ale může být přepisán argumentem *cwd*. "
+"Musí se jednat o absolutní cestu. Relativní *path* bude vyjádřen proti "
+"tomuto argumentu."
 
 #: ../../library/os.rst:5005
 msgid ""
@@ -7215,6 +7540,9 @@ msgid ""
 "effect will depend on the application being launched. Values are integers as"
 " supported by the Win32 :c:func:`!ShellExecute` function."
 msgstr ""
+"Použijte *show_cmd* k přepsání výchozího stylu okna. Zda to má nějaký efekt,"
+" bude záviset na spouštěné aplikaci. Hodnoty jsou celá čísla podporovaná "
+"funkcí Win32 :c:func:`!ShellExecute`."
 
 #: ../../library/os.rst:5009
 msgid ""
@@ -7226,6 +7554,13 @@ msgid ""
 " :func:`os.path.normpath` function to ensure that paths are properly encoded"
 " for Win32."
 msgstr ""
+":func:`startfile` se vrátí jakmile je přidřulená aplikace spuštěna. "
+"Neexistuje možnost čekat, až se aplikace uzavře, a nemá způsob, jak získat "
+"výsledek aplikace. Parametr *path* je relativní vūči současnému adresáři "
+"nebo *cwd*. Chcete-li použít absolutní cestu, ujistěte se, že první znak "
+"není lomítko (``'/'``). Použijte :mod:`pathlib` nebo funkci "
+":func:`os.path.normpath`, abyste zajistili, že cesty jsou správně kódovány "
+"pro Win32."
 
 #: ../../library/os.rst:5017
 msgid ""
@@ -7233,24 +7568,33 @@ msgid ""
 "function is not resolved until this function is first called.  If the "
 "function cannot be resolved, :exc:`NotImplementedError` will be raised."
 msgstr ""
+"Aby se snížila nadčas spuštění interpretu, funkce Win32 "
+":c:func:`!ShellExecute` není vyřešena, dokud není tato funkce poprvé volána."
+" Pokud funkci nelze vyřešit, bude vyvolána :exc:`NotImplementedError`."
 
 #: ../../library/os.rst:5021
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.startfile`` with arguments "
 "``path``, ``operation``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.startfile`` s argumenty ``path``, "
+"``operation``."
 
 #: ../../library/os.rst:5023
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.startfile/2`` with arguments"
 " ``path``, ``operation``, ``arguments``, ``cwd``, ``show_cmd``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.startfile/2`` s argumenty "
+"``path``, ``operation``, ``arguments``, ``cwd``, ``show_cmd``."
 
 #: ../../library/os.rst:5027
 msgid ""
 "Added the *arguments*, *cwd* and *show_cmd* arguments, and the "
 "``os.startfile/2`` audit event."
 msgstr ""
+"Přidány argumenty *arguments*, *cwd* a *show_cmd* a event auditu "
+"``os.startfile/2``."
 
 #: ../../library/os.rst:5034
 msgid ""
@@ -7262,12 +7606,20 @@ msgid ""
 "not specify the meaning of the return value of the C function, so the return"
 " value of the Python function is system-dependent."
 msgstr ""
+"Spustí příkaz (řetězec) v subshell. To je implementováno voláním standardní "
+"funkce C :c:func:`system` a má stejná omezení. Změny na :data:`sys.stdin` "
+"atd. nejsou odráženy v prostředí spuštěného příkazu. Pokud *command* "
+"vygeneruje nějaký výstup, bude odeslán do standardt ního výstupního toku "
+"interpretu. Standard C nespecifiková význam vrácené hodnoty funkce C, takže "
+"vrácená hodnota funkce Python je závislá na systému."
 
 #: ../../library/os.rst:5042
 msgid ""
 "On Unix, the return value is the exit status of the process encoded in the "
 "format specified for :func:`wait`."
 msgstr ""
+"Na Unixu je vrácená hodnota exit status procesu zakódovaný v formátu určeném"
+" pro :func:`wait`."
 
 #: ../../library/os.rst:5045
 msgid ""
@@ -7277,6 +7629,11 @@ msgid ""
 "status of the command run; on systems using a non-native shell, consult your"
 " shell documentation."
 msgstr ""
+"Na Windows je vrácená hodnota ta, kterou vrátí shell systému po spuštění "
+"*command*. Shell je dán proměnnou prostředí Windows :envvar:`COMSPEC`: je to"
+" obvykle :program:`cmd.exe`, které vrátí exit status provedeného příkazu; na"
+" systémech používajících neerodjí shell, konzultujte dokumentaci vašeho "
+"shellu."
 
 #: ../../library/os.rst:5051
 msgid ""
@@ -7285,6 +7642,10 @@ msgid ""
 " to using this function.  See the :ref:`subprocess-replacements` section in "
 "the :mod:`subprocess` documentation for some helpful recipes."
 msgstr ""
+"Modul :mod:`subprocess` poskytuje výkonnější způsoby pro spuštění nových "
+"procesů a získání jejich výsledků; použití tohoto modulu je doporučováno "
+"místo použití této funkce. Viz sekce :ref:`subprocess-replacements` v "
+"dokumentaci modulu :mod:`subprocess` pro některé užitečné recepty."
 
 #: ../../library/os.rst:5056
 msgid ""
@@ -7292,38 +7653,43 @@ msgid ""
 "(exit status) into an exit code. On Windows, the result is directly the exit"
 " code."
 msgstr ""
+"Na Unixu lze :func:`waitstatus_to_exitcode` použít k převodu výsledku (exit "
+"status) na exit kód. Na Windows je výsledek přímo exit kódem."
 
 #: ../../library/os.rst:5060
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.system`` with argument "
 "``command``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``os.system`` s argumentem ``command``."
 
 #: ../../library/os.rst:5067
 msgid ""
 "Returns the current global process times. The return value is an object with"
 " five attributes:"
 msgstr ""
+"Vrací současné globální časy procesu. Vrácená hodnota je objekt s pěti "
+"atributy:"
 
 #: ../../library/os.rst:5070
 msgid ":attr:`!user` - user time"
-msgstr ""
+msgstr ":attr:`!user` - čas uživatele"
 
 #: ../../library/os.rst:5071
 msgid ":attr:`!system` - system time"
-msgstr ""
+msgstr ":attr:`!system` - čas systému"
 
 #: ../../library/os.rst:5072
 msgid ":attr:`!children_user` - user time of all child processes"
-msgstr ""
+msgstr ":attr:`!children_user` - čas uživatele všech podprocesů"
 
 #: ../../library/os.rst:5073
 msgid ":attr:`!children_system` - system time of all child processes"
-msgstr ""
+msgstr ":attr:`!children_system` - čas systému všech podprocesů"
 
 #: ../../library/os.rst:5074
 msgid ":attr:`!elapsed` - elapsed real time since a fixed point in the past"
-msgstr ""
+msgstr ":attr:`!elapsed` - uplynulý reálný čas od pevného bodu v minulosti"
 
 #: ../../library/os.rst:5076
 msgid ""
@@ -7331,6 +7697,9 @@ msgid ""
 "containing :attr:`!user`, :attr:`!system`, :attr:`!children_user`, "
 ":attr:`!children_system`, and :attr:`!elapsed` in that order."
 msgstr ""
+"Z důvodu zpětné kompatibility se tento objekt chová také jako pět-prvkový "
+"tuple obsahující :attr:`!user`, :attr:`!system`, :attr:`!children_user`, "
+":attr:`!children_system` a :attr:`!elapsed` v témto pořadí."
 
 #: ../../library/os.rst:5080
 msgid ""
@@ -7341,6 +7710,12 @@ msgid ""
 "processthreadsapi-getprocesstimes>`_ on Windows. On Windows, only "
 ":attr:`!user` and :attr:`!system` are known; the other attributes are zero."
 msgstr ""
+"Viz stránka man Unix :manpage:`times(2)` a stránka man `times(3) "
+"<https://man.freebsd.org/cgi/man.cgi?time(3)>`_ na Unixu nebo "
+"`GetProcessTimes MSDN "
+"<https://docs.microsoft.com/windows/win32/api/processthreadsapi/nf-"
+"processthreadsapi-getprocesstimes>`_ na Windows. Na Windows jsou známy pouze"
+" :attr:`!user` a :attr:`!system`; ostatní atributy jsou nula."
 
 #: ../../library/os.rst:5094
 msgid ""
@@ -7350,18 +7725,25 @@ msgid ""
 "status (if the signal number is zero); the high bit of the low byte is set "
 "if a core file was produced."
 msgstr ""
+"Čeká na dokončení podprocesu a vrací tuple obsahující jeho pid a indikaci "
+"exit stavu: 16-bitové číslo, jehož nízký bajt je číslo signálu, který zabil "
+"proces, a jehož vysoký bajt je exit status (pokud je číslo signálu nula); "
+"vysoký bit nízkého bajtu je nastaven, pokud byl vytvoren core file."
 
 #: ../../library/os.rst:5100
 msgid ""
 "If there are no children that could be waited for, :exc:`ChildProcessError` "
 "is raised."
 msgstr ""
+"Pokud neexistují žádné podprocesy, na které by bylo možné čekat, je vyvolána"
+" :exc:`ChildProcessError`."
 
 #: ../../library/os.rst:5103 ../../library/os.rst:5178
 msgid ""
 ":func:`waitstatus_to_exitcode` can be used to convert the exit status into "
 "an exit code."
 msgstr ""
+":func:`waitstatus_to_exitcode` lze použít k převodu exit stavu na exit kód."
 
 #: ../../library/os.rst:5110
 msgid ""
@@ -7369,10 +7751,13 @@ msgid ""
 "the completion of a specific child process and have more options. "
 ":func:`waitpid` is the only one also available on Windows."
 msgstr ""
+"Ostatní funkce :func:`!wait*` uvedené níže mohou být použity k čekání na "
+"dokončení specifického podprocesu a mají více možností. :func:`waitpid` je "
+"jediná, která je také dostupná na Windows."
 
 #: ../../library/os.rst:5117
 msgid "Wait for the completion of a child process."
-msgstr ""
+msgstr "Čeká na dokončení podprocesu."
 
 #: ../../library/os.rst:5119
 msgid ""
@@ -7380,6 +7765,9 @@ msgid ""
 ":data:`P_PIDFD`. The interpretation of *id* depends on it; see their "
 "individual descriptions."
 msgstr ""
+"*idtype* může být :data:`P_PID`, :data:`P_PGID`, :data:`P_ALL` nebo (na "
+"Linuxu) :data:`P_PIDFD`. Význam *id* závisí na něm; viz jejich jednotlivé "
+"popisy."
 
 #: ../../library/os.rst:5122
 msgid ""
@@ -7387,34 +7775,41 @@ msgid ""
 ":data:`WSTOPPED` or :data:`WCONTINUED` is required; :data:`WNOHANG` and "
 ":data:`WNOWAIT` are additional optional flags."
 msgstr ""
+"*options* je OR kombinace příznaků. Alespoň jeden z :data:`WEXITED`, "
+":data:`WSTOPPED` nebo :data:`WCONTINUED` je povinný; :data:`WNOHANG` a "
+":data:`WNOWAIT` jsou další volitelné příznaký."
 
 #: ../../library/os.rst:5126
 msgid ""
 "The return value is an object representing the data contained in the "
 ":c:type:`siginfo_t` structure with the following attributes:"
 msgstr ""
+"Vrácená hodnota je objekt reprezentující data obsahuá ve struktuře "
+":c:type:`siginfo_t` s následujícími atributy:"
 
 #: ../../library/os.rst:5129
 msgid ":attr:`!si_pid` (process ID)"
-msgstr ""
+msgstr ":attr:`!si_pid` (ID procesu)"
 
 #: ../../library/os.rst:5130
 msgid ":attr:`!si_uid` (real user ID of the child)"
-msgstr ""
+msgstr ":attr:`!si_uid` (skutečný UID potomka)"
 
 #: ../../library/os.rst:5131
 msgid ":attr:`!si_signo` (always :const:`~signal.SIGCHLD`)"
-msgstr ""
+msgstr ":attr:`!si_signo` (vždy :const:`~signal.SIGCHLD`)"
 
 #: ../../library/os.rst:5132
 msgid ""
 ":attr:`!si_status` (the exit status or signal number, depending on "
 ":attr:`!si_code`)"
 msgstr ""
+":attr:`!si_status` (exit status nebo číslo signálu, závisle na "
+":attr:`!si_code`)"
 
 #: ../../library/os.rst:5133
 msgid ":attr:`!si_code` (see :data:`CLD_EXITED` for possible values)"
-msgstr ""
+msgstr ":attr:`!si_code` (viz :data:`CLD_EXITED` pro možné hodnoty)"
 
 #: ../../library/os.rst:5135
 msgid ""
@@ -7422,14 +7817,17 @@ msgid ""
 "requested state, ``None`` is returned. Otherwise, if there are no matching "
 "children that could be waited for, :exc:`ChildProcessError` is raised."
 msgstr ""
+"Pokud je určen :data:`WNOHANG` a neexistují žádné podprocesy v požadovaném "
+"stavu, vrátí se ``None``. Jinak, pokud neexistují podprocesy, na které by "
+"bylo možné čekat, je vyvolána :exc:`ChildProcessError`."
 
 #: ../../library/os.rst:5144
 msgid "This function is now available on macOS as well."
-msgstr ""
+msgstr "Tato funkce je nyní dostupná také na macOS."
 
 #: ../../library/os.rst:5150
 msgid "The details of this function differ on Unix and Windows."
-msgstr ""
+msgstr "Detaily této funkce se liší na Unixu a Windows."
 
 #: ../../library/os.rst:5152
 msgid ""
@@ -7439,6 +7837,10 @@ msgid ""
 "the value of the integer *options*, which should be ``0`` for normal "
 "operation."
 msgstr ""
+"Na Unixu: Čeká na dokončení podprocesu daného ID procesu *pid* a vrací tuple"
+" obsahující jeho ID procesu a indikaci exit stavu (zakódovaného jako pro "
+":func:`wait`). Sémantika volání je ovlivněna hodnotou celogníselného "
+"*options*, která by měla být ``0`` pro normální provoz."
 
 #: ../../library/os.rst:5157
 msgid ""
@@ -7449,6 +7851,12 @@ msgid ""
 "is less than ``-1``, status is requested for any process in the process "
 "group ``-pid`` (the absolute value of *pid*)."
 msgstr ""
+"Pokud je *pid* větší než ``0``, :func:`waitpid` žádá informace o stavu "
+"tohoto konkrétního procesu. Pokud je *pid* ``0``, žádost je pro stav "
+"libovolného potomka skupiny procesů současného procesu. Pokud je *pid* "
+"``-1``, žádost se týka libovolného potomka současného procesu. Pokud je "
+"*pid* menší než ``-1``, stav je žádán pro libovolný proces ve skupině "
+"procesů ``-pid`` (absolutní hodnota *pid*)."
 
 #: ../../library/os.rst:5164
 msgid ""
@@ -7458,6 +7866,11 @@ msgid ""
 " for, :exc:`ChildProcessError` is raised.  Other options that can be used "
 "are :data:`WUNTRACED` and :data:`WCONTINUED`."
 msgstr ""
+"*options* je OR kombinace příznaků. Pokud obsahuje :data:`WNOHANG` a "
+"neexistují žádné podprocesy v požadovaném stavu, vrací se ``(0, 0)``. Jinak,"
+" pokud neexistují podprocesy, na které by bylo možné čekat, je vyvolána "
+":exc:`ChildProcessError`. Další možné možnosti jsou :data:`WUNTRACED` a "
+":data:`WCONTINUED`."
 
 #: ../../library/os.rst:5170
 msgid ""
@@ -7470,6 +7883,13 @@ msgid ""
 ":func:`spawn\\* <spawnl>` functions called with :const:`P_NOWAIT` return "
 "suitable process handles."
 msgstr ""
+"Na Windows: Čeká na dokončení procesu daného handle procesu *pid* a vrací "
+"tuple obsahující *pid* a jeho exit status posunutý vlevo o 8 bitů (posuv "
+"zjednošuje příkřízné použití funkce). *pid* menší néž nebo rovno ``0`` nemá "
+"na Windows zvláštní význam a vyvolá výjimku. Hodnota celogníselného "
+"*options* nemá žádný efekt. *pid* může odkazovat na libovolný proces, jehož "
+"ID je známo, ne nutně podproces. Funkce :func:`spawn\\* <spawnl>` volané s "
+":const:`P_NOWAIT` vrací vhodné handly procesů."
 
 #: ../../library/os.rst:5191
 msgid ""
@@ -7480,12 +7900,18 @@ msgid ""
 "*options* argument is the same as that provided to :func:`waitpid` and "
 ":func:`wait4`."
 msgstr ""
+"Podobné :func:`waitpid`, s výjimkou, že není dán argument s ID procesu a "
+"vrácí se 3-prvkový tuple obsahující ID procesu potomka, indikaci exit stavu "
+"a informace o použití prostředků. Viz :func:`resource.getrusage` pro detaily"
+" o informacích o použití prostředků. Argument *options* je stejný jako ten "
+"poskytnutý :func:`waitpid` a :func:`wait4`."
 
 #: ../../library/os.rst:5198 ../../library/os.rst:5212
 msgid ""
 ":func:`waitstatus_to_exitcode` can be used to convert the exit status into "
 "an exitcode."
 msgstr ""
+":func:`waitstatus_to_exitcode` lze použít k převodu exit stavu na exit kód."
 
 #: ../../library/os.rst:5206
 msgid ""
@@ -7495,38 +7921,49 @@ msgid ""
 " information.  The arguments to :func:`wait4` are the same as those provided"
 " to :func:`waitpid`."
 msgstr ""
+"Podobné :func:`waitpid`, s výjimkou, že se vrátí 3-prvkový tuple obsahující "
+"ID procesu potomka, indikaci exit stavu a informace o použití prostředků. "
+"Viz :func:`resource.getrusage` pro detaily o informacích o použití "
+"prostředků. Argumenty :func:`wait4` jsou stejné jako ty poskytnuté "
+":func:`waitpid`."
 
 #: ../../library/os.rst:5223
 msgid ""
 "These are the possible values for *idtype* in :func:`waitid`. They affect "
 "how *id* is interpreted:"
 msgstr ""
+"Toto jsou možné hodnoty pro *idtype* v :func:`waitid`. Ovlivňují, jak je "
+"*id* interpretován:"
 
 #: ../../library/os.rst:5226
 msgid ":data:`!P_PID` - wait for the child whose PID is *id*."
-msgstr ""
+msgstr ":data:`!P_PID` - čeká na potomka, jehož PID je *id*."
 
 #: ../../library/os.rst:5227
 msgid ":data:`!P_PGID` - wait for any child whose progress group ID is *id*."
 msgstr ""
+":data:`!P_PGID` - čeká na libovolného potomka, jehož ID skupiny procesů je "
+"*id*."
 
 #: ../../library/os.rst:5228
 msgid ":data:`!P_ALL` - wait for any child; *id* is ignored."
-msgstr ""
+msgstr ":data:`!P_ALL` - čeká na libovolného potomka; *id* je ignorován."
 
 #: ../../library/os.rst:5229
 msgid ""
 ":data:`!P_PIDFD` - wait for the child identified by the file descriptor *id*"
 " (a process file descriptor created with :func:`pidfd_open`)."
 msgstr ""
+":data:`!P_PIDFD` - čeká na potomka identifikováného deskriptorem souboru "
+"*id* (deskriptor procesu vytvořený s :func:`pidfd_open`)."
 
 #: ../../library/os.rst:5234
 msgid ":data:`!P_PIDFD` is only available on Linux >= 5.4."
-msgstr ""
+msgstr ":data:`!P_PIDFD` je dostupná pouze na Linuxu >= 5.4."
 
 #: ../../library/os.rst:5237
 msgid "The :data:`!P_PIDFD` constant."
-msgstr ""
+msgstr "Konstanta :data:`!P_PIDFD`."
 
 #: ../../library/os.rst:5243
 msgid ""
@@ -7534,28 +7971,37 @@ msgid ""
 ":func:`waitid` causes child processes to be reported if they have been "
 "continued from a job control stop since they were last reported."
 msgstr ""
+"Tento příznak *options* pro :func:`waitpid`, :func:`wait3`, :func:`wait4` a "
+":func:`waitid` způsobí, že podprocesy jsou vhlášeny, pokud byly pokračovány "
+"z zastavenií job control od doby, kdy byly naposledy vhlášeny."
 
 #: ../../library/os.rst:5252
 msgid ""
 "This *options* flag for :func:`waitid` causes child processes that have "
 "terminated to be reported."
 msgstr ""
+"Tento příznak *options* pro :func:`waitid` způsobí, že podprocesy, které "
+"skončily, jsou vhlášeny."
 
 #: ../../library/os.rst:5255
 msgid ""
 "The other ``wait*`` functions always report children that have terminated, "
 "so this option is not available for them."
 msgstr ""
+"Ostatní funkce ``wait*`` vždy vhlášují podprocesy, které skončily, takže "
+"tato možnost pro ně není dostupná."
 
 #: ../../library/os.rst:5265
 msgid ""
 "This *options* flag for :func:`waitid` causes child processes that have been"
 " stopped by the delivery of a signal to be reported."
 msgstr ""
+"Tento příznak *options* pro :func:`waitid` způsobí, že podprocesy zastavenyé"
+" dorukou signálu jsou vhlášeny."
 
 #: ../../library/os.rst:5268 ../../library/os.rst:5300
 msgid "This option is not available for the other ``wait*`` functions."
-msgstr ""
+msgstr "Tato možnost není dostupná pro ostatní funkce ``wait*``."
 
 #: ../../library/os.rst:5277
 msgid ""
@@ -7563,10 +8009,13 @@ msgid ""
 "causes child processes to also be reported if they have been stopped but "
 "their current state has not been reported since they were stopped."
 msgstr ""
+"Tento příznak *options* pro :func:`waitpid`, :func:`wait3` a :func:`wait4` "
+"způsobí, že podprocesy jsou také vhlášeny, pokud byly zastaveny, ale jejich "
+"současný stav nebyl vhlášen od jejich zastavenií."
 
 #: ../../library/os.rst:5281
 msgid "This option is not available for :func:`waitid`."
-msgstr ""
+msgstr "Tato možnost není dostupná pro :func:`waitid`."
 
 #: ../../library/os.rst:5288
 msgid ""
@@ -7574,6 +8023,9 @@ msgid ""
 "and :func:`waitid` to return right away if no child process status is "
 "available immediately."
 msgstr ""
+"Tento příznak *options* způsobí, že :func:`waitpid`, :func:`wait3`, "
+":func:`wait4` a :func:`waitid` se okamžitě vrátí, pokud není okamžitě "
+"dostupná žádná informace o stavu podprocesu."
 
 #: ../../library/os.rst:5297
 msgid ""
@@ -7581,24 +8033,29 @@ msgid ""
 "state, so that a later :func:`!wait*` call can be used to retrieve the child"
 " status information again."
 msgstr ""
+"Tento příznak *options* způsobí, že :func:`waitid` ponechá potomka ve stavu "
+"čekání, takže předběžnou :func:`!wait*` volání lze použít k novému zíkání "
+"informací o stavu potomka."
 
 #: ../../library/os.rst:5312
 msgid ""
 "These are the possible values for :attr:`!si_code` in the result returned by"
 " :func:`waitid`."
 msgstr ""
+"Toto jsou možné hodnoty pro :attr:`!si_code` ve výsledku vráceném "
+":func:`waitid`."
 
 #: ../../library/os.rst:5319
 msgid "Added :data:`CLD_KILLED` and :data:`CLD_STOPPED` values."
-msgstr ""
+msgstr "Přidány hodnoty :data:`CLD_KILLED` a :data:`CLD_STOPPED`."
 
 #: ../../library/os.rst:5325
 msgid "Convert a wait status to an exit code."
-msgstr ""
+msgstr "Konvertuje wait status na exit kód."
 
 #: ../../library/os.rst:5327
 msgid "On Unix:"
-msgstr ""
+msgstr "Na Unixu:"
 
 #: ../../library/os.rst:5329
 msgid ""
@@ -7606,6 +8063,9 @@ msgid ""
 "the process exit status (return ``WEXITSTATUS(status)``): result greater "
 "than or equal to 0."
 msgstr ""
+"Pokud proces skončil normálně (pokud je ``WIFEXITED(status)`` true), vrátí "
+"exit status procesu (vrátí ``WEXITSTATUS(status)``): výsledek větší nebo "
+"rovný 0."
 
 #: ../../library/os.rst:5332
 msgid ""
@@ -7614,14 +8074,17 @@ msgid ""
 "caused the process to terminate (return ``-WTERMSIG(status)``): result less "
 "than 0."
 msgstr ""
+"Pokud byl proces ukončen signálem (pokud je ``WIFSIGNALED(status)`` true), "
+"vrátí ``-signum`` kde *signum* je číslo signálu, který způsobil ukončení "
+"procesu (vrátí ``-WTERMSIG(status)``): výsledek menší než 0."
 
 #: ../../library/os.rst:5336
 msgid "Otherwise, raise a :exc:`ValueError`."
-msgstr ""
+msgstr "Jinak vyvolej :exc:`ValueError`."
 
 #: ../../library/os.rst:5338
 msgid "On Windows, return *status* shifted right by 8 bits."
-msgstr ""
+msgstr "Na Windows vrátí *status* posunutý vpravo o 8 bitů."
 
 #: ../../library/os.rst:5340
 msgid ""
@@ -7630,12 +8093,18 @@ msgid ""
 "``WIFSTOPPED(status)`` is true. This function must not be called if "
 "``WIFSTOPPED(status)`` is true."
 msgstr ""
+"Na Unixu, pokud je proces sledován nebo pokud byla :func:`waitpid` volána s "
+"možností :data:`WUNTRACED`, musí volající nejdříve zkontrolovat, zda je "
+"``WIFSTOPPED(status)`` true. Tato funkce nesmí být volána, pokud je "
+"``WIFSTOPPED(status)`` true."
 
 #: ../../library/os.rst:5347
 msgid ""
 ":func:`WIFEXITED`, :func:`WEXITSTATUS`, :func:`WIFSIGNALED`, "
 ":func:`WTERMSIG`, :func:`WIFSTOPPED`, :func:`WSTOPSIG` functions."
 msgstr ""
+"Funkce :func:`WIFEXITED`, :func:`WEXITSTATUS`, :func:`WIFSIGNALED`, "
+":func:`WTERMSIG`, :func:`WIFSTOPPED`, :func:`WSTOPSIG`."
 
 #: ../../library/os.rst:5355
 msgid ""
@@ -7643,16 +8112,22 @@ msgid ""
 ":func:`system`, :func:`wait`, or :func:`waitpid` as a parameter.  They may "
 "be used to determine the disposition of a process."
 msgstr ""
+"Následující funkce berou kód stavu procesu, jak je vrácen :func:`system`, "
+":func:`wait` nebo :func:`waitpid` jako parametr. Mohou být použity k určení "
+"způsobu, jak se proces chová."
 
 #: ../../library/os.rst:5361
 msgid ""
 "Return ``True`` if a core dump was generated for the process, otherwise "
 "return ``False``."
 msgstr ""
+"Vrátí ``True``, pokud byl pro proces generován core dump, jinak vrátí "
+"``False``."
 
 #: ../../library/os.rst:5364 ../../library/os.rst:5430
 msgid "This function should be employed only if :func:`WIFSIGNALED` is true."
 msgstr ""
+"Tato funkce by měla být používána pouze pokud je :func:`WIFSIGNALED` true."
 
 #: ../../library/os.rst:5371
 msgid ""
@@ -7660,16 +8135,21 @@ msgid ""
 ":const:`~signal.SIGCONT` (if the process has been continued from a job "
 "control stop), otherwise return ``False``."
 msgstr ""
+"Vrátí ``True``, pokud byl zastavený potomek obnoven doručením "
+":const:`~signal.SIGCONT` (pokud byl proces pokračován z job control stop), "
+"jinak vrátí ``False``."
 
 #: ../../library/os.rst:5375
 msgid "See :data:`WCONTINUED` option."
-msgstr ""
+msgstr "Viz možnost :data:`WCONTINUED`."
 
 #: ../../library/os.rst:5382
 msgid ""
 "Return ``True`` if the process was stopped by delivery of a signal, "
 "otherwise return ``False``."
 msgstr ""
+"Vrátí ``True``, pokud byl proces zastavený doručením signálu, jinak vrátí "
+"``False``."
 
 #: ../../library/os.rst:5385
 msgid ""
@@ -7677,12 +8157,16 @@ msgid ""
 "done using :data:`WUNTRACED` option or when the process is being traced (see"
 " :manpage:`ptrace(2)`)."
 msgstr ""
+":func:`WIFSTOPPED` vrátí ``True`` pouze pokud byla :func:`waitpid` volána s "
+"možností :data:`WUNTRACED` nebo když je proces sledován (viz "
+":manpage:`ptrace(2)`)."
 
 #: ../../library/os.rst:5393
 msgid ""
 "Return ``True`` if the process was terminated by a signal, otherwise return "
 "``False``."
 msgstr ""
+"Vrátí ``True``, pokud byl proces ukončen signálem, jinak vrátí ``False``."
 
 #: ../../library/os.rst:5401
 msgid ""
@@ -7690,30 +8174,34 @@ msgid ""
 "calling ``exit()`` or ``_exit()``, or by returning from ``main()``; "
 "otherwise return ``False``."
 msgstr ""
+"Vrátí ``True``, pokud proces skončil normálně, konkrétně voláním ``exit()`` "
+"nebo ``_exit()``, nebo vrácením z ``main()``; jinak vrátí ``False``."
 
 #: ../../library/os.rst:5410
 msgid "Return the process exit status."
-msgstr ""
+msgstr "Vrátí exit status procesu."
 
 #: ../../library/os.rst:5412
 msgid "This function should be employed only if :func:`WIFEXITED` is true."
 msgstr ""
+"Tato funkce by měla být používána pouze pokud je :func:`WIFEXITED` true."
 
 #: ../../library/os.rst:5419
 msgid "Return the signal which caused the process to stop."
-msgstr ""
+msgstr "Vrátí signál, který způsobil zastavenií procesu."
 
 #: ../../library/os.rst:5421
 msgid "This function should be employed only if :func:`WIFSTOPPED` is true."
 msgstr ""
+"Tato funkce by měla být používána pouze pokud je :func:`WIFSTOPPED` true."
 
 #: ../../library/os.rst:5428
 msgid "Return the number of the signal that caused the process to terminate."
-msgstr ""
+msgstr "Vrátí číslo signálu, který způsobil ukončení procesu."
 
 #: ../../library/os.rst:5436
 msgid "Interface to the scheduler"
-msgstr ""
+msgstr "Rozhraní k prováděši"
 
 #: ../../library/os.rst:5438
 msgid ""
@@ -7721,46 +8209,53 @@ msgid ""
 " system. They are only available on some Unix platforms. For more detailed "
 "information, consult your Unix manpages."
 msgstr ""
+"Tyto funkce kontrolují, jak je procesu přidělena CPU častka operačním "
+"systémem. Jsou dostupné pouze na některých Unix platformách. Pro více "
+"podrobných informací si prohlédněte stránky Unix manualu."
 
 #: ../../library/os.rst:5444
 msgid ""
 "The following scheduling policies are exposed if they are supported by the "
 "operating system."
 msgstr ""
+"Následující politiky plánování jsou zpřístupněny, pokud jsou podporovány "
+"operačním systémem."
 
 #: ../../library/os.rst:5451
 msgid "The default scheduling policy."
-msgstr ""
+msgstr "Výchozí politika plánování."
 
 #: ../../library/os.rst:5455
 msgid ""
 "Scheduling policy for CPU-intensive processes that tries to preserve "
 "interactivity on the rest of the computer."
 msgstr ""
+"Politika plánování pro CPU-intenzivní procesy, která se pokusí zachovat "
+"interaktivitu na zbytku počítače."
 
 #: ../../library/os.rst:5460
 msgid "Scheduling policy for tasks with deadline constraints."
-msgstr ""
+msgstr "Politika plánování pro úlohy s omezenimi splatné lhûty."
 
 #: ../../library/os.rst:5466
 msgid "Scheduling policy for extremely low priority background tasks."
-msgstr ""
+msgstr "Politika plánování pro extrémně nízkou prioritu zadání na pozadí."
 
 #: ../../library/os.rst:5470
 msgid "Alias for :data:`SCHED_OTHER`."
-msgstr ""
+msgstr "Alias pro :data:`SCHED_OTHER`."
 
 #: ../../library/os.rst:5476
 msgid "Scheduling policy for sporadic server programs."
-msgstr ""
+msgstr "Politika plánování pro sporadické server programy."
 
 #: ../../library/os.rst:5480
 msgid "A First In First Out scheduling policy."
-msgstr ""
+msgstr "Politika plánování First In First Out."
 
 #: ../../library/os.rst:5484
 msgid "A round-robin scheduling policy."
-msgstr ""
+msgstr "Politika plánování round-robin."
 
 #: ../../library/os.rst:5488
 msgid ""
@@ -7768,6 +8263,9 @@ msgid ""
 " this flag set forks, its child's scheduling policy and priority are reset "
 "to the default."
 msgstr ""
+"Tento příznak lze OR'ovat s jakoukoli jinou politikou plánování. Když se "
+"proces s tímto příznakem nastaveným forkuje, politika plánování a priorita "
+"jeho dite se resetují na výchozí."
 
 #: ../../library/os.rst:5495
 msgid ""
@@ -7775,26 +8273,33 @@ msgid ""
 ":func:`sched_setparam`, :func:`sched_setscheduler`, and "
 ":func:`sched_getparam`. It is immutable."
 msgstr ""
+"Tato třída reprezentuje laděné parametry plánování používané v "
+":func:`sched_setparam`, :func:`sched_setscheduler` a :func:`sched_getparam`."
+" Je neáninné."
 
 #: ../../library/os.rst:5499
 msgid "At the moment, there is only one possible parameter:"
-msgstr ""
+msgstr "V současné době existuje pouze jeden možný parametr:"
 
 #: ../../library/os.rst:5503
 msgid "The scheduling priority for a scheduling policy."
-msgstr ""
+msgstr "Priorita plánování pro politiku plánování."
 
 #: ../../library/os.rst:5508
 msgid ""
 "Get the minimum priority value for *policy*. *policy* is one of the "
 "scheduling policy constants above."
 msgstr ""
+"Získej minimální prioritu pro *policy*. *policy* je jedna z konstant "
+"politiky plánování výše."
 
 #: ../../library/os.rst:5514
 msgid ""
 "Get the maximum priority value for *policy*. *policy* is one of the "
 "scheduling policy constants above."
 msgstr ""
+"Získej maximální prioritu pro *policy*. *policy* je jedna z konstant "
+"politiky plánování výše."
 
 #: ../../library/os.rst:5520
 msgid ""
@@ -7802,6 +8307,9 @@ msgid ""
 " the calling process. *policy* is one of the scheduling policy constants "
 "above. *param* is a :class:`sched_param` instance."
 msgstr ""
+"Nastav politiku plánování pro proces s PID *pid*. PID 0 znamená volájící "
+"proces. *policy* je jedna z konstant politiky plánování výše. *param* je "
+"instance :class:`sched_param`."
 
 #: ../../library/os.rst:5527
 msgid ""
@@ -7809,29 +8317,37 @@ msgid ""
 "means the calling process. The result is one of the scheduling policy "
 "constants above."
 msgstr ""
+"Vrátí politiku plánování pro proces s PID *pid*. PID 0 znamená volájící "
+"proces. Výsledek je jedna z konstant politiky plánování výše."
 
 #: ../../library/os.rst:5534
 msgid ""
 "Set the scheduling parameters for the process with PID *pid*. A *pid* of 0 "
 "means the calling process. *param* is a :class:`sched_param` instance."
 msgstr ""
+"Nastav parametry plánování pro proces s PID *pid*. PID 0 znamená volájící "
+"proces. *param* je instance :class:`sched_param`."
 
 #: ../../library/os.rst:5540
 msgid ""
 "Return the scheduling parameters as a :class:`sched_param` instance for the "
 "process with PID *pid*. A *pid* of 0 means the calling process."
 msgstr ""
+"Vrátí parametry plánování jako instanci :class:`sched_param` pro proces s "
+"PID *pid*. PID 0 znamená volájící proces."
 
 #: ../../library/os.rst:5546
 msgid ""
 "Return the round-robin quantum in seconds for the process with PID *pid*. A "
 "*pid* of 0 means the calling process."
 msgstr ""
+"Vrátí round-robin quantum v sekundách pro proces s PID *pid*. PID 0 znamená "
+"volájící proces."
 
 #: ../../library/os.rst:5552
 msgid ""
 "Voluntarily relinquish the CPU. See :manpage:`sched_yield(2)` for details."
-msgstr ""
+msgstr "Dobrovolně se vzdejte CPU. Viz :manpage:`sched_yield(2)` pro detaily."
 
 #: ../../library/os.rst:5557
 msgid ""
@@ -7839,24 +8355,29 @@ msgid ""
 "set of CPUs.  *mask* is an iterable of integers representing the set of CPUs"
 " to which the process should be restricted."
 msgstr ""
+"Omez proces s PID *pid* (nebo současný proces, pokud je nula) na sadu CPU. "
+"*mask* je iterable celych čísel reprezentující sadu CPU, na kterou by měl "
+"být proces omezen."
 
 #: ../../library/os.rst:5564
 msgid "Return the set of CPUs the process with PID *pid* is restricted to."
-msgstr ""
+msgstr "Vrátí sadu CPU, na kterou je proces s PID *pid* omezen."
 
 #: ../../library/os.rst:5566
 msgid ""
 "If *pid* is zero, return the set of CPUs the calling thread of the current "
 "process is restricted to."
 msgstr ""
+"Pokud je *pid* nula, vrátí sadu CPU, na kterou je omezeno volájící vlákno "
+"současného procesu."
 
 #: ../../library/os.rst:5569
 msgid "See also the :func:`process_cpu_count` function."
-msgstr ""
+msgstr "Viz také funkce :func:`process_cpu_count`."
 
 #: ../../library/os.rst:5575
 msgid "Miscellaneous System Information"
-msgstr ""
+msgstr "Různé informace o systému"
 
 #: ../../library/os.rst:5580
 msgid ""
@@ -7868,12 +8389,21 @@ msgid ""
 " keys of the ``confstr_names`` dictionary.  For configuration variables not "
 "included in that mapping, passing an integer for *name* is also accepted."
 msgstr ""
+"Vrátí hodnoty systémové konfigurace typu string. *name* určuje konfigurační "
+"hodnotu, kterou chcete získat; může to být string, který je název definované"
+" systémové hodnoty; tyto názvy jsou určeny v řadě standardů (POSIX, Unix 95,"
+" Unix 98 a další). Některé platformy definují také další názvy. Názvy známé "
+"hostitelskjému operačnímu systému jsou uvedeny jako klíče slovníku "
+"``confstr_names``. Pro konfigurační proměnné nezahrnuté do tohoto mapování "
+"je možné také předát celek pro *name*."
 
 #: ../../library/os.rst:5588
 msgid ""
 "If the configuration value specified by *name* isn't defined, ``None`` is "
 "returned."
 msgstr ""
+"Pokud konfigurační hodnota určená *name* není definována, je vrácen "
+"``None``."
 
 #: ../../library/os.rst:5591
 msgid ""
@@ -7882,6 +8412,10 @@ msgid ""
 " included in ``confstr_names``, an :exc:`OSError` is raised with "
 ":const:`errno.EINVAL` for the error number."
 msgstr ""
+"Pokud je *name* string a není známý, je vyvolána :exc:`ValueError`. Pokud "
+"hostitelský systém nepodporuje konkrétní hodnotu pro *name*, ačkoli je "
+"obsahučena v ``confstr_names``, je vyvolána :exc:`OSError` s "
+":const:`errno.EINVAL` pro číslo chyby."
 
 #: ../../library/os.rst:5601
 msgid ""
@@ -7889,24 +8423,33 @@ msgid ""
 "defined for those names by the host operating system. This can be used to "
 "determine the set of names known to the system."
 msgstr ""
+"Slovník mapující názvy přijaté :func:`confstr` na celogníselné hodnoty "
+"definované pro ty názvy operačním systémem. Lze jej použít k určení sady "
+"názvů známých systému."
 
 #: ../../library/os.rst:5610
 msgid ""
 "Return the number of logical CPUs in the **system**. Returns ``None`` if "
 "undetermined."
 msgstr ""
+"Vrátí počet logických CPU v **systému**. Vrátí ``None``, pokud je "
+"neurychlen."
 
 #: ../../library/os.rst:5613
 msgid ""
 "The :func:`process_cpu_count` function can be used to get the number of "
 "logical CPUs usable by the calling thread of the **current process**."
 msgstr ""
+"Funkce :func:`process_cpu_count` může být použíta k zíkání počtu logických "
+"CPU použitelných volájícím vláknem **současného procesu**."
 
 #: ../../library/os.rst:5618
 msgid ""
 "If :option:`-X cpu_count <-X>` is given or :envvar:`PYTHON_CPU_COUNT` is "
 "set, :func:`cpu_count` returns the override value *n*."
 msgstr ""
+"Pokud je zadána možnost :option:`-X cpu_count <-X>` nebo je nastaven "
+":envvar:`PYTHON_CPU_COUNT`, :func:`cpu_count` vrátí přepsané hodnotu *n*."
 
 #: ../../library/os.rst:5625
 msgid ""
@@ -7914,6 +8457,8 @@ msgid ""
 "last 1, 5, and 15 minutes or raises :exc:`OSError` if the load average was "
 "unobtainable."
 msgstr ""
+"Vrátí počet procesů v systémové frontě zprûměrované přes poslední 1, 5 a 15 "
+"minut nebo vyvolej :exc:`OSError`, pokud byla průměrná zátěž nezískalná."
 
 #: ../../library/os.rst:5634
 msgid ""
@@ -7921,22 +8466,30 @@ msgid ""
 " process**. Returns ``None`` if undetermined. It can be less than "
 ":func:`cpu_count` depending on the CPU affinity."
 msgstr ""
+"Ziskej počet logických CPU použitelných volájícím vláknem **současného "
+"procesu**. Vrátí ``None``, pokud je neurychlen. Může být menší než "
+":func:`cpu_count` v závislosti na CPU affinity."
 
 #: ../../library/os.rst:5638
 msgid ""
 "The :func:`cpu_count` function can be used to get the number of logical CPUs"
 " in the **system**."
 msgstr ""
+"Funkce :func:`cpu_count` může být použíta k zíkání počtu logických CPU v "
+"**systému**."
 
 #: ../../library/os.rst:5641
 msgid ""
 "If :option:`-X cpu_count <-X>` is given or :envvar:`PYTHON_CPU_COUNT` is "
 "set, :func:`process_cpu_count` returns the override value *n*."
 msgstr ""
+"Pokud je zadána možnost :option:`-X cpu_count <-X>` nebo je nastaven "
+":envvar:`PYTHON_CPU_COUNT`, :func:`process_cpu_count` vrátí přepsané hodnotu"
+" *n*."
 
 #: ../../library/os.rst:5644
 msgid "See also the :func:`sched_getaffinity` function."
-msgstr ""
+msgstr "Viz také funkce :func:`sched_getaffinity`."
 
 #: ../../library/os.rst:5651
 msgid ""
@@ -7946,6 +8499,10 @@ msgid ""
 "dictionary that provides information on the known names is given by "
 "``sysconf_names``."
 msgstr ""
+"Vrátí celogníselné hodnoty systémové konfigurace. Pokud konfigurační hodnota"
+" určená *name* není definována, je vrácen ``-1``. Poznámky týkající se "
+"parametru *name* pro :func:`confstr` se vztahují i zde; slovník, který "
+"poskytuje informace o známých názvech, je dán ``sysconf_names``."
 
 #: ../../library/os.rst:5661
 msgid ""
@@ -7953,22 +8510,28 @@ msgid ""
 "defined for those names by the host operating system. This can be used to "
 "determine the set of names known to the system."
 msgstr ""
+"Slovník mapující názvy přijaté :func:`sysconf` na celogníselné hodnoty "
+"definované pro ty názvy operačním systémem. Lze jej použít k určení sady "
+"názvů známých systému."
 
 #: ../../library/os.rst:5667
 msgid "Add ``'SC_MINSIGSTKSZ'`` name."
-msgstr ""
+msgstr "Přidán název ``'SC_MINSIGSTKSZ'``."
 
 #: ../../library/os.rst:5670
 msgid ""
 "The following data values are used to support path manipulation operations."
 "  These are defined for all platforms."
 msgstr ""
+"Následující datové hodnoty se používají k podporě operací manipulace s "
+"cestami. Ty jsou definovány pro všechny platformy."
 
 #: ../../library/os.rst:5673
 msgid ""
 "Higher-level operations on pathnames are defined in the :mod:`os.path` "
 "module."
 msgstr ""
+"Vyšší úroveň operací na cestách jsou definovány v modulu :mod:`os.path`."
 
 #: ../../library/os.rst:5679
 msgid ""
@@ -7976,6 +8539,9 @@ msgid ""
 "directory. This is ``'.'`` for Windows and POSIX. Also available via "
 ":mod:`os.path`."
 msgstr ""
+"Konstantní řetězec používaný operačním systémem k odkazování na současný "
+"adresář. Toto je ``'.'`` pro Windows a POSIX. Dostupné také přes "
+":mod:`os.path`."
 
 #: ../../library/os.rst:5687
 msgid ""
@@ -7983,6 +8549,9 @@ msgid ""
 "directory. This is ``'..'`` for Windows and POSIX. Also available via "
 ":mod:`os.path`."
 msgstr ""
+"Konstantní řetězec používaný operačním systémem k odkazování na nadřazený "
+"adresář. Toto je ``'..'`` pro Windows a POSIX. Dostupné také přes "
+":mod:`os.path`."
 
 #: ../../library/os.rst:5696
 msgid ""
@@ -7992,6 +8561,11 @@ msgid ""
 ":func:`os.path.split` and :func:`os.path.join` --- but it is occasionally "
 "useful. Also available via :mod:`os.path`."
 msgstr ""
+"Znak používaný operačním systémem k oddělování komponent cesty. Toto je "
+"``'/'`` pro POSIX a ``'\\\\\\\\'`` pro Windows. Vezměte na vědomí, že "
+"znalost tohoto není dostaatečná k tomu, abyste mohli parsovat nebo spájovat "
+"cesty --- použijte :func:`os.path.split` a :func:`os.path.join` --- ale je "
+"to přímě všimnut použitelné. Dostupné také přes :mod:`os.path`."
 
 #: ../../library/os.rst:5706
 msgid ""
@@ -8000,12 +8574,18 @@ msgid ""
 " to ``'/'`` on Windows systems where ``sep`` is a backslash. Also available "
 "via :mod:`os.path`."
 msgstr ""
+"Alternativní znak používaný operačním systémem k oddělování komponent cesty,"
+" nebo ``None``, pokud existuje jen jeden oddešteľj. Toto je nastavené na "
+"``'/'`` na Windows systémech, kde ``sep`` je obrácené lomítko. Dostupné také"
+" přes :mod:`os.path`."
 
 #: ../../library/os.rst:5715
 msgid ""
 "The character which separates the base filename from the extension; for "
 "example, the ``'.'`` in :file:`os.py`. Also available via :mod:`os.path`."
 msgstr ""
+"Znak, který odděluje název souboru od přípony; například ``'.'`` v "
+":file:`os.py`. Dostupné také přes :mod:`os.path`."
 
 #: ../../library/os.rst:5723
 msgid ""
@@ -8013,6 +8593,9 @@ msgid ""
 " path components (as in :envvar:`PATH`), such as ``':'`` for POSIX or "
 "``';'`` for Windows. Also available via :mod:`os.path`."
 msgstr ""
+"Znak obvyklou používaný operačním systémem k oddělování komponent cesty "
+"hledání (jako v :envvar:`PATH`), například ``':'`` pro POSIX nebo ``';'`` "
+"pro Windows. Dostupné také přes :mod:`os.path`."
 
 #: ../../library/os.rst:5730
 msgid ""
@@ -8020,6 +8603,9 @@ msgid ""
 ":func:`spawn\\*p\\* <spawnl>` if the environment doesn't have a ``'PATH'`` "
 "key. Also available via :mod:`os.path`."
 msgstr ""
+"Výchozí cesta hledání používaná :func:`exec\\*p\\* <execl>` a "
+":func:`spawn\\*p\\* <spawnl>`, pokud prostředí nemá klíč ``'PATH'``. "
+"Dostupné také přes :mod:`os.path`."
 
 #: ../../library/os.rst:5737
 msgid ""
@@ -8029,12 +8615,19 @@ msgid ""
 "*os.linesep* as a line terminator when writing files opened in text mode "
 "(the default); use a single ``'\\n'`` instead, on all platforms."
 msgstr ""
+"Řetězec používaný k oddělování (nebo speluště ukončení) řádků na současné "
+"platformě. Může to být jeden znak, například ``'\\n'`` pro POSIX, nebo víc "
+"znaků, například ``'\\r\\n'`` pro Windows. Nepoužévejte *os.linesep* jako "
+"terminátor řádku při zápisu souborů otevřených v textu módu (výchozího); "
+"místo toho použijte jeden ``'\\n'`` na všech platformách."
 
 #: ../../library/os.rst:5746
 msgid ""
 "The file path of the null device. For example: ``'/dev/null'`` for POSIX, "
 "``'nul'`` for Windows.  Also available via :mod:`os.path`."
 msgstr ""
+"Cesta souboru null zařízení. Například: ``'/dev/null'`` pro POSIX, ``'nul'``"
+" pro Windows. Dostupné také přes :mod:`os.path`."
 
 #: ../../library/os.rst:5757
 msgid ""
@@ -8042,22 +8635,29 @@ msgid ""
 ":func:`~sys.getdlopenflags` functions.  See the Unix manual page "
 ":manpage:`dlopen(3)` for what the different flags mean."
 msgstr ""
+"Příznak pro použití s funkcemi :func:`~sys.setdlopenflags` a "
+":func:`~sys.getdlopenflags`. Viz man stránka Unix :manpage:`dlopen(3)` pro "
+"význam různých příznaků."
 
 #: ../../library/os.rst:5765
 msgid "Random numbers"
-msgstr ""
+msgstr "Náhodná čísla"
 
 #: ../../library/os.rst:5770
 msgid ""
 "Get up to *size* random bytes. The function can return less bytes than "
 "requested."
 msgstr ""
+"Získej až *size* náhodných bajtů. Funkce může vrátit méně bajtů než "
+"vyžadováno."
 
 #: ../../library/os.rst:5773
 msgid ""
 "These bytes can be used to seed user-space random number generators or for "
 "cryptographic purposes."
 msgstr ""
+"Tyto bajty mohou být použity k seční generátorů náhodných čísel v "
+"uživatelském prostoru nebo pro kryptografické účely."
 
 #: ../../library/os.rst:5776
 msgid ""
@@ -8066,6 +8666,9 @@ msgid ""
 "data will have a negative impact on  other users  of the ``/dev/random`` and"
 " ``/dev/urandom`` devices."
 msgstr ""
+"``getrandom()`` se opíra na entropii sebrané z ovladačů zařízení a dalších "
+"zdrojů hluku prostředí. Zbytečné čtení velkého množství dat bude mít negati "
+"pní vliv na ostatní uživatele zařízení ``/dev/random`` a ``/dev/urandom``."
 
 #: ../../library/os.rst:5781
 msgid ""
@@ -8073,17 +8676,23 @@ msgid ""
 "following values ORed together: :py:const:`os.GRND_RANDOM` and "
 ":py:data:`GRND_NONBLOCK`."
 msgstr ""
+"Argument flags je bitová maska, která může obsahovat nulu nebo víc "
+"následujících hodnot OR'ovaných dohromady: :py:const:`os.GRND_RANDOM` a "
+":py:data:`GRND_NONBLOCK`."
 
 #: ../../library/os.rst:5785
 msgid ""
 "See also the `Linux getrandom() manual page <https://man7.org/linux/man-"
 "pages/man2/getrandom.2.html>`_."
 msgstr ""
+"Viz také stránka man `Linux getrandom() <https://man7.org/linux/man-"
+"pages/man2/getrandom.2.html>`_."
 
 #: ../../library/os.rst:5794
 msgid ""
 "Return a bytestring of *size* random bytes suitable for cryptographic use."
 msgstr ""
+"Vrátí bytestring *size* náhodných bajtů vhodných pro kryptografické použití."
 
 #: ../../library/os.rst:5796
 msgid ""
@@ -8091,6 +8700,9 @@ msgid ""
 "The returned data should be unpredictable enough for cryptographic "
 "applications, though its exact quality depends on the OS implementation."
 msgstr ""
+"Tato funkce vrátí náhodné bajty ze zdroje náhody specifického pro OS. "
+"Vrácená data by měla být dostatpě neprediktivná pro kryptografické aplikace,"
+" ale její přesná kvalita závisí na implementaci OS."
 
 #: ../../library/os.rst:5800
 msgid ""
@@ -8101,6 +8713,12 @@ msgid ""
 "random bytes in non-blocking mode (using the :data:`GRND_NONBLOCK` flag) or "
 "to poll until the system urandom entropy pool is initialized."
 msgstr ""
+"Na Linuxu, pokud je k dispozici systémové volání ``getrandom()``, je "
+"používáno v blokujícím módu: blokuje až je inicializoán fond entropie "
+"urandom systému (128 bitů entropie je sebreno kernelem). Viz :pep:`524` pro "
+"zdůvodnění. Na Linuxu lze funkci :func:`getrandom` použít k zíkání náhodných"
+" bajtů v ne-blokujícím módu (s použitím příznak :data:`GRND_NONBLOCK`) nebo "
+"k okamžitému kontrole až je fond entropie urandom systému inicializoán."
 
 #: ../../library/os.rst:5807
 msgid ""
@@ -8108,10 +8726,13 @@ msgid ""
 "device. If the ``/dev/urandom`` device is not available or not readable, the"
 " :exc:`NotImplementedError` exception is raised."
 msgstr ""
+"V systému podobnému Unixu jsou náhodné bajty čteny ze zařízení "
+"``/dev/urandom``. Pokud zařízení ``/dev/urandom`` není dostupné nebo "
+"nečitelmé, je vyvolána výjimka :exc:`NotImplementedError`."
 
 #: ../../library/os.rst:5811
 msgid "On Windows, it will use ``BCryptGenRandom()``."
-msgstr ""
+msgstr "Na Windows bude použito ``BCryptGenRandom()``."
 
 #: ../../library/os.rst:5814
 msgid ""
@@ -8119,6 +8740,9 @@ msgid ""
 "use interface to the random number generator provided by your platform, "
 "please see :class:`random.SystemRandom`."
 msgstr ""
+"Modul :mod:`secrets` poskytuje funkce vyšší úroveňe. Pro snadně se "
+"používající rozhraní na generátor náhodných čísel poskytované vaší "
+"platformou, viz :class:`random.SystemRandom`."
 
 #: ../../library/os.rst:5818
 msgid ""
@@ -8126,24 +8750,34 @@ msgid ""
 "available.  On OpenBSD 5.6 and newer, the C ``getentropy()`` function is now"
 " used. These functions avoid the usage of an internal file descriptor."
 msgstr ""
+"Na Linuxu 3.17 a nověším je nyní používáno systémové volání ``getrandom()``,"
+" pokud je dostupné. Na OpenBSD 5.6 a nověším je nyní používána C funkce "
+"``getentropy()``. Tyto funkce se vyhýbají použití interního deskriptoru "
+"souboru."
 
 #: ../../library/os.rst:5824
 msgid ""
 "On Linux, if the ``getrandom()`` syscall blocks (the urandom entropy pool is"
 " not initialized yet), fall back on reading ``/dev/urandom``."
 msgstr ""
+"Na Linuxu, pokud systémové volání ``getrandom()`` blokuje (fond entropie "
+"urandom není ještě inicializoán), padejte se čtením z ``/dev/urandom``."
 
 #: ../../library/os.rst:5828
 msgid ""
 "On Linux, ``getrandom()`` is now used in blocking mode to increase the "
 "security."
 msgstr ""
+"Na Linuxu je nyní ``getrandom()`` používáno v blokujícím módu zvýsi "
+"bezpečnost."
 
 #: ../../library/os.rst:5832
 msgid ""
 "On Windows, ``BCryptGenRandom()`` is used instead of ``CryptGenRandom()`` "
 "which is deprecated."
 msgstr ""
+"Na Windows se ``BCryptGenRandom()`` používá místo ``CryptGenRandom()``, "
+"které je zastaralé."
 
 #: ../../library/os.rst:5838
 msgid ""
@@ -8151,6 +8785,9 @@ msgid ""
 "no random bytes are available, and when reading from ``/dev/urandom``, it "
 "blocks if the entropy pool has not yet been initialized."
 msgstr ""
+"Výchozě je při čtení z ``/dev/random`` :func:`getrandom` blokuje, pokud "
+"nejsou dostupné žádné náhodné bajty, a při čtení z ``/dev/urandom`` blokuje,"
+" pokud fond entropie ještě nebyl inicializoán."
 
 #: ../../library/os.rst:5842
 msgid ""
@@ -8158,154 +8795,159 @@ msgid ""
 " block in these cases, but instead immediately raises "
 ":exc:`BlockingIOError`."
 msgstr ""
+"Pokud je nastaven příznak :py:data:`GRND_NONBLOCK`, :func:`getrandom` se v "
+"těchto případech neblokuje, ale místo toho okamžitě vyvolá "
+":exc:`BlockingIOError`."
 
 #: ../../library/os.rst:5849
 msgid ""
 "If  this  bit  is  set,  then  random bytes are drawn from the "
 "``/dev/random`` pool instead of the ``/dev/urandom`` pool."
 msgstr ""
+"Pokud je tento bit nastaven, jsou náhodné bajty sbírány z fondu "
+"``/dev/random`` místo fondu ``/dev/urandom``."
 
 #: ../../library/os.rst:386 ../../library/os.rst:552 ../../library/os.rst:756
 msgid "user"
-msgstr ""
+msgstr "uživatel"
 
 #: ../../library/os.rst:386
 msgid "effective id"
-msgstr ""
+msgstr "efektivní id"
 
 #: ../../library/os.rst:395 ../../library/os.rst:461 ../../library/os.rst:470
 #: ../../library/os.rst:479 ../../library/os.rst:493 ../../library/os.rst:691
 #: ../../library/os.rst:4601 ../../library/os.rst:4627
 msgid "process"
-msgstr ""
+msgstr "proces"
 
 #: ../../library/os.rst:395 ../../library/os.rst:461
 msgid "group"
-msgstr ""
+msgstr "skupina"
 
 #: ../../library/os.rst:470 ../../library/os.rst:552
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: ../../library/os.rst:479
 msgid "id of parent"
-msgstr ""
+msgstr "id nadřazeného"
 
 #: ../../library/os.rst:493 ../../library/os.rst:691
 msgid "scheduling priority"
-msgstr ""
+msgstr "priorita plánování"
 
 #: ../../library/os.rst:575 ../../library/os.rst:826
 msgid "environment variables"
-msgstr ""
+msgstr "proměnné prostředí"
 
 #: ../../library/os.rst:575
 msgid "setting"
-msgstr ""
+msgstr "nastavení"
 
 #: ../../library/os.rst:756
 msgid "id, setting"
-msgstr ""
+msgstr "id, nastavení"
 
 #: ../../library/os.rst:789
 msgid "gethostname() (in module socket)"
-msgstr ""
+msgstr "gethostname() (v modulu socket)"
 
 #: ../../library/os.rst:789
 msgid "gethostbyaddr() (in module socket)"
-msgstr ""
+msgstr "gethostbyaddr() (v modulu socket)"
 
 #: ../../library/os.rst:826 ../../library/os.rst:2733
 msgid "deleting"
-msgstr ""
+msgstr "mazání"
 
 #: ../../library/os.rst:1387 ../../library/os.rst:3103
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../library/os.rst:1387
 msgid "pty"
-msgstr ""
+msgstr "pty"
 
 #: ../../library/os.rst:2119 ../../library/os.rst:2532
 #: ../../library/os.rst:2733 ../../library/os.rst:3640
 #: ../../library/os.rst:3740
 msgid "directory"
-msgstr ""
+msgstr "adresář"
 
 #: ../../library/os.rst:2119
 msgid "changing"
-msgstr ""
+msgstr "změně"
 
 #: ../../library/os.rst:2532
 msgid "creating"
-msgstr ""
+msgstr "vytváření"
 
 #: ../../library/os.rst:2532
 msgid "UNC paths"
-msgstr ""
+msgstr "cesty UNC"
 
 #: ../../library/os.rst:2532
 msgid "and os.makedirs()"
-msgstr ""
+msgstr "a os.makedirs()"
 
 #: ../../library/os.rst:3103
 msgid "stat"
-msgstr ""
+msgstr "stat"
 
 #: ../../library/os.rst:3640 ../../library/os.rst:3740
 msgid "walking"
-msgstr ""
+msgstr "procházení"
 
 #: ../../library/os.rst:3640 ../../library/os.rst:3740
 msgid "traversal"
-msgstr ""
+msgstr "procházka"
 
 #: ../../library/os.rst:4601 ../../library/os.rst:4627
 msgid "killing"
-msgstr ""
+msgstr "zabíjení"
 
 #: ../../library/os.rst:4601 ../../library/os.rst:4627
 msgid "signalling"
-msgstr ""
+msgstr "signalizace"
 
 #: ../../library/os.rst:5676 ../../library/os.rst:5712
 msgid ". (dot)"
-msgstr ""
+msgstr ". (tečka)"
 
 #: ../../library/os.rst:5676 ../../library/os.rst:5684
 #: ../../library/os.rst:5692 ../../library/os.rst:5703
 #: ../../library/os.rst:5712
 msgid "in pathnames"
-msgstr ""
+msgstr "v cestách"
 
 #: ../../library/os.rst:5684
 msgid ".."
-msgstr ""
+msgstr ".."
 
 #: ../../library/os.rst:5692 ../../library/os.rst:5703
 msgid "/ (slash)"
-msgstr ""
+msgstr "/ (lomítko)"
 
 #: ../../library/os.rst:5693
 msgid "\\ (backslash)"
-msgstr ""
+msgstr "\\ (obrácené lomítko)"
 
 #: ../../library/os.rst:5693
 msgid "in pathnames (Windows)"
-msgstr ""
+msgstr "v cestách (Windows)"
 
 #: ../../library/os.rst:5719
 msgid ": (colon)"
-msgstr ""
+msgstr ": (dvojtečka)"
 
 #: ../../library/os.rst:5719
 msgid "path separator (POSIX)"
-msgstr ""
+msgstr "oddělovač cesty (POSIX)"
 
 #: ../../library/os.rst:5719
 msgid "; (semicolon)"
-msgstr ""
+msgstr "; (středník)"
 
 #~ msgid ""
 #~ "Python UTF-8 mode is now enabled by default (:pep:`686`). It may be disabled"
