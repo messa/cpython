@@ -36,12 +36,12 @@ msgstr ""
 "základních hodnot: znaky, celá čísla, čísla s plovoucí řádovou čárkou. Pole "
 "jsou sekvenční typy a chovají se velmi podobně jako seznamy, s výjimkou "
 "toho, že typ objektů v nich uložených je omezen. Typ je specifikován při "
-"vytvoření objektu pomocí :dfn:`typu kódu`, což je jeden znak. Jsou "
-"definovány následující typy kódů:"
+"vytvoření objektu pomocí :dfn:`kódu typu`, což je jeden znak. Jsou "
+"definovány následující kódy typů:"
 
 #: ../../library/array.rst:19
 msgid "Type code"
-msgstr "Typ kódu"
+msgstr "Kód typu"
 
 #: ../../library/array.rst:19
 msgid "C Type"
@@ -231,7 +231,7 @@ msgstr ""
 
 #: ../../library/array.rst:60
 msgid "Please migrate to ``'w'`` typecode."
-msgstr "Prosím migrace na ``'w'`` typcode."
+msgstr "Přejděte prosím na kód typu ``'w'``."
 
 #: ../../library/array.rst:67
 msgid ""
@@ -249,7 +249,7 @@ msgstr "Modul definuje následující položku:"
 
 #: ../../library/array.rst:76
 msgid "A string with all available type codes."
-msgstr "Řetězec se všemi dostupnými typy kódů."
+msgstr "Řetězec se všemi dostupnými kódy typů."
 
 #: ../../library/array.rst:79
 msgid "The module defines the following type:"
@@ -262,10 +262,10 @@ msgid ""
 ":class:`bytearray` object, a Unicode string, or iterable over elements of "
 "the appropriate type."
 msgstr ""
-"Nové pole, jehož položky jsou omezeny *typcodem*, a inicializován z "
-"volitelné hodnoty *initializer*, která musí být objektem :class:`bytes` nebo"
-" :class:`bytearray`, řetězcem Unicode nebo iterace přes prvky odpovíjajích "
-"typů."
+"Nové pole, jehož položky jsou omezeny kódem typu *typecode* a inicializovány"
+" z volitelné hodnoty *initializer*, která musí být objektem :class:`bytes` "
+"nebo :class:`bytearray`, řetězcem Unicode nebo iterovatelným objektem přes "
+"prvky odpovídajícího typu."
 
 #: ../../library/array.rst:89
 msgid ""
@@ -290,12 +290,12 @@ msgid ""
 "interface, and may be used wherever :term:`bytes-like objects <bytes-like "
 "object>` are supported."
 msgstr ""
-"Objekty pole podporují obyčejné operace sekvencí jako indexování, slicing, "
-"zjišťování a násobení. Pokud použeijete přiřazování zřetězce, musí být "
-"přiřazená hodnota objekt pole se stejným typcodem; ve všech ostatních "
-"případech je vyvolána :exc:`TypeError`. Objekty pole také implementují "
-"rozhraní paměti a mohou se používat kdekoli jsou podporovány :term:`objekty "
-"podobné bajtům <bytes-like object>`."
+"Objekty pole podporují běžné sekvenční operace jako indexování, slicing, "
+"zřetězení a násobení. Při použití přiřazení do slice musí být přiřazená "
+"hodnota objekt pole se stejným kódem typu; ve všech ostatních případech je "
+"vyvolána :exc:`TypeError`. Objekty pole také implementují rozhraní "
+"vyrovnávací paměti a mohou se používat kdekoli jsou podporovány "
+":term:`objekty podobné bajtům <bytes-like object>`."
 
 #: ../../library/array.rst:102
 msgid ""
@@ -307,15 +307,15 @@ msgstr ""
 
 #: ../../library/array.rst:107
 msgid "The typecode character used to create the array."
-msgstr "Znak typu kódu použitý k vytvoření pole."
+msgstr "Znak kódu typu použitý k vytvoření pole."
 
 #: ../../library/array.rst:112
 msgid "The length in bytes of one array item in the internal representation."
-msgstr "Délka v bajtech jedného prvku pole v interní reprezentaci."
+msgstr "Délka v bajtech jednoho prvku pole v interní reprezentaci."
 
 #: ../../library/array.rst:117
 msgid "Append a new item with value *x* to the end of the array."
-msgstr "Připlatí nový prvek s hodnotou *x* na konec pole."
+msgstr "Připojí nový prvek s hodnotou *x* na konec pole."
 
 #: ../../library/array.rst:122
 msgid ""
@@ -328,13 +328,14 @@ msgid ""
 "returned numbers are valid as long as the array exists and no length-"
 "changing operations are applied to it."
 msgstr ""
-"Vrátí tuple ``(address, length)`` udávající aktuální adresu paměti a délku v"
-" prvcích vyrovnávací paměti používané k uložení obsahu pole. Velikost "
+"Vrátí n-tici ``(address, length)`` udávající aktuální adresu paměti a délku "
+"v prvcích vyrovnávací paměti používané k uložení obsahu pole. Velikost "
 "vyrovnávací paměti v bajtech lze vypočítat jako ``array.buffer_info()[1] * "
 "array.itemsize``. To je příležitostně užitečné při práci s nízkoúrovňovými "
-"(a inhěrently nebezpečnými) rozhraními V/V, která vyžadují adresy paměti, "
-"jako jsou určité operace :c:func:`!ioctl`. Vrácená čísla jsou platná pokud "
-"pole existuje a není na něj aplikována žádná operace měnící délku."
+"(a ze své podstaty nebezpečnými) rozhraními I/O, která vyžadují adresy "
+"paměti, jako jsou určité operace :c:func:`!ioctl`. Vrácená čísla jsou "
+"platná, dokud pole existuje a není na něj aplikována žádná operace měnící "
+"délku."
 
 #: ../../library/array.rst:132
 msgid ""
@@ -344,11 +345,11 @@ msgid ""
 "backward compatibility and should be avoided in new code.  The buffer "
 "interface is documented in :ref:`bufferobjects`."
 msgstr ""
-"Pokud používáte objekty pole z kódu napsáného v C nebo C++ (jediným "
-"způsobem, jak efektivně využít tyto informace), má větší smysl použít "
-"rozhraní paměti podporované objekty pole. Tato metoda je udržována pro "
-"zpětnou kompatibilitu a měla by se vycházet v novém kódu. Rozhraní paměti je"
-" dokumentováno v :ref:`bufferobjects`."
+"Při použití objektů pole z kódu napsaného v C nebo C++ (jediný způsob, jak "
+"efektivně využít tyto informace) má větší smysl použít rozhraní vyrovnávací "
+"paměti podporované objekty pole. Tato metoda je udržována pro zpětnou "
+"kompatibilitu a měla by se v novém kódu vyhnout. Rozhraní vyrovnávací paměti"
+" je dokumentováno v :ref:`bufferobjects`."
 
 #: ../../library/array.rst:141
 msgid ""
@@ -357,10 +358,10 @@ msgid ""
 ":exc:`RuntimeError` is raised.  It is useful when reading data from a file "
 "written on a machine with a different byte order."
 msgstr ""
-"\"Vyměňuje bajty\" všech prvků pole. To je podporováno pouze pro hodnoty, "
-"které jsou 1, 2, 4 nebo 8 bajtů na velikost; pro ostatní typy hodnot je "
-"vyvolána :exc:`RuntimeError`. Je užitečné při čténí dat ze souboru "
-"napsáného na stroji s jinudším pořadím bajtů."
+"Provede \"byteswap\" (výměnu bajtů) všech prvků pole. Toto je podporováno "
+"pouze pro hodnoty o velikosti 1, 2, 4 nebo 8 bajtů; pro ostatní typy hodnot "
+"je vyvolána :exc:`RuntimeError`. Je to užitečné při čtení dat ze souboru "
+"napsaného na stroji s jiným pořadím bajtů."
 
 #: ../../library/array.rst:149
 msgid "Return the number of occurrences of *x* in the array."
@@ -375,9 +376,9 @@ msgid ""
 "array."
 msgstr ""
 "Přidá prvky z *iterable* na konec pole. Pokud je *iterable* dalším polem, "
-"musí mít *přesně* stejný typcode; pokud ne, bude vyvolána :exc:`TypeError`. "
-"Pokud *iterable* není polem, musí být iterovatelné a jeho prvky musí být "
-"správného typu pro přidaní do pole."
+"musí mít *přesně* stejný kód typu; pokud ne, bude vyvolána :exc:`TypeError`."
+" Pokud *iterable* není polem, musí být iterovatelné a jeho prvky musí být "
+"správného typu pro přidání do pole."
 
 #: ../../library/array.rst:162
 msgid ""
@@ -385,9 +386,9 @@ msgid ""
 "as an array of machine values (as if it had been read from a file using the "
 ":meth:`fromfile` method)."
 msgstr ""
-"Přidá prvky z :term:`objektu podobného bajtům`, interpretujíc je jako pole "
-"hodnot stroje (jako by byly čtené ze souboru pomocí metody "
-":meth:`fromfile`)."
+"Přidá prvky z :term:`objektu podobného bajtům <bytes-like object>`, "
+"interpretujíc jeho obsah jako pole hodnot stroje (jako by byl přečten ze "
+"souboru pomocí metody :meth:`fromfile`)."
 
 #: ../../library/array.rst:166
 msgid ":meth:`!fromstring` is renamed to :meth:`frombytes` for clarity."
@@ -400,10 +401,10 @@ msgid ""
 ":exc:`EOFError` is raised, but the items that were available are still "
 "inserted into the array."
 msgstr ""
-"Přečte *n* prvků (jako hodnoty stroje) z objektu :term:`file object` *f* a "
-"přidejte je na konec pole. Pokud jsou dostupny méně než *n* prvků, je "
-"vyvolána :exc:`EOFError`, ale prvky, které byly dostupny, jsou stále vloženy"
-" do pole."
+"Přečte *n* prvků (jako hodnoty stroje) z :term:`souborového objektu <file "
+"object>` *f* a připojí je na konec pole. Pokud je dostupných méně než *n* "
+"prvků, je vyvolána :exc:`EOFError`, ale prvky, které byly dostupné, jsou "
+"stále vloženy do pole."
 
 #: ../../library/array.rst:180
 msgid ""
@@ -445,8 +446,8 @@ msgid ""
 "Insert a new item with value *x* in the array before position *i*. Negative "
 "values are treated as being relative to the end of the array."
 msgstr ""
-"Vloží nový prvek s hodnotou *x* v poli před pozici *i*. Záporné hodnoty jsou"
-" zprácovány jako relativní k konci pole."
+"Vloží nový prvek s hodnotou *x* do pole před pozici *i*. Záporné hodnoty "
+"jsou zpracovány jako relativní ke konci pole."
 
 #: ../../library/array.rst:211
 msgid ""
@@ -454,8 +455,9 @@ msgid ""
 "optional argument defaults to ``-1``, so that by default the last item is "
 "removed and returned."
 msgstr ""
-"Odstraní prvek s indexem *i* z pole a vrátí jej. Volitelný argument se stává"
-" ``-1``, takže standardně je odstraněn a vrácen poslední prvek."
+"Odstraní prvek s indexem *i* z pole a vrátí jej. Volitelný argument má "
+"výchozí hodnotu ``-1``, takže standardně je odstraněn a vrácen poslední "
+"prvek."
 
 #: ../../library/array.rst:218
 msgid "Remove the first occurrence of *x* from the array."
@@ -516,14 +518,14 @@ msgid ""
 "must also be defined if it contains corresponding floating-point values. "
 "Examples::"
 msgstr ""
-"Reprezentace řetězce objektů pole má formu ``array(typecode, initializer)``."
-" Inicializátor je vynechán pokud je pole prázdné, jinak je to řetězec "
-"Unicode pokud je *typcode* ``'u'`` nebo ``'w'``, jinak je to seznam čísez. "
-"Reprezentace řetězce je zaručênā aby mohla být převéd̈ena zpět na pole se "
-"stejným typem a hodnotou pomocí :func:`eval`, dokud je třída "
+"Řetězcová reprezentace objektů pole má formu ``array(typecode, "
+"initializer)``. Inicializátor je vynechán, pokud je pole prázdné, jinak je "
+"to řetězec Unicode, pokud je *typecode* ``'u'`` nebo ``'w'``, jinak je to "
+"seznam čísel. Řetězcová reprezentace je zaručena, že může být převedena zpět"
+" na pole se stejným typem a hodnotou pomocí :func:`eval`, pokud je třída "
 ":class:`~array.array` importována pomocí ``from array import array``. "
-"Proměnné ``inf`` a ``nan`` musí být také definovány pokud obsahuje "
-"odpovíjající hodnoty s plovoucí řádovou čárkou. Příklady::"
+"Proměnné ``inf`` a ``nan`` musí být také definovány, pokud obsahuje "
+"odpovídající hodnoty s plovoucí řádovou čárkou. Příklady::"
 
 #: ../../library/array.rst:272
 msgid ""
@@ -543,7 +545,7 @@ msgstr "Modul :mod:`struct`"
 
 #: ../../library/array.rst:281
 msgid "Packing and unpacking of heterogeneous binary data."
-msgstr "Balíní a rozbalování heterogenních binárních dat."
+msgstr "Balení a rozbalení heterogenních binárních dat."
 
 #: ../../library/array.rst:283
 msgid "`NumPy <https://numpy.org/>`_"

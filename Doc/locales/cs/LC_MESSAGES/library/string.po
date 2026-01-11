@@ -392,6 +392,19 @@ msgid ""
 ":func:`getattr`, while an expression of the form ``'[index]'`` does an index"
 " lookup using :meth:`~object.__getitem__`."
 msgstr ""
+"Samotné *field_name* začíná *arg_name*, který je buď číslo nebo klíčové "
+"slovo. Pokud je to číslo, odkazuje na poziční argument, a pokud je to "
+"klíčové slovo, odkazuje na pojmenovaný argument. *arg_name* je považován za "
+"číslo, pokud by volání :meth:`str.isdecimal` na řetězec vrátilo True. Pokud "
+"jsou číselné arg_names ve formátovacím řetězci 0, 1, 2, ... v pořadí, mohou "
+"být všechny vynechány (ne jen některé) a čísla 0, 1, 2, ... budou "
+"automaticky vložena v tomto pořadí. Protože *arg_name* není ohraničen "
+"uvozovkami, není možné zadat libovolné klíče slovníku (např. řetězce "
+"``'10'`` nebo ``':-]'``) v rámci formátovacího řetězce. *arg_name* může být "
+"následován libovolným počtem indexovacích nebo atributových výrazů. Výraz ve"
+" tvaru ``'.name'`` vybere pojmenovaný atribut pomocí :func:`getattr`, "
+"zatímco výraz ve tvaru ``'[index]'`` provede vyhledání indexu pomocí "
+":meth:`~object.__getitem__`."
 
 #: ../../library/string.rst:252
 #, python-brace-format
@@ -399,15 +412,17 @@ msgid ""
 "The positional argument specifiers can be omitted for :meth:`str.format`, so"
 " ``'{} {}'.format(a, b)`` is equivalent to ``'{0} {1}'.format(a, b)``."
 msgstr ""
+"Poziční specifikátory argumentů lze vynechat pro :meth:`str.format`, takže "
+"``'{} {}'.format(a, b)`` je ekvivalentní ``'{0} {1}'.format(a, b)``."
 
 #: ../../library/string.rst:256
 msgid ""
 "The positional argument specifiers can be omitted for :class:`Formatter`."
-msgstr ""
+msgstr "Poziční specifikátory argumentů lze vynechat pro :class:`Formatter`."
 
 #: ../../library/string.rst:259
 msgid "Some simple format string examples::"
-msgstr ""
+msgstr "Několik jednoduchých příkladů formátovacího řetězce::"
 
 #: ../../library/string.rst:261
 #, python-brace-format
@@ -419,6 +434,12 @@ msgid ""
 "\"Weight in tons {0.weight}\"       # 'weight' attribute of first positional arg\n"
 "\"Units destroyed: {players[0]}\"   # First element of keyword argument 'players'."
 msgstr ""
+"\"Nejdříve si spočítej do {0}\"  # Odkazuje na první poziční argument\n"
+"\"Přines mi {}\"                    # Implicitně odkazuje na první poziční argument\n"
+"\"Od {} do {}\"                      # Stejné jako \"Od {0} do {1}\"\n"
+"\"Můj cíl je {name}\"               # Odkazuje na pojmenovaný argument 'name'\n"
+"\"Hmotnost v tunách {0.weight}\"   # Atribut 'weight' prvního pozičního argumentu\n"
+"\"Zničené jednotky: {players[0]}\" # První prvek pojmenovaného argumentu 'players'."
 
 #: ../../library/string.rst:270
 msgid ""
@@ -429,6 +450,12 @@ msgid ""
 "formatting.  By converting the value to a string before calling "
 ":meth:`~object.__format__`, the normal formatting logic is bypassed."
 msgstr ""
+"Pole *conversion* způsobuje konverzi typu před formátováním. Obvykle je "
+"uáloha formátování hodnoty provedena metodou :meth:`~object.__format__` "
+"hodnoty samé. Avšak v některých případech je žádoucí, aby se typ formátoval "
+"jako řetězec, přédevzíy si vlastní definici formátování. Konvertíme-li "
+"hodnotu na řetězec před voláním :meth:`~object.__format__`, je normální "
+"logika formátování obejíta."
 
 #: ../../library/string.rst:277
 msgid ""
@@ -436,10 +463,13 @@ msgid ""
 ":func:`str` on the value, ``'!r'`` which calls :func:`repr` and ``'!a'`` "
 "which calls :func:`ascii`."
 msgstr ""
+"V současnosti jsou podporovany tři znaky konverze: ``'!s'`` který volá "
+":func:`str` na hodnotu, ``'!r'`` který volá :func:`repr` a ``'!a'`` který "
+"volá :func:`ascii`."
 
 #: ../../library/string.rst:281
 msgid "Some examples::"
-msgstr ""
+msgstr "Několik příkladů::"
 
 #: ../../library/string.rst:283
 #, python-brace-format
@@ -448,6 +478,9 @@ msgid ""
 "\"Bring out the holy {name!r}\"    # Calls repr() on the argument first\n"
 "\"More {!a}\"                      # Calls ascii() on the argument first"
 msgstr ""
+"\"Harold je hodně chytrý {0!s}\"      # Volá str() na argument nejdříve\n"
+"\"Vyďiště světočný {name!r}\"  # Volá repr() na argument nejdříve\n"
+"\"Víc {!a}\"                       # Volá ascii() na argument nejdříve"
 
 #: ../../library/string.rst:287
 msgid ""
@@ -456,12 +489,18 @@ msgid ""
 "decimal precision and so on.  Each value type can define its own "
 "\"formatting mini-language\" or interpretation of the *format_spec*."
 msgstr ""
+"Pole *format_spec* obsahuje specifikaci toho, jak má být hodnota "
+"představena, včetně podrobností, jako jsou šířka pole, zarovnání, "
+"vyplňování, desetinná přesnost a podobně. Každý typ hodnoty může definovat "
+"svůj vlastní \"formátovací mini-jazyk\" nebo interpretaci *format_spec*."
 
 #: ../../library/string.rst:292
 msgid ""
 "Most built-in types support a common formatting mini-language, which is "
 "described in the next section."
 msgstr ""
+"Většina vestavěných typů podporuje společný formátovací mini-jazyk, který je"
+" popsán v další části."
 
 #: ../../library/string.rst:295
 msgid ""
@@ -472,14 +511,19 @@ msgid ""
 "*format_spec* string is interpreted. This allows the formatting of a value "
 "to be dynamically specified."
 msgstr ""
+"Pole *format_spec* může obsahovat také vnořená zámenná pole v jeho rámci. "
+"Tato vnořená zámenná pole mohou obsahovat název pole, příznaky konverze a "
+"specifikaci formátu, ale hlubbší vnoření není povoleno. Zámenná pole v rámci"
+" format_spec jsou nahrazena před interpretací řetězce *format_spec*. To "
+"umožňuje dynamicky specifikovat formátování hodnoty."
 
 #: ../../library/string.rst:302
 msgid "See the :ref:`formatexamples` section for some examples."
-msgstr ""
+msgstr "Naleznete několik příkladů v části :ref:`formatexamples`."
 
 #: ../../library/string.rst:308
 msgid "Format Specification Mini-Language"
-msgstr ""
+msgstr "Mini-jazyk specifikace formátu"
 
 #: ../../library/string.rst:310
 msgid ""
@@ -490,6 +534,11 @@ msgid ""
 "formattable type may define how the format specification is to be "
 "interpreted."
 msgstr ""
+"\"Specifikace formátu\" se používají v zámenných polích obsažených v rámci "
+"formátovacího řetězce k definování, jak se jednotlivé hodnoty představují "
+"(viz :ref:`formatstrings`, :ref:`f-strings` a :ref:`t-strings`). Mohou být "
+"také předány přímo vestavěné funkci :func:`format`. Každý formátovatelný typ"
+" může definovat, jak má být specifikace formátu interpretována."
 
 #: ../../library/string.rst:317
 msgid ""
@@ -497,6 +546,9 @@ msgid ""
 "specifications, although some of the formatting options are only supported "
 "by the numeric types."
 msgstr ""
+"Většina vestavěných typů implementuje následující možnosti pro specifikace "
+"formátu, ačkoli některé možnosti formátování jsou podporovány pouze "
+"numerickými typy."
 
 #: ../../library/string.rst:320
 msgid ""
@@ -504,10 +556,13 @@ msgid ""
 " result as if you had called :func:`str` on the value. A non-empty format "
 "specification typically modifies the result."
 msgstr ""
+"Obecná konvence je, že prázdná specifikace formátu dává stejný výsledek, "
+"jako kdybyste volali :func:`str` na hodnotu. Neprázdná specifikace formátu "
+"obvykle výsledek mĝní."
 
 #: ../../library/string.rst:324
 msgid "The general form of a *standard format specifier* is:"
-msgstr ""
+msgstr "Obecná forma *standardní specifikace formátu* je:"
 
 #: ../../library/string.rst:341
 #, python-brace-format
@@ -520,45 +575,55 @@ msgid ""
 "curly brace with a nested replacement field.  This limitation doesn't affect"
 " the :func:`format` function."
 msgstr ""
+"Pokud je zadána platná hodnota *align*, může jí předcházet znak *fill*, "
+"který může být libovolný znak a výchozheou je mezera, pokud chybí. Není "
+"možné použít literální sloitou závorku (\"``{``\" nebo \"``}``\") jako znak "
+"*fill* v :ref:`formátovaném řetězci <f-strings>` nebo při použití metody "
+":meth:`str.format`. Je však možné vložit složitou závorku s vnořeným "
+"zaměňovacím polem. Toto omezení se nenáhejvá funkci :func:`format`."
 
 #: ../../library/string.rst:350
 msgid "The meaning of the various alignment options is as follows:"
-msgstr ""
+msgstr "Výčznam různých možností zarovnání je následující:"
 
 #: ../../library/string.rst:359 ../../library/string.rst:391
 #: ../../library/string.rst:457
 msgid "Option"
-msgstr ""
+msgstr "Možnost"
 
 #: ../../library/string.rst:359 ../../library/string.rst:391
 #: ../../library/string.rst:457 ../../library/string.rst:491
 #: ../../library/string.rst:502 ../../library/string.rst:537
 msgid "Meaning"
-msgstr ""
+msgstr "Výčznam"
 
 #: ../../library/string.rst:361
 msgid "``'<'``"
-msgstr ""
+msgstr "``'<'``"
 
 #: ../../library/string.rst:361
 msgid ""
 "Forces the field to be left-aligned within the available space (this is the "
 "default for most objects)."
 msgstr ""
+"Vynutit zarovnání pole doleva v dostupném prostoru (toto je výchozí hodnota "
+"pro většinu objektů)."
 
 #: ../../library/string.rst:364
 msgid "``'>'``"
-msgstr ""
+msgstr "``'>'``"
 
 #: ../../library/string.rst:364
 msgid ""
 "Forces the field to be right-aligned within the available space (this is the"
 " default for numbers)."
 msgstr ""
+"Vynutit zarovnání pole doprava v dostupném prostoru (toto je výchozí hodnota"
+" pro čísla)."
 
 #: ../../library/string.rst:367
 msgid "``'='``"
-msgstr ""
+msgstr "``'='``"
 
 #: ../../library/string.rst:367
 msgid ""
@@ -568,14 +633,18 @@ msgid ""
 ":class:`complex`. It becomes the default for numbers when '0' immediately "
 "precedes the field width."
 msgstr ""
+"Vynutit umístění vyplňování za znamnaínkem (pokud existuje), ale před "
+"číslicé. Používá se pro tisk polí ve tvaru '+000000120'. Tato možnost "
+"zarovnání je platná pouze pro numerické typy, kromě :class:`complex`. Stává "
+"se výchozheou pro čísla, pokud '0' ihned předchází šířce pole."
 
 #: ../../library/string.rst:374
 msgid "``'^'``"
-msgstr ""
+msgstr "``'^'``"
 
 #: ../../library/string.rst:374
 msgid "Forces the field to be centered within the available space."
-msgstr ""
+msgstr "Vynutit zarovnání pole na střed dostupného prostoru."
 
 #: ../../library/string.rst:378
 msgid ""
@@ -583,42 +652,51 @@ msgid ""
 "always be the same size as the data to fill it, so that the alignment option"
 " has no meaning in this case."
 msgstr ""
+"Poznámka: pokud není definována minimální šířka pole, bude šířka pole vždy "
+"stejná jako data k jejímu vyplňování, takže možnost zarovnání má v tomto "
+"případě žádný výčznam."
 
 #: ../../library/string.rst:382
 msgid ""
 "The *sign* option is only valid for number types, and can be one of the "
 "following:"
 msgstr ""
+"Možnost *sign* je platná pouze pro numerické typy a může být jednám z "
+"následujících:"
 
 #: ../../library/string.rst:393
 msgid "``'+'``"
-msgstr ""
+msgstr "``'+'``"
 
 #: ../../library/string.rst:393
 msgid ""
 "Indicates that a sign should be used for both positive as well as negative "
 "numbers."
-msgstr ""
+msgstr "Indikuje, že by se málo použít znaménko pro kladná i záporná čísla."
 
 #: ../../library/string.rst:396
 msgid "``'-'``"
-msgstr ""
+msgstr "``'-'``"
 
 #: ../../library/string.rst:396
 msgid ""
 "Indicates that a sign should be used only for negative numbers (this is the "
 "default behavior)."
 msgstr ""
+"Indikuje, že by se málo použít znaménko pouze pro záporná čísla (toto je "
+"výchozheho chování)."
 
 #: ../../library/string.rst:385 ../../library/string.rst:399
 msgid "space"
-msgstr ""
+msgstr "mezera"
 
 #: ../../library/string.rst:399
 msgid ""
 "Indicates that a leading space should be used on positive numbers, and a "
 "minus sign on negative numbers."
 msgstr ""
+"Indikuje, že by se měla použít úvadní mezera na kladných číslech a znaménko "
+"mínus na záporných číslech."
 
 #: ../../library/string.rst:406
 msgid ""
@@ -626,10 +704,13 @@ msgid ""
 "zero after rounding to the format precision.  This option is only valid for "
 "floating-point presentation types."
 msgstr ""
+"Možnost ``'z'`` vynucuje převod záporntých nulOVY'ch hodnot s plovoucí "
+"řádovou čárkou na kladné nuly po zaokrouhlení na přesnost formátu. Tato "
+"možnost je platná pouze pro typy prezentace s plovoucí řádovou čárkou."
 
 #: ../../library/string.rst:410
 msgid "Added the ``'z'`` option (see also :pep:`682`)."
-msgstr ""
+msgstr "Přidána možnost ``'z'`` (viz také :pep:`682`)."
 
 #: ../../library/string.rst:415
 msgid ""
@@ -644,6 +725,16 @@ msgid ""
 "of these conversions only if a digit follows it. In addition, for ``'g'`` "
 "and ``'G'`` conversions, trailing zeros are not removed from the result."
 msgstr ""
+"Možnost ``'#'`` způsobuje, že se použíevá \"střídá forma\". Alternativní "
+"forma je definována různě pro různé typy. Tato možnost je platná pouze pro "
+"celomusí, pohyblivou řádovou čárkou a komplexní typy. Pro celá čísla se při "
+"použití binárního, oktalového nebo šestnctkového výstupu tato možnost "
+"přidává příslušné předpony ``'0b'``, ``'0o'``, ``'0x'`` nebo ``'0X'`` na "
+"výstupní hodnotu. Pro float a complex alternativní forma způsobuje, že "
+"výsledek konverze vždy obsahuje desatinnou čárku, i když za ní nésleduje "
+"žádná čísla. Za normálného stavu se desatiná čárka objeví ve výstupu těchto "
+"konverzí pouze v případě, že za ní následuje číslo. Kromě toho se při "
+"konverzcách ``'g'`` a ``'G'`` neodstraňují koncové nuly z výsledku."
 
 #: ../../library/string.rst:427
 msgid ""
@@ -651,6 +742,9 @@ msgid ""
 "including any prefixes, separators, and other formatting characters. If not "
 "specified, then the field width will be determined by the content."
 msgstr ""
+"*width* je desatinné celé číslo definující minimální celkovou šířku pole, "
+"včetně všech předčísel, oddělovacích prvků a dalších znších vyplňování. "
+"Pokud není zadáno, šířka pole se určí podle obsahu."
 
 #: ../../library/string.rst:431
 msgid ""
@@ -659,12 +753,18 @@ msgid ""
 "excluding :class:`complex`.  This is equivalent to a *fill* character of "
 "``'0'`` with an *alignment* type of ``'='``."
 msgstr ""
+"Pokud není dáno výslovné zarovnání, předcházení pole *width* znakem nula "
+"(``'0'``) umožňuje vyplňování nužou s vědomím znaménka pro numerické typy, "
+"kromě :class:`complex`. To je ekvivalentní znaku *fill* ``'0'`` s typem "
+"*alignment* ``'='``."
 
 #: ../../library/string.rst:436
 msgid ""
 "Preceding the *width* field by ``'0'`` no longer affects the default "
 "alignment for strings."
 msgstr ""
+"Předcházení pole *width* podle ``'0'`` již nevílivá výchozheou zarovnání pro"
+" řetězce."
 
 #: ../../library/string.rst:440
 msgid ""
@@ -676,6 +776,12 @@ msgid ""
 "the field content.  The *precision* is not allowed for integer presentation "
 "types."
 msgstr ""
+"*precision* je desatinné celé číslo indikující, kolik číslic se má zobrazit "
+"za desatinnou čárkou pro typy prezentace ``'f'`` a ``'F'``, nebo před a za "
+"desatinnou čárkou pro typy prezentace ``'g'`` nebo ``'G'``. Pro typy "
+"prezentace řetězce pole indikuje maximální velikost pole - jinmmi slovy, "
+"kolik znaků se použije z obsahu pole. *precision* není povolena pro typy "
+"prezentace celch čísll."
 
 #: ../../library/string.rst:448
 msgid ""
@@ -683,10 +789,13 @@ msgid ""
 " group separator for the integral and fractional parts of a number "
 "respectively. It can be one of the following:"
 msgstr ""
+"Možnost *grouping* po polích *width* a *precision* umožňuje zadat oddělovač "
+"skupiny číslic pro celomu a zlomkovou část čísla. Může to být jedno z "
+"následujících:"
 
 #: ../../library/string.rst:459
 msgid "``','``"
-msgstr ""
+msgstr "``','``"
 
 #: ../../library/string.rst:459
 msgid ""
@@ -694,10 +803,13 @@ msgid ""
 "floating-point presentation types, excluding ``'n'``. For other presentation"
 " types, this option is not supported."
 msgstr ""
+"Vkládá čárku každé 3 číslic pro typ prezentace celých čísl ``'d'`` a typy "
+"prezentace s plovoucí řádovou čárkou, kromě ``'n'``. Pro ostatní typy "
+"prezentace tato možnost není podporována."
 
 #: ../../library/string.rst:465
 msgid "``'_'``"
-msgstr ""
+msgstr "``'_'``"
 
 #: ../../library/string.rst:465
 msgid ""
@@ -707,106 +819,115 @@ msgid ""
 "inserted every 4 digits. For other presentation types, this option is not "
 "supported."
 msgstr ""
+"Vkládá podtržítéko každé 3 číslic pro typ prezentace celých čísl ``'d'`` a "
+"typy prezentace s plovoucí řádovou čárkou, kromě ``'n'``. Pro typy "
+"prezentace celých čísl ``'b'``, ``'o'``, ``'x'`` a ``'X'`` se podtržítka "
+"vkládají každé 4 číslic. Pro ostatní typy prezentace tato možnost není "
+"podporována."
 
 #: ../../library/string.rst:475
 msgid ""
 "For a locale aware separator, use the ``'n'`` presentation type instead."
 msgstr ""
+"Pro oddělovač s vědomím ločku použijte typ prezentace ``'n'`` místo toho."
 
 #: ../../library/string.rst:477
 msgid "Added the ``','`` option (see also :pep:`378`)."
-msgstr ""
+msgstr "Přidána možnost ``','`` (viz také :pep:`378`)."
 
 #: ../../library/string.rst:480
 msgid "Added the ``'_'`` option (see also :pep:`515`)."
-msgstr ""
+msgstr "Přidána možnost ``'_'`` (viz také :pep:`515`)."
 
 #: ../../library/string.rst:483
 msgid "Support the *grouping* option for the fractional part."
-msgstr ""
+msgstr "Podpora možnosti *grouping* pro zlomkovou část."
 
 #: ../../library/string.rst:486
 msgid "Finally, the *type* determines how the data should be presented."
-msgstr ""
+msgstr "Konečně *type* určí, jak má být data představena."
 
 #: ../../library/string.rst:488
 msgid "The available string presentation types are:"
-msgstr ""
+msgstr "Dostupné typy prezentace řetězců jsou:"
 
 #: ../../library/string.rst:491 ../../library/string.rst:502
 #: ../../library/string.rst:537
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: ../../library/string.rst:493
 msgid "``'s'``"
-msgstr ""
+msgstr "``'s'``"
 
 #: ../../library/string.rst:493
 msgid ""
 "String format. This is the default type for strings and may be omitted."
 msgstr ""
+"Formát řetězce. Toto je výchozheou typ pro řetězce a lze jej vynechat."
 
 #: ../../library/string.rst:496 ../../library/string.rst:525
 #: ../../library/string.rst:614
 msgid "None"
-msgstr ""
+msgstr "Nic"
 
 #: ../../library/string.rst:496
 msgid "The same as ``'s'``."
-msgstr ""
+msgstr "Stejné jako ``'s'``."
 
 #: ../../library/string.rst:499
 msgid "The available integer presentation types are:"
-msgstr ""
+msgstr "Dostupné typy prezentace celých čísel jsou:"
 
 #: ../../library/string.rst:504
 msgid "``'b'``"
-msgstr ""
+msgstr "``'b'``"
 
 #: ../../library/string.rst:504
 msgid "Binary format. Outputs the number in base 2."
-msgstr ""
+msgstr "Binární formát. Výstup čísla v základu 2."
 
 #: ../../library/string.rst:506
 msgid "``'c'``"
-msgstr ""
+msgstr "``'c'``"
 
 #: ../../library/string.rst:506
 msgid ""
 "Character. Converts the integer to the corresponding unicode character "
 "before printing."
-msgstr ""
+msgstr "Znak. Konvertuje celé číslo na odpovïdající znak Unicode před tiskem."
 
 #: ../../library/string.rst:509
 msgid "``'d'``"
-msgstr ""
+msgstr "``'d'``"
 
 #: ../../library/string.rst:509
 msgid "Decimal Integer. Outputs the number in base 10."
-msgstr ""
+msgstr "Desatinné celé číslo. Výstup čísla v základu 10."
 
 #: ../../library/string.rst:511
 msgid "``'o'``"
-msgstr ""
+msgstr "``'o'``"
 
 #: ../../library/string.rst:511
 msgid "Octal format. Outputs the number in base 8."
-msgstr ""
+msgstr "Oktalový formát. Výstup čísla v základu 8."
 
 #: ../../library/string.rst:513
 msgid "``'x'``"
-msgstr ""
+msgstr "``'x'``"
 
 #: ../../library/string.rst:513
 msgid ""
 "Hex format. Outputs the number in base 16, using lower-case letters for the "
 "digits above 9."
 msgstr ""
+"Hex formát. Výstup čísla v základu 16 pomocí malých písme mene pro číslicé "
+"nad 9."
 
 #: ../../library/string.rst:516
 msgid "``'X'``"
-msgstr ""
+msgstr "``'X'``"
 
 #: ../../library/string.rst:516
 msgid ""
@@ -814,20 +935,25 @@ msgid ""
 "digits above 9. In case ``'#'`` is specified, the prefix ``'0x'`` will be "
 "upper-cased to ``'0X'`` as well."
 msgstr ""
+"Hex formát. Výstup čísla v základu 16 pomocí velkých písme mene pro číslicé "
+"nad 9. V případě, že ``'#'`` je zadáno, předpona ``'0x'`` bude také "
+"převědena na velká písme na ``'0X'``."
 
 #: ../../library/string.rst:521 ../../library/string.rst:606
 msgid "``'n'``"
-msgstr ""
+msgstr "``'n'``"
 
 #: ../../library/string.rst:521
 msgid ""
 "Number. This is the same as ``'d'``, except that it uses the current locale "
 "setting to insert the appropriate digit group separators."
 msgstr ""
+"Číslo. Toto je stejné jako ``'d'``, s výšimkou, že používá aktuálné "
+"nastavení ločku k vložení odpovïdajících oddělovačů skupin číslic."
 
 #: ../../library/string.rst:525
 msgid "The same as ``'d'``."
-msgstr ""
+msgstr "Stejné jako ``'d'``."
 
 #: ../../library/string.rst:528
 msgid ""
@@ -836,16 +962,22 @@ msgid ""
 "``None``). When doing so, :func:`float` is used to convert the integer to a "
 "floating-point number before formatting."
 msgstr ""
+"Kromě výše uvedených typů prezentace mohou být celá čísla formátována s typy"
+" prezentace s plovoucí řádovou čárkou výše uvedenými (s výšimkou ``'n'`` a "
+"``None``). Při tomé se :func:`float` používá k převedeni celého čísla na "
+"číslo s plovoucí řádovou čárkou před formátováním."
 
 #: ../../library/string.rst:533
 msgid ""
 "The available presentation types for :class:`float` and "
 ":class:`~decimal.Decimal` values are:"
 msgstr ""
+"Dostupné typy prezentace pro hodnoty :class:`float` a "
+":class:`~decimal.Decimal` jsou:"
 
 #: ../../library/string.rst:539
 msgid "``'e'``"
-msgstr ""
+msgstr "``'e'``"
 
 #: ../../library/string.rst:539
 msgid ""
@@ -858,26 +990,37 @@ msgid ""
 ":class:`~decimal.Decimal`.  If ``p=0``, the decimal point is omitted unless "
 "the ``#`` option is used."
 msgstr ""
+"Vědeckota formát. Pro danou přesnost ``p`` formátuje číslo vědeckotým "
+"zápisem s písmenem 'e' oddělujícím koeficient od exponentu. Koeficient má "
+"jednu číslic před a ``p`` číslic za desatinnou čárkou, celkem ``p + 1`` "
+"významných číslic. Bez zadané přesnosti se používá přesnost ``6`` číslic za "
+"desatinnou čárkou pro :class:`float` a jsou zobrazeny všechny koeficienty "
+"pro :class:`~decimal.Decimal`. Pokud ``p=0``, je desatiná čárka vynechána, "
+"pokud není použit volba ``#``."
 
 #: ../../library/string.rst:550
 msgid ""
 "For :class:`float`, the exponent always contains at least two digits, and is"
 " zero if the value is zero."
 msgstr ""
+"Pro :class:`float` exponent vždy obsahuje alespoň dvě číslic a je nula, "
+"pokud je hodnota nula."
 
 #: ../../library/string.rst:553
 msgid "``'E'``"
-msgstr ""
+msgstr "``'E'``"
 
 #: ../../library/string.rst:553
 msgid ""
 "Scientific notation. Same as ``'e'`` except it uses an upper case 'E' as the"
 " separator character."
 msgstr ""
+"Vědeckotý formát. Stejné jako ``'e'`` s výšimkou, že používá velký písmenem "
+"'E' jako znk oddělovač."
 
 #: ../../library/string.rst:556
 msgid "``'f'``"
-msgstr ""
+msgstr "``'f'``"
 
 #: ../../library/string.rst:556
 msgid ""
@@ -888,20 +1031,28 @@ msgid ""
 "coefficient digits for :class:`~decimal.Decimal`.  If ``p=0``, the decimal "
 "point is omitted unless the ``#`` option is used."
 msgstr ""
+"Notační bod. Pro danou přesnost ``p`` formátuje číslo jako desatinné číslo s"
+" přesně ``p`` číslic za desatinnou čárkou. Bez zadané přesnosti se používá "
+"přesnost ``6`` číslic za desatinnou čárkou pro :class:`float` a používá "
+"přesnost dostatenou k zobrazení všech koeficientných číslic pro "
+":class:`~decimal.Decimal`. Pokud ``p=0``, je desatiná čárka vynechána, pokud"
+" není použit volba ``#``."
 
 #: ../../library/string.rst:565
 msgid "``'F'``"
-msgstr ""
+msgstr "``'F'``"
 
 #: ../../library/string.rst:565
 msgid ""
 "Fixed-point notation. Same as ``'f'``, but converts ``nan`` to  ``NAN`` and "
 "``inf`` to ``INF``."
 msgstr ""
+"Notační bod. Stejné jako ``'f'``, ale konvertuje ``nan`` na ``NAN`` a "
+"``inf`` na ``INF``."
 
 #: ../../library/string.rst:568
 msgid "``'g'``"
-msgstr ""
+msgstr "``'g'``"
 
 #: ../../library/string.rst:568
 msgid ""
@@ -910,6 +1061,10 @@ msgid ""
 "format or in scientific notation, depending on its magnitude. A precision of"
 " ``0`` is treated as equivalent to a precision of ``1``."
 msgstr ""
+"Obecný formát. Pro danou přesnost ``p >= 1`` toto zaokrouhlí číslo na ``p`` "
+"významných číslic a potom formátuje výsledek buď v notačních bodech nebo "
+"vědeckotém zápisem, v závislosti na jeho velikosti. Přesnost ``0`` je "
+"zakázána se pokládá za ekvivalent přesnosti ``1``."
 
 #: ../../library/string.rst:575
 msgid ""
@@ -923,6 +1078,14 @@ msgid ""
 " decimal point is also removed if there are no remaining digits following "
 "it, unless the ``'#'`` option is used."
 msgstr ""
+"Přesná pravidla jsou následující: předpokládá se, že výsledek formátovaný s "
+"typem prezentace ``'e'`` a přesností ``p-1`` by měl exponent ``exp``. Pak, "
+"pokud ``m <= exp < p``, kde ``m`` je -4 pro float a -6 pro :class:`Decimals "
+"<decimal.Decimal>`, je číslo formátováno s typem prezentace ``'f'`` a "
+"přesností ``p-1-exp``. V opačném případě je číslo formátováno s typem "
+"prezentace ``'e'`` a přesností ``p-1``. V obou případech jsou odstraněny "
+"nevýznamné koncové nuly z signifikantu a desatiná čárka je odstraňována "
+"také, pokud po ní zbývá žádné číslicé, pokud není používána volba ``'#'``."
 
 #: ../../library/string.rst:588
 msgid ""
@@ -933,6 +1096,12 @@ msgid ""
 " place value of the least significant digit is larger than 1, and fixed-"
 "point notation is used otherwise."
 msgstr ""
+"Bez zadané přesnosti se používá přesnost ``6`` významných číslic pro "
+":class:`float`. Pro :class:`~decimal.Decimal` je koeficient výsledku "
+"vytvořen z koeficientných číslic hodnoty; vědeckoté zpráva je používána pro "
+"hodnoty menší než ``1e-6`` v absolutní hodnotě a hodnoty, kde je místo "
+"hodnoty nejméně významné číslic větší než 1, a notační bod je používán "
+"jinak."
 
 #: ../../library/string.rst:597
 msgid ""
@@ -940,16 +1109,22 @@ msgid ""
 "formatted as ``inf``, ``-inf``, ``0``, ``-0`` and ``nan`` respectively, "
 "regardless of the precision."
 msgstr ""
+"Kladné a záporné nekonecno, kladná a záporná nula a nans jsou formátovány "
+"jako ``inf``, ``-inf``, ``0``, ``-0`` a ``nan`` v pořadí, bez ohledu na "
+"přesnost."
 
 #: ../../library/string.rst:602
 msgid "``'G'``"
-msgstr ""
+msgstr "``'G'``"
 
 #: ../../library/string.rst:602
 msgid ""
 "General format. Same as ``'g'`` except switches to ``'E'`` if the number "
 "gets too large. The representations of infinity and NaN are uppercased, too."
 msgstr ""
+"Obecný formát. Stejné jako ``'g'`` s výšimkou, že přepíná na ``'E'``, pokud "
+"se číslo stává příliš velkým. Reprezentace nekonecna a NaN jsou také "
+"zmenšeny na velká písme."
 
 #: ../../library/string.rst:606
 msgid ""
@@ -957,16 +1132,21 @@ msgid ""
 "setting to insert the appropriate digit group separators for the integral "
 "part of a number."
 msgstr ""
+"Číslo. Toto je stejné jako ``'g'``, s výšimkou, že používá aktuálné "
+"nastavení ločku k vložení odpovïdajících oddělovačů skupin číslic pro celou "
+"část čísla."
 
 #: ../../library/string.rst:611
 msgid "``'%'``"
-msgstr ""
+msgstr "``'%'``"
 
 #: ../../library/string.rst:611
 msgid ""
 "Percentage. Multiplies the number by 100 and displays in fixed (``'f'``) "
 "format, followed by a percent sign."
 msgstr ""
+"Procenta. Násobí číslo 100 a zobrazuje v pevném (``'f'``) formátu, "
+"následováno procentém."
 
 #: ../../library/string.rst:614
 msgid ""
@@ -976,6 +1156,11 @@ msgid ""
 "``exp >= p - 1``.  When the precision is not specified, the latter will be "
 "as large as needed to represent the given value faithfully."
 msgstr ""
+"Pro :class:`float` je to jako typ ``'g'``, s výšimkou, že pokud se notační "
+"bod používá k formátování výsledku, vždy obsahuje alespoň jednu čísli za "
+"desatinnou čárkou a přepíná na vědeckoté zprávy, když ``exp >= p - 1``. "
+"Pokud přesnost není zadána, bude přesnost takovyou velká jako je třeba, aby "
+"se dáná hodnota přesně reprezentovala."
 
 #: ../../library/string.rst:622
 msgid ""
@@ -983,12 +1168,16 @@ msgid ""
 " depending on the value of ``context.capitals`` for the current decimal "
 "context."
 msgstr ""
+"Pro :class:`~decimal.Decimal` je to stejné jako ``'g'`` nebo ``'G'`` v "
+"závislosti na hodnotě ``context.capitals`` pro aktuální desetinný kontext."
 
 #: ../../library/string.rst:626
 msgid ""
 "The overall effect is to match the output of :func:`str` as altered by the "
 "other format modifiers."
 msgstr ""
+"Celkový efekt je sladit se výstupem :func:`str` změněným ostatními "
+"modifikátory formátu."
 
 #: ../../library/string.rst:630
 msgid ""
@@ -997,6 +1186,10 @@ msgid ""
 "of the :func:`round` builtin.  For :class:`~decimal.Decimal`, the rounding "
 "mode of the current :ref:`context <decimal-context>` will be used."
 msgstr ""
+"Výsledek by měl být správně zaokrouhlenný na danou přesnost ``p`` číslic za "
+"desatinnou čárkou. Režim zaokrouhlování pro :class:`float` odpovídá tomu, "
+"který má vestavěná :func:`round`. Pro :class:`~decimal.Decimal` bude použit "
+"režim zaokrouhlování aktuálního :ref:`kontextu <decimal-context>`."
 
 #: ../../library/string.rst:635
 msgid ""
@@ -1009,16 +1202,26 @@ msgid ""
 "output of :func:`str` (complex numbers with a non-zero real part are also "
 "surrounded by parentheses), possibly altered by other format modifiers."
 msgstr ""
+"Dostupné typy prezentace pro :class:`complex` jsou stejné jako ty pro "
+":class:`float` (``'%'`` není povoleno). Jak reálná tak imaginární složka "
+"komplexního čísla jsou formátovány jako čísla s plovoucí řádovou čárkou, "
+"podle zadaného typu prezentace. Jsou odděleny povinným znaménkem imaginární "
+"složky, která končí příponou ``j``. Pokud typ prezentace chybí, výsledek "
+"bude odpovídat výstupem :func:`str` (komplexní čísla s nenulovým reálným "
+"částí jsou také obklopena závorkama), možně zmměněným ostatními modifikátory"
+" formátu."
 
 #: ../../library/string.rst:648
 msgid "Format examples"
-msgstr ""
+msgstr "Příklady formátu"
 
 #: ../../library/string.rst:650
 msgid ""
 "This section contains examples of the :meth:`str.format` syntax and "
 "comparison with the old ``%``-formatting."
 msgstr ""
+"Tato část obsahuje příklady syntaxe :meth:`str.format` a porovnání se starým"
+" formátováním ``%``."
 
 #: ../../library/string.rst:653
 #, python-brace-format, python-format
@@ -1027,16 +1230,21 @@ msgid ""
 " the addition of the ``{}`` and with ``:`` used instead of ``%``. For "
 "example, ``'%03.2f'`` can be translated to ``'{:03.2f}'``."
 msgstr ""
+"Ve většině případů je syntaxe podobná starému formátování ``%``, s přidáním "
+"``{}`` a s ``:`` používáno místo ``%``. Například ``'%03.2f'`` lze přeložit "
+"na ``'{:03.2f}'``."
 
 #: ../../library/string.rst:657
 msgid ""
 "The new format syntax also supports new and different options, shown in the "
 "following examples."
 msgstr ""
+"Nová syntaxe formátu také podporuje nové a odlišné volby, ukázané v "
+"následujících příkladech."
 
 #: ../../library/string.rst:660
 msgid "Accessing arguments by position::"
-msgstr ""
+msgstr "Přístup k argumentům podle pozice::"
 
 #: ../../library/string.rst:662
 #, python-brace-format
@@ -1052,10 +1260,20 @@ msgid ""
 ">>> '{0}{1}{0}'.format('abra', 'cad')   # arguments' indices can be repeated\n"
 "'abracadabra'"
 msgstr ""
+">>> '{0}, {1}, {2}'.format('a', 'b', 'c')\n"
+"'a, b, c'\n"
+">>> '{}, {}, {}'.format('a', 'b', 'c')  # pouze 3.1+\n"
+"'a, b, c'\n"
+">>> '{2}, {1}, {0}'.format('a', 'b', 'c')\n"
+"'c, b, a'\n"
+">>> '{2}, {1}, {0}'.format(*'abc')      # rozbalování sekvence argumentů\n"
+"'c, b, a'\n"
+">>> '{0}{1}{0}'.format('abra', 'cad')   # indexy argumentů lze opakovat\n"
+"'abracadabra'"
 
 #: ../../library/string.rst:673
 msgid "Accessing arguments by name::"
-msgstr ""
+msgstr "Přístup k argumentům podle jména::"
 
 #: ../../library/string.rst:675
 #, python-brace-format
@@ -1066,10 +1284,15 @@ msgid ""
 ">>> 'Coordinates: {latitude}, {longitude}'.format(**coord)\n"
 "'Coordinates: 37.24N, -115.81W'"
 msgstr ""
+">>> 'Souřadnice: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W')\n"
+"'Souřadnice: 37.24N, -115.81W'\n"
+">>> coord = {'latitude': '37.24N', 'longitude': '-115.81W'}\n"
+">>> 'Souřadnice: {latitude}, {longitude}'.format(**coord)\n"
+"'Souřadnice: 37.24N, -115.81W'"
 
 #: ../../library/string.rst:681
 msgid "Accessing arguments' attributes::"
-msgstr ""
+msgstr "Přístup k atributům argumentů::"
 
 #: ../../library/string.rst:683
 #, python-brace-format
@@ -1087,10 +1310,22 @@ msgid ""
 ">>> str(Point(4, 2))\n"
 "'Point(4, 2)'"
 msgstr ""
+">>> c = 3-5j\n"
+">>> ('Komplexní číslo {0} je tvořeno z reálné části {0.real} '\n"
+"...  'a imaginární části {0.imag}.').format(c)\n"
+"'Komplexní číslo (3-5j) je tvořeno z reálné části 3.0 a imaginární části -5.0.'\n"
+">>> class Point:\n"
+"...     def __init__(self, x, y):\n"
+"...         self.x, self.y = x, y\n"
+"...     def __str__(self):\n"
+"...         return 'Point({self.x}, {self.y})'.format(self=self)\n"
+"...\n"
+">>> str(Point(4, 2))\n"
+"'Point(4, 2)'"
 
 #: ../../library/string.rst:696
 msgid "Accessing arguments' items::"
-msgstr ""
+msgstr "Přístup k položkám argumentů::"
 
 #: ../../library/string.rst:698
 #, python-brace-format
@@ -1099,11 +1334,14 @@ msgid ""
 ">>> 'X: {0[0]};  Y: {0[1]}'.format(coord)\n"
 "'X: 3;  Y: 5'"
 msgstr ""
+">>> coord = (3, 5)\n"
+">>> 'X: {0[0]};  Y: {0[1]}'.format(coord)\n"
+"'X: 3;  Y: 5'"
 
 #: ../../library/string.rst:702
 #, python-format
 msgid "Replacing ``%s`` and ``%r``::"
-msgstr ""
+msgstr "Zaměnění ``%s`` a ``%r``::"
 
 #: ../../library/string.rst:704
 #, python-brace-format
@@ -1111,10 +1349,12 @@ msgid ""
 ">>> \"repr() shows quotes: {!r}; str() doesn't: {!s}\".format('test1', 'test2')\n"
 "\"repr() shows quotes: 'test1'; str() doesn't: test2\""
 msgstr ""
+">>> \"repr() zobrazuje cudzince: {!r}; str() ne: {!s}\".format('test1', 'test2')\n"
+"\"repr() zobrazuje cudzince: 'test1'; str() ne: test2\""
 
 #: ../../library/string.rst:707
 msgid "Aligning the text and specifying a width::"
-msgstr ""
+msgstr "Zarovnání textu a určení šířky::"
 
 #: ../../library/string.rst:709
 #, python-brace-format
@@ -1128,11 +1368,19 @@ msgid ""
 ">>> '{:*^30}'.format('centered')  # use '*' as a fill char\n"
 "'***********centered***********'"
 msgstr ""
+">>> '{:<30}'.format('zarovnan doleva')\n"
+"'zarovnan doleva              '\n"
+">>> '{:>30}'.format('zarovnan doprava')\n"
+"'             zarovnan doprava'\n"
+">>> '{:^30}'.format('uprostred')\n"
+"'          uprostred          '\n"
+">>> '{:*^30}'.format('uprostred')  # pouzij '*' jako vyplnovaci znak\n"
+"'***********uprostred***********'"
 
 #: ../../library/string.rst:718
 #, python-format
 msgid "Replacing ``%+f``, ``%-f``, and ``% f`` and specifying a sign::"
-msgstr ""
+msgstr "Zaměnění ``%+f``, ``%-f`` a ``% f`` a určení znaménka::"
 
 #: ../../library/string.rst:720
 #, python-brace-format
@@ -1144,12 +1392,18 @@ msgid ""
 ">>> '{:-f}; {:-f}'.format(3.14, -3.14)  # show only the minus -- same as '{:f}; {:f}'\n"
 "'3.140000; -3.140000'"
 msgstr ""
+">>> '{:+f}; {:+f}'.format(3.14, -3.14)  # vdy ukazi\n"
+"'+3.140000; -3.140000'\n"
+">>> '{: f}; {: f}'.format(3.14, -3.14)  # ukazi mezeru pro kladna cisla\n"
+"' 3.140000; -3.140000'\n"
+">>> '{:-f}; {:-f}'.format(3.14, -3.14)  # ukazuj pouze minus -- stejne jako '{:f}; {:f}'\n"
+"'3.140000; -3.140000'"
 
 #: ../../library/string.rst:727
 #, python-format
 msgid ""
 "Replacing ``%x`` and ``%o`` and converting the value to different bases::"
-msgstr ""
+msgstr "Zaměnění ``%x`` a ``%o`` a konverze hodnoty na různé základy::"
 
 #: ../../library/string.rst:729
 #, python-brace-format
@@ -1161,10 +1415,16 @@ msgid ""
 ">>> \"int: {0:d};  hex: {0:#x};  oct: {0:#o};  bin: {0:#b}\".format(42)\n"
 "'int: 42;  hex: 0x2a;  oct: 0o52;  bin: 0b101010'"
 msgstr ""
+">>> # format take podporuje binarn cisla\n"
+">>> \"int: {0:d};  hex: {0:x};  oct: {0:o};  bin: {0:b}\".format(42)\n"
+"'int: 42;  hex: 2a;  oct: 52;  bin: 101010'\n"
+">>> # s 0x, 0o nebo 0b jako predpona:\n"
+">>> \"int: {0:d};  hex: {0:#x};  oct: {0:#o};  bin: {0:#b}\".format(42)\n"
+"'int: 42;  hex: 0x2a;  oct: 0o52;  bin: 0b101010'"
 
 #: ../../library/string.rst:736
 msgid "Using the comma or the underscore as a digit group separator::"
-msgstr ""
+msgstr "Použití čárky nebo podtržítka jako oddělovač skupiny číslic::"
 
 #: ../../library/string.rst:738
 #, python-brace-format
@@ -1184,10 +1444,24 @@ msgid ""
 ">>> '{:,._}'.format(123456789.123456789)\n"
 "'123,456,789.123_456_79'"
 msgstr ""
+">>> '{:,}'.format(1234567890)\n"
+"'1,234,567,890'\n"
+">>> '{:_}'.format(1234567890)\n"
+"'1_234_567_890'\n"
+">>> '{:_b}'.format(1234567890)\n"
+"'100_1001_1001_0110_0000_0010_1101_0010'\n"
+">>> '{:_x}'.format(1234567890)\n"
+"'4996_02d2'\n"
+">>> '{:_}'.format(123456789.123456789)\n"
+"'123_456_789.12345679'\n"
+">>> '{:.,}'.format(123456789.123456789)\n"
+"'123456789.123,456,79'\n"
+">>> '{:,._}'.format(123456789.123456789)\n"
+"'123,456,789.123_456_79'"
 
 #: ../../library/string.rst:753
 msgid "Expressing a percentage::"
-msgstr ""
+msgstr "Výraz v procentech::"
 
 #: ../../library/string.rst:755
 #, python-brace-format
@@ -1197,10 +1471,14 @@ msgid ""
 ">>> 'Correct answers: {:.2%}'.format(points/total)\n"
 "'Correct answers: 86.36%'"
 msgstr ""
+">>> points = 19\n"
+">>> total = 22\n"
+">>> 'Spravne odpovedi: {:.2%}'.format(points/total)\n"
+"'Spravne odpovedi: 86.36%'"
 
 #: ../../library/string.rst:760
 msgid "Using type-specific formatting::"
-msgstr ""
+msgstr "Použití formátování specifického pro typ::"
 
 #: ../../library/string.rst:762
 #, python-brace-format, python-format
@@ -1210,10 +1488,14 @@ msgid ""
 ">>> '{:%Y-%m-%d %H:%M:%S}'.format(d)\n"
 "'2010-07-04 12:15:58'"
 msgstr ""
+">>> import datetime\n"
+">>> d = datetime.datetime(2010, 7, 4, 12, 15, 58)\n"
+">>> '{:%Y-%m-%d %H:%M:%S}'.format(d)\n"
+"'2010-07-04 12:15:58'"
 
 #: ../../library/string.rst:767
 msgid "Nesting arguments and more complex examples::"
-msgstr ""
+msgstr "Vnořené argumenty a složitější příklady::"
 
 #: ../../library/string.rst:769
 #, python-brace-format
@@ -1245,10 +1527,36 @@ msgid ""
 "   10     A    12  1010\n"
 "   11     B    13  1011"
 msgstr ""
+">>> for align, text in zip('<^>', ['left', 'center', 'right']):\n"
+"...     '{0:{fill}{align}16}'.format(text, fill=align, align=align)\n"
+"...\n"
+"'left<<<<<<<<<<<<'\n"
+"'^^^^^center^^^^^'\n"
+"'>>>>>>>>>>>right'\n"
+">>>\n"
+">>> octets = [192, 168, 0, 1]\n"
+">>> '{:02X}{:02X}{:02X}{:02X}'.format(*octets)\n"
+"'C0A80001'\n"
+">>> int(_, 16)\n"
+"3232235521\n"
+">>>\n"
+">>> width = 5\n"
+">>> for num in range(5,12):\n"
+"...     for base in 'dXob':\n"
+"...         print('{0:{width}{base}}'.format(num, base=base, width=width), end=' ')\n"
+"...     print()\n"
+"...\n"
+"    5     5     5   101\n"
+"    6     6     6   110\n"
+"    7     7     7   111\n"
+"    8     8    10  1000\n"
+"    9     9    11  1001\n"
+"   10     A    12  1010\n"
+"   11     B    13  1011"
 
 #: ../../library/string.rst:801
 msgid "Template strings ($-strings)"
-msgstr ""
+msgstr "Vorloj řetězců ($-řetězce)"
 
 #: ../../library/string.rst:805
 msgid ""
@@ -1257,6 +1565,10 @@ msgid ""
 ":ref:`formatted string literals <f-strings>`, and :ref:`template string "
 "literals <template-strings>`."
 msgstr ""
+"Funkce popsáná zde byla zavédena v Pythonu 2.4; jednoduchá metoda "
+"šablonování založená na regulárních výraze. Předchází :meth:`str.format`, "
+":ref:`formátované řetězce <f-strings>` a :ref:`šablony řetězců <template-"
+"strings>`."
 
 #: ../../library/string.rst:810
 msgid ""
@@ -1265,6 +1577,10 @@ msgid ""
 ":class:`string.templatelib.Template` objects, found in the "
 ":mod:`string.templatelib` module."
 msgstr ""
+"Není spojena se šablonovými řetězci (t-řetězce), které byly zavédeny v "
+"Pythonu 3.14. Ty se vyhodnocují na objekty "
+":class:`string.templatelib.Template` nalezené v modulu "
+":mod:`string.templatelib`."
 
 #: ../../library/string.rst:815
 msgid ""
@@ -1276,16 +1592,24 @@ msgid ""
 "template strings for i18n, see the `flufl.i18n "
 "<https://flufli18n.readthedocs.io/en/latest/>`_ package."
 msgstr ""
+"Šablonové řetězce poskytují jednodušší nahrazení řetězců popsané v "
+":pep:`292`. Hlavním případě použití pro šablonové řetězce je mezinárodní "
+"například (i18n), protože v tomto kontextu jednodušší syntaxe a funkce "
+"usnadňuje překládání než ostatní vestavěné vykládání řetězců v Pythonu. Jako"
+" příklad knihovny vytvořené na šablonových řetězcích pro i18n naleznete "
+"balík `flufl.i18n <https://flufl.i18n.readthedocs.io/en/latest/>`_."
 
 #: ../../library/string.rst:825
 msgid ""
 "Template strings support ``$``-based substitutions, using the following "
 "rules:"
 msgstr ""
+"Šablonové řetězce podporují ``$``-zalozená nahrazení pomocí následujících "
+"pravidel:"
 
 #: ../../library/string.rst:827
 msgid "``$$`` is an escape; it is replaced with a single ``$``."
-msgstr ""
+msgstr "``$$`` je úprava; je nahrazena jednoduchou ``$``."
 
 #: ../../library/string.rst:829
 msgid ""
@@ -1296,6 +1620,11 @@ msgid ""
 "character after the ``$`` character terminates this placeholder "
 "specification."
 msgstr ""
+"``$identifier`` pojmenovava místo nahrazení, které odpovída klíči mapování "
+"``\\\"identifier\\\"\". Ve výchozheom nastavení je ``\\\"identifier\\\"`` "
+"omezeno na jakékoliv ASCII alfanumerické řetězce bez rozlišování velikosti "
+"(včetně podtržítek) zaČínájící na podtržítko nebo ASCII písmenem. První znak"
+" neidentifikátoru po znaku ``$`` končí tuto specifikaci místa nahrazení."
 
 #: ../../library/string.rst:836
 #, python-brace-format
@@ -1304,22 +1633,28 @@ msgid ""
 "valid identifier characters follow the placeholder but are not part of the "
 "placeholder, such as ``\"${noun}ification\"``."
 msgstr ""
+"``${identifier}`` je ekvivalentní ``$identifier``. Je vyžadováno, pokud za "
+"zasťém přijde je platné znaky identifikátoru, ale nejsou součástí zasťého, "
+"jako je ``\\\"${noun}ification\\\"``."
 
 #: ../../library/string.rst:840
 msgid ""
 "Any other appearance of ``$`` in the string will result in a "
 ":exc:`ValueError` being raised."
 msgstr ""
+"Jakékoliv další výskyt ``$`` v řetězci způsobí vyzvání :exc:`ValueError`."
 
 #: ../../library/string.rst:843
 msgid ""
 "The :mod:`string` module provides a :class:`Template` class that implements "
 "these rules.  The methods of :class:`Template` are:"
 msgstr ""
+"Modul :mod:`string` poskytuje třídu :class:`Template`, která implementuje "
+"tato pravidla. Metody :class:`Template` jsou:"
 
 #: ../../library/string.rst:849
 msgid "The constructor takes a single argument which is the template string."
-msgstr ""
+msgstr "Konstruktor mří jeden argument, kterým je šablonový řetězec."
 
 #: ../../library/string.rst:854
 msgid ""
@@ -1329,6 +1664,11 @@ msgid ""
 "keywords are the placeholders.  When both *mapping* and *kwds* are given and"
 " there are duplicates, the placeholders from *kwds* take precedence."
 msgstr ""
+"Provede nahrazení šablony a vrátí nový řetězec. *mapping* je jakékoliv "
+"objektu podobné slovníku s klíči, které odpovídají zastővkám v šablone. "
+"Alternativně můžete poskytnout argumenty klíčů, kde klíče jsou zastővky. "
+"Pokud jsou zadány oboje *mapping* a *kwds* a existují duplikáty, zastővky z "
+"*kwds* mají přednost."
 
 #: ../../library/string.rst:863
 msgid ""
@@ -1338,6 +1678,11 @@ msgid ""
 "unlike with :meth:`substitute`, any other appearances of the ``$`` will "
 "simply return ``$`` instead of raising :exc:`ValueError`."
 msgstr ""
+"Jako :meth:`substitute`, s výšimkou, že pokud zastővky chybí z *mapping* a "
+"*kwds*, místo vyzvání výjimky :exc:`KeyError` se původní zastővka objeví "
+"výsledném řetězci beze změn. Také na rozdíl od :meth:`substitute` se "
+"jakykoliv další výskyt ``$`` ve skutečnosti vrátí ``$`` místo vyzvání "
+":exc:`ValueError`."
 
 #: ../../library/string.rst:869
 msgid ""
@@ -1348,32 +1693,44 @@ msgid ""
 "dangling delimiters, unmatched braces, or placeholders that are not valid "
 "Python identifiers."
 msgstr ""
+"Zatmco ostatní výjimky mohou stále nastat, tato metoda se nazývá "
+"\"bezpečná\", protože se vždy snaží vrátit použitelný řetězec místo vyhození"
+" výjimky. V jiném smyslu může být :meth:`safe_substitute` částku než "
+"bezpečná, protože všekujíci ignoruje špatně formátované šablony obsahující "
+"visućí oddělovače, nespárované závorky nebo zastővky, které nejsou platné "
+"identifikátory Pythonu."
 
 #: ../../library/string.rst:879
 msgid ""
 "Returns ``False`` if the template has invalid placeholders that will cause "
 ":meth:`substitute` to raise :exc:`ValueError`."
 msgstr ""
+"Vrátí ``False``, pokud má šablona neplatné zastřřavky, které způsobí, že "
+":meth:`substitute` vyhodnotová :exc:`ValueError`."
 
 #: ../../library/string.rst:887
 msgid ""
 "Returns a list of the valid identifiers in the template, in the order they "
 "first appear, ignoring any invalid identifiers."
 msgstr ""
+"Vrátí seznam platných identifikátorů v šablone v pořadí, v němž se prvně "
+"objeví, ignorujíc neplatné identifikátory."
 
 #: ../../library/string.rst:892
 msgid ":class:`Template` instances also provide one public data attribute:"
-msgstr ""
+msgstr "Instance :class:`Template` také poskytují jeden veřejný atribut dat:"
 
 #: ../../library/string.rst:896
 msgid ""
 "This is the object passed to the constructor's *template* argument.  In "
 "general, you shouldn't change it, but read-only access is not enforced."
 msgstr ""
+"Toto je objekt předaný argumentu *template* konstruktoru. V obecném případě "
+"byste jej neměli měnit, ale přístup pouze pro čtení není vynucen."
 
 #: ../../library/string.rst:899
 msgid "Here is an example of how to use a Template::"
-msgstr ""
+msgstr "Zde je příklad použití šablony::"
 
 #: ../../library/string.rst:901
 msgid ""
@@ -1393,6 +1750,21 @@ msgid ""
 ">>> Template('$who likes $what').safe_substitute(d)\n"
 "'tim likes $what'"
 msgstr ""
+">>> from string import Template\n"
+">>> s = Template('$who likes $what')\n"
+">>> s.substitute(who='tim', what='kung pao')\n"
+"'tim likes kung pao'\n"
+">>> d = dict(who='tim')\n"
+">>> Template('Give $who $100').substitute(d)\n"
+"Traceback (most recent call last):\n"
+"...\n"
+"ValueError: Invalid placeholder in string: line 1, col 11\n"
+">>> Template('$who likes $what').substitute(d)\n"
+"Traceback (most recent call last):\n"
+"...\n"
+"KeyError: 'what'\n"
+">>> Template('$who likes $what').safe_substitute(d)\n"
+"'tim likes $what'"
 
 #: ../../library/string.rst:917
 msgid ""
@@ -1401,6 +1773,10 @@ msgid ""
 "expression used to parse template strings.  To do this, you can override "
 "these class attributes:"
 msgstr ""
+"Pokročilé použití: můžete odvodit podskupiny :class:`Template` k "
+"přizpůsobení syntaxe zastővku, znaku oddělovače nebo celého regulárního "
+"výrazu používaného k analýze šablonových řetězců. Za tímto účelem můžete "
+"přepsat tyto atributy třídy:"
 
 #: ../../library/string.rst:922
 msgid ""
@@ -1411,6 +1787,12 @@ msgid ""
 "change the delimiter after class creation (i.e. a different delimiter must "
 "be set in the subclass's class namespace)."
 msgstr ""
+"*delimiter* -- Toto je literalální řetězec popisující oddělovač zavádějící "
+"zastővku. Výchozheou hodnotou je ``$``. Zdá se, že by to * nemělo* být "
+"regulárním výrazem, protože implementace bude podle potřeby volat "
+":meth:`re.escape` na tento řetězec. Dále si zvšimněte, že nemůžete měnit "
+"oddělovač po vytvoření třídy (tj. jiný oddělovač musí být nastaven v "
+"názvovém prostoru třídy podskupiny)."
 
 #: ../../library/string.rst:929
 msgid ""
@@ -1419,18 +1801,27 @@ msgid ""
 "``(?a:[_a-z][_a-z0-9]*)``.  If this is given and *braceidpattern* is "
 "``None`` this pattern will also apply to braced placeholders."
 msgstr ""
+"*idpattern* -- Toto je regulární výraz popisující vzor pro bezšřřavé "
+"zastővky. Výchozheou hodnotou je regulární výraz ``(?a:[_a-z][_a-z0-9]*)``. "
+"Pokud je to zadáno a *braceidpattern* je ``None``, tento vzor se bude "
+"vztahovat také na šřřavé zastővky."
 
 #: ../../library/string.rst:936
 msgid ""
 "Since default *flags* is ``re.IGNORECASE``, pattern ``[a-z]`` can match with"
 " some non-ASCII characters. That's why we use the local ``a`` flag here."
 msgstr ""
+"Protože výchozheou *flags* je ``re.IGNORECASE``, vzor ``[a-z]`` může "
+"odpovídat některým znám non-ASCII. Proto zde používáme lokální příznak "
+"``a``."
 
 #: ../../library/string.rst:940
 msgid ""
 "*braceidpattern* can be used to define separate patterns used inside and "
 "outside the braces."
 msgstr ""
+"*braceidpattern* má být použito k definování samostatných vzorů používaných "
+"uvnitř a mimo závorky."
 
 #: ../../library/string.rst:944
 msgid ""
@@ -1440,6 +1831,10 @@ msgid ""
 "If given, this allows you to define different patterns for braced and "
 "unbraced placeholders."
 msgstr ""
+"*braceidpattern* -- Toto je jako *idpattern*, ale popisuje vzor pro šřřavé "
+"zastővky. Výchozheou hodnotou je ``None``, což znamená vrátit se k "
+"*idpattern* (tj. stejný vzor se používá jak uvnitř tak mimo závorky). Pokud "
+"je uvedeno, umím vám definovat různé vzory pro šřřavé a bezšřřavé zastővky."
 
 #: ../../library/string.rst:952
 msgid ""
@@ -1449,6 +1844,11 @@ msgid ""
 "to the flags, so custom *idpattern*\\ s must follow conventions for verbose "
 "regular expressions."
 msgstr ""
+"*flags* -- Příznáky regulárního výrazu, které budou použity při kompiláci "
+"regulárního výrazu používaného k rozpoznání nahrazení. Výchozheou hodnotou "
+"je ``re.IGNORECASE``. Zvšimněte si, že ``re.VERBOSE`` bude vždy přidán k "
+"příznākům, takže vlastní *idpattern*\\ s musí dodrzovat konvence pro verbose"
+" regulární výrazy."
 
 #: ../../library/string.rst:960
 msgid ""
@@ -1458,40 +1858,56 @@ msgid ""
 "capturing groups correspond to the rules given above, along with the invalid"
 " placeholder rule:"
 msgstr ""
+"Alternativně můžete poskytnout celý vzor regulárního výrazu přeepsáním "
+"atributu třídy *pattern*. Pokud to uděláte, hodnota musí být objektem "
+"regulárního výrazu se čtyřmi pojmenovanými skupinami zachycení. Skupiny "
+"zachycení odpovídají pravidlům uvedeným výše spolu s pravidlem neplatného "
+"zastővky:"
 
 #: ../../library/string.rst:966
 msgid ""
 "*escaped* -- This group matches the escape sequence, e.g. ``$$``, in the "
 "default pattern."
 msgstr ""
+"*escaped* -- Tato skupina odpovídá sekvenci úpravi, např. ``$$``, ve "
+"výchozím vzoru."
 
 #: ../../library/string.rst:969
 msgid ""
 "*named* -- This group matches the unbraced placeholder name; it should not "
 "include the delimiter in capturing group."
 msgstr ""
+"*named* -- Tato skupina odpovídá názvu bezšřřavého zastővky; neměla by "
+"obsahovat oddělovač v zachyténí skupině."
 
 #: ../../library/string.rst:972
 msgid ""
 "*braced* -- This group matches the brace enclosed placeholder name; it "
 "should not include either the delimiter or braces in the capturing group."
 msgstr ""
+"*braced* -- Tato skupina odpovídá názvu zastővky uzavřené v závorkách; "
+"neměla by obsahovat ani oddělovač ani závorky v zachyténí skupině."
 
 #: ../../library/string.rst:975
 msgid ""
 "*invalid* -- This group matches any other delimiter pattern (usually a "
 "single delimiter), and it should appear last in the regular expression."
 msgstr ""
+"*invalid* -- Tato skupina odpovídá jakémukoliv jinému vzoru oddělovače "
+"(obvykle jedinému oddělovači) a měla by se objevit na konci regulárního "
+"výrazu."
 
 #: ../../library/string.rst:978
 msgid ""
 "The methods on this class will raise :exc:`ValueError` if the pattern "
 "matches the template without one of these named groups matching."
 msgstr ""
+"Metody této třídy vyvolají :exc:`ValueError`, pokud vzor odpovídá šablone "
+"bez jedné z těchto pojmenovaných skupin, které odpovídají."
 
 #: ../../library/string.rst:983
 msgid "Helper functions"
-msgstr ""
+msgstr "Pomocné funkce"
 
 #: ../../library/string.rst:987
 msgid ""
@@ -1502,78 +1918,83 @@ msgid ""
 "leading and trailing whitespace are removed, otherwise *sep* is used to "
 "split and join the words."
 msgstr ""
+"Rozdlít argument do slov pomocí :meth:`str.split`, kapitalizujte každé slovo"
+" pomocí :meth:`str.capitalize` a spojení kapitalizů slov pomocí "
+":meth:`str.join`. Pokud je volitelný druhý argument *sep* nepytometrný nebo "
+"``None``, běžny znaků mezer jsou nahrazeny jediným mezerou a čislí a koncové"
+" mezer jsou odstraněny, jinak je *sep* použit k rozdlení a spojení slov."
 
 #: ../../library/string.rst:205
 #, python-brace-format
 msgid "{} (curly brackets)"
-msgstr ""
+msgstr "{} (složité závorky)"
 
 #: ../../library/string.rst:205 ../../library/string.rst:352
 #: ../../library/string.rst:385 ../../library/string.rst:404
 #: ../../library/string.rst:413 ../../library/string.rst:452
 msgid "in string formatting"
-msgstr ""
+msgstr "v formátování řetězců"
 
 #: ../../library/string.rst:205
 msgid ". (dot)"
-msgstr ""
+msgstr ". (tečka)"
 
 #: ../../library/string.rst:205
 msgid "[] (square brackets)"
-msgstr ""
+msgstr "[] (hranáté závorky)"
 
 #: ../../library/string.rst:205
 msgid "! (exclamation)"
-msgstr ""
+msgstr "! (vykřičník)"
 
 #: ../../library/string.rst:205
 msgid ": (colon)"
-msgstr ""
+msgstr ": (dvé tečky)"
 
 #: ../../library/string.rst:352
 msgid "< (less)"
-msgstr ""
+msgstr "< (menší)"
 
 #: ../../library/string.rst:352
 msgid "> (greater)"
-msgstr ""
+msgstr "> (větší)"
 
 #: ../../library/string.rst:352
 msgid "= (equals)"
-msgstr ""
+msgstr "= (rovná se)"
 
 #: ../../library/string.rst:352
 msgid "^ (caret)"
-msgstr ""
+msgstr "^ (střška)"
 
 #: ../../library/string.rst:385
 msgid "+ (plus)"
-msgstr ""
+msgstr "+ (plus)"
 
 #: ../../library/string.rst:385
 msgid "- (minus)"
-msgstr ""
+msgstr "- (mínus)"
 
 #: ../../library/string.rst:404
 msgid "z"
-msgstr ""
+msgstr "z"
 
 #: ../../library/string.rst:413
 msgid "# (hash)"
-msgstr ""
+msgstr "# (kříž)"
 
 #: ../../library/string.rst:452
 msgid ", (comma)"
-msgstr ""
+msgstr ", (čárka)"
 
 #: ../../library/string.rst:452
 msgid "_ (underscore)"
-msgstr ""
+msgstr "_ (podtržítko)"
 
 #: ../../library/string.rst:823
 msgid "$ (dollar)"
-msgstr ""
+msgstr "$ (dolar)"
 
 #: ../../library/string.rst:823
 msgid "in template strings"
-msgstr ""
+msgstr "v šablonových řetězcích"
