@@ -191,6 +191,10 @@ msgid ""
 "... :keyword:`finally` statement to ensure that the old tty attributes are "
 "restored exactly no matter what happens::"
 msgstr ""
+"Zde je funkce, která vyzve k zadání hesla s vypnutým echem. Všimněte si "
+"techniky používající samostatné volání :func:`tcgetattr` a příkaz "
+":keyword:`try` ... :keyword:`finally` k zajištění, že staré atributy tty "
+"budou přesně obnoveny bez ohledu na to, co se stane::"
 
 #: ../../library/termios.rst:125
 msgid ""
@@ -207,15 +211,27 @@ msgid ""
 "        termios.tcsetattr(fd, termios.TCSADRAIN, old)\n"
 "    return passwd"
 msgstr ""
+"def getpass(prompt=\"Password: \"):\n"
+"    import termios, sys\n"
+"    fd = sys.stdin.fileno()\n"
+"    old = termios.tcgetattr(fd)\n"
+"    new = termios.tcgetattr(fd)\n"
+"    new[3] = new[3] & ~termios.ECHO          # lflags\n"
+"    try:\n"
+"        termios.tcsetattr(fd, termios.TCSADRAIN, new)\n"
+"        passwd = input(prompt)\n"
+"    finally:\n"
+"        termios.tcsetattr(fd, termios.TCSADRAIN, old)\n"
+"    return passwd"
 
 #: ../../library/termios.rst:8
 msgid "POSIX"
-msgstr ""
+msgstr "POSIX"
 
 #: ../../library/termios.rst:8
 msgid "I/O control"
-msgstr ""
+msgstr "řízení I/O"
 
 #: ../../library/termios.rst:8
 msgid "tty"
-msgstr ""
+msgstr "tty"
