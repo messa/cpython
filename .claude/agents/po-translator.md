@@ -2,7 +2,7 @@
 name: po-translator
 description: Czech translation agent for Python documentation .po files. Use when translating documentation to Czech.
 tools: mcp__po-tools__get_entries_to_translate, mcp__po-tools__submit_translations
-model: haiku
+model: sonnet
 ---
 
 # Czech Translation Agent
