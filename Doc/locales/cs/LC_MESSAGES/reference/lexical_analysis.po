@@ -182,7 +182,7 @@ msgstr "dolar (``$``)"
 
 #: ../../reference/lexical_analysis.rst:74
 msgid "backquote (``​`​``)"
-msgstr "zpětný apostof (````)"
+msgstr "zpětný apostrof (``​`​``)"
 
 #: ../../reference/lexical_analysis.rst:75
 msgid "control character"
@@ -1176,8 +1176,8 @@ msgid ""
 "String literals are text enclosed in single quotes (``'``) or double quotes "
 "(``\"``). For example:"
 msgstr ""
-"Řetězcové literály jsou text uzavřený v jednoduchých uvozovkách ('``) nebo "
-"dvojitých uvozovkách (\"`\"). Například:"
+"Řetězcové literály jsou text uzavřený v jednoduchých uvozovkách (``'``) nebo"
+" dvojitých uvozovkách (``\"``). Například:"
 
 #: ../../reference/lexical_analysis.rst:639
 msgid ""
@@ -1210,8 +1210,8 @@ msgid ""
 "Except for this limitation, the choice of quote character (``'`` or ``\"``) "
 "does not affect how the literal is parsed."
 msgstr ""
-"S výjimkou tohoto omezení volba znaku uvozovky ('`` nebo \"``) nemá vliv na "
-"to, jak je literál parsován."
+"S výjimkou tohoto omezení volba znaku uvozovky (``'`` nebo ``\"``) nemá vliv"
+" na to, jak je literál parsován."
 
 #: ../../reference/lexical_analysis.rst:656
 msgid ""
@@ -1264,10 +1264,9 @@ msgid ""
 "except that three unescaped quotes in a row terminate the literal, if they "
 "are of the same kind (``'`` or ``\"``) used at the start::"
 msgstr ""
-"V trojitém uvozovkovaném literálu jsou povoleny neescapované uvozovky (a "
-"jsou zachovány), s výjimkou tří neescapovaných uvozovek za sebou, které "
-"ukončí literál, pokud jsou stejného typu ('`` nebo \"``) použitého na "
-"začátku::"
+"V trojitě uvozovaném literálu jsou povoleny neescapované uvozovky (a jsou "
+"zachovány), s výjimkou tří neescapovaných uvozovek za sebou, které ukončí "
+"literál, pokud jsou stejného typu (``'`` nebo ``\"``) použitého na začátku::"
 
 #: ../../reference/lexical_analysis.rst:688
 msgid "\"\"\"This string has \"quotes\" inside.\"\"\""
@@ -2287,11 +2286,11 @@ msgid ""
 "partly by the parser, which handles expressions in the replacement field. "
 "The exact way the work is split is a CPython implementation detail."
 msgstr ""
-"F-strings jsou zprácovány částečně :term:`lexikálním analyzátorem`, který "
-"vytváří tokeny :py:data:`~token.FSTRING_START`, "
+"F-řetězce jsou zpracovávány částečně :term:`lexikálním analyzátorem <lexical"
+" analyzer>`, který vytváří tokeny :py:data:`~token.FSTRING_START`, "
 ":py:data:`~token.FSTRING_MIDDLE` a :py:data:`~token.FSTRING_END`, a částečně"
 " parserem, který zpracovává výrazy v poli nahrazení. Způsob, jakým je práce "
-"rozdělena, je detail implementace CPython."
+"rozdělena, je detail implementace CPythonu."
 
 #: ../../reference/lexical_analysis.rst:1219
 msgid ""
