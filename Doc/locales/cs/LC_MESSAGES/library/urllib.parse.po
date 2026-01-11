@@ -75,6 +75,9 @@ msgid ""
 "categories: URL parsing and URL quoting. These are covered in detail in the "
 "following sections."
 msgstr ""
+"Modul :mod:`urllib.parse` definuje funkce, které spadají do dvou širokých "
+"kategorií: parsování URL a quoting URL. Jsou podrobně popsány v "
+"následujících sekcích."
 
 #: ../../library/urllib.parse.rst:42
 msgid ""
@@ -83,16 +86,22 @@ msgid ""
 "by :rfc:`3986`, which introduced the term ``authority`` as its replacement. "
 "The use of ``netloc`` is continued for backward compatibility."
 msgstr ""
+"Funkce tohoto modulu používají zastaralý termín ``netloc`` (nebo "
+"``net_loc``), který byl zaveden v :rfc:`1808`. Tento termín však byl "
+"nahrazen v :rfc:`3986`, které zavedlo termín ``authority`` jako jeho "
+"náhradu. Použití ``netloc`` pokračuje kvůli zpětné kompatibilitě."
 
 #: ../../library/urllib.parse.rst:48
 msgid "URL Parsing"
-msgstr ""
+msgstr "Parsování URL"
 
 #: ../../library/urllib.parse.rst:50
 msgid ""
 "The URL parsing functions focus on splitting a URL string into its "
 "components, or on combining URL components into a URL string."
 msgstr ""
+"Funkce pro parsování URL se zaměřují na rozdělení řetězce URL na jeho "
+"komponenty nebo na kombinování komponent URL do řetězce URL."
 
 #: ../../library/urllib.parse.rst:55
 #, python-format
@@ -106,6 +115,14 @@ msgid ""
 "except for a leading slash in the *path* component, which is retained if "
 "present.  For example:"
 msgstr ""
+"Parsuje URL do šesti komponent a vrací 6-prvkový :term:`named tuple`. To "
+"odpovídá obecné struktuře URL: "
+"``scheme://netloc/path;parameters?query#fragment``. Každá položka tuple je "
+"řetězec, možná prázdný. Komponenty nejsou rozděleny na menší části "
+"(například síťové umístění je jediný řetězec) a % escape sekvence nejsou "
+"expandovány. Oddělovače zobrazené výše nejsou součástí výsledku, kromě "
+"úvodního lomítka v komponentě *path*, které je ponecháno, pokud je přítomno."
+" Například:"
 
 #: ../../library/urllib.parse.rst:64
 msgid ""
@@ -130,6 +147,26 @@ msgid ""
 ">>> o._replace(fragment=\"\").geturl()\n"
 "'http://docs.python.org:80/3/library/urllib.parse.html?highlight=params'"
 msgstr ""
+">>> from urllib.parse import urlparse\n"
+">>> urlparse(\"scheme://netloc/path;parameters?query#fragment\")\n"
+"ParseResult(scheme='scheme', netloc='netloc', path='/path;parameters', params='',\n"
+"            query='query', fragment='fragment')\n"
+">>> o = urlparse(\"http://docs.python.org:80/3/library/urllib.parse.html?\"\n"
+"...              \"highlight=params#url-parsing\")\n"
+">>> o\n"
+"ParseResult(scheme='http', netloc='docs.python.org:80',\n"
+"            path='/3/library/urllib.parse.html', params='',\n"
+"            query='highlight=params', fragment='url-parsing')\n"
+">>> o.scheme\n"
+"'http'\n"
+">>> o.netloc\n"
+"'docs.python.org:80'\n"
+">>> o.hostname\n"
+"'docs.python.org'\n"
+">>> o.port\n"
+"80\n"
+">>> o._replace(fragment=\"\").geturl()\n"
+"'http://docs.python.org:80/3/library/urllib.parse.html?highlight=params'"
 
 #: ../../library/urllib.parse.rst:88
 msgid ""
@@ -137,6 +174,9 @@ msgid ""
 "netloc only if it is properly introduced by '//'.  Otherwise the input is "
 "presumed to be a relative URL and thus to start with a path component."
 msgstr ""
+"Podle syntaktických specifikací v :rfc:`1808` funkce urlparse rozpozná "
+"netloc pouze pokud je správně uveden pomocí '//'.  Jinak je vstup považován "
+"za relativní URL a tedy začíná komponentou path."
 
 #: ../../library/urllib.parse.rst:93
 #, python-format
@@ -152,6 +192,16 @@ msgid ""
 "ParseResult(scheme='', netloc='', path='help/Python.html', params='',\n"
 "            query='', fragment='')"
 msgstr ""
+">>> from urllib.parse import urlparse\n"
+">>> urlparse('//www.cwi.nl:80/%7Eguido/Python.html')\n"
+"ParseResult(scheme='', netloc='www.cwi.nl:80', path='/%7Eguido/Python.html',\n"
+"            params='', query='', fragment='')\n"
+">>> urlparse('www.cwi.nl/%7Eguido/Python.html')\n"
+"ParseResult(scheme='', netloc='', path='www.cwi.nl/%7Eguido/Python.html',\n"
+"            params='', query='', fragment='')\n"
+">>> urlparse('help/Python.html')\n"
+"ParseResult(scheme='', netloc='', path='help/Python.html', params='',\n"
+"            query='', fragment='')"
 
 #: ../../library/urllib.parse.rst:107
 msgid ""
@@ -160,6 +210,10 @@ msgid ""
 " as *urlstring*, except that the default value ``''`` is always allowed, and"
 " is automatically converted to ``b''`` if appropriate."
 msgstr ""
+"Argument *scheme* udává výchozí adresovací schéma, které se použije pouze "
+"pokud URL není uvedeno.  Mělo by být stejného typu (text nebo bajty) jako "
+"*urlstring*, kromě toho, že výchozí hodnota ``''`` je vždy povolena a "
+"automaticky konvertována na ``b''`` pokud je to vhodné."
 
 #: ../../library/urllib.parse.rst:112
 msgid ""
@@ -168,62 +222,68 @@ msgid ""
 "query component, and :attr:`fragment` is set to the empty string in the "
 "return value."
 msgstr ""
+"Pokud je argument *allow_fragments* nepravdivý, identifikátory fragmentů "
+"nejsou rozpoznány.  Místo toho jsou parsovány jako součást komponenty path, "
+"parameters nebo query a :attr:`fragment` je nastaven na prázdný řetězec ve "
+"vrácené hodnotě."
 
 #: ../../library/urllib.parse.rst:117
 msgid ""
 "The return value is a :term:`named tuple`, which means that its items can be"
 " accessed by index or as named attributes, which are:"
 msgstr ""
+"Vrácená hodnota je :term:`named tuple`, což znamená, že k jeho položkám lze "
+"přistupovat pomocí indexu nebo jako pojmenovaných atributů, které jsou:"
 
 #: ../../library/urllib.parse.rst:121 ../../library/urllib.parse.rst:314
 #: ../../library/urllib.parse.rst:436
 msgid "Attribute"
-msgstr ""
+msgstr "Atribut"
 
 #: ../../library/urllib.parse.rst:121 ../../library/urllib.parse.rst:314
 #: ../../library/urllib.parse.rst:436
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: ../../library/urllib.parse.rst:121 ../../library/urllib.parse.rst:314
 #: ../../library/urllib.parse.rst:436
 msgid "Value"
-msgstr ""
+msgstr "Hodnota"
 
 #: ../../library/urllib.parse.rst:121 ../../library/urllib.parse.rst:314
 #: ../../library/urllib.parse.rst:436
 msgid "Value if not present"
-msgstr ""
+msgstr "Hodnota pokud není přítomna"
 
 #: ../../library/urllib.parse.rst:123 ../../library/urllib.parse.rst:316
 msgid ":attr:`scheme`"
-msgstr ""
+msgstr ":attr:`scheme`"
 
 #: ../../library/urllib.parse.rst:123 ../../library/urllib.parse.rst:316
 #: ../../library/urllib.parse.rst:438
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../../library/urllib.parse.rst:123 ../../library/urllib.parse.rst:316
 msgid "URL scheme specifier"
-msgstr ""
+msgstr "Specifikátor schématu URL"
 
 #: ../../library/urllib.parse.rst:123 ../../library/urllib.parse.rst:316
 msgid "*scheme* parameter"
-msgstr ""
+msgstr "parametr *scheme*"
 
 #: ../../library/urllib.parse.rst:125 ../../library/urllib.parse.rst:318
 msgid ":attr:`netloc`"
-msgstr ""
+msgstr ":attr:`netloc`"
 
 #: ../../library/urllib.parse.rst:125 ../../library/urllib.parse.rst:318
 #: ../../library/urllib.parse.rst:440
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../library/urllib.parse.rst:125 ../../library/urllib.parse.rst:318
 msgid "Network location part"
-msgstr ""
+msgstr "Část síťového umístění"
 
 #: ../../library/urllib.parse.rst:125 ../../library/urllib.parse.rst:127
 #: ../../library/urllib.parse.rst:129 ../../library/urllib.parse.rst:132
@@ -232,96 +292,96 @@ msgstr ""
 #: ../../library/urllib.parse.rst:324 ../../library/urllib.parse.rst:438
 #: ../../library/urllib.parse.rst:440
 msgid "empty string"
-msgstr ""
+msgstr "prázdný řetězec"
 
 #: ../../library/urllib.parse.rst:127 ../../library/urllib.parse.rst:320
 msgid ":attr:`path`"
-msgstr ""
+msgstr ":attr:`path`"
 
 #: ../../library/urllib.parse.rst:127 ../../library/urllib.parse.rst:320
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../library/urllib.parse.rst:127 ../../library/urllib.parse.rst:320
 msgid "Hierarchical path"
-msgstr ""
+msgstr "Hierarchická cesta"
 
 #: ../../library/urllib.parse.rst:129
 msgid ":attr:`params`"
-msgstr ""
+msgstr ":attr:`params`"
 
 #: ../../library/urllib.parse.rst:129 ../../library/urllib.parse.rst:322
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../library/urllib.parse.rst:129
 msgid "Parameters for last path element"
-msgstr ""
+msgstr "Parametry pro poslední element cesty"
 
 #: ../../library/urllib.parse.rst:132 ../../library/urllib.parse.rst:322
 msgid ":attr:`query`"
-msgstr ""
+msgstr ":attr:`query`"
 
 #: ../../library/urllib.parse.rst:132 ../../library/urllib.parse.rst:324
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ../../library/urllib.parse.rst:132 ../../library/urllib.parse.rst:322
 msgid "Query component"
-msgstr ""
+msgstr "Komponenta query"
 
 #: ../../library/urllib.parse.rst:134 ../../library/urllib.parse.rst:324
 #: ../../library/urllib.parse.rst:440
 msgid ":attr:`fragment`"
-msgstr ""
+msgstr ":attr:`fragment`"
 
 #: ../../library/urllib.parse.rst:134
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ../../library/urllib.parse.rst:134 ../../library/urllib.parse.rst:324
 #: ../../library/urllib.parse.rst:440
 msgid "Fragment identifier"
-msgstr ""
+msgstr "Identifikátor fragmentu"
 
 #: ../../library/urllib.parse.rst:136 ../../library/urllib.parse.rst:326
 msgid ":attr:`username`"
-msgstr ""
+msgstr ":attr:`username`"
 
 #: ../../library/urllib.parse.rst:136 ../../library/urllib.parse.rst:326
 msgid "User name"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 #: ../../library/urllib.parse.rst:136 ../../library/urllib.parse.rst:138
 #: ../../library/urllib.parse.rst:140 ../../library/urllib.parse.rst:142
 #: ../../library/urllib.parse.rst:326 ../../library/urllib.parse.rst:328
 #: ../../library/urllib.parse.rst:330 ../../library/urllib.parse.rst:332
 msgid ":const:`None`"
-msgstr ""
+msgstr ":const:`None`"
 
 #: ../../library/urllib.parse.rst:138 ../../library/urllib.parse.rst:328
 msgid ":attr:`password`"
-msgstr ""
+msgstr ":attr:`password`"
 
 #: ../../library/urllib.parse.rst:138 ../../library/urllib.parse.rst:328
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: ../../library/urllib.parse.rst:140 ../../library/urllib.parse.rst:330
 msgid ":attr:`hostname`"
-msgstr ""
+msgstr ":attr:`hostname`"
 
 #: ../../library/urllib.parse.rst:140 ../../library/urllib.parse.rst:330
 msgid "Host name (lower case)"
-msgstr ""
+msgstr "Název hostitele (malá písmena)"
 
 #: ../../library/urllib.parse.rst:142 ../../library/urllib.parse.rst:332
 msgid ":attr:`port`"
-msgstr ""
+msgstr ":attr:`port`"
 
 #: ../../library/urllib.parse.rst:142 ../../library/urllib.parse.rst:332
 msgid "Port number as integer, if present"
-msgstr ""
+msgstr "Číslo portu jako celé číslo, pokud je přítomno"
 
 #: ../../library/urllib.parse.rst:146 ../../library/urllib.parse.rst:336
 msgid ""
@@ -329,12 +389,16 @@ msgid ""
 "invalid port is specified in the URL.  See section :ref:`urlparse-result-"
 "object` for more information on the result object."
 msgstr ""
+"Čtení atributu :attr:`port` vyvolá :exc:`ValueError` pokud je v URL zadán "
+"neplatný port.  Viz sekce :ref:`urlparse-result-object` pro více informací o"
+" výsledném objektu."
 
 #: ../../library/urllib.parse.rst:150 ../../library/urllib.parse.rst:340
 msgid ""
 "Unmatched square brackets in the :attr:`netloc` attribute will raise a "
 ":exc:`ValueError`."
 msgstr ""
+"Nepárové hranaté závorky v atributu :attr:`netloc` vyvolá :exc:`ValueError`."
 
 #: ../../library/urllib.parse.rst:153 ../../library/urllib.parse.rst:343
 msgid ""
@@ -343,6 +407,10 @@ msgid ""
 "``#``, ``@``, or ``:`` will raise a :exc:`ValueError`. If the URL is "
 "decomposed before parsing, no error will be raised."
 msgstr ""
+"Znaky v atributu :attr:`netloc`, které se rozloží pomocí NFKC normalizace "
+"(jak používá kódování IDNA) na některý z ``/``, ``?``, ``#``, ``@`` nebo "
+"``:`` vyvolá :exc:`ValueError`. Pokud je URL rozloženo před parsováním, "
+"nepřijde k vyvolání chyby."
 
 #: ../../library/urllib.parse.rst:158
 msgid ""
@@ -351,6 +419,10 @@ msgid ""
 ":meth:`_replace`. The :meth:`_replace` method will return a new ParseResult "
 "object replacing specified fields with new values."
 msgstr ""
+"Jako je tomu u všech named tuple, podtyřída má několik dalších metod a "
+"atributů, které jsou obzvláště užitečné. Jednou takovou metodou je "
+":meth:`_replace`. Metoda :meth:`_replace` vrátí nový objekt ParseResult, "
+"který nahradí zadaná pole novými hodnotami."
 
 #: ../../library/urllib.parse.rst:163
 #, python-format
@@ -364,16 +436,26 @@ msgid ""
 "ParseResult(scheme='http', netloc='www.cwi.nl:80', path='/%7Eguido/Python.html',\n"
 "            params='', query='', fragment='')"
 msgstr ""
+">>> from urllib.parse import urlparse\n"
+">>> u = urlparse('//www.cwi.nl:80/%7Eguido/Python.html')\n"
+">>> u\n"
+"ParseResult(scheme='', netloc='www.cwi.nl:80', path='/%7Eguido/Python.html',\n"
+"            params='', query='', fragment='')\n"
+">>> u._replace(scheme='http')\n"
+"ParseResult(scheme='http', netloc='www.cwi.nl:80', path='/%7Eguido/Python.html',\n"
+"            params='', query='', fragment='')"
 
 #: ../../library/urllib.parse.rst:177
 msgid ""
 ":func:`urlparse` does not perform validation.  See :ref:`URL parsing "
 "security <url-parsing-security>` for details."
 msgstr ""
+"Funkce :func:`urlparse` neprovádí validaci.  Viz :ref:`URL parsing security "
+"<url-parsing-security>` pro podrobnosti."
 
 #: ../../library/urllib.parse.rst:180
 msgid "Added IPv6 URL parsing capabilities."
-msgstr ""
+msgstr "Přidány schopnosti parsování IPv6 URL."
 
 #: ../../library/urllib.parse.rst:183
 msgid ""
@@ -381,18 +463,25 @@ msgid ""
 "false), in accordance with :rfc:`3986`.  Previously, an allowlist of schemes"
 " that support fragments existed."
 msgstr ""
+"Fragment je nyní parsován pro všechna URL schémata (pokud není "
+"*allow_fragments* nepravdivý), v souladu s :rfc:`3986`.  Dříve existoval "
+"allowlist schémat, která podporují fragmenty."
 
 #: ../../library/urllib.parse.rst:188 ../../library/urllib.parse.rst:357
 msgid ""
 "Out-of-range port numbers now raise :exc:`ValueError`, instead of returning "
 ":const:`None`."
 msgstr ""
+"Čísla portů mimo rozsah nyní vyvolají :exc:`ValueError` místo vrácení "
+":const:`None`."
 
 #: ../../library/urllib.parse.rst:192 ../../library/urllib.parse.rst:361
 msgid ""
 "Characters that affect netloc parsing under NFKC normalization will now "
 "raise :exc:`ValueError`."
 msgstr ""
+"Znaky, které ovlivňují parsování netloc pomocí NFKC normalizace, nyní vyvolá"
+" :exc:`ValueError`."
 
 #: ../../library/urllib.parse.rst:199
 msgid ""
@@ -401,6 +490,10 @@ msgid ""
 "dictionary.  The dictionary keys are the unique query variable names and the"
 " values are lists of values for each name."
 msgstr ""
+"Parsuje query řetězec zadaný jako řetězcový argument (data typu "
+":mimetype:`application/x-www-form-urlencoded`).  Data jsou vrácena jako "
+"slovník. Klíče slovníku jsou jedinečné názvy proměnných query a hodnoty jsou"
+" seznamy hodnot pro každý název."
 
 #: ../../library/urllib.parse.rst:204 ../../library/urllib.parse.rst:253
 msgid ""
@@ -410,6 +503,11 @@ msgid ""
 "default false value indicates that blank values are to be ignored and "
 "treated as if they were not included."
 msgstr ""
+"Volitelný argument *keep_blank_values* je příznak udávající, zda prázdné "
+"hodnoty v percent-kódovaných query by měly být zachyceny jako prázdné "
+"řetězce. Pravdivá hodnota udává, že prázdné hodnoty by měly být zachovány "
+"jako prázdné řetězce.  Výchozí nepravdivá hodnota udává, že prázdné hodnoty "
+"mají být ignorovány a zachyceny, jako by nebyly zahrnuty."
 
 #: ../../library/urllib.parse.rst:210 ../../library/urllib.parse.rst:259
 msgid ""
@@ -417,6 +515,9 @@ msgid ""
 "parsing errors.  If false (the default), errors are silently ignored.  If "
 "true, errors raise a :exc:`ValueError` exception."
 msgstr ""
+"Volitelný argument *strict_parsing* je příznak udávající, co dělat s chybami"
+" parsování. Pokud je nepravdivý (výchozí), chyby jsou tiše ignorovány. Pokud"
+" je pravdivý, chyby vyvolá výjimku :exc:`ValueError`."
 
 #: ../../library/urllib.parse.rst:214 ../../library/urllib.parse.rst:263
 msgid ""
@@ -424,6 +525,9 @@ msgid ""
 "percent-encoded sequences into Unicode characters, as accepted by the "
 ":meth:`bytes.decode` method."
 msgstr ""
+"Volitelné parametry *encoding* a *errors* specifikují, jak dekódovat "
+"percent-kódované sekvence na Unicode znaky, jak je akceptováno metodou "
+":meth:`bytes.decode`."
 
 #: ../../library/urllib.parse.rst:218 ../../library/urllib.parse.rst:267
 msgid ""
@@ -431,26 +535,33 @@ msgid ""
 "read. If set, then throws a :exc:`ValueError` if there are more than "
 "*max_num_fields* fields read."
 msgstr ""
+"Volitelný argument *max_num_fields* je maximální počet polí k přečtení. "
+"Pokud je nastaven, pak vyvolá :exc:`ValueError`, pokud je přečteno více než "
+"*max_num_fields* polí."
 
 #: ../../library/urllib.parse.rst:222 ../../library/urllib.parse.rst:271
 msgid ""
 "The optional argument *separator* is the symbol to use for separating the "
 "query arguments. It defaults to ``&``."
 msgstr ""
+"Volitelný argument *separator* je symbol použitý pro oddělení argumentů "
+"query. Výchozí hodnota je ``&``."
 
 #: ../../library/urllib.parse.rst:225
 msgid ""
 "Use the :func:`urllib.parse.urlencode` function (with the ``doseq`` "
 "parameter set to ``True``) to convert such dictionaries into query strings."
 msgstr ""
+"Použijte funkci :func:`urllib.parse.urlencode` (s parametrem ``doseq`` "
+"nastaveným na ``True``) pro převedení takových slovníků na query řetězce."
 
 #: ../../library/urllib.parse.rst:230 ../../library/urllib.parse.rst:277
 msgid "Add *encoding* and *errors* parameters."
-msgstr ""
+msgstr "Přidány parametry *encoding* a *errors*."
 
 #: ../../library/urllib.parse.rst:233 ../../library/urllib.parse.rst:280
 msgid "Added *max_num_fields* parameter."
-msgstr ""
+msgstr "Přidán parametr *max_num_fields*."
 
 #: ../../library/urllib.parse.rst:236 ../../library/urllib.parse.rst:283
 msgid ""
@@ -459,12 +570,18 @@ msgid ""
 "parameter separator. This has been changed to allow only a single separator "
 "key, with ``&`` as the default separator."
 msgstr ""
+"Přidán parametr *separator* s výchozí hodnotou ``&``. Verze Pythonu starší "
+"než Python 3.10 umožňovaly použití jak ``;`` tak ``&`` jako oddělovač query "
+"parametrů. To bylo změněno tak, aby umožňovalo pouze jediný oddělovač, "
+"přičemž ``&`` je výchozí oddělovač."
 
 #: ../../library/urllib.parse.rst:242 ../../library/urllib.parse.rst:761
 msgid ""
 "Accepting objects with false values (like ``0`` and ``[]``) except empty "
 "strings and byte-like objects and ``None`` is now deprecated."
 msgstr ""
+"Akceptování objektů s nepravdivými hodnotami (jako ``0`` a ``[]``) kromě "
+"prázdných řetězců a byte-like objektů a ``None`` je nyní zastaralé."
 
 #: ../../library/urllib.parse.rst:249
 msgid ""
@@ -472,12 +589,17 @@ msgid ""
 ":mimetype:`application/x-www-form-urlencoded`).  Data are returned as a list"
 " of name, value pairs."
 msgstr ""
+"Parsuje query řetězec zadaný jako řetězcový argument (data typu "
+":mimetype:`application/x-www-form-urlencoded`).  Data jsou vrácena jako "
+"seznam párů jméno, hodnota."
 
 #: ../../library/urllib.parse.rst:274
 msgid ""
 "Use the :func:`urllib.parse.urlencode` function to convert such lists of "
 "pairs into query strings."
 msgstr ""
+"Použijte funkci :func:`urllib.parse.urlencode` pro převedení takových "
+"seznamů párů na query řetězce."
 
 #: ../../library/urllib.parse.rst:292
 msgid ""
@@ -487,6 +609,10 @@ msgid ""
 "unnecessary delimiters (for example, a ``?`` with an empty query; the RFC "
 "states that these are equivalent)."
 msgstr ""
+"Sestaví URL z tuple vráceného ``urlparse()``. Argument *parts* může být "
+"jakýkoliv šestipolokový iterovatelný objekt. To může vést k mírně odlišnému,"
+" ale ekvivalentnímu URL, pokud původně parsované URL mělo zbytné oddělovače "
+"(například ``?`` s prázdným query; RFC uvadí, že tyto jsou ekvivalentní)."
 
 #: ../../library/urllib.parse.rst:301
 msgid ""
@@ -497,17 +623,25 @@ msgid ""
 "is needed to separate the path segments and parameters.  This function "
 "returns a 5-item :term:`named tuple`::"
 msgstr ""
+"Toto je podobné :func:`urlparse`, ale nerozděluje params z URL. Mělo by to "
+"být obecně použito místo :func:`urlparse` pokud je požadována novější URL "
+"syntaxe umožňující aplikovat parametry na každý segment části *path* URL "
+"(viz :rfc:`2396`).  Samostatná funkce je potřeba pro oddělení segmentů cesty"
+" a parametrů. Tato funkce vrací 5-prvkový :term:`named tuple`::"
 
 #: ../../library/urllib.parse.rst:308
 msgid ""
 "(addressing scheme, network location, path, query, fragment identifier)."
 msgstr ""
+"(adresovací schéma, síťové umístění, cesta, query, identifikátor fragmentu)."
 
 #: ../../library/urllib.parse.rst:310 ../../library/urllib.parse.rst:432
 msgid ""
 "The return value is a :term:`named tuple`, its items can be accessed by "
 "index or as named attributes:"
 msgstr ""
+"Vrácená hodnota je :term:`named tuple`, k jeho položkám lze přistupovat "
+"pomocí indexu nebo jako pojmenovaných atributů:"
 
 #: ../../library/urllib.parse.rst:348
 msgid ""
@@ -515,21 +649,26 @@ msgid ""
 "control and space characters are stripped from the URL. ``\\n``, ``\\r`` and"
 " tab ``\\t`` characters are removed from the URL at any position."
 msgstr ""
+"V souladu s částí `WHATWG spec`_, která aktualizuje RFC 3986, jsou úvodní C0"
+" control a mezery odstraněny z URL. ``\\n``, ``\\r`` a tab ``\\t`` znaky "
+"jsou odstraněny z URL na jakékoliv pozici."
 
 #: ../../library/urllib.parse.rst:354
 msgid ""
 ":func:`urlsplit` does not perform validation.  See :ref:`URL parsing "
 "security <url-parsing-security>` for details."
 msgstr ""
+"Funkce :func:`urlsplit` neprovádí validaci.  Viz :ref:`URL parsing security "
+"<url-parsing-security>` pro podrobnosti."
 
 #: ../../library/urllib.parse.rst:365
 msgid "ASCII newline and tab characters are stripped from the URL."
-msgstr ""
+msgstr "ASCII nový řádek a tab znaky jsou odstraněny z URL."
 
 #: ../../library/urllib.parse.rst:368
 msgid ""
 "Leading WHATWG C0 control and space characters are stripped from the URL."
-msgstr ""
+msgstr "Úvodní WHATWG C0 control a mezery jsou odstraněny z URL."
 
 #: ../../library/urllib.parse.rst:375
 msgid ""
@@ -539,6 +678,11 @@ msgid ""
 "the URL that was parsed originally had unnecessary delimiters (for example, "
 "a ? with an empty query; the RFC states that these are equivalent)."
 msgstr ""
+"Kombinuje elementy tuple vráceného :func:`urlsplit` do kompletního URL jako "
+"řetězec. Argument *parts* může být jakýkoliv pětipolokový iterovatelný "
+"objekt. To může vést k mírně odlišnému, ale ekvivalentnímu URL, pokud "
+"původně parsované URL mělo zbytné oddělovače (například ? s prázdným query; "
+"RFC uvadí, že tyto jsou ekvivalentní)."
 
 #: ../../library/urllib.parse.rst:384
 msgid ""
@@ -547,12 +691,18 @@ msgid ""
 " in particular the addressing scheme, the network location and (part of) the"
 " path, to provide missing components in the relative URL.  For example:"
 msgstr ""
+"Sestaví plné („absolutní“) URL kombinací „bázového URL“ (*base*) s dalším "
+"URL (*url*).  Nefórmálně to používá komponenty bázového URL, konkrétně "
+"adresovací schéma, síťové umístění a (část) cesty, k poskytnutí chybějících "
+"komponent v relativním URL.  Například:"
 
 #: ../../library/urllib.parse.rst:393
 msgid ""
 "The *allow_fragments* argument has the same meaning and default as for "
 ":func:`urlparse`."
 msgstr ""
+"Argument *allow_fragments* má stejný význam a výchozí hodnotu jako pro "
+":func:`urlparse`."
 
 #: ../../library/urllib.parse.rst:398
 msgid ""
@@ -560,6 +710,9 @@ msgid ""
 "``scheme://``), the *url*'s hostname and/or scheme will be present in the "
 "result.  For example:"
 msgstr ""
+"Pokud je *url* absolutní URL (to znamená, že začíná na ``//`` nebo "
+"``scheme://``), hostname a/nebo schéma *url* bude přítomno ve výsledku.  "
+"Například:"
 
 #: ../../library/urllib.parse.rst:401
 #, python-format
@@ -568,12 +721,17 @@ msgid ""
 "...         '//www.python.org/%7Eguido')\n"
 "'http://www.python.org/%7Eguido'"
 msgstr ""
+">>> urljoin('http://www.cwi.nl/%7Eguido/Python.html',\n"
+"...         '//www.python.org/%7Eguido')\n"
+"'http://www.python.org/%7Eguido'"
 
 #: ../../library/urllib.parse.rst:407
 msgid ""
 "If you do not want that behavior, preprocess the *url* with :func:`urlsplit`"
 " and :func:`urlunsplit`, removing possible *scheme* and *netloc* parts."
 msgstr ""
+"Pokud nechcete toto chování, předzpracujte *url* pomocí :func:`urlsplit` a "
+":func:`urlunsplit`, odstraněním možných částí *scheme* a *netloc*."
 
 #: ../../library/urllib.parse.rst:412
 msgid ""
@@ -583,10 +741,16 @@ msgid ""
 "username)``, if ``username`` can contain an absolute URL, the result of "
 "``urljoin`` will be the absolute URL."
 msgstr ""
+"Protože absolutní URL může být předáno jako parametr ``url``, obecně **není "
+"bezpečné** používat ``urljoin`` s útočníkem kontrolovaným ``url``. Například"
+" v ``urljoin(\"https://website.com/users/\", username)``, pokud ``username``"
+" může obsahovat absolutní URL, výsledek ``urljoin`` bude absolutní URL."
 
 #: ../../library/urllib.parse.rst:422
 msgid "Behavior updated to match the semantics defined in :rfc:`3986`."
 msgstr ""
+"Chování aktualizováno tak, aby odpovídalo sémantice definované v "
+":rfc:`3986`."
 
 #: ../../library/urllib.parse.rst:427
 msgid ""
@@ -595,24 +759,30 @@ msgid ""
 "string.  If there is no fragment identifier in *url*, return *url* "
 "unmodified and an empty string."
 msgstr ""
+"Pokud *url* obsahuje identifikátor fragmentu, vrátí modifikovanou verzi "
+"*url* bez identifikátoru fragmentu a identifikátor fragmentu jako samostatný"
+" řetězec.  Pokud není identifikátor fragmentu v *url*, vrátí *url* nezměněný"
+" a prázdný řetězec."
 
 #: ../../library/urllib.parse.rst:438
 msgid ":attr:`url`"
-msgstr ""
+msgstr ":attr:`url`"
 
 #: ../../library/urllib.parse.rst:438
 msgid "URL with no fragment"
-msgstr ""
+msgstr "URL bez fragmentu"
 
 #: ../../library/urllib.parse.rst:443
 msgid ""
 "See section :ref:`urlparse-result-object` for more information on the result"
 " object."
 msgstr ""
+"Viz sekce :ref:`urlparse-result-object` pro více informací o výsledném "
+"objektu."
 
 #: ../../library/urllib.parse.rst:446
 msgid "Result is a structured object rather than a simple 2-tuple."
-msgstr ""
+msgstr "Výsledek je strukturovaný objekt spolu s jednoduchým 2-tuple."
 
 #: ../../library/urllib.parse.rst:451
 msgid ""
@@ -621,10 +791,14 @@ msgid ""
 "``URL:scheme://host/path`` or ``scheme://host/path``). If *url* is not a "
 "wrapped URL, it is returned without changes."
 msgstr ""
+"Extrahuje url ze zabaleného URL (to znamená, řetězec formátovaný jako "
+"``<URL:scheme://host/path>``, ``<scheme://host/path>``, "
+"``URL:scheme://host/path`` nebo ``scheme://host/path``). Pokud *url* není "
+"zabalené URL, je vráceno bez změn."
 
 #: ../../library/urllib.parse.rst:459
 msgid "URL parsing security"
-msgstr ""
+msgstr "Bezpečnost parsování URL"
 
 #: ../../library/urllib.parse.rst:461
 msgid ""
@@ -634,6 +808,10 @@ msgid ""
 "considered URLs elsewhere.  Their purpose is for practical functionality "
 "rather than purity."
 msgstr ""
+"API :func:`urlsplit` a :func:`urlparse` neprovádí **validaci** vstupů.  "
+"Nemusí vyvolat chyby na vstupech, které jiné aplikace považují za neplatné. "
+" Mohou také uspět na některých vstupech, které nemusí být jinde považovány "
+"za URL. Jejich účelem je praktická funkcionalita spíše než čistota."
 
 #: ../../library/urllib.parse.rst:467
 msgid ""
@@ -641,6 +819,9 @@ msgid ""
 "some component parts as empty strings. Or components may contain more than "
 "perhaps they should."
 msgstr ""
+"Místo vyvolání výjimky na neobvyklém vstupu mohou místo toho vrátit některé "
+"části komponent jako prázdné řetězce. Nebo komponenty mohou obsahovat více "
+"než by možná měly."
 
 #: ../../library/urllib.parse.rst:471
 msgid ""
@@ -650,6 +831,11 @@ msgid ""
 "make sense?  Is that a sensible ``path``?  Is there anything strange about "
 "that ``hostname``?  etc."
 msgstr ""
+"Doporučujeme, aby uživatelé těchto API, kde hodnoty mohou být použity "
+"kdekoliv s bezpečnostními důsledky, kódovali defenzivně. Proveďte nějakou "
+"verifikaci ve vašem kódu před důvěřováním vrácené části komponenty. Dává to "
+"``scheme`` smysl?  Je to rozumný ``path``?  Je něco podivného na tom "
+"``hostname``?  atd."
 
 #: ../../library/urllib.parse.rst:477
 msgid ""
@@ -662,10 +848,18 @@ msgid ""
 "behaviors predate both standards leading us to be very cautious about making"
 " API behavior changes."
 msgstr ""
+"Co tvoří URL není univerzálně dobře definováno. Různé aplikace mají různé "
+"potřeby a požadovaná omezení. Například živý `WHATWG spec`_ popisuje, co "
+"vyžadují uživatelské webové klienty jako webový prohlížeč. Zatímco "
+":rfc:`3986` je obecnější.  Tyto funkce zahrnují některé aspekty obou, ale "
+"nelze tvrdit, že jsou v souladu s jedním z nich. API a existující "
+"uživatelský kód s očekáváními na specifické chování předcházely oběma "
+"standardům, což nás vede k tomu, abychom byli velmi opatrní ohledně "
+"provádění změn chování API."
 
 #: ../../library/urllib.parse.rst:488
 msgid "Parsing ASCII Encoded Bytes"
-msgstr ""
+msgstr "Parsování ASCII kódovaných bajtů"
 
 #: ../../library/urllib.parse.rst:490
 msgid ""
@@ -675,6 +869,11 @@ msgid ""
 "parsing functions in this module all operate on :class:`bytes` and "
 ":class:`bytearray` objects in addition to :class:`str` objects."
 msgstr ""
+"Funkce pro parsování URL byly původně navrženy tak, aby pracovaly pouze na "
+"znakových řetězcích. V praxi je užitečné být schopen manipulovat správně "
+"citovaná a kódovaná URL jako sekvence ASCII bajtů. V souladu s tím všechny "
+"funkce pro parsování URL v tomto modulu pracují na objektech :class:`bytes` "
+"a :class:`bytearray` navíc k objektům :class:`str`."
 
 #: ../../library/urllib.parse.rst:496
 msgid ""
@@ -682,6 +881,9 @@ msgid ""
 ":class:`str` data. If :class:`bytes` or :class:`bytearray` data is passed "
 "in, the result will contain only :class:`bytes` data."
 msgstr ""
+"Pokud jsou předána data :class:`str`, výsledek bude také obsahovat pouze "
+"data :class:`str`. Pokud jsou předána data :class:`bytes` nebo "
+":class:`bytearray`, výsledek bude obsahovat pouze data :class:`bytes`."
 
 #: ../../library/urllib.parse.rst:500
 msgid ""
@@ -690,6 +892,10 @@ msgid ""
 ":exc:`TypeError` being raised, while attempting to pass in non-ASCII byte "
 "values will trigger :exc:`UnicodeDecodeError`."
 msgstr ""
+"Pokus o smíchání dat :class:`str` s :class:`bytes` nebo :class:`bytearray` v"
+" jediném volání funkce bude mít za následek vyvolání :exc:`TypeError`, "
+"zatímco pokus o předání non-ASCII bajtových hodnot spustí "
+":exc:`UnicodeDecodeError`."
 
 #: ../../library/urllib.parse.rst:505
 msgid ""
@@ -703,6 +909,15 @@ msgid ""
 " contains either :class:`bytes` data (for :meth:`encode` methods) or "
 ":class:`str` data (for :meth:`decode` methods)."
 msgstr ""
+"K podpoře snadnější konverze výsledných objektů mezi :class:`str` a "
+":class:`bytes` všechny vrácené hodnoty z funkcí pro parsování URL poskytují "
+"buď metodu :meth:`encode` (když výsledek obsahuje data :class:`str`) nebo "
+"metodu :meth:`decode` (když výsledek obsahuje data :class:`bytes`). "
+"Signatury těchto metod odpovídají těm z odpovídajících metod :class:`str` a "
+":class:`bytes` (kromě toho, že výchozí kódování je ``'ascii'`` spíše než "
+"``'utf-8'``). Každá produkuje hodnotu odpovídajícího typu, která obsahuje "
+"buď data :class:`bytes` (pro metody :meth:`encode`) nebo data :class:`str` "
+"(pro metody :meth:`decode`)."
 
 #: ../../library/urllib.parse.rst:516
 msgid ""
@@ -710,6 +925,9 @@ msgid ""
 " may contain non-ASCII data will need to do their own decoding from bytes to"
 " characters before invoking the URL parsing methods."
 msgstr ""
+"Aplikace, které potřebují pracovat s potenciálně nesprávně citovanými URL, "
+"které mohou obsahovat non-ASCII data, budou muset provést vlastní dekódování"
+" z bajtů na znaky před vyvoláním metod pro parsování URL."
 
 #: ../../library/urllib.parse.rst:520
 msgid ""
@@ -718,14 +936,19 @@ msgid ""
 "consuming byte sequences as detailed in the documentation of the individual "
 "URL quoting functions."
 msgstr ""
+"Chování popsáno v této sekci se vztahuje pouze na funkce pro parsování URL. "
+"Funkce pro quoting URL používají vlastní pravidla při produkci nebo "
+"konzumaci bajtových sekvencí, jak je podrobně popsáno v dokumentaci "
+"jednotlivých funkcí pro quoting URL."
 
 #: ../../library/urllib.parse.rst:525
 msgid "URL parsing functions now accept ASCII encoded byte sequences"
 msgstr ""
+"Funkce pro parsování URL nyní akceptují ASCII kódované bajtové sekvence"
 
 #: ../../library/urllib.parse.rst:532
 msgid "Structured Parse Results"
-msgstr ""
+msgstr "Strukturované výsledky parsování"
 
 #: ../../library/urllib.parse.rst:534
 msgid ""
@@ -735,6 +958,10 @@ msgid ""
 "functions, the encoding and decoding support described in the previous "
 "section, as well as an additional method:"
 msgstr ""
+"Výsledné objekty z funkcí :func:`urlparse`, :func:`urlsplit` a "
+":func:`urldefrag` jsou podtyřídy typu :class:`tuple`. Tyto podtyřídy "
+"přidávají atributy uvedené v dokumentaci pro tyto funkce, podporu kódování a"
+" dekódování popsanou v předchozí sekci, stejně jako další metodu:"
 
 #: ../../library/urllib.parse.rst:542
 msgid ""
@@ -743,6 +970,10 @@ msgid ""
 "case and empty components may be dropped. Specifically, empty parameters, "
 "queries, and fragment identifiers will be removed."
 msgstr ""
+"Vrací opětovně spojenou verzi původního URL jako řetězec. To se může lišit "
+"od původního URL tím, že schéma může být normalizováno na malá písmena a "
+"prázdné komponenty mohou být odstraněny. Konkrétně prázdné parametry, query "
+"a identifikátory fragmentů budou odstraněny."
 
 #: ../../library/urllib.parse.rst:547
 msgid ""
@@ -750,64 +981,85 @@ msgid ""
 "removed. For :func:`urlsplit` and :func:`urlparse` results, all noted "
 "changes will be made to the URL returned by this method."
 msgstr ""
+"Pro výsledky :func:`urldefrag` budou odstraněny pouze prázdné identifikátory"
+" fragmentů. Pro výsledky :func:`urlsplit` a :func:`urlparse` budou všechny "
+"uvedené změny provedeny na URL vráceném touto metodou."
 
 #: ../../library/urllib.parse.rst:551
 msgid ""
 "The result of this method remains unchanged if passed back through the "
 "original parsing function:"
 msgstr ""
+"Výsledek této metody zůstává nezměněný, pokud je předán zpět skrze původní "
+"parsovací funkci:"
 
 #: ../../library/urllib.parse.rst:564
 msgid ""
 "The following classes provide the implementations of the structured parse "
 "results when operating on :class:`str` objects:"
 msgstr ""
+"Následující třídy poskytují implementace strukturovaných výsledků parsování "
+"při práci s objekty :class:`str`:"
 
 #: ../../library/urllib.parse.rst:569
 msgid ""
 "Concrete class for :func:`urldefrag` results containing :class:`str` data. "
 "The :meth:`encode` method returns a :class:`DefragResultBytes` instance."
 msgstr ""
+"Konkrétní třída pro výsledky :func:`urldefrag` obsahující data :class:`str`."
+" Metoda :meth:`encode` vrací instanci :class:`DefragResultBytes`."
 
 #: ../../library/urllib.parse.rst:577
 msgid ""
 "Concrete class for :func:`urlparse` results containing :class:`str` data. "
 "The :meth:`encode` method returns a :class:`ParseResultBytes` instance."
 msgstr ""
+"Konkrétní třída pro výsledky :func:`urlparse` obsahující data :class:`str`. "
+"Metoda :meth:`encode` vrací instanci :class:`ParseResultBytes`."
 
 #: ../../library/urllib.parse.rst:583
 msgid ""
 "Concrete class for :func:`urlsplit` results containing :class:`str` data. "
 "The :meth:`encode` method returns a :class:`SplitResultBytes` instance."
 msgstr ""
+"Konkrétní třída pro výsledky :func:`urlsplit` obsahující data :class:`str`. "
+"Metoda :meth:`encode` vrací instanci :class:`SplitResultBytes`."
 
 #: ../../library/urllib.parse.rst:588
 msgid ""
 "The following classes provide the implementations of the parse results when "
 "operating on :class:`bytes` or :class:`bytearray` objects:"
 msgstr ""
+"Následující třídy poskytují implementace výsledků parsování při práci s "
+"objekty :class:`bytes` nebo :class:`bytearray`:"
 
 #: ../../library/urllib.parse.rst:593
 msgid ""
 "Concrete class for :func:`urldefrag` results containing :class:`bytes` data."
 " The :meth:`decode` method returns a :class:`DefragResult` instance."
 msgstr ""
+"Konkrétní třída pro výsledky :func:`urldefrag` obsahující data "
+":class:`bytes`. Metoda :meth:`decode` vrací instanci :class:`DefragResult`."
 
 #: ../../library/urllib.parse.rst:601
 msgid ""
 "Concrete class for :func:`urlparse` results containing :class:`bytes` data. "
 "The :meth:`decode` method returns a :class:`ParseResult` instance."
 msgstr ""
+"Konkrétní třída pro výsledky :func:`urlparse` obsahující data "
+":class:`bytes`. Metoda :meth:`decode` vrací instanci :class:`ParseResult`."
 
 #: ../../library/urllib.parse.rst:609
 msgid ""
 "Concrete class for :func:`urlsplit` results containing :class:`bytes` data. "
 "The :meth:`decode` method returns a :class:`SplitResult` instance."
 msgstr ""
+"Konkrétní třída pro výsledky :func:`urlsplit` obsahující data "
+":class:`bytes`. Metoda :meth:`decode` vrací instanci :class:`SplitResult`."
 
 #: ../../library/urllib.parse.rst:617
 msgid "URL Quoting"
-msgstr ""
+msgstr "Quoting URL"
 
 #: ../../library/urllib.parse.rst:619
 msgid ""
@@ -817,6 +1069,11 @@ msgid ""
 "recreate the original data from the contents of a URL component if that task"
 " isn't already covered by the URL parsing functions above."
 msgstr ""
+"Funkce pro quoting URL se zaměřují na přijetí programových dat a jejich "
+"zabezpečení pro použití jako komponenty URL citováním speciálních znaků a "
+"vhodným kódováním non-ASCII textu. Podporují také obrácení těchto operací k "
+"znovuvytvoření původních dat z obsahu komponenty URL, pokud tento úkol již "
+"není pokryt funkcemi pro parsování URL výše."
 
 #: ../../library/urllib.parse.rst:627
 #, python-brace-format
@@ -827,17 +1084,24 @@ msgid ""
 "optional *safe* parameter specifies additional ASCII characters that should "
 "not be quoted --- its default value is ``'/'``."
 msgstr ""
+"Nahradí speciální znaky v *string* pomocí :samp:`%{xx}` escape. Písmena, "
+"číslice a znaky ``'_.-~'`` nejsou nikdy citovány. Výchozí hodnota této "
+"funkce je určena pro citování sekce path URL. Volitelný parametr *safe* "
+"specifikuje další ASCII znaky, které by neměly být citovány --- jeho výchozí"
+" hodnota je ``'/'``."
 
 #: ../../library/urllib.parse.rst:633 ../../library/urllib.parse.rst:679
 #: ../../library/urllib.parse.rst:708
 msgid "*string* may be either a :class:`str` or a :class:`bytes` object."
-msgstr ""
+msgstr "*string* může být buď objekt :class:`str` nebo :class:`bytes`."
 
 #: ../../library/urllib.parse.rst:635
 msgid ""
 "Moved from :rfc:`2396` to :rfc:`3986` for quoting URL strings. \"~\" is now "
 "included in the set of unreserved characters."
 msgstr ""
+"Přesunuto z :rfc:`2396` na :rfc:`3986` pro citování URL řetězců. \"~\" je "
+"nyní zahrnuto v množině nereservovaných znaků."
 
 #: ../../library/urllib.parse.rst:639
 msgid ""
@@ -848,16 +1112,24 @@ msgid ""
 "*encoding* and *errors* must not be supplied if *string* is a "
 ":class:`bytes`, or a :class:`TypeError` is raised."
 msgstr ""
+"Volitelné parametry *encoding* a *errors* specifikují, jak zachovat non-"
+"ASCII znaky, jak je akceptováno metodou :meth:`str.encode`. *encoding* je "
+"výchozí na ``'utf-8'``. *errors* je výchozí na ``'strict'``, což znamená, že"
+" nepodporované znaky vyvolají :class:`UnicodeEncodeError`. *encoding* a "
+"*errors* nesmí být poskytnuty, pokud *string* je :class:`bytes`, jinak je "
+"vyvolán :class:`TypeError`."
 
 #: ../../library/urllib.parse.rst:647
 msgid ""
 "Note that ``quote(string, safe, encoding, errors)`` is equivalent to "
 "``quote_from_bytes(string.encode(encoding, errors), safe)``."
 msgstr ""
+"Poznámka, že ``quote(string, safe, encoding, errors)`` je ekvivalentní k "
+"``quote_from_bytes(string.encode(encoding, errors), safe)``."
 
 #: ../../library/urllib.parse.rst:650
 msgid "Example: ``quote('/El Niño/')`` yields ``'/El%20Ni%C3%B1o/'``."
-msgstr ""
+msgstr "Příklad: ``quote('/El Niño/')`` vydá ``'/El%20Ni%C3%B1o/'``."
 
 #: ../../library/urllib.parse.rst:655
 msgid ""
@@ -866,22 +1138,28 @@ msgid ""
 "Plus signs in the original string are escaped unless they are included in "
 "*safe*.  It also does not have *safe* default to ``'/'``."
 msgstr ""
+"Jako :func:`quote`, ale také nahradí mezery znaky plus, jak je vyžadováno "
+"pro citování hodnot HTML formulářů při sestavování query řetězce pro "
+"umístění do URL. Znaky plus v původním řetězci jsou escapovány, pokud nejsou"
+" zahrnuty v *safe*.  Také nemá výchozí hodnotu *safe* na ``'/'``."
 
 #: ../../library/urllib.parse.rst:660
 #, python-format
 msgid "Example: ``quote_plus('/El Niño/')`` yields ``'%2FEl+Ni%C3%B1o%2F'``."
-msgstr ""
+msgstr "Příklad: ``quote_plus('/El Niño/')`` vydá ``'%2FEl+Ni%C3%B1o%2F'``."
 
 #: ../../library/urllib.parse.rst:665
 msgid ""
 "Like :func:`quote`, but accepts a :class:`bytes` object rather than a "
 ":class:`str`, and does not perform string-to-bytes encoding."
 msgstr ""
+"Jako :func:`quote`, ale akceptuje objekt :class:`bytes` spíše než "
+":class:`str` a neprovádí kódování řetězce na bajty."
 
 #: ../../library/urllib.parse.rst:668
 #, python-format
 msgid "Example: ``quote_from_bytes(b'a&\\xef')`` yields ``'a%26%EF'``."
-msgstr ""
+msgstr "Příklad: ``quote_from_bytes(b'a&\\xef')`` vydá ``'a%26%EF'``."
 
 #: ../../library/urllib.parse.rst:674
 #, python-brace-format
@@ -891,35 +1169,43 @@ msgid ""
 "encoded sequences into Unicode characters, as accepted by the "
 ":meth:`bytes.decode` method."
 msgstr ""
+"Nahradí :samp:`%{xx}` escape sekvence jejich jednoznakovm ekvivalentem. "
+"Volitelné parametry *encoding* a *errors* specifikují, jak dekódovat "
+"percent-kódované sekvence na Unicode znaky, jak je akceptováno metodou "
+":meth:`bytes.decode`."
 
 #: ../../library/urllib.parse.rst:681
 msgid ""
 "*encoding* defaults to ``'utf-8'``. *errors* defaults to ``'replace'``, "
 "meaning invalid sequences are replaced by a placeholder character."
 msgstr ""
+"*encoding* je výchozí na ``'utf-8'``. *errors* je výchozí na ``'replace'``, "
+"což znamená, že neplatné sekvence jsou nahrazeny placeholderem."
 
 #: ../../library/urllib.parse.rst:685
 msgid "Example: ``unquote('/El%20Ni%C3%B1o/')`` yields ``'/El Niño/'``."
-msgstr ""
+msgstr "Příklad: ``unquote('/El%20Ni%C3%B1o/')`` vydá ``'/El Niño/'``."
 
 #: ../../library/urllib.parse.rst:687
 msgid ""
 "*string* parameter supports bytes and str objects (previously only str)."
-msgstr ""
+msgstr "Parametr *string* podporuje objekty bytes a str (dříve pouze str)."
 
 #: ../../library/urllib.parse.rst:695
 msgid ""
 "Like :func:`unquote`, but also replace plus signs with spaces, as required "
 "for unquoting HTML form values."
 msgstr ""
+"Jako :func:`unquote`, ale také nahrazuje znaky plus mezerami, jak je "
+"vyžadováno pro unquoting hodnot HTML formulářů."
 
 #: ../../library/urllib.parse.rst:698
 msgid "*string* must be a :class:`str`."
-msgstr ""
+msgstr "*string* musí být :class:`str`."
 
 #: ../../library/urllib.parse.rst:700
 msgid "Example: ``unquote_plus('/El+Ni%C3%B1o/')`` yields ``'/El Niño/'``."
-msgstr ""
+msgstr "Příklad: ``unquote_plus('/El+Ni%C3%B1o/')`` vydá ``'/El Niño/'``."
 
 #: ../../library/urllib.parse.rst:705
 #, python-brace-format
@@ -927,17 +1213,21 @@ msgid ""
 "Replace :samp:`%{xx}` escapes with their single-octet equivalent, and return"
 " a :class:`bytes` object."
 msgstr ""
+"Nahradí :samp:`%{xx}` escape sekvence jejich jednobajtovým ekvivalentem a "
+"vrátí objekt :class:`bytes`."
 
 #: ../../library/urllib.parse.rst:710
 msgid ""
 "If it is a :class:`str`, unescaped non-ASCII characters in *string* are "
 "encoded into UTF-8 bytes."
 msgstr ""
+"Pokud je to :class:`str`, neescapované non-ASCII znaky v *string* jsou "
+"kódovány do UTF-8 bajtů."
 
 #: ../../library/urllib.parse.rst:713
 #, python-format
 msgid "Example: ``unquote_to_bytes('a%26%EF')`` yields ``b'a&\\xef'``."
-msgstr ""
+msgstr "Příklad: ``unquote_to_bytes('a%26%EF')`` vydá ``b'a&\\xef'``."
 
 #: ../../library/urllib.parse.rst:719
 msgid ""
@@ -947,6 +1237,11 @@ msgid ""
 "operation with the :func:`~urllib.request.urlopen` function, then it should "
 "be encoded to bytes, otherwise it would result in a :exc:`TypeError`."
 msgstr ""
+"Konvertuje mapovací objekt nebo sekvenci dvouprvokových tuple, které mohou "
+"obsahovat objekty :class:`str` nebo :class:`bytes`, na percent-kódovaný "
+"ASCII textový řetězec.  Pokud má být výsledný řetězec použit jako *data* pro"
+" POST operaci s funkcí :func:`~urllib.request.urlopen`, měl by být kódován "
+"do bajtů, jinak by to vedlo k :exc:`TypeError`."
 
 #: ../../library/urllib.parse.rst:726
 #, python-format
@@ -961,6 +1256,15 @@ msgid ""
 "and not encode '/' characters.  For maximum control of what is quoted, use "
 "``quote`` and specify a value for *safe*."
 msgstr ""
+"Výsledný řetězec je série ``key=value`` párů oddělených znaky ``'&'``, kde "
+"obě *key* i *value* jsou citovány pomocí funkce *quote_via*.  Výchozí "
+"hodnota je :func:`quote_plus` použit pro citování hodnot, což znamená, že "
+"mezery jsou citovány jako znak ``'+'`` a znaky '/' jsou kódovány jako "
+"``%2F``, což následuje standard pro GET požadavky (``application/x-www-form-"
+"urlencoded``).  Alternativní funkce, kterou lze předat jako *quote_via* je "
+":func:`quote`, která kóduje mezery jako ``%20`` a nekóduje znaky '/'. Pro "
+"maximální kontrolu nad tím, co je citováno, použijte ``quote`` a "
+"specifikujte hodnotu pro *safe*."
 
 #: ../../library/urllib.parse.rst:736
 msgid ""
@@ -972,6 +1276,13 @@ msgid ""
 "for the key.  The order of parameters in the encoded string will match the "
 "order of parameter tuples in the sequence."
 msgstr ""
+"Když je sekvence dvouprvokových tuple použita jako argument *query*, první "
+"element každého tuple je klíč a druhý je hodnota. Element hodnoty může být "
+"sám o sobě sekvence a v tom případě, pokud se volitelný parametr *doseq* "
+"vyhodnocuje jako ``True``, individuální ``key=value`` páry oddělené ``'&'`` "
+"jsou generovány pro každý element sekvence hodnoty pro klíč.  Pořadí "
+"parametrů v kódovaném řetězci bude odpovídat pořadí tuple parametrů v "
+"sekvenci."
 
 #: ../../library/urllib.parse.rst:744
 msgid ""
@@ -979,12 +1290,18 @@ msgid ""
 "*quote_via* (the *encoding* and *errors* parameters are only passed when a "
 "query element is a :class:`str`)."
 msgstr ""
+"Parametry *safe*, *encoding* a *errors* jsou předány dále do *quote_via* "
+"(parametry *encoding* a *errors* jsou předány pouze když je element query "
+":class:`str`)."
 
 #: ../../library/urllib.parse.rst:748
 msgid ""
 "To reverse this encoding process, :func:`parse_qs` and :func:`parse_qsl` are"
 " provided in this module to parse query strings into Python data structures."
 msgstr ""
+"K obrácení tohoto kódovacího procesu jsou v tomto modulu poskytnuty "
+":func:`parse_qs` a :func:`parse_qsl` pro parsování query řetězců do datových"
+" struktur Pythonu."
 
 #: ../../library/urllib.parse.rst:751
 msgid ""
@@ -992,28 +1309,33 @@ msgid ""
 ":func:`urllib.parse.urlencode` method can be used for generating the query "
 "string of a URL or data for a POST request."
 msgstr ""
+"Viz :ref:`urllib examples <urllib-examples>` pro zjištění, jak může být "
+"metoda :func:`urllib.parse.urlencode` použita pro generování query řetězce "
+"URL nebo dat pro POST požadavek."
 
 #: ../../library/urllib.parse.rst:755
 msgid "*query* supports bytes and string objects."
-msgstr ""
+msgstr "*query* podporuje objekty bytes a string."
 
 #: ../../library/urllib.parse.rst:758
 msgid "Added the *quote_via* parameter."
-msgstr ""
+msgstr "Přidán parametr *quote_via*."
 
 #: ../../library/urllib.parse.rst:768
 msgid "`WHATWG`_ -  URL Living standard"
-msgstr ""
+msgstr "`WHATWG`_ -  URL Living standard"
 
 #: ../../library/urllib.parse.rst:769
 msgid ""
 "Working Group for the URL Standard that defines URLs, domains, IP addresses,"
 " the application/x-www-form-urlencoded format, and their API."
 msgstr ""
+"Pracovní skupina pro URL standard, který definuje URL, domény, IP adresy, "
+"formát application/x-www-form-urlencoded a jejich API."
 
 #: ../../library/urllib.parse.rst:772
 msgid ":rfc:`3986` - Uniform Resource Identifiers"
-msgstr ""
+msgstr ":rfc:`3986` - Uniform Resource Identifiers"
 
 #: ../../library/urllib.parse.rst:773
 msgid ""
@@ -1022,36 +1344,42 @@ msgid ""
 "mostly for backward compatibility purposes and for certain de-facto parsing "
 "requirements as commonly observed in major browsers."
 msgstr ""
+"Toto je aktuální standard (STD66). Jakékoliv změny modulu urllib.parse by "
+"měly být v souladu s tímto. Mohou být pozorovány určité odchylky, které jsou"
+" většinou kvůli zpětné kompatibilitě a určitým de-facto parsovacím "
+"požadavkům běžně pozorovaným v hlavních prohlížečích."
 
 #: ../../library/urllib.parse.rst:778
 msgid ":rfc:`2732` - Format for Literal IPv6 Addresses in URL's."
-msgstr ""
+msgstr ":rfc:`2732` - Formát pro literály IPv6 adres v URL."
 
 #: ../../library/urllib.parse.rst:779
 msgid "This specifies the parsing requirements of IPv6 URLs."
-msgstr ""
+msgstr "Toto specifikuje parsovací požadavky IPv6 URL."
 
 #: ../../library/urllib.parse.rst:781
 msgid ":rfc:`2396` - Uniform Resource Identifiers (URI): Generic Syntax"
-msgstr ""
+msgstr ":rfc:`2396` - Uniform Resource Identifiers (URI): Generic Syntax"
 
 #: ../../library/urllib.parse.rst:782
 msgid ""
 "Document describing the generic syntactic requirements for both Uniform "
 "Resource Names (URNs) and Uniform Resource Locators (URLs)."
 msgstr ""
+"Dokument popisující obecné syntaktické požadavky jak pro Uniform Resource "
+"Names (URN), tak pro Uniform Resource Locators (URL)."
 
 #: ../../library/urllib.parse.rst:785
 msgid ":rfc:`2368` - The mailto URL scheme."
-msgstr ""
+msgstr ":rfc:`2368` - Schéma URL mailto."
 
 #: ../../library/urllib.parse.rst:786
 msgid "Parsing requirements for mailto URL schemes."
-msgstr ""
+msgstr "Parsovací požadavky pro schéma URL mailto."
 
 #: ../../library/urllib.parse.rst:788
 msgid ":rfc:`1808` - Relative Uniform Resource Locators"
-msgstr ""
+msgstr ":rfc:`1808` - Relativní Uniform Resource Locators"
 
 #: ../../library/urllib.parse.rst:789
 msgid ""
@@ -1059,31 +1387,34 @@ msgid ""
 "relative URL, including a fair number of \"Abnormal Examples\" which govern "
 "the treatment of border cases."
 msgstr ""
+"Tato Request For Comments zahrnuje pravidla pro spojení absolutního a "
+"relativního URL, včetně značného počtu „Abnormal Examples“, které řídí "
+"zachycení hranitních případů."
 
 #: ../../library/urllib.parse.rst:793
 msgid ":rfc:`1738` - Uniform Resource Locators (URL)"
-msgstr ""
+msgstr ":rfc:`1738` - Uniform Resource Locators (URL)"
 
 #: ../../library/urllib.parse.rst:794
 msgid "This specifies the formal syntax and semantics of absolute URLs."
-msgstr ""
+msgstr "Toto specifikuje formální syntaxi a sémantiku absolutních URL."
 
 #: ../../library/urllib.parse.rst:9
 msgid "WWW"
-msgstr ""
+msgstr "WWW"
 
 #: ../../library/urllib.parse.rst:9
 msgid "World Wide Web"
-msgstr ""
+msgstr "World Wide Web"
 
 #: ../../library/urllib.parse.rst:9
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../../library/urllib.parse.rst:9
 msgid "parsing"
-msgstr ""
+msgstr "parsování"
 
 #: ../../library/urllib.parse.rst:9
 msgid "relative"
-msgstr ""
+msgstr "relativní"

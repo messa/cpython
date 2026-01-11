@@ -11,95 +11,115 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/picklebuffer.rst:9
 msgid "Pickle buffer objects"
-msgstr ""
+msgstr "Objekty pickle bufferu"
 
 #: ../../c-api/picklebuffer.rst:13
 msgid ""
-"A :class:`pickle.PickleBuffer` object wraps a :ref:`buffer-providing "
-"object <bufferobjects>` for out-of-band data transfer with the "
-":mod:`pickle` module."
+"A :class:`pickle.PickleBuffer` object wraps a :ref:`buffer-providing object "
+"<bufferobjects>` for out-of-band data transfer with the :mod:`pickle` "
+"module."
 msgstr ""
+"Objekt :class:`pickle.PickleBuffer` obaluje :ref:`objekt poskytující buffer "
+"<bufferobjects>` pro přenos dat mimo hlavní kanál s modulem :mod:`pickle`."
 
 #: ../../c-api/picklebuffer.rst:19
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python pickle "
-"buffer type. This is the same object as :class:`pickle.PickleBuffer` in "
-"the Python layer."
+"This instance of :c:type:`PyTypeObject` represents the Python pickle buffer "
+"type. This is the same object as :class:`pickle.PickleBuffer` in the Python "
+"layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ Python pickle buffer. "
+"Jedná se o stejný objekt jako :class:`pickle.PickleBuffer` v Pythonové "
+"vrstvě."
 
 #: ../../c-api/picklebuffer.rst:25
 msgid ""
 "Return true if *op* is a pickle buffer instance. This function always "
 "succeeds."
 msgstr ""
+"Vrací pravdu, pokud *op* je instance pickle bufferu. Tato funkce vždy "
+"uspěje."
 
 #: ../../c-api/picklebuffer.rst:31
 msgid "Create a pickle buffer from the object *obj*."
-msgstr ""
+msgstr "Vytvoří pickle buffer z objektu *obj*."
 
 #: ../../c-api/picklebuffer.rst:33
 msgid ""
-"This function will fail if *obj* doesn't support the :ref:`buffer "
-"protocol <bufferobjects>`."
+"This function will fail if *obj* doesn't support the :ref:`buffer protocol "
+"<bufferobjects>`."
 msgstr ""
+"Tato funkce selže, pokud *obj* nepodporuje :ref:`buffer protokol "
+"<bufferobjects>`."
 
 #: ../../c-api/picklebuffer.rst:35
 msgid ""
 "On success, return a new pickle buffer instance. On failure, set an "
 "exception and return ``NULL``."
 msgstr ""
+"Při úspěchu vrací novou instanci pickle bufferu. Při selhání nastaví výjimku"
+" a vrací ``NULL``."
 
 #: ../../c-api/picklebuffer.rst:38
-msgid "Analogous to calling :class:`pickle.PickleBuffer` with *obj* in Python."
-msgstr ""
+msgid ""
+"Analogous to calling :class:`pickle.PickleBuffer` with *obj* in Python."
+msgstr "Analogické k volání :class:`pickle.PickleBuffer` s *obj* v Pythonu."
 
 #: ../../c-api/picklebuffer.rst:43
 msgid ""
-"Get a pointer to the underlying :c:type:`Py_buffer` that the pickle "
-"buffer wraps."
+"Get a pointer to the underlying :c:type:`Py_buffer` that the pickle buffer "
+"wraps."
 msgstr ""
+"Získá ukazatel na podkladový :c:type:`Py_buffer`, který pickle buffer "
+"obaluje."
 
 #: ../../c-api/picklebuffer.rst:45
 msgid ""
-"The returned pointer is valid as long as *picklebuf* is alive and has not"
-" been released. The caller must not modify or free the returned "
+"The returned pointer is valid as long as *picklebuf* is alive and has not "
+"been released. The caller must not modify or free the returned "
 ":c:type:`Py_buffer`. If the pickle buffer has been released, raise "
 ":exc:`ValueError`."
 msgstr ""
+"Vrácený ukazatel je platný po dobu, kdy je *picklebuf* aktivní a nebyl "
+"uvolněn. Volající nesmí modifikovat nebo uvolnit vrácený "
+":c:type:`Py_buffer`. Pokud byl pickle buffer uvolněn, vyvolá "
+":exc:`ValueError`."
 
 #: ../../c-api/picklebuffer.rst:49
 msgid ""
 "On success, return a pointer to the buffer view. On failure, set an "
 "exception and return ``NULL``."
 msgstr ""
+"Při úspěchu vrací ukazatel na buffer view. Při selhání nastaví výjimku a "
+"vrací ``NULL``."
 
 #: ../../c-api/picklebuffer.rst:55
 msgid "Release the underlying buffer held by the pickle buffer."
-msgstr ""
+msgstr "Uvolní podkladový buffer držený pickle bufferem."
 
 #: ../../c-api/picklebuffer.rst:57
-msgid "Return ``0`` on success. On failure, set an exception and return ``-1``."
-msgstr ""
+msgid ""
+"Return ``0`` on success. On failure, set an exception and return ``-1``."
+msgstr "Při úspěchu vrací ``0``. Při selhání nastaví výjimku a vrací ``-1``."
 
 #: ../../c-api/picklebuffer.rst:59
 msgid "Analogous to calling :meth:`pickle.PickleBuffer.release` in Python."
-msgstr ""
+msgstr "Analogické k volání :meth:`pickle.PickleBuffer.release` v Pythonu."
 
 #: ../../c-api/picklebuffer.rst:5
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../c-api/picklebuffer.rst:5
 msgid "PickleBuffer"
-msgstr ""
-
+msgstr "PickleBuffer"

@@ -745,20 +745,26 @@ msgid ""
 "indicating which protocols should be used, and how.  All of these attributes"
 " may be assigned to."
 msgstr ""
+"Kromě implementace výše uvedených metod musí implementace rozhraní "
+":class:`CookiePolicy` také poskytovat následující atributy, které určují, "
+"které protokoly by měly být použity a jakým způsobem. Všem těmto atributům "
+"lze přiřazovat hodnoty."
 
 #: ../../library/http.cookiejar.rst:418
 msgid "Implement Netscape protocol."
-msgstr ""
+msgstr "Implementuje protokol Netscape."
 
 #: ../../library/http.cookiejar.rst:423
 msgid "Implement :rfc:`2965` protocol."
-msgstr ""
+msgstr "Implementuje protokol :rfc:`2965`."
 
 #: ../../library/http.cookiejar.rst:428
 msgid ""
 "Don't add :mailheader:`Cookie2` header to requests (the presence of this "
 "header indicates to the server that we understand :rfc:`2965` cookies)."
 msgstr ""
+"Nepřidává hlavičku :mailheader:`Cookie2` k požadavkům (přítomnost této "
+"hlavičky serveru indikuje, že rozumíme cookies podle :rfc:`2965`)."
 
 #: ../../library/http.cookiejar.rst:431
 msgid ""
@@ -768,20 +774,27 @@ msgid ""
 "policy' to allow setting and receiving any and all cookies (this is unlikely"
 " to be useful)."
 msgstr ""
+"Nejpoužitelnější způsob, jak definovat třídu :class:`CookiePolicy`, je "
+"oddědit od :class:`DefaultCookiePolicy` a přepsat některé nebo všechny výše "
+"uvedené metody. Samotná třída :class:`CookiePolicy` může být použita jako "
+"„nulová politika“, která umožňuje nastavení a příjem všech cookies (to je "
+"nepravděpodobné, že by bylo užitečné)."
 
 #: ../../library/http.cookiejar.rst:440
 msgid "DefaultCookiePolicy Objects"
-msgstr ""
+msgstr "Objekty DefaultCookiePolicy"
 
 #: ../../library/http.cookiejar.rst:442
 msgid "Implements the standard rules for accepting and returning cookies."
-msgstr ""
+msgstr "Implementuje standardní pravidla pro přijímání a vracení cookies."
 
 #: ../../library/http.cookiejar.rst:444
 msgid ""
 "Both :rfc:`2965` and Netscape cookies are covered.  RFC 2965 handling is "
 "switched off by default."
 msgstr ""
+"Podporuje jak :rfc:`2965`, tak Netscape cookies. Obsluha RFC 2965 je ve "
+"výchozím nastavení vypnuta."
 
 #: ../../library/http.cookiejar.rst:447
 msgid ""
@@ -789,6 +802,9 @@ msgid ""
 "call its methods in your overridden implementations before adding your own "
 "additional checks::"
 msgstr ""
+"Nejjednodušší způsob, jak poskytnout vlastní politiku, je oddědit tuto třídu"
+" a volat její metody ve vašich přepsaných implementacích před přidáním "
+"vašich vlastních dalších kontrol::"
 
 #: ../../library/http.cookiejar.rst:451
 msgid ""
@@ -801,6 +817,14 @@ msgid ""
 "            return False\n"
 "        return True"
 msgstr ""
+"import http.cookiejar\n"
+"class MyCookiePolicy(http.cookiejar.DefaultCookiePolicy):\n"
+"    def set_ok(self, cookie, request):\n"
+"        if not http.cookiejar.DefaultCookiePolicy.set_ok(self, cookie, request):\n"
+"            return False\n"
+"        if i_dont_want_to_store_this_cookie(cookie):\n"
+"            return False\n"
+"        return True"
 
 #: ../../library/http.cookiejar.rst:460
 msgid ""
@@ -810,6 +834,11 @@ msgid ""
 "to tighten up the rather loose Netscape protocol rules a little bit (at the "
 "cost of blocking some benign cookies)."
 msgstr ""
+"Kromě funkcí vyžadovaných pro implementaci rozhraní :class:`CookiePolicy` "
+"tato třída umožňuje blokovat a povolovat domény pro nastavení a příjem "
+"cookies. Existují také některé přepínače přísnosti, které umožňují o něco "
+"zpřísnit poměrně volná pravidla protokolu Netscape (za cenu zablokování "
+"některých neškodných cookies)."
 
 #: ../../library/http.cookiejar.rst:466
 msgid ""
@@ -821,6 +850,13 @@ msgid ""
 "methods for *allowed_domains*).  If you set an allowlist, you can turn it "
 "off again by setting it to :const:`None`."
 msgstr ""
+"Je poskytnut blocklist a allowlist domén (oba jsou ve výchozím nastavení "
+"vypnuty). Při nastavení a vracení cookies se účastní pouze domény, které "
+"nejsou v blocklistu a jsou přítomny v allowlistu (pokud je allowlist "
+"aktivní). Použijte argument konstruktoru *blocked_domains* a metody "
+":meth:`blocked_domains` a :meth:`set_blocked_domains` (a odpovídající "
+"argument a metody pro *allowed_domains*). Pokud nastavíte allowlist, můžete "
+"jej opět vypnout nastavením na :const:`None`."
 
 #: ../../library/http.cookiejar.rst:474
 msgid ""
@@ -835,39 +871,52 @@ msgid ""
 "``\"192.168.1.2\"`` and ``\".168.1.2\"``, 192.168.1.2 is blocked, but "
 "193.168.1.2 is not."
 msgstr ""
+"Domény v blocku nebo allow seznamech, které nezačínají tečkou, musí přesně "
+"odpovídat cookie doméně, aby došlo ke shodě. Například ``\"example.com\"`` "
+"odpovídá blocklist položce ``\"example.com\"``, ale ``\"www.example.com\"`` "
+"nikoliv. Domény, které začínají tečkou, odpovídají také specifičtějším "
+"doménám. Například jak ``\"www.example.com\"``, tak "
+"``\"www.coyote.example.com\"`` odpovídají ``\".example.com\"`` (ale samé "
+"``\"example.com\"`` nikoliv). IP adresy jsou výjimkou a musí odpovídat "
+"přesně. Například pokud blocked_domains obsahuje ``\"192.168.1.2\"`` a "
+"``\".168.1.2\"``, 192.168.1.2 je blokováno, ale 193.168.1.2 není."
 
 #: ../../library/http.cookiejar.rst:483
 msgid ""
 ":class:`DefaultCookiePolicy` implements the following additional methods:"
-msgstr ""
+msgstr ":class:`DefaultCookiePolicy` implementuje následující další metody:"
 
 #: ../../library/http.cookiejar.rst:488
 msgid "Return the sequence of blocked domains (as a tuple)."
-msgstr ""
+msgstr "Vrací sekvenci blokovaných domén (jako tuple)."
 
 #: ../../library/http.cookiejar.rst:493
 msgid "Set the sequence of blocked domains."
-msgstr ""
+msgstr "Nastaví sekvenci blokovaných domén."
 
 #: ../../library/http.cookiejar.rst:498
 msgid ""
 "Return ``True`` if *domain* is on the blocklist for setting or receiving "
 "cookies."
 msgstr ""
+"Vrací ``True``, pokud je *domain* na blocklistu pro nastavení nebo příjem "
+"cookies."
 
 #: ../../library/http.cookiejar.rst:504
 msgid "Return :const:`None`, or the sequence of allowed domains (as a tuple)."
-msgstr ""
+msgstr "Vrací :const:`None`, nebo sekvenci povolených domén (jako tuple)."
 
 #: ../../library/http.cookiejar.rst:509
 msgid "Set the sequence of allowed domains, or :const:`None`."
-msgstr ""
+msgstr "Nastaví sekvenci povolených domén, nebo :const:`None`."
 
 #: ../../library/http.cookiejar.rst:514
 msgid ""
 "Return ``True`` if *domain* is not on the allowlist for setting or receiving"
 " cookies."
 msgstr ""
+"Vrací ``True``, pokud *domain* není na allowlistu pro nastavení nebo příjem "
+"cookies."
 
 #: ../../library/http.cookiejar.rst:517
 msgid ""
@@ -875,6 +924,9 @@ msgid ""
 "are all initialised from the constructor arguments of the same name, and "
 "which may all be assigned to."
 msgstr ""
+"Instance :class:`DefaultCookiePolicy` mají následující atributy, které jsou "
+"všechny inicializovány z argumentů konstruktoru stejného názvu a kterým všem"
+" lze přiřazovat hodnoty."
 
 #: ../../library/http.cookiejar.rst:524
 msgid ""
@@ -886,10 +938,17 @@ msgid ""
 ":rfc:`2965` handling is turned off.  Therefore, RFC 2109 cookies are "
 "downgraded by default."
 msgstr ""
+"Pokud je true, požaduje, aby instance :class:`CookieJar` downgradovala "
+":rfc:`2109` cookies (tj. cookies přijaté v hlavičce :mailheader:`Set-Cookie`"
+" s cookie-attribute verze 1) na Netscape cookies nastavením atributu verze "
+"instance :class:`Cookie` na 0. Výchozí hodnota je :const:`None`, v tomž "
+"případě jsou RFC 2109 cookies downgradovány právě tehdy, když je vypnuta "
+"obsluha :rfc:`2965`. Proto jsou RFC 2109 cookies ve výchozím nastavení "
+"downgradovány."
 
 #: ../../library/http.cookiejar.rst:532
 msgid "General strictness switches:"
-msgstr ""
+msgstr "Obecné přepínače přísnosti:"
 
 #: ../../library/http.cookiejar.rst:536
 msgid ""
@@ -897,10 +956,13 @@ msgid ""
 "domains like ``.co.uk``, ``.gov.uk``, ``.co.nz``.etc.  This is far from "
 "perfect and isn't guaranteed to work!"
 msgstr ""
+"Neumověuje stránkám nastavit dvoukomponené domény s top-level doménami se "
+"zemským kódem jako ``.co.uk``, ``.gov.uk``, ``.co.nz`` atd. To je daleko od "
+"dokonalosti a není zaručeno, že to bude fungovat!"
 
 #: ../../library/http.cookiejar.rst:541
 msgid ":rfc:`2965` protocol strictness switches:"
-msgstr ""
+msgstr "Přepínače přísnosti protokolu :rfc:`2965`:"
 
 #: ../../library/http.cookiejar.rst:545
 msgid ""
@@ -909,31 +971,41 @@ msgid ""
 "an image hosted on another site).  If this is false, cookies are *never* "
 "blocked on the basis of verifiability"
 msgstr ""
+"Dodržuje pravidla :rfc:`2965` pro neověřitelné transakce (obvykle je "
+"neověřitelnou transakcí ta, která vyplývá z přesměrování nebo požadavku na "
+"obrázek umístěný na jiné stránce). Pokud je to false, cookies *nikdy* nejsou"
+" blokovány na základě ověřitelnosti"
 
 #: ../../library/http.cookiejar.rst:551
 msgid "Netscape protocol strictness switches:"
-msgstr ""
+msgstr "Přepínače přísnosti protokolu Netscape:"
 
 #: ../../library/http.cookiejar.rst:555
 msgid ""
 "Apply :rfc:`2965` rules on unverifiable transactions even to Netscape "
 "cookies."
 msgstr ""
+"Aplikuje pravidla :rfc:`2965` pro neověřitelné transakce i na Netscape "
+"cookies."
 
 #: ../../library/http.cookiejar.rst:560
 msgid ""
 "Flags indicating how strict to be with domain-matching rules for Netscape "
 "cookies.  See below for acceptable values."
 msgstr ""
+"Příznaky určující, jak přísně postupovat s pravidly pro porovnávání domén u "
+"Netscape cookies. Viz níže pro přijatelné hodnoty."
 
 #: ../../library/http.cookiejar.rst:566
 msgid ""
 "Ignore cookies in Set-Cookie: headers that have names starting with ``'$'``."
 msgstr ""
+"Ignoruje cookies v hlavičkách Set-Cookie:, které mají jména začínající na "
+"``'$'``."
 
 #: ../../library/http.cookiejar.rst:571
 msgid "Don't allow setting cookies whose path doesn't path-match request URI."
-msgstr ""
+msgstr "Neumověuje nastavit cookies, jejichž cesta neodpovídá URI požadavku."
 
 #: ../../library/http.cookiejar.rst:573
 msgid ""
@@ -941,6 +1013,10 @@ msgid ""
 " value is constructed by or-ing together (for example, "
 "``DomainStrictNoDots|DomainStrictNonDomain`` means both flags are set)."
 msgstr ""
+":attr:`~DefaultCookiePolicy.strict_ns_domain` je kolekce příznků. Jeho "
+"hodnota je vytvořena OR-ováním dohromady (například "
+"``DomainStrictNoDots|DomainStrictNonDomain`` znamená, že jsou nastaveny oba "
+"příznaky)."
 
 #: ../../library/http.cookiejar.rst:580
 msgid ""
@@ -948,6 +1024,9 @@ msgid ""
 "``www.foo.bar.com`` can't set a cookie for ``.bar.com``, because ``www.foo``"
 " contains a dot)."
 msgstr ""
+"Při nastavení cookies nesmí „host prefix“ obsahovat tečku (např. "
+"``www.foo.bar.com`` nemůže nastavit cookie pro ``.bar.com``, protože "
+"``www.foo`` obsahuje tečku)."
 
 #: ../../library/http.cookiejar.rst:587
 msgid ""
@@ -956,30 +1035,38 @@ msgid ""
 "``spam.example.com`` won't be returned cookies from ``example.com`` that had"
 " no ``domain`` cookie-attribute)."
 msgstr ""
+"Cookies, které explicitně neurčily cookie-attribute ``domain``, mohou být "
+"vráceny pouze doméně rovné doméně, která cookie nastavila (např. "
+"``spam.example.com`` nedostane vráceny cookies od ``example.com``, které "
+"neměly cookie-attribute ``domain``)."
 
 #: ../../library/http.cookiejar.rst:595
 msgid "When setting cookies, require a full :rfc:`2965` domain-match."
-msgstr ""
+msgstr "Při nastavení cookies vyžaduje úplné domain-match podle :rfc:`2965`."
 
 #: ../../library/http.cookiejar.rst:597
 msgid ""
 "The following attributes are provided for convenience, and are the most "
 "useful combinations of the above flags:"
 msgstr ""
+"Následující atributy jsou poskytnuty pro pohodlí a jsou nejčastějšími "
+"užitečnými kombinacemi výše uvedených příznků:"
 
 #: ../../library/http.cookiejar.rst:603
 msgid ""
 "Equivalent to 0 (ie. all of the above Netscape domain strictness flags "
 "switched off)."
 msgstr ""
+"Ekvivalent 0 (tj. všechny výše uvedené příznaky přísnosti Netscape domény "
+"jsou vypnuty)."
 
 #: ../../library/http.cookiejar.rst:609
 msgid "Equivalent to ``DomainStrictNoDots|DomainStrictNonDomain``."
-msgstr ""
+msgstr "Ekvivalent ``DomainStrictNoDots|DomainStrictNonDomain``."
 
 #: ../../library/http.cookiejar.rst:613
 msgid "Cookie Objects"
-msgstr ""
+msgstr "Objekty Cookie"
 
 #: ../../library/http.cookiejar.rst:615
 msgid ""
@@ -991,6 +1078,13 @@ msgid ""
 "cookies may be 'downgraded' by :mod:`http.cookiejar` from version 1 to "
 "version 0 (Netscape) cookies."
 msgstr ""
+"Instance :class:`Cookie` mají atributy Pythonu zhruba odpovídající "
+"standardním cookie-attributes specifikovaným v různých cookie standardech. "
+"Korespondence není jedna ku jedné, protože existují komplikovaná pravidla "
+"pro přiřazování výchozích hodnot, protože cookie-attributes ``max-age`` a "
+"``expires`` obsahují ekvivalentní informace, a protože :rfc:`2109` cookies "
+"mohou být „downgradovány“ modulem :mod:`http.cookiejar` z verze 1 na verzi 0"
+" (Netscape) cookies."
 
 #: ../../library/http.cookiejar.rst:623
 msgid ""
@@ -998,6 +1092,9 @@ msgid ""
 "circumstances in a :class:`CookiePolicy` method.  The class does not enforce"
 " internal consistency, so you should know what you're doing if you do that."
 msgstr ""
+"Přiřazení těmto atributům by nemělo být nutné kromě vzácných okolností v "
+"metodě :class:`CookiePolicy`. Třída nevynucuje vnitřní konzistenci, takže "
+"byste měli vědět, co děláte, pokud to uděláte."
 
 #: ../../library/http.cookiejar.rst:630
 msgid ""
@@ -1006,54 +1103,67 @@ msgid ""
 "1.  However, note that :mod:`http.cookiejar` may 'downgrade' RFC 2109 "
 "cookies to Netscape cookies, in which case :attr:`version` is 0."
 msgstr ""
+"Integer nebo :const:`None`. Netscape cookies mají :attr:`version` 0. "
+":rfc:`2965` a :rfc:`2109` cookies mají cookie-attribute ``version`` 1. "
+"Nicméně si povšimněte, že :mod:`http.cookiejar` může „downgradovat“ RFC 2109"
+" cookies na Netscape cookies, v tomž případě je :attr:`version` 0."
 
 #: ../../library/http.cookiejar.rst:638
 msgid "Cookie name (a string)."
-msgstr ""
+msgstr "Název cookie (string)."
 
 #: ../../library/http.cookiejar.rst:643
 msgid "Cookie value (a string), or :const:`None`."
-msgstr ""
+msgstr "Hodnota cookie (string), nebo :const:`None`."
 
 #: ../../library/http.cookiejar.rst:648
 msgid ""
 "String representing a port or a set of ports (eg. '80', or '80,8080'), or "
 ":const:`None`."
 msgstr ""
+"String reprezentující port nebo sadu portů (např. „80“, nebo „80,8080“), "
+"nebo :const:`None`."
 
 #: ../../library/http.cookiejar.rst:654
 msgid "Cookie domain (a string)."
-msgstr ""
+msgstr "Doména cookie (string)."
 
 #: ../../library/http.cookiejar.rst:659
 msgid "Cookie path (a string, eg. ``'/acme/rocket_launchers'``)."
-msgstr ""
+msgstr "Cesta cookie (string, např. ``'/acme/rocket_launchers'``)."
 
 #: ../../library/http.cookiejar.rst:664
 msgid "``True`` if cookie should only be returned over a secure connection."
 msgstr ""
+"``True``, pokud by měla být cookie vrácena pouze přes bezpečné spojení."
 
 #: ../../library/http.cookiejar.rst:669
 msgid ""
 "Integer expiry date in seconds since epoch, or :const:`None`.  See also the "
 ":meth:`is_expired` method."
 msgstr ""
+"Datum expirace jako integer v sekundách od epohy, nebo :const:`None`. Viz "
+"také metoda :meth:`is_expired`."
 
 #: ../../library/http.cookiejar.rst:675
 msgid "``True`` if this is a session cookie."
-msgstr ""
+msgstr "``True``, pokud se jedná o session cookie."
 
 #: ../../library/http.cookiejar.rst:680
 msgid ""
 "String comment from the server explaining the function of this cookie, or "
 ":const:`None`."
 msgstr ""
+"Stringový komentář od serveru vysvětlující funkci této cookie, nebo "
+":const:`None`."
 
 #: ../../library/http.cookiejar.rst:686
 msgid ""
 "URL linking to a comment from the server explaining the function of this "
 "cookie, or :const:`None`."
 msgstr ""
+"URL odkazující na komentář od serveru vysvětlující funkci této cookie, nebo "
+":const:`None`."
 
 #: ../../library/http.cookiejar.rst:692
 msgid ""
@@ -1063,46 +1173,58 @@ msgid ""
 "because :mod:`http.cookiejar` may 'downgrade' RFC 2109 cookies to Netscape "
 "cookies, in which case :attr:`version` is 0."
 msgstr ""
+"``True``, pokud byla tato cookie přijata jako :rfc:`2109` cookie (tj. cookie"
+" přišla v hlavičce :mailheader:`Set-Cookie` a hodnota cookie-attribute "
+"Version v té hlavičce byla 1). Tento atribut je poskytnut, protože "
+":mod:`http.cookiejar` může „downgradovat“ RFC 2109 cookies na Netscape "
+"cookies, v tomž případě je :attr:`version` 0."
 
 #: ../../library/http.cookiejar.rst:701
 msgid ""
 "``True`` if a port or set of ports was explicitly specified by the server "
 "(in the :mailheader:`Set-Cookie` / :mailheader:`Set-Cookie2` header)."
 msgstr ""
+"``True``, pokud byl port nebo sada portů explicitně určena serverem (v "
+"hlavičce :mailheader:`Set-Cookie` / :mailheader:`Set-Cookie2`)."
 
 #: ../../library/http.cookiejar.rst:707
 msgid "``True`` if a domain was explicitly specified by the server."
-msgstr ""
+msgstr "``True``, pokud byla doména explicitně určena serverem."
 
 #: ../../library/http.cookiejar.rst:712
 msgid ""
 "``True`` if the domain explicitly specified by the server began with a dot "
 "(``'.'``)."
 msgstr ""
+"``True``, pokud doména explicitně určená serverem začíná tečkou (``'.'``)."
 
 #: ../../library/http.cookiejar.rst:715
 msgid ""
 "Cookies may have additional non-standard cookie-attributes.  These may be "
 "accessed using the following methods:"
 msgstr ""
+"Cookies mohou mít další nestandardní cookie-attributes. K těm lze "
+"přistupovat pomocí následujících metod:"
 
 #: ../../library/http.cookiejar.rst:721
 msgid "Return ``True`` if cookie has the named cookie-attribute."
-msgstr ""
+msgstr "Vrací ``True``, pokud cookie má pojmenovaný cookie-attribute."
 
 #: ../../library/http.cookiejar.rst:726
 msgid ""
 "If cookie has the named cookie-attribute, return its value. Otherwise, "
 "return *default*."
 msgstr ""
+"Pokud cookie má pojmenovaný cookie-attribute, vrací jeho hodnotu. Jinak "
+"vrací *default*."
 
 #: ../../library/http.cookiejar.rst:732
 msgid "Set the value of the named cookie-attribute."
-msgstr ""
+msgstr "Nastaví hodnotu pojmenovaného cookie-attribute."
 
 #: ../../library/http.cookiejar.rst:734
 msgid "The :class:`Cookie` class also defines the following method:"
-msgstr ""
+msgstr "Třída :class:`Cookie` také definuje následující metodu:"
 
 #: ../../library/http.cookiejar.rst:739
 msgid ""
@@ -1110,15 +1232,18 @@ msgid ""
 "should expire.  If *now* is given (in seconds since the epoch), return "
 "whether the cookie has expired at the specified time."
 msgstr ""
+"``True``, pokud u cookie už prošel čas, kdy server požadoval její expiraci. "
+"Pokud je zadáno *now* (v sekundách od epohy), vrací, zda cookie expirovala v"
+" určeném čase."
 
 #: ../../library/http.cookiejar.rst:745
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/http.cookiejar.rst:747
 msgid ""
 "The first example shows the most common usage of :mod:`http.cookiejar`::"
-msgstr ""
+msgstr "První příklad ukazuje nejčastější použití :mod:`http.cookiejar`::"
 
 #: ../../library/http.cookiejar.rst:749
 msgid ""
@@ -1127,6 +1252,10 @@ msgid ""
 "opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))\n"
 "r = opener.open(\"http://example.com/\")"
 msgstr ""
+"import http.cookiejar, urllib.request\n"
+"cj = http.cookiejar.CookieJar()\n"
+"opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))\n"
+"r = opener.open(\"http://example.com/\")"
 
 #: ../../library/http.cookiejar.rst:754
 msgid ""
@@ -1134,6 +1263,9 @@ msgid ""
 "Lynx cookies (assumes Unix/Netscape convention for location of the cookies "
 "file)::"
 msgstr ""
+"Tento příklad ilustruje, jak otevřít URL použitím vašich Netscape, Mozilla "
+"nebo Lynx cookies (předpokládá Unix/Netscape konvenci pro umístění souboru "
+"cookies)::"
 
 #: ../../library/http.cookiejar.rst:757
 msgid ""
@@ -1143,6 +1275,11 @@ msgid ""
 "opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))\n"
 "r = opener.open(\"http://example.com/\")"
 msgstr ""
+"import os, http.cookiejar, urllib.request\n"
+"cj = http.cookiejar.MozillaCookieJar()\n"
+"cj.load(os.path.join(os.path.expanduser(\"~\"), \".netscape\", \"cookies.txt\"))\n"
+"opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))\n"
+"r = opener.open(\"http://example.com/\")"
 
 #: ../../library/http.cookiejar.rst:763
 msgid ""
@@ -1151,6 +1288,10 @@ msgid ""
 "returning Netscape cookies, and block some domains from setting cookies or "
 "having them returned::"
 msgstr ""
+"Další příklad ilustruje použití :class:`DefaultCookiePolicy`. Zapne "
+":rfc:`2965` cookies, bude přísnější ohledně domén při nastavování a vracení "
+"Netscape cookies a zablokuje některé domény od nastavování cookies nebo "
+"jejich vracení::"
 
 #: ../../library/http.cookiejar.rst:768
 msgid ""
@@ -1163,3 +1304,11 @@ msgid ""
 "opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))\n"
 "r = opener.open(\"http://example.com/\")"
 msgstr ""
+"import urllib.request\n"
+"from http.cookiejar import CookieJar, DefaultCookiePolicy\n"
+"policy = DefaultCookiePolicy(\n"
+"    rfc2965=True, strict_ns_domain=Policy.DomainStrict,\n"
+"    blocked_domains=[\"ads.net\", \".ads.net\"])\n"
+"cj = CookieJar(policy)\n"
+"opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))\n"
+"r = opener.open(\"http://example.com/\")"

@@ -201,6 +201,9 @@ msgid ""
 "\"window size\"), and what header and trailer format will be used. It has "
 "the same meaning as `described for compress() <#compress-wbits>`__."
 msgstr ""
+"Parametr *wbits* ridi velikost bufferu historie (nebo \"velikost okna\") a "
+"jaky format hlavicky a paticky bude pouzit. Ma stejny vyznam jako `popsany "
+"pro compress() <#compress-wbits>`__."
 
 #: ../../library/zlib.rst:99
 msgid ""
@@ -208,6 +211,9 @@ msgid ""
 "compression state. Valid values range from ``1`` to ``9``. Higher values use"
 " more memory, but are faster and produce smaller output."
 msgstr ""
+"Parametr *memLevel* ridi mnozstvi pameti pouzite pro interni stav komprese. "
+"Platne hodnoty jsou v rozsahu ``1`` az ``9``. Vyssi hodnoty pouzivaji vice "
+"pameti, ale jsou rychlejsi a produkuji mensi vystup."
 
 #: ../../library/zlib.rst:103
 msgid ""
@@ -215,6 +221,9 @@ msgid ""
 ":const:`Z_DEFAULT_STRATEGY`, :const:`Z_FILTERED`, :const:`Z_HUFFMAN_ONLY`, "
 ":const:`Z_RLE` and :const:`Z_FIXED`."
 msgstr ""
+"*strategy* slouzi k ladeni kompresniho algoritmu. Mozne hodnoty jsou "
+":const:`Z_DEFAULT_STRATEGY`, :const:`Z_FILTERED`, :const:`Z_HUFFMAN_ONLY`, "
+":const:`Z_RLE` a :const:`Z_FIXED`."
 
 #: ../../library/zlib.rst:107
 msgid ""
@@ -224,10 +233,14 @@ msgid ""
 " that are expected to be most common should come at the end of the "
 "dictionary."
 msgstr ""
+"*zdict* je preddefinovany kompresni slovnik. Jedna se o sekvenci bytu (jako "
+"napr. objekt :class:`bytes`) obsahujici podsekvence, ktere se ocekavaji v "
+"datech urcených ke kompresi. Podsekvence, ktere se ocekavaji nejcasteji, by "
+"mely byt na konci slovniku."
 
 #: ../../library/zlib.rst:112
 msgid "Added the *zdict* parameter and keyword argument support."
-msgstr ""
+msgstr "Pridan parametr *zdict* a podpora klicovych argumentu."
 
 #: ../../library/zlib.rst:122
 msgid ""
@@ -240,6 +253,14 @@ msgid ""
 "Since the algorithm is designed for use as a checksum algorithm, it is not "
 "suitable for use as a general hash algorithm."
 msgstr ""
+"Vypocita CRC (Cyclic Redundancy Check) kontrolni soucet dat *data*. Vysledek"
+" je 32-bitove cislo bez znamenka. Pokud je zadana hodnota *value*, pouzije "
+"se jako pocatecni hodnota kontrolniho souctu; jinak se pouzije vychozi "
+"hodnota 0. Predani *value* umoznuje vypocitat prubezny kontrolni soucet pres"
+" spojeni nekolika vstupu. Algoritmus neni kryptograficky silny a nemelo by "
+"se pouzivat pro autentizaci nebo digitalni podpisy. Protoze je algoritmus "
+"navrzeny pro pouziti jako algoritmus kontrolniho souctu, neni vhodny pro "
+"pouziti jako obecny hashovaci algoritmus."
 
 #: ../../library/zlib.rst:136
 msgid ""
@@ -249,6 +270,10 @@ msgid ""
 "initial size of the output buffer.  Raises the :exc:`error` exception if any"
 " error occurs."
 msgstr ""
+"Dekomprimuje byty v *data* a vraci objekt bytes obsahujici nekomprimovana "
+"data. Parametr *wbits* zavisi na formatu *data* a je probrany nize. Pokud je"
+" zadano *bufsize*, pouzije se jako pocatecni velikost vystupniho bufferu. "
+"Vyvola vyjimku :exc:`error`, pokud dojde k chybe."
 
 #: ../../library/zlib.rst:144
 msgid ""
@@ -256,36 +281,49 @@ msgid ""
 "size\"), and what header and trailer format is expected. It is similar to "
 "the parameter for :func:`compressobj`, but accepts more ranges of values:"
 msgstr ""
+"Parametr *wbits* ridi velikost bufferu historie (nebo \"velikost okna\") a "
+"jaky format hlavicky a paticky se ocekava. Je podobny parametru pro "
+":func:`compressobj`, ale akceptuje sirsi rozsah hodnot:"
 
 #: ../../library/zlib.rst:149
 msgid ""
 "+8 to +15: The base-two logarithm of the window size.  The input must "
 "include a zlib header and trailer."
 msgstr ""
+"+8 az +15: Logaritmus o zakladu dva velikosti okna. Vstup musi obsahovat "
+"zlib hlavicku a paticku."
 
 #: ../../library/zlib.rst:152
 msgid ""
 "0: Automatically determine the window size from the zlib header. Only "
 "supported since zlib 1.2.3.5."
 msgstr ""
+"0: Automaticky urci velikost okna ze zlib hlavicky. Podporovano pouze od "
+"zlib 1.2.3.5."
 
 #: ../../library/zlib.rst:155
 msgid ""
 "−8 to −15: Uses the absolute value of *wbits* as the window size logarithm."
 "  The input must be a raw stream with no header or trailer."
 msgstr ""
+"−8 az −15: Pouzije absolutni hodnotu *wbits* jako logaritmus velikosti okna."
+" Vstup musi byt surovy stream bez hlavicky nebo paticky."
 
 #: ../../library/zlib.rst:158
 msgid ""
 "+24 to +31 = 16 + (8 to 15): Uses the low 4 bits of the value as the window "
 "size logarithm.  The input must include a gzip header and trailer."
 msgstr ""
+"+24 az +31 = 16 + (8 az 15): Pouzije spodni 4 bity hodnoty jako logaritmus "
+"velikosti okna. Vstup musi obsahovat gzip hlavicku a paticku."
 
 #: ../../library/zlib.rst:162
 msgid ""
 "+40 to +47 = 32 + (8 to 15): Uses the low 4 bits of the value as the window "
 "size logarithm, and automatically accepts either the zlib or gzip format."
 msgstr ""
+"+40 az +47 = 32 + (8 az 15): Pouzije spodni 4 bity hodnoty jako logaritmus "
+"velikosti okna a automaticky akceptuje bud zlib nebo gzip format."
 
 #: ../../library/zlib.rst:166
 msgid ""
@@ -295,6 +333,10 @@ msgid ""
 "to the largest window size and requires a zlib header and trailer to be "
 "included."
 msgstr ""
+"Pri dekompresi streamu nesmi byt velikost okna mensi nez velikost puvodni "
+"pouzita ke kompresi streamu; pouziti prilis male hodnoty muze vest k vyjimce"
+" :exc:`error`. Vychozi hodnota *wbits* odpovida nejvetsi velikosti okna a "
+"vyzaduje zlib hlavicku a paticku."
 
 #: ../../library/zlib.rst:172
 msgid ""
@@ -303,16 +345,22 @@ msgid ""
 " you don't have to get this value exactly right; tuning it will only save a "
 "few calls to :c:func:`malloc`."
 msgstr ""
+"*bufsize* je pocatecni velikost bufferu pouziteho pro uchovavani "
+"dekomprimovanych dat. Pokud je zapotrebi vice mista, velikost bufferu se "
+"podle potreby zvysi, takze nemusite ziskat tuto hodnotu presne; ladenim "
+"uspornite jen par volani :c:func:`malloc`."
 
 #: ../../library/zlib.rst:177
 msgid "*wbits* and *bufsize* can be used as keyword arguments."
-msgstr ""
+msgstr "*wbits* a *bufsize* lze pouzit jako klicove argumenty."
 
 #: ../../library/zlib.rst:182
 msgid ""
 "Returns a decompression object, to be used for decompressing data streams "
 "that won't fit into memory at once."
 msgstr ""
+"Vraci dekompresni objekt pro dekompresi datovych streamu, ktere se nevejdou "
+"do pameti najednou."
 
 #: ../../library/zlib.rst:185
 msgid ""
@@ -320,6 +368,9 @@ msgid ""
 "\"window size\"), and what header and trailer format is expected.  It has "
 "the same meaning as `described for decompress() <#decompress-wbits>`__."
 msgstr ""
+"Parametr *wbits* ridi velikost bufferu historie (nebo \"velikost okna\") a "
+"jaky format hlavicky a paticky se ocekava. Ma stejny vyznam jako `popsany "
+"pro decompress() <#decompress-wbits>`__."
 
 #: ../../library/zlib.rst:189
 msgid ""
@@ -327,6 +378,9 @@ msgid ""
 "provided, this must be the same dictionary as was used by the compressor "
 "that produced the data that is to be decompressed."
 msgstr ""
+"Parametr *zdict* specifikuje preddefinovany kompresni slovnik. Pokud je "
+"poskytnuto, musi to byt stejny slovnik, jaky byl pouzit kompresorem, ktery "
+"vytvoril data urcena k dekompresi."
 
 #: ../../library/zlib.rst:195
 msgid ""
@@ -334,14 +388,17 @@ msgid ""
 "modify its contents between the call to :func:`decompressobj` and the first "
 "call to the decompressor's ``decompress()`` method."
 msgstr ""
+"Pokud je *zdict* menitelny objekt (jako :class:`bytearray`), nesmi jeho "
+"obsah modifikovat mezi volanim :func:`decompressobj` a prvnim volanim metody"
+" ``decompress()`` dekompresoru."
 
 #: ../../library/zlib.rst:199
 msgid "Added the *zdict* parameter."
-msgstr ""
+msgstr "Pridan parametr *zdict*."
 
 #: ../../library/zlib.rst:203
 msgid "Compression objects support the following methods:"
-msgstr ""
+msgstr "Kompresni objekty podporuji nasledujici metody:"
 
 #: ../../library/zlib.rst:208
 msgid ""
@@ -350,6 +407,10 @@ msgid ""
 "output produced by any preceding calls to the :meth:`compress` method.  Some"
 " input may be kept in internal buffers for later processing."
 msgstr ""
+"Komprimuje *data* a vraci objekt bytes obsahujici komprimovana data alespon "
+"casti dat v *data*. Tato data by mela byt spojena s vystupem vytvorenym "
+"predchozimi volanimi metody :meth:`compress`. Nektere vstupy mohou byt "
+"uchovavany v internich bufferech pro pozdejsi zpracovani."
 
 #: ../../library/zlib.rst:216
 msgid ""
@@ -364,22 +425,35 @@ msgid ""
 "method cannot be called again; the only realistic action is to delete the "
 "object."
 msgstr ""
+"Vsechny cekajici vstupy jsou zpracovany a je vracen objekt bytes obsahujici "
+"zbyvajici komprimovany vystup. *mode* lze vybrat z konstant "
+":const:`Z_NO_FLUSH`, :const:`Z_PARTIAL_FLUSH`, :const:`Z_SYNC_FLUSH`, "
+":const:`Z_FULL_FLUSH`, :const:`Z_BLOCK` nebo :const:`Z_FINISH`, s vychozi "
+"hodnotou :const:`Z_FINISH`. Krome :const:`Z_FINISH` vsechny konstanty "
+"umoznuji dale komprimovat bytestrings dat, zatimco :const:`Z_FINISH` dokonci"
+" komprimovany stream a zabrani dalsi kompresi dat. Po zavolani :meth:`flush`"
+" s *mode* nastavenym na :const:`Z_FINISH` nesmi byt metoda :meth:`compress` "
+"znovu zavolana; jedinou realistickou akci je smazat objekt."
 
 #: ../../library/zlib.rst:229
 msgid ""
 "Returns a copy of the compression object.  This can be used to efficiently "
 "compress a set of data that share a common initial prefix."
 msgstr ""
+"Vraci kopii kompresniho objektu. To lze pouzit k efektivni kompresi sady "
+"dat, ktera sdilejí spolecny pocatecni prefix."
 
 #: ../../library/zlib.rst:233
 msgid ""
 "Added :func:`copy.copy` and :func:`copy.deepcopy` support to compression "
 "objects."
 msgstr ""
+"Pridana podpora :func:`copy.copy` a :func:`copy.deepcopy` pro kompresni "
+"objekty."
 
 #: ../../library/zlib.rst:238
 msgid "Decompression objects support the following methods and attributes:"
-msgstr ""
+msgstr "Dekompresni objekty podporuji nasledujici metody a atributy:"
 
 #: ../../library/zlib.rst:243
 msgid ""
@@ -388,6 +462,10 @@ msgid ""
 "compression data is available.  If the whole bytestring turned out to "
 "contain compressed data, this is ``b\"\"``, an empty bytes object."
 msgstr ""
+"Objekt bytes, ktery obsahuje byty za koncem komprimovanych dat. To znamena, "
+"ze zustava ``b\"\"`` az do posledniho bytu, ktery obsahuje komprimovana "
+"data. Pokud cely bytestring obsahoval komprimovana data, je to ``b\"\"``, "
+"prazdny objekt bytes."
 
 #: ../../library/zlib.rst:251
 msgid ""
@@ -397,18 +475,26 @@ msgid ""
 "must feed it (possibly with further data concatenated to it) back to a "
 "subsequent :meth:`decompress` method call in order to get correct output."
 msgstr ""
+"Objekt bytes, ktery obsahuje data, ktera nebyla zpracovana poslednim volanim"
+" :meth:`decompress`, protoze prekrocila limit bufferu nekomprimovanych dat. "
+"Tato data jeste nebyla zpracovana zlib, takze je musite predat (mozna s "
+"dalsimi daty) zpet do nasledujiciho volani metody :meth:`decompress`, abyste"
+" ziskali spravny vystup."
 
 #: ../../library/zlib.rst:260
 msgid ""
 "A boolean indicating whether the end of the compressed data stream has been "
 "reached."
 msgstr ""
+"Boolean indikujici, zda byl dosazen konec komprimovaneho datoveho streamu."
 
 #: ../../library/zlib.rst:263
 msgid ""
 "This makes it possible to distinguish between a properly formed compressed "
 "stream, and an incomplete or truncated one."
 msgstr ""
+"To umoznuje rozlisit mezi spravne vytvoreny komprimovany stream a "
+"nekomplenim nebo zkracenym."
 
 #: ../../library/zlib.rst:271
 msgid ""
@@ -418,6 +504,11 @@ msgid ""
 ":meth:`decompress` method.  Some of the input data may be preserved in "
 "internal buffers for later processing."
 msgstr ""
+"Dekomprimuje *data* a vraci objekt bytes obsahujici nekomprimovana data "
+"odpovidajici alespon casti dat v *string*. Tato data by mela byt spojena s "
+"vystupem vytvorenym predchozimi volanimi metody :meth:`decompress`. Cast "
+"vstupnich dat muze byt uchovana v internich bufferech pro pozdejsi "
+"zpracovani."
 
 #: ../../library/zlib.rst:277
 msgid ""
@@ -429,10 +520,17 @@ msgid ""
 "*max_length* is zero then the whole input is decompressed, and "
 ":attr:`unconsumed_tail` is empty."
 msgstr ""
+"Pokud je volitelny parametr *max_length* nenulovy, navratova hodnota nebude "
+"delsi nez *max_length*. To muze znamenat, ze ne vsechny komprimovane vstupy "
+"mohou byt zpracovany; nespotrebovana data budou ulozena v atributu "
+":attr:`unconsumed_tail`. Tento bytestring musi byt predan nasledujicimu "
+"volani :meth:`decompress`, pokud ma dekomprese pokracovat. Pokud je "
+"*max_length* nula, cely vstup je dekomprimovan a :attr:`unconsumed_tail` je "
+"prazdny."
 
 #: ../../library/zlib.rst:284
 msgid "*max_length* can be used as a keyword argument."
-msgstr ""
+msgstr "*max_length* lze pouzit jako klicovy argument."
 
 #: ../../library/zlib.rst:290
 msgid ""
@@ -441,11 +539,16 @@ msgid ""
 ":meth:`decompress` method cannot be called again; the only realistic action "
 "is to delete the object."
 msgstr ""
+"Vsechny cekajici vstupy jsou zpracovany a je vracen objekt bytes obsahujici "
+"zbyvajici nekomprimovany vystup. Po zavolani :meth:`flush` nesmi byt metoda "
+":meth:`decompress` znovu zavolana; jedinou realistickou akci je smazat "
+"objekt."
 
 #: ../../library/zlib.rst:295
 msgid ""
 "The optional parameter *length* sets the initial size of the output buffer."
 msgstr ""
+"Volitelny parametr *length* nastavuje pocatecni velikost vystupniho bufferu."
 
 #: ../../library/zlib.rst:300
 msgid ""
@@ -453,134 +556,164 @@ msgid ""
 "state of the decompressor midway through the data stream in order to speed "
 "up random seeks into the stream at a future point."
 msgstr ""
+"Vraci kopii dekompresniho objektu. To lze pouzit k ulozeni stavu "
+"dekompresoru uprostred datoveho streamu, aby se zrychlilo nahodne "
+"vyhledavani ve streamu v budoucnu."
 
 #: ../../library/zlib.rst:305
 msgid ""
 "Added :func:`copy.copy` and :func:`copy.deepcopy` support to decompression "
 "objects."
 msgstr ""
+"Pridana podpora :func:`copy.copy` a :func:`copy.deepcopy` pro dekompresni "
+"objekty."
 
 #: ../../library/zlib.rst:310
 msgid ""
 "The following constants are available to configure compression and "
 "decompression behavior:"
 msgstr ""
+"Nasledujici konstanty jsou k dispozici pro konfiguraci chovani komprese a "
+"dekomprese:"
 
 #: ../../library/zlib.rst:315
 msgid "The deflate compression method."
-msgstr ""
+msgstr "Metoda deflate komprese."
 
 #: ../../library/zlib.rst:320
 msgid ""
 "The maximum window size, expressed as a power of 2. For example, if "
 ":const:`!MAX_WBITS` is ``15`` it results in a window size of ``32 KiB``."
 msgstr ""
+"Maximalni velikost okna, vyjadrena jako mocnina 2. Napr. pokud je "
+":const:`!MAX_WBITS` ``15``, vysledkem je velikost okna ``32 KiB``."
 
 #: ../../library/zlib.rst:327
 msgid "The default memory level for compression objects."
-msgstr ""
+msgstr "Vychozi uroven pameti pro kompresni objekty."
 
 #: ../../library/zlib.rst:332
 msgid "The default buffer size for decompression operations."
-msgstr ""
+msgstr "Vychozi velikost bufferu pro dekompresni operace."
 
 #: ../../library/zlib.rst:337
 msgid "Compression level ``0``; no compression."
-msgstr ""
+msgstr "Uroven komprese ``0``; zadna komprese."
 
 #: ../../library/zlib.rst:344
 msgid "Compression level ``1``; fastest and produces the least compression."
-msgstr ""
+msgstr "Uroven komprese ``1``; nejrychlejsi a produkuje nejmene komprese."
 
 #: ../../library/zlib.rst:349
 msgid "Compression level ``9``; slowest and produces the most compression."
-msgstr ""
+msgstr "Uroven komprese ``9``; nejpomalejsi a produkuje nejvice komprese."
 
 #: ../../library/zlib.rst:354
 msgid ""
 "Default compression level (``-1``); a compromise between speed and "
 "compression. Currently equivalent to compression level ``6``."
 msgstr ""
+"Vychozi uroven komprese (``-1``); kompromis mezi rychlosti a kompresi. "
+"Momentalne ekvivalentni urovni komprese ``6``."
 
 #: ../../library/zlib.rst:360
 msgid "Default compression strategy, for normal data."
-msgstr ""
+msgstr "Vychozi kompresni strategie pro normalni data."
 
 #: ../../library/zlib.rst:365
 msgid "Compression strategy for data produced by a filter (or predictor)."
-msgstr ""
+msgstr "Kompresni strategie pro data vytvorena filtrem (nebo prediktorem)."
 
 #: ../../library/zlib.rst:370
 msgid "Compression strategy that forces Huffman coding only."
-msgstr ""
+msgstr "Kompresni strategie, ktera vynucuje pouze Huffmanovo kodovani."
 
 #: ../../library/zlib.rst:375
 msgid ""
 "Compression strategy that limits match distances to one (run-length "
 "encoding)."
 msgstr ""
+"Kompresni strategie, ktera omezuje vzdalenosti shod na jednu (run-length "
+"encoding)."
 
 #: ../../library/zlib.rst:377
 msgid ""
 "This constant is only available if Python was compiled with zlib 1.2.0.1 or "
 "greater."
 msgstr ""
+"Tato konstanta je k dispozici pouze pokud byl Python prelozeny se zlib "
+"1.2.0.1 nebo vyssi."
 
 #: ../../library/zlib.rst:385
 msgid "Compression strategy that prevents the use of dynamic Huffman codes."
 msgstr ""
+"Kompresni strategie, ktera zabranuji pouziti dynamickych Huffmanovych kodu."
 
 #: ../../library/zlib.rst:387 ../../library/zlib.rst:424
 msgid ""
 "This constant is only available if Python was compiled with zlib 1.2.2.2 or "
 "greater."
 msgstr ""
+"Tato konstanta je k dispozici pouze pokud byl Python prelozeny se zlib "
+"1.2.2.2 nebo vyssi."
 
 #: ../../library/zlib.rst:395
 msgid "Flush mode ``0``. No special flushing behavior."
-msgstr ""
+msgstr "Flush rezim ``0``. Zadne specialni chovani pri vyprazdnovani."
 
 #: ../../library/zlib.rst:402
 msgid "Flush mode ``1``. Flush as much output as possible."
-msgstr ""
+msgstr "Flush rezim ``1``. Vyprazdni co nejvice vystupu."
 
 #: ../../library/zlib.rst:407
 msgid ""
 "Flush mode ``2``. All output is flushed and the output is aligned to a byte "
 "boundary."
 msgstr ""
+"Flush rezim ``2``. Vsechny vystupy jsou vyprazdneny a vystup je zarovnan na "
+"hranici bytu."
 
 #: ../../library/zlib.rst:412
 msgid ""
 "Flush mode ``3``. All output is flushed and the compression state is reset."
 msgstr ""
+"Flush rezim ``3``. Vsechny vystupy jsou vyprazdneny a stav komprese je "
+"resetovan."
 
 #: ../../library/zlib.rst:417
 msgid ""
 "Flush mode ``4``. All pending input is processed, no more input is expected."
 msgstr ""
+"Flush rezim ``4``. Vsechny cekajici vstupy jsou zpracovany, zadny dalsi "
+"vstup se neocekava."
 
 #: ../../library/zlib.rst:422
 msgid "Flush mode ``5``. A deflate block is completed and emitted."
-msgstr ""
+msgstr "Flush rezim ``5``. Deflate blok je dokoncen a emitovan."
 
 #: ../../library/zlib.rst:432
 msgid ""
 "Flush mode ``6``, for inflate operations. Instructs inflate to return when "
 "it gets to the next deflate block boundary."
 msgstr ""
+"Flush rezim ``6`` pro inflate operace. Instrukuje inflate, aby se vratil, "
+"kdyz se dostane k dalsi hranici deflate bloku."
 
 #: ../../library/zlib.rst:435
 msgid ""
 "This constant is only available if Python was compiled with zlib 1.2.3.4 or "
 "greater."
 msgstr ""
+"Tato konstanta je k dispozici pouze pokud byl Python prelozeny se zlib "
+"1.2.3.4 nebo vyssi."
 
 #: ../../library/zlib.rst:441
 msgid ""
 "Information about the version of the zlib library in use is available "
 "through the following constants:"
 msgstr ""
+"Informace o verzi pouzite zlib knihovny jsou k dispozici prostrednictvim "
+"nasledujicich konstant:"
 
 #: ../../library/zlib.rst:447
 msgid ""
@@ -588,11 +721,14 @@ msgid ""
 "module. This may be different from the zlib library actually used at "
 "runtime, which is available as :const:`ZLIB_RUNTIME_VERSION`."
 msgstr ""
+"Retezec verze zlib knihovny, ktera byla pouzita pro sestaveni modulu. Muze "
+"se lisit od zlib knihovny skutecne pouzite za behu, ktera je k dispozici "
+"jako :const:`ZLIB_RUNTIME_VERSION`."
 
 #: ../../library/zlib.rst:454
 msgid ""
 "The version string of the zlib library actually loaded by the interpreter."
-msgstr ""
+msgstr "Retezec verze zlib knihovny skutecne nactene interpretem."
 
 #: ../../library/zlib.rst:461
 msgid ""
@@ -601,51 +737,58 @@ msgid ""
 ":data:`ZLIB_RUNTIME_VERSION` constants reflect the version of the zlib API "
 "provided by zlib-ng."
 msgstr ""
+"Retezec verze zlib-ng knihovny, ktera byla pouzita pro sestaveni modulu, "
+"pokud byla pouzita zlib-ng. Kdyz je pritomna, konstanty :data:`ZLIB_VERSION`"
+" a :data:`ZLIB_RUNTIME_VERSION` odrazejí verzi zlib API poskytovane zlib-ng."
 
 #: ../../library/zlib.rst:466
 msgid ""
 "If zlib-ng was not used to build the module, this constant will be absent."
 msgstr ""
+"Pokud zlib-ng nebyla pouzita pro sestaveni modulu, tato konstanta bude "
+"chybet."
 
 #: ../../library/zlib.rst:473
 msgid "Module :mod:`gzip`"
-msgstr ""
+msgstr "Modul :mod:`gzip`"
 
 #: ../../library/zlib.rst:474
 msgid "Reading and writing :program:`gzip`\\ -format files."
-msgstr ""
+msgstr "Cteni a zapis souboru ve formatu :program:`gzip`."
 
 #: ../../library/zlib.rst:476
 msgid "https://www.zlib.net"
-msgstr ""
+msgstr "https://www.zlib.net"
 
 #: ../../library/zlib.rst:477
 msgid "The zlib library home page."
-msgstr ""
+msgstr "Domovska stranka knihovny zlib."
 
 #: ../../library/zlib.rst:479
 msgid "https://www.zlib.net/manual.html"
-msgstr ""
+msgstr "https://www.zlib.net/manual.html"
 
 #: ../../library/zlib.rst:480
 msgid ""
 "The zlib manual explains  the semantics and usage of the library's many "
 "functions."
-msgstr ""
+msgstr "Manual zlib vysvetluje semantiku a pouziti mnoha funkci knihovny."
 
 #: ../../library/zlib.rst:483
 msgid ""
 "In case gzip (de)compression is a bottleneck, the `python-isal`_ package "
 "speeds up (de)compression with a mostly compatible API."
 msgstr ""
+"V pripade, ze gzip (de)komprese je uzke hrdlo, balik `python-isal`_ "
+"zrychluje (de)kompresi s vetsinou kompatibilnim API."
 
 #: ../../library/zlib.rst:118
 msgid "Cyclic Redundancy Check"
-msgstr ""
+msgstr "Cyklicky redundantni kontrolni soucet"
 
 #: ../../library/zlib.rst:118
 msgid "checksum"
-msgstr ""
+msgstr "kontrolni soucet"
 
 #~ msgid "Combine two Adler-32 checksums into one."
 #~ msgstr ""

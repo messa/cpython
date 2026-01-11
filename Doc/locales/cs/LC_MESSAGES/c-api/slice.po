@@ -11,100 +11,123 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/slice.rst:6
 msgid "Slice Objects"
-msgstr ""
+msgstr "Objekty slice"
 
 #: ../../c-api/slice.rst:11
 msgid ""
-"The type object for slice objects.  This is the same as :class:`slice` in"
-" the Python layer."
+"The type object for slice objects.  This is the same as :class:`slice` in "
+"the Python layer."
 msgstr ""
+"Objektový typ pro objekty slice. Jedná se o totéž jako :class:`slice` v "
+"Pythonu."
 
 #: ../../c-api/slice.rst:17
 msgid ""
 "Return true if *ob* is a slice object; *ob* must not be ``NULL``.  This "
 "function always succeeds."
 msgstr ""
+"Vrací true, pokud *ob* je objekt slice; *ob* nesmí být ``NULL``. Tato funkce"
+" vždy uspěje."
 
 #: ../../c-api/slice.rst:23
 msgid ""
-"Return a new slice object with the given values.  The *start*, *stop*, "
-"and *step* parameters are used as the values of the slice object "
-"attributes of the same names.  Any of the values may be ``NULL``, in "
-"which case the ``None`` will be used for the corresponding attribute."
+"Return a new slice object with the given values.  The *start*, *stop*, and "
+"*step* parameters are used as the values of the slice object attributes of "
+"the same names.  Any of the values may be ``NULL``, in which case the "
+"``None`` will be used for the corresponding attribute."
 msgstr ""
+"Vrací nový objekt slice s danými hodnotami. Parametry *start*, *stop* a "
+"*step* jsou použity jako hodnoty atributů objektu slice stejného jména. "
+"Kterákoliv z hodnot může být ``NULL``, v takovém případě bude použito "
+"``None`` pro odpovídající atribut."
 
 #: ../../c-api/slice.rst:28
 msgid ""
 "Return ``NULL`` with an exception set if the new object could not be "
 "allocated."
 msgstr ""
+"Vrací ``NULL`` s nastavenou výjimkou, pokud nový objekt nemohl být alokován."
 
 #: ../../c-api/slice.rst:34
 msgid ""
 "Retrieve the start, stop and step indices from the slice object *slice*, "
-"assuming a sequence of length *length*. Treats indices greater than "
-"*length* as errors."
+"assuming a sequence of length *length*. Treats indices greater than *length*"
+" as errors."
 msgstr ""
+"Získá indexy start, stop a step z objektu slice *slice*, za předpokladu "
+"posloupnosti délky *length*. Indexy větší než *length* jsou považovány za "
+"chybu."
 
 #: ../../c-api/slice.rst:38
 msgid ""
-"Returns ``0`` on success and ``-1`` on error with no exception set "
-"(unless one of the indices was not ``None`` and failed to be converted to"
-" an integer, in which case ``-1`` is returned with an exception set)."
+"Returns ``0`` on success and ``-1`` on error with no exception set (unless "
+"one of the indices was not ``None`` and failed to be converted to an "
+"integer, in which case ``-1`` is returned with an exception set)."
 msgstr ""
+"Vrací ``0`` při úspěchu a ``-1`` při chybě bez nastavené výjimky (pokud však"
+" některý z indexů nebyl ``None`` a selhalo jeho převedení na celé číslo, pak"
+" je vráceno ``-1`` s nastavenou výjimkou)."
 
 #: ../../c-api/slice.rst:42
 msgid "You probably do not want to use this function."
-msgstr ""
+msgstr "Pravděpodobně nechcete použít tuto funkci."
 
 #: ../../c-api/slice.rst:44 ../../c-api/slice.rst:75
 msgid ""
-"The parameter type for the *slice* parameter was ``PySliceObject*`` "
-"before."
-msgstr ""
+"The parameter type for the *slice* parameter was ``PySliceObject*`` before."
+msgstr "Typ parametru pro parametr *slice* byl dříve ``PySliceObject*``."
 
 #: ../../c-api/slice.rst:51
 msgid ""
-"Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start,"
-" stop, and step indices from the slice object *slice* assuming a sequence"
-" of length *length*, and store the length of the slice in *slicelength*."
-"  Out of bounds indices are clipped in a manner consistent with the "
-"handling of normal slices."
+"Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start, "
+"stop, and step indices from the slice object *slice* assuming a sequence of "
+"length *length*, and store the length of the slice in *slicelength*.  Out of"
+" bounds indices are clipped in a manner consistent with the handling of "
+"normal slices."
 msgstr ""
+"Použitelná náhrada za :c:func:`PySlice_GetIndices`. Získá indexy start, stop"
+" a step z objektu slice *slice* za předpokladu posloupnosti délky *length* a"
+" uloží délku slicu do *slicelength*. Indexy mimo rozsah jsou ořezány "
+"způsobem konzistentním se zpracováním běžných slicovacích operací."
 
 #: ../../c-api/slice.rst:57
 msgid "Return ``0`` on success and ``-1`` on error with an exception set."
-msgstr ""
+msgstr "Vrací ``0`` při úspěchu a ``-1`` při chybě s nastavenou výjimkou."
 
 #: ../../c-api/slice.rst:60
 msgid ""
-"This function is considered not safe for resizable sequences. Its "
-"invocation should be replaced by a combination of "
-":c:func:`PySlice_Unpack` and :c:func:`PySlice_AdjustIndices` where ::"
+"This function is considered not safe for resizable sequences. Its invocation"
+" should be replaced by a combination of :c:func:`PySlice_Unpack` and "
+":c:func:`PySlice_AdjustIndices` where ::"
 msgstr ""
+"Tato funkce není považována za bezpečnou pro sekvence měnící velikost. Její "
+"volání by mělo být nahrazeno kombinací :c:func:`PySlice_Unpack` a "
+":c:func:`PySlice_AdjustIndices`, kde ::"
 
 #: ../../c-api/slice.rst:64
 #, python-brace-format
 msgid ""
-"if (PySlice_GetIndicesEx(slice, length, &start, &stop, &step, "
-"&slicelength) < 0) {\n"
+"if (PySlice_GetIndicesEx(slice, length, &start, &stop, &step, &slicelength) < 0) {\n"
 "    // return error\n"
 "}"
 msgstr ""
+"if (PySlice_GetIndicesEx(slice, length, &start, &stop, &step, &slicelength) < 0) {\n"
+"    // return error\n"
+"}"
 
 #: ../../c-api/slice.rst:68
 msgid "is replaced by ::"
-msgstr ""
+msgstr "je nahrazeno ::"
 
 #: ../../c-api/slice.rst:70
 #, python-brace-format
@@ -114,15 +137,24 @@ msgid ""
 "}\n"
 "slicelength = PySlice_AdjustIndices(length, &start, &stop, step);"
 msgstr ""
+"if (PySlice_Unpack(slice, &start, &stop, &step) < 0) {\n"
+"    // return error\n"
+"}\n"
+"slicelength = PySlice_AdjustIndices(length, &start, &stop, step);"
 
 #: ../../c-api/slice.rst:79
 msgid ""
-"If ``Py_LIMITED_API`` is not set or set to the value between "
-"``0x03050400`` and ``0x03060000`` (not including) or ``0x03060100`` or "
-"higher :c:func:`!PySlice_GetIndicesEx` is implemented as a macro using "
-":c:func:`!PySlice_Unpack` and :c:func:`!PySlice_AdjustIndices`. Arguments"
-" *start*, *stop* and *step* are evaluated more than once."
+"If ``Py_LIMITED_API`` is not set or set to the value between ``0x03050400`` "
+"and ``0x03060000`` (not including) or ``0x03060100`` or higher "
+":c:func:`!PySlice_GetIndicesEx` is implemented as a macro using "
+":c:func:`!PySlice_Unpack` and :c:func:`!PySlice_AdjustIndices`. Arguments "
+"*start*, *stop* and *step* are evaluated more than once."
 msgstr ""
+"Pokud není ``Py_LIMITED_API`` nastaveno nebo je nastaveno na hodnotu mezi "
+"``0x03050400`` a ``0x03060000`` (nevčetně) nebo ``0x03060100`` nebo vyšší, "
+"je :c:func:`!PySlice_GetIndicesEx` implementována jako makro používající "
+":c:func:`!PySlice_Unpack` a :c:func:`!PySlice_AdjustIndices`. Argumenty "
+"*start*, *stop* a *step* jsou vyhodnoceny vícekrát."
 
 #: ../../c-api/slice.rst:86
 msgid ""
@@ -130,50 +162,64 @@ msgid ""
 "between ``0x03060000`` and ``0x03060100`` (not including) "
 ":c:func:`!PySlice_GetIndicesEx` is a deprecated function."
 msgstr ""
+"Pokud je ``Py_LIMITED_API`` nastaveno na hodnotu menší než ``0x03050400`` "
+"nebo mezi ``0x03060000`` a ``0x03060100`` (nevčetně), je "
+":c:func:`!PySlice_GetIndicesEx` zastaralou funkcí."
 
 #: ../../c-api/slice.rst:94
 msgid ""
 "Extract the start, stop and step data members from a slice object as C "
 "integers.  Silently reduce values larger than ``PY_SSIZE_T_MAX`` to "
 "``PY_SSIZE_T_MAX``, silently boost the start and stop values less than "
-"``PY_SSIZE_T_MIN`` to ``PY_SSIZE_T_MIN``, and silently boost the step "
-"values less than ``-PY_SSIZE_T_MAX`` to ``-PY_SSIZE_T_MAX``."
+"``PY_SSIZE_T_MIN`` to ``PY_SSIZE_T_MIN``, and silently boost the step values"
+" less than ``-PY_SSIZE_T_MAX`` to ``-PY_SSIZE_T_MAX``."
 msgstr ""
+"Extrahuje datové členy start, stop a step z objektu slice jako C integery. "
+"Tiše redukuje hodnoty větší než ``PY_SSIZE_T_MAX`` na ``PY_SSIZE_T_MAX``, "
+"tiše zvyšuje hodnoty start a stop menší než ``PY_SSIZE_T_MIN`` na "
+"``PY_SSIZE_T_MIN`` a tiše zvyšuje hodnoty step menší než ``-PY_SSIZE_T_MAX``"
+" na ``-PY_SSIZE_T_MAX``."
 
 #: ../../c-api/slice.rst:100
 msgid "Return ``-1`` with an exception set on error, ``0`` on success."
-msgstr ""
+msgstr "Vrací ``-1`` s nastavenou výjimkou při chybě, ``0`` při úspěchu."
 
 #: ../../c-api/slice.rst:107
 msgid ""
-"Adjust start/end slice indices assuming a sequence of the specified "
-"length. Out of bounds indices are clipped in a manner consistent with the"
-" handling of normal slices."
+"Adjust start/end slice indices assuming a sequence of the specified length. "
+"Out of bounds indices are clipped in a manner consistent with the handling "
+"of normal slices."
 msgstr ""
+"Upravuje indexy start/end slice za předpokladu posloupnosti zadané délky. "
+"Indexy mimo rozsah jsou ořezány způsobem konzistentním se zpracováním "
+"běžných slicovacích operací."
 
 #: ../../c-api/slice.rst:111
 msgid ""
 "Return the length of the slice.  Always successful.  Doesn't call Python "
 "code."
-msgstr ""
+msgstr "Vrací délku slicu. Vždy úspěšné. Nevolá kód Pythonu."
 
 #: ../../c-api/slice.rst:118
 msgid "Ellipsis Object"
-msgstr ""
+msgstr "Objekt Ellipsis"
 
 #: ../../c-api/slice.rst:123
 msgid ""
-"The type of Python :const:`Ellipsis` object.  Same as "
-":class:`types.EllipsisType` in the Python layer."
+"The type of Python :const:`Ellipsis` object.  Same "
+"as :class:`types.EllipsisType` in the Python layer."
 msgstr ""
+"Typ objektu Python :const:`Ellipsis`. Totéž jako :class:`types.EllipsisType`"
+" v Pythonu."
 
 #: ../../c-api/slice.rst:129
 msgid ""
 "The Python ``Ellipsis`` object.  This object has no methods.  Like "
 ":c:data:`Py_None`, it is an :term:`immortal` singleton object."
 msgstr ""
+"Objekt Python ``Ellipsis``. Tento objekt nemá žádné metody. Podobně jako "
+":c:data:`Py_None` je to :term:`immortal` singleton objekt."
 
 #: ../../c-api/slice.rst:132
 msgid ":c:data:`Py_Ellipsis` is immortal."
-msgstr ""
-
+msgstr ":c:data:`Py_Ellipsis` je immortal."

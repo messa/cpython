@@ -11,230 +11,275 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/frame.rst:4
 msgid "Frame Objects"
-msgstr ""
+msgstr "Objekty rámce"
 
 #: ../../c-api/frame.rst:8
 msgid "The C structure of the objects used to describe frame objects."
-msgstr ""
+msgstr "Struktura C objektů používaných k popisu objektů rámce."
 
 #: ../../c-api/frame.rst:10
 msgid "There are no public members in this structure."
-msgstr ""
+msgstr "V této struktuře nejsou žádné veřejné členy."
 
 #: ../../c-api/frame.rst:12
 msgid ""
-"The members of this structure were removed from the public C API. Refer "
-"to the :ref:`What's New entry <pyframeobject-3.11-hiding>` for details."
+"The members of this structure were removed from the public C API. Refer to "
+"the :ref:`What's New entry <pyframeobject-3.11-hiding>` for details."
 msgstr ""
+"Členy této struktury byly odstraněny z veřejného C API. Podrobnosti najdete "
+"v :ref:`záznamu Co je nového <pyframeobject-3.11-hiding>`."
 
 #: ../../c-api/frame.rst:17
 msgid ""
-"The :c:func:`PyEval_GetFrame` and :c:func:`PyThreadState_GetFrame` "
-"functions can be used to get a frame object."
+"The :c:func:`PyEval_GetFrame` and :c:func:`PyThreadState_GetFrame` functions"
+" can be used to get a frame object."
 msgstr ""
+"Funkce :c:func:`PyEval_GetFrame` a :c:func:`PyThreadState_GetFrame` lze "
+"použít k získání objektu rámce."
 
 #: ../../c-api/frame.rst:20
 msgid "See also :ref:`Reflection <reflection>`."
-msgstr ""
+msgstr "Viz také :ref:`Reflexe <reflection>`."
 
 #: ../../c-api/frame.rst:24
 msgid ""
 "The type of frame objects. It is the same object as "
 ":py:class:`types.FrameType` in the Python layer."
 msgstr ""
+"Typ objektů rámce. Je to stejný objekt jako :py:class:`types.FrameType` v "
+"Pythonové vrstvě."
 
 #: ../../c-api/frame.rst:29
 msgid ""
 "Previously, this type was only available after including "
 "``<frameobject.h>``."
-msgstr ""
+msgstr "Dříve byl tento typ dostupný pouze po zahrnutí ``<frameobject.h>``."
 
 #: ../../c-api/frame.rst:34
 msgid ""
-"Create a new frame object. This function returns a :term:`strong "
-"reference` to the new frame object on success, and returns ``NULL`` with "
-"an exception set on failure."
+"Create a new frame object. This function returns a :term:`strong reference` "
+"to the new frame object on success, and returns ``NULL`` with an exception "
+"set on failure."
 msgstr ""
+"Vytvoří nový objekt rámce. Tato funkce při úspěchu vrací :term:`silný odkaz "
+"<strong reference>` na nový objekt rámce a při selhání vrací ``NULL`` s "
+"nastavenou výjimkou."
 
 #: ../../c-api/frame.rst:40
 msgid "Return non-zero if *obj* is a frame object."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je *obj* objekt rámce."
 
 #: ../../c-api/frame.rst:44
 msgid ""
 "Previously, this function was only available after including "
 "``<frameobject.h>``."
 msgstr ""
+"Dříve byla tato funkce dostupná pouze po zahrnutí ``<frameobject.h>``."
 
 #: ../../c-api/frame.rst:49
 msgid "Get the *frame* next outer frame."
-msgstr ""
+msgstr "Získá další vnější rámec *frame*."
 
 #: ../../c-api/frame.rst:51
 msgid ""
 "Return a :term:`strong reference`, or ``NULL`` if *frame* has no outer "
 "frame."
 msgstr ""
+"Vrací :term:`silný odkaz <strong reference>`, nebo ``NULL``, pokud *frame* "
+"nemá vnější rámec."
 
 #: ../../c-api/frame.rst:59
 msgid "Get the *frame*'s :attr:`~frame.f_builtins` attribute."
-msgstr ""
+msgstr "Získá atribut :attr:`~frame.f_builtins` rámce *frame*."
 
 #: ../../c-api/frame.rst:61 ../../c-api/frame.rst:92
 msgid "Return a :term:`strong reference`. The result cannot be ``NULL``."
 msgstr ""
+"Vrací :term:`silný odkaz <strong reference>`. Výsledek nemůže být ``NULL``."
 
 #: ../../c-api/frame.rst:68
 msgid "Get the *frame* code."
-msgstr ""
+msgstr "Získá kód rámce *frame*."
 
 #: ../../c-api/frame.rst:70 ../../c-api/frame.rst:136
 msgid "Return a :term:`strong reference`."
-msgstr ""
+msgstr "Vrací :term:`silný odkaz <strong reference>`."
 
 #: ../../c-api/frame.rst:72
 msgid "The result (frame code) cannot be ``NULL``."
-msgstr ""
+msgstr "Výsledek (kód rámce) nemůže být ``NULL``."
 
 #: ../../c-api/frame.rst:79
 msgid ""
-"Get the generator, coroutine, or async generator that owns this frame, or"
-" ``NULL`` if this frame is not owned by a generator. Does not raise an "
+"Get the generator, coroutine, or async generator that owns this frame, or "
+"``NULL`` if this frame is not owned by a generator. Does not raise an "
 "exception, even if the return value is ``NULL``."
 msgstr ""
+"Získá generátor, korutinu nebo asynchronní generátor, který vlastní tento "
+"rámec, nebo ``NULL``, pokud tento rámec není vlastněn generátorem. "
+"Nevyvolává výjimku, ani když je návratová hodnota ``NULL``."
 
 #: ../../c-api/frame.rst:83
 msgid "Return a :term:`strong reference`, or ``NULL``."
-msgstr ""
+msgstr "Vrací :term:`silný odkaz <strong reference>`, nebo ``NULL``."
 
 #: ../../c-api/frame.rst:90
 msgid "Get the *frame*'s :attr:`~frame.f_globals` attribute."
-msgstr ""
+msgstr "Získá atribut :attr:`~frame.f_globals` rámce *frame*."
 
 #: ../../c-api/frame.rst:99
 msgid "Get the *frame*'s :attr:`~frame.f_lasti` attribute."
-msgstr ""
+msgstr "Získá atribut :attr:`~frame.f_lasti` rámce *frame*."
 
 #: ../../c-api/frame.rst:101
 msgid "Returns -1 if ``frame.f_lasti`` is ``None``."
-msgstr ""
+msgstr "Vrací -1, pokud je ``frame.f_lasti`` rovno ``None``."
 
 #: ../../c-api/frame.rst:108
 msgid "Get the variable *name* of *frame*."
-msgstr ""
+msgstr "Získá proměnnou *name* z rámce *frame*."
 
 #: ../../c-api/frame.rst:110
 msgid "Return a :term:`strong reference` to the variable value on success."
 msgstr ""
+"Při úspěchu vrací :term:`silný odkaz <strong reference>` na hodnotu "
+"proměnné."
 
 #: ../../c-api/frame.rst:111
-msgid "Raise :exc:`NameError` and return ``NULL`` if the variable does not exist."
-msgstr ""
+msgid ""
+"Raise :exc:`NameError` and return ``NULL`` if the variable does not exist."
+msgstr "Vyvolá :exc:`NameError` a vrátí ``NULL``, pokud proměnná neexistuje."
 
 #: ../../c-api/frame.rst:112
 msgid "Raise an exception and return ``NULL`` on error."
-msgstr ""
+msgstr "Při chybě vyvolá výjimku a vrátí ``NULL``."
 
 #: ../../c-api/frame.rst:114
 msgid "*name* type must be a :class:`str`."
-msgstr ""
+msgstr "Typ *name* musí být :class:`str`."
 
 #: ../../c-api/frame.rst:121
 msgid ""
 "Similar to :c:func:`PyFrame_GetVar`, but the variable name is a C string "
 "encoded in UTF-8."
 msgstr ""
+"Podobné jako :c:func:`PyFrame_GetVar`, ale název proměnné je řetězec C "
+"kódovaný v UTF-8."
 
 #: ../../c-api/frame.rst:129
 msgid ""
-"Get the *frame*'s :attr:`~frame.f_locals` attribute. If the frame refers "
-"to an :term:`optimized scope`, this returns a write-through proxy object "
-"that allows modifying the locals. In all other cases (classes, modules, "
-":func:`exec`, :func:`eval`) it returns the mapping representing the frame"
-" locals directly (as described for :func:`locals`)."
+"Get the *frame*'s :attr:`~frame.f_locals` attribute. If the frame refers to "
+"an :term:`optimized scope`, this returns a write-through proxy object that "
+"allows modifying the locals. In all other cases (classes, modules, "
+":func:`exec`, :func:`eval`) it returns the mapping representing the frame "
+"locals directly (as described for :func:`locals`)."
 msgstr ""
+"Získá atribut :attr:`~frame.f_locals` rámce *frame*. Pokud rámec odkazuje na"
+" :term:`optimalizovaný rozsah <optimized scope>`, vrací proxy objekt s "
+"průchodným zápisem, který umožňuje úpravu lokálních proměnných. Ve všech "
+"ostatních případech (třídy, moduly, :func:`exec`, :func:`eval`) vrací přímo "
+"mapování reprezentující lokální proměnné rámce (jak je popsáno pro "
+":func:`locals`)."
 
 #: ../../c-api/frame.rst:140
 msgid ""
 "As part of :pep:`667`, return an instance of "
 ":c:var:`PyFrameLocalsProxy_Type`."
 msgstr ""
+"Jako součást :pep:`667` vrací instanci :c:var:`PyFrameLocalsProxy_Type`."
 
 #: ../../c-api/frame.rst:146
 msgid "Return the line number that *frame* is currently executing."
-msgstr ""
+msgstr "Vrací číslo řádku, který *frame* aktuálně vykonává."
 
 #: ../../c-api/frame.rst:150
 msgid "Frame Locals Proxies"
-msgstr ""
+msgstr "Proxy lokálních proměnných rámce"
 
 #: ../../c-api/frame.rst:154
 msgid ""
 "The :attr:`~frame.f_locals` attribute on a :ref:`frame object <frame-"
 "objects>` is an instance of a \"frame-locals proxy\". The proxy object "
 "exposes a write-through view of the underlying locals dictionary for the "
-"frame. This ensures that the variables exposed by ``f_locals`` are always"
-" up to date with the live local variables in the frame itself."
+"frame. This ensures that the variables exposed by ``f_locals`` are always up"
+" to date with the live local variables in the frame itself."
 msgstr ""
+"Atribut :attr:`~frame.f_locals` na :ref:`objektu rámce <frame-objects>` je "
+"instancí „proxy lokálních proměnných rámce“. Proxy objekt poskytuje pohled s"
+" průchodným zápisem na základní slovník lokálních proměnných pro rámec. To "
+"zajišťuje, že proměnné vystavované pomocí ``f_locals`` jsou vždy aktuální s "
+"aktivními lokálními proměnnými v samém rámci."
 
 #: ../../c-api/frame.rst:160
 msgid "See :pep:`667` for more information."
-msgstr ""
+msgstr "Další informace najdete v :pep:`667`."
 
 #: ../../c-api/frame.rst:164
 msgid "The type of frame :func:`locals` proxy objects."
-msgstr ""
+msgstr "Typ proxy objektů :func:`locals` rámce."
 
 #: ../../c-api/frame.rst:168
 msgid "Return non-zero if *obj* is a frame :func:`locals` proxy."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je *obj* proxy :func:`locals` rámce."
 
 #: ../../c-api/frame.rst:172
 msgid "Legacy Local Variable APIs"
-msgstr ""
+msgstr "Zastaralá API pro lokální proměnné"
 
 #: ../../c-api/frame.rst:174
 msgid ""
-"These APIs are :term:`soft deprecated`. As of Python 3.13, they do "
-"nothing. They exist solely for backwards compatibility."
+"These APIs are :term:`soft deprecated`. As of Python 3.13, they do nothing. "
+"They exist solely for backwards compatibility."
 msgstr ""
+"Tato API jsou :term:`měkce zastaralá <soft deprecated>`. Od Pythonu 3.13 "
+"nedělají nic. Existují pouze kvůli zpětné kompatibilitě."
 
 #: ../../c-api/frame.rst:180 ../../c-api/frame.rst:194
 #: ../../c-api/frame.rst:207
 msgid "This function is :term:`soft deprecated` and does nothing."
 msgstr ""
+"Tato funkce je :term:`měkce zastaralá <soft deprecated>` a nedělá nic."
 
 #: ../../c-api/frame.rst:182
 msgid ""
-"Prior to Python 3.13, this function would copy the "
-":attr:`~frame.f_locals` attribute of *f* to the internal \"fast\" array "
-"of local variables, allowing changes in frame objects to be visible to "
-"the interpreter. If *clear* was true, this function would process "
-"variables that were unset in the locals dictionary."
+"Prior to Python 3.13, this function would copy the :attr:`~frame.f_locals` "
+"attribute of *f* to the internal \"fast\" array of local variables, allowing"
+" changes in frame objects to be visible to the interpreter. If *clear* was "
+"true, this function would process variables that were unset in the locals "
+"dictionary."
 msgstr ""
+"Před Pythonem 3.13 tato funkce kopírovala atribut :attr:`~frame.f_locals` "
+"rámce *f* do interního „rychleho“ pole lokálních proměnných, což umožňovalo,"
+" aby změny v objektech rámce byly viditelné pro interpretátor. Pokud bylo "
+"*clear* nastaveno na pravdu, tato funkce zpracovávala proměnné, které byly "
+"ve slovníku lokálních proměnných zrušeny."
 
 #: ../../c-api/frame.rst:188 ../../c-api/frame.rst:201
 #: ../../c-api/frame.rst:213
 msgid "This function now does nothing."
-msgstr ""
+msgstr "Tato funkce nyní nedělá nic."
 
 #: ../../c-api/frame.rst:196
 msgid ""
-"Prior to Python 3.13, this function would copy the internal \"fast\" "
-"array of local variables (which is used by the interpreter) to the "
+"Prior to Python 3.13, this function would copy the internal \"fast\" array "
+"of local variables (which is used by the interpreter) to the "
 ":attr:`~frame.f_locals` attribute of *f*, allowing changes in local "
 "variables to be visible to frame objects."
 msgstr ""
+"Před Pythonem 3.13 tato funkce kopírovala interní „rzychlé“ pole lokálních "
+"proměnných (které používá interpretátor) do atributu :attr:`~frame.f_locals`"
+" rámce *f*, což umožňovalo, aby změny v lokálních proměnných byly viditelné "
+"pro objekty rámce."
 
 #: ../../c-api/frame.rst:209
 msgid ""
@@ -242,34 +287,38 @@ msgid ""
 ":c:func:`PyFrame_FastToLocals`, but would return ``0`` on success, and "
 "``-1`` with an exception set on failure."
 msgstr ""
+"Před Pythonem 3.13 byla tato funkce podobná :c:func:`PyFrame_FastToLocals`, "
+"ale při úspěchu vracela ``0`` a při selhání ``-1`` s nastavenou výjimkou."
 
 #: ../../c-api/frame.rst:218
 msgid ":pep:`667`"
-msgstr ""
+msgstr ":pep:`667`"
 
 #: ../../c-api/frame.rst:222
 msgid "Internal Frames"
-msgstr ""
+msgstr "Interní rámce"
 
 #: ../../c-api/frame.rst:224
 msgid "Unless using :pep:`523`, you will not need this."
-msgstr ""
+msgstr "Pokud nepoužíváte :pep:`523`, nebudete toto potřebovat."
 
 #: ../../c-api/frame.rst:228
 msgid "The interpreter's internal frame representation."
-msgstr ""
+msgstr "Interní reprezentace rámce interpretátoru."
 
 #: ../../c-api/frame.rst:234
 msgid "Return a :term:`strong reference` to the code object for the frame."
 msgstr ""
+"Vrací :term:`silný odkaz <strong reference>` na objekt kódu pro rámec."
 
 #: ../../c-api/frame.rst:241
 msgid "Return the byte offset into the last executed instruction."
-msgstr ""
+msgstr "Vrací bajtový offset do poslední provedené instrukce."
 
 #: ../../c-api/frame.rst:248
 msgid ""
 "Return the currently executing line number, or -1 if there is no line "
 "number."
 msgstr ""
-
+"Vrací aktuálně vykonávané číslo řádku, nebo -1, pokud není k dispozici žádné"
+" číslo řádku."

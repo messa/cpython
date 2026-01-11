@@ -11,228 +11,298 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/capsule.rst:6
 msgid "Capsules"
-msgstr ""
+msgstr "Capsules"
 
 #: ../../c-api/capsule.rst:10
 msgid ""
-"Refer to :ref:`using-capsules` for more information on using these "
-"objects."
+"Refer to :ref:`using-capsules` for more information on using these objects."
 msgstr ""
+"Více informací o používání těchto objektů najdete v :ref:`using-capsules`."
 
 #: ../../c-api/capsule.rst:17
 msgid ""
-"This subtype of :c:type:`PyObject` represents an opaque value, useful for"
-" C extension modules which need to pass an opaque value (as a "
-":c:expr:`void*` pointer) through Python code to other C code.  It is "
-"often used to make a C function pointer defined in one module available "
-"to other modules, so the regular import mechanism can be used to access C"
-" APIs defined in dynamically loaded modules."
+"This subtype of :c:type:`PyObject` represents an opaque value, useful for C "
+"extension modules which need to pass an opaque value (as a :c:expr:`void*` "
+"pointer) through Python code to other C code.  It is often used to make a C "
+"function pointer defined in one module available to other modules, so the "
+"regular import mechanism can be used to access C APIs defined in dynamically"
+" loaded modules."
 msgstr ""
+"Tento podtyp :c:type:`PyObject` reprezentuje neprůhlednou hodnotu, užitečnou"
+" pro C rozšiřující moduly, které potřebují předat neprůhlednou hodnotu (jako"
+" ukazatel :c:expr:`void*`) skrz Python kód do jiného C kódu. Často se "
+"používá k tomu, aby C ukazatel na funkci definovaný v jednom modulu byl "
+"zpřístupněn jiným modulům, takže běžný mechanismus importu může být použit "
+"pro přístup k C API definovaným v dynamicky načítaných modulech."
 
 #: ../../c-api/capsule.rst:27
 msgid ""
-"The type object corresponding to capsule objects. This is the same object"
-" as :class:`types.CapsuleType` in the Python layer."
+"The type object corresponding to capsule objects. This is the same object as"
+" :class:`types.CapsuleType` in the Python layer."
 msgstr ""
+"Typ objektu odpovídající capsule objektům. Toto je stejný objekt jako "
+":class:`types.CapsuleType` v Python vrstvě."
 
 #: ../../c-api/capsule.rst:33
 msgid "The type of a destructor callback for a capsule.  Defined as::"
-msgstr ""
+msgstr "Typ destruktorového callbacku pro capsule. Definován jako::"
 
 #: ../../c-api/capsule.rst:35
 msgid "typedef void (*PyCapsule_Destructor)(PyObject *);"
-msgstr ""
+msgstr "typedef void (*PyCapsule_Destructor)(PyObject *);"
 
 #: ../../c-api/capsule.rst:37
 msgid ""
 "See :c:func:`PyCapsule_New` for the semantics of PyCapsule_Destructor "
 "callbacks."
 msgstr ""
+"Sémantiku PyCapsule_Destructor callbacků najdete v :c:func:`PyCapsule_New`."
 
 #: ../../c-api/capsule.rst:43
 msgid ""
-"Return true if its argument is a :c:type:`PyCapsule`.  This function "
-"always succeeds."
+"Return true if its argument is a :c:type:`PyCapsule`.  This function always "
+"succeeds."
 msgstr ""
+"Vrací true, pokud je její argument :c:type:`PyCapsule`. Tato funkce vždy "
+"uspěje."
 
 #: ../../c-api/capsule.rst:49
 msgid ""
 "Create a :c:type:`PyCapsule` encapsulating the *pointer*.  The *pointer* "
 "argument may not be ``NULL``."
 msgstr ""
+"Vytvoří :c:type:`PyCapsule` zapouzdřující *pointer*. Argument *pointer* "
+"nesmí být ``NULL``."
 
 #: ../../c-api/capsule.rst:52
 msgid "On failure, set an exception and return ``NULL``."
-msgstr ""
+msgstr "Při selhání nastaví výjimku a vrátí ``NULL``."
 
 #: ../../c-api/capsule.rst:54
 msgid ""
-"The *name* string may either be ``NULL`` or a pointer to a valid C "
-"string.  If non-``NULL``, this string must outlive the capsule.  (Though "
-"it is permitted to free it inside the *destructor*.)"
+"The *name* string may either be ``NULL`` or a pointer to a valid C string.  "
+"If non-``NULL``, this string must outlive the capsule.  (Though it is "
+"permitted to free it inside the *destructor*.)"
 msgstr ""
+"Řetězec *name* může být buď ``NULL`` nebo ukazatel na platný C řetězec. "
+"Pokud není ``NULL``, tento řetězec musí přežít capsule. (Přesto je povoleno "
+"jej uvolnit uvnitř *destructor*.)"
 
 #: ../../c-api/capsule.rst:58
 msgid ""
 "If the *destructor* argument is not ``NULL``, it will be called with the "
 "capsule as its argument when it is destroyed."
 msgstr ""
+"Pokud argument *destructor* není ``NULL``, bude zavolán s capsule jako "
+"argumentem, když je zničena."
 
 #: ../../c-api/capsule.rst:61
 msgid ""
 "If this capsule will be stored as an attribute of a module, the *name* "
-"should be specified as ``modulename.attributename``.  This will enable "
-"other modules to import the capsule using :c:func:`PyCapsule_Import`."
+"should be specified as ``modulename.attributename``.  This will enable other"
+" modules to import the capsule using :c:func:`PyCapsule_Import`."
 msgstr ""
+"Pokud bude tato capsule uložena jako atribut modulu, *name* by měl být "
+"specifikován jako ``modulename.attributename``. To umožní jiným modulům "
+"importovat capsule pomocí :c:func:`PyCapsule_Import`."
 
 #: ../../c-api/capsule.rst:68
 msgid ""
-"Retrieve the *pointer* stored in the capsule.  On failure, set an "
-"exception and return ``NULL``."
+"Retrieve the *pointer* stored in the capsule.  On failure, set an exception "
+"and return ``NULL``."
 msgstr ""
+"Získá *pointer* uložený v capsule. Při selhání nastaví výjimku a vrátí "
+"``NULL``."
 
 #: ../../c-api/capsule.rst:71
 msgid ""
-"The *name* parameter must compare exactly to the name stored in the "
-"capsule. If the name stored in the capsule is ``NULL``, the *name* passed"
-" in must also be ``NULL``.  Python uses the C function :c:func:`!strcmp` "
-"to compare capsule names."
+"The *name* parameter must compare exactly to the name stored in the capsule."
+" If the name stored in the capsule is ``NULL``, the *name* passed in must "
+"also be ``NULL``.  Python uses the C function :c:func:`!strcmp` to compare "
+"capsule names."
 msgstr ""
+"Parametr *name* musí přesně odpovídat jménu uloženému v capsule. Pokud je "
+"jméno uložené v capsule ``NULL``, *name* předaný dovnitř musí být také "
+"``NULL``. Python používá C funkci :c:func:`!strcmp` k porovnání jmen "
+"capsule."
 
 #: ../../c-api/capsule.rst:79
 msgid ""
 "Return the current destructor stored in the capsule.  On failure, set an "
 "exception and return ``NULL``."
 msgstr ""
+"Vrátí aktuální destruktor uložený v capsule. Při selhání nastaví výjimku a "
+"vrátí ``NULL``."
 
 #: ../../c-api/capsule.rst:82
 msgid ""
 "It is legal for a capsule to have a ``NULL`` destructor.  This makes a "
-"``NULL`` return code somewhat ambiguous; use :c:func:`PyCapsule_IsValid` "
-"or :c:func:`PyErr_Occurred` to disambiguate."
+"``NULL`` return code somewhat ambiguous; use :c:func:`PyCapsule_IsValid` or "
+":c:func:`PyErr_Occurred` to disambiguate."
 msgstr ""
+"Je legální, aby capsule měla ``NULL`` destruktor. To dělá návratový kód "
+"``NULL`` trochu nejednoznačným; použijte :c:func:`PyCapsule_IsValid` nebo "
+":c:func:`PyErr_Occurred` k odstranění nejednoznačnosti."
 
 #: ../../c-api/capsule.rst:89
 msgid ""
 "Return the current context stored in the capsule.  On failure, set an "
 "exception and return ``NULL``."
 msgstr ""
+"Vrátí aktuální kontext uložený v capsule. Při selhání nastaví výjimku a "
+"vrátí ``NULL``."
 
 #: ../../c-api/capsule.rst:92
 msgid ""
-"It is legal for a capsule to have a ``NULL`` context.  This makes a "
-"``NULL`` return code somewhat ambiguous; use :c:func:`PyCapsule_IsValid` "
-"or :c:func:`PyErr_Occurred` to disambiguate."
-msgstr ""
-
-#: ../../c-api/capsule.rst:99
-msgid ""
-"Return the current name stored in the capsule.  On failure, set an "
-"exception and return ``NULL``."
-msgstr ""
-
-#: ../../c-api/capsule.rst:102
-msgid ""
-"It is legal for a capsule to have a ``NULL`` name.  This makes a ``NULL``"
+"It is legal for a capsule to have a ``NULL`` context.  This makes a ``NULL``"
 " return code somewhat ambiguous; use :c:func:`PyCapsule_IsValid` or "
 ":c:func:`PyErr_Occurred` to disambiguate."
 msgstr ""
+"Je legální, aby capsule měla ``NULL`` kontext. To dělá návratový kód "
+"``NULL`` trochu nejednoznačným; použijte :c:func:`PyCapsule_IsValid` nebo "
+":c:func:`PyErr_Occurred` k odstranění nejednoznačnosti."
+
+#: ../../c-api/capsule.rst:99
+msgid ""
+"Return the current name stored in the capsule.  On failure, set an exception"
+" and return ``NULL``."
+msgstr ""
+"Vrátí aktuální jméno uložené v capsule. Při selhání nastaví výjimku a vrátí "
+"``NULL``."
+
+#: ../../c-api/capsule.rst:102
+msgid ""
+"It is legal for a capsule to have a ``NULL`` name.  This makes a ``NULL`` "
+"return code somewhat ambiguous; use :c:func:`PyCapsule_IsValid` or "
+":c:func:`PyErr_Occurred` to disambiguate."
+msgstr ""
+"Je legální, aby capsule měla ``NULL`` jméno. To dělá návratový kód ``NULL`` "
+"trochu nejednoznačným; použijte :c:func:`PyCapsule_IsValid` nebo "
+":c:func:`PyErr_Occurred` k odstranění nejednoznačnosti."
 
 #: ../../c-api/capsule.rst:109
 msgid ""
-"Import a pointer to a C object from a capsule attribute in a module.  The"
-" *name* parameter should specify the full name to the attribute, as in "
+"Import a pointer to a C object from a capsule attribute in a module.  The "
+"*name* parameter should specify the full name to the attribute, as in "
 "``module.attribute``.  The *name* stored in the capsule must match this "
 "string exactly."
 msgstr ""
+"Importuje ukazatel na C objekt z capsule atributu v modulu. Parametr *name* "
+"by měl specifikovat plný název atributu, jako ``module.attribute``. Jméno "
+"uložené v capsule musí přesně odpovídat tomuto řetězci."
 
 #: ../../c-api/capsule.rst:114
 msgid ""
-"This function splits *name* on the ``.`` character, and imports the first"
-" element. It then processes further elements using attribute lookups."
+"This function splits *name* on the ``.`` character, and imports the first "
+"element. It then processes further elements using attribute lookups."
 msgstr ""
+"Tato funkce rozdělí *name* na znak ``.`` a importuje první prvek. Poté "
+"zpracuje další prvky pomocí vyhledávání atributů."
 
 #: ../../c-api/capsule.rst:117
 msgid ""
 "Return the capsule's internal *pointer* on success.  On failure, set an "
 "exception and return ``NULL``."
 msgstr ""
+"Při úspěchu vrátí interní *pointer* capsule. Při selhání nastaví výjimku a "
+"vrátí ``NULL``."
 
 #: ../../c-api/capsule.rst:122
 msgid ""
 "If *name* points to an attribute of some submodule or subpackage, this "
-"submodule or subpackage must be previously imported using other means "
-"(for example, by using :c:func:`PyImport_ImportModule`) for the attribute"
-" lookups to succeed."
+"submodule or subpackage must be previously imported using other means (for "
+"example, by using :c:func:`PyImport_ImportModule`) for the attribute lookups"
+" to succeed."
 msgstr ""
+"Pokud *name* ukazuje na atribut nějakého submodulu nebo subbalíčku, tento "
+"submodul nebo subbalíček musí být předem importován jinými prostředky "
+"(například pomocí :c:func:`PyImport_ImportModule`), aby vyhledávání atributů"
+" bylo úspěšné."
 
 #: ../../c-api/capsule.rst:127
 msgid "*no_block* has no effect anymore."
-msgstr ""
+msgstr "*no_block* již nemá žádný efekt."
 
 #: ../../c-api/capsule.rst:133
 msgid ""
-"Determines whether or not *capsule* is a valid capsule.  A valid capsule "
-"is non-``NULL``, passes :c:func:`PyCapsule_CheckExact`, has a "
-"non-``NULL`` pointer stored in it, and its internal name matches the "
-"*name* parameter.  (See :c:func:`PyCapsule_GetPointer` for information on"
-" how capsule names are compared.)"
+"Determines whether or not *capsule* is a valid capsule.  A valid capsule is "
+"non-``NULL``, passes :c:func:`PyCapsule_CheckExact`, has a non-``NULL`` "
+"pointer stored in it, and its internal name matches the *name* parameter.  "
+"(See :c:func:`PyCapsule_GetPointer` for information on how capsule names are"
+" compared.)"
 msgstr ""
+"Určuje, zda *capsule* je platná capsule. Platná capsule je non-``NULL``, "
+"projde :c:func:`PyCapsule_CheckExact`, má uložený non-``NULL`` ukazatel a "
+"její interní jméno odpovídá parametru *name*. (Viz "
+":c:func:`PyCapsule_GetPointer` pro informace o tom, jak jsou jména capsule "
+"porovnávána.)"
 
 #: ../../c-api/capsule.rst:139
 msgid ""
-"In other words, if :c:func:`PyCapsule_IsValid` returns a true value, "
-"calls to any of the accessors (any function starting with "
-"``PyCapsule_Get``) are guaranteed to succeed."
+"In other words, if :c:func:`PyCapsule_IsValid` returns a true value, calls "
+"to any of the accessors (any function starting with ``PyCapsule_Get``) are "
+"guaranteed to succeed."
 msgstr ""
+"Jinými slovy, pokud :c:func:`PyCapsule_IsValid` vrátí true hodnotu, volání "
+"jakéhokoliv z přístupových funkcí (jakákoliv funkce začínající "
+"``PyCapsule_Get``) jsou zaručeny jako úspěšné."
 
 #: ../../c-api/capsule.rst:143
 msgid ""
-"Return a nonzero value if the object is valid and matches the name passed"
-" in. Return ``0`` otherwise.  This function will not fail."
+"Return a nonzero value if the object is valid and matches the name passed "
+"in. Return ``0`` otherwise.  This function will not fail."
 msgstr ""
+"Vrátí nenulovou hodnotu, pokud je objekt platný a odpovídá předanému jménu. "
+"Jinak vrátí ``0``. Tato funkce nikdy neselže."
 
 #: ../../c-api/capsule.rst:149
 msgid "Set the context pointer inside *capsule* to *context*."
-msgstr ""
+msgstr "Nastaví ukazatel kontextu uvnitř *capsule* na *context*."
 
 #: ../../c-api/capsule.rst:151 ../../c-api/capsule.rst:158
 #: ../../c-api/capsule.rst:167 ../../c-api/capsule.rst:175
-msgid "Return ``0`` on success.  Return nonzero and set an exception on failure."
+msgid ""
+"Return ``0`` on success.  Return nonzero and set an exception on failure."
 msgstr ""
+"Při úspěchu vrátí ``0``. Při selhání vrátí nenulovou hodnotu a nastaví "
+"výjimku."
 
 #: ../../c-api/capsule.rst:156
 msgid "Set the destructor inside *capsule* to *destructor*."
-msgstr ""
+msgstr "Nastaví destruktor uvnitř *capsule* na *destructor*."
 
 #: ../../c-api/capsule.rst:163
 msgid ""
 "Set the name inside *capsule* to *name*.  If non-``NULL``, the name must "
-"outlive the capsule.  If the previous *name* stored in the capsule was "
-"not ``NULL``, no attempt is made to free it."
+"outlive the capsule.  If the previous *name* stored in the capsule was not "
+"``NULL``, no attempt is made to free it."
 msgstr ""
+"Nastaví jméno uvnitř *capsule* na *name*. Pokud není ``NULL``, jméno musí "
+"přežít capsule. Pokud předchozí *name* uložené v capsule nebylo ``NULL``, "
+"není proveden pokus o jeho uvolnění."
 
 #: ../../c-api/capsule.rst:172
 msgid ""
-"Set the void pointer inside *capsule* to *pointer*.  The pointer may not "
-"be ``NULL``."
+"Set the void pointer inside *capsule* to *pointer*.  The pointer may not be "
+"``NULL``."
 msgstr ""
+"Nastaví void ukazatel uvnitř *capsule* na *pointer*. Ukazatel nesmí být "
+"``NULL``."
 
 #: ../../c-api/capsule.rst:8
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../c-api/capsule.rst:8
 msgid "Capsule"
-msgstr ""
-
+msgstr "Capsule"

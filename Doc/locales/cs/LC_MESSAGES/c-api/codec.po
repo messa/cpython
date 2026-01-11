@@ -11,181 +11,218 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/codec.rst:4
 msgid "Codec registry and support functions"
-msgstr ""
+msgstr "Registr kodeků a podpůrné funkce"
 
 #: ../../c-api/codec.rst:8
 msgid "Register a new codec search function."
-msgstr ""
+msgstr "Zaregistruje novou vyhledávací funkci kodeků."
 
 #: ../../c-api/codec.rst:10
 msgid ""
-"As a side effect, this tries to load the :mod:`!encodings` package, if "
-"not yet done, to make sure that it is always first in the list of search "
+"As a side effect, this tries to load the :mod:`!encodings` package, if not "
+"yet done, to make sure that it is always first in the list of search "
 "functions."
 msgstr ""
+"Jako vedlejší efekt se pokouší načíst balíček :mod:`!encodings`, pokud ještě"
+" není načten, aby bylo zajištěno, že bude vždy první v seznamu vyhledávacích"
+" funkcí."
 
 #: ../../c-api/codec.rst:15
 msgid ""
-"Unregister a codec search function and clear the registry's cache. If the"
-" search function is not registered, do nothing. Return 0 on success. "
-"Raise an exception and return -1 on error."
+"Unregister a codec search function and clear the registry's cache. If the "
+"search function is not registered, do nothing. Return 0 on success. Raise an"
+" exception and return -1 on error."
 msgstr ""
+"Odregistruje vyhledávací funkci kodeků a vyčistí cache registru. Pokud "
+"vyhledávací funkce není registrována, neprovede nic. Vrací 0 při úspěchu. "
+"Vyvolá výjimku a vrací -1 při chybě."
 
 #: ../../c-api/codec.rst:23
 msgid ""
-"Return ``1`` or ``0`` depending on whether there is a registered codec "
-"for the given *encoding*.  This function always succeeds."
+"Return ``1`` or ``0`` depending on whether there is a registered codec for "
+"the given *encoding*.  This function always succeeds."
 msgstr ""
+"Vrací ``1`` nebo ``0`` v závislosti na tom, zda je pro daný *encoding* "
+"registrován kodek. Tato funkce vždy uspěje."
 
 #: ../../c-api/codec.rst:28
 msgid "Generic codec based encoding API."
-msgstr ""
+msgstr "Obecné API kódování založené na kodeku."
 
 #: ../../c-api/codec.rst:30
 msgid ""
 "*object* is passed through the encoder function found for the given "
-"*encoding* using the error handling method defined by *errors*.  *errors*"
-" may be ``NULL`` to use the default method defined for the codec.  Raises"
-" a :exc:`LookupError` if no encoder can be found."
+"*encoding* using the error handling method defined by *errors*.  *errors* "
+"may be ``NULL`` to use the default method defined for the codec.  Raises a "
+":exc:`LookupError` if no encoder can be found."
 msgstr ""
+"*object* je procházen enkódovací funkcí nalezenou pro daný *encoding* s "
+"použitím metody ošetření chyb definované parametrem *errors*. *errors* může "
+"být ``NULL`` pro použití výchozí metody definované pro kodek. Vyvolá "
+":exc:`LookupError`, pokud nelze nalézt enkóder."
 
 #: ../../c-api/codec.rst:37
 msgid "Generic codec based decoding API."
-msgstr ""
+msgstr "Obecné API dekódování založené na kodeku."
 
 #: ../../c-api/codec.rst:39
 msgid ""
 "*object* is passed through the decoder function found for the given "
-"*encoding* using the error handling method defined by *errors*.  *errors*"
-" may be ``NULL`` to use the default method defined for the codec.  Raises"
-" a :exc:`LookupError` if no decoder can be found."
+"*encoding* using the error handling method defined by *errors*.  *errors* "
+"may be ``NULL`` to use the default method defined for the codec.  Raises a "
+":exc:`LookupError` if no decoder can be found."
 msgstr ""
+"*object* je procházen dekódovací funkcí nalezenou pro daný *encoding* s "
+"použitím metody ošetření chyb definované parametrem *errors*. *errors* může "
+"být ``NULL`` pro použití výchozí metody definované pro kodek. Vyvolá "
+":exc:`LookupError`, pokud nelze nalézt dekóder."
 
 #: ../../c-api/codec.rst:46
 msgid "Codec lookup API"
-msgstr ""
+msgstr "API vyhledávání kodeků"
 
 #: ../../c-api/codec.rst:48
 msgid ""
-"In the following functions, the *encoding* string is looked up converted "
-"to all lower-case characters, which makes encodings looked up through "
-"this mechanism effectively case-insensitive.  If no codec is found, a "
+"In the following functions, the *encoding* string is looked up converted to "
+"all lower-case characters, which makes encodings looked up through this "
+"mechanism effectively case-insensitive.  If no codec is found, a "
 ":exc:`KeyError` is set and ``NULL`` returned."
 msgstr ""
+"V následujících funkcích je řetězec *encoding* vyhledáván převedeny na malá "
+"písmena, což činí kódování vyhledávaná tímto mechanismem efektivně necitlivá"
+" na velikost písmen. Pokud není nalezen žádný kodek, je nastavena "
+":exc:`KeyError` a vráceno ``NULL``."
 
 #: ../../c-api/codec.rst:55
 msgid "Get an encoder function for the given *encoding*."
-msgstr ""
+msgstr "Získá enkódovací funkci pro daný *encoding*."
 
 #: ../../c-api/codec.rst:59
 msgid "Get a decoder function for the given *encoding*."
-msgstr ""
+msgstr "Získá dekódovací funkci pro daný *encoding*."
 
 #: ../../c-api/codec.rst:63
 msgid ""
-"Get an :class:`~codecs.IncrementalEncoder` object for the given "
-"*encoding*."
-msgstr ""
+"Get an :class:`~codecs.IncrementalEncoder` object for the given *encoding*."
+msgstr "Získá objekt :class:`~codecs.IncrementalEncoder` pro daný *encoding*."
 
 #: ../../c-api/codec.rst:67
 msgid ""
-"Get an :class:`~codecs.IncrementalDecoder` object for the given "
-"*encoding*."
-msgstr ""
+"Get an :class:`~codecs.IncrementalDecoder` object for the given *encoding*."
+msgstr "Získá objekt :class:`~codecs.IncrementalDecoder` pro daný *encoding*."
 
 #: ../../c-api/codec.rst:71
 msgid ""
 "Get a :class:`~codecs.StreamReader` factory function for the given "
 "*encoding*."
 msgstr ""
+"Získá tovarní funkci :class:`~codecs.StreamReader` pro daný *encoding*."
 
 #: ../../c-api/codec.rst:75
 msgid ""
 "Get a :class:`~codecs.StreamWriter` factory function for the given "
 "*encoding*."
 msgstr ""
+"Získá tovarní funkci :class:`~codecs.StreamWriter` pro daný *encoding*."
 
 #: ../../c-api/codec.rst:79
 msgid "Registry API for Unicode encoding error handlers"
-msgstr ""
+msgstr "Registr API pro handler chyb kódování Unicode"
 
 #: ../../c-api/codec.rst:83
 msgid ""
 "Register the error handling callback function *error* under the given "
-"*name*. This callback function will be called by a codec when it "
-"encounters unencodable characters/undecodable bytes and *name* is "
-"specified as the error parameter in the call to the encode/decode "
-"function."
+"*name*. This callback function will be called by a codec when it encounters "
+"unencodable characters/undecodable bytes and *name* is specified as the "
+"error parameter in the call to the encode/decode function."
 msgstr ""
+"Zaregistruje callback funkci *error* pro ošetření chyb pod daným *name*. "
+"Tato callback funkce bude volána kodekem, když narazí na znaků, které nelze "
+"enkódovat / bajty, které nelze dekódovat, a *name* je specifikován jako "
+"parametr error při volání enkódovací/dekódovací funkce."
 
 #: ../../c-api/codec.rst:88
 msgid ""
 "The callback gets a single argument, an instance of "
 ":exc:`UnicodeEncodeError`, :exc:`UnicodeDecodeError` or "
-":exc:`UnicodeTranslateError` that holds information about the problematic"
-" sequence of characters or bytes and their offset in the original string "
-"(see :ref:`unicodeexceptions` for functions to extract this information)."
-"  The callback must either raise the given exception, or return a two-"
-"item tuple containing the replacement for the problematic sequence, and "
-"an integer giving the offset in the original string at which "
-"encoding/decoding should be resumed."
+":exc:`UnicodeTranslateError` that holds information about the problematic "
+"sequence of characters or bytes and their offset in the original string (see"
+" :ref:`unicodeexceptions` for functions to extract this information).  The "
+"callback must either raise the given exception, or return a two-item tuple "
+"containing the replacement for the problematic sequence, and an integer "
+"giving the offset in the original string at which encoding/decoding should "
+"be resumed."
 msgstr ""
+"Callback získá jeden argument, instanci :exc:`UnicodeEncodeError`, "
+":exc:`UnicodeDecodeError` nebo :exc:`UnicodeTranslateError`, která obsahuje "
+"informace o problematické sekvenci znaků nebo bajtů a jejich pozici v "
+"původním řetězci (viz :ref:`unicodeexceptions` pro funkce k extrakci těchto "
+"informací). Callback musí buď vyvolat danou výjimku, nebo vrátit tuple se "
+"dvěma položkami obsahující nahrazení problematické sekvence a celé číslo "
+"udávající pozici v původním řetězci, na které by mělo pokračovat "
+"enkódování/dekódování."
 
 #: ../../c-api/codec.rst:98
 msgid "Return ``0`` on success, ``-1`` on error."
-msgstr ""
+msgstr "Vrací ``0`` při úspěchu, ``-1`` při chybě."
 
 #: ../../c-api/codec.rst:102
 msgid ""
-"Lookup the error handling callback function registered under *name*.  As "
-"a special case ``NULL`` can be passed, in which case the error handling "
+"Lookup the error handling callback function registered under *name*.  As a "
+"special case ``NULL`` can be passed, in which case the error handling "
 "callback for \"strict\" will be returned."
 msgstr ""
+"Vyhledá callback funkci pro ošetření chyb registrovanou pod *name*. Jako "
+"speciální případ může být předáno ``NULL``, v tomž případě bude vrácen "
+"callback pro ošetření chyb pro „strict“."
 
 #: ../../c-api/codec.rst:108
 msgid "Raise *exc* as an exception."
-msgstr ""
+msgstr "Vyvolá *exc* jako výjimku."
 
 #: ../../c-api/codec.rst:112
 msgid "Ignore the unicode error, skipping the faulty input."
-msgstr ""
+msgstr "Ignoruje chybu unicode, přeskakuje chybný vstup."
 
 #: ../../c-api/codec.rst:116
 msgid "Replace the unicode encode error with ``?`` or ``U+FFFD``."
-msgstr ""
+msgstr "Nahradí chybu enkódování unicode pomocí ``?`` nebo ``U+FFFD``."
 
 #: ../../c-api/codec.rst:120
 msgid "Replace the unicode encode error with XML character references."
-msgstr ""
+msgstr "Nahradí chybu enkódování unicode pomocí XML znakových referencí."
 
 #: ../../c-api/codec.rst:124
 msgid ""
-"Replace the unicode encode error with backslash escapes (``\\x``, ``\\u``"
-" and ``\\U``)."
+"Replace the unicode encode error with backslash escapes (``\\x``, ``\\u`` "
+"and ``\\U``)."
 msgstr ""
+"Nahradí chybu enkódování unicode pomocí backslash escape sekvencí (``\\x``, "
+"``\\u`` a ``\\U``)."
 
 #: ../../c-api/codec.rst:129
 #, python-brace-format
 msgid "Replace the unicode encode error with ``\\N{...}`` escapes."
-msgstr ""
+msgstr "Nahradí chybu enkódování unicode pomocí ``\\N{...}`` escape sekvencí."
 
 #: ../../c-api/codec.rst:135
 msgid "Codec utility variables"
-msgstr ""
+msgstr "Pomocné proměnné pro kodeky"
 
 #: ../../c-api/codec.rst:139
 msgid ""
 "A string constant containing the lowercase hexadecimal digits: "
 "``\"0123456789abcdef\"``."
 msgstr ""
-
+"Řetězcová konstanta obsahující malá hexadecimální číslice: "
+"``\"0123456789abcdef\"``."

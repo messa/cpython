@@ -11,115 +11,137 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/method.rst:6
 msgid "Instance Method Objects"
-msgstr ""
+msgstr "Objekty instančních metod"
 
 #: ../../c-api/method.rst:10
 msgid ""
-"An instance method is a wrapper for a :c:type:`PyCFunction` and the new "
-"way to bind a :c:type:`PyCFunction` to a class object. It replaces the "
-"former call ``PyMethod_New(func, NULL, class)``."
+"An instance method is a wrapper for a :c:type:`PyCFunction` and the new way "
+"to bind a :c:type:`PyCFunction` to a class object. It replaces the former "
+"call ``PyMethod_New(func, NULL, class)``."
 msgstr ""
+"Instanční metoda je obal pro :c:type:`PyCFunction` a nový způsob, jak "
+"navázat :c:type:`PyCFunction` na objekt třídy. Nahrazuje dřívější volání "
+"``PyMethod_New(func, NULL, class)``."
 
 #: ../../c-api/method.rst:17
 msgid ""
 "This instance of :c:type:`PyTypeObject` represents the Python instance "
 "method type. It is not exposed to Python programs."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ instanční metody "
+"Pythonu. Není vystavena programům v Pythonu."
 
 #: ../../c-api/method.rst:23
 msgid ""
 "Return true if *o* is an instance method object (has type "
-":c:data:`PyInstanceMethod_Type`).  The parameter must not be ``NULL``. "
-"This function always succeeds."
+":c:data:`PyInstanceMethod_Type`).  The parameter must not be ``NULL``. This "
+"function always succeeds."
 msgstr ""
+"Vrací true, pokud je *o* objekt instanční metody (má typ "
+":c:data:`PyInstanceMethod_Type`). Parametr nesmí být ``NULL``. Tato funkce "
+"vždy uspěje."
 
 #: ../../c-api/method.rst:30
 msgid ""
-"Return a new instance method object, with *func* being any callable "
-"object. *func* is the function that will be called when the instance "
-"method is called."
+"Return a new instance method object, with *func* being any callable object. "
+"*func* is the function that will be called when the instance method is "
+"called."
 msgstr ""
+"Vrací nový objekt instanční metody, kde *func* je libovolný volatelný "
+"objekt. *func* je funkce, která bude zavolána při volání instanční metody."
 
 #: ../../c-api/method.rst:37
 msgid "Return the function object associated with the instance method *im*."
-msgstr ""
+msgstr "Vrací objekt funkce asociovaný s instanční metodou *im*."
 
 #: ../../c-api/method.rst:42
 msgid ""
 "Macro version of :c:func:`PyInstanceMethod_Function` which avoids error "
 "checking."
 msgstr ""
+"Makro verze :c:func:`PyInstanceMethod_Function`, která se vyhýbá kontrole "
+"chyb."
 
 #: ../../c-api/method.rst:48
 msgid "Method Objects"
-msgstr ""
+msgstr "Objekty metod"
 
 #: ../../c-api/method.rst:52
 msgid ""
-"Methods are bound function objects. Methods are always bound to an "
-"instance of a user-defined class. Unbound methods (methods bound to a "
-"class object) are no longer available."
+"Methods are bound function objects. Methods are always bound to an instance "
+"of a user-defined class. Unbound methods (methods bound to a class object) "
+"are no longer available."
 msgstr ""
+"Metody jsou vázané objekty funkcí. Metody jsou vždy vázány na instanci "
+"uživatelsky definované třídy. Nevázané metody (metody vázané na objekt "
+"třídy) již nejsou dostupné."
 
 #: ../../c-api/method.rst:61
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python method "
-"type.  This is exposed to Python programs as ``types.MethodType``."
+"This instance of :c:type:`PyTypeObject` represents the Python method type.  "
+"This is exposed to Python programs as ``types.MethodType``."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ metody Pythonu. Je "
+"vystavena programům v Pythonu jako ``types.MethodType``."
 
 #: ../../c-api/method.rst:67
 msgid ""
-"Return true if *o* is a method object (has type :c:data:`PyMethod_Type`)."
-"  The parameter must not be ``NULL``.  This function always succeeds."
+"Return true if *o* is a method object (has type :c:data:`PyMethod_Type`).  "
+"The parameter must not be ``NULL``.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *o* objekt metody (má typ :c:data:`PyMethod_Type`). "
+"Parametr nesmí být ``NULL``. Tato funkce vždy uspěje."
 
 #: ../../c-api/method.rst:73
 msgid ""
-"Return a new method object, with *func* being any callable object and "
-"*self* the instance the method should be bound. *func* is the function "
-"that will be called when the method is called. *self* must not be "
-"``NULL``."
+"Return a new method object, with *func* being any callable object and *self*"
+" the instance the method should be bound. *func* is the function that will "
+"be called when the method is called. *self* must not be ``NULL``."
 msgstr ""
+"Vrací nový objekt metody, kde *func* je libovolný volatelný objekt a *self* "
+"je instance, na kterou má být metoda vázána. *func* je funkce, která bude "
+"zavolána při volání metody. *self* nesmí být ``NULL``."
 
 #: ../../c-api/method.rst:80
 msgid "Return the function object associated with the method *meth*."
-msgstr ""
+msgstr "Vrací objekt funkce asociovaný s metodou *meth*."
 
 #: ../../c-api/method.rst:85
-msgid "Macro version of :c:func:`PyMethod_Function` which avoids error checking."
+msgid ""
+"Macro version of :c:func:`PyMethod_Function` which avoids error checking."
 msgstr ""
+"Makro verze :c:func:`PyMethod_Function`, která se vyhýbá kontrole chyb."
 
 #: ../../c-api/method.rst:90
 msgid "Return the instance associated with the method *meth*."
-msgstr ""
+msgstr "Vrací instanci asociovanou s metodou *meth*."
 
 #: ../../c-api/method.rst:95
 msgid "Macro version of :c:func:`PyMethod_Self` which avoids error checking."
-msgstr ""
+msgstr "Makro verze :c:func:`PyMethod_Self`, která se vyhýbá kontrole chyb."
 
 #: ../../c-api/method.rst:8 ../../c-api/method.rst:50
 msgid "object"
-msgstr ""
+msgstr "object"
 
 #: ../../c-api/method.rst:8
 msgid "instancemethod"
-msgstr ""
+msgstr "instancemethod"
 
 #: ../../c-api/method.rst:50
 msgid "method"
-msgstr ""
+msgstr "method"
 
 #: ../../c-api/method.rst:59
 msgid "MethodType (in module types)"
-msgstr ""
-
+msgstr "MethodType (v modulu types)"

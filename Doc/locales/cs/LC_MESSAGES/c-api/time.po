@@ -11,164 +11,202 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/time.rst:6
 msgid "PyTime C API"
-msgstr ""
+msgstr "PyTime C API"
 
 #: ../../c-api/time.rst:10
 msgid ""
 "The clock C API provides access to system clocks. It is similar to the "
 "Python :mod:`time` module."
 msgstr ""
+"Clock C API poskytuje přístup k systémovým hodinám. Je podobné Pythonovskému"
+" modulu :mod:`time`."
 
 #: ../../c-api/time.rst:13
 msgid ""
-"For C API related to the :mod:`datetime` module, see "
-":ref:`datetimeobjects`."
+"For C API related to the :mod:`datetime` module, see :ref:`datetimeobjects`."
 msgstr ""
+"Pro C API vztahující se k modulu :mod:`datetime`, viz "
+":ref:`datetimeobjects`."
 
 #: ../../c-api/time.rst:17
 msgid "Types"
-msgstr ""
+msgstr "Typy"
 
 #: ../../c-api/time.rst:21
 msgid ""
 "A timestamp or duration in nanoseconds, represented as a signed 64-bit "
 "integer."
 msgstr ""
+"Časové razítko nebo doba trvání v nanosekundách, reprezentovaná jako signed "
+"64-bitové celé číslo."
 
 #: ../../c-api/time.rst:24
 msgid ""
-"The reference point for timestamps depends on the clock used. For "
-"example, :c:func:`PyTime_Time` returns timestamps relative to the UNIX "
-"epoch."
+"The reference point for timestamps depends on the clock used. For example, "
+":c:func:`PyTime_Time` returns timestamps relative to the UNIX epoch."
 msgstr ""
+"Referenční bod pro časová razítka závisí na použitých hodinách. Například "
+":c:func:`PyTime_Time` vrací časová razítka relativní k UNIX epoše."
 
 #: ../../c-api/time.rst:27
 msgid ""
-"The supported range is around [-292.3 years; +292.3 years]. Using the "
-"Unix epoch (January 1st, 1970) as reference, the supported date range is "
-"around [1677-09-21; 2262-04-11]. The exact limits are exposed as "
-"constants:"
+"The supported range is around [-292.3 years; +292.3 years]. Using the Unix "
+"epoch (January 1st, 1970) as reference, the supported date range is around "
+"[1677-09-21; 2262-04-11]. The exact limits are exposed as constants:"
 msgstr ""
+"Podporovaný rozsah je přibližně [-292,3 let; +292,3 let]. Při použití Unix "
+"epochy (1. ledna 1970) jako reference je podporovaný rozsah datumů přibližně"
+" [1677-09-21; 2262-04-11]. Přesné limity jsou vystaveny jako konstanty:"
 
 #: ../../c-api/time.rst:34
 msgid "Minimum value of :c:type:`PyTime_t`."
-msgstr ""
+msgstr "Minimální hodnota :c:type:`PyTime_t`."
 
 #: ../../c-api/time.rst:38
 msgid "Maximum value of :c:type:`PyTime_t`."
-msgstr ""
+msgstr "Maximální hodnota :c:type:`PyTime_t`."
 
 #: ../../c-api/time.rst:42
 msgid "Clock Functions"
-msgstr ""
+msgstr "Funkce pro hodiny"
 
 #: ../../c-api/time.rst:44
 msgid ""
-"The following functions take a pointer to a :c:expr:`PyTime_t` that they "
-"set to the value of a particular clock. Details of each clock are given "
-"in the documentation of the corresponding Python function."
+"The following functions take a pointer to a :c:expr:`PyTime_t` that they set"
+" to the value of a particular clock. Details of each clock are given in the "
+"documentation of the corresponding Python function."
 msgstr ""
+"Následující funkce berou ukazatel na :c:expr:`PyTime_t`, který nastavují na "
+"hodnotu konkrétních hodin. Detaily jednotlivých hodin jsou uvedeny v "
+"dokumentaci odpovídající Pythonovské funkce."
 
 #: ../../c-api/time.rst:49
 msgid ""
-"The functions return ``0`` on success, or ``-1`` (with an exception set) "
-"on failure."
+"The functions return ``0`` on success, or ``-1`` (with an exception set) on "
+"failure."
 msgstr ""
+"Funkce vrací ``0`` při úspěchu, nebo ``-1`` (s nastavenou výjimkou) při "
+"chybě."
 
 #: ../../c-api/time.rst:52
 msgid ""
-"On integer overflow, they set the :c:data:`PyExc_OverflowError` exception"
-" and set ``*result`` to the value clamped to the ``[PyTime_MIN; "
-"PyTime_MAX]`` range. (On current systems, integer overflows are likely "
-"caused by misconfigured system time.)"
+"On integer overflow, they set the :c:data:`PyExc_OverflowError` exception "
+"and set ``*result`` to the value clamped to the ``[PyTime_MIN; PyTime_MAX]``"
+" range. (On current systems, integer overflows are likely caused by "
+"misconfigured system time.)"
 msgstr ""
+"Při přetečení celého čísla nastaví výjimku :c:data:`PyExc_OverflowError` a "
+"nastaví ``*result`` na hodnotu oříznutou do rozsahu ``[PyTime_MIN; "
+"PyTime_MAX]``. (Na současných systémech jsou přetečení celých čísel "
+"pravděpodobně způsobena špatně nastaveným systémovým časem.)"
 
 #: ../../c-api/time.rst:58
 msgid ""
 "As any other C API (unless otherwise specified), the functions must be "
 "called with an :term:`attached thread state`."
 msgstr ""
+"Jako každé jiné C API (pokud není uvedeno jinak), funkce musí být volány s "
+":term:`attached thread state`."
 
 #: ../../c-api/time.rst:63
 msgid ""
-"Read the monotonic clock. See :func:`time.monotonic` for important "
-"details on this clock."
+"Read the monotonic clock. See :func:`time.monotonic` for important details "
+"on this clock."
 msgstr ""
+"Čte monotonické hodiny. Viz :func:`time.monotonic` pro důležité detaily o "
+"těchto hodinách."
 
 #: ../../c-api/time.rst:68
 msgid ""
-"Read the performance counter. See :func:`time.perf_counter` for important"
-" details on this clock."
+"Read the performance counter. See :func:`time.perf_counter` for important "
+"details on this clock."
 msgstr ""
+"Čte performance counter. Viz :func:`time.perf_counter` pro důležité detaily "
+"o tomto čtači."
 
 #: ../../c-api/time.rst:73
 msgid ""
-"Read the “wall clock” time. See :func:`time.time` for details important "
-"on this clock."
+"Read the “wall clock” time. See :func:`time.time` for details important on "
+"this clock."
 msgstr ""
+"Čte čas „wall clock“. Viz :func:`time.time` pro důležité detaily o těchto "
+"hodinách."
 
 #: ../../c-api/time.rst:78
 msgid "Raw Clock Functions"
-msgstr ""
+msgstr "Raw funkce pro hodiny"
 
 #: ../../c-api/time.rst:80
 msgid ""
-"Similar to clock functions, but don't set an exception on error and don't"
-" require the caller to have an :term:`attached thread state`."
+"Similar to clock functions, but don't set an exception on error and don't "
+"require the caller to have an :term:`attached thread state`."
 msgstr ""
+"Podobné funkcím pro hodiny, ale nenastavují výjimku při chybě a nevyžadují, "
+"aby volající měl :term:`attached thread state`."
 
 #: ../../c-api/time.rst:83
 msgid "On success, the functions return ``0``."
-msgstr ""
+msgstr "Při úspěchu vrací funkce ``0``."
 
 #: ../../c-api/time.rst:85
 msgid ""
 "On failure, they set ``*result`` to ``0`` and return ``-1``, *without* "
-"setting an exception. To get the cause of the error, :term:`attach "
-"<attached thread state>` a :term:`thread state`, and call the regular "
-"(non-``Raw``) function. Note that the regular function may succeed after "
-"the ``Raw`` one failed."
+"setting an exception. To get the cause of the error, :term:`attach <attached"
+" thread state>` a :term:`thread state`, and call the regular (non-``Raw``) "
+"function. Note that the regular function may succeed after the ``Raw`` one "
+"failed."
 msgstr ""
+"Při chybě nastaví ``*result`` na ``0`` a vrátí ``-1``, *bez* nastavení "
+"výjimky. Pro získání příčiny chyby :term:`připojte <attached thread state>` "
+":term:`thread state` a zavolejte obyčejnou (ne-``Raw``) funkci. Poznámka: "
+"obyčejná funkce může uspět i po tom, co ``Raw`` funkce selhala."
 
 #: ../../c-api/time.rst:92
 msgid ""
-"Similar to :c:func:`PyTime_Monotonic`, but don't set an exception on "
-"error and don't require an :term:`attached thread state`."
+"Similar to :c:func:`PyTime_Monotonic`, but don't set an exception on error "
+"and don't require an :term:`attached thread state`."
 msgstr ""
+"Podobné :c:func:`PyTime_Monotonic`, ale nenastaví výjimku při chybě a "
+"nevyžaduje :term:`attached thread state`."
 
 #: ../../c-api/time.rst:97
 msgid ""
-"Similar to :c:func:`PyTime_PerfCounter`, but don't set an exception on "
-"error and don't require an :term:`attached thread state`."
+"Similar to :c:func:`PyTime_PerfCounter`, but don't set an exception on error"
+" and don't require an :term:`attached thread state`."
 msgstr ""
+"Podobné :c:func:`PyTime_PerfCounter`, ale nenastaví výjimku při chybě a "
+"nevyžaduje :term:`attached thread state`."
 
 #: ../../c-api/time.rst:102
 msgid ""
-"Similar to :c:func:`PyTime_Time`, but don't set an exception on error and"
-" don't require an :term:`attached thread state`."
+"Similar to :c:func:`PyTime_Time`, but don't set an exception on error and "
+"don't require an :term:`attached thread state`."
 msgstr ""
+"Podobné :c:func:`PyTime_Time`, ale nenastaví výjimku při chybě a nevyžaduje "
+":term:`attached thread state`."
 
 #: ../../c-api/time.rst:107
 msgid "Conversion functions"
-msgstr ""
+msgstr "Konverzní funkce"
 
 #: ../../c-api/time.rst:111
 msgid "Convert a timestamp to a number of seconds as a C :c:expr:`double`."
-msgstr ""
+msgstr "Konvertuje časové razítko na počet sekund jako C :c:expr:`double`."
 
 #: ../../c-api/time.rst:113
 msgid ""
 "The function cannot fail, but note that :c:expr:`double` has limited "
 "accuracy for large values."
 msgstr ""
-
+"Funkce nemůže selhat, ale pozor, :c:expr:`double` má omezenou přesnost pro "
+"velké hodnoty."

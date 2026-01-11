@@ -173,11 +173,11 @@ msgstr ""
 
 #: ../../library/xml.sax.reader.rst:96
 msgid "XMLReader Objects"
-msgstr ""
+msgstr "Objekty XMLReader"
 
 #: ../../library/xml.sax.reader.rst:98
 msgid "The :class:`XMLReader` interface supports the following methods:"
-msgstr ""
+msgstr "Rozhraní :class:`XMLReader` podporuje následující metody:"
 
 #: ../../library/xml.sax.reader.rst:103
 msgid ""
@@ -188,18 +188,24 @@ msgid ""
 "returns, the input is completely processed, and the parser object can be "
 "discarded or reset."
 msgstr ""
+"Zpracuje vstupní zdroj a vytvoří SAX události. Objekt *source* může být "
+"systémový identifikátor (řetězec identifikující vstupní zdroj -- typicky "
+"název souboru nebo URL), objekt :class:`pathlib.Path` nebo :term:`path-like "
+"<path-like object>`, anebo objekt :class:`InputSource`. Když :meth:`parse` "
+"skončí, vstup je kompletně zpracován a objekt parseru může být zahozen nebo "
+"resetován."
 
 #: ../../library/xml.sax.reader.rst:110
 msgid "Added support of character streams."
-msgstr ""
+msgstr "Přidána podpora znakových streamů."
 
 #: ../../library/xml.sax.reader.rst:113
 msgid "Added support of path-like objects."
-msgstr ""
+msgstr "Přidána podpora path-like objektů."
 
 #: ../../library/xml.sax.reader.rst:119
 msgid "Return the current :class:`~xml.sax.handler.ContentHandler`."
-msgstr ""
+msgstr "Vrátí aktuální :class:`~xml.sax.handler.ContentHandler`."
 
 #: ../../library/xml.sax.reader.rst:124
 msgid ""
@@ -207,20 +213,25 @@ msgid ""
 ":class:`~xml.sax.handler.ContentHandler` is set, content events will be "
 "discarded."
 msgstr ""
+"Nastaví aktuální :class:`~xml.sax.handler.ContentHandler`. Pokud není "
+"nastaven žádný :class:`~xml.sax.handler.ContentHandler`, události obsahu "
+"budou zahozeny."
 
 #: ../../library/xml.sax.reader.rst:131
 msgid "Return the current :class:`~xml.sax.handler.DTDHandler`."
-msgstr ""
+msgstr "Vrátí aktuální :class:`~xml.sax.handler.DTDHandler`."
 
 #: ../../library/xml.sax.reader.rst:136
 msgid ""
 "Set the current :class:`~xml.sax.handler.DTDHandler`.  If no "
 ":class:`~xml.sax.handler.DTDHandler` is set, DTD events will be discarded."
 msgstr ""
+"Nastaví aktuální :class:`~xml.sax.handler.DTDHandler`. Pokud není nastaven "
+"žádný :class:`~xml.sax.handler.DTDHandler`, DTD události budou zahozeny."
 
 #: ../../library/xml.sax.reader.rst:143
 msgid "Return the current :class:`~xml.sax.handler.EntityResolver`."
-msgstr ""
+msgstr "Vrátí aktuální :class:`~xml.sax.handler.EntityResolver`."
 
 #: ../../library/xml.sax.reader.rst:148
 msgid ""
@@ -229,20 +240,27 @@ msgid ""
 "external entity will result in opening the system identifier for the entity,"
 " and fail if it is not available."
 msgstr ""
+"Nastaví aktuální :class:`~xml.sax.handler.EntityResolver`. Pokud není "
+"nastaven žádný :class:`~xml.sax.handler.EntityResolver`, pokusy o rozlišení "
+"externí entity povedou k otevření systémového identifikátoru pro entitu a "
+"selhání, pokud není dostupný."
 
 #: ../../library/xml.sax.reader.rst:156
 msgid "Return the current :class:`~xml.sax.handler.ErrorHandler`."
-msgstr ""
+msgstr "Vrátí aktuální :class:`~xml.sax.handler.ErrorHandler`."
 
 #: ../../library/xml.sax.reader.rst:161
 msgid ""
 "Set the current error handler.  If no :class:`~xml.sax.handler.ErrorHandler`"
 " is set, errors will be raised as exceptions, and warnings will be printed."
 msgstr ""
+"Nastaví aktuální handler chyb. Pokud není nastaven žádný "
+":class:`~xml.sax.handler.ErrorHandler`, chyby budou vyv olány jako výjimky a"
+" varování budou vypsána."
 
 #: ../../library/xml.sax.reader.rst:167
 msgid "Allow an application to set the locale for errors and warnings."
-msgstr ""
+msgstr "Umožňuje aplikaci nastavit lokální nastavení pro chyby a varování."
 
 #: ../../library/xml.sax.reader.rst:169
 msgid ""
@@ -251,6 +269,10 @@ msgid ""
 "raise a SAX exception.  Applications may request a locale change in the "
 "middle of a parse."
 msgstr ""
+"SAX parsery nejsou pov inny poskytovat lokalizaci pro chyby a varování; "
+"pokud však nemohou podporovat požadované lokální nastavení, musí vyvolat SAX"
+" výjimku. Aplikace mohou požadovat změnu lokálního nastavení uprosteřed "
+"parsování."
 
 #: ../../library/xml.sax.reader.rst:176
 msgid ""
@@ -258,6 +280,9 @@ msgid ""
 " recognized, :exc:`SAXNotRecognizedException` is raised. The well-known "
 "featurenames are listed in the module :mod:`xml.sax.handler`."
 msgstr ""
+"Vrátí aktuální nastavení pro vlastnost *featurename*. Pokud vlastnost není "
+"rozpoznána, je vyv olána :exc:`SAXNotRecognizedException`. Známé názvy "
+"vlastností jsou uvedeny v modulu :mod:`xml.sax.handler`."
 
 #: ../../library/xml.sax.reader.rst:183
 msgid ""
@@ -265,6 +290,9 @@ msgid ""
 ":exc:`SAXNotRecognizedException` is raised. If the feature or its setting is"
 " not supported by the parser, *SAXNotSupportedException* is raised."
 msgstr ""
+"Nastaví *featurename* na *value*. Pokud vlastnost není rozpoznána, je "
+"vyvolána :exc:`SAXNotRecognizedException`. Pokud vlastnost nebo její "
+"nastavení není parserem podporováno, je vyvolána *SAXNotSupportedException*."
 
 #: ../../library/xml.sax.reader.rst:190
 msgid ""
@@ -272,6 +300,9 @@ msgid ""
 "not recognized, a :exc:`SAXNotRecognizedException` is raised. The well-known"
 " propertynames are listed in the module :mod:`xml.sax.handler`."
 msgstr ""
+"Vrátí aktuální nastavení pro vlastnost *propertyname*. Pokud vlastnost není "
+"rozpoznána, je vyvolána :exc:`SAXNotRecognizedException`. Známé názvy "
+"vlastností jsou uvedeny v modulu :mod:`xml.sax.handler`."
 
 #: ../../library/xml.sax.reader.rst:197
 msgid ""
@@ -279,20 +310,24 @@ msgid ""
 ":exc:`SAXNotRecognizedException` is raised. If the property or its setting "
 "is not supported by the parser, *SAXNotSupportedException* is raised."
 msgstr ""
+"Nastaví *propertyname* na *value*. Pokud vlastnost není rozpoznána, je "
+"vyvolána :exc:`SAXNotRecognizedException`. Pokud vlastnost nebo její "
+"nastavení není parserem podporováno, je vyvolána *SAXNotSupportedException*."
 
 #: ../../library/xml.sax.reader.rst:205
 msgid "IncrementalParser Objects"
-msgstr ""
+msgstr "Objekty IncrementalParser"
 
 #: ../../library/xml.sax.reader.rst:207
 msgid ""
 "Instances of :class:`IncrementalParser` offer the following additional "
 "methods:"
 msgstr ""
+"Instance :class:`IncrementalParser` nabízejí následující dodatečné metody:"
 
 #: ../../library/xml.sax.reader.rst:212
 msgid "Process a chunk of *data*."
-msgstr ""
+msgstr "Zpracuje kus *data*."
 
 #: ../../library/xml.sax.reader.rst:217
 msgid ""
@@ -300,6 +335,9 @@ msgid ""
 "that can be checked only at the end, invoke handlers, and may clean up "
 "resources allocated during parsing."
 msgstr ""
+"Předpokládá konec dokumentu. To zkontroluje podmínky správnosti formy, které"
+" lze zkontrolovat pouze na konci, zavolá handlery a může uvolnit prostředky "
+"alokov ané během parsování."
 
 #: ../../library/xml.sax.reader.rst:224
 msgid ""
@@ -307,74 +345,83 @@ msgid ""
 "that it is ready to parse new documents. The results of calling parse or "
 "feed after close without calling reset are undefined."
 msgstr ""
+"Tato metoda je volána poté, co bylo voláno close, aby resetovala parser, "
+"takže je připraven parsovat nové dokumenty. Výsledky volání parse nebo feed "
+"po close bez volání reset jsou nedefinované."
 
 #: ../../library/xml.sax.reader.rst:232
 msgid "Locator Objects"
-msgstr ""
+msgstr "Objekty Locator"
 
 #: ../../library/xml.sax.reader.rst:234
 msgid "Instances of :class:`Locator` provide these methods:"
-msgstr ""
+msgstr "Instance :class:`Locator` poskytují tyto metody:"
 
 #: ../../library/xml.sax.reader.rst:239
 msgid "Return the column number where the current event begins."
-msgstr ""
+msgstr "Vrátí číslo sloupce, kde začíná aktuální událost."
 
 #: ../../library/xml.sax.reader.rst:244
 msgid "Return the line number where the current event begins."
-msgstr ""
+msgstr "Vrátí číslo řádku, kde začíná aktuální událost."
 
 #: ../../library/xml.sax.reader.rst:249
 msgid "Return the public identifier for the current event."
-msgstr ""
+msgstr "Vrátí veřejný identifikátor pro aktuální událost."
 
 #: ../../library/xml.sax.reader.rst:254
 msgid "Return the system identifier for the current event."
-msgstr ""
+msgstr "Vrátí systémový identifikátor pro aktuální událost."
 
 #: ../../library/xml.sax.reader.rst:260
 msgid "InputSource Objects"
-msgstr ""
+msgstr "Objekty InputSource"
 
 #: ../../library/xml.sax.reader.rst:265
 msgid "Sets the public identifier of this :class:`InputSource`."
-msgstr ""
+msgstr "Nastaví veřejný identifikátor tohoto :class:`InputSource`."
 
 #: ../../library/xml.sax.reader.rst:270
 msgid "Returns the public identifier of this :class:`InputSource`."
-msgstr ""
+msgstr "Vrátí veřejný identifikátor tohoto :class:`InputSource`."
 
 #: ../../library/xml.sax.reader.rst:275
 msgid "Sets the system identifier of this :class:`InputSource`."
-msgstr ""
+msgstr "Nastaví systémový identifikátor tohoto :class:`InputSource`."
 
 #: ../../library/xml.sax.reader.rst:280
 msgid "Returns the system identifier of this :class:`InputSource`."
-msgstr ""
+msgstr "Vrátí systémový identifikátor tohoto :class:`InputSource`."
 
 #: ../../library/xml.sax.reader.rst:285
 msgid "Sets the character encoding of this :class:`InputSource`."
-msgstr ""
+msgstr "Nastaví znakovou sadu tohoto :class:`InputSource`."
 
 #: ../../library/xml.sax.reader.rst:287
 msgid ""
 "The encoding must be a string acceptable for an XML encoding declaration "
 "(see section 4.3.3 of the XML recommendation)."
 msgstr ""
+"Kódování musí být řetězec přijatelný pro XML deklaraci kódování (viz sekce "
+"4.3.3 XML doporučení)."
 
 #: ../../library/xml.sax.reader.rst:290
 msgid ""
 "The encoding attribute of the :class:`InputSource` is ignored if the "
 ":class:`InputSource` also contains a character stream."
 msgstr ""
+"Atribut encoding objektu :class:`InputSource` je ignorován, pokud "
+":class:`InputSource` také obsahuje znakový stream."
 
 #: ../../library/xml.sax.reader.rst:296
 msgid "Get the character encoding of this InputSource."
-msgstr ""
+msgstr "Získá znakovou sadu tohoto InputSource."
 
 #: ../../library/xml.sax.reader.rst:301
 msgid "Set the byte stream (a :term:`binary file`) for this input source."
 msgstr ""
+"Nastaví byte stream (:term:`binární soubor <binary file>`) pro tento vstupní"
+" zdroj."
 
 #: ../../library/xml.sax.reader.rst:303
 msgid ""
@@ -382,26 +429,34 @@ msgid ""
 "specified, but it will use a byte stream in preference to opening a URI "
 "connection itself."
 msgstr ""
+"SAX parser toto bude ignorovat, pokud je také zadán znakový stream, ale bude"
+" používat byte stream před otevřením URI propojení samo."
 
 #: ../../library/xml.sax.reader.rst:306
 msgid ""
 "If the application knows the character encoding of the byte stream, it "
 "should set it with the setEncoding method."
 msgstr ""
+"Pokud aplikace zná znakovou sadu byte streamu, měla by ji nastavit pomocí "
+"metody setEncoding."
 
 #: ../../library/xml.sax.reader.rst:312
 msgid "Get the byte stream for this input source."
-msgstr ""
+msgstr "Získá byte stream pro tento vstupní zdroj."
 
 #: ../../library/xml.sax.reader.rst:314
 msgid ""
 "The getEncoding method will return the character encoding for this byte "
 "stream, or ``None`` if unknown."
 msgstr ""
+"Metoda getEncoding vrátí znakovou sadu pro tento byte stream, nebo ``None``,"
+" pokud není známá."
 
 #: ../../library/xml.sax.reader.rst:320
 msgid "Set the character stream (a :term:`text file`) for this input source."
 msgstr ""
+"Nastaví znakový stream (:term:`textový soubor <text file>`) pro tento "
+"vstupní zdroj."
 
 #: ../../library/xml.sax.reader.rst:322
 msgid ""
@@ -409,14 +464,17 @@ msgid ""
 "byte stream and will not attempt to open a URI connection to the system "
 "identifier."
 msgstr ""
+"Pokud je zadán znakový stream, SAX parser bude ignorovat jakýkoli byte "
+"stream a nebude se pokoušet otevřít URI propojení k systémovému "
+"identifikátoru."
 
 #: ../../library/xml.sax.reader.rst:328
 msgid "Get the character stream for this input source."
-msgstr ""
+msgstr "Získá znakový stream pro tento vstupní zdroj."
 
 #: ../../library/xml.sax.reader.rst:334
 msgid "The :class:`Attributes` Interface"
-msgstr ""
+msgstr "Rozhraní :class:`Attributes`"
 
 #: ../../library/xml.sax.reader.rst:336
 msgid ""
@@ -428,27 +486,34 @@ msgid ""
 ":meth:`~collections.abc.Mapping.values`.  The following methods are also "
 "provided:"
 msgstr ""
+"Objekty :class:`Attributes` implementují část :term:`mapping protokolu "
+"<mapping>`, včetně metod :meth:`~collections.abc.Mapping.copy`, "
+":meth:`~collections.abc.Mapping.get`, :meth:`~object.__contains__`, "
+":meth:`~collections.abc.Mapping.items`, "
+":meth:`~collections.abc.Mapping.keys` a "
+":meth:`~collections.abc.Mapping.values`. Následující metody jsou také "
+"poskytovány:"
 
 #: ../../library/xml.sax.reader.rst:346
 msgid "Return the number of attributes."
-msgstr ""
+msgstr "Vrátí počet atributů."
 
 #: ../../library/xml.sax.reader.rst:351
 msgid "Return the names of the attributes."
-msgstr ""
+msgstr "Vrátí názvy atributů."
 
 #: ../../library/xml.sax.reader.rst:356
 msgid ""
 "Returns the type of the attribute *name*, which is normally ``'CDATA'``."
-msgstr ""
+msgstr "Vrátí typ atributu *name*, který je normálně ``'CDATA'``."
 
 #: ../../library/xml.sax.reader.rst:361
 msgid "Return the value of attribute *name*."
-msgstr ""
+msgstr "Vrátí hodnotu atributu *name*."
 
 #: ../../library/xml.sax.reader.rst:370
 msgid "The :class:`AttributesNS` Interface"
-msgstr ""
+msgstr "Rozhraní :class:`AttributesNS`"
 
 #: ../../library/xml.sax.reader.rst:372
 msgid ""
@@ -456,23 +521,26 @@ msgid ""
 "section :ref:`attributes-objects`).  All methods supported by that interface"
 " are also available on :class:`AttributesNS` objects."
 msgstr ""
+"Toto rozhraní je podtyp rozhraní :class:`Attributes` (viz sekce "
+":ref:`attributes-objects`). Všechny metody podporované tímto rozhraním jsou "
+"také dostupné na objektech :class:`AttributesNS`."
 
 #: ../../library/xml.sax.reader.rst:376
 msgid "The following methods are also available:"
-msgstr ""
+msgstr "Následující metody jsou také dostupné:"
 
 #: ../../library/xml.sax.reader.rst:381
 msgid "Return the value for a qualified name."
-msgstr ""
+msgstr "Vrátí hodnotu pro kvalifikovaný název."
 
 #: ../../library/xml.sax.reader.rst:386
 msgid "Return the ``(namespace, localname)`` pair for a qualified *name*."
-msgstr ""
+msgstr "Vrátí dvojici ``(namespace, localname)`` pro kvalifikovaný *name*."
 
 #: ../../library/xml.sax.reader.rst:391
 msgid "Return the qualified name for a ``(namespace, localname)`` pair."
-msgstr ""
+msgstr "Vrátí kvalifikovaný název pro dvojici ``(namespace, localname)``."
 
 #: ../../library/xml.sax.reader.rst:396
 msgid "Return the qualified names of all attributes."
-msgstr ""
+msgstr "Vrátí kvalifikované názvy všech atributů."

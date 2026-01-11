@@ -11,167 +11,182 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/hash.rst:4
 msgid "PyHash API"
-msgstr ""
+msgstr "PyHash API"
 
 #: ../../c-api/hash.rst:6
 msgid ""
 "See also the :c:member:`PyTypeObject.tp_hash` member and :ref:`numeric-"
 "hash`."
-msgstr ""
+msgstr "Viz také člen :c:member:`PyTypeObject.tp_hash` a :ref:`numeric-hash`."
 
 #: ../../c-api/hash.rst:10
 msgid "Hash value type: signed integer."
-msgstr ""
+msgstr "Typ hashovací hodnoty: signed integer."
 
 #: ../../c-api/hash.rst:17
 msgid "Hash value type: unsigned integer."
-msgstr ""
+msgstr "Typ hashovací hodnoty: unsigned integer."
 
 #: ../../c-api/hash.rst:24
 msgid ""
 "A numerical value indicating the algorithm for hashing of :class:`str`, "
 ":class:`bytes`, and :class:`memoryview`."
 msgstr ""
+"Číselná hodnota označující algoritmus pro hashování :class:`str`, "
+":class:`bytes` a :class:`memoryview`."
 
 #: ../../c-api/hash.rst:27
 msgid "The algorithm name is exposed by :data:`sys.hash_info.algorithm`."
 msgstr ""
+"Název algoritmu je dostupný prostřednictvím :data:`sys.hash_info.algorithm`."
 
 #: ../../c-api/hash.rst:36
 msgid ""
 "Numerical values to compare to :c:macro:`Py_HASH_ALGORITHM` to determine "
-"which algorithm is used for hashing. The hash algorithm can be configured"
-" via the configure :option:`--with-hash-algorithm` option."
+"which algorithm is used for hashing. The hash algorithm can be configured "
+"via the configure :option:`--with-hash-algorithm` option."
 msgstr ""
+"Číselné hodnoty pro porovnání s :c:macro:`Py_HASH_ALGORITHM` pro určení, "
+"který algoritmus se používá pro hashování. Hashovací algoritmus lze "
+"nakonfigurovat pomocí configure volby :option:`--with-hash-algorithm`."
 
 #: ../../c-api/hash.rst:40
 msgid "Add :c:macro:`!Py_HASH_FNV` and :c:macro:`!Py_HASH_SIPHASH24`."
-msgstr ""
+msgstr "Přidáno :c:macro:`!Py_HASH_FNV` a :c:macro:`!Py_HASH_SIPHASH24`."
 
 #: ../../c-api/hash.rst:43
 msgid "Add :c:macro:`!Py_HASH_SIPHASH13`."
-msgstr ""
+msgstr "Přidáno :c:macro:`!Py_HASH_SIPHASH13`."
 
 #: ../../c-api/hash.rst:49
 msgid ""
-"Buffers of length in range ``[1, Py_HASH_CUTOFF)`` are hashed using "
-"DJBX33A instead of the algorithm described by "
-":c:macro:`Py_HASH_ALGORITHM`."
+"Buffers of length in range ``[1, Py_HASH_CUTOFF)`` are hashed using DJBX33A "
+"instead of the algorithm described by :c:macro:`Py_HASH_ALGORITHM`."
 msgstr ""
+"Buffery o délce v rozsahu ``[1, Py_HASH_CUTOFF)`` jsou hashovány pomocí "
+"DJBX33A namísto algoritmu popsaného v :c:macro:`Py_HASH_ALGORITHM`."
 
 #: ../../c-api/hash.rst:52
 msgid "A :c:macro:`!Py_HASH_CUTOFF` of 0 disables the optimization."
-msgstr ""
+msgstr ":c:macro:`!Py_HASH_CUTOFF` o hodnotě 0 zakáže optimalizaci."
 
 #: ../../c-api/hash.rst:53
-msgid ":c:macro:`!Py_HASH_CUTOFF` must be non-negative and less or equal than 7."
-msgstr ""
+msgid ""
+":c:macro:`!Py_HASH_CUTOFF` must be non-negative and less or equal than 7."
+msgstr ":c:macro:`!Py_HASH_CUTOFF` musí být nezáporný a menší nebo roven 7."
 
 #: ../../c-api/hash.rst:55
 msgid ""
-"32-bit platforms should use a cutoff smaller than 64-bit platforms "
-"because it is easier to create colliding strings. A cutoff of 7 on 64-bit"
-" platforms and 5 on 32-bit platforms should provide a decent safety "
-"margin."
+"32-bit platforms should use a cutoff smaller than 64-bit platforms because "
+"it is easier to create colliding strings. A cutoff of 7 on 64-bit platforms "
+"and 5 on 32-bit platforms should provide a decent safety margin."
 msgstr ""
+"32-bitové platformy by měly používat menší cutoff než 64-bitové platformy, "
+"protože je jednodušší vytvořit kolizní řetězce. Cutoff 7 na 64-bitových "
+"platformách a 5 na 32-bitových platformách by měl poskytnout slušný "
+"bezpečnostní okraj."
 
 #: ../../c-api/hash.rst:59
 msgid "This corresponds to the :data:`sys.hash_info.cutoff` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.cutoff`."
 
 #: ../../c-api/hash.rst:66
 msgid ""
-"The `Mersenne prime <https://en.wikipedia.org/wiki/Mersenne_prime>`_ ``P "
-"= 2**n -1``, used for numeric hash scheme."
+"The `Mersenne prime <https://en.wikipedia.org/wiki/Mersenne_prime>`_ ``P = "
+"2**n -1``, used for numeric hash scheme."
 msgstr ""
+"`Mersennovo prvočíslo <https://en.wikipedia.org/wiki/Mersenne_prime>`_ ``P ="
+" 2**n -1``, použité pro numerické hashovací schéma."
 
 #: ../../c-api/hash.rst:69
 msgid "This corresponds to the :data:`sys.hash_info.modulus` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.modulus`."
 
 #: ../../c-api/hash.rst:76
 msgid "The exponent ``n`` of ``P`` in :c:macro:`PyHASH_MODULUS`."
-msgstr ""
+msgstr "Exponent ``n`` z ``P`` v :c:macro:`PyHASH_MODULUS`."
 
 #: ../../c-api/hash.rst:83
 msgid "Prime multiplier used in string and various other hashes."
-msgstr ""
+msgstr "Prvočíselný násobitel používaný při hashování řetězců a dalších typů."
 
 #: ../../c-api/hash.rst:90
 msgid "The hash value returned for a positive infinity."
-msgstr ""
+msgstr "Hashovací hodnota vracená pro kladné nekonečno."
 
 #: ../../c-api/hash.rst:92
 msgid "This corresponds to the :data:`sys.hash_info.inf` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.inf`."
 
 #: ../../c-api/hash.rst:99
 msgid "The multiplier used for the imaginary part of a complex number."
-msgstr ""
+msgstr "Násobič použitý pro imaginární část komplexního čísla."
 
 #: ../../c-api/hash.rst:101
 msgid "This corresponds to the :data:`sys.hash_info.imag` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.imag`."
 
 #: ../../c-api/hash.rst:108
 msgid "Hash function definition used by :c:func:`PyHash_GetFuncDef`."
-msgstr ""
+msgstr "Definice hashovací funkce používaná :c:func:`PyHash_GetFuncDef`."
 
 #: ../../c-api/hash.rst:112
 msgid "Hash function."
-msgstr ""
+msgstr "Hashovací funkce."
 
 #: ../../c-api/hash.rst:116
 msgid "Hash function name (UTF-8 encoded string)."
-msgstr ""
+msgstr "Název hashovací funkce (UTF-8 kódovaný řetězec)."
 
 #: ../../c-api/hash.rst:118
 msgid "This corresponds to the :data:`sys.hash_info.algorithm` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.algorithm`."
 
 #: ../../c-api/hash.rst:122
 msgid "Internal size of the hash value in bits."
-msgstr ""
+msgstr "Interní velikost hashovací hodnoty v bitech."
 
 #: ../../c-api/hash.rst:124
 msgid "This corresponds to the :data:`sys.hash_info.hash_bits` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.hash_bits`."
 
 #: ../../c-api/hash.rst:128
 msgid "Size of seed input in bits."
-msgstr ""
+msgstr "Velikost seed vstupu v bitech."
 
 #: ../../c-api/hash.rst:130
 msgid "This corresponds to the :data:`sys.hash_info.seed_bits` constant."
-msgstr ""
+msgstr "To odpovídá konstantě :data:`sys.hash_info.seed_bits`."
 
 #: ../../c-api/hash.rst:137
 msgid "Get the hash function definition."
-msgstr ""
+msgstr "Získá definici hashovací funkce."
 
 #: ../../c-api/hash.rst:140
 msgid ":pep:`456` \"Secure and interchangeable hash algorithm\"."
-msgstr ""
+msgstr ":pep:`456` „Bezpečný a záměnný hashovací algoritmus\"."
 
 #: ../../c-api/hash.rst:147
 msgid ""
-"Hash a pointer value: process the pointer value as an integer (cast it to"
-" ``uintptr_t`` internally). The pointer is not dereferenced."
+"Hash a pointer value: process the pointer value as an integer (cast it to "
+"``uintptr_t`` internally). The pointer is not dereferenced."
 msgstr ""
+"Zahashuje ukazatel: zpracuje hodnotu ukazatele jako celé číslo (interně ji "
+"přetypuje na ``uintptr_t``). Ukazatel není dereferencován."
 
 #: ../../c-api/hash.rst:150
 msgid "The function cannot fail: it cannot return ``-1``."
-msgstr ""
+msgstr "Funkce nemůže selhat: nemůže vrátit ``-1``."
 
 #: ../../c-api/hash.rst:157
 msgid ""
@@ -180,6 +195,10 @@ msgid ""
 ":class:`memoryview`, and other built-in objects that implement the "
 ":ref:`buffer protocol <bufferobjects>`."
 msgstr ""
+"Vypočítá a vrátí hashovací hodnotu bufferu o délce *len* bajtů začínajícího "
+"na adrese *ptr*. Hash je zaručeně shodný s hashem :class:`bytes`, "
+":class:`memoryview` a dalších vestavěných objektů, které implementují "
+":ref:`buffer protocol <bufferobjects>`."
 
 #: ../../c-api/hash.rst:162
 msgid ""
@@ -187,22 +206,26 @@ msgid ""
 ":c:member:`~PyTypeObject.tp_richcompare` function compares to another "
 "object's buffer."
 msgstr ""
+"Použijte tuto funkci pro implementaci hashování pro neměnné objekty, jejichž"
+" funkce :c:member:`~PyTypeObject.tp_richcompare` porovnává s bufferem jiného"
+" objektu."
 
 #: ../../c-api/hash.rst:166
 msgid "*len* must be greater than or equal to ``0``."
-msgstr ""
+msgstr "*len* musí být větší nebo rovno ``0``."
 
 #: ../../c-api/hash.rst:168
 msgid "This function always succeeds."
-msgstr ""
+msgstr "Tato funkce vždy uspěje."
 
 #: ../../c-api/hash.rst:175
 msgid ""
 "Generic hashing function that is meant to be put into a type object's "
 "``tp_hash`` slot. Its result only depends on the object's identity."
 msgstr ""
+"Generická hashovací funkce, která je určena k vložení do slotu ``tp_hash`` "
+"typového objektu. Její výsledek závisí pouze na identitě objektu."
 
 #: ../../c-api/hash.rst:180
 msgid "In CPython, it is equivalent to :c:func:`Py_HashPointer`."
-msgstr ""
-
+msgstr "V CPythonu je ekvivalentní s :c:func:`Py_HashPointer`."

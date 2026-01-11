@@ -11,69 +11,82 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/bool.rst:6
 msgid "Boolean Objects"
-msgstr ""
+msgstr "Booleovské objekty"
 
 #: ../../c-api/bool.rst:8
 msgid ""
 "Booleans in Python are implemented as a subclass of integers.  There are "
-"only two booleans, :c:data:`Py_False` and :c:data:`Py_True`.  As such, "
-"the normal creation and deletion functions don't apply to booleans.  The "
+"only two booleans, :c:data:`Py_False` and :c:data:`Py_True`.  As such, the "
+"normal creation and deletion functions don't apply to booleans.  The "
 "following macros are available, however."
 msgstr ""
+"Booleovské hodnoty v Pythonu jsou implementovány jako podtřída celých čísel."
+" Existují pouze dva booleovské objekty, :c:data:`Py_False` a "
+":c:data:`Py_True`. Proto se na ně nevztahují běžné funkce pro vytváření a "
+"mazání objektů. K dispozici jsou však následující makra."
 
 #: ../../c-api/bool.rst:16
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python boolean "
-"type; it is the same object as :class:`bool` in the Python layer."
+"This instance of :c:type:`PyTypeObject` represents the Python boolean type; "
+"it is the same object as :class:`bool` in the Python layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje booleovský typ Pythonu; je"
+" to tentýž objekt jako :class:`bool` v Pythonové vrstvě."
 
 #: ../../c-api/bool.rst:22
 msgid ""
-"Return true if *o* is of type :c:data:`PyBool_Type`.  This function "
-"always succeeds."
+"Return true if *o* is of type :c:data:`PyBool_Type`.  This function always "
+"succeeds."
 msgstr ""
+"Vrací pravdu, pokud *o* je typu :c:data:`PyBool_Type`. Tato funkce vždy "
+"uspěje."
 
 #: ../../c-api/bool.rst:28
 msgid ""
 "The Python ``False`` object.  This object has no methods and is "
 ":term:`immortal`."
 msgstr ""
+"Pythonový objekt ``False``. Tento objekt nemá žádné metody a je "
+":term:`immortal`."
 
 #: ../../c-api/bool.rst:31
 msgid ":c:data:`Py_False` is :term:`immortal`."
-msgstr ""
+msgstr ":c:data:`Py_False` je :term:`immortal`."
 
 #: ../../c-api/bool.rst:37
 msgid ""
 "The Python ``True`` object.  This object has no methods and is "
 ":term:`immortal`."
 msgstr ""
+"Pythonový objekt ``True``. Tento objekt nemá žádné metody a je "
+":term:`immortal`."
 
 #: ../../c-api/bool.rst:40
 msgid ":c:data:`Py_True` is :term:`immortal`."
-msgstr ""
+msgstr ":c:data:`Py_True` je :term:`immortal`."
 
 #: ../../c-api/bool.rst:46
 msgid "Return :c:data:`Py_False` from a function."
-msgstr ""
+msgstr "Vrátí z funkce :c:data:`Py_False`."
 
 #: ../../c-api/bool.rst:51
 msgid "Return :c:data:`Py_True` from a function."
-msgstr ""
+msgstr "Vrátí z funkce :c:data:`Py_True`."
 
 #: ../../c-api/bool.rst:56
 msgid ""
-"Return :c:data:`Py_True` or :c:data:`Py_False`, depending on the truth "
-"value of *v*."
+"Return :c:data:`Py_True` or :c:data:`Py_False`, depending on the truth value"
+" of *v*."
 msgstr ""
-
+"Vrátí :c:data:`Py_True` nebo :c:data:`Py_False` podle pravdivostní hodnoty "
+"*v*."

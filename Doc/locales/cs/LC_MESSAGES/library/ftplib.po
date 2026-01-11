@@ -684,22 +684,34 @@ msgid ""
 ">>> ftps.nlst()\n"
 "['6jack', 'OpenBSD', 'antilink', 'blogbench', 'bsdcam', 'clockspeed', 'djbdns-jedi', 'docs', 'eaccelerator-jedi', 'favicon.ico', 'francotone', 'fugu', 'ignore', 'libpuzzle', 'metalog', 'minidentd', 'misc', 'mysql-udf-global-user-variables', 'php-jenkins-hash', 'php-skein-hash', 'php-webdav', 'phpaudit', 'phpbench', 'pincaster', 'ping', 'posto', 'pub', 'public', 'public_keys', 'pure-ftpd', 'qscan', 'qtc', 'sharedance', 'skycache', 'sound', 'tmp', 'ucarp']"
 msgstr ""
+">>> ftps = FTP_TLS('ftp.pureftpd.org')\n"
+">>> ftps.login()\n"
+"'230 Anonymous user logged in'\n"
+">>> ftps.prot_p()\n"
+"'200 Data protection level set to \"private\"'\n"
+">>> ftps.nlst()\n"
+"['6jack', 'OpenBSD', 'antilink', 'blogbench', 'bsdcam', 'clockspeed', 'djbdns-jedi', 'docs', 'eaccelerator-jedi', 'favicon.ico', 'francotone', 'fugu', 'ignore', 'libpuzzle', 'metalog', 'minidentd', 'misc', 'mysql-udf-global-user-variables', 'php-jenkins-hash', 'php-skein-hash', 'php-webdav', 'phpaudit', 'phpbench', 'pincaster', 'ping', 'posto', 'pub', 'public', 'public_keys', 'pure-ftpd', 'qscan', 'qtc', 'sharedance', 'skycache', 'sound', 'tmp', 'ucarp']"
 
 #: ../../library/ftplib.rst:524
 msgid ""
 ":class:`!FTP_TLS` class inherits from :class:`FTP`, defining these "
 "additional methods and attributes:"
 msgstr ""
+"Třída :class:`!FTP_TLS` dědí z :class:`FTP` a definuje tyto další metody a "
+"atributy:"
 
 #: ../../library/ftplib.rst:529
 msgid "The SSL version to use (defaults to :data:`ssl.PROTOCOL_SSLv23`)."
 msgstr ""
+"Verze SSL, která se má použít (výchozí je :data:`ssl.PROTOCOL_SSLv23`)."
 
 #: ../../library/ftplib.rst:533
 msgid ""
 "Set up a secure control connection by using TLS or SSL, depending on what is"
 " specified in the :attr:`ssl_version` attribute."
 msgstr ""
+"Nastaví zabezpečené řídicí spojení pomocí TLS nebo SSL, v závislosti na tom,"
+" co je specifikováno v atributu :attr:`ssl_version`."
 
 #: ../../library/ftplib.rst:536
 msgid ""
@@ -707,6 +719,9 @@ msgid ""
 ":attr:`ssl.SSLContext.check_hostname` and *Server Name Indication* (see "
 ":const:`ssl.HAS_SNI`)."
 msgstr ""
+"Metoda nyní podporuje kontrolu jména hostitele pomocí "
+":attr:`ssl.SSLContext.check_hostname` a *Server Name Indication* (viz "
+":const:`ssl.HAS_SNI`)."
 
 #: ../../library/ftplib.rst:543
 msgid ""
@@ -714,34 +729,41 @@ msgid ""
 "advantage of firewalls that know how to handle NAT with non-secure FTP "
 "without opening fixed ports."
 msgstr ""
+"Vrátí řídicí kanál zpět na nezašifrovaný. Může být užitečné pro využití "
+"firewallů, které umí pracovat s NAT u nezabezpečeného FTP bez otevírání "
+"pevných portů."
 
 #: ../../library/ftplib.rst:551
 msgid "Set up secure data connection."
-msgstr ""
+msgstr "Nastaví zabezpečené datové spojení."
 
 #: ../../library/ftplib.rst:555
 msgid "Set up clear text data connection."
-msgstr ""
+msgstr "Nastaví nezašifrované datové spojení."
 
 #: ../../library/ftplib.rst:559
 msgid "Module variables"
-msgstr ""
+msgstr "Proměnné modulu"
 
 #: ../../library/ftplib.rst:563
 msgid "Exception raised when an unexpected reply is received from the server."
-msgstr ""
+msgstr "Výjimka vyvolaná, když je ze serveru přijata neočekávaná odpověď."
 
 #: ../../library/ftplib.rst:568
 msgid ""
 "Exception raised when an error code signifying a temporary error (response "
 "codes in the range 400--499) is received."
 msgstr ""
+"Výjimka vyvolaná, když je přijat kód chyby označující dočasnou chybu (kódy "
+"odpovědí v rozsahu 400--499)."
 
 #: ../../library/ftplib.rst:574
 msgid ""
 "Exception raised when an error code signifying a permanent error (response "
 "codes in the range 500--599) is received."
 msgstr ""
+"Výjimka vyvolaná, když je přijat kód chyby označující trvalou chybu (kódy "
+"odpovědí v rozsahu 500--599)."
 
 #: ../../library/ftplib.rst:580
 msgid ""
@@ -749,6 +771,8 @@ msgid ""
 "the response specifications of the File Transfer Protocol, i.e. begin with a"
 " digit in the range 1--5."
 msgstr ""
+"Výjimka vyvolaná, když je ze serveru přijata odpověď, která neodpovídá "
+"specifikacím File Transfer Protocol, tj. nezačíná číslicí v rozsahu 1--5."
 
 #: ../../library/ftplib.rst:587
 msgid ""
@@ -757,10 +781,14 @@ msgid ""
 "opposed to programming errors made by the caller).  This set includes the "
 "four exceptions listed above as well as :exc:`OSError` and :exc:`EOFError`."
 msgstr ""
+"Množina všech výjimek (jako tuple), které mohou metody instancí :class:`FTP`"
+" vyvolat v důsledku problémů s FTP spojením (na rozdíl od programovacích "
+"chyb volícího kódu). Tato množina zahrnuje čtyři výše uvedené výjimky a také"
+" :exc:`OSError` a :exc:`EOFError`."
 
 #: ../../library/ftplib.rst:595
 msgid "Module :mod:`netrc`"
-msgstr ""
+msgstr "Modul :mod:`netrc`"
 
 #: ../../library/ftplib.rst:596
 msgid ""
@@ -768,15 +796,18 @@ msgid ""
 "typically used by FTP clients to load user authentication information before"
 " prompting the user."
 msgstr ""
+"Parser pro formát souboru :file:`.netrc`. Soubor :file:`.netrc` je obvykle "
+"používán FTP klienty k načtení autentizačních údajů uživatele před vyžádáním"
+" od uživatele."
 
 #: ../../library/ftplib.rst:9
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../../library/ftplib.rst:9
 msgid "protocol"
-msgstr ""
+msgstr "protokol"
 
 #: ../../library/ftplib.rst:9
 msgid "ftplib (standard module)"
-msgstr ""
+msgstr "ftplib (standardní modul)"

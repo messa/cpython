@@ -11,138 +11,167 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/iterator.rst:6
 msgid "Iterator Objects"
-msgstr ""
+msgstr "Objekty iterátorů"
 
 #: ../../c-api/iterator.rst:8
 msgid ""
-"Python provides two general-purpose iterator objects.  The first, a "
-"sequence iterator, works with an arbitrary sequence supporting the "
-":meth:`~object.__getitem__` method.  The second works with a callable "
-"object and a sentinel value, calling the callable for each item in the "
-"sequence, and ending the iteration when the sentinel value is returned."
+"Python provides two general-purpose iterator objects.  The first, a sequence"
+" iterator, works with an arbitrary sequence supporting the "
+":meth:`~object.__getitem__` method.  The second works with a callable object"
+" and a sentinel value, calling the callable for each item in the sequence, "
+"and ending the iteration when the sentinel value is returned."
 msgstr ""
+"Python poskytuje dva univerzální objekty iterátorů. První, iterátor "
+"sekvence, pracuje s libovolnou sekvencí podporující metodu "
+":meth:`~object.__getitem__`. Druhý pracuje s callable objektem a strážnou "
+"hodnotou, volá callable pro každou položku v sekvenci a ukončí iteraci, když"
+" je vrácena strážná hodnota."
 
 #: ../../c-api/iterator.rst:17
 msgid ""
-"Type object for iterator objects returned by :c:func:`PySeqIter_New` and "
-"the one-argument form of the :func:`iter` built-in function for built-in "
+"Type object for iterator objects returned by :c:func:`PySeqIter_New` and the"
+" one-argument form of the :func:`iter` built-in function for built-in "
 "sequence types."
 msgstr ""
+"Typový objekt pro objekty iterátorů vrácené funkcí :c:func:`PySeqIter_New` a"
+" jednoargumentovou formou vestavěné funkce :func:`iter` pro vestavěné "
+"sekvenční typy."
 
 #: ../../c-api/iterator.rst:24
 msgid ""
-"Return true if the type of *op* is :c:data:`PySeqIter_Type`.  This "
-"function always succeeds."
+"Return true if the type of *op* is :c:data:`PySeqIter_Type`.  This function "
+"always succeeds."
 msgstr ""
+"Vrací true, pokud je typ *op* :c:data:`PySeqIter_Type`. Tato funkce vždy "
+"uspěje."
 
 #: ../../c-api/iterator.rst:30
 msgid ""
-"Return an iterator that works with a general sequence object, *seq*.  The"
-" iteration ends when the sequence raises :exc:`IndexError` for the "
+"Return an iterator that works with a general sequence object, *seq*.  The "
+"iteration ends when the sequence raises :exc:`IndexError` for the "
 "subscripting operation."
 msgstr ""
+"Vrací iterátor, který pracuje s obecným sekvenčním objektem *seq*. Iterace "
+"končí, když sekvence vyvolá :exc:`IndexError` při operaci indexování."
 
 #: ../../c-api/iterator.rst:37
 msgid ""
-"Type object for iterator objects returned by :c:func:`PyCallIter_New` and"
-" the two-argument form of the :func:`iter` built-in function."
+"Type object for iterator objects returned by :c:func:`PyCallIter_New` and "
+"the two-argument form of the :func:`iter` built-in function."
 msgstr ""
+"Typový objekt pro objekty iterátorů vrácené funkcí :c:func:`PyCallIter_New` "
+"a dvouargumentovou formou vestavěné funkce :func:`iter`."
 
 #: ../../c-api/iterator.rst:43
 msgid ""
-"Return true if the type of *op* is :c:data:`PyCallIter_Type`.  This "
-"function always succeeds."
+"Return true if the type of *op* is :c:data:`PyCallIter_Type`.  This function"
+" always succeeds."
 msgstr ""
+"Vrací true, pokud je typ *op* :c:data:`PyCallIter_Type`. Tato funkce vždy "
+"uspěje."
 
 #: ../../c-api/iterator.rst:49
 msgid ""
-"Return a new iterator.  The first parameter, *callable*, can be any "
-"Python callable object that can be called with no parameters; each call "
-"to it should return the next item in the iteration.  When *callable* "
-"returns a value equal to *sentinel*, the iteration will be terminated."
+"Return a new iterator.  The first parameter, *callable*, can be any Python "
+"callable object that can be called with no parameters; each call to it "
+"should return the next item in the iteration.  When *callable* returns a "
+"value equal to *sentinel*, the iteration will be terminated."
 msgstr ""
+"Vrací nový iterátor. První parametr, *callable*, může být jakýkoli callable "
+"objekt Pythonu, který lze volat bez parametrů; každé jeho volání by mělo "
+"vrátit další položku v iteraci. Když *callable* vrátí hodnotu rovnou "
+"*sentinel*, iterace bude ukončena."
 
 #: ../../c-api/iterator.rst:56
 msgid "Range Objects"
-msgstr ""
+msgstr "Objekty range"
 
 #: ../../c-api/iterator.rst:60
 msgid "The type object for :class:`range` objects."
-msgstr ""
+msgstr "Typový objekt pro objekty :class:`range`."
 
 #: ../../c-api/iterator.rst:65
 msgid ""
 "Return true if the object *o* is an instance of a :class:`range` object. "
 "This function always succeeds."
 msgstr ""
+"Vrací true, pokud je objekt *o* instancí objektu :class:`range`. Tato funkce"
+" vždy uspěje."
 
 #: ../../c-api/iterator.rst:70
 msgid "Builtin Iterator Types"
-msgstr ""
+msgstr "Vestavěné typy iterátorů"
 
 #: ../../c-api/iterator.rst:72
 msgid ""
-"These are built-in iteration types that are included in Python's C API, "
-"but provide no additional functions. They are here for completeness."
+"These are built-in iteration types that are included in Python's C API, but "
+"provide no additional functions. They are here for completeness."
 msgstr ""
+"Toto jsou vestavěné iterační typy, které jsou součástí C API Pythonu, ale "
+"neposkytují žádné další funkce. Jsou zde pro úplnost."
 
 #: ../../c-api/iterator.rst:80
 msgid "C type"
-msgstr ""
+msgstr "C typ"
 
 #: ../../c-api/iterator.rst:81
 msgid "Python type"
-msgstr ""
+msgstr "Pythonový typ"
 
 #: ../../c-api/iterator.rst:83
 msgid ":py:class:`enumerate`"
-msgstr ""
+msgstr ":py:class:`enumerate`"
 
 #: ../../c-api/iterator.rst:85
 msgid ":py:class:`filter`"
-msgstr ""
+msgstr ":py:class:`filter`"
 
 #: ../../c-api/iterator.rst:87
 msgid ":py:class:`map`"
-msgstr ""
+msgstr ":py:class:`map`"
 
 #: ../../c-api/iterator.rst:89
 msgid ":py:class:`reversed`"
-msgstr ""
+msgstr ":py:class:`reversed`"
 
 #: ../../c-api/iterator.rst:91
 msgid ":py:class:`zip`"
-msgstr ""
+msgstr ":py:class:`zip`"
 
 #: ../../c-api/iterator.rst:95
 msgid "Other Iterator Objects"
-msgstr ""
+msgstr "Další objekty iterátorů"
 
 #: ../../c-api/iterator.rst:113
 msgid "Type objects for iterators of various built-in objects."
-msgstr ""
+msgstr "Typové objekty pro iterátory různých vestavěných objektů."
 
 #: ../../c-api/iterator.rst:115
 msgid ""
 "Do not create instances of these directly; prefer calling "
 ":c:func:`PyObject_GetIter` instead."
 msgstr ""
+"Nevytvářejte instance těchto objektů přímo; místo toho raději volejte "
+":c:func:`PyObject_GetIter`."
 
 #: ../../c-api/iterator.rst:118
 msgid ""
 "Note that there is no guarantee that a given built-in type uses a given "
-"iterator type. For example, iterating over :class:`range` will use one of"
-" two iterator types depending on the size of the range. Other types may "
-"start using a similar scheme in the future, without warning."
+"iterator type. For example, iterating over :class:`range` will use one of "
+"two iterator types depending on the size of the range. Other types may start"
+" using a similar scheme in the future, without warning."
 msgstr ""
-
+"Mějte na paměti, že neexistuje žádná záruka, že daný vestavěný typ používá "
+"daný typ iterátoru. Například iterace přes :class:`range` použije jeden ze "
+"dvou typů iterátorů v závislosti na velikosti rozsahu. Další typy mohou v "
+"budoucnu začít používat podobné schéma, bez varování."

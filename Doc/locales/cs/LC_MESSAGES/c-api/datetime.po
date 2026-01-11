@@ -11,32 +11,39 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/datetime.rst:6
 msgid "DateTime Objects"
-msgstr ""
+msgstr "Objekty DateTime"
 
 #: ../../c-api/datetime.rst:8
 msgid ""
-"Various date and time objects are supplied by the :mod:`datetime` module."
-" Before using any of these functions, the header file :file:`datetime.h` "
-"must be included in your source (note that this is not included by "
+"Various date and time objects are supplied by the :mod:`datetime` module. "
+"Before using any of these functions, the header file :file:`datetime.h` must"
+" be included in your source (note that this is not included by "
 ":file:`Python.h`), and the macro :c:macro:`PyDateTime_IMPORT` must be "
-"invoked, usually as part of the module initialisation function.  The "
-"macro puts a pointer to a C structure into a static variable, "
+"invoked, usually as part of the module initialisation function.  The macro "
+"puts a pointer to a C structure into a static variable, "
 ":c:data:`PyDateTimeAPI`, that is used by the following macros."
 msgstr ""
+"Modul :mod:`datetime` poskytuje různé objekty pro práci s datem a časem. "
+"Před použitím kterékoli z těchto funkcí musí být ve vašem zdrojovém kódu "
+"zahrnut hlavičkový soubor :file:`datetime.h` (všimněte si, že není zahrnut v"
+" :file:`Python.h`), a makro :c:macro:`PyDateTime_IMPORT` musí být vyvoláno, "
+"obvykle jako součást inicializační funkce modulu. Makro vloží ukazatel na C "
+"strukturu do statické proměnné :c:data:`PyDateTimeAPI`, která je používána "
+"následujícími makry."
 
 #: ../../c-api/datetime.rst:18
 msgid "Import the datetime C API."
-msgstr ""
+msgstr "Importuje datetime C API."
 
 #: ../../c-api/datetime.rst:20
 msgid ""
@@ -44,6 +51,9 @@ msgid ""
 ":c:var:`PyDateTimeAPI` to ``NULL`` and set an exception. The caller must "
 "check if an error occurred via :c:func:`PyErr_Occurred`:"
 msgstr ""
+"Při úspěchu naplní ukazatel :c:var:`PyDateTimeAPI`. Při selhání nastaví "
+":c:var:`PyDateTimeAPI` na ``NULL`` a nastaví výjimku. Volající musí "
+"zkontrolovat, zda došlo k chybě pomocí :c:func:`PyErr_Occurred`:"
 
 #: ../../c-api/datetime.rst:24
 #, python-brace-format
@@ -51,236 +61,301 @@ msgid ""
 "PyDateTime_IMPORT;\n"
 "if (PyErr_Occurred()) { /* cleanup */ }"
 msgstr ""
+"PyDateTime_IMPORT;\n"
+"if (PyErr_Occurred()) { /* cleanup */ }"
 
 #: ../../c-api/datetime.rst:31
 msgid "This is not compatible with subinterpreters."
-msgstr ""
+msgstr "Toto není kompatibilní se subinterpretery."
 
 #: ../../c-api/datetime.rst:35
 msgid "Structure containing the fields for the datetime C API."
-msgstr ""
+msgstr "Struktura obsahující pole pro datetime C API."
 
 #: ../../c-api/datetime.rst:37
 msgid "The fields of this structure are private and subject to change."
-msgstr ""
+msgstr "Pole této struktury jsou soukromá a mohou se měnit."
 
 #: ../../c-api/datetime.rst:39
 msgid "Do not use this directly; prefer ``PyDateTime_*`` APIs instead."
-msgstr ""
+msgstr "Nepoužívejte toto přímo; preferujte místo toho API ``PyDateTime_*``."
 
 #: ../../c-api/datetime.rst:43
 msgid "Dynamically allocated object containing the datetime C API."
-msgstr ""
+msgstr "Dynamicky alokovaný objekt obsahující datetime C API."
 
 #: ../../c-api/datetime.rst:45
 msgid ""
-"This variable is only available once :c:macro:`PyDateTime_IMPORT` "
-"succeeds."
+"This variable is only available once :c:macro:`PyDateTime_IMPORT` succeeds."
 msgstr ""
+"Tato proměnná je dostupná až po úspěšném vyvolání "
+":c:macro:`PyDateTime_IMPORT`."
 
 #: ../../c-api/datetime.rst:49
 msgid "This subtype of :c:type:`PyObject` represents a Python date object."
-msgstr ""
+msgstr "Tento podtyp :c:type:`PyObject` reprezentuje objekt date v Pythonu."
 
 #: ../../c-api/datetime.rst:53
-msgid "This subtype of :c:type:`PyObject` represents a Python datetime object."
+msgid ""
+"This subtype of :c:type:`PyObject` represents a Python datetime object."
 msgstr ""
+"Tento podtyp :c:type:`PyObject` reprezentuje objekt datetime v Pythonu."
 
 #: ../../c-api/datetime.rst:57
 msgid "This subtype of :c:type:`PyObject` represents a Python time object."
-msgstr ""
+msgstr "Tento podtyp :c:type:`PyObject` reprezentuje objekt time v Pythonu."
 
 #: ../../c-api/datetime.rst:61
 msgid ""
 "This subtype of :c:type:`PyObject` represents the difference between two "
 "datetime values."
 msgstr ""
+"Tento podtyp :c:type:`PyObject` reprezentuje rozdíl mezi dvěma datetime "
+"hodnotami."
 
 #: ../../c-api/datetime.rst:65
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python date type; "
-"it is the same object as :class:`datetime.date` in the Python layer."
+"This instance of :c:type:`PyTypeObject` represents the Python date type; it "
+"is the same object as :class:`datetime.date` in the Python layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ date v Pythonu; jedná "
+"se o stejný objekt jako :class:`datetime.date` na úrovni Pythonu."
 
 #: ../../c-api/datetime.rst:70
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python datetime "
-"type; it is the same object as :class:`datetime.datetime` in the Python "
-"layer."
+"This instance of :c:type:`PyTypeObject` represents the Python datetime type;"
+" it is the same object as :class:`datetime.datetime` in the Python layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ datetime v Pythonu; "
+"jedná se o stejný objekt jako :class:`datetime.datetime` na úrovni Pythonu."
 
 #: ../../c-api/datetime.rst:75
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python time type; "
-"it is the same object as :class:`datetime.time` in the Python layer."
+"This instance of :c:type:`PyTypeObject` represents the Python time type; it "
+"is the same object as :class:`datetime.time` in the Python layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ time v Pythonu; jedná "
+"se o stejný objekt jako :class:`datetime.time` na úrovni Pythonu."
 
 #: ../../c-api/datetime.rst:80
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python type for "
-"the difference between two datetime values; it is the same object as "
+"This instance of :c:type:`PyTypeObject` represents the Python type for the "
+"difference between two datetime values; it is the same object as "
 ":class:`datetime.timedelta` in the Python layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ v Pythonu pro rozdíl "
+"mezi dvěma datetime hodnotami; jedná se o stejný objekt jako "
+":class:`datetime.timedelta` na úrovni Pythonu."
 
 #: ../../c-api/datetime.rst:86
 msgid ""
-"This instance of :c:type:`PyTypeObject` represents the Python time zone "
-"info type; it is the same object as :class:`datetime.tzinfo` in the "
-"Python layer."
+"This instance of :c:type:`PyTypeObject` represents the Python time zone info"
+" type; it is the same object as :class:`datetime.tzinfo` in the Python "
+"layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ pro informace o "
+"časovém pásmu v Pythonu; jedná se o stejný objekt jako "
+":class:`datetime.tzinfo` na úrovni Pythonu."
 
 #: ../../c-api/datetime.rst:90
 msgid "Macro for access to the UTC singleton:"
-msgstr ""
+msgstr "Makro pro přístup k UTC singletonu:"
 
 #: ../../c-api/datetime.rst:94
 msgid ""
 "Returns the time zone singleton representing UTC, the same object as "
 ":attr:`datetime.timezone.utc`."
 msgstr ""
+"Vrací singleton časového pásma reprezentující UTC, stejný objekt jako "
+":attr:`datetime.timezone.utc`."
 
 #: ../../c-api/datetime.rst:100
 msgid "Type-check macros:"
-msgstr ""
+msgstr "Makra pro kontrolu typů:"
 
 #: ../../c-api/datetime.rst:104
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_DateType` or a subtype"
-" of :c:data:`!PyDateTime_DateType`.  *ob* must not be ``NULL``.  This "
-"function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_DateType` or a subtype of"
+" :c:data:`!PyDateTime_DateType`.  *ob* must not be ``NULL``.  This function "
+"always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_DateType` nebo podtypu "
+":c:data:`!PyDateTime_DateType`. *ob* nesmí být ``NULL``. Tato funkce vždy "
+"uspe je."
 
 #: ../../c-api/datetime.rst:111
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_DateType`. *ob* must "
-"not be ``NULL``.  This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_DateType`. *ob* must not "
+"be ``NULL``.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_DateType`. *ob* nesmí být"
+" ``NULL``. Tato funkce vždy uspeje."
 
 #: ../../c-api/datetime.rst:117
 msgid ""
 "Return true if *ob* is of type :c:data:`PyDateTime_DateTimeType` or a "
-"subtype of :c:data:`!PyDateTime_DateTimeType`.  *ob* must not be "
-"``NULL``.  This function always succeeds."
+"subtype of :c:data:`!PyDateTime_DateTimeType`.  *ob* must not be ``NULL``.  "
+"This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_DateTimeType` nebo "
+"podtypu :c:data:`!PyDateTime_DateTimeType`. *ob* nesmí být ``NULL``. Tato "
+"funkce vždy uspeje."
 
 #: ../../c-api/datetime.rst:124
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_DateTimeType`. *ob* "
-"must not be ``NULL``.  This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_DateTimeType`. *ob* must "
+"not be ``NULL``.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_DateTimeType`. *ob* nesmí"
+" být ``NULL``. Tato funkce vždy uspeje."
 
 #: ../../c-api/datetime.rst:130
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_TimeType` or a subtype"
-" of :c:data:`!PyDateTime_TimeType`.  *ob* must not be ``NULL``.  This "
-"function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_TimeType` or a subtype of"
+" :c:data:`!PyDateTime_TimeType`.  *ob* must not be ``NULL``.  This function "
+"always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_TimeType` nebo podtypu "
+":c:data:`!PyDateTime_TimeType`. *ob* nesmí být ``NULL``. Tato funkce vždy "
+"uspeje."
 
 #: ../../c-api/datetime.rst:137
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_TimeType`. *ob* must "
-"not be ``NULL``.  This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_TimeType`. *ob* must not "
+"be ``NULL``.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_TimeType`. *ob* nesmí být"
+" ``NULL``. Tato funkce vždy uspeje."
 
 #: ../../c-api/datetime.rst:143
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_DeltaType` or a "
-"subtype of :c:data:`!PyDateTime_DeltaType`.  *ob* must not be ``NULL``.  "
-"This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_DeltaType` or a subtype "
+"of :c:data:`!PyDateTime_DeltaType`.  *ob* must not be ``NULL``.  This "
+"function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_DeltaType` nebo podtypu "
+":c:data:`!PyDateTime_DeltaType`. *ob* nesmí být ``NULL``. Tato funkce vždy "
+"uspeje."
 
 #: ../../c-api/datetime.rst:150
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_DeltaType`. *ob* must "
-"not be ``NULL``.  This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_DeltaType`. *ob* must not"
+" be ``NULL``.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_DeltaType`. *ob* nesmí "
+"být ``NULL``. Tato funkce vždy uspeje."
 
 #: ../../c-api/datetime.rst:156
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_TZInfoType` or a "
-"subtype of :c:data:`!PyDateTime_TZInfoType`.  *ob* must not be ``NULL``."
-"  This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_TZInfoType` or a subtype "
+"of :c:data:`!PyDateTime_TZInfoType`.  *ob* must not be ``NULL``.  This "
+"function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_TZInfoType` nebo podtypu "
+":c:data:`!PyDateTime_TZInfoType`. *ob* nesmí být ``NULL``. Tato funkce vždy "
+"uspeje."
 
 #: ../../c-api/datetime.rst:163
 msgid ""
-"Return true if *ob* is of type :c:data:`PyDateTime_TZInfoType`. *ob* must"
-" not be ``NULL``.  This function always succeeds."
+"Return true if *ob* is of type :c:data:`PyDateTime_TZInfoType`. *ob* must "
+"not be ``NULL``.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud je *ob* typu :c:data:`PyDateTime_TZInfoType`. *ob* nesmí "
+"být ``NULL``. Tato funkce vždy uspeje."
 
 #: ../../c-api/datetime.rst:167
 msgid "Macros to create objects:"
-msgstr ""
+msgstr "Makra pro vytváření objektů:"
 
 #: ../../c-api/datetime.rst:171
 msgid ""
-"Return a :class:`datetime.date` object with the specified year, month and"
-" day."
-msgstr ""
+"Return a :class:`datetime.date` object with the specified year, month and "
+"day."
+msgstr "Vrací objekt :class:`datetime.date` se zadaným rokem, měsícem a dnem."
 
 #: ../../c-api/datetime.rst:176
 msgid ""
-"Return a :class:`datetime.datetime` object with the specified year, "
-"month, day, hour, minute, second and microsecond."
+"Return a :class:`datetime.datetime` object with the specified year, month, "
+"day, hour, minute, second and microsecond."
 msgstr ""
+"Vrací objekt :class:`datetime.datetime` se zadaným rokem, měsícem, dnem, "
+"hodinou, minutou, sekundou a mikrosekundou."
 
 #: ../../c-api/datetime.rst:182
 msgid ""
-"Return a :class:`datetime.datetime` object with the specified year, "
-"month, day, hour, minute, second, microsecond and fold."
+"Return a :class:`datetime.datetime` object with the specified year, month, "
+"day, hour, minute, second, microsecond and fold."
 msgstr ""
+"Vrací objekt :class:`datetime.datetime` se zadaným rokem, měsícem, dnem, "
+"hodinou, minutou, sekundou, mikrosekundou a fold."
 
 #: ../../c-api/datetime.rst:190
 msgid ""
 "Return a :class:`datetime.time` object with the specified hour, minute, "
 "second and microsecond."
 msgstr ""
+"Vrací objekt :class:`datetime.time` se zadanou hodinou, minutou, sekundou a "
+"mikrosekundou."
 
 #: ../../c-api/datetime.rst:196
 msgid ""
 "Return a :class:`datetime.time` object with the specified hour, minute, "
 "second, microsecond and fold."
 msgstr ""
+"Vrací objekt :class:`datetime.time` se zadanou hodinou, minutou, sekundou, "
+"mikrosekundou a fold."
 
 #: ../../c-api/datetime.rst:204
 msgid ""
-"Return a :class:`datetime.timedelta` object representing the given number"
-" of days, seconds and microseconds.  Normalization is performed so that "
-"the resulting number of microseconds and seconds lie in the ranges "
-"documented for :class:`datetime.timedelta` objects."
+"Return a :class:`datetime.timedelta` object representing the given number of"
+" days, seconds and microseconds.  Normalization is performed so that the "
+"resulting number of microseconds and seconds lie in the ranges documented "
+"for :class:`datetime.timedelta` objects."
 msgstr ""
+"Vrací objekt :class:`datetime.timedelta` reprezentující zadaný počet dnů, "
+"sekund a mikrosekund. Provádí se normalizace, takže výsledný počet "
+"mikrosekund a sekund leží v rozsazích dokumentovaných pro objekty "
+":class:`datetime.timedelta`."
 
 #: ../../c-api/datetime.rst:212
 msgid ""
 "Return a :class:`datetime.timezone` object with an unnamed fixed offset "
 "represented by the *offset* argument."
 msgstr ""
+"Vrací objekt :class:`datetime.timezone` s nepojmenovaným fixním posunem "
+"reprezentovaným argumentem *offset*."
 
 #: ../../c-api/datetime.rst:220
 msgid ""
-"Return a :class:`datetime.timezone` object with a fixed offset "
-"represented by the *offset* argument and with tzname *name*."
+"Return a :class:`datetime.timezone` object with a fixed offset represented "
+"by the *offset* argument and with tzname *name*."
 msgstr ""
+"Vrací objekt :class:`datetime.timezone` s fixním posunem reprezentovaným "
+"argumentem *offset* a s tzname *name*."
 
 #: ../../c-api/datetime.rst:226
 msgid ""
 "Macros to extract fields from date objects.  The argument must be an "
 "instance of :c:type:`PyDateTime_Date`, including subclasses (such as "
-":c:type:`PyDateTime_DateTime`).  The argument must not be ``NULL``, and "
-"the type is not checked:"
+":c:type:`PyDateTime_DateTime`).  The argument must not be ``NULL``, and the "
+"type is not checked:"
 msgstr ""
+"Makra pro extrakci polí z datových objektů. Argument musí být instance "
+":c:type:`PyDateTime_Date`, včetně podtříd (např. "
+":c:type:`PyDateTime_DateTime`). Argument nesmí být ``NULL`` a typ není "
+"kontrolován:"
 
 #: ../../c-api/datetime.rst:233
 msgid "Return the year, as a positive int."
-msgstr ""
+msgstr "Vrací rok jako kladné int."
 
 #: ../../c-api/datetime.rst:238
 msgid "Return the month, as an int from 1 through 12."
-msgstr ""
+msgstr "Vrací měsíc jako int od 1 do 12."
 
 #: ../../c-api/datetime.rst:243
 msgid "Return the day, as an int from 1 through 31."
-msgstr ""
+msgstr "Vrací den jako int od 1 do 31."
 
 #: ../../c-api/datetime.rst:246
 msgid ""
@@ -288,89 +363,103 @@ msgid ""
 "instance of :c:type:`PyDateTime_DateTime`, including subclasses. The "
 "argument must not be ``NULL``, and the type is not checked:"
 msgstr ""
+"Makra pro extrakci polí z datetime objektů. Argument musí být instance "
+":c:type:`PyDateTime_DateTime`, včetně podtříd. Argument nesmí být ``NULL`` a"
+" typ není kontrolován:"
 
 #: ../../c-api/datetime.rst:252 ../../c-api/datetime.rst:290
 msgid "Return the hour, as an int from 0 through 23."
-msgstr ""
+msgstr "Vrací hodinu jako int od 0 do 23."
 
 #: ../../c-api/datetime.rst:257 ../../c-api/datetime.rst:295
 msgid "Return the minute, as an int from 0 through 59."
-msgstr ""
+msgstr "Vrací minutu jako int od 0 do 59."
 
 #: ../../c-api/datetime.rst:262 ../../c-api/datetime.rst:300
 msgid "Return the second, as an int from 0 through 59."
-msgstr ""
+msgstr "Vrací sekundu jako int od 0 do 59."
 
 #: ../../c-api/datetime.rst:267 ../../c-api/datetime.rst:305
 msgid "Return the microsecond, as an int from 0 through 999999."
-msgstr ""
+msgstr "Vrací mikrosekundu jako int od 0 do 999999."
 
 #: ../../c-api/datetime.rst:272 ../../c-api/datetime.rst:310
 msgid "Return the fold, as an int from 0 through 1."
-msgstr ""
+msgstr "Vrací fold jako int od 0 do 1."
 
 #: ../../c-api/datetime.rst:279 ../../c-api/datetime.rst:317
 msgid "Return the tzinfo (which may be ``None``)."
-msgstr ""
+msgstr "Vrací tzinfo (může být ``None``)."
 
 #: ../../c-api/datetime.rst:284
 msgid ""
 "Macros to extract fields from time objects.  The argument must be an "
-"instance of :c:type:`PyDateTime_Time`, including subclasses. The argument"
-" must not be ``NULL``, and the type is not checked:"
+"instance of :c:type:`PyDateTime_Time`, including subclasses. The argument "
+"must not be ``NULL``, and the type is not checked:"
 msgstr ""
+"Makra pro extrakci polí z time objektů. Argument musí být instance "
+":c:type:`PyDateTime_Time`, včetně podtříd. Argument nesmí být ``NULL`` a typ"
+" není kontrolován:"
 
 #: ../../c-api/datetime.rst:322
 msgid ""
-"Macros to extract fields from time delta objects.  The argument must be "
-"an instance of :c:type:`PyDateTime_Delta`, including subclasses. The "
-"argument must not be ``NULL``, and the type is not checked:"
+"Macros to extract fields from time delta objects.  The argument must be an "
+"instance of :c:type:`PyDateTime_Delta`, including subclasses. The argument "
+"must not be ``NULL``, and the type is not checked:"
 msgstr ""
+"Makra pro extrakci polí z time delta objektů. Argument musí být instance "
+":c:type:`PyDateTime_Delta`, včetně podtříd. Argument nesmí být ``NULL`` a "
+"typ není kontrolován:"
 
 #: ../../c-api/datetime.rst:328
 msgid "Return the number of days, as an int from -999999999 to 999999999."
-msgstr ""
+msgstr "Vrací počet dnů jako int od -999999999 do 999999999."
 
 #: ../../c-api/datetime.rst:335
 msgid "Return the number of seconds, as an int from 0 through 86399."
-msgstr ""
+msgstr "Vrací počet sekund jako int od 0 do 86399."
 
 #: ../../c-api/datetime.rst:342
 msgid "Return the number of microseconds, as an int from 0 through 999999."
-msgstr ""
+msgstr "Vrací počet mikrosekund jako int od 0 do 999999."
 
 #: ../../c-api/datetime.rst:347
 msgid "Macros for the convenience of modules implementing the DB API:"
-msgstr ""
+msgstr "Makra pro pohodlí modulů implementujících DB API:"
 
 #: ../../c-api/datetime.rst:351
 msgid ""
-"Create and return a new :class:`datetime.datetime` object given an "
-"argument tuple suitable for passing to "
-":meth:`datetime.datetime.fromtimestamp`."
+"Create and return a new :class:`datetime.datetime` object given an argument "
+"tuple suitable for passing to :meth:`datetime.datetime.fromtimestamp`."
 msgstr ""
+"Vytvoří a vrací nový objekt :class:`datetime.datetime` zadaný tuple "
+"argumentem vhodným pro předání do :meth:`datetime.datetime.fromtimestamp`."
 
 #: ../../c-api/datetime.rst:357
 msgid ""
 "Create and return a new :class:`datetime.date` object given an argument "
 "tuple suitable for passing to :meth:`datetime.date.fromtimestamp`."
 msgstr ""
+"Vytvoří a vrací nový objekt :class:`datetime.date` zadaný tuple argumentem "
+"vhodným pro předání do :meth:`datetime.date.fromtimestamp`."
 
 #: ../../c-api/datetime.rst:362
 msgid "Internal data"
-msgstr ""
+msgstr "Interní data"
 
 #: ../../c-api/datetime.rst:364
 msgid ""
 "The following symbols are exposed by the C API but should be considered "
 "internal-only."
 msgstr ""
+"Následující symboly jsou exponovány C API, ale měly by být považovány za "
+"čistě interní."
 
 #: ../../c-api/datetime.rst:369
 msgid "Name of the datetime capsule to pass to :c:func:`PyCapsule_Import`."
-msgstr ""
+msgstr "Název datetime kapsle pro předání do :c:func:`PyCapsule_Import`."
 
 #: ../../c-api/datetime.rst:371
 msgid "Internal usage only. Use :c:macro:`PyDateTime_IMPORT` instead."
 msgstr ""
-
+"Pouze pro interní použití. Použijte místo toho :c:macro:`PyDateTime_IMPORT`."
