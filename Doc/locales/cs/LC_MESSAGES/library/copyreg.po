@@ -11,79 +11,95 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/copyreg.rst:2
 msgid ":mod:`!copyreg` --- Register :mod:`!pickle` support functions"
-msgstr ""
+msgstr ":mod:`!copyreg` --- Registrace funkcí pro podporu :mod:`!pickle`"
 
 #: ../../library/copyreg.rst:7
 msgid "**Source code:** :source:`Lib/copyreg.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/copyreg.py`"
 
 #: ../../library/copyreg.rst:15
 msgid ""
 "The :mod:`copyreg` module offers a way to define functions used while "
-"pickling specific objects.  The :mod:`pickle` and :mod:`copy` modules use"
-" those functions when pickling/copying those objects.  The module "
-"provides configuration information about object constructors which are "
-"not classes. Such constructors may be factory functions or class "
-"instances."
+"pickling specific objects.  The :mod:`pickle` and :mod:`copy` modules use "
+"those functions when pickling/copying those objects.  The module provides "
+"configuration information about object constructors which are not classes. "
+"Such constructors may be factory functions or class instances."
 msgstr ""
+"Modul :mod:`copyreg` nabízí způsob, jak definovat funkce používané při "
+"serializaci specifických objektů. Moduly :mod:`pickle` a :mod:`copy` tyto "
+"funkce používají při serializaci/kopírování těchto objektů. Modul poskytuje "
+"informace o konfiguraci konstruktorů objektů, které nejsou třídami. Takové "
+"konstruktory mohou být tovární funkce nebo instance tříd."
 
 #: ../../library/copyreg.rst:24
 msgid ""
-"Declares *object* to be a valid constructor.  If *object* is not callable"
-" (and hence not valid as a constructor), raises :exc:`TypeError`."
+"Declares *object* to be a valid constructor.  If *object* is not callable "
+"(and hence not valid as a constructor), raises :exc:`TypeError`."
 msgstr ""
+"Deklaruje, že *object* je platný konstruktor. Pokud *object* není callable "
+"(a tedy není platný jako konstruktor), vyvolá :exc:`TypeError`."
 
 #: ../../library/copyreg.rst:30
 msgid ""
 "Declares that *function* should be used as a \"reduction\" function for "
-"objects of type *type*.  *function* must return either a string or a "
-"tuple containing between two and six elements. See the "
-":attr:`~pickle.Pickler.dispatch_table` for more details on the interface "
-"of *function*."
+"objects of type *type*.  *function* must return either a string or a tuple "
+"containing between two and six elements. See the "
+":attr:`~pickle.Pickler.dispatch_table` for more details on the interface of "
+"*function*."
 msgstr ""
+"Deklaruje, že *function* by měla být používána jako \"redukční\" funkce pro "
+"objekty typu *type*. *function* musí vrátit buď řetězec nebo tuple "
+"obsahující dva až šest prvků. Viz :attr:`~pickle.Pickler.dispatch_table` pro"
+" více detailů o rozhraní *function*."
 
 #: ../../library/copyreg.rst:35
 msgid ""
-"The *constructor_ob* parameter is a legacy feature and is now ignored, "
-"but if passed it must be a callable."
+"The *constructor_ob* parameter is a legacy feature and is now ignored, but "
+"if passed it must be a callable."
 msgstr ""
+"Parametr *constructor_ob* je zakázanou funkcí a nyní je ignorován, ale pokud"
+" je předán, musí být callable."
 
 #: ../../library/copyreg.rst:38
 msgid ""
-"Note that the :attr:`~pickle.Pickler.dispatch_table` attribute of a "
-"pickler object or subclass of :class:`pickle.Pickler` can also be used "
-"for declaring reduction functions."
+"Note that the :attr:`~pickle.Pickler.dispatch_table` attribute of a pickler "
+"object or subclass of :class:`pickle.Pickler` can also be used for declaring"
+" reduction functions."
 msgstr ""
+"Všimněte si, že atribut :attr:`~pickle.Pickler.dispatch_table` objektu "
+"pickler nebo pod třídy :class:`pickle.Pickler` lze také použít k deklaraci "
+"redukčních funkcí."
 
 #: ../../library/copyreg.rst:43
 msgid "Example"
-msgstr ""
+msgstr "Příklad"
 
 #: ../../library/copyreg.rst:45
 msgid ""
-"The example below would like to show how to register a pickle function "
-"and how it will be used:"
+"The example below would like to show how to register a pickle function and "
+"how it will be used:"
 msgstr ""
+"Následující příklad by rád ukázal, jak registrovat pickle funkci a jak bude "
+"používána:"
 
 #: ../../library/copyreg.rst:9
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../library/copyreg.rst:9
 msgid "pickle"
-msgstr ""
+msgstr "pickle"
 
 #: ../../library/copyreg.rst:9
 msgid "copy"
-msgstr ""
-
+msgstr "copy"

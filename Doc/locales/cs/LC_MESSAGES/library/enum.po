@@ -119,73 +119,84 @@ msgstr "Nomenklaturu"
 
 #: ../../library/enum.rst:55
 msgid "The class :class:`!Color` is an *enumeration* (or *enum*)"
-msgstr ""
+msgstr "Třída :class:`!Color` je *výčet* (nebo *enum*)"
 
 #: ../../library/enum.rst:56
 msgid ""
 "The attributes :attr:`!Color.RED`, :attr:`!Color.GREEN`, etc., are "
 "*enumeration members* (or *members*) and are functionally constants."
 msgstr ""
+"Atributy :attr:`!Color.RED`, :attr:`!Color.GREEN` atd. jsou *členové výčtu* "
+"(nebo *členové*) a jsou funkčně konstanty."
 
 #: ../../library/enum.rst:58
 msgid ""
 "The enum members have *names* and *values* (the name of :attr:`!Color.RED` "
 "is ``RED``, the value of :attr:`!Color.BLUE` is ``3``, etc.)"
 msgstr ""
+"Členové enumerace mají *jména* a *hodnoty* (jméno :attr:`!Color.RED` je "
+"``RED``, hodnota :attr:`!Color.BLUE` je ``3`` atd.)"
 
 #: ../../library/enum.rst:65
 msgid "Module Contents"
-msgstr ""
+msgstr "Obsah modulu"
 
 #: ../../library/enum.rst:67
 msgid ":class:`EnumType`"
-msgstr ""
+msgstr ":class:`EnumType`"
 
 #: ../../library/enum.rst:69
 msgid "The ``type`` for Enum and its subclasses."
-msgstr ""
+msgstr "Typ ``type`` pro Enum a jeho podtřídy."
 
 #: ../../library/enum.rst:71
 msgid ":class:`Enum`"
-msgstr ""
+msgstr ":class:`Enum`"
 
 #: ../../library/enum.rst:73
 msgid "Base class for creating enumerated constants."
-msgstr ""
+msgstr "Základní třída pro vytváření výčtem definovaných konstant."
 
 #: ../../library/enum.rst:75
 msgid ":class:`IntEnum`"
-msgstr ""
+msgstr ":class:`IntEnum`"
 
 #: ../../library/enum.rst:77
 msgid ""
 "Base class for creating enumerated constants that are also subclasses of "
 ":class:`int`. (`Notes`_)"
 msgstr ""
+"Základní třída pro vytváření výčtem definovaných konstant, které jsou "
+"zároveň podtřídami :class:`int`. (`Poznámky`_)"
 
 #: ../../library/enum.rst:80
 msgid ":class:`StrEnum`"
-msgstr ""
+msgstr ":class:`StrEnum`"
 
 #: ../../library/enum.rst:82
 msgid ""
 "Base class for creating enumerated constants that are also subclasses of "
 ":class:`str`. (`Notes`_)"
 msgstr ""
+"Základní třída pro vytváření výčtem definovaných konstant, které jsou "
+"zároveň podtřídami :class:`str`. (`Poznámky`_)"
 
 #: ../../library/enum.rst:85
 msgid ":class:`Flag`"
-msgstr ""
+msgstr ":class:`Flag`"
 
 #: ../../library/enum.rst:87
 msgid ""
 "Base class for creating enumerated constants that can be combined using the "
 "bitwise operations without losing their :class:`Flag` membership."
 msgstr ""
+"Základní třída pro vytváření výčtem definovaných konstant, které lze "
+"kombinovat pomocí bitových operací bez ztřáty jejich členství v "
+":class:`Flag`."
 
 #: ../../library/enum.rst:90
 msgid ":class:`IntFlag`"
-msgstr ""
+msgstr ":class:`IntFlag`"
 
 #: ../../library/enum.rst:92
 msgid ""
@@ -193,20 +204,26 @@ msgid ""
 "bitwise operators without losing their :class:`IntFlag` membership. "
 ":class:`IntFlag` members are also subclasses of :class:`int`. (`Notes`_)"
 msgstr ""
+"Základní třída pro vytváření výčtem definovaných konstant, které lze "
+"kombinovat pomocí bitových operátorű bez ztřáty jejich členství v "
+":class:`IntFlag`. Členové :class:`IntFlag` jsou také podtřídami "
+":class:`int`. (`Poznámky`_)"
 
 #: ../../library/enum.rst:96
 msgid ":class:`ReprEnum`"
-msgstr ""
+msgstr ":class:`ReprEnum`"
 
 #: ../../library/enum.rst:98
 msgid ""
 "Used by :class:`IntEnum`, :class:`StrEnum`, and :class:`IntFlag` to keep the"
 " :class:`str() <str>` of the mixed-in type."
 msgstr ""
+"Používáno :class:`IntEnum`, :class:`StrEnum` a :class:`IntFlag` k zachování "
+":class:`str() <str>` smíchaného typu."
 
 #: ../../library/enum.rst:101
 msgid ":class:`EnumCheck`"
-msgstr ""
+msgstr ":class:`EnumCheck`"
 
 #: ../../library/enum.rst:103
 msgid ""
@@ -214,10 +231,12 @@ msgid ""
 "``UNIQUE``, for use with :func:`verify` to ensure various constraints are "
 "met by a given enumeration."
 msgstr ""
+"Výčet s hodnotami ``CONTINUOUS``, ``NAMED_FLAGS`` a ``UNIQUE``, používající "
+"se s :func:`verify` k zajištění různých omezení daným výčtem."
 
 #: ../../library/enum.rst:107
 msgid ":class:`FlagBoundary`"
-msgstr ""
+msgstr ":class:`FlagBoundary`"
 
 #: ../../library/enum.rst:109
 msgid ""
@@ -225,19 +244,22 @@ msgid ""
 "``KEEP`` which allows for more fine-grained control over how invalid values "
 "are dealt with in an enumeration."
 msgstr ""
+"Výčet s hodnotami ``STRICT``, ``CONFORM``, ``EJECT`` a ``KEEP``, který "
+"umožňuje jemnější kontrolu nad způsobem, jakým se s neplatnými hodnotami "
+"nakládá v enumeraci."
 
 #: ../../library/enum.rst:113
 msgid ":class:`EnumDict`"
-msgstr ""
+msgstr ":class:`EnumDict`"
 
 #: ../../library/enum.rst:115
 msgid ""
 "A subclass of :class:`dict` for use when subclassing :class:`EnumType`."
-msgstr ""
+msgstr "Podtřída :class:`dict` používaná při rozdělování :class:`EnumType`."
 
 #: ../../library/enum.rst:117
 msgid ":class:`auto`"
-msgstr ""
+msgstr ":class:`auto`"
 
 #: ../../library/enum.rst:119
 msgid ""
@@ -245,10 +267,13 @@ msgid ""
 ":class:`StrEnum` defaults to the lower-cased version of the member name, "
 "while other Enums default to 1 and increase from there."
 msgstr ""
+"Instance jsou nahrazeny odpovídající hodnotou pro členy Enum. "
+":class:`StrEnum` ve výchozím stavu používá malopídsmené verze jména členu, "
+"zatímco ostatní Enum defaultně začínají na 1 a od tam udélávají kroky."
 
 #: ../../library/enum.rst:123
 msgid ":func:`~enum.property`"
-msgstr ""
+msgstr ":func:`~enum.property`"
 
 #: ../../library/enum.rst:125
 msgid ""
@@ -256,45 +281,50 @@ msgid ""
 "member names.  The ``value`` and ``name`` attributes are implemented this "
 "way."
 msgstr ""
+"Umožňuje, aby členové :class:`Enum` měli atributy bez konfliktu s jmény "
+"členů. Atributy ``value`` a ``name`` jsou implementovány tímto způsobem."
 
 #: ../../library/enum.rst:129
 msgid ":func:`unique`"
-msgstr ""
+msgstr ":func:`unique`"
 
 #: ../../library/enum.rst:131
 msgid ""
 "Enum class decorator that ensures only one name is bound to any one value."
 msgstr ""
+"Dekorátor třídy Enum, který zajiští, aby bylo na libovolnou hodnotu vázáno "
+"pouze jedno jméno."
 
 #: ../../library/enum.rst:133
 msgid ":func:`verify`"
-msgstr ""
+msgstr ":func:`verify`"
 
 #: ../../library/enum.rst:135
 msgid ""
 "Enum class decorator that checks user-selectable constraints on an "
 "enumeration."
 msgstr ""
+"Dekorátor třídy Enum, který kontroluje omezení vybraná uživatelem na výčtu."
 
 #: ../../library/enum.rst:138
 msgid ":func:`member`"
-msgstr ""
+msgstr ":func:`member`"
 
 #: ../../library/enum.rst:140
 msgid "Make ``obj`` a member.  Can be used as a decorator."
-msgstr ""
+msgstr "Vytváří ``obj`` jako člena. Může se použít jako dekorátor."
 
 #: ../../library/enum.rst:142
 msgid ":func:`nonmember`"
-msgstr ""
+msgstr ":func:`nonmember`"
 
 #: ../../library/enum.rst:144
 msgid "Do not make ``obj`` a member.  Can be used as a decorator."
-msgstr ""
+msgstr "Nekréuj ``obj`` jako člena. Může se použít jako dekorátor."
 
 #: ../../library/enum.rst:146
 msgid ":func:`global_enum`"
-msgstr ""
+msgstr ":func:`global_enum`"
 
 #: ../../library/enum.rst:148
 msgid ""
@@ -302,32 +332,37 @@ msgid ""
 "members as belonging to the module instead of its class, and export the enum"
 " members to the global namespace."
 msgstr ""
+"Změňuje :class:`str() <str>` a :func:`repr` enumerace tak, aby jeho členové "
+"byli ukázáni jako patřící do modulu místem jeho třídy, a exportuje členy "
+"enumerace do globálního oboru názvů."
 
 #: ../../library/enum.rst:152
 msgid ":func:`show_flag_values`"
-msgstr ""
+msgstr ":func:`show_flag_values`"
 
 #: ../../library/enum.rst:154
 msgid "Return a list of all power-of-two integers contained in a flag."
-msgstr ""
+msgstr "Vrací seznam všech mocnin dvou celých čísel obsažených v příznaků."
 
 #: ../../library/enum.rst:157
 msgid "``Flag``, ``IntFlag``, ``auto``"
-msgstr ""
+msgstr "``Flag``, ``IntFlag``, ``auto``"
 
 #: ../../library/enum.rst:158
 msgid ""
 "``StrEnum``, ``EnumCheck``, ``ReprEnum``, ``FlagBoundary``, ``property``, "
 "``member``, ``nonmember``, ``global_enum``, ``show_flag_values``"
 msgstr ""
+"``StrEnum``, ``EnumCheck``, ``ReprEnum``, ``FlagBoundary``, ``property``, "
+"``member``, ``nonmember``, ``global_enum``, ``show_flag_values``"
 
 #: ../../library/enum.rst:159
 msgid "``EnumDict``"
-msgstr ""
+msgstr "``EnumDict``"
 
 #: ../../library/enum.rst:164
 msgid "Data Types"
-msgstr ""
+msgstr "Datové typy"
 
 #: ../../library/enum.rst:169
 msgid ""
@@ -335,6 +370,9 @@ msgid ""
 " to subclass *EnumType* -- see :ref:`Subclassing EnumType <enumtype-"
 "examples>` for details."
 msgstr ""
+"*EnumType* je :term:`metaclass` pro enumerace *enum*. Je možné rozdělovat "
+"*EnumType* -- viz :ref:`Subclassing EnumType <enumtype-examples>` pro "
+"podrobnosti."
 
 #: ../../library/enum.rst:173
 msgid ""
@@ -343,99 +381,111 @@ msgid ""
 "the final *enum*, as well as creating the enum members, properly handling "
 "duplicates, providing iteration over the enum class, etc."
 msgstr ""
+"``EnumType`` je odpovědné za nastavení správných metod :meth:`!__repr__`, "
+":meth:`!__str__`, :meth:`!__format__` a :meth:`!__reduce__` na finální "
+"*enum*, jako i za vytváření členů enumerace, správné zacházení s duplikáty, "
+"poskytování iterace přes třídu enum atd."
 
 #: ../../library/enum.rst:180
 msgid ""
 "Before 3.11 ``EnumType`` was called ``EnumMeta``, which is still available "
 "as an alias."
 msgstr ""
+"Před 3.11 byla ``EnumType`` nazývána ``EnumMeta``, která je stále k "
+"dispozici jako alias."
 
 #: ../../library/enum.rst:184
 msgid "This method is called in two different ways:"
-msgstr ""
+msgstr "Tato metoda je volána dvěma různými způsoby:"
 
 #: ../../library/enum.rst:186
 msgid "to look up an existing member:"
-msgstr ""
+msgstr "k vyhledání existujícího člena:"
 
 #: ../../library/enum.rst
 msgid "cls"
-msgstr ""
+msgstr "Enum třída, kterou se volá."
 
 #: ../../library/enum.rst:188 ../../library/enum.rst:194
 msgid "The enum class being called."
-msgstr ""
+msgstr "Enum třída, kterou se volá."
 
 #: ../../library/enum.rst
 msgid "value"
-msgstr ""
+msgstr "Hodnota k vyhledání."
 
 #: ../../library/enum.rst:189
 msgid "The value to lookup."
-msgstr ""
+msgstr "Hodnota k vyhledání."
 
 #: ../../library/enum.rst:191
 msgid ""
 "to use the ``cls`` enum to create a new enum (only if the existing enum does"
 " not have any members):"
 msgstr ""
+"použít enum ``cls`` k vytvoření nového enumu (pouze pokud existující enum "
+"nemá žádné členy):"
 
 #: ../../library/enum.rst:195
 msgid "The name of the new Enum to create."
-msgstr ""
+msgstr "Jméno nového Enum k vytvoření."
 
 #: ../../library/enum.rst
 msgid "names"
-msgstr ""
+msgstr "Jména/hodnoty členů nového Enum."
 
 #: ../../library/enum.rst:196
 msgid "The names/values of the members for the new Enum."
-msgstr ""
+msgstr "Jména/hodnoty členů nového Enum."
 
 #: ../../library/enum.rst
 msgid "module"
-msgstr ""
+msgstr "Název modulu, ve kterém je novy Enum vytvořen."
 
 #: ../../library/enum.rst:197
 msgid "The name of the module the new Enum is created in."
-msgstr ""
+msgstr "Název modulu, ve kterém je novy Enum vytvořen."
 
 #: ../../library/enum.rst
 msgid "qualname"
-msgstr ""
+msgstr "SkuteČné umístění v modulu, kde lze tento Enum najít."
 
 #: ../../library/enum.rst:198
 msgid "The actual location in the module where this Enum can be found."
-msgstr ""
+msgstr "SkuteČné umístění v modulu, kde lze tento Enum najít."
 
 #: ../../library/enum.rst
 msgid "type"
-msgstr ""
+msgstr "Typ míchání pro nový Enum."
 
 #: ../../library/enum.rst:199
 msgid "A mix-in type for the new Enum."
-msgstr ""
+msgstr "Typ míchání pro nový Enum."
 
 #: ../../library/enum.rst
 msgid "start"
-msgstr ""
+msgstr "První celopoviná hodnota pro Enum (používáno :class:`auto`)."
 
 #: ../../library/enum.rst:200
 msgid "The first integer value for the Enum (used by :class:`auto`)."
-msgstr ""
+msgstr "První celopoviná hodnota pro Enum (používáno :class:`auto`)."
 
 #: ../../library/enum.rst
 msgid "boundary"
 msgstr ""
+"Jak nakládat s hodnotami mimo rozsah z bitových operací (:class:`Flag` "
+"pouze)."
 
 #: ../../library/enum.rst:201
 msgid ""
 "How to handle out-of-range values from bit operations (:class:`Flag` only)."
 msgstr ""
+"Jak nakládat s hodnotami mimo rozsah z bitových operací (:class:`Flag` "
+"pouze)."
 
 #: ../../library/enum.rst:205
 msgid "Returns ``True`` if member belongs to the ``cls``::"
-msgstr ""
+msgstr "Vrací ``True``, pokud člen patří ``cls``:"
 
 #: ../../library/enum.rst:207
 msgid ""
@@ -445,102 +495,127 @@ msgid ""
 ">>> Color.RED.value in Color\n"
 "True"
 msgstr ""
+">>> some_var = Color.RED\n"
+">>> some_var in Color\n"
+"True\n"
+">>> Color.RED.value in Color\n"
+"True"
 
 #: ../../library/enum.rst:215
 msgid ""
 "Before Python 3.12, a ``TypeError`` is raised if a non-Enum-member is used "
 "in a containment check."
 msgstr ""
+"Před Pythonem 3.12 se vyvolejí ``TypeError``, pokud se v testu příslušnosti "
+"použije člen bez Enumerace."
 
 #: ../../library/enum.rst:220
 msgid ""
 "Returns ``['__class__', '__doc__', '__members__', '__module__']`` and the "
 "names of the members in *cls*::"
 msgstr ""
+"Vrací ``['__class__', '__doc__', '__members__', '__module__']`` a jména "
+"členů v *cls*:"
 
 #: ../../library/enum.rst:223
 msgid ""
 ">>> dir(Color)\n"
 "['BLUE', 'GREEN', 'RED', '__class__', '__contains__', '__doc__', '__getitem__', '__init_subclass__', '__iter__', '__len__', '__members__', '__module__', '__name__', '__qualname__']"
 msgstr ""
+">>> dir(Color)\n"
+"['BLUE', 'GREEN', 'RED', '__class__', '__contains__', '__doc__', '__getitem__', '__init_subclass__', '__iter__', '__len__', '__members__', '__module__', '__name__', '__qualname__']"
 
 #: ../../library/enum.rst:228
 msgid ""
 "Returns the Enum member in *cls* matching *name*, or raises a "
 ":exc:`KeyError`::"
 msgstr ""
+"Vrací člena Enumerace v *cls* odpovídající *name* nebo vyvolejí "
+":exc:`KeyError`:"
 
 #: ../../library/enum.rst:230
 msgid ""
 ">>> Color['BLUE']\n"
 "<Color.BLUE: 3>"
 msgstr ""
+">>> Color['BLUE']\n"
+"<Color.BLUE: 3>"
 
 #: ../../library/enum.rst:235
 msgid "Returns each member in *cls* in definition order::"
-msgstr ""
+msgstr "Vrací každého člena v *cls* v pořadí definice:"
 
 #: ../../library/enum.rst:237
 msgid ""
 ">>> list(Color)\n"
 "[<Color.RED: 1>, <Color.GREEN: 2>, <Color.BLUE: 3>]"
 msgstr ""
+">>> list(Color)\n"
+"[<Color.RED: 1>, <Color.GREEN: 2>, <Color.BLUE: 3>]"
 
 #: ../../library/enum.rst:242
 msgid "Returns the number of member in *cls*::"
-msgstr ""
+msgstr "Vrací počet členů v *cls*:"
 
 #: ../../library/enum.rst:244
 msgid ""
 ">>> len(Color)\n"
 "3"
 msgstr ""
+">>> len(Color)\n"
+"3"
 
 #: ../../library/enum.rst:249
 msgid "Returns a mapping of every enum name to its member, including aliases"
-msgstr ""
+msgstr "Vrací mapování každého jména enumací na svého člena, včetně aliasů"
 
 #: ../../library/enum.rst:253
 msgid "Returns each member in *cls* in reverse definition order::"
-msgstr ""
+msgstr "Vrací každého člena v *cls* v opačném pořadí definice:"
 
 #: ../../library/enum.rst:255
 msgid ""
 ">>> list(reversed(Color))\n"
 "[<Color.BLUE: 3>, <Color.GREEN: 2>, <Color.RED: 1>]"
 msgstr ""
+">>> list(reversed(Color))\n"
+"[<Color.BLUE: 3>, <Color.GREEN: 2>, <Color.RED: 1>]"
 
 #: ../../library/enum.rst:261
 msgid "*Enum* is the base class for all *enum* enumerations."
-msgstr ""
+msgstr "*Enum* je základní třída pro všechny enumerace *enum*."
 
 #: ../../library/enum.rst:265
 msgid "The name used to define the ``Enum`` member::"
-msgstr ""
+msgstr "Jméno použité k definování člena ``Enum``:"
 
 #: ../../library/enum.rst:267
 msgid ""
 ">>> Color.BLUE.name\n"
 "'BLUE'"
 msgstr ""
+">>> Color.BLUE.name\n"
+"'BLUE'"
 
 #: ../../library/enum.rst:272
 msgid "The value given to the ``Enum`` member::"
-msgstr ""
+msgstr "Hodnota daná členu ``Enum``:"
 
 #: ../../library/enum.rst:274
 msgid ""
 ">>> Color.RED.value\n"
 "1"
 msgstr ""
+">>> Color.RED.value\n"
+"1"
 
 #: ../../library/enum.rst:277 ../../library/enum.rst:297
 msgid "Value of the member, can be set in :meth:`~Enum.__new__`."
-msgstr ""
+msgstr "Hodnota člena, může být nastavena v :meth:`~Enum.__new__`."
 
 #: ../../library/enum.rst:279
 msgid "Enum member values"
-msgstr ""
+msgstr "Hodnoty členů enumerace"
 
 #: ../../library/enum.rst:281
 msgid ""
@@ -549,6 +624,9 @@ msgid ""
 "appropriate value will be chosen for you.  See :class:`auto` for the "
 "details."
 msgstr ""
+"Hodnoty členů mohou být cokoli: :class:`int`, :class:`str` atd. Pokud není "
+"přesná hodnota důležitá, můžete použít instance :class:`auto` a bude pro vás"
+" zvolena odpovídající hodnota. Viz :class:`auto` pro podrobnosti."
 
 #: ../../library/enum.rst:286
 msgid ""
@@ -557,22 +635,30 @@ msgid ""
 "quadratic performance impact during creation relative to the total number of"
 " mutable/unhashable values in the enum."
 msgstr ""
+"Přestože mutabilní/non-hashovatelne hodnoty, jakož :class:`dict`, "
+":class:`list` nebo mutabilní :class:`~dataclasses.dataclass`, mohou být "
+"používány, budou mít během vytváření kvadratický dopad na výkonnost vücí "
+"celkovému počtu mutabilních/non-hashovatelnych hodnot v enumeraci."
 
 #: ../../library/enum.rst:293
 msgid "Name of the member."
-msgstr ""
+msgstr "Jméno člena."
 
 #: ../../library/enum.rst:301
 msgid ""
 "No longer used, kept for backward compatibility. (class attribute, removed "
 "during class creation)."
 msgstr ""
+"Již se nepoužívá, učováno pro zpětné kompatibilního. (atribut třídy, odebrán"
+" během vytváření třídy)."
 
 #: ../../library/enum.rst:306
 msgid ""
 "``_ignore_`` is only used during creation and is removed from the "
 "enumeration once creation is complete."
 msgstr ""
+"``_ignore_`` se používá pouze během vytváření a je odebrán z enumerace "
+"jakmile je vytváření dokončeno."
 
 #: ../../library/enum.rst:309
 msgid ""
@@ -580,12 +666,17 @@ msgid ""
 "names will also be removed from the completed enumeration.  See "
 ":ref:`TimePeriod <enum-time-period>` for an example."
 msgstr ""
+"``_ignore_`` je seznam jmen, která se nestanou členy a jejich jména budou "
+"také odebrána z dokončené enumerace. Viz :ref:`TimePeriod <enum-time-"
+"period>` pro příklad."
 
 #: ../../library/enum.rst:315
 msgid ""
 "Returns ``['__class__', '__doc__', '__module__', 'name', 'value']`` and any "
 "public methods defined on *self.__class__*::"
 msgstr ""
+"Vrací ``['__class__', '__doc__', '__module__', 'name', 'value']`` a jakékoli"
+" veřejné metody definované na *self.__class__*:"
 
 #: ../../library/enum.rst:318
 #, python-format
@@ -607,40 +698,58 @@ msgid ""
 ">>> dir(Weekday.SATURDAY)\n"
 "['__class__', '__doc__', '__eq__', '__hash__', '__module__', 'name', 'today', 'value']"
 msgstr ""
+">>> from enum import Enum\n"
+">>> from datetime import date\n"
+">>> class Weekday(Enum):\n"
+"...     MONDAY = 1\n"
+"...     TUESDAY = 2\n"
+"...     WEDNESDAY = 3\n"
+"...     THURSDAY = 4\n"
+"...     FRIDAY = 5\n"
+"...     SATURDAY = 6\n"
+"...     SUNDAY = 7\n"
+"...     @classmethod\n"
+"...     def today(cls):\n"
+"...         print('dnesšní den je %s' % cls(date.today().isoweekday()).name)\n"
+"...\n"
+">>> dir(Weekday.SATURDAY)\n"
+"['__class__', '__doc__', '__eq__', '__hash__', '__module__', 'name', 'today', 'value']"
 
 #: ../../library/enum.rst
 msgid "name"
-msgstr ""
+msgstr "Jméno člena, který je definován (např. 'RED')."
 
 #: ../../library/enum.rst:337
 msgid "The name of the member being defined (e.g. 'RED')."
-msgstr ""
+msgstr "Jméno člena, který je definován (např. 'RED')."
 
 #: ../../library/enum.rst:338
 msgid "The start value for the Enum; the default is 1."
-msgstr ""
+msgstr "Počáteční hodnota pro Enum; výchozí hodnota je 1."
 
 #: ../../library/enum.rst
 msgid "count"
-msgstr ""
+msgstr "Počet členů, které jsou aktuálně definovány, včetně tohoto."
 
 #: ../../library/enum.rst:339
 msgid "The number of members currently defined, not including this one."
-msgstr ""
+msgstr "Počet členů, které jsou aktuálně definovány, včetně tohoto."
 
 #: ../../library/enum.rst
 msgid "last_values"
-msgstr ""
+msgstr "Seznam předchozích hodnot."
 
 #: ../../library/enum.rst:340
 msgid "A list of the previous values."
-msgstr ""
+msgstr "Seznam předchozích hodnot."
 
 #: ../../library/enum.rst:342
 msgid ""
 "A *staticmethod* that is used to determine the next value returned by "
 ":class:`auto`::"
 msgstr ""
+"*staticmethod*, který se používá k urovení následující hodnoty vrácené "
+":class:`auto`:"
 
 #: ../../library/enum.rst:345
 msgid ""
@@ -655,30 +764,48 @@ msgid ""
 ">>> PowersOfThree.SECOND.value\n"
 "9"
 msgstr ""
+">>> from enum import auto, Enum\n"
+">>> class PowersOfThree(Enum):\n"
+"...     @staticmethod\n"
+"...     def _generate_next_value_(name, start, count, last_values):\n"
+"...         return 3 ** (count + 1)\n"
+"...     FIRST = auto()\n"
+"...     SECOND = auto()\n"
+"...\n"
+">>> PowersOfThree.SECOND.value\n"
+"9"
 
 #: ../../library/enum.rst:358
 msgid ""
 "By default, does nothing.  If multiple values are given in the member "
 "assignment, those values become separate arguments to ``__init__``; e.g."
 msgstr ""
+"Ve výchozím stavu nedělá nic. Pokud je v přiřazení člena dáno více hodnot, "
+"tyčto hodnoty se stanou samostatnými argumenty ``__init__``; např."
 
 #: ../../library/enum.rst:365
 msgid ""
 "``Weekday.__init__()`` would be called as ``Weekday.__init__(self, 1, "
 "'Mon')``"
 msgstr ""
+"``Weekday.__init__()`` by byla volána jako ``Weekday.__init__(self, 1, "
+"'Mon')``"
 
 #: ../../library/enum.rst:369
 msgid ""
 "A *classmethod* that is used to further configure subsequent subclasses. By "
 "default, does nothing."
 msgstr ""
+"*classmethod*, který se používá k dalšímu konfiguraci následných podtříd. Ve"
+" výchozím stavu nedělá nic."
 
 #: ../../library/enum.rst:374
 msgid ""
 "A *classmethod* for looking up values not found in *cls*.  By default it "
 "does nothing, but can be overridden to implement custom search behavior::"
 msgstr ""
+"*classmethod* pro vyhledání hodnot nenalezených v *cls*. Ve výchozím stavu "
+"to nedělá, ale může být přepsána pro implementaci vlastního chování hledání:"
 
 #: ../../library/enum.rst:377
 msgid ""
@@ -699,6 +826,22 @@ msgid ""
 ">>> Build('deBUG')\n"
 "<Build.DEBUG: 'debug'>"
 msgstr ""
+">>> from enum import auto, StrEnum\n"
+">>> class Build(StrEnum):\n"
+"...     DEBUG = auto()\n"
+"...     OPTIMIZED = auto()\n"
+"...     @classmethod\n"
+"...     def _missing_(cls, value):\n"
+"...         value = value.lower()\n"
+"...         for member in cls:\n"
+"...             if member.value == value:\n"
+"...                 return member\n"
+"...         return None\n"
+"...\n"
+">>> Build.DEBUG.value\n"
+"'debug'\n"
+">>> Build('deBUG')\n"
+"<Build.DEBUG: 'debug'>"
 
 #: ../../library/enum.rst:396
 msgid ""
@@ -706,23 +849,30 @@ msgid ""
 "definition or in a mixin class (such as ``int``), all values given in the "
 "member assignment will be passed; e.g."
 msgstr ""
+"Ve výchozím stavu neexistuje. Pokud je zadána bud' v definici třídy enum "
+"nebo v míchané třídě (jako``int``), všechny hodnoty dané v přiřazení člena "
+"budou předány; např."
 
 #: ../../library/enum.rst:404
 msgid ""
 "results in the call ``int('1a', 16)`` and a value of ``26`` for the member."
-msgstr ""
+msgstr "vysledky ve volání ``int('1a', 16)`` a hodnote ``26`` pro člena."
 
 #: ../../library/enum.rst:408
 msgid ""
 "When writing a custom ``__new__``, do not use ``super().__new__`` -- call "
 "the appropriate ``__new__`` instead."
 msgstr ""
+"Při psání vlastního ``__new__``, nepoužívejte ``super().__new__`` -- místem "
+"toho volájte příslušný ``__new__``."
 
 #: ../../library/enum.rst:413
 msgid ""
 "Returns the string used for *repr()* calls.  By default, returns the *Enum* "
 "name, member name, and value, but can be overridden::"
 msgstr ""
+"Vrací řetězec použitý pro volání *repr()*. Ve výchozím stavu vrací název "
+"*Enum*, jméno člena a hodnotu, ale může být přepsána:"
 
 #: ../../library/enum.rst:416
 #, python-brace-format
@@ -739,12 +889,25 @@ msgid ""
 ">>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f\"{OtherStyle.ALTERNATE}\"\n"
 "(OtherStyle.ALTERNATE, 'OtherStyle.ALTERNATE', 'OtherStyle.ALTERNATE')"
 msgstr ""
+">>> from enum import auto, Enum\n"
+">>> class OtherStyle(Enum):\n"
+"...     ALTERNATE = auto()\n"
+"...     OTHER = auto()\n"
+"...     SOMETHING_ELSE = auto()\n"
+"...     def __repr__(self):\n"
+"...         cls_name = self.__class__.__name__\n"
+"...         return f'{cls_name}.{self.name}'\n"
+"...\n"
+">>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f\"{OtherStyle.ALTERNATE}\"\n"
+"(OtherStyle.ALTERNATE, 'OtherStyle.ALTERNATE', 'OtherStyle.ALTERNATE')"
 
 #: ../../library/enum.rst:430
 msgid ""
 "Returns the string used for *str()* calls.  By default, returns the *Enum* "
 "name and member name, but can be overridden::"
 msgstr ""
+"Vrací řetězec použitý pro volání *str()*. Ve výchozím stavu vrací název "
+"*Enum* a jméno člena, ale může být přepsána:"
 
 #: ../../library/enum.rst:433
 #, python-brace-format
@@ -760,12 +923,24 @@ msgid ""
 ">>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f\"{OtherStyle.ALTERNATE}\"\n"
 "(<OtherStyle.ALTERNATE: 1>, 'ALTERNATE', 'ALTERNATE')"
 msgstr ""
+">>> from enum import auto, Enum\n"
+">>> class OtherStyle(Enum):\n"
+"...     ALTERNATE = auto()\n"
+"...     OTHER = auto()\n"
+"...     SOMETHING_ELSE = auto()\n"
+"...     def __str__(self):\n"
+"...         return f'{self.name}'\n"
+"...\n"
+">>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f\"{OtherStyle.ALTERNATE}\"\n"
+"(<OtherStyle.ALTERNATE: 1>, 'ALTERNATE', 'ALTERNATE')"
 
 #: ../../library/enum.rst:446
 msgid ""
 "Returns the string used for *format()* and *f-string* calls.  By default, "
 "returns :meth:`__str__` return value, but can be overridden::"
 msgstr ""
+"Vrací řetězec použitý pro volání *format()* a *f-string*. Ve výchozím stavu "
+"vrací návraté hodnotu :meth:`__str__`, ale může být přepsána:"
 
 #: ../../library/enum.rst:449
 #, python-brace-format
@@ -781,20 +956,32 @@ msgid ""
 ">>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f\"{OtherStyle.ALTERNATE}\"\n"
 "(<OtherStyle.ALTERNATE: 1>, 'OtherStyle.ALTERNATE', 'ALTERNATE')"
 msgstr ""
+">>> from enum import auto, Enum\n"
+">>> class OtherStyle(Enum):\n"
+"...     ALTERNATE = auto()\n"
+"...     OTHER = auto()\n"
+"...     SOMETHING_ELSE = auto()\n"
+"...     def __format__(self, spec):\n"
+"...         return f'{self.name}'\n"
+"...\n"
+">>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f\"{OtherStyle.ALTERNATE}\"\n"
+"(<OtherStyle.ALTERNATE: 1>, 'OtherStyle.ALTERNATE', 'ALTERNATE')"
 
 #: ../../library/enum.rst:462
 msgid ""
 "Using :class:`auto` with :class:`Enum` results in integers of increasing "
 "value, starting with ``1``."
 msgstr ""
+"Použítí :class:`auto` s :class:`Enum` vede na celá čísla s rostoucí "
+"hodnotou, začínájící ``1``."
 
 #: ../../library/enum.rst:465
 msgid "Added :ref:`enum-dataclass-support`"
-msgstr ""
+msgstr "Přidano :ref:`enum-dataclass-support`"
 
 #: ../../library/enum.rst:469
 msgid "Adds a new name as an alias to an existing member::"
-msgstr ""
+msgstr "Přidává nové jméno jako alias existujícímu členu:"
 
 #: ../../library/enum.rst:471
 msgid ""
@@ -802,16 +989,19 @@ msgid ""
 ">>> Color.ERROR\n"
 "<Color.RED: 1>"
 msgstr ""
+">>> Color.RED._add_alias_(\"ERROR\")\n"
+">>> Color.ERROR\n"
+"<Color.RED: 1>"
 
 #: ../../library/enum.rst:475
 msgid ""
 "Raises a :exc:`NameError` if the name is already assigned to a different "
 "member."
-msgstr ""
+msgstr "Vyvolejí :exc:`NameError`, pokud je jméno již přiřazeno jinému členu."
 
 #: ../../library/enum.rst:481
 msgid "Adds a new value as an alias to an existing member::"
-msgstr ""
+msgstr "Přidává novou hodnotu jako alias existujícímu členu:"
 
 #: ../../library/enum.rst:483
 msgid ""
@@ -819,12 +1009,16 @@ msgid ""
 ">>> Color(42)\n"
 "<Color.RED: 1>"
 msgstr ""
+">>> Color.RED._add_value_alias_(42)\n"
+">>> Color(42)\n"
+"<Color.RED: 1>"
 
 #: ../../library/enum.rst:487
 msgid ""
 "Raises a :exc:`ValueError` if the value is already linked with a different "
 "member."
 msgstr ""
+"Vyvolejí :exc:`ValueError`, pokud je hodnota již propojena s jiným členem."
 
 #: ../../library/enum.rst:494
 msgid ""
@@ -833,12 +1027,18 @@ msgid ""
 "operation is performed with an *IntEnum* member, the resulting value loses "
 "its enumeration status."
 msgstr ""
+"*IntEnum* je stejné jako :class:`Enum`, ale její členové jsou také celá "
+"čísla a mohou být používány kdekoli, kde lze použít celé číslo. Pokud je s "
+"členem *IntEnum* provedena jakákoli celopoviná operace, výsledná hodnota "
+"ztrácí svý stav enumerace."
 
 #: ../../library/enum.rst:515
 msgid ""
 "Using :class:`auto` with :class:`IntEnum` results in integers of increasing "
 "value, starting with ``1``."
 msgstr ""
+"Použítí :class:`auto` s :class:`IntEnum` vede na celá čísla s rostoucí "
+"hodnotou, začínájící ``1``."
 
 #: ../../library/enum.rst:518
 msgid ""
@@ -846,6 +1046,9 @@ msgid ""
 "*replacement of existing constants* use-case. :meth:`~object.__format__` was"
 " already :meth:`!int.__format__` for that same reason."
 msgstr ""
+":meth:`~object.__str__` je nyní :meth:`!int.__str__` pro lepší podporu "
+"případu *nahrazení existujících konstant*. :meth:`~object.__format__` již "
+"byl :meth:`!int.__format__` ze stejného důvodu."
 
 #: ../../library/enum.rst:525
 msgid ""
@@ -854,6 +1057,10 @@ msgid ""
 "result of any string operation performed on or with a *StrEnum* member is "
 "not part of the enumeration."
 msgstr ""
+"*StrEnum* je stejné jako :class:`Enum`, ale její členové jsou také řetězce a"
+" mohou být používány na většině míst, kde lze použít řetězec. Výsledek "
+"jakékoli operace řetězce provedene na členu *StrEnum* nebo s ním není "
+"součástí enumerace."
 
 #: ../../library/enum.rst:546
 msgid ""
@@ -862,12 +1069,18 @@ msgid ""
 "``isinstance(unknown, str)``), and in those locations you will need to use "
 "``str(MyStrEnum.MY_MEMBER)``."
 msgstr ""
+"Existují místa v stdlib, která kontrolují přesnou :class:`str` místem "
+"podtřídy :class:`str` (tj. ``type(unknown) == str`` místem "
+"``isinstance(unknown, str)``), a na těch místech budete muset použít "
+"``str(MyStrEnum.MY_MEMBER)``."
 
 #: ../../library/enum.rst:553
 msgid ""
 "Using :class:`auto` with :class:`StrEnum` results in the lower-cased member "
 "name as the value."
 msgstr ""
+"Použítí :class:`auto` s :class:`StrEnum` vede na jméno člena s malipísmenem "
+"jako hodnotu."
 
 #: ../../library/enum.rst:558
 msgid ""
@@ -875,6 +1088,9 @@ msgid ""
 "*replacement of existing constants* use-case.  :meth:`~object.__format__` is"
 " likewise :meth:`!str.__format__` for that same reason."
 msgstr ""
+":meth:`~object.__str__` je :meth:`!str.__str__` pro lepší podporu případu "
+"*nahrazení existujících konstant*. :meth:`~object.__format__` je podobně "
+":meth:`!str.__format__` ze stejného důvodu."
 
 #: ../../library/enum.rst:566
 msgid ""
@@ -882,10 +1098,13 @@ msgid ""
 "operators ``&`` (*AND*), ``|`` (*OR*), ``^`` (*XOR*), and ``~`` (*INVERT*); "
 "the results of those operations are (aliases of) members of the enumeration."
 msgstr ""
+"``Flag`` je stejné jako :class:`Enum`, ale její členové podporují bitové "
+"operátory ``&`` (*AND*), ``|`` (*OR*), ``^`` (*XOR*) a ``~`` (*INVERT*); "
+"výsledky těchto operací jsou (áliasom) člené enumerace."
 
 #: ../../library/enum.rst:572
 msgid "Returns *True* if value is in self::"
-msgstr ""
+msgstr "Vrací *True*, pokud je hodnota v self:"
 
 #: ../../library/enum.rst:574
 msgid ""
@@ -906,10 +1125,26 @@ msgid ""
 ">>> white in purple\n"
 "False"
 msgstr ""
+">>> from enum import Flag, auto\n"
+">>> class Color(Flag):\n"
+"...     RED = auto()\n"
+"...     GREEN = auto()\n"
+"...     BLUE = auto()\n"
+"...\n"
+">>> purple = Color.RED | Color.BLUE\n"
+">>> white = Color.RED | Color.GREEN | Color.BLUE\n"
+">>> Color.GREEN in purple\n"
+"False\n"
+">>> Color.GREEN in white\n"
+"True\n"
+">>> purple in white\n"
+"True\n"
+">>> white in purple\n"
+"False"
 
 #: ../../library/enum.rst:593
 msgid "Returns all contained non-alias members::"
-msgstr ""
+msgstr "Vrací všechny obsahuíané ne-aliasové členy:"
 
 #: ../../library/enum.rst:595
 msgid ""
@@ -918,10 +1153,14 @@ msgid ""
 ">>> list(purple)\n"
 "[<Color.RED: 1>, <Color.BLUE: 4>]"
 msgstr ""
+">>> list(Color.RED)\n"
+"[<Color.RED: 1>]\n"
+">>> list(purple)\n"
+"[<Color.RED: 1>, <Color.BLUE: 4>]"
 
 #: ../../library/enum.rst:604
 msgid "Returns number of members in flag::"
-msgstr ""
+msgstr "Vrací počet členů v příznaků:"
 
 #: ../../library/enum.rst:606
 msgid ""
@@ -930,10 +1169,14 @@ msgid ""
 ">>> len(white)\n"
 "3"
 msgstr ""
+">>> len(Color.GREEN)\n"
+"1\n"
+">>> len(white)\n"
+"3"
 
 #: ../../library/enum.rst:615
 msgid "Returns *True* if any members in flag, *False* otherwise::"
-msgstr ""
+msgstr "Vrací *True*, pokud jsou v příznaků členové, *False* jinak:"
 
 #: ../../library/enum.rst:617
 msgid ""
@@ -945,16 +1188,25 @@ msgid ""
 ">>> bool(black)\n"
 "False"
 msgstr ""
+">>> bool(Color.GREEN)\n"
+"True\n"
+">>> bool(white)\n"
+"True\n"
+">>> black = Color(0)\n"
+">>> bool(black)\n"
+"False"
 
 #: ../../library/enum.rst:627
 msgid "Returns current flag binary or'ed with other::"
-msgstr ""
+msgstr "Vrací aktuální příznak binárně or'ed s jiným:"
 
 #: ../../library/enum.rst:629
 msgid ""
 ">>> Color.RED | Color.GREEN\n"
 "<Color.RED|GREEN: 3>"
 msgstr ""
+">>> Color.RED | Color.GREEN\n"
+"<Color.RED|GREEN: 3>"
 
 #: ../../library/enum.rst:634
 msgid "Returns current flag binary and'ed with other::"

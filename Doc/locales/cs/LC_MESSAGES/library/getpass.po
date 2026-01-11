@@ -11,104 +11,134 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/getpass.rst:2
 msgid ":mod:`!getpass` --- Portable password input"
-msgstr ""
+msgstr ":mod:`!getpass` --- Přenosná vstupní funkce pro heslo"
 
 #: ../../library/getpass.rst:11
 msgid "**Source code:** :source:`Lib/getpass.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/getpass.py`"
 
 #: ../../includes/wasm-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-notavail.rst:5
 msgid ""
-"This module does not work or is not available on WebAssembly. See :ref"
-":`wasm-availability` for more information."
+"This module does not work or is not available on WebAssembly. See "
+":ref:`wasm-availability` for more information."
 msgstr ""
+"Tento modul nefunguje nebo není dostupný na WebAssembly. Více informací viz "
+":ref:`wasm-availability`."
 
 #: ../../library/getpass.rst:17
 msgid "The :mod:`getpass` module provides two functions:"
-msgstr ""
+msgstr "Modul :mod:`getpass` poskytuje dvě funkce:"
 
 #: ../../library/getpass.rst:21
 msgid ""
-"Prompt the user for a password without echoing.  The user is prompted "
-"using the string *prompt*, which defaults to ``'Password: '``.  On Unix, "
-"the prompt is written to the file-like object *stream* using the replace "
-"error handler if needed.  *stream* defaults to the controlling terminal "
+"Prompt the user for a password without echoing.  The user is prompted using "
+"the string *prompt*, which defaults to ``'Password: '``.  On Unix, the "
+"prompt is written to the file-like object *stream* using the replace error "
+"handler if needed.  *stream* defaults to the controlling terminal "
 "(:file:`/dev/tty`) or if that is unavailable to ``sys.stderr`` (this "
 "argument is ignored on Windows)."
 msgstr ""
+"Vyzvá uživatele na heslo bez jeho echování. Uživatel je vyzvou �etězcem "
+"*prompt*, který se výchozí na ``'Password: '``. Na Unixu je prompt zapsán do"
+" objektu podobného souboru *stream* s použitím obsluhovače chyby replace "
+"pokud je potřeba. *stream* se výchozí na poučíjicí terminál "
+"(:file:`/dev/tty`) nebo pokud není dostupný, na ``sys.stderr`` (tento "
+"argument je ignorován v systému Windows)."
 
 #: ../../library/getpass.rst:28
 msgid ""
-"The *echo_char* argument controls how user input is displayed while "
-"typing. If *echo_char* is ``None`` (default), input remains hidden. "
-"Otherwise, *echo_char* must be a single printable ASCII character and "
-"each typed character is replaced by it. For example, ``echo_char='*'`` "
-"will display asterisks instead of the actual input."
+"The *echo_char* argument controls how user input is displayed while typing. "
+"If *echo_char* is ``None`` (default), input remains hidden. Otherwise, "
+"*echo_char* must be a single printable ASCII character and each typed "
+"character is replaced by it. For example, ``echo_char='*'`` will display "
+"asterisks instead of the actual input."
 msgstr ""
+"Argument *echo_char* řídí, jak se vstup uživatele zobrazuje během psaní. "
+"Pokud je *echo_char* ``None`` (výchozí), vstup zůstává skrytý. V opačném "
+"případě *echo_char* musí být jeden tisknutélný ASCII znak a každý napsáný "
+"znak je jím nahrazen. Například ``echo_char='*'`` zobrazí hvězdičky místo "
+"skutečného vstupu."
 
 #: ../../library/getpass.rst:34
 msgid ""
-"If echo free input is unavailable getpass() falls back to printing a "
-"warning message to *stream* and reading from ``sys.stdin`` and issuing a "
+"If echo free input is unavailable getpass() falls back to printing a warning"
+" message to *stream* and reading from ``sys.stdin`` and issuing a "
 ":exc:`GetPassWarning`."
 msgstr ""
+"Pokud vstup bez echování není dostupný, getpass() se vrátí k tiskání zprávy "
+"o varování na *stream* a čtení ze ``sys.stdin`` a vydání "
+":exc:`GetPassWarning`."
 
 #: ../../library/getpass.rst:39
 msgid ""
-"If you call getpass from within IDLE, the input may be done in the "
-"terminal you launched IDLE from rather than the idle window itself."
+"If you call getpass from within IDLE, the input may be done in the terminal "
+"you launched IDLE from rather than the idle window itself."
 msgstr ""
+"Pokud voláte getpass z prostredí IDLE, vstup může být proveden v terminálu, "
+"ze kterého jste spustili IDLE, spíše než v okně IDLE samoté."
 
 #: ../../library/getpass.rst:43
 msgid ""
-"On Unix systems, when *echo_char* is set, the terminal will be configured"
-" to operate in :manpage:`noncanonical mode "
+"On Unix systems, when *echo_char* is set, the terminal will be configured to"
+" operate in :manpage:`noncanonical mode "
 "<termios(3)#Canonical_and_noncanonical_mode>`. In particular, this means "
 "that line editing shortcuts such as :kbd:`Ctrl+U` will not work and may "
 "insert unexpected characters into the input."
 msgstr ""
+"Na systémech Unix, když je *echo_char* nastaven, bude terminál nakonfigurán "
+"tak, aby pracoval v :manpage:`noncanonical mode "
+"<termios(3)#Canonical_and_noncanonical_mode>`. Zejména to znamená, že "
+"zkratky pro úpravu řádků jako :kbd:`Ctrl+U` nebudou fungovat a mohou vložit "
+"neočekávané znaky do vstupu."
 
 #: ../../library/getpass.rst:50
 msgid "Added the *echo_char* parameter for keyboard feedback."
-msgstr ""
+msgstr "Přidán parametr *echo_char* pro zpětnou vazbu klávesnice."
 
 #: ../../library/getpass.rst:55
-msgid "A :exc:`UserWarning` subclass issued when password input may be echoed."
+msgid ""
+"A :exc:`UserWarning` subclass issued when password input may be echoed."
 msgstr ""
+"Podtina :exc:`UserWarning` vydáná když má vstup hesla možnost být echován."
 
 #: ../../library/getpass.rst:60
 msgid "Return the \"login name\" of the user."
-msgstr ""
+msgstr "Vrátí \"přihlašovací jméno\" uživatele."
 
 #: ../../library/getpass.rst:62
 msgid ""
 "This function checks the environment variables :envvar:`LOGNAME`, "
 ":envvar:`USER`, :envvar:`!LNAME` and :envvar:`USERNAME`, in order, and "
-"returns the value of the first one which is set to a non-empty string.  "
-"If none are set, the login name from the password database is returned on"
-" systems which support the :mod:`pwd` module, otherwise, an "
-":exc:`OSError` is raised."
+"returns the value of the first one which is set to a non-empty string.  If "
+"none are set, the login name from the password database is returned on "
+"systems which support the :mod:`pwd` module, otherwise, an :exc:`OSError` is"
+" raised."
 msgstr ""
+"Tato funkce zkontroluje proměnné prostředí :envvar:`LOGNAME`, "
+":envvar:`USER`, :envvar:`!LNAME` a :envvar:`USERNAME`, v daném pořadí, a "
+"vrátí hodnotu první, která je nastavena na neprazdnoutěz. Pokud není nic "
+"nastaveno, je vráceno přihlašovací jméno z databáze hesel v systémech, které"
+" podporují modul :mod:`pwd`, jinak je vyvolána :exc:`OSError`."
 
 #: ../../library/getpass.rst:69
-msgid "In general, this function should be preferred over :func:`os.getlogin`."
-msgstr ""
+msgid ""
+"In general, this function should be preferred over :func:`os.getlogin`."
+msgstr "Vžadě by mĕla být tato funkce preferována před :func:`os.getlogin`."
 
 #: ../../library/getpass.rst:71
 msgid "Previously, various exceptions beyond just :exc:`OSError` were raised."
-msgstr ""
-
+msgstr "Dříve byly vyvolány různé výjimky mimo jen :exc:`OSError`."

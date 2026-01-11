@@ -11,125 +11,152 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/winsound.rst:2
 msgid ":mod:`!winsound` --- Sound-playing interface for Windows"
-msgstr ""
+msgstr ":mod:`!winsound` --- Rozhraní pro přehrávání zvuku v systému Windows"
 
 #: ../../library/winsound.rst:13
 msgid ""
 "The :mod:`winsound` module provides access to the basic sound-playing "
-"machinery provided by Windows platforms.  It includes functions and "
-"several constants."
+"machinery provided by Windows platforms.  It includes functions and several "
+"constants."
 msgstr ""
+"Modul :mod:`winsound` poskytuje přístup ke základnímu zařízení pro "
+"přehrávání zvuku dostupnému na platformách Windows. Zahrnuje funkce a "
+"několik konstant."
 
 #: ../../library/winsound.rst:16
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/winsound.rst:21
 msgid ""
 "Beep the PC's speaker. The *frequency* parameter specifies frequency, in "
 "hertz, of the sound, and must be in the range 37 through 32,767. The "
-"*duration* parameter specifies the number of milliseconds the sound "
-"should last.  If the system is not able to beep the speaker, "
-":exc:`RuntimeError` is raised."
+"*duration* parameter specifies the number of milliseconds the sound should "
+"last.  If the system is not able to beep the speaker, :exc:`RuntimeError` is"
+" raised."
 msgstr ""
+"Zavrkne reproduktor počítače. Parametr *frequency* určuje frekvenci zvuku v "
+"hertzech a musí být v rozsahu 37 až 32 767. Parametr *duration* určuje počet"
+" milisekund, po které by měl zvuk trvat. Pokud systém nedokáže zavrknutí "
+"zvuku přehrát, je vyvolána výjimka :exc:`RuntimeError`."
 
 #: ../../library/winsound.rst:29
 msgid ""
-"Call the underlying :c:func:`!PlaySound` function from the Platform API."
-"  The *sound* parameter may be a filename, a system sound alias, audio "
-"data as a :term:`bytes-like object`, or ``None``.  Its interpretation "
-"depends on the value of *flags*, which can be a bitwise ORed combination "
-"of the constants described below. If the *sound* parameter is ``None``, "
-"any currently playing waveform sound is stopped. If the system indicates "
-"an error, :exc:`RuntimeError` is raised."
+"Call the underlying :c:func:`!PlaySound` function from the Platform API.  "
+"The *sound* parameter may be a filename, a system sound alias, audio data as"
+" a :term:`bytes-like object`, or ``None``.  Its interpretation depends on "
+"the value of *flags*, which can be a bitwise ORed combination of the "
+"constants described below. If the *sound* parameter is ``None``, any "
+"currently playing waveform sound is stopped. If the system indicates an "
+"error, :exc:`RuntimeError` is raised."
 msgstr ""
+"Zavolá podkladovou funkci :c:func:`!PlaySound` z Platform API. Parametr "
+"*sound* může být název souboru, alias systémového zvuku, zvuková data jako "
+":term:`bytes-like object` nebo ``None``. Jeho interpretace závisí na hodnotě"
+" parametru *flags*, která může být bitwise OR kombinací konstant popsaných "
+"níže. Pokud je parametr *sound* roven ``None``, jakýkoli právě přehrávaný "
+"zvukový signál se zastaví. Pokud systém indikuje chybu, je vyvolána výjimka "
+":exc:`RuntimeError`."
 
 #: ../../library/winsound.rst:40
 msgid ""
-"Call the underlying :c:func:`!MessageBeep` function from the Platform "
-"API.  This plays a sound as specified in the registry.  The *type* "
-"argument specifies which sound to play; possible values are ``-1``, "
+"Call the underlying :c:func:`!MessageBeep` function from the Platform API.  "
+"This plays a sound as specified in the registry.  The *type* argument "
+"specifies which sound to play; possible values are ``-1``, "
 "``MB_ICONASTERISK``, ``MB_ICONEXCLAMATION``, ``MB_ICONHAND``, "
-"``MB_ICONQUESTION``, and ``MB_OK``, all described below.  The value "
-"``-1`` produces a \"simple beep\"; this is the final fallback if a sound "
-"cannot be played otherwise.  If the system indicates an error, "
-":exc:`RuntimeError` is raised."
+"``MB_ICONQUESTION``, and ``MB_OK``, all described below.  The value ``-1`` "
+"produces a \"simple beep\"; this is the final fallback if a sound cannot be "
+"played otherwise.  If the system indicates an error, :exc:`RuntimeError` is "
+"raised."
 msgstr ""
+"Zavolá podkladovou funkci :c:func:`!MessageBeep` z Platform API. To přehrává"
+" zvuk uvedený v registru. Argument *type* určuje, který zvuk se má přehrát; "
+"možné hodnoty jsou ``-1``, ``MB_ICONASTERISK``, ``MB_ICONEXCLAMATION``, "
+"``MB_ICONHAND``, ``MB_ICONQUESTION`` a ``MB_OK``, všechny popsány níže. "
+"Hodnota ``-1`` vytváří \"jednoduché zavrknutí\"; je to poslední záložná "
+"varianta, pokud nelze zvuk přehrát jinak. Pokud systém indikuje chybu, je "
+"vyvolána výjimka :exc:`RuntimeError`."
 
 #: ../../library/winsound.rst:51
 msgid ""
 "The *sound* parameter is the name of a WAV file. Do not use with "
 ":const:`SND_ALIAS`."
 msgstr ""
+"Parametr *sound* je název souboru WAV. Nepoužívejte s :const:`SND_ALIAS`."
 
 #: ../../library/winsound.rst:57
 msgid ""
-"The *sound* parameter is a sound association name from the registry.  If "
-"the registry contains no such name, play the system default sound unless "
-":const:`SND_NODEFAULT` is also specified. If no default sound is "
-"registered, raise :exc:`RuntimeError`. Do not use with "
-":const:`SND_FILENAME`."
+"The *sound* parameter is a sound association name from the registry.  If the"
+" registry contains no such name, play the system default sound unless "
+":const:`SND_NODEFAULT` is also specified. If no default sound is registered,"
+" raise :exc:`RuntimeError`. Do not use with :const:`SND_FILENAME`."
 msgstr ""
+"Parametr *sound* je název zvukové asociace z registru. Pokud registr "
+"neobsahuje takový název, přehrávej výchozí systémový zvuk, pokud není určen "
+"é také :const:`SND_NODEFAULT`. Pokud není zaregistrovan výchozí zvuk, "
+"vyvoléj :exc:`RuntimeError`. Nepoužívejte s :const:`SND_FILENAME`."
 
 #: ../../library/winsound.rst:62
 msgid ""
-"All Win32 systems support at least the following; most systems support "
-"many more:"
+"All Win32 systems support at least the following; most systems support many "
+"more:"
 msgstr ""
+"Všechny systémy Win32 podporují alespoň následující; většina systémů "
+"podporuje mnohem více:"
 
 #: ../../library/winsound.rst:66
 msgid ":func:`PlaySound` *name*"
-msgstr ""
+msgstr ":func:`PlaySound` *name*"
 
 #: ../../library/winsound.rst:66
 msgid "Corresponding Control Panel Sound name"
-msgstr ""
+msgstr "Odpovíjející název zvuku z Ovládácího panelu"
 
 #: ../../library/winsound.rst:68
 msgid "``'SystemAsterisk'``"
-msgstr ""
+msgstr "``'SystemAsterisk'``"
 
 #: ../../library/winsound.rst:68
 msgid "Asterisk"
-msgstr ""
+msgstr "Asterisk"
 
 #: ../../library/winsound.rst:70
 msgid "``'SystemExclamation'``"
-msgstr ""
+msgstr "``'SystemExclamation'``"
 
 #: ../../library/winsound.rst:70
 msgid "Exclamation"
-msgstr ""
+msgstr "Exclamation"
 
 #: ../../library/winsound.rst:72
 msgid "``'SystemExit'``"
-msgstr ""
+msgstr "``'SystemExit'``"
 
 #: ../../library/winsound.rst:72
 msgid "Exit Windows"
-msgstr ""
+msgstr "Exit Windows"
 
 #: ../../library/winsound.rst:74
 msgid "``'SystemHand'``"
-msgstr ""
+msgstr "``'SystemHand'``"
 
 #: ../../library/winsound.rst:74
 msgid "Critical Stop"
-msgstr ""
+msgstr "Critical Stop"
 
 #: ../../library/winsound.rst:76
 msgid "``'SystemQuestion'``"
-msgstr ""
+msgstr "``'SystemQuestion'``"
 
 #: ../../library/winsound.rst:76
 msgid "Question"
@@ -152,20 +179,20 @@ msgstr ""
 
 #: ../../library/winsound.rst:92
 msgid ""
-"Play the sound repeatedly.  The :const:`SND_ASYNC` flag must also be used"
-" to avoid blocking.  Cannot be used with :const:`SND_MEMORY`."
+"Play the sound repeatedly.  The :const:`SND_ASYNC` flag must also be used to"
+" avoid blocking.  Cannot be used with :const:`SND_MEMORY`."
 msgstr ""
 
 #: ../../library/winsound.rst:98
 msgid ""
-"The *sound* parameter to :func:`PlaySound` is a memory image of a WAV "
-"file, as a :term:`bytes-like object`."
+"The *sound* parameter to :func:`PlaySound` is a memory image of a WAV file, "
+"as a :term:`bytes-like object`."
 msgstr ""
 
 #: ../../library/winsound.rst:103
 msgid ""
-"This module does not support playing from a memory image asynchronously, "
-"so a combination of this flag and :const:`SND_ASYNC` will raise "
+"This module does not support playing from a memory image asynchronously, so "
+"a combination of this flag and :const:`SND_ASYNC` will raise "
 ":exc:`RuntimeError`."
 msgstr ""
 
@@ -197,8 +224,8 @@ msgstr ""
 
 #: ../../library/winsound.rst:142
 msgid ""
-"The *sound* parameter is an application-specific alias in the registry. "
-"This flag can be combined with the :const:`SND_ALIAS` flag to specify an "
+"The *sound* parameter is an application-specific alias in the registry. This"
+" flag can be combined with the :const:`SND_ALIAS` flag to specify an "
 "application-defined sound alias."
 msgstr ""
 
@@ -231,4 +258,3 @@ msgstr ""
 #: ../../library/winsound.rst:185
 msgid "Play the ``SystemQuestion`` sound."
 msgstr ""
-

@@ -11,49 +11,57 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/winreg.rst:2
 msgid ":mod:`!winreg` --- Windows registry access"
-msgstr ""
+msgstr ":mod:`!winreg` --- Přístup k registru Windows"
 
 #: ../../library/winreg.rst:12
 msgid ""
-"These functions expose the Windows registry API to Python.  Instead of "
-"using an integer as the registry handle, a :ref:`handle object <handle-"
-"object>` is used to ensure that the handles are closed correctly, even if"
-" the programmer neglects to explicitly close them."
+"These functions expose the Windows registry API to Python.  Instead of using"
+" an integer as the registry handle, a :ref:`handle object <handle-object>` "
+"is used to ensure that the handles are closed correctly, even if the "
+"programmer neglects to explicitly close them."
 msgstr ""
+"Tyto funkce zpřístupňují API registru Windows Pythonu. Místo použití "
+"celočíselného popisovače registru se používá :ref:`objekt popisovače "
+"<handle-object>`, aby se zajistilo, že jsou popisovače správně zavřeny, i "
+"když programátor zapomene je explicitně zavřít."
 
 #: ../../library/winreg.rst:17
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/winreg.rst:21
 msgid ""
-"Several functions in this module used to raise a :exc:`WindowsError`, "
-"which is now an alias of :exc:`OSError`."
+"Several functions in this module used to raise a :exc:`WindowsError`, which "
+"is now an alias of :exc:`OSError`."
 msgstr ""
+"Některé funkce v tomto modulu dříve vyvolávaly :exc:`WindowsError`, která je"
+" nyní aliasem pro :exc:`OSError`."
 
 #: ../../library/winreg.rst:28
 msgid "Functions"
-msgstr ""
+msgstr "Funkce"
 
 #: ../../library/winreg.rst:30
 msgid "This module offers the following functions:"
-msgstr ""
+msgstr "Tento modul nabízí následující funkce:"
 
 #: ../../library/winreg.rst:35
 msgid ""
-"Closes a previously opened registry key.  The *hkey* argument specifies a"
-" previously opened key."
+"Closes a previously opened registry key.  The *hkey* argument specifies a "
+"previously opened key."
 msgstr ""
+"Zavře předtím otevřený klíc registru. Argument *hkey* určuje předtím "
+"otevřený klíc."
 
 #: ../../library/winreg.rst:40
 msgid ""
@@ -61,48 +69,60 @@ msgid ""
 "<PyHKEY.Close>`), it is closed when the *hkey* object is destroyed by "
 "Python."
 msgstr ""
+"Pokud se *hkey* neuzavře pomocí této metody (nebo přes :meth:`hkey.Close() "
+"<PyHKEY.Close>`), uzavře se po zničení objektu *hkey* Pythonem."
 
 #: ../../library/winreg.rst:47
 msgid ""
 "Establishes a connection to a predefined registry handle on another "
 "computer, and returns a :ref:`handle object <handle-object>`."
 msgstr ""
+"Navazuje spojení s předdefinovaným popisovačem registru na druhém počítači a"
+" vrací :ref:`objekt popisovače <handle-object>`."
 
 #: ../../library/winreg.rst:50
 msgid ""
 "*computer_name* is the name of the remote computer, of the form "
 "``r\"\\\\computername\"``.  If ``None``, the local computer is used."
 msgstr ""
+"*computer_name* je název vzdáleného počítače ve formąťu "
+"``r\"\\\\computername\"``. Pokud je ``None``, používá se lokální počítač."
 
 #: ../../library/winreg.rst:53
 msgid "*key* is the predefined handle to connect to."
-msgstr ""
+msgstr "*key* je předdefinovaný popisovač pro spojení."
 
 #: ../../library/winreg.rst:55 ../../library/winreg.rst:79
 #: ../../library/winreg.rst:111
 msgid ""
-"The return value is the handle of the opened key. If the function fails, "
-"an :exc:`OSError` exception is raised."
+"The return value is the handle of the opened key. If the function fails, an "
+":exc:`OSError` exception is raised."
 msgstr ""
+"Návrątová hodnota je popisovač otevřeného klíče. Pokud se funkce nezdaří, je"
+" vyvolána výšimka :exc:`OSError`."
 
 #: ../../library/winreg.rst:58
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.ConnectRegistry`` "
-"with arguments ``computer_name``, ``key``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.ConnectRegistry`` with "
+"arguments ``computer_name``, ``key``."
 msgstr ""
+"Vyvolá :ref:`auditční událost <auditing>` ``winreg.ConnectRegistry`` s "
+"argumenty ``computer_name``, ``key``."
 
 #: ../../library/winreg.rst:60 ../../library/winreg.rst:86
 #: ../../library/winreg.rst:120 ../../library/winreg.rst:141
 #: ../../library/winreg.rst:174 ../../library/winreg.rst:205
 #: ../../library/winreg.rst:240 ../../library/winreg.rst:331
 msgid "See :ref:`above <exception-changed>`."
-msgstr ""
+msgstr "Viz :ref:`výše <exception-changed>`."
 
 #: ../../library/winreg.rst:66 ../../library/winreg.rst:92
 msgid ""
-"Creates or opens the specified key, returning a :ref:`handle object "
-"<handle-object>`."
+"Creates or opens the specified key, returning a :ref:`handle object <handle-"
+"object>`."
 msgstr ""
+"Vytvoří nebo otevře zadaný klíc a vrací :ref:`objekt popisovače <handle-"
+"object>`."
 
 #: ../../library/winreg.rst:69 ../../library/winreg.rst:95
 #: ../../library/winreg.rst:128 ../../library/winreg.rst:149
@@ -117,56 +137,74 @@ msgid ""
 "*key* is an already open key, or one of the predefined :ref:`HKEY_* "
 "constants <hkey-constants>`."
 msgstr ""
+"*key* je již otevřený klíc nebo jedna z :ref:`konstant HKEY_* <hkey-"
+"constants>`."
 
 #: ../../library/winreg.rst:72 ../../library/winreg.rst:98
 msgid "*sub_key* is a string that names the key this method opens or creates."
 msgstr ""
+"*sub_key* je řetězec, který pojmenovává klíc, který tato metoda otevře nebo "
+"vytvoří."
 
 #: ../../library/winreg.rst:74 ../../library/winreg.rst:106
 msgid ""
-"If *key* is one of the predefined keys, *sub_key* may be ``None``. In "
-"that case, the handle returned is the same key handle passed in to the "
-"function."
+"If *key* is one of the predefined keys, *sub_key* may be ``None``. In that "
+"case, the handle returned is the same key handle passed in to the function."
 msgstr ""
+"Pokud je *key* jedná z předdefinovaných klíčů, *sub_key* může být ``None``. "
+"V tom případě je popisovač vrácený stejné jako popisovač klíče předaný "
+"funkci."
 
 #: ../../library/winreg.rst:77 ../../library/winreg.rst:109
 msgid "If the key already exists, this function opens the existing key."
-msgstr ""
+msgstr "Pokud klíc již existuje, tato funkce otevře existující klíc."
 
 #: ../../library/winreg.rst:82 ../../library/winreg.rst:114
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``winreg.CreateKey`` with "
 "arguments ``key``, ``sub_key``, ``access``."
 msgstr ""
+"Vyvolá :ref:`auditční událost <auditing>` ``winreg.CreateKey`` s argumenty "
+"``key``, ``sub_key``, ``access``."
 
 #: ../../library/winreg.rst:84 ../../library/winreg.rst:116
 #: ../../library/winreg.rst:326
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.OpenKey/result`` with"
-" argument ``key``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.OpenKey/result`` with "
+"argument ``key``."
 msgstr ""
+"Vyvolá :ref:`auditční událost <auditing>` ``winreg.OpenKey/result`` s "
+"argumentem ``key``."
 
 #: ../../library/winreg.rst:100 ../../library/winreg.rst:156
-msgid "*reserved* is a reserved integer, and must be zero. The default is zero."
+msgid ""
+"*reserved* is a reserved integer, and must be zero. The default is zero."
 msgstr ""
+"*reserved* je vyhrazené celé číslo a musí být nula. Výchozí hodnota je nula."
 
 #: ../../library/winreg.rst:102
 msgid ""
 "*access* is an integer that specifies an access mask that describes the "
-"desired security access for the key.  Default is :const:`KEY_WRITE`.  See"
-" :ref:`Access Rights <access-rights>` for other allowed values."
+"desired security access for the key.  Default is :const:`KEY_WRITE`.  See "
+":ref:`Access Rights <access-rights>` for other allowed values."
 msgstr ""
+"*access* je celé číslo, které určuje masku přístupu, která popisuje "
+"požadovaný bezpečnostní přístup ke klíči. Výchozí hodnota je "
+":const:`KEY_WRITE`. Viz :ref:`Práva přístupu <access-rights>` pro další "
+"povolené hodnoty."
 
 #: ../../library/winreg.rst:126 ../../library/winreg.rst:147
 msgid "Deletes the specified key."
-msgstr ""
+msgstr "Smazá zadaný klíc."
 
 #: ../../library/winreg.rst:131
 msgid ""
 "*sub_key* is a string that must be a subkey of the key identified by the "
-"*key* parameter.  This value must not be ``None``, and the key may not "
-"have subkeys."
+"*key* parameter.  This value must not be ``None``, and the key may not have "
+"subkeys."
 msgstr ""
+"*sub_key* je řetězec, který musí být podklíčem klíče identifikováného "
+"parametrem *key*. Tato hodnota nesmí být ``None`` a klíc nesmí mít podklíče."
 
 #: ../../library/winreg.rst:134 ../../library/winreg.rst:163
 msgid "*This method can not delete keys with subkeys.*"
@@ -187,17 +225,16 @@ msgstr ""
 #: ../../library/winreg.rst:152
 msgid ""
 "*sub_key* is a string that must be a subkey of the key identified by the "
-"*key* parameter. This value must not be ``None``, and the key may not "
-"have subkeys."
+"*key* parameter. This value must not be ``None``, and the key may not have "
+"subkeys."
 msgstr ""
 
 #: ../../library/winreg.rst:158
 msgid ""
 "*access* is an integer that specifies an access mask that describes the "
-"desired security access for the key.  Default is "
-":const:`KEY_WOW64_64KEY`. On 32-bit Windows, the WOW64 constants are "
-"ignored. See :ref:`Access Rights <access-rights>` for other allowed "
-"values."
+"desired security access for the key.  Default is :const:`KEY_WOW64_64KEY`. "
+"On 32-bit Windows, the WOW64 constants are ignored. See :ref:`Access Rights "
+"<access-rights>` for other allowed values."
 msgstr ""
 
 #: ../../library/winreg.rst:168
@@ -223,20 +260,21 @@ msgid "Enumerates subkeys of an open registry key, returning a string."
 msgstr ""
 
 #: ../../library/winreg.rst:197
-msgid "*index* is an integer that identifies the index of the key to retrieve."
+msgid ""
+"*index* is an integer that identifies the index of the key to retrieve."
 msgstr ""
 
 #: ../../library/winreg.rst:199
 msgid ""
-"The function retrieves the name of one subkey each time it is called.  It"
-" is typically called repeatedly until an :exc:`OSError` exception is "
-"raised, indicating, no more values are available."
+"The function retrieves the name of one subkey each time it is called.  It is"
+" typically called repeatedly until an :exc:`OSError` exception is raised, "
+"indicating, no more values are available."
 msgstr ""
 
 #: ../../library/winreg.rst:203
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.EnumKey`` with "
-"arguments ``key``, ``index``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.EnumKey`` with arguments"
+" ``key``, ``index``."
 msgstr ""
 
 #: ../../library/winreg.rst:211
@@ -244,14 +282,15 @@ msgid "Enumerates values of an open registry key, returning a tuple."
 msgstr ""
 
 #: ../../library/winreg.rst:216
-msgid "*index* is an integer that identifies the index of the value to retrieve."
+msgid ""
+"*index* is an integer that identifies the index of the value to retrieve."
 msgstr ""
 
 #: ../../library/winreg.rst:218
 msgid ""
-"The function retrieves the name of one subkey each time it is called. It "
-"is typically called repeatedly, until an :exc:`OSError` exception is "
-"raised, indicating no more values."
+"The function retrieves the name of one subkey each time it is called. It is "
+"typically called repeatedly, until an :exc:`OSError` exception is raised, "
+"indicating no more values."
 msgstr ""
 
 #: ../../library/winreg.rst:222 ../../library/winreg.rst:342
@@ -294,8 +333,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:233
 msgid ""
-"An integer that identifies the type of the value data (see table in docs "
-"for :meth:`SetValueEx`)"
+"An integer that identifies the type of the value data (see table in docs for"
+" :meth:`SetValueEx`)"
 msgstr ""
 
 #: ../../library/winreg.rst:238
@@ -331,22 +370,22 @@ msgid ""
 "It is not necessary to call :func:`FlushKey` to change a key. Registry "
 "changes are flushed to disk by the registry using its lazy flusher.  "
 "Registry changes are also flushed to disk at system shutdown.  Unlike "
-":func:`CloseKey`, the :func:`FlushKey` method returns only when all the "
-"data has been written to the registry. An application should only call "
-":func:`FlushKey` if it requires absolute certainty that registry changes "
-"are on disk."
+":func:`CloseKey`, the :func:`FlushKey` method returns only when all the data"
+" has been written to the registry. An application should only call "
+":func:`FlushKey` if it requires absolute certainty that registry changes are"
+" on disk."
 msgstr ""
 
 #: ../../library/winreg.rst:274
 msgid ""
-"If you don't know whether a :func:`FlushKey` call is required, it "
-"probably isn't."
+"If you don't know whether a :func:`FlushKey` call is required, it probably "
+"isn't."
 msgstr ""
 
 #: ../../library/winreg.rst:280
 msgid ""
-"Creates a subkey under the specified key and stores registration "
-"information from a specified file into that subkey."
+"Creates a subkey under the specified key and stores registration information"
+" from a specified file into that subkey."
 msgstr ""
 
 #: ../../library/winreg.rst:283
@@ -361,10 +400,9 @@ msgstr ""
 
 #: ../../library/winreg.rst:288
 msgid ""
-"*file_name* is the name of the file to load registry data from. This file"
-" must have been created with the :func:`SaveKey` function. Under the file"
-" allocation table (FAT) file system, the filename may not have an "
-"extension."
+"*file_name* is the name of the file to load registry data from. This file "
+"must have been created with the :func:`SaveKey` function. Under the file "
+"allocation table (FAT) file system, the filename may not have an extension."
 msgstr ""
 
 #: ../../library/winreg.rst:292
@@ -372,8 +410,8 @@ msgid ""
 "A call to :func:`LoadKey` fails if the calling process does not have the "
 ":c:data:`!SE_RESTORE_PRIVILEGE` privilege.  Note that privileges are "
 "different from permissions -- see the `RegLoadKey documentation "
-"<https://msdn.microsoft.com/en-us/library/ms724889%28v=VS.85%29.aspx>`__ "
-"for more details."
+"<https://msdn.microsoft.com/en-us/library/ms724889%28v=VS.85%29.aspx>`__ for"
+" more details."
 msgstr ""
 
 #: ../../library/winreg.rst:298
@@ -384,12 +422,13 @@ msgstr ""
 
 #: ../../library/winreg.rst:301
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.LoadKey`` with "
-"arguments ``key``, ``sub_key``, ``file_name``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.LoadKey`` with arguments"
+" ``key``, ``sub_key``, ``file_name``."
 msgstr ""
 
 #: ../../library/winreg.rst:307
-msgid "Opens the specified key, returning a :ref:`handle object <handle-object>`."
+msgid ""
+"Opens the specified key, returning a :ref:`handle object <handle-object>`."
 msgstr ""
 
 #: ../../library/winreg.rst:312
@@ -397,7 +436,8 @@ msgid "*sub_key* is a string that identifies the sub_key to open."
 msgstr ""
 
 #: ../../library/winreg.rst:314
-msgid "*reserved* is a reserved integer, and must be zero.  The default is zero."
+msgid ""
+"*reserved* is a reserved integer, and must be zero.  The default is zero."
 msgstr ""
 
 #: ../../library/winreg.rst:316
@@ -417,8 +457,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:324
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.OpenKey`` with "
-"arguments ``key``, ``sub_key``, ``access``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.OpenKey`` with arguments"
+" ``key``, ``sub_key``, ``access``."
 msgstr ""
 
 #: ../../library/winreg.rst:328
@@ -439,8 +479,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:353
 msgid ""
-"An integer giving when the key was last modified (if available) as 100's "
-"of nanoseconds since Jan 1, 1601."
+"An integer giving when the key was last modified (if available) as 100's of "
+"nanoseconds since Jan 1, 1601."
 msgstr ""
 
 #: ../../library/winreg.rst:358
@@ -455,17 +495,17 @@ msgstr ""
 
 #: ../../library/winreg.rst:368
 msgid ""
-"*sub_key* is a string that holds the name of the subkey with which the "
-"value is associated.  If this parameter is ``None`` or empty, the "
-"function retrieves the value set by the :func:`SetValue` method for the "
-"key identified by *key*."
+"*sub_key* is a string that holds the name of the subkey with which the value"
+" is associated.  If this parameter is ``None`` or empty, the function "
+"retrieves the value set by the :func:`SetValue` method for the key "
+"identified by *key*."
 msgstr ""
 
 #: ../../library/winreg.rst:372
 msgid ""
 "Values in the registry have name, type, and data components. This method "
-"retrieves the data for a key's first value that has a ``NULL`` name. But "
-"the underlying API call doesn't return the type, so always use "
+"retrieves the data for a key's first value that has a ``NULL`` name. But the"
+" underlying API call doesn't return the type, so always use "
 ":func:`QueryValueEx` if possible."
 msgstr ""
 
@@ -477,8 +517,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:382
 msgid ""
-"Retrieves the type and data for a specified value name associated with an"
-" open registry key."
+"Retrieves the type and data for a specified value name associated with an "
+"open registry key."
 msgstr ""
 
 #: ../../library/winreg.rst:388
@@ -495,8 +535,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:397
 msgid ""
-"An integer giving the registry type for this value (see table in docs for"
-" :meth:`SetValueEx`)"
+"An integer giving the registry type for this value (see table in docs for "
+":meth:`SetValueEx`)"
 msgstr ""
 
 #: ../../library/winreg.rst:407
@@ -506,18 +546,18 @@ msgstr ""
 #: ../../library/winreg.rst:412
 msgid ""
 "*file_name* is the name of the file to save registry data to.  This file "
-"cannot already exist. If this filename includes an extension, it cannot "
-"be used on file allocation table (FAT) file systems by the "
-":meth:`LoadKey` method."
+"cannot already exist. If this filename includes an extension, it cannot be "
+"used on file allocation table (FAT) file systems by the :meth:`LoadKey` "
+"method."
 msgstr ""
 
 #: ../../library/winreg.rst:417
 msgid ""
 "If *key* represents a key on a remote computer, the path described by "
-"*file_name* is relative to the remote computer. The caller of this method"
-" must possess the **SeBackupPrivilege** security privilege.  Note that "
-"privileges are different than permissions -- see the `Conflicts Between "
-"User Rights and Permissions documentation <https://msdn.microsoft.com/en-"
+"*file_name* is relative to the remote computer. The caller of this method "
+"must possess the **SeBackupPrivilege** security privilege.  Note that "
+"privileges are different than permissions -- see the `Conflicts Between User"
+" Rights and Permissions documentation <https://msdn.microsoft.com/en-"
 "us/library/ms724878%28v=VS.85%29.aspx>`__ for more details."
 msgstr ""
 
@@ -527,8 +567,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:427
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.SaveKey`` with "
-"arguments ``key``, ``file_name``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.SaveKey`` with arguments"
+" ``key``, ``file_name``."
 msgstr ""
 
 #: ../../library/winreg.rst:432
@@ -554,14 +594,14 @@ msgstr ""
 
 #: ../../library/winreg.rst:445
 msgid ""
-"If the key specified by the *sub_key* parameter does not exist, the "
-"SetValue function creates it."
+"If the key specified by the *sub_key* parameter does not exist, the SetValue"
+" function creates it."
 msgstr ""
 
 #: ../../library/winreg.rst:448 ../../library/winreg.rst:481
 msgid ""
-"Value lengths are limited by available memory. Long values (more than "
-"2048 bytes) should be stored as files with the filenames stored in the "
+"Value lengths are limited by available memory. Long values (more than 2048 "
+"bytes) should be stored as files with the filenames stored in the "
 "configuration registry.  This helps the registry perform efficiently."
 msgstr ""
 
@@ -593,8 +633,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:470
 msgid ""
-"*type* is an integer that specifies the type of the data. See :ref:`Value"
-" Types <value-types>` for the available types."
+"*type* is an integer that specifies the type of the data. See :ref:`Value "
+"Types <value-types>` for the available types."
 msgstr ""
 
 #: ../../library/winreg.rst:475
@@ -623,15 +663,15 @@ msgstr ""
 
 #: ../../library/winreg.rst:499
 msgid ""
-"If the key is not on the reflection list, the function succeeds but has "
-"no effect.  Disabling reflection for a key does not affect reflection of "
-"any subkeys."
+"If the key is not on the reflection list, the function succeeds but has no "
+"effect.  Disabling reflection for a key does not affect reflection of any "
+"subkeys."
 msgstr ""
 
 #: ../../library/winreg.rst:503
 msgid ""
-"Raises an :ref:`auditing event <auditing>` "
-"``winreg.DisableReflectionKey`` with argument ``key``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.DisableReflectionKey`` "
+"with argument ``key``."
 msgstr ""
 
 #: ../../library/winreg.rst:508
@@ -639,13 +679,14 @@ msgid "Restores registry reflection for the specified disabled key."
 msgstr ""
 
 #: ../../library/winreg.rst:516
-msgid "Restoring reflection for a key does not affect reflection of any subkeys."
+msgid ""
+"Restoring reflection for a key does not affect reflection of any subkeys."
 msgstr ""
 
 #: ../../library/winreg.rst:518
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``winreg.EnableReflectionKey``"
-" with argument ``key``."
+"Raises an :ref:`auditing event <auditing>` ``winreg.EnableReflectionKey`` "
+"with argument ``key``."
 msgstr ""
 
 #: ../../library/winreg.rst:523
@@ -668,8 +709,7 @@ msgstr ""
 
 #: ../../library/winreg.rst:541
 msgid ""
-"The following constants are defined for use in many :mod:`winreg` "
-"functions."
+"The following constants are defined for use in many :mod:`winreg` functions."
 msgstr ""
 
 #: ../../library/winreg.rst:546
@@ -687,22 +727,22 @@ msgstr ""
 msgid ""
 "Registry entries subordinate to this key define the preferences of the "
 "current user. These preferences include the settings of environment "
-"variables, data about program groups, colors, printers, network "
-"connections, and application preferences."
+"variables, data about program groups, colors, printers, network connections,"
+" and application preferences."
 msgstr ""
 
 #: ../../library/winreg.rst:564
 msgid ""
-"Registry entries subordinate to this key define the physical state of the"
-" computer, including data about the bus type, system memory, and "
-"installed hardware and software."
+"Registry entries subordinate to this key define the physical state of the "
+"computer, including data about the bus type, system memory, and installed "
+"hardware and software."
 msgstr ""
 
 #: ../../library/winreg.rst:570
 msgid ""
 "Registry entries subordinate to this key define the default user "
-"configuration for new users on the local computer and the user "
-"configuration for the current user."
+"configuration for new users on the local computer and the user configuration"
+" for the current user."
 msgstr ""
 
 #: ../../library/winreg.rst:576
@@ -774,8 +814,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:639
 msgid ""
-"Required to request change notifications for a registry key or for "
-"subkeys of a registry key."
+"Required to request change notifications for a registry key or for subkeys "
+"of a registry key."
 msgstr ""
 
 #: ../../library/winreg.rst:644
@@ -794,14 +834,14 @@ msgstr ""
 
 #: ../../library/winreg.rst:657
 msgid ""
-"Indicates that an application on 64-bit Windows should operate on the "
-"64-bit registry view. On 32-bit Windows, this constant is ignored."
+"Indicates that an application on 64-bit Windows should operate on the 64-bit"
+" registry view. On 32-bit Windows, this constant is ignored."
 msgstr ""
 
 #: ../../library/winreg.rst:662
 msgid ""
-"Indicates that an application on 64-bit Windows should operate on the "
-"32-bit registry view. On 32-bit Windows, this constant is ignored."
+"Indicates that an application on 64-bit Windows should operate on the 32-bit"
+" registry view. On 32-bit Windows, this constant is ignored."
 msgstr ""
 
 #: ../../library/winreg.rst:668
@@ -823,7 +863,8 @@ msgid "32-bit number."
 msgstr ""
 
 #: ../../library/winreg.rst:683
-msgid "A 32-bit number in little-endian format. Equivalent to :const:`REG_DWORD`."
+msgid ""
+"A 32-bit number in little-endian format. Equivalent to :const:`REG_DWORD`."
 msgstr ""
 
 #: ../../library/winreg.rst:687
@@ -842,8 +883,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:700
 msgid ""
-"A sequence of null-terminated strings, terminated by two null characters."
-" (Python handles this termination automatically.)"
+"A sequence of null-terminated strings, terminated by two null characters. "
+"(Python handles this termination automatically.)"
 msgstr ""
 
 #: ../../library/winreg.rst:705
@@ -855,7 +896,8 @@ msgid "A 64-bit number."
 msgstr ""
 
 #: ../../library/winreg.rst:715
-msgid "A 64-bit number in little-endian format. Equivalent to :const:`REG_QWORD`."
+msgid ""
+"A 64-bit number in little-endian format. Equivalent to :const:`REG_QWORD`."
 msgstr ""
 
 #: ../../library/winreg.rst:721
@@ -880,8 +922,8 @@ msgstr ""
 
 #: ../../library/winreg.rst:741
 msgid ""
-"This object wraps a Windows HKEY object, automatically closing it when "
-"the object is destroyed.  To guarantee cleanup, you can call either the "
+"This object wraps a Windows HKEY object, automatically closing it when the "
+"object is destroyed.  To guarantee cleanup, you can call either the "
 ":meth:`~PyHKEY.Close` method on the object, or the :func:`CloseKey` "
 "function."
 msgstr ""
@@ -897,7 +939,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/winreg.rst:750
-msgid "Handle objects provide semantics for :meth:`~object.__bool__` -- thus ::"
+msgid ""
+"Handle objects provide semantics for :meth:`~object.__bool__` -- thus ::"
 msgstr ""
 
 #: ../../library/winreg.rst:752
@@ -908,17 +951,17 @@ msgstr ""
 
 #: ../../library/winreg.rst:755
 msgid ""
-"will print ``Yes`` if the handle is currently valid (has not been closed "
-"or detached)."
+"will print ``Yes`` if the handle is currently valid (has not been closed or "
+"detached)."
 msgstr ""
 
 #: ../../library/winreg.rst:758
 msgid ""
 "Handle objects can be converted to an integer (e.g., using the built-in "
-":func:`int` function), in which case the underlying Windows handle value "
-"is returned.  You can also use the :meth:`~PyHKEY.Detach` method to "
-"return the integer handle, and also disconnect the Windows handle from "
-"the handle object."
+":func:`int` function), in which case the underlying Windows handle value is "
+"returned.  You can also use the :meth:`~PyHKEY.Detach` method to return the "
+"integer handle, and also disconnect the Windows handle from the handle "
+"object."
 msgstr ""
 
 #: ../../library/winreg.rst:766
@@ -942,10 +985,9 @@ msgstr ""
 
 #: ../../library/winreg.rst:779
 msgid ""
-"After calling this function, the handle is effectively invalidated, but "
-"the handle is not closed.  You would call this function when you need the"
-" underlying Win32 handle to exist beyond the lifetime of the handle "
-"object."
+"After calling this function, the handle is effectively invalidated, but the "
+"handle is not closed.  You would call this function when you need the "
+"underlying Win32 handle to exist beyond the lifetime of the handle object."
 msgstr ""
 
 #: ../../library/winreg.rst:783
@@ -985,39 +1027,28 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "*sub_key* is a string that names "
-#~ "the subkey to delete. If ``None``, "
-#~ "deletes all subkeys and values of "
-#~ "the specified key."
+#~ "*sub_key* is a string that names the subkey to delete. If ``None``, deletes "
+#~ "all subkeys and values of the specified key."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "This function deletes a key and "
-#~ "all its descendants. If *sub_key* is "
-#~ "``None``, all subkeys and values of "
-#~ "the specified key are deleted."
+#~ "This function deletes a key and all its descendants. If *sub_key* is "
+#~ "``None``, all subkeys and values of the specified key are deleted."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Raises an :ref:`auditing event <auditing>` "
-#~ "``winreg.DeleteTree`` with arguments ``key``, "
-#~ "``sub_key``."
+#~ "Raises an :ref:`auditing event <auditing>` ``winreg.DeleteTree`` with "
+#~ "arguments ``key``, ``sub_key``."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The object also support equality "
-#~ "comparison semantics, so handle objects "
-#~ "will compare equal if they both "
-#~ "reference the same underlying Windows "
-#~ "handle value. Closed handle objects "
-#~ "(those with a handle value of "
-#~ "zero) always compare equal."
+#~ "The object also support equality comparison semantics, so handle objects "
+#~ "will compare equal if they both reference the same underlying Windows handle"
+#~ " value. Closed handle objects (those with a handle value of zero) always "
+#~ "compare equal."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Handle objects are now compared by "
-#~ "their underlying Windows handle value "
-#~ "instead of object identity for equality"
-#~ " comparisons."
+#~ "Handle objects are now compared by their underlying Windows handle value "
+#~ "instead of object identity for equality comparisons."
 #~ msgstr ""
-

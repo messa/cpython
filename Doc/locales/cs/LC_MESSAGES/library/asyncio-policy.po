@@ -11,17 +11,17 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-policy.rst:8
 msgid "Policies"
-msgstr ""
+msgstr "Zásady"
 
 #: ../../library/asyncio-policy.rst:12
 msgid ""
@@ -30,181 +30,229 @@ msgid ""
 ":class:`asyncio.Runner` with *loop_factory* to use the desired loop "
 "implementation."
 msgstr ""
+"Zásady jsou zastaralé a budou odstraněny v Pythonu 3.16. Uživatelům se "
+"doporučuje používat funkci :func:`asyncio.run` nebo třídu "
+":class:`asyncio.Runner` s parametrem *loop_factory* pro používání požadované"
+" implementace smyčky."
 
 #: ../../library/asyncio-policy.rst:18
 msgid ""
 "An event loop policy is a global object used to get and set the current "
-":ref:`event loop <asyncio-event-loop>`, as well as create new event "
-"loops. The default policy can be :ref:`replaced <asyncio-policy-get-set>`"
-" with :ref:`built-in alternatives <asyncio-policy-builtin>` to use "
-"different event loop implementations, or substituted by a :ref:`custom "
-"policy <asyncio-custom-policies>` that can override these behaviors."
+":ref:`event loop <asyncio-event-loop>`, as well as create new event loops. "
+"The default policy can be :ref:`replaced <asyncio-policy-get-set>` with "
+":ref:`built-in alternatives <asyncio-policy-builtin>` to use different event"
+" loop implementations, or substituted by a :ref:`custom policy <asyncio-"
+"custom-policies>` that can override these behaviors."
 msgstr ""
+"Zásada smyčky událostí je globální objekt používaný k získání a nastavení "
+"aktuální :ref:`smyčky událostí <asyncio-event-loop>`, stejně jako k "
+"vytváření nových smyček událostí. Výchozí zásadu lze :ref:`nahradit "
+"<asyncio-policy-get-set>` :ref:`vestavěnými alternativami <asyncio-policy-"
+"builtin>` pro použití různých implementací smyčky eventos, nebo ji nahradit "
+":ref:`vlastní zásadou <asyncio-custom-policies>`, která může tyto chování "
+"přepsat."
 
 #: ../../library/asyncio-policy.rst:27
 msgid ""
-"The :ref:`policy object <asyncio-policy-objects>` gets and sets a "
-"separate event loop per *context*. This is per-thread by default, though "
-"custom policies could define *context* differently."
+"The :ref:`policy object <asyncio-policy-objects>` gets and sets a separate "
+"event loop per *context*. This is per-thread by default, though custom "
+"policies could define *context* differently."
 msgstr ""
+"Objekt :ref:`zásady <asyncio-policy-objects>` získává a nastavuje "
+"samostatnou smyčku událostí na *kontext*. Ve výchozím nastavení je to na "
+"vlákno, ačkoli vlastní zásady mohly definovat *kontext* jinak."
 
 #: ../../library/asyncio-policy.rst:32
 msgid ""
 "Custom event loop policies can control the behavior of "
-":func:`get_event_loop`, :func:`set_event_loop`, and "
-":func:`new_event_loop`."
+":func:`get_event_loop`, :func:`set_event_loop`, and :func:`new_event_loop`."
 msgstr ""
+"Vlastní zásady smyčky událostí mohou ovládat chování :func:`get_event_loop`,"
+" :func:`set_event_loop` a :func:`new_event_loop`."
 
 #: ../../library/asyncio-policy.rst:35
 msgid ""
 "Policy objects should implement the APIs defined in the "
 ":class:`AbstractEventLoopPolicy` abstract base class."
 msgstr ""
+"Objekty zásad by měly implementovat API definované v abstraktní základě "
+"třídy :class:`AbstractEventLoopPolicy`."
 
 #: ../../library/asyncio-policy.rst:42
 msgid "Getting and Setting the Policy"
-msgstr ""
+msgstr "Získání a nastavení zásady"
 
 #: ../../library/asyncio-policy.rst:44
 msgid ""
 "The following functions can be used to get and set the policy for the "
 "current process:"
 msgstr ""
+"Následující funkce lze použít k získání a nastavení zásady pro aktuální "
+"proces:"
 
 #: ../../library/asyncio-policy.rst:49
 msgid "Return the current process-wide policy."
-msgstr ""
+msgstr "Vrátí aktuální zásadu proču."
 
 #: ../../library/asyncio-policy.rst:51
 msgid ""
-"The :func:`get_event_loop_policy` function is deprecated and will be "
-"removed in Python 3.16."
+"The :func:`get_event_loop_policy` function is deprecated and will be removed"
+" in Python 3.16."
 msgstr ""
+"Funkce :func:`get_event_loop_policy` je zastaralá a bude odstraněna v "
+"Pythonu 3.16."
 
 #: ../../library/asyncio-policy.rst:57
 msgid "Set the current process-wide policy to *policy*."
-msgstr ""
+msgstr "Nastavuje aktuální zásadu proču na *policy*."
 
 #: ../../library/asyncio-policy.rst:59
 msgid "If *policy* is set to ``None``, the default policy is restored."
-msgstr ""
+msgstr "Pokud je *policy* nastaven na ``None``, obnovuje se výchozí zásada."
 
 #: ../../library/asyncio-policy.rst:61
 msgid ""
-"The :func:`set_event_loop_policy` function is deprecated and will be "
-"removed in Python 3.16."
+"The :func:`set_event_loop_policy` function is deprecated and will be removed"
+" in Python 3.16."
 msgstr ""
+"Funkce :func:`set_event_loop_policy` je zastaralá a bude odstraněna v "
+"Pythonu 3.16."
 
 #: ../../library/asyncio-policy.rst:69
 msgid "Policy Objects"
-msgstr ""
+msgstr "Objekty zásad"
 
 #: ../../library/asyncio-policy.rst:71
 msgid "The abstract event loop policy base class is defined as follows:"
 msgstr ""
+"Abstraktní základě třídy zásady smyčky událostí je definována následovně:"
 
 #: ../../library/asyncio-policy.rst:75
 msgid "An abstract base class for asyncio policies."
-msgstr ""
+msgstr "Abstraktní základě třída pro zásady asyncio."
 
 #: ../../library/asyncio-policy.rst:79
 msgid "Get the event loop for the current context."
-msgstr ""
+msgstr "Ziská smyčku událostí pro aktuální kontext."
 
 #: ../../library/asyncio-policy.rst:81
 msgid ""
 "Return an event loop object implementing the :class:`AbstractEventLoop` "
 "interface."
 msgstr ""
+"Vrátí objekt smyčky událostí implementující rozhraní "
+":class:`AbstractEventLoop`."
 
 #: ../../library/asyncio-policy.rst:84 ../../library/asyncio-policy.rst:96
 msgid "This method should never return ``None``."
-msgstr ""
+msgstr "Tato metoda by nikdy neměla vrátit ``None``."
 
 #: ../../library/asyncio-policy.rst:90
 msgid "Set the event loop for the current context to *loop*."
-msgstr ""
+msgstr "Nastavuje smyčku událostí pro aktuální kontext na *loop*."
 
 #: ../../library/asyncio-policy.rst:94
 msgid "Create and return a new event loop object."
-msgstr ""
+msgstr "Vytváří a vrátí nový objekt smyčky událostí."
 
 #: ../../library/asyncio-policy.rst:98
 msgid ""
-"The :class:`AbstractEventLoopPolicy` class is deprecated and will be "
-"removed in Python 3.16."
+"The :class:`AbstractEventLoopPolicy` class is deprecated and will be removed"
+" in Python 3.16."
 msgstr ""
+"Třída :class:`AbstractEventLoopPolicy` je zastaralá a bude odstraněna v "
+"Pythonu 3.16."
 
 #: ../../library/asyncio-policy.rst:105
 msgid "asyncio ships with the following built-in policies:"
-msgstr ""
+msgstr "asyncio se dodává s následujícími vestavěnými zásadami:"
 
 #: ../../library/asyncio-policy.rst:110
 msgid ""
 "The default asyncio policy.  Uses :class:`SelectorEventLoop` on Unix and "
 ":class:`ProactorEventLoop` on Windows."
 msgstr ""
+"Výchozí zásada asyncio. Používá :class:`SelectorEventLoop` na Unixu a "
+":class:`ProactorEventLoop` na Windows."
 
 #: ../../library/asyncio-policy.rst:113
 msgid ""
 "There is no need to install the default policy manually. asyncio is "
 "configured to use the default policy automatically."
 msgstr ""
+"Není třeba instalovatvýchozí zásadu ručně. asyncio je nakonfigurován na "
+"automatické použití výchozí zásady."
 
 #: ../../library/asyncio-policy.rst:118
 msgid "On Windows, :class:`ProactorEventLoop` is now used by default."
 msgstr ""
+"Na Windows se nyní :class:`ProactorEventLoop` používá ve výchozím nastavení."
 
 #: ../../library/asyncio-policy.rst:120
 msgid ""
-"The :meth:`get_event_loop` method of the default asyncio policy now "
-"raises a :exc:`RuntimeError` if there is no set event loop."
+"The :meth:`get_event_loop` method of the default asyncio policy now raises a"
+" :exc:`RuntimeError` if there is no set event loop."
 msgstr ""
+"Metoda :meth:`get_event_loop` výchozí zásady asyncio nyní vyvolá "
+":exc:`RuntimeError`, pokud neexistuje nastavená smyčka událostí."
 
 #: ../../library/asyncio-policy.rst:124
 msgid ""
-"The :class:`DefaultEventLoopPolicy` class is deprecated and will be "
-"removed in Python 3.16."
+"The :class:`DefaultEventLoopPolicy` class is deprecated and will be removed "
+"in Python 3.16."
 msgstr ""
+"Třída :class:`DefaultEventLoopPolicy` je zastaralá a bude odstraněna v "
+"Pythonu 3.16."
 
 #: ../../library/asyncio-policy.rst:131
 msgid ""
-"An alternative event loop policy that uses the :class:`SelectorEventLoop`"
-" event loop implementation."
+"An alternative event loop policy that uses the :class:`SelectorEventLoop` "
+"event loop implementation."
 msgstr ""
+"Alternativní zásada smyčky událostí, která používá implementaci smyčky "
+"událostí :class:`SelectorEventLoop`."
 
 #: ../../library/asyncio-policy.rst:134 ../../library/asyncio-policy.rst:146
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/asyncio-policy.rst:136
 msgid ""
-"The :class:`WindowsSelectorEventLoopPolicy` class is deprecated and will "
-"be removed in Python 3.16."
+"The :class:`WindowsSelectorEventLoopPolicy` class is deprecated and will be "
+"removed in Python 3.16."
 msgstr ""
+"Třída :class:`WindowsSelectorEventLoopPolicy` je zastaralá a bude odstraněna"
+" v Pythonu 3.16."
 
 #: ../../library/asyncio-policy.rst:143
 msgid ""
-"An alternative event loop policy that uses the :class:`ProactorEventLoop`"
-" event loop implementation."
+"An alternative event loop policy that uses the :class:`ProactorEventLoop` "
+"event loop implementation."
 msgstr ""
+"Alternativní zásada smyčky událostí, která používá implementaci smyčky "
+"událostí :class:`ProactorEventLoop`."
 
 #: ../../library/asyncio-policy.rst:148
 msgid ""
-"The :class:`WindowsProactorEventLoopPolicy` class is deprecated and will "
-"be removed in Python 3.16."
+"The :class:`WindowsProactorEventLoopPolicy` class is deprecated and will be "
+"removed in Python 3.16."
 msgstr ""
+"Třída :class:`WindowsProactorEventLoopPolicy` je zastaralá a bude odstraněna"
+" v Pythonu 3.16."
 
 #: ../../library/asyncio-policy.rst:156
 msgid "Custom Policies"
-msgstr ""
+msgstr "Vlastní zásady"
 
 #: ../../library/asyncio-policy.rst:158
 msgid ""
 "To implement a new event loop policy, it is recommended to subclass "
-":class:`DefaultEventLoopPolicy` and override the methods for which custom"
-" behavior is wanted, e.g.::"
+":class:`DefaultEventLoopPolicy` and override the methods for which custom "
+"behavior is wanted, e.g.::"
 msgstr ""
+"K implementaci nové zásady smyčky událostí se doporučuje poddělitsi "
+":class:`DefaultEventLoopPolicy` a přepsat metody, pro které se chce vlastní "
+"chování, například::"
 
 #: ../../library/asyncio-policy.rst:162
 msgid ""
@@ -221,4 +269,15 @@ msgid ""
 "\n"
 "asyncio.set_event_loop_policy(MyEventLoopPolicy())"
 msgstr ""
-
+"class MyEventLoopPolicy(asyncio.DefaultEventLoopPolicy):\n"
+"\n"
+"    def get_event_loop(self):\n"
+"        \"\"\"Ziská smyčku událostí.\n"
+"\n"
+"        Může to být None nebo instance EventLoop.\n"
+"        \"\"\"\n"
+"        loop = super().get_event_loop()\n"
+"        # Udělej něco se smyčkou ...\n"
+"        return loop\n"
+"\n"
+"asyncio.set_event_loop_policy(MyEventLoopPolicy())"

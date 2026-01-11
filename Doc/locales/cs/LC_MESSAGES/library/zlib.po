@@ -11,24 +11,26 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/zlib.rst:2
 msgid ":mod:`!zlib` --- Compression compatible with :program:`gzip`"
-msgstr ""
+msgstr ":mod:`!zlib` --- Komprese kompatibilní s :program:`gzip`"
 
 #: ../../library/zlib.rst:10
 msgid ""
-"For applications that require data compression, the functions in this "
-"module allow compression and decompression, using the `zlib library "
+"For applications that require data compression, the functions in this module"
+" allow compression and decompression, using the `zlib library "
 "<https://www.zlib.net>`_."
 msgstr ""
+"Pro aplikace vyžadující kompresi dat umožňují funkce v tomto modulu kompresi"
+" a dekompresi pomocí `knihovny zlib <https://www.zlib.net>`_."
 
 #: ../../includes/optional-module.rst:1
 msgid ""
@@ -37,103 +39,140 @@ msgid ""
 "provided Python to you). If you are the distributor, see :ref:`optional-"
 "module-requirements`."
 msgstr ""
+"Toto je :term:`volitelný modul`. Pokud chybí ve vašem Pythonu, vyhledejte "
+"dokumentaci od distributora (tedy od toho, kdo vám Python poskytl). Pokud "
+"jste distributor, podívejte se na :ref:`optional-module-requirements`."
 
 #: ../../library/zlib.rst:15
 msgid ""
-"zlib's functions have many options and often need to be used in a "
-"particular order.  This documentation doesn't attempt to cover all of the"
-" permutations; consult the `zlib manual "
-"<https://www.zlib.net/manual.html>`_ for authoritative information."
+"zlib's functions have many options and often need to be used in a particular"
+" order.  This documentation doesn't attempt to cover all of the "
+"permutations; consult the `zlib manual <https://www.zlib.net/manual.html>`_ "
+"for authoritative information."
 msgstr ""
+"Funkce zlib mají mnoho možností a často je třeba je používat v konkrétním "
+"pořadí. Tato dokumentace se nesnaží pokrýt všechny permutace; podrobnější "
+"informace najdete v `manuálu zlib <https://www.zlib.net/manual.html>`_."
 
 #: ../../library/zlib.rst:20
 msgid "For reading and writing ``.gz`` files see the :mod:`gzip` module."
-msgstr ""
+msgstr "Pro čtení a zápis souborů ``.gz`` viz modul :mod:`gzip`."
 
 #: ../../library/zlib.rst:22
 msgid "The available exception and functions in this module are:"
-msgstr ""
+msgstr "Dostupné výjimky a funkce v tomto modulu jsou:"
 
 #: ../../library/zlib.rst:27
 msgid "Exception raised on compression and decompression errors."
-msgstr ""
+msgstr "Výjimka vyvolaná při chybách komprese a dekomprese."
 
 #: ../../library/zlib.rst:32
 msgid ""
-"Computes an Adler-32 checksum of *data*.  (An Adler-32 checksum is almost"
-" as reliable as a CRC32 but can be computed much more quickly.)  The "
-"result is an unsigned 32-bit integer.  If *value* is present, it is used "
-"as the starting value of the checksum; otherwise, a default value of 1 is"
-" used.  Passing in *value* allows computing a running checksum over the "
+"Computes an Adler-32 checksum of *data*.  (An Adler-32 checksum is almost as"
+" reliable as a CRC32 but can be computed much more quickly.)  The result is "
+"an unsigned 32-bit integer.  If *value* is present, it is used as the "
+"starting value of the checksum; otherwise, a default value of 1 is used.  "
+"Passing in *value* allows computing a running checksum over the "
 "concatenation of several inputs.  The algorithm is not cryptographically "
-"strong, and should not be used for authentication or digital signatures."
-"  Since the algorithm is designed for use as a checksum algorithm, it is "
-"not suitable for use as a general hash algorithm."
+"strong, and should not be used for authentication or digital signatures.  "
+"Since the algorithm is designed for use as a checksum algorithm, it is not "
+"suitable for use as a general hash algorithm."
 msgstr ""
+"Vypočítá kontrolní součet Adler-32 dat *data*. (Kontrolní součet Adler-32 je"
+" téměř stejně spolehlivý jako CRC32, ale lze jej vypočítat mnohemlem "
+"rychleji.) Výsledkem je 32-bitové celé číslo bez znaménka. Pokud je přítomen"
+" *value*, je použit jako počáteční hodnota kontrolního součtu; jinak se "
+"používá výchozí hodnota 1. Předání *value* umožňuje výčet bežžicího "
+"kontrolního součtu přes spojení několika vstupů. Algoritmus není "
+"kryptograficky silný a neměl by se používat k authentifikaci nebo digitálním"
+" podpisů. Vzhledem k tomu, že je algoritmus navrhén pro použití jako "
+"algoritmus kontrolního součtu, není vhodný pro použití jako obecný hash "
+"algoritmus."
 
 #: ../../library/zlib.rst:42 ../../library/zlib.rst:131
 msgid "The result is always unsigned."
-msgstr ""
+msgstr "Výsledkem je vždy číslo bez znaménka."
 
 #: ../../library/zlib.rst:47
 msgid ""
 "Compresses the bytes in *data*, returning a bytes object containing "
 "compressed data. *level* is an integer from ``0`` to ``9`` or ``-1`` "
 "controlling the level of compression; See :const:`Z_BEST_SPEED` (``1``), "
-":const:`Z_BEST_COMPRESSION` (``9``), :const:`Z_NO_COMPRESSION` (``0``), "
-"and the default, :const:`Z_DEFAULT_COMPRESSION` (``-1``) for more "
-"information about these values."
+":const:`Z_BEST_COMPRESSION` (``9``), :const:`Z_NO_COMPRESSION` (``0``), and "
+"the default, :const:`Z_DEFAULT_COMPRESSION` (``-1``) for more information "
+"about these values."
 msgstr ""
+"Komprimuje bajty v *data* a vrací objekt bytes obsahující komprimovaná data."
+" *level* je celé číslo od ``0`` do ``9`` nebo ``-1`` určující úroveň "
+"komprese; podrobnější informace o těchto hodnotách viz :const:`Z_BEST_SPEED`"
+" (``1``), :const:`Z_BEST_COMPRESSION` (``9``), :const:`Z_NO_COMPRESSION` "
+"(``0``) a výchozí :const:`Z_DEFAULT_COMPRESSION` (``-1``)."
 
 #: ../../library/zlib.rst:55
 msgid ""
 "The *wbits* argument controls the size of the history buffer (or the "
 "\"window size\") used when compressing data, and whether a header and "
-"trailer is included in the output.  It can take several ranges of values,"
-" defaulting to ``15`` (:const:`MAX_WBITS`):"
+"trailer is included in the output.  It can take several ranges of values, "
+"defaulting to ``15`` (:const:`MAX_WBITS`):"
 msgstr ""
+"Argument *wbits* kontroluje velikost vyrovnávací paměti historie (nebo "
+"\"velikost okna\") používané při kompresi dat a zda je výstup doplněn "
+"záhlavím a závěřcem. Může nabývat několika rozsahů hodnot, výděláná na "
+"``15`` (:const:`MAX_WBITS`):"
 
 #: ../../library/zlib.rst:60
 msgid ""
-"+9 to +15: The base-two logarithm of the window size, which therefore "
-"ranges between 512 and 32768.  Larger values produce better compression "
-"at the expense of greater memory usage.  The resulting output will "
-"include a zlib-specific header and trailer."
+"+9 to +15: The base-two logarithm of the window size, which therefore ranges"
+" between 512 and 32768.  Larger values produce better compression at the "
+"expense of greater memory usage.  The resulting output will include a zlib-"
+"specific header and trailer."
 msgstr ""
+"+9 až +15: Logaritmus o základě 2 velikosti okna, která se tedy pohybuje "
+"mezi 512 a 32768. Větší hodnoty poskytují lepší kompresi na úhu větší "
+"spotřeby paměti. Výstup bude obsahovat záhlaví a závěř specifické pro zlib."
 
 #: ../../library/zlib.rst:65
 msgid ""
-"−9 to −15: Uses the absolute value of *wbits* as the window size "
-"logarithm, while producing a raw output stream with no header or trailing"
-" checksum."
+"−9 to −15: Uses the absolute value of *wbits* as the window size logarithm, "
+"while producing a raw output stream with no header or trailing checksum."
 msgstr ""
+"−9 až −15: Používá absolutní hodnotu *wbits* jako logaritmus velikosti okna,"
+" přičemž vytváří surový výstupní proud bez záhlaví nebo koncového "
+"kontrolního součtu."
 
 #: ../../library/zlib.rst:69
 msgid ""
-"+25 to +31 = 16 + (9 to 15): Uses the low 4 bits of the value as the "
-"window size logarithm, while including a basic :program:`gzip` header and"
-" trailing checksum in the output."
+"+25 to +31 = 16 + (9 to 15): Uses the low 4 bits of the value as the window "
+"size logarithm, while including a basic :program:`gzip` header and trailing "
+"checksum in the output."
 msgstr ""
+"+25 až +31 = 16 + (9 až 15): Používá dolní 4 bity hodnoty jako logaritmus "
+"velikosti okna a zahrnuje základní záhlaví :program:`gzip` a koncový "
+"kontrolní součet ve výstupu."
 
 #: ../../library/zlib.rst:73
 msgid "Raises the :exc:`error` exception if any error occurs."
-msgstr ""
+msgstr "Vyvolejí výjimku :exc:`error`, pokud dojde k chybě."
 
 #: ../../library/zlib.rst:75
 msgid "*level* can now be used as a keyword parameter."
-msgstr ""
+msgstr "*level* lze nyní použít jako parametr klíčového slova."
 
 #: ../../library/zlib.rst:78
 msgid ""
-"The *wbits* parameter is now available to set window bits and compression"
-" type."
+"The *wbits* parameter is now available to set window bits and compression "
+"type."
 msgstr ""
+"Parametr *wbits* je nyní k dispozici pro nastavení bitů okna a typu "
+"komprese."
 
 #: ../../library/zlib.rst:84
 msgid ""
-"Returns a compression object, to be used for compressing data streams "
-"that won't fit into memory at once."
+"Returns a compression object, to be used for compressing data streams that "
+"won't fit into memory at once."
 msgstr ""
+"Vrací objekt komprese, který se má použít pro kompresi toků dat, které se "
+"nevejdou do paměti najednou."
 
 #: ../../library/zlib.rst:87
 msgid ""
@@ -143,41 +182,47 @@ msgid ""
 ":const:`Z_DEFAULT_COMPRESSION` (``-1``) for more information about these "
 "values."
 msgstr ""
+"*level* je úroveň komprese -- celé číslo od ``0`` do ``9`` nebo ``-1``. "
+"Podrobnější informace o těchto hodnotách viz :const:`Z_BEST_SPEED` (``1``), "
+":const:`Z_BEST_COMPRESSION` (``9``), :const:`Z_NO_COMPRESSION` (``0``) a "
+"výchozí :const:`Z_DEFAULT_COMPRESSION` (``-1``)."
 
 #: ../../library/zlib.rst:92
 msgid ""
-"*method* is the compression algorithm. Currently, the only supported "
-"value is :const:`DEFLATED`."
+"*method* is the compression algorithm. Currently, the only supported value "
+"is :const:`DEFLATED`."
 msgstr ""
+"*method* je algoritmus komprese. V současnosti je jedinou podporovanou "
+"hodnotou :const:`DEFLATED`."
 
 #: ../../library/zlib.rst:95
 msgid ""
 "The *wbits* parameter controls the size of the history buffer (or the "
-"\"window size\"), and what header and trailer format will be used. It has"
-" the same meaning as `described for compress() <#compress-wbits>`__."
+"\"window size\"), and what header and trailer format will be used. It has "
+"the same meaning as `described for compress() <#compress-wbits>`__."
 msgstr ""
 
 #: ../../library/zlib.rst:99
 msgid ""
-"The *memLevel* argument controls the amount of memory used for the "
-"internal compression state. Valid values range from ``1`` to ``9``. "
-"Higher values use more memory, but are faster and produce smaller output."
+"The *memLevel* argument controls the amount of memory used for the internal "
+"compression state. Valid values range from ``1`` to ``9``. Higher values use"
+" more memory, but are faster and produce smaller output."
 msgstr ""
 
 #: ../../library/zlib.rst:103
 msgid ""
-"*strategy* is used to tune the compression algorithm. Possible values are"
-" :const:`Z_DEFAULT_STRATEGY`, :const:`Z_FILTERED`, "
-":const:`Z_HUFFMAN_ONLY`, :const:`Z_RLE` and :const:`Z_FIXED`."
+"*strategy* is used to tune the compression algorithm. Possible values are "
+":const:`Z_DEFAULT_STRATEGY`, :const:`Z_FILTERED`, :const:`Z_HUFFMAN_ONLY`, "
+":const:`Z_RLE` and :const:`Z_FIXED`."
 msgstr ""
 
 #: ../../library/zlib.rst:107
 msgid ""
-"*zdict* is a predefined compression dictionary. This is a sequence of "
-"bytes (such as a :class:`bytes` object) containing subsequences that are "
-"expected to occur frequently in the data that is to be compressed. Those "
-"subsequences that are expected to be most common should come at the end "
-"of the dictionary."
+"*zdict* is a predefined compression dictionary. This is a sequence of bytes "
+"(such as a :class:`bytes` object) containing subsequences that are expected "
+"to occur frequently in the data that is to be compressed. Those subsequences"
+" that are expected to be most common should come at the end of the "
+"dictionary."
 msgstr ""
 
 #: ../../library/zlib.rst:112
@@ -186,31 +231,30 @@ msgstr ""
 
 #: ../../library/zlib.rst:122
 msgid ""
-"Computes a CRC (Cyclic Redundancy Check) checksum of *data*. The result "
-"is an unsigned 32-bit integer. If *value* is present, it is used as the "
-"starting value of the checksum; otherwise, a default value of 0 is used."
-"  Passing in *value* allows computing a running checksum over the "
+"Computes a CRC (Cyclic Redundancy Check) checksum of *data*. The result is "
+"an unsigned 32-bit integer. If *value* is present, it is used as the "
+"starting value of the checksum; otherwise, a default value of 0 is used.  "
+"Passing in *value* allows computing a running checksum over the "
 "concatenation of several inputs.  The algorithm is not cryptographically "
-"strong, and should not be used for authentication or digital signatures."
-"  Since the algorithm is designed for use as a checksum algorithm, it is "
-"not suitable for use as a general hash algorithm."
+"strong, and should not be used for authentication or digital signatures.  "
+"Since the algorithm is designed for use as a checksum algorithm, it is not "
+"suitable for use as a general hash algorithm."
 msgstr ""
 
 #: ../../library/zlib.rst:136
 msgid ""
-"Decompresses the bytes in *data*, returning a bytes object containing the"
-" uncompressed data.  The *wbits* parameter depends on the format of "
-"*data*, and is discussed further below. If *bufsize* is given, it is used"
-" as the initial size of the output buffer.  Raises the :exc:`error` "
-"exception if any error occurs."
+"Decompresses the bytes in *data*, returning a bytes object containing the "
+"uncompressed data.  The *wbits* parameter depends on the format of *data*, "
+"and is discussed further below. If *bufsize* is given, it is used as the "
+"initial size of the output buffer.  Raises the :exc:`error` exception if any"
+" error occurs."
 msgstr ""
 
 #: ../../library/zlib.rst:144
 msgid ""
-"The *wbits* parameter controls the size of the history buffer (or "
-"\"window size\"), and what header and trailer format is expected. It is "
-"similar to the parameter for :func:`compressobj`, but accepts more ranges"
-" of values:"
+"The *wbits* parameter controls the size of the history buffer (or \"window "
+"size\"), and what header and trailer format is expected. It is similar to "
+"the parameter for :func:`compressobj`, but accepts more ranges of values:"
 msgstr ""
 
 #: ../../library/zlib.rst:149
@@ -227,38 +271,37 @@ msgstr ""
 
 #: ../../library/zlib.rst:155
 msgid ""
-"−8 to −15: Uses the absolute value of *wbits* as the window size "
-"logarithm.  The input must be a raw stream with no header or trailer."
+"−8 to −15: Uses the absolute value of *wbits* as the window size logarithm."
+"  The input must be a raw stream with no header or trailer."
 msgstr ""
 
 #: ../../library/zlib.rst:158
 msgid ""
-"+24 to +31 = 16 + (8 to 15): Uses the low 4 bits of the value as the "
-"window size logarithm.  The input must include a gzip header and trailer."
+"+24 to +31 = 16 + (8 to 15): Uses the low 4 bits of the value as the window "
+"size logarithm.  The input must include a gzip header and trailer."
 msgstr ""
 
 #: ../../library/zlib.rst:162
 msgid ""
-"+40 to +47 = 32 + (8 to 15): Uses the low 4 bits of the value as the "
-"window size logarithm, and automatically accepts either the zlib or gzip "
-"format."
+"+40 to +47 = 32 + (8 to 15): Uses the low 4 bits of the value as the window "
+"size logarithm, and automatically accepts either the zlib or gzip format."
 msgstr ""
 
 #: ../../library/zlib.rst:166
 msgid ""
-"When decompressing a stream, the window size must not be smaller than the"
-" size originally used to compress the stream; using a too-small value may"
-" result in an :exc:`error` exception. The default *wbits* value "
-"corresponds to the largest window size and requires a zlib header and "
-"trailer to be included."
+"When decompressing a stream, the window size must not be smaller than the "
+"size originally used to compress the stream; using a too-small value may "
+"result in an :exc:`error` exception. The default *wbits* value corresponds "
+"to the largest window size and requires a zlib header and trailer to be "
+"included."
 msgstr ""
 
 #: ../../library/zlib.rst:172
 msgid ""
-"*bufsize* is the initial size of the buffer used to hold decompressed "
-"data.  If more space is required, the buffer size will be increased as "
-"needed, so you don't have to get this value exactly right; tuning it will"
-" only save a few calls to :c:func:`malloc`."
+"*bufsize* is the initial size of the buffer used to hold decompressed data."
+"  If more space is required, the buffer size will be increased as needed, so"
+" you don't have to get this value exactly right; tuning it will only save a "
+"few calls to :c:func:`malloc`."
 msgstr ""
 
 #: ../../library/zlib.rst:177
@@ -267,15 +310,15 @@ msgstr ""
 
 #: ../../library/zlib.rst:182
 msgid ""
-"Returns a decompression object, to be used for decompressing data streams"
-" that won't fit into memory at once."
+"Returns a decompression object, to be used for decompressing data streams "
+"that won't fit into memory at once."
 msgstr ""
 
 #: ../../library/zlib.rst:185
 msgid ""
 "The *wbits* parameter controls the size of the history buffer (or the "
-"\"window size\"), and what header and trailer format is expected.  It has"
-" the same meaning as `described for decompress() <#decompress-wbits>`__."
+"\"window size\"), and what header and trailer format is expected.  It has "
+"the same meaning as `described for decompress() <#decompress-wbits>`__."
 msgstr ""
 
 #: ../../library/zlib.rst:189
@@ -287,9 +330,9 @@ msgstr ""
 
 #: ../../library/zlib.rst:195
 msgid ""
-"If *zdict* is a mutable object (such as a :class:`bytearray`), you must "
-"not modify its contents between the call to :func:`decompressobj` and the"
-" first call to the decompressor's ``decompress()`` method."
+"If *zdict* is a mutable object (such as a :class:`bytearray`), you must not "
+"modify its contents between the call to :func:`decompressobj` and the first "
+"call to the decompressor's ``decompress()`` method."
 msgstr ""
 
 #: ../../library/zlib.rst:199
@@ -302,30 +345,30 @@ msgstr ""
 
 #: ../../library/zlib.rst:208
 msgid ""
-"Compress *data*, returning a bytes object containing compressed data for "
-"at least part of the data in *data*.  This data should be concatenated to"
-" the output produced by any preceding calls to the :meth:`compress` "
-"method.  Some input may be kept in internal buffers for later processing."
+"Compress *data*, returning a bytes object containing compressed data for at "
+"least part of the data in *data*.  This data should be concatenated to the "
+"output produced by any preceding calls to the :meth:`compress` method.  Some"
+" input may be kept in internal buffers for later processing."
 msgstr ""
 
 #: ../../library/zlib.rst:216
 msgid ""
-"All pending input is processed, and a bytes object containing the "
-"remaining compressed output is returned.  *mode* can be selected from the"
-" constants :const:`Z_NO_FLUSH`, :const:`Z_PARTIAL_FLUSH`, "
-":const:`Z_SYNC_FLUSH`, :const:`Z_FULL_FLUSH`, :const:`Z_BLOCK`, or "
-":const:`Z_FINISH`, defaulting to :const:`Z_FINISH`.  Except "
-":const:`Z_FINISH`, all constants allow compressing further bytestrings of"
-" data, while :const:`Z_FINISH` finishes the compressed stream and "
-"prevents compressing any more data.  After calling :meth:`flush` with "
-"*mode* set to :const:`Z_FINISH`, the :meth:`compress` method cannot be "
-"called again; the only realistic action is to delete the object."
+"All pending input is processed, and a bytes object containing the remaining "
+"compressed output is returned.  *mode* can be selected from the constants "
+":const:`Z_NO_FLUSH`, :const:`Z_PARTIAL_FLUSH`, :const:`Z_SYNC_FLUSH`, "
+":const:`Z_FULL_FLUSH`, :const:`Z_BLOCK`, or :const:`Z_FINISH`, defaulting to"
+" :const:`Z_FINISH`.  Except :const:`Z_FINISH`, all constants allow "
+"compressing further bytestrings of data, while :const:`Z_FINISH` finishes "
+"the compressed stream and prevents compressing any more data.  After calling"
+" :meth:`flush` with *mode* set to :const:`Z_FINISH`, the :meth:`compress` "
+"method cannot be called again; the only realistic action is to delete the "
+"object."
 msgstr ""
 
 #: ../../library/zlib.rst:229
 msgid ""
-"Returns a copy of the compression object.  This can be used to "
-"efficiently compress a set of data that share a common initial prefix."
+"Returns a copy of the compression object.  This can be used to efficiently "
+"compress a set of data that share a common initial prefix."
 msgstr ""
 
 #: ../../library/zlib.rst:233
@@ -340,8 +383,8 @@ msgstr ""
 
 #: ../../library/zlib.rst:243
 msgid ""
-"A bytes object which contains any bytes past the end of the compressed "
-"data. That is, this remains ``b\"\"`` until the last byte that contains "
+"A bytes object which contains any bytes past the end of the compressed data."
+" That is, this remains ``b\"\"`` until the last byte that contains "
 "compression data is available.  If the whole bytestring turned out to "
 "contain compressed data, this is ``b\"\"``, an empty bytes object."
 msgstr ""
@@ -349,42 +392,41 @@ msgstr ""
 #: ../../library/zlib.rst:251
 msgid ""
 "A bytes object that contains any data that was not consumed by the last "
-":meth:`decompress` call because it exceeded the limit for the "
-"uncompressed data buffer.  This data has not yet been seen by the zlib "
-"machinery, so you must feed it (possibly with further data concatenated "
-"to it) back to a subsequent :meth:`decompress` method call in order to "
-"get correct output."
+":meth:`decompress` call because it exceeded the limit for the uncompressed "
+"data buffer.  This data has not yet been seen by the zlib machinery, so you "
+"must feed it (possibly with further data concatenated to it) back to a "
+"subsequent :meth:`decompress` method call in order to get correct output."
 msgstr ""
 
 #: ../../library/zlib.rst:260
 msgid ""
-"A boolean indicating whether the end of the compressed data stream has "
-"been reached."
+"A boolean indicating whether the end of the compressed data stream has been "
+"reached."
 msgstr ""
 
 #: ../../library/zlib.rst:263
 msgid ""
-"This makes it possible to distinguish between a properly formed "
-"compressed stream, and an incomplete or truncated one."
+"This makes it possible to distinguish between a properly formed compressed "
+"stream, and an incomplete or truncated one."
 msgstr ""
 
 #: ../../library/zlib.rst:271
 msgid ""
-"Decompress *data*, returning a bytes object containing the uncompressed "
-"data corresponding to at least part of the data in *string*.  This data "
-"should be concatenated to the output produced by any preceding calls to "
-"the :meth:`decompress` method.  Some of the input data may be preserved "
-"in internal buffers for later processing."
+"Decompress *data*, returning a bytes object containing the uncompressed data"
+" corresponding to at least part of the data in *string*.  This data should "
+"be concatenated to the output produced by any preceding calls to the "
+":meth:`decompress` method.  Some of the input data may be preserved in "
+"internal buffers for later processing."
 msgstr ""
 
 #: ../../library/zlib.rst:277
 msgid ""
 "If the optional parameter *max_length* is non-zero then the return value "
 "will be no longer than *max_length*. This may mean that not all of the "
-"compressed input can be processed; and unconsumed data will be stored in "
-"the attribute :attr:`unconsumed_tail`. This bytestring must be passed to "
-"a subsequent call to :meth:`decompress` if decompression is to continue."
-"  If *max_length* is zero then the whole input is decompressed, and "
+"compressed input can be processed; and unconsumed data will be stored in the"
+" attribute :attr:`unconsumed_tail`. This bytestring must be passed to a "
+"subsequent call to :meth:`decompress` if decompression is to continue.  If "
+"*max_length* is zero then the whole input is decompressed, and "
 ":attr:`unconsumed_tail` is empty."
 msgstr ""
 
@@ -394,29 +436,28 @@ msgstr ""
 
 #: ../../library/zlib.rst:290
 msgid ""
-"All pending input is processed, and a bytes object containing the "
-"remaining uncompressed output is returned.  After calling :meth:`flush`, "
-"the :meth:`decompress` method cannot be called again; the only realistic "
-"action is to delete the object."
+"All pending input is processed, and a bytes object containing the remaining "
+"uncompressed output is returned.  After calling :meth:`flush`, the "
+":meth:`decompress` method cannot be called again; the only realistic action "
+"is to delete the object."
 msgstr ""
 
 #: ../../library/zlib.rst:295
 msgid ""
-"The optional parameter *length* sets the initial size of the output "
-"buffer."
+"The optional parameter *length* sets the initial size of the output buffer."
 msgstr ""
 
 #: ../../library/zlib.rst:300
 msgid ""
-"Returns a copy of the decompression object.  This can be used to save the"
-" state of the decompressor midway through the data stream in order to "
-"speed up random seeks into the stream at a future point."
+"Returns a copy of the decompression object.  This can be used to save the "
+"state of the decompressor midway through the data stream in order to speed "
+"up random seeks into the stream at a future point."
 msgstr ""
 
 #: ../../library/zlib.rst:305
 msgid ""
-"Added :func:`copy.copy` and :func:`copy.deepcopy` support to "
-"decompression objects."
+"Added :func:`copy.copy` and :func:`copy.deepcopy` support to decompression "
+"objects."
 msgstr ""
 
 #: ../../library/zlib.rst:310
@@ -481,8 +522,8 @@ msgstr ""
 
 #: ../../library/zlib.rst:377
 msgid ""
-"This constant is only available if Python was compiled with zlib 1.2.0.1 "
-"or greater."
+"This constant is only available if Python was compiled with zlib 1.2.0.1 or "
+"greater."
 msgstr ""
 
 #: ../../library/zlib.rst:385
@@ -491,8 +532,8 @@ msgstr ""
 
 #: ../../library/zlib.rst:387 ../../library/zlib.rst:424
 msgid ""
-"This constant is only available if Python was compiled with zlib 1.2.2.2 "
-"or greater."
+"This constant is only available if Python was compiled with zlib 1.2.2.2 or "
+"greater."
 msgstr ""
 
 #: ../../library/zlib.rst:395
@@ -505,20 +546,18 @@ msgstr ""
 
 #: ../../library/zlib.rst:407
 msgid ""
-"Flush mode ``2``. All output is flushed and the output is aligned to a "
-"byte boundary."
+"Flush mode ``2``. All output is flushed and the output is aligned to a byte "
+"boundary."
 msgstr ""
 
 #: ../../library/zlib.rst:412
 msgid ""
-"Flush mode ``3``. All output is flushed and the compression state is "
-"reset."
+"Flush mode ``3``. All output is flushed and the compression state is reset."
 msgstr ""
 
 #: ../../library/zlib.rst:417
 msgid ""
-"Flush mode ``4``. All pending input is processed, no more input is "
-"expected."
+"Flush mode ``4``. All pending input is processed, no more input is expected."
 msgstr ""
 
 #: ../../library/zlib.rst:422
@@ -527,14 +566,14 @@ msgstr ""
 
 #: ../../library/zlib.rst:432
 msgid ""
-"Flush mode ``6``, for inflate operations. Instructs inflate to return "
-"when it gets to the next deflate block boundary."
+"Flush mode ``6``, for inflate operations. Instructs inflate to return when "
+"it gets to the next deflate block boundary."
 msgstr ""
 
 #: ../../library/zlib.rst:435
 msgid ""
-"This constant is only available if Python was compiled with zlib 1.2.3.4 "
-"or greater."
+"This constant is only available if Python was compiled with zlib 1.2.3.4 or "
+"greater."
 msgstr ""
 
 #: ../../library/zlib.rst:441
@@ -551,19 +590,21 @@ msgid ""
 msgstr ""
 
 #: ../../library/zlib.rst:454
-msgid "The version string of the zlib library actually loaded by the interpreter."
+msgid ""
+"The version string of the zlib library actually loaded by the interpreter."
 msgstr ""
 
 #: ../../library/zlib.rst:461
 msgid ""
 "The version string of the zlib-ng library that was used for building the "
 "module if zlib-ng was used. When present, the :data:`ZLIB_VERSION` and "
-":data:`ZLIB_RUNTIME_VERSION` constants reflect the version of the zlib "
-"API provided by zlib-ng."
+":data:`ZLIB_RUNTIME_VERSION` constants reflect the version of the zlib API "
+"provided by zlib-ng."
 msgstr ""
 
 #: ../../library/zlib.rst:466
-msgid "If zlib-ng was not used to build the module, this constant will be absent."
+msgid ""
+"If zlib-ng was not used to build the module, this constant will be absent."
 msgstr ""
 
 #: ../../library/zlib.rst:473
@@ -610,41 +651,28 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Given the Adler-32 checksum *adler1* of"
-#~ " a sequence ``A`` and the Adler-32"
-#~ " checksum *adler2* of a sequence "
-#~ "``B`` of length *len2*, return the "
-#~ "Adler-32 checksum of ``A`` and ``B`` "
-#~ "concatenated."
+#~ "Given the Adler-32 checksum *adler1* of a sequence ``A`` and the Adler-32 "
+#~ "checksum *adler2* of a sequence ``B`` of length *len2*, return the Adler-32 "
+#~ "checksum of ``A`` and ``B`` concatenated."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "This function is typically useful to "
-#~ "combine Adler-32 checksums that were "
-#~ "concurrently computed. To compute checksums"
-#~ " sequentially, use :func:`adler32` with the"
-#~ " running checksum as the ``value`` "
-#~ "argument."
+#~ "This function is typically useful to combine Adler-32 checksums that were "
+#~ "concurrently computed. To compute checksums sequentially, use "
+#~ ":func:`adler32` with the running checksum as the ``value`` argument."
 #~ msgstr ""
 
 #~ msgid "Combine two CRC-32 checksums into one."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Given the CRC-32 checksum *crc1* of "
-#~ "a sequence ``A`` and the CRC-32 "
-#~ "checksum *crc2* of a sequence ``B`` "
-#~ "of length *len2*, return the CRC-32 "
-#~ "checksum of ``A`` and ``B`` "
-#~ "concatenated."
+#~ "Given the CRC-32 checksum *crc1* of a sequence ``A`` and the CRC-32 checksum"
+#~ " *crc2* of a sequence ``B`` of length *len2*, return the CRC-32 checksum of "
+#~ "``A`` and ``B`` concatenated."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "This function is typically useful to "
-#~ "combine CRC-32 checksums that were "
-#~ "concurrently computed. To compute checksums"
-#~ " sequentially, use :func:`crc32` with the"
-#~ " running checksum as the ``value`` "
-#~ "argument."
+#~ "This function is typically useful to combine CRC-32 checksums that were "
+#~ "concurrently computed. To compute checksums sequentially, use :func:`crc32` "
+#~ "with the running checksum as the ``value`` argument."
 #~ msgstr ""
-

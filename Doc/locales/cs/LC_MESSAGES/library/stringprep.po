@@ -11,154 +11,196 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/stringprep.rst:2
 msgid ":mod:`!stringprep` --- Internet String Preparation"
-msgstr ""
+msgstr ":mod:`!stringprep` --- Příprava internetových řetězců"
 
 #: ../../library/stringprep.rst:10
 msgid "**Source code:** :source:`Lib/stringprep.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/stringprep.py`"
 
 #: ../../library/stringprep.rst:14
 msgid ""
-"When identifying things (such as host names) in the internet, it is often"
-" necessary to compare such identifications for \"equality\". Exactly how "
-"this comparison is executed may depend on the application domain, e.g. "
-"whether it should be case-insensitive or not. It may be also necessary to"
-" restrict the possible identifications, to allow only identifications "
-"consisting of \"printable\" characters."
+"When identifying things (such as host names) in the internet, it is often "
+"necessary to compare such identifications for \"equality\". Exactly how this"
+" comparison is executed may depend on the application domain, e.g. whether "
+"it should be case-insensitive or not. It may be also necessary to restrict "
+"the possible identifications, to allow only identifications consisting of "
+"\"printable\" characters."
 msgstr ""
+"Při identifikaci věcí (například názvů hostitelů) na internetu je často "
+"nutné porovnávat takové identifikace z hlediska \"rovnosti\". Způsob, jakým "
+"se toto porovnání provádí, se může lišit v závislosti na doméně aplikace, "
+"například zda by mělo být citlivé na velikost písmen nebo ne. Může být také "
+"nutné omezit možné identifikace, aby se povolily pouze identifikace "
+"skládající se z \"tisknutelných\" znaků."
 
 #: ../../library/stringprep.rst:21
 msgid ""
 ":rfc:`3454` defines a procedure for \"preparing\" Unicode strings in "
-"internet protocols. Before passing strings onto the wire, they are "
-"processed with the preparation procedure, after which they have a certain"
-" normalized form. The RFC defines a set of tables, which can be combined "
-"into profiles. Each profile must define which tables it uses, and what "
-"other optional parts of the ``stringprep`` procedure are part of the "
-"profile. One example of a ``stringprep`` profile is ``nameprep``, which "
-"is used for internationalized domain names."
+"internet protocols. Before passing strings onto the wire, they are processed"
+" with the preparation procedure, after which they have a certain normalized "
+"form. The RFC defines a set of tables, which can be combined into profiles. "
+"Each profile must define which tables it uses, and what other optional parts"
+" of the ``stringprep`` procedure are part of the profile. One example of a "
+"``stringprep`` profile is ``nameprep``, which is used for internationalized "
+"domain names."
 msgstr ""
+":rfc:`3454` definuje proceduru pro \"přípravu\" Unicode řetězců v "
+"internetových protokolech. Před odesláním řetězců do sítě jsou zpracovány "
+"procedurou přípravy, po které mají určitou normalizovanou formu. RFC "
+"definuje sadu tabulek, které lze kombinovat do profilů. Každý profil musí "
+"definovat, které tabulky používá a jaké další volitelné části procedury "
+"``stringprep`` jsou součástí profilu. Jedním příkladem profilu "
+"``stringprep`` je ``nameprep``, který se používá pro internacionalizované "
+"názvy domén."
 
 #: ../../library/stringprep.rst:29
 msgid ""
-"The module :mod:`stringprep` only exposes the tables from :rfc:`3454`. As"
-" these tables would be very large to represent as dictionaries or lists, "
-"the module uses the Unicode character database internally. The module "
-"source code itself was generated using the ``mkstringprep.py`` utility."
+"The module :mod:`stringprep` only exposes the tables from :rfc:`3454`. As "
+"these tables would be very large to represent as dictionaries or lists, the "
+"module uses the Unicode character database internally. The module source "
+"code itself was generated using the ``mkstringprep.py`` utility."
 msgstr ""
+"Modul :mod:`stringprep` pouze zpřístupňuje tabulky z :rfc:`3454`. Protože by"
+" bylo velmi náročné reprezentovat tyto tabulky jako slovníky nebo seznamy, "
+"modul interně používá databázi Unicode znaků. Zdrojový kód modulu byl "
+"vygenerován pomocí utility ``mkstringprep.py``."
 
 #: ../../library/stringprep.rst:34
 msgid ""
-"As a result, these tables are exposed as functions, not as data "
-"structures. There are two kinds of tables in the RFC: sets and mappings. "
-"For a set, :mod:`stringprep` provides the \"characteristic function\", "
-"i.e. a function that returns ``True`` if the parameter is part of the "
-"set. For mappings, it provides the mapping function: given the key, it "
-"returns the associated value. Below is a list of all functions available "
-"in the module."
+"As a result, these tables are exposed as functions, not as data structures. "
+"There are two kinds of tables in the RFC: sets and mappings. For a set, "
+":mod:`stringprep` provides the \"characteristic function\", i.e. a function "
+"that returns ``True`` if the parameter is part of the set. For mappings, it "
+"provides the mapping function: given the key, it returns the associated "
+"value. Below is a list of all functions available in the module."
 msgstr ""
+"V důsledku toho jsou tyto tabulky zpřístupňovány jako funkce, ne jako datové"
+" struktury. V RFC existují dva druhy tabulek: množiny a mapování. Pro "
+"množinu :mod:`stringprep` poskytuje \"charakteristickou funkci\", tedy "
+"funkci, která vrátí ``True``, pokud je parametr součástí množiny. Pro "
+"mapování poskytuje mapovací funkci: vzhledem k klíču vrátí přidruženou "
+"hodnotu. Níže je seznam všech funkcí dostúpných v modulu."
 
 #: ../../library/stringprep.rst:44
 msgid ""
-"Determine whether *code* is in tableA.1 (Unassigned code points in "
-"Unicode 3.2)."
+"Determine whether *code* is in tableA.1 (Unassigned code points in Unicode "
+"3.2)."
 msgstr ""
+"Zjistě, zda je *code* v tabulce A.1 (Nepřiřazené kódové body v Unicode 3.2)."
 
 #: ../../library/stringprep.rst:49
 msgid "Determine whether *code* is in tableB.1 (Commonly mapped to nothing)."
-msgstr ""
+msgstr "Zjistě, zda je *code* v tabulce B.1 (Obecně mapováno na nic)."
 
 #: ../../library/stringprep.rst:54
 msgid ""
-"Return the mapped value for *code* according to tableB.2 (Mapping for "
-"case-folding used with NFKC)."
+"Return the mapped value for *code* according to tableB.2 (Mapping for case-"
+"folding used with NFKC)."
 msgstr ""
+"Vrátí mapovanou hodnotu pro *code* podle tabulky B.2 (Mapování pro skládání "
+"psaného písmena používané s NFKC)."
 
 #: ../../library/stringprep.rst:60
 msgid ""
-"Return the mapped value for *code* according to tableB.3 (Mapping for "
-"case-folding used with no normalization)."
+"Return the mapped value for *code* according to tableB.3 (Mapping for case-"
+"folding used with no normalization)."
 msgstr ""
+"Vrátí mapovanou hodnotu pro *code* podle tabulky B.3 (Mapování pro skládání "
+"psaného písmena používané bez normalizace)."
 
 #: ../../library/stringprep.rst:66
 msgid "Determine whether *code* is in tableC.1.1  (ASCII space characters)."
-msgstr ""
+msgstr "Zjistě, zda je *code* v tabulce C.1.1  (ASCII znaky mezery)."
 
 #: ../../library/stringprep.rst:71
-msgid "Determine whether *code* is in tableC.1.2  (Non-ASCII space characters)."
-msgstr ""
+msgid ""
+"Determine whether *code* is in tableC.1.2  (Non-ASCII space characters)."
+msgstr "Zjistě, zda je *code* v tabulce C.1.2  (Znaky mezery mimo ASCII)."
 
 #: ../../library/stringprep.rst:76
 msgid ""
-"Determine whether *code* is in tableC.1  (Space characters, union of "
-"C.1.1 and C.1.2)."
+"Determine whether *code* is in tableC.1  (Space characters, union of C.1.1 "
+"and C.1.2)."
 msgstr ""
+"Zjistě, zda je *code* v tabulce C.1  (Znaky mezery, sjednocení C.1.1 a "
+"C.1.2)."
 
 #: ../../library/stringprep.rst:82
 msgid "Determine whether *code* is in tableC.2.1  (ASCII control characters)."
-msgstr ""
+msgstr "Zjistě, zda je *code* v tabulce C.2.1  (ASCII řídicí znaky)."
 
 #: ../../library/stringprep.rst:87
-msgid "Determine whether *code* is in tableC.2.2  (Non-ASCII control characters)."
-msgstr ""
+msgid ""
+"Determine whether *code* is in tableC.2.2  (Non-ASCII control characters)."
+msgstr "Zjistě, zda je *code* v tabulce C.2.2  (Řídicí znaky mimo ASCII)."
 
 #: ../../library/stringprep.rst:92
 msgid ""
-"Determine whether *code* is in tableC.2  (Control characters, union of "
-"C.2.1 and C.2.2)."
+"Determine whether *code* is in tableC.2  (Control characters, union of C.2.1"
+" and C.2.2)."
 msgstr ""
+"Zjistě, zda je *code* v tabulce C.2  (Řídicí znaky, sjednocení C.2.1 a "
+"C.2.2)."
 
 #: ../../library/stringprep.rst:98
 msgid "Determine whether *code* is in tableC.3  (Private use)."
-msgstr ""
+msgstr "Zjistě, zda je *code* v tabulce C.3  (Soukromé použití)."
 
 #: ../../library/stringprep.rst:103
 msgid "Determine whether *code* is in tableC.4  (Non-character code points)."
 msgstr ""
+"Zjistě, zda je *code* v tabulce C.4  (Kódové body, které nejsou znaky)."
 
 #: ../../library/stringprep.rst:108
 msgid "Determine whether *code* is in tableC.5  (Surrogate codes)."
-msgstr ""
+msgstr "Zjistě, zda je *code* v tabulce C.5  (Kódy náhradních znaků)."
 
 #: ../../library/stringprep.rst:113
-msgid "Determine whether *code* is in tableC.6  (Inappropriate for plain text)."
-msgstr ""
+msgid ""
+"Determine whether *code* is in tableC.6  (Inappropriate for plain text)."
+msgstr "Zjistě, zda je *code* v tabulce C.6  (Nevhodné pro občejný text)."
 
 #: ../../library/stringprep.rst:118
 msgid ""
 "Determine whether *code* is in tableC.7  (Inappropriate for canonical "
 "representation)."
 msgstr ""
+"Zjistě, zda je *code* v tabulce C.7  (Nevhodné pro kanonické znázornění)."
 
 #: ../../library/stringprep.rst:124
 msgid ""
-"Determine whether *code* is in tableC.8  (Change display properties or "
-"are deprecated)."
+"Determine whether *code* is in tableC.8  (Change display properties or are "
+"deprecated)."
 msgstr ""
+"Zjistě, zda je *code* v tabulce C.8  (Mění vlastnosti znázornění nebo jsou "
+"zastaralé)."
 
 #: ../../library/stringprep.rst:130
 msgid "Determine whether *code* is in tableC.9  (Tagging characters)."
-msgstr ""
+msgstr "Zjistě, zda je *code* v tabulce C.9  (Značovací znaky)."
 
 #: ../../library/stringprep.rst:135
 msgid ""
 "Determine whether *code* is in tableD.1  (Characters with bidirectional "
 "property \"R\" or \"AL\")."
 msgstr ""
+"Zjistě, zda je *code* v tabulce D.1  (Znaky se dvousměrnou vlastností \"R\" "
+"nebo \"AL\")."
 
 #: ../../library/stringprep.rst:141
 msgid ""
 "Determine whether *code* is in tableD.2  (Characters with bidirectional "
 "property \"L\")."
 msgstr ""
-
+"Zjistě, zda je *code* v tabulce D.2  (Znaky se dvousměrnou vlastností "
+"\"L\")."

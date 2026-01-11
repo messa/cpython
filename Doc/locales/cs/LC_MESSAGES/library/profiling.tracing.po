@@ -11,37 +11,45 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/profiling.tracing.rst:5
 msgid ":mod:`profiling.tracing` --- Deterministic profiler"
-msgstr ""
+msgstr ":mod:`profiling.tracing` --- Deterministický profiler"
 
 #: ../../library/profiling.tracing.rst:16
 msgid "**Source code:** :source:`Lib/profiling/tracing/`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/profiling/tracing/`"
 
 #: ../../library/profiling.tracing.rst:20
 msgid ""
 "The :mod:`profiling.tracing` module provides deterministic profiling of "
 "Python programs. It monitors every function call, function return, and "
-"exception event, recording precise timing for each. This approach "
-"provides exact call counts and complete visibility into program "
-"execution, making it ideal for development and testing scenarios."
+"exception event, recording precise timing for each. This approach provides "
+"exact call counts and complete visibility into program execution, making it "
+"ideal for development and testing scenarios."
 msgstr ""
+"Modul :mod:`profiling.tracing` poskytuje deterministické profilování "
+"programů v Pythonu. Monitoruje každé volání funkce, návrat z funkce a event "
+"výjimky, přičemž zaznamenává přesný čas pro každý z nich. Tento přístup "
+"poskytuje přesné počty volání a úplný přehled o spuštění programu, takže je "
+"ideální pro scénáře vývoje a testování."
 
 #: ../../library/profiling.tracing.rst:28
 msgid ""
-"This module is also available as ``cProfile`` for backward compatibility."
-" The ``cProfile`` name will continue to work in all future Python "
-"versions. Use whichever import style suits your codebase::"
+"This module is also available as ``cProfile`` for backward compatibility. "
+"The ``cProfile`` name will continue to work in all future Python versions. "
+"Use whichever import style suits your codebase::"
 msgstr ""
+"Tento modul je také k dispozici jako ``cProfile`` pro zpětnou kompatibilitu."
+" Jméno ``cProfile`` bude pokračovat v práci ve všech budoucích verzích "
+"Pythonu. Použijte ten styl importu, který nejlépe vyhovuje vašemu kódu::"
 
 #: ../../library/profiling.tracing.rst:32
 msgid ""
@@ -53,160 +61,207 @@ msgid ""
 "import cProfile\n"
 "cProfile.run('my_function()')"
 msgstr ""
+"# Preferovaný (nový styl)\n"
+"import profiling.tracing\n"
+"profiling.tracing.run('my_function()')\n"
+"\n"
+"# Také funguje (zpětně kompatibilní)\n"
+"import cProfile\n"
+"cProfile.run('my_function()')"
 
 #: ../../library/profiling.tracing.rst:42
 msgid "What is deterministic profiling?"
-msgstr ""
+msgstr "Co je deterministické profilování?"
 
 #: ../../library/profiling.tracing.rst:44
 msgid ""
 ":dfn:`Deterministic profiling` captures every function call, function "
-"return, and exception event during program execution. The profiler "
-"measures the precise time intervals between these events, providing exact"
-" statistics about how the program behaves."
+"return, and exception event during program execution. The profiler measures "
+"the precise time intervals between these events, providing exact statistics "
+"about how the program behaves."
 msgstr ""
+":dfn:`Deterministické profilování` zaznamenaává každé volání funkce, návrat "
+"z funkce a event výjimky během běhu programu. Profiler měří přesné časové "
+"intervaly mezi těmito ereigneami a poskytuje přesné statistiky o chování "
+"programu."
 
 #: ../../library/profiling.tracing.rst:49
 msgid ""
 "In contrast to :ref:`statistical profiling <profiling-sampling>`, which "
 "samples the call stack periodically to estimate where time is spent, "
-"deterministic profiling records every event. This means you get exact "
-"call counts rather than statistical approximations. The trade-off is that"
-" instrumenting every event introduces overhead that can slow down program"
-" execution."
+"deterministic profiling records every event. This means you get exact call "
+"counts rather than statistical approximations. The trade-off is that "
+"instrumenting every event introduces overhead that can slow down program "
+"execution."
 msgstr ""
+"Na rozdíl od :ref:`statistického profilování <profiling-sampling>`, které "
+"pravidelmě vzórkùje zásobník volání pro odhad, kde se stráví čas, "
+"deterministické profilování zaznamenává každý event. To znamená, že získáte "
+"přesné počty volání místem statistických aproximací. Kompromisem je, že "
+"instrumentace každého eventu zavádí režin, který může zpomalit běh programu."
 
 #: ../../library/profiling.tracing.rst:55
 msgid ""
 "Python's interpreted nature makes deterministic profiling practical. The "
-"interpreter already dispatches events for function calls and returns, so "
-"the profiler can hook into this mechanism without requiring code "
-"modification. The overhead tends to be moderate relative to the inherent "
-"cost of interpretation, making deterministic profiling suitable for most "
-"development workflows."
+"interpreter already dispatches events for function calls and returns, so the"
+" profiler can hook into this mechanism without requiring code modification. "
+"The overhead tends to be moderate relative to the inherent cost of "
+"interpretation, making deterministic profiling suitable for most development"
+" workflows."
 msgstr ""
+"Interpretovaná povaha Pythonu dělá deterministické profilování praktické. "
+"Interpret už dispacuje eventy pro volání a návraty z funkcí, takže se "
+"profiler může napojit na tento mechanismus bez potřeby úpravy kódu. Režin "
+"bývá mírný vzhledem k inhěrentnímu nákladu interpretace, což dėlá "
+"deterministické profilování vhodném pro většinu vývojových pracovních "
+"postupů."
 
 #: ../../library/profiling.tracing.rst:61
 msgid "Deterministic profiling helps answer questions like:"
-msgstr ""
+msgstr "Deterministické profilování pomáhá odpovědět na otázky jako:"
 
 #: ../../library/profiling.tracing.rst:63
 msgid "How many times was this function called?"
-msgstr ""
+msgstr "Kolikrát byla tato funkce vyvolána?"
 
 #: ../../library/profiling.tracing.rst:64
 msgid "What is the complete call graph of my program?"
-msgstr ""
+msgstr "Jaký je úplný graf volání mého programu?"
 
 #: ../../library/profiling.tracing.rst:65
 msgid "Which functions are called by a particular function?"
-msgstr ""
+msgstr "Které funkce jsou vyvolány konkrétní funkcí?"
 
 #: ../../library/profiling.tracing.rst:66
 msgid "Are there unexpected function calls happening?"
-msgstr ""
+msgstr "Dochází k neočekávaným voláním funkcí?"
 
 #: ../../library/profiling.tracing.rst:68
 msgid ""
 "Call count statistics can identify bugs (surprising counts) and inline "
-"expansion opportunities (high call counts). Internal time statistics "
-"reveal \"hot loops\" that warrant optimization. Cumulative time "
-"statistics help identify algorithmic inefficiencies. The handling of "
-"cumulative times in this profiler allows direct comparison of recursive "
-"and iterative implementations."
+"expansion opportunities (high call counts). Internal time statistics reveal "
+"\"hot loops\" that warrant optimization. Cumulative time statistics help "
+"identify algorithmic inefficiencies. The handling of cumulative times in "
+"this profiler allows direct comparison of recursive and iterative "
+"implementations."
 msgstr ""
+"Statistiky počtu volání mohou odhalit chyby (překvapivé počty) a "
+"příležitosti pro inlining (vysoké počty volání). Statistiky interního času "
+"odhalují \"horé smyčky\", které zaslouží optimalizaci. Statistiky "
+"kumulativního času pomáhají identifikovat algoritmické neefektivnosti. "
+"Zpřacování kumulativních časů v tomto profileru umožňuje přímé srovnání "
+"rekurzivních a iteračních implementací."
 
 #: ../../library/profiling.tracing.rst:78
 msgid "Command-line interface"
-msgstr ""
+msgstr "Roz hr aní příkazové řádky"
 
 #: ../../library/profiling.tracing.rst:82
 msgid ""
-"The :mod:`profiling.tracing` module can be invoked as a script to profile"
-" another script or module:"
+"The :mod:`profiling.tracing` module can be invoked as a script to profile "
+"another script or module:"
 msgstr ""
+"Modul :mod:`profiling.tracing` lze spustit jako skript pro profilování "
+"jiného skriptu nebo modulu:"
 
 #: ../../library/profiling.tracing.rst:85
 msgid ""
-"python -m profiling.tracing [-o output_file] [-s sort_order] (-m module |"
-" script.py)"
+"python -m profiling.tracing [-o output_file] [-s sort_order] (-m module | "
+"script.py)"
 msgstr ""
+"python -m profiling.tracing [-o output_file] [-s sort_order] (-m module | "
+"script.py)"
 
 #: ../../library/profiling.tracing.rst:89
 msgid ""
-"This runs the specified script or module under the profiler and prints "
-"the results to standard output (or saves them to a file)."
+"This runs the specified script or module under the profiler and prints the "
+"results to standard output (or saves them to a file)."
 msgstr ""
+"To spustí zadáný skript nebo modul pod profilerem a vytiskne výsledky na "
+"standardní výstup (nebo je uloží do souboru)."
 
 #: ../../library/profiling.tracing.rst:94
 msgid ""
-"Write the profile results to a file instead of standard output. The "
-"output file can be read by the :mod:`pstats` module for later analysis."
+"Write the profile results to a file instead of standard output. The output "
+"file can be read by the :mod:`pstats` module for later analysis."
 msgstr ""
+"Zapište výsledky profilování do souboru místem standardního výstupu. Soubor "
+"výstupu lze následNě přečíst modulem :mod:`pstats` pro pozdejší analýzu."
 
 #: ../../library/profiling.tracing.rst:99
 msgid ""
 "Sort the output by the specified key. This accepts any of the sort keys "
 "recognized by :meth:`pstats.Stats.sort_stats`, such as ``cumulative``, "
-"``time``, ``calls``, or ``name``. This option only applies when "
-":option:`-o <profiling.tracing -o>` is not specified."
+"``time``, ``calls``, or ``name``. This option only applies when :option:`-o "
+"<profiling.tracing -o>` is not specified."
 msgstr ""
+"Seřaďuje výstup podle zadaného klíče. To přijímá kterýkoliv ze šořovacích "
+"klíčů uznávaných metodou :meth:`pstats.Stats.sort_stats`, jako například "
+"``cumulative``, ``time``, ``calls`` nebo ``name``. Tato možnost se vztahuje "
+"pouze v případě, že je zadána :option:`-o <profiling.tracing -o>`."
 
 #: ../../library/profiling.tracing.rst:106
 msgid ""
 "Profile a module instead of a script. The module is located using the "
 "standard import mechanism."
 msgstr ""
+"Profiluje modul místem skriptu. Modul se nachází pomocí standardního "
+"mechanismu importu."
 
 #: ../../library/profiling.tracing.rst:109
 msgid "The ``-m`` option for ``cProfile``."
-msgstr ""
+msgstr "Volba ``-m`` pro ``cProfile``."
 
 #: ../../library/profiling.tracing.rst:112
 msgid "The ``-m`` option for :mod:`profile`."
-msgstr ""
+msgstr "Volba ``-m`` pro :mod:`profile`."
 
 #: ../../library/profiling.tracing.rst:117
 msgid "Programmatic usage examples"
-msgstr ""
+msgstr "Příklady použití z programu"
 
 #: ../../library/profiling.tracing.rst:119
 msgid ""
 "For more control over profiling, use the module's functions and classes "
 "directly."
 msgstr ""
+"Pro větší kontrolu nad profilováním použijte přímo funkce a třídy modulu."
 
 #: ../../library/profiling.tracing.rst:124
 msgid "Basic profiling"
-msgstr ""
+msgstr "Základní profilování"
 
 #: ../../library/profiling.tracing.rst:126
 msgid "The simplest approach uses the :func:`!run` function::"
-msgstr ""
+msgstr "Nejjednodušší přístup používá funkci :func:`!run`::"
 
 #: ../../library/profiling.tracing.rst:128
 msgid ""
 "import profiling.tracing\n"
 "profiling.tracing.run('my_function()')"
 msgstr ""
+"import profiling.tracing\n"
+"profiling.tracing.run('my_function()')"
 
 #: ../../library/profiling.tracing.rst:131
 msgid ""
-"This profiles the given code string and prints a summary to standard "
-"output. To save results for later analysis::"
+"This profiles the given code string and prints a summary to standard output."
+" To save results for later analysis::"
 msgstr ""
+"To profiluje daný kód a vytiskne souhrn na standardní výstup. Chcete-li "
+"uložit výsledky pro pozdejší analýzu::"
 
 #: ../../library/profiling.tracing.rst:134
 msgid "profiling.tracing.run('my_function()', 'output.prof')"
-msgstr ""
+msgstr "profiling.tracing.run('my_function()', 'output.prof')"
 
 #: ../../library/profiling.tracing.rst:138
 msgid "Using the :class:`!Profile` class"
-msgstr ""
+msgstr "Použití třídy :class:`!Profile`"
 
 #: ../../library/profiling.tracing.rst:140
 msgid "The :class:`!Profile` class provides fine-grained control::"
-msgstr ""
+msgstr "Třída :class:`!Profile` poskytuje jemnou kontrolu::"
 
 #: ../../library/profiling.tracing.rst:142
 msgid ""
@@ -225,10 +280,24 @@ msgid ""
 "ps.print_stats()\n"
 "print(s.getvalue())"
 msgstr ""
+"import profiling.tracing\n"
+"import pstats\n"
+"from io import StringIO\n"
+"\n"
+"pr = profiling.tracing.Profile()\n"
+"pr.enable()\n"
+"# ... kód k profilování ...\n"
+"pr.disable()\n"
+"\n"
+"# Tisk výsledků\n"
+"s = StringIO()\n"
+"ps = pstats.Stats(pr, stream=s).sort_stats(pstats.SortKey.CUMULATIVE)\n"
+"ps.print_stats()\n"
+"print(s.getvalue())"
 
 #: ../../library/profiling.tracing.rst:157
 msgid "The :class:`!Profile` class also works as a context manager::"
-msgstr ""
+msgstr "Třída :class:`!Profile` také pracuje jako context manager::"
 
 #: ../../library/profiling.tracing.rst:159
 msgid ""
@@ -239,152 +308,188 @@ msgid ""
 "\n"
 "pr.print_stats()"
 msgstr ""
+"import profiling.tracing\n"
+"\n"
+"with profiling.tracing.Profile() as pr:\n"
+"    # ... kód k profilování ...\n"
+"\n"
+"pr.print_stats()"
 
 #: ../../library/profiling.tracing.rst:168
 msgid "Module reference"
-msgstr ""
+msgstr "Referenční přírůčka modulu"
 
 #: ../../library/profiling.tracing.rst:174
 msgid "Profile execution of a command and print or save the results."
-msgstr ""
+msgstr "Profiluje spuštění příkazu a vytiskne nebo uloží výsledky."
 
 #: ../../library/profiling.tracing.rst:176
 msgid ""
 "This function executes the *command* string using :func:`exec` in the "
 "``__main__`` module's namespace::"
 msgstr ""
+"Tato funkce spustí řetězec *command* pomocí :func:`exec` v oboru názvů "
+"modulu ``__main__``:"
 
 #: ../../library/profiling.tracing.rst:179
 msgid "exec(command, __main__.__dict__, __main__.__dict__)"
-msgstr ""
+msgstr "exec(command, __main__.__dict__, __main__.__dict__)"
 
 #: ../../library/profiling.tracing.rst:181
 msgid ""
-"If *filename* is not provided, the function creates a "
-":class:`pstats.Stats` instance and prints a summary to standard output. "
-"If *filename* is provided, the raw profile data is saved to that file for"
-" later analysis with :mod:`pstats`."
+"If *filename* is not provided, the function creates a :class:`pstats.Stats` "
+"instance and prints a summary to standard output. If *filename* is provided,"
+" the raw profile data is saved to that file for later analysis with "
+":mod:`pstats`."
 msgstr ""
+"Pokud není *filename* zadán, funkce vytvoří instanci :class:`pstats.Stats` a"
+" vytiskne souhrn na standardní výstup. Pokud je *filename* zadán, raw data "
+"profilování se uloží do toho souboru pro pozdejší analýzu s :mod:`pstats`."
 
 #: ../../library/profiling.tracing.rst:186
 msgid ""
-"The *sort* argument specifies the sort order for printed output, "
-"accepting any value recognized by :meth:`pstats.Stats.sort_stats`."
+"The *sort* argument specifies the sort order for printed output, accepting "
+"any value recognized by :meth:`pstats.Stats.sort_stats`."
 msgstr ""
+"Argument *sort* určuje pořadí seřazení vytisk nutého výstupu a přijímá "
+"jakoukoli hodnotu uznanou metodou :meth:`pstats.Stats.sort_stats`."
 
 #: ../../library/profiling.tracing.rst:192
 msgid "Profile execution of a command with explicit namespaces."
-msgstr ""
+msgstr "Profiluje spuštění příkazu s explicitními obory jmen."
 
 #: ../../library/profiling.tracing.rst:194
 msgid ""
-"Like :func:`run`, but executes the command with the specified *globals* "
-"and *locals* mappings instead of using the ``__main__`` module's "
-"namespace::"
+"Like :func:`run`, but executes the command with the specified *globals* and "
+"*locals* mappings instead of using the ``__main__`` module's namespace::"
 msgstr ""
+"Podobně jako :func:`run`, ale spustí příkaz se zadanými mapováními *globals*"
+" a *locals* místem použití oboru jmen modulu ``__main__``:"
 
 #: ../../library/profiling.tracing.rst:197
 msgid "exec(command, globals, locals)"
-msgstr ""
+msgstr "exec(command, globals, locals)"
 
 #: ../../library/profiling.tracing.rst:202
 msgid "A profiler object that collects execution statistics."
-msgstr ""
+msgstr "Objekt profileru, který sbírá statistiky spuštění."
 
 #: ../../library/profiling.tracing.rst:204
 msgid ""
 "The optional *timer* argument specifies a custom timing function. If not "
 "provided, the profiler uses a platform-appropriate default timer. When "
-"supplying a custom timer, it must return a single number representing the"
-" current time. If the timer returns integers, use *timeunit* to specify "
-"the duration of one time unit (for example, ``0.001`` for milliseconds)."
+"supplying a custom timer, it must return a single number representing the "
+"current time. If the timer returns integers, use *timeunit* to specify the "
+"duration of one time unit (for example, ``0.001`` for milliseconds)."
 msgstr ""
+"Volitelný argument *timer* určuje vlastní funkci časování. Pokud není zadán,"
+" profiler používá výchozí časovač vhodný pro platform. Při zadávání "
+"vlastního časovače musí vrátit jedno číslo reprezentující současný čas. "
+"Pokud časovač vrátí celá čísla, použijte *timeunit* k určení trvání jedné "
+"jednotky času (například ``0.001`` pro milisekund­)."
 
 #: ../../library/profiling.tracing.rst:210
 msgid ""
 "The *subcalls* argument controls whether the profiler tracks call "
-"relationships between functions. The *builtins* argument controls whether"
-" built-in functions are profiled."
+"relationships between functions. The *builtins* argument controls whether "
+"built-in functions are profiled."
 msgstr ""
+"Argument *subcalls* kontroluje, zda profiler sleduje vztahy volání mezi "
+"funkcemi. Argument *builtins* kontroluje, zda jsou vestavované funkce "
+"profilovyány."
 
 #: ../../library/profiling.tracing.rst:214
 msgid "Added context manager support."
-msgstr ""
+msgstr "Přidána podpora context manageru."
 
 #: ../../library/profiling.tracing.rst:219
 msgid "Start collecting profiling data."
-msgstr ""
+msgstr "Začíná sbírat data profilování."
 
 #: ../../library/profiling.tracing.rst:223
 msgid "Stop collecting profiling data."
-msgstr ""
+msgstr "Zastavuje sbor dat profilovani."
 
 #: ../../library/profiling.tracing.rst:227
 msgid ""
 "Stop collecting data and record the results internally as the current "
 "profile."
-msgstr ""
+msgstr "Zastavuje sbor dat a zaznamena vysledky interme jako aktualni profil."
 
 #: ../../library/profiling.tracing.rst:232
 msgid ""
-"Create a :class:`pstats.Stats` object from the current profile and print "
-"the results to standard output."
+"Create a :class:`pstats.Stats` object from the current profile and print the"
+" results to standard output."
 msgstr ""
+"Vytvori objekt :class:`pstats.Stats` z aktualniho profilu a vytiskne "
+"vysledky na standardni vystup."
 
 #: ../../library/profiling.tracing.rst:235
 msgid ""
-"The *sort* argument specifies the sorting order. It accepts a single key "
-"or a tuple of keys for multi-level sorting, using the same values as "
+"The *sort* argument specifies the sorting order. It accepts a single key or "
+"a tuple of keys for multi-level sorting, using the same values as "
 ":meth:`pstats.Stats.sort_stats`."
 msgstr ""
+"Argument *sort* urcuje poradi serazeni. Akceptuje jeden klic nebo n-tici "
+"klicu pro vicestupne serazeni a pouziva stejne hodnoty jako "
+":meth:`pstats.Stats.sort_stats`."
 
 #: ../../library/profiling.tracing.rst:239
 msgid "Support for a tuple of sort keys."
-msgstr ""
+msgstr "Podpora n-tice klicu serazeni."
 
 #: ../../library/profiling.tracing.rst:244
 msgid ""
 "Write the current profile data to *filename*. The file can be read by "
 ":class:`pstats.Stats` for later analysis."
 msgstr ""
+"Zapise aktualni data profilu do *filename*. Soubor lze cist tridu "
+":class:`pstats.Stats` pro pozdejsi analyzu."
 
 #: ../../library/profiling.tracing.rst:249
 msgid "Profile the command string via :func:`exec`."
-msgstr ""
+msgstr "Profiluje retezec prikazu pres :func:`exec`."
 
 #: ../../library/profiling.tracing.rst:253
-msgid "Profile the command string via :func:`exec` with the specified namespaces."
-msgstr ""
+msgid ""
+"Profile the command string via :func:`exec` with the specified namespaces."
+msgstr "Profiluje retezec prikazu pres :func:`exec` se zada nym obory jmen."
 
 #: ../../library/profiling.tracing.rst:258
 msgid "Profile a function call. Returns whatever *func* returns::"
-msgstr ""
+msgstr "Profiluje volani funkce. Vraci cokoliv *func* vraci::"
 
 #: ../../library/profiling.tracing.rst:260
 msgid "result = pr.runcall(my_function, arg1, arg2, keyword=value)"
-msgstr ""
+msgstr "result = pr.runcall(my_function, arg1, arg2, keyword=value)"
 
 #: ../../library/profiling.tracing.rst:264
 msgid ""
 "Profiling requires that the profiled code returns normally. If the "
-"interpreter terminates (for example, via :func:`sys.exit`) during "
-"profiling, no results will be available."
+"interpreter terminates (for example, via :func:`sys.exit`) during profiling,"
+" no results will be available."
 msgstr ""
+"Profilovani vyzaduje, aby profilovany kod vracio normalne. Pokud se "
+"interpret termin uje (naprklad pres :func:`sys.exit`) behem profilovani, "
+"nebudou dostupne zadne vysledky."
 
 #: ../../library/profiling.tracing.rst:270
 msgid "Using a custom timer"
-msgstr ""
+msgstr "Pouziti vlastniho casovace"
 
 #: ../../library/profiling.tracing.rst:272
 msgid ""
-"The :class:`Profile` class accepts a custom timing function, allowing you"
-" to measure different aspects of execution such as wall-clock time or CPU"
-" time. Pass the timing function to the constructor::"
+"The :class:`Profile` class accepts a custom timing function, allowing you to"
+" measure different aspects of execution such as wall-clock time or CPU time."
+" Pass the timing function to the constructor::"
 msgstr ""
+"Trida :class:`Profile` akceptuje vlastni funkci casovani, ktera vam umoznuje"
+" merit rozlicne aspekty provedeni jako naprklad cas steny nebo cas CPU. "
+"Predejte funkci casovani konstruktoru::"
 
 #: ../../library/profiling.tracing.rst:276
 msgid "pr = profiling.tracing.Profile(my_timer_function)"
-msgstr ""
+msgstr "pr = profiling.tracing.Profile(my_timer_function)"
 
 #: ../../library/profiling.tracing.rst:278
 msgid ""
@@ -392,103 +497,124 @@ msgid ""
 "time. If it returns integers, also specify *timeunit* to indicate the "
 "duration of one unit::"
 msgstr ""
+"Funkce casovace musi vratit jedno cislo reprezentujici soucasny cas. Pokud "
+"vraci cela cisla, urcete take *timeunit* pro oznaceni trvani jedne "
+"jednotky::"
 
 #: ../../library/profiling.tracing.rst:282
 msgid ""
 "# Timer returns time in milliseconds\n"
 "pr = profiling.tracing.Profile(my_ms_timer, 0.001)"
 msgstr ""
+"# Casovac vraci cas v milisekundach\n"
+"pr = profiling.tracing.Profile(my_ms_timer, 0.001)"
 
 #: ../../library/profiling.tracing.rst:285
 msgid ""
-"For best performance, the timer function should be as fast as possible. "
-"The profiler calls it frequently, so timer overhead directly affects "
-"profiling overhead."
+"For best performance, the timer function should be as fast as possible. The "
+"profiler calls it frequently, so timer overhead directly affects profiling "
+"overhead."
 msgstr ""
+"Pro nejlepsi vykona je funkce casovace by mela byt co nejrychlejsi. Profiler"
+" ji vola casto, takze rezije casovace primo ovlivnuje reziji profilovani."
 
 #: ../../library/profiling.tracing.rst:289
 msgid ""
-"The :mod:`time` module provides several functions suitable for use as "
-"custom timers:"
+"The :mod:`time` module provides several functions suitable for use as custom"
+" timers:"
 msgstr ""
+"Modul :mod:`time` poskytuje nektere funkce vhodne pro pouziti jako vlastni "
+"casovace:"
 
 #: ../../library/profiling.tracing.rst:292
 msgid ":func:`time.perf_counter` for high-resolution wall-clock time"
-msgstr ""
+msgstr ":func:`time.perf_counter` pro vysoko-rezolucni cas steny"
 
 #: ../../library/profiling.tracing.rst:293
 msgid ":func:`time.process_time` for CPU time (excluding sleep)"
-msgstr ""
+msgstr ":func:`time.process_time` pro cas CPU (vyjma spanku)"
 
 #: ../../library/profiling.tracing.rst:294
 msgid ":func:`time.monotonic` for monotonic clock time"
-msgstr ""
+msgstr ":func:`time.monotonic` pro monotonni cas hodin"
 
 #: ../../library/profiling.tracing.rst:298
 msgid "Limitations"
-msgstr ""
+msgstr "Omezeni"
 
 #: ../../library/profiling.tracing.rst:300
 msgid ""
-"Deterministic profiling has inherent limitations related to timing "
-"accuracy."
+"Deterministic profiling has inherent limitations related to timing accuracy."
 msgstr ""
+"Deterministicke profilovani ma inherentni omezeni souvisejici s presnosti "
+"casovani."
 
 #: ../../library/profiling.tracing.rst:302
 msgid ""
-"The underlying timer typically has a resolution of about one millisecond."
-" Measurements cannot be more accurate than this resolution. With enough "
-"measurements, timing errors tend to average out, but individual "
-"measurements may be imprecise."
+"The underlying timer typically has a resolution of about one millisecond. "
+"Measurements cannot be more accurate than this resolution. With enough "
+"measurements, timing errors tend to average out, but individual measurements"
+" may be imprecise."
 msgstr ""
+"Podkladovy casovac ma typicky rozliseni asi jedne milisekund y. Mereni "
+"nemohou byt presnejsi nez toto rozliseni. S dostatem mereni, casove chyby "
+"maji tendenci se vyvazovat, ale jednotliva mereni mohou byt nepresna."
 
 #: ../../library/profiling.tracing.rst:307
 msgid ""
 "There is also latency between when an event occurs and when the profiler "
 "captures the timestamp. Similarly, there is latency after reading the "
-"timestamp before user code resumes. Functions called frequently "
-"accumulate this latency, which can make them appear slower than they "
-"actually are. This error is typically less than one clock tick per call "
-"but can become significant for functions called many times."
+"timestamp before user code resumes. Functions called frequently accumulate "
+"this latency, which can make them appear slower than they actually are. This"
+" error is typically less than one clock tick per call but can become "
+"significant for functions called many times."
 msgstr ""
+"Existuje take latence mezi tim, kdy se event vyskytne a kdy profiler zaznam "
+"ena cas. Podobne existuje latence po precteni casovace nez pokracuje "
+"uzivatelsky kod. Funkce volane casto akumuluji tuto latenci, coz je muze "
+"cinit pomaleji nez opravdu jsou. Tato chyba je typicky mensi nez jeden "
+"hodinovy tik na volani, ale muze se stat vyznamna pro funkce volane mnoha "
+"krat."
 
 #: ../../library/profiling.tracing.rst:314
 msgid ""
 "The :mod:`profiling.tracing` module (and its ``cProfile`` alias) is "
-"implemented as a C extension with low overhead, so these timing issues "
-"are less pronounced than with the deprecated pure Python :mod:`profile` "
-"module."
+"implemented as a C extension with low overhead, so these timing issues are "
+"less pronounced than with the deprecated pure Python :mod:`profile` module."
 msgstr ""
+"Modul :mod:`profiling.tracing` (a jeho alias ``cProfile``) je implementovan "
+"jako C rozsireni s niskym rezijim, takze tyto problemy s casovanim jsou mene"
+" vyznamne nez u zastaraleho cistera pythonoveho modulu :mod:`profile`."
 
 #: ../../library/profiling.tracing.rst:321
 msgid ":mod:`profiling`"
-msgstr ""
+msgstr ":mod:`profiling`"
 
 #: ../../library/profiling.tracing.rst:322
-msgid "Overview of Python profiling tools and guidance on choosing a profiler."
-msgstr ""
+msgid ""
+"Overview of Python profiling tools and guidance on choosing a profiler."
+msgstr "Prehled nastroju profilovani Pythonu a pruvodce volbou profileru."
 
 #: ../../library/profiling.tracing.rst:324
 msgid ":mod:`profiling.sampling`"
-msgstr ""
+msgstr ":mod:`profiling.sampling`"
 
 #: ../../library/profiling.tracing.rst:325
 msgid "Statistical sampling profiler for production use."
-msgstr ""
+msgstr "Statisticky vzorkovaci profiler pro pouziti v produkcni prostredie."
 
 #: ../../library/profiling.tracing.rst:327
 msgid ":mod:`pstats`"
-msgstr ""
+msgstr ":mod:`pstats`"
 
 #: ../../library/profiling.tracing.rst:328
 msgid "Statistics analysis and formatting for profile data."
-msgstr ""
+msgstr "Analyza statistik a formatovani pro data profilovani."
 
 #: ../../library/profiling.tracing.rst:330
 msgid ":mod:`profile`"
-msgstr ""
+msgstr ":mod:`profile`"
 
 #: ../../library/profiling.tracing.rst:331
 msgid "Deprecated pure Python profiler (includes calibration documentation)."
-msgstr ""
-
+msgstr "Zastaraly cisti pythonovy profiler (zahrnuje dokumentaci kalibraci)."

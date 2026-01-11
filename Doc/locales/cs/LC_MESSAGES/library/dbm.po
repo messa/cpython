@@ -11,157 +11,187 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/dbm.rst:2
 msgid ":mod:`!dbm` --- Interfaces to Unix \"databases\""
-msgstr ""
+msgstr ":mod:`!dbm` --- Rozhraní k Unix \"databázím\""
 
 #: ../../library/dbm.rst:7
 msgid "**Source code:** :source:`Lib/dbm/__init__.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/dbm/__init__.py`"
 
 #: ../../library/dbm.rst:11
 msgid ":mod:`dbm` is a generic interface to variants of the DBM database:"
-msgstr ""
+msgstr ":mod:`dbm` je generické rozhraní k variantám DBM databází:"
 
 #: ../../library/dbm.rst:13
 msgid ":mod:`dbm.sqlite3`"
-msgstr ""
+msgstr ":mod:`dbm.sqlite3`"
 
 #: ../../library/dbm.rst:14
 msgid ":mod:`dbm.gnu`"
-msgstr ""
+msgstr ":mod:`dbm.gnu`"
 
 #: ../../library/dbm.rst:15
 msgid ":mod:`dbm.ndbm`"
-msgstr ""
+msgstr ":mod:`dbm.ndbm`"
 
 #: ../../library/dbm.rst:17
 msgid ""
-"If none of these modules are installed, the slow-but-simple "
-"implementation in module :mod:`dbm.dumb` will be used.  There is a `third"
-" party interface <https://www.jcea.es/programacion/pybsddb.htm>`_ to the "
-"Oracle Berkeley DB."
+"If none of these modules are installed, the slow-but-simple implementation "
+"in module :mod:`dbm.dumb` will be used.  There is a `third party interface "
+"<https://www.jcea.es/programacion/pybsddb.htm>`_ to the Oracle Berkeley DB."
 msgstr ""
+"Pokud není nainstalován žádný z těchto modulů, bude použita pomalá, ale "
+"jednoduchá implementace v modulu :mod:`dbm.dumb`. Existuje `rozhraní třetí "
+"strany <https://www.jcea.es/programacion/pybsddb.htm>`_ k Oracle Berkeley "
+"DB."
 
 #: ../../library/dbm.rst:24
 msgid ""
 "A tuple containing the exceptions that can be raised by each of the "
-"supported modules, with a unique exception also named :exc:`dbm.error` as"
-" the first item --- the latter is used when :exc:`dbm.error` is raised."
+"supported modules, with a unique exception also named :exc:`dbm.error` as "
+"the first item --- the latter is used when :exc:`dbm.error` is raised."
 msgstr ""
+"Tuple obsahující výjimky, které mohou být vyvolány každým z podporovaných "
+"modulů, s jedinečnou výjimkou nazvanou také :exc:`dbm.error` jako první "
+"položka --- ta se používá, když je vyvolána :exc:`dbm.error`."
 
 #: ../../library/dbm.rst:31
 msgid ""
-"This function attempts to guess which of the several simple database "
-"modules available --- :mod:`dbm.sqlite3`, :mod:`dbm.gnu`, "
-":mod:`dbm.ndbm`, or :mod:`dbm.dumb` --- should be used to open a given "
-"file."
+"This function attempts to guess which of the several simple database modules"
+" available --- :mod:`dbm.sqlite3`, :mod:`dbm.gnu`, :mod:`dbm.ndbm`, or "
+":mod:`dbm.dumb` --- should be used to open a given file."
 msgstr ""
+"Tato funkce se pokouší určit, který z několika jednoduchých databázových "
+"modulů --- :mod:`dbm.sqlite3`, :mod:`dbm.gnu`, :mod:`dbm.ndbm` nebo "
+":mod:`dbm.dumb` --- by měl být použit k otevření daného souboru."
 
 #: ../../library/dbm.rst:35
 msgid "Return one of the following values:"
-msgstr ""
+msgstr "Vrací jednu z následujících hodnot:"
 
 #: ../../library/dbm.rst:37
 msgid ""
 "``None`` if the file can't be opened because it's unreadable or doesn't "
 "exist"
 msgstr ""
+"``None``, pokud soubor nelze otevřít, protože je nečitelný nebo neexistuje"
 
 #: ../../library/dbm.rst:38
 msgid "the empty string (``''``) if the file's format can't be guessed"
-msgstr ""
+msgstr "prázdný řetězec (``''``), pokud nelze určit formát souboru"
 
 #: ../../library/dbm.rst:39
 msgid ""
 "a string containing the required module name, such as ``'dbm.ndbm'`` or "
 "``'dbm.gnu'``"
 msgstr ""
+"řetězec obsahující požadovaný název modulu, například ``'dbm.ndbm'`` nebo "
+"``'dbm.gnu'``"
 
-#: ../../library/dbm.rst:41 ../../library/dbm.rst:270 ../../library/dbm.rst:471
+#: ../../library/dbm.rst:41 ../../library/dbm.rst:270
+#: ../../library/dbm.rst:471
 msgid "*filename* accepts a :term:`path-like object`."
-msgstr ""
+msgstr "*filename* přijímá :term:`path-like object`."
 
 #: ../../library/dbm.rst:65
 msgid "Open a database and return the corresponding database object."
-msgstr ""
+msgstr "Otevře databázi a vrátí odpovídající objekt databáze."
 
 #: ../../library/dbm.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Parametry"
 
 #: ../../library/dbm.rst:67
 msgid ""
 "The database file to open.  If the database file already exists, the "
-":func:`whichdb` function is used to determine its type and the "
-"appropriate module is used; if it does not exist, the first submodule "
-"listed above that can be imported is used."
+":func:`whichdb` function is used to determine its type and the appropriate "
+"module is used; if it does not exist, the first submodule listed above that "
+"can be imported is used."
 msgstr ""
+"Soubor databáze, který se má otevřít. Pokud soubor databáze již existuje, je"
+" funkce :func:`whichdb` použita k určení jeho typu a je použit příslušný "
+"modul; pokud neexistuje, je použit první z výše uvedených podmodulů, který "
+"lze importovat."
 
 #: ../../library/dbm.rst:68 ../../library/dbm.rst:242
 msgid "The database file to open."
-msgstr ""
+msgstr "Soubor databáze, který se má otevřít."
 
 #: ../../library/dbm.rst:70
 msgid ""
-"If the database file already exists, the :func:`whichdb` function is used"
-" to determine its type and the appropriate module is used; if it does not"
-" exist, the first submodule listed above that can be imported is used."
+"If the database file already exists, the :func:`whichdb` function is used to"
+" determine its type and the appropriate module is used; if it does not "
+"exist, the first submodule listed above that can be imported is used."
 msgstr ""
+"Pokud soubor databáze již existuje, je funkce :func:`whichdb` použita k "
+"určení jeho typu a je použit příslušný modul; pokud neexistuje, je použit "
+"první z výše uvedených podmodulů, který lze importovat."
 
-#: ../../library/dbm.rst:75 ../../library/dbm.rst:182 ../../library/dbm.rst:374
+#: ../../library/dbm.rst:75 ../../library/dbm.rst:182
+#: ../../library/dbm.rst:374
 msgid ""
 "* ``'r'`` (default): |flag_r| * ``'w'``: |flag_w| * ``'c'``: |flag_c| * "
 "``'n'``: |flag_n|"
 msgstr ""
+"* ``'r'`` (výchozí): |flag_r| * ``'w'``: |flag_w| * ``'c'``: |flag_c| * "
+"``'n'``: |flag_n|"
 
-#: ../../library/dbm.rst:76 ../../library/dbm.rst:184 ../../library/dbm.rst:247
-#: ../../library/dbm.rst:375
+#: ../../library/dbm.rst:76 ../../library/dbm.rst:184
+#: ../../library/dbm.rst:247 ../../library/dbm.rst:375
 msgid "``'r'`` (default): |flag_r|"
-msgstr ""
+msgstr "``'r'`` (výchozí): |flag_r|"
 
-#: ../../library/dbm.rst:77 ../../library/dbm.rst:185 ../../library/dbm.rst:248
-#: ../../library/dbm.rst:376 ../../library/dbm.rst:452
+#: ../../library/dbm.rst:77 ../../library/dbm.rst:185
+#: ../../library/dbm.rst:248 ../../library/dbm.rst:376
+#: ../../library/dbm.rst:452
 msgid "``'w'``: |flag_w|"
-msgstr ""
+msgstr "``'w'``: |flag_w|"
 
-#: ../../library/dbm.rst:78 ../../library/dbm.rst:186 ../../library/dbm.rst:249
-#: ../../library/dbm.rst:377
+#: ../../library/dbm.rst:78 ../../library/dbm.rst:186
+#: ../../library/dbm.rst:249 ../../library/dbm.rst:377
 msgid "``'c'``: |flag_c|"
-msgstr ""
+msgstr "``'c'``: |flag_c|"
 
-#: ../../library/dbm.rst:79 ../../library/dbm.rst:187 ../../library/dbm.rst:250
-#: ../../library/dbm.rst:378 ../../library/dbm.rst:454
+#: ../../library/dbm.rst:79 ../../library/dbm.rst:187
+#: ../../library/dbm.rst:250 ../../library/dbm.rst:378
+#: ../../library/dbm.rst:454
 msgid "``'n'``: |flag_n|"
-msgstr ""
+msgstr "``'n'``: |flag_n|"
 
-#: ../../library/dbm.rst:81 ../../library/dbm.rst:264 ../../library/dbm.rst:380
-#: ../../library/dbm.rst:456
+#: ../../library/dbm.rst:81 ../../library/dbm.rst:264
+#: ../../library/dbm.rst:380 ../../library/dbm.rst:456
 msgid "|mode_param_doc|"
-msgstr ""
+msgstr "|mode_param_doc|"
 
 #: ../../library/dbm.rst:84
 msgid "*file* accepts a :term:`path-like object`."
-msgstr ""
+msgstr "*file* přijímá :term:`path-like object`."
 
 #: ../../library/dbm.rst:87
 msgid ""
-"The object returned by :func:`~dbm.open` supports the basic functionality"
-" of mutable :term:`mappings <mapping>`; keys and their corresponding "
-"values can be stored, retrieved, and deleted, and iteration, the "
-":keyword:`in` operator and methods :meth:`!keys`, :meth:`!get`, "
-":meth:`!setdefault` and :meth:`!clear` are available. The :meth:`!keys` "
-"method returns a list instead of a view object. The :meth:`!setdefault` "
-"method requires two arguments."
+"The object returned by :func:`~dbm.open` supports the basic functionality of"
+" mutable :term:`mappings <mapping>`; keys and their corresponding values can"
+" be stored, retrieved, and deleted, and iteration, the :keyword:`in` "
+"operator and methods :meth:`!keys`, :meth:`!get`, :meth:`!setdefault` and "
+":meth:`!clear` are available. The :meth:`!keys` method returns a list "
+"instead of a view object. The :meth:`!setdefault` method requires two "
+"arguments."
 msgstr ""
+"Objekt vrácený funkcí :func:`~dbm.open` podporuje základní funkcionalitu "
+"mutable :term:`mapování <mapping>`; klíče a jejich odpovídající hodnoty lze "
+"ukládat, načítávat a mazát, a iterace, klíčové slovo :keyword:`in` a metody "
+":meth:`!keys`, :meth:`!get`, :meth:`!setdefault` a :meth:`!clear` jsou k "
+"dispozici. Metoda :meth:`!keys` vrací seznam místo objektu view. Metoda "
+":meth:`!setdefault` vyžaduje dva argumenty."
 
 #: ../../library/dbm.rst:95
 msgid ""
@@ -169,40 +199,54 @@ msgid ""
 "strings are used they are implicitly converted to the default encoding "
 "before being stored."
 msgstr ""
+"Klíče a hodnoty jsou vždy ukládány jako :class:`bytes`. To znamená, že když "
+"jsou používány řetězce, jsou implicitně převedený na výchozí kódování před "
+"jejich uložením."
 
 #: ../../library/dbm.rst:99
 msgid ""
-"These objects also support being used in a :keyword:`with` statement, "
-"which will automatically close them when done."
+"These objects also support being used in a :keyword:`with` statement, which "
+"will automatically close them when done."
 msgstr ""
+"Tyto objekty také podporují použití v příkazu :keyword:`with`, který je "
+"automaticky zavře, když jsou hotovy."
 
 #: ../../library/dbm.rst:102
 msgid ""
 ":meth:`!get` and :meth:`!setdefault` methods are now available for all "
 ":mod:`dbm` backends."
 msgstr ""
+"Metody :meth:`!get` a :meth:`!setdefault` jsou nyní k dispozici pro všechny "
+":mod:`dbm` backendy."
 
 #: ../../library/dbm.rst:106
 msgid ""
 "Added native support for the context management protocol to the objects "
 "returned by :func:`~dbm.open`."
 msgstr ""
+"Přidána nativní podpora pro protokol správy kontextu k objektům vráceným "
+"funkcí :func:`~dbm.open`."
 
 #: ../../library/dbm.rst:110
 msgid ""
-"Deleting a key from a read-only database raises a database module "
-"specific exception instead of :exc:`KeyError`."
+"Deleting a key from a read-only database raises a database module specific "
+"exception instead of :exc:`KeyError`."
 msgstr ""
+"Mazání klíče z databáze pouze pro čtení vyvolá specifickou výjimku "
+"databázového modulu místo :exc:`KeyError`."
 
 #: ../../library/dbm.rst:114
 msgid ":meth:`!clear` methods are now available for all :mod:`dbm` backends."
 msgstr ""
+"Metody :meth:`!clear` jsou nyní k dispozici pro všechny :mod:`dbm` backendy."
 
 #: ../../library/dbm.rst:118
 msgid ""
-"The following example records some hostnames and a corresponding title,  "
-"and then prints out the contents of the database::"
+"The following example records some hostnames and a corresponding title,  and"
+" then prints out the contents of the database::"
 msgstr ""
+"Následující příkéklad zaznamenává některé názvy počítačů a odpovídající "
+"název, a poté vytisknout obsah databáze::"
 
 #: ../../library/dbm.rst:121
 msgid ""
@@ -230,101 +274,144 @@ msgid ""
 "\n"
 "# db is automatically closed when leaving the with statement."
 msgstr ""
+"import dbm\n"
+"\n"
+"# Otevřete databázi, vytvoříte ji, pokud je to nutné.\n"
+"with dbm.open('cache', 'c') as db:\n"
+"\n"
+"    # Zaznamenejte některé hodnoty\n"
+"    db[b'hello'] = b'there'\n"
+"    db['www.python.org'] = 'Python Website'\n"
+"    db['www.cnn.com'] = 'Cable News Network'\n"
+"\n"
+"    # Upozornějeme, že klíče jsou nyní považovány za bytes.\n"
+"    assert db[b'www.python.org'] == b'Python Website'\n"
+"    # Všimněte si, jak je hodnota nyní v bytes.\n"
+"    assert db['www.cnn.com'] == b'Cable News Network'\n"
+"\n"
+"    # Často používané metody rozhraní dict také pracují.\n"
+"    print(db.get('python.org', b'not present'))\n"
+"\n"
+"    # Uložení ne-stringového klíče nebo hodnoty vyvolá výjimku (s nejvynamšíím\n"
+"    # pravděpodobností TypeError).\n"
+"    db['www.yahoo.com'] = 4\n"
+"\n"
+"# db je automaticky zavřen při opuftení příkazu with."
 
 #: ../../library/dbm.rst:148
 msgid "Module :mod:`shelve`"
-msgstr ""
+msgstr "Modul :mod:`shelve`"
 
 #: ../../library/dbm.rst:149
 msgid "Persistence module which stores non-string data."
-msgstr ""
+msgstr "Modul persistánčnũ prvků, který ukládá data, která nejsou řetězci."
 
 #: ../../library/dbm.rst:152
 msgid "The individual submodules are described in the following sections."
-msgstr ""
+msgstr "Jednotlivé submodulyě jsou popsány v následujících částech."
 
 #: ../../library/dbm.rst:155
 msgid ":mod:`dbm.sqlite3` --- SQLite backend for dbm"
-msgstr ""
+msgstr ":mod:`dbm.sqlite3` --- SQLite backend pro dbm"
 
 #: ../../library/dbm.rst:163
 msgid "**Source code:** :source:`Lib/dbm/sqlite3.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/dbm/sqlite3.py`"
 
 #: ../../library/dbm.rst:167
 msgid ""
-"This module uses the standard library :mod:`sqlite3` module to provide an"
-" SQLite backend for the :mod:`dbm` module. The files created by "
-":mod:`dbm.sqlite3` can thus be opened by :mod:`sqlite3`, or any other "
-"SQLite browser, including the SQLite CLI."
+"This module uses the standard library :mod:`sqlite3` module to provide an "
+"SQLite backend for the :mod:`dbm` module. The files created by "
+":mod:`dbm.sqlite3` can thus be opened by :mod:`sqlite3`, or any other SQLite"
+" browser, including the SQLite CLI."
 msgstr ""
+"Tento modul používá standartní knihovny :mod:`sqlite3` modul k poskytnutí "
+"SQLite backendu pro modul :mod:`dbm`. Soubory vytvořené :mod:`dbm.sqlite3` "
+"mohou být také otevřeny :mod:`sqlite3` nebo libovolnou jinou prohledečkou "
+"SQLite, včetně SQLite CLI."
 
-#: ../../includes/wasm-mobile-notavail.rst:3 ../../includes/wasm-notavail.rst:3
+#: ../../includes/wasm-mobile-notavail.rst:3
+#: ../../includes/wasm-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-notavail.rst:5
 msgid ""
-"This module does not work or is not available on WebAssembly. See :ref"
-":`wasm-availability` for more information."
+"This module does not work or is not available on WebAssembly. See "
+":ref:`wasm-availability` for more information."
 msgstr ""
+"Tento modul nefunguje nebo není k dispozici na WebAssembly. Další informace "
+"naleznete v :ref:`wasm-availability`."
 
 #: ../../library/dbm.rst:176
 msgid "Open an SQLite database."
-msgstr ""
+msgstr "Otevře SQLite databázi."
 
 #: ../../library/dbm.rst:178
 msgid "The path to the database to be opened."
-msgstr ""
+msgstr "Cesta k databázi, kterou se má otevřít."
 
 #: ../../library/dbm.rst:189
 msgid ""
-"The Unix file access mode of the file (default: octal ``0o666``), used "
-"only when the database has to be created."
+"The Unix file access mode of the file (default: octal ``0o666``), used only "
+"when the database has to be created."
 msgstr ""
+"Unixový přístupový režim souboru (výchozí: oktalové ``0o666``), použitý "
+"pouze při vytváření databáze."
 
 #: ../../library/dbm.rst:193
 msgid ""
-"The returned database object behaves similar to a mutable "
-":term:`mapping`, but the :meth:`!keys` method returns a list, and the "
-":meth:`!setdefault` method requires two arguments. It also supports a "
-"\"closing\" context manager via the :keyword:`with` keyword."
+"The returned database object behaves similar to a mutable :term:`mapping`, "
+"but the :meth:`!keys` method returns a list, and the :meth:`!setdefault` "
+"method requires two arguments. It also supports a \"closing\" context "
+"manager via the :keyword:`with` keyword."
 msgstr ""
+"Vrácený objekt databáze se chová podobně jako mutable :term:`mapping`, ale "
+"metoda :meth:`!keys` vrací seznam a metoda :meth:`!setdefault` vyžaduje dva "
+"argumenty. Podporuje také \"closing\" context manager prostřednictvím "
+"klíčového slova :keyword:`with`."
 
 #: ../../library/dbm.rst:198 ../../library/dbm.rst:399
 msgid "The following method is also provided:"
-msgstr ""
+msgstr "Je poskytnutá také následující metoda:"
 
 #: ../../library/dbm.rst:202
 msgid "Close the SQLite database."
-msgstr ""
+msgstr "Zavře SQLite databázi."
 
 #: ../../library/dbm.rst:206
 msgid ":mod:`dbm.gnu` --- GNU database manager"
-msgstr ""
+msgstr ":mod:`dbm.gnu` --- GNU správce databází"
 
 #: ../../library/dbm.rst:212
 msgid "**Source code:** :source:`Lib/dbm/gnu.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/dbm/gnu.py`"
 
 #: ../../library/dbm.rst:216
 msgid ""
 "The :mod:`dbm.gnu` module provides an interface to the :abbr:`GDBM (GNU "
-"dbm)` library, similar to the :mod:`dbm.ndbm` module, but with additional"
-" functionality like crash tolerance."
+"dbm)` library, similar to the :mod:`dbm.ndbm` module, but with additional "
+"functionality like crash tolerance."
 msgstr ""
+"Modul :mod:`dbm.gnu` poskytuje rozhraní k :abbr:`GDBM (GNU dbm)` knihovně, "
+"podobně jako modul :mod:`dbm.ndbm`, ale s další funkcionalitou jako odolnost"
+" proti séhavandí."
 
 #: ../../library/dbm.rst:222 ../../library/dbm.rst:342
 msgid ""
 "The file formats created by :mod:`dbm.gnu` and :mod:`dbm.ndbm` are "
 "incompatible and can not be used interchangeably."
 msgstr ""
+"Formáty souborů vytvořené :mod:`dbm.gnu` a :mod:`dbm.ndbm` jsou "
+"nekompatibilní a nemohou být zaměnřovány."
 
 #: ../../includes/wasm-mobile-notavail.rst:5
 msgid ""
 "This module is not supported on :ref:`mobile platforms <mobile-"
 "availability>` or :ref:`WebAssembly platforms <wasm-availability>`."
 msgstr ""
+"Tento modul není podporován na :ref:`mobilních platformach <mobile-"
+"availability>` nebo :ref:`WebAssembly platformách <wasm-availability>`."
 
 #: ../../library/dbm.rst:229
 msgid ""
@@ -332,105 +419,133 @@ msgid ""
 ":exc:`KeyError` is raised for general mapping errors like specifying an "
 "incorrect key."
 msgstr ""
+"Vyvolána na :mod:`dbm.gnu`-specifických chybách, jako je I/O chyba. "
+":exc:`KeyError` je vyvolána pro obecné mapování chyby jako je zadání "
+"nesprávného klíče."
 
 #: ../../library/dbm.rst:235
 msgid ""
 "A string of characters the *flag* parameter of :meth:`~dbm.gnu.open` "
 "supports."
-msgstr ""
+msgstr "Řetězec znaků, které parametr *flag* :meth:`~dbm.gnu.open` podporuje."
 
 #: ../../library/dbm.rst:240
 msgid "Open a GDBM database and return a :class:`!gdbm` object."
-msgstr ""
+msgstr "Otevře GDBM databázi a vrátí objekt :class:`!gdbm`."
 
 #: ../../library/dbm.rst:246
 msgid ""
 "* ``'r'`` (default): |flag_r| * ``'w'``: |flag_w| * ``'c'``: |flag_c| * "
-"``'n'``: |flag_n|  The following additional characters may be appended to"
-" control how the database is opened:  * ``'f'``: Open the database in "
-"fast mode.   Writes to the database will not be synchronized. * ``'s'``: "
-"Synchronized mode.   Changes to the database will be written immediately "
-"to the file. * ``'u'``: Do not lock database.  Not all flags are valid "
-"for all versions of GDBM. See the :data:`open_flags` member for a list of"
-" supported flag characters."
+"``'n'``: |flag_n|  The following additional characters may be appended to "
+"control how the database is opened:  * ``'f'``: Open the database in fast "
+"mode.   Writes to the database will not be synchronized. * ``'s'``: "
+"Synchronized mode.   Changes to the database will be written immediately to "
+"the file. * ``'u'``: Do not lock database.  Not all flags are valid for all "
+"versions of GDBM. See the :data:`open_flags` member for a list of supported "
+"flag characters."
 msgstr ""
+"* ``'r'`` (výchozí): |flag_r| * ``'w'``: |flag_w| * ``'c'``: |flag_c| * "
+"``'n'``: |flag_n|  Následující další znaky mohou být přidány k řízení "
+"otevření databáze:  * ``'f'``: Otevřete databázi v rychlém režimu. Zápisy do"
+" databáze nebudou synchronizovány. * ``'s'``: Synchronizovaný režim. Změny v"
+" databázi budou okamžitě zapsány do souboru. * ``'u'``: Nezámykejte "
+"databázi. Ne všechny příznak jsou platné pro všechny verze GDBM. V seznamu "
+"podporovaných znaků příznaků naleznete v členu :data:`open_flags`."
 
 #: ../../library/dbm.rst:252
 msgid ""
 "The following additional characters may be appended to control how the "
 "database is opened:"
-msgstr ""
+msgstr "Následující další znaky mohou být přidány k řízení otevření databáze:"
 
 #: ../../library/dbm.rst:255
 msgid ""
-"``'f'``: Open the database in fast mode. Writes to the database will not "
-"be synchronized."
+"``'f'``: Open the database in fast mode. Writes to the database will not be "
+"synchronized."
 msgstr ""
+"``'f'``: Otevřete databázi v rychlém režimu. Zápisy do databáze nebudou "
+"synchronizovány."
 
 #: ../../library/dbm.rst:257
 msgid ""
 "``'s'``: Synchronized mode. Changes to the database will be written "
 "immediately to the file."
 msgstr ""
+"``'s'``: Synchronizovaný režim. Změny v databázi budou okamžitě zapsány do "
+"souboru."
 
 #: ../../library/dbm.rst:259
 msgid "``'u'``: Do not lock database."
-msgstr ""
+msgstr "``'u'``: Nezámykejte databázi."
 
 #: ../../library/dbm.rst:261
 msgid ""
-"Not all flags are valid for all versions of GDBM. See the "
-":data:`open_flags` member for a list of supported flag characters."
+"Not all flags are valid for all versions of GDBM. See the :data:`open_flags`"
+" member for a list of supported flag characters."
 msgstr ""
+"Ne všechny příznak jsou platné pro všechny verze GDBM. V seznamu "
+"podporovaných znaků příznaků naleznete v členu :data:`open_flags`."
 
 #: ../../library/dbm.rst
 msgid "Raises"
-msgstr ""
+msgstr "Vyvolá"
 
 #: ../../library/dbm.rst:267
 msgid "If an invalid *flag* argument is passed."
-msgstr ""
+msgstr "Pokud je předán neplatný argument *flag*."
 
 #: ../../library/dbm.rst:273
 msgid ""
-":class:`!gdbm` objects behave similar to mutable :term:`mappings "
-"<mapping>`, but methods :meth:`!items`, :meth:`!values`, :meth:`!pop`, "
-":meth:`!popitem`, and :meth:`!update` are not supported, the "
-":meth:`!keys` method returns a list, and the :meth:`!setdefault` method "
-"requires two arguments. It also supports a \"closing\" context manager "
-"via the :keyword:`with` keyword."
+":class:`!gdbm` objects behave similar to mutable :term:`mappings <mapping>`,"
+" but methods :meth:`!items`, :meth:`!values`, :meth:`!pop`, "
+":meth:`!popitem`, and :meth:`!update` are not supported, the :meth:`!keys` "
+"method returns a list, and the :meth:`!setdefault` method requires two "
+"arguments. It also supports a \"closing\" context manager via the "
+":keyword:`with` keyword."
 msgstr ""
+"Objekty :class:`!gdbm` se chovají podobně jako mutable :term:`mapování "
+"<mapping>`, ale metody :meth:`!items`, :meth:`!values`, :meth:`!pop`, "
+":meth:`!popitem` a :meth:`!update` nejsou podporovány, metoda :meth:`!keys` "
+"vrací seznam a metoda :meth:`!setdefault` vyžaduje dva argumenty. Podporuje "
+"také \"closing\" context manager prostřednictvím klíčového slova "
+":keyword:`with`."
 
 #: ../../library/dbm.rst:280 ../../library/dbm.rst:393
 msgid "Added the :meth:`!get` and :meth:`!setdefault` methods."
-msgstr ""
+msgstr "Přidány metody :meth:`!get` a :meth:`!setdefault`."
 
 #: ../../library/dbm.rst:283 ../../library/dbm.rst:396
 msgid "Added the :meth:`!clear` method."
-msgstr ""
+msgstr "Přidána metoda :meth:`!clear`."
 
 #: ../../library/dbm.rst:286 ../../library/dbm.rst:479
 msgid "The following methods are also provided:"
-msgstr ""
+msgstr "Jsou poskytnuta také následující metody:"
 
 #: ../../library/dbm.rst:290
 msgid "Close the GDBM database."
-msgstr ""
+msgstr "Zavře GDBM databázi."
 
 #: ../../library/dbm.rst:294
 msgid ""
-"It's possible to loop over every key in the database using this method  "
-"and the :meth:`nextkey` method.  The traversal is ordered by GDBM's "
-"internal hash values, and won't be sorted by the key values.  This method"
-" returns the starting key."
+"It's possible to loop over every key in the database using this method  and "
+"the :meth:`nextkey` method.  The traversal is ordered by GDBM's internal "
+"hash values, and won't be sorted by the key values.  This method returns the"
+" starting key."
 msgstr ""
+"Je možné procházet každý klíč v databázi pomocí této metody a metody "
+":meth:`nextkey`. Procházení je seřazeno podle GDBM interních hodnot hashe a "
+"nebude seřazeno podle hodnot klíčů. Tato metoda vrací počáteční klíč."
 
 #: ../../library/dbm.rst:301
 msgid ""
 "Returns the key that follows *key* in the traversal.  The following code "
-"prints every key in the database ``db``, without having to create a list "
-"in memory that contains them all::"
+"prints every key in the database ``db``, without having to create a list in "
+"memory that contains them all::"
 msgstr ""
+"Vrací klíč, který následuje *key* v procházení. Následující kód vytisknout "
+"každý klíč v databázi ``db``, bez potřeby vytvořit seznam v paměti, který by"
+" je obsahoval::"
 
 #: ../../library/dbm.rst:305
 msgid ""
@@ -439,29 +554,40 @@ msgid ""
 "    print(k)\n"
 "    k = db.nextkey(k)"
 msgstr ""
+"k = db.firstkey()\n"
+"while k is not None:\n"
+"    print(k)\n"
+"    k = db.nextkey(k)"
 
 #: ../../library/dbm.rst:312
 msgid ""
 "If you have carried out a lot of deletions and would like to shrink the "
 "space used by the GDBM file, this routine will reorganize the database.  "
-":class:`!gdbm` objects will not shorten the length of a database file "
-"except by using this reorganization; otherwise, deleted file space will "
-"be kept and reused as new (key, value) pairs are added."
+":class:`!gdbm` objects will not shorten the length of a database file except"
+" by using this reorganization; otherwise, deleted file space will be kept "
+"and reused as new (key, value) pairs are added."
 msgstr ""
+"Pokud jste provedli mnoho mazání a chtěli byste zmenšit prostor používaný "
+"souborem GDBM, tato rutina bude reorganizovat databázi. Objekty "
+":class:`!gdbm` nezakrátí délku souboru databáze s výčjimkou použití této "
+"reorganizace; v opačném případě bude smazaný prostor souboru zachován a "
+"znovu použit, které jsou přidány nové (klíč, hodnota) páry."
 
 #: ../../library/dbm.rst:320
 msgid ""
 "When the database has been opened in fast mode, this method forces any "
 "unwritten data to be written to the disk."
 msgstr ""
+"Pokud byla databáze otevřena v rychlém režimu, tato metoda vynútit vlšechna "
+"nenapsáná data být zapsána na disk."
 
 #: ../../library/dbm.rst:325
 msgid ":mod:`dbm.ndbm` --- New Database Manager"
-msgstr ""
+msgstr ":mod:`dbm.ndbm` --- Správce nové databáze"
 
 #: ../../library/dbm.rst:331
 msgid "**Source code:** :source:`Lib/dbm/ndbm.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/dbm/ndbm.py`"
 
 #: ../../library/dbm.rst:335
 msgid ""
@@ -469,14 +595,21 @@ msgid ""
 "Database Manager)` library. This module can be used with the \"classic\" "
 "NDBM interface or the :abbr:`GDBM (GNU dbm)` compatibility interface."
 msgstr ""
+"Modul :mod:`dbm.ndbm` poskytuje rozhraní k :abbr:`NDBM (Nová správce "
+"databáze)` knihovně. Tento modul lze použít s rozhraním \"klasický\" NDBM "
+"nebo s kompatibilním rozhraním :abbr:`GDBM (GNU dbm)`."
 
 #: ../../library/dbm.rst:347
 msgid ""
-"The NDBM library shipped as part of macOS has an undocumented limitation "
-"on the size of values, which can result in corrupted database files when "
+"The NDBM library shipped as part of macOS has an undocumented limitation on "
+"the size of values, which can result in corrupted database files when "
 "storing values larger than this limit. Reading such corrupted files can "
 "result in a hard crash (segmentation fault)."
 msgstr ""
+"Knihovna NDBM dodaná jako součást macOS má nedokumentované omezení na "
+"velikost hodnot, které mohou způsobit poškozené soubory databáze při "
+"ukládání hodnot větších než toto omezení. Čtení takového poškozeného souboru"
+" může způsobit tvrdé selhala (segmentování viny)."
 
 #: ../../library/dbm.rst:356
 msgid ""
@@ -484,54 +617,68 @@ msgid ""
 ":exc:`KeyError` is raised for general mapping errors like specifying an "
 "incorrect key."
 msgstr ""
+"Vyvolána na :mod:`dbm.ndbm`-specifických chybách, jako je I/O chyba. "
+":exc:`KeyError` je vyvolána pro obecné mapování chyby jako je zadání "
+"nesprávného klíče."
 
 #: ../../library/dbm.rst:362
 msgid "Name of the NDBM implementation library used."
-msgstr ""
+msgstr "Název používané knihovny NDBM implementace."
 
 #: ../../library/dbm.rst:367
 msgid "Open an NDBM database and return an :class:`!ndbm` object."
-msgstr ""
+msgstr "Otevře NDBM databázi a vrátí objekt :class:`!ndbm`."
 
 #: ../../library/dbm.rst:369
 msgid ""
-"The basename of the database file (without the :file:`.dir` or "
-":file:`.pag` extensions)."
+"The basename of the database file (without the :file:`.dir` or :file:`.pag` "
+"extensions)."
 msgstr ""
+"Základní název souboru databáze (bez přípon :file:`.dir` nebo :file:`.pag`)."
 
 #: ../../library/dbm.rst:383
 msgid "Accepts :term:`path-like object` for filename."
-msgstr ""
+msgstr "Přijímá :term:`path-like object` pro název souboru."
 
 #: ../../library/dbm.rst:386
 msgid ""
-":class:`!ndbm` objects behave similar to mutable :term:`mappings "
-"<mapping>`, but methods :meth:`!items`, :meth:`!values`, :meth:`!pop`, "
-":meth:`!popitem`, and :meth:`!update` are not supported, the "
-":meth:`!keys` method returns a list, and the :meth:`!setdefault` method "
-"requires two arguments. It also supports a \"closing\" context manager "
-"via the :keyword:`with` keyword."
+":class:`!ndbm` objects behave similar to mutable :term:`mappings <mapping>`,"
+" but methods :meth:`!items`, :meth:`!values`, :meth:`!pop`, "
+":meth:`!popitem`, and :meth:`!update` are not supported, the :meth:`!keys` "
+"method returns a list, and the :meth:`!setdefault` method requires two "
+"arguments. It also supports a \"closing\" context manager via the "
+":keyword:`with` keyword."
 msgstr ""
+"Objekty :class:`!ndbm` se chovají podobně jako mutable :term:`mapování "
+"<mapping>`, ale metody :meth:`!items`, :meth:`!values`, :meth:`!pop`, "
+":meth:`!popitem` a :meth:`!update` nejsou podporovány, metoda :meth:`!keys` "
+"vrací seznam a metoda :meth:`!setdefault` vyžaduje dva argumenty. Podporuje "
+"také \"closing\" context manager prostřednictvím klíčového slova "
+":keyword:`with`."
 
 #: ../../library/dbm.rst:403
 msgid "Close the NDBM database."
-msgstr ""
+msgstr "Zavře NDBM databázi."
 
 #: ../../library/dbm.rst:407
 msgid ":mod:`dbm.dumb` --- Portable DBM implementation"
-msgstr ""
+msgstr ":mod:`dbm.dumb` --- Přenosná implementace DBM"
 
 #: ../../library/dbm.rst:412
 msgid "**Source code:** :source:`Lib/dbm/dumb.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/dbm/dumb.py`"
 
 #: ../../library/dbm.rst:418
 msgid ""
 "The :mod:`dbm.dumb` module is intended as a last resort fallback for the "
 ":mod:`dbm` module when a more robust module is not available. The "
-":mod:`dbm.dumb` module is not written for speed and is not nearly as "
-"heavily used as the other database modules."
+":mod:`dbm.dumb` module is not written for speed and is not nearly as heavily"
+" used as the other database modules."
 msgstr ""
+"Modul :mod:`dbm.dumb` je určen jako poslední resort zálohy pro modul "
+":mod:`dbm`, když není k dispozici robustnější modul. Modul :mod:`dbm.dumb` "
+"není psán pro rychlost a není se březně tak těžkě používán jako ostatní "
+"databázové moduly."
 
 #: ../../library/dbm.rst:425
 msgid ""
@@ -539,10 +686,13 @@ msgid ""
 "interface which is written entirely in Python. Unlike other :mod:`dbm` "
 "backends, such as :mod:`dbm.gnu`, no external library is required."
 msgstr ""
+"Modul :mod:`dbm.dumb` poskytuje persistátní rozhraní :class:`dict`-like, "
+"které je napsáno zcela v Pythonu. Na rozdíl od ostatních :mod:`dbm` "
+"backendů, jako je :mod:`dbm.gnu`, není vyžadována externí knihovna."
 
 #: ../../library/dbm.rst:430
 msgid "The :mod:`!dbm.dumb` module defines the following:"
-msgstr ""
+msgstr "Modul :mod:`!dbm.dumb` definuje následující:"
 
 #: ../../library/dbm.rst:434
 msgid ""
@@ -550,10 +700,13 @@ msgid ""
 ":exc:`KeyError` is raised for general mapping errors like specifying an "
 "incorrect key."
 msgstr ""
+"Vyvolána na :mod:`dbm.dumb`-specifických chybách, jako je I/O chyba. "
+":exc:`KeyError` je vyvolána pro obecné mapování chyby jako je zadání "
+"nesprávného klíče."
 
 #: ../../library/dbm.rst:440
 msgid "Open a :mod:`!dbm.dumb` database."
-msgstr ""
+msgstr "Otevře databázi :mod:`!dbm.dumb`."
 
 #: ../../library/dbm.rst:442
 #, python-brace-format
@@ -562,148 +715,140 @@ msgid ""
 "creates the following files:  - :file:`{filename}.dat` - "
 ":file:`{filename}.dir`"
 msgstr ""
+"Základní název souboru databáze (bez přípon). Nová databáze vytváří "
+"následující soubory: - :file:`{filename}.dat` - :file:`{filename}.dir`"
 
 #: ../../library/dbm.rst:443
 msgid ""
 "The basename of the database file (without extensions). A new database "
 "creates the following files:"
 msgstr ""
+"Základní název souboru databáze (bez přípon). Nová databáze vytváří "
+"následující soubory:"
 
 #: ../../library/dbm.rst:446
 #, python-brace-format
 msgid ":file:`{filename}.dat`"
-msgstr ""
+msgstr ":file:`{filename}.dat`"
 
 #: ../../library/dbm.rst:447
 #, python-brace-format
 msgid ":file:`{filename}.dir`"
-msgstr ""
+msgstr ":file:`{filename}.dir`"
 
 #: ../../library/dbm.rst:450
 msgid ""
 "* ``'r'``: |flag_r| * ``'w'``: |flag_w| * ``'c'`` (default): |flag_c| * "
 "``'n'``: |flag_n|"
 msgstr ""
+"* ``'r'``: |flag_r| * ``'w'``: |flag_w| * ``'c'`` (výchozí): |flag_c| * "
+"``'n'``: |flag_n|"
 
 #: ../../library/dbm.rst:451
 msgid "``'r'``: |flag_r|"
-msgstr ""
+msgstr "``'r'``: |flag_r|"
 
 #: ../../library/dbm.rst:453
 msgid "``'c'`` (default): |flag_c|"
-msgstr ""
+msgstr "``'c'`` (výchozí): |flag_c|"
 
 #: ../../library/dbm.rst:460
 msgid ""
-"It is possible to crash the Python interpreter when loading a database "
-"with a sufficiently large/complex entry due to stack depth limitations in"
-" Python's AST compiler."
+"It is possible to crash the Python interpreter when loading a database with "
+"a sufficiently large/complex entry due to stack depth limitations in "
+"Python's AST compiler."
 msgstr ""
+"Je možné zhršebit interpřt Pythonu při načítání databáze s dostatečně "
+"velkým/komplexním zápisem z důvodu omezení hloubky zásobníku v AST "
+"kompilátoru Pythonu."
 
 #: ../../library/dbm.rst:464
 msgid ""
-":func:`~dbm.dumb.open` always creates a new database when *flag* is "
-"``'n'``."
+":func:`~dbm.dumb.open` always creates a new database when *flag* is ``'n'``."
 msgstr ""
+":func:`~dbm.dumb.open` vždy vytvoří novou databázi, když je *flag* ``'n'``."
 
 #: ../../library/dbm.rst:467
 msgid ""
-"A database opened read-only if *flag* is ``'r'``. A database is not "
-"created if it does not exist if *flag* is ``'r'`` or ``'w'``."
+"A database opened read-only if *flag* is ``'r'``. A database is not created "
+"if it does not exist if *flag* is ``'r'`` or ``'w'``."
 msgstr ""
+"Databáze se otevře jen pro čtení, pokud je *flag* ``'r'``. Databáze se "
+"nevytvoří, pokud neexistuje, pokud je *flag* ``'r'`` nebo ``'w'``."
 
 #: ../../library/dbm.rst:474
 msgid ""
-"The returned database object behaves similar to a mutable "
-":term:`mapping`, but the :meth:`!keys` and :meth:`!items` methods return "
-"lists, and the :meth:`!setdefault` method requires two arguments. It also"
-" supports a \"closing\" context manager via the :keyword:`with` keyword."
+"The returned database object behaves similar to a mutable :term:`mapping`, "
+"but the :meth:`!keys` and :meth:`!items` methods return lists, and the "
+":meth:`!setdefault` method requires two arguments. It also supports a "
+"\"closing\" context manager via the :keyword:`with` keyword."
 msgstr ""
+"Vrácený objekt databáze se chová podobně jako mutable :term:`mapping`, ale "
+"metody :meth:`!keys` a :meth:`!items` vrací seznamy a metoda "
+":meth:`!setdefault` vyžaduje dva argumenty. Podporuje také \"closing\" "
+"context manager prostřednictvím klíčového slova :keyword:`with`."
 
 #: ../../library/dbm.rst:483
 msgid "Close the database."
-msgstr ""
+msgstr "Zavře databázi."
 
 #: ../../library/dbm.rst:487
 msgid ""
-"Synchronize the on-disk directory and data files.  This method is called "
-"by the :meth:`shelve.Shelf.sync` method."
+"Synchronize the on-disk directory and data files.  This method is called by "
+"the :meth:`shelve.Shelf.sync` method."
 msgstr ""
+"Synchronizujte adresář na disku a datové soubory. Tato metoda je volána "
+"metodou :meth:`shelve.Shelf.sync`."
 
 #: ../../library/dbm.rst:414
 msgid "databases"
-msgstr ""
+msgstr "databáze"
 
 #~ msgid ""
-#~ "If none of these modules are "
-#~ "installed, the slow-but-simple "
-#~ "implementation in module :mod:`dbm.dumb` will"
-#~ " be used. There is a `third "
-#~ "party interface "
-#~ "<https://www.jcea.es/programacion/pybsddb.htm>`_ to the"
-#~ " Oracle Berkeley DB."
+#~ "If none of these modules are installed, the slow-but-simple implementation "
+#~ "in module :mod:`dbm.dumb` will be used. There is a `third party interface "
+#~ "<https://www.jcea.es/programacion/pybsddb.htm>`_ to the Oracle Berkeley DB."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "None of the underlying modules will "
-#~ "automatically shrink the disk space used"
-#~ " by the database file. However, "
-#~ ":mod:`dbm.sqlite3`, :mod:`dbm.gnu` and "
-#~ ":mod:`dbm.dumb` provide a :meth:`!reorganize` "
-#~ "method that can be used for this"
-#~ " purpose."
+#~ "None of the underlying modules will automatically shrink the disk space used"
+#~ " by the database file. However, :mod:`dbm.sqlite3`, :mod:`dbm.gnu` and "
+#~ ":mod:`dbm.dumb` provide a :meth:`!reorganize` method that can be used for "
+#~ "this purpose."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "If you have carried out a lot "
-#~ "of deletions and would like to "
-#~ "shrink the space used on disk, "
-#~ "this method will reorganize the "
-#~ "database; otherwise, deleted file space "
-#~ "will be kept and reused as new "
-#~ "(key, value) pairs are added."
+#~ "If you have carried out a lot of deletions and would like to shrink the "
+#~ "space used on disk, this method will reorganize the database; otherwise, "
+#~ "deleted file space will be kept and reused as new (key, value) pairs are "
+#~ "added."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "While reorganizing, as much as two "
-#~ "times the size of the original "
-#~ "database is required in free disk "
-#~ "space. However, be aware that this "
-#~ "factor changes for each :mod:`dbm` "
-#~ "submodule."
+#~ "While reorganizing, as much as two times the size of the original database "
+#~ "is required in free disk space. However, be aware that this factor changes "
+#~ "for each :mod:`dbm` submodule."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "While reorganizing, as much as one "
-#~ "time the size of the original "
-#~ "database is required in free disk "
-#~ "space. However, be aware that this "
-#~ "factor changes for each :mod:`dbm` "
-#~ "submodule."
+#~ "While reorganizing, as much as one time the size of the original database is"
+#~ " required in free disk space. However, be aware that this factor changes for"
+#~ " each :mod:`dbm` submodule."
 #~ msgstr ""
 
 #~ msgid ""
-#~ ":mod:`dbm.dumb` does not support concurrent"
-#~ " read/write access. (Multiple simultaneous "
-#~ "read accesses are safe.) When a "
-#~ "program has the database open for "
-#~ "writing, no other program should have"
-#~ " it open for reading or writing."
+#~ ":mod:`dbm.dumb` does not support concurrent read/write access. (Multiple "
+#~ "simultaneous read accesses are safe.) When a program has the database open "
+#~ "for writing, no other program should have it open for reading or writing."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "If you have carried out a lot "
-#~ "of deletions and would like to "
-#~ "shrink the space used on disk, "
-#~ "this method will reorganize the "
-#~ "database; otherwise, deleted file space "
-#~ "will not be reused."
+#~ "If you have carried out a lot of deletions and would like to shrink the "
+#~ "space used on disk, this method will reorganize the database; otherwise, "
+#~ "deleted file space will not be reused."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "While reorganizing, no additional free "
-#~ "disk space is required. However, be "
-#~ "aware that this factor changes for "
-#~ "each :mod:`dbm` submodule."
+#~ "While reorganizing, no additional free disk space is required. However, be "
+#~ "aware that this factor changes for each :mod:`dbm` submodule."
 #~ msgstr ""
-

@@ -11,39 +11,45 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/lzma.rst:2
 msgid ":mod:`!lzma` --- Compression using the LZMA algorithm"
-msgstr ""
+msgstr ":mod:`!lzma` --- Komprese pomocí algoritmu LZMA"
 
 #: ../../library/lzma.rst:12
 msgid "**Source code:** :source:`Lib/lzma.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/lzma.py`"
 
 #: ../../library/lzma.rst:16
 msgid ""
-"This module provides classes and convenience functions for compressing "
-"and decompressing data using the LZMA compression algorithm. Also "
-"included is a file interface supporting the ``.xz`` and legacy ``.lzma`` "
-"file formats used by the :program:`xz` utility, as well as raw compressed"
-" streams."
+"This module provides classes and convenience functions for compressing and "
+"decompressing data using the LZMA compression algorithm. Also included is a "
+"file interface supporting the ``.xz`` and legacy ``.lzma`` file formats used"
+" by the :program:`xz` utility, as well as raw compressed streams."
 msgstr ""
+"Tento modul poskytuje třídy a funkce na podporu komprese a dekompresi dat "
+"pomocí kompresního algoritmu LZMA. Zahrnuje také rozhraní souboru, které "
+"podporuje formáty souborů ``.xz`` a starší ``.lzma`` používané nástrojem "
+":program:`xz`, stejně jako raw komprimované toky."
 
 #: ../../library/lzma.rst:21
 msgid ""
 "The interface provided by this module is very similar to that of the "
-":mod:`bz2` module. Note that :class:`LZMAFile` and :class:`bz2.BZ2File` "
-"are *not* thread-safe, so if you need to use a single :class:`LZMAFile` "
-"instance from multiple threads, it is necessary to protect it with a "
-"lock."
+":mod:`bz2` module. Note that :class:`LZMAFile` and :class:`bz2.BZ2File` are "
+"*not* thread-safe, so if you need to use a single :class:`LZMAFile` instance"
+" from multiple threads, it is necessary to protect it with a lock."
 msgstr ""
+"Rozhraní poskytované tímto modulem je velmi podobné rozhraní modulu "
+":mod:`bz2`. Poznamenejme, že :class:`LZMAFile` a :class:`bz2.BZ2File` "
+"*nejsou* thread-safe, takže pokud potřebujete použít jednu instanci "
+":class:`LZMAFile` z více vláken, je nutné ji chránit zámkem."
 
 #: ../../includes/optional-module.rst:1
 msgid ""
@@ -52,52 +58,72 @@ msgid ""
 "provided Python to you). If you are the distributor, see :ref:`optional-"
 "module-requirements`."
 msgstr ""
+"Toto je :term:`volitelný modul`. Pokud chybí ve vaší kopii CPythonu, "
+"podívejte se na dokumentaci od svého distributora (tj. od toho, kdo vám "
+"Python poskytl). Pokud jste distributorem, podívejte se na :ref:`optional-"
+"module-requirements`."
 
 #: ../../library/lzma.rst:31
 msgid ""
 "This exception is raised when an error occurs during compression or "
 "decompression, or while initializing the compressor/decompressor state."
 msgstr ""
+"Tato výjimka se vyvolá, pokud dojde k chybě během komprese nebo dekompresi, "
+"nebo během inicializace stavu kompresoru/dekompresoru."
 
 #: ../../library/lzma.rst:36
 msgid "Reading and writing compressed files"
-msgstr ""
+msgstr "Čtení a zápis komprimovaných souborů"
 
 #: ../../library/lzma.rst:40
 msgid ""
-"Open an LZMA-compressed file in binary or text mode, returning a "
-":term:`file object`."
+"Open an LZMA-compressed file in binary or text mode, returning a :term:`file"
+" object`."
 msgstr ""
+"Otevře komprimovaný soubor LZMA v binárním nebo textovém režimu, vrátí "
+":term:`objektu souboru`."
 
 #: ../../library/lzma.rst:43
 msgid ""
 "The *filename* argument can be either an actual file name (given as a "
 ":class:`str`, :class:`bytes` or :term:`path-like <path-like object>` "
-"object), in which case the named file is opened, or it can be an existing"
-" file object to read from or write to."
+"object), in which case the named file is opened, or it can be an existing "
+"file object to read from or write to."
 msgstr ""
+"Argument *filename* může být buď skutečným názvem souboru (uvedeným jako "
+":class:`str`, :class:`bytes` nebo :term:`path-like <path-like object>` "
+"objekt), v kéž případě se pojmenovaný soubor otevře, nebo může být "
+"existujícím objektem souboru, ze kterého se čte nebo do kterého se zapisuje."
 
 #: ../../library/lzma.rst:48
 msgid ""
 "The *mode* argument can be any of ``\"r\"``, ``\"rb\"``, ``\"w\"``, "
-"``\"wb\"``, ``\"x\"``, ``\"xb\"``, ``\"a\"`` or ``\"ab\"`` for binary "
-"mode, or ``\"rt\"``, ``\"wt\"``, ``\"xt\"``, or ``\"at\"`` for text mode."
-" The default is ``\"rb\"``."
+"``\"wb\"``, ``\"x\"``, ``\"xb\"``, ``\"a\"`` or ``\"ab\"`` for binary mode, "
+"or ``\"rt\"``, ``\"wt\"``, ``\"xt\"``, or ``\"at\"`` for text mode. The "
+"default is ``\"rb\"``."
 msgstr ""
+"Argument *mode* může být libovolným z ``\"r\"``, ``\"rb\"``, ``\"w\"``, "
+"``\"wb\"``, ``\"x\"``, ``\"xb\"``, ``\"a\"`` nebo ``\"ab\"`` pro binární "
+"režim, nebo ``\"rt\"``, ``\"wt\"``, ``\"xt\"``, nebo ``\"at\"`` pro textový "
+"režim. Výchozí hodnota je ``\"rb\"``."
 
 #: ../../library/lzma.rst:52 ../../library/lzma.rst:97
 msgid ""
-"When opening a file for reading, the *format* and *filters* arguments "
-"have the same meanings as for :class:`LZMADecompressor`. In this case, "
-"the *check* and *preset* arguments should not be used."
+"When opening a file for reading, the *format* and *filters* arguments have "
+"the same meanings as for :class:`LZMADecompressor`. In this case, the "
+"*check* and *preset* arguments should not be used."
 msgstr ""
+"Při otevírání souboru ke čtení mají argumenty *format* a *filters* stejný "
+"význam jako pro :class:`LZMADecompressor`. V tomto případě by se argumenty "
+"*check* a *preset* neměly používat."
 
 #: ../../library/lzma.rst:56 ../../library/lzma.rst:101
 msgid ""
 "When opening a file for writing, the *format*, *check*, *preset* and "
-"*filters* arguments have the same meanings as for "
-":class:`LZMACompressor`."
+"*filters* arguments have the same meanings as for :class:`LZMACompressor`."
 msgstr ""
+"Při otevírání souboru k zápisu mají argumenty *format*, *check*, *preset* a "
+"*filters* stejný význam jako pro :class:`LZMACompressor`."
 
 #: ../../library/lzma.rst:59
 msgid ""
@@ -105,6 +131,9 @@ msgid ""
 "constructor: ``LZMAFile(filename, mode, ...)``. In this case, the "
 "*encoding*, *errors* and *newline* arguments must not be provided."
 msgstr ""
+"Pro binární režim je tato funkce ekvivalentní konstruktoru "
+":class:`LZMAFile`: ``LZMAFile(filename, mode, ...)``. V tomto případě nesmí "
+"být poskytnuty argumenty *encoding*, *errors* a *newline*."
 
 #: ../../library/lzma.rst:63
 msgid ""
@@ -112,267 +141,357 @@ msgid ""
 ":class:`io.TextIOWrapper` instance with the specified encoding, error "
 "handling behavior, and line ending(s)."
 msgstr ""
+"Pro textový režim je vytvořen objekt :class:`LZMAFile` a zabalen do instance"
+" :class:`io.TextIOWrapper` se zadaným kódováním, chováním při chybách a "
+"koncem (konci) řádku."
 
 #: ../../library/lzma.rst:67
 msgid "Added support for the ``\"x\"``, ``\"xb\"`` and ``\"xt\"`` modes."
-msgstr ""
+msgstr "Přidána podpora režimů ``\"x\"``, ``\"xb\"`` a ``\"xt\"``."
 
 #: ../../library/lzma.rst:70 ../../library/lzma.rst:143
 msgid "Accepts a :term:`path-like object`."
-msgstr ""
+msgstr "Přijímá :term:`objektu podobného cestě`."
 
 #: ../../library/lzma.rst:76
 msgid "Open an LZMA-compressed file in binary mode."
-msgstr ""
+msgstr "Otevře komprimovaný soubor LZMA v binárním režimu."
 
 #: ../../library/lzma.rst:78
 msgid ""
 "An :class:`LZMAFile` can wrap an already-open :term:`file object`, or "
-"operate directly on a named file. The *filename* argument specifies "
-"either the file object to wrap, or the name of the file to open (as a "
-":class:`str`, :class:`bytes` or :term:`path-like <path-like object>` "
-"object). When wrapping an existing file object, the wrapped file will not"
-" be closed when the :class:`LZMAFile` is closed."
+"operate directly on a named file. The *filename* argument specifies either "
+"the file object to wrap, or the name of the file to open (as a :class:`str`,"
+" :class:`bytes` or :term:`path-like <path-like object>` object). When "
+"wrapping an existing file object, the wrapped file will not be closed when "
+"the :class:`LZMAFile` is closed."
 msgstr ""
+":class:`LZMAFile` může obalekat již otevřený :term:`objekt souboru`, nebo "
+"pracovat přímo se pojmenovaným souborem. Argument *filename* udává buď "
+"objekt souboru, který má být obalen, nebo název souboru, který se má otevřít"
+" (jako :class:`str`, :class:`bytes` nebo :term:`path-like <path-like "
+"object>` objekt). Při obalení existujícího objektu souboru nebude obalený "
+"soubor uzavřen při zavření :class:`LZMAFile`."
 
 #: ../../library/lzma.rst:85
 msgid ""
-"The *mode* argument can be either ``\"r\"`` for reading (default), "
-"``\"w\"`` for overwriting, ``\"x\"`` for exclusive creation, or ``\"a\"``"
-" for appending. These can equivalently be given as ``\"rb\"``, "
-"``\"wb\"``, ``\"xb\"`` and ``\"ab\"`` respectively."
+"The *mode* argument can be either ``\"r\"`` for reading (default), ``\"w\"``"
+" for overwriting, ``\"x\"`` for exclusive creation, or ``\"a\"`` for "
+"appending. These can equivalently be given as ``\"rb\"``, ``\"wb\"``, "
+"``\"xb\"`` and ``\"ab\"`` respectively."
 msgstr ""
+"Argument *mode* může být buď ``\"r\"`` pro čtení (výchozí), ``\"w\"`` pro "
+"přepis, ``\"x\"`` pro výelně vytvořený, nebo ``\"a\"`` pro přidávání. Ty se "
+"mohou ekvivalentně zadat jako ``\"rb\"``, ``\"wb\"``, ``\"xb\"`` a "
+"``\"ab\"`` v tom příslunšném pořadí."
 
 #: ../../library/lzma.rst:90
 msgid ""
-"If *filename* is a file object (rather than an actual file name), a mode "
-"of ``\"w\"`` does not truncate the file, and is instead equivalent to "
+"If *filename* is a file object (rather than an actual file name), a mode of "
+"``\"w\"`` does not truncate the file, and is instead equivalent to "
 "``\"a\"``."
 msgstr ""
+"Pokud je *filename* objektem souboru (místy skuteČného názvu souboru), režim"
+" ``\"w\"`` neskrátí soubor a je místo toho ekvivalentní ``\"a\"``."
 
 #: ../../library/lzma.rst:93
 msgid ""
-"When opening a file for reading, the input file may be the concatenation "
-"of multiple separate compressed streams. These are transparently decoded "
-"as a single logical stream."
+"When opening a file for reading, the input file may be the concatenation of "
+"multiple separate compressed streams. These are transparently decoded as a "
+"single logical stream."
 msgstr ""
+"Při otevírání souboru ke čtení může být vstupní soubor zřetězením více "
+"oddělených komprimovaných toků. Ty jsou transparentně dekódovány jako jeden "
+"logický tok."
 
 #: ../../library/lzma.rst:104
 msgid ""
 ":class:`LZMAFile` supports all the members specified by "
-":class:`io.BufferedIOBase`, except for :meth:`~io.BufferedIOBase.detach` "
-"and :meth:`~io.IOBase.truncate`. Iteration and the :keyword:`with` "
-"statement are supported."
+":class:`io.BufferedIOBase`, except for :meth:`~io.BufferedIOBase.detach` and"
+" :meth:`~io.IOBase.truncate`. Iteration and the :keyword:`with` statement "
+"are supported."
 msgstr ""
+":class:`LZMAFile` podporuje všechny členy urmеnе pů "
+":class:`io.BufferedIOBase`, s výjimkou :meth:`~io.BufferedIOBase.detach` a "
+":meth:`~io.IOBase.truncate`. Je podporována iterace a příkaz "
+":keyword:`with`."
 
 #: ../../library/lzma.rst:109
 msgid "The following method and attributes are also provided:"
-msgstr ""
+msgstr "Jsou též poskytnuty následující metody a atributy:"
 
 #: ../../library/lzma.rst:113
 msgid ""
-"Return buffered data without advancing the file position. At least one "
-"byte of data will be returned, unless EOF has been reached. The exact "
-"number of bytes returned is unspecified (the *size* argument is ignored)."
+"Return buffered data without advancing the file position. At least one byte "
+"of data will be returned, unless EOF has been reached. The exact number of "
+"bytes returned is unspecified (the *size* argument is ignored)."
 msgstr ""
+"Vrátí uloženou data bez posunu pozice souboru. Budou vráceny alespoň jeden "
+"byte dat, pokud nebyl dosažen konec souboru. Přesný počet vrácených byteů je"
+" neurčitý (argument *size* je ignorován)."
 
 #: ../../library/lzma.rst:117
 msgid ""
 "While calling :meth:`peek` does not change the file position of the "
-":class:`LZMAFile`, it may change the position of the underlying file "
-"object (e.g. if the :class:`LZMAFile` was constructed by passing a file "
-"object for *filename*)."
+":class:`LZMAFile`, it may change the position of the underlying file object "
+"(e.g. if the :class:`LZMAFile` was constructed by passing a file object for "
+"*filename*)."
 msgstr ""
+"Zatímco volání :meth:`peek` nemění pozici souboru :class:`LZMAFile`, může "
+"změnit pozici podkladového objektu souboru (např. pokud byla "
+":class:`LZMAFile` vytvořena předáním objektu souboru pro *filename*)."
 
 #: ../../library/lzma.rst:124
 msgid "``'rb'`` for reading and ``'wb'`` for writing."
-msgstr ""
+msgstr "``'rb'`` pro čtení a ``'wb'`` pro zápis."
 
 #: ../../library/lzma.rst:130
 msgid ""
-"The lzma file name.  Equivalent to the :attr:`~io.FileIO.name` attribute "
-"of the underlying :term:`file object`."
+"The lzma file name.  Equivalent to the :attr:`~io.FileIO.name` attribute of "
+"the underlying :term:`file object`."
 msgstr ""
+"Název souboru lzma. Ekvivalentní atributu :attr:`~io.FileIO.name` "
+"podkladového :term:`objektu souboru`."
 
 #: ../../library/lzma.rst:136
 msgid "Added support for the ``\"x\"`` and ``\"xb\"`` modes."
-msgstr ""
+msgstr "Přidána podpora režimů ``\"x\"`` a ``\"xb\"``."
 
 #: ../../library/lzma.rst:139
 msgid ""
 "The :meth:`~io.BufferedIOBase.read` method now accepts an argument of "
 "``None``."
 msgstr ""
+"Metoda :meth:`~io.BufferedIOBase.read` nyní přijímá argument ``None``."
 
 #: ../../library/lzma.rst:148
 msgid "Compressing and decompressing data in memory"
-msgstr ""
+msgstr "Komprese a dekomprese dat v paměti"
 
 #: ../../library/lzma.rst:152
 msgid ""
 "Create a compressor object, which can be used to compress data "
 "incrementally."
 msgstr ""
+"Vytvoří objekt kompresoru, který lze použít pro inkremenā31ní kompresi dat."
 
 #: ../../library/lzma.rst:154
 msgid ""
 "For a more convenient way of compressing a single chunk of data, see "
 ":func:`compress`."
 msgstr ""
+"Pro pohodlnější způsob komprese jednoho kusu dat viz :func:`compress`."
 
 #: ../../library/lzma.rst:157
 msgid ""
 "The *format* argument specifies what container format should be used. "
 "Possible values are:"
 msgstr ""
+"Argument *format* určuje, jaký formát kontejneru by měl být použit. Možné "
+"hodnoty jsou:"
 
 #: ../../library/lzma.rst:160
 msgid ":const:`FORMAT_XZ`: The ``.xz`` container format."
-msgstr ""
+msgstr ":const:`FORMAT_XZ`: Formát kontejneru ``.xz``."
 
 #: ../../library/lzma.rst:161
 msgid "This is the default format."
-msgstr ""
+msgstr "Toto je výchozí formát."
 
 #: ../../library/lzma.rst:163
 msgid ":const:`FORMAT_ALONE`: The legacy ``.lzma`` container format."
-msgstr ""
+msgstr ":const:`FORMAT_ALONE`: Starší formát kontejneru ``.lzma``."
 
 #: ../../library/lzma.rst:164
 msgid ""
-"This format is more limited than ``.xz`` -- it does not support integrity"
-" checks or multiple filters."
+"This format is more limited than ``.xz`` -- it does not support integrity "
+"checks or multiple filters."
 msgstr ""
+"Tento formát je omezující než ``.xz`` -- nepřijímá kontrolu integrity nebo "
+"více filtrů."
 
 #: ../../library/lzma.rst:167
-msgid ":const:`FORMAT_RAW`: A raw data stream, not using any container format."
-msgstr ""
+msgid ""
+":const:`FORMAT_RAW`: A raw data stream, not using any container format."
+msgstr ":const:`FORMAT_RAW`: Raw tok dat, bez použití formátu kontejneru."
 
 #: ../../library/lzma.rst:168
 msgid ""
-"This format specifier does not support integrity checks, and requires "
-"that you always specify a custom filter chain (for both compression and "
+"This format specifier does not support integrity checks, and requires that "
+"you always specify a custom filter chain (for both compression and "
 "decompression). Additionally, data compressed in this manner cannot be "
 "decompressed using :const:`FORMAT_AUTO` (see :class:`LZMADecompressor`)."
 msgstr ""
+"Tento specifikátor formátu nepřijímá kontrolu integrity a vyžaduje, aby jste"
+" vždy zadali vlastní řetěz filtrů (pro kompresi i dekompresí). Navíc data "
+"komprimovaná tímto způsobem nemohou být dekomprimována pomocí "
+":const:`FORMAT_AUTO` (viz :class:`LZMADecompressor`)."
 
 #: ../../library/lzma.rst:173
 msgid ""
-"The *check* argument specifies the type of integrity check to include in "
-"the compressed data. This check is used when decompressing, to ensure "
-"that the data has not been corrupted. Possible values are:"
+"The *check* argument specifies the type of integrity check to include in the"
+" compressed data. This check is used when decompressing, to ensure that the "
+"data has not been corrupted. Possible values are:"
 msgstr ""
+"Argument *check* určuje typ kontroly integrity, která se má zahrnout do "
+"komprimovaných dat. Tato kontrola se používá při dekompresí, aby se "
+"zajištılo, že data nebyla poškozena. Možné hodnoty jsou:"
 
 #: ../../library/lzma.rst:177
 msgid ""
-":const:`CHECK_NONE`: No integrity check. This is the default (and the "
-"only acceptable value) for :const:`FORMAT_ALONE` and :const:`FORMAT_RAW`."
+":const:`CHECK_NONE`: No integrity check. This is the default (and the only "
+"acceptable value) for :const:`FORMAT_ALONE` and :const:`FORMAT_RAW`."
 msgstr ""
+":const:`CHECK_NONE`: Žádná kontrola integrity. Toto je výchozí (a jediná "
+"přijatelná) hodnota pro :const:`FORMAT_ALONE` a :const:`FORMAT_RAW`."
 
 #: ../../library/lzma.rst:181
 msgid ":const:`CHECK_CRC32`: 32-bit Cyclic Redundancy Check."
 msgstr ""
+":const:`CHECK_CRC32`: 32-bitový cyklický kontrolní součet (Cyclic Redundancy"
+" Check)."
 
 #: ../../library/lzma.rst:183
 msgid ""
-":const:`CHECK_CRC64`: 64-bit Cyclic Redundancy Check. This is the default"
-" for :const:`FORMAT_XZ`."
+":const:`CHECK_CRC64`: 64-bit Cyclic Redundancy Check. This is the default "
+"for :const:`FORMAT_XZ`."
 msgstr ""
+":const:`CHECK_CRC64`: 64-bitový cyklický kontrolní součet. Toto je výchozí "
+"pro :const:`FORMAT_XZ`."
 
 #: ../../library/lzma.rst:186
 msgid ":const:`CHECK_SHA256`: 256-bit Secure Hash Algorithm."
-msgstr ""
+msgstr ":const:`CHECK_SHA256`: 256-bitový Secure Hash Algorithm."
 
 #: ../../library/lzma.rst:188
-msgid "If the specified check is not supported, an :class:`LZMAError` is raised."
+msgid ""
+"If the specified check is not supported, an :class:`LZMAError` is raised."
 msgstr ""
+"Pokud zadaná kontrola není podporována, je vyvolána :class:`LZMAError`."
 
 #: ../../library/lzma.rst:190
 msgid ""
 "The compression settings can be specified either as a preset compression "
-"level (with the *preset* argument), or in detail as a custom filter chain"
-" (with the *filters* argument)."
+"level (with the *preset* argument), or in detail as a custom filter chain "
+"(with the *filters* argument)."
 msgstr ""
+"Nastavení komprese mohou být zadána buď jako úroveň před-nastavené komprese "
+"(argument *preset*), nebo detailně jako vlastní řetězec filtrů (argument "
+"*filters*)."
 
 #: ../../library/lzma.rst:194
 msgid ""
-"The *preset* argument (if provided) should be an integer between ``0`` "
-"and ``9`` (inclusive), optionally OR-ed with the constant "
-":const:`PRESET_EXTREME`. If neither *preset* nor *filters* are given, the"
-" default behavior is to use :const:`PRESET_DEFAULT` (preset level ``6``)."
-" Higher presets produce smaller output, but make the compression process "
+"The *preset* argument (if provided) should be an integer between ``0`` and "
+"``9`` (inclusive), optionally OR-ed with the constant "
+":const:`PRESET_EXTREME`. If neither *preset* nor *filters* are given, the "
+"default behavior is to use :const:`PRESET_DEFAULT` (preset level ``6``). "
+"Higher presets produce smaller output, but make the compression process "
 "slower."
 msgstr ""
+"Argument *preset* (pokud je poskytnut) by měl být celé číslo mezi ``0`` a "
+"``9`` (včetně), fakultativně OR-ované s konstantou :const:`PRESET_EXTREME`. "
+"Pokud není zadáno ani *preset* ani *filters*, výchozí chování je použít "
+":const:`PRESET_DEFAULT` (úroveň předvolby ``6``). Vyšší předvolby vytvářejí "
+"menší výstup, ale pomalejší proces komprese."
 
 #: ../../library/lzma.rst:203
 msgid ""
 "In addition to being more CPU-intensive, compression with higher presets "
-"also requires much more memory (and produces output that needs more "
-"memory to decompress). With preset ``9`` for example, the overhead for an"
-" :class:`LZMACompressor` object can be as high as 800 MiB. For this "
-"reason, it is generally best to stick with the default preset."
+"also requires much more memory (and produces output that needs more memory "
+"to decompress). With preset ``9`` for example, the overhead for an "
+":class:`LZMACompressor` object can be as high as 800 MiB. For this reason, "
+"it is generally best to stick with the default preset."
 msgstr ""
+"Kromě vyšší náročnosti na CPU jsou vyšší předvolby také požadují mnohem "
+"větší paměť (a vytvářejí výstup, který potřebuje více paměti na dekompresi)."
+" Například s předvolbou ``9`` může být režie objektu :class:`LZMACompressor`"
+" až 800 MiB. Z toho důvodu je obecně nejlepší držet se výchozí předvolby."
 
 #: ../../library/lzma.rst:209
 msgid ""
-"The *filters* argument (if provided) should be a filter chain specifier. "
-"See :ref:`filter-chain-specs` for details."
+"The *filters* argument (if provided) should be a filter chain specifier. See"
+" :ref:`filter-chain-specs` for details."
 msgstr ""
+"Argument *filters* (pokud je poskytnut) by měl být specifickátorem řetězce "
+"filtrů. Vidz :ref:`filter-chain-specs` pro podrobnosti."
 
 #: ../../library/lzma.rst:214
 msgid ""
-"Compress *data* (a :class:`bytes` object), returning a :class:`bytes` "
-"object containing compressed data for at least part of the input. Some of"
-" *data* may be buffered internally, for use in later calls to "
-":meth:`compress` and :meth:`flush`. The returned data should be "
-"concatenated with the output of any previous calls to :meth:`compress`."
+"Compress *data* (a :class:`bytes` object), returning a :class:`bytes` object"
+" containing compressed data for at least part of the input. Some of *data* "
+"may be buffered internally, for use in later calls to :meth:`compress` and "
+":meth:`flush`. The returned data should be concatenated with the output of "
+"any previous calls to :meth:`compress`."
 msgstr ""
+"Komprimuje *data* (objekt :class:`bytes`), vrací objekt :class:`bytes` "
+"obsahující komprimovaná data alespoň pro část vstupu. Některá data mohou být"
+" interně vyrovnávána pro použití v pozdějších voláních :meth:`compress` a "
+":meth:`flush`. Vrácená data by měla být realizována s výstupem z každého "
+"předchozího volání :meth:`compress`."
 
 #: ../../library/lzma.rst:222
 msgid ""
-"Finish the compression process, returning a :class:`bytes` object "
-"containing any data stored in the compressor's internal buffers."
+"Finish the compression process, returning a :class:`bytes` object containing"
+" any data stored in the compressor's internal buffers."
 msgstr ""
+"Dokončí proces komprese, vrátí objekt :class:`bytes` obsahující vsdá data "
+"uložená v interních vyrovnávacích pamětech kompresoru."
 
 #: ../../library/lzma.rst:225
 msgid "The compressor cannot be used after this method has been called."
-msgstr ""
+msgstr "Kompresor nelze použít po volání této metody."
 
 #: ../../library/lzma.rst:230
 msgid ""
 "Create a decompressor object, which can be used to decompress data "
 "incrementally."
 msgstr ""
+"Vytvoří objekt dekompresoru, který lze použít pro inkremenā31ní dekompresí "
+"dat."
 
 #: ../../library/lzma.rst:233
 msgid ""
-"For a more convenient way of decompressing an entire compressed stream at"
-" once, see :func:`decompress`."
+"For a more convenient way of decompressing an entire compressed stream at "
+"once, see :func:`decompress`."
 msgstr ""
+"Pro pohodlnější způsob dekomprese celého komprimovaného toku najednou viz "
+":func:`decompress`."
 
 #: ../../library/lzma.rst:236
 msgid ""
-"The *format* argument specifies the container format that should be used."
-" The default is :const:`FORMAT_AUTO`, which can decompress both ``.xz`` "
-"and ``.lzma`` files. Other possible values are :const:`FORMAT_XZ`, "
+"The *format* argument specifies the container format that should be used. "
+"The default is :const:`FORMAT_AUTO`, which can decompress both ``.xz`` and "
+"``.lzma`` files. Other possible values are :const:`FORMAT_XZ`, "
 ":const:`FORMAT_ALONE`, and :const:`FORMAT_RAW`."
 msgstr ""
+"Argument *format* udává, který formát kontejneru by měl být použit. Výchozí "
+"je :const:`FORMAT_AUTO`, který může dekomprimovat soubory ``.xz`` i "
+"``.lzma``. Daljší možné hodnoty jsou :const:`FORMAT_XZ`, "
+":const:`FORMAT_ALONE` a :const:`FORMAT_RAW`."
 
 #: ../../library/lzma.rst:241
 msgid ""
-"The *memlimit* argument specifies a limit (in bytes) on the amount of "
-"memory that the decompressor can use. When this argument is used, "
-"decompression will fail with an :class:`LZMAError` if it is not possible "
-"to decompress the input within the given memory limit."
+"The *memlimit* argument specifies a limit (in bytes) on the amount of memory"
+" that the decompressor can use. When this argument is used, decompression "
+"will fail with an :class:`LZMAError` if it is not possible to decompress the"
+" input within the given memory limit."
 msgstr ""
+"Argument *memlimit* určuje limit (v bajtech) na množství paměti, kterou může"
+" dekompresor použít. Pokud je tento argument použit, dekomprese selhá s "
+":class:`LZMAError`, pokud není možné dekomprimovat vstup v daném limitu "
+"paměti."
 
 #: ../../library/lzma.rst:246
 msgid ""
-"The *filters* argument specifies the filter chain that was used to create"
-" the stream being decompressed. This argument is required if *format* is "
-":const:`FORMAT_RAW`, but should not be used for other formats. See :ref"
-":`filter-chain-specs` for more information about filter chains."
+"The *filters* argument specifies the filter chain that was used to create "
+"the stream being decompressed. This argument is required if *format* is "
+":const:`FORMAT_RAW`, but should not be used for other formats. See "
+":ref:`filter-chain-specs` for more information about filter chains."
 msgstr ""
+"Argument *filters* určuje řetězec filtrů, který byl použit k vytvoření "
+"dekomprimovaného toku. Tento argument je povinný, pokud je *format* "
+":const:`FORMAT_RAW`, ale neměl by být použit pro jiné formáty. Vídz "
+":ref:`filter-chain-specs` pro více informací o řetězcích filtrů."
 
 #: ../../library/lzma.rst:252
 msgid ""
@@ -381,41 +500,60 @@ msgid ""
 "decompress a multi-stream input with :class:`LZMADecompressor`, you must "
 "create a new decompressor for each stream."
 msgstr ""
+"Tato třída transparentně nezpracovává vstupy obsahující více komprimovaných "
+"toků, na rozdíl od :func:`decompress` a :class:`LZMAFile`. Chcete-li "
+"dekomprimovat více-toků vstup s :class:`LZMADecompressor`, musíte vytvořit "
+"nový dekompresor pro každý tok."
 
 #: ../../library/lzma.rst:259
 msgid ""
-"Decompress *data* (a :term:`bytes-like object`), returning uncompressed "
-"data as bytes. Some of *data* may be buffered internally, for use in "
-"later calls to :meth:`decompress`. The returned data should be "
-"concatenated with the output of any previous calls to :meth:`decompress`."
+"Decompress *data* (a :term:`bytes-like object`), returning uncompressed data"
+" as bytes. Some of *data* may be buffered internally, for use in later calls"
+" to :meth:`decompress`. The returned data should be concatenated with the "
+"output of any previous calls to :meth:`decompress`."
 msgstr ""
+"Dekomprimuje *data* (objekt :term:`bytes-like`), vrátí dekomprimovaná data "
+"jako bajty. Některá data mohou být internně vyrovnávána pro použití v "
+"pozdějších voláních :meth:`decompress`. Vrácená data by měla být realizována"
+" s výstupem z každého předchozího volání :meth:`decompress`."
 
 #: ../../library/lzma.rst:265
 msgid ""
 "If *max_length* is nonnegative, returns at most *max_length* bytes of "
 "decompressed data. If this limit is reached and further output can be "
-"produced, the :attr:`~.needs_input` attribute will be set to ``False``. "
-"In this case, the next call to :meth:`~.decompress` may provide *data* as"
-" ``b''`` to obtain more of the output."
+"produced, the :attr:`~.needs_input` attribute will be set to ``False``. In "
+"this case, the next call to :meth:`~.decompress` may provide *data* as "
+"``b''`` to obtain more of the output."
 msgstr ""
+"Pokud je *max_length* nezáporné, vrátí nejvyu 0 *max_length* bajtů "
+"dekomprimovaných dat. Pokud je tohoto limitu dosaženo a lze vytvořit další "
+"výstup, bude atribut :attr:`~.needs_input` nastaven na ``False``. V tomto "
+"případě může následující volání :meth:`~.decompress` poskytnout *data* jako "
+"``b''`` k získání více výstupu."
 
 #: ../../library/lzma.rst:272
 msgid ""
-"If all of the input data was decompressed and returned (either because "
-"this was less than *max_length* bytes, or because *max_length* was "
-"negative), the :attr:`~.needs_input` attribute will be set to ``True``."
+"If all of the input data was decompressed and returned (either because this "
+"was less than *max_length* bytes, or because *max_length* was negative), the"
+" :attr:`~.needs_input` attribute will be set to ``True``."
 msgstr ""
+"Pokud byly všechna vstupní data dekomprimována a vrácena (buď protože byla "
+"menší než *max_length* bajtů, nebo protože *max_length* bylo záporné), bude "
+"atribut :attr:`~.needs_input` nastaven na ``True``."
 
 #: ../../library/lzma.rst:277
 msgid ""
-"Attempting to decompress data after the end of stream is reached raises "
-"an :exc:`EOFError`.  Any data found after the end of the stream is "
-"ignored and saved in the :attr:`~.unused_data` attribute."
+"Attempting to decompress data after the end of stream is reached raises an "
+":exc:`EOFError`.  Any data found after the end of the stream is ignored and "
+"saved in the :attr:`~.unused_data` attribute."
 msgstr ""
+"Pokus o dekompresí dat po dosažení konce toku způsobuje vyvolání "
+":exc:`EOFError`. Každá data nalezená po konci toku jsou ignorována a uložena"
+" v atributu :attr:`~.unused_data`."
 
 #: ../../library/lzma.rst:281
 msgid "Added the *max_length* parameter."
-msgstr ""
+msgstr "Přidán parametr *max_length*."
 
 #: ../../library/lzma.rst:286
 msgid ""
@@ -423,42 +561,53 @@ msgid ""
 ":const:`CHECK_UNKNOWN` until enough of the input has been decoded to "
 "determine what integrity check it uses."
 msgstr ""
+"ID kontroly integrity použité vstupním tokem. To může být "
+":const:`CHECK_UNKNOWN` dokud není dostatek vstupu dekódováno, aby se "
+"zjistilo, kterou kontrolu integrity používá."
 
 #: ../../library/lzma.rst:292
 msgid "``True`` if the end-of-stream marker has been reached."
-msgstr ""
+msgstr "``True``, pokud bylo dosaženo značky konce toku."
 
 #: ../../library/lzma.rst:296
 msgid "Data found after the end of the compressed stream."
-msgstr ""
+msgstr "Data nalezena po konci komprimovaného toku."
 
 #: ../../library/lzma.rst:298
 msgid "Before the end of the stream is reached, this will be ``b\"\"``."
-msgstr ""
+msgstr "Před dosažením konce toku to bude ``b\"\"``."
 
 #: ../../library/lzma.rst:302
 msgid ""
-"``False`` if the :meth:`.decompress` method can provide more decompressed"
-" data before requiring new uncompressed input."
+"``False`` if the :meth:`.decompress` method can provide more decompressed "
+"data before requiring new uncompressed input."
 msgstr ""
+"``False``, pokud metoda :meth:`.decompress` může poskytnout více "
+"dekomprimovaných dat před vyžadováním nových nekomprimovaných vstupů."
 
 #: ../../library/lzma.rst:309
 msgid ""
-"Compress *data* (a :class:`bytes` object), returning the compressed data "
-"as a :class:`bytes` object."
+"Compress *data* (a :class:`bytes` object), returning the compressed data as "
+"a :class:`bytes` object."
 msgstr ""
+"Komprimuje *data* (objekt :class:`bytes`), vrátí komprimovaná data jako "
+"objekt :class:`bytes`."
 
 #: ../../library/lzma.rst:312
 msgid ""
 "See :class:`LZMACompressor` above for a description of the *format*, "
 "*check*, *preset* and *filters* arguments."
 msgstr ""
+"Podrobnosti argumentu *format*, *check*, *preset* a *filters* viz "
+":class:`LZMACompressor` výše."
 
 #: ../../library/lzma.rst:318
 msgid ""
-"Decompress *data* (a :class:`bytes` object), returning the uncompressed "
-"data as a :class:`bytes` object."
+"Decompress *data* (a :class:`bytes` object), returning the uncompressed data"
+" as a :class:`bytes` object."
 msgstr ""
+"Dekomprimuje *data* (objekt :class:`bytes`), vrátí dekomprimovaná data jako "
+"objekt :class:`bytes`."
 
 #: ../../library/lzma.rst:321
 msgid ""
@@ -466,71 +615,87 @@ msgid ""
 "decompress all of these streams, and return the concatenation of the "
 "results."
 msgstr ""
+"Pokud jsou *data* zreťezením více různých komprimovaných toků, dekomprimuje "
+"všechny tyto toky a vrátí zreťezení výsledků."
 
 #: ../../library/lzma.rst:324
 msgid ""
 "See :class:`LZMADecompressor` above for a description of the *format*, "
 "*memlimit* and *filters* arguments."
 msgstr ""
+"Podrobnosti argumentů *format*, *memlimit* a *filters* viz "
+":class:`LZMADecompressor` výše."
 
 #: ../../library/lzma.rst:329
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Různé"
 
 #: ../../library/lzma.rst:333
-msgid "Return ``True`` if the given integrity check is supported on this system."
+msgid ""
+"Return ``True`` if the given integrity check is supported on this system."
 msgstr ""
+"Vrátí ``True``, pokud je daná kontrola integrity podporována na tomto "
+"systému."
 
 #: ../../library/lzma.rst:335
 msgid ""
 ":const:`CHECK_NONE` and :const:`CHECK_CRC32` are always supported. "
-":const:`CHECK_CRC64` and :const:`CHECK_SHA256` may be unavailable if you "
-"are using a version of :program:`liblzma` that was compiled with a "
-"limited feature set."
+":const:`CHECK_CRC64` and :const:`CHECK_SHA256` may be unavailable if you are"
+" using a version of :program:`liblzma` that was compiled with a limited "
+"feature set."
 msgstr ""
+":const:`CHECK_NONE` a :const:`CHECK_CRC32` jsou vždy podporovány. "
+":const:`CHECK_CRC64` a :const:`CHECK_SHA256` nemusí být k dispozici, pokud "
+"používáte verzi :program:`liblzma`, která byla kompilovaná s omezenou sadou "
+"funkcí."
 
 #: ../../library/lzma.rst:344
 msgid "Specifying custom filter chains"
-msgstr ""
+msgstr "Specifikace vlastních řetězců filtrů"
 
 #: ../../library/lzma.rst:346
 msgid ""
 "A filter chain specifier is a sequence of dictionaries, where each "
-"dictionary contains the ID and options for a single filter. Each "
-"dictionary must contain the key ``\"id\"``, and may contain additional "
-"keys to specify filter-dependent options. Valid filter IDs are as "
-"follows:"
+"dictionary contains the ID and options for a single filter. Each dictionary "
+"must contain the key ``\"id\"``, and may contain additional keys to specify "
+"filter-dependent options. Valid filter IDs are as follows:"
 msgstr ""
+"Specifikátor řetězce filtrů je posloupnost slovníků, kde každý slovník "
+"obsahuje ID a možnosti pro jeden filtr. Každý slovník musí obsahovat klíc "
+"``\"id\"``, a má obsahovat další klíce pro urzéní možností záviaslého "
+"filtru. Platné IDs filtrů jsou následující:"
 
 #: ../../library/lzma.rst:351
 msgid "Compression filters:"
-msgstr ""
+msgstr "Kompresní filtry:"
 
 #: ../../library/lzma.rst:353
 msgid ":const:`FILTER_LZMA1` (for use with :const:`FORMAT_ALONE`)"
-msgstr ""
+msgstr ":const:`FILTER_LZMA1` (pro použití s :const:`FORMAT_ALONE`)"
 
 #: ../../library/lzma.rst:354
 msgid ""
 ":const:`FILTER_LZMA2` (for use with :const:`FORMAT_XZ` and "
 ":const:`FORMAT_RAW`)"
 msgstr ""
+":const:`FILTER_LZMA2` (pro použití s :const:`FORMAT_XZ` a "
+":const:`FORMAT_RAW`)"
 
 #: ../../library/lzma.rst:356
 msgid "Delta filter:"
-msgstr ""
+msgstr "Delta filtr:"
 
 #: ../../library/lzma.rst:358
 msgid ":const:`FILTER_DELTA`"
-msgstr ""
+msgstr ":const:`FILTER_DELTA`"
 
 #: ../../library/lzma.rst:360
 msgid "Branch-Call-Jump (BCJ) filters:"
-msgstr ""
+msgstr "Filtry Branch-Call-Jump (BCJ):"
 
 #: ../../library/lzma.rst:362
 msgid ":const:`FILTER_X86`"
-msgstr ""
+msgstr ":const:`FILTER_X86`"
 
 #: ../../library/lzma.rst:363
 msgid ":const:`FILTER_IA64`"
@@ -554,27 +719,27 @@ msgstr ""
 
 #: ../../library/lzma.rst:369
 msgid ""
-"A filter chain can consist of up to 4 filters, and cannot be empty. The "
-"last filter in the chain must be a compression filter, and any other "
-"filters must be delta or BCJ filters."
+"A filter chain can consist of up to 4 filters, and cannot be empty. The last"
+" filter in the chain must be a compression filter, and any other filters "
+"must be delta or BCJ filters."
 msgstr ""
 
 #: ../../library/lzma.rst:373
 msgid ""
-"Compression filters support the following options (specified as "
-"additional entries in the dictionary representing the filter):"
+"Compression filters support the following options (specified as additional "
+"entries in the dictionary representing the filter):"
 msgstr ""
 
 #: ../../library/lzma.rst:376
 msgid ""
-"``preset``: A compression preset to use as a source of default values for"
-" options that are not specified explicitly."
+"``preset``: A compression preset to use as a source of default values for "
+"options that are not specified explicitly."
 msgstr ""
 
 #: ../../library/lzma.rst:378
 msgid ""
-"``dict_size``: Dictionary size in bytes. This should be between 4 KiB and"
-" 1.5 GiB (inclusive)."
+"``dict_size``: Dictionary size in bytes. This should be between 4 KiB and "
+"1.5 GiB (inclusive)."
 msgstr ""
 
 #: ../../library/lzma.rst:380
@@ -583,8 +748,8 @@ msgstr ""
 
 #: ../../library/lzma.rst:381
 msgid ""
-"``lp``: Number of literal position bits. The sum ``lc + lp`` must be at "
-"most 4."
+"``lp``: Number of literal position bits. The sum ``lc + lp`` must be at most"
+" 4."
 msgstr ""
 
 #: ../../library/lzma.rst:383
@@ -597,8 +762,8 @@ msgstr ""
 
 #: ../../library/lzma.rst:385
 msgid ""
-"``nice_len``: What should be considered a \"nice length\" for a match. "
-"This should be 273 or less."
+"``nice_len``: What should be considered a \"nice length\" for a match. This "
+"should be 273 or less."
 msgstr ""
 
 #: ../../library/lzma.rst:387
@@ -609,15 +774,15 @@ msgstr ""
 
 #: ../../library/lzma.rst:389
 msgid ""
-"``depth``: Maximum search depth used by match finder. 0 (default) means "
-"to select automatically based on other filter options."
+"``depth``: Maximum search depth used by match finder. 0 (default) means to "
+"select automatically based on other filter options."
 msgstr ""
 
 #: ../../library/lzma.rst:392
 msgid ""
 "The delta filter stores the differences between bytes, producing more "
-"repetitive input for the compressor in certain circumstances. It supports"
-" one option, ``dist``. This indicates the distance between bytes to be "
+"repetitive input for the compressor in certain circumstances. It supports "
+"one option, ``dist``. This indicates the distance between bytes to be "
 "subtracted. The default is 1, i.e. take the differences between adjacent "
 "bytes."
 msgstr ""
@@ -625,11 +790,11 @@ msgstr ""
 #: ../../library/lzma.rst:397
 msgid ""
 "The BCJ filters are intended to be applied to machine code. They convert "
-"relative branches, calls and jumps in the code to use absolute "
-"addressing, with the aim of increasing the redundancy that can be "
-"exploited by the compressor. These filters support one option, "
-"``start_offset``. This specifies the address that should be mapped to the"
-" beginning of the input data. The default is 0."
+"relative branches, calls and jumps in the code to use absolute addressing, "
+"with the aim of increasing the redundancy that can be exploited by the "
+"compressor. These filters support one option, ``start_offset``. This "
+"specifies the address that should be mapped to the beginning of the input "
+"data. The default is 0."
 msgstr ""
 
 #: ../../library/lzma.rst:405
@@ -715,4 +880,3 @@ msgid ""
 "with lzma.open(\"file.xz\", \"w\", filters=my_filters) as f:\n"
 "    f.write(b\"blah blah blah\")"
 msgstr ""
-

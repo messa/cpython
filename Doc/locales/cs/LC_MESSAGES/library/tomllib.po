@@ -11,21 +11,21 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/tomllib.rst:2
 msgid ":mod:`!tomllib` --- Parse TOML files"
-msgstr ""
+msgstr ":mod:`!tomllib` --- Analýza TOML souborů"
 
 #: ../../library/tomllib.rst:12
 msgid "**Source code:** :source:`Lib/tomllib`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/tomllib`"
 
 #: ../../library/tomllib.rst:16
 msgid ""
@@ -33,98 +33,120 @@ msgid ""
 "Minimal Language, `https://toml.io <https://toml.io/en/>`_). This module "
 "does not support writing TOML."
 msgstr ""
+"Tento modul poskytuje rozhraní pro analýzu TOML 1.0.0 (Tom's Obvious Minimal"
+" Language, `https://toml.io <https://toml.io/en/>`_). Tento modul "
+"nepodporuje zápis do TOML."
 
 #: ../../library/tomllib.rst:22
 msgid ""
-"The :pypi:`Tomli-W package <tomli-w>` is a TOML writer that can be used "
-"in conjunction with this module, providing a write API familiar to users "
-"of the standard library :mod:`marshal` and :mod:`pickle` modules."
+"The :pypi:`Tomli-W package <tomli-w>` is a TOML writer that can be used in "
+"conjunction with this module, providing a write API familiar to users of the"
+" standard library :mod:`marshal` and :mod:`pickle` modules."
 msgstr ""
+"Balíček :pypi:`Tomli-W <tomli-w>` je zápis TOML, který lze používat spolu s "
+"tímto modulem a poskytuje API pro zápis známé z modulů standardní knihovny "
+":mod:`marshal` a :mod:`pickle`."
 
 #: ../../library/tomllib.rst:29
 msgid ""
-"The :pypi:`TOML Kit package <tomlkit>` is a style-preserving TOML library"
-" with both read and write capability. It is a recommended replacement for"
-" this module for editing already existing TOML files."
+"The :pypi:`TOML Kit package <tomlkit>` is a style-preserving TOML library "
+"with both read and write capability. It is a recommended replacement for "
+"this module for editing already existing TOML files."
 msgstr ""
+"Balíček :pypi:`TOML Kit <tomlkit>` je knihovna TOML, která zachovává styl a "
+"podporuje čtení i zápis. Je to doporučená náhrada za tento modul při úpravě "
+"existujících souborů TOML."
 
 #: ../../library/tomllib.rst:35
 msgid "This module defines the following functions:"
-msgstr ""
+msgstr "Tento modul definuje následující funkce:"
 
 #: ../../library/tomllib.rst:39
 msgid ""
-"Read a TOML file. The first argument should be a readable and binary file"
-" object. Return a :class:`dict`. Convert TOML types to Python using this "
+"Read a TOML file. The first argument should be a readable and binary file "
+"object. Return a :class:`dict`. Convert TOML types to Python using this "
 ":ref:`conversion table <toml-to-py-table>`."
 msgstr ""
+"Napříte soubor TOML. Prvi argument by měl být čitelný a binární objektem "
+"souboru. Vrátí :class:`dict`. Konvertuje typy TOML na Python pomocí této "
+":ref:`tabulky konverzí <toml-to-py-table>`."
 
 #: ../../library/tomllib.rst:43
 msgid ""
 "*parse_float* will be called with the string of every TOML float to be "
-"decoded.  By default, this is equivalent to ``float(num_str)``. This can "
-"be used to use another datatype or parser for TOML floats (e.g. "
-":class:`decimal.Decimal`). The callable must not return a :class:`dict` "
-"or a :class:`list`, else a :exc:`ValueError` is raised."
+"decoded.  By default, this is equivalent to ``float(num_str)``. This can be "
+"used to use another datatype or parser for TOML floats (e.g. "
+":class:`decimal.Decimal`). The callable must not return a :class:`dict` or a"
+" :class:`list`, else a :exc:`ValueError` is raised."
 msgstr ""
+"*parse_float* bude volán s řetězcem každého TOML float, který má být "
+"dekódován. Ve výchozím stavu je to ekvivalentní ``float(num_str)``. Lze jej "
+"použít k použití jiného datového typu nebo parseru pro TOML floats (např. "
+":class:`decimal.Decimal`). Volatelnost nemůže vrátit :class:`dict` nebo "
+":class:`list`, jinak je vyvolána :exc:`ValueError`."
 
 #: ../../library/tomllib.rst:49 ../../library/tomllib.rst:58
 msgid "A :exc:`TOMLDecodeError` will be raised on an invalid TOML document."
-msgstr ""
+msgstr "Na neplatném dokumentu TOML bude vyvolán :exc:`TOMLDecodeError`."
 
 #: ../../library/tomllib.rst:54
 msgid ""
-"Load TOML from a :class:`str` object. Return a :class:`dict`. Convert "
-"TOML types to Python using this :ref:`conversion table <toml-to-py-"
-"table>`. The *parse_float* argument has the same meaning as in "
-":func:`load`."
+"Load TOML from a :class:`str` object. Return a :class:`dict`. Convert TOML "
+"types to Python using this :ref:`conversion table <toml-to-py-table>`. The "
+"*parse_float* argument has the same meaning as in :func:`load`."
 msgstr ""
+"Načíte TOML z objektu :class:`str`. Vrátí :class:`dict`. Konvertuje typy "
+"TOML na Python pomocí této :ref:`tabulky konverzí <toml-to-py-table>`. "
+"Argument *parse_float* má stejný význam jako v :func:`load`."
 
 #: ../../library/tomllib.rst:61
 msgid "The following exceptions are available:"
-msgstr ""
+msgstr "Následující výjimky jsou k dispozici:"
 
 #: ../../library/tomllib.rst:65
-msgid "Subclass of :exc:`ValueError` with the following additional attributes:"
-msgstr ""
+msgid ""
+"Subclass of :exc:`ValueError` with the following additional attributes:"
+msgstr "Podtrida :exc:`ValueError` s následujícími doplňujícími atributy:"
 
 #: ../../library/tomllib.rst:69
 msgid "The unformatted error message."
-msgstr ""
+msgstr "Ne formovaná chybová zpráva."
 
 #: ../../library/tomllib.rst:73
 msgid "The TOML document being parsed."
-msgstr ""
+msgstr "Dokument TOML, který se analyzuje."
 
 #: ../../library/tomllib.rst:77
 msgid "The index of *doc* where parsing failed."
-msgstr ""
+msgstr "Index *doc*, kde se analýza nezdalařila."
 
 #: ../../library/tomllib.rst:81
 msgid "The line corresponding to *pos*."
-msgstr ""
+msgstr "Rádek odpovída jící *pos*."
 
 #: ../../library/tomllib.rst:85
 msgid "The column corresponding to *pos*."
-msgstr ""
+msgstr "Sloupec odpovída jící *pos*."
 
 #: ../../library/tomllib.rst:87
 msgid ""
 "Added the *msg*, *doc* and *pos* parameters. Added the :attr:`msg`, "
 ":attr:`doc`, :attr:`pos`, :attr:`lineno` and :attr:`colno` attributes."
 msgstr ""
+"Přidány parametry *msg*, *doc* a *pos*. Přidány atributy :attr:`msg`, "
+":attr:`doc`, :attr:`pos`, :attr:`lineno` a :attr:`colno`."
 
 #: ../../library/tomllib.rst:91
 msgid "Passing free-form positional arguments is deprecated."
-msgstr ""
+msgstr "Predávání volebných požadavků je zastaralé."
 
 #: ../../library/tomllib.rst:96
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/tomllib.rst:98
 msgid "Parsing a TOML file::"
-msgstr ""
+msgstr "Analýza TOML souboru::"
 
 #: ../../library/tomllib.rst:100
 msgid ""
@@ -133,10 +155,14 @@ msgid ""
 "with open(\"pyproject.toml\", \"rb\") as f:\n"
 "    data = tomllib.load(f)"
 msgstr ""
+"import tomllib\n"
+"\n"
+"with open(\"pyproject.toml\", \"rb\") as f:\n"
+"    data = tomllib.load(f)"
 
 #: ../../library/tomllib.rst:105
 msgid "Parsing a TOML string::"
-msgstr ""
+msgstr "Analýza TOML řetězce::"
 
 #: ../../library/tomllib.rst:107
 msgid ""
@@ -149,51 +175,59 @@ msgid ""
 "\n"
 "data = tomllib.loads(toml_str)"
 msgstr ""
+"import tomllib\n"
+"\n"
+"toml_str = \"\"\"\n"
+"python-version = \"3.11.0\"\n"
+"python-implementation = \"CPython\"\n"
+"\"\"\"\n"
+"\n"
+"data = tomllib.loads(toml_str)"
 
 #: ../../library/tomllib.rst:118
 msgid "Conversion Table"
-msgstr ""
+msgstr "Tabulka konverzí"
 
 #: ../../library/tomllib.rst:123
 msgid "TOML"
-msgstr ""
+msgstr "TOML"
 
 #: ../../library/tomllib.rst:123
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../library/tomllib.rst:125
 msgid "TOML document"
-msgstr ""
+msgstr "Dokument TOML"
 
 #: ../../library/tomllib.rst:125 ../../library/tomllib.rst:145
 #: ../../library/tomllib.rst:147
 msgid "dict"
-msgstr ""
+msgstr "dict"
 
 #: ../../library/tomllib.rst:127
 msgid "string"
-msgstr ""
+msgstr "string"
 
 #: ../../library/tomllib.rst:127
 msgid "str"
-msgstr ""
+msgstr "str"
 
 #: ../../library/tomllib.rst:129
 msgid "integer"
-msgstr ""
+msgstr "integer"
 
 #: ../../library/tomllib.rst:129
 msgid "int"
-msgstr ""
+msgstr "int"
 
 #: ../../library/tomllib.rst:131
 msgid "float"
-msgstr ""
+msgstr "float"
 
 #: ../../library/tomllib.rst:131
 msgid "float (configurable with *parse_float*)"
-msgstr ""
+msgstr "float (konfigurovatelný s *parse_float*)"
 
 #: ../../library/tomllib.rst:133
 msgid "boolean"
@@ -260,4 +294,3 @@ msgstr ""
 #: ../../library/tomllib.rst:149
 msgid "list of dicts"
 msgstr ""
-

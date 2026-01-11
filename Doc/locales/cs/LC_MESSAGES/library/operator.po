@@ -11,21 +11,21 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/operator.rst:2
 msgid ":mod:`!operator` --- Standard operators as functions"
-msgstr ""
+msgstr ":mod:`!operator` --- Standardní operátory jako funkce"
 
 #: ../../library/operator.rst:9
 msgid "**Source code:** :source:`Lib/operator.py`"
-msgstr ""
+msgstr "**Zdrojóvý kód:** :source:`Lib/operator.py`"
 
 #: ../../library/operator.rst:18
 msgid ""
@@ -33,39 +33,58 @@ msgid ""
 "corresponding to the intrinsic operators of Python.  For example, "
 "``operator.add(x, y)`` is equivalent to the expression ``x+y``. Many "
 "function names are those used for special methods, without the double "
-"underscores.  For backward compatibility, many of these have a variant "
-"with the double underscores kept. The variants without the double "
-"underscores are preferred for clarity."
+"underscores.  For backward compatibility, many of these have a variant with "
+"the double underscores kept. The variants without the double underscores are"
+" preferred for clarity."
 msgstr ""
+"Modul :mod:`operator` exportuje sadu efektivních funkcí odpovídajících "
+"vnítrňním operátorűm Pythonu. Například ``operator.add(x, y)`` je "
+"ekvivalentní výrazu ``x+y``. Mnoho názvű funkcí jsou ty, které se používají "
+"pro speciální metody, bez dvojitých podtřížk. Pro zpěnou kompatibilitu mají "
+"mnoho z nich variantu se zachovanými dvojitými podtřížky. Varianty bez "
+"dvojitých podtřížk jsou preferovány pro přehlednost."
 
 #: ../../library/operator.rst:25
 msgid ""
-"The functions fall into categories that perform object comparisons, "
-"logical operations, mathematical operations and sequence operations."
+"The functions fall into categories that perform object comparisons, logical "
+"operations, mathematical operations and sequence operations."
 msgstr ""
+"Funkce spadají do kategorií, které provádějí porovnávání objektů, logické "
+"operace, matematické operace a operace se sekvencemi."
 
 #: ../../library/operator.rst:28
 msgid ""
-"The object comparison functions are useful for all objects, and are named"
-" after the rich comparison operators they support:"
+"The object comparison functions are useful for all objects, and are named "
+"after the rich comparison operators they support:"
 msgstr ""
+"Funkce pro porovnávání objektů jsou užitečné pro všechny objekty a jsou "
+"pojmenovoat podle operátorů bohatého porovnávání, které podporují:"
 
 #: ../../library/operator.rst:45
 msgid ""
-"Perform \"rich comparisons\" between *a* and *b*. Specifically, ``lt(a, "
-"b)`` is equivalent to ``a < b``, ``le(a, b)`` is equivalent to ``a <= "
-"b``, ``eq(a, b)`` is equivalent to ``a == b``, ``ne(a, b)`` is equivalent"
-" to ``a != b``, ``gt(a, b)`` is equivalent to ``a > b`` and ``ge(a, b)`` "
-"is equivalent to ``a >= b``.  Note that these functions can return any "
-"value, which may or may not be interpretable as a Boolean value.  See "
+"Perform \"rich comparisons\" between *a* and *b*. Specifically, ``lt(a, b)``"
+" is equivalent to ``a < b``, ``le(a, b)`` is equivalent to ``a <= b``, "
+"``eq(a, b)`` is equivalent to ``a == b``, ``ne(a, b)`` is equivalent to ``a "
+"!= b``, ``gt(a, b)`` is equivalent to ``a > b`` and ``ge(a, b)`` is "
+"equivalent to ``a >= b``.  Note that these functions can return any value, "
+"which may or may not be interpretable as a Boolean value.  See "
 ":ref:`comparisons` for more information about rich comparisons."
 msgstr ""
+"Provádějí „bohaté porovnávání“ mezi *a* a *b*. Konkrétně ``lt(a, b)`` je "
+"ekvivalentní ``a < b``, ``le(a, b)`` je ekvivalentní ``a <= b``, ``eq(a, "
+"b)`` je ekvivalentní ``a == b``, ``ne(a, b)`` je ekvivalentní ``a != b``, "
+"``gt(a, b)`` je ekvivalentní ``a > b`` a ``ge(a, b)`` je ekvivalentní ``a >="
+" b``. Všimněte si, že tyto funkce mohou vrátit jakoukoli hodnotu, která "
+"nemusí být nutně interpretovatelna jako logická hodnota. Více informácí "
+"naleznete v :ref:`comparisons`."
 
 #: ../../library/operator.rst:54
 msgid ""
 "The logical operations are also generally applicable to all objects, and "
 "support truth tests, identity tests, and boolean operations:"
 msgstr ""
+"Logické operace jsou také obecně použitelné na všechny objekty a podporují "
+"testy pravdivosti, testy identity a logické operace:"
 
 #: ../../library/operator.rst:61
 msgid ""
@@ -74,199 +93,227 @@ msgid ""
 "defines this operation.  The result is affected by the "
 ":meth:`~object.__bool__` and :meth:`~object.__len__` methods.)"
 msgstr ""
+"Vrácí výsledek :keyword:`not` *obj*. (Všimněte si, že neexistuje žádná "
+"metoda :meth:`!__not__` pro instance objektů; pouze jádro interpretu "
+"definuje tuto operaci. Výsledek je ovlivněn metodami "
+":meth:`~object.__bool__` a :meth:`~object.__len__`.)"
 
 #: ../../library/operator.rst:69
 msgid ""
-"Return :const:`True` if *obj* is true, and :const:`False` otherwise.  "
-"This is equivalent to using the :class:`bool` constructor."
+"Return :const:`True` if *obj* is true, and :const:`False` otherwise.  This "
+"is equivalent to using the :class:`bool` constructor."
 msgstr ""
+"Vrácí :const:`True`, pokud je *obj* pravdivý, a :const:`False` v opačném "
+"případě. Toto je ekvivalentní použití konstruktoru :class:`bool`."
 
 #: ../../library/operator.rst:75
 msgid "Return ``a is b``.  Tests object identity."
-msgstr ""
+msgstr "Vrácí ``a is b``. Testuje identitu objektu."
 
 #: ../../library/operator.rst:80
 msgid "Return ``a is not b``.  Tests object identity."
-msgstr ""
+msgstr "Vrácí ``a is not b``. Testuje identitu objektu."
 
 #: ../../library/operator.rst:85
 msgid "Return ``a is None``.  Tests object identity."
-msgstr ""
+msgstr "Vrácí ``a is None``. Testuje identitu objektu."
 
 #: ../../library/operator.rst:92
 msgid "Return ``a is not None``.  Tests object identity."
-msgstr ""
+msgstr "Vrácí ``a is not None``. Testuje identitu objektu."
 
 #: ../../library/operator.rst:97
 msgid "The mathematical and bitwise operations are the most numerous:"
-msgstr ""
+msgstr "Matematické a bitové operace jsou nejpočetnější:"
 
 #: ../../library/operator.rst:103
 msgid "Return the absolute value of *obj*."
-msgstr ""
+msgstr "Vrácí absolutní hodnotu *obj*."
 
 #: ../../library/operator.rst:109
 msgid "Return ``a + b``, for *a* and *b* numbers."
-msgstr ""
+msgstr "Vrácí ``a + b`` pro čísla *a* a *b*."
 
 #: ../../library/operator.rst:115
 msgid "Return the bitwise and of *a* and *b*."
-msgstr ""
+msgstr "Vrácí bitovø AND *a* a *b*."
 
 #: ../../library/operator.rst:121
 msgid "Return ``a // b``."
-msgstr ""
+msgstr "Vrácí ``a // b``."
 
 #: ../../library/operator.rst:127
 msgid "Return *a* converted to an integer.  Equivalent to ``a.__index__()``."
-msgstr ""
+msgstr "Vrácí *a* převede na celé číslo. Ekvivalentní ``a.__index__()``."
 
 #: ../../library/operator.rst:129
 msgid ""
-"The result always has exact type :class:`int`.  Previously, the result "
-"could have been an instance of a subclass of ``int``."
+"The result always has exact type :class:`int`.  Previously, the result could"
+" have been an instance of a subclass of ``int``."
 msgstr ""
+"Výsledek má vždy přesný typ :class:`int`. Dříve mě výsledek můci být "
+"instancí podskupiny ``int``."
 
 #: ../../library/operator.rst:139
 msgid ""
 "Return the bitwise inverse of the number *obj*.  This is equivalent to "
 "``~obj``."
 msgstr ""
+"Vrácí bitový inverzní obraz čísla *obj*. Toto je ekvivalentní ``~obj``."
 
 #: ../../library/operator.rst:145
 msgid "Return *a* shifted left by *b*."
-msgstr ""
+msgstr "Vrácí *a* posunuty doleva o *b*."
 
 #: ../../library/operator.rst:151
 msgid "Return ``a % b``."
-msgstr ""
+msgstr "Vrácí ``a % b``."
 
 #: ../../library/operator.rst:157
 msgid "Return ``a * b``, for *a* and *b* numbers."
-msgstr ""
+msgstr "Vrácí ``a * b`` pro čísla *a* a *b*."
 
 #: ../../library/operator.rst:163
 msgid "Return ``a @ b``."
-msgstr ""
+msgstr "Vrácí ``a @ b``."
 
 #: ../../library/operator.rst:171
 msgid "Return *obj* negated (``-obj``)."
-msgstr ""
+msgstr "Vrácí *obj* negované (``-obj``)."
 
 #: ../../library/operator.rst:177
 msgid "Return the bitwise or of *a* and *b*."
-msgstr ""
+msgstr "Vrácí bitové OR *a* a *b*."
 
 #: ../../library/operator.rst:183
 msgid "Return *obj* positive (``+obj``)."
-msgstr ""
+msgstr "Vrácí *obj* kladné (``+obj``)."
 
 #: ../../library/operator.rst:189
 msgid "Return ``a ** b``, for *a* and *b* numbers."
-msgstr ""
+msgstr "Vrácí ``a ** b`` pro čísla *a* a *b*."
 
 #: ../../library/operator.rst:195
 msgid "Return *a* shifted right by *b*."
-msgstr ""
+msgstr "Vrácí *a* posunuty doprava o *b*."
 
 #: ../../library/operator.rst:201
 msgid "Return ``a - b``."
-msgstr ""
+msgstr "Vrácí ``a - b``."
 
 #: ../../library/operator.rst:207
 msgid ""
 "Return ``a / b`` where 2/3 is .66 rather than 0.  This is also known as "
 "\"true\" division."
 msgstr ""
+"Vrácí ``a / b`` kde 2/3 je .66 místem 0. Toto je také známo jako "
+"\"skutečné\" dělení."
 
 #: ../../library/operator.rst:214
 msgid "Return the bitwise exclusive or of *a* and *b*."
-msgstr ""
+msgstr "Vrácí bitové exkluzivní OR *a* a *b*."
 
 #: ../../library/operator.rst:217
 msgid ""
 "Operations which work with sequences (some of them with mappings too) "
 "include:"
 msgstr ""
+"Operace, které pracují se sekvencemi (nektéré z nich také se mapováním) "
+"zahrnují:"
 
 #: ../../library/operator.rst:222
 msgid "Return ``a + b`` for *a* and *b* sequences."
-msgstr ""
+msgstr "Vrácí ``a + b`` pro sekvence *a* a *b*."
 
 #: ../../library/operator.rst:228
 msgid "Return the outcome of the test ``b in a``. Note the reversed operands."
-msgstr ""
+msgstr "Vrácí výsledek testu ``b in a``. Poznám čka obrácené operandy."
 
 #: ../../library/operator.rst:233
 msgid "Return the number of occurrences of *b* in *a*."
-msgstr ""
+msgstr "Vrácí počet výskytů *b* v *a*."
 
 #: ../../library/operator.rst:239
 msgid "Remove the value of *a* at index *b*."
-msgstr ""
+msgstr "Odebere hodnotu *a* na indexu *b*."
 
 #: ../../library/operator.rst:245
 msgid "Return the value of *a* at index *b*."
-msgstr ""
+msgstr "Vrácí hodnotu *a* na indexu *b*."
 
 #: ../../library/operator.rst:250
 msgid "Return the index of the first of occurrence of *b* in *a*."
-msgstr ""
+msgstr "Vrácí index prvního výskyt *b* v *a*."
 
 #: ../../library/operator.rst:256
 msgid "Set the value of *a* at index *b* to *c*."
-msgstr ""
+msgstr "Nastaví hodnotu *a* na indexu *b* na *c*."
 
 #: ../../library/operator.rst:261
 msgid ""
 "Return an estimated length for the object *obj*. First try to return its "
-"actual length, then an estimate using :meth:`object.__length_hint__`, and"
-" finally return the default value."
+"actual length, then an estimate using :meth:`object.__length_hint__`, and "
+"finally return the default value."
 msgstr ""
+"Vrácí odhadnutou délku objektu *obj*. Nejprve se pokusí vrátit jeho "
+"skutečnou délku, pak odhad používající :meth:`object.__length_hint__` a "
+"nakoňc další výchozí hodnotu."
 
 #: ../../library/operator.rst:268
 msgid "The following operation works with callables:"
-msgstr ""
+msgstr "Následující operace pracuje se volaška:"
 
 #: ../../library/operator.rst:273
 msgid "Return ``obj(*args, **kwargs)``."
-msgstr ""
+msgstr "Vrácí ``obj(*args, **kwargs)``."
 
 #: ../../library/operator.rst:278
 msgid ""
-"The :mod:`operator` module also defines tools for generalized attribute "
-"and item lookups.  These are useful for making fast field extractors as "
+"The :mod:`operator` module also defines tools for generalized attribute and "
+"item lookups.  These are useful for making fast field extractors as "
 "arguments for :func:`map`, :func:`sorted`, :meth:`itertools.groupby`, or "
 "other functions that expect a function argument."
 msgstr ""
+"Modul :mod:`operator` také definuje nástroje pro generalizéné vyhledávání "
+"atributů a položek. Jsou užitečné pro vytváření rychlých extractorů polí "
+"jako argumenty pro :func:`map`, :func:`sorted`, :meth:`itertools.groupby` "
+"nebo další funkce, které očekávají funkční argument."
 
 #: ../../library/operator.rst:287
 msgid ""
-"Return a callable object that fetches *attr* from its operand. If more "
-"than one attribute is requested, returns a tuple of attributes. The "
-"attribute names can also contain dots. For example:"
+"Return a callable object that fetches *attr* from its operand. If more than "
+"one attribute is requested, returns a tuple of attributes. The attribute "
+"names can also contain dots. For example:"
 msgstr ""
+"Vrácí volašík objekt, který načítá *attr* z jeho operandu. Pokud je "
+"požadováno více atributů, vrátí n-tici atributů. Názvy atributů mohou "
+"obsahovat i tečky. Například:"
 
 #: ../../library/operator.rst:291
-msgid "After ``f = attrgetter('name')``, the call ``f(b)`` returns ``b.name``."
-msgstr ""
+msgid ""
+"After ``f = attrgetter('name')``, the call ``f(b)`` returns ``b.name``."
+msgstr "Po ``f = attrgetter('name')``, volaní ``f(b)`` vrátí ``b.name``."
 
 #: ../../library/operator.rst:293
 msgid ""
 "After ``f = attrgetter('name', 'date')``, the call ``f(b)`` returns "
 "``(b.name, b.date)``."
 msgstr ""
+"Po ``f = attrgetter('name', 'date')``, volaní ``f(b)`` vrátí ``(b.name, "
+"b.date)``."
 
 #: ../../library/operator.rst:296
 msgid ""
 "After ``f = attrgetter('name.first', 'name.last')``, the call ``f(b)`` "
 "returns ``(b.name.first, b.name.last)``."
 msgstr ""
+"Po ``f = attrgetter('name.first', 'name.last')``, volaní ``f(b)`` vrátí "
+"``(b.name.first, b.name.last)``."
 
 #: ../../library/operator.rst:299 ../../library/operator.rst:331
 #: ../../library/operator.rst:379
 msgid "Equivalent to::"
-msgstr ""
+msgstr "Ekvivalentní::"
 
 #: ../../library/operator.rst:301
 msgid ""
@@ -287,6 +334,22 @@ msgid ""
 "        obj = getattr(obj, name)\n"
 "    return obj"
 msgstr ""
+"def attrgetter(*items):\n"
+"    if any(not isinstance(item, str) for item in items):\n"
+"        raise TypeError('attribute name must be a string')\n"
+"    if len(items) == 1:\n"
+"        attr = items[0]\n"
+"        def g(obj):\n"
+"            return resolve_attr(obj, attr)\n"
+"    else:\n"
+"        def g(obj):\n"
+"            return tuple(resolve_attr(obj, attr) for attr in items)\n"
+"    return g\n"
+"\n"
+"def resolve_attr(obj, attr):\n"
+"    for name in attr.split(\".\"):\n"
+"        obj = getattr(obj, name)\n"
+"    return obj"
 
 #: ../../library/operator.rst:322
 msgid ""
@@ -294,16 +357,21 @@ msgid ""
 "operand's :meth:`~object.__getitem__` method.  If multiple items are "
 "specified, returns a tuple of lookup values.  For example:"
 msgstr ""
+"Vrácí volašík objekt, který načítá *item* z jeho operandu použitím metody "
+":meth:`~object.__getitem__` operandu. Pokud je zadáno více položek, vrátí "
+"n-tici hodnot vyhledání. Například:"
 
 #: ../../library/operator.rst:326
 msgid "After ``f = itemgetter(2)``, the call ``f(r)`` returns ``r[2]``."
-msgstr ""
+msgstr "Po ``f = itemgetter(2)``, volaní ``f(r)`` vrátí ``r[2]``."
 
 #: ../../library/operator.rst:328
 msgid ""
-"After ``g = itemgetter(2, 5, 3)``, the call ``g(r)`` returns ``(r[2], "
-"r[5], r[3])``."
+"After ``g = itemgetter(2, 5, 3)``, the call ``g(r)`` returns ``(r[2], r[5], "
+"r[3])``."
 msgstr ""
+"Po ``g = itemgetter(2, 5, 3)``, volaní ``g(r)`` vrátí ``(r[2], r[5], "
+"r[3])``."
 
 #: ../../library/operator.rst:333
 msgid ""
@@ -317,6 +385,15 @@ msgid ""
 "            return tuple(obj[item] for item in items)\n"
 "    return g"
 msgstr ""
+"def itemgetter(*items):\n"
+"    if len(items) == 1:\n"
+"        item = items[0]\n"
+"        def g(obj):\n"
+"            return obj[item]\n"
+"    else:\n"
+"        def g(obj):\n"
+"            return tuple(obj[item] for item in items)\n"
+"    return g"
 
 #: ../../library/operator.rst:343
 msgid ""
@@ -325,31 +402,40 @@ msgid ""
 ":term:`hashable` value.  Lists, tuples, and strings accept an index or a "
 "slice:"
 msgstr ""
+"Položky mohou být jakýkoli typ přijatý metodou :meth:`~object.__getitem__` "
+"operandu. Slovníky přijmají jakoukoli :term:`hashable` hodnotu. Seznamy, "
+"tuple a řetězce přijmají index nebo segment:"
 
 #: ../../library/operator.rst:357
 msgid ""
-"Example of using :func:`itemgetter` to retrieve specific fields from a "
-"tuple record:"
+"Example of using :func:`itemgetter` to retrieve specific fields from a tuple"
+" record:"
 msgstr ""
+"Příklad použití :func:`itemgetter` k získání konkrétních polí ze záznamu "
+"n-tice:"
 
 #: ../../library/operator.rst:370
 msgid ""
-"Return a callable object that calls the method *name* on its operand.  If"
-" additional arguments and/or keyword arguments are given, they will be "
-"given to the method as well.  For example:"
+"Return a callable object that calls the method *name* on its operand.  If "
+"additional arguments and/or keyword arguments are given, they will be given "
+"to the method as well.  For example:"
 msgstr ""
+"Vrácí volašík objekt, který volá metodu *name* na svém operandu. Pokud jsou "
+"zadány dodatečné argumenty a/nebo argumenty s klíčem, budou zadány i metodě."
+" Například:"
 
 #: ../../library/operator.rst:374
 msgid ""
-"After ``f = methodcaller('name')``, the call ``f(b)`` returns "
-"``b.name()``."
-msgstr ""
+"After ``f = methodcaller('name')``, the call ``f(b)`` returns ``b.name()``."
+msgstr "Po ``f = methodcaller('name')``, volaní ``f(b)`` vrátí ``b.name()``."
 
 #: ../../library/operator.rst:376
 msgid ""
-"After ``f = methodcaller('name', 'foo', bar=1)``, the call ``f(b)`` "
-"returns ``b.name('foo', bar=1)``."
+"After ``f = methodcaller('name', 'foo', bar=1)``, the call ``f(b)`` returns "
+"``b.name('foo', bar=1)``."
 msgstr ""
+"Po ``f = methodcaller('name', 'foo', bar=1)``, volaní ``f(b)`` vrátí "
+"``b.name('foo', bar=1)``."
 
 #: ../../library/operator.rst:381
 msgid ""
@@ -358,205 +444,211 @@ msgid ""
 "        return getattr(obj, name)(*args, **kwargs)\n"
 "    return caller"
 msgstr ""
+"def methodcaller(name, /, *args, **kwargs):\n"
+"    def caller(obj):\n"
+"        return getattr(obj, name)(*args, **kwargs)\n"
+"    return caller"
 
 #: ../../library/operator.rst:390
 msgid "Mapping Operators to Functions"
-msgstr ""
+msgstr "Mapování operátorů na funkce"
 
 #: ../../library/operator.rst:392
 msgid ""
-"This table shows how abstract operations correspond to operator symbols "
-"in the Python syntax and the functions in the :mod:`operator` module."
+"This table shows how abstract operations correspond to operator symbols in "
+"the Python syntax and the functions in the :mod:`operator` module."
 msgstr ""
+"Tato tabulka ukazuje, jak abstratní operace odpovídají symbolum operátorů v "
+"syntaxi Pythonu a funkcím v modulu :mod:`operator`."
 
 #: ../../library/operator.rst:396
 msgid "Operation"
-msgstr ""
+msgstr "Operace"
 
 #: ../../library/operator.rst:396
 msgid "Syntax"
-msgstr ""
+msgstr "Syntaxe"
 
 #: ../../library/operator.rst:396
 msgid "Function"
-msgstr ""
+msgstr "Funkce"
 
 #: ../../library/operator.rst:398
 msgid "Addition"
-msgstr ""
+msgstr "Sčítání"
 
 #: ../../library/operator.rst:398
 msgid "``a + b``"
-msgstr ""
+msgstr "``a + b``"
 
 #: ../../library/operator.rst:398
 msgid "``add(a, b)``"
-msgstr ""
+msgstr "``add(a, b)``"
 
 #: ../../library/operator.rst:400
 msgid "Concatenation"
-msgstr ""
+msgstr "Zreřetězení"
 
 #: ../../library/operator.rst:400
 msgid "``seq1 + seq2``"
-msgstr ""
+msgstr "``seq1 + seq2``"
 
 #: ../../library/operator.rst:400
 msgid "``concat(seq1, seq2)``"
-msgstr ""
+msgstr "``concat(seq1, seq2)``"
 
 #: ../../library/operator.rst:402
 msgid "Containment Test"
-msgstr ""
+msgstr "Test obsahu"
 
 #: ../../library/operator.rst:402
 msgid "``obj in seq``"
-msgstr ""
+msgstr "``obj in seq``"
 
 #: ../../library/operator.rst:402
 msgid "``contains(seq, obj)``"
-msgstr ""
+msgstr "``contains(seq, obj)``"
 
 #: ../../library/operator.rst:404 ../../library/operator.rst:406
 msgid "Division"
-msgstr ""
+msgstr "Dělení"
 
 #: ../../library/operator.rst:404
 msgid "``a / b``"
-msgstr ""
+msgstr "``a / b``"
 
 #: ../../library/operator.rst:404
 msgid "``truediv(a, b)``"
-msgstr ""
+msgstr "``truediv(a, b)``"
 
 #: ../../library/operator.rst:406
 msgid "``a // b``"
-msgstr ""
+msgstr "``a // b``"
 
 #: ../../library/operator.rst:406
 msgid "``floordiv(a, b)``"
-msgstr ""
+msgstr "``floordiv(a, b)``"
 
 #: ../../library/operator.rst:408
 msgid "Bitwise And"
-msgstr ""
+msgstr "Bitové AND"
 
 #: ../../library/operator.rst:408
 msgid "``a & b``"
-msgstr ""
+msgstr "``a & b``"
 
 #: ../../library/operator.rst:408
 msgid "``and_(a, b)``"
-msgstr ""
+msgstr "``and_(a, b)``"
 
 #: ../../library/operator.rst:410
 msgid "Bitwise Exclusive Or"
-msgstr ""
+msgstr "Bitové exkluzivní OR"
 
 #: ../../library/operator.rst:410
 msgid "``a ^ b``"
-msgstr ""
+msgstr "``a ^ b``"
 
 #: ../../library/operator.rst:410
 msgid "``xor(a, b)``"
-msgstr ""
+msgstr "``xor(a, b)``"
 
 #: ../../library/operator.rst:412
 msgid "Bitwise Inversion"
-msgstr ""
+msgstr "Bitová inverze"
 
 #: ../../library/operator.rst:412
 msgid "``~ a``"
-msgstr ""
+msgstr "``~ a``"
 
 #: ../../library/operator.rst:412
 msgid "``invert(a)``"
-msgstr ""
+msgstr "``invert(a)``"
 
 #: ../../library/operator.rst:414
 msgid "Bitwise Or"
-msgstr ""
+msgstr "Bitové OR"
 
 #: ../../library/operator.rst:414
 msgid "``a | b``"
-msgstr ""
+msgstr "``a | b``"
 
 #: ../../library/operator.rst:414
 msgid "``or_(a, b)``"
-msgstr ""
+msgstr "``or_(a, b)``"
 
 #: ../../library/operator.rst:416
 msgid "Exponentiation"
-msgstr ""
+msgstr "Umocnění"
 
 #: ../../library/operator.rst:416
 msgid "``a ** b``"
-msgstr ""
+msgstr "``a ** b``"
 
 #: ../../library/operator.rst:416
 msgid "``pow(a, b)``"
-msgstr ""
+msgstr "``pow(a, b)``"
 
 #: ../../library/operator.rst:418 ../../library/operator.rst:420
 #: ../../library/operator.rst:422 ../../library/operator.rst:424
 msgid "Identity"
-msgstr ""
+msgstr "Identita"
 
 #: ../../library/operator.rst:418
 msgid "``a is b``"
-msgstr ""
+msgstr "``a is b``"
 
 #: ../../library/operator.rst:418
 msgid "``is_(a, b)``"
-msgstr ""
+msgstr "``is_(a, b)``"
 
 #: ../../library/operator.rst:420
 msgid "``a is not b``"
-msgstr ""
+msgstr "``a is not b``"
 
 #: ../../library/operator.rst:420
 msgid "``is_not(a, b)``"
-msgstr ""
+msgstr "``is_not(a, b)``"
 
 #: ../../library/operator.rst:422
 msgid "``a is None``"
-msgstr ""
+msgstr "``a is None``"
 
 #: ../../library/operator.rst:422
 msgid "``is_none(a)``"
-msgstr ""
+msgstr "``is_none(a)``"
 
 #: ../../library/operator.rst:424
 msgid "``a is not None``"
-msgstr ""
+msgstr "``a is not None``"
 
 #: ../../library/operator.rst:424
 msgid "``is_not_none(a)``"
-msgstr ""
+msgstr "``is_not_none(a)``"
 
 #: ../../library/operator.rst:426
 msgid "Indexed Assignment"
-msgstr ""
+msgstr "Přiřazení s indexem"
 
 #: ../../library/operator.rst:426
 msgid "``obj[k] = v``"
-msgstr ""
+msgstr "``obj[k] = v``"
 
 #: ../../library/operator.rst:426
 msgid "``setitem(obj, k, v)``"
-msgstr ""
+msgstr "``setitem(obj, k, v)``"
 
 #: ../../library/operator.rst:428
 msgid "Indexed Deletion"
-msgstr ""
+msgstr "Indexované mazání"
 
 #: ../../library/operator.rst:428
 msgid "``del obj[k]``"
-msgstr ""
+msgstr "``del obj[k]``"
 
 #: ../../library/operator.rst:428
 msgid "``delitem(obj, k)``"
-msgstr ""
+msgstr "``delitem(obj, k)``"
 
 #: ../../library/operator.rst:430
 msgid "Indexing"
@@ -806,20 +898,20 @@ msgstr ""
 
 #: ../../library/operator.rst:476
 msgid ""
-"Many operations have an \"in-place\" version.  Listed below are functions"
-" providing a more primitive access to in-place operators than the usual "
-"syntax does; for example, the :term:`statement` ``x += y`` is equivalent "
-"to ``x = operator.iadd(x, y)``.  Another way to put it is to say that ``z"
-" = operator.iadd(x, y)`` is equivalent to the compound statement ``z = x;"
-" z += y``."
+"Many operations have an \"in-place\" version.  Listed below are functions "
+"providing a more primitive access to in-place operators than the usual "
+"syntax does; for example, the :term:`statement` ``x += y`` is equivalent to "
+"``x = operator.iadd(x, y)``.  Another way to put it is to say that ``z = "
+"operator.iadd(x, y)`` is equivalent to the compound statement ``z = x; z += "
+"y``."
 msgstr ""
 
 #: ../../library/operator.rst:483
 msgid ""
 "In those examples, note that when an in-place method is called, the "
 "computation and assignment are performed in two separate steps.  The in-"
-"place functions listed below only do the first step, calling the in-place"
-" method.  The second step, assignment, is not handled."
+"place functions listed below only do the first step, calling the in-place "
+"method.  The second step, assignment, is not handled."
 msgstr ""
 
 #: ../../library/operator.rst:488
@@ -830,8 +922,8 @@ msgstr ""
 
 #: ../../library/operator.rst:497
 msgid ""
-"For mutable targets such as lists and dictionaries, the in-place method "
-"will perform the update, so no subsequent assignment is necessary:"
+"For mutable targets such as lists and dictionaries, the in-place method will"
+" perform the update, so no subsequent assignment is necessary:"
 msgstr ""
 
 #: ../../library/operator.rst:509
@@ -844,8 +936,7 @@ msgstr ""
 
 #: ../../library/operator.rst:521
 msgid ""
-"``a = iconcat(a, b)`` is equivalent to ``a += b`` for *a* and *b* "
-"sequences."
+"``a = iconcat(a, b)`` is equivalent to ``a += b`` for *a* and *b* sequences."
 msgstr ""
 
 #: ../../library/operator.rst:527
@@ -891,4 +982,3 @@ msgstr ""
 #: ../../library/operator.rst:589
 msgid "``a = ixor(a, b)`` is equivalent to ``a ^= b``."
 msgstr ""
-

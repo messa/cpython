@@ -11,17 +11,17 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-platforms.rst:9
 msgid "Platform Support"
-msgstr ""
+msgstr "Podpora platformy"
 
 #: ../../library/asyncio-platforms.rst:11
 msgid ""
@@ -29,20 +29,25 @@ msgid ""
 "have subtle differences and limitations due to the platforms' underlying "
 "architecture and capabilities."
 msgstr ""
+"Modul :mod:`asyncio` je navržen tak, aby byl přenositelný, ale některé "
+"platformy mají jemné rozdíly a omezení kvůli základní architektuře a "
+"možnostem platformy."
 
 #: ../../library/asyncio-platforms.rst:17
 msgid "All Platforms"
-msgstr ""
+msgstr "Všechny platformy"
 
 #: ../../library/asyncio-platforms.rst:19
 msgid ""
 ":meth:`loop.add_reader` and :meth:`loop.add_writer` cannot be used to "
 "monitor file I/O."
 msgstr ""
+":meth:`loop.add_reader` a :meth:`loop.add_writer` nelze použít k "
+"monitorování souborového I/O."
 
 #: ../../library/asyncio-platforms.rst:24
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../library/asyncio-platforms.rst:26
 msgid ""
@@ -50,66 +55,84 @@ msgid ""
 ":source:`Lib/asyncio/windows_events.py`, "
 ":source:`Lib/asyncio/windows_utils.py`"
 msgstr ""
+"**Zdrojový kód:** :source:`Lib/asyncio/proactor_events.py`, "
+":source:`Lib/asyncio/windows_events.py`, "
+":source:`Lib/asyncio/windows_utils.py`"
 
 #: ../../library/asyncio-platforms.rst:34
 msgid "On Windows, :class:`ProactorEventLoop` is now the default event loop."
 msgstr ""
+"Na Windows je :class:`ProactorEventLoop` nyní výchozí smyčkou událostí."
 
 #: ../../library/asyncio-platforms.rst:36
 msgid "All event loops on Windows do not support the following methods:"
-msgstr ""
+msgstr "Všechny smyčky událostí na Windows nepodležují následujícím metodám:"
 
 #: ../../library/asyncio-platforms.rst:38
 msgid ""
-":meth:`loop.create_unix_connection` and :meth:`loop.create_unix_server` "
-"are not supported. The :const:`socket.AF_UNIX` socket family is specific "
-"to Unix."
+":meth:`loop.create_unix_connection` and :meth:`loop.create_unix_server` are "
+"not supported. The :const:`socket.AF_UNIX` socket family is specific to "
+"Unix."
 msgstr ""
+":meth:`loop.create_unix_connection` a :meth:`loop.create_unix_server` nejsou"
+" podporovány. Rodina soketů :const:`socket.AF_UNIX` je specifická pro Unix."
 
 #: ../../library/asyncio-platforms.rst:42
 msgid ""
-":meth:`loop.add_signal_handler` and :meth:`loop.remove_signal_handler` "
-"are not supported."
+":meth:`loop.add_signal_handler` and :meth:`loop.remove_signal_handler` are "
+"not supported."
 msgstr ""
+":meth:`loop.add_signal_handler` a :meth:`loop.remove_signal_handler` nejsou "
+"podporovány."
 
 #: ../../library/asyncio-platforms.rst:45
 msgid ":class:`SelectorEventLoop` has the following limitations:"
-msgstr ""
+msgstr ":class:`SelectorEventLoop` má následující omezení:"
 
 #: ../../library/asyncio-platforms.rst:47
 msgid ""
 ":class:`~selectors.SelectSelector` is used to wait on socket events: it "
 "supports sockets and is limited to 512 sockets."
 msgstr ""
+":class:`~selectors.SelectSelector` se používá k čekání na události soketu: "
+"podporuje sockety a je omezen na 512 soketů."
 
 #: ../../library/asyncio-platforms.rst:50
 msgid ""
 ":meth:`loop.add_reader` and :meth:`loop.add_writer` only accept socket "
 "handles (e.g. pipe file descriptors are not supported)."
 msgstr ""
+":meth:`loop.add_reader` a :meth:`loop.add_writer` přijímají pouze handles "
+"soketů (např. deskriptory fileů s názvem pipe nejsou podporovány)."
 
 #: ../../library/asyncio-platforms.rst:53
 msgid ""
 "Pipes are not supported, so the :meth:`loop.connect_read_pipe` and "
 ":meth:`loop.connect_write_pipe` methods are not implemented."
 msgstr ""
+"Pipes nejsou podporovány, proto metody :meth:`loop.connect_read_pipe` a "
+":meth:`loop.connect_write_pipe` nejsou implementovány."
 
 #: ../../library/asyncio-platforms.rst:56
 msgid ""
 ":ref:`Subprocesses <asyncio-subprocess>` are not supported, i.e. "
-":meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell` methods "
-"are not implemented."
+":meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell` methods are "
+"not implemented."
 msgstr ""
+":ref:`Podprocesy <asyncio-subprocess>` nejsou podporovány, tj. metody "
+":meth:`loop.subprocess_exec` a :meth:`loop.subprocess_shell` nejsou "
+"implementovány."
 
 #: ../../library/asyncio-platforms.rst:60
 msgid ":class:`ProactorEventLoop` has the following limitations:"
-msgstr ""
+msgstr ":class:`ProactorEventLoop` má následující omezení:"
 
 #: ../../library/asyncio-platforms.rst:62
 msgid ""
 "The :meth:`loop.add_reader` and :meth:`loop.add_writer` methods are not "
 "supported."
 msgstr ""
+"Metody :meth:`loop.add_reader` a :meth:`loop.add_writer` nejsou podporovány."
 
 #: ../../library/asyncio-platforms.rst:65
 msgid ""
@@ -119,38 +142,51 @@ msgid ""
 "<https://en.wikipedia.org/wiki/High_Precision_Event_Timer>`_) and on the "
 "Windows configuration."
 msgstr ""
+"Rozlišovací schopnost monotonického hodin na Windows je obvykle kolem 15,6 "
+"milisekund. Nejlepší rozlišovací schopnost je 0,5 milisekundy. Rozlišovací "
+"schopnost závisí na hardware (dostupnost `HPET "
+"<https://en.wikipedia.org/wiki/High_Precision_Event_Timer>`_) a na "
+"konfiguraci Windows."
 
 #: ../../library/asyncio-platforms.rst:75
 msgid "Subprocess Support on Windows"
-msgstr ""
+msgstr "Podpora podprocesů na Windows"
 
 #: ../../library/asyncio-platforms.rst:77
 msgid ""
 "On Windows, the default event loop :class:`ProactorEventLoop` supports "
 "subprocesses, whereas :class:`SelectorEventLoop` does not."
 msgstr ""
+"Na Windows výchozí smyčka událostí :class:`ProactorEventLoop` podporuje "
+"podprocesy, zatícá :class:`SelectorEventLoop` nikoliv."
 
 #: ../../library/asyncio-platforms.rst:82
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../library/asyncio-platforms.rst:84
 msgid "Modern macOS versions are fully supported."
-msgstr ""
+msgstr "Moderní verze macOS jsou plně podporovány."
 
 #: ../../library/asyncio-platforms.rst:87
 msgid "macOS <= 10.8"
-msgstr ""
+msgstr "macOS <= 10.8"
 
 #: ../../library/asyncio-platforms.rst:88
 msgid ""
 "On macOS 10.6, 10.7 and 10.8, the default event loop uses "
-":class:`selectors.KqueueSelector`, which does not support character "
-"devices on these versions.  The :class:`SelectorEventLoop` can be "
-"manually configured to use :class:`~selectors.SelectSelector` or "
-":class:`~selectors.PollSelector` to support character devices on these "
-"older versions of macOS.  Example::"
+":class:`selectors.KqueueSelector`, which does not support character devices "
+"on these versions.  The :class:`SelectorEventLoop` can be manually "
+"configured to use :class:`~selectors.SelectSelector` or "
+":class:`~selectors.PollSelector` to support character devices on these older"
+" versions of macOS.  Example::"
 msgstr ""
+"Na macOS 10.6, 10.7 a 10.8 používá výchozí smyčka událostí "
+":class:`selectors.KqueueSelector`, který na těchto verzích nepodporuje "
+"znaková zařízení. :class:`SelectorEventLoop` lze ručně nastavit tak, aby "
+"používal :class:`~selectors.SelectSelector` nebo "
+":class:`~selectors.PollSelector` k podporě znakových zařízení na těchto "
+"starších verzích macOS. Příklad::"
 
 #: ../../library/asyncio-platforms.rst:95
 msgid ""
@@ -161,4 +197,9 @@ msgid ""
 "loop = asyncio.SelectorEventLoop(selector)\n"
 "asyncio.set_event_loop(loop)"
 msgstr ""
-
+"import asyncio\n"
+"import selectors\n"
+"\n"
+"selector = selectors.SelectSelector()\n"
+"loop = asyncio.SelectorEventLoop(selector)\n"
+"asyncio.set_event_loop(loop)"

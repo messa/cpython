@@ -11,75 +11,104 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/importlib.resources.rst:2
 msgid ""
-":mod:`!importlib.resources` -- Package resource reading, opening and "
-"access"
+":mod:`!importlib.resources` -- Package resource reading, opening and access"
 msgstr ""
+":mod:`!importlib.resources` -- Čtení, otevírání a přístup k prostředkům "
+"balíčku"
 
 #: ../../library/importlib.resources.rst:7
 msgid "**Source code:** :source:`Lib/importlib/resources/__init__.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/importlib/resources/__init__.py`"
 
 #: ../../library/importlib.resources.rst:13
 msgid ""
 "This module leverages Python's import system to provide access to "
 "*resources* within *packages*."
 msgstr ""
+"Tento modul využívá Pythonův importní systém k poskytnutí přístupu k "
+"*prostředkům* v rámci *balíčků*."
 
 #: ../../library/importlib.resources.rst:16
 msgid ""
-"\"Resources\" are file-like resources associated with a module or package"
-" in Python. The resources may be contained directly in a package, within "
-"a subdirectory contained in that package, or adjacent to modules outside "
-"a package. Resources may be text or binary. As a result, a package's "
-"Python module sources (.py), compilation artifacts (pycache), and "
-"installation artifacts (like :func:`reserved filenames "
-"<os.path.isreserved>` in directories) are technically de-facto resources "
-"of that package. In practice, however, resources are primarily those non-"
-"Python artifacts exposed specifically by the package author."
+"\"Resources\" are file-like resources associated with a module or package in"
+" Python. The resources may be contained directly in a package, within a "
+"subdirectory contained in that package, or adjacent to modules outside a "
+"package. Resources may be text or binary. As a result, a package's Python "
+"module sources (.py), compilation artifacts (pycache), and installation "
+"artifacts (like :func:`reserved filenames <os.path.isreserved>` in "
+"directories) are technically de-facto resources of that package. In "
+"practice, however, resources are primarily those non-Python artifacts "
+"exposed specifically by the package author."
 msgstr ""
+"\"Prostředky\" jsou prostředky podobné souborům asociované s modulem nebo "
+"balíčkem v Pythonu. Prostředky mohou být obsaženy přímo v balíčku, v "
+"podadresáři obsaženém v tomto balíčku nebo vedle modulů mimo balíček. "
+"Prostředky mohou být textové nebo binární. V důsledku toho jsou zdrojové "
+"kódy Pythonových modulů balíčku (.py), artefakty kompilace (pycache) a "
+"artefakty instalace (jako :func:`rezervovaná jména souborů "
+"<os.path.isreserved>` v adresářích) technicky de-facto prostředky tohoto "
+"balíčku. V praxi jsou však prostředky především ty artefakty, které nejsou "
+"Python a které autor balíčku speciálně zveřejňuje."
 
 #: ../../library/importlib.resources.rst:26
 msgid "Resources can be opened or read in either binary or text mode."
-msgstr ""
+msgstr "Prostředky lze otevřít nebo přečíst v binárním nebo textovém režimu."
 
 #: ../../library/importlib.resources.rst:28
 msgid ""
 "Resources are roughly akin to files inside directories, though it's "
 "important to keep in mind that this is just a metaphor.  Resources and "
-"packages **do not** have to exist as physical files and directories on "
-"the file system: for example, a package and its resources can be imported"
-" from a zip file using :py:mod:`zipimport`."
+"packages **do not** have to exist as physical files and directories on the "
+"file system: for example, a package and its resources can be imported from a"
+" zip file using :py:mod:`zipimport`."
 msgstr ""
+"Prostředky jsou zhruba podobné souborům v adresářích, i když je důležité mít"
+" na paměti, že jde pouze o metaforu. Prostředky a balíčky **nemusí** "
+"existovat jako fyzické soubory a adresáře v systému souborů: například "
+"balíček a jeho prostředky lze importovat ze zip souboru pomocí "
+":py:mod:`zipimport`."
 
 #: ../../library/importlib.resources.rst:36
 msgid ""
 "This module provides functionality similar to `pkg_resources "
-"<https://setuptools.readthedocs.io/en/latest/pkg_resources.html>`_ `Basic"
-" Resource Access "
+"<https://setuptools.readthedocs.io/en/latest/pkg_resources.html>`_ `Basic "
+"Resource Access "
 "<https://setuptools.readthedocs.io/en/latest/pkg_resources.html#basic-"
-"resource-access>`_ without the performance overhead of that package.  "
-"This makes reading resources included in packages easier, with more "
-"stable and consistent semantics."
+"resource-access>`_ without the performance overhead of that package.  This "
+"makes reading resources included in packages easier, with more stable and "
+"consistent semantics."
 msgstr ""
+"Tento modul poskytuje funkcionalitu podobné `pkg_resources "
+"<https://setuptools.readthedocs.io/en/latest/pkg_resources.html>`_ `Basic "
+"Resource Access "
+"<https://setuptools.readthedocs.io/en/latest/pkg_resources.html#basic-"
+"resource-access>`_ bez náročnosti na výkon tohoto balíčku. To usnadnuje "
+"čtení prostředků zařazených v balíčcích, s více stabilními a konzistentními "
+"součástmi."
 
 #: ../../library/importlib.resources.rst:44
 msgid ""
-"The standalone backport of this module provides more information on "
-"`using importlib.resources <https://importlib-"
+"The standalone backport of this module provides more information on `using "
+"importlib.resources <https://importlib-"
 "resources.readthedocs.io/en/latest/using.html>`_ and `migrating from "
 "pkg_resources to importlib.resources <https://importlib-"
 "resources.readthedocs.io/en/latest/migration.html>`_."
 msgstr ""
+"Samostatná zpětná portační verze tohoto modulu poskytuje více informací o "
+"`používání importlib.resources <https://importlib-"
+"resources.readthedocs.io/en/latest/using.html>`_ a `migraci z pkg_resources "
+"na importlib.resources <https://importlib-"
+"resources.readthedocs.io/en/latest/migration.html>`_."
 
 #: ../../library/importlib.resources.rst:50
 msgid ""
@@ -87,78 +116,107 @@ msgid ""
 "reading should implement a ``get_resource_reader(fullname)`` method as "
 "specified by :class:`importlib.resources.abc.ResourceReader`."
 msgstr ""
+":class:`Zaváděče <importlib.abc.Loader>`, které si přejou podporovat čtení "
+"prostředků, by měly implementovat metodu ``get_resource_reader(fullname)`` "
+"tak, jak je specifikováno v :class:`importlib.resources.abc.ResourceReader`."
 
 #: ../../library/importlib.resources.rst:56
 msgid ""
 "Represents an anchor for resources, either a :class:`module object "
-"<types.ModuleType>` or a module name as a string. Defined as ``Union[str,"
-" ModuleType]``."
+"<types.ModuleType>` or a module name as a string. Defined as ``Union[str, "
+"ModuleType]``."
 msgstr ""
+"Představuje kotvu pro prostředky, buď objekt :class:`modul "
+"<types.ModuleType>` nebo název modulu jako řetězec. Definováno jako "
+"``Union[str, ModuleType]``."
 
 #: ../../library/importlib.resources.rst:62
 msgid ""
-"Returns a :class:`~importlib.resources.abc.Traversable` object "
-"representing the resource container (think directory) and its resources "
-"(think files). A Traversable may contain other containers (think "
-"subdirectories)."
+"Returns a :class:`~importlib.resources.abc.Traversable` object representing "
+"the resource container (think directory) and its resources (think files). A "
+"Traversable may contain other containers (think subdirectories)."
 msgstr ""
+"Vrací objekt :class:`~importlib.resources.abc.Traversable` reprezentující "
+"kontejner prostředků (myšlenka adresář) a jeho prostředky (myšlenka "
+"soubory). Traversable může obsahovat další kontejnery (myšlenka "
+"podadresáře)."
 
 #: ../../library/importlib.resources.rst:67
 msgid ""
 "*anchor* is an optional :class:`Anchor`. If the anchor is a package, "
 "resources are resolved from that package. If a module, resources are "
-"resolved adjacent to that module (in the same package or the package "
-"root). If the anchor is omitted, the caller's module is used."
+"resolved adjacent to that module (in the same package or the package root). "
+"If the anchor is omitted, the caller's module is used."
 msgstr ""
+"*anchor* je volitelná :class:`Anchor`. Pokud je anchor balíček, prostředky "
+"se překládají z tohoto balíčku. Pokud je modul, prostředky se překládají "
+"vedle tohoto modulu (ve stejném balíčku nebo kořeni balíčku). Pokud je "
+"anchor vynechán, používá se modul volajícího."
 
 #: ../../library/importlib.resources.rst:75
 msgid ""
 "*package* parameter was renamed to *anchor*. *anchor* can now be a non-"
-"package module and if omitted will default to the caller's module. "
-"*package* is still accepted for compatibility but will raise a "
-":exc:`DeprecationWarning`. Consider passing the anchor positionally or "
-"using ``importlib_resources >= 5.10`` for a compatible interface on older"
-" Pythons."
+"package module and if omitted will default to the caller's module. *package*"
+" is still accepted for compatibility but will raise a "
+":exc:`DeprecationWarning`. Consider passing the anchor positionally or using"
+" ``importlib_resources >= 5.10`` for a compatible interface on older "
+"Pythons."
 msgstr ""
+"Parametr *package* byl přejmenován na *anchor*. *anchor* může být nyní i "
+"nebalečný modul a pokud bude vynechán, standardně se používá modul "
+"volajícího. *package* je stále přijímán pro kompatibilitu, ale vyvolá "
+":exc:`DeprecationWarning`. Zvažujte předání anchor pozicione či použítí "
+"``importlib_resources >= 5.10`` pro kompatibilné rozhraní na starších "
+"verzích Pythonu."
 
 #: ../../library/importlib.resources.rst:85
 msgid ""
-"Given a :class:`~importlib.resources.abc.Traversable` object representing"
-" a file or directory, typically from :func:`importlib.resources.files`, "
-"return a context manager for use in a :keyword:`with` statement. The "
-"context manager provides a :class:`pathlib.Path` object."
+"Given a :class:`~importlib.resources.abc.Traversable` object representing a "
+"file or directory, typically from :func:`importlib.resources.files`, return "
+"a context manager for use in a :keyword:`with` statement. The context "
+"manager provides a :class:`pathlib.Path` object."
 msgstr ""
+"Vzhledem k objektu :class:`~importlib.resources.abc.Traversable` "
+"reprezentující soubor nebo adresář, typicky z "
+":func:`importlib.resources.files`, vrací správce kontextu pro použití v "
+"příkazu :keyword:`with`. Správce kontextu poskytuje objekt "
+":class:`pathlib.Path`."
 
 #: ../../library/importlib.resources.rst:90
 msgid ""
 "Exiting the context manager cleans up any temporary file or directory "
 "created when the resource was extracted from e.g. a zip file."
 msgstr ""
+"Opûstění správce kontextu vyčistí jaký koliv dočasný soubor nebo adresář "
+"vytvořený při extrahování prostředku např. ze zip souboru."
 
 #: ../../library/importlib.resources.rst:93
 msgid ""
 "Use ``as_file`` when the Traversable methods (``read_text``, etc) are "
-"insufficient and an actual file or directory on the file system is "
-"required."
+"insufficient and an actual file or directory on the file system is required."
 msgstr ""
+"Použíjte ``as_file`` pokud metody Traversable (``read_text``, atd.) nejsou "
+"dostatečné a je vyžadován aktuální soubor nebo adresář v systému souborů."
 
 #: ../../library/importlib.resources.rst:99
 msgid "Added support for *traversable* representing a directory."
-msgstr ""
+msgstr "Přidána podpora pro *traversable* reprezentující adresář."
 
 #: ../../library/importlib.resources.rst:106
 msgid "Functional API"
-msgstr ""
+msgstr "Funkční API"
 
 #: ../../library/importlib.resources.rst:108
 msgid ""
-"A set of simplified, backwards-compatible helpers is available. These "
-"allow common operations in a single function call."
+"A set of simplified, backwards-compatible helpers is available. These allow "
+"common operations in a single function call."
 msgstr ""
+"Je k dispozici sada zjednodušených, zpětně kompatibilních pomocníků. Ty "
+"umožňují občejné operace v jednom volání funkce."
 
 #: ../../library/importlib.resources.rst:111
 msgid "For all the following functions:"
-msgstr ""
+msgstr "Pro všechny následující funkce:"
 
 #: ../../library/importlib.resources.rst:113
 msgid ""
@@ -166,30 +224,39 @@ msgid ""
 ":func:`~importlib.resources.files`. Unlike in ``files``, it may not be "
 "omitted."
 msgstr ""
+"*anchor* je :class:`~importlib.resources.Anchor`, jak v "
+":func:`~importlib.resources.files`. Na rozdíl od ``files``, nesmí být "
+"vynechán."
 
 #: ../../library/importlib.resources.rst:117
 msgid ""
 "*path_names* are components of a resource's path name, relative to the "
-"anchor. For example, to get the text of resource named ``info.txt``, "
-"use::"
+"anchor. For example, to get the text of resource named ``info.txt``, use::"
 msgstr ""
+"*path_names* jsou součásti názvu cesty prostředku, vztahovny k anchor. "
+"Například k získání textu prostředku pojmenovaného ``info.txt`` použíjte:"
 
 #: ../../library/importlib.resources.rst:121
 msgid "importlib.resources.read_text(my_module, \"info.txt\")"
-msgstr ""
+msgstr "importlib.resources.read_text(my_module, \"info.txt\")"
 
 #: ../../library/importlib.resources.rst:123
 msgid ""
-"Like :meth:`Traversable.joinpath <importlib.resources.abc.Traversable>`, "
-"The individual components should use forward slashes (``/``) as path "
+"Like :meth:`Traversable.joinpath <importlib.resources.abc.Traversable>`, The"
+" individual components should use forward slashes (``/``) as path "
 "separators. For example, the following are equivalent::"
 msgstr ""
+"Jako :meth:`Traversable.joinpath <importlib.resources.abc.Traversable>`, "
+"jednotlivé komponenty by měly používat dopředné lomítka (``/``) jako "
+"oddělovače cesty. Například následující jsou ekvivalentní:"
 
 #: ../../library/importlib.resources.rst:128
 msgid ""
 "importlib.resources.read_binary(my_module, \"pics/painting.png\")\n"
 "importlib.resources.read_binary(my_module, \"pics\", \"painting.png\")"
 msgstr ""
+"importlib.resources.read_binary(my_module, \"pics/painting.png\")\n"
+"importlib.resources.read_binary(my_module, \"pics\", \"painting.png\")"
 
 #: ../../library/importlib.resources.rst:131
 msgid ""
@@ -197,16 +264,21 @@ msgid ""
 "explicit *encoding* argument if multiple *path_names* are given. For "
 "example, to get the text of ``info/chapter1.txt``, use::"
 msgstr ""
+"Z důvodů zpětné kompatibility vyžadují funkce, které čtou text explicitní "
+"argument *encoding*, pokud je zadáno více *path_names*. Například k získání "
+"textu ``info/chapter1.txt`` použíjte:"
 
 #: ../../library/importlib.resources.rst:135
 msgid ""
 "importlib.resources.read_text(my_module, \"info\", \"chapter1.txt\",\n"
 "                              encoding='utf-8')"
 msgstr ""
+"importlib.resources.read_text(my_module, \"info\", \"chapter1.txt\",\n"
+"                              encoding='utf-8')"
 
 #: ../../library/importlib.resources.rst:140
 msgid "Open the named resource for binary reading."
-msgstr ""
+msgstr "Otevře pojmenovaný prostředek pro binární čtení."
 
 #: ../../library/importlib.resources.rst:142
 #: ../../library/importlib.resources.rst:185
@@ -214,15 +286,19 @@ msgstr ""
 #: ../../library/importlib.resources.rst:250
 #: ../../library/importlib.resources.rst:268
 msgid ""
-"See :ref:`the introduction <importlib_resources_functional>` for details "
-"on *anchor* and *path_names*."
+"See :ref:`the introduction <importlib_resources_functional>` for details on "
+"*anchor* and *path_names*."
 msgstr ""
+"Podrobnosti o *anchor* a *path_names* naleznete v :ref:`úvodu "
+"<importlib_resources_functional>`."
 
 #: ../../library/importlib.resources.rst:145
 msgid ""
-"This function returns a :class:`~typing.BinaryIO` object, that is, a "
-"binary stream open for reading."
+"This function returns a :class:`~typing.BinaryIO` object, that is, a binary "
+"stream open for reading."
 msgstr ""
+"Tato funkce vrací objekt :class:`~typing.BinaryIO`, tedy binární proud "
+"otevřený pro čtení."
 
 #: ../../library/importlib.resources.rst:148
 #: ../../library/importlib.resources.rst:172
@@ -232,114 +308,139 @@ msgstr ""
 #: ../../library/importlib.resources.rst:253
 #: ../../library/importlib.resources.rst:271
 msgid "This function is roughly equivalent to::"
-msgstr ""
+msgstr "Tato funkce je zhruba ekvivalentní:"
 
 #: ../../library/importlib.resources.rst:150
 msgid "files(anchor).joinpath(*path_names).open('rb')"
-msgstr ""
+msgstr "files(anchor).joinpath(*path_names).open('rb')"
 
 #: ../../library/importlib.resources.rst:152
 #: ../../library/importlib.resources.rst:192
 #: ../../library/importlib.resources.rst:257
 msgid "Multiple *path_names* are accepted."
-msgstr ""
+msgstr "Je přijato více *path_names*."
 
 #: ../../library/importlib.resources.rst:158
 msgid ""
-"Open the named resource for text reading. By default, the contents are "
-"read as strict UTF-8."
+"Open the named resource for text reading. By default, the contents are read "
+"as strict UTF-8."
 msgstr ""
+"Otevře pojmenovaný prostředek pro textové čtení. Ve výchozím nastavení se "
+"obsah čte jako strict UTF-8."
 
 #: ../../library/importlib.resources.rst:161
 #: ../../library/importlib.resources.rst:201
 msgid ""
-"See :ref:`the introduction <importlib_resources_functional>` for details "
-"on *anchor* and *path_names*. *encoding* and *errors* have the same "
-"meaning as in built-in :func:`open`."
+"See :ref:`the introduction <importlib_resources_functional>` for details on "
+"*anchor* and *path_names*. *encoding* and *errors* have the same meaning as "
+"in built-in :func:`open`."
 msgstr ""
+"Podrobnosti o *anchor* a *path_names* naleznete v :ref:`Úvodu "
+"<importlib_resources_functional>`. *encoding* a *errors* mají stejný výraz "
+"jako v zabudovaném :func:`open`."
 
 #: ../../library/importlib.resources.rst:165
 #: ../../library/importlib.resources.rst:205
 msgid ""
-"For backward compatibility reasons, the *encoding* argument must be given"
-" explicitly if there are multiple *path_names*. This limitation is "
-"scheduled to be removed in Python 3.15."
+"For backward compatibility reasons, the *encoding* argument must be given "
+"explicitly if there are multiple *path_names*. This limitation is scheduled "
+"to be removed in Python 3.15."
 msgstr ""
+"Z důvodů zpětné kompatibility musí být argument *encoding* zadán explicitne,"
+" pokud existuje více *path_names*. Toto omezení je plánováno být odstraněno "
+"v Pythonu 3.15."
 
 #: ../../library/importlib.resources.rst:169
 msgid ""
 "This function returns a :class:`~typing.TextIO` object, that is, a text "
 "stream open for reading."
 msgstr ""
+"Tato funkce vrací objekt :class:`~typing.TextIO`, tedy textový proud "
+"otevřený pro čtení."
 
 #: ../../library/importlib.resources.rst:174
 msgid "files(anchor).joinpath(*path_names).open('r', encoding=encoding)"
-msgstr ""
+msgstr "files(anchor).joinpath(*path_names).open('r', encoding=encoding)"
 
 #: ../../library/importlib.resources.rst:176
 #: ../../library/importlib.resources.rst:213
 #: ../../library/importlib.resources.rst:240
 msgid ""
-"Multiple *path_names* are accepted. *encoding* and *errors* must be given"
-" as keyword arguments."
+"Multiple *path_names* are accepted. *encoding* and *errors* must be given as"
+" keyword arguments."
 msgstr ""
+"Je přijato více *path_names*. *encoding* a *errors* musí být zadány jako "
+"pojmenované argumenty."
 
 #: ../../library/importlib.resources.rst:183
 msgid "Read and return the contents of the named resource as :class:`bytes`."
-msgstr ""
+msgstr "Přečte a vraťte obsah pojmenovaného prostředku jako :class:`bytes`."
 
 #: ../../library/importlib.resources.rst:190
 msgid "files(anchor).joinpath(*path_names).read_bytes()"
-msgstr ""
+msgstr "files(anchor).joinpath(*path_names).read_bytes()"
 
 #: ../../library/importlib.resources.rst:198
 msgid ""
 "Read and return the contents of the named resource as :class:`str`. By "
 "default, the contents are read as strict UTF-8."
 msgstr ""
+"Přečte a vraťte obsah pojmenovaného prostředku jako :class:`str`. Ve "
+"výchozím nastavení se obsah čte jako strict UTF-8."
 
 #: ../../library/importlib.resources.rst:211
 msgid "files(anchor).joinpath(*path_names).read_text(encoding=encoding)"
-msgstr ""
+msgstr "files(anchor).joinpath(*path_names).read_text(encoding=encoding)"
 
 #: ../../library/importlib.resources.rst:220
 msgid ""
 "Provides the path to the *resource* as an actual file system path.  This "
-"function returns a context manager for use in a :keyword:`with` "
-"statement. The context manager provides a :class:`pathlib.Path` object."
+"function returns a context manager for use in a :keyword:`with` statement. "
+"The context manager provides a :class:`pathlib.Path` object."
 msgstr ""
+"Poskytuje cestu k *prostředku* jako aktuální cestu systému souborů. Tato "
+"funkce vrací správce kontextu pro použití v příkazu :keyword:`with`. Správce"
+" kontextu poskytuje objekt :class:`pathlib.Path`."
 
 #: ../../library/importlib.resources.rst:224
 msgid ""
-"Exiting the context manager cleans up any temporary files created, e.g. "
-"when the resource needs to be extracted from a zip file."
+"Exiting the context manager cleans up any temporary files created, e.g. when"
+" the resource needs to be extracted from a zip file."
 msgstr ""
+"Opûstění správce kontextu vyčistí jakékoliv dočasné soubory vytvořené, např."
+" když prostředek musí být extrahorán ze zip souboru."
 
 #: ../../library/importlib.resources.rst:227
 msgid ""
-"For example, the :meth:`~pathlib.Path.stat` method requires an actual "
-"file system path; it can be used like this::"
+"For example, the :meth:`~pathlib.Path.stat` method requires an actual file "
+"system path; it can be used like this::"
 msgstr ""
+"Například metoda :meth:`~pathlib.Path.stat` vyžaduje aktuální cestu systému "
+"souborů; může být použita takto:"
 
 #: ../../library/importlib.resources.rst:230
 msgid ""
 "with importlib.resources.path(anchor, \"resource.txt\") as fspath:\n"
 "    result = fspath.stat()"
 msgstr ""
+"with importlib.resources.path(anchor, \"resource.txt\") as fspath:\n"
+"    result = fspath.stat()"
 
 #: ../../library/importlib.resources.rst:238
 msgid "as_file(files(anchor).joinpath(*path_names))"
-msgstr ""
+msgstr "as_file(files(anchor).joinpath(*path_names))"
 
 #: ../../library/importlib.resources.rst:247
 msgid ""
 "Return ``True`` if the named resource exists, otherwise ``False``. This "
 "function does not consider directories to be resources."
 msgstr ""
+"Vrací ``True``, pokud pojmenovaný prostředek existuje, jinak ``False``. Tato"
+" funkce nepovaová adresáře za prostředky."
 
 #: ../../library/importlib.resources.rst:255
 msgid "files(anchor).joinpath(*path_names).is_file()"
-msgstr ""
+msgstr "files(anchor).joinpath(*path_names).is_file()"
 
 #: ../../library/importlib.resources.rst:263
 msgid ""
@@ -348,34 +449,35 @@ msgid ""
 "directories) as :class:`str`. The iterable does not recurse into "
 "subdirectories."
 msgstr ""
+"Vrať itérovatelné přes pojmenované položky v balíčku nebo cestě. Iterátor "
+"vrací jména prostředků (např. souborů) a ne-prostředků (např. adresářů) jako"
+" :class:`str`. Iterátor se nerekurzívně zanoróvá do podadresářů."
 
 #: ../../library/importlib.resources.rst:273
 msgid ""
 "for resource in files(anchor).joinpath(*path_names).iterdir():\n"
 "    yield resource.name"
 msgstr ""
+"for resource in files(anchor).joinpath(*path_names).iterdir():\n"
+"    yield resource.name"
 
 #: ../../library/importlib.resources.rst:276
 msgid ""
-"Prefer ``iterdir()`` as above, which offers more control over the results"
-" and richer functionality."
+"Prefer ``iterdir()`` as above, which offers more control over the results "
+"and richer functionality."
 msgstr ""
+"Preferujte ``iterdir()`` viz výše, které nabízejí větší kontrolu nad "
+"výsledky a bohatší funkcionalitu."
 
 #~ msgid ""
-#~ "*package* parameter was renamed to "
-#~ "*anchor*. *package* was still accepted, "
+#~ "*package* parameter was renamed to *anchor*. *package* was still accepted, "
 #~ "but deprecated."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "*package* parameter was fully removed. "
-#~ "*anchor* can now be a non-package"
-#~ " module and if omitted will default"
-#~ " to the caller's module. *package* is"
-#~ " no longer accepted since Python "
-#~ "3.15. Consider passing the anchor "
-#~ "positionally or using ``importlib_resources >="
-#~ " 5.10`` for a compatible interface on"
-#~ " older Pythons."
+#~ "*package* parameter was fully removed. *anchor* can now be a non-package "
+#~ "module and if omitted will default to the caller's module. *package* is no "
+#~ "longer accepted since Python 3.15. Consider passing the anchor positionally "
+#~ "or using ``importlib_resources >= 5.10`` for a compatible interface on older"
+#~ " Pythons."
 #~ msgstr ""
-

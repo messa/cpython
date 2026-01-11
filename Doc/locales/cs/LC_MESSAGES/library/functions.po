@@ -691,12 +691,20 @@ msgid ""
 "Note that classes are callable (calling a class returns a new instance); "
 "instances are callable if their class has a :meth:`~object.__call__` method."
 msgstr ""
+"Vrátí :const:`True`, pokud se argument *object* jeví jako volatelný, "
+":const:`False` v opačném případě. Pokud tato funkce vrátí ``True``, je stále"
+" možné, že volání selže, ale pokud vrátí ``False``, volání *object* nikdy "
+"neuspěje. Poznámka: třídy jsou volatelné (volání třídy vrátí novou "
+"instanci); instance jsou volatelné, pokud má jejich třída metodu "
+":meth:`~object.__call__`."
 
 #: ../../library/functions.rst:240
 msgid ""
 "This function was first removed in Python 3.0 and then brought back in "
 "Python 3.2."
 msgstr ""
+"Tato funkce byla poprvé odstraněna v Pythonu 3.0 a později obnovena v "
+"Pythonu 3.2."
 
 #: ../../library/functions.rst:247
 msgid ""
@@ -705,16 +713,22 @@ msgid ""
 "``chr(8364)`` returns the string ``'€'``. This is the inverse of "
 ":func:`ord`."
 msgstr ""
+"Vrátí řetězec reprezentující znak se zadaným Unicode kódovým bodem. "
+"Například ``chr(97)`` vrátí řetězec ``'a'``, zatímco ``chr(8364)`` vrátí "
+"řetězec ``'€'``. Toto je inverzní funkce k :func:`ord`."
 
 #: ../../library/functions.rst:251
 msgid ""
 "The valid range for the argument is from 0 through 1,114,111 (0x10FFFF in "
 "base 16).  :exc:`ValueError` will be raised if it is outside that range."
 msgstr ""
+"Platný rozsah pro argument je od 0 do 1 114 111 (0x10FFFF v šestnáctkovém "
+"formátu). Pokud je argument mimo tento rozsah, bude vyvolana "
+":exc:`ValueError`."
 
 #: ../../library/functions.rst:257
 msgid "Transform a method into a class method."
-msgstr ""
+msgstr "Transformuje metodu na metodu třídy."
 
 #: ../../library/functions.rst:259
 msgid ""
@@ -722,6 +736,9 @@ msgid ""
 "an instance method receives the instance. To declare a class method, use "
 "this idiom::"
 msgstr ""
+"Metoda třídy obdrží třídu jako implicitní první argument, stejně jako metoda"
+" instance obdrží instanci. Chcete-li deklarovat metodu třídy, použijte tuto "
+"idiomatiku::"
 
 #: ../../library/functions.rst:263
 msgid ""
@@ -729,12 +746,17 @@ msgid ""
 "    @classmethod\n"
 "    def f(cls, arg1, arg2): ..."
 msgstr ""
+"class C:\n"
+"    @classmethod\n"
+"    def f(cls, arg1, arg2): ..."
 
 #: ../../library/functions.rst:267
 msgid ""
 "The ``@classmethod`` form is a function :term:`decorator` -- see "
 ":ref:`function` for details."
 msgstr ""
+"Forma ``@classmethod`` je :term:`dekorátor` funkce -- podrobnosti viz "
+":ref:`function`."
 
 #: ../../library/functions.rst:270
 msgid ""
@@ -743,6 +765,10 @@ msgid ""
 "class. If a class method is called for a derived class, the derived class "
 "object is passed as the implied first argument."
 msgstr ""
+"Metodu třídy lze volat jak na třídě (například ``C.f()``), tak na instanci "
+"(například ``C().f()``). Instance se ignoruje s výjimkou její třídy. Pokud "
+"je metoda třídy volána pro odvozenou třídu, objekt odvozené třídy je předán "
+"jako implicitní první argument."
 
 #: ../../library/functions.rst:275
 msgid ""
@@ -750,12 +776,17 @@ msgid ""
 "those, see :func:`staticmethod` in this section. For more information on "
 "class methods, see :ref:`types`."
 msgstr ""
+"Metody třídy se liší od statických metod C++ nebo Java. Pokud je chcete, "
+"podívejte se na :func:`staticmethod` v tomto oddíle. Další informace o "
+"metodách třídy naleznete v :ref:`types`."
 
 #: ../../library/functions.rst:279
 msgid ""
 "Class methods can now wrap other :term:`descriptors <descriptor>` such as "
 ":func:`property`."
 msgstr ""
+"Metody třídy mají nyní obalené další :term:`deskriptory <descriptor>` jako "
+"je :func:`property`."
 
 #: ../../library/functions.rst:283
 msgid ""
@@ -764,12 +795,18 @@ msgid ""
 ":attr:`~function.__qualname__`, :attr:`~function.__doc__` and "
 ":attr:`~function.__annotations__`) and have a new ``__wrapped__`` attribute."
 msgstr ""
+"Metody třídy nyní dědičí atributy metody (:attr:`~function.__module__`, "
+":attr:`~function.__name__`, :attr:`~function.__qualname__`, "
+":attr:`~function.__doc__` a :attr:`~function.__annotations__`) a mají nový "
+"atribut ``__wrapped__``."
 
 #: ../../library/functions.rst:290
 msgid ""
 "Class methods can no longer wrap other :term:`descriptors <descriptor>` such"
 " as :func:`property`."
 msgstr ""
+"Metody třídy již nemohou obalu převádět další :term:`deskriptory "
+"<descriptor>` jako je :func:`property`."
 
 #: ../../library/functions.rst:297
 msgid ""
@@ -778,6 +815,10 @@ msgid ""
 "string, a byte string, or an AST object.  Refer to the :mod:`ast` module "
 "documentation for information on how to work with AST objects."
 msgstr ""
+"Zkompiluje *source* do objektu kódu nebo AST. Objekty kódu mohou být "
+"spouštěny pomocí :func:`exec` nebo :func:`eval`. *source* může být normální "
+"řetězec, bajtřetězec nebo AST objekt. Informace o práci s AST objekty "
+"naleznete v dokumentaci modulu :mod:`ast`."
 
 #: ../../library/functions.rst:302
 msgid ""
@@ -785,6 +826,9 @@ msgid ""
 "pass some recognizable value if it wasn't read from a file (``'<string>'`` "
 "is commonly used)."
 msgstr ""
+"Argument *filename* by měl poskytnout soubor, ze kterého byl kód přečten; "
+"předněte nějakou rozpoznatelnou hodnotu, pokud nebyl přečten ze souboru "
+"(``'<string>'`` se běžně používá)."
 
 #: ../../library/functions.rst:306
 msgid ""
@@ -794,6 +838,11 @@ msgid ""
 "single interactive statement (in the latter case, expression statements that"
 " evaluate to something other than ``None`` will be printed)."
 msgstr ""
+"Argument *mode* určuje, jaký druh kódu musí být zkompilovan; může být "
+"``'exec'`` pokud *source* sestavá ze sekvence příkazů, ``'eval'`` pokud "
+"sestavá z jednoho výrazu, nebo ``'single'`` pokud sestavá z jednoho "
+"interaktivního příkazu (v druhém případě budou vytisknuty výrazy, které se "
+"vyhodnotily na jinou hodnotu než ``None``)."
 
 #: ../../library/functions.rst:312
 msgid ""
@@ -808,6 +857,16 @@ msgid ""
 "*flags* argument is it -- the flags (future features and compiler options) "
 "in the surrounding code are ignored."
 msgstr ""
+"Volitelné argumenty *flags* a *dont_inherit* kontrolují, které :ref:`volby "
+"kompilátoru <ast-compiler-flags>` by měly být aktivovány a které "
+":ref:`budoucí vlastnosti <future>` by měly být povoleny. Pokud ani jedna "
+"není přítomna (nebo obě jsou nula) je kód zkompilovan se stejnými příznaky, "
+"které ovlivňují kód, který volá :func:`compile`. Pokud je dán argument "
+"*flags* a *dont_inherit* není (nebo je nula), potom jsou použity volby "
+"kompilátoru a budoucí příkazy zadané argumentem *flags* v příchozím k tomu, "
+"co by bylo použito v každém případě. Pokud je *dont_inherit* nenulové celé "
+"číslo, potom je argument *flags* to -- příznačky (budoucí vlastnosti a volby"
+" kompilátoru) v obklopujícím kódu jsou ignorovány."
 
 #: ../../library/functions.rst:323
 msgid ""
@@ -819,6 +878,13 @@ msgid ""
 ":ref:`Compiler flags <ast-compiler-flags>` can be found in :mod:`ast` "
 "module, with ``PyCF_`` prefix."
 msgstr ""
+"Volby kompilátoru a budoucí příkazy jsou určeny bity, které mohou být bitově"
+" kombinovány pomocí OR pro zadání více možností. Bitové pole potřebné pro "
+"zadání dané budoucí vlastnosti může být nalezeno jako atribut "
+":attr:`~__future__._Feature.compiler_flag` instance "
+":class:`~__future__._Feature` v modulu :mod:`__future__`. :ref:`Příznačky "
+"kompilátoru <ast-compiler-flags>` mohou být nalezeny v modulu :mod:`ast` s "
+"předponou ``PyCF_``."
 
 #: ../../library/functions.rst:331
 msgid ""
@@ -828,18 +894,27 @@ msgid ""
 " optimization; ``__debug__`` is true), ``1`` (asserts are removed, "
 "``__debug__`` is false) or ``2`` (docstrings are removed too)."
 msgstr ""
+"Argument *optimize* určuje úroveň optimalizace kompilátoru; výchozí hodnota "
+"``-1`` vybere úroveň optimalizace interpretřu danou volbami :option:`-O`. "
+"Explicitní úrovně jsou ``0`` (bez optimalizace; ``__debug__`` je true), "
+"``1`` (asser ty jsou odstraněny, ``__debug__`` je false) nebo ``2`` (také "
+"docstringy jsou odstraněny)."
 
 #: ../../library/functions.rst:337
 msgid ""
 "This function raises :exc:`SyntaxError` or :exc:`ValueError` if the compiled"
 " source is invalid."
 msgstr ""
+"Tato funkce vyvolá :exc:`SyntaxError` nebo :exc:`ValueError`, pokud je "
+"zkompilovaný zdroj neplatný."
 
 #: ../../library/functions.rst:340
 msgid ""
 "If you want to parse Python code into its AST representation, see "
 ":func:`ast.parse`."
 msgstr ""
+"Pokud chcete analyzovat kód Pythonu do jeho AST reprezentace, viz "
+":func:`ast.parse`."
 
 #: ../../library/functions.rst:343 ../../library/functions.rst:345
 msgid ""
@@ -847,6 +922,9 @@ msgid ""
 "``source`` and ``filename``. This event may also be raised by implicit "
 "compilation."
 msgstr ""
+"Vyvolá :ref:`audiční událost <auditing>` ``compile`` s argumenty ``source`` "
+"a ``filename``. Tato událost může být také vyvolana implicitním "
+"kompilaváním."
 
 #: ../../library/functions.rst:351
 msgid ""
@@ -855,6 +933,9 @@ msgid ""
 "to facilitate detection of incomplete and complete statements in the "
 ":mod:`code` module."
 msgstr ""
+"Při kompilaci řetězce s vicelinkým kódem v režimu ``'single'`` nebo "
+"``'eval'`` musí být vstup ukončen alespoň jednou znakovém nového řádku. To "
+"je usnadnit detekci neuplnch a úplných příkazů v modulu :mod:`code`."
 
 #: ../../library/functions.rst:358
 msgid ""
@@ -862,35 +943,46 @@ msgid ""
 "large/complex string when compiling to an AST object due to stack depth "
 "limitations in Python's AST compiler."
 msgstr ""
+"Je možné zhrčit interpret Python s dostateně velkým/komplexním řetězcem při "
+"kompilaci do objektu AST kvůli omezením hloubky zásobníku kompilátoru AST "
+"Pythonu."
 
 #: ../../library/functions.rst:362
 msgid ""
 "Allowed use of Windows and Mac newlines.  Also, input in ``'exec'`` mode "
 "does not have to end in a newline anymore.  Added the *optimize* parameter."
 msgstr ""
+"Povoleno použítí konců řádků Windows a Mac. Také vstup v režimu ``'exec'`` "
+"již nemá konečit novým řádkem. Přidán parametr *optimize*."
 
 #: ../../library/functions.rst:366
 msgid ""
 "Previously, :exc:`TypeError` was raised when null bytes were encountered in "
 "*source*."
 msgstr ""
+"Dříve byla vyvolana :exc:`TypeError` pokud byly v *source* nalezeny bajtové "
+"znulovky."
 
 #: ../../library/functions.rst:370
 msgid ""
 "``ast.PyCF_ALLOW_TOP_LEVEL_AWAIT`` can now be passed in flags to enable "
 "support for top-level ``await``, ``async for``, and ``async with``."
 msgstr ""
+"``ast.PyCF_ALLOW_TOP_LEVEL_AWAIT`` může být nyní předán v příznačcích k "
+"povolení podpory pro top-level ``await``, ``async for`` a ``async with``."
 
 #: ../../library/functions.rst:379
 msgid ""
 "Convert a single string or number to a complex number, or create a complex "
 "number from real and imaginary parts."
 msgstr ""
+"Konvertuje jeden řetězec nebo číslo na komplexní číslo, nebo vytvoří "
+"komplexní číslo z reálné a imaginární části."
 
 #: ../../library/functions.rst:382 ../../library/functions.rst:756
 #: ../../library/functions.rst:1004
 msgid "Examples:"
-msgstr ""
+msgstr "Příklady:"
 
 #: ../../library/functions.rst:384
 msgid ""
@@ -911,6 +1003,22 @@ msgid ""
 ">>> complex(-1.23, 4.5)\n"
 "(-1.23+4.5j)"
 msgstr ""
+">>> complex('+1.23')\n"
+"(1.23+0j)\n"
+">>> complex('-4.5j')\n"
+"-4.5j\n"
+">>> complex('-1.23+4.5j')\n"
+"(-1.23+4.5j)\n"
+">>> complex('\\t( -1.23+4.5J )\\n')\n"
+"(-1.23+4.5j)\n"
+">>> complex('-Infinity+NaNj')\n"
+"(-inf+nanj)\n"
+">>> complex(1.23)\n"
+"(1.23+0j)\n"
+">>> complex(imag=-4.5)\n"
+"-4.5j\n"
+">>> complex(-1.23, 4.5)\n"
+"(-1.23+4.5j)"
 
 #: ../../library/functions.rst:403
 msgid ""
@@ -926,6 +1034,17 @@ msgid ""
 ":token:`~float:complexvalue` production rule in the following grammar, after"
 " parentheses and leading and trailing whitespace characters are removed:"
 msgstr ""
+"Pokud je argument řetězec, musí obsahovat buď reálnou část (ve stejném "
+"formátu jako pro :func:`float`) nebo imaginární část (ve stejném formátu ale"
+" s příponou ``'j'`` nebo ``'J'``), nebo obě reálné a imaginární části "
+"(znaménko imaginární části je v tomto případě povinné). Řetězec může být "
+"voliteľně obklopen meznamí a zavřenými závorkami ``'('`` a ``')'``, které "
+"jsou ignorovány. Řetězec nesmí obsahovat mezeru mezi ``'+'``, ``'-'``, "
+"předponami ``'j'`` nebo ``'J'`` a dekadickým číslem. Například "
+"``complex('1+2j')`` je v pořádku, ale ``complex('1 + 2j')`` vyvaží "
+":exc:`ValueError`. Konkrétně, vstup musí splňovat pravidlo výroba "
+":token:`~float:complexvalue` v následující gramatice, po odebrání závorek a "
+"předchozí a konečné mezery:"
 
 #: ../../library/functions.rst:422
 msgid ""
@@ -936,6 +1055,12 @@ msgid ""
 ":meth:`~object.__float__`. If :meth:`!__float__` is not defined then it "
 "falls back to :meth:`~object.__index__`."
 msgstr ""
+"Pokud je argument číslo, je konstruktor služí jako numerická konverze jako "
+":class:`int` a :class:`float`. Pro obecný objektu Pythonu ``x`` "
+"``complex(x)`` deleguje na ``x.__complex__()``. Pokud "
+":meth:`~object.__complex__` není definován, padá zpět na "
+":meth:`~object.__float__`. Pokud :meth:`!__float__` není definován, padá "
+"zpět na :meth:`~object.__index__`."
 
 #: ../../library/functions.rst:431
 msgid ""
@@ -947,37 +1072,50 @@ msgid ""
 "imaginary component ``real.imag+imag.real``. If one of arguments is a real "
 "number, only its real component is used in the above expressions."
 msgstr ""
+"Pokud jsou zadány dva argumenty nebo jsou použity argumenty klíč, každý "
+"argument může být jakýkoli numerický typ (včetně komplexního). Pokud jsou "
+"oba argumenty reálná čísla, vrátí komplexní číslo s reálnou součástí *real* "
+"a imaginární součástí *imag*. Pokud jsou oba argumenty komplexní čísla, "
+"vrátí komplexní číslo s reálnou součástí ``real.real-imag.imag`` a "
+"imaginární součástí ``real.imag+imag.real``. Pokud je jeden z argumentů "
+"reálné číslo, používá se v přísluxšných výrazy pouze jeho reálná součást."
 
 #: ../../library/functions.rst:441
 msgid ""
 "See also :meth:`complex.from_number` which only accepts a single numeric "
 "argument."
 msgstr ""
+"Viz také :meth:`complex.from_number`, která přijímá pouze jeden numerický "
+"argument."
 
 #: ../../library/functions.rst:443
 msgid "If all arguments are omitted, returns ``0j``."
-msgstr ""
+msgstr "Pokud jsou všechny argumenty vynechány, vrátí ``0j``."
 
 #: ../../library/functions.rst:445
 msgid "The complex type is described in :ref:`typesnumeric`."
-msgstr ""
+msgstr "Typ complex je popsán v :ref:`typesnumeric`."
 
 #: ../../library/functions.rst:447 ../../library/functions.rst:810
 #: ../../library/functions.rst:1052
 msgid "Grouping digits with underscores as in code literals is allowed."
-msgstr ""
+msgstr "Seskupení čísllic podtržít́ se jako v literálech kódu je povoleno."
 
 #: ../../library/functions.rst:450
 msgid ""
 "Falls back to :meth:`~object.__index__` if :meth:`~object.__complex__` and "
 ":meth:`~object.__float__` are not defined."
 msgstr ""
+"Padá zpět na :meth:`~object.__index__`, pokud není definováno "
+":meth:`~object.__complex__` a :meth:`~object.__float__`."
 
 #: ../../library/functions.rst:454
 msgid ""
 "Passing a complex number as the *real* or *imag* argument is now deprecated;"
 " it should only be passed as a single positional argument."
 msgstr ""
+"Předání komplexního čísla jako argumentu *real* nebo *imag* je nyní "
+"zastarálé; mělo by být předáno pouze jako jeden poziuní argument."
 
 #: ../../library/functions.rst:461
 msgid ""
@@ -987,6 +1125,11 @@ msgid ""
 "example, ``delattr(x, 'foobar')`` is equivalent to ``del x.foobar``. *name* "
 "need not be a Python identifier (see :func:`setattr`)."
 msgstr ""
+"Toto je příbuzné :func:`setattr`. Argumenty jsou objekt a řetězec. Řetězec "
+"musí být názem jednoho z atributů objektu. Funkce maže pojmenovaný atribut, "
+"za předpokladu že objekt to dovoluje. Například ``delattr(x, 'foobar')`` je "
+"ekvivalentní ``del x.foobar``. *name* nemusí být identifikátor Pythonu (viz "
+":func:`setattr`)."
 
 #: ../../library/functions.rst:474
 msgid ""
@@ -994,12 +1137,16 @@ msgid ""
 "See :class:`dict` and :ref:`typesmapping` for documentation about this "
 "class."
 msgstr ""
+"Vytvoří nový slovník. Objekt :class:`dict` je třída slovníku. Viz "
+":class:`dict` a :ref:`typesmapping` pro dokumentaci o této třídě."
 
 #: ../../library/functions.rst:477
 msgid ""
 "For other containers see the built-in :class:`list`, :class:`set`, and "
 ":class:`tuple` classes, as well as the :mod:`collections` module."
 msgstr ""
+"Pro další kontejnery viz vstavene třídy :class:`list`, :class:`set` a "
+":class:`tuple`, stejně jako modul :mod:`collections`."
 
 #: ../../library/functions.rst:484
 msgid ""
@@ -1007,6 +1154,8 @@ msgid ""
 "With an argument, attempt to return a list of valid attributes for that "
 "object."
 msgstr ""
+"Bez argumentů vrátí seznam názevů v aktuálním lokálním oboru. S argumentem "
+"se pokusí vrátit seznam platných atributů pro ten to objekt."
 
 #: ../../library/functions.rst:487
 msgid ""
@@ -1016,6 +1165,11 @@ msgid ""
 ":func:`~object.__getattribute__` function to customize the way :func:`dir` "
 "reports their attributes."
 msgstr ""
+"Pokud má objekt metodu pojmenovanou :meth:`~object.__dir__`, bude tato "
+"metoda volána a musí vrátit seznam atributů. To umožňuje objektům, které "
+"implementují vlastní funkci :func:`~object.__getattr__` nebo "
+":func:`~object.__getattribute__`, přizpůsobit způsob, jakým :func:`dir` "
+"oznamuje jejich atributy."
 
 #: ../../library/functions.rst:494
 msgid ""
@@ -1025,6 +1179,10 @@ msgid ""
 "necessarily complete and may be inaccurate when the object has a custom "
 ":func:`~object.__getattr__`."
 msgstr ""
+"Pokud objekt neposkytuje :meth:`~object.__dir__`, funkce se snaží shromáždít"
+" informace z atributu :attr:`~object.__dict__` objektu, pokud je definován, "
+"a z jeho objektu typu. Výsledný seznam nemusí být nutně úplný a může být "
+"nepřesný, pokud má objekt vlastní :func:`~object.__getattr__`."
 
 #: ../../library/functions.rst:500
 msgid ""
@@ -1032,18 +1190,23 @@ msgid ""
 "of objects, as it attempts to produce the most relevant, rather than "
 "complete, information:"
 msgstr ""
+"Standardní mechanismus :func:`dir` se chová různě s různými typy objektů, "
+"protože se snaží vytvořit nejrelevantnější, spoluš úplné, informace:"
 
 #: ../../library/functions.rst:504
 msgid ""
 "If the object is a module object, the list contains the names of the "
 "module's attributes."
 msgstr ""
+"Pokud je objekt objektem modulu, seznam obsahuje názvy atributů modulu."
 
 #: ../../library/functions.rst:507
 msgid ""
 "If the object is a type or class object, the list contains the names of its "
 "attributes, and recursively of the attributes of its bases."
 msgstr ""
+"Pokud je objekt typem nebo třídou, seznam obsahuje názvy jejích atributů a "
+"rekurzivně názvy atributů jejích základá."
 
 #: ../../library/functions.rst:510
 msgid ""
@@ -1051,10 +1214,12 @@ msgid ""
 "its class's attributes, and recursively of the attributes of its class's "
 "base classes."
 msgstr ""
+"V ostatních případech seznam obsahuje názvy atributů objektu, názvy atributů"
+" jeho třídy a rekurzivně názvy atributů základő její třídy."
 
 #: ../../library/functions.rst:514
 msgid "The resulting list is sorted alphabetically.  For example:"
-msgstr ""
+msgstr "Výsledný seznam je seřazen abecedně. Například:"
 
 #: ../../library/functions.rst:534
 msgid ""
@@ -1064,6 +1229,11 @@ msgid ""
 "its detailed behavior may change across releases.  For example, metaclass "
 "attributes are not in the result list when the argument is a class."
 msgstr ""
+"Protože je :func:`dir` poskytována hlavně jako výhoda pro použití na "
+"interaktivním promptu, snaží se poskytnout zajímavé sady názvů více než "
+"snaží se poskytnout přesně nebo konzistentně definovanou sadu názvů, a její "
+"podrobné chování se může měnít mezi verze. Například, atributy metadtřídy "
+"nejsou v seznamu výsledků, pokud je argumentem třída."
 
 #: ../../library/functions.rst:544
 msgid ""
@@ -1076,6 +1246,14 @@ msgid ""
 "% b`` is very close to *a*, if ``a % b`` is non-zero it has the same sign as"
 " *b*, and ``0 <= abs(a % b) < abs(b)``."
 msgstr ""
+"Vezme dva (neinkompletní) čísla jako argumenty a vrátí pár čísel skládající "
+"se z jejich kvocientu a zbytku při použití celostného dělení. S míšenými "
+"typy operandů se aplikují pravidla binárních aritmetických operátorů. Pro "
+"čísla jsou výsledkem ``(a // b, a % b)``. Pro pohybující se čísla je "
+"výsledkem ``(q, a % b)``, kde *q* je obvykle ``math.floor(a / b)`` ale má má"
+" o 1 méně. V každém případě ``q * b + a % b`` je velmi blízko *a*, pokud je "
+"``a % b`` nenulové, má stejné znaménko jako *b*, a ``0 <= abs(a % b) < "
+"abs(b)``."
 
 #: ../../library/functions.rst:556
 msgid ""
@@ -1085,10 +1263,15 @@ msgid ""
 ":func:`enumerate` returns a tuple containing a count (from *start* which "
 "defaults to 0) and the values obtained from iterating over *iterable*."
 msgstr ""
+"Vrátí objekt enumerate. *iterable* musí být sekvence, :term:`itérátor` nebo "
+"nějaký jiný objekt, který podporuje iteraci. Metoda "
+":meth:`~iterator.__next__` itérátoru vráceného funkcemi :func:`enumerate` "
+"vrátí n-tici obsahující počet (od *start*, který se standardně nastavuje na "
+"0) a hodnoty získáné z iterace přes *iterable*."
 
 #: ../../library/functions.rst:568
 msgid "Equivalent to::"
-msgstr ""
+msgstr "Ekvivalentní:"
 
 #: ../../library/functions.rst:570
 msgid ""
@@ -1098,44 +1281,51 @@ msgid ""
 "        yield n, elem\n"
 "        n += 1"
 msgstr ""
+"def enumerate(iterable, start=0):\n"
+"    n = start\n"
+"    for elem in iterable:\n"
+"        yield n, elem\n"
+"        n += 1"
 
 #: ../../library/functions.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Parametry"
 
 #: ../../library/functions.rst:580
 msgid "A Python expression."
-msgstr ""
+msgstr "Výraz Pythonu."
 
 #: ../../library/functions.rst:584
 msgid "The global namespace (default: ``None``)."
-msgstr ""
+msgstr "Globální jmenný prostor (standardně: ``None``)."
 
 #: ../../library/functions.rst:588
 msgid "The local namespace (default: ``None``)."
-msgstr ""
+msgstr "Lokální jmenný prostor (standardně: ``None``)."
 
 #: ../../library/functions.rst
 msgid "Returns"
-msgstr ""
+msgstr "Vrací"
 
 #: ../../library/functions.rst:592
 msgid "The result of the evaluated expression."
-msgstr ""
+msgstr "Výsledek vyhodnoceného výrazu."
 
 #: ../../library/functions.rst
 msgid "raises"
-msgstr ""
+msgstr "Vyvolat"
 
 #: ../../library/functions.rst:593
 msgid "Syntax errors are reported as exceptions."
-msgstr ""
+msgstr "Chyby syntaxe jsou hlvášeny jako výj imky."
 
 #: ../../library/functions.rst:597 ../../library/functions.rst:658
 msgid ""
 "This function executes arbitrary code. Calling it with user-supplied input "
 "may lead to security vulnerabilities."
 msgstr ""
+"Tato funkce spouští libovolný kód. Volání s uživatelem zadaným vstupem může "
+"vęst k bezbezpečnostním zřanitivitám."
 
 #: ../../library/functions.rst:600
 msgid ""
@@ -1155,10 +1345,24 @@ msgid ""
 "already referenced in the scope that is calling :func:`eval` (e.g. via a "
 ":keyword:`nonlocal` statement)."
 msgstr ""
+"Argument *source* je analyzován a vyhodnocen jako výraz Pythonu (technicky "
+"řečeno, seznam podminek) pomocí mapování *globals* a *locals* jako globální "
+"a lokální jmenný prostor. Pokud je slovník *globals* přítomen a neobsahuje "
+"hodnotu pro klíč ``__builtins__``, odkaz na slovník vestavěného modulu "
+":mod:`builtins` je vložen pod ten klíč před tím, než je *source* analyzován."
+" Takto můžete kontrolovat, které vestavby jsou dostupné pro spustený kód "
+"vložením vlastní ho slovníku ``__builtins__`` do *globals* před předáním "
+":func:`eval`. Pokud mapování *locals* vynecháno, standardně se nastavuje na "
+"slovník *globals*. Pokud jsou obě mapování vynechána, zdroj je spuen s "
+"*globals* a *locals* v prostředí kde je :func:`eval` volána. Poznámka, "
+"*eval()* bude mít přístup pouze k :term:`vnořeným obořum <nested scope>` "
+"(non-locals) v obklopujícím prostředí, pokud již jsou odkazovány v oboru, "
+"který volá :func:`eval` (například prostřednictvím příkazu "
+":keyword:`nonlocal`)."
 
 #: ../../library/functions.rst:616
 msgid "Example:"
-msgstr ""
+msgstr "Příklad:"
 
 #: ../../library/functions.rst:622
 msgid ""
@@ -1167,6 +1371,11 @@ msgid ""
 " of a string.  If the code object has been compiled with ``'exec'`` as the "
 "*mode* argument, :func:`eval`\\'s return value will be ``None``."
 msgstr ""
+"Tato funkce může být rovněž použita k spustaní libovolných kódových objektů "
+"(jako například ty vytvořené funkcemi :func:`compile`). V tomto případě "
+"předněste kódový objekt místo řetězce. Pokud byl kódový objekt zkompilovan s"
+" ``'exec'`` jako argumentem *mode*, :func:`eval`\\'s návrat se bude rovnat "
+"``None``."
 
 #: ../../library/functions.rst:627
 msgid ""
@@ -1175,18 +1384,26 @@ msgid ""
 "current global and local dictionary, respectively, which may be useful to "
 "pass around for use by :func:`eval` or :func:`exec`."
 msgstr ""
+"Pokyny: dynamické spuštění příkazů je podporováno funkcemi :func:`exec`. "
+"Funkce :func:`globals` a :func:`locals` vracejcí aktuální globální a lokální"
+" slovník, v čěm má být užitečné předávat k použití :func:`eval` nebo "
+":func:`exec`."
 
 #: ../../library/functions.rst:632
 msgid ""
 "If the given source is a string, then leading and trailing spaces and tabs "
 "are stripped."
 msgstr ""
+"Pokud je daný zdroj řetězec, s předáním a řadícími mezerami a tabulky jsou "
+"odstraňovány."
 
 #: ../../library/functions.rst:635
 msgid ""
 "See :func:`ast.literal_eval` for a function that can safely evaluate strings"
 " with expressions containing only literals."
 msgstr ""
+"Viz :func:`ast.literal_eval` pro funkci, která může bezpečně vyhodnotit "
+"řetězce obsahující výrazy obsahující pouze literaly."
 
 #: ../../library/functions.rst:638 ../../library/functions.rst:640
 #: ../../library/functions.rst:700 ../../library/functions.rst:702
@@ -1194,16 +1411,21 @@ msgid ""
 "Raises an :ref:`auditing event <auditing>` ``exec`` with the code object as "
 "the argument. Code compilation events may also be raised."
 msgstr ""
+"Vyvolá :ref:`audiční událost <auditing>` ``exec`` s kódovým objektem jako "
+"argumentem. Mohou být také vyvolany události kompilace kódu."
 
 #: ../../library/functions.rst:645 ../../library/functions.rst:722
 msgid "The *globals* and *locals* arguments can now be passed as keywords."
 msgstr ""
+"Argumenty *globals* a *locals* mohou být nyní předány jako klíč slova."
 
 #: ../../library/functions.rst:649 ../../library/functions.rst:726
 msgid ""
 "The semantics of the default *locals* namespace have been adjusted as "
 "described for the :func:`locals` builtin."
 msgstr ""
+"Sémantika standardního jmenného prostoru *locals* byla upravena jak je "
+"popsáno pro vestavěné :func:`locals`."
 
 #: ../../library/functions.rst:661
 msgid ""
@@ -1217,6 +1439,15 @@ msgid ""
 " not be used outside of function definitions even within the context of code"
 " passed to the :func:`exec` function. The return value is ``None``."
 msgstr ""
+"Tato funkce podporuje dynamické spuštění kódu Pythonu. *source* musí být buď"
+" řetězec nebo kódový objekt. Pokud je to řetězec, je řetězec analyzován jako"
+" sada příkazů Pythonu, která je poté spuen (pokud nedojde k chybě syntaxe). "
+"[#]_ Pokud je kódový objekt, je jednodue spuen. Ve všech případech je "
+"očekáván, že kód, který je spuen, bude platný jako vstup souboru (viz oddël "
+":ref:`file-input` v Příruce. Vědőte si, že příkazy :keyword:`nonlocal`, "
+":keyword:`yield` a :keyword:`return` nemohou být používány mimo definice "
+"funkcí ani v kontextu kódu předaného funkci :func:`exec`. Návrat je "
+"``None``."
 
 #: ../../library/functions.rst:672
 msgid ""
@@ -1228,6 +1459,13 @@ msgid ""
 " any mapping object.  Remember that at the module level, globals and locals "
 "are the same dictionary."
 msgstr ""
+"Ve všech případech, pokud jsou volitelné části vynechány, kód je spuen v "
+"aktuálním oboru. Pokud je poskytnut pouze *globals*, musí být slovníkem "
+"(nikoli podtřídou slovníku), který bude použit pro globální i lokální "
+"proměnné. Pokud jsou dány *globals* a *locals*, jsou použity pro globální a "
+"lokální proměnné. Pokud je poskytnut, *locals* může být libovolným mapujícím"
+" objektem. Pamatujte si, že na úrovni modulu jsou globals a locals stejným "
+"slovníkem."
 
 #: ../../library/functions.rst:682
 msgid ""
@@ -1237,6 +1475,11 @@ msgid ""
 "access variables assigned at the top level (as the \"top level\" variables "
 "are treated as class variables in a class definition)."
 msgstr ""
+"Pokud ``exec`` získá dva oddělené objekty jako *globals* a *locals*, kód "
+"bude spuen, jako by byl vložen do definice třídy. To znamá, že funkce a "
+"třídy definované v spusteném kódu nebudou moci přistupovat k proměnným "
+"přiřazeným na vyšší úrovni (jako jsou proměnné \"vyšší úrovně\" zacházeny "
+"jako proměnné třídy v definici třídy)."
 
 #: ../../library/functions.rst:688
 msgid ""
@@ -1247,6 +1490,10 @@ msgid ""
 "``__builtins__`` dictionary into *globals* before passing it to "
 ":func:`exec`."
 msgstr ""
+"Pokud slovník *globals* neobsahuje hodnotu pro klíč ``__builtins__``, odkaz "
+"na slovník vestavěného modulu :mod:`builtins` je vložen pod ten klíč. Takto "
+"můžete kontrolovat, které vestavby jsou dostupné pro spustený kód vložením "
+"vlastního slovníku ``__builtins__`` do *globals* před předáním :func:`exec`."
 
 #: ../../library/functions.rst:694
 msgid ""
@@ -1255,6 +1502,10 @@ msgid ""
 "variables <closure variable>`. The length of the tuple must exactly match "
 "the length of the code object's :attr:`~codeobject.co_freevars` attribute."
 msgstr ""
+"Argument *closure* určuje zavření--n-tici cellvars. Je platné pouze pokud je"
+" *object* kódovým objektem obsahujícím :term:`volné (uzavřené) proměnné "
+"<closure variable>`. Délka n-tice musí přesně odpovídat délce atributu "
+":attr:`~codeobject.co_freevars` kódového objektu."
 
 #: ../../library/functions.rst:707
 msgid ""
@@ -1262,6 +1513,9 @@ msgid ""
 " global and local namespace, respectively, which may be useful to pass "
 "around for use as the second and third argument to :func:`exec`."
 msgstr ""
+"Vestavěné funkce :func:`globals` a :func:`locals` vracejcí aktuální globální"
+" a lokální prostor, které mohou být užitečné k předávání jako druhý a třetí "
+"argument :func:`exec`."
 
 #: ../../library/functions.rst:713
 msgid ""
@@ -1269,6 +1523,9 @@ msgid ""
 "Pass an explicit *locals* dictionary if you need to see effects of the code "
 "on *locals* after function :func:`exec` returns."
 msgstr ""
+"Výchozí *locals* chová se tak jak je popsáno pro funkci :func:`locals` níže."
+" Předněste explicitní slovník *locals*, pokud potřebujete vidět účinky kódu "
+"na *locals* po návratu z funkce :func:`exec`."
 
 #: ../../library/functions.rst:717
 msgid "Added the *closure* parameter."

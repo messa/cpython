@@ -11,235 +11,293 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-future.rst:8
 msgid "Futures"
-msgstr ""
+msgstr "Futures"
 
 #: ../../library/asyncio-future.rst:10
 msgid ""
 "**Source code:** :source:`Lib/asyncio/futures.py`, "
 ":source:`Lib/asyncio/base_futures.py`"
 msgstr ""
+"**Zdrojový kód:** :source:`Lib/asyncio/futures.py`, "
+":source:`Lib/asyncio/base_futures.py`"
 
 #: ../../library/asyncio-future.rst:15
 msgid ""
-"*Future* objects are used to bridge **low-level callback-based code** "
-"with high-level async/await code."
+"*Future* objects are used to bridge **low-level callback-based code** with "
+"high-level async/await code."
 msgstr ""
+"Objekty *Future* se používají k propojení **kódu založeného na "
+"nízkoúrovňových callbackech** s kódem vysoké úrovně async/await."
 
 #: ../../library/asyncio-future.rst:20
 msgid "Future Functions"
-msgstr ""
+msgstr "Funkce pro Future"
 
 #: ../../library/asyncio-future.rst:24
 msgid "Return ``True`` if *obj* is either of:"
-msgstr ""
+msgstr "Vrátí ``True``, je-li *obj* jedním z:"
 
 #: ../../library/asyncio-future.rst:26
 msgid "an instance of :class:`asyncio.Future`,"
-msgstr ""
+msgstr "instance třídy :class:`asyncio.Future`,"
 
 #: ../../library/asyncio-future.rst:27
 msgid "an instance of :class:`asyncio.Task`,"
-msgstr ""
+msgstr "instance třídy :class:`asyncio.Task`,"
 
 #: ../../library/asyncio-future.rst:28
 msgid "a Future-like object with a ``_asyncio_future_blocking`` attribute."
-msgstr ""
+msgstr "objekt podobný Future s atributem ``_asyncio_future_blocking``."
 
 #: ../../library/asyncio-future.rst:36
 msgid "Return:"
-msgstr ""
+msgstr "Výstup:"
 
 #: ../../library/asyncio-future.rst:38
 msgid ""
-"*obj* argument as is, if *obj* is a :class:`Future`, a :class:`Task`, or "
-"a Future-like object (:func:`isfuture` is used for the test.)"
+"*obj* argument as is, if *obj* is a :class:`Future`, a :class:`Task`, or a "
+"Future-like object (:func:`isfuture` is used for the test.)"
 msgstr ""
+"Argument *obj* tak jak je, pokud je *obj* instance :class:`Future`, "
+":class:`Task`, nebo objekt podobný Future (pro test se používá "
+":func:`isfuture`."
 
 #: ../../library/asyncio-future.rst:42
 msgid ""
 "a :class:`Task` object wrapping *obj*, if *obj* is a coroutine "
-"(:func:`iscoroutine` is used for the test); in this case the coroutine "
-"will be scheduled by ``ensure_future()``."
+"(:func:`iscoroutine` is used for the test); in this case the coroutine will "
+"be scheduled by ``ensure_future()``."
 msgstr ""
+"objekt :class:`Task` zabalující *obj*, pokud je *obj* korutina "
+"(:func:`iscoroutine` se používá pro test); v tomto případě bude korutina "
+"naplánována pomocí ``ensure_future()``."
 
 #: ../../library/asyncio-future.rst:47
 msgid ""
-"a :class:`Task` object that would await on *obj*, if *obj* is an "
-"awaitable (:func:`inspect.isawaitable` is used for the test.)"
+"a :class:`Task` object that would await on *obj*, if *obj* is an awaitable "
+"(:func:`inspect.isawaitable` is used for the test.)"
 msgstr ""
+"objekt :class:`Task`, který by čekal na *obj*, pokud je *obj* awaitable "
+"(:func:`inspect.isawaitable` se používá pro test.)"
 
 #: ../../library/asyncio-future.rst:50
 msgid "If *obj* is neither of the above a :exc:`TypeError` is raised."
 msgstr ""
+"Pokud *obj* není žádný z výše uvedených případů, je vyvolána "
+":exc:`TypeError`."
 
 #: ../../library/asyncio-future.rst:54
 msgid ""
 "Save a reference to the result of this function, to avoid a task "
 "disappearing mid-execution."
 msgstr ""
+"Uložte si odkaz na výsledek této funkce, abyste se vyhnuli zmiznutí úkolu "
+"během provádění."
 
 #: ../../library/asyncio-future.rst:57
 msgid ""
 "See also the :func:`create_task` function which is the preferred way for "
-"creating new tasks or use :class:`asyncio.TaskGroup` which keeps "
-"reference to the task internally."
+"creating new tasks or use :class:`asyncio.TaskGroup` which keeps reference "
+"to the task internally."
 msgstr ""
+"Viz také funkce :func:`create_task`, která je upřednostňovaným způsobem pro "
+"vytváření nových úkolů, nebo použijte :class:`asyncio.TaskGroup`, která si "
+"drží odkaz na úkol interně."
 
 #: ../../library/asyncio-future.rst:61
 msgid "The function accepts any :term:`awaitable` object."
-msgstr ""
+msgstr "Funkce přijímá jakýkoli :term:`awaitable` objekt."
 
 #: ../../library/asyncio-future.rst:64
 msgid ""
 "Deprecation warning is emitted if *obj* is not a Future-like object and "
 "*loop* is not specified and there is no running event loop."
 msgstr ""
+"Vypustené varování je vyvoláno, pokud *obj* není objekt podobný Future a "
+"*loop* není zadán a není žádná spuštěná smycka událostí."
 
 #: ../../library/asyncio-future.rst:71
 msgid ""
 "Wrap a :class:`concurrent.futures.Future` object in a "
 ":class:`asyncio.Future` object."
 msgstr ""
+"Zalomení objektu :class:`concurrent.futures.Future` do objektu "
+":class:`asyncio.Future`."
 
 #: ../../library/asyncio-future.rst:74
 msgid ""
-"Deprecation warning is emitted if *future* is not a Future-like object "
-"and *loop* is not specified and there is no running event loop."
+"Deprecation warning is emitted if *future* is not a Future-like object and "
+"*loop* is not specified and there is no running event loop."
 msgstr ""
+"Vypustené varování je vyvoláno, pokud *future* není objekt podobný Future a "
+"*loop* není zadán a není žádná spuštěná smycka událostí."
 
 #: ../../library/asyncio-future.rst:81
 msgid "Future Object"
-msgstr ""
+msgstr "Objekt Future"
 
 #: ../../library/asyncio-future.rst:85
 msgid ""
-"A Future represents an eventual result of an asynchronous operation.  Not"
-" thread-safe."
+"A Future represents an eventual result of an asynchronous operation.  Not "
+"thread-safe."
 msgstr ""
+"Future reprezentuje eventuální výsledek asynchronní operace. Není bezpečná "
+"pro vlákna."
 
 #: ../../library/asyncio-future.rst:88
 msgid ""
 "Future is an :term:`awaitable` object.  Coroutines can await on Future "
-"objects until they either have a result or an exception set, or until "
-"they are cancelled. A Future can be awaited multiple times and the result"
-" is same."
+"objects until they either have a result or an exception set, or until they "
+"are cancelled. A Future can be awaited multiple times and the result is "
+"same."
 msgstr ""
+"Future je :term:`awaitable` objekt. Korutiny mohou čekat na objekty Future, "
+"dokud nemají nastaven výsledek nebo výjimku, nebo dokud nejsou zrušeny. Na "
+"Future se mohou čekat vícekrát a výsledek je stejný."
 
 #: ../../library/asyncio-future.rst:93
 msgid ""
-"Typically Futures are used to enable low-level callback-based code (e.g. "
-"in protocols implemented using asyncio :ref:`transports <asyncio-"
-"transports-protocols>`) to interoperate with high-level async/await code."
+"Typically Futures are used to enable low-level callback-based code (e.g. in "
+"protocols implemented using asyncio :ref:`transports <asyncio-transports-"
+"protocols>`) to interoperate with high-level async/await code."
 msgstr ""
+"Typicky se Futures používají k umožnění nízkoúrovňového kódu založeného na "
+"callbackech (např. v protokolech implementovaných pomocí asyncio "
+":ref:`transportů <asyncio-transports-protocols>`) k vzjémné interoperabilitě"
+" s kódem vysoké úrovně async/await."
 
 #: ../../library/asyncio-future.rst:98
 msgid ""
-"The rule of thumb is to never expose Future objects in user-facing APIs, "
-"and the recommended way to create a Future object is to call "
-":meth:`loop.create_future`.  This way alternative event loop "
-"implementations can inject their own optimized implementations of a "
-"Future object."
+"The rule of thumb is to never expose Future objects in user-facing APIs, and"
+" the recommended way to create a Future object is to call "
+":meth:`loop.create_future`.  This way alternative event loop implementations"
+" can inject their own optimized implementations of a Future object."
 msgstr ""
+"Pravidlem je nikdy nevystavovat objekty Future ve verejňých API a "
+"doporučeným způsobem vytvoření objektu Future je volání "
+":meth:`loop.create_future`. Tímto způsobem mohou alternativní implementace "
+"smyckhy událostí vložit své vlastní optimalizo vané implementace objektu "
+"Future."
 
 #: ../../library/asyncio-future.rst:104
 msgid "Added support for the :mod:`contextvars` module."
-msgstr ""
+msgstr "Přidána podpora pro modul :mod:`contextvars`."
 
 #: ../../library/asyncio-future.rst:107
 msgid ""
-"Deprecation warning is emitted if *loop* is not specified and there is no"
-" running event loop."
+"Deprecation warning is emitted if *loop* is not specified and there is no "
+"running event loop."
 msgstr ""
+"Vypustené varování je vyvoláno, pokud *loop* není zadán a není žádná "
+"spuštěná smycka událostí."
 
 #: ../../library/asyncio-future.rst:113
 msgid "Return the result of the Future."
-msgstr ""
+msgstr "Vrátí výsledek Future."
 
 #: ../../library/asyncio-future.rst:115
 msgid ""
 "If the Future is *done* and has a result set by the :meth:`set_result` "
 "method, the result value is returned."
 msgstr ""
+"Pokud je Future *dokončeno* a má výsledek nastavený metodou "
+":meth:`set_result`, je vrácena hodnota výsle dku."
 
 #: ../../library/asyncio-future.rst:118
 msgid ""
 "If the Future is *done* and has an exception set by the "
 ":meth:`set_exception` method, this method raises the exception."
 msgstr ""
+"Pokud je Future *dokončeno* a má výjimku nastavenou metodou "
+":meth:`set_exception`, tato metoda vyvolá výjimku."
 
 #: ../../library/asyncio-future.rst:121 ../../library/asyncio-future.rst:209
 msgid ""
 "If the Future has been *cancelled*, this method raises a "
 ":exc:`CancelledError` exception."
 msgstr ""
+"Pokud bylo Future *zrušeno*, tato metoda vyvolá výjimku "
+":exc:`CancelledError`."
 
 #: ../../library/asyncio-future.rst:124
 msgid ""
 "If the Future's result isn't yet available, this method raises an "
 ":exc:`InvalidStateError` exception."
 msgstr ""
+"Pokud výsledek Future není ještě dostupný, tato metoda vyvolá výjimku "
+":exc:`InvalidStateError`."
 
 #: ../../library/asyncio-future.rst:129
 msgid "Mark the Future as *done* and set its result."
-msgstr ""
+msgstr "Označí Future jako *dokončeno* a nastaví jeho výsledek."
 
 #: ../../library/asyncio-future.rst:131 ../../library/asyncio-future.rst:138
-msgid "Raises an :exc:`InvalidStateError` error if the Future is already *done*."
+msgid ""
+"Raises an :exc:`InvalidStateError` error if the Future is already *done*."
 msgstr ""
+"Vyvolá chybu :exc:`InvalidStateError`, pokud je Future již *dokončeno*."
 
 #: ../../library/asyncio-future.rst:136
 msgid "Mark the Future as *done* and set an exception."
-msgstr ""
+msgstr "Označí Future jako *dokončeno* a nastaví výjimku."
 
 #: ../../library/asyncio-future.rst:143
 msgid "Return ``True`` if the Future is *done*."
-msgstr ""
+msgstr "Vrátí ``True``, pokud je Future *dokončeno*."
 
 #: ../../library/asyncio-future.rst:145
 msgid ""
 "A Future is *done* if it was *cancelled* or if it has a result or an "
 "exception set with :meth:`set_result` or :meth:`set_exception` calls."
 msgstr ""
+"Future je *dokončeno*, pokud bylo *zrušeno* nebo pokud má výsledek nebo "
+"výjimku nastavenou volanni :meth:`set_result` nebo :meth:`set_exception`."
 
 #: ../../library/asyncio-future.rst:151
 msgid "Return ``True`` if the Future was *cancelled*."
-msgstr ""
+msgstr "Vrátí ``True``, pokud bylo Future *zrušeno*."
 
 #: ../../library/asyncio-future.rst:153
 msgid ""
-"The method is usually used to check if a Future is not *cancelled* before"
-" setting a result or an exception for it::"
+"The method is usually used to check if a Future is not *cancelled* before "
+"setting a result or an exception for it::"
 msgstr ""
+"Metoda se obvykle používá ke kontrole, zda Future není *zrušeno* před "
+"nastavením výsle dku nebo výjimky:"
 
 #: ../../library/asyncio-future.rst:156
 msgid ""
 "if not fut.cancelled():\n"
 "    fut.set_result(42)"
 msgstr ""
+"if not fut.cancelled():\n"
+"    fut.set_result(42)"
 
 #: ../../library/asyncio-future.rst:161
 msgid "Add a callback to be run when the Future is *done*."
-msgstr ""
+msgstr "Přidejte callback, který se spustí, když je Future *dokončeno*."
 
 #: ../../library/asyncio-future.rst:163
 msgid "The *callback* is called with the Future object as its only argument."
-msgstr ""
+msgstr "Callback je volán s objektem Future jako jeho jediným argumentem."
 
 #: ../../library/asyncio-future.rst:166
 msgid ""
-"If the Future is already *done* when this method is called, the callback "
-"is scheduled with :meth:`loop.call_soon`."
+"If the Future is already *done* when this method is called, the callback is "
+"scheduled with :meth:`loop.call_soon`."
 msgstr ""
+"Pokud je Future již *dokončeno* v časovém okamžiku volání této metody, "
+"callback je naplanován pomocí :meth:`loop.call_soon`."
 
 #: ../../library/asyncio-future.rst:169
 msgid ""
@@ -247,12 +305,16 @@ msgid ""
 ":class:`contextvars.Context` for the *callback* to run in. The current "
 "context is used when no *context* is provided."
 msgstr ""
+"Volitelný argument *context* pouze s klíčem umožňuje zadání vlastného "
+":class:`contextvars.Context` pro spouštění *callback*. Pokud není zadán "
+"*context*, je použit aktuální kontext."
 
 #: ../../library/asyncio-future.rst:173
 msgid ""
-":func:`functools.partial` can be used to pass parameters to the callback,"
-" e.g.::"
+":func:`functools.partial` can be used to pass parameters to the callback, "
+"e.g.::"
 msgstr ""
+":func:`functools.partial` lze použít k předání parametrů callbacku, např.:"
 
 #: ../../library/asyncio-future.rst:176
 msgid ""
@@ -260,64 +322,79 @@ msgid ""
 "fut.add_done_callback(\n"
 "    functools.partial(print, \"Future:\"))"
 msgstr ""
+"# Zavolej 'print(\"Future:\", fut)' když je \"fut\" dokončeno.\n"
+"fut.add_done_callback(\n"
+"    functools.partial(print, \"Future:\"))"
 
 #: ../../library/asyncio-future.rst:180
 msgid ""
 "The *context* keyword-only parameter was added. See :pep:`567` for more "
 "details."
 msgstr ""
+"Parametr *context* pouze s klíčem byl přidán. Viz :pep:`567` pro více "
+"podrobností."
 
 #: ../../library/asyncio-future.rst:186
 msgid "Remove *callback* from the callbacks list."
-msgstr ""
+msgstr "Odebere *callback* ze seznamu callbacků."
 
 #: ../../library/asyncio-future.rst:188
 msgid ""
 "Returns the number of callbacks removed, which is typically 1, unless a "
 "callback was added more than once."
 msgstr ""
+"Vrátí počet odebraných callbacků, což je typicky 1, pokud callback nebyl "
+"přidán vícekrát."
 
 #: ../../library/asyncio-future.rst:193
 msgid "Cancel the Future and schedule callbacks."
-msgstr ""
+msgstr "Zruší Future a naplanu je callbacky."
 
 #: ../../library/asyncio-future.rst:195
 msgid ""
-"If the Future is already *done* or *cancelled*, return ``False``. "
-"Otherwise, change the Future's state to *cancelled*, schedule the "
-"callbacks, and return ``True``."
+"If the Future is already *done* or *cancelled*, return ``False``. Otherwise,"
+" change the Future's state to *cancelled*, schedule the callbacks, and "
+"return ``True``."
 msgstr ""
+"Pokud je Future již *dokončeno* nebo *zrušeno*, vrátí ``False``. V opačném "
+"případě změní stav Future na *zrušeno*, napla nu je callbacky a vrátí "
+"``True``."
 
 #: ../../library/asyncio-future.rst:199
 msgid "Added the *msg* parameter."
-msgstr ""
+msgstr "Byl přidán parametr *msg*."
 
 #: ../../library/asyncio-future.rst:204
 msgid "Return the exception that was set on this Future."
-msgstr ""
+msgstr "Vrátí výjimku, která byla na této Future nastavena."
 
 #: ../../library/asyncio-future.rst:206
 msgid ""
-"The exception (or ``None`` if no exception was set) is returned only if "
-"the Future is *done*."
+"The exception (or ``None`` if no exception was set) is returned only if the "
+"Future is *done*."
 msgstr ""
+"Výjimka (nebo ``None``, pokud nebyla nastavena žádná výjimka) je vrácena "
+"pouze pokud je Future *dokončeno*."
 
 #: ../../library/asyncio-future.rst:212
 msgid ""
 "If the Future isn't *done* yet, this method raises an "
 ":exc:`InvalidStateError` exception."
 msgstr ""
+"Pokud Future ještě není *dokončeno*, tato metoda vyvolá výjimku "
+":exc:`InvalidStateError`."
 
 #: ../../library/asyncio-future.rst:217
 msgid "Return the event loop the Future object is bound to."
-msgstr ""
+msgstr "Vrátí smýcku událostí, ke které je objekt Future vázán."
 
 #: ../../library/asyncio-future.rst:224
 msgid ""
-"This example creates a Future object, creates and schedules an "
-"asynchronous Task to set result for the Future, and waits until the "
-"Future has a result::"
+"This example creates a Future object, creates and schedules an asynchronous "
+"Task to set result for the Future, and waits until the Future has a result::"
 msgstr ""
+"Tento příklad vytváří objekt Future, vytváří a planu je asynchronní úkol, "
+"aby nastavní výsledek pro Future, a čekat, dokud Future nemá výsledek:"
 
 #: ../../library/asyncio-future.rst:228
 msgid ""
@@ -349,47 +426,86 @@ msgid ""
 "\n"
 "asyncio.run(main())"
 msgstr ""
+"async def set_after(fut, delay, value):\n"
+"    # Usni na *delay* sekund.\n"
+"    await asyncio.sleep(delay)\n"
+"\n"
+"    # Nastav *value* jako výsledek *fut* Future.\n"
+"    fut.set_result(value)\n"
+"\n"
+"async def main():\n"
+"    # Získej aktuální smýcku událostí.\n"
+"    loop = asyncio.get_running_loop()\n"
+"\n"
+"    # Vytvoř nový objekt Future.\n"
+"    fut = loop.create_future()\n"
+"\n"
+"    # Spust\" \"set_after()\" korutinu v paralelním úkolu.\n"
+"    # Používáme zde nízkoúrovňové API \"loop.create_task()\", protože\n"
+"    # již máme odkaz na smycku událostí.\n"
+"    # Jinak bychom mohli použít jen \"asyncio.create_task()\".\n"
+"    loop.create_task(\n"
+"        set_after(fut, 1, '... world'))\n"
+"\n"
+"    print('hello ...')\n"
+"\n"
+"    # Čekat, až *fut* má výsledek (1 sekunda) a vytisknout ho.\n"
+"    print(await fut)\n"
+"\n"
+"asyncio.run(main())"
 
 #: ../../library/asyncio-future.rst:259
 msgid ""
-"The Future object was designed to mimic "
-":class:`concurrent.futures.Future`.  Key differences include:"
+"The Future object was designed to mimic :class:`concurrent.futures.Future`."
+"  Key differences include:"
 msgstr ""
+"Objekt Future byl navržen tak, aby napodoboval "
+":class:`concurrent.futures.Future`. Klíčové rozdíly zahrnují:"
 
 #: ../../library/asyncio-future.rst:262
 msgid ""
-"unlike asyncio Futures, :class:`concurrent.futures.Future` instances "
-"cannot be awaited."
+"unlike asyncio Futures, :class:`concurrent.futures.Future` instances cannot "
+"be awaited."
 msgstr ""
+"Na rozdil od asyncio Futures, instance :class:`concurrent.futures.Future` "
+"nemohou být čekány."
 
 #: ../../library/asyncio-future.rst:265
 msgid ""
-":meth:`asyncio.Future.result` and :meth:`asyncio.Future.exception` do not"
-" accept the *timeout* argument."
+":meth:`asyncio.Future.result` and :meth:`asyncio.Future.exception` do not "
+"accept the *timeout* argument."
 msgstr ""
+":meth:`asyncio.Future.result` a :meth:`asyncio.Future.exception` nepri jmají"
+" argument *timeout*."
 
 #: ../../library/asyncio-future.rst:268
 msgid ""
-":meth:`asyncio.Future.result` and :meth:`asyncio.Future.exception` raise "
-"an :exc:`InvalidStateError` exception when the Future is not *done*."
+":meth:`asyncio.Future.result` and :meth:`asyncio.Future.exception` raise an "
+":exc:`InvalidStateError` exception when the Future is not *done*."
 msgstr ""
+":meth:`asyncio.Future.result` a :meth:`asyncio.Future.exception` vyvolávají "
+"výjimku :exc:`InvalidStateError`, když Future není *dokončeno*."
 
 #: ../../library/asyncio-future.rst:272
 msgid ""
-"Callbacks registered with :meth:`asyncio.Future.add_done_callback` are "
-"not called immediately.  They are scheduled with :meth:`loop.call_soon` "
-"instead."
+"Callbacks registered with :meth:`asyncio.Future.add_done_callback` are not "
+"called immediately.  They are scheduled with :meth:`loop.call_soon` instead."
 msgstr ""
+"Callbacky registrované s :meth:`asyncio.Future.add_done_callback` nejsou "
+"okamžitě volány. Místem toho jsou naplánovány pomocí :meth:`loop.call_soon`."
 
 #: ../../library/asyncio-future.rst:276
 msgid ""
-"asyncio Future is not compatible with the :func:`concurrent.futures.wait`"
-" and :func:`concurrent.futures.as_completed` functions."
+"asyncio Future is not compatible with the :func:`concurrent.futures.wait` "
+"and :func:`concurrent.futures.as_completed` functions."
 msgstr ""
+"asyncio Future není kompatibilní s funkcemi :func:`concurrent.futures.wait` "
+"a :func:`concurrent.futures.as_completed`."
 
 #: ../../library/asyncio-future.rst:280
 msgid ""
 ":meth:`asyncio.Future.cancel` accepts an optional ``msg`` argument, but "
 ":meth:`concurrent.futures.Future.cancel` does not."
 msgstr ""
-
+":meth:`asyncio.Future.cancel` přijímá volitelný argument ``msg``, ale "
+":meth:`concurrent.futures.Future.cancel` ne."

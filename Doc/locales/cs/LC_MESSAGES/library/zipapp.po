@@ -11,41 +11,50 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/zipapp.rst:2
 msgid ":mod:`!zipapp` --- Manage executable Python zip archives"
-msgstr ""
+msgstr ":mod:`!zipapp` --- Správa spustitelných archivů Python zip"
 
 #: ../../library/zipapp.rst:9
 msgid "**Source code:** :source:`Lib/zipapp.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/zipapp.py`"
 
 #: ../../library/zipapp.rst:16
 msgid ""
-"This module provides tools to manage the creation of zip files containing"
-" Python code, which can be  :ref:`executed directly by the Python "
-"interpreter <using-on-interface-options>`.  The module provides both a "
-":ref:`zipapp-command-line-interface` and a :ref:`zipapp-python-api`."
+"This module provides tools to manage the creation of zip files containing "
+"Python code, which can be  :ref:`executed directly by the Python interpreter"
+" <using-on-interface-options>`.  The module provides both a :ref:`zipapp-"
+"command-line-interface` and a :ref:`zipapp-python-api`."
 msgstr ""
+"Tento modul poskytuje nástroje pro správu vytváření zip souborů obsahujících"
+" kód Pythonu, které mohou být :ref:`prováděny přímo interpretem Pythonu "
+"<using-on-interface-options>`. Modul poskytuje jak :ref:`rozhraní "
+"příkazového řádku <zipapp-command-line-interface>` tak :ref:`API v Pythonu "
+"<zipapp-python-api>`."
 
 #: ../../library/zipapp.rst:23
 msgid "Basic Example"
-msgstr ""
+msgstr "Základní příklad"
 
 #: ../../library/zipapp.rst:25
 msgid ""
-"The following example shows how the :ref:`zipapp-command-line-interface` "
-"can be used to create an executable archive from a directory containing "
-"Python code.  When run, the archive will execute the ``main`` function "
-"from the module ``myapp`` in the archive."
+"The following example shows how the :ref:`zipapp-command-line-interface` can"
+" be used to create an executable archive from a directory containing Python "
+"code.  When run, the archive will execute the ``main`` function from the "
+"module ``myapp`` in the archive."
 msgstr ""
+"Následující příklad ukazuje, jak lze pomocí :ref:`rozhraní příkazového řádku"
+" <zipapp-command-line-interface>` vytvořit spustitelný archiv z adresáře "
+"obsahujícího kód Pythonu. Při spuštění bude archiv provádět funkci ``main`` "
+"z modulu ``myapp`` v archivu."
 
 #: ../../library/zipapp.rst:30
 msgid ""
@@ -53,116 +62,150 @@ msgid ""
 "$ python myapp.pyz\n"
 "<output from myapp>"
 msgstr ""
+"$ python -m zipapp myapp -m \"myapp:main\"\n"
+"$ python myapp.pyz\n"
+"<výstup z myapp>"
 
 #: ../../library/zipapp.rst:40
 msgid "Command-Line Interface"
-msgstr ""
+msgstr "Rozhraní příkazového řádku"
 
 #: ../../library/zipapp.rst:42
 msgid ""
-"When called as a program from the command line, the following form is "
-"used:"
+"When called as a program from the command line, the following form is used:"
 msgstr ""
+"Pokud je volán jako program z příkazového řádku, používá se následující "
+"tvar:"
 
 #: ../../library/zipapp.rst:44
 msgid "$ python -m zipapp source [options]"
-msgstr ""
+msgstr "$ python -m zipapp source [možnosti]"
 
 #: ../../library/zipapp.rst:48
 msgid ""
-"If *source* is a directory, this will create an archive from the contents"
-" of *source*.  If *source* is a file, it should be an archive, and it "
-"will be copied to the target archive (or the contents of its shebang line"
-" will be displayed if the --info option is specified)."
+"If *source* is a directory, this will create an archive from the contents of"
+" *source*.  If *source* is a file, it should be an archive, and it will be "
+"copied to the target archive (or the contents of its shebang line will be "
+"displayed if the --info option is specified)."
 msgstr ""
+"Pokud je *source* adresář, vytvoří se archiv z obsahu *source*. Pokud je "
+"*source* soubor, měl by to být archiv, který bude zkopírován do cílového "
+"archivu (nebo se obsah jeho řádku shebang zobrazí, je-li zadána volba "
+"--info)."
 
 #: ../../library/zipapp.rst:53
 msgid "The following options are understood:"
-msgstr ""
+msgstr "Jsou podporovány následující volby:"
 
 #: ../../library/zipapp.rst:59
 msgid ""
-"Write the output to a file named *output*.  If this option is not "
-"specified, the output filename will be the same as the input *source*, "
-"with the extension ``.pyz`` added.  If an explicit filename is given, it "
-"is used as is (so a ``.pyz`` extension should be included if required)."
+"Write the output to a file named *output*.  If this option is not specified,"
+" the output filename will be the same as the input *source*, with the "
+"extension ``.pyz`` added.  If an explicit filename is given, it is used as "
+"is (so a ``.pyz`` extension should be included if required)."
 msgstr ""
+"Zapsat výstup do souboru s názvem *output*. Pokud tato volba není zadána, "
+"bude název výstupního souboru stejný jako vstupní *source*, s příponou "
+"``.pyz`` přidanou. Pokud je uveden explicitní název souboru, je použit tak "
+"jak je (takže by měla být zahrnuta přípona ``.pyz``, je-li požadována)."
 
 #: ../../library/zipapp.rst:64
 msgid ""
-"An output filename must be specified if the *source* is an archive (and "
-"in that case, *output* must not be the same as *source*)."
+"An output filename must be specified if the *source* is an archive (and in "
+"that case, *output* must not be the same as *source*)."
 msgstr ""
+"Musí být zadán název výstupního souboru, pokud je *source* archiv (a v tom "
+"případě nesmí být *output* stejný jako *source*)."
 
 #: ../../library/zipapp.rst:69
 msgid ""
-"Add a ``#!`` line to the archive specifying *interpreter* as the command "
-"to run.  Also, on POSIX, make the archive executable.  The default is to "
-"write no ``#!`` line, and not make the file executable."
+"Add a ``#!`` line to the archive specifying *interpreter* as the command to "
+"run.  Also, on POSIX, make the archive executable.  The default is to write "
+"no ``#!`` line, and not make the file executable."
 msgstr ""
+"Přidá řádek ``#!`` do archivu určující *interpreter* jako příkaz ke "
+"spuštění. Také na POSIX systémech archiv učiní spustitelným. Výchozím "
+"nastavením je nezapsat žádný řádek ``#!`` a nespravit soubor jako "
+"spustitelný."
 
 #: ../../library/zipapp.rst:75
 msgid ""
 "Write a ``__main__.py`` file to the archive that executes *mainfn*.  The "
-"*mainfn* argument should have the form \"pkg.mod:fn\", where \"pkg.mod\" "
-"is a package/module in the archive, and \"fn\" is a callable in the given"
-" module. The ``__main__.py`` file will execute that callable."
+"*mainfn* argument should have the form \"pkg.mod:fn\", where \"pkg.mod\" is "
+"a package/module in the archive, and \"fn\" is a callable in the given "
+"module. The ``__main__.py`` file will execute that callable."
 msgstr ""
+"Zapsat soubor ``__main__.py`` do archivu, který provádí *mainfn*. Argument "
+"*mainfn* by měl mít tvar \"pkg.mod:fn\", kde \"pkg.mod\" je balíček/modul v "
+"archivu a \"fn\" je volatelný objekt v daném modulu. Soubor ``__main__.py`` "
+"bude provádět ten volatelný objekt."
 
 #: ../../library/zipapp.rst:80
 msgid ":option:`--main` cannot be specified when copying an archive."
-msgstr ""
+msgstr ":option:`--main` nelze zadavat při kopírování archivu."
 
 #: ../../library/zipapp.rst:84
 msgid ""
 "Compress files with the deflate method, reducing the size of the output "
 "file. By default, files are stored uncompressed in the archive."
 msgstr ""
+"Komprimovat soubory metodou deflate, čímž se zmenší velikost výstupního "
+"souboru. Standardně se soubory v archivu ukládají nekomprimované."
 
 #: ../../library/zipapp.rst:87
 msgid ":option:`--compress` has no effect when copying an archive."
-msgstr ""
+msgstr ":option:`--compress` nemá žádný vliv při kopírování archivu."
 
 #: ../../library/zipapp.rst:93
 msgid ""
-"Display the interpreter embedded in the archive, for diagnostic purposes."
-"  In this case, any other options are ignored and SOURCE must be an "
-"archive, not a directory."
+"Display the interpreter embedded in the archive, for diagnostic purposes.  "
+"In this case, any other options are ignored and SOURCE must be an archive, "
+"not a directory."
 msgstr ""
+"Zobrazit interpret vložený v archivu pro diagnostické účely. V tomto případě"
+" se všechny ostatní volby ignorují a SOURCE musí být archiv, ne adresář."
 
 #: ../../library/zipapp.rst:99
 msgid "Print a short usage message and exit."
-msgstr ""
+msgstr "Vytisknout krátkou zprávu o použití a skončit."
 
 #: ../../library/zipapp.rst:105
 msgid "Python API"
-msgstr ""
+msgstr "Python API"
 
 #: ../../library/zipapp.rst:107
 msgid "The module defines two convenience functions:"
-msgstr ""
+msgstr "Modul definuje dvě počobitné funkce:"
 
 #: ../../library/zipapp.rst:112
 msgid ""
-"Create an application archive from *source*.  The source can be any of "
-"the following:"
+"Create an application archive from *source*.  The source can be any of the "
+"following:"
 msgstr ""
+"Vytvořit aplikací archiv z *source*. Zdroj může být kterýkoli z "
+"následujících:"
 
 #: ../../library/zipapp.rst:115
 msgid ""
 "The name of a directory, or a :term:`path-like object` referring to a "
-"directory, in which case a new application archive will be created from "
-"the content of that directory."
+"directory, in which case a new application archive will be created from the "
+"content of that directory."
 msgstr ""
+"Název adresáře nebo :term:`path-like object` odkazující na adresář, v tom "
+"případě bude vytvořen nový aplikací archiv z obsahu tohoto adresáře."
 
 #: ../../library/zipapp.rst:118
 msgid ""
 "The name of an existing application archive file, or a :term:`path-like "
-"object` referring to such a file, in which case the file is copied to the"
-" target (modifying it to reflect the value given for the *interpreter* "
+"object` referring to such a file, in which case the file is copied to the "
+"target (modifying it to reflect the value given for the *interpreter* "
 "argument).  The file name should include the ``.pyz`` extension, if "
 "required."
 msgstr ""
+"Název existujícího souboru aplikací archivu nebo :term:`path-like object` "
+"odkazující na takový soubor, v tom případě je soubor zkopírován do cíle "
+"(upravuje se tak, aby odrážel hodnotu danou pro argument *interpreter*). "
+"Název souboru by měl obsahovat příponu ``.pyz``, je-li požadována."
 
 #: ../../library/zipapp.rst:122
 msgid ""
@@ -170,106 +213,142 @@ msgid ""
 "should be an application archive, and the file object is assumed to be "
 "positioned at the start of the archive."
 msgstr ""
+"Objekt souboru otevřený ke čtení v režimu byteů. Obsah souboru by měl být "
+"aplikací archiv a předpokládá se, že je objekt souboru umístěn na začátku "
+"archivu."
 
 #: ../../library/zipapp.rst:126
 msgid ""
 "The *target* argument determines where the resulting archive will be "
 "written:"
-msgstr ""
+msgstr "Argument *target* určuje, kam bude zapsán výsledný archiv:"
 
 #: ../../library/zipapp.rst:129
 msgid ""
-"If it is the name of a file, or a :term:`path-like object`, the archive "
-"will be written to that file."
+"If it is the name of a file, or a :term:`path-like object`, the archive will"
+" be written to that file."
 msgstr ""
+"Pokud je to název souboru nebo :term:`path-like object`, bude archiv zapsán "
+"do tohoto souboru."
 
 #: ../../library/zipapp.rst:131
 msgid ""
 "If it is an open file object, the archive will be written to that file "
 "object, which must be open for writing in bytes mode."
 msgstr ""
+"Pokud je to otevřený objekt souboru, bude archiv zapsán do tohoto objektu "
+"souboru, který musí být otevřen pro zápis v režimu byteů."
 
 #: ../../library/zipapp.rst:133
 msgid ""
-"If the target is omitted (or ``None``), the source must be a directory "
-"and the target will be a file with the same name as the source, with a "
-"``.pyz`` extension added."
+"If the target is omitted (or ``None``), the source must be a directory and "
+"the target will be a file with the same name as the source, with a ``.pyz`` "
+"extension added."
 msgstr ""
+"Pokud je cíl vynechán (nebo je ``None``), musí být zdrojem adresář a cílem "
+"bude soubor se stejným názvem jako zdroj, s přidanou příponou ``.pyz``."
 
 #: ../../library/zipapp.rst:137
 msgid ""
-"The *interpreter* argument specifies the name of the Python interpreter "
-"with which the archive will be executed.  It is written as a \"shebang\" "
-"line at the start of the archive.  On POSIX, this will be interpreted by "
-"the OS, and on Windows it will be handled by the Python launcher.  "
-"Omitting the *interpreter* results in no shebang line being written.  If "
-"an interpreter is specified, and the target is a filename, the executable"
-" bit of the target file will be set."
+"The *interpreter* argument specifies the name of the Python interpreter with"
+" which the archive will be executed.  It is written as a \"shebang\" line at"
+" the start of the archive.  On POSIX, this will be interpreted by the OS, "
+"and on Windows it will be handled by the Python launcher.  Omitting the "
+"*interpreter* results in no shebang line being written.  If an interpreter "
+"is specified, and the target is a filename, the executable bit of the target"
+" file will be set."
 msgstr ""
+"Argument *interpreter* určuje jméno interpretu Pythonu, kterým bude archiv "
+"prováděn. Je napsán jako \"šebang\" na začátku archivu. Na POSIX bude "
+"interpretován operačním systémem a na Windows bude zpracován spuštěčem "
+"Pythonu. Vynechání argumentu *interpreter* výsledného šebang zápisu. Pokud "
+"je zadán interpret a cíl je název souboru, bude nastaven spustitelný bit "
+"cílového souboru."
 
 #: ../../library/zipapp.rst:145
 msgid ""
-"The *main* argument specifies the name of a callable which will be used "
-"as the main program for the archive.  It can only be specified if the "
-"source is a directory, and the source does not already contain a "
-"``__main__.py`` file.  The *main* argument should take the form "
-"\"pkg.module:callable\" and the archive will be run by importing "
-"\"pkg.module\" and executing the given callable with no arguments.  It is"
-" an error to omit *main* if the source is a directory and does not "
-"contain a ``__main__.py`` file, as otherwise the resulting archive would "
-"not be executable."
+"The *main* argument specifies the name of a callable which will be used as "
+"the main program for the archive.  It can only be specified if the source is"
+" a directory, and the source does not already contain a ``__main__.py`` "
+"file.  The *main* argument should take the form \"pkg.module:callable\" and "
+"the archive will be run by importing \"pkg.module\" and executing the given "
+"callable with no arguments.  It is an error to omit *main* if the source is "
+"a directory and does not contain a ``__main__.py`` file, as otherwise the "
+"resulting archive would not be executable."
 msgstr ""
+"Argument *main* určuje jméno volatelného objektu, který bude použit jako "
+"hlavní program archivu. Může být určen pouze v případě, že zdrojem je "
+"adresář a zdroj již neobsahuje soubor ``__main__.py``. Argument *main* by "
+"měl mít tvar \"pkg.module:callable\" a archiv bude spnuštěn importem "
+"\"pkg.module\" a provedením daného volatelného objektu bez argumentů. Je "
+"chyba vynechat *main*, pokud je zdrojem adresář a neobsahuje soubor "
+"``__main__.py``, protože by výsledný archiv ne byl spustitelný."
 
 #: ../../library/zipapp.rst:155
 msgid ""
-"The optional *filter* argument specifies a callback function that is "
-"passed a Path object representing the path to the file being added "
-"(relative to the source directory).  It should return ``True`` if the "
-"file is to be added."
+"The optional *filter* argument specifies a callback function that is passed "
+"a Path object representing the path to the file being added (relative to the"
+" source directory).  It should return ``True`` if the file is to be added."
 msgstr ""
+"Volitelný argument *filter* určuje funkci callback, které je předán objekt "
+"Path reprezentující cestu k souboru, který je přidáván (řešeno vůči "
+"zdrojovému adresáři). Měl by vrátit ``True``, pokud má být soubor přidán."
 
 #: ../../library/zipapp.rst:160
 msgid ""
-"The optional *compressed* argument determines whether files are "
-"compressed.  If set to ``True``, files in the archive are compressed with"
-" the deflate method; otherwise, files are stored uncompressed. This "
-"argument has no effect when copying an existing archive."
+"The optional *compressed* argument determines whether files are compressed."
+"  If set to ``True``, files in the archive are compressed with the deflate "
+"method; otherwise, files are stored uncompressed. This argument has no "
+"effect when copying an existing archive."
 msgstr ""
+"Volitelný argument *compressed* určuje, zda jsou soubory komprimovány. Pokud"
+" je nastaven na ``True``, jsou soubory v archivu komprimovány metodou "
+"deflate; jinak jsou soubory uloženy nekomprimované. Tento argument nemá vliv"
+" při kopírování existujícího archivu."
 
 #: ../../library/zipapp.rst:165
 msgid ""
-"If a file object is specified for *source* or *target*, it is the "
-"caller's responsibility to close it after calling create_archive."
+"If a file object is specified for *source* or *target*, it is the caller's "
+"responsibility to close it after calling create_archive."
 msgstr ""
+"Pokud je pro *source* nebo *target* určen objekt souboru, je odpovědnost "
+"volájícího jej zavřít po volání create_archive."
 
 #: ../../library/zipapp.rst:168
 msgid ""
-"When copying an existing archive, file objects supplied only need "
-"``read`` and ``readline``, or ``write`` methods.  When creating an "
-"archive from a directory, if the target is a file object it will be "
-"passed to the ``zipfile.ZipFile`` class, and must supply the methods "
-"needed by that class."
+"When copying an existing archive, file objects supplied only need ``read`` "
+"and ``readline``, or ``write`` methods.  When creating an archive from a "
+"directory, if the target is a file object it will be passed to the "
+"``zipfile.ZipFile`` class, and must supply the methods needed by that class."
 msgstr ""
+"Při kopírování existujícího archivu potuto soubory objekt pouze potřebu "
+"metod ``read`` a ``readline`` nebo ``write``. Při vytváření archivu z "
+"adresáře, pokud je cílem objekt souboru, bude předán třídě "
+"``zipfile.ZipFile`` a musí dodanit metody potřebné pro tuto třídu."
 
 #: ../../library/zipapp.rst:174
 msgid "Added the *filter* and *compressed* parameters."
-msgstr ""
+msgstr "Přidány parametry *filter* a *compressed*."
 
 #: ../../library/zipapp.rst:179
 msgid ""
 "Return the interpreter specified in the ``#!`` line at the start of the "
-"archive.  If there is no ``#!`` line, return :const:`None`. The *archive*"
-" argument can be a filename or a file-like object open for reading in "
-"bytes mode.  It is assumed to be at the start of the archive."
+"archive.  If there is no ``#!`` line, return :const:`None`. The *archive* "
+"argument can be a filename or a file-like object open for reading in bytes "
+"mode.  It is assumed to be at the start of the archive."
 msgstr ""
+"Vrátit interpret zadaný v řádku ``#!`` na začátku archivu. Pokud nemá řádek "
+"``#!``, vrátí :const:`None`. Argument *archive* může být název souboru nebo "
+"objekt podobný souboru otevřený pro čtení v režimu byteů. Předpokládá se, že"
+" je na začátku archivu."
 
 #: ../../library/zipapp.rst:188
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/zipapp.rst:190
 msgid "Pack up a directory into an archive, and run it."
-msgstr ""
+msgstr "Zabalit adresář do archivu a spustit jej."
 
 #: ../../library/zipapp.rst:192
 msgid ""
@@ -290,8 +369,8 @@ msgstr ""
 
 #: ../../library/zipapp.rst:203
 msgid ""
-"To make the application directly executable on POSIX, specify an "
-"interpreter to use."
+"To make the application directly executable on POSIX, specify an interpreter"
+" to use."
 msgstr ""
 
 #: ../../library/zipapp.rst:206
@@ -310,18 +389,17 @@ msgstr ""
 #: ../../library/zipapp.rst:215
 msgid ""
 ">>> import zipapp\n"
-">>> zipapp.create_archive('old_archive.pyz', 'new_archive.pyz', "
-"'/usr/bin/python3')"
+">>> zipapp.create_archive('old_archive.pyz', 'new_archive.pyz', '/usr/bin/python3')"
 msgstr ""
 
 #: ../../library/zipapp.rst:218
 msgid ""
 "To update the file in place, do the replacement in memory using a "
-":class:`~io.BytesIO` object, and then overwrite the source afterwards.  "
-"Note that there is a risk when overwriting a file in place that an error "
-"will result in the loss of the original file.  This code does not protect"
-" against such errors, but production code should do so.  Also, this "
-"method will only work if the archive fits in memory::"
+":class:`~io.BytesIO` object, and then overwrite the source afterwards.  Note"
+" that there is a risk when overwriting a file in place that an error will "
+"result in the loss of the original file.  This code does not protect against"
+" such errors, but production code should do so.  Also, this method will only"
+" work if the archive fits in memory::"
 msgstr ""
 
 #: ../../library/zipapp.rst:225
@@ -340,33 +418,32 @@ msgstr ""
 
 #: ../../library/zipapp.rst:238
 msgid ""
-"Note that if you specify an interpreter and then distribute your "
-"application archive, you need to ensure that the interpreter used is "
-"portable.  The Python launcher for Windows supports most common forms of "
-"POSIX ``#!`` line, but there are other issues to consider:"
+"Note that if you specify an interpreter and then distribute your application"
+" archive, you need to ensure that the interpreter used is portable.  The "
+"Python launcher for Windows supports most common forms of POSIX ``#!`` line,"
+" but there are other issues to consider:"
 msgstr ""
 
 #: ../../library/zipapp.rst:243
 msgid ""
 "If you use \"/usr/bin/env python\" (or other forms of the \"python\" "
-"command, such as \"/usr/bin/python\"), you need to consider that your "
-"users may have either Python 2 or Python 3 as their default, and write "
-"your code to work under both versions."
+"command, such as \"/usr/bin/python\"), you need to consider that your users "
+"may have either Python 2 or Python 3 as their default, and write your code "
+"to work under both versions."
 msgstr ""
 
 #: ../../library/zipapp.rst:247
 msgid ""
-"If you use an explicit version, for example \"/usr/bin/env python3\" your"
-" application will not work for users who do not have that version.  (This"
-" may be what you want if you have not made your code Python 2 "
-"compatible)."
+"If you use an explicit version, for example \"/usr/bin/env python3\" your "
+"application will not work for users who do not have that version.  (This may"
+" be what you want if you have not made your code Python 2 compatible)."
 msgstr ""
 
 #: ../../library/zipapp.rst:250
 msgid ""
-"There is no way to say \"python X.Y or later\", so be careful of using an"
-" exact version like \"/usr/bin/env python3.4\" as you will need to change"
-" your shebang line for users of Python 3.5, for example."
+"There is no way to say \"python X.Y or later\", so be careful of using an "
+"exact version like \"/usr/bin/env python3.4\" as you will need to change "
+"your shebang line for users of Python 3.5, for example."
 msgstr ""
 
 #: ../../library/zipapp.rst:254
@@ -382,10 +459,10 @@ msgstr ""
 #: ../../library/zipapp.rst:261
 msgid ""
 "Using the :mod:`zipapp` module, it is possible to create self-contained "
-"Python programs, which can be distributed to end users who only need to "
-"have a suitable version of Python installed on their system.  The key to "
-"doing this is to bundle all of the application's dependencies into the "
-"archive, along with the application code."
+"Python programs, which can be distributed to end users who only need to have"
+" a suitable version of Python installed on their system.  The key to doing "
+"this is to bundle all of the application's dependencies into the archive, "
+"along with the application code."
 msgstr ""
 
 #: ../../library/zipapp.rst:267
@@ -394,15 +471,15 @@ msgstr ""
 
 #: ../../library/zipapp.rst:269
 msgid ""
-"Create your application in a directory as normal, so you have a ``myapp``"
-" directory containing a ``__main__.py`` file, and any supporting "
-"application code."
+"Create your application in a directory as normal, so you have a ``myapp`` "
+"directory containing a ``__main__.py`` file, and any supporting application "
+"code."
 msgstr ""
 
 #: ../../library/zipapp.rst:273
 msgid ""
-"Install all of your application's dependencies into the ``myapp`` "
-"directory, using pip:"
+"Install all of your application's dependencies into the ``myapp`` directory,"
+" using pip:"
 msgstr ""
 
 #: ../../library/zipapp.rst:276
@@ -411,9 +488,9 @@ msgstr ""
 
 #: ../../library/zipapp.rst:280
 msgid ""
-"(this assumes you have your project requirements in a "
-"``requirements.txt`` file - if not, you can just list the dependencies "
-"manually on the pip command line)."
+"(this assumes you have your project requirements in a ``requirements.txt`` "
+"file - if not, you can just list the dependencies manually on the pip "
+"command line)."
 msgstr ""
 
 #: ../../library/zipapp.rst:284
@@ -426,19 +503,18 @@ msgstr ""
 
 #: ../../library/zipapp.rst:290
 msgid ""
-"This will produce a standalone executable, which can be run on any "
-"machine with the appropriate interpreter available. See :ref:`zipapp-"
-"specifying-the-interpreter` for details. It can be shipped to users as a "
-"single file."
+"This will produce a standalone executable, which can be run on any machine "
+"with the appropriate interpreter available. See :ref:`zipapp-specifying-the-"
+"interpreter` for details. It can be shipped to users as a single file."
 msgstr ""
 
 #: ../../library/zipapp.rst:294
 msgid ""
-"On Unix, the ``myapp.pyz`` file is executable as it stands.  You can "
-"rename the file to remove the ``.pyz`` extension if you prefer a "
-"\"plain\" command name.  On Windows, the ``myapp.pyz[w]`` file is "
-"executable by virtue of the fact that the Python interpreter registers "
-"the ``.pyz`` and ``.pyzw`` file extensions when installed."
+"On Unix, the ``myapp.pyz`` file is executable as it stands.  You can rename "
+"the file to remove the ``.pyz`` extension if you prefer a \"plain\" command "
+"name.  On Windows, the ``myapp.pyz[w]`` file is executable by virtue of the "
+"fact that the Python interpreter registers the ``.pyz`` and ``.pyzw`` file "
+"extensions when installed."
 msgstr ""
 
 #: ../../library/zipapp.rst:302
@@ -447,16 +523,16 @@ msgstr ""
 
 #: ../../library/zipapp.rst:304
 msgid ""
-"If your application depends on a package that includes a C extension, "
-"that package cannot be run from a zip file (this is an OS limitation, as "
-"executable code must be present in the filesystem for the OS loader to "
-"load it). In this case, you can exclude that dependency from the zipfile,"
-" and either require your users to have it installed, or ship it alongside"
-" your zipfile and add code to your ``__main__.py`` to include the "
-"directory containing the unzipped module in ``sys.path``. In this case, "
-"you will need to make sure to ship appropriate binaries for your target "
-"architecture(s) (and potentially pick the correct version to add to "
-"``sys.path`` at runtime, based on the user's machine)."
+"If your application depends on a package that includes a C extension, that "
+"package cannot be run from a zip file (this is an OS limitation, as "
+"executable code must be present in the filesystem for the OS loader to load "
+"it). In this case, you can exclude that dependency from the zipfile, and "
+"either require your users to have it installed, or ship it alongside your "
+"zipfile and add code to your ``__main__.py`` to include the directory "
+"containing the unzipped module in ``sys.path``. In this case, you will need "
+"to make sure to ship appropriate binaries for your target architecture(s) "
+"(and potentially pick the correct version to add to ``sys.path`` at runtime,"
+" based on the user's machine)."
 msgstr ""
 
 #: ../../library/zipapp.rst:316
@@ -465,20 +541,20 @@ msgstr ""
 
 #: ../../library/zipapp.rst:318
 msgid ""
-"Python has been able to execute zip files which contain a ``__main__.py``"
-" file since version 2.6.  In order to be executed by Python, an "
-"application archive simply has to be a standard zip file containing a "
-"``__main__.py`` file which will be run as the entry point for the "
-"application.  As usual for any Python script, the parent of the script "
-"(in this case the zip file) will be placed on :data:`sys.path` and thus "
-"further modules can be imported from the zip file."
+"Python has been able to execute zip files which contain a ``__main__.py`` "
+"file since version 2.6.  In order to be executed by Python, an application "
+"archive simply has to be a standard zip file containing a ``__main__.py`` "
+"file which will be run as the entry point for the application.  As usual for"
+" any Python script, the parent of the script (in this case the zip file) "
+"will be placed on :data:`sys.path` and thus further modules can be imported "
+"from the zip file."
 msgstr ""
 
 #: ../../library/zipapp.rst:325
 msgid ""
-"The zip file format allows arbitrary data to be prepended to a zip file."
-"  The zip application format uses this ability to prepend a standard "
-"POSIX \"shebang\" line to the file (``#!/path/to/interpreter``)."
+"The zip file format allows arbitrary data to be prepended to a zip file.  "
+"The zip application format uses this ability to prepend a standard POSIX "
+"\"shebang\" line to the file (``#!/path/to/interpreter``)."
 msgstr ""
 
 #: ../../library/zipapp.rst:329
@@ -487,26 +563,26 @@ msgstr ""
 
 #: ../../library/zipapp.rst:331
 msgid ""
-"An optional shebang line, containing the characters ``b'#!'`` followed by"
-" an interpreter name, and then a newline (``b'\\n'``) character.  The "
+"An optional shebang line, containing the characters ``b'#!'`` followed by an"
+" interpreter name, and then a newline (``b'\\n'``) character.  The "
 "interpreter name can be anything acceptable to the OS \"shebang\" "
-"processing, or the Python launcher on Windows.  The interpreter should be"
-" encoded in UTF-8 on Windows, and in :func:`sys.getfilesystemencoding` on"
-" POSIX."
+"processing, or the Python launcher on Windows.  The interpreter should be "
+"encoded in UTF-8 on Windows, and in :func:`sys.getfilesystemencoding` on "
+"POSIX."
 msgstr ""
 
 #: ../../library/zipapp.rst:336
 msgid ""
 "Standard zipfile data, as generated by the :mod:`zipfile` module.  The "
-"zipfile content *must* include a file called ``__main__.py`` (which must "
-"be in the \"root\" of the zipfile - i.e., it cannot be in a "
-"subdirectory).  The zipfile data can be compressed or uncompressed."
+"zipfile content *must* include a file called ``__main__.py`` (which must be "
+"in the \"root\" of the zipfile - i.e., it cannot be in a subdirectory).  The"
+" zipfile data can be compressed or uncompressed."
 msgstr ""
 
 #: ../../library/zipapp.rst:341
 msgid ""
-"If an application archive has a shebang line, it may have the executable "
-"bit set on POSIX systems, to allow it to be executed directly."
+"If an application archive has a shebang line, it may have the executable bit"
+" set on POSIX systems, to allow it to be executed directly."
 msgstr ""
 
 #: ../../library/zipapp.rst:344
@@ -519,4 +595,3 @@ msgstr ""
 #: ../../library/zipapp.rst:11
 msgid "Executable Zip Files"
 msgstr ""
-

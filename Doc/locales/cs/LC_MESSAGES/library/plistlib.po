@@ -11,28 +11,31 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/plistlib.rst:2
 msgid ":mod:`!plistlib` --- Generate and parse Apple ``.plist`` files"
-msgstr ""
+msgstr ":mod:`!plistlib` --- Generování a analýza souborů Apple ``.plist``"
 
 #: ../../library/plistlib.rst:11
 msgid "**Source code:** :source:`Lib/plistlib.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/plistlib.py`"
 
 #: ../../library/plistlib.rst:19
 msgid ""
 "This module provides an interface for reading and writing the \"property "
-"list\" files used by Apple, primarily on macOS and iOS. This module "
-"supports both binary and XML plist files."
+"list\" files used by Apple, primarily on macOS and iOS. This module supports"
+" both binary and XML plist files."
 msgstr ""
+"Tento modul poskytuje rozhraní pro čtení a zápis souborů \"property list\" "
+"používaných společností Apple, zejména na macOS a iOS. Tento modul podporuje"
+" binární i XML soubory plist."
 
 #: ../../library/plistlib.rst:23
 msgid ""
@@ -40,218 +43,265 @@ msgid ""
 "supporting basic object types, like dictionaries, lists, numbers and "
 "strings.  Usually the top level object is a dictionary."
 msgstr ""
+"Formát souboru property list (``.plist``) je jednoduchou serializací "
+"podporující základní typy objektů, jako jsou slovníky, seznamy, čísla a "
+"řetězce. Obvykle je objekt na nejvyšší úrovni slovník."
 
 #: ../../library/plistlib.rst:27
 msgid ""
 "To write out and to parse a plist file, use the :func:`dump` and "
 ":func:`load` functions."
 msgstr ""
+"Chcete-li vytvořit a analyzovat soubor plist, použijte funkce :func:`dump` a"
+" :func:`load`."
 
 #: ../../library/plistlib.rst:30
 msgid ""
-"To work with plist data in bytes or string objects, use :func:`dumps` and"
-" :func:`loads`."
+"To work with plist data in bytes or string objects, use :func:`dumps` and "
+":func:`loads`."
 msgstr ""
+"Chcete-li pracovat s daty plist v objektech bytes nebo string, použijte "
+"funkce :func:`dumps` a :func:`loads`."
 
 #: ../../library/plistlib.rst:33
 msgid ""
 "Values can be strings, integers, floats, booleans, tuples, lists, "
-"dictionaries (but only with string keys), :class:`bytes`, "
-":class:`bytearray` or :class:`datetime.datetime` objects."
+"dictionaries (but only with string keys), :class:`bytes`, :class:`bytearray`"
+" or :class:`datetime.datetime` objects."
 msgstr ""
+"Hodnoty mohou být řetězce, celá čísla, dešetinná čísla, booleovské hodnoty, "
+"n-tice, seznamy, slovníky (ale pouze se řetězcovými klíči), objekty "
+":class:`bytes`, :class:`bytearray` nebo :class:`datetime.datetime`."
 
 #: ../../library/plistlib.rst:37
 msgid "New API, old API deprecated.  Support for binary format plists added."
 msgstr ""
+"Nové API, staré API zastaralé. Přidána podpora pro binární formát plistů."
 
 #: ../../library/plistlib.rst:40
 msgid ""
-"Support added for reading and writing :class:`UID` tokens in binary "
-"plists as used by NSKeyedArchiver and NSKeyedUnarchiver."
+"Support added for reading and writing :class:`UID` tokens in binary plists "
+"as used by NSKeyedArchiver and NSKeyedUnarchiver."
 msgstr ""
+"Přidána podpora pro čtení a zápis tokenů :class:`UID` v binárních plistech "
+"používaných NSKeyedArchiver a NSKeyedUnarchiver."
 
 #: ../../library/plistlib.rst:44
 msgid "Old API removed."
-msgstr ""
+msgstr "Staré API odebráno."
 
 #: ../../library/plistlib.rst:49
 msgid ""
 "`PList manual page "
 "<https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/>`_"
 msgstr ""
+"`PList manuál "
+"<https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/>`_"
 
 #: ../../library/plistlib.rst:50
 msgid "Apple's documentation of the file format."
-msgstr ""
+msgstr "Dokumentace společnosti Apple k formátu souboru."
 
 #: ../../library/plistlib.rst:53
 msgid "This module defines the following functions:"
-msgstr ""
+msgstr "Tento modul definuje následující funkce:"
 
 #: ../../library/plistlib.rst:57
 msgid ""
-"Read a plist file. *fp* should be a readable and binary file object. "
-"Return the unpacked root object (which usually is a dictionary)."
+"Read a plist file. *fp* should be a readable and binary file object. Return "
+"the unpacked root object (which usually is a dictionary)."
 msgstr ""
+"Přečítá soubor plist. *fp* by měl být čitelný a binární objektu souboru. "
+"Vrací rozbaléný kořenový objekt (kterým je obvykle slovník)."
 
 #: ../../library/plistlib.rst:61
-msgid "The *fmt* is the format of the file and the following values are valid:"
-msgstr ""
+msgid ""
+"The *fmt* is the format of the file and the following values are valid:"
+msgstr "*fmt* je formát souboru a následující hodnoty jsou platné:"
 
 #: ../../library/plistlib.rst:63
 msgid ":data:`None`: Autodetect the file format"
-msgstr ""
+msgstr ":data:`None`: Automaticky detekuj formát souboru"
 
 #: ../../library/plistlib.rst:65
 msgid ":data:`FMT_XML`: XML file format"
-msgstr ""
+msgstr ":data:`FMT_XML`: Formát souboru XML"
 
 #: ../../library/plistlib.rst:67
 msgid ":data:`FMT_BINARY`: Binary plist format"
-msgstr ""
+msgstr ":data:`FMT_BINARY`: Binární formát plist"
 
 #: ../../library/plistlib.rst:69
 msgid ""
 "The *dict_type* is the type used for dictionaries that are read from the "
 "plist file."
 msgstr ""
+"*dict_type* je typ používaný pro slovníky, které jsou čteny ze souboru "
+"plist."
 
 #: ../../library/plistlib.rst:72
 msgid ""
-"When *aware_datetime* is true, fields with type ``datetime.datetime`` "
-"will be created as :ref:`aware object <datetime-naive-aware>`, with "
+"When *aware_datetime* is true, fields with type ``datetime.datetime`` will "
+"be created as :ref:`aware object <datetime-naive-aware>`, with "
 ":attr:`!tzinfo` as :const:`datetime.UTC`."
 msgstr ""
+"Je-li *aware_datetime* pravda, pole s typem ``datetime.datetime`` budou "
+"vytvořena jako :ref:`aware objekty <datetime-naive-aware>` s :attr:`!tzinfo`"
+" jako :const:`datetime.UTC`."
 
 #: ../../library/plistlib.rst:76
 msgid ""
 "XML data for the :data:`FMT_XML` format is parsed using the Expat parser "
 "from :mod:`xml.parsers.expat` -- see its documentation for possible "
-"exceptions on ill-formed XML.  Unknown elements will simply be ignored by"
-" the plist parser."
+"exceptions on ill-formed XML.  Unknown elements will simply be ignored by "
+"the plist parser."
 msgstr ""
+"XML data pro formát :data:`FMT_XML` je analýzována pomocí parseru Expat z "
+":mod:`xml.parsers.expat` -- viz jeho dokumentace pro možné výjimky při "
+"chybně formátovaném XML. Neznámé prvky budou parsorem plist jednoduše "
+"ignorovány."
 
 #: ../../library/plistlib.rst:81
 msgid ""
 "The parser raises :exc:`InvalidFileException` when the file cannot be "
 "parsed."
 msgstr ""
+"Parser vyvolá :exc:`InvalidFileException` pokud nelze soubor analyzovat."
 
 #: ../../library/plistlib.rst:85 ../../library/plistlib.rst:130
 msgid "The keyword-only parameter *aware_datetime* has been added."
-msgstr ""
+msgstr "Parametr pouze pro klíčová slova *aware_datetime* byl přidán."
 
 #: ../../library/plistlib.rst:91
 msgid ""
 "Load a plist from a bytes or string object. See :func:`load` for an "
 "explanation of the keyword arguments."
 msgstr ""
+"Načte plist z objektu bytes nebo string. Viz :func:`load` pro vysvětlení "
+"argumentu klíčových slov."
 
 #: ../../library/plistlib.rst:96
 msgid "*data* can be a string when *fmt* equals :data:`FMT_XML`."
-msgstr ""
+msgstr "*data* může být řetězec, pokud se *fmt* rovná :data:`FMT_XML`."
 
 #: ../../library/plistlib.rst:101
 msgid ""
 "Write *value* to a plist file. *fp* should be a writable, binary file "
 "object."
 msgstr ""
+"Zapíše *value* do souboru plist. *fp* by měl být zapisovatelný, binární "
+"objektu souboru."
 
 #: ../../library/plistlib.rst:104
 msgid ""
-"The *fmt* argument specifies the format of the plist file and can be one "
-"of the following values:"
+"The *fmt* argument specifies the format of the plist file and can be one of "
+"the following values:"
 msgstr ""
+"Argument *fmt* určuje formát souboru plist a může být jednou z následujících"
+" hodnot:"
 
 #: ../../library/plistlib.rst:107
 msgid ":data:`FMT_XML`: XML formatted plist file"
-msgstr ""
+msgstr ":data:`FMT_XML`: Soubor plist formátovaný v XML"
 
 #: ../../library/plistlib.rst:109
 msgid ":data:`FMT_BINARY`: Binary formatted plist file"
-msgstr ""
+msgstr ":data:`FMT_BINARY`: Binárně formátovaný soubor plist"
 
 #: ../../library/plistlib.rst:111
 msgid ""
 "When *sort_keys* is true (the default) the keys for dictionaries will be "
-"written to the plist in sorted order, otherwise they will be written in "
-"the iteration order of the dictionary."
+"written to the plist in sorted order, otherwise they will be written in the "
+"iteration order of the dictionary."
 msgstr ""
+"Pokud je *sort_keys* pravda (výchozí hodnota), budou klíče slovníků zapsány "
+"do plist v seřazeném pořadí, jinak budou zapsány v pořadí iterace slovníku."
 
 #: ../../library/plistlib.rst:115
 msgid ""
-"When *skipkeys* is false (the default) the function raises "
-":exc:`TypeError` when a key of a dictionary is not a string, otherwise "
-"such keys are skipped."
+"When *skipkeys* is false (the default) the function raises :exc:`TypeError` "
+"when a key of a dictionary is not a string, otherwise such keys are skipped."
 msgstr ""
+"Je-li *skipkeys* nepravda (výchozí hodnota), funkce vyvolá :exc:`TypeError`,"
+" pokud klíč slovníku není řetězec, jinak jsou takové klíče přeskočeny."
 
 #: ../../library/plistlib.rst:118
 msgid ""
-"When *aware_datetime* is true and any field with type "
-"``datetime.datetime`` is set as an :ref:`aware object <datetime-naive-"
-"aware>`, it will convert to UTC timezone before writing it."
+"When *aware_datetime* is true and any field with type ``datetime.datetime`` "
+"is set as an :ref:`aware object <datetime-naive-aware>`, it will convert to "
+"UTC timezone before writing it."
 msgstr ""
+"Je-li *aware_datetime* pravda a jakkoliv pole s typem ``datetime.datetime`` "
+"je nastaveno jako :ref:`aware objekt <datetime-naive-aware>`, bude "
+"konvertíno do časového pásma UTC před zápisem."
 
 #: ../../library/plistlib.rst:122
 msgid ""
-"A :exc:`TypeError` will be raised if the object is of an unsupported type"
-" or a container that contains objects of unsupported types."
+"A :exc:`TypeError` will be raised if the object is of an unsupported type or"
+" a container that contains objects of unsupported types."
 msgstr ""
+":exc:`TypeError` bude vyvoláno, pokud je objekt nepodporovaného typu nebo "
+"kontejner, který obsahuje objekty nepodporovaných typů."
 
 #: ../../library/plistlib.rst:125
 msgid ""
 "An :exc:`OverflowError` will be raised for integer values that cannot be "
 "represented in (binary) plist files."
 msgstr ""
+":exc:`OverflowError` bude vyvoláno pro celé hodnoty, které nelze "
+"reprezentovat v (binárních) souborech plist."
 
 #: ../../library/plistlib.rst:136
 msgid ""
-"Return *value* as a plist-formatted bytes object. See the documentation "
-"for :func:`dump` for an explanation of the keyword arguments of this "
-"function."
+"Return *value* as a plist-formatted bytes object. See the documentation for "
+":func:`dump` for an explanation of the keyword arguments of this function."
 msgstr ""
+"Vrací *value* jako objektu formátovaného plist bytes. Viz dokumentace "
+":func:`dump` pro vysvětlení argumentů klíčových slov této funkce."
 
 #: ../../library/plistlib.rst:143
 msgid "The following classes are available:"
-msgstr ""
+msgstr "Následující třídy jsou dostupné:"
 
 #: ../../library/plistlib.rst:147
 msgid ""
-"Wraps an :class:`int`.  This is used when reading or writing "
-"NSKeyedArchiver encoded data, which contains UID (see PList manual)."
+"Wraps an :class:`int`.  This is used when reading or writing NSKeyedArchiver"
+" encoded data, which contains UID (see PList manual)."
 msgstr ""
+"Zabálí :class:`int`. Použíá se při čtení nebo zápisu dat kódovaných "
+"NSKeyedArchiver, která obsahují UID (viz PList manuál)."
 
 #: ../../library/plistlib.rst:152
 msgid "Int value of the UID.  It must be in the range ``0 <= data < 2**64``."
-msgstr ""
+msgstr "Celová hodnota UID. Musí být v rozsahu ``0 <= data < 2**64``."
 
 #: ../../library/plistlib.rst:157
 msgid "The following constants are available:"
-msgstr ""
+msgstr "Následující konstanty jsou dostupné:"
 
 #: ../../library/plistlib.rst:161
 msgid "The XML format for plist files."
-msgstr ""
+msgstr "Formát XML pro soubory plist."
 
 #: ../../library/plistlib.rst:168
 msgid "The binary format for plist files"
-msgstr ""
+msgstr "Binární formát pro soubory plist"
 
 #: ../../library/plistlib.rst:173
 msgid "The module defines the following exceptions:"
-msgstr ""
+msgstr "Modul definuje následující výjimky:"
 
 #: ../../library/plistlib.rst:177
 msgid "Raised when a file cannot be parsed."
-msgstr ""
+msgstr "Vyvoláno, pokud nelze soubor analyzovat."
 
 #: ../../library/plistlib.rst:183
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/plistlib.rst:185
 msgid "Generating a plist::"
-msgstr ""
+msgstr "Generování plist::"
 
 #: ../../library/plistlib.rst:187
 msgid ""
@@ -275,10 +325,29 @@ msgid ""
 ")\n"
 "print(plistlib.dumps(pl).decode())"
 msgstr ""
+"import datetime\n"
+"import plistlib\n"
+"\n"
+"pl = dict(\n"
+"    aString = \"Doodah\",\n"
+"    aList = [\"A\", \"B\", 12, 32.1, [1, 2, 3]],\n"
+"    aFloat = 0.1,\n"
+"    anInt = 728,\n"
+"    aDict = dict(\n"
+"        anotherString = \"<hello & hi there!>\",\n"
+"        aThirdString = \"M\\xe4ssig, Ma\\xdf\",\n"
+"        aTrueValue = True,\n"
+"        aFalseValue = False,\n"
+"    ),\n"
+"    someData = b\"<binary gunk>\",\n"
+"    someMoreData = b\"<lots of binary gunk>\" * 10,\n"
+"    aDate = datetime.datetime.now()\n"
+")\n"
+"print(plistlib.dumps(pl).decode())"
 
 #: ../../library/plistlib.rst:207
 msgid "Parsing a plist::"
-msgstr ""
+msgstr "Analýza plist::"
 
 #: ../../library/plistlib.rst:209
 msgid ""
@@ -293,16 +362,25 @@ msgid ""
 "pl = plistlib.loads(plist)\n"
 "print(pl[\"foo\"])"
 msgstr ""
+"import plistlib\n"
+"\n"
+"plist = b\"\"\"<plist version=\"1.0\">\n"
+"<dict>\n"
+"    <key>foo</key>\n"
+"    <string>bar</string>\n"
+"</dict>\n"
+"</plist>\"\"\"\n"
+"pl = plistlib.loads(plist)\n"
+"print(pl[\"foo\"])"
 
 #: ../../library/plistlib.rst:13
 msgid "plist"
-msgstr ""
+msgstr "plist"
 
 #: ../../library/plistlib.rst:13
 msgid "file"
-msgstr ""
+msgstr "soubor"
 
 #: ../../library/plistlib.rst:13
 msgid "property list"
-msgstr ""
-
+msgstr "seznam vlastností"

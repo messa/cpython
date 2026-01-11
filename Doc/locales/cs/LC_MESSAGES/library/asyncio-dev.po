@@ -11,139 +11,167 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-dev.rst:7
 msgid "Developing with asyncio"
-msgstr ""
+msgstr "Vývoj s asyncio"
 
 #: ../../library/asyncio-dev.rst:9
 msgid ""
 "Asynchronous programming is different from classic \"sequential\" "
 "programming."
 msgstr ""
+"Asynchronní programování se liší od klasického \"sekvenčníč\" programování."
 
 #: ../../library/asyncio-dev.rst:12
-msgid "This page lists common mistakes and traps and explains how to avoid them."
+msgid ""
+"This page lists common mistakes and traps and explains how to avoid them."
 msgstr ""
+"Tato stránka uvádí běžné chyby a úskalí a vysvětluje, jak se jim vyhnout."
 
 #: ../../library/asyncio-dev.rst:19
 msgid "Debug Mode"
-msgstr ""
+msgstr "Režim ladění"
 
 #: ../../library/asyncio-dev.rst:21
 msgid ""
 "By default asyncio runs in production mode.  In order to ease the "
 "development asyncio has a *debug mode*."
 msgstr ""
+"Ve výchozím nastavení asyncio běží v produkčním režimu. Aby se usnadnil "
+"vývoj, asyncio má *režim ladění*."
 
 #: ../../library/asyncio-dev.rst:24
 msgid "There are several ways to enable asyncio debug mode:"
-msgstr ""
+msgstr "Existuje několik způsobů, jak povolit režim ladění asyncio:"
 
 #: ../../library/asyncio-dev.rst:26
-msgid "Setting the :envvar:`PYTHONASYNCIODEBUG` environment variable to ``1``."
-msgstr ""
+msgid ""
+"Setting the :envvar:`PYTHONASYNCIODEBUG` environment variable to ``1``."
+msgstr "Nastavení proměnné prostředí :envvar:`PYTHONASYNCIODEBUG` na ``1``."
 
 #: ../../library/asyncio-dev.rst:28
 msgid "Using the :ref:`Python Development Mode <devmode>`."
-msgstr ""
+msgstr "Použití :ref:`Režimu vývoje Pythonu <devmode>`."
 
 #: ../../library/asyncio-dev.rst:30
 msgid "Passing ``debug=True`` to :func:`asyncio.run`."
-msgstr ""
+msgstr "Předání ``debug=True`` do :func:`asyncio.run`."
 
 #: ../../library/asyncio-dev.rst:32
 msgid "Calling :meth:`loop.set_debug`."
-msgstr ""
+msgstr "Volání :meth:`loop.set_debug`."
 
 #: ../../library/asyncio-dev.rst:34
 msgid "In addition to enabling the debug mode, consider also:"
-msgstr ""
+msgstr "Kromě povolení režimu ladění zvažte také:"
 
 #: ../../library/asyncio-dev.rst:36
 msgid ""
 "setting the log level of the :ref:`asyncio logger <asyncio-logger>` to "
-":py:const:`logging.DEBUG`, for example the following snippet of code can "
-"be run at startup of the application::"
+":py:const:`logging.DEBUG`, for example the following snippet of code can be "
+"run at startup of the application::"
 msgstr ""
+"nastavení úrovně protokolovatání :ref:`asyncio loggeru <asyncio-logger>` na "
+":py:const:`logging.DEBUG`, například následující část kódu lze spustit při "
+"spustení aplikace::"
 
 #: ../../library/asyncio-dev.rst:40
 msgid "logging.basicConfig(level=logging.DEBUG)"
-msgstr ""
+msgstr "logging.basicConfig(level=logging.DEBUG)"
 
 #: ../../library/asyncio-dev.rst:42
 msgid ""
 "configuring the :mod:`warnings` module to display :exc:`ResourceWarning` "
-"warnings.  One way of doing that is by using the :option:`-W` ``default``"
-" command line option."
+"warnings.  One way of doing that is by using the :option:`-W` ``default`` "
+"command line option."
 msgstr ""
+"konfigurací modulu :mod:`warnings` k zobrazení :exc:`ResourceWarning` "
+"varování. Jednou z cest je použití volby příkazového řádku :option:`-W` "
+"``default``."
 
 #: ../../library/asyncio-dev.rst:47
 msgid "When the debug mode is enabled:"
-msgstr ""
+msgstr "Když je povolen režim ladění:"
 
 #: ../../library/asyncio-dev.rst:49
 msgid ""
 "Many non-threadsafe asyncio APIs (such as :meth:`loop.call_soon` and "
-":meth:`loop.call_at` methods) raise an exception if they are called from "
-"a wrong thread."
+":meth:`loop.call_at` methods) raise an exception if they are called from a "
+"wrong thread."
 msgstr ""
+"Mnoho bezpečných asyncio API (jako například :meth:`loop.call_soon` a "
+":meth:`loop.call_at`) vyvolavá výžimku, pokud jsou volány ze špatného "
+"vlákna."
 
 #: ../../library/asyncio-dev.rst:53
 msgid ""
 "The execution time of the I/O selector is logged if it takes too long to "
 "perform an I/O operation."
-msgstr ""
+msgstr "Čas provedení V/V selektoru je zaznamenán, pokud trvá příliš dlouho."
 
 #: ../../library/asyncio-dev.rst:56
 msgid ""
 "Callbacks taking longer than 100 milliseconds are logged.  The "
-":attr:`loop.slow_callback_duration` attribute can be used to set the "
-"minimum execution duration in seconds that is considered \"slow\"."
+":attr:`loop.slow_callback_duration` attribute can be used to set the minimum"
+" execution duration in seconds that is considered \"slow\"."
 msgstr ""
+"Callback funkce trvající déle než 100 milisekund jsou zaznamenány. Atribut "
+":attr:`loop.slow_callback_duration` lze použít k nastavení minimální doby "
+"provedení v sekundách, která se považuje za \"pomalou\"."
 
 #: ../../library/asyncio-dev.rst:64
 msgid "Concurrency and Multithreading"
-msgstr ""
+msgstr "Konkurence a multithread"
 
 #: ../../library/asyncio-dev.rst:66
 msgid ""
-"An event loop runs in a thread (typically the main thread) and executes "
-"all callbacks and Tasks in its thread.  While a Task is running in the "
-"event loop, no other Tasks can run in the same thread.  When a Task "
-"executes an ``await`` expression, the running Task gets suspended, and "
-"the event loop executes the next Task."
+"An event loop runs in a thread (typically the main thread) and executes all "
+"callbacks and Tasks in its thread.  While a Task is running in the event "
+"loop, no other Tasks can run in the same thread.  When a Task executes an "
+"``await`` expression, the running Task gets suspended, and the event loop "
+"executes the next Task."
 msgstr ""
+"Smyčka událostí běží ve vláknu (obvykle v hlavním vláknu) a provádí všechny "
+"callback funkce a Úlohy ve svém vláknu. Když je Úloha spuštěna ve smyčce "
+"událostí, nemohou se ve stejném vláknu spouštět žádné další Úlohy. Pokud "
+"Úloha provede výraz ``await``, beží Úloha se pozastaví a smyčka событostí "
+"provádí další Úlohu."
 
 #: ../../library/asyncio-dev.rst:72
 msgid ""
 "To schedule a :term:`callback` from another OS thread, the "
 ":meth:`loop.call_soon_threadsafe` method should be used. Example::"
 msgstr ""
+"K naplanování :term:`callback` funkce z jiného vlákna OS by se měla použít "
+"metoda :meth:`loop.call_soon_threadsafe`. Příklad::"
 
 #: ../../library/asyncio-dev.rst:75
 msgid "loop.call_soon_threadsafe(callback, *args)"
-msgstr ""
+msgstr "loop.call_soon_threadsafe(callback, *args)"
 
 #: ../../library/asyncio-dev.rst:77
 msgid ""
 "Almost all asyncio objects are not thread safe, which is typically not a "
-"problem unless there is code that works with them from outside of a Task "
-"or a callback.  If there's a need for such code to call a low-level "
-"asyncio API, the :meth:`loop.call_soon_threadsafe` method should be used,"
-" e.g.::"
+"problem unless there is code that works with them from outside of a Task or "
+"a callback.  If there's a need for such code to call a low-level asyncio "
+"API, the :meth:`loop.call_soon_threadsafe` method should be used, e.g.::"
 msgstr ""
+"Skoro všechny asyncio objekty nejsou bezpečné pro vlákna, což obvykle není "
+"problém, pokud nebá kód, který pracuje s nimi zvenč Úlohy nebo callback "
+"funkce. Pokud je potřeba, aby takóvý kód volal low-level asyncio API, měla "
+"by se použít metoda :meth:`loop.call_soon_threadsafe`, například::"
 
 #: ../../library/asyncio-dev.rst:83
 msgid "loop.call_soon_threadsafe(fut.cancel)"
-msgstr ""
+msgstr "loop.call_soon_threadsafe(fut.cancel)"
 
 #: ../../library/asyncio-dev.rst:85
 msgid ""
@@ -151,6 +179,9 @@ msgid ""
 ":func:`run_coroutine_threadsafe` function should be used. It returns a "
 ":class:`concurrent.futures.Future` to access the result::"
 msgstr ""
+"K naplanování objektu korutiny z jiného vlákna OS by se měla použít funkce "
+":func:`run_coroutine_threadsafe`. Vrací :class:`concurrent.futures.Future` "
+"pro přístup k výsledku::"
 
 #: ../../library/asyncio-dev.rst:89
 msgid ""
@@ -163,83 +194,118 @@ msgid ""
 "# Wait for the result:\n"
 "result = future.result()"
 msgstr ""
+"async def coro_func():\n"
+"     return await asyncio.sleep(1, 42)\n"
+"\n"
+"# Později v jiném vláknu OS:\n"
+"\n"
+"future = asyncio.run_coroutine_threadsafe(coro_func(), loop)\n"
+"# Počkejte na výsledek:\n"
+"result = future.result()"
 
 #: ../../library/asyncio-dev.rst:98
 msgid "To handle signals the event loop must be run in the main thread."
 msgstr ""
+"Pro zprávu signálů musí být smyčka událostí spouštěna v hlavním vláknu."
 
 #: ../../library/asyncio-dev.rst:101
 msgid ""
 "The :meth:`loop.run_in_executor` method can be used with a "
 ":class:`concurrent.futures.ThreadPoolExecutor` or "
 ":class:`~concurrent.futures.InterpreterPoolExecutor` to execute blocking "
-"code in a different OS thread without blocking the OS thread that the "
-"event loop runs in."
+"code in a different OS thread without blocking the OS thread that the event "
+"loop runs in."
 msgstr ""
+"Metoda :meth:`loop.run_in_executor` lze použít s "
+":class:`concurrent.futures.ThreadPoolExecutor` nebo "
+":class:`~concurrent.futures.InterpreterPoolExecutor` k provedení blokujícího"
+" kódu v jiném vláknu OS bez blokání vlákna OS, ve kterém smyčka událostí "
+"běží."
 
 #: ../../library/asyncio-dev.rst:107
 msgid ""
-"There is currently no way to schedule coroutines or callbacks directly "
-"from a different process (such as one started with "
-":mod:`multiprocessing`). The :ref:`asyncio-event-loop-methods` section "
-"lists APIs that can read from pipes and watch file descriptors without "
-"blocking the event loop. In addition, asyncio's :ref:`Subprocess "
-"<asyncio-subprocess>` APIs provide a way to start a process and "
-"communicate with it from the event loop. Lastly, the aforementioned "
-":meth:`loop.run_in_executor` method can also be used with a "
-":class:`concurrent.futures.ProcessPoolExecutor` to execute code in a "
+"There is currently no way to schedule coroutines or callbacks directly from "
+"a different process (such as one started with :mod:`multiprocessing`). The "
+":ref:`asyncio-event-loop-methods` section lists APIs that can read from "
+"pipes and watch file descriptors without blocking the event loop. In "
+"addition, asyncio's :ref:`Subprocess <asyncio-subprocess>` APIs provide a "
+"way to start a process and communicate with it from the event loop. Lastly, "
+"the aforementioned :meth:`loop.run_in_executor` method can also be used with"
+" a :class:`concurrent.futures.ProcessPoolExecutor` to execute code in a "
 "different process."
 msgstr ""
+"V současné době neexistuje žádný způsob, jak naplánovat korutiny nebo "
+"callback funkce přímo z jiného procesu (jako je proces spustený s "
+":mod:`multiprocessing`). Sekce :ref:`asyncio-event-loop-methods` seznam API,"
+" která mohou číst z potrubí a sledovat deskriptory souborů bez blokání "
+"smyčky událostí. Kromě toho poskytují asyncio :ref:`Subprocess <asyncio-"
+"subprocess>` API způsob, jak spustit proces a komunikovat s ním ze smyčky "
+"událostí. Nakonec lze zmíněnou metodu :meth:`loop.run_in_executor` použít "
+"také s :class:`concurrent.futures.ProcessPoolExecutor` k provedení kódu v "
+"jiném procesu."
 
 #: ../../library/asyncio-dev.rst:121
 msgid "Running Blocking Code"
-msgstr ""
+msgstr "Spuštění blokujícího kódu"
 
 #: ../../library/asyncio-dev.rst:123
 msgid ""
-"Blocking (CPU-bound) code should not be called directly.  For example, if"
-" a function performs a CPU-intensive calculation for 1 second, all "
-"concurrent asyncio Tasks and IO operations would be delayed by 1 second."
+"Blocking (CPU-bound) code should not be called directly.  For example, if a "
+"function performs a CPU-intensive calculation for 1 second, all concurrent "
+"asyncio Tasks and IO operations would be delayed by 1 second."
 msgstr ""
+"Blokující (CPU-vázaný) kód by se neměl volat přímo. Například, pokud funkce "
+"provádí výpočet náročný na CPU po dobu 1 sekundy, všechny souběžé asyncio "
+"Úlohy a V/V operace budou zpožděny o 1 sekundu."
 
 #: ../../library/asyncio-dev.rst:128
 msgid ""
-"An executor can be used to run a task in a different thread, including in"
-" a different interpreter, or even in a different process to avoid "
-"blocking the OS thread with the event loop.  See the "
-":meth:`loop.run_in_executor` method for more details."
+"An executor can be used to run a task in a different thread, including in a "
+"different interpreter, or even in a different process to avoid blocking the "
+"OS thread with the event loop.  See the :meth:`loop.run_in_executor` method "
+"for more details."
 msgstr ""
+"Executor lze použít ke spustení Úlohy v jiném vláknu, včetně v jiném "
+"interpretru, nebo dokonce v jiném procesu, aby se zabránilo blokání vlákna "
+"OS se smyčkou událostí. Podrobnosti viz metoda :meth:`loop.run_in_executor`."
 
 #: ../../library/asyncio-dev.rst:138
 msgid "Logging"
-msgstr ""
+msgstr "Protokolování"
 
 #: ../../library/asyncio-dev.rst:140
 msgid ""
-"asyncio uses the :mod:`logging` module and all logging is performed via "
-"the ``\"asyncio\"`` logger."
+"asyncio uses the :mod:`logging` module and all logging is performed via the "
+"``\"asyncio\"`` logger."
 msgstr ""
+"asyncio používá modul :mod:`logging` a vše protokolování je prováděno "
+"prostřednictvím loggeru ``\"asyncio\"`` ."
 
 #: ../../library/asyncio-dev.rst:143
 msgid ""
 "The default log level is :py:const:`logging.INFO`, which can be easily "
 "adjusted::"
 msgstr ""
+"Vychozi uroven protokolu je :py:const:`logging.INFO`, kterou lze snadno "
+"upravit::"
 
 #: ../../library/asyncio-dev.rst:146
 msgid "logging.getLogger(\"asyncio\").setLevel(logging.WARNING)"
-msgstr ""
+msgstr "logging.getLogger(\"asyncio\").setLevel(logging.WARNING)"
 
 #: ../../library/asyncio-dev.rst:149
 msgid ""
 "Network logging can block the event loop. It is recommended to use a "
-"separate thread for handling logs or use non-blocking IO. For example, "
-"see :ref:`blocking-handlers`."
+"separate thread for handling logs or use non-blocking IO. For example, see "
+":ref:`blocking-handlers`."
 msgstr ""
+"Protokolování sítě může blokovat smyčku učálostí. Doporučuje se použít "
+"samostatné vlákno pro zpracování protokolů nebo použít neblokující V/V. "
+"Například viz :ref:`blocking-handlers`."
 
 #: ../../library/asyncio-dev.rst:157
 msgid "Detect never-awaited coroutines"
-msgstr ""
+msgstr "Detekce neuhočených korutin"
 
 #: ../../library/asyncio-dev.rst:159
 msgid ""
@@ -247,6 +313,9 @@ msgid ""
 "instead of ``await coro()``) or the coroutine is not scheduled with "
 ":meth:`asyncio.create_task`, asyncio will emit a :exc:`RuntimeWarning`::"
 msgstr ""
+"Když je volána funkce korutiny, ale není ohočena (např. ``coro()`` místo "
+"``await coro()``) nebo korutina není naplnánována s "
+":meth:`asyncio.create_task`, asyncio vydá :exc:`RuntimeWarning`::"
 
 #: ../../library/asyncio-dev.rst:164
 msgid ""
@@ -260,20 +329,31 @@ msgid ""
 "\n"
 "asyncio.run(main())"
 msgstr ""
+"import asyncio\n"
+"\n"
+"async def test():\n"
+"    print(\"nikdy nesplnānováno\")\n"
+"\n"
+"async def main():\n"
+"    test()\n"
+"\n"
+"asyncio.run(main())"
 
 #: ../../library/asyncio-dev.rst:174 ../../library/asyncio-dev.rst:219
 msgid "Output::"
-msgstr ""
+msgstr "Výstup::"
 
 #: ../../library/asyncio-dev.rst:176
 msgid ""
 "test.py:7: RuntimeWarning: coroutine 'test' was never awaited\n"
 "  test()"
 msgstr ""
+"test.py:7: RuntimeWarning: korutina 'test' nikdy nebyla ohodena\n"
+"  test()"
 
 #: ../../library/asyncio-dev.rst:179 ../../library/asyncio-dev.rst:235
 msgid "Output in debug mode::"
-msgstr ""
+msgstr "Výstup v režimu ladění::"
 
 #: ../../library/asyncio-dev.rst:181
 msgid ""
@@ -288,12 +368,24 @@ msgid ""
 "    test()\n"
 "  test()"
 msgstr ""
+"test.py:7: RuntimeWarning: korutina 'test' nikdy nebyla ohodena\n"
+"Korutina vytvořena v (posledním)\n"
+"  Soubor \"../t.py\", řádek 9, v <module>\n"
+"    asyncio.run(main(), debug=True)\n"
+"\n"
+"  < .. >\n"
+"\n"
+"  Soubor \"../t.py\", řádek 7, v main\n"
+"    test()\n"
+"  test()"
 
 #: ../../library/asyncio-dev.rst:192
 msgid ""
 "The usual fix is to either await the coroutine or call the "
 ":meth:`asyncio.create_task` function::"
 msgstr ""
+"Obvyklé řešení je buď ohodit korutinu nebo zavolat funkci "
+":meth:`asyncio.create_task`::"
 
 #: ../../library/asyncio-dev.rst:195
 msgid ""
@@ -307,10 +399,10 @@ msgstr ""
 
 #: ../../library/asyncio-dev.rst:202
 msgid ""
-"If a :meth:`Future.set_exception` is called but the Future object is "
-"never awaited on, the exception would never be propagated to the user "
-"code.  In this case, asyncio would emit a log message when the Future "
-"object is garbage collected."
+"If a :meth:`Future.set_exception` is called but the Future object is never "
+"awaited on, the exception would never be propagated to the user code.  In "
+"this case, asyncio would emit a log message when the Future object is "
+"garbage collected."
 msgstr ""
 
 #: ../../library/asyncio-dev.rst:207
@@ -344,8 +436,8 @@ msgstr ""
 
 #: ../../library/asyncio-dev.rst:230
 msgid ""
-":ref:`Enable the debug mode <asyncio-debug-mode>` to get the traceback "
-"where the task was created::"
+":ref:`Enable the debug mode <asyncio-debug-mode>` to get the traceback where"
+" the task was created::"
 msgstr ""
 
 #: ../../library/asyncio-dev.rst:233
@@ -369,4 +461,3 @@ msgid ""
 "    raise Exception(\"not consumed\")\n"
 "Exception: not consumed"
 msgstr ""
-

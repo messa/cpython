@@ -11,29 +11,35 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/select.rst:2
 msgid ":mod:`!select` --- Waiting for I/O completion"
-msgstr ""
+msgstr ":mod:`!select` --- Čekání na dokončení I/O"
 
 #: ../../library/select.rst:9
 msgid ""
 "This module provides access to the :c:func:`!select` and :c:func:`!poll` "
-"functions available in most operating systems, :c:func:`!devpoll` "
-"available on Solaris and derivatives, :c:func:`!epoll` available on Linux"
-" 2.5+ and :c:func:`!kqueue` available on most BSD. Note that on Windows, "
-"it only works for sockets; on other operating systems, it also works for "
-"other file types (in particular, on Unix, it works on pipes). It cannot "
-"be used on regular files to determine whether a file has grown since it "
-"was last read."
+"functions available in most operating systems, :c:func:`!devpoll` available "
+"on Solaris and derivatives, :c:func:`!epoll` available on Linux 2.5+ and "
+":c:func:`!kqueue` available on most BSD. Note that on Windows, it only works"
+" for sockets; on other operating systems, it also works for other file types"
+" (in particular, on Unix, it works on pipes). It cannot be used on regular "
+"files to determine whether a file has grown since it was last read."
 msgstr ""
+"Tento modul poskytuje přístup k funkcím :c:func:`!select` a :c:func:`!poll` "
+"dostupným na většině operačních systémů, :c:func:`!devpoll` dostupné na "
+"Solarisu a jeho derivátech, :c:func:`!epoll` dostupné na Linuxu 2.5+ a "
+":c:func:`!kqueue` dostupné na většině BSD. Poznámka: na Windows funguje "
+"pouze pro sockety; na ostatních operačních systémech funguje také pro další "
+"typy souborů (zvláště na Unixu funguje na pipes). Nelze jej použít na "
+"běžných souborech k určení, zda se soubor zvětšil od poslední čtení."
 
 #: ../../library/select.rst:20
 msgid ""
@@ -42,28 +48,35 @@ msgid ""
 "encouraged to use the :mod:`selectors` module instead, unless they want "
 "precise control over the OS-level primitives used."
 msgstr ""
+"Modul :mod:`selectors` umožňuje vysokoúrovňový a efektivní I/O multiplexing,"
+" postavený na primitivech modulu :mod:`select`. Uživatelům se doporučuje "
+"používat modul :mod:`selectors` namísto tohoto, pokud nechcete přesnou "
+"kontrolu nad používanými primitimy na úrovni OS."
 
 #: ../../includes/wasm-notavail.rst:3 ../../library/select.rst:178
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-notavail.rst:5
 msgid ""
-"This module does not work or is not available on WebAssembly. See :ref"
-":`wasm-availability` for more information."
+"This module does not work or is not available on WebAssembly. See "
+":ref:`wasm-availability` for more information."
 msgstr ""
+"Tento modul nefunguje nebo není dostupný na WebAssembly. Další informace "
+"naleznete v :ref:`wasm-availability`."
 
 #: ../../library/select.rst:27
 msgid "The module defines the following:"
-msgstr ""
+msgstr "Modul definuje následující:"
 
 #: ../../library/select.rst:32
 msgid "A deprecated alias of :exc:`OSError`."
-msgstr ""
+msgstr "Zastaralý alias pro :exc:`OSError`."
 
 #: ../../library/select.rst:34
 msgid "Following :pep:`3151`, this class was made an alias of :exc:`OSError`."
 msgstr ""
+"Podle :pep:`3151` byla tato třída vytvořena jako alias pro :exc:`OSError`."
 
 #: ../../library/select.rst:40
 msgid ""
@@ -71,208 +84,275 @@ msgid ""
 "polling object; see section :ref:`devpoll-objects` below for the methods "
 "supported by devpoll objects."
 msgstr ""
+"(Podporováno pouze na Solarisu a jeho derivátech.)  Vrací objekt "
+"``/dev/poll`` pro polling; viz sekce :ref:`devpoll-objects` níže pro metody "
+"podporované objekty devpoll."
 
 #: ../../library/select.rst:44
 msgid ""
 ":c:func:`!devpoll` objects are linked to the number of file descriptors "
-"allowed at the time of instantiation. If your program reduces this value,"
-" :c:func:`!devpoll` will fail. If your program increases this value, "
-":c:func:`!devpoll` may return an incomplete list of active file "
-"descriptors."
+"allowed at the time of instantiation. If your program reduces this value, "
+":c:func:`!devpoll` will fail. If your program increases this value, "
+":c:func:`!devpoll` may return an incomplete list of active file descriptors."
 msgstr ""
+"Objekty :c:func:`!devpoll` jsou navázány na počet deskriptorů souborů "
+"dostupných v čase instantace. Pokud váš program sníží tuto hodnotu, "
+":c:func:`!devpoll` selže. Pokud váš program zvýší tuto hodnotu, "
+":c:func:`!devpoll` může vrátit neúplný seznam aktivních deskriptorů souborů."
 
 #: ../../library/select.rst:50 ../../library/select.rst:79
 #: ../../library/select.rst:106
 msgid "The new file descriptor is :ref:`non-inheritable <fd_inheritance>`."
-msgstr ""
+msgstr "Nový deskriptor souboru je :ref:`nezděditelný <fd_inheritance>`."
 
 #: ../../library/select.rst:54 ../../library/select.rst:108
 msgid "The new file descriptor is now non-inheritable."
-msgstr ""
+msgstr "Nový deskriptor souboru je nyní nezděditelný."
 
 #: ../../library/select.rst:59
 msgid ""
-"(Only supported on Linux 2.5.44 and newer.) Return an edge polling "
-"object, which can be used as Edge or Level Triggered interface for I/O "
-"events."
+"(Only supported on Linux 2.5.44 and newer.) Return an edge polling object, "
+"which can be used as Edge or Level Triggered interface for I/O events."
 msgstr ""
+"(Podporováno pouze na Linuxu 2.5.44 a novějších verzích.)  Vrací objekt edge"
+" polling, který lze použít jako rozhraní Edge nebo Level Triggered pro I/O "
+"události."
 
 #: ../../library/select.rst:63
 msgid ""
 "*sizehint* informs epoll about the expected number of events to be "
-"registered.  It must be positive, or ``-1`` to use the default. It is "
-"only used on older systems where :c:func:`!epoll_create1` is not "
-"available; otherwise it has no effect (though its value is still "
-"checked)."
+"registered.  It must be positive, or ``-1`` to use the default. It is only "
+"used on older systems where :c:func:`!epoll_create1` is not available; "
+"otherwise it has no effect (though its value is still checked)."
 msgstr ""
+"*sizehint* informuje epoll o očekávaném počtu událostí, které mají být "
+"registrovány.  Musí být kladný nebo ``-1`` pro použití výchozí hodnoty. "
+"Používá se pouze na starších systémech, kde není dostupné "
+":c:func:`!epoll_create1`; jinak nemá žádný efekt (ačkoli jeho hodnota se "
+"stále kontroluje)."
 
 #: ../../library/select.rst:68
 msgid ""
-"*flags* is deprecated and completely ignored.  However, when supplied, "
-"its value must be ``0`` or ``select.EPOLL_CLOEXEC``, otherwise "
-"``OSError`` is raised."
+"*flags* is deprecated and completely ignored.  However, when supplied, its "
+"value must be ``0`` or ``select.EPOLL_CLOEXEC``, otherwise ``OSError`` is "
+"raised."
 msgstr ""
+"*flags* je zastaralý a kompletně ignorován.  Pokud je však zadán, musí být "
+"jeho hodnota ``0`` nebo ``select.EPOLL_CLOEXEC``, jinak je vyvolána "
+"``OSError``."
 
 #: ../../library/select.rst:72
 msgid ""
 "See the :ref:`epoll-objects` section below for the methods supported by "
 "epolling objects."
 msgstr ""
+"Viz sekce :ref:`epoll-objects` níže pro metody podporované objekty epolling."
 
 #: ../../library/select.rst:75
 msgid ""
-"``epoll`` objects support the context management protocol: when used in a"
-" :keyword:`with` statement, the new file descriptor is automatically "
-"closed at the end of the block."
+"``epoll`` objects support the context management protocol: when used in a "
+":keyword:`with` statement, the new file descriptor is automatically closed "
+"at the end of the block."
 msgstr ""
+"Objekty ``epoll`` podporují protokol správy kontextu: při použití v příkazu "
+":keyword:`with` je nový deskriptor souboru automaticky uzavřen na konci "
+"bloku."
 
 #: ../../library/select.rst:81
 msgid "Added the *flags* parameter."
-msgstr ""
+msgstr "Přidán parametr *flags*."
 
 #: ../../library/select.rst:84
 msgid ""
-"Support for the :keyword:`with` statement was added. The new file "
-"descriptor is now non-inheritable."
+"Support for the :keyword:`with` statement was added. The new file descriptor"
+" is now non-inheritable."
 msgstr ""
+"Přidána podpora pro příkaz :keyword:`with`. Nový deskriptor souboru je nyní "
+"nezděditelný."
 
 #: ../../library/select.rst:88
 msgid ""
-"The *flags* parameter.  ``select.EPOLL_CLOEXEC`` is used by default now. "
-"Use :func:`os.set_inheritable` to make the file descriptor inheritable."
+"The *flags* parameter.  ``select.EPOLL_CLOEXEC`` is used by default now. Use"
+" :func:`os.set_inheritable` to make the file descriptor inheritable."
 msgstr ""
+"Parametr *flags*.  Nyní je standardně používáno ``select.EPOLL_CLOEXEC``. "
+"Použijte :func:`os.set_inheritable` k nastavení deskriptoru souboru jako "
+"zděditelného."
 
 #: ../../library/select.rst:95
 msgid ""
-"(Not supported by all operating systems.)  Returns a polling object, "
-"which supports registering and unregistering file descriptors, and then "
-"polling them for I/O events; see section :ref:`poll-objects` below for "
-"the methods supported by polling objects."
+"(Not supported by all operating systems.)  Returns a polling object, which "
+"supports registering and unregistering file descriptors, and then polling "
+"them for I/O events; see section :ref:`poll-objects` below for the methods "
+"supported by polling objects."
 msgstr ""
+"(Není podporováno všemi operačními systémy.)  Vrací objekt polling, který "
+"podporuje registraci a odregistraci deskriptorů souborů, a poté jejich "
+"polling pro I/O události; viz sekce :ref:`poll-objects` níže pro metody "
+"podporované objekty polling."
 
 #: ../../library/select.rst:103
 msgid ""
-"(Only supported on BSD.)  Returns a kernel queue object; see section :ref"
-":`kqueue-objects` below for the methods supported by kqueue objects."
+"(Only supported on BSD.)  Returns a kernel queue object; see section "
+":ref:`kqueue-objects` below for the methods supported by kqueue objects."
 msgstr ""
+"(Podporováno pouze na BSD.)  Vrací objekt kernel queue; viz sekce "
+":ref:`kqueue-objects` níže pro metody podporované objekty kqueue."
 
 #: ../../library/select.rst:114
 msgid ""
-"(Only supported on BSD.)  Returns a kernel event object; see section :ref"
-":`kevent-objects` below for the methods supported by kevent objects."
+"(Only supported on BSD.)  Returns a kernel event object; see section "
+":ref:`kevent-objects` below for the methods supported by kevent objects."
 msgstr ""
+"(Podporováno pouze na BSD.)  Vrací objekt kernel event; viz sekce "
+":ref:`kevent-objects` níže pro metody podporované objekty kevent."
 
 #: ../../library/select.rst:120
 msgid ""
 "This is a straightforward interface to the Unix :c:func:`!select` system "
-"call. The first three arguments are iterables of 'waitable objects': "
-"either integers representing file descriptors or objects with a "
-"parameterless method named :meth:`~io.IOBase.fileno` returning such an "
-"integer:"
+"call. The first three arguments are iterables of 'waitable objects': either "
+"integers representing file descriptors or objects with a parameterless "
+"method named :meth:`~io.IOBase.fileno` returning such an integer:"
 msgstr ""
+"Toto je jednoduché rozhraní k systémovému volání Unix :c:func:`!select`. "
+"První tři argumenty jsou iterovatelné objekty 'čekatelných objektů': buď "
+"celá čísla reprezentující deskriptory souborů nebo objekty s "
+"bezparametrizační metodou pojmenovanou :meth:`~io.IOBase.fileno` vracející "
+"takové celé číslo:"
 
 #: ../../library/select.rst:125
 msgid "*rlist*: wait until ready for reading"
-msgstr ""
+msgstr "*rlist*: čekej až bude připraveno ke čtení"
 
 #: ../../library/select.rst:126
 msgid "*wlist*: wait until ready for writing"
-msgstr ""
+msgstr "*wlist*: čekej až bude připraveno k zápisu"
 
 #: ../../library/select.rst:127
 msgid ""
-"*xlist*: wait for an \"exceptional condition\" (see the manual page for "
-"what your system considers such a condition)"
+"*xlist*: wait for an \"exceptional condition\" (see the manual page for what"
+" your system considers such a condition)"
 msgstr ""
+"*xlist*: čekej na \"výjimečnou podmínku\" (podrobnosti naleznete na stránce "
+"příslušného manuálu vašeho systému)"
 
 #: ../../library/select.rst:130
 msgid ""
 "Empty iterables are allowed, but acceptance of three empty iterables is "
-"platform-dependent. (It is known to work on Unix but not on Windows.)  "
-"The optional *timeout* argument specifies a time-out as a floating-point "
-"number in seconds. When the *timeout* argument is omitted or ``None``, "
-"the function blocks until at least one file descriptor is ready.  A time-"
-"out value of zero specifies a poll and never blocks."
+"platform-dependent. (It is known to work on Unix but not on Windows.)  The "
+"optional *timeout* argument specifies a time-out as a floating-point number "
+"in seconds. When the *timeout* argument is omitted or ``None``, the function"
+" blocks until at least one file descriptor is ready.  A time-out value of "
+"zero specifies a poll and never blocks."
 msgstr ""
+"Prázdné iterovatelné objekty jsou povoleny, ale přijetí tří prázdných "
+"iterovatelných objektů je závislé na platformě. (Je známo, že funguje na "
+"Unixu, ale ne na Windows.)  Volitelný argument *timeout* specifikuje časový "
+"limit jako číslo s plovoucí desetinnou čárkou v sekundách. Pokud je argument"
+" *timeout* vynechán nebo ``None``, funkce blokuje až do chvíle, kdy je "
+"připraven alespoň jeden deskriptor souboru.  Hodnota časového limitu nula "
+"specifikuje polling a nikdy neblokuje."
 
 #: ../../library/select.rst:138
 msgid ""
-"The return value is a triple of lists of objects that are ready: subsets "
-"of the first three arguments.  When the time-out is reached without a "
-"file descriptor becoming ready, three empty lists are returned."
+"The return value is a triple of lists of objects that are ready: subsets of "
+"the first three arguments.  When the time-out is reached without a file "
+"descriptor becoming ready, three empty lists are returned."
 msgstr ""
+"Návratová hodnota je trojice seznamů objektů, které jsou připraveny: "
+"podmnožiny prvních tří argumentů.  Když se dosáhne časového limitu bez toho,"
+" aby se deskriptor souboru stal připraveným, jsou vráceny tři prázdné "
+"seznamy."
 
 #: ../../library/select.rst:146
 msgid ""
-"Among the acceptable object types in the iterables are Python :term:`file"
-" objects <file object>` (e.g. ``sys.stdin``, or objects returned by "
+"Among the acceptable object types in the iterables are Python :term:`file "
+"objects <file object>` (e.g. ``sys.stdin``, or objects returned by "
 ":func:`open` or :func:`os.popen`), socket objects returned by "
-":func:`socket.socket`.  You may also define a :dfn:`wrapper` class "
-"yourself, as long as it has an appropriate :meth:`~io.IOBase.fileno` "
-"method (that really returns a file descriptor, not just a random "
-"integer)."
+":func:`socket.socket`.  You may also define a :dfn:`wrapper` class yourself,"
+" as long as it has an appropriate :meth:`~io.IOBase.fileno` method (that "
+"really returns a file descriptor, not just a random integer)."
 msgstr ""
+"Mezi přijatelnými typy objektů v iterovatelných objektech jsou Python "
+":term:`file objects <file object>` (např. ``sys.stdin``, nebo objekty "
+"vrácené :func:`open` nebo :func:`os.popen`), objekty socket vrácené "
+":func:`socket.socket`.  Můžete také definovat vlastní třídu :dfn:`wrapper`, "
+"pokud má příslušnou metodu :meth:`~io.IOBase.fileno` (která skutečně vrací "
+"deskriptor souboru, ne jen náhodné celé číslo)."
 
 #: ../../library/select.rst:157
 msgid ""
-"File objects on Windows are not acceptable, but sockets are.  On Windows,"
-" the underlying :c:func:`!select` function is provided by the WinSock "
+"File objects on Windows are not acceptable, but sockets are.  On Windows, "
+"the underlying :c:func:`!select` function is provided by the WinSock "
 "library, and does not handle file descriptors that don't originate from "
 "WinSock."
 msgstr ""
+"Objekty souboru na Windows nejsou příjatelné, ale sockety ano.  Na Windows "
+"je podkladová funkce :c:func:`!select` poskytována knihovnou WinSock a nemá "
+"zpracovávány deskriptory souborů, které nepocházejí z WinSocku."
 
 #: ../../library/select.rst:162 ../../library/select.rst:268
 #: ../../library/select.rst:374 ../../library/select.rst:462
 #: ../../library/select.rst:503
 msgid ""
-"The function is now retried with a recomputed timeout when interrupted by"
-" a signal, except if the signal handler raises an exception (see "
-":pep:`475` for the rationale), instead of raising "
-":exc:`InterruptedError`."
+"The function is now retried with a recomputed timeout when interrupted by a "
+"signal, except if the signal handler raises an exception (see :pep:`475` for"
+" the rationale), instead of raising :exc:`InterruptedError`."
 msgstr ""
+"Funkce je nyní zopakována s pře počítaným časovým limitem, pokud je "
+"přeruvčena signálem, s výjimkou případu, kdy obslužná rutina signálu vyvolá "
+"výjimku (podrobnosti naleznete v :pep:`475`), namísto vyvolání "
+":exc:`InterruptedError`."
 
 #: ../../library/select.rst:171
 msgid ""
-"The minimum number of bytes which can be written without blocking to a "
-"pipe when the pipe has been reported as ready for writing by "
-":func:`~select.select`, :func:`!poll` or another interface in this "
-"module.  This doesn't apply to other kind of file-like objects such as "
-"sockets."
+"The minimum number of bytes which can be written without blocking to a pipe "
+"when the pipe has been reported as ready for writing by "
+":func:`~select.select`, :func:`!poll` or another interface in this module.  "
+"This doesn't apply to other kind of file-like objects such as sockets."
 msgstr ""
+"Minimální počet bajtů, které mohou být zapsány bez blokání do potrubí, pokud"
+" bylo potrubí zahlášeno jako připraveno pro zápis :func:`~select.select`, "
+":func:`!poll` nebo jiným rozhraním v tomto modulu.  Toto se neuplatnňuje na "
+"ostatní druhy objektů podobných souborům, jako jsou sockety."
 
 #: ../../library/select.rst:176
 msgid "This value is guaranteed by POSIX to be at least 512."
-msgstr ""
+msgstr "Tato hodnota je podle POSIX zarukována alespoň 512."
 
 #: ../../library/select.rst:186
 msgid "``/dev/poll`` Polling Objects"
-msgstr ""
+msgstr "Objekty ``/dev/poll`` Polling"
 
 #: ../../library/select.rst:188
 msgid ""
-"Solaris and derivatives have ``/dev/poll``. While :c:func:`!select` is "
-"*O*\\ (*highest file descriptor*) and :c:func:`!poll` is *O*\\ (*number "
-"of file descriptors*), ``/dev/poll`` is *O*\\ (*active file "
-"descriptors*)."
+"Solaris and derivatives have ``/dev/poll``. While :c:func:`!select` is *O*\\"
+" (*highest file descriptor*) and :c:func:`!poll` is *O*\\ (*number of file "
+"descriptors*), ``/dev/poll`` is *O*\\ (*active file descriptors*)."
 msgstr ""
+"Solaris a jeho deriváty mají ``/dev/poll``. Zatímco :c:func:`!select` je "
+"*O*\\ (*nejvyšší deskriptor souboru*) a :c:func:`!poll` je *O*\\ (*počet "
+"deskriptorů souborů*), ``/dev/poll`` je *O*\\ (*aktivní deskriptory "
+"souborů*)."
 
 #: ../../library/select.rst:192
 msgid ""
 "``/dev/poll`` behaviour is very close to the standard :c:func:`!poll` "
 "object."
 msgstr ""
+"Chování ``/dev/poll`` je velmi podobné standardnímu objektu :c:func:`!poll`."
 
 #: ../../library/select.rst:198
 msgid "Close the file descriptor of the polling object."
-msgstr ""
+msgstr "Uzavře deskriptor souboru objektu pro polling."
 
 #: ../../library/select.rst:205
 msgid "``True`` if the polling object is closed."
-msgstr ""
+msgstr "``True`` pokud je objekt pro polling uzavřen."
 
 #: ../../library/select.rst:212
 msgid "Return the file descriptor number of the polling object."
-msgstr ""
+msgstr "Vrací číslo deskriptoru souboru objektu pro polling."
 
 #: ../../library/select.rst:219 ../../library/select.rst:397
 msgid ""
@@ -282,645 +362,726 @@ msgid ""
 ":meth:`~io.IOBase.fileno` method that returns an integer.  File objects "
 "implement :meth:`!fileno`, so they can also be used as the argument."
 msgstr ""
+"Registruje deskriptor souboru s objektem pro polling.  Budoucí volání metody"
+" :meth:`poll` pak budou kontrolovat, zda má deskriptor souboru nājaké "
+"čekájící I/O události.  *fd* může být buď celé číslo, nebo objekt s metodou "
+":meth:`~io.IOBase.fileno`, která vrací celé číslo.  Objekty souboru "
+"implementují :meth:`!fileno`, takže mohou být použity také jako argument."
 
 #: ../../library/select.rst:225
 msgid ""
-"*eventmask* is an optional bitmask describing the type of events you want"
-" to check for. The constants are the same that with :c:func:`!poll` "
-"object. The default value is a combination of the constants "
-":const:`POLLIN`, :const:`POLLPRI`, and :const:`POLLOUT`."
+"*eventmask* is an optional bitmask describing the type of events you want to"
+" check for. The constants are the same that with :c:func:`!poll` object. The"
+" default value is a combination of the constants :const:`POLLIN`, "
+":const:`POLLPRI`, and :const:`POLLOUT`."
 msgstr ""
+"*eventmask* je volitelná bitová maska popisující typ událostí, které chcete "
+"kontrolovat. Konstanty jsou stejné jako u objektu :c:func:`!poll`. Výchozí "
+"hodnota je kombinace konstant :const:`POLLIN`, :const:`POLLPRI` a "
+":const:`POLLOUT`."
 
 #: ../../library/select.rst:232
 msgid ""
-"Registering a file descriptor that's already registered is not an error, "
-"but the result is undefined. The appropriate action is to unregister or "
-"modify it first. This is an important difference compared with "
-":c:func:`!poll`."
+"Registering a file descriptor that's already registered is not an error, but"
+" the result is undefined. The appropriate action is to unregister or modify "
+"it first. This is an important difference compared with :c:func:`!poll`."
 msgstr ""
+"Registrace deskriptoru souboru, který je již registrován, není chyba, ale "
+"výsledek je nedělāný. Vhodná akce je jej předem odregistrovat nebo upravit. "
+"To je důležitý rozdíl oproti :c:func:`!poll`."
 
 #: ../../library/select.rst:240
 msgid ""
-"This method does an :meth:`unregister` followed by a :meth:`register`. It"
-" is (a bit) more efficient that doing the same explicitly."
+"This method does an :meth:`unregister` followed by a :meth:`register`. It is"
+" (a bit) more efficient that doing the same explicitly."
 msgstr ""
+"Tato metoda provede :meth:`unregister` následované :meth:`register`. Je "
+"(mírně) efektivnější, než kdyby to bylo provedeno explicitně."
 
 #: ../../library/select.rst:247 ../../library/select.rst:441
 msgid ""
-"Remove a file descriptor being tracked by a polling object.  Just like "
-"the :meth:`register` method, *fd* can be an integer or an object with a "
+"Remove a file descriptor being tracked by a polling object.  Just like the "
+":meth:`register` method, *fd* can be an integer or an object with a "
 ":meth:`~io.IOBase.fileno` method that returns an integer."
 msgstr ""
+"Odebere deskriptor souboru sledovaný objektem pro polling.  Stejně jako "
+"metoda :meth:`register` může být *fd* celé číslo nebo objekt s metodou "
+":meth:`~io.IOBase.fileno`, která vrací celé číslo."
 
 #: ../../library/select.rst:251
 msgid ""
-"Attempting to remove a file descriptor that was never registered is "
-"safely ignored."
+"Attempting to remove a file descriptor that was never registered is safely "
+"ignored."
 msgstr ""
+"Pokus o odstranění deskriptoru souboru, který nikdy nebyl registrován, je "
+"bezpečně ignorán."
 
 #: ../../library/select.rst:257
 msgid ""
-"Polls the set of registered file descriptors, and returns a possibly "
-"empty list containing ``(fd, event)`` 2-tuples for the descriptors that "
-"have events or errors to report. *fd* is the file descriptor, and *event*"
-" is a bitmask with bits set for the reported events for that descriptor "
-"--- :const:`POLLIN` for waiting input, :const:`POLLOUT` to indicate that "
-"the descriptor can be written to, and so forth. An empty list indicates "
-"that the call timed out and no file descriptors had any events to report."
-" If *timeout* is given, it specifies the length of time in milliseconds "
-"which the system will wait for events before returning. If *timeout* is "
-"omitted, -1, or :const:`None`, the call will block until there is an "
-"event for this poll object."
+"Polls the set of registered file descriptors, and returns a possibly empty "
+"list containing ``(fd, event)`` 2-tuples for the descriptors that have "
+"events or errors to report. *fd* is the file descriptor, and *event* is a "
+"bitmask with bits set for the reported events for that descriptor --- "
+":const:`POLLIN` for waiting input, :const:`POLLOUT` to indicate that the "
+"descriptor can be written to, and so forth. An empty list indicates that the"
+" call timed out and no file descriptors had any events to report. If "
+"*timeout* is given, it specifies the length of time in milliseconds which "
+"the system will wait for events before returning. If *timeout* is omitted, "
+"-1, or :const:`None`, the call will block until there is an event for this "
+"poll object."
 msgstr ""
+"Provede polling sady registrovaných deskriptorů souborů a vrací "
+"potencionálně prázdný seznam obsahující ``(fd, event)`` 2-n-tice pro "
+"deskriptory, které mají události nebo chyby k zahlášení. *fd* je deskriptor "
+"souboru a *event* je bitová maska s nastavenými bity pro zahlášené události "
+"pro tento deskriptor --- :const:`POLLIN` pro čekající vstup, "
+":const:`POLLOUT` k indi ka ci, že lze do deskriptoru zapisovat, a tak dále. "
+"Prázdný seznam označuje, že volání vypršelo a žádné deskriptory souborů "
+"neměly žádné události k zahlášení. Pokud je zadán *timeout*, specifikuje "
+"délku času v milisekundách, po kterou bude systém čekat na události před "
+"návratem. Pokud je *timeout* vynechán, -1 nebo :const:`None`, volání se bude"
+" blokovat až do chvíle, kdy bude událost pro tento objekt polling."
 
 #: ../../library/select.rst:278
 msgid "Edge and Level Trigger Polling (epoll) Objects"
-msgstr ""
+msgstr "Objekty Edge a Level Trigger Polling (epoll)"
 
 #: ../../library/select.rst:280
 msgid "https://linux.die.net/man/4/epoll"
-msgstr ""
+msgstr "https://linux.die.net/man/4/epoll"
 
 #: ../../library/select.rst:282
 msgid "*eventmask*"
-msgstr ""
+msgstr "*eventmask*"
 
 #: ../../library/select.rst:285 ../../library/select.rst:409
 #: ../../library/select.rst:529 ../../library/select.rst:558
 #: ../../library/select.rst:589 ../../library/select.rst:597
 #: ../../library/select.rst:617 ../../library/select.rst:640
 msgid "Constant"
-msgstr ""
+msgstr "Konstanta"
 
 #: ../../library/select.rst:285 ../../library/select.rst:409
 #: ../../library/select.rst:529 ../../library/select.rst:558
 #: ../../library/select.rst:589 ../../library/select.rst:597
 #: ../../library/select.rst:617 ../../library/select.rst:640
 msgid "Meaning"
-msgstr ""
+msgstr "Význam"
 
 #: ../../library/select.rst:287
 msgid ":const:`EPOLLIN`"
-msgstr ""
+msgstr ":const:`EPOLLIN`"
 
 #: ../../library/select.rst:287
 msgid "Available for read"
-msgstr ""
+msgstr "Dostupné ke čtení"
 
 #: ../../library/select.rst:289
 msgid ":const:`EPOLLOUT`"
-msgstr ""
+msgstr ":const:`EPOLLOUT`"
 
 #: ../../library/select.rst:289
 msgid "Available for write"
-msgstr ""
+msgstr "Dostupné pro zápis"
 
 #: ../../library/select.rst:291
 msgid ":const:`EPOLLPRI`"
-msgstr ""
+msgstr ":const:`EPOLLPRI`"
 
 #: ../../library/select.rst:291
 msgid "Urgent data for read"
-msgstr ""
+msgstr "Naléhavá data ke čtení"
 
 #: ../../library/select.rst:293
 msgid ":const:`EPOLLERR`"
-msgstr ""
+msgstr ":const:`EPOLLERR`"
 
 #: ../../library/select.rst:293
 msgid "Error condition happened on the assoc. fd"
-msgstr ""
+msgstr "Chyba na přidruženém fd"
 
 #: ../../library/select.rst:295
 msgid ":const:`EPOLLHUP`"
-msgstr ""
+msgstr ":const:`EPOLLHUP`"
 
 #: ../../library/select.rst:295
 msgid "Hang up happened on the assoc. fd"
-msgstr ""
+msgstr "Zavření spojeni na přidruženém fd"
 
 #: ../../library/select.rst:297
 msgid ":const:`EPOLLET`"
-msgstr ""
+msgstr ":const:`EPOLLET`"
 
 #: ../../library/select.rst:297
 msgid "Set Edge Trigger behavior, the default is Level Trigger behavior"
-msgstr ""
+msgstr "Nastavit chování Edge Trigger, výchozí je chování Level Trigger"
 
 #: ../../library/select.rst:300
 msgid ":const:`EPOLLONESHOT`"
-msgstr ""
+msgstr ":const:`EPOLLONESHOT`"
 
 #: ../../library/select.rst:300
 msgid ""
-"Set one-shot behavior. After one event is pulled out, the fd is "
-"internally disabled"
+"Set one-shot behavior. After one event is pulled out, the fd is internally "
+"disabled"
 msgstr ""
+"Nastavit chování jednoho snímku. Poté, co je jedná událost vytahována, je fd"
+" interně zakázán"
 
 #: ../../library/select.rst:303
 msgid ":const:`EPOLLEXCLUSIVE`"
-msgstr ""
+msgstr ":const:`EPOLLEXCLUSIVE`"
 
 #: ../../library/select.rst:303
 msgid ""
-"Wake only one epoll object when the associated fd has an event. The "
-"default (if this flag is not set) is to wake all epoll objects polling on"
-" a fd."
+"Wake only one epoll object when the associated fd has an event. The default "
+"(if this flag is not set) is to wake all epoll objects polling on a fd."
 msgstr ""
+"Probudit pouze jeden objekt epoll, pokud má přidružený fd událost. Výchozí "
+"(pokud není nastaven tento příznak) je probuzen všechny objekty epoll "
+"sledující fd."
 
 #: ../../library/select.rst:308
 msgid ":const:`EPOLLRDHUP`"
-msgstr ""
+msgstr ":const:`EPOLLRDHUP`"
 
 #: ../../library/select.rst:308
 msgid ""
 "Stream socket peer closed connection or shut down writing half of "
 "connection."
 msgstr ""
+"Socket peerského toku uzavřel spojení nebo vypnul zápisovou polovinu "
+"spojení."
 
 #: ../../library/select.rst:311
 msgid ":const:`EPOLLRDNORM`"
-msgstr ""
+msgstr ":const:`EPOLLRDNORM`"
 
 #: ../../library/select.rst:311
 msgid "Equivalent to :const:`EPOLLIN`"
-msgstr ""
+msgstr "Ekvivalentní :const:`EPOLLIN`"
 
 #: ../../library/select.rst:313
 msgid ":const:`EPOLLRDBAND`"
-msgstr ""
+msgstr ":const:`EPOLLRDBAND`"
 
 #: ../../library/select.rst:313
 msgid "Priority data band can be read."
-msgstr ""
+msgstr "Lze číst příonostnő datového pásu."
 
 #: ../../library/select.rst:315
 msgid ":const:`EPOLLWRNORM`"
-msgstr ""
+msgstr ":const:`EPOLLWRNORM`"
 
 #: ../../library/select.rst:315
 msgid "Equivalent to :const:`EPOLLOUT`"
-msgstr ""
+msgstr "Ekvivalentní :const:`EPOLLOUT`"
 
 #: ../../library/select.rst:317
 msgid ":const:`EPOLLWRBAND`"
-msgstr ""
+msgstr ":const:`EPOLLWRBAND`"
 
 #: ../../library/select.rst:317
 msgid "Priority data may be written."
-msgstr ""
+msgstr "Priorita dat může být zapsána."
 
 #: ../../library/select.rst:319
 msgid ":const:`EPOLLMSG`"
-msgstr ""
+msgstr ":const:`EPOLLMSG`"
 
 #: ../../library/select.rst:319
 msgid "Ignored."
-msgstr ""
+msgstr "Ignorováno."
 
 #: ../../library/select.rst:321
 msgid ":const:`EPOLLWAKEUP`"
-msgstr ""
+msgstr ":const:`EPOLLWAKEUP`"
 
 #: ../../library/select.rst:321
 msgid "Prevents sleep during event waiting."
-msgstr ""
+msgstr "Zabraňí spánku při čekání na události."
 
 #: ../../library/select.rst:324
 msgid ""
-":const:`EPOLLEXCLUSIVE` was added.  It's only supported by Linux Kernel "
-"4.5 or later."
+":const:`EPOLLEXCLUSIVE` was added.  It's only supported by Linux Kernel 4.5 "
+"or later."
 msgstr ""
+":const:`EPOLLEXCLUSIVE` byl přidán.  Je podporován pouze jádrem Linuxu 4.5 "
+"nebo nově jším."
 
 #: ../../library/select.rst:328
 msgid ""
-":const:`EPOLLWAKEUP` was added. It's only supported by Linux Kernel 3.5 "
-"or later."
+":const:`EPOLLWAKEUP` was added. It's only supported by Linux Kernel 3.5 or "
+"later."
 msgstr ""
+":const:`EPOLLWAKEUP` byl přidán. Je podporován pouze jádrem Linuxu 3.5 nebo "
+"nově jším."
 
 #: ../../library/select.rst:334
 msgid "Close the control file descriptor of the epoll object."
-msgstr ""
+msgstr "Uzavře ovládací deskriptor souboru objektu epoll."
 
 #: ../../library/select.rst:339
 msgid "``True`` if the epoll object is closed."
-msgstr ""
+msgstr "``True`` pokud je objekt epoll uzavřen."
 
 #: ../../library/select.rst:344 ../../library/select.rst:486
 msgid "Return the file descriptor number of the control fd."
-msgstr ""
+msgstr "Vrací číslo deskriptoru souboru ovládacího fd."
 
 #: ../../library/select.rst:349
 msgid "Create an epoll object from a given file descriptor."
-msgstr ""
+msgstr "Vytvoří objekt epoll z daného deskriptoru souboru."
 
 #: ../../library/select.rst:354
 msgid "Register a fd descriptor with the epoll object."
-msgstr ""
+msgstr "Registruje deskriptor fd s objektem epoll."
 
 #: ../../library/select.rst:359
 msgid "Modify a registered file descriptor."
-msgstr ""
+msgstr "Změní registrovaný deskriptor souboru."
 
 #: ../../library/select.rst:364
 msgid "Remove a registered file descriptor from the epoll object."
-msgstr ""
+msgstr "Odebere registrovaný deskriptor souboru z objektu epoll."
 
 #: ../../library/select.rst:366
 msgid "The method no longer ignores the :data:`~errno.EBADF` error."
-msgstr ""
+msgstr "Metoda již neignoruje chybu :data:`~errno.EBADF`."
 
 #: ../../library/select.rst:372
 msgid "Wait for events. timeout in seconds (float)"
-msgstr ""
+msgstr "Čekej na události. timeout v sekundách (float)"
 
 #: ../../library/select.rst:384
 msgid "Polling Objects"
-msgstr ""
+msgstr "Objekty Polling"
 
 #: ../../library/select.rst:386
 msgid ""
-"The :c:func:`!poll` system call, supported on most Unix systems, provides"
-" better scalability for network servers that service many, many clients "
-"at the same time. :c:func:`!poll` scales better because the system call "
-"only requires listing the file descriptors of interest, while "
-":c:func:`!select` builds a bitmap, turns on bits for the fds of interest,"
-" and then afterward the whole bitmap has to be linearly scanned again. "
-":c:func:`!select` is *O*\\ (*highest file descriptor*), while "
-":c:func:`!poll` is *O*\\ (*number of file descriptors*)."
+"The :c:func:`!poll` system call, supported on most Unix systems, provides "
+"better scalability for network servers that service many, many clients at "
+"the same time. :c:func:`!poll` scales better because the system call only "
+"requires listing the file descriptors of interest, while :c:func:`!select` "
+"builds a bitmap, turns on bits for the fds of interest, and then afterward "
+"the whole bitmap has to be linearly scanned again. :c:func:`!select` is "
+"*O*\\ (*highest file descriptor*), while :c:func:`!poll` is *O*\\ (*number "
+"of file descriptors*)."
 msgstr ""
+"Systémové volání :c:func:`!poll`, podporované na většině systémů Unix, "
+"poskytuje lepší škálovatelnost pro síťové servery, které obsluhují mnoho, "
+"mnoho klientů zároveň. :c:func:`!poll` se škáluje lépe, protože systémové "
+"volání vyžaduje pouze uvedení deskriptorů souborů zájmu, zatímco "
+":c:func:`!select` vytváří bitmapu, zapíná bity pro fd zájmu a poté musí být "
+"celá bitmapa opět lineárně proskenována. :c:func:`!select` je *O*\\ "
+"(*nejvyšší deskriptor souboru*), zatímco :c:func:`!poll` je *O*\\ (*počet "
+"deskriptorů souborů*)."
 
 #: ../../library/select.rst:403
 msgid ""
-"*eventmask* is an optional bitmask describing the type of events you want"
-" to check for, and can be a combination of the constants :const:`POLLIN`,"
-" :const:`POLLPRI`, and :const:`POLLOUT`, described in the table below.  "
-"If not specified, the default value used will check for all 3 types of "
-"events."
+"*eventmask* is an optional bitmask describing the type of events you want to"
+" check for, and can be a combination of the constants :const:`POLLIN`, "
+":const:`POLLPRI`, and :const:`POLLOUT`, described in the table below.  If "
+"not specified, the default value used will check for all 3 types of events."
 msgstr ""
+"*eventmask* je volitelná bitová maska popisující typ událostí, které chcete "
+"kontrolovat, a může být kombinací konstant :const:`POLLIN`, :const:`POLLPRI`"
+" a :const:`POLLOUT`, popsaných v tabulce níže.  Pokud není zadáno, bude "
+"použita výchozí hodnota, která zkontroluje všechny 3 typy událostí."
 
 #: ../../library/select.rst:411
 msgid ":const:`POLLIN`"
-msgstr ""
+msgstr ":const:`POLLIN`"
 
 #: ../../library/select.rst:411
 msgid "There is data to read"
-msgstr ""
+msgstr "Jsou data ke čtení"
 
 #: ../../library/select.rst:413
 msgid ":const:`POLLPRI`"
-msgstr ""
+msgstr ":const:`POLLPRI`"
 
 #: ../../library/select.rst:413
 msgid "There is urgent data to read"
-msgstr ""
+msgstr "Jsou naléhavá data ke čtení"
 
 #: ../../library/select.rst:415
 msgid ":const:`POLLOUT`"
-msgstr ""
+msgstr ":const:`POLLOUT`"
 
 #: ../../library/select.rst:415
 msgid "Ready for output: writing will not block"
-msgstr ""
+msgstr "Připraveno k zápisu: zápis nebude blokovat"
 
 #: ../../library/select.rst:417
 msgid ":const:`POLLERR`"
-msgstr ""
+msgstr ":const:`POLLERR`"
 
 #: ../../library/select.rst:417
 msgid "Error condition of some sort"
-msgstr ""
+msgstr "Nějaká chyba"
 
 #: ../../library/select.rst:419
 msgid ":const:`POLLHUP`"
-msgstr ""
+msgstr ":const:`POLLHUP`"
 
 #: ../../library/select.rst:419
 msgid "Hung up"
-msgstr ""
+msgstr "Zavřeno"
 
 #: ../../library/select.rst:421
 msgid ":const:`POLLRDHUP`"
-msgstr ""
+msgstr ":const:`POLLRDHUP`"
 
 #: ../../library/select.rst:421
 msgid ""
 "Stream socket peer closed connection, or shut down writing half of "
 "connection"
 msgstr ""
+"Socket peerského toku uzavřel spojení nebo vypnul zápisovou polovinu spojení"
 
 #: ../../library/select.rst:424
 msgid ":const:`POLLNVAL`"
-msgstr ""
+msgstr ":const:`POLLNVAL`"
 
 #: ../../library/select.rst:424
 msgid "Invalid request: descriptor not open"
-msgstr ""
+msgstr "Neplatný požadavek: deskriptor není otevřen"
 
 #: ../../library/select.rst:427
 msgid ""
-"Registering a file descriptor that's already registered is not an error, "
-"and has the same effect as registering the descriptor exactly once."
+"Registering a file descriptor that's already registered is not an error, and"
+" has the same effect as registering the descriptor exactly once."
 msgstr ""
+"Registrace deskriptoru souboru, který je již registrován, není chyba a má "
+"stejný efekt jako registrace deskriptoru právě jednou."
 
 #: ../../library/select.rst:433
 msgid ""
 "Modifies an already registered fd. This has the same effect as "
-"``register(fd, eventmask)``.  Attempting to modify a file descriptor that"
-" was never registered causes an :exc:`OSError` exception with errno "
+"``register(fd, eventmask)``.  Attempting to modify a file descriptor that "
+"was never registered causes an :exc:`OSError` exception with errno "
 ":const:`ENOENT` to be raised."
 msgstr ""
+"Změní již registrovaný fd. To má stejný efekt jako ``register(fd, "
+"eventmask)``.  Pokus o upravit deskriptor souboru, který nikdy nebyl "
+"registrován, způsobuje vyvolání výjimky :exc:`OSError` s errno "
+":const:`ENOENT`."
 
 #: ../../library/select.rst:445
 msgid ""
-"Attempting to remove a file descriptor that was never registered causes a"
-" :exc:`KeyError` exception to be raised."
+"Attempting to remove a file descriptor that was never registered causes a "
+":exc:`KeyError` exception to be raised."
 msgstr ""
+"Pokus o odstranění deskriptoru souboru, který nikdy nebyl registrován, "
+"způsobuje vyvolání výjimky :exc:`KeyError`."
 
 #: ../../library/select.rst:451
 msgid ""
-"Polls the set of registered file descriptors, and returns a possibly "
-"empty list containing ``(fd, event)`` 2-tuples for the descriptors that "
-"have events or errors to report. *fd* is the file descriptor, and *event*"
-" is a bitmask with bits set for the reported events for that descriptor "
-"--- :const:`POLLIN` for waiting input, :const:`POLLOUT` to indicate that "
-"the descriptor can be written to, and so forth. An empty list indicates "
-"that the call timed out and no file descriptors had any events to report."
-" If *timeout* is given, it specifies the length of time in milliseconds "
-"which the system will wait for events before returning. If *timeout* is "
-"omitted, negative, or :const:`None`, the call will block until there is "
-"an event for this poll object."
+"Polls the set of registered file descriptors, and returns a possibly empty "
+"list containing ``(fd, event)`` 2-tuples for the descriptors that have "
+"events or errors to report. *fd* is the file descriptor, and *event* is a "
+"bitmask with bits set for the reported events for that descriptor --- "
+":const:`POLLIN` for waiting input, :const:`POLLOUT` to indicate that the "
+"descriptor can be written to, and so forth. An empty list indicates that the"
+" call timed out and no file descriptors had any events to report. If "
+"*timeout* is given, it specifies the length of time in milliseconds which "
+"the system will wait for events before returning. If *timeout* is omitted, "
+"negative, or :const:`None`, the call will block until there is an event for "
+"this poll object."
 msgstr ""
+"Provede polling sady registrovaných deskriptorů souborů a vrací "
+"potencionálně prázdný seznam obsahující ``(fd, event)`` 2-n-tice pro "
+"deskriptory, které mají události nebo chyby k zahlášení. *fd* je deskriptor "
+"souboru a *event* je bitová maska s nastavenými bity pro zahlášené události "
+"pro tento deskriptor --- :const:`POLLIN` pro čekající vstup, "
+":const:`POLLOUT` k indikaci, že lze do deskriptoru zapisovat, a tak dále. "
+"Prázdný seznam označuje, že volání vypršelo a žádné deskriptory souborů "
+"neměly žádné události k zahlášení. Pokud je zadán *timeout*, specifikuje "
+"délku času v milisekundách, po kterou bude systém čekat na události před "
+"návratem. Pokud je *timeout* vynechán, negativní nebo :const:`None`, volání "
+"se bude blokovat až do chvíle, kdy bude událost pro tento objekt polling."
 
 #: ../../library/select.rst:472
 msgid "Kqueue Objects"
-msgstr ""
+msgstr "Objekty Kqueue"
 
 #: ../../library/select.rst:476
 msgid "Close the control file descriptor of the kqueue object."
-msgstr ""
+msgstr "Uzavře ovládací deskriptor souboru objektu kqueue."
 
 #: ../../library/select.rst:481
 msgid "``True`` if the kqueue object is closed."
-msgstr ""
+msgstr "``True`` pokud je objekt kqueue uzavřen."
 
 #: ../../library/select.rst:491
 msgid "Create a kqueue object from a given file descriptor."
-msgstr ""
+msgstr "Vytvoří objekt kqueue z daného deskriptoru souboru."
 
 #: ../../library/select.rst:496
 msgid "Low level interface to kevent"
-msgstr ""
+msgstr "Rozhraní nízké úrovně ke kevent"
 
 #: ../../library/select.rst:498
 msgid "changelist must be an iterable of kevent objects or ``None``"
 msgstr ""
+"changelist musí být iterovatelným objektem kevent objektů nebo ``None``"
 
 #: ../../library/select.rst:499
 msgid "max_events must be 0 or a positive integer"
-msgstr ""
+msgstr "max_events musí být 0 nebo kladné celé číslo"
 
 #: ../../library/select.rst:500
 msgid ""
 "timeout in seconds (floats possible); the default is ``None``, to wait "
 "forever"
 msgstr ""
+"timeout v sekundách (možné float); výchozí je ``None``, pro čekání navporád"
 
 #: ../../library/select.rst:513
 msgid "Kevent Objects"
-msgstr ""
+msgstr "Objekty Kevent"
 
 #: ../../library/select.rst:515
 msgid "https://man.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2"
-msgstr ""
+msgstr "https://man.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2"
 
 #: ../../library/select.rst:519
 msgid ""
-"Value used to identify the event. The interpretation depends on the "
-"filter but it's usually the file descriptor. In the constructor ident can"
-" either be an int or an object with a :meth:`~io.IOBase.fileno` method. "
-"kevent stores the integer internally."
+"Value used to identify the event. The interpretation depends on the filter "
+"but it's usually the file descriptor. In the constructor ident can either be"
+" an int or an object with a :meth:`~io.IOBase.fileno` method. kevent stores "
+"the integer internally."
 msgstr ""
+"Hodnota používáná k identifikáci události. Významu závisí na filtru, ale "
+"běžně jde o deskriptor souboru. V konstruktoru může být ident buď int nebo "
+"objekt s metodou :meth:`~io.IOBase.fileno`. kevent ukládá celé číslo "
+"interně."
 
 #: ../../library/select.rst:526
 msgid "Name of the kernel filter."
-msgstr ""
+msgstr "Název filtru jádra."
 
 #: ../../library/select.rst:531
 msgid ":const:`KQ_FILTER_READ`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_READ`"
 
 #: ../../library/select.rst:531
-msgid "Takes a descriptor and returns whenever there is data available to read"
-msgstr ""
+msgid ""
+"Takes a descriptor and returns whenever there is data available to read"
+msgstr "Vezme deskriptor a vrací všichni jsou k dispozici data ke čtení"
 
 #: ../../library/select.rst:534
 msgid ":const:`KQ_FILTER_WRITE`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_WRITE`"
 
 #: ../../library/select.rst:534
-msgid "Takes a descriptor and returns whenever there is data available to write"
-msgstr ""
+msgid ""
+"Takes a descriptor and returns whenever there is data available to write"
+msgstr "Vezme deskriptor a vrací všichni jsou k dispozici data k zápisu"
 
 #: ../../library/select.rst:537
 msgid ":const:`KQ_FILTER_AIO`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_AIO`"
 
 #: ../../library/select.rst:537
 msgid "AIO requests"
-msgstr ""
+msgstr "Požadavky AIO"
 
 #: ../../library/select.rst:539
 msgid ":const:`KQ_FILTER_VNODE`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_VNODE`"
 
 #: ../../library/select.rst:539
-msgid "Returns when one or more of the requested events watched in *fflag* occurs"
+msgid ""
+"Returns when one or more of the requested events watched in *fflag* occurs"
 msgstr ""
+"Vrací, pokud nastane jedna nebo více požadovaných událostí sledovaných v "
+"*fflag*"
 
 #: ../../library/select.rst:542
 msgid ":const:`KQ_FILTER_PROC`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_PROC`"
 
 #: ../../library/select.rst:542
 msgid "Watch for events on a process id"
-msgstr ""
+msgstr "Sleduj události na ID procesu"
 
 #: ../../library/select.rst:544
 msgid ":const:`KQ_FILTER_NETDEV`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_NETDEV`"
 
 #: ../../library/select.rst:544
 msgid "Watch for events on a network device [not available on macOS]"
-msgstr ""
+msgstr "Sleduj události na síťovém zařízení [není dostupné na macOS]"
 
 #: ../../library/select.rst:547
 msgid ":const:`KQ_FILTER_SIGNAL`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_SIGNAL`"
 
 #: ../../library/select.rst:547
 msgid "Returns whenever the watched signal is delivered to the process"
-msgstr ""
+msgstr "Vrací všichni je sledovaný signál dodán procesu"
 
 #: ../../library/select.rst:550
 msgid ":const:`KQ_FILTER_TIMER`"
-msgstr ""
+msgstr ":const:`KQ_FILTER_TIMER`"
 
 #: ../../library/select.rst:550
 msgid "Establishes an arbitrary timer"
-msgstr ""
+msgstr "Vytváří libovolný časovač"
 
 #: ../../library/select.rst:555
 msgid "Filter action."
-msgstr ""
+msgstr "Akce filtru."
 
 #: ../../library/select.rst:560
 msgid ":const:`KQ_EV_ADD`"
-msgstr ""
+msgstr ":const:`KQ_EV_ADD`"
 
 #: ../../library/select.rst:560
 msgid "Adds or modifies an event"
-msgstr ""
+msgstr "Přidává nebo změňuje událost"
 
 #: ../../library/select.rst:562
 msgid ":const:`KQ_EV_DELETE`"
-msgstr ""
+msgstr ":const:`KQ_EV_DELETE`"
 
 #: ../../library/select.rst:562
 msgid "Removes an event from the queue"
-msgstr ""
+msgstr "Odebere událost z fronty"
 
 #: ../../library/select.rst:564
 msgid ":const:`KQ_EV_ENABLE`"
-msgstr ""
+msgstr ":const:`KQ_EV_ENABLE`"
 
 #: ../../library/select.rst:564
 msgid "Permitscontrol() to returns the event"
-msgstr ""
+msgstr "Umožňuje control() vrátit událost"
 
 #: ../../library/select.rst:566
 msgid ":const:`KQ_EV_DISABLE`"
-msgstr ""
+msgstr ":const:`KQ_EV_DISABLE`"
 
 #: ../../library/select.rst:566
 msgid "Disablesevent"
-msgstr ""
+msgstr "Zakázat událost"
 
 #: ../../library/select.rst:568
 msgid ":const:`KQ_EV_ONESHOT`"
-msgstr ""
+msgstr ":const:`KQ_EV_ONESHOT`"
 
 #: ../../library/select.rst:568
 msgid "Removes event after first occurrence"
-msgstr ""
+msgstr "Odebere událost po prvním výskyte"
 
 #: ../../library/select.rst:570
 msgid ":const:`KQ_EV_CLEAR`"
-msgstr ""
+msgstr ":const:`KQ_EV_CLEAR`"
 
 #: ../../library/select.rst:570
 msgid "Reset the state after an event is retrieved"
-msgstr ""
+msgstr "Resetovat stav po zpřístupnění události"
 
 #: ../../library/select.rst:572
 msgid ":const:`KQ_EV_SYSFLAGS`"
-msgstr ""
+msgstr ":const:`KQ_EV_SYSFLAGS`"
 
 #: ../../library/select.rst:572 ../../library/select.rst:574
 msgid "internal event"
-msgstr ""
+msgstr "interní událost"
 
 #: ../../library/select.rst:574
 msgid ":const:`KQ_EV_FLAG1`"
-msgstr ""
+msgstr ":const:`KQ_EV_FLAG1`"
 
 #: ../../library/select.rst:576
 msgid ":const:`KQ_EV_EOF`"
-msgstr ""
+msgstr ":const:`KQ_EV_EOF`"
 
 #: ../../library/select.rst:576
 msgid "Filter specific EOF condition"
-msgstr ""
+msgstr "Podmínka EOF specifická pro filtr"
 
 #: ../../library/select.rst:578
 msgid ":const:`KQ_EV_ERROR`"
-msgstr ""
+msgstr ":const:`KQ_EV_ERROR`"
 
 #: ../../library/select.rst:578
 msgid "See return values"
-msgstr ""
+msgstr "Viz návratné hodnoty"
 
 #: ../../library/select.rst:584
 msgid "Filter specific flags."
-msgstr ""
+msgstr "Príznak specifický pro filtr."
 
 #: ../../library/select.rst:586
 msgid ":const:`KQ_FILTER_READ` and  :const:`KQ_FILTER_WRITE` filter flags:"
-msgstr ""
+msgstr ":const:`KQ_FILTER_READ` a :const:`KQ_FILTER_WRITE` příznak filtru:"
 
 #: ../../library/select.rst:591
 msgid ":const:`KQ_NOTE_LOWAT`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_LOWAT`"
 
 #: ../../library/select.rst:591
 msgid "low water mark of a socket buffer"
-msgstr ""
+msgstr "nízká vodí márka vyrovnávací paměti socketu"
 
 #: ../../library/select.rst:594
 msgid ":const:`KQ_FILTER_VNODE` filter flags:"
-msgstr ""
+msgstr ":const:`KQ_FILTER_VNODE` příznak filtru:"
 
 #: ../../library/select.rst:599
 msgid ":const:`KQ_NOTE_DELETE`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_DELETE`"
 
 #: ../../library/select.rst:599
 msgid "*unlink()* was called"
-msgstr ""
+msgstr "Bylo voláno *unlink()*"
 
 #: ../../library/select.rst:601
 msgid ":const:`KQ_NOTE_WRITE`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_WRITE`"
 
 #: ../../library/select.rst:601
 msgid "a write occurred"
-msgstr ""
+msgstr "Došlo k zápisu"
 
 #: ../../library/select.rst:603
 msgid ":const:`KQ_NOTE_EXTEND`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_EXTEND`"
 
 #: ../../library/select.rst:603
 msgid "the file was extended"
-msgstr ""
+msgstr "soubor byl rozšířen"
 
 #: ../../library/select.rst:605
 msgid ":const:`KQ_NOTE_ATTRIB`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_ATTRIB`"
 
 #: ../../library/select.rst:605
 msgid "an attribute was changed"
-msgstr ""
+msgstr "atribut byl změněn"
 
 #: ../../library/select.rst:607
 msgid ":const:`KQ_NOTE_LINK`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_LINK`"
 
 #: ../../library/select.rst:607
 msgid "the link count has changed"
-msgstr ""
+msgstr "počet odkazů se změnil"
 
 #: ../../library/select.rst:609
 msgid ":const:`KQ_NOTE_RENAME`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_RENAME`"
 
 #: ../../library/select.rst:609
 msgid "the file was renamed"
-msgstr ""
+msgstr "soubor byl přejmenován"
 
 #: ../../library/select.rst:611
 msgid ":const:`KQ_NOTE_REVOKE`"
-msgstr ""
+msgstr ":const:`KQ_NOTE_REVOKE`"
 
 #: ../../library/select.rst:611
 msgid "access to the file was revoked"
@@ -1039,35 +1200,24 @@ msgid "WinSock"
 msgstr ""
 
 #~ msgid ""
-#~ "Empty iterables are allowed, but "
-#~ "acceptance of three empty iterables is"
-#~ " platform-dependent. (It is known to"
-#~ " work on Unix but not on "
-#~ "Windows.)  The optional *timeout* argument "
-#~ "specifies a time-out in seconds; "
-#~ "it may be a non-integer to "
-#~ "specify fractions of seconds. When the"
-#~ " *timeout* argument is omitted or "
-#~ "``None``, the function blocks until at"
-#~ " least one file descriptor is ready."
-#~ "  A time-out value of zero "
-#~ "specifies a poll and never blocks."
+#~ "Empty iterables are allowed, but acceptance of three empty iterables is "
+#~ "platform-dependent. (It is known to work on Unix but not on Windows.)  The "
+#~ "optional *timeout* argument specifies a time-out in seconds; it may be a "
+#~ "non-integer to specify fractions of seconds. When the *timeout* argument is "
+#~ "omitted or ``None``, the function blocks until at least one file descriptor "
+#~ "is ready.  A time-out value of zero specifies a poll and never blocks."
 #~ msgstr ""
 
 #~ msgid "Accepts any real number as *timeout*, not only integer or float."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Wait for events. If *timeout* is "
-#~ "given, it specifies the length of "
-#~ "time in seconds (may be non-"
-#~ "integer) which the system will wait "
-#~ "for events before returning."
+#~ "Wait for events. If *timeout* is given, it specifies the length of time in "
+#~ "seconds (may be non-integer) which the system will wait for events before "
+#~ "returning."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "timeout in seconds (non-integers are "
-#~ "possible); the default is ``None``, to"
-#~ " wait forever"
+#~ "timeout in seconds (non-integers are possible); the default is ``None``, to "
+#~ "wait forever"
 #~ msgstr ""
-

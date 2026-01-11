@@ -11,105 +11,119 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/tkinter.dnd.rst:2
 msgid ":mod:`!tkinter.dnd` --- Drag and drop support"
-msgstr ""
+msgstr ":mod:`!tkinter.dnd` --- Podpora drag and drop"
 
 #: ../../library/tkinter.dnd.rst:8
 msgid "**Source code:** :source:`Lib/tkinter/dnd.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/tkinter/dnd.py`"
 
 #: ../../library/tkinter.dnd.rst:12
 msgid ""
-"This is experimental and due to be deprecated when it is replaced with "
-"the Tk DND."
+"This is experimental and due to be deprecated when it is replaced with the "
+"Tk DND."
 msgstr ""
+"Toto je experimentální a mělo by být zastaralé, jakmile bude nahrazeno Tk "
+"DND."
 
 #: ../../library/tkinter.dnd.rst:15
 msgid ""
 "The :mod:`tkinter.dnd` module provides drag-and-drop support for objects "
-"within a single application, within the same window or between windows. "
-"To enable an object to be dragged, you must create an event binding for "
-"it that starts the drag-and-drop process. Typically, you bind a "
-"ButtonPress event to a callback function that you write (see :ref"
-":`Bindings-and-Events`). The function should call :func:`dnd_start`, "
-"where 'source' is the object to be dragged, and 'event' is the event that"
-" invoked the call (the argument to your callback function)."
+"within a single application, within the same window or between windows. To "
+"enable an object to be dragged, you must create an event binding for it that"
+" starts the drag-and-drop process. Typically, you bind a ButtonPress event "
+"to a callback function that you write (see :ref:`Bindings-and-Events`). The "
+"function should call :func:`dnd_start`, where 'source' is the object to be "
+"dragged, and 'event' is the event that invoked the call (the argument to "
+"your callback function)."
 msgstr ""
+"Modul :mod:`tkinter.dnd` poskytuje podporu drag-and-drop pro objekty v rámci"
+" jedné aplikace, v rámci stejného okna nebo mezi okny. Chcete-li povolit "
+"přetahování objektu, musíte pro něj vytvořit binding událostí, který zahájí "
+"proces drag-and-drop. Obvykle vážete ButtonPress událost na callback funkci,"
+" kterou napíšete (viz :ref:`Bindings-and-Events`). Funkce by měla zavolat "
+":func:`dnd_start`, kde 'source' je objekt, který se má přetahovat, a 'event'"
+" je událost, která vyvolala volání (argument vaší callback funkce)."
 
 #: ../../library/tkinter.dnd.rst:23
 msgid "Selection of a target object occurs as follows:"
-msgstr ""
+msgstr "Výběr cílového objektu probíhá následovně:"
 
 #: ../../library/tkinter.dnd.rst:25
 msgid "Top-down search of area under mouse for target widget"
-msgstr ""
+msgstr "Vyhledávání parametru widgetu cíle shora dolű v oblasti pod myší"
 
 #: ../../library/tkinter.dnd.rst:27
 msgid "Target widget should have a callable *dnd_accept* attribute"
-msgstr ""
+msgstr "Widget cíle by měl mít volelný atribut *dnd_accept*"
 
 #: ../../library/tkinter.dnd.rst:28
 msgid ""
-"If *dnd_accept* is not present or returns ``None``, search moves to "
-"parent widget"
+"If *dnd_accept* is not present or returns ``None``, search moves to parent "
+"widget"
 msgstr ""
+"Pokud *dnd_accept* není přítomen nebo vrátí ``None``, vyhledávání se přesune"
+" na nadřazený widget"
 
 #: ../../library/tkinter.dnd.rst:29
 msgid "If no target widget is found, then the target object is ``None``"
-msgstr ""
+msgstr "Pokud není nalezen žádný widget cíle, pak je cílový objekt ``None``"
 
 #: ../../library/tkinter.dnd.rst:31
 msgid "Call to *<old_target>.dnd_leave(source, event)*"
-msgstr ""
+msgstr "Volání *<old_target>.dnd_leave(source, event)*"
 
 #: ../../library/tkinter.dnd.rst:32
 msgid "Call to *<new_target>.dnd_enter(source, event)*"
-msgstr ""
+msgstr "Volání *<new_target>.dnd_enter(source, event)*"
 
 #: ../../library/tkinter.dnd.rst:33
 msgid "Call to *<target>.dnd_commit(source, event)* to notify of drop"
-msgstr ""
+msgstr "Volání *<target>.dnd_commit(source, event)* k oznámení pushšení"
 
 #: ../../library/tkinter.dnd.rst:34
-msgid "Call to *<source>.dnd_end(target, event)* to signal end of drag-and-drop"
+msgid ""
+"Call to *<source>.dnd_end(target, event)* to signal end of drag-and-drop"
 msgstr ""
+"Volání *<source>.dnd_end(target, event)* k signálu konce drag-and-drop"
 
 #: ../../library/tkinter.dnd.rst:39
 msgid ""
 "The *DndHandler* class handles drag-and-drop events tracking Motion and "
 "ButtonRelease events on the root of the event widget."
 msgstr ""
+"Třída *DndHandler* zpracovává sledování událostí drag-and-drop Motion a "
+"ButtonRelease na kořenu widgetu události."
 
 #: ../../library/tkinter.dnd.rst:44
 msgid "Cancel the drag-and-drop process."
-msgstr ""
+msgstr "Zrušit proces drag-and-drop."
 
 #: ../../library/tkinter.dnd.rst:48
 msgid "Execute end of drag-and-drop functions."
-msgstr ""
+msgstr "Proveč funkčníc konce drag-and-drop."
 
 #: ../../library/tkinter.dnd.rst:52
 msgid "Inspect area below mouse for target objects while drag is performed."
-msgstr ""
+msgstr "Inspikujte oblast pod myší pro cílové objekty během provedeného drag."
 
 #: ../../library/tkinter.dnd.rst:56
 msgid "Signal end of drag when the release pattern is triggered."
-msgstr ""
+msgstr "Signalizujte konec drag, když se vzor vyzválení spustí."
 
 #: ../../library/tkinter.dnd.rst:60
 msgid "Factory function for drag-and-drop process."
-msgstr ""
+msgstr "Tovární funkce pro proces drag-and-drop."
 
 #: ../../library/tkinter.dnd.rst:64
 msgid ":ref:`Bindings-and-Events`"
-msgstr ""
-
+msgstr ":ref:`Bindings-and-Events`"

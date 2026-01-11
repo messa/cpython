@@ -11,44 +11,51 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/platform.rst:2
 msgid ":mod:`!platform` ---  Access to underlying platform's identifying data"
 msgstr ""
+":mod:`!platform` --- Přístup k identifikačním datům podkladové platformy"
 
 #: ../../library/platform.rst:10
 msgid "**Source code:** :source:`Lib/platform.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/platform.py`"
 
 #: ../../library/platform.rst:16
 msgid ""
-"Specific platforms listed alphabetically, with Linux included in the Unix"
-" section."
+"Specific platforms listed alphabetically, with Linux included in the Unix "
+"section."
 msgstr ""
+"Konkrétní platformy jsou uvedeny abecedně, Linux je zahrnut v oddílu Unix."
 
 #: ../../library/platform.rst:21
 msgid "Cross platform"
-msgstr ""
+msgstr "Multiplatformní"
 
 #: ../../library/platform.rst:26
 msgid ""
-"Queries the given executable (defaults to the Python interpreter binary) "
-"for various architecture information."
+"Queries the given executable (defaults to the Python interpreter binary) for"
+" various architecture information."
 msgstr ""
+"Dotazuje daný spustitelný soubor (výchozího bude binární soubor interpretu "
+"Pythonu) na různé informace o architektuře."
 
 #: ../../library/platform.rst:29
 msgid ""
-"Returns a tuple ``(bits, linkage)`` which contain information about the "
-"bit architecture and the linkage format used for the executable. Both "
-"values are returned as strings."
+"Returns a tuple ``(bits, linkage)`` which contain information about the bit "
+"architecture and the linkage format used for the executable. Both values are"
+" returned as strings."
 msgstr ""
+"Vrací tuple ``(bits, linkage)`` obsahující informace o bitové architektuře a"
+" formátu propojení používaném pro spustitelný soubor. Obě hodnoty jsou "
+"vráceny jako řetězce."
 
 #: ../../library/platform.rst:33
 msgid ""
@@ -57,87 +64,116 @@ msgid ""
 "``sizeof(long)`` on Python version < 1.5.2) is used as indicator for the "
 "supported pointer size."
 msgstr ""
+"Hodnoty, které nelze určit, jsou vráceny jak je dáno parametrem presets. Je-"
+"li bits dán jako ``''``, je ``sizeof(pointer)`` (nebo ``sizeof(long)`` na "
+"Python verzi < 1.5.2) použit jako indikátor podporované velikosti pointeru."
 
 #: ../../library/platform.rst:38
 msgid ""
-"The function relies on the system's :file:`file` command to do the actual"
-" work. This is available on most if not all Unix  platforms and some non-"
-"Unix platforms and then only if the executable points to the Python "
-"interpreter.  Reasonable defaults are used when the above needs are not "
-"met."
+"The function relies on the system's :file:`file` command to do the actual "
+"work. This is available on most if not all Unix  platforms and some non-Unix"
+" platforms and then only if the executable points to the Python interpreter."
+"  Reasonable defaults are used when the above needs are not met."
 msgstr ""
+"Funkce se opírá o příkaz :file:`file` systému k provedení skutečné práce. "
+"Toto je dostupné na většině, pokud ne na všech, platformach Unix a na "
+"některých nichtunixových platformách, a pak pouze pokud spustitelný soubor "
+"odkazuje na interpret Pythonu. Rozumné výchozí hodnoty jsou používány, když "
+"nejsou splněny výše uvedené požadavky."
 
 #: ../../library/platform.rst:45
 msgid ""
-"On macOS (and perhaps other platforms), executable files may be universal"
-" files containing multiple architectures."
+"On macOS (and perhaps other platforms), executable files may be universal "
+"files containing multiple architectures."
 msgstr ""
+"Na macOS (a možná i na jiných platformách) mohou být spustitelné soubory "
+"univerzálními soubory obsahujícími více architektur."
 
 #: ../../library/platform.rst:48
 msgid ""
-"To get at the \"64-bitness\" of the current interpreter, it is more "
-"reliable to query the :data:`sys.maxsize` attribute::"
+"To get at the \"64-bitness\" of the current interpreter, it is more reliable"
+" to query the :data:`sys.maxsize` attribute::"
 msgstr ""
+"Aby bylo možné získat \"64-bitnost\" aktuálního interpretu, je "
+"spolehlivlejší dotazovat se na atribut :data:`sys.maxsize`:"
 
 #: ../../library/platform.rst:51
 msgid "is_64bits = sys.maxsize > 2**32"
-msgstr ""
+msgstr "is_64bits = sys.maxsize > 2**32"
 
 #: ../../library/platform.rst:56
 msgid ""
-"Returns the machine type, e.g. ``'AMD64'``. An empty string is returned "
-"if the value cannot be determined."
+"Returns the machine type, e.g. ``'AMD64'``. An empty string is returned if "
+"the value cannot be determined."
 msgstr ""
+"Vrací typ počítače, například ``'AMD64'``. Vrací se prázdný řetězec, pokud "
+"hodnotu nelze určit."
 
 #: ../../library/platform.rst:59
 msgid ""
 "The output is platform-dependent and may differ in casing and naming "
 "conventions."
 msgstr ""
+"Výstup je závislý na platformě a může se lišit v psaní a konvencích "
+"pojmenování."
 
 #: ../../library/platform.rst:64
 msgid ""
-"Returns the computer's network name (may not be fully qualified!). An "
-"empty string is returned if the value cannot be determined."
+"Returns the computer's network name (may not be fully qualified!). An empty "
+"string is returned if the value cannot be determined."
 msgstr ""
+"Vrací síťový název počítače (nemusí být plně kvalifikován!). Vrací se "
+"prázdný řetězec, pokud hodnotu nelze určit."
 
 #: ../../library/platform.rst:70
 msgid ""
 "Returns a single string identifying the underlying platform with as much "
 "useful information as possible."
 msgstr ""
+"Vrací jeden řetězec identifikující podkladovou platformu s co nejvíce "
+"užitečných informací."
 
 #: ../../library/platform.rst:73
 msgid ""
-"The output is intended to be *human readable* rather than machine "
-"parseable. It may look different on different platforms and this is "
-"intended."
+"The output is intended to be *human readable* rather than machine parseable."
+" It may look different on different platforms and this is intended."
 msgstr ""
+"Výstup je určen k tomu, aby byl *{čitelný lidí}* spolu s tím, aby byl "
+"analyzován počítačem. Nemusí vypadat stejně na různých platformách a to je "
+"zamýšleno."
 
 #: ../../library/platform.rst:76
 msgid ""
-"If *aliased* is true, the function will use aliases for various platforms"
-" that report system names which differ from their common names, for "
-"example SunOS will be reported as Solaris.  The :func:`system_alias` "
-"function is used to implement this."
+"If *aliased* is true, the function will use aliases for various platforms "
+"that report system names which differ from their common names, for example "
+"SunOS will be reported as Solaris.  The :func:`system_alias` function is "
+"used to implement this."
 msgstr ""
+"Pokud je *aliased* pravda, funkce bude používat aliasy pro různé platformy, "
+"které hláší názvy systému, které se liší od jejich běžných názvů, například "
+"SunOS bude hlášen jako Solaris. Funkce :func:`system_alias` se používá k "
+"implementaci tohoto."
 
 #: ../../library/platform.rst:81
 msgid ""
 "Setting *terse* to true causes the function to return only the absolute "
 "minimum information needed to identify the platform."
 msgstr ""
+"Nastavení *terse* na pravda způsobuje, že funkce vrací pouze absolutní "
+"minimální informace potřebné k identifikaci platformy."
 
 #: ../../library/platform.rst:84
 msgid ""
-"On macOS, the function now uses :func:`mac_ver`, if it returns a non-"
-"empty release string, to get the macOS version rather than the darwin "
-"version."
+"On macOS, the function now uses :func:`mac_ver`, if it returns a non-empty "
+"release string, to get the macOS version rather than the darwin version."
 msgstr ""
+"Na macOS funkce nyní používá :func:`mac_ver`, pokud vrací neprádzný řetězec "
+"verze, aby získala verzi macOS spolu s tím, aby zároveň získala verzi "
+"darwin."
 
 #: ../../library/platform.rst:92
 msgid "Returns the (real) processor name, e.g. ``'amdk6'``."
-msgstr ""
+msgstr "Vrací (skuteč ný) název procesoru, například ``'amdk6'``."
 
 #: ../../library/platform.rst:94
 msgid ""
@@ -145,103 +181,131 @@ msgid ""
 "many platforms do not provide this information or simply return the same "
 "value as for :func:`machine`.  NetBSD does this."
 msgstr ""
+"Vrací se prázdný řetězec, pokud hodnotu nelze určit. Pozornéte, že mnoho "
+"platformų tyto informace neposkytuje nebo jednomuše vrací stejnou hodnotu "
+"jako :func:`machine`. NetBSD to dělá."
 
 #: ../../library/platform.rst:101
 msgid ""
-"Returns a tuple ``(buildno, builddate)`` stating the Python build number "
-"and date as strings."
+"Returns a tuple ``(buildno, builddate)`` stating the Python build number and"
+" date as strings."
 msgstr ""
+"Vrací tuple ``(buildno, builddate)`` udající číslo a datum sestavení Pythonu"
+" jako řetězce."
 
 #: ../../library/platform.rst:107
 msgid "Returns a string identifying the compiler used for compiling Python."
-msgstr ""
+msgstr "Vrací řetězec identifikující kompilátor použitý k sestavení Pythonu."
 
 #: ../../library/platform.rst:112
 msgid "Returns a string identifying the Python implementation SCM branch."
-msgstr ""
+msgstr "Vrací řetězec identifikující větev SCM implementace Pythonu."
 
 #: ../../library/platform.rst:117
 msgid ""
 "Returns a string identifying the Python implementation. Possible return "
 "values are: 'CPython', 'IronPython', 'Jython', 'PyPy'."
 msgstr ""
+"Vrací řetězec identifikující implementaci Pythonu. Možné návraté hodnoty "
+"jsou: 'CPython', 'IronPython', 'Jython', 'PyPy'."
 
 #: ../../library/platform.rst:123
 msgid "Returns a string identifying the Python implementation SCM revision."
-msgstr ""
+msgstr "Vrací řetězec identifikující revizi SCM implementace Pythonu."
 
 #: ../../library/platform.rst:128
 msgid "Returns the Python version as string ``'major.minor.patchlevel'``."
-msgstr ""
+msgstr "Vrací verzi Pythonu jako řetězec ``'major.minor.patchlevel'``."
 
 #: ../../library/platform.rst:130
 msgid ""
-"Note that unlike the Python ``sys.version``, the returned value will "
-"always include the patchlevel (it defaults to 0)."
+"Note that unlike the Python ``sys.version``, the returned value will always "
+"include the patchlevel (it defaults to 0)."
 msgstr ""
+"Pozornéte, že na rozdíul ``sys.version`` Pythonu bude vrácená hodnota vždy "
+"obsahovat patchlevel (výchozího 0)."
 
 #: ../../library/platform.rst:136
 msgid ""
 "Returns the Python version as tuple ``(major, minor, patchlevel)`` of "
 "strings."
 msgstr ""
+"Vrací verzi Pythonu jako tuple ``(major, minor, patchlevel)`` řetězců."
 
 #: ../../library/platform.rst:138
 msgid ""
-"Note that unlike the Python ``sys.version``, the returned value will "
-"always include the patchlevel (it defaults to ``'0'``)."
+"Note that unlike the Python ``sys.version``, the returned value will always "
+"include the patchlevel (it defaults to ``'0'``)."
 msgstr ""
+"Pozornéte, že na rozdíul ``sys.version`` Pythonu bude vrácená hodnota vždy "
+"obsahovat patchlevel (výchozího ``'0'``)"
 
 #: ../../library/platform.rst:144
 msgid ""
-"Returns the system's release, e.g. ``'2.2.0'`` or ``'NT'``. An empty "
-"string is returned if the value cannot be determined."
+"Returns the system's release, e.g. ``'2.2.0'`` or ``'NT'``. An empty string "
+"is returned if the value cannot be determined."
 msgstr ""
+"Vrací verzi vydanjí systému, například ``'2.2.0'`` nebo ``'NT'``. Vrací se "
+"prázdný řetězec, pokud hodnotu nelze určit."
 
 #: ../../library/platform.rst:150
 msgid ""
-"Returns the system/OS name, such as ``'Linux'``, ``'Darwin'``, "
-"``'Java'``, ``'Windows'``. An empty string is returned if the value "
-"cannot be determined."
+"Returns the system/OS name, such as ``'Linux'``, ``'Darwin'``, ``'Java'``, "
+"``'Windows'``. An empty string is returned if the value cannot be "
+"determined."
 msgstr ""
+"Vrací název systému/OS, jakož ``'Linux'``, ``'Darwin'``, ``'Java'``, "
+"``'Windows'``. Vrací se prázdný řetězec, pokud hodnotu nelze určit."
 
 #: ../../library/platform.rst:153
 msgid ""
 "On iOS and Android, this returns the user-facing OS name (i.e, ``'iOS``, "
-"``'iPadOS'`` or ``'Android'``). To obtain the kernel name (``'Darwin'`` "
-"or ``'Linux'``), use :func:`os.uname`."
+"``'iPadOS'`` or ``'Android'``). To obtain the kernel name (``'Darwin'`` or "
+"``'Linux'``), use :func:`os.uname`."
 msgstr ""
+"Na iOS a Androidu vrací název OS příslušející uživateli (tj. ``'iOS'``, "
+"``'iPadOS'`` nebo ``'Android'``). Aby bylo možné získat název jádra "
+"(``'Darwin'`` nebo ``'Linux'``), použijte :func:`os.uname`."
 
 #: ../../library/platform.rst:159
 msgid ""
 "Returns ``(system, release, version)`` aliased to common marketing names "
-"used for some systems.  It also does some reordering of the information "
-"in some cases where it would otherwise cause confusion."
+"used for some systems.  It also does some reordering of the information in "
+"some cases where it would otherwise cause confusion."
 msgstr ""
+"Vrací ``(system, release, version)`` aliasován na běžné marketingové názvy "
+"používané pro některé systémy. Dělá také některé přesunování informací v "
+"některých příbřéh, kde by to jiňak móhlo způsobit záměnu."
 
 #: ../../library/platform.rst:166
 msgid ""
 "Returns the system's release version, e.g. ``'#3 on degas'``. An empty "
 "string is returned if the value cannot be determined."
 msgstr ""
+"Vrací verzi vydanjí systému, například ``'#3 on degas'``. Vrací se prázdný "
+"řetězec, pokud hodnotu nelze určit."
 
 #: ../../library/platform.rst:169
 msgid ""
-"On iOS and Android, this is the user-facing OS version. To obtain the "
-"Darwin or Linux kernel version, use :func:`os.uname`."
+"On iOS and Android, this is the user-facing OS version. To obtain the Darwin"
+" or Linux kernel version, use :func:`os.uname`."
 msgstr ""
+"Na iOS a Androidu je to verze OS příslušející uživateli. Aby bylo možné "
+"získat verzi jádra Darwin nebo Linux, použijte :func:`os.uname`."
 
 #: ../../library/platform.rst:174
 msgid ""
-"Fairly portable uname interface. Returns a "
-":func:`~collections.namedtuple` containing six attributes: "
-":attr:`system`, :attr:`node`, :attr:`release`, :attr:`version`, "
-":attr:`machine`, and :attr:`processor`."
+"Fairly portable uname interface. Returns a :func:`~collections.namedtuple` "
+"containing six attributes: :attr:`system`, :attr:`node`, :attr:`release`, "
+":attr:`version`, :attr:`machine`, and :attr:`processor`."
 msgstr ""
+"Poměrně přenosné rozhraní uname. Vrací :func:`~collections.namedtuple` "
+"obsahující šest atributů: :attr:`system`, :attr:`node`, :attr:`release`, "
+":attr:`version`, :attr:`machine` a :attr:`processor`."
 
 #: ../../library/platform.rst:178
 msgid ":attr:`processor` is resolved late, on demand."
-msgstr ""
+msgstr ":attr:`processor` je vyřešen pozdě, na védomií."
 
 #: ../../library/platform.rst:180
 msgid ""
@@ -249,87 +313,114 @@ msgid ""
 ":func:`os.uname`, where they are named :attr:`!sysname` and "
 ":attr:`!nodename`."
 msgstr ""
+"Pozornéte: první dva názvy atributů se liší od názvů prezentovaných "
+":func:`os.uname`, kde jsou pojmemnovvány :attr:`!sysname` a "
+":attr:`!nodename`."
 
 #: ../../library/platform.rst:184
 msgid "Entries which cannot be determined are set to ``''``."
-msgstr ""
+msgstr "Položky, které nelze určit, jsou nastaveny na ``''``."
 
 #: ../../library/platform.rst:186
 msgid "Result changed from a tuple to a :func:`~collections.namedtuple`."
-msgstr ""
+msgstr "Výsledek se změnil z n-tice na :func:`~collections.namedtuple`."
 
 #: ../../library/platform.rst:189
 msgid ":attr:`processor` is resolved late instead of immediately."
-msgstr ""
+msgstr ":attr:`processor` je vyřešen pozdě místo okamžitě."
 
 #: ../../library/platform.rst:194
 msgid ""
-"Clear out the internal cache of information, such as the :func:`uname`. "
-"This is typically useful when the platform's :func:`node` is changed by "
-"an external process and one needs to retrieve the updated value."
+"Clear out the internal cache of information, such as the :func:`uname`. This"
+" is typically useful when the platform's :func:`node` is changed by an "
+"external process and one needs to retrieve the updated value."
 msgstr ""
+"Vyčisti internní cache informací, jako je :func:`uname`. To je typicky "
+"užitečné, když je :func:`node` platformy změněn externím procesem a je třeba"
+" získat aktualizovanou hodnotu."
 
 #: ../../library/platform.rst:202
 msgid "Java platform"
-msgstr ""
+msgstr "Platforma Java"
 
 #: ../../library/platform.rst:207
 msgid "Version interface for Jython."
-msgstr ""
+msgstr "Rozhraní verze pro Jython."
 
 #: ../../library/platform.rst:209
 msgid ""
-"Returns a tuple ``(release, vendor, vminfo, osinfo)`` with *vminfo* being"
-" a tuple ``(vm_name, vm_release, vm_vendor)`` and *osinfo* being a tuple "
-"``(os_name, os_version, os_arch)``. Values which cannot be determined are"
-" set to the defaults given as parameters (which all default to ``''``)."
+"Returns a tuple ``(release, vendor, vminfo, osinfo)`` with *vminfo* being a "
+"tuple ``(vm_name, vm_release, vm_vendor)`` and *osinfo* being a tuple "
+"``(os_name, os_version, os_arch)``. Values which cannot be determined are "
+"set to the defaults given as parameters (which all default to ``''``)."
 msgstr ""
+"Vrací tuple ``(release, vendor, vminfo, osinfo)`` s *vminfo* jako tuple "
+"``(vm_name, vm_release, vm_vendor)`` a *osinfo* jako tuple ``(os_name, "
+"os_version, os_arch)``. Hodnoty, které nelze určit, jsou nastaveny na "
+"výchozí hodnoty dané jako parametry (které všechny výchozí ``''``)."
 
 #: ../../library/platform.rst:214
 msgid ""
-"It was largely untested, had a confusing API, and was only useful for "
-"Jython support."
+"It was largely untested, had a confusing API, and was only useful for Jython"
+" support."
 msgstr ""
+"Bylo to málo testováno, mělo z mátící rozhraní a bylo užitečné pouze pro "
+"podporu Jythonu."
 
 #: ../../library/platform.rst:220
 msgid "Windows platform"
-msgstr ""
+msgstr "Platforma Windows"
 
 #: ../../library/platform.rst:225
 msgid ""
-"Get additional version information from the Windows Registry and return a"
-" tuple ``(release, version, csd, ptype)`` referring to OS release, "
-"version number, CSD level (service pack) and OS type (multi/single "
-"processor). Values which cannot be determined are set to the defaults "
-"given as parameters (which all default to an empty string)."
+"Get additional version information from the Windows Registry and return a "
+"tuple ``(release, version, csd, ptype)`` referring to OS release, version "
+"number, CSD level (service pack) and OS type (multi/single processor). "
+"Values which cannot be determined are set to the defaults given as "
+"parameters (which all default to an empty string)."
 msgstr ""
+"Získá doplňující informace o verzi z registru Windows a vrací tuple "
+"``(release, version, csd, ptype)`` odkazující na vydanjí OS, číslo verze, "
+"úroveň CSD (servisní balga) a typ OS (multi/single processor). Hodnoty, "
+"které nelze určit, jsou nastaveny na výchozí hodnoty dané jako parametry "
+"(které všechny výchozí na prázdný řetězec)."
 
 #: ../../library/platform.rst:231
 msgid ""
 "As a hint: *ptype* is ``'Uniprocessor Free'`` on single processor NT "
 "machines and ``'Multiprocessor Free'`` on multi processor machines. The "
-"``'Free'`` refers to the OS version being free of debugging code. It "
-"could also state ``'Checked'`` which means the OS version uses debugging "
-"code, i.e. code that checks arguments, ranges, etc."
+"``'Free'`` refers to the OS version being free of debugging code. It could "
+"also state ``'Checked'`` which means the OS version uses debugging code, "
+"i.e. code that checks arguments, ranges, etc."
 msgstr ""
+"Jako návmr: *ptype* je ``'Uniprocessor Free'`` na jednoprocesorových NT "
+"počítačch a ``'Multiprocessor Free'`` na viceprocesorových počítačch. "
+"``'Free'`` odkazuje na verzi OS bez kódu pro ladění. Mohlo by to také řící "
+"``'Checked'``, což znamná, že verze OS používá kód pro ladění, tj. kód, "
+"který kontroluje argumenty, rozsahy, atd."
 
 #: ../../library/platform.rst:239
 msgid ""
-"Returns a string representing the current Windows edition, or ``None`` if"
-" the value cannot be determined.  Possible values include but are not "
-"limited to ``'Enterprise'``, ``'IoTUAP'``, ``'ServerStandard'``, and "
+"Returns a string representing the current Windows edition, or ``None`` if "
+"the value cannot be determined.  Possible values include but are not limited"
+" to ``'Enterprise'``, ``'IoTUAP'``, ``'ServerStandard'``, and "
 "``'nanoserver'``."
 msgstr ""
+"Vrací řetězec reprezentující aktuální edici Windows, nebo ``None`` pokud "
+"hodnotu nelze určit. Možné hodnoty zahrnují, ale nejsou omezeny na "
+"``'Enterprise'``, ``'IoTUAP'``, ``'ServerStandard'`` a ``'nanoserver'``."
 
 #: ../../library/platform.rst:247
 msgid ""
-"Return ``True`` if the Windows edition returned by :func:`win32_edition` "
-"is recognized as an IoT edition."
+"Return ``True`` if the Windows edition returned by :func:`win32_edition` is "
+"recognized as an IoT edition."
 msgstr ""
+"Vrátí ``True``, pokud je edice Windows vrácená :func:`win32_edition` "
+"rozpoznána jako IoT edice."
 
 #: ../../library/platform.rst:254
 msgid "macOS platform"
-msgstr ""
+msgstr "Platforma macOS"
 
 #: ../../library/platform.rst:258
 msgid ""
@@ -337,60 +428,76 @@ msgid ""
 "versioninfo, machine)`` with *versioninfo* being a tuple ``(version, "
 "dev_stage, non_release_version)``."
 msgstr ""
+"Získá informace o verzi macOS a vrací je jako tuple ``(release, versioninfo,"
+" machine)`` s *versioninfo* jako tuple ``(version, dev_stage, "
+"non_release_version)``."
 
 #: ../../library/platform.rst:262
 msgid ""
-"Entries which cannot be determined are set to ``''``.  All tuple entries "
-"are strings."
+"Entries which cannot be determined are set to ``''``.  All tuple entries are"
+" strings."
 msgstr ""
+"Položky, které nelze určit, jsou nastaveny na ``''``. Všechny položky n-tice"
+" jsou řetězce."
 
 #: ../../library/platform.rst:266
 msgid "iOS platform"
-msgstr ""
+msgstr "Platforma iOS"
 
 #: ../../library/platform.rst:270
 msgid ""
 "Get iOS version information and return it as a "
 ":func:`~collections.namedtuple` with the following attributes:"
 msgstr ""
+"Získá informace o verzi iOS a vrací je jako :func:`~collections.namedtuple` "
+"s následujícími atributy:"
 
 #: ../../library/platform.rst:273
 msgid "``system`` is the OS name; either ``'iOS'`` or ``'iPadOS'``."
-msgstr ""
+msgstr "``system`` je název OS; buď ``'iOS'`` nebo ``'iPadOS'``."
 
 #: ../../library/platform.rst:274
 msgid "``release`` is the iOS version number as a string (e.g., ``'17.2'``)."
-msgstr ""
+msgstr "``release`` je číslo verze iOS jako řetězec (např. ``'17.2'``)."
 
 #: ../../library/platform.rst:275
 msgid ""
 "``model`` is the device model identifier; this will be a string like "
 "``'iPhone13,2'`` for a physical device, or ``'iPhone'`` on a simulator."
 msgstr ""
+"``model`` je identifikátor modelu zařízeni; bude to řetězec jako "
+"``'iPhone13,2'`` pro fyzické zařízeni, nebo ``'iPhone'`` na simulujician."
 
 #: ../../library/platform.rst:277
 msgid ""
 "``is_simulator`` is a boolean describing if the app is running on a "
 "simulator or a physical device."
 msgstr ""
+"``is_simulator`` je booleovská hodnota popisující, zda je aplikace spouštěna"
+" na simulujician nebo fyzickém zařízeni."
 
 #: ../../library/platform.rst:280
 msgid ""
 "Entries which cannot be determined are set to the defaults given as "
 "parameters."
 msgstr ""
+"Položky, které nelze určit, jsou nastaveny na výchozí hodnoty dané jako "
+"parametry."
 
 #: ../../library/platform.rst:285
 msgid "Unix platforms"
-msgstr ""
+msgstr "Platformy Unix"
 
 #: ../../library/platform.rst:289
 msgid ""
 "Tries to determine the libc version against which the file executable "
-"(defaults to the Python interpreter) is linked.  Returns a tuple of "
-"strings ``(lib, version)`` which default to the given parameters in case "
-"the lookup fails."
+"(defaults to the Python interpreter) is linked.  Returns a tuple of strings "
+"``(lib, version)`` which default to the given parameters in case the lookup "
+"fails."
 msgstr ""
+"Pokusí se určit verzi libc, proti které je spustitelný soubor (výchozího "
+"bude interpret Pythonu) propojen. Vrací tuple řetězců ``(lib, version)``, "
+"které se v případě selhgní vyhledávání vrátí na dané parametry."
 
 #: ../../library/platform.rst:293
 msgid ""
@@ -398,50 +505,68 @@ msgid ""
 "versions add symbols to the executable is probably only usable for "
 "executables compiled using :program:`gcc`."
 msgstr ""
+"Pozornéte, že tato funkce má hlubokou znalost o tom, jak různé verze libc "
+"přidávají symboly do spustitelného souboru a je pravděpodobně použitelná "
+"pouze pro spustitelné soubory kompilované pomocí :program:`gcc`."
 
 #: ../../library/platform.rst:297
 msgid "The file is read and scanned in chunks of *chunksize* bytes."
-msgstr ""
+msgstr "Soubor je čten a prohledáván v částech *chunksize* bajtů."
 
 #: ../../library/platform.rst:301
 msgid "Linux platforms"
-msgstr ""
+msgstr "Platformy Linux"
 
 #: ../../library/platform.rst:305
 msgid ""
-"Get operating system identification from ``os-release`` file and return "
-"it as a dict. The ``os-release`` file is a `freedesktop.org standard "
-"<https://www.freedesktop.org/software/systemd/man/os-release.html>`_ and "
-"is available in most Linux distributions. A noticeable exception is "
-"Android and Android-based distributions."
+"Get operating system identification from ``os-release`` file and return it "
+"as a dict. The ``os-release`` file is a `freedesktop.org standard "
+"<https://www.freedesktop.org/software/systemd/man/os-release.html>`_ and is "
+"available in most Linux distributions. A noticeable exception is Android and"
+" Android-based distributions."
 msgstr ""
+"Získá identifikáci operačního systému ze souboru ``os-release`` a vrací ji "
+"jako dict. Soubor ``os-release`` je `standard freedesktop.org "
+"<https://www.freedesktop.org/software/systemd/man/os-release.html>`_ a je "
+"dostupný ve většině distribucí Linuxu. Nabéhnutou výjimkou je Android a "
+"distribuce založené na Androidu."
 
 #: ../../library/platform.rst:311
 msgid ""
 "Raises :exc:`OSError` or subclass when neither ``/etc/os-release`` nor "
 "``/usr/lib/os-release`` can be read."
 msgstr ""
+"Vyvolá :exc:`OSError` nebo podtřídu, když ani ``/etc/os-release`` ani "
+"``/usr/lib/os-release`` nelze přečíst."
 
 #: ../../library/platform.rst:314
 msgid ""
 "On success, the function returns a dictionary where keys and values are "
 "strings. Values have their special characters like ``\"`` and ``$`` "
 "unquoted. The fields ``NAME``, ``ID``, and ``PRETTY_NAME`` are always "
-"defined according to the standard. All other fields are optional. Vendors"
-" may include additional fields."
+"defined according to the standard. All other fields are optional. Vendors "
+"may include additional fields."
 msgstr ""
+"Při úspěchu funkce vrací slovník, kde klíče a hodnoty jsou řetězce. Hodnoty "
+"mají své speciální znaky jako ``\\\"`` a ``$`` bez uvozovek. Pole ``NAME``, "
+"``ID`` a ``PRETTY_NAME`` jsou vždy definovány podle standardu. Všechna "
+"ostatní pole jsou volitelná. Prodejci mohou zahrnout další pole."
 
 #: ../../library/platform.rst:320
 msgid ""
 "Note that fields like ``NAME``, ``VERSION``, and ``VARIANT`` are strings "
-"suitable for presentation to users. Programs should use fields like "
-"``ID``, ``ID_LIKE``, ``VERSION_ID``, or ``VARIANT_ID`` to identify Linux "
+"suitable for presentation to users. Programs should use fields like ``ID``, "
+"``ID_LIKE``, ``VERSION_ID``, or ``VARIANT_ID`` to identify Linux "
 "distributions."
 msgstr ""
+"Pozornéte, že pole jako ``NAME``, ``VERSION`` a ``VARIANT`` jsou řetězce "
+"vhodné k prezentaci uživatelům. Programy by měly používat pole jako ``ID``, "
+"``ID_LIKE``, ``VERSION_ID`` nebo ``VARIANT_ID`` k identifikaci distribucí "
+"Linuxu."
 
 #: ../../library/platform.rst:325
 msgid "Example::"
-msgstr ""
+msgstr "Příklad::"
 
 #: ../../library/platform.rst:327
 msgid ""
@@ -453,34 +578,49 @@ msgid ""
 "        ids.extend(info[\"ID_LIKE\"].split())\n"
 "    return ids"
 msgstr ""
+"def get_like_distro():\n"
+"    info = platform.freedesktop_os_release()\n"
+"    ids = [info[\"ID\"]]\n"
+"    if \"ID_LIKE\" in info:\n"
+"        # ids are space separated and ordered by precedence\n"
+"        ids.extend(info[\"ID_LIKE\"].split())\n"
+"    return ids"
 
 #: ../../library/platform.rst:339
 msgid "Android platform"
-msgstr ""
+msgstr "Platforma Android"
 
 #: ../../library/platform.rst:344
 msgid ""
-"Get Android device information. Returns a :func:`~collections.namedtuple`"
-" with the following attributes. Values which cannot be determined are set"
-" to the defaults given as parameters."
+"Get Android device information. Returns a :func:`~collections.namedtuple` "
+"with the following attributes. Values which cannot be determined are set to "
+"the defaults given as parameters."
 msgstr ""
+"Získá informace o Android zařízeni. Vrací :func:`~collections.namedtuple` s "
+"následujícími atributy. Hodnoty, které nelze určit, jsou nastaveny na "
+"výchozí hodnoty dané jako parametry."
 
 #: ../../library/platform.rst:348
 msgid "``release`` - Android version, as a string (e.g. ``\"14\"``)."
-msgstr ""
+msgstr "``release`` - verze Androidu jako řetězec (např. ``\"14\"``)."
 
 #: ../../library/platform.rst:350
 msgid ""
-"``api_level`` - API level of the running device, as an integer (e.g. "
-"``34`` for Android 14). To get the API level which Python was built "
-"against, see :func:`sys.getandroidapilevel`."
+"``api_level`` - API level of the running device, as an integer (e.g. ``34`` "
+"for Android 14). To get the API level which Python was built against, see "
+":func:`sys.getandroidapilevel`."
 msgstr ""
+"``api_level`` - úroveň API běžjícího zařízeni jako celoké číslo (např. "
+"``34`` pro Android 14). Chcete-li získat úroveň API, proti kterému byl "
+"Python sestaven, viz :func:`sys.getandroidapilevel`."
 
 #: ../../library/platform.rst:354
 msgid ""
 "``manufacturer`` - `Manufacturer name "
 "<https://developer.android.com/reference/android/os/Build#MANUFACTURER>`__."
 msgstr ""
+"``manufacturer`` - `Název výrobce "
+"<https://developer.android.com/reference/android/os/Build#MANUFACTURER>`__."
 
 #: ../../library/platform.rst:357
 msgid ""
@@ -488,6 +628,9 @@ msgid ""
 "<https://developer.android.com/reference/android/os/Build#MODEL>`__ – "
 "typically the marketing name or model number."
 msgstr ""
+"``model`` - `Název modelu "
+"<https://developer.android.com/reference/android/os/Build#MODEL>`__ - "
+"obvykle název prodejného jména nebo číslo modelu."
 
 #: ../../library/platform.rst:361
 msgid ""
@@ -495,33 +638,42 @@ msgid ""
 "<https://developer.android.com/reference/android/os/Build#DEVICE>`__ – "
 "typically the model number or a codename."
 msgstr ""
+"``device`` - `Název zařízeni "
+"<https://developer.android.com/reference/android/os/Build#DEVICE>`__ - "
+"obvykle číslo modelu nebo kód."
 
 #: ../../library/platform.rst:365
 msgid ""
-"``is_emulator`` - ``True`` if the device is an emulator; ``False`` if "
-"it's a physical device."
+"``is_emulator`` - ``True`` if the device is an emulator; ``False`` if it's a"
+" physical device."
 msgstr ""
+"``is_emulator`` - ``True`` pokud je zařízeni emulátor; ``False`` pokud je to"
+" fyzické zařízeni."
 
 #: ../../library/platform.rst:368
 msgid ""
 "Google maintains a `list of known model and device names "
 "<https://storage.googleapis.com/play_public/supported_devices.html>`__."
 msgstr ""
+"Google spravuje `seznam známých názvů modelů a zařízení "
+"<https://storage.googleapis.com/play_public/supported_devices.html>`__."
 
 #: ../../library/platform.rst:376
 msgid "Command-line usage"
-msgstr ""
+msgstr "Použití příkazové řádky"
 
 #: ../../library/platform.rst:378
 msgid ""
-":mod:`platform` can also be invoked directly using the :option:`-m` "
-"switch of the interpreter::"
+":mod:`platform` can also be invoked directly using the :option:`-m` switch "
+"of the interpreter::"
 msgstr ""
+":mod:`platform` může být také vyvolán přímo pomocí přepnače :option:`-m` "
+"interpretu::"
 
 #: ../../library/platform.rst:381
 #, python-brace-format
 msgid "python -m platform [--terse] [--nonaliased] [{nonaliased,terse} ...]"
-msgstr ""
+msgstr "python -m platform [--terse] [--nonaliased] [{nonaliased,terse} ...]"
 
 #: ../../library/platform.rst:383
 msgid "The following options are accepted:"
@@ -529,15 +681,15 @@ msgstr ""
 
 #: ../../library/platform.rst:389
 msgid ""
-"Print terse information about the platform. This is equivalent to calling"
-" :func:`platform.platform` with the *terse* argument set to ``True``."
+"Print terse information about the platform. This is equivalent to calling "
+":func:`platform.platform` with the *terse* argument set to ``True``."
 msgstr ""
 
 #: ../../library/platform.rst:394
 msgid ""
 "Print platform information without system/OS name aliasing. This is "
-"equivalent to calling :func:`platform.platform` with the *aliased* "
-"argument set to ``True``."
+"equivalent to calling :func:`platform.platform` with the *aliased* argument "
+"set to ``True``."
 msgstr ""
 
 #: ../../library/platform.rst:398
@@ -546,4 +698,3 @@ msgid ""
 "``nonaliased``) to explicitly control the output format. These behave "
 "similarly to their corresponding options."
 msgstr ""
-

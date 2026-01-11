@@ -11,161 +11,177 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/tkinter.font.rst:2
 msgid ":mod:`!tkinter.font` --- Tkinter font wrapper"
-msgstr ""
+msgstr ":mod:`!tkinter.font` --- obalový modul Tkinter pro fonty"
 
 #: ../../library/tkinter.font.rst:8
 msgid "**Source code:** :source:`Lib/tkinter/font.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/tkinter/font.py`"
 
 #: ../../library/tkinter.font.rst:12
 msgid ""
-"The :mod:`tkinter.font` module provides the :class:`Font` class for "
-"creating and using named fonts."
+"The :mod:`tkinter.font` module provides the :class:`Font` class for creating"
+" and using named fonts."
 msgstr ""
+"Modul :mod:`tkinter.font` poskytuje třídu :class:`Font` pro vytváření a "
+"používání pojmenovaných fontů."
 
 #: ../../library/tkinter.font.rst:15
 msgid "The different font weights and slants are:"
-msgstr ""
+msgstr "Různé váhy a sklon fontů jsou:"
 
 #: ../../library/tkinter.font.rst:24
 msgid ""
-"The :class:`Font` class represents a named font. *Font* instances are "
-"given unique names and can be specified by their family, size, and style "
-"configuration. Named fonts are Tk's method of creating and identifying "
-"fonts as a single object, rather than specifying a font by its attributes"
-" with each occurrence."
+"The :class:`Font` class represents a named font. *Font* instances are given "
+"unique names and can be specified by their family, size, and style "
+"configuration. Named fonts are Tk's method of creating and identifying fonts"
+" as a single object, rather than specifying a font by its attributes with "
+"each occurrence."
 msgstr ""
+"Třída :class:`Font` představuje pojmenovaný font. Instance *Font* mají "
+"jedinečné názvy a lze je specifikovat svým rodinným kódem, velikostí a "
+"konfigurací stylu. Pojmenované fonty jsou Tk způsob vytváření a identifikace"
+" fontů jako jednoho objektu, spíše než specifikace fontu jeho atributy při "
+"každém výskytu."
 
 #: ../../library/tkinter.font.rst:30
 msgid "arguments:"
-msgstr ""
+msgstr "argumenty:"
 
 #: ../../library/tkinter.font.rst
 msgid "*font* - font specifier tuple (family, size, options)"
-msgstr ""
+msgstr "*font* - n-tice specifikující font (rodina, velikost, možnosti)"
 
 #: ../../library/tkinter.font.rst
 msgid "*name* - unique font name"
-msgstr ""
+msgstr "*name* - jedinitečný název fontu"
 
 #: ../../library/tkinter.font.rst
 msgid "*exists* - self points to existing named font if true"
 msgstr ""
+"*exists* - self odkazuje na existující pojmenovaný font, pokud je hodnota "
+"true"
 
 #: ../../library/tkinter.font.rst:36
 msgid "additional keyword options (ignored if *font* is specified):"
 msgstr ""
+"další možnosti klíčových slov (jsou ignorovány, pokud je zadán *font*):"
 
 #: ../../library/tkinter.font.rst
 msgid "*family* - font family i.e. Courier, Times"
-msgstr ""
+msgstr "*family* - rodina fontu, např. Courier, Times"
 
 #: ../../library/tkinter.font.rst
 msgid "*size* - font size"
-msgstr ""
+msgstr "*size* - velikost fontu"
 
 #: ../../library/tkinter.font.rst
 msgid "If *size* is positive it is interpreted as size in points."
 msgstr ""
+"Pokud je *size* kladné číslo, je interpretována jako velikost v bodech."
 
 #: ../../library/tkinter.font.rst
 msgid "If *size* is a negative number its absolute value is treated"
-msgstr ""
+msgstr "Pokud je *size* záporné číslo, jeho absolutní hodnota je zpracována"
 
 #: ../../library/tkinter.font.rst
 msgid "as size in pixels."
-msgstr ""
+msgstr "jako velikost v pixelech."
 
 #: ../../library/tkinter.font.rst
 msgid "*weight* - font emphasis (NORMAL, BOLD)"
-msgstr ""
+msgstr "*weight* - zvýraznění fontu (NORMAL, BOLD)"
 
 #: ../../library/tkinter.font.rst
 msgid "*slant* - ROMAN, ITALIC"
-msgstr ""
+msgstr "*slant* - ROMAN, ITALIC"
 
 #: ../../library/tkinter.font.rst
 msgid "*underline* - font underlining (0 - none, 1 - underline)"
-msgstr ""
+msgstr "*underline* - podtržení fontu (0 - nic, 1 - podtržení)"
 
 #: ../../library/tkinter.font.rst
 msgid "*overstrike* - font strikeout (0 - none, 1 - strikeout)"
-msgstr ""
+msgstr "*overstrike* - přeškrtnutí fontu (0 - nic, 1 - přeškrtnutí)"
 
 #: ../../library/tkinter.font.rst:50
 msgid "Return the attributes of the font."
-msgstr ""
+msgstr "Vrátí atributy fontu."
 
 #: ../../library/tkinter.font.rst:54
 msgid "Retrieve an attribute of the font."
-msgstr ""
+msgstr "Získa atribut fontu."
 
 #: ../../library/tkinter.font.rst:58
 msgid "Modify attributes of the font."
-msgstr ""
+msgstr "Změní atributy fontu."
 
 #: ../../library/tkinter.font.rst:62
 msgid "Return new instance of the current font."
-msgstr ""
+msgstr "Vrátí novou instanci aktuálního fontu."
 
 #: ../../library/tkinter.font.rst:66
 msgid ""
-"Return amount of space the text would occupy on the specified display "
-"when formatted in the current font. If no display is specified then the "
-"main application window is assumed."
+"Return amount of space the text would occupy on the specified display when "
+"formatted in the current font. If no display is specified then the main "
+"application window is assumed."
 msgstr ""
+"Vrátí množství místa, které by text zabíral na zadaném displeji, pokud by "
+"byl formátován v aktuálním fontu. Pokud není zadán žádný displej, "
+"předpokládá se hlavní okno aplikace."
 
 #: ../../library/tkinter.font.rst:72
 msgid "Return font-specific data. Options include:"
-msgstr ""
+msgstr "Vrátí data specifická pro font. Možnosti zahrnují:"
 
 #: ../../library/tkinter.font.rst:75
 msgid "*ascent* - distance between baseline and highest point that a"
-msgstr ""
+msgstr "*ascent* - vzdálenost mezi základnou a nejvlnjším bodem, který"
 
 #: ../../library/tkinter.font.rst:76 ../../library/tkinter.font.rst:79
 msgid "character of the font can occupy"
-msgstr ""
+msgstr "znak fontu může zabírat"
 
 #: ../../library/tkinter.font.rst:78
 msgid "*descent* - distance between baseline and lowest point that a"
-msgstr ""
+msgstr "*descent* - vzdálenost mezi základnou a nejnižším bodem, který"
 
 #: ../../library/tkinter.font.rst:81
 msgid "*linespace* - minimum vertical separation necessary between any two"
 msgstr ""
+"*linespace* - minimální vertikální oddělení necess potorné mezi jakákoliv"
 
 #: ../../library/tkinter.font.rst:82
 msgid "characters of the font that ensures no vertical overlap between lines."
 msgstr ""
+"dva znaky fontu, které zajistvují, aby nedocházelo k vertikálnímu překrytí "
+"mezi řádky."
 
 #: ../../library/tkinter.font.rst:84
 msgid "*fixed* - 1 if font is fixed-width else 0"
-msgstr ""
+msgstr "*fixed* - 1, pokud je font s pevnou šířkou, jinak 0"
 
 #: ../../library/tkinter.font.rst:88
 msgid "Return the different font families."
-msgstr ""
+msgstr "Vrátí různé rodiny fontů."
 
 #: ../../library/tkinter.font.rst:92
 msgid "Return the names of defined fonts."
-msgstr ""
+msgstr "Vrátí názvy definovaných fontů."
 
 #: ../../library/tkinter.font.rst:96
 msgid "Return a :class:`Font` representation of a tk named font."
-msgstr ""
+msgstr "Vrátí reprezentaci :class:`Font` pojmenovaného tk fontu."
 
 #: ../../library/tkinter.font.rst:98
 msgid "The *root* parameter was added."
-msgstr ""
-
+msgstr "Parametr *root* byl přidán."

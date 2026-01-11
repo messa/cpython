@@ -11,63 +11,77 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/urllib.error.rst:2
 msgid ":mod:`!urllib.error` --- Exception classes raised by urllib.request"
 msgstr ""
+":mod:`!urllib.error` --- Třídy výjimek vyvolané modulem urllib.request"
 
 #: ../../library/urllib.error.rst:10
 msgid "**Source code:** :source:`Lib/urllib/error.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/urllib/error.py`"
 
 #: ../../library/urllib.error.rst:14
 msgid ""
-"The :mod:`urllib.error` module defines the exception classes for "
-"exceptions raised by :mod:`urllib.request`.  The base exception class is "
+"The :mod:`urllib.error` module defines the exception classes for exceptions "
+"raised by :mod:`urllib.request`.  The base exception class is "
 ":exc:`URLError`."
 msgstr ""
+"Modul :mod:`urllib.error` definuje třídy výjimek pro výjimky vyvolané "
+"modulem :mod:`urllib.request`. Základní třídou výjimky je :exc:`URLError`."
 
 #: ../../library/urllib.error.rst:17
-msgid "The following exceptions are raised by :mod:`urllib.error` as appropriate:"
+msgid ""
+"The following exceptions are raised by :mod:`urllib.error` as appropriate:"
 msgstr ""
+"Následující výjimky jsou vyvolány modulem :mod:`urllib.error` podle situace:"
 
 #: ../../library/urllib.error.rst:21
 msgid ""
-"The handlers raise this exception (or derived exceptions) when they run "
-"into a problem.  It is a subclass of :exc:`OSError`."
+"The handlers raise this exception (or derived exceptions) when they run into"
+" a problem.  It is a subclass of :exc:`OSError`."
 msgstr ""
+"Handlery vyvolávají tuto výjimku (nebo odvozené výjimky), když narazí na "
+"problém. Je to podtřída :exc:`OSError`."
 
 #: ../../library/urllib.error.rst:26
 msgid ""
-"The reason for this error.  It can be a message string or another "
-"exception instance."
+"The reason for this error.  It can be a message string or another exception "
+"instance."
 msgstr ""
+"Důvod pro tuto chybu. Může to být řetězec zprávy nebo instance jiné výjimky."
 
 #: ../../library/urllib.error.rst:29
 msgid ""
 ":exc:`URLError` used to be a subtype of :exc:`IOError`, which is now an "
 "alias of :exc:`OSError`."
 msgstr ""
+":exc:`URLError` bývala podtypem :exc:`IOError`, který je nyní aliasem "
+":exc:`OSError`."
 
 #: ../../library/urllib.error.rst:36
 msgid ""
 "Though being an exception (a subclass of :exc:`URLError`), an "
 ":exc:`HTTPError` can also function as a non-exceptional file-like return "
-"value (the same thing that :func:`~urllib.request.urlopen` returns).  "
-"This is useful when handling exotic HTTP errors, such as requests for "
+"value (the same thing that :func:`~urllib.request.urlopen` returns).  This "
+"is useful when handling exotic HTTP errors, such as requests for "
 "authentication."
 msgstr ""
+"Ačkoliv je :exc:`HTTPError` výjimkou (podtřídou :exc:`URLError`), může také "
+"fungovat jako neobvyklá návratová hodnota podobná souboru (totéž, co vrací "
+":func:`~urllib.request.urlopen`). To je užitečné při zpracování exotických "
+"chyb HTTP, jako jsou požadavky na ověření."
 
 #: ../../library/urllib.error.rst:44
 msgid "Contains the request URL. An alias for *filename* attribute."
-msgstr ""
+msgstr "Obsahuje URL požadavku. Je aliasem atributu *filename*."
 
 #: ../../library/urllib.error.rst:49
 msgid ""
@@ -75,22 +89,29 @@ msgid ""
 "corresponds to a value found in the dictionary of codes as found in "
 ":attr:`http.server.BaseHTTPRequestHandler.responses`."
 msgstr ""
+"Stavový kód HTTP definovaný v :rfc:`2616`. Tato číselná hodnota odpovídá "
+"hodnotě v slovníku kódů, který se nachází v "
+":attr:`http.server.BaseHTTPRequestHandler.responses`."
 
 #: ../../library/urllib.error.rst:55
 msgid ""
-"This is usually a string explaining the reason for this error. An alias "
-"for *msg* attribute."
+"This is usually a string explaining the reason for this error. An alias for "
+"*msg* attribute."
 msgstr ""
+"Obvykle to je řetězec vysvětlující důvod této chyby. Je aliasem atributu "
+"*msg*."
 
 #: ../../library/urllib.error.rst:60
 msgid ""
 "The HTTP response headers for the HTTP request that caused the "
 ":exc:`HTTPError`. An alias for *hdrs* attribute."
 msgstr ""
+"HTTP záhlaví pro HTTP požadavek, který způsobil :exc:`HTTPError`. Je aliasem"
+" atributu *hdrs*."
 
 #: ../../library/urllib.error.rst:68
 msgid "A file-like object where the HTTP error body can be read from."
-msgstr ""
+msgstr "Objekt podobný souboru, ze kterého lze číst telo chyby HTTP."
 
 #: ../../library/urllib.error.rst:72
 msgid ""
@@ -98,8 +119,10 @@ msgid ""
 "function detects that the amount of the downloaded data is less than the "
 "expected amount (given by the *Content-Length* header)."
 msgstr ""
+"Tato výjimka je vyvolána, když funkce :func:`~urllib.request.urlretrieve` "
+"detekuje, že množství stažených dat je menší než očekávané množství (dáno "
+"záhlavím *Content-Length*)."
 
 #: ../../library/urllib.error.rst:79
 msgid "The downloaded (and supposedly truncated) data."
-msgstr ""
-
+msgstr "Stažená (a presumě zkrácená) data."

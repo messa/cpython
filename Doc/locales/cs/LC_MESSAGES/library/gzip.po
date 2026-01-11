@@ -11,27 +11,30 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/gzip.rst:2
 msgid ":mod:`!gzip` --- Support for :program:`gzip` files"
-msgstr ""
+msgstr ":mod:`!gzip` --- Podpora pro soubory :program:`gzip`"
 
 #: ../../library/gzip.rst:7
 msgid "**Source code:** :source:`Lib/gzip.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/gzip.py`"
 
 #: ../../library/gzip.rst:11
 msgid ""
 "This module provides a simple interface to compress and decompress files "
 "just like the GNU programs :program:`gzip` and :program:`gunzip` would."
 msgstr ""
+"Tento modul poskytuje jednoduchý interface pro kompresi a dekompresi "
+"souborů, stejně jako by to dělaly programy GNU :program:`gzip` a "
+":program:`gunzip`."
 
 #: ../../includes/optional-module.rst:1
 msgid ""
@@ -40,44 +43,58 @@ msgid ""
 "provided Python to you). If you are the distributor, see :ref:`optional-"
 "module-requirements`."
 msgstr ""
+"Toto je :term:`volitelný modul`. Pokud chybí ve vaší kopii CPythonu, "
+"hledejte dokumentaci od vašeho distributora (tj. od toho, kdo vám poskytl "
+"Python). Pokud jste vy distributor, viz :ref:`optional-module-requirements`."
 
 #: ../../library/gzip.rst:16
 msgid "The data compression is provided by the :mod:`zlib` module."
-msgstr ""
+msgstr "Kompresi dat zajišťuje modul :mod:`zlib`."
 
 #: ../../library/gzip.rst:18
 msgid ""
-"The :mod:`gzip` module provides the :class:`GzipFile` class, as well as "
-"the :func:`.open`, :func:`compress` and :func:`decompress` convenience "
-"functions. The :class:`GzipFile` class reads and writes :program:`gzip`\\"
-" -format files, automatically compressing or decompressing the data so "
-"that it looks like an ordinary :term:`file object`."
+"The :mod:`gzip` module provides the :class:`GzipFile` class, as well as the "
+":func:`.open`, :func:`compress` and :func:`decompress` convenience "
+"functions. The :class:`GzipFile` class reads and writes :program:`gzip`\\ "
+"-format files, automatically compressing or decompressing the data so that "
+"it looks like an ordinary :term:`file object`."
 msgstr ""
+"Modul :mod:`gzip` poskytuje třídu :class:`GzipFile` a také pohodlné funkce "
+":func:`.open`, :func:`compress` a :func:`decompress`. Třída "
+":class:`GzipFile` čte a zapisuje soubory ve formátu :program:`gzip`\\ "
+"automaticky komprimující nebo dekomprimující data tak, aby vypadala jako "
+"běžný :term:`objektu souboru`."
 
 #: ../../library/gzip.rst:24
 msgid ""
 "Note that additional file formats which can be decompressed by the "
-":program:`gzip` and :program:`gunzip` programs, such  as those produced "
-"by :program:`compress` and :program:`pack`, are not supported by this "
-"module."
+":program:`gzip` and :program:`gunzip` programs, such  as those produced by "
+":program:`compress` and :program:`pack`, are not supported by this module."
 msgstr ""
+"Upozorňujeme, že dodatečné formáty souborů, které lze dekomprimovat programy"
+" :program:`gzip` a :program:`gunzip`, jako jsou ty vytvořené programy "
+":program:`compress` a :program:`pack`, nejsou tímto modulem podporovány."
 
 #: ../../library/gzip.rst:28
 msgid "The module defines the following items:"
-msgstr ""
+msgstr "Modul definuje následující položky:"
 
 #: ../../library/gzip.rst:33
 msgid ""
-"Open a gzip-compressed file in binary or text mode, returning a "
-":term:`file object`."
+"Open a gzip-compressed file in binary or text mode, returning a :term:`file "
+"object`."
 msgstr ""
+"Otevře soubor komprimovaný gzipem v binárním nebo textovém režimu a vrátí "
+":term:`objektu souboru`."
 
 #: ../../library/gzip.rst:36
 msgid ""
 "The *filename* argument can be an actual filename (a :class:`str` or "
-":class:`bytes` object), or an existing file object to read from or write "
-"to."
+":class:`bytes` object), or an existing file object to read from or write to."
 msgstr ""
+"Argument *filename* může být skutečný název souboru (objekt :class:`str` "
+"nebo :class:`bytes`) nebo existující objekt souboru, ze kterého se čte nebo "
+"do kterého se zapisuje."
 
 #: ../../library/gzip.rst:39
 msgid ""
@@ -85,19 +102,27 @@ msgid ""
 "``'w'``, ``'wb'``, ``'x'`` or ``'xb'`` for binary mode, or ``'rt'``, "
 "``'at'``, ``'wt'``, or ``'xt'`` for text mode. The default is ``'rb'``."
 msgstr ""
+"Argument *mode* může být ``'r'``, ``'rb'``, ``'a'``, ``'ab'``, ``'w'``, "
+"``'wb'``, ``'x'`` nebo ``'xb'`` pro binární režim, nebo ``'rt'``, ``'at'``, "
+"``'wt'`` nebo ``'xt'`` pro textový režim. Výchozí hodnota je ``'rb'``."
 
 #: ../../library/gzip.rst:43
 msgid ""
 "The *compresslevel* argument is an integer from 0 to 9, as for the "
 ":class:`GzipFile` constructor."
 msgstr ""
+"Argument *compresslevel* je celé číslo od 0 do 9, jako pro konstruktor "
+":class:`GzipFile`."
 
 #: ../../library/gzip.rst:46
 msgid ""
 "For binary mode, this function is equivalent to the :class:`GzipFile` "
-"constructor: ``GzipFile(filename, mode, compresslevel)``. In this case, "
-"the *encoding*, *errors* and *newline* arguments must not be provided."
+"constructor: ``GzipFile(filename, mode, compresslevel)``. In this case, the "
+"*encoding*, *errors* and *newline* arguments must not be provided."
 msgstr ""
+"Pro binární režim je tato funkce ekvivalentní konstruktoru "
+":class:`GzipFile`: ``GzipFile(filename, mode, compresslevel)``. V tomto "
+"případě musí argumenty *encoding*, *errors* a *newline* zadány být."
 
 #: ../../library/gzip.rst:50
 msgid ""
@@ -105,27 +130,35 @@ msgid ""
 ":class:`io.TextIOWrapper` instance with the specified encoding, error "
 "handling behavior, and line ending(s)."
 msgstr ""
+"Pro textový režim je vytvořen objekt :class:`GzipFile` a zabalený v instanci"
+" :class:`io.TextIOWrapper` se zadaným kódováním, chováním při zpracování "
+"chyb a konci řádků."
 
 #: ../../library/gzip.rst:54
 msgid ""
-"Added support for *filename* being a file object, support for text mode, "
-"and the *encoding*, *errors* and *newline* arguments."
+"Added support for *filename* being a file object, support for text mode, and"
+" the *encoding*, *errors* and *newline* arguments."
 msgstr ""
+"Přidána podpora pro *filename* jako objekt souboru, podpora textového režimu"
+" a argumenty *encoding*, *errors* a *newline*."
 
 #: ../../library/gzip.rst:58
 msgid "Added support for the ``'x'``, ``'xb'`` and ``'xt'`` modes."
-msgstr ""
+msgstr "Přidána podpora pro režimy ``'x'``, ``'xb'`` a ``'xt'``."
 
 #: ../../library/gzip.rst:61 ../../library/gzip.rst:175
 msgid "Accepts a :term:`path-like object`."
-msgstr ""
+msgstr "Přijmá :term:`objektu se path`."
 
 #: ../../library/gzip.rst:66
 msgid ""
 "An exception raised for invalid gzip files.  It inherits from "
-":exc:`OSError`. :exc:`EOFError` and :exc:`zlib.error` can also be raised "
-"for invalid gzip files."
+":exc:`OSError`. :exc:`EOFError` and :exc:`zlib.error` can also be raised for"
+" invalid gzip files."
 msgstr ""
+"Výjimka vyvolaná pro neplatné soubory gzip. Dědí z :exc:`OSError`. "
+":exc:`EOFError` a :exc:`zlib.error` mohou být vyvolány také pro neplatné "
+"soubory gzip."
 
 #: ../../library/gzip.rst:74
 msgid ""
@@ -134,71 +167,104 @@ msgid ""
 ":meth:`~io.IOBase.truncate` method.  At least one of *fileobj* and "
 "*filename* must be given a non-trivial value."
 msgstr ""
+"Konstruktor pro třídu :class:`GzipFile`, která simuluje většinu metod "
+":term:`objektu souboru`, s výjimkou metody :meth:`~io.IOBase.truncate`. "
+"Alespoň jeden z argumentů *fileobj* a *filename* musí mít netriviální "
+"hodnotu."
 
 #: ../../library/gzip.rst:79
 msgid ""
-"The new class instance is based on *fileobj*, which can be a regular "
-"file, an :class:`io.BytesIO` object, or any other object which simulates "
-"a file.  It defaults to ``None``, in which case *filename* is opened to "
-"provide a file object."
+"The new class instance is based on *fileobj*, which can be a regular file, "
+"an :class:`io.BytesIO` object, or any other object which simulates a file.  "
+"It defaults to ``None``, in which case *filename* is opened to provide a "
+"file object."
 msgstr ""
+"Nová instance třídy je založena na *fileobj*, které může být obyčejný "
+"soubor, objekt :class:`io.BytesIO` nebo jakýkoli jiný objekt, který simuluje"
+" soubor. Výchozí hodnota je ``None``, v případě kterého se otevře "
+"*filename*, aby poskytl objekt souboru."
 
 #: ../../library/gzip.rst:84
 msgid ""
-"When *fileobj* is not ``None``, the *filename* argument is only used to "
-"be included in the :program:`gzip` file header, which may include the "
-"original filename of the uncompressed file.  It defaults to the filename "
-"of *fileobj*, if discernible; otherwise, it defaults to the empty string,"
-" and in this case the original filename is not included in the header."
+"When *fileobj* is not ``None``, the *filename* argument is only used to be "
+"included in the :program:`gzip` file header, which may include the original "
+"filename of the uncompressed file.  It defaults to the filename of "
+"*fileobj*, if discernible; otherwise, it defaults to the empty string, and "
+"in this case the original filename is not included in the header."
 msgstr ""
+"Pokud *fileobj* není ``None``, argument *filename* se používá pouze k "
+"zahrnutí do záhlaví souboru :program:`gzip`, které může obsahovat původní "
+"název nekomprimovaného souboru. Výchozí hodnota je název souboru *fileobj*, "
+"pokud je rozpoznatelný; jinak výchozí hodnota je prázdný řetězec a v tomto "
+"případě původní název souboru není zahrnut v záhlaví."
 
 #: ../../library/gzip.rst:90
 msgid ""
 "The *mode* argument can be any of ``'r'``, ``'rb'``, ``'a'``, ``'ab'``, "
-"``'w'``, ``'wb'``, ``'x'``, or ``'xb'``, depending on whether the file "
-"will be read or written.  The default is the mode of *fileobj* if "
-"discernible; otherwise, the default is ``'rb'``.  In future Python "
-"releases the mode of *fileobj* will not be used.  It is better to always "
-"specify *mode* for writing."
+"``'w'``, ``'wb'``, ``'x'``, or ``'xb'``, depending on whether the file will "
+"be read or written.  The default is the mode of *fileobj* if discernible; "
+"otherwise, the default is ``'rb'``.  In future Python releases the mode of "
+"*fileobj* will not be used.  It is better to always specify *mode* for "
+"writing."
 msgstr ""
+"Argument *mode* může být ``'r'``, ``'rb'``, ``'a'``, ``'ab'``, ``'w'``, "
+"``'wb'``, ``'x'`` nebo ``'xb'``, v závislosti na tom, zda bude soubor čten "
+"nebo zapsán. Výchozí hodnota je režim *fileobj*, pokud je rozpoznatelný; "
+"jinak výchozí hodnota je ``'rb'``. V budoucích verzích Pythonu nebude režim "
+"*fileobj* používán. Je lepší vždy zadat *mode* pro zapis."
 
 #: ../../library/gzip.rst:96
 msgid ""
 "Note that the file is always opened in binary mode. To open a compressed "
-"file in text mode, use :func:`.open` (or wrap your :class:`GzipFile` with"
-" an :class:`io.TextIOWrapper`)."
+"file in text mode, use :func:`.open` (or wrap your :class:`GzipFile` with an"
+" :class:`io.TextIOWrapper`)."
 msgstr ""
+"Pozor na to, že soubor je vždy otevřen v binárním režimu. Chcete-li otevřít "
+"komprimovaný soubor v textovém režimu, použijte :func:`.open` (nebo "
+"zabaleťte svůj :class:`GzipFile` do :class:`io.TextIOWrapper`)."
 
 #: ../../library/gzip.rst:100
 msgid ""
-"The *compresslevel* argument is an integer from ``0`` to ``9`` "
-"controlling the level of compression; ``1`` is fastest and produces the "
-"least compression, and ``9`` is slowest and produces the most "
-"compression. ``0`` is no compression. The default is ``9``."
+"The *compresslevel* argument is an integer from ``0`` to ``9`` controlling "
+"the level of compression; ``1`` is fastest and produces the least "
+"compression, and ``9`` is slowest and produces the most compression. ``0`` "
+"is no compression. The default is ``9``."
 msgstr ""
+"Argument *compresslevel* je celé číslo od ``0`` do ``9`` ovládájící úroveň "
+"komprese; ``1`` je nejrychlejší a vytváří nejmanjší kompresi, a ``9`` je "
+"nejpomalejší a vytváří největší kompresi. ``0`` znamená žádnou kompresi. "
+"Výchozí hodnota je ``9``."
 
 #: ../../library/gzip.rst:105
 msgid ""
-"The optional *mtime* argument is the timestamp requested by gzip. The "
-"time is in Unix format, i.e., seconds since 00:00:00 UTC, January 1, "
-"1970. If *mtime* is omitted or ``None``, the current time is used. Use "
-"*mtime* = 0 to generate a compressed stream that does not depend on "
-"creation time."
+"The optional *mtime* argument is the timestamp requested by gzip. The time "
+"is in Unix format, i.e., seconds since 00:00:00 UTC, January 1, 1970. If "
+"*mtime* is omitted or ``None``, the current time is used. Use *mtime* = 0 to"
+" generate a compressed stream that does not depend on creation time."
 msgstr ""
+"Volitelný argument *mtime* je časové razitko požadované gzipem. Čas je ve "
+"formátu Unix, tj. sekundy od 00:00:00 UTC, 1. ledna 1970. Pokud je *mtime* "
+"vynechán nebo ``None``, používá se současný čas. Použijte *mtime* = 0 k "
+"vytvoření komprimovaného toku, který závisí na čase vytvoření."
 
 #: ../../library/gzip.rst:110
-msgid "See below for the :attr:`mtime` attribute that is set when decompressing."
-msgstr ""
+msgid ""
+"See below for the :attr:`mtime` attribute that is set when decompressing."
+msgstr "Viz níže atribut :attr:`mtime`, který je nastaven při dekompresi."
 
 #: ../../library/gzip.rst:112
 msgid ""
-"Calling a :class:`GzipFile` object's :meth:`!close` method does not close"
-" *fileobj*, since you might wish to append more material after the "
-"compressed data.  This also allows you to pass an :class:`io.BytesIO` "
-"object opened for writing as *fileobj*, and retrieve the resulting memory"
-" buffer using the :class:`io.BytesIO` object's "
-":meth:`~io.BytesIO.getvalue` method."
+"Calling a :class:`GzipFile` object's :meth:`!close` method does not close "
+"*fileobj*, since you might wish to append more material after the compressed"
+" data.  This also allows you to pass an :class:`io.BytesIO` object opened "
+"for writing as *fileobj*, and retrieve the resulting memory buffer using the"
+" :class:`io.BytesIO` object's :meth:`~io.BytesIO.getvalue` method."
 msgstr ""
+"Volání metody :meth:`!close` objektu :class:`GzipFile` neuzavře *fileobj*, "
+"protože můžetě chtít přidat víc materiálu po komprimovaných datech. To vám "
+"také umožňuje předat objekt :class:`io.BytesIO` otevřený pro zápis jako "
+"*fileobj* a vyzvedmout si výslednou paměť pomőcí metody "
+":meth:`~io.BytesIO.getvalue` objektu :class:`io.BytesIO`."
 
 #: ../../library/gzip.rst:118
 msgid ""
@@ -206,140 +272,184 @@ msgid ""
 "including iteration and the :keyword:`with` statement.  Only the "
 ":meth:`~io.IOBase.truncate` method isn't implemented."
 msgstr ""
+":class:`GzipFile` podporuje rozhraní :class:`io.BufferedIOBase`, včetně "
+"iterace a příkazu :keyword:`with`. Pouze metoda :meth:`~io.IOBase.truncate` "
+"není implementována."
 
 #: ../../library/gzip.rst:122
 msgid ":class:`GzipFile` also provides the following method and attribute:"
-msgstr ""
+msgstr ":class:`GzipFile` také poskytuje následující metodu a atribut:"
 
 #: ../../library/gzip.rst:126
 msgid ""
-"Read *n* uncompressed bytes without advancing the file position. The "
-"number of bytes returned may be more or less than requested."
+"Read *n* uncompressed bytes without advancing the file position. The number "
+"of bytes returned may be more or less than requested."
 msgstr ""
+"Přečı *n* nekomprimovaných bajtů bez posunu pozice souboru. Počet vrácených "
+"bajtů může být více nebo méně než požadováno."
 
 #: ../../library/gzip.rst:129
 msgid ""
 "While calling :meth:`peek` does not change the file position of the "
-":class:`GzipFile`, it may change the position of the underlying file "
-"object (e.g. if the :class:`GzipFile` was constructed with the *fileobj* "
+":class:`GzipFile`, it may change the position of the underlying file object "
+"(e.g. if the :class:`GzipFile` was constructed with the *fileobj* "
 "parameter)."
 msgstr ""
+"Zatímco volání :meth:`peek` nemění pozici souboru :class:`GzipFile`, může "
+"změnit pozici podstatného objektu souboru (např. pokud byl :class:`GzipFile`"
+" zkonstruován s parametrem *fileobj*)."
 
 #: ../../library/gzip.rst:138
 msgid "``'rb'`` for reading and ``'wb'`` for writing."
-msgstr ""
+msgstr "``'rb'`` pro čtení a ``'wb'`` pro zápis."
 
 #: ../../library/gzip.rst:140
 msgid "In previous versions it was an integer ``1`` or ``2``."
-msgstr ""
+msgstr "V předchozích verzích to bylo celé číslo ``1`` nebo ``2``."
 
 #: ../../library/gzip.rst:145
 msgid ""
-"When decompressing, this attribute is set to the last timestamp in the "
-"most recently read header.  It is an integer, holding the number of "
-"seconds since the Unix epoch (00:00:00 UTC, January 1, 1970). The initial"
-" value before reading any headers is ``None``."
+"When decompressing, this attribute is set to the last timestamp in the most "
+"recently read header.  It is an integer, holding the number of seconds since"
+" the Unix epoch (00:00:00 UTC, January 1, 1970). The initial value before "
+"reading any headers is ``None``."
 msgstr ""
+"Při dekompresi je tento atribut nastaven na poslední časové razitko v "
+"nepředstavujícím záhlaví. Je to celé číslo, které obsahuje počet sekund od "
+"Unix epoch (00:00:00 UTC, 1. ledna 1970). Počáteční hodnota před přečtením "
+"jakéhokoli záhlaví je ``None``."
 
 #: ../../library/gzip.rst:152
 msgid ""
 "The path to the gzip file on disk, as a :class:`str` or :class:`bytes`. "
-"Equivalent to the output of :func:`os.fspath` on the original input path,"
-" with no other normalization, resolution or expansion."
+"Equivalent to the output of :func:`os.fspath` on the original input path, "
+"with no other normalization, resolution or expansion."
 msgstr ""
+"Cesta k souboru gzip na disku, jako :class:`str` nebo :class:`bytes`. "
+"Ekvivalentní výstup :func:`os.fspath` na původní vstupní cestu, bez další "
+"normalizace, rozlišení nebo rozšíření."
 
 #: ../../library/gzip.rst:156
 msgid ""
-"Support for the :keyword:`with` statement was added, along with the "
-"*mtime* constructor argument and :attr:`mtime` attribute."
+"Support for the :keyword:`with` statement was added, along with the *mtime* "
+"constructor argument and :attr:`mtime` attribute."
 msgstr ""
+"Podpora pro příkaz :keyword:`with` byla přidána spolu s argumentem "
+"konstruktoru *mtime* a atributem :attr:`mtime`."
 
 #: ../../library/gzip.rst:160
 msgid "Support for zero-padded and unseekable files was added."
 msgstr ""
+"Podpora pro soubory doplnné nulami a nehledatelné soubory byla přidána."
 
 #: ../../library/gzip.rst:163
 msgid "The :meth:`io.BufferedIOBase.read1` method is now implemented."
-msgstr ""
+msgstr "Metoda :meth:`io.BufferedIOBase.read1` je nyní implementována."
 
 #: ../../library/gzip.rst:166
 msgid "Added support for the ``'x'`` and ``'xb'`` modes."
-msgstr ""
+msgstr "Přidána podpora pro režimy ``'x'`` a ``'xb'``."
 
 #: ../../library/gzip.rst:169
 msgid ""
-"Added support for writing arbitrary :term:`bytes-like objects <bytes-like"
-" object>`. The :meth:`~io.BufferedIOBase.read` method now accepts an "
-"argument of ``None``."
+"Added support for writing arbitrary :term:`bytes-like objects <bytes-like "
+"object>`. The :meth:`~io.BufferedIOBase.read` method now accepts an argument"
+" of ``None``."
 msgstr ""
+"Přidána podpora pro zápis libovolných :term:`objekty podobné bajtům <bytes-"
+"like object>`. Metoda :meth:`~io.BufferedIOBase.read` nyní přijmá argument "
+"``None``."
 
 #: ../../library/gzip.rst:178
 msgid ""
-"Opening :class:`GzipFile` for writing without specifying the *mode* "
-"argument is deprecated."
+"Opening :class:`GzipFile` for writing without specifying the *mode* argument"
+" is deprecated."
 msgstr ""
+"Otevření :class:`GzipFile` pro zápis bez zadání argumentu *mode* je "
+"zastaralé."
 
 #: ../../library/gzip.rst:182
 msgid ""
-"Remove the ``filename`` attribute, use the :attr:`~GzipFile.name` "
-"attribute instead."
+"Remove the ``filename`` attribute, use the :attr:`~GzipFile.name` attribute "
+"instead."
 msgstr ""
+"Odebrán atribut ``filename``, místo toho použijte atribut "
+":attr:`~GzipFile.name`."
 
 #: ../../library/gzip.rst:189
 msgid ""
 "Compress the *data*, returning a :class:`bytes` object containing the "
-"compressed data.  *compresslevel* and *mtime* have the same meaning as in"
-" the :class:`GzipFile` constructor above, but *mtime* defaults to 0 for "
+"compressed data.  *compresslevel* and *mtime* have the same meaning as in "
+"the :class:`GzipFile` constructor above, but *mtime* defaults to 0 for "
 "reproducible output."
 msgstr ""
+"Komprimujte *data*, vrátí :class:`bytes` objekt obsahující komprimovaná "
+"data. *compresslevel* a *mtime* mají stejný význam jako v konstruktoru "
+":class:`GzipFile` výše, ale *mtime* výchozí 0 pro reprodukovatelný výstup."
 
 #: ../../library/gzip.rst:195
 msgid "Added the *mtime* parameter for reproducible output."
-msgstr ""
+msgstr "Přidán parametr *mtime* pro reprodukovatelný výstup."
 
 #: ../../library/gzip.rst:197
 msgid ""
-"Speed is improved by compressing all data at once instead of in a "
-"streamed fashion. Calls with *mtime* set to ``0`` are delegated to "
+"Speed is improved by compressing all data at once instead of in a streamed "
+"fashion. Calls with *mtime* set to ``0`` are delegated to "
 ":func:`zlib.compress` for better speed. In this situation the output may "
 "contain a gzip header \"OS\" byte value other than 255 \"unknown\" as "
 "supplied by the underlying zlib implementation."
 msgstr ""
+"Rychlost se zlepšuje kompresí všech dat najednou místo stream fashion. "
+"Volání s *mtime* nastavenou na ``0`` jsou delegovány na "
+":func:`zlib.compress` pro lepší rychlost. V této situaci může výstup "
+"obsahovat byte \"OS\" záhlaví gzip s jiné hodnotou než 255 \"unknown\" jak "
+"je zadáno podstatným zlib implementací."
 
 #: ../../library/gzip.rst:204
 msgid ""
-"The gzip header OS byte is guaranteed to be set to 255 when this function"
-" is used as was the case in 3.10 and earlier."
+"The gzip header OS byte is guaranteed to be set to 255 when this function is"
+" used as was the case in 3.10 and earlier."
 msgstr ""
+"Byte \"OS\" záhlaví gzip je zajištěn nastaven na 255, když je tato funkce "
+"používána jako v 3.10 a dřívějších verzích."
 
 #: ../../library/gzip.rst:207
 msgid ""
 "The *mtime* parameter now defaults to 0 for reproducible output. For the "
 "previous behaviour of using the current time, pass ``None`` to *mtime*."
 msgstr ""
+"Parametr *mtime* nyní výchozí 0 pro reprodukovatelný výstup. Pro předchozí "
+"chování používání současného času, předačte ``None`` do *mtime*."
 
 #: ../../library/gzip.rst:214
 msgid ""
 "Decompress the *data*, returning a :class:`bytes` object containing the "
-"uncompressed data. This function is capable of decompressing multi-member"
-" gzip data (multiple gzip blocks concatenated together). When the data is"
-" certain to contain only one member the :func:`zlib.decompress` function "
-"with *wbits* set to 31 is faster."
+"uncompressed data. This function is capable of decompressing multi-member "
+"gzip data (multiple gzip blocks concatenated together). When the data is "
+"certain to contain only one member the :func:`zlib.decompress` function with"
+" *wbits* set to 31 is faster."
 msgstr ""
+"Dekomprimujte *data*, vrátí :class:`bytes` objekt obsahující nekomprimovaná "
+"data. Tato funkce je schopna dekomprimovat data s více členy gzip (více gzip"
+" bloků spojených dohromady). Pokud je jisté, že data obsahují pouze jeden "
+"člen, je funkce :func:`zlib.decompress` s *wbits* nastavenou na 31 "
+"rychlejší."
 
 #: ../../library/gzip.rst:221
 msgid ""
-"Speed is improved by decompressing members at once in memory instead of "
-"in a streamed fashion."
+"Speed is improved by decompressing members at once in memory instead of in a"
+" streamed fashion."
 msgstr ""
+"Rychlost je zlepšena dekompresi členů na jednou v paměti místo stream "
+"fashion."
 
 #: ../../library/gzip.rst:228
 msgid "Examples of usage"
-msgstr ""
+msgstr "Příklady použití"
 
 #: ../../library/gzip.rst:230
 msgid "Example of how to read a compressed file::"
-msgstr ""
+msgstr "Příklad jak číst komprimovaný soubor::"
 
 #: ../../library/gzip.rst:232
 msgid ""
@@ -347,10 +457,13 @@ msgid ""
 "with gzip.open('/home/joe/file.txt.gz', 'rb') as f:\n"
 "    file_content = f.read()"
 msgstr ""
+"import gzip\n"
+"with gzip.open('/home/joe/file.txt.gz', 'rb') as f:\n"
+"    file_content = f.read()"
 
 #: ../../library/gzip.rst:236
 msgid "Example of how to create a compressed GZIP file::"
-msgstr ""
+msgstr "Příklad jak vytvořit komprimovaný soubor GZIP::"
 
 #: ../../library/gzip.rst:238
 msgid ""
@@ -359,10 +472,14 @@ msgid ""
 "with gzip.open('/home/joe/file.txt.gz', 'wb') as f:\n"
 "    f.write(content)"
 msgstr ""
+"import gzip\n"
+"content = b\"Lots of content here\"\n"
+"with gzip.open('/home/joe/file.txt.gz', 'wb') as f:\n"
+"    f.write(content)"
 
 #: ../../library/gzip.rst:243
 msgid "Example of how to GZIP compress an existing file::"
-msgstr ""
+msgstr "Příklad jak GZIP komprimovat existující soubor::"
 
 #: ../../library/gzip.rst:245
 msgid ""
@@ -372,10 +489,15 @@ msgid ""
 "    with gzip.open('/home/joe/file.txt.gz', 'wb') as f_out:\n"
 "        shutil.copyfileobj(f_in, f_out)"
 msgstr ""
+"import gzip\n"
+"import shutil\n"
+"with open('/home/joe/file.txt', 'rb') as f_in:\n"
+"    with gzip.open('/home/joe/file.txt.gz', 'wb') as f_out:\n"
+"        shutil.copyfileobj(f_in, f_out)"
 
 #: ../../library/gzip.rst:251
 msgid "Example of how to GZIP compress a binary string::"
-msgstr ""
+msgstr "Příklad jak GZIP komprimovat binární řetězec::"
 
 #: ../../library/gzip.rst:253
 msgid ""
@@ -383,72 +505,80 @@ msgid ""
 "s_in = b\"Lots of content here\"\n"
 "s_out = gzip.compress(s_in)"
 msgstr ""
+"import gzip\n"
+"s_in = b\"Lots of content here\"\n"
+"s_out = gzip.compress(s_in)"
 
 #: ../../library/gzip.rst:259
 msgid "Module :mod:`zlib`"
-msgstr ""
+msgstr "Modul :mod:`zlib`"
 
 #: ../../library/gzip.rst:260
 msgid ""
-"The basic data compression module needed to support the :program:`gzip` "
-"file format."
+"The basic data compression module needed to support the :program:`gzip` file"
+" format."
 msgstr ""
+"Základní modul komprese dat potřebný pro podporu formátu souboru "
+":program:`gzip`."
 
 #: ../../library/gzip.rst:263
 msgid ""
 "In case gzip (de)compression is a bottleneck, the `python-isal`_ package "
 "speeds up (de)compression with a mostly compatible API."
 msgstr ""
+"V případě, že gzip (de)komprese je úzkým místem, balík `python-isal`_ "
+"zrychluďuje (de)kompresi s většinou kompatibilním API."
 
 #: ../../library/gzip.rst:273
 msgid "Command-line interface"
-msgstr ""
+msgstr "Rozhraní příkazového řádku"
 
 #: ../../library/gzip.rst:275
 msgid ""
-"The :mod:`gzip` module provides a simple command line interface to "
-"compress or decompress files."
+"The :mod:`gzip` module provides a simple command line interface to compress "
+"or decompress files."
 msgstr ""
+"Modul :mod:`gzip` poskytuje jednoducho rozhraní příkazového řádku pro "
+"kompresi nebo dekompresi souborů."
 
 #: ../../library/gzip.rst:278
 msgid "Once executed the :mod:`gzip` module keeps the input file(s)."
-msgstr ""
+msgstr "Po provedení modul :mod:`gzip` zachová vstupní soubor(y)."
 
 #: ../../library/gzip.rst:282
 msgid ""
 "Add a new command line interface with a usage. By default, when you will "
 "execute the CLI, the default compression level is 6."
 msgstr ""
+"Přidán nové rozhraní příkazového řádku s použitím. Ve výyďtu, kdy spuštítě "
+"CLI, výchozí úroveň komprese je 6."
 
 #: ../../library/gzip.rst:286
 msgid "Command-line options"
-msgstr ""
+msgstr "Volby příkazového řádku"
 
 #: ../../library/gzip.rst:290
 msgid "If *file* is not specified, read from :data:`sys.stdin`."
-msgstr ""
+msgstr "Pokud *file* není zadán, čte z :data:`sys.stdin`."
 
 #: ../../library/gzip.rst:294
 msgid "Indicates the fastest compression method (less compression)."
-msgstr ""
+msgstr "Naznačuje nejrychlejší metodu komprese (méně komprese)."
 
 #: ../../library/gzip.rst:298
 msgid "Indicates the slowest compression method (best compression)."
-msgstr ""
+msgstr "Naznačuje nejpomalejší metodu komprese (nejlepší komprese)."
 
 #: ../../library/gzip.rst:302
 msgid "Decompress the given file."
-msgstr ""
+msgstr "Dekomprimujte daný soubor."
 
 #: ../../library/gzip.rst:306
 msgid "Show the help message."
-msgstr ""
+msgstr "Zobrazit zprávu nápovědy."
 
 #~ msgid ""
-#~ "The default compression level was "
-#~ "reduced to 6 (down from 9). It "
-#~ "is the default level used by most"
-#~ " compression tools and a better "
-#~ "tradeoff between speed and performance."
+#~ "The default compression level was reduced to 6 (down from 9). It is the "
+#~ "default level used by most compression tools and a better tradeoff between "
+#~ "speed and performance."
 #~ msgstr ""
-

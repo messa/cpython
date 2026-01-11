@@ -1733,10 +1733,12 @@ msgid ""
 "The class's :term:`qualified name`. See also: :attr:`__qualname__ attributes"
 " <definition.__qualname__>`."
 msgstr ""
+":term:`Kvalifikovaný název <qualified name>` třídy. Viz také: atributy "
+":attr:`__qualname__ <definition.__qualname__>`."
 
 #: ../../reference/datamodel.rst:1207
 msgid "The name of the module in which the class was defined."
-msgstr ""
+msgstr "Název modulu, ve kterém byla třída definována."
 
 #: ../../reference/datamodel.rst:1210
 msgid ""
@@ -1744,6 +1746,9 @@ msgid ""
 " of the class's namespace. See also: :attr:`__dict__ attributes "
 "<object.__dict__>`."
 msgstr ""
+":class:`Proxy mapování <types.MappingProxyType>` poskytující pohled jen pro "
+"čtení na namespace třídy. Viz také: atributy :attr:`__dict__ "
+"<object.__dict__>`."
 
 #: ../../reference/datamodel.rst:1215
 msgid ""
@@ -1751,6 +1756,9 @@ msgid ""
 "defined as ``class X(A, B, C)``, ``X.__bases__`` will be exactly equal to "
 "``(A, B, C)``."
 msgstr ""
+":class:`Tuple` obsahující základní třídy. Ve většině případů bude "
+"``X.__bases__`` třídy definované jako ``class X(A, B, C)`` přesně rovno "
+"``(A, B, C)``."
 
 #: ../../reference/datamodel.rst:1222
 msgid ""
@@ -1758,12 +1766,17 @@ msgid ""
 "memory layout of instances. This attribute corresponds to "
 ":c:member:`~PyTypeObject.tp_base` at the C level."
 msgstr ""
+"Jediná základní třída v řetězu dědičnosti, která je odpovědná za rozložení "
+"paměti instancí. Tento atribut odpovídá :c:member:`~PyTypeObject.tp_base` na"
+" úrovni C."
 
 #: ../../reference/datamodel.rst:1227
 msgid ""
 "The class's documentation string, or ``None`` if undefined. Not inherited by"
 " subclasses."
 msgstr ""
+"Dokumentační řetězec třídy, nebo ``None`` pokud není definován. Není děděn "
+"podtřídami."
 
 #: ../../reference/datamodel.rst:1231
 msgid ""
@@ -1771,6 +1784,9 @@ msgid ""
 "collected during class body execution. See also: :attr:`__annotations__ "
 "attributes <object.__annotations__>`."
 msgstr ""
+"Slovník obsahující :term:`anotace proměnných <variable annotation>` "
+"shromážděné během provádění těla třídy. Viz také: atributy "
+":attr:`__annotations__ <object.__annotations__>`."
 
 #: ../../reference/datamodel.rst:1236
 msgid ""
@@ -1778,6 +1794,9 @@ msgid ""
 "see :mod:`annotationlib`. Use :func:`annotationlib.get_annotations` instead "
 "of accessing this attribute directly."
 msgstr ""
+"Pro osvědčené postupy práce s :attr:`~object.__annotations__` prosím viz "
+":mod:`annotationlib`. Místo přímého přístupu k tomuto atributu použijte "
+":func:`annotationlib.get_annotations`."
 
 #: ../../reference/datamodel.rst:1243
 msgid ""
@@ -1787,12 +1806,19 @@ msgid ""
 "__future__ import annotations``. See :pep:`749 <749#pep749-metaclasses>` for"
 " details."
 msgstr ""
+"Přístup k atributu :attr:`!__annotations__` přímo na objektu třídy může "
+"vrátit anotace pro nesprávnou třídu, konkrétně v určitých případech, kdy je "
+"třída, její základní třída nebo metaklas definován pod ``from __future__ "
+"import annotations``. Viz :pep:`749 <749#pep749-metaclasses>` pro "
+"podrobnosti."
 
 #: ../../reference/datamodel.rst:1249
 msgid ""
 "This attribute does not exist on certain builtin classes. On user-defined "
 "classes without ``__annotations__``, it is an empty dictionary."
 msgstr ""
+"Tento atribut neexistuje na určitých vestavěných třídách. Na uživatelských "
+"třídách bez ``__annotations__`` je to prázdný slovník."
 
 #: ../../reference/datamodel.rst:1258
 msgid ""
@@ -1800,18 +1826,24 @@ msgid ""
 "no annotations. See also: :attr:`__annotate__ attributes "
 "<object.__annotate__>`."
 msgstr ""
+":term:`Funkční anotace` pro tuto třídu, nebo ``None`` pokud třída nemá "
+"anotace. Viz také: atributy :attr:`__annotate__ <object.__annotate__>`."
 
 #: ../../reference/datamodel.rst:1265
 msgid ""
 "A :class:`tuple` containing the :ref:`type parameters <type-params>` of a "
 ":ref:`generic class <generic-classes>`."
 msgstr ""
+":class:`Tuple` obsahující :ref:`parametry typu <type-params>` :ref:`generic "
+"třídy <generic-classes>`."
 
 #: ../../reference/datamodel.rst:1271
 msgid ""
 "A :class:`tuple` containing names of attributes of this class which are "
 "assigned through ``self.X`` from any function in its body."
 msgstr ""
+":class:`Tuple` obsahující názvy atributů této třídy, které jsou přiřazeny "
+"přes ``self.X`` z jakékoliv funkce v jejím těle."
 
 #: ../../reference/datamodel.rst:1277
 msgid ""
@@ -1819,22 +1851,29 @@ msgid ""
 "decorators. Setting the :attr:`~type.__module__` attribute removes the "
 ":attr:`!__firstlineno__` item from the type's dictionary."
 msgstr ""
+"Číslo řádku prvního řádku definice třídy, včetně dekoratórů. Nastavením "
+"atributu :attr:`~type.__module__` se odebere položka "
+":attr:`!__firstlineno__` ze slovníku typu."
 
 #: ../../reference/datamodel.rst:1285
 msgid ""
 "The :class:`tuple` of classes that are considered when looking for base "
 "classes during method resolution."
 msgstr ""
+":class:`Tuple` tříd, které jsou zvažovány při vyhledávání základních tříd "
+"během rozlišování metod."
 
 #: ../../reference/datamodel.rst:1290
 msgid "Special methods"
-msgstr ""
+msgstr "Speciální metody"
 
 #: ../../reference/datamodel.rst:1292
 msgid ""
 "In addition to the special attributes described above, all Python classes "
 "also have the following two methods available:"
 msgstr ""
+"Kromě speciálních atributů popsaných výše májí všechny Pythonské třídy k "
+"dispozici také následující dvě metody:"
 
 #: ../../reference/datamodel.rst:1297
 msgid ""
@@ -1842,6 +1881,9 @@ msgid ""
 "resolution order for its instances.  It is called at class instantiation, "
 "and its result is stored in :attr:`~type.__mro__`."
 msgstr ""
+"Tato metoda může být přepišována metaklasí aby přizpůsobila pořadí "
+"rozlišování metod pro její instance. Její návštěva probíhá při instantiaci "
+"třídy a její výsledek je uložen v :attr:`~type.__mro__`."
 
 #: ../../reference/datamodel.rst:1303
 msgid ""
@@ -1849,6 +1891,9 @@ msgid ""
 " method returns a list of all those references still alive. The list is in "
 "definition order. Example:"
 msgstr ""
+"Každá třída si vede seznam slabých odkazů na své bezprostřední podtřídy. "
+"Tato metoda vrací seznam všech těch odkazů, které jsou stále živé. Seznam je"
+" v pořadí definice. Příklad:"
 
 #: ../../reference/datamodel.rst:1307
 msgid ""
@@ -1857,10 +1902,14 @@ msgid ""
 ">>> A.__subclasses__()\n"
 "[<class 'B'>]"
 msgstr ""
+">>> class A: pass\n"
+">>> class B(A): pass\n"
+">>> A.__subclasses__()\n"
+"[<class 'B'>]"
 
 #: ../../reference/datamodel.rst:1315
 msgid "Class instances"
-msgstr ""
+msgstr "Instance třídy"
 
 #: ../../reference/datamodel.rst:1323
 msgid ""
@@ -1878,6 +1927,19 @@ msgid ""
 "class attribute is found, and the object's class has a "
 ":meth:`~object.__getattr__` method, that is called to satisfy the lookup."
 msgstr ""
+"Instance třídy se vytváří voláním objektu třídy (viz výše). Instance třídy "
+"má namespace implementovaný jako slovník, který je prvním místem, kde se "
+"hledají odkazy na atributy. Pokud atribut není nalezen zde a třída instance "
+"má atribut se stejným názvem, hledání pokračuje s atributy třídy. Pokud se "
+"najde atribut třídy, který je objektem funkce definované uživatelem, je "
+"transformován na objekt metody instance, jehož atribut "
+":attr:`~method.__self__` je instance. Objekty statické metody a metody třídy"
+" jsou také transformovány; viz výše v \"Třídach\". Viz sekci "
+":ref:`descriptors` pro další způsob, jak se atributy třídy získané přes její"
+" instance mohou lišit od objektů skutečně uložených v "
+":attr:`~object.__dict__` třídy. Pokud není nalezen žádný atribut třídy a "
+"třída objektu má metodu :meth:`~object.__getattr__`, ta se vyvolá k "
+"uspokojení vyhledávání."
 
 #: ../../reference/datamodel.rst:1339
 msgid ""
@@ -1886,16 +1948,22 @@ msgid ""
 ":meth:`~object.__delattr__` method, this is called instead of updating the "
 "instance dictionary directly."
 msgstr ""
+"Přiřazení a mazání atributů aktualizují slovník instance, nikdy slovník "
+"třídy. Pokud třída má metodu :meth:`~object.__setattr__` nebo "
+":meth:`~object.__delattr__`, je ta vyvolána místo přímé aktualizace slovníku"
+" instance."
 
 #: ../../reference/datamodel.rst:1349
 msgid ""
 "Class instances can pretend to be numbers, sequences, or mappings if they "
 "have methods with certain special names.  See section :ref:`specialnames`."
 msgstr ""
+"Instance třídy se mohou tvařit jako čísla, sekvence nebo mapování, pokud "
+"mají metody s určitými speciálními názvy. Viz sekci :ref:`specialnames`."
 
 #: ../../reference/datamodel.rst:1361
 msgid "The class to which a class instance belongs."
-msgstr ""
+msgstr "Třída, kéhouž instance třídy náleží."
 
 #: ../../reference/datamodel.rst:1365
 msgid ""
@@ -1903,10 +1971,13 @@ msgid ""
 "attributes. Not all instances have a :attr:`!__dict__` attribute; see the "
 "section on :ref:`slots` for more details."
 msgstr ""
+"Slovník nebo jiný objekt mapování použitý k ukládání (zapisovatelných) "
+"atributů objektu. Ne všechny instance mají atribut :attr:`!__dict__`; "
+"podrobnější informace naleznete v sekci o :ref:`slots`."
 
 #: ../../reference/datamodel.rst:1371
 msgid "I/O objects (also known as file objects)"
-msgstr ""
+msgstr "I/O objekty (známé také jako objekty souborů)"
 
 #: ../../reference/datamodel.rst:1386
 msgid ""
@@ -1916,6 +1987,11 @@ msgid ""
 ":meth:`~socket.socket.makefile` method of socket objects (and perhaps by "
 "other functions or methods provided by extension modules)."
 msgstr ""
+":term:`Objekt souboru` reprezentuje otevřený soubor. K vytvoření objektů "
+"souboru jsou k dispozici různé zkratky: vstavěná funkce :func:`open`, a také"
+" :func:`os.popen`, :func:`os.fdopen` a metoda "
+":meth:`~socket.socket.makefile` objektů socketů (a možná také dalšími "
+"funkcemi nebo metodami poskytovanými rozšiřujícími moduly)."
 
 #: ../../reference/datamodel.rst:1392
 msgid ""
@@ -1924,10 +2000,14 @@ msgid ""
 "and error streams; they are all open in text mode and therefore follow the "
 "interface defined by the :class:`io.TextIOBase` abstract class."
 msgstr ""
+"Objekty ``sys.stdin``, ``sys.stdout`` a ``sys.stderr`` jsou inicializovány "
+"na objekty souborů odpovídající standardnímu vstupu, výstupu a chybovým "
+"tokům interpretu; všechny jsou otevřeny v textovém módu a proto se řídí "
+"rozhraním definovaným abstraktní třídou :class:`io.TextIOBase`."
 
 #: ../../reference/datamodel.rst:1400
 msgid "Internal types"
-msgstr ""
+msgstr "Interní typy"
 
 #: ../../reference/datamodel.rst:1406
 msgid ""
@@ -1935,10 +2015,13 @@ msgid ""
 "Their definitions may change with future versions of the interpreter, but "
 "they are mentioned here for completeness."
 msgstr ""
+"Některé typy používané interně interpretem jsou zveřejněny uživateli. Jejich"
+" definice se mohou změnit v budoucích verzích interpretu, ale jsou zde "
+"zmínněny pro úplnost."
 
 #: ../../reference/datamodel.rst:1414
 msgid "Code objects"
-msgstr ""
+msgstr "Objekty kódu"
 
 #: ../../reference/datamodel.rst:1418
 msgid ""
@@ -1952,14 +2035,22 @@ msgid ""
 "immutable and contain no references (directly or indirectly) to mutable "
 "objects."
 msgstr ""
+"Objekty kódu reprezentují *bajtově kompilovaný* spustitelný kód Pythonu, "
+"nebo :term:`bytecode`. Rozdíul mezi objektem kódu a objektem funkce spočívá "
+"v tom, že objekt funkce obsahuje explicitní odkaz na globální proměnné "
+"funkce (modul, ve kterém byla definována), zatíc objekt kódu neobsahuje "
+"žádný kontext; také jsou výchozí hodnoty argumentů uloženy v objektu funkce,"
+" ne v objektu kódu (protože reprezentují hodnoty vypočíané za běhu). Na "
+"rozdíul od objektů funkcí jsou objekty kódu nezmnné a neobsahují žádné "
+"odkazy (přímo nebo nepřímo) na měnivé objekty."
 
 #: ../../reference/datamodel.rst:1452
 msgid "The function name"
-msgstr ""
+msgstr "Název funkce"
 
 #: ../../reference/datamodel.rst:1455
 msgid "The fully qualified function name"
-msgstr ""
+msgstr "Kvalifikováný název funkce"
 
 #: ../../reference/datamodel.rst:1460
 msgid ""
@@ -1967,30 +2058,40 @@ msgid ""
 "positional-only parameters and parameters with default values) that the "
 "function has"
 msgstr ""
+"Celkový počet pozicíních :term:`parametrů <parameter>` (včetně pozicíně-"
+"pouze parametrů a parametrů s výchozími hodnotami), které funkce má"
 
 #: ../../reference/datamodel.rst:1465
 msgid ""
 "The number of positional-only :term:`parameters <parameter>` (including "
 "arguments with default values) that the function has"
 msgstr ""
+"Počet pozicíně-pouze :term:`parametrů <parameter>` (včetně argumentů s "
+"výchozími hodnotami), které funkce má"
 
 #: ../../reference/datamodel.rst:1469
 msgid ""
 "The number of keyword-only :term:`parameters <parameter>` (including "
 "arguments with default values) that the function has"
 msgstr ""
+"Počet :term:`parametrů <parameter>` jen podle klíče (včetně argumentů s "
+"výchozími hodnotami), které funkce má"
 
 #: ../../reference/datamodel.rst:1473
 msgid ""
 "The number of :ref:`local variables <naming>` used by the function "
 "(including parameters)"
 msgstr ""
+"Počet :ref:`lokálních proměnných <naming>` použitých funkcí (včetně "
+"parametrů)"
 
 #: ../../reference/datamodel.rst:1477
 msgid ""
 "A :class:`tuple` containing the names of the local variables in the function"
 " (starting with the parameter names)"
 msgstr ""
+":class:`Tuple` obsahující názvy lokálních proměnných v funkci (započínává "
+"jmény parametrů)"
 
 #: ../../reference/datamodel.rst:1481
 msgid ""
@@ -1998,6 +2099,9 @@ msgid ""
 "that are referenced from at least one :term:`nested scope` inside the "
 "function"
 msgstr ""
+":class:`Tuple` obsahující názvy :ref:`lokálních proměnných <naming>`, na "
+"které se odkazuje alespoň z jedného :term:`vnořeného rozsahu <nested scope>`"
+" uvnitř funkce"
 
 #: ../../reference/datamodel.rst:1485
 msgid ""
@@ -2005,57 +2109,64 @@ msgid ""
 "<closure variable>` that a :term:`nested scope` references in an outer "
 "scope. See also :attr:`function.__closure__`."
 msgstr ""
+":class:`Tuple` obsahující názvy :term:`volných (zavřených) proměnných "
+"<closure variable>`, na které se :term:`vnořený rozsah <nested scope>` "
+"odkazuje v dolním rozsahu. Viz také :attr:`function.__closure__`."
 
 #: ../../reference/datamodel.rst:1489
 msgid "Note: references to global and builtin names are *not* included."
-msgstr ""
+msgstr "Poznámka: odkazy na globální a vstavěné názvy jsou *vypusty*."
 
 #: ../../reference/datamodel.rst:1492
 msgid ""
 "A string representing the sequence of :term:`bytecode` instructions in the "
 "function"
-msgstr ""
+msgstr "Retněz reprezentující sekvenci instrôř :term:`bytecode` v funkci"
 
 #: ../../reference/datamodel.rst:1496
 msgid ""
 "A :class:`tuple` containing the literals used by the :term:`bytecode` in the"
 " function"
 msgstr ""
+":class:`Tuple` obsahující literály používané :term:`bytecode` v funkci"
 
 #: ../../reference/datamodel.rst:1500
 msgid ""
 "A :class:`tuple` containing the names used by the :term:`bytecode` in the "
 "function"
-msgstr ""
+msgstr ":class:`Tuple` obsahující názvy používané :term:`bytecode` v funkci"
 
 #: ../../reference/datamodel.rst:1504
 msgid "The name of the file from which the code was compiled"
-msgstr ""
+msgstr "Název souboru, ze kterého byl kód kompilovan"
 
 #: ../../reference/datamodel.rst:1507
 msgid "The line number of the first line of the function"
-msgstr ""
+msgstr "Číslo řádku prvního řádku funkce"
 
 #: ../../reference/datamodel.rst:1510
 msgid ""
 "A string encoding the mapping from :term:`bytecode` offsets to line numbers."
 " For details, see the source code of the interpreter."
 msgstr ""
+"Retněz kódující mapování z odsunů :term:`bytecode` na čísla řádků. "
+"Podrobnosti naleznete v zdrojovém kódu interpretu."
 
 #: ../../reference/datamodel.rst:1513
 msgid ""
 "This attribute of code objects is deprecated, and may be removed in Python "
 "3.15."
 msgstr ""
+"Tento atribut objektů kódu je zastaralý a může být odstraněn v Pythonu 3.15."
 
 #: ../../reference/datamodel.rst:1518
 msgid "The required stack size of the code object"
-msgstr ""
+msgstr "Požadovaná velikost zásobníku objektu kódu"
 
 #: ../../reference/datamodel.rst:1521
 msgid ""
 "An :class:`integer <int>` encoding a number of flags for the interpreter."
-msgstr ""
+msgstr ":class:`Celé číslo <int>` kódující počet flagů pro interpret."
 
 #: ../../reference/datamodel.rst:1526
 msgid ""
@@ -2067,6 +2178,13 @@ msgid ""
 ":ref:`inspect-module-co-flags` for details on the semantics of each flags "
 "that might be present."
 msgstr ""
+"Následující flagi bity jsou definovány pro :attr:`~codeobject.co_flags`: bit"
+" ``0x04`` je nastaven, pokud funkce používá syntax ``*arguments`` k přijetí "
+"libovolného počtu pozicíních argumentů; bit ``0x08`` je nastaven, pokud "
+"funkce používá syntax ``**keywords`` k přijetí libovolných argumentů podle "
+"klíče; bit ``0x20`` je nastaven, pokud je funkce generátor. Viz "
+":ref:`inspect-module-co-flags` pro podrobnosti o sémantice každého flagu, "
+"který může být přítomen."
 
 #: ../../reference/datamodel.rst:1534
 msgid ""
@@ -2075,11 +2193,17 @@ msgid ""
 "whether a code object was compiled with a particular feature enabled. See "
 ":attr:`~__future__._Feature.compiler_flag`."
 msgstr ""
+"Deklarace budoucích funkcí (například ``from __future__ import division``) "
+"také používají bity v :attr:`~codeobject.co_flags` k oznámení, zda byl "
+"objekt kódu kompilovan s příslušnou funkcí povolenou. Viz "
+":attr:`~__future__._Feature.compiler_flag`."
 
 #: ../../reference/datamodel.rst:1538
 msgid ""
 "Other bits in :attr:`~codeobject.co_flags` are reserved for internal use."
 msgstr ""
+"Další bity v :attr:`~codeobject.co_flags` jsou vyhrazeny pro interní "
+"použití."
 
 #: ../../reference/datamodel.rst:1542
 msgid ""
@@ -2088,16 +2212,22 @@ msgid ""
 " and the first item in :attr:`~codeobject.co_consts` is the docstring of the"
 " function."
 msgstr ""
+"Pokud objekt kódu reprezentuje funkci a má dokumentační řetězec, bit "
+":data:`~inspect.CO_HAS_DOCSTRING` je nastaven v :attr:`~codeobject.co_flags`"
+" a první položka v :attr:`~codeobject.co_consts` je dokumentační řetězec "
+"funkce."
 
 #: ../../reference/datamodel.rst:1548
 msgid "Methods on code objects"
-msgstr ""
+msgstr "Metody na objektech kódu"
 
 #: ../../reference/datamodel.rst:1552
 msgid ""
 "Returns an iterable over the source code positions of each :term:`bytecode` "
 "instruction in the code object."
 msgstr ""
+"Vrací iterátor přes pozice zdrojového kódu každé instrukce :term:`bytecode` "
+"v objektu kódu."
 
 #: ../../reference/datamodel.rst:1555
 msgid ""
@@ -2106,36 +2236,47 @@ msgid ""
 "position of the source code that compiled to the *i-th* code unit. Column "
 "information is 0-indexed utf-8 byte offsets on the given source line."
 msgstr ""
+"Iterátor vrací :class:`tuple`\\y obsahující ``(start_line, end_line, "
+"start_column, end_column)``. *I-té* tuple odpovídá pozici zdrojového kódu, "
+"které byly kompilované na *i-tým* kódu. Informace o sloupcích jsou "
+"0-indexované byte offsety v kódování UTF-8 na daném řádku zdroje."
 
 #: ../../reference/datamodel.rst:1561
 msgid ""
 "This positional information can be missing. A non-exhaustive lists of cases "
 "where this may happen:"
 msgstr ""
+"Tato informace o poloze může chybět. Nenéexhaustivní seznam případů, kdy se "
+"to může stát:"
 
 #: ../../reference/datamodel.rst:1564
 msgid "Running the interpreter with :option:`-X` ``no_debug_ranges``."
-msgstr ""
+msgstr "Spuštění interpretu s :option:`-X` ``no_debug_ranges``."
 
 #: ../../reference/datamodel.rst:1565
 msgid ""
 "Loading a pyc file compiled while using :option:`-X` ``no_debug_ranges``."
 msgstr ""
+"Načtení souboru pyc kompilovaného při použití :option:`-X` "
+"``no_debug_ranges``."
 
 #: ../../reference/datamodel.rst:1566
 msgid "Position tuples corresponding to artificial instructions."
-msgstr ""
+msgstr "Tuple pozic odpovídající umělým instró\"m."
 
 #: ../../reference/datamodel.rst:1567
 msgid ""
 "Line and column numbers that can't be represented due to implementation "
 "specific limitations."
 msgstr ""
+"Počty řádků a sloupců, které nemohou být reprezentovány kvůli omezením "
+"specifickým pro implementaci."
 
 #: ../../reference/datamodel.rst:1570
 msgid ""
 "When this occurs, some or all of the tuple elements can be :const:`None`."
 msgstr ""
+"Když k tomu dojde, některé nebo všechny prvky tuple mohou být :const:`None`."
 
 #: ../../reference/datamodel.rst:1576
 msgid ""
@@ -2146,6 +2287,12 @@ msgid ""
 "``no_debug_ranges`` command line flag or the :envvar:`PYTHONNODEBUGRANGES` "
 "environment variable can be used."
 msgstr ""
+"Tato funkce vyžaduje uložení pozic sloupců v objektech kódu, což může vést k"
+" malému zvétšení využívání disku kompilovaných souborů Pythonu nebo paměti "
+"interpretu. Aby se zavřely ukládání doplňujících informací a/nebo "
+"deaktivovalo tisku doplňujících informací trasování, může být použit "
+"příkazový řádek :option:`-X` ``no_debug_ranges`` nebo proměnná prostředí "
+":envvar:`PYTHONNODEBUGRANGES`."
 
 #: ../../reference/datamodel.rst:1585
 msgid ""
@@ -2153,18 +2300,25 @@ msgid ""
 ":term:`bytecode`\\s. Each item yielded is a ``(start, end, lineno)`` "
 ":class:`tuple`:"
 msgstr ""
+"Vrací iterátor, který zdří informace o po sobě jdoucích rozsazích "
+":term:`bytecode`\\. Každá část zdřó je ``(start, end, lineno)`` "
+":class:`tuple`:"
 
 #: ../../reference/datamodel.rst:1589
 msgid ""
 "``start`` (an :class:`int`) represents the offset (inclusive) of the start "
 "of the :term:`bytecode` range"
 msgstr ""
+"``start`` (:class:`int`) reprezentuje offset (včetně) začátku rozsahu "
+":term:`bytecode`"
 
 #: ../../reference/datamodel.rst:1591
 msgid ""
 "``end`` (an :class:`int`) represents the offset (exclusive) of the end of "
 "the :term:`bytecode` range"
 msgstr ""
+"``end`` (:class:`int`) reprezentuje offset (vyloučené) konce rozsahu "
+":term:`bytecode`"
 
 #: ../../reference/datamodel.rst:1593
 msgid ""
@@ -2172,14 +2326,17 @@ msgid ""
 ":term:`bytecode` range, or ``None`` if the bytecodes in the given range have"
 " no line number"
 msgstr ""
+"``lineno`` je :class:`int` reprezentující číslo řádku rozsahu "
+":term:`bytecode`, nebo ``None`` pokud bytecody v daném rozsahu nemají číslo "
+"řádku"
 
 #: ../../reference/datamodel.rst:1597
 msgid "The items yielded will have the following properties:"
-msgstr ""
+msgstr "Vydávané prvky budou mít následující vlastnosti:"
 
 #: ../../reference/datamodel.rst:1599
 msgid "The first range yielded will have a ``start`` of 0."
-msgstr ""
+msgstr "První vydávaný rozsah bude mít ``start`` 0."
 
 #: ../../reference/datamodel.rst:1600
 msgid ""
@@ -2187,16 +2344,20 @@ msgid ""
 " for any pair of :class:`tuple`\\s, the ``start`` of the second will be "
 "equal to the ``end`` of the first."
 msgstr ""
+"Rozsahy ``(start, end)`` budou ne-klesající a konsekutivní. To jest, pro "
+"každý pár :class:`tuple`\\, bude ``start`` druhého roven ``end`` prvního."
 
 #: ../../reference/datamodel.rst:1603
 msgid "No range will be backwards: ``end >= start`` for all triples."
-msgstr ""
+msgstr "Žádný rozsah nebude zpětně: ``end >= start`` pro všechny trojice."
 
 #: ../../reference/datamodel.rst:1604
 msgid ""
 "The last :class:`tuple` yielded will have ``end`` equal to the size of the "
 ":term:`bytecode`."
 msgstr ""
+"Poslední :class:`tuple` zdřó bude mít ``end`` rovné velikosti "
+":term:`bytecode`."
 
 #: ../../reference/datamodel.rst:1607
 msgid ""
@@ -2204,29 +2365,33 @@ msgid ""
 "are used for lines that are present in the source code, but have been "
 "eliminated by the :term:`bytecode` compiler."
 msgstr ""
+"Rozsahy o nučlené šířce, kde ``start == end``, jsou povoleny. Rozsahy o "
+"nučlené šířce jsou používány pro řádky, které jsou přítomny ve zdrojovém "
+"kódu, ale byly eliminovány kompilátorem :term:`bytecode`."
 
 #: ../../reference/datamodel.rst:1615
 msgid ":pep:`626` - Precise line numbers for debugging and other tools."
-msgstr ""
+msgstr ":pep:`626` - Přesné čísla řádků pro ladění a další nástroje."
 
 #: ../../reference/datamodel.rst:1616
 msgid "The PEP that introduced the :meth:`!co_lines` method."
-msgstr ""
+msgstr "PEP, které zavédl úzko :meth:`!co_lines`."
 
 #: ../../reference/datamodel.rst:1620
 msgid ""
 "Return a copy of the code object with new values for the specified fields."
-msgstr ""
+msgstr "Vrati kopii objektu kódu s novými hodnotami pro zadáné pole."
 
 #: ../../reference/datamodel.rst:1622
 msgid ""
 "Code objects are also supported by the generic function "
 ":func:`copy.replace`."
 msgstr ""
+"Objekty kódu jsou také podporovány generíkou funkcí :func:`copy.replace`."
 
 #: ../../reference/datamodel.rst:1630
 msgid "Frame objects"
-msgstr ""
+msgstr "Objekty rámu"
 
 #: ../../reference/datamodel.rst:1634
 msgid ""
@@ -2234,12 +2399,17 @@ msgid ""
 " objects <traceback-objects>`, and are also passed to registered trace "
 "functions."
 msgstr ""
+"Objekty rámu reprezentují rámy provedení. Mohou se vyskytovat v "
+":ref:`objektech trasování <traceback-objects>`, a jsou také předány "
+"registrovaným funkcím trasování."
 
 #: ../../reference/datamodel.rst:1653
 msgid ""
 "Points to the previous stack frame (towards the caller), or ``None`` if this"
 " is the bottom stack frame"
 msgstr ""
+"Ukazuje na předchozí rám zásobníku (směrem k volájícímu), nebo ``None`` "
+"pokud je to dolní rám zásobníku"
 
 #: ../../reference/datamodel.rst:1657
 msgid ""
@@ -2247,6 +2417,9 @@ msgid ""
 "Accessing this attribute raises an :ref:`auditing event <auditing>` "
 "``object.__getattr__`` with arguments ``obj`` and ``\"f_code\"``."
 msgstr ""
+":ref:`Objekt kódu <code-objects>` běžící v tomto rámu. Přístup k tomuto "
+"atributu vyvolá :ref:`auditing <auditing>` událost ``object.__getattr__`` s "
+"argumenty ``obj`` a ``\"f_code\"``."
 
 #: ../../reference/datamodel.rst:1662
 msgid ""
@@ -2254,33 +2427,43 @@ msgid ""
 " the frame refers to an :term:`optimized scope`, this may return a write-"
 "through proxy object."
 msgstr ""
+"Mapování používané rámem pro hledání :ref:`lokálních proměnných <naming>`. "
+"Pokud se rám odkazuje na :term:`optimaliezovaný rozsah`, móže se vrátit "
+"objekt proxy s průchodem-do-zápisu."
 
 #: ../../reference/datamodel.rst:1667
 msgid "Return a proxy for optimized scopes."
-msgstr ""
+msgstr "Vrati proxy pro optimaliezované rozsahy."
 
 #: ../../reference/datamodel.rst:1671
 msgid ""
 "The dictionary used by the frame to look up :ref:`global variables <naming>`"
 msgstr ""
+"Slovník použitý rámem pro hledání :ref:`globálních proměnných <naming>`"
 
 #: ../../reference/datamodel.rst:1675
 msgid ""
 "The dictionary used by the frame to look up :ref:`built-in (intrinsic) names"
 " <naming>`"
 msgstr ""
+"Slovník použitý rámem pro hledání :ref:`vstavěných (intrinčnjých) názvů "
+"<naming>`"
 
 #: ../../reference/datamodel.rst:1679
 msgid ""
 "The \"precise instruction\" of the frame object (this is an index into the "
 ":term:`bytecode` string of the :ref:`code object <code-objects>`)"
 msgstr ""
+"\"Přesná instrukce\" objektu rámu (toto je index do řetězce :term:`bytecode`"
+" :ref:`objektu kódu <code-objects>`)"
 
 #: ../../reference/datamodel.rst:1684
 msgid ""
 "The :term:`generator` or :term:`coroutine` object that owns this frame, or "
 "``None`` if the frame is a normal function."
 msgstr ""
+":term:`Generátor` nebo :term:`korutina` objekt vlastnící tento rám, nebo "
+"``None`` pokud je rám normální funkcí."
 
 #: ../../reference/datamodel.rst:1701
 msgid ""
@@ -2288,12 +2471,17 @@ msgid ""
 "execution (this is used by debuggers). Normally an event is triggered for "
 "each new source line (see :attr:`~frame.f_trace_lines`)."
 msgstr ""
+"Pokud není ``None``, toto je funkce vyvoláná pro různé události během "
+"provádění kódu (to je používáno ladiči). Normálně je událost spouštěna pro "
+"každý nový zdrojový řádek (viz :attr:`~frame.f_trace_lines`)."
 
 #: ../../reference/datamodel.rst:1706
 msgid ""
 "Set this attribute to :const:`False` to disable triggering a tracing event "
 "for each source line."
 msgstr ""
+"Nastavte tento atribut na :const:`False` a deaktivujte spouštění události "
+"trasování pro každý zdrojový řádek."
 
 #: ../../reference/datamodel.rst:1710
 msgid ""
@@ -2301,6 +2489,10 @@ msgid ""
 "requested. Note that this may lead to undefined interpreter behaviour if "
 "exceptions raised by the trace function escape to the function being traced."
 msgstr ""
+"Nastavte tento atribut na :const:`True` aby bylo možno požadovat události "
+"pro každý op-kód. Mějte na paměti, že to může vést k nedefinovanému chování "
+"interpretu, pokud výjimky zavéné funkcí trasování uniknou k funkci běžící "
+"trasování."
 
 #: ../../reference/datamodel.rst:1716
 msgid ""
@@ -2309,14 +2501,17 @@ msgid ""
 "debugger can implement a Jump command (aka Set Next Statement) by writing to"
 " this attribute."
 msgstr ""
+"Aktuální číslo řádku rámu -- zapsání do toho z předcházící funkce skoku na "
+"daný řádek (pouze pro nejnižší rám). Ladič může implementovat příkaz Jump "
+"(alias Set Next Statement) zapsáním do tohoto atributu."
 
 #: ../../reference/datamodel.rst:1722
 msgid "Frame object methods"
-msgstr ""
+msgstr "Metody objektu rámu"
 
 #: ../../reference/datamodel.rst:1724
 msgid "Frame objects support one method:"
-msgstr ""
+msgstr "Objekty rámu podporují jednu metodu:"
 
 #: ../../reference/datamodel.rst:1728
 msgid ""
@@ -2326,22 +2521,31 @@ msgid ""
 "objects (for example when catching an :ref:`exception <bltin-exceptions>` "
 "and storing its :ref:`traceback <traceback-objects>` for later use)."
 msgstr ""
+"Tato metoda vymaže všechny odkazy na :ref:`lokální proměnné <naming>` držené"
+" rámem. Také pokud rám náležel :term:`generátoru`, generátor je finalizován."
+" To pomhá prerušit cykly odkazů obsahující objekty rámu (například při cyklu"
+" :ref:`výjimky <bltin-exceptions>` a uložení její :ref:`trasování "
+"<traceback-objects>` pro pozdější použití)."
 
 #: ../../reference/datamodel.rst:1734
 msgid ""
 ":exc:`RuntimeError` is raised if the frame is currently executing or "
 "suspended."
 msgstr ""
+":exc:`RuntimeError` je vyvolen pokud se rám aktuálně spouští nebo je "
+"pozastaven."
 
 #: ../../reference/datamodel.rst:1739
 msgid ""
 "Attempting to clear a suspended frame raises :exc:`RuntimeError` (as has "
 "always been the case for executing frames)."
 msgstr ""
+"Pokus o vyčištění pozastaveného rámu vyvolává :exc:`RuntimeError` (jako tomu"
+" bylo vždy u spouštěných rámů)."
 
 #: ../../reference/datamodel.rst:1747
 msgid "Traceback objects"
-msgstr ""
+msgstr "Objekty trasování"
 
 #: ../../reference/datamodel.rst:1760
 msgid ""
@@ -2349,10 +2553,13 @@ msgid ""
 "errors>`. A traceback object is implicitly created when an exception occurs,"
 " and may also be explicitly created by calling :class:`types.TracebackType`."
 msgstr ""
+"Objekty trasování reprezentují zásobník trasování :ref:`výjimky <tut-"
+"errors>`. Objekt trasování je implicitně vytvořen, když dojde k výjimce, a "
+"může také být explicitně vytvořen voláním :class:`types.TracebackType`."
 
 #: ../../reference/datamodel.rst:1765
 msgid "Traceback objects can now be explicitly instantiated from Python code."
-msgstr ""
+msgstr "Objekty trasování lze nyní explicitně vytvořit z kódu Pythonu."
 
 #: ../../reference/datamodel.rst:1768
 msgid ""
@@ -2364,6 +2571,12 @@ msgid ""
 ":func:`sys.exc_info`, and as the :attr:`~BaseException.__traceback__` "
 "attribute of the caught exception."
 msgstr ""
+"Pro implicitně vytvářené trasování, když hledání obsluhováné výjimky "
+"rozvinuje zásobník provedení, na každé rozvinýmé úrovni je objekt trasování "
+"vložen před aktuální trasování. Když je obsluhovač výjimky vstoupen, "
+"zásobník trasování je zpřístupněn programu. (Viz sekce :ref:`try`.) Je "
+"přístupný jako třetí prvek tuple vrácené :func:`sys.exc_info` a jako atribut"
+" :attr:`~BaseException.__traceback__` zavŮdjené výjimky."
 
 #: ../../reference/datamodel.rst:1777
 msgid ""
@@ -2372,6 +2585,9 @@ msgid ""
 "interactive, it is also made available to the user as "
 ":data:`sys.last_traceback`."
 msgstr ""
+"Pokud program neobsahuje vhodnou obsluhu, zásobník trasování je zapsán "
+"(pěkně formátován) na standardní chybový proud; pokud je interpret "
+"interaktivní, je také zpřístupněn uživateli jako :data:`sys.last_traceback`."
 
 #: ../../reference/datamodel.rst:1782
 msgid ""
@@ -2379,25 +2595,30 @@ msgid ""
 "to determine how the :attr:`~traceback.tb_next` attributes should be linked "
 "to form a full stack trace."
 msgstr ""
+"Pro explicitně vytvářené trasování je na tvůrci trasování, aby určil, jak by"
+" měly být atributy :attr:`~traceback.tb_next` propojeny, aby vytvořily úplný"
+" zásobník trasování."
 
 #: ../../reference/datamodel.rst:1797
 msgid ""
 "Points to the execution :ref:`frame <frame-objects>` of the current level."
-msgstr ""
+msgstr "Ukazuje na :ref:`rám <frame-objects>` provedení aktuální úrovni."
 
 #: ../../reference/datamodel.rst:1800
 msgid ""
 "Accessing this attribute raises an :ref:`auditing event <auditing>` "
 "``object.__getattr__`` with arguments ``obj`` and ``\"tb_frame\"``."
 msgstr ""
+"Přístup k tomuto atributu vyvolá :ref:`auditing <auditing>` událost "
+"``object.__getattr__`` s argumenty ``obj`` a ``\"tb_frame\"``."
 
 #: ../../reference/datamodel.rst:1805
 msgid "Gives the line number where the exception occurred"
-msgstr ""
+msgstr "Dává číslo řádku, kde k výjimce došlo"
 
 #: ../../reference/datamodel.rst:1808
 msgid "Indicates the \"precise instruction\"."
-msgstr ""
+msgstr "Udává \"přesnou instrukci\"."
 
 #: ../../reference/datamodel.rst:1810
 msgid ""
@@ -2406,6 +2627,10 @@ msgid ""
 "occurred in a :keyword:`try` statement with no matching except clause or "
 "with a :keyword:`finally` clause."
 msgstr ""
+"Číslo řádku a poslední instrukce v trasování se mohou lišit od čísla řádku "
+"jeho :ref:`objektu rámu <frame-objects>` pokud k výjimce došlo v "
+":keyword:`try` příkázu bez shody except klauzule nebo s :keyword:`finally` "
+"klauzulí."
 
 #: ../../reference/datamodel.rst:1821
 msgid ""
@@ -2413,20 +2638,26 @@ msgid ""
 "stack trace (towards the frame where the exception occurred), or ``None`` if"
 " there is no next level."
 msgstr ""
+"Zvláštní zapisovací atribut :attr:`!tb_next` je další úroveň v zásobníku "
+"trasování (směrem k rámu, kde k výjimce došlo), nebo ``None`` pokud "
+"neexistuje další úroveň."
 
 #: ../../reference/datamodel.rst:1825
 msgid "This attribute is now writable"
-msgstr ""
+msgstr "Tento atribut je nyní zapisovací"
 
 #: ../../reference/datamodel.rst:1830
 msgid "Slice objects"
-msgstr ""
+msgstr "Objekty sečne"
 
 #: ../../reference/datamodel.rst:1834
 msgid ""
 "Slice objects are used to represent slices for :meth:`~object.__getitem__` "
 "methods.  They are also created by the built-in :func:`slice` function."
 msgstr ""
+"Objekty sečne se používají k reprezentaci sečení pro "
+":meth:`~object.__getitem__` metody. Jsou také vytvářeny vstavěné funkcí "
+":func:`slice`."
 
 #: ../../reference/datamodel.rst:1843
 msgid ""
@@ -2434,10 +2665,13 @@ msgid ""
 ":attr:`~slice.stop` is the upper bound; :attr:`~slice.step` is the step "
 "value; each is ``None`` if omitted.  These attributes can have any type."
 msgstr ""
+"Speciální atributy jen pro čtení: :attr:`~slice.start` je dolní mez; "
+":attr:`~slice.stop` je horní mez; :attr:`~slice.step` je hodnota kroku; "
+"každý je ``None`` pokud je vynechán. Tyto atributy mohou mít jaký koliv typ."
 
 #: ../../reference/datamodel.rst:1847
 msgid "Slice objects support one method:"
-msgstr ""
+msgstr "Objekty sečne podporují jednu metodu:"
 
 #: ../../reference/datamodel.rst:1851
 msgid ""
@@ -2448,10 +2682,15 @@ msgid ""
 "stride length of the slice. Missing or out-of-bounds indices are handled in "
 "a manner consistent with regular slices."
 msgstr ""
+"Tato metoda bere jeden celočíselný argument *délka* a vypočítá informace o "
+"sečni, kterou by objekt sečny popisoval, pokud by se aplikoval na sekvenci "
+"*délky* prvků. Vrací tuple tří celočíselných hodnot; postupně to jsou indexy"
+" *start* a *stop* a *krok* nebo délka kroku sečny. Chybějící nebo vyše "
+"indexy jsou zpracovány způsobem konzistentním s regulárními sečny."
 
 #: ../../reference/datamodel.rst:1860
 msgid "Static method objects"
-msgstr ""
+msgstr "Objekty statické metody"
 
 #: ../../reference/datamodel.rst:1862
 msgid ""
@@ -2463,10 +2702,17 @@ msgid ""
 "any further transformation. Static method objects are also callable. Static "
 "method objects are created by the built-in :func:`staticmethod` constructor."
 msgstr ""
+"Objekty statické metody poskytují zpýsob, jak se vyhnót transformaci objektů"
+" funkcí na objekty metody popsané výše. Objekt statické metody je obal kolem"
+" jakékoliv jiného objektu, obvykle objektu metody definovaného uživatelem. "
+"Když je objekt statické metody získán z třídy nebo instance třídy, vrnéný "
+"objekt je vlastně zabaluje objekt, který není předmětem další transformace. "
+"Objekty statické metody jsou také vyvolatelny. Objekty statické metody jsou "
+"vytvářeny vstavěným konstruktorem :func:`staticmethod`."
 
 #: ../../reference/datamodel.rst:1872
 msgid "Class method objects"
-msgstr ""
+msgstr "Objekty metody třídy"
 
 #: ../../reference/datamodel.rst:1874
 msgid ""
@@ -2477,10 +2723,15 @@ msgid ""
 "methods>`. Class method objects are created by the built-in "
 ":func:`classmethod` constructor."
 msgstr ""
+"Objekt metody třídy, jako objekt statické metody, je obal kolem jiného "
+"objektu, který mění zpýsob, jak je tento objekt získáván z tříd a instancí "
+"třídy. Chování objektů metody třídy při takovem získání je popisáno výše, "
+"pod :ref:`\"instanní metody\" <instance-methods>`. Objekty metody třídy jsou"
+" vytvářeny vstavěným konstruktorem :func:`classmethod`."
 
 #: ../../reference/datamodel.rst:1884
 msgid "Special method names"
-msgstr ""
+msgstr "Jména speciálních metod"
 
 #: ../../reference/datamodel.rst:1890
 msgid ""
@@ -2495,6 +2746,15 @@ msgid ""
 " appropriate method is defined (typically :exc:`AttributeError` or "
 ":exc:`TypeError`)."
 msgstr ""
+"Třída může implementovat určité operace, které jsou vyvolvány speciální "
+"syntaxí (jako jsou aritmetické operace nebo indexování a sečení) definováním"
+" metod se speciálními názvy. Toto je Péthyůnuv přístup k :dfn:`přetívání "
+"operátorů`, umožňující třídám definovat jejich vlastní chování vzhledem k "
+"jazykovým operátorů. Například, pokud třída definuje metodu nazvanou "
+":meth:`~object.__getitem__`, a ``x`` je instancí této třídy, pak ``x[i]`` je"
+" přibližně rovno ``type(x).__getitem__(x, i)``. Pokud není napíkno, snahy o "
+"provedení operace vyvolají výjimku, pokud není definována vhodná metoda "
+"(typicky :exc:`AttributeError` nebo :exc:`TypeError`)."
 
 #: ../../reference/datamodel.rst:1901
 msgid ""
@@ -2504,6 +2764,11 @@ msgid ""
 ":func:`iter` on its instances will raise a :exc:`TypeError` (without falling"
 " back to :meth:`~object.__getitem__`). [#]_"
 msgstr ""
+"Nastavení speciální metody na ``None`` označuje, že příslušná operace není k"
+" dispozici. Například, pokud třída nastaví :meth:`~object.__iter__` na "
+"``None``, třída není iterable, takže volání :func:`iter` na jejích "
+"instancích vyvolá :exc:`TypeError` (bez přístupu k "
+":meth:`~object.__getitem__`). [#]_"
 
 #: ../../reference/datamodel.rst:1907
 msgid ""
@@ -2514,10 +2779,16 @@ msgid ""
 " (One example of this is the :ref:`NodeList <dom-nodelist-objects>` "
 "interface in the W3C's Document Object Model.)"
 msgstr ""
+"Pokud při implementaci třídy, která emuluje jaký koliv vstavěný typ, je "
+"důležité, aby emulace byla implementována pouze do míry, která dává smysl "
+"pro emulovaný objekt. Například některé sekvence mohou fungovat dobrě s "
+"získáváním jednotlivých prvků, ale extrakování sečny nemusí dávat smysl. "
+"(Jedním příkladem je :ref:`NodeList <dom-nodelist-objects>` rozhraní v Model"
+" dokumentu objektu W3C.)"
 
 #: ../../reference/datamodel.rst:1918
 msgid "Basic customization"
-msgstr ""
+msgstr "Základní přizpůsobení"
 
 #: ../../reference/datamodel.rst:1924
 msgid ""
@@ -2528,6 +2799,12 @@ msgid ""
 "(the call to the class).  The return value of :meth:`__new__` should be the "
 "new object instance (usually an instance of *cls*)."
 msgstr ""
+"Voláno pro vytvoření nové instance třídy *cls*. :meth:`__new__` je statická "
+"metoda (speciálně v tažená, takze ji není třeba deklarovat jako takou), "
+"která bere třídu, jehož instance byla požadována jako svůj první argument. "
+"Zbylc argument jsou ty, které byly předány výrazu konstruktoru objektu "
+"(volání třídy). Návrataná hodnota :meth:`__new__` by měla být nová instance "
+"objektu (obvykle instance *cls*)."
 
 #: ../../reference/datamodel.rst:1931
 msgid ""
@@ -2536,6 +2813,9 @@ msgid ""
 "with appropriate arguments and then modifying the newly created instance as "
 "necessary before returning it."
 msgstr ""
+"Typické implementace vytvářejí novou instanci třídy vyvolním :meth:`__new__`"
+" nadset třídy použitím ``super().__new__(cls[, ...])`` s vhodnými argumenty "
+"a poté ůpravou nověvytvářené instance před návratem."
 
 #: ../../reference/datamodel.rst:1936
 msgid ""
@@ -2545,12 +2825,18 @@ msgid ""
 " the remaining arguments are the same as were passed to the object "
 "constructor."
 msgstr ""
+"Pokud je :meth:`__new__` vyvolné během konstrukce objektu a vrátí instanci "
+"*cls*, pak :meth:`__init__` novoutvorené instance bude vyvolana jako "
+"``__init__(self[, ...])``, kde *self* je nová instance a zbylé argumenty "
+"jsou stejné jako byly předány konstruktoru objektu."
 
 #: ../../reference/datamodel.rst:1941
 msgid ""
 "If :meth:`__new__` does not return an instance of *cls*, then the new "
 "instance's :meth:`__init__` method will not be invoked."
 msgstr ""
+"Pokud :meth:`__new__` nevrátí instanci *cls*, pak :meth:`__init__` nové "
+"instance nebude vyvolana."
 
 #: ../../reference/datamodel.rst:1944
 msgid ""
@@ -2559,6 +2845,9 @@ msgid ""
 "commonly overridden in custom metaclasses in order to customize class "
 "creation."
 msgstr ""
+":meth:`__new__` je mělena hlavně k umožnění podtříd nemnnch typů (jako int, "
+"str nebo tuple) k přizpůsobení vytváření instancí. Je také běnit přepišována"
+" vlastnými metaklasámi, aby se přizpůsobilo vytváření třídy."
 
 #: ../../reference/datamodel.rst:1953
 msgid ""
@@ -2569,6 +2858,12 @@ msgid ""
 " ensure proper initialization of the base class part of the instance; for "
 "example: ``super().__init__([args...])``."
 msgstr ""
+"Voláno poté, co byla instance vytvořena (:meth:`__new__`), ale před jejím "
+"návratem volájícímu. Argumenty jsou ty, které byly předány výrazu "
+"konstruktoru třídy. Pokud má základní třída :meth:`__init__` metodu, "
+":meth:`__init__` metoda odvozené třídy, pokud existuje, její explicitně "
+"vyvola, aby se zajištilé správné inicializování části základní třídy "
+"instance; například: ``super().__init__([args...])``."
 
 #: ../../reference/datamodel.rst:1960
 msgid ""
@@ -2577,6 +2872,10 @@ msgid ""
 "it), no non-``None`` value may be returned by :meth:`__init__`; doing so "
 "will cause a :exc:`TypeError` to be raised at runtime."
 msgstr ""
+"Protože :meth:`__new__` a :meth:`__init__` pracují společně při konstruování"
+" objektů (:meth:`__new__` jej vytvářet a :meth:`__init__` jej přizpůsobí), "
+"není možno vrátit jinou než ``None`` hodnotu :meth:`__init__`; tö vyvolá "
+":exc:`TypeError` během běhu."
 
 #: ../../reference/datamodel.rst:1973
 msgid ""
@@ -2586,6 +2885,10 @@ msgid ""
 "must explicitly call it to ensure proper deletion of the base class part of "
 "the instance."
 msgstr ""
+"Voláno, když je instance téměř zničena. Toto se také nazývá finaližer nebo "
+"(nevhodně) destruktor. Pokud má základní třída :meth:`__del__` metodu, "
+":meth:`__del__` metoda odvozené třídy, pokud existuje, její explicitně "
+"vyvola, aby se zajištilé správné mazání části základní třídy instance."
 
 #: ../../reference/datamodel.rst:1979
 msgid ""
@@ -2596,6 +2899,11 @@ msgid ""
 " about to be destroyed; the current :term:`CPython` implementation only "
 "calls it once."
 msgstr ""
+"Je možné (však se to nevříkomendá!) aby :meth:`__del__` metoda oddallila "
+"zničení instance vytvořením nového odkazu na ni. Toto se nazývá object "
+"*resurrection*. Je specifické pro implementaci, zda je :meth:`__del__` "
+"volana druhékrat, když se má resuscitovaá instance zničit; současná "
+":term:`CPython` implementace jej volA pouze jednou."
 
 #: ../../reference/datamodel.rst:1986
 msgid ""
@@ -2604,6 +2912,10 @@ msgid ""
 "provides a straightforward way to register a cleanup function to be called "
 "when an object is garbage collected."
 msgstr ""
+"Není zaručeno, že :meth:`__del__` metody jsou volány pro objekty, které "
+"stále existují, když se interpret ukončí. :class:`weakref.finalize` "
+"poskytuje přímochar způsob pro registraci čištící funkce, která má být "
+"volána, když je objekt garbace sbran."
 
 #: ../../reference/datamodel.rst:1993
 msgid ""
@@ -2611,6 +2923,9 @@ msgid ""
 "the reference count for ``x`` by one, and the latter is only called when "
 "``x``'s reference count reaches zero."
 msgstr ""
+"``del x`` neprovolává přímo ``x.__del__()`` --- předcházející snižuře počet "
+"linků ``x`` o jednu, a poslední je volána pouze, když počet linků ``x`` "
+"dosáhne nuly."
 
 #: ../../reference/datamodel.rst:1998
 msgid ""
@@ -2622,10 +2937,16 @@ msgid ""
 "references its own traceback, which references the locals of all frames "
 "caught in the traceback."
 msgstr ""
+"Je možené, že cyklus odvozu může zabránit počtu linků objektu v procházce na"
+" nulu. V tomto případě bude cyklus později detekctován a smazán "
+":term:`cyklickým sberačem odpadu <garbage collection>`. Občnou příčinou "
+"cyklů odkuzu je, když byla výjimka zachycena v lokální proměnné. Rám své "
+"lokály pouštějí odkaz na výjimku, která se odkazuje na její vlastní "
+"trasování, které se odkazuje na lokály všech rámů zachycených v trasování."
 
 #: ../../reference/datamodel.rst:2008
 msgid "Documentation for the :mod:`gc` module."
-msgstr ""
+msgstr "Dokumentace pro modul :mod:`gc`."
 
 #: ../../reference/datamodel.rst:2012
 msgid ""
@@ -2633,6 +2954,9 @@ msgid ""
 "invoked, exceptions that occur during their execution are ignored, and a "
 "warning is printed to ``sys.stderr`` instead.  In particular:"
 msgstr ""
+"Kvůli předvidám okrajovým okolím, za kterých jsou :meth:`__del__` metody "
+"vyvolvány, jsou výjimky, které nastanou během jejich spustení, ignorovány, a"
+" varované je vytisknut do ``sys.stderr`` místo. Zvláště:"
 
 #: ../../reference/datamodel.rst:2016
 msgid ""
@@ -2642,6 +2966,10 @@ msgid ""
 "may already be taken by the code that gets interrupted to execute "
 ":meth:`__del__`."
 msgstr ""
+":meth:`__del__` může být vyvolana, když je libovolný kód spouštěn, včetně z "
+"jakého libovolného vlákna. Pokud :meth:`__del__` musí získat zámek nebo "
+"vyvolat jiný vázání zdroj, může se zlénovat, jak zdroj může již být zatéžen "
+"kódem, který se přeruší k provedení :meth:`__del__`."
 
 #: ../../reference/datamodel.rst:2022
 msgid ""
@@ -2653,6 +2981,14 @@ msgid ""
 "such globals exist, this may help in assuring that imported modules are "
 "still available at the time when the :meth:`__del__` method is called."
 msgstr ""
+":meth:`__del__` móže být spusten během vypínání interpretu. V důsledku toho "
+"globální proměnné, na které potebuje přistupovat (včetně ostatních modulů) "
+"již mohou být smazáy nebo nastavíy na ``None``. Python zaručuje, že "
+"globální proměnné jejichž název začíná jedným podértném jsou smazány z "
+"jejich modulu před mazurejem ostatních globálních proměnných; pokud "
+"neexistují jiné odkazy na takové globální proměnné, to může pomoci při "
+"zajištění, že importované moduly jsou stále dostupné v čase volání "
+":meth:`__del__` metody."
 
 #: ../../reference/datamodel.rst:2037
 msgid ""
@@ -2666,6 +3002,15 @@ msgid ""
 " when an \"informal\" string representation of instances of that class is "
 "required."
 msgstr ""
+"Voláno vstavěné funkcí :func:`repr` pro výpočet \"oficiálního\" řetězce "
+"reprezentace objektu. Pokud je to vůbec možené, měl by to vypadát jako "
+"platný Pythonský výraz, který by mohl být použit k znovuvýt tvoilení objektu"
+" se stejnou hodnotou (vzhledem k vhodnému prostředí). Pokud to není možené, "
+"řetězec tvaru ``<...some useful description...>`` by měl být vrácen. "
+"Návrataná hodnota musí být objektem řetězce. Pokud třída definuje "
+":meth:`__repr__` ale ne :meth:`__str__`, pak :meth:`__repr__` je také "
+"použit, když je požadován \"neoficiální\" řetězec reprezentace instancí této"
+" třídy."
 
 #: ../../reference/datamodel.rst:2046
 msgid ""
@@ -2673,6 +3018,9 @@ msgid ""
 "representation is information-rich and unambiguous. A default implementation"
 " is provided by the :class:`object` class itself."
 msgstr ""
+"Toto se typicky používá pro ladění, je důležité, aby byla reprezentace "
+"bohatá na informační a jednoznačna. Stanovená implementace je poskytována "
+"samotnou :class:`object` třídou."
 
 #: ../../reference/datamodel.rst:2058
 msgid ""
@@ -2681,6 +3029,10 @@ msgid ""
 "\"informal\" or nicely printable string representation of an object.  The "
 "return value must be a :ref:`str <textseq>` object."
 msgstr ""
+"Voláno :func:`str(object) <str>`, stanovenou implementací :meth:`__format__`"
+" a vstavěné funkcí :func:`print`, pro výpočet \"neoficiálního\" nebo "
+"přijemně tisknutelného řetězce reprezentace objektu. Návrataná hodnota musí "
+"být objektem :ref:`str <textseq>`."
 
 #: ../../reference/datamodel.rst:2063
 msgid ""
@@ -2688,12 +3040,17 @@ msgid ""
 "expectation that :meth:`__str__` return a valid Python expression: a more "
 "convenient or concise representation can be used."
 msgstr ""
+"Tato metoda se liší od :meth:`object.__repr__` v tom, že není očekávání, že "
+":meth:`__str__` vrátí platný Pythonský výraz: lze použít pohodlněší nebo "
+"stříčnjí reprezentaci."
 
 #: ../../reference/datamodel.rst:2067
 msgid ""
 "The default implementation defined by the built-in type :class:`object` "
 "calls :meth:`object.__repr__`."
 msgstr ""
+"Stanovená implementace definovaná vstavěným typem :class:`object` volá "
+":meth:`object.__repr__`."
 
 #: ../../reference/datamodel.rst:2077
 msgid ""
@@ -2701,6 +3058,9 @@ msgid ""
 "of an object. This should return a :class:`bytes` object. The "
 ":class:`object` class itself does not provide this method."
 msgstr ""
+"Voláno :ref:`bytes <func-bytes>` pro výpočet reprezentace byte-string "
+"objektu. Toto by mělo vrátit objekt :class:`bytes`. Samotna :class:`object` "
+"třída neposkytuje tuto metodu."
 
 #: ../../reference/datamodel.rst:2089
 msgid ""
@@ -2713,33 +3073,47 @@ msgid ""
 "will either delegate formatting to one of the built-in types, or use a "
 "similar formatting option syntax."
 msgstr ""
+"Voláno vstavěné funkcí :func:`format` a v důsledku, vyhodnocením "
+":ref:`formátovaných literlů řetězců <f-strings>` a metodou "
+":meth:`str.format`, pro vytřebéní \"formátovaného\" řetězce reprezentace "
+"objektu. Argument *format_spec* je řetězec, který obsahuje popis žadovaných "
+"voleb formátování. Interpretace argumentu *format_spec* je na typu, který "
+"implementuje :meth:`__format__`, však většina tříd bude buď delegovat "
+"formátování jednomu ze vstavěných typů, nebo použít podobnou syntaxi volby "
+"formátování."
 
 #: ../../reference/datamodel.rst:2099
 msgid ""
 "See :ref:`formatspec` for a description of the standard formatting syntax."
-msgstr ""
+msgstr "Viz :ref:`formatspec` pro popis standatní syntax formatok."
 
 #: ../../reference/datamodel.rst:2101
 msgid "The return value must be a string object."
-msgstr ""
+msgstr "Návrataná hodnota musí být objektem řetězce."
 
 #: ../../reference/datamodel.rst:2103
 msgid ""
 "The default implementation by the :class:`object` class should be given an "
 "empty *format_spec* string. It delegates to :meth:`__str__`."
 msgstr ""
+"Stanovená implementace :class:`object` třídou by měla být poskytnuta "
+"prázdným řetězcem *format_spec*. Deleguje do :meth:`__str__`."
 
 #: ../../reference/datamodel.rst:2106
 msgid ""
 "The __format__ method of ``object`` itself raises a :exc:`TypeError` if "
 "passed any non-empty string."
 msgstr ""
+"Metoda __format__ samotného ``object`` vyvolá :exc:`TypeError`, pokud je "
+"předán jaký koliv ne prázdný řetězec."
 
 #: ../../reference/datamodel.rst:2110
 msgid ""
 "``object.__format__(x, '')`` is now equivalent to ``str(x)`` rather than "
 "``format(str(x), '')``."
 msgstr ""
+"``object.__format__(x, '')`` je nyní ekvivalentní ``str(x)`` místo "
+"``format(str(x), '')``."
 
 #: ../../reference/datamodel.rst:2126
 msgid ""
@@ -2749,6 +3123,11 @@ msgid ""
 "``x.__eq__(y)``, ``x!=y`` calls ``x.__ne__(y)``, ``x>y`` calls "
 "``x.__gt__(y)``, and ``x>=y`` calls ``x.__ge__(y)``."
 msgstr ""
+"Toto jsou tzv. \"bohaté porovnání\" metody. Korespondence mezi symboly "
+"operátora a jmény metod je následující: ``x<y`` volá ``x.__lt__(y)``, "
+"``x<=y`` volá ``x.__le__(y)``, ``x==y`` volá ``x.__eq__(y)``, ``x!=y`` volá "
+"``x.__ne__(y)``, ``x>y`` volá ``x.__gt__(y)`` a ``x>=y`` volá "
+"``x.__ge__(y)``."
 
 #: ../../reference/datamodel.rst:2132
 msgid ""
@@ -2760,6 +3139,12 @@ msgid ""
 "statement), Python will call :func:`bool` on the value to determine if the "
 "result is true or false."
 msgstr ""
+"Metoda bohatého srovnání může vrátit singleton :data:`NotImplemented`, pokud"
+" neimplementuje operaci pro daný pár argumentů. Podle konvence je ``False`` "
+"a ``True`` vráceno pro úspešné srovnání. Však tyto metody mohou vrátit "
+"jakoukoli hodnotu, takže pokud je operační symbol použit v logickém kontextu"
+" (např. v podmínce příkázu ``if``), Python volá :func:`bool` na hodnotu, aby"
+" určil, zda je výsledek pravda nebo nepravda."
 
 #: ../../reference/datamodel.rst:2139
 msgid ""
@@ -2772,6 +3157,14 @@ msgid ""
 "not imply ``x<=y``. To automatically generate ordering operations from a "
 "single root operation, see :func:`functools.total_ordering`."
 msgstr ""
+"Ve stanovenosti ``object`` implementuje :meth:`__eq__` použitím ``is``, "
+"vracením :data:`NotImplemented` v případě neúspešného srovnání: ``True if x "
+"is y else NotImplemented``. Pro :meth:`__ne__`, ve stanovenosti deleguje "
+":meth:`__eq__` a invertuje výsledek, pokud není :data:`!NotImplemented`. "
+"Nejsou žádné další implikované vztahy mezi operacemi srovnání nebo "
+"stanovenostmi implementace; například pravdivost ``(x<y or x==y)`` "
+"neimplikuje ``x<=y``. Chcete-li automaticky generovat operáce řazení z jedné"
+" kořenové operace, viz :func:`functools.total_ordering`."
 
 #: ../../reference/datamodel.rst:2148
 msgid ""
@@ -2781,6 +3174,11 @@ msgid ""
 "method may generate these results directly, but may also return "
 ":data:`NotImplemented`."
 msgstr ""
+"Ve stanovenosti :class:`object` třída poskytuje implementace konzistentní s "
+":ref:`expressions-value-comparisons`: rovnost porovnává podle identity "
+"objektu a porovnání řadí vyvolává :exc:`TypeError`. Každá stanovená metoda "
+"může tyto výsledky generovat přímo, ale může také vrátit "
+":data:`NotImplemented`."
 
 #: ../../reference/datamodel.rst:2154
 msgid ""
@@ -2788,6 +3186,9 @@ msgid ""
 ":term:`hashable` objects which support custom comparison operations and are "
 "usable as dictionary keys."
 msgstr ""
+"Viz odstavec o :meth:`__hash__` pro některé důležité poznámky k vytváření "
+":term:`hashable` objektů, které podporují vlastní operace srovnání a jsou "
+"použitelné jako klíče slovníku."
 
 #: ../../reference/datamodel.rst:2158
 msgid ""
@@ -2801,6 +3202,14 @@ msgid ""
 "operand has priority, otherwise the left operand's method has priority.  "
 "Virtual subclassing is not considered."
 msgstr ""
+"Neexistují verze těchto metod s vyměněnými argumenty (k použití, když levý "
+"argument nepodporuje operaci, ale pravý argument ano); spícě :meth:`__lt__` "
+"a :meth:`__gt__` jsou navzájem reflexe, :meth:`__le__` a :meth:`__ge__` jsou"
+" navzájem reflexe a :meth:`__eq__` a :meth:`__ne__` jsou jejich vlastní "
+"reflexe. Pokud jsou operandy různých typů a typ pravého operandu je přímé "
+"nebo nepřímé podtřïdou typu levého operandu, odraz metoda pravého operandu "
+"má prioritu, jinak metoda levého operandu má prioritu. Virtuální "
+"podtřídování není brané v úvahu."
 
 #: ../../reference/datamodel.rst:2169
 msgid ""
@@ -2808,6 +3217,9 @@ msgid ""
 ":data:`NotImplemented`, the ``==`` and ``!=`` operators will fall back to "
 "``is`` and ``is not``, respectively."
 msgstr ""
+"Pokud žádná vhodná metoda nevrátí jakoukoli jinou hodnotu než "
+":data:`NotImplemented`, operátory ``==`` a ``!=`` se vratí k ``is`` a ``is "
+"not``, v tomto pořadí."
 
 #: ../../reference/datamodel.rst:2178
 msgid ""
@@ -2819,12 +3231,21 @@ msgid ""
 "the object that also play a part in comparison of objects by packing them "
 "into a tuple and hashing the tuple. Example::"
 msgstr ""
+"Voláno vstavěné funkcí :func:`hash` a pro operace na členech hashovaných "
+"sborů včetně :class:`set`, :class:`frozenset` a :class:`dict`. Metoda "
+"``__hash__()`` by měla vrátit celé číslo. Jedinou požadovaná vlastnost je, "
+"že objekty, které se porovnávají rovné, mají stejnou hodnotu hash; je "
+"doporučeno smíchat dohromady hodnoty hash komponent objektu, které hrají "
+"roli v srovnání objektů jejich balením do tuple a hashováním tuple. "
+"Příklad::"
 
 #: ../../reference/datamodel.rst:2186
 msgid ""
 "def __hash__(self):\n"
 "    return hash((self.name, self.nick, self.color))"
 msgstr ""
+"def __hash__(self):\n"
+"    return hash((self.name, self.nick, self.color))"
 
 #: ../../reference/datamodel.rst:2191
 msgid ""
@@ -2835,6 +3256,13 @@ msgid ""
 "sizes, be sure to check the width on all supported builds.  An easy way to "
 "do this is with ``python -c \"import sys; print(sys.hash_info.width)\"``."
 msgstr ""
+":func:`hash` zkrátí hodnotu vrácenou z vlastní metody :meth:`__hash__` "
+"objektu na velikost :c:type:`Py_ssize_t`. Toto je typicky 8 bytů na "
+"64bitových sestavăch a 4 bajty na 32bitových sestavēch. Pokud "
+":meth:`__hash__` objektu musí pracovat mezi sestavămi různých bitů, ujistěte"
+" se, že jste zkontrolovali šířku na všech podporovaných sestavāch. Snadný "
+"způsob, jak to udělat, je ``python -c \"import sys; "
+"print(sys.hash_info.width)\"``."
 
 #: ../../reference/datamodel.rst:2199
 msgid ""
@@ -2847,6 +3275,13 @@ msgid ""
 "value is immutable (if the object's hash value changes, it will be in the "
 "wrong hash bucket)."
 msgstr ""
+"Pokud třída nedefinuje :meth:`__eq__` metodu, neměla by definovat ani "
+":meth:`__hash__` operaci; pokud definuje :meth:`__eq__` ale ne "
+":meth:`__hash__`, její instance nebudou použitelné jako položky v "
+"hashovaných sborů. Pokud třída definuje mutable objekty a implementuje "
+":meth:`__eq__` metodu, neměla by implementovat :meth:`__hash__`, protože "
+"implementace :term:`hashable` sborů vyžaduje, aby byla hodnota hash klíče "
+"neměnná (pokud se změní hodnota hash objektu, bude v chybném hash bucketě)."
 
 #: ../../reference/datamodel.rst:2208
 msgid ""
@@ -2856,6 +3291,11 @@ msgid ""
 "appropriate value such that ``x == y`` implies both that ``x is y`` and "
 "``hash(x) == hash(y)``."
 msgstr ""
+"Uživatelsky definované třídy mají :meth:`__eq__` a :meth:`__hash__` metody "
+"ve stanovenosti (děděny z :class:`object` třídy); s nimi se všechny objekty "
+"porovnávají nerovné (vý jimž s sebou) a ``x.__hash__()`` vrací vhodnou "
+"hodnotu takovou, že ``x == y`` implikuje jakže ``x is y`` tak ``hash(x) == "
+"hash(y)``."
 
 #: ../../reference/datamodel.rst:2213
 msgid ""
@@ -2866,6 +3306,12 @@ msgid ""
 "their hash value, and will also be correctly identified as unhashable when "
 "checking ``isinstance(obj, collections.abc.Hashable)``."
 msgstr ""
+"Třída, která přepisě :meth:`__eq__` a nedefinuje :meth:`__hash__`, bude mít "
+"její :meth:`__hash__` implicitně nastaven na ``None``. Pokud je "
+":meth:`__hash__` metoda třídy ``None``, instance třídy vyvolají vhodnou "
+":exc:`TypeError` při pokusu programu získat jejich hash hodnotu, a budou "
+"také správně identifikovány jako unhashable při kontrole ``isinstance(obj, "
+"collections.abc.Hashable)``."
 
 #: ../../reference/datamodel.rst:2220
 msgid ""
@@ -2873,6 +3319,9 @@ msgid ""
 "of :meth:`__hash__` from a parent class, the interpreter must be told this "
 "explicitly by setting ``__hash__ = <ParentClass>.__hash__``."
 msgstr ""
+"Pokud třída, která přepisě :meth:`__eq__`, potřebuje zachovat implementaci "
+":meth:`__hash__` od paroční třídy, interpret musí být o tomó explicitně "
+"informóván nastavením ``__hash__ = <ParentClass>.__hash__``."
 
 #: ../../reference/datamodel.rst:2224
 msgid ""
@@ -2882,6 +3331,11 @@ msgid ""
 ":exc:`TypeError` would be incorrectly identified as hashable by an "
 "``isinstance(obj, collections.abc.Hashable)`` call."
 msgstr ""
+"Pokud třída, která nepřepisě :meth:`__eq__`, chce potlačit podporu hash, "
+"měla by v definici třídy obsahovat ``__hash__ = None``. Třída, která "
+"definuje vlastní :meth:`__hash__`, které explicitně vyvolá :exc:`TypeError`,"
+" by byla nesprávně identifikována jako hashable volnáním ``isinstance(obj, "
+"collections.abc.Hashable)``."
 
 #: ../../reference/datamodel.rst:2233
 msgid ""
@@ -2890,6 +3344,10 @@ msgid ""
 "constant within an individual Python process, they are not predictable "
 "between repeated invocations of Python."
 msgstr ""
+"Ve stanovenosti :meth:`__hash__` hodnoty objektu str a bytes jsou "
+"\"sošoviny\" s nepředvídatelnivou náhodné hodnotu. Iž zůstávají konstantní v"
+" rámci jednotlivého procesu Pythonu, nejsou předvídatelné mezi opakovaným "
+"vyvoláním Pythonu."
 
 #: ../../reference/datamodel.rst:2238
 msgid ""
@@ -2898,6 +3356,10 @@ msgid ""
 "insertion, *O*\\ (*n*\\ :sup:`2`) complexity.  See "
 "http://ocert.org/advisories/ocert-2011-003.html for details."
 msgstr ""
+"Toto je mímeno k poskytnutí ochrany před zataka denial-of-service způsobenou"
+" pělivě vybranými vstupy, které využívají nejhorší případ výkonnosti vložení"
+" slovníku, *O*\\ (*n*\\ :sup:`2`) komplexity. Viz "
+"http://ocert.org/advisories/ocert-2011-003.html pro podrobnosti."
 
 #: ../../reference/datamodel.rst:2243
 msgid ""
@@ -2905,14 +3367,17 @@ msgid ""
 "made guarantees about this ordering (and it typically varies between 32-bit "
 "and 64-bit builds)."
 msgstr ""
+"Změna hodnot hash ovlivňuje pořadí iterace sad. Python nikdy neuváděl záruky"
+" ohledně tohoto pořadí (a typicky se liší mezi 32bitovými a 64bitovými "
+"sestavāmi)."
 
 #: ../../reference/datamodel.rst:2247
 msgid "See also :envvar:`PYTHONHASHSEED`."
-msgstr ""
+msgstr "Viz také :envvar:`PYTHONHASHSEED`."
 
 #: ../../reference/datamodel.rst:2249
 msgid "Hash randomization is enabled by default."
-msgstr ""
+msgstr "Randomizace hash je ve stanovenosti povolena."
 
 #: ../../reference/datamodel.rst:2257
 msgid ""
@@ -2923,10 +3388,16 @@ msgid ""
 ":meth:`!__len__` nor :meth:`!__bool__` (which is true of the :class:`object`"
 " class itself), all its instances are considered true."
 msgstr ""
+"Voláno k implementaci testování pravdívosti a vstavěné operace ``bool()``; "
+"mělo by vrátit ``False`` nebo ``True``. Pokud tato metoda není definována, "
+":meth:`~object.__len__` je volána, pokud je definována, a objekt je "
+"konsideráván pravda, pokud je její výsledek nenulový. Pokud třída nedefinuje"
+" ani :meth:`!__len__` ani :meth:`!__bool__` (což platí pro :class:`object` "
+"třídu samotnou), všechny její instance jsou konsiderávány pravda."
 
 #: ../../reference/datamodel.rst:2268
 msgid "Customizing attribute access"
-msgstr ""
+msgstr "Přizpůsobení přístupu atribuč"
 
 #: ../../reference/datamodel.rst:2270
 msgid ""
@@ -2934,6 +3405,8 @@ msgid ""
 "access (use of, assignment to, or deletion of ``x.name``) for class "
 "instances."
 msgstr ""
+"Následující metody mohou být definovány aby se přizpůsobil význam přístupu "
+"atribuč (použití, přiřazení, nebo mazání ``x.name``) pro instance třídy."
 
 #: ../../reference/datamodel.rst:2278
 msgid ""
@@ -2945,6 +3418,13 @@ msgid ""
 "attribute value or raise an :exc:`AttributeError` exception. The "
 ":class:`object` class itself does not provide this method."
 msgstr ""
+"Voláno když selhá stanovený přístup k atributu s :exc:`AttributeError` (buď "
+":meth:`__getattribute__` vyvolá :exc:`AttributeError` protože *name* není "
+"atribut instance nebo atribut ve stromu třídy pro ``self``; nebo "
+":meth:`__get__` vlastnosti *name* vyvolá :exc:`AttributeError`). Tato metoda"
+" by měla buď vrátit (vypočtenou) hodnotu atributu nebo vyvolat výjimku "
+":exc:`AttributeError`. Samotna :class:`object` třída neposkytuje tuto "
+"metodu."
 
 #: ../../reference/datamodel.rst:2286
 msgid ""
@@ -2958,6 +3438,15 @@ msgid ""
 "object).  See the :meth:`__getattribute__` method below for a way to "
 "actually get total control over attribute access."
 msgstr ""
+"Pozněte, že pokud je atribut nalezen normálním mechanismem, "
+":meth:`__getattr__` není volána. (Toto je záměrná asymetrie mezi "
+":meth:`__getattr__` a :meth:`__setattr__`.) To se dělá jak pro důvody "
+"efektivity, tak protože jinak by :meth:`__getattr__` neměla žádný způsob "
+"přístupu k ostatním atributům instance. Pozněte, že alespoň pro proměnné "
+"instance můžte si vezmt úplné kontrolu tak, že nevložíte žádné hodnoty do "
+"slovníku atribučů instance (ale místo toho je vložíte do jiného objektu). "
+"Viz metoda :meth:`__getattribute__` níže pro způsob, jak získat úplné "
+"kontrolu nad přístupu k atributů."
 
 #: ../../reference/datamodel.rst:2299
 msgid ""
@@ -2970,6 +3459,14 @@ msgid ""
 "call the base class method with the same name to access any attributes it "
 "needs, for example, ``object.__getattribute__(self, name)``."
 msgstr ""
+"Voláno bezpodmíně aby se implementovaly přístupem k atributům pro instance "
+"třídy. Pokud třída definuje také :meth:`__getattr__`, ten poslední nebude "
+"volán, pokud :meth:`__getattribute__` buď jej neprovolá explicitně nebo "
+"nevyvolá :exc:`AttributeError`. Tato metoda by měla vrátit (vypočtenou) "
+"hodnotu atributu nebo vyvolat výjimku :exc:`AttributeError`. Aby se vyhnul "
+"nekonečné rekurzi v této metodě, její implementace by měla vždy volát metodu"
+" třídy ze základu se stejným jménem aby přistoupil k jakýmkoli atributům, "
+"které potřebuje, například, ``object.__getattribute__(self, name)``."
 
 #: ../../reference/datamodel.rst:2310
 msgid ""
@@ -2977,12 +3474,17 @@ msgid ""
 "result of implicit invocation via language syntax or :ref:`built-in "
 "functions <builtin-functions>`. See :ref:`special-lookup`."
 msgstr ""
+"Tato metoda může být stále obejítá při hledání speciálních metod jako "
+"výsledek implicitní invokace přes jazykovou syntax nebo :ref:`vstavěné "
+"funkce <builtin-functions>`. Viz :ref:`special-lookup`."
 
 #: ../../reference/datamodel.rst:2315 ../../reference/datamodel.rst:2317
 msgid ""
 "For certain sensitive attribute accesses, raises an :ref:`auditing event "
 "<auditing>` ``object.__getattr__`` with arguments ``obj`` and ``name``."
 msgstr ""
+"Pro určité citlivé přístupem k atributů, vyvolává :ref:`auditing <auditing>`"
+" událost ``object.__getattr__`` s argumenty ``obj`` a ``name``."
 
 #: ../../reference/datamodel.rst:2324
 msgid ""
@@ -2990,6 +3492,9 @@ msgid ""
 " the normal mechanism (i.e. store the value in the instance dictionary). "
 "*name* is the attribute name, *value* is the value to be assigned to it."
 msgstr ""
+"Voláno při pokusu o přiřazení atributu. Toto je voláno místo normálního "
+"mechanismu (tj. uložení hodnoty v slovníku instance). *name* je název "
+"atributu, *value* je hodnota, která má být přiřazena."
 
 #: ../../reference/datamodel.rst:2328
 msgid ""
@@ -2997,6 +3502,9 @@ msgid ""
 "call the base class method with the same name, for example, "
 "``object.__setattr__(self, name, value)``."
 msgstr ""
+"Pokud :meth:`__setattr__` chce přiřadit atribut instanci, měl by volat "
+"metodu ze základu se stejným jménem, například, ``object.__setattr__(self, "
+"name, value)``."
 
 #: ../../reference/datamodel.rst:2332 ../../reference/datamodel.rst:2334
 msgid ""
@@ -3004,6 +3512,8 @@ msgid ""
 "<auditing>` ``object.__setattr__`` with arguments ``obj``, ``name``, "
 "``value``."
 msgstr ""
+"Pro určité citlivé přiřazení atribuč, vyvolává :ref:`auditing <auditing>` "
+"událost ``object.__setattr__`` s argumenty ``obj``, ``name``, ``value``."
 
 #: ../../reference/datamodel.rst:2341
 msgid ""
@@ -3011,22 +3521,28 @@ msgid ""
 "This should only be implemented if ``del obj.name`` is meaningful for the "
 "object."
 msgstr ""
+"Jako :meth:`__setattr__` ale pro mazání atribuč místo přiřazení. Toto by "
+"mělo být implementováno pouze pokud ``del obj.name`` má smysl pro objekt."
 
 #: ../../reference/datamodel.rst:2344 ../../reference/datamodel.rst:2346
 msgid ""
 "For certain sensitive attribute deletions, raises an :ref:`auditing event "
 "<auditing>` ``object.__delattr__`` with arguments ``obj`` and ``name``."
 msgstr ""
+"Pro určité citlivé mazání atribuč, vyvolává :ref:`auditing <auditing>` "
+"událost ``object.__delattr__`` s argumenty ``obj`` a ``name``."
 
 #: ../../reference/datamodel.rst:2353
 msgid ""
 "Called when :func:`dir` is called on the object. An iterable must be "
 "returned. :func:`dir` converts the returned iterable to a list and sorts it."
 msgstr ""
+"Voláno když je :func:`dir` volána na objektu. Musí být vráceno iterable. "
+":func:`dir` konvertuje vrácené iterable na seznam a třïdí jej."
 
 #: ../../reference/datamodel.rst:2358
 msgid "Customizing module attribute access"
-msgstr ""
+msgstr "Přizpůsobení přístupu k atributům modulu"
 
 #: ../../reference/datamodel.rst:2368
 msgid ""
@@ -3039,6 +3555,14 @@ msgid ""
 "module ``__dict__`` before raising an :exc:`AttributeError`. If found, it is"
 " called with the attribute name and the result is returned."
 msgstr ""
+"Speciální názvy ``__getattr__`` a ``__dir__`` mohou být také použity k "
+"přizpůsobení přístupu k atributům modulu. Funkce ``__getattr__`` na úrovni "
+"modulu by měla přijmout jeden argument, kterým je název atributu a vrátit "
+"vypočtenou hodnotu nebo vyvolat :exc:`AttributeError`. Pokud atribut není "
+"nalezen na objektu modulu přes normální vyhledávání, tj. "
+":meth:`object.__getattribute__`, pak ``__getattr__`` je hledána v modulu "
+"``__dict__`` před vyvolením :exc:`AttributeError`. Pokud je nalezena, je "
+"volána s názvem atributu a výsledek je vrácen."
 
 #: ../../reference/datamodel.rst:2377
 msgid ""
@@ -3046,6 +3570,9 @@ msgid ""
 "of strings that represents the names accessible on module. If present, this "
 "function overrides the standard :func:`dir` search on a module."
 msgstr ""
+"Funkce ``__dir__`` by měla přijmout bez argumentů a vrátit iterable řetězců,"
+" který reprezentuje názvy dostupné na modulu. Pokud je přítomna, tato funkce"
+" přepiše standardní :func:`dir` hledání na modulu."
 
 #: ../../reference/datamodel.rst:2383
 msgid ""
@@ -3053,6 +3580,9 @@ msgid ""
 "attributes, properties, etc.), one can set the ``__class__`` attribute of a "
 "module object to a subclass of :class:`types.ModuleType`. For example::"
 msgstr ""
+"Pro jemnější přizpůsobení chování modulu (nastavení atributů, vlastností, "
+"atd.), lze nastave ``__class__`` atribut objektu modulu na podtřídu "
+":class:`types.ModuleType`. Například::"
 
 #: ../../reference/datamodel.rst:2387
 #, python-brace-format
@@ -3070,6 +3600,18 @@ msgid ""
 "\n"
 "sys.modules[__name__].__class__ = VerboseModule"
 msgstr ""
+"import sys\n"
+"from types import ModuleType\n"
+"\n"
+"class VerboseModule(ModuleType):\n"
+"    def __repr__(self):\n"
+"        return f'Verbose {self.__name__}'\n"
+"\n"
+"    def __setattr__(self, attr, value):\n"
+"        print(f'Setting {attr}...')\n"
+"        super().__setattr__(attr, value)\n"
+"\n"
+"sys.modules[__name__].__class__ = VerboseModule"
 
 #: ../../reference/datamodel.rst:2401
 msgid ""
@@ -3078,26 +3620,30 @@ msgid ""
 "module globals (whether by code within the module, or via a reference to the"
 " module's globals dictionary) is unaffected."
 msgstr ""
+"Definování modulu ``__getattr__`` a nastavení modulu ``__class__`` pouze "
+"ovlivňují hledání provedena použitím syntaxe přístupu k atributů -- přímý "
+"přístup ke globálům modulu (querým kódem v rámci modulu, nebo přes odkaz na "
+"slovník globálů modulu) není úlklidav."
 
 #: ../../reference/datamodel.rst:2406
 msgid "``__class__`` module attribute is now writable."
-msgstr ""
+msgstr "Atribut ``__class__`` modulu je nyní zapisovací."
 
 #: ../../reference/datamodel.rst:2409
 msgid "``__getattr__`` and ``__dir__`` module attributes."
-msgstr ""
+msgstr "``__getattr__`` a ``__dir__`` atributy modulu."
 
 #: ../../reference/datamodel.rst:2414
 msgid ":pep:`562` - Module __getattr__ and __dir__"
-msgstr ""
+msgstr ":pep:`562` - Module __getattr__ a __dir__"
 
 #: ../../reference/datamodel.rst:2415
 msgid "Describes the ``__getattr__`` and ``__dir__`` functions on modules."
-msgstr ""
+msgstr "Popisuje funkce ``__getattr__`` a ``__dir__`` na modulech."
 
 #: ../../reference/datamodel.rst:2421
 msgid "Implementing Descriptors"
-msgstr ""
+msgstr "Implementace Descriptorů"
 
 #: ../../reference/datamodel.rst:2423
 msgid ""
@@ -3109,6 +3655,12 @@ msgid ""
 " the owner class' :attr:`~object.__dict__`.  The :class:`object` class "
 "itself does not implement any of these protocols."
 msgstr ""
+"Následující metody se vztahují pouze když instance třídy obsahující metodu "
+"(tzv. *deskriptor* třída) se objevuje v *vlastní* třídě (deskriptor musí být"
+" vřeď slovníku třídy vlastníka nebo v slovníku třídy pro jednu z jejích "
+"rodičů). V příkladech níže \"atribut\" označuje atribut, jehož jméno je "
+"klíčem vlastnosti v :attr:`~object.__dict__` vlastní třídy. Samotna "
+":class:`object` třída neimplementuje žádné z těchto protokolů."
 
 #: ../../reference/datamodel.rst:2433
 msgid ""
@@ -3118,12 +3670,18 @@ msgid ""
 "the attribute was accessed through, or ``None`` when the attribute is "
 "accessed through the *owner*."
 msgstr ""
+"Voláno k získání atributu vlastní třídy (přístup k atributu třídy) nebo "
+"instance této třídy (přístup k atributu instance). Volitelný argument "
+"*owner* je vlastní třída, zatíc *instance* je instance, přes kterou byl "
+"atribut přístupován, nebo ``None`` když je atribut přístupován přes *owner*."
 
 #: ../../reference/datamodel.rst:2439
 msgid ""
 "This method should return the computed attribute value or raise an "
 ":exc:`AttributeError` exception."
 msgstr ""
+"Tato metoda by měla vrátit vypočtenou hodnotu atributu nebo vyvolat výjimku "
+":exc:`AttributeError`."
 
 #: ../../reference/datamodel.rst:2442
 msgid ""
@@ -3134,12 +3692,19 @@ msgid ""
 "implementation always passes in both arguments whether they are required or "
 "not."
 msgstr ""
+":PEP:`252` specifiková že :meth:`__get__` je vyvolatelna s jedním nebo dvěma"
+" argumenty. Vlastní vstavěné deskriptory Pythonu podporují tuto specifikaci;"
+" však je pravděpodobné, že některé nástroje třetích stran mají deskriptory, "
+"které vyžadují oba argumenty. Vlastní implementace :meth:`__getattribute__` "
+"Pythonu vždy předává oba argumenty, bez ohledu na to, zda jsou požadovány."
 
 #: ../../reference/datamodel.rst:2451
 msgid ""
 "Called to set the attribute on an instance *instance* of the owner class to "
 "a new value, *value*."
 msgstr ""
+"Voláno k nastavení atributu na instanci *instance* vlastní třídy na novou "
+"hodnotu, *value*."
 
 #: ../../reference/datamodel.rst:2454
 msgid ""
@@ -3147,17 +3712,21 @@ msgid ""
 "descriptor to a \"data descriptor\".  See :ref:`descriptor-invocation` for "
 "more details."
 msgstr ""
+"Poznámka, přidání :meth:`__set__` nebo :meth:`__delete__` mění druh "
+"deskriptoru na \"datový deskriptor\". Viz :ref:`descriptor-invocation` pro "
+"více podrobností."
 
 #: ../../reference/datamodel.rst:2460
 msgid ""
 "Called to delete the attribute on an instance *instance* of the owner class."
-msgstr ""
+msgstr "Voláno k mazání atributu na instanci *instance* vlastní třídy."
 
 #: ../../reference/datamodel.rst:2462
 msgid ""
 "Instances of descriptors may also have the :attr:`!__objclass__` attribute "
 "present:"
 msgstr ""
+"Instance deskriptorů mohou mít také přítomny atribut :attr:`!__objclass__`:"
 
 #: ../../reference/datamodel.rst:2467
 msgid ""
@@ -3169,10 +3738,16 @@ msgid ""
 "argument (for example, CPython sets this attribute for unbound methods that "
 "are implemented in C)."
 msgstr ""
+"Atribut :attr:`!__objclass__` je interpretován modulem :mod:`inspect` jako "
+"specifikování třídy, kde byl tento objekt definován (nastavení tohoto vhodně"
+" může pomoci při introspekci za běhhu dynamického atributu třídy). Pro "
+"vyvolatelny, může to naznačovat, že instance daného typu (nebo podtřídy) je "
+"očekávána nebo vyžadována jako první pozicíní argument (například, CPython "
+"nastavuje tento atribut pro nevyušované metody implementované v C)."
 
 #: ../../reference/datamodel.rst:2478
 msgid "Invoking Descriptors"
-msgstr ""
+msgstr "Vyvolvání Descriptorů"
 
 #: ../../reference/datamodel.rst:2480
 msgid ""
@@ -3182,6 +3757,11 @@ msgid ""
 ":meth:`~object.__delete__`. If any of those methods are defined for an "
 "object, it is said to be a descriptor."
 msgstr ""
+"Všeobecně je deskriptor objektové atribut s \"chóvou vazby\", jeden, jejichž"
+" přístup k atributu byl přepišen metodami v protokolu deskriptoru: "
+":meth:`~object.__get__`, :meth:`~object.__set__` a "
+":meth:`~object.__delete__`. Pokud je některá z těchto metod definována pro "
+"objekt, se říká, že je to deskriptor."
 
 #: ../../reference/datamodel.rst:2486
 msgid ""
@@ -3190,6 +3770,10 @@ msgid ""
 "chain starting with ``a.__dict__['x']``, then ``type(a).__dict__['x']``, and"
 " continuing through the base classes of ``type(a)`` excluding metaclasses."
 msgstr ""
+"Stanovené chování pro přístup k atributu je získání, nastavení nebo mazání "
+"atributu ze slovníku objektu. Například, ``a.x`` má řetěz vyhledávání "
+"začínájící ``a.__dict__['x']``, pak ``type(a).__dict__['x']`` a pokračující "
+"v bázových třídach ``type(a)`` vyloučením metaklas."
 
 #: ../../reference/datamodel.rst:2491
 msgid ""
@@ -3198,46 +3782,58 @@ msgid ""
 "descriptor method instead.  Where this occurs in the precedence chain "
 "depends on which descriptor methods were defined and how they were called."
 msgstr ""
+"Však pokud je vyhledaná hodnota objekt definující jednu z metod deskriptoru,"
+" Python má má převést stanovené chování a mít invokovat metodu deskriptoru "
+"místo. Kde se to vyskytuje v řetězu priority závisí na tom, které metody "
+"deskriptoru byly definovány a jak byly volány."
 
 #: ../../reference/datamodel.rst:2496
 msgid ""
 "The starting point for descriptor invocation is a binding, ``a.x``. How the "
 "arguments are assembled depends on ``a``:"
 msgstr ""
+"Počátečním bodem pro invokaci deskriptoru je vazba, ``a.x``. Jak jsou "
+"argumenty zmáhané závisí na ``a``:"
 
 #: ../../reference/datamodel.rst:2499
 msgid "Direct Call"
-msgstr ""
+msgstr "Přímé volání"
 
 #: ../../reference/datamodel.rst:2500
 msgid ""
 "The simplest and least common call is when user code directly invokes a "
 "descriptor method:    ``x.__get__(a)``."
 msgstr ""
+"Nejjednonodušší a nejméné obĕčnjé volání je kdy uživatelský kód přímo vyvolá"
+" metodu deskriptoru: ``x.__get__(a)``."
 
 #: ../../reference/datamodel.rst:2503
 msgid "Instance Binding"
-msgstr ""
+msgstr "Vazba instance"
 
 #: ../../reference/datamodel.rst:2504
 msgid ""
 "If binding to an object instance, ``a.x`` is transformed into the call: "
 "``type(a).__dict__['x'].__get__(a, type(a))``."
 msgstr ""
+"Pokud se váže na instanci objektu, ``a.x`` se transformuje na volání: "
+"``type(a).__dict__['x'].__get__(a, type(a))``."
 
 #: ../../reference/datamodel.rst:2507
 msgid "Class Binding"
-msgstr ""
+msgstr "Vazba třídy"
 
 #: ../../reference/datamodel.rst:2508
 msgid ""
 "If binding to a class, ``A.x`` is transformed into the call: "
 "``A.__dict__['x'].__get__(None, A)``."
 msgstr ""
+"Pokud se váže na třídu, ``A.x`` se transformuje na volání: "
+"``A.__dict__['x'].__get__(None, A)``."
 
 #: ../../reference/datamodel.rst:2511
 msgid "Super Binding"
-msgstr ""
+msgstr "Super Vazba"
 
 #: ../../reference/datamodel.rst:2512
 msgid ""
@@ -3246,6 +3842,10 @@ msgid ""
 "``B.__dict__['x'].__get__(a, A)``.  If not a descriptor, ``x`` is returned "
 "unchanged."
 msgstr ""
+"Tacké vyhledávání jako ``super(A, a).x`` prohledává ``a.__class__.__mro__`` "
+"pro základní třídu ``B`` následující po ``A`` a pak vrací "
+"``B.__dict__['x'].__get__(a, A)``. Pokud není deskriptor, ``x`` je vrácen "
+"beze změn."
 
 #: ../../reference/datamodel.rst:2549
 msgid ""
@@ -3264,6 +3864,19 @@ msgid ""
 "dictionary.  In contrast, non-data descriptors can be overridden by "
 "instances."
 msgstr ""
+"Pro vázby instance priority vyvolvání deskriptoru závisí na tom, které "
+"metody deskriptoru jsou definovány. Deskriptor může definovat jakoukoli "
+"kombinaci :meth:`~object.__get__`, :meth:`~object.__set__` a "
+":meth:`~object.__delete__`. Pokud nedefinuje :meth:`!__get__`, pak přístup k"
+" atributu vrací samotný objekt deskriptoru pokud tam není hodnota v slovníku"
+" instance objektu. Pokud deskriptor definuje :meth:`!__set__` a/nebo "
+":meth:`!__delete__`, je to datový deskriptor; pokud nedefinuje nic, je to "
+"non-datový deskriptor. Normálně, datové deskriptory definují oba "
+":meth:`!__get__` a :meth:`!__set__`, zatíc non-datové deskriptory mají pouze"
+" :meth:`!__get__` metodu. Datové deskriptory s :meth:`!__get__` a "
+":meth:`!__set__` (a/nebo :meth:`!__delete__`) definovany vždy přepiší "
+"předefinování v slovníku instance. Naproti tomu non-datové deskriptory mohou"
+" být přepišeny instancemi."
 
 #: ../../reference/datamodel.rst:2564
 msgid ""
@@ -3273,16 +3886,23 @@ msgid ""
 "instances to acquire behaviors that differ from other instances of the same "
 "class."
 msgstr ""
+"Pythonské metody (včetně těch zdobených :deco:`staticmethod` a "
+":deco:`classmethod`) jsou implementovány jako non-datové deskriptory. Pokud "
+"jde o to, instance mohou předefinovat a přepsat metody. Toto umožňuje "
+"jednotlivé instance si získat chování, které se liší od ostatních instancí "
+"stejné třídy."
 
 #: ../../reference/datamodel.rst:2570
 msgid ""
 "The :func:`property` function is implemented as a data descriptor. "
 "Accordingly, instances cannot override the behavior of a property."
 msgstr ""
+"Funkce :func:`property` je implementována jako datový deskriptor. V důsledku"
+" toho instance nemohou přepsat chování vlastnosti."
 
 #: ../../reference/datamodel.rst:2577
 msgid "__slots__"
-msgstr ""
+msgstr "__slots__"
 
 #: ../../reference/datamodel.rst:2579
 msgid ""
@@ -3290,12 +3910,17 @@ msgid ""
 "and deny the creation of :attr:`~object.__dict__` and *__weakref__* (unless "
 "explicitly declared in *__slots__* or available in a parent.)"
 msgstr ""
+"*__slots__* umožňují nám explicitně deklarovat datové členy (jako "
+"vlastnosti) a zakázat vytváření :attr:`~object.__dict__` a *__weakref__* "
+"(pokud není explicitně deklarováno v *__slots__* nebo dostupno v rodiču.)"
 
 #: ../../reference/datamodel.rst:2583
 msgid ""
 "The space saved over using :attr:`~object.__dict__` can be significant. "
 "Attribute lookup speed can be significantly improved as well."
 msgstr ""
+"Místo ušetřeno nad použitím :attr:`~object.__dict__` může být významné. "
+"Rychlost vyhledání atributu může být také výrazně lepší."
 
 #: ../../reference/datamodel.rst:2588
 msgid ""
@@ -3304,10 +3929,14 @@ msgid ""
 "for the declared variables and prevents the automatic creation of "
 ":attr:`~object.__dict__` and *__weakref__* for each instance."
 msgstr ""
+"Tato proměnná třídy může být přiřazena řetězcem, iterable nebo sekvencí "
+"řetězců s názvy proměnných použitých instancemi. *__slots__* rezervuje místo"
+" pro deklarované proměnné a zabrauje automatickému vytváření "
+":attr:`~object.__dict__` a *__weakref__* pro každé instanci."
 
 #: ../../reference/datamodel.rst:2597
 msgid "Notes on using *__slots__*:"
-msgstr ""
+msgstr "Poznámky k použití *__slots__*:"
 
 #: ../../reference/datamodel.rst:2599
 msgid ""
@@ -3315,6 +3944,8 @@ msgid ""
 ":attr:`~object.__dict__` and *__weakref__* attribute of the instances will "
 "always be accessible."
 msgstr ""
+"Pokud dědíte z třídy bez *__slots__*, atribut :attr:`~object.__dict__` a "
+"*__weakref__* instancí bude vždy dostupný."
 
 #: ../../reference/datamodel.rst:2603
 msgid ""
@@ -3324,6 +3955,11 @@ msgid ""
 "assignment of new variables is desired, then add ``'__dict__'`` to the "
 "sequence of strings in the *__slots__* declaration."
 msgstr ""
+"Bez proměnné :attr:`~object.__dict__` instance nemohou být přiřazeny nové "
+"proměnné v nezapsanském *__slots__* definici. Pokusy o přiřazení neuvedenu "
+"názvu proměnné vyvolává :exc:`AttributeError`. Pokud je žádoucí dynamické "
+"přiřazení nových proměnných, přidějte ``'__dict__'`` k sekvenci řetězců v "
+"*__slots__* deklaraci."
 
 #: ../../reference/datamodel.rst:2610
 msgid ""
@@ -3332,6 +3968,10 @@ msgid ""
 "instances. If weak reference support is needed, then add ``'__weakref__'`` "
 "to the sequence of strings in the *__slots__* declaration."
 msgstr ""
+"Bez proměnné *__weakref__* pro každé instanci, třídy definující *__slots__* "
+"nepodporují :mod:`slabé odkazy <weakref>` na její instance. Pokud je "
+"potřebna podpora slabého odkazu, přidějte ``'__weakref__'`` k sekvenci "
+"řetězců v *__slots__* deklaraci."
 
 #: ../../reference/datamodel.rst:2616
 msgid ""
@@ -3341,6 +3981,11 @@ msgid ""
 "*__slots__*; otherwise, the class attribute would overwrite the descriptor "
 "assignment."
 msgstr ""
+"*__slots__* jsou implementovány na úrovni třídy vytvořením :ref:`deskriptorů"
+" <descriptors>` pro každý název proměnné. V důsledku toho atributy třídy "
+"nemohou být použity k nastavení výchozích hodnot pro proměnné instance "
+"definované *__slots__*; jinak by atribut třídy přepsal přiřazení "
+"deskriptoru."
 
 #: ../../reference/datamodel.rst:2622
 msgid ""
@@ -3350,6 +3995,11 @@ msgid ""
 ":attr:`~object.__dict__` and *__weakref__* unless the subclass also defines "
 "*__slots__* (which should only contain names of any *additional* slots)."
 msgstr ""
+"Akce *__slots__* deklarace není omezena na třídu, kde je definována. "
+"*__slots__* deklarováné v rodičích jsou dostupné v dětských třídach. Však "
+"instance dětské podtřídy získá :attr:`~object.__dict__` a *__weakref__* "
+"pokud podtřída také nedefinuje *__slots__* (které by měly obsahovat pouze "
+"názvy jakykoli *dalších* slotů)."
 
 #: ../../reference/datamodel.rst:2628
 msgid ""
@@ -3359,6 +4009,10 @@ msgid ""
 "meaning of the program undefined.  In the future, a check may be added to "
 "prevent this."
 msgstr ""
+"Pokud třída definuje slot, také definovaný v základní třídě, proměnná "
+"instance definovaná slot základní třídy je nepřístupná (s výjimkou získání "
+"její deskriptoru přímo z základní třídy). To znesnašují význam programu "
+"nedefinován. V budoucnosti může být přidána kontrola, aby se to zabránilo."
 
 #: ../../reference/datamodel.rst:2633
 msgid ""
@@ -3367,10 +4021,14 @@ msgid ""
 "<PyTypeObject.tp_itemsize>` such as :class:`int`, :class:`bytes`, and "
 ":class:`tuple`."
 msgstr ""
+":exc:`TypeError` bude vyvolen pokud nepřazdné *__slots__* jsou definovány "
+"pro třídu odvozenou z :c:member:`\"variábilné délky\" vstavěného typu "
+"<PyTypeObject.tp_itemsize>` jakož :class:`int`, :class:`bytes` a "
+":class:`tuple`."
 
 #: ../../reference/datamodel.rst:2638
 msgid "Any non-string :term:`iterable` may be assigned to *__slots__*."
-msgstr ""
+msgstr "Jakékoliv ne-řetězec :term:`iterable` může být přiřazeno *__slots__*."
 
 #: ../../reference/datamodel.rst:2640
 msgid ""
@@ -3379,12 +4037,18 @@ msgid ""
 " can be used to provide per-attribute docstrings that will be recognised by "
 ":func:`inspect.getdoc` and displayed in the output of :func:`help`."
 msgstr ""
+"Pokud je :class:`slovník <dict>` použit k přiřazení *__slots__*, klíče "
+"slovníku budou použity jako názvy slotů. Hodnoty slovníku mohou být použity "
+"k poskytnutí dokumentace per-atribut, které bude uznvána "
+":func:`inspect.getdoc` a zobrazena v výstupu :func:`help`."
 
 #: ../../reference/datamodel.rst:2645
 msgid ""
 ":attr:`~object.__class__` assignment works only if both classes have the "
 "same *__slots__*."
 msgstr ""
+"Zpřiřazení :attr:`~object.__class__` funguje pouze pokud mají obě třídy "
+"stejný *__slots__*."
 
 #: ../../reference/datamodel.rst:2648
 msgid ""
@@ -3393,6 +4057,10 @@ msgid ""
 "created by slots (the other bases must have empty slot layouts) - violations"
 " raise :exc:`TypeError`."
 msgstr ""
+":ref:`Vícenásobná dědičnost <tut-multiple>` s více slotovaným rodičským "
+"třídami může být použita, ale pouze jeden rodič má povolen mít atributy "
+"vytvořené sloty (ostatní báze musí mít prázdné slot rozložení) - porvušení "
+"vyvolává :exc:`TypeError`."
 
 #: ../../reference/datamodel.rst:2654
 msgid ""
@@ -3400,10 +4068,13 @@ msgid ""
 "created for each of the iterator's values. However, the *__slots__* "
 "attribute will be an empty iterator."
 msgstr ""
+"Pokud je :term:`iterator` použit pro *__slots__*, pak :term:`deskriptor` je "
+"vytvořen pro každého z hodnot iteratoru. Však atribut *__slots__* bude "
+"prázdným iterator."
 
 #: ../../reference/datamodel.rst:2662
 msgid "Customizing class creation"
-msgstr ""
+msgstr "Přizpůsobení vytváření třídy"
 
 #: ../../reference/datamodel.rst:2664
 msgid ""
@@ -3414,6 +4085,12 @@ msgid ""
 " affect the specific class they're applied to, ``__init_subclass__`` solely "
 "applies to future subclasses of the class defining the method."
 msgstr ""
+"Kadyká třída dědí z jiné třídy, :meth:`~object.__init_subclass__` je volána "
+"na rodičské třídě. Tímto způsobem je možené psát třídy, které mění chování "
+"podtříd. Toto je úzce související s dekorator y třídy, ale kde dekorator y "
+"třídy ovlivňují pouze specifickou třídu, na kterou jsou aplikovány, "
+"``__init_subclass__`` se vztahuje pouze na budoucí podtřídy třídy definující"
+" metodu."
 
 #: ../../reference/datamodel.rst:2673
 msgid ""
@@ -3421,6 +4098,9 @@ msgid ""
 "then the new subclass. If defined as a normal instance method, this method "
 "is implicitly converted to a class method."
 msgstr ""
+"Tato metoda je volána kdykoli je obsažená třída subclassed. *cls* je pak "
+"nová podtřída. Pokud je definována jako normální instanní metoda, tato "
+"metoda je implicitně konvertována na metodu třídy."
 
 #: ../../reference/datamodel.rst:2677
 msgid ""
@@ -3429,6 +4109,10 @@ msgid ""
 "``__init_subclass__``, one should take out the needed keyword arguments and "
 "pass the others over to the base class, as in::"
 msgstr ""
+"Argumenty klíč slov, které jsou dány nové třídě, jsou předány "
+"``__init_subclass__`` rodičské třídy. Z důvodu kompatibility s ostatními "
+"třídami používajícími ``__init_subclass__``, jednén by si měl vzdříclate "
+"potřebné argumenty klíč a předát ostatní základní třídě, jak v::"
 
 #: ../../reference/datamodel.rst:2683
 msgid ""
@@ -3440,12 +4124,21 @@ msgid ""
 "class AustralianPhilosopher(Philosopher, default_name=\"Bruce\"):\n"
 "    pass"
 msgstr ""
+"class Philosopher:\n"
+"    def __init_subclass__(cls, /, default_name, **kwargs):\n"
+"        super().__init_subclass__(**kwargs)\n"
+"        cls.default_name = default_name\n"
+"\n"
+"class AustralianPhilosopher(Philosopher, default_name=\"Bruce\"):\n"
+"    pass"
 
 #: ../../reference/datamodel.rst:2691
 msgid ""
 "The default implementation ``object.__init_subclass__`` does nothing, but "
 "raises an error if it is called with any arguments."
 msgstr ""
+"Stanovená implementace ``object.__init_subclass__`` nedělá nic, ale vyvolá "
+"chybu pokud je volána s jakýmikoli argumenty."
 
 #: ../../reference/datamodel.rst:2696
 msgid ""
@@ -3454,24 +4147,33 @@ msgid ""
 " actual metaclass (rather than the explicit hint) can be accessed as "
 "``type(cls)``."
 msgstr ""
+"Hint metaklasé ``metaclass`` je spotřebován zbytčkem typu machineriky a není"
+" nikdy předán implementacím ``__init_subclass__``. Skutečna metaklasé "
+"(roduže explicitního hintu) může být přistupována jako ``type(cls)``."
 
 #: ../../reference/datamodel.rst:2704
 msgid ""
 "When a class is created, :meth:`!type.__new__` scans the class variables and"
 " makes callbacks to those with a :meth:`~object.__set_name__` hook."
 msgstr ""
+"Když je třída vytvořena, :meth:`!type.__new__` skenuš proměnné třídy a délá "
+"callback na ty s :meth:`~object.__set_name__` hokem."
 
 #: ../../reference/datamodel.rst:2709
 msgid ""
 "Automatically called at the time the owning class *owner* is created. The "
 "object has been assigned to *name* in that class::"
 msgstr ""
+"Automaticky voláno v čase vytvoření vlastní třídy *owner*. Objekt byl "
+"přiřazen *name* v této třídě::"
 
 #: ../../reference/datamodel.rst:2712
 msgid ""
 "class A:\n"
 "    x = C()  # Automatically calls: x.__set_name__(A, 'x')"
 msgstr ""
+"class A:\n"
+"    x = C()  # Automatically calls: x.__set_name__(A, 'x')"
 
 #: ../../reference/datamodel.rst:2715
 msgid ""
@@ -3479,6 +4181,9 @@ msgid ""
 ":meth:`__set_name__` will not be called automatically. If needed, "
 ":meth:`__set_name__` can be called directly::"
 msgstr ""
+"Pokud je proměnná třídy přiřazena po vytvoření třídy, :meth:`__set_name__` "
+"nebude automaticky volána. Pokud je potřeba, :meth:`__set_name__` může být "
+"volána přímo::"
 
 #: ../../reference/datamodel.rst:2719
 msgid ""
@@ -3489,14 +4194,20 @@ msgid ""
 "A.x = c                  # The hook is not called\n"
 "c.__set_name__(A, 'x')   # Manually invoke the hook"
 msgstr ""
+"class A:\n"
+"   pass\n"
+"\n"
+"c = C()\n"
+"A.x = c                  # The hook is not called\n"
+"c.__set_name__(A, 'x')   # Manually invoke the hook"
 
 #: ../../reference/datamodel.rst:2726
 msgid "See :ref:`class-object-creation` for more details."
-msgstr ""
+msgstr "Viz :ref:`class-object-creation` pro více podrobností."
 
 #: ../../reference/datamodel.rst:2734
 msgid "Metaclasses"
-msgstr ""
+msgstr "Metaklasé"
 
 #: ../../reference/datamodel.rst:2741
 msgid ""
@@ -3504,6 +4215,9 @@ msgid ""
 "executed in a new namespace and the class name is bound locally to the "
 "result of ``type(name, bases, namespace)``."
 msgstr ""
+"Ve stanovenosti jsou třídy konstruovány použitím :func:`type`. Tělo třídy je"
+" spustené v novém namespace a jméno třídy je svázáno lokelně na výsledek "
+"``type(name, bases, namespace)``."
 
 #: ../../reference/datamodel.rst:2745
 msgid ""
@@ -3512,6 +4226,10 @@ msgid ""
 "existing class that included such an argument. In the following example, "
 "both ``MyClass`` and ``MySubclass`` are instances of ``Meta``::"
 msgstr ""
+"Proces vytváření třídy může být přizpůsoben předáním argumentu klíč "
+"``metaclass`` v řádu definice třídy, nebo děděním z existující třídy, která "
+"zahrnovala takový argument. V následujícím příkladě jsou oba ``MyClass`` a "
+"``MySubclass`` instance ``Meta``::"
 
 #: ../../reference/datamodel.rst:2750
 msgid ""
@@ -3524,36 +4242,46 @@ msgid ""
 "class MySubclass(MyClass):\n"
 "    pass"
 msgstr ""
+"class Meta(type):\n"
+"    pass\n"
+"\n"
+"class MyClass(metaclass=Meta):\n"
+"    pass\n"
+"\n"
+"class MySubclass(MyClass):\n"
+"    pass"
 
 #: ../../reference/datamodel.rst:2759
 msgid ""
 "Any other keyword arguments that are specified in the class definition are "
 "passed through to all metaclass operations described below."
 msgstr ""
+"Jakykoli jiné argumenty klíč, které jsou specifikovány v definici třídy jsou"
+" předány všem metaklasé operácím popsaným níže."
 
 #: ../../reference/datamodel.rst:2762
 msgid "When a class definition is executed, the following steps occur:"
-msgstr ""
+msgstr "Když je vřenı definice třídy, nasledující kroky se uskutečňují:"
 
 #: ../../reference/datamodel.rst:2764
 msgid "MRO entries are resolved;"
-msgstr ""
+msgstr "MRO entré jsou vyřešeny;"
 
 #: ../../reference/datamodel.rst:2765
 msgid "the appropriate metaclass is determined;"
-msgstr ""
+msgstr "správná metaklasé je určena;"
 
 #: ../../reference/datamodel.rst:2766
 msgid "the class namespace is prepared;"
-msgstr ""
+msgstr "obor názvů třídy je připraven;"
 
 #: ../../reference/datamodel.rst:2767
 msgid "the class body is executed;"
-msgstr ""
+msgstr "tělo třídy je spustené;"
 
 #: ../../reference/datamodel.rst:2768
 msgid "the class object is created."
-msgstr ""
+msgstr "objekt třídy je vytvořen."
 
 #: ../../reference/datamodel.rst:2772
 msgid "Resolving MRO entries"

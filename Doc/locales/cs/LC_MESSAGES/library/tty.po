@@ -11,89 +11,111 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/tty.rst:2
 msgid ":mod:`!tty` --- Terminal control functions"
-msgstr ""
+msgstr ":mod:`!tty` --- Funkce pro ovládání terminálu"
 
 #: ../../library/tty.rst:11
 msgid "**Source code:** :source:`Lib/tty.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/tty.py`"
 
 #: ../../library/tty.rst:15
 msgid ""
-"The :mod:`tty` module defines functions for putting the tty into cbreak "
-"and raw modes."
+"The :mod:`tty` module defines functions for putting the tty into cbreak and "
+"raw modes."
 msgstr ""
+"Modul :mod:`tty` definuje funkce pro nastavení terminálu do režimu cbreak a "
+"raw."
 
 #: ../../library/tty.rst:18
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/tty.rst:20
-msgid "Because it requires the :mod:`termios` module, it will work only on Unix."
-msgstr ""
+msgid ""
+"Because it requires the :mod:`termios` module, it will work only on Unix."
+msgstr "Protože vyžaduje modul :mod:`termios`, funguje pouze na Unixu."
 
 #: ../../library/tty.rst:22
 msgid "The :mod:`tty` module defines the following functions:"
-msgstr ""
+msgstr "Modul :mod:`tty` definuje následující funkce:"
 
 #: ../../library/tty.rst:27
 msgid ""
-"Convert the tty attribute list *mode*, which is a list like the one "
-"returned by :func:`termios.tcgetattr`, to that of a tty in raw mode."
+"Convert the tty attribute list *mode*, which is a list like the one returned"
+" by :func:`termios.tcgetattr`, to that of a tty in raw mode."
 msgstr ""
+"Převede seznam atributů terminálu *mode*, který je seznam jako ten vrácený "
+"funkcí :func:`termios.tcgetattr`, na seznam pro terminál v režimu raw."
 
 #: ../../library/tty.rst:35
 msgid ""
-"Convert the tty attribute list *mode*, which is a list like the one "
-"returned by :func:`termios.tcgetattr`, to that of a tty in cbreak mode."
+"Convert the tty attribute list *mode*, which is a list like the one returned"
+" by :func:`termios.tcgetattr`, to that of a tty in cbreak mode."
 msgstr ""
+"Převede seznam atributů terminálu *mode*, který je seznam jako ten vrácený "
+"funkcí :func:`termios.tcgetattr`, na seznam pro terminál v režimu cbreak."
 
 #: ../../library/tty.rst:38
 msgid ""
-"This clears the ``ECHO`` and ``ICANON`` local mode flags in *mode* as "
-"well as setting the minimum input to 1 byte with no delay."
+"This clears the ``ECHO`` and ``ICANON`` local mode flags in *mode* as well "
+"as setting the minimum input to 1 byte with no delay."
 msgstr ""
+"Toto vymaže příznaky ``ECHO`` a ``ICANON`` v režimu *mode* a nastaví "
+"minimální vstup na 1 bajt bez zpoždění."
 
 #: ../../library/tty.rst:43
 msgid ""
-"The ``ICRNL`` flag is no longer cleared. This matches Linux and macOS "
-"``stty cbreak`` behavior and what :func:`setcbreak` historically did."
+"The ``ICRNL`` flag is no longer cleared. This matches Linux and macOS ``stty"
+" cbreak`` behavior and what :func:`setcbreak` historically did."
 msgstr ""
+"Příznak ``ICRNL`` se již nevymazává. To odpovídá chování ``stty cbreak`` na "
+"Linuxu a macOS a tomu, co :func:`setcbreak` historicky prováděla."
 
 #: ../../library/tty.rst:50
 msgid ""
-"Change the mode of the file descriptor *fd* to raw. If *when* is omitted,"
-" it defaults to :const:`termios.TCSAFLUSH`, and is passed to "
-":func:`termios.tcsetattr`. The return value of :func:`termios.tcgetattr` "
-"is saved before setting *fd* to raw mode; this value is returned."
+"Change the mode of the file descriptor *fd* to raw. If *when* is omitted, it"
+" defaults to :const:`termios.TCSAFLUSH`, and is passed to "
+":func:`termios.tcsetattr`. The return value of :func:`termios.tcgetattr` is "
+"saved before setting *fd* to raw mode; this value is returned."
 msgstr ""
+"Změní režim deskriptoru souboru *fd* na raw. Pokud je vynechán *when*, "
+"výchozí je :const:`termios.TCSAFLUSH` a je předán :func:`termios.tcsetattr`."
+" Návratová hodnota :func:`termios.tcgetattr` je uložena před nastavením *fd*"
+" do režimu raw; tato hodnota je vrácena."
 
 #: ../../library/tty.rst:55 ../../library/tty.rst:69
-msgid "The return value is now the original tty attributes, instead of ``None``."
-msgstr ""
+msgid ""
+"The return value is now the original tty attributes, instead of ``None``."
+msgstr "Návratová hodnota je nyní původní atributy terminálu místo ``None``."
 
 #: ../../library/tty.rst:61
 msgid ""
-"Change the mode of file descriptor *fd* to cbreak. If *when* is omitted, "
-"it defaults to :const:`termios.TCSAFLUSH`, and is passed to "
-":func:`termios.tcsetattr`. The return value of :func:`termios.tcgetattr` "
-"is saved before setting *fd* to cbreak mode; this value is returned."
+"Change the mode of file descriptor *fd* to cbreak. If *when* is omitted, it "
+"defaults to :const:`termios.TCSAFLUSH`, and is passed to "
+":func:`termios.tcsetattr`. The return value of :func:`termios.tcgetattr` is "
+"saved before setting *fd* to cbreak mode; this value is returned."
 msgstr ""
+"Změní režim deskriptoru souboru *fd* na cbreak. Pokud je vynechán *when*, "
+"výchozí je :const:`termios.TCSAFLUSH` a je předán :func:`termios.tcsetattr`."
+" Návratová hodnota :func:`termios.tcgetattr` je uložena před nastavením *fd*"
+" do režimu cbreak; tato hodnota je vrácena."
 
 #: ../../library/tty.rst:66
 msgid ""
-"This clears the ``ECHO`` and ``ICANON`` local mode flags as well as "
-"setting the minimum input to 1 byte with no delay."
+"This clears the ``ECHO`` and ``ICANON`` local mode flags as well as setting "
+"the minimum input to 1 byte with no delay."
 msgstr ""
+"Toto vymaže příznaky ``ECHO`` a ``ICANON`` v režimu a nastaví minimální "
+"vstup na 1 bajt bez zpoždění."
 
 #: ../../library/tty.rst:72
 msgid ""
@@ -101,12 +123,14 @@ msgid ""
 "Python 3.11 and earlier as well as matching what Linux, macOS, & BSDs "
 "describe in their ``stty(1)`` man pages regarding cbreak mode."
 msgstr ""
+"Příznak ``ICRNL`` se již nevymazává. Toto obnovuje chování Pythonu 3.11 a "
+"starších verzí a také odpovídá tomu, co popisují man pages ``stty(1)`` na "
+"Linuxu, macOS a BSD ohledně režimu cbreak."
 
 #: ../../library/tty.rst:80
 msgid "Module :mod:`termios`"
-msgstr ""
+msgstr "Modul :mod:`termios`"
 
 #: ../../library/tty.rst:81
 msgid "Low-level terminal control interface."
-msgstr ""
-
+msgstr "Rozhraní pro ovládání terminálu na nízké úrovni."

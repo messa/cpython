@@ -11,23 +11,25 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/resource.rst:2
 msgid ":mod:`!resource` --- Resource usage information"
-msgstr ""
+msgstr ":mod:`!resource` --- Informace o využívání prostředků"
 
 #: ../../library/resource.rst:13
 msgid ""
-"This module provides basic mechanisms for measuring and controlling "
-"system resources utilized by a program."
+"This module provides basic mechanisms for measuring and controlling system "
+"resources utilized by a program."
 msgstr ""
+"Tento modul poskytuje základní mechanismy pro měření a kontrolu systémových "
+"prostředků využívaných programem."
 
 #: ../../library/resource.rst:16 ../../library/resource.rst:104
 #: ../../library/resource.rst:181 ../../library/resource.rst:193
@@ -36,230 +38,295 @@ msgstr ""
 #: ../../library/resource.rst:241 ../../library/resource.rst:255
 #: ../../library/resource.rst:264 ../../library/resource.rst:273
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/resource.rst:18
 msgid ""
-"Symbolic constants are used to specify particular system resources and to"
-" request usage information about either the current process or its "
-"children."
+"Symbolic constants are used to specify particular system resources and to "
+"request usage information about either the current process or its children."
 msgstr ""
+"Symbolické konstanty se používají k určení konkrétních systémových "
+"prostředků a k vyžádání informací o využívání buď aktuálního procesu nebo "
+"jeho podřízených procesů."
 
 #: ../../library/resource.rst:21
 msgid "An :exc:`OSError` is raised on syscall failure."
-msgstr ""
+msgstr "Na selhání syscallu je vyvolána výjimka :exc:`OSError`."
 
 #: ../../library/resource.rst:26
 msgid "A deprecated alias of :exc:`OSError`."
-msgstr ""
+msgstr "Zastaralý alias :exc:`OSError`."
 
 #: ../../library/resource.rst:28
 msgid "Following :pep:`3151`, this class was made an alias of :exc:`OSError`."
 msgstr ""
+"Následující :pep:`3151`, byla tato třída udělána aliasem :exc:`OSError`."
 
 #: ../../library/resource.rst:33
 msgid "Resource Limits"
-msgstr ""
+msgstr "Limity prostředků"
 
 #: ../../library/resource.rst:35
 msgid ""
 "Resources usage can be limited using the :func:`setrlimit` function "
 "described below. Each resource is controlled by a pair of limits: a soft "
 "limit and a hard limit. The soft limit is the current limit, and may be "
-"lowered or raised by a process over time. The soft limit can never exceed"
-" the hard limit. The hard limit can be lowered to any value greater than "
-"the soft limit, but not raised. (Only processes with the effective UID of"
-" the super-user can raise a hard limit.)"
+"lowered or raised by a process over time. The soft limit can never exceed "
+"the hard limit. The hard limit can be lowered to any value greater than the "
+"soft limit, but not raised. (Only processes with the effective UID of the "
+"super-user can raise a hard limit.)"
 msgstr ""
+"Používání prostředků lze omezit pomocí funkce :func:`setrlimit` popsané "
+"níže. Každý prostředek je kontrolován párem limitů: měkkým limitem a tvrdým "
+"limitem. Měkký limit je aktuálním limitem a může být procesem snížen nebo "
+"zvýšen. Měkký limit nikdy nesmí překročit tvrdý limit. Tvrdý limit lze "
+"snížit na jakoukoli hodnotu větší než měkký limit, ale nikoli zvýšit. (Pouze"
+" procesy s efektivním UID super-uživatele mohou zvýšit tvrdý limit.)"
 
 #: ../../library/resource.rst:43
 msgid ""
-"The specific resources that can be limited are system dependent. They are"
-" described in the :manpage:`getrlimit(2)` man page.  The resources listed"
-" below are supported when the underlying operating system supports them; "
-"resources which cannot be checked or controlled by the operating system "
-"are not defined in this module for those platforms."
+"The specific resources that can be limited are system dependent. They are "
+"described in the :manpage:`getrlimit(2)` man page.  The resources listed "
+"below are supported when the underlying operating system supports them; "
+"resources which cannot be checked or controlled by the operating system are "
+"not defined in this module for those platforms."
 msgstr ""
+"Konkrétní prostředky, které lze omezit, jsou závislé na systému. Jsou "
+"popsány na stránce :manpage:`getrlimit(2)`. Prostředky uvedené níže jsou "
+"podporovány, pokud je podporuje základní operační systém; prostředky, které "
+"nemohou být kontrolovány operačním systémem, nejsou v tomto modulu pro tyto "
+"platformy definovány."
 
 #: ../../library/resource.rst:52
 msgid "Constant used to represent the limit for an unlimited resource."
-msgstr ""
+msgstr "Konstanta používaná k reprezentaci limitu pro neomezený prostředek."
 
 #: ../../library/resource.rst:57
 msgid ""
-"Returns a tuple ``(soft, hard)`` with the current soft and hard limits of"
-" *resource*. Raises :exc:`ValueError` if an invalid resource is "
-"specified, or :exc:`error` if the underlying system call fails "
-"unexpectedly."
+"Returns a tuple ``(soft, hard)`` with the current soft and hard limits of "
+"*resource*. Raises :exc:`ValueError` if an invalid resource is specified, or"
+" :exc:`error` if the underlying system call fails unexpectedly."
 msgstr ""
+"Vrací tuple ``(soft, hard)`` s aktuálnými měkkými a tvrdými limity "
+"*resource*. Vyvolá :exc:`ValueError`, pokud je zadán neplatný prostředek, "
+"nebo :exc:`error`, pokud systémový vol selhá nepřímočeně."
 
 #: ../../library/resource.rst:64
 msgid ""
-"Sets new limits of consumption of *resource*. The *limits* argument must "
-"be a tuple ``(soft, hard)`` of two integers describing the new limits. A "
-"value of :const:`~resource.RLIM_INFINITY` can be used to request a limit "
-"that is unlimited."
+"Sets new limits of consumption of *resource*. The *limits* argument must be "
+"a tuple ``(soft, hard)`` of two integers describing the new limits. A value "
+"of :const:`~resource.RLIM_INFINITY` can be used to request a limit that is "
+"unlimited."
 msgstr ""
+"Nastaví nové limity spotřeby *resource*. Argument *limits* musí být tuple "
+"``(soft, hard)`` dvou celých čísel popisujících nové limity. Hodnota "
+":const:`~resource.RLIM_INFINITY` může být použita k vyžádání neomezeného "
+"limitu."
 
 #: ../../library/resource.rst:69
 msgid ""
 "Raises :exc:`ValueError` if an invalid resource is specified, if the new "
-"soft limit exceeds the hard limit, or if a process tries to raise its "
-"hard limit. Specifying a limit of :const:`~resource.RLIM_INFINITY` when "
-"the hard or system limit for that resource is not unlimited will result "
-"in a :exc:`ValueError`.  A process with the effective UID of super-user "
-"can request any valid limit value, including unlimited, but "
-":exc:`ValueError` will still be raised if the requested limit exceeds the"
-" system imposed limit."
+"soft limit exceeds the hard limit, or if a process tries to raise its hard "
+"limit. Specifying a limit of :const:`~resource.RLIM_INFINITY` when the hard "
+"or system limit for that resource is not unlimited will result in a "
+":exc:`ValueError`.  A process with the effective UID of super-user can "
+"request any valid limit value, including unlimited, but :exc:`ValueError` "
+"will still be raised if the requested limit exceeds the system imposed "
+"limit."
 msgstr ""
+"Vyvolá :exc:`ValueError`, pokud je zadán neplatný prostředek, pokud nový "
+"měkký limit překročí tvrdý limit, nebo pokud se proces pokusí zvýšit svůj "
+"tvrdý limit. Zadání limitu :const:`~resource.RLIM_INFINITY`, když tvrdý nebo"
+" systémový limit pro daný prostředek není neomezen, způsobí vyvolání "
+":exc:`ValueError`. Proces s efektivním UID super-uživatele může vyžádat "
+"jakoukoli platnou hodnotu limitu, včetně neomezené, ale :exc:`ValueError` "
+"bude stále vyvolána, pokud zadáný limit překročí limit zavéstý systémem."
 
 #: ../../library/resource.rst:78
 msgid ""
 "``setrlimit`` may also raise :exc:`error` if the underlying system call "
 "fails."
 msgstr ""
+"``setrlimit`` může také vyvolat :exc:`error`, pokud systémový vol selhá."
 
 #: ../../library/resource.rst:81
 msgid "VxWorks only supports setting :const:`RLIMIT_NOFILE`."
-msgstr ""
+msgstr "VxWorks podporuje pouze nastavení :const:`RLIMIT_NOFILE`."
 
 #: ../../library/resource.rst:83
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``resource.setrlimit`` with "
 "arguments ``resource``, ``limits``."
 msgstr ""
+"Vyvolá :ref:`auditüní událost <auditing>` ``resource.setrlimit`` s argumenty"
+" ``resource``, ``limits``."
 
 #: ../../library/resource.rst:88
 msgid ""
 "Combines :func:`setrlimit` and :func:`getrlimit` in one function and "
 "supports to get and set the resources limits of an arbitrary process. If "
 "*pid* is 0, then the call applies to the current process. *resource* and "
-"*limits* have the same meaning as in :func:`setrlimit`, except that "
-"*limits* is optional."
+"*limits* have the same meaning as in :func:`setrlimit`, except that *limits*"
+" is optional."
 msgstr ""
+"Kombinuje :func:`setrlimit` a :func:`getrlimit` v jedné funkci a podporuje "
+"získání a nastavení limitů prostředků libovolného procesu. Pokud je *pid* 0,"
+" pak se vol vztahuje na aktuální proces. *resource* a *limits* mají stejný "
+"význams jako v :func:`setrlimit`, s výjimkou, že *limits* je volitelné."
 
 #: ../../library/resource.rst:94
 msgid ""
-"When *limits* is not given the function returns the *resource* limit of "
-"the process *pid*. When *limits* is given the *resource* limit of the "
-"process is set and the former resource limit is returned."
+"When *limits* is not given the function returns the *resource* limit of the "
+"process *pid*. When *limits* is given the *resource* limit of the process is"
+" set and the former resource limit is returned."
 msgstr ""
+"Pokud *limits* není zadán, funkce vrátí limit *resource* procesu *pid*. "
+"Pokud je *limits* zadán, je limit *resource* procesu nastaven a starý limit "
+"prostředku je vrácen."
 
 #: ../../library/resource.rst:98
 msgid ""
 "Raises :exc:`ProcessLookupError` when *pid* can't be found and "
-":exc:`PermissionError` when the user doesn't have ``CAP_SYS_RESOURCE`` "
-"for the process."
+":exc:`PermissionError` when the user doesn't have ``CAP_SYS_RESOURCE`` for "
+"the process."
 msgstr ""
+"Vyvolá :exc:`ProcessLookupError`, pokud *pid* nelze nalézt, a "
+":exc:`PermissionError`, pokud uživatel nemá ``CAP_SYS_RESOURCE`` pro proces."
 
 #: ../../library/resource.rst:102
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``resource.prlimit`` with "
 "arguments ``pid``, ``resource``, ``limits``."
 msgstr ""
+"Vyvolá :ref:`auditüní událost <auditing>` ``resource.prlimit`` s argumenty "
+"``pid``, ``resource``, ``limits``."
 
 #: ../../library/resource.rst:109
 msgid ""
-"These symbols define resources whose consumption can be controlled using "
-"the :func:`setrlimit` and :func:`getrlimit` functions described below. "
-"The values of these symbols are exactly the constants used by C programs."
+"These symbols define resources whose consumption can be controlled using the"
+" :func:`setrlimit` and :func:`getrlimit` functions described below. The "
+"values of these symbols are exactly the constants used by C programs."
 msgstr ""
+"Tyto symboly definují prostředky, jejichž spotřeba může být kontrolována "
+"pomocí funkcí :func:`setrlimit` a :func:`getrlimit` popsáných níže. Hodnoty "
+"těchto symbolů jsou přesně konstanty používané programý C."
 
 #: ../../library/resource.rst:113
 msgid ""
-"The Unix man page for :manpage:`getrlimit(2)` lists the available "
-"resources. Note that not all systems use the same symbol or same value to"
-" denote the same resource.  This module does not attempt to mask platform"
-" differences --- symbols not defined for a platform will not be available"
-" from this module on that platform."
+"The Unix man page for :manpage:`getrlimit(2)` lists the available resources."
+" Note that not all systems use the same symbol or same value to denote the "
+"same resource.  This module does not attempt to mask platform differences "
+"--- symbols not defined for a platform will not be available from this "
+"module on that platform."
 msgstr ""
+"Stránka man pro Unix :manpage:`getrlimit(2)` seznam dostupných prostředků. "
+"Vezměte v úvahu, že ne všechny systémy používají stejný symbol nebo stejnou "
+"hodnotu k označení stejného prostředku. Tento modul se nepokousí skrýt "
+"rozdvě rozdvě mezi platformami --- symboly nedefinované pro platformu "
+"nebudou dostupné z tohoto modulu na této platformě."
 
 #: ../../library/resource.rst:122
 msgid ""
 "The maximum size (in bytes) of a core file that the current process can "
-"create. This may result in the creation of a partial core file if a "
-"larger core would be required to contain the entire process image."
+"create. This may result in the creation of a partial core file if a larger "
+"core would be required to contain the entire process image."
 msgstr ""
+"Maximální velikost (v bytech) hlavního souboru, který může souasný proces "
+"vytvořit. To může způsobit vytvoření částého hlavního souboru, pokud by bylo"
+" potřeba větší jádro na zahřnutí celého obrazu procesu."
 
 #: ../../library/resource.rst:129
 msgid ""
-"The maximum amount of processor time (in seconds) that a process can use."
-" If this limit is exceeded, a :const:`~signal.SIGXCPU` signal is sent to "
-"the process. (See the :mod:`signal` module documentation for information "
-"about how to catch this signal and do something useful, e.g. flush open "
-"files to disk.)"
+"The maximum amount of processor time (in seconds) that a process can use. If"
+" this limit is exceeded, a :const:`~signal.SIGXCPU` signal is sent to the "
+"process. (See the :mod:`signal` module documentation for information about "
+"how to catch this signal and do something useful, e.g. flush open files to "
+"disk.)"
 msgstr ""
+"Maximální množství času procesoru (v sekundách), které může proces použít. "
+"Pokud je tento limit překročen, je procesu odeslán signál "
+":const:`~signal.SIGXCPU`. (Viz dokumentace modulu :mod:`signal` pro "
+"informace o tom, jak zachytit tento signál a udělat něco užtečného, např. "
+"vyprazdnit otevřené soubory na disk.)"
 
 #: ../../library/resource.rst:137
 msgid "The maximum size of a file which the process may create."
-msgstr ""
+msgstr "Maximální velikost souboru, který může proces vytvořit."
 
 #: ../../library/resource.rst:142
 msgid "The maximum size (in bytes) of the process's heap."
-msgstr ""
+msgstr "Maximální velikost (v bytech) haldy procesu."
 
 #: ../../library/resource.rst:147
 msgid ""
-"The maximum size (in bytes) of the call stack for the current process.  "
-"This only affects the stack of the main thread in a multi-threaded "
-"process."
+"The maximum size (in bytes) of the call stack for the current process.  This"
+" only affects the stack of the main thread in a multi-threaded process."
 msgstr ""
+"Maximální velikost (v bytech) zásobníku volání pro aktuální proces. To "
+"ovlivňuje pouze zásobník hlavního vlákna v procesu s více vlákny."
 
 #: ../../library/resource.rst:153
 msgid ""
-"The maximum resident set size that should be made available to the "
-"process."
+"The maximum resident set size that should be made available to the process."
 msgstr ""
+"Maximální velikost rezidentialní sady, která má být zpřístupněna procesu."
 
 #: ../../library/resource.rst:158
 msgid "The maximum number of processes the current process may create."
-msgstr ""
+msgstr "Maximální počet procesů, které může aktuální proces vytvořit."
 
 #: ../../library/resource.rst:163
 msgid "The maximum number of open file descriptors for the current process."
-msgstr ""
+msgstr "Maximální počet otevřených dešifrátorů souborů pro aktuální proces."
 
 #: ../../library/resource.rst:168
 msgid "The BSD name for :const:`RLIMIT_NOFILE`."
-msgstr ""
+msgstr "Název BSD pro :const:`RLIMIT_NOFILE`."
 
 #: ../../library/resource.rst:173
 msgid "The maximum address space which may be locked in memory."
-msgstr ""
+msgstr "Maximální adresní prostor, který může být uzamken v paměti."
 
 #: ../../library/resource.rst:178
 msgid ""
-"The largest area of mapped memory which the process may occupy. Usually "
-"an alias of :const:`RLIMIT_AS`."
+"The largest area of mapped memory which the process may occupy. Usually an "
+"alias of :const:`RLIMIT_AS`."
 msgstr ""
+"Nejvtší oblast mapované paměti, kterou může proces zabírat. Obvykle alias "
+":const:`RLIMIT_AS`."
 
 #: ../../library/resource.rst:186
 msgid ""
 "The maximum area (in bytes) of address space which may be taken by the "
 "process."
 msgstr ""
+"Maximální oblast (v bytech) adresního prostoru, který má být zabířen "
+"procesem."
 
 #: ../../library/resource.rst:191
 msgid "The number of bytes that can be allocated for POSIX message queues."
-msgstr ""
+msgstr "Počet bytů, které mohou být alokovány pro fronty zpráv POSIX."
 
 #: ../../library/resource.rst:200
-msgid "The ceiling for the process's nice level (calculated as 20 - rlim_cur)."
-msgstr ""
+msgid ""
+"The ceiling for the process's nice level (calculated as 20 - rlim_cur)."
+msgstr "Strop pro uroveň přijemnosti procesu (vypočíaný jako 20 - rlim_cur)."
 
 #: ../../library/resource.rst:209
 msgid "The ceiling of the real-time priority."
-msgstr ""
+msgstr "Strop priorit v reálném čase."
 
 #: ../../library/resource.rst:218
 msgid ""
-"The time limit (in microseconds) on CPU time that a process can spend "
-"under real-time scheduling without making a blocking syscall."
+"The time limit (in microseconds) on CPU time that a process can spend under "
+"real-time scheduling without making a blocking syscall."
 msgstr ""
+"Časový limit (v mikrosekundách) na čas CPU, který má proces strávit v "
+"reálném planování bez blokujícího syscallu."
 
 #: ../../library/resource.rst:228
 msgid "The number of signals which the process may queue."
-msgstr ""
+msgstr "Počet signálů, které může proces fronty."
 
 #: ../../library/resource.rst:237
 msgid ""
@@ -267,31 +334,39 @@ msgid ""
 "limits the amount of network memory, and hence the amount of mbufs, that "
 "this user may hold at any time."
 msgstr ""
+"Maximální velikost (v bytech) použítí vyrovnávací paměti socket pro tohoto "
+"uživatele. Toto omezuje množství sítě, a tedy množství mbufsů, které má "
+"tento uživatel v jakémkoli čase."
 
 #: ../../library/resource.rst:248
 msgid ""
-"The maximum size (in bytes) of the swap space that may be reserved or "
-"used by all of this user id's processes. This limit is enforced only if "
-"bit 1 of the vm.overcommit sysctl is set. Please see `tuning(7) "
+"The maximum size (in bytes) of the swap space that may be reserved or used "
+"by all of this user id's processes. This limit is enforced only if bit 1 of "
+"the vm.overcommit sysctl is set. Please see `tuning(7) "
 "<https://man.freebsd.org/cgi/man.cgi?query=tuning&sektion=7>`__ for a "
 "complete description of this sysctl."
 msgstr ""
+"Maximální velikost (v bytech) mísovacího prostoru, který má být vyhrazen "
+"nebo použit všech procesů této ID uživatele. Tento limit je vynucen pouze v "
+"případě, že je nastaven bit 1 sysctl vm.overcommit. Viz `tuning(7) "
+"<https://man.freebsd.org/cgi/man.cgi?query=tuning&sektion=7>`__ pro úplņý "
+"popis tohoto sysctl."
 
 #: ../../library/resource.rst:262
 msgid "The maximum number of pseudo-terminals created by this user id."
-msgstr ""
+msgstr "Maximální počet pseudo-terminálů vytvořených této ID uživatele."
 
 #: ../../library/resource.rst:271
 msgid "The maximum number of kqueues this user id is allowed to create."
-msgstr ""
+msgstr "Maximální počet kqueue, které může tato ID uživatele vytvořit."
 
 #: ../../library/resource.rst:279
 msgid "Resource Usage"
-msgstr ""
+msgstr "Použítí prostředků"
 
 #: ../../library/resource.rst:281
 msgid "These functions are used to retrieve resource usage information:"
-msgstr ""
+msgstr "Tyto funkce jsou používány k získání informací o použítí prostředků:"
 
 #: ../../library/resource.rst:286
 msgid ""
@@ -300,10 +375,14 @@ msgid ""
 "parameter.  The *who* parameter should be specified using one of the "
 ":const:`!RUSAGE_\\*` constants described below."
 msgstr ""
+"Tato funkce vrací objekt, který popisuje prostředky spotřebované buď "
+"aktuálním procesem nebo jeho dětmi, jak je zadáno parametrem *who*. Parametr"
+" *who* by měl být zadán pomocí jedné z konstant :const:`!RUSAGE_\\*` "
+"popsáných níže."
 
 #: ../../library/resource.rst:291
 msgid "A simple example::"
-msgstr ""
+msgstr "Jednoduchý příklad::"
 
 #: ../../library/resource.rst:293
 msgid ""
@@ -319,123 +398,146 @@ msgid ""
 "   _ = 1 + 1\n"
 "print(getrusage(RUSAGE_SELF))"
 msgstr ""
+"from resource import *\n"
+"import time\n"
+"\n"
+"# a non CPU-bound task\n"
+"time.sleep(3)\n"
+"print(getrusage(RUSAGE_SELF))\n"
+"\n"
+"# a CPU-bound task\n"
+"for i in range(10 ** 8):\n"
+"   _ = 1 + 1\n"
+"print(getrusage(RUSAGE_SELF))"
 
 #: ../../library/resource.rst:305
 msgid ""
 "The fields of the return value each describe how a particular system "
-"resource has been used, e.g. amount of time spent running is user mode or"
-" number of times the process was swapped out of main memory. Some values "
-"are dependent on the clock tick internal, e.g. the amount of memory the "
-"process is using."
+"resource has been used, e.g. amount of time spent running is user mode or "
+"number of times the process was swapped out of main memory. Some values are "
+"dependent on the clock tick internal, e.g. the amount of memory the process "
+"is using."
 msgstr ""
+"Pole návrátové hodnoty každé popisují, jak byl konkrétní systémový "
+"prostředek použit, např. kolik času byl stráven v uživatelském režimu nebo "
+"kolikrát byl proces vytlačen z hlavní paměti. Některé hodnoty závisí na "
+"internu hodinového tiku, např. kolik paměti proces používá."
 
 #: ../../library/resource.rst:310
 msgid ""
-"For backward compatibility, the return value is also accessible as a "
-"tuple of 16 elements."
+"For backward compatibility, the return value is also accessible as a tuple "
+"of 16 elements."
 msgstr ""
+"Pro zpětnă kompatibilitu je návrátová hodnota také přístupná jako tuple 16 "
+"prvků."
 
 #: ../../library/resource.rst:313
 msgid ""
-"The fields :attr:`!ru_utime` and :attr:`!ru_stime` of the return value "
-"are floating-point values representing the amount of time spent executing"
-" in user mode and the amount of time spent executing in system mode, "
+"The fields :attr:`!ru_utime` and :attr:`!ru_stime` of the return value are "
+"floating-point values representing the amount of time spent executing in "
+"user mode and the amount of time spent executing in system mode, "
 "respectively. The remaining values are integers. Consult the "
 ":manpage:`getrusage(2)` man page for detailed information about these "
 "values. A brief summary is presented here:"
 msgstr ""
+"Pole :attr:`!ru_utime` a :attr:`!ru_stime` návrátové hodnoty jsou hodnoty s "
+"plovaá́ řádovou čárkou reprezentující množství času stráveného spouštěním v "
+"uživatelském režimu a množství času stráveného spouštěním v systémovém "
+"režimu. Zbűvájící hodnoty jsou celá čísla. Konzultujte stránku "
+":manpage:`getrusage(2)` pro podrobné informace o těchto hodnotách. Střučn't "
+"souhrn je zde prezentován:"
 
 #: ../../library/resource.rst:320
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: ../../library/resource.rst:320
 msgid "Field"
-msgstr ""
+msgstr "Pole"
 
 #: ../../library/resource.rst:320
 msgid "Resource"
-msgstr ""
+msgstr "Prostředek"
 
 #: ../../library/resource.rst:322
 msgid "``0``"
-msgstr ""
+msgstr "``0``"
 
 #: ../../library/resource.rst:322
 msgid ":attr:`!ru_utime`"
-msgstr ""
+msgstr ":attr:`!ru_utime`"
 
 #: ../../library/resource.rst:322
 msgid "time in user mode (float seconds)"
-msgstr ""
+msgstr "čas v uživatelském režimu (float sekund)"
 
 #: ../../library/resource.rst:324
 msgid "``1``"
-msgstr ""
+msgstr "``1``"
 
 #: ../../library/resource.rst:324
 msgid ":attr:`!ru_stime`"
-msgstr ""
+msgstr ":attr:`!ru_stime`"
 
 #: ../../library/resource.rst:324
 msgid "time in system mode (float seconds)"
-msgstr ""
+msgstr "čas v systémovém režimu (float sekund)"
 
 #: ../../library/resource.rst:326
 msgid "``2``"
-msgstr ""
+msgstr "``2``"
 
 #: ../../library/resource.rst:326
 msgid ":attr:`!ru_maxrss`"
-msgstr ""
+msgstr ":attr:`!ru_maxrss`"
 
 #: ../../library/resource.rst:326
 msgid "maximum resident set size"
-msgstr ""
+msgstr "maximální velikost rezidualní sady"
 
 #: ../../library/resource.rst:328
 msgid "``3``"
-msgstr ""
+msgstr "``3``"
 
 #: ../../library/resource.rst:328
 msgid ":attr:`!ru_ixrss`"
-msgstr ""
+msgstr ":attr:`!ru_ixrss`"
 
 #: ../../library/resource.rst:328
 msgid "shared memory size"
-msgstr ""
+msgstr "velikost sdílené paměti"
 
 #: ../../library/resource.rst:330
 msgid "``4``"
-msgstr ""
+msgstr "``4``"
 
 #: ../../library/resource.rst:330
 msgid ":attr:`!ru_idrss`"
-msgstr ""
+msgstr ":attr:`!ru_idrss`"
 
 #: ../../library/resource.rst:330
 msgid "unshared memory size"
-msgstr ""
+msgstr "velikost nesdlené paměti"
 
 #: ../../library/resource.rst:332
 msgid "``5``"
-msgstr ""
+msgstr "``5``"
 
 #: ../../library/resource.rst:332
 msgid ":attr:`!ru_isrss`"
-msgstr ""
+msgstr ":attr:`!ru_isrss`"
 
 #: ../../library/resource.rst:332
 msgid "unshared stack size"
-msgstr ""
+msgstr "velikost nesdleného zásobníku"
 
 #: ../../library/resource.rst:334
 msgid "``6``"
-msgstr ""
+msgstr "``6``"
 
 #: ../../library/resource.rst:334
 msgid ":attr:`!ru_minflt`"
-msgstr ""
+msgstr ":attr:`!ru_minflt`"
 
 #: ../../library/resource.rst:334
 msgid "page faults not requiring I/O"
@@ -551,43 +653,40 @@ msgstr ""
 
 #: ../../library/resource.rst:355
 msgid ""
-"This function will raise a :exc:`ValueError` if an invalid *who* "
-"parameter is specified. It may also raise :exc:`error` exception in "
-"unusual circumstances."
+"This function will raise a :exc:`ValueError` if an invalid *who* parameter "
+"is specified. It may also raise :exc:`error` exception in unusual "
+"circumstances."
 msgstr ""
 
 #: ../../library/resource.rst:361
 msgid ""
-"Returns the number of bytes in a system page. (This need not be the same "
-"as the hardware page size.)"
+"Returns the number of bytes in a system page. (This need not be the same as "
+"the hardware page size.)"
 msgstr ""
 
 #: ../../library/resource.rst:364
 msgid ""
 "The following :const:`!RUSAGE_\\*` symbols are passed to the "
-":func:`getrusage` function to specify which processes information should "
-"be provided for."
+":func:`getrusage` function to specify which processes information should be "
+"provided for."
 msgstr ""
 
 #: ../../library/resource.rst:370
 msgid ""
 "Pass to :func:`getrusage` to request resources consumed by the calling "
-"process, which is the sum of resources used by all threads in the "
-"process."
+"process, which is the sum of resources used by all threads in the process."
 msgstr ""
 
 #: ../../library/resource.rst:376
 msgid ""
-"Pass to :func:`getrusage` to request resources consumed by child "
-"processes of the calling process which have been terminated and waited "
-"for."
+"Pass to :func:`getrusage` to request resources consumed by child processes "
+"of the calling process which have been terminated and waited for."
 msgstr ""
 
 #: ../../library/resource.rst:382
 msgid ""
-"Pass to :func:`getrusage` to request resources consumed by both the "
-"current process and child processes.  May not be available on all "
-"systems."
+"Pass to :func:`getrusage` to request resources consumed by both the current "
+"process and child processes.  May not be available on all systems."
 msgstr ""
 
 #: ../../library/resource.rst:388
@@ -597,38 +696,30 @@ msgid ""
 msgstr ""
 
 #~ msgid ""
-#~ "It is now always positive. Previously,"
-#~ " it could be negative, such as "
-#~ "-1 or -3."
+#~ "It is now always positive. Previously, it could be negative, such as -1 or "
+#~ "-3."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Constants used to represent the soft "
-#~ "and hard limit values if they "
-#~ "cannot be represented in the ``rlim_t``"
-#~ " value in C. Can be equal to"
-#~ " :data:`RLIM_INFINITY`."
+#~ "Constants used to represent the soft and hard limit values if they cannot be"
+#~ " represented in the ``rlim_t`` value in C. Can be equal to "
+#~ ":data:`RLIM_INFINITY`."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The maximum number of threads for "
-#~ "this user id, not counting the "
-#~ "main and kernel threads."
+#~ "The maximum number of threads for this user id, not counting the main and "
+#~ "kernel threads."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The maximum total size of in-"
-#~ "kernel buffers for bi-directional "
-#~ "pipes/fifos that this user id is "
-#~ "allowed to consume."
+#~ "The maximum total size of in-kernel buffers for bi-directional pipes/fifos "
+#~ "that this user id is allowed to consume."
 #~ msgstr ""
 
 #~ msgid "The maximum number of threads each process can create."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The limit of the number of "
-#~ "process-shared Posix thread library objects"
-#~ " allocated by user id."
+#~ "The limit of the number of process-shared Posix thread library objects "
+#~ "allocated by user id."
 #~ msgstr ""
-

@@ -11,102 +11,120 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/trace.rst:2
 msgid ":mod:`!trace` --- Trace or track Python statement execution"
-msgstr ""
+msgstr ":mod:`!trace` --- Sledování a trasování spuštění příkazů Pythonu"
 
 #: ../../library/trace.rst:7
 msgid "**Source code:** :source:`Lib/trace.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/trace.py`"
 
 #: ../../library/trace.rst:11
 msgid ""
 "The :mod:`trace` module allows you to trace program execution, generate "
-"annotated statement coverage listings, print caller/callee relationships "
-"and list functions executed during a program run.  It can be used in "
-"another program or from the command line."
+"annotated statement coverage listings, print caller/callee relationships and"
+" list functions executed during a program run.  It can be used in another "
+"program or from the command line."
 msgstr ""
+"Modul :mod:`trace` vám umožňuje trasovat spuštění programu, generovat "
+"anotované seznamy pokrytí příkazů, vytisknout vztahy mezi voláním a volaným "
+"(caller/callee) a vypsat funkce spuštěné během běhu programu. Lze jej "
+"používat v jiném programu nebo z příkazové řádky."
 
 #: ../../library/trace.rst:18
 msgid "`Coverage.py <https://coverage.readthedocs.io/>`_"
-msgstr ""
+msgstr "`Coverage.py <https://coverage.readthedocs.io/>`_"
 
 #: ../../library/trace.rst:19
 msgid ""
 "A popular third-party coverage tool that provides HTML output along with "
 "advanced features such as branch coverage."
 msgstr ""
+"Populární nástroj pro pokrytí třetích stran, který poskytuje výstup HTML "
+"spolu s pokročilými funkcemi, jako je pokrytí větvení."
 
 #: ../../library/trace.rst:25
 msgid "Command-Line Usage"
-msgstr ""
+msgstr "Používání z příkazové řádky"
 
 #: ../../library/trace.rst:27
 msgid ""
-"The :mod:`trace` module can be invoked from the command line.  It can be "
-"as simple as ::"
+"The :mod:`trace` module can be invoked from the command line.  It can be as "
+"simple as ::"
 msgstr ""
+"Modul :mod:`trace` lze vyvolat z příkazové řádky. Může to být tak jedné jako"
+" ::"
 
 #: ../../library/trace.rst:30
 msgid "python -m trace --count -C . somefile.py ..."
-msgstr ""
+msgstr "python -m trace --count -C . somefile.py ..."
 
 #: ../../library/trace.rst:32
 msgid ""
-"The above will execute :file:`somefile.py` and generate annotated "
-"listings of all Python modules imported during the execution into the "
-"current directory."
+"The above will execute :file:`somefile.py` and generate annotated listings "
+"of all Python modules imported during the execution into the current "
+"directory."
 msgstr ""
+"Vývojové části bude spustitelný soubor :file:`somefile.py` a vygenerovány "
+"anotované seznamy všech modulů Pythonu importovaných během spuštění do "
+"aktuálního adresáře."
 
 #: ../../library/trace.rst:39
 msgid "Display usage and exit."
-msgstr ""
+msgstr "Zobrazí používání a ukončí se."
 
 #: ../../library/trace.rst:43
 msgid "Display the version of the module and exit."
-msgstr ""
+msgstr "Zobrazí verzi modulu a ukončí se."
 
 #: ../../library/trace.rst:45
 msgid "Added ``--module`` option that allows to run an executable module."
 msgstr ""
+"Přidána volba ``--module``, která umožňuje spouštět spustitelný modul."
 
 #: ../../library/trace.rst:49
 msgid "Main options"
-msgstr ""
+msgstr "Hlavní volby"
 
 #: ../../library/trace.rst:51
 msgid ""
 "At least one of the following options must be specified when invoking "
-":mod:`trace`.  The :option:`--listfuncs <-l>` option is mutually "
-"exclusive with the :option:`--trace <-t>` and :option:`--count <-c>` "
-"options. When :option:`--listfuncs <-l>` is provided, neither "
-":option:`--count <-c>` nor :option:`--trace <-t>` are accepted, and vice "
-"versa."
+":mod:`trace`.  The :option:`--listfuncs <-l>` option is mutually exclusive "
+"with the :option:`--trace <-t>` and :option:`--count <-c>` options. When "
+":option:`--listfuncs <-l>` is provided, neither :option:`--count <-c>` nor "
+":option:`--trace <-t>` are accepted, and vice versa."
 msgstr ""
+"Při vyvolavání :mod:`trace` musí být zadána alespoň jedna z následujících "
+"voleb. Volba :option:`--listfuncs <-l>` se vzájemně vylučuje s volbami "
+":option:`--trace <-t>` a :option:`--count <-c>`. Pokud je zadána "
+":option:`--listfuncs <-l>`, nejsou přijaté volby :option:`--count <-c>` ani "
+":option:`--trace <-t>`, a naopak."
 
 #: ../../library/trace.rst:61
 msgid ""
-"Produce a set of annotated listing files upon program completion that "
-"shows how many times each statement was executed.  See also "
-":option:`--coverdir <-C>`, :option:`--file <-f>` and :option:`--no-report"
-" <-R>` below."
+"Produce a set of annotated listing files upon program completion that shows "
+"how many times each statement was executed.  See also :option:`--coverdir "
+"<-C>`, :option:`--file <-f>` and :option:`--no-report <-R>` below."
 msgstr ""
+"Vytvoří sadu anotovaných seznamů po dokončení programu, které ukazují, "
+"kolikrát byl každý příkaz spustu. Viz také :option:`--coverdir <-C>`, "
+":option:`--file <-f>` a :option:`--no-report <-R>` níže."
 
 #: ../../library/trace.rst:68
 msgid "Display lines as they are executed."
-msgstr ""
+msgstr "Zobrazí řádky při jejich spuštění."
 
 #: ../../library/trace.rst:72
 msgid "Display the functions executed by running the program."
-msgstr ""
+msgstr "Zobrazí funkce spuštěné během spuštění programu."
 
 #: ../../library/trace.rst:76
 msgid ""
@@ -114,20 +132,24 @@ msgid ""
 ":option:`--count <-c>` and :option:`--file <-f>` option.  This does not "
 "execute any code."
 msgstr ""
+"Vytvoří anotovaný seznam z dřívějšího spuštění programu, které používalo "
+"volby :option:`--count <-c>` a :option:`--file <-f>`. To nespuští žádný kód."
 
 #: ../../library/trace.rst:82
 msgid "Display the calling relationships exposed by running the program."
-msgstr ""
+msgstr "Zobrazí vztahy volání odhalené při spuštění programu."
 
 #: ../../library/trace.rst:85
 msgid "Modifiers"
-msgstr ""
+msgstr "Modifikátory"
 
 #: ../../library/trace.rst:91
 msgid ""
-"Name of a file to accumulate counts over several tracing runs.  Should be"
-" used with the :option:`--count <-c>` option."
+"Name of a file to accumulate counts over several tracing runs.  Should be "
+"used with the :option:`--count <-c>` option."
 msgstr ""
+"Název souboru pro shromažďování počtů během několika spuštění trasování. Ubý"
+" vá se používat s volbou :option:`--count <-c>`."
 
 #: ../../library/trace.rst:96
 #, python-brace-format
@@ -136,30 +158,39 @@ msgid ""
 "``package.module`` is written to file "
 ":file:`{dir}/{package}/{module}.cover`."
 msgstr ""
+"Adresář, kam jí soubory sestav. Zpráva pokrytí pro ``package.module`` je "
+"psána do souboru :file:`{dir}/{package}/{module}.cover`."
 
 #: ../../library/trace.rst:101
 msgid ""
-"When generating annotated listings, mark lines which were not executed "
-"with ``>>>>>>``."
+"When generating annotated listings, mark lines which were not executed with "
+"``>>>>>>``."
 msgstr ""
+"Při generánování anotovaných seznamů označí řádky, které nebyly spustitelné,"
+" jako ``>>>>>>``."
 
 #: ../../library/trace.rst:106
 msgid ""
-"When using :option:`--count <-c>` or :option:`--report <-r>`, write a "
-"brief summary to stdout for each file processed."
+"When using :option:`--count <-c>` or :option:`--report <-r>`, write a brief "
+"summary to stdout for each file processed."
 msgstr ""
+"Při používání :option:`--count <-c>` nebo :option:`--report <-r>` zapsat "
+"kroucit zprávu na stdout pro každý zpracovaný soubor."
 
 #: ../../library/trace.rst:111
 msgid ""
-"Do not generate annotated listings.  This is useful if you intend to make"
-" several runs with :option:`--count <-c>`, and then produce a single set "
-"of annotated listings at the end."
+"Do not generate annotated listings.  This is useful if you intend to make "
+"several runs with :option:`--count <-c>`, and then produce a single set of "
+"annotated listings at the end."
 msgstr ""
+"Negenerovat anotované seznamy. To je užtečné, pokud máte zaměření udělat "
+"několik spuštění s :option:`--count <-c>` a poté vytvořit jedné sadu "
+"anotovaných seznamů na konci."
 
 #: ../../library/trace.rst:117
 msgid ""
-"Prefix each line with the time since the program started.  Only used "
-"while tracing."
+"Prefix each line with the time since the program started.  Only used while "
+"tracing."
 msgstr ""
 
 #: ../../library/trace.rst:121
@@ -178,9 +209,8 @@ msgstr ""
 
 #: ../../library/trace.rst:134
 msgid ""
-"Ignore all modules and packages in the named directory and "
-"subdirectories. The argument can be a list of directories separated by "
-":data:`os.pathsep`."
+"Ignore all modules and packages in the named directory and subdirectories. "
+"The argument can be a list of directories separated by :data:`os.pathsep`."
 msgstr ""
 
 #: ../../library/trace.rst:140
@@ -189,30 +219,30 @@ msgstr ""
 
 #: ../../library/trace.rst:145
 msgid ""
-"Create an object to trace execution of a single statement or expression."
-"  All parameters are optional.  *count* enables counting of line numbers."
-"  *trace* enables line execution tracing.  *countfuncs* enables listing "
-"of the functions called during the run.  *countcallers* enables call "
-"relationship tracking.  *ignoremods* is a list of modules or packages to "
-"ignore. *ignoredirs* is a list of directories whose modules or packages "
-"should be ignored.  *infile* is the name of the file from which to read "
-"stored count information.  *outfile* is the name of the file in which to "
-"write updated count information.  *timing* enables a timestamp relative "
-"to when tracing was started to be displayed."
+"Create an object to trace execution of a single statement or expression.  "
+"All parameters are optional.  *count* enables counting of line numbers.  "
+"*trace* enables line execution tracing.  *countfuncs* enables listing of the"
+" functions called during the run.  *countcallers* enables call relationship "
+"tracking.  *ignoremods* is a list of modules or packages to ignore. "
+"*ignoredirs* is a list of directories whose modules or packages should be "
+"ignored.  *infile* is the name of the file from which to read stored count "
+"information.  *outfile* is the name of the file in which to write updated "
+"count information.  *timing* enables a timestamp relative to when tracing "
+"was started to be displayed."
 msgstr ""
 
 #: ../../library/trace.rst:158
 msgid ""
 "Execute the command and gather statistics from the execution with the "
-"current tracing parameters.  *cmd* must be a string or code object, "
-"suitable for passing into :func:`exec`."
+"current tracing parameters.  *cmd* must be a string or code object, suitable"
+" for passing into :func:`exec`."
 msgstr ""
 
 #: ../../library/trace.rst:164
 msgid ""
 "Execute the command and gather statistics from the execution with the "
-"current tracing parameters, in the defined global and local environments."
-"  If not defined, *globals* and *locals* default to empty dictionaries."
+"current tracing parameters, in the defined global and local environments.  "
+"If not defined, *globals* and *locals* default to empty dictionaries."
 msgstr ""
 
 #: ../../library/trace.rst:171
@@ -224,15 +254,15 @@ msgstr ""
 #: ../../library/trace.rst:176
 msgid ""
 "Return a :class:`CoverageResults` object that contains the cumulative "
-"results of all previous calls to ``run``, ``runctx`` and ``runfunc`` for "
-"the given :class:`Trace` instance.  Does not reset the accumulated trace "
+"results of all previous calls to ``run``, ``runctx`` and ``runfunc`` for the"
+" given :class:`Trace` instance.  Does not reset the accumulated trace "
 "results."
 msgstr ""
 
 #: ../../library/trace.rst:183
 msgid ""
-"A container for coverage results, created by :meth:`Trace.results`.  "
-"Should not be created directly by the user."
+"A container for coverage results, created by :meth:`Trace.results`.  Should "
+"not be created directly by the user."
 msgstr ""
 
 #: ../../library/trace.rst:188
@@ -241,18 +271,18 @@ msgstr ""
 
 #: ../../library/trace.rst:193
 msgid ""
-"Write coverage results.  Set *show_missing* to show lines that had no "
-"hits.  Set *summary* to include in the output the coverage summary per "
-"module.  *coverdir* specifies the directory into which the coverage "
-"result files will be output.  If ``None``, the results for each source "
-"file are placed in its directory."
+"Write coverage results.  Set *show_missing* to show lines that had no hits."
+"  Set *summary* to include in the output the coverage summary per module.  "
+"*coverdir* specifies the directory into which the coverage result files will"
+" be output.  If ``None``, the results for each source file are placed in its"
+" directory."
 msgstr ""
 
 #: ../../library/trace.rst:199
 msgid ""
 "If *ignore_missing_files* is ``True``, coverage counts for files that no "
-"longer exist are silently ignored. Otherwise, a missing file will raise a"
-" :exc:`FileNotFoundError`."
+"longer exist are silently ignored. Otherwise, a missing file will raise a "
+":exc:`FileNotFoundError`."
 msgstr ""
 
 #: ../../library/trace.rst:203
@@ -282,4 +312,3 @@ msgid ""
 "r = tracer.results()\n"
 "r.write_results(show_missing=True, coverdir=\".\")"
 msgstr ""
-

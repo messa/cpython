@@ -11,122 +11,167 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/marshal.rst:2
 msgid ":mod:`!marshal` --- Internal Python object serialization"
-msgstr ""
+msgstr ":mod:`!marshal` --- Interní serializace objektů Pythonu"
 
 #: ../../library/marshal.rst:10
 msgid ""
-"This module contains functions that can read and write Python values in a"
-" binary format.  The format is specific to Python, but independent of "
-"machine architecture issues (e.g., you can write a Python value to a file"
-" on a PC, transport the file to a Mac, and read it back there).  Details "
-"of the format are undocumented on purpose; it may change between Python "
-"versions (although it rarely does). [#]_"
+"This module contains functions that can read and write Python values in a "
+"binary format.  The format is specific to Python, but independent of machine"
+" architecture issues (e.g., you can write a Python value to a file on a PC, "
+"transport the file to a Mac, and read it back there).  Details of the format"
+" are undocumented on purpose; it may change between Python versions "
+"(although it rarely does). [#]_"
 msgstr ""
+"Tento modul obsahuje funkce, které mohou číst a psát hodnoty Pythonu v "
+"binárním formátu. Formát je specifický pro Python, ale nezávisí na "
+"problémech s architekturou stroje (například můžete napsat hodnotu Pythonu "
+"do souboru na počítači se systémem Windows, přenést soubor na počítač se "
+"systémem macOS a číst jej tam). Detaily formátu jsou záměrně "
+"nedokumentovány; mohou se změnit mezi verzemi Pythonu (ačkoli se to zřídka "
+"stane). [#]_"
 
 #: ../../library/marshal.rst:21
 msgid ""
-"This is not a general \"persistence\" module.  For general persistence "
-"and transfer of Python objects through RPC calls, see the modules "
-":mod:`pickle` and :mod:`shelve`.  The :mod:`marshal` module exists mainly"
-" to support reading and writing the \"pseudo-compiled\" code for Python "
-"modules of :file:`.pyc` files. Therefore, the Python maintainers reserve "
-"the right to modify the marshal format in backward incompatible ways "
-"should the need arise. The format of code objects is not compatible "
-"between Python versions, even if the version of the format is the same. "
-"De-serializing a code object in the incorrect Python version has "
-"undefined behavior. If you're serializing and de-serializing Python "
-"objects, use the :mod:`pickle` module instead -- the performance is "
-"comparable, version independence is guaranteed, and pickle supports a "
-"substantially wider range of objects than marshal."
+"This is not a general \"persistence\" module.  For general persistence and "
+"transfer of Python objects through RPC calls, see the modules :mod:`pickle` "
+"and :mod:`shelve`.  The :mod:`marshal` module exists mainly to support "
+"reading and writing the \"pseudo-compiled\" code for Python modules of "
+":file:`.pyc` files. Therefore, the Python maintainers reserve the right to "
+"modify the marshal format in backward incompatible ways should the need "
+"arise. The format of code objects is not compatible between Python versions,"
+" even if the version of the format is the same. De-serializing a code object"
+" in the incorrect Python version has undefined behavior. If you're "
+"serializing and de-serializing Python objects, use the :mod:`pickle` module "
+"instead -- the performance is comparable, version independence is "
+"guaranteed, and pickle supports a substantially wider range of objects than "
+"marshal."
 msgstr ""
+"Toto není obecný modul \"persistence\". Pro obecné uchovávání a přenos "
+"objektů Pythonu prostřednictvím volání RPC viz moduly :mod:`pickle` a "
+":mod:`shelve`. Modul :mod:`marshal` existuje především pro podporu čtení a "
+"zápisu \"pseudo-kompilovaného\" kódu pro moduly Pythonu v souborech "
+":file:`.pyc`. Proto si správci Pythonu vyhrazují právo na úpravu formátu "
+"marshal zpětně nekompatibilním způsobem, pokud by to bylo potřeba. Formát "
+"objektů kódu není kompatibilní mezi verzemi Pythonu, i když je verze formátu"
+" stejná. Deserializace objektu kódu v nesprávné verzi Pythonu má "
+"nedefinované chování. Pokud serializujete a deserializujete objekty Pythonu,"
+" použijte místo toho modul :mod:`pickle` -- výkon je srovnatelný, "
+"nezávislost verzí je garantována a pickle podporuje podstatně širší rozsah "
+"objektů než marshal."
 
 #: ../../library/marshal.rst:37
 msgid ""
-"The :mod:`marshal` module is not intended to be secure against erroneous "
-"or maliciously constructed data.  Never unmarshal data received from an "
+"The :mod:`marshal` module is not intended to be secure against erroneous or "
+"maliciously constructed data.  Never unmarshal data received from an "
 "untrusted or unauthenticated source."
 msgstr ""
+"Modul :mod:`marshal` není určen k ochraně proti chybným nebo zlovolně "
+"vytvořeným datům. Nikdy nedeserializujte data přijatá z nedůvěryhodného nebo"
+" neověřeného zdroje."
 
 #: ../../library/marshal.rst:41
 msgid ""
-"There are functions that read/write files as well as functions operating "
-"on bytes-like objects."
+"There are functions that read/write files as well as functions operating on "
+"bytes-like objects."
 msgstr ""
+"Existují funkce, které čtou/zapisují soubory, a také funkce operující s "
+"objekty podobnými bajtům."
 
 #: ../../library/marshal.rst:46
 msgid ""
-"Not all Python object types are supported; in general, only objects whose"
-" value is independent from a particular invocation of Python can be "
-"written and read by this module.  The following types are supported:"
+"Not all Python object types are supported; in general, only objects whose "
+"value is independent from a particular invocation of Python can be written "
+"and read by this module.  The following types are supported:"
 msgstr ""
+"Ne všechny typy objektů Pythonu jsou podporovány; obecně lze napsat a "
+"přečíst tímto modulem pouze objekty, jejichž hodnota je nezávislá na "
+"konkrétním volání Pythonu. Následující typy jsou podporovány:"
 
 #: ../../library/marshal.rst:50
 msgid ""
 "Numeric types: :class:`int`, :class:`bool`, :class:`float`, "
 ":class:`complex`."
 msgstr ""
+"Numerické typy: :class:`int`, :class:`bool`, :class:`float`, "
+":class:`complex`."
 
 #: ../../library/marshal.rst:51
 msgid ""
-"Strings (:class:`str`) and :class:`bytes`. :term:`Bytes-like objects "
-"<bytes-like object>` like :class:`bytearray` are marshalled as "
-":class:`!bytes`."
+"Strings (:class:`str`) and :class:`bytes`. :term:`Bytes-like objects <bytes-"
+"like object>` like :class:`bytearray` are marshalled as :class:`!bytes`."
 msgstr ""
+"Textové řetězce (:class:`str`) a :class:`bytes`. Objekty podobné bajtům "
+":term:`<bytes-like object>` jako :class:`bytearray` jsou marshalovány jako "
+":class:`!bytes`."
 
 #: ../../library/marshal.rst:54
 msgid ""
-"Containers: :class:`tuple`, :class:`list`, :class:`set`, "
-":class:`frozenset`, and (since :data:`version` 5), :class:`slice`. It "
-"should be understood that these are supported only if the values "
-"contained therein are themselves supported. Recursive containers are "
-"supported since :data:`version` 3."
+"Containers: :class:`tuple`, :class:`list`, :class:`set`, :class:`frozenset`,"
+" and (since :data:`version` 5), :class:`slice`. It should be understood that"
+" these are supported only if the values contained therein are themselves "
+"supported. Recursive containers are supported since :data:`version` 3."
 msgstr ""
+"Kontejnery: :class:`tuple`, :class:`list`, :class:`set`, :class:`frozenset` "
+"a (od :data:`verze` 5) :class:`slice`. Mělo by se chápat, že jsou "
+"podporovány pouze tehdy, jsou-li hodnoty v nich obsahužené sé podporovány. "
+"Rekurzivní kontejnery jsou podporovány od :data:`verze` 3."
 
 #: ../../library/marshal.rst:59
-msgid "The singletons :const:`None`, :const:`Ellipsis` and :exc:`StopIteration`."
+msgid ""
+"The singletons :const:`None`, :const:`Ellipsis` and :exc:`StopIteration`."
 msgstr ""
+"Singletonové objekty :const:`None`, :const:`Ellipsis` a "
+":exc:`StopIteration`."
 
 #: ../../library/marshal.rst:60
 msgid ""
-":class:`code` objects, if *allow_code* is true. See note above about "
-"version dependence."
+":class:`code` objects, if *allow_code* is true. See note above about version"
+" dependence."
 msgstr ""
+"Objekty :class:`code`, pokud je *allow_code* pravda. Viz poznámka výše o "
+"závislosti na verzi."
 
 #: ../../library/marshal.rst:65
 msgid ""
-"Added format version 3, which supports marshalling recursive lists, sets "
-"and dictionaries."
+"Added format version 3, which supports marshalling recursive lists, sets and"
+" dictionaries."
 msgstr ""
+"Přidán formát verze 3, který podporuje marshašování rekurzivních seznamů, "
+"množin a slovníků."
 
 #: ../../library/marshal.rst:67
 msgid ""
-"Added format version 4, which supports efficient representations of short"
-" strings."
+"Added format version 4, which supports efficient representations of short "
+"strings."
 msgstr ""
+"Přidán formát verze 4, který podporuje efektivní reprezentaci kratších "
+"řetězců."
 
 #: ../../library/marshal.rst:72
 msgid "Added format version 5, which allows marshalling slices."
-msgstr ""
+msgstr "Přidán formát verze 5, který umožňuje marshašování prostředky."
 
 #: ../../library/marshal.rst:75
 msgid "The module defines these functions:"
-msgstr ""
+msgstr "Modul definuje tyto funkce:"
 
 #: ../../library/marshal.rst:80
 msgid ""
-"Write the value on the open file.  The value must be a supported type.  "
-"The file must be a writeable :term:`binary file`."
+"Write the value on the open file.  The value must be a supported type.  The "
+"file must be a writeable :term:`binary file`."
 msgstr ""
+"Napíše hodnotu do otevřeného souboru. Hodnota musí být podporovaného typu. "
+"Soubor musí být zapisovatelný :term:`binární soubor`."
 
 #: ../../library/marshal.rst:83
 msgid ""
@@ -136,67 +181,95 @@ msgid ""
 ":func:`load`. :ref:`Code objects <code-objects>` are only supported if "
 "*allow_code* is true."
 msgstr ""
+"Pokud má hodnota (nebo obsahuje objekt, který má) nepodporovaný typ, je "
+"vyvolana výjimka :exc:`ValueError` --- ale do souboru budou také napsány "
+"brátů v chybě. Objekt nebude správně přečten zpět :func:`load`. Objekty "
+":ref:`kódu <code-objects>` jsou podporovány pouze pokud je *allow_code* "
+"pravda."
 
 #: ../../library/marshal.rst:88
 msgid ""
-"The *version* argument indicates the data format that ``dump`` should use"
-" (see below)."
+"The *version* argument indicates the data format that ``dump`` should use "
+"(see below)."
 msgstr ""
+"Argument *version* udavá, jaký datový formát by měl ``dump`` používat (viz "
+"níže)."
 
 #: ../../library/marshal.rst:91 ../../library/marshal.rst:131
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``marshal.dumps`` with "
-"arguments ``value``, ``version``."
+"Raises an :ref:`auditing event <auditing>` ``marshal.dumps`` with arguments "
+"``value``, ``version``."
 msgstr ""
+"Vyvolava udalóst :ref:`auditing <auditing>` ``marshal.dumps`` s argumenty "
+"``value``, ``version``."
 
 #: ../../library/marshal.rst:93 ../../library/marshal.rst:117
 #: ../../library/marshal.rst:133 ../../library/marshal.rst:151
 msgid "Added the *allow_code* parameter."
-msgstr ""
+msgstr "Přidán parametr *allow_code*."
 
 #: ../../library/marshal.rst:99
 msgid ""
-"Read one value from the open file and return it.  If no valid value is "
-"read (e.g. because the data has a different Python version's incompatible"
-" marshal format), raise :exc:`EOFError`, :exc:`ValueError` or "
-":exc:`TypeError`. :ref:`Code objects <code-objects>` are only supported "
-"if *allow_code* is true. The file must be a readable :term:`binary file`."
+"Read one value from the open file and return it.  If no valid value is read "
+"(e.g. because the data has a different Python version's incompatible marshal"
+" format), raise :exc:`EOFError`, :exc:`ValueError` or :exc:`TypeError`. "
+":ref:`Code objects <code-objects>` are only supported if *allow_code* is "
+"true. The file must be a readable :term:`binary file`."
 msgstr ""
+"Přečte jednu hodnotu z otevřeného souboru a vraťte ji. Pokud není přečtena "
+"žádná platná hodnota (např. protože data mají nekompatibilní formát marshal "
+"jiné verze Pythonu), vyvolejte :exc:`EOFError`, :exc:`ValueError` nebo "
+":exc:`TypeError`. Objekty :ref:`kódu <code-objects>` jsou podporovány pouze "
+"pokud je *allow_code* pravda. Soubor musí být čitelorný :term:`binární "
+"soubor`."
 
 #: ../../library/marshal.rst:105
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``marshal.load`` with no "
 "arguments."
 msgstr ""
+"Vyvolava udalóst :ref:`auditing <auditing>` ``marshal.load`` bez argumentů."
 
 #: ../../library/marshal.rst:109
 msgid ""
 "If an object containing an unsupported type was marshalled with "
-":func:`dump`, :func:`load` will substitute ``None`` for the "
-"unmarshallable type."
+":func:`dump`, :func:`load` will substitute ``None`` for the unmarshallable "
+"type."
 msgstr ""
+"Pokud byl objekt obsahující nepodporovaný typ marshalován pomocí "
+":func:`dump`, :func:`load` nahradí ``None`` typ, který nelze "
+"demarshalizovat."
 
 #: ../../library/marshal.rst:114
 msgid ""
-"This call used to raise a ``code.__new__`` audit event for each code "
-"object. Now it raises a single ``marshal.load`` event for the entire load"
-" operation."
+"This call used to raise a ``code.__new__`` audit event for each code object."
+" Now it raises a single ``marshal.load`` event for the entire load "
+"operation."
 msgstr ""
+"Toto volání už dříve vyvolalo audit ``code.__new__`` pro každý objekt kódu. "
+"Nyní vyvolava jedinou udalóst ``marshal.load`` pro celou operaci načítání."
 
 #: ../../library/marshal.rst:123
 msgid ""
 "Return the bytes object that would be written to a file by ``dump(value, "
 "file)``.  The value must be a supported type.  Raise a :exc:`ValueError` "
-"exception if value has (or contains an object that has) an unsupported "
-"type. :ref:`Code objects <code-objects>` are only supported if "
-"*allow_code* is true."
+"exception if value has (or contains an object that has) an unsupported type."
+" :ref:`Code objects <code-objects>` are only supported if *allow_code* is "
+"true."
 msgstr ""
+"Vraťte bytes objekt, který by byl napsán do souboru pomocí ``dump(value, "
+"file)``. Hodnota musí být podporovaného typu. Vyvolejte výjimku "
+":exc:`ValueError`, pokud má hodnota (nebo obsahuje objekt, který má) "
+"nepodporovaný typ. Objekty :ref:`kódu <code-objects>` jsou podporovány pouze"
+" pokud je *allow_code* pravda."
 
 #: ../../library/marshal.rst:128
 msgid ""
-"The *version* argument indicates the data format that ``dumps`` should "
-"use (see below)."
+"The *version* argument indicates the data format that ``dumps`` should use "
+"(see below)."
 msgstr ""
+"Argument *version* udavá, jaký datový formát by měl ``dumps`` používat (viz "
+"níže)."
 
 #: ../../library/marshal.rst:139
 msgid ""
@@ -205,134 +278,148 @@ msgid ""
 ":ref:`Code objects <code-objects>` are only supported if *allow_code* is "
 "true. Extra bytes in the input are ignored."
 msgstr ""
+"Konvertujte :term:`bytes-like objekt` na hodnotu. Pokud nenálezána žádná "
+"platná hodnota, vyvolejte :exc:`EOFError`, :exc:`ValueError` nebo "
+":exc:`TypeError`. Objekty :ref:`kódu <code-objects>` jsou podporovány pouze "
+"pokud je *allow_code* pravda. Navvíc bajty ve vstupu jsou ignorovány."
 
 #: ../../library/marshal.rst:144
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``marshal.loads`` with "
-"argument ``bytes``."
+"Raises an :ref:`auditing event <auditing>` ``marshal.loads`` with argument "
+"``bytes``."
 msgstr ""
+"Vyvolava udalóst :ref:`auditing <auditing>` ``marshal.loads`` s argumentem "
+"``bytes``."
 
 #: ../../library/marshal.rst:148
 msgid ""
-"This call used to raise a ``code.__new__`` audit event for each code "
-"object. Now it raises a single ``marshal.loads`` event for the entire "
-"load operation."
+"This call used to raise a ``code.__new__`` audit event for each code object."
+" Now it raises a single ``marshal.loads`` event for the entire load "
+"operation."
 msgstr ""
+"Toto volání už dříve vyvolalo audit ``code.__new__`` pro každý objekt kódu. "
+"Nyní vyvolava jedinou udalóst ``marshal.loads`` pro celou operaci načítání."
 
 #: ../../library/marshal.rst:155
 msgid "In addition, the following constants are defined:"
-msgstr ""
+msgstr "Navíc jsou definovány následující konstanty:"
 
 #: ../../library/marshal.rst:159
 msgid ""
-"Indicates the format that the module uses. Version 0 is the historical "
-"first version; subsequent versions add new features. Generally, a new "
-"version becomes the default when it is introduced."
+"Indicates the format that the module uses. Version 0 is the historical first"
+" version; subsequent versions add new features. Generally, a new version "
+"becomes the default when it is introduced."
 msgstr ""
+"Udavá formát, který modul používá. Verze 0 je historicky první verze; "
+"následnící verze přidávají nové funkce. Obecně se nová verze stává výchozí, "
+"když je zavedena."
 
 #: ../../library/marshal.rst:165
 msgid "Version"
-msgstr ""
+msgstr "Verze"
 
 #: ../../library/marshal.rst:165
 msgid "Available since"
-msgstr ""
+msgstr "K dispozici od"
 
 #: ../../library/marshal.rst:165
 msgid "New features"
-msgstr ""
+msgstr "Nové vlastnosti"
 
 #: ../../library/marshal.rst:167
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../library/marshal.rst:167
 msgid "Python 2.4"
-msgstr ""
+msgstr "Python 2.4"
 
 #: ../../library/marshal.rst:167
 msgid "Sharing interned strings"
-msgstr ""
+msgstr "Sdílení interních řetězců"
 
 #: ../../library/marshal.rst:169
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../library/marshal.rst:169
 msgid "Python 2.5"
-msgstr ""
+msgstr "Python 2.5"
 
 #: ../../library/marshal.rst:169
 msgid "Binary representation of floats"
-msgstr ""
+msgstr "Binární reprezentace desítinných čísel"
 
 #: ../../library/marshal.rst:171
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../library/marshal.rst:171 ../../library/marshal.rst:173
 msgid "Python 3.4"
-msgstr ""
+msgstr "Python 3.4"
 
 #: ../../library/marshal.rst:171
 msgid "Support for object instancing and recursion"
-msgstr ""
+msgstr "Podpora vytváření instancí objektu a rekurze"
 
 #: ../../library/marshal.rst:173
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ../../library/marshal.rst:173
 msgid "Efficient representation of short strings"
-msgstr ""
+msgstr "Efektivní reprezentace kratších řetězců"
 
 #: ../../library/marshal.rst:175
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ../../library/marshal.rst:175
 msgid "Python 3.14"
-msgstr ""
+msgstr "Python 3.14"
 
 #: ../../library/marshal.rst:175
 msgid "Support for :class:`slice` objects"
-msgstr ""
+msgstr "Podpora objektů :class:`slice`"
 
 #: ../../library/marshal.rst:180
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../library/marshal.rst:181
 msgid ""
 "The name of this module stems from a bit of terminology used by the "
-"designers of Modula-3 (amongst others), who use the term \"marshalling\" "
-"for shipping of data around in a self-contained form. Strictly speaking, "
-"\"to marshal\" means to convert some data from internal to external form "
-"(in an RPC buffer for instance) and \"unmarshalling\" for the reverse "
-"process."
+"designers of Modula-3 (amongst others), who use the term \"marshalling\" for"
+" shipping of data around in a self-contained form. Strictly speaking, \"to "
+"marshal\" means to convert some data from internal to external form (in an "
+"RPC buffer for instance) and \"unmarshalling\" for the reverse process."
 msgstr ""
+"Název tohoto modulu pochází z terminologie, kterou používají návrháři "
+"systému Modula-3 (mimo jiné), kteří používají pojem \"marshalling\" pro "
+"přepravu dat v samořeklamné formě. Přísně řečeno, \"marshalling\" znamená "
+"konverzi nějakých dat z interní na externí formu (například v RPC bufferu) a"
+" \"unmarshalling\" pro opatný proces."
 
 #: ../../library/marshal.rst:17
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../library/marshal.rst:17
 msgid "pickle"
-msgstr ""
+msgstr "pickle"
 
 #: ../../library/marshal.rst:17
 msgid "shelve"
-msgstr ""
+msgstr "shelve"
 
 #: ../../library/marshal.rst:44
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../library/marshal.rst:44
 msgid "code"
-msgstr ""
+msgstr "kód"
 
 #: ../../library/marshal.rst:44
 msgid "code object"
-msgstr ""
-
+msgstr "objekt kódu"

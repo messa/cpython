@@ -11,122 +11,151 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/copy.rst:2
 msgid ":mod:`!copy` --- Shallow and deep copy operations"
-msgstr ""
+msgstr ":mod:`!copy` --- Operace mělké a hluboké kopie"
 
 #: ../../library/copy.rst:7
 msgid "**Source code:** :source:`Lib/copy.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/copy.py`"
 
 #: ../../library/copy.rst:11
 msgid ""
-"Assignment statements in Python do not copy objects, they create bindings"
-" between a target and an object. For collections that are mutable or "
-"contain mutable items, a copy is sometimes needed so one can change one "
-"copy without changing the other. This module provides generic shallow and"
-" deep copy operations (explained below)."
+"Assignment statements in Python do not copy objects, they create bindings "
+"between a target and an object. For collections that are mutable or contain "
+"mutable items, a copy is sometimes needed so one can change one copy without"
+" changing the other. This module provides generic shallow and deep copy "
+"operations (explained below)."
 msgstr ""
+"Příkazy přiřazení v Pythonu nekopírují objekty, vytvářejí vazby mezi cílem a"
+" objektem. Pro kolekce, které jsou měnitelné nebo obsahují měnitelné "
+"položky, je někdy potřeba kopie, aby se jedna kopie mohla změnit bez změny "
+"druhé. Tento modul poskytuje generické operace mělké a hluboké kopie "
+"(vysvětleno níže)."
 
 #: ../../library/copy.rst:18
 msgid "Interface summary:"
-msgstr ""
+msgstr "Přehled rozhraní:"
 
 #: ../../library/copy.rst:22
 msgid "Return a shallow copy of *obj*."
-msgstr ""
+msgstr "Vrací mělkou kopii *obj*."
 
 #: ../../library/copy.rst:27
 msgid "Return a deep copy of *obj*."
-msgstr ""
+msgstr "Vrací hlubokou kopii *obj*."
 
 #: ../../library/copy.rst:32
 msgid ""
-"Creates a new object of the same type as *obj*, replacing fields with "
-"values from *changes*."
+"Creates a new object of the same type as *obj*, replacing fields with values"
+" from *changes*."
 msgstr ""
+"Vytváří nový objekt stejného typu jako *obj*, s nahrazenými poli hodnotami z"
+" *changes*."
 
 #: ../../library/copy.rst:40
 msgid "Raised for module specific errors."
-msgstr ""
+msgstr "Vyvoláno pro chyby specifické modulu."
 
 #: ../../library/copy.rst:44
 msgid ""
 "The difference between shallow and deep copying is only relevant for "
-"compound objects (objects that contain other objects, like lists or class"
-" instances):"
+"compound objects (objects that contain other objects, like lists or class "
+"instances):"
 msgstr ""
+"Rozdíl mezi mělkou a hlubokou kopií je relevantní pouze pro složené objekty "
+"(objekty, které obsahují jiné objekty, jako seznamy nebo instance tříd):"
 
 #: ../../library/copy.rst:47
 msgid ""
-"A *shallow copy* constructs a new compound object and then (to the extent"
-" possible) inserts *references* into it to the objects found in the "
-"original."
+"A *shallow copy* constructs a new compound object and then (to the extent "
+"possible) inserts *references* into it to the objects found in the original."
 msgstr ""
+"*Mělká kopie* vytváří nový složený objekt a poté (pokud je to možné) do něj "
+"vkládá *reference* na objekty nalezené v originále."
 
 #: ../../library/copy.rst:50
 msgid ""
 "A *deep copy* constructs a new compound object and then, recursively, "
 "inserts *copies* into it of the objects found in the original."
 msgstr ""
+"*Hluboká kopie* vytváří nový složený objekt a poté rekurzivně do něj vkládá "
+"*kopie* objektů nalezených v originále."
 
 #: ../../library/copy.rst:53
 msgid ""
 "Two problems often exist with deep copy operations that don't exist with "
 "shallow copy operations:"
 msgstr ""
+"Dva problémy se často vyskytují s operacemi hluboké kopie, které se "
+"nevyskytují s operacemi mělké kopie:"
 
 #: ../../library/copy.rst:56
 msgid ""
-"Recursive objects (compound objects that, directly or indirectly, contain"
-" a reference to themselves) may cause a recursive loop."
+"Recursive objects (compound objects that, directly or indirectly, contain a "
+"reference to themselves) may cause a recursive loop."
 msgstr ""
+"Rekurzivní objekty (složené objekty, které přímým nebo nepřímým způsobem "
+"obsahují referenci samy na sebe) mohou způsobit rekurzivné smyky."
 
 #: ../../library/copy.rst:59
 msgid ""
-"Because deep copy copies everything it may copy too much, such as data "
-"which is intended to be shared between copies."
+"Because deep copy copies everything it may copy too much, such as data which"
+" is intended to be shared between copies."
 msgstr ""
+"Protože hluboká kopie kopíruje všechno, může zkopírovat příliš mnoho, "
+"například data, která jsou určena k sdíleání mezi kopiemi."
 
 #: ../../library/copy.rst:62
 msgid "The :func:`deepcopy` function avoids these problems by:"
-msgstr ""
+msgstr "Funkce :func:`deepcopy` se vyhýba těmto problémům tak, že:"
 
 #: ../../library/copy.rst:64
 msgid ""
-"keeping a ``memo`` dictionary of objects already copied during the "
-"current copying pass; and"
+"keeping a ``memo`` dictionary of objects already copied during the current "
+"copying pass; and"
 msgstr ""
+"uchovává slovník ``memo`` objektů již zkopírovaných během aktuálního průběhu"
+" kopírání; a"
 
 #: ../../library/copy.rst:67
 msgid ""
-"letting user-defined classes override the copying operation or the set of"
-" components copied."
+"letting user-defined classes override the copying operation or the set of "
+"components copied."
 msgstr ""
+"umožňuje uživatelsky definovaným třídám přepsat operaci kopírání nebo sadu "
+"zkopírovaných komponent."
 
 #: ../../library/copy.rst:70
 msgid ""
 "This module does not copy types like module, method, stack trace, stack "
 "frame, file, socket, window, or any similar types.  It does \"copy\" "
-"functions and classes (shallow and deeply), by returning the original "
-"object unchanged; this is compatible with the way these are treated by "
-"the :mod:`pickle` module."
+"functions and classes (shallow and deeply), by returning the original object"
+" unchanged; this is compatible with the way these are treated by the "
+":mod:`pickle` module."
 msgstr ""
+"Tento modul nekopíruje typy jako modul, metoda, stack trace, stack frame, "
+"soubor, socket, okno nebo podobné typy. Funkcemi a třídami se zabývá "
+"\"kopíráním\" (mělké i hluboko), vracíním originálního objektu beze změn; to"
+" je kompatibilní s tím, jak se s nimi zachází v modulu :mod:`pickle`."
 
 #: ../../library/copy.rst:75
 msgid ""
-"Shallow copies of dictionaries can be made using :meth:`dict.copy`, and "
-"of lists by assigning a slice of the entire list, for example, "
-"``copied_list = original_list[:]``."
+"Shallow copies of dictionaries can be made using :meth:`dict.copy`, and of "
+"lists by assigning a slice of the entire list, for example, ``copied_list = "
+"original_list[:]``."
 msgstr ""
+"Mělké kopie slovníků lze vytvářet pomocí :meth:`dict.copy` a seznamů "
+"přiřazením dîlu celého seznamu, například ``copied_list = "
+"original_list[:]``."
 
 #: ../../library/copy.rst:81
 msgid ""
@@ -135,71 +164,89 @@ msgid ""
 "information on these methods.  In fact, the :mod:`copy` module uses the "
 "registered pickle functions from the :mod:`copyreg` module."
 msgstr ""
+"Třídy mohou používat stejná rozhraní k řízení kopírání, která použíevají k "
+"řízení picklingu. Podrobnosti o těchto metodách naleznete v popisu modulu "
+":mod:`pickle`. Skutečně modul :mod:`copy` používá registrované funkce pickle"
+" z modulu :mod:`copyreg`."
 
 #: ../../library/copy.rst:92
 msgid ""
-"In order for a class to define its own copy implementation, it can define"
-" special methods :meth:`~object.__copy__` and "
-":meth:`~object.__deepcopy__`."
+"In order for a class to define its own copy implementation, it can define "
+"special methods :meth:`~object.__copy__` and :meth:`~object.__deepcopy__`."
 msgstr ""
+"Aby třída mohla definovat svou vlastní implementaci kopírání, může definovat"
+" speciální metody :meth:`~object.__copy__` a :meth:`~object.__deepcopy__`."
 
 #: ../../library/copy.rst:98
 msgid ""
-"Called to implement the shallow copy operation; no additional arguments "
-"are passed."
+"Called to implement the shallow copy operation; no additional arguments are "
+"passed."
 msgstr ""
+"Vyvoláno pro implementaci operace mělké kopie; nejsou předány žádné další "
+"argumenty."
 
 #: ../../library/copy.rst:104
 msgid ""
-"Called to implement the deep copy operation; it is passed one argument, "
-"the *memo* dictionary.  If the ``__deepcopy__`` implementation needs to "
-"make a deep copy of a component, it should call the "
-":func:`~copy.deepcopy` function with the component as first argument and "
-"the *memo* dictionary as second argument. The *memo* dictionary should be"
-" treated as an opaque object."
+"Called to implement the deep copy operation; it is passed one argument, the "
+"*memo* dictionary.  If the ``__deepcopy__`` implementation needs to make a "
+"deep copy of a component, it should call the :func:`~copy.deepcopy` function"
+" with the component as first argument and the *memo* dictionary as second "
+"argument. The *memo* dictionary should be treated as an opaque object."
 msgstr ""
+"Vyvoláno pro implementaci operace hluboké kopie; je předán jeden argument, "
+"slovník *memo*. Jestliže implementace ``__deepcopy__`` musí vytvořit "
+"hlubokou kopii komponenty, měla by volat funkci :func:`~copy.deepcopy` s "
+"komponentou jako prvním argumentem a slovníkem *memo* jako druhým "
+"argumentem. Slovník *memo* by měl být zacházen jako nepropustný objekt."
 
 #: ../../library/copy.rst:114
 msgid ""
-"Function :func:`!copy.replace` is more limited than :func:`~copy.copy` "
-"and :func:`~copy.deepcopy`, and only supports named tuples created by "
-":func:`~collections.namedtuple`, :mod:`dataclasses`, and other classes "
-"which define method :meth:`~object.__replace__`."
+"Function :func:`!copy.replace` is more limited than :func:`~copy.copy` and "
+":func:`~copy.deepcopy`, and only supports named tuples created by "
+":func:`~collections.namedtuple`, :mod:`dataclasses`, and other classes which"
+" define method :meth:`~object.__replace__`."
 msgstr ""
+"Funkce :func:`!copy.replace` je více omezena než :func:`~copy.copy` a "
+":func:`~copy.deepcopy`, a podporuje pouze pojmenovvané tuples vytvořené "
+"pomocí :func:`~collections.namedtuple`, :mod:`dataclasses`, a další třídy, "
+"které definují metodu :meth:`~object.__replace__`."
 
 #: ../../library/copy.rst:122
 msgid ""
-"This method should create a new object of the same type, replacing fields"
-" with values from *changes*."
+"This method should create a new object of the same type, replacing fields "
+"with values from *changes*."
 msgstr ""
+"Tato metoda by měla vytvořit nový objekt stejného typu, s nahrazenými poli "
+"hodnotami z *changes*."
 
 #: ../../library/copy.rst:130
 msgid "Module :mod:`pickle`"
-msgstr ""
+msgstr "Modul :mod:`pickle`"
 
 #: ../../library/copy.rst:131
 msgid ""
-"Discussion of the special methods used to support object state retrieval "
-"and restoration."
+"Discussion of the special methods used to support object state retrieval and"
+" restoration."
 msgstr ""
+"Diskuse o speciálních metodách používaných k podpoře získávání a obnovy "
+"stavu objektu."
 
 #: ../../library/copy.rst:79
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../library/copy.rst:79
 msgid "pickle"
-msgstr ""
+msgstr "pickle"
 
 #: ../../library/copy.rst:86
 msgid "__copy__() (copy protocol)"
-msgstr ""
+msgstr "__copy__() (protokol kopírání)"
 
 #: ../../library/copy.rst:86
 msgid "__deepcopy__() (copy protocol)"
-msgstr ""
+msgstr "__deepcopy__() (protokol kopírání)"
 
 #: ../../library/copy.rst:111
 msgid "__replace__() (replace protocol)"
-msgstr ""
-
+msgstr "__replace__() (protokol nahrazení)"

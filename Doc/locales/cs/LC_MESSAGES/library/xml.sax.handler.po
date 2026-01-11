@@ -11,254 +11,302 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/xml.sax.handler.rst:2
 msgid ":mod:`!xml.sax.handler` --- Base classes for SAX handlers"
-msgstr ""
+msgstr ":mod:`!xml.sax.handler` --- Základní třídy pro obslužné rutiny SAX"
 
 #: ../../library/xml.sax.handler.rst:10
 msgid "**Source code:** :source:`Lib/xml/sax/handler.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/xml/sax/handler.py`"
 
 #: ../../library/xml.sax.handler.rst:14
 msgid ""
-"The SAX API defines five kinds of handlers: content handlers, DTD "
-"handlers, error handlers, entity resolvers and lexical handlers. "
-"Applications normally only need to implement those interfaces whose "
-"events they are interested in; they can implement the interfaces in a "
-"single object or in multiple objects. Handler implementations should "
-"inherit from the base classes provided in the module "
-":mod:`xml.sax.handler`, so that all methods get default implementations."
+"The SAX API defines five kinds of handlers: content handlers, DTD handlers, "
+"error handlers, entity resolvers and lexical handlers. Applications normally"
+" only need to implement those interfaces whose events they are interested "
+"in; they can implement the interfaces in a single object or in multiple "
+"objects. Handler implementations should inherit from the base classes "
+"provided in the module :mod:`xml.sax.handler`, so that all methods get "
+"default implementations."
 msgstr ""
+"SAX API definuje pět typů obslužných rutin: obslužné rutiny obsahu, obslužné"
+" rutiny DTD, obslužné rutiny chyb, překladače entit a lexikální obslužné "
+"rutiny. Aplikace běžně potřebují implementovat pouze ty rozhraní, jejichž "
+"události je zajímají; mohou implementovat rozhraní v jednom objektu nebo v "
+"několika objektech. Implementace obslužných rutin by měly dědit ze "
+"základních tříd poskytovaných modulem :mod:`xml.sax.handler`, aby všechny "
+"metody měly výchozí implementace."
 
 #: ../../library/xml.sax.handler.rst:24
 msgid ""
-"This is the main callback interface in SAX, and the one most important to"
-" applications. The order of events in this interface mirrors the order of"
-" the information in the document."
+"This is the main callback interface in SAX, and the one most important to "
+"applications. The order of events in this interface mirrors the order of the"
+" information in the document."
 msgstr ""
+"Toto je hlavní rozhraní callback v SAX a nejdůležitější pro aplikace. Pořadí"
+" událostí v tomto rozhraní odpovídá pořadí informací v dokumentu."
 
 #: ../../library/xml.sax.handler.rst:31
 msgid "Handle DTD events."
-msgstr ""
+msgstr "Zpracovávat událostí DTD."
 
 #: ../../library/xml.sax.handler.rst:33
 msgid ""
-"This interface specifies only those DTD events required for basic parsing"
-" (unparsed entities and attributes)."
+"This interface specifies only those DTD events required for basic parsing "
+"(unparsed entities and attributes)."
 msgstr ""
+"Toto rozhraní určuje pouze ty DTD události vyžadované pro základní analýzu "
+"(nezpracované entity a atributy)."
 
 #: ../../library/xml.sax.handler.rst:39
 msgid ""
-"Basic interface for resolving entities. If you create an object "
-"implementing this interface, then register the object with your Parser, "
-"the parser will call the method in your object to resolve all external "
-"entities."
+"Basic interface for resolving entities. If you create an object implementing"
+" this interface, then register the object with your Parser, the parser will "
+"call the method in your object to resolve all external entities."
 msgstr ""
+"Základní rozhraní pro překladání entit. Pokud vytvoříte objekt "
+"implementující toto rozhraní a zaregistrujete ho u svého analizátoru, parser"
+" zavolá metodu ve vašem objektu pro překladání všech externích entit."
 
 #: ../../library/xml.sax.handler.rst:46
 msgid ""
-"Interface used by the parser to present error and warning messages to the"
-" application.  The methods of this object control whether errors are "
+"Interface used by the parser to present error and warning messages to the "
+"application.  The methods of this object control whether errors are "
 "immediately converted to exceptions or are handled in some other way."
 msgstr ""
+"Rozhraní používané parserem k prezentaci chybových zpráv a varovných zpráv "
+"aplikaci. Metody tohoto objektu určují, zda jsou chyby okamžitě převedeny na"
+" výjimky nebo jsou zpracovávány jiným způsobem."
 
 #: ../../library/xml.sax.handler.rst:53
 msgid ""
-"Interface used by the parser to represent low frequency events which may "
-"not be of interest to many applications."
+"Interface used by the parser to represent low frequency events which may not"
+" be of interest to many applications."
 msgstr ""
+"Rozhraní používané parserem k reprezentaci nízko-frekvenčních událostí, "
+"které nemusí být mnoho aplikacím zajímavé."
 
 #: ../../library/xml.sax.handler.rst:56
 msgid ""
 "In addition to these classes, :mod:`xml.sax.handler` provides symbolic "
 "constants for the feature and property names."
 msgstr ""
+"Kromě těchto tříd poskytuje :mod:`xml.sax.handler` symbolické konstanty pro "
+"názvy funkcí a vlastností."
 
 #: ../../library/xml.sax.handler.rst:62
 msgid "value: ``\"http://xml.org/sax/features/namespaces\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/features/namespaces\"``"
 
 #: ../../library/xml.sax.handler.rst:63
 msgid "true: Perform Namespace processing."
-msgstr ""
+msgstr "true: Provádět zpracování oboru názvů."
 
 #: ../../library/xml.sax.handler.rst:65
 msgid ""
 "false: Optionally do not perform Namespace processing (implies namespace-"
 "prefixes; default)."
 msgstr ""
+"false: Volitelně neprovádět zpracování oboru názvů (znamená namespace-"
+"prefixes; výchozí)."
 
 #: ../../library/xml.sax.handler.rst:66 ../../library/xml.sax.handler.rst:76
 #: ../../library/xml.sax.handler.rst:85 ../../library/xml.sax.handler.rst:94
 #: ../../library/xml.sax.handler.rst:110 ../../library/xml.sax.handler.rst:120
 #: ../../library/xml.sax.handler.rst:152
 msgid "access: (parsing) read-only; (not parsing) read/write"
-msgstr ""
+msgstr "přístup: (analýza) pouze pro čtení; (bez analýzy) čtení/zápis"
 
 #: ../../library/xml.sax.handler.rst:71
 msgid "value: ``\"http://xml.org/sax/features/namespace-prefixes\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/features/namespace-prefixes\"``"
 
 #: ../../library/xml.sax.handler.rst:73
 msgid ""
-"true: Report the original prefixed names and attributes used for "
-"Namespace declarations."
+"true: Report the original prefixed names and attributes used for Namespace "
+"declarations."
 msgstr ""
+"true: Hlásit původní předpony a atributy použité pro deklarace oboru názvů."
 
 #: ../../library/xml.sax.handler.rst:75
 msgid ""
 "false: Do not report attributes used for Namespace declarations, and "
 "optionally do not report original prefixed names (default)."
 msgstr ""
+"false: Neohlašovat atributy používané pro deklarace oboru názvů a volitelně "
+"neohlašovat původní předpony (výchozí)."
 
 #: ../../library/xml.sax.handler.rst:81
 msgid "value: ``\"http://xml.org/sax/features/string-interning\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/features/string-interning\"``"
 
 #: ../../library/xml.sax.handler.rst:83
 msgid ""
 "true: All element names, prefixes, attribute names, Namespace URIs, and "
 "local names are interned using the built-in intern function."
 msgstr ""
+"true: Všechny názvy prvků, předpony, názvy atributů, identifikátory URI "
+"oboru názvů a místní názvy jsou internalizovány pomocí vestavěné funkce "
+"intern."
 
 #: ../../library/xml.sax.handler.rst:84
-msgid "false: Names are not necessarily interned, although they may be (default)."
+msgid ""
+"false: Names are not necessarily interned, although they may be (default)."
 msgstr ""
+"false: Názvy nejsou nutně internalizovány, i když mohou být (výchozí)."
 
 #: ../../library/xml.sax.handler.rst:90
 msgid "value: ``\"http://xml.org/sax/features/validation\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/features/validation\"``"
 
 #: ../../library/xml.sax.handler.rst:92
 msgid ""
-"true: Report all validation errors (implies external-general-entities and"
-" external-parameter-entities)."
+"true: Report all validation errors (implies external-general-entities and "
+"external-parameter-entities)."
 msgstr ""
+"true: Hlásit všechny chyby ověřování (znamená external-general-entities a "
+"external-parameter-entities)."
 
 #: ../../library/xml.sax.handler.rst:93
 msgid "false: Do not report validation errors."
-msgstr ""
+msgstr "false: Neohlašovat chyby ověřování."
 
 #: ../../library/xml.sax.handler.rst:101
 msgid ""
 "Enabling opens a vulnerability to `external entity attacks "
-"<https://en.wikipedia.org/wiki/XML_external_entity_attack>`_ if the "
-"parser is used with user-provided XML content. Please reflect on your "
-"`threat model <https://en.wikipedia.org/wiki/Threat_model>`_ before "
-"enabling this feature."
+"<https://en.wikipedia.org/wiki/XML_external_entity_attack>`_ if the parser "
+"is used with user-provided XML content. Please reflect on your `threat model"
+" <https://en.wikipedia.org/wiki/Threat_model>`_ before enabling this "
+"feature."
 msgstr ""
+"Povolení otevírá zranitelnost `útoků externí entity "
+"<https://en.wikipedia.org/wiki/XML_external_entity_attack>`_ pokud je parser"
+" použit s uživatelem poskytnutým XML obsahem. Prosím zvažte svůj `model "
+"hrozby <https://en.wikipedia.org/wiki/Threat_model>`_ před povolením této "
+"funkce."
 
 #: ../../library/xml.sax.handler.rst:107
 msgid "value: ``\"http://xml.org/sax/features/external-general-entities\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/features/external-general-entities\"``"
 
 #: ../../library/xml.sax.handler.rst:108
 msgid "true: Include all external general (text) entities."
-msgstr ""
+msgstr "true: Zahrnout všechny externí obecné (textové) entity."
 
 #: ../../library/xml.sax.handler.rst:109
 msgid "false: Do not include external general entities."
-msgstr ""
+msgstr "false: Nezahrnovat externí obecné entity."
 
 #: ../../library/xml.sax.handler.rst:115
 msgid "value: ``\"http://xml.org/sax/features/external-parameter-entities\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/features/external-parameter-entities\"``"
 
 #: ../../library/xml.sax.handler.rst:117
 msgid ""
-"true: Include all external parameter entities, including the external DTD"
-" subset."
+"true: Include all external parameter entities, including the external DTD "
+"subset."
 msgstr ""
+"true: Zahrnout všechny externí entity parametrů, včetně externí podmnožiny "
+"DTD."
 
 #: ../../library/xml.sax.handler.rst:119
 msgid ""
-"false: Do not include any external parameter entities, even the external "
-"DTD subset."
+"false: Do not include any external parameter entities, even the external DTD"
+" subset."
 msgstr ""
+"false: Nezahrnovat žádné externí entity parametrů, dokonce ani externí "
+"podmnožinu DTD."
 
 #: ../../library/xml.sax.handler.rst:125
 msgid "List of all features."
-msgstr ""
+msgstr "Seznam všech funkcí."
 
 #: ../../library/xml.sax.handler.rst:130
 msgid "value: ``\"http://xml.org/sax/properties/lexical-handler\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/properties/lexical-handler\"``"
 
 #: ../../library/xml.sax.handler.rst:131
 msgid "data type: xml.sax.handler.LexicalHandler (not supported in Python 2)"
 msgstr ""
+"datový typ: xml.sax.handler.LexicalHandler (není podporován v Python 2)"
 
 #: ../../library/xml.sax.handler.rst:133
 msgid ""
-"description: An optional extension handler for lexical events like "
-"comments."
+"description: An optional extension handler for lexical events like comments."
 msgstr ""
+"popis: Volitelná rozšířená obslužná rutina pro lexikální události jako "
+"komentáře."
 
 #: ../../library/xml.sax.handler.rst:134 ../../library/xml.sax.handler.rst:143
 msgid "access: read/write"
-msgstr ""
+msgstr "přístup: čtení/zápis"
 
 #: ../../library/xml.sax.handler.rst:139
 msgid "value: ``\"http://xml.org/sax/properties/declaration-handler\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/properties/declaration-handler\"``"
 
 #: ../../library/xml.sax.handler.rst:140
 msgid "data type: xml.sax.sax2lib.DeclHandler (not supported in Python 2)"
-msgstr ""
+msgstr "datový typ: xml.sax.sax2lib.DeclHandler (není podporován v Python 2)"
 
 #: ../../library/xml.sax.handler.rst:142
 msgid ""
-"description: An optional extension handler for DTD-related events other "
-"than notations and unparsed entities."
+"description: An optional extension handler for DTD-related events other than"
+" notations and unparsed entities."
 msgstr ""
+"popis: Volitelná rozšířená obslužná rutina pro DTD související události mimo"
+" notace a nezpracované entity."
 
 #: ../../library/xml.sax.handler.rst:148
 msgid "value: ``\"http://xml.org/sax/properties/dom-node\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/properties/dom-node\"``"
 
 #: ../../library/xml.sax.handler.rst:149
 msgid "data type: org.w3c.dom.Node (not supported in Python 2)"
-msgstr ""
+msgstr "datový typ: org.w3c.dom.Node (není podporován v Python 2)"
 
 #: ../../library/xml.sax.handler.rst:151
 msgid ""
-"description: When parsing, the current DOM node being visited if this is "
-"a DOM iterator; when not parsing, the root DOM node for iteration."
+"description: When parsing, the current DOM node being visited if this is a "
+"DOM iterator; when not parsing, the root DOM node for iteration."
 msgstr ""
+"popis: Při analýze je aktuální uzel DOM navštívený, pokud se jedná o "
+"iterátor DOM; když se neanalyzuje, je to kořenový uzel DOM pro iteraci."
 
 #: ../../library/xml.sax.handler.rst:157
 msgid "value: ``\"http://xml.org/sax/properties/xml-string\"``"
-msgstr ""
+msgstr "hodnota: ``\"http://xml.org/sax/properties/xml-string\"``"
 
 #: ../../library/xml.sax.handler.rst:158
 msgid "data type: Bytes"
-msgstr ""
+msgstr "datový typ: Bytes"
 
 #: ../../library/xml.sax.handler.rst:160
 msgid ""
-"description: The literal string of characters that was the source for the"
-" current event."
+"description: The literal string of characters that was the source for the "
+"current event."
 msgstr ""
+"popis: Literální řetězec znaků, který byl zdrojem pro aktuální událost."
 
 #: ../../library/xml.sax.handler.rst:161
 msgid "access: read-only"
-msgstr ""
+msgstr "přístup: pouze pro čtení"
 
 #: ../../library/xml.sax.handler.rst:166
 msgid "List of all known property names."
-msgstr ""
+msgstr "Seznam všech známých názvů vlastností."
 
 #: ../../library/xml.sax.handler.rst:172
 msgid "ContentHandler Objects"
-msgstr ""
+msgstr "Objekty ContentHandler"
 
 #: ../../library/xml.sax.handler.rst:174
 msgid ""
@@ -266,29 +314,38 @@ msgid ""
 "application.  The following methods are called by the parser on the "
 "appropriate events in the input document:"
 msgstr ""
+"Od uživatelů se očekává, že budou dílčí třídy :class:`ContentHandler` pro "
+"podporu své aplikace. Následující metody jsou volány parserem na příslušné "
+"události ve vstupním dokumentu:"
 
 #: ../../library/xml.sax.handler.rst:181
 msgid ""
 "Called by the parser to give the application a locator for locating the "
 "origin of document events."
 msgstr ""
+"Volán parserem, aby aplikaci poskytl lokátor pro lokalizaci původu událostí "
+"dokumentu."
 
 #: ../../library/xml.sax.handler.rst:184
 msgid ""
 "SAX parsers are strongly encouraged (though not absolutely required) to "
 "supply a locator: if it does so, it must supply the locator to the "
-"application by invoking this method before invoking any of the other "
-"methods in the DocumentHandler interface."
+"application by invoking this method before invoking any of the other methods"
+" in the DocumentHandler interface."
 msgstr ""
+"SAX parsery jsou silně doporučeny (i když nejsou absolutně požadovány) "
+"poskytnout lokátor: pokud tak udělají, musí poskytnout lokátor aplikaci "
+"vyvoláním této metody před vyvoláním jakékoli jiné metody v rozhraní "
+"DocumentHandler."
 
 #: ../../library/xml.sax.handler.rst:189
 msgid ""
 "The locator allows the application to determine the end position of any "
 "document-related event, even if the parser is not reporting an error. "
-"Typically, the application will use this information for reporting its "
-"own errors (such as character content that does not match an "
-"application's business rules). The information returned by the locator is"
-" probably not sufficient for use with a search engine."
+"Typically, the application will use this information for reporting its own "
+"errors (such as character content that does not match an application's "
+"business rules). The information returned by the locator is probably not "
+"sufficient for use with a search engine."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:196
@@ -304,9 +361,8 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:205
 msgid ""
-"The SAX parser will invoke this method only once, before any other "
-"methods in this interface or in DTDHandler (except for "
-":meth:`setDocumentLocator`)."
+"The SAX parser will invoke this method only once, before any other methods "
+"in this interface or in DTDHandler (except for :meth:`setDocumentLocator`)."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:211
@@ -315,10 +371,10 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:213
 msgid ""
-"The SAX parser will invoke this method only once, and it will be the last"
-" method invoked during the parse. The parser shall not invoke this method"
-" until it has either abandoned parsing (because of an unrecoverable "
-"error) or reached the end of input."
+"The SAX parser will invoke this method only once, and it will be the last "
+"method invoked during the parse. The parser shall not invoke this method "
+"until it has either abandoned parsing (because of an unrecoverable error) or"
+" reached the end of input."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:221
@@ -336,20 +392,20 @@ msgstr ""
 #: ../../library/xml.sax.handler.rst:228
 msgid ""
 "There are cases, however, when applications need to use prefixes in "
-"character data or in attribute values, where they cannot safely be "
-"expanded automatically; the :meth:`startPrefixMapping` and "
-":meth:`endPrefixMapping` events supply the information to the application"
-" to expand prefixes in those contexts itself, if necessary."
+"character data or in attribute values, where they cannot safely be expanded "
+"automatically; the :meth:`startPrefixMapping` and :meth:`endPrefixMapping` "
+"events supply the information to the application to expand prefixes in those"
+" contexts itself, if necessary."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:236
 msgid ""
-"Note that :meth:`startPrefixMapping` and :meth:`endPrefixMapping` events "
-"are not guaranteed to be properly nested relative to each-other: all "
+"Note that :meth:`startPrefixMapping` and :meth:`endPrefixMapping` events are"
+" not guaranteed to be properly nested relative to each-other: all "
 ":meth:`startPrefixMapping` events will occur before the corresponding "
 ":meth:`startElement` event, and all :meth:`endPrefixMapping` events will "
-"occur after the corresponding :meth:`endElement` event, but their order "
-"is not guaranteed."
+"occur after the corresponding :meth:`endElement` event, but their order is "
+"not guaranteed."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:246
@@ -369,13 +425,13 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:257
 msgid ""
-"The *name* parameter contains the raw XML 1.0 name of the element type as"
-" a string and the *attrs* parameter holds an object of the "
-":ref:`Attributes <attributes-objects>` interface containing the "
-"attributes of the element.  The object passed as *attrs* may be re-used "
-"by the parser; holding on to a reference to it is not a reliable way to "
-"keep a copy of the attributes. To keep a copy of the attributes, use the "
-":meth:`copy` method of the *attrs* object."
+"The *name* parameter contains the raw XML 1.0 name of the element type as a "
+"string and the *attrs* parameter holds an object of the :ref:`Attributes "
+"<attributes-objects>` interface containing the attributes of the element.  "
+"The object passed as *attrs* may be re-used by the parser; holding on to a "
+"reference to it is not a reliable way to keep a copy of the attributes. To "
+"keep a copy of the attributes, use the :meth:`copy` method of the *attrs* "
+"object."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:268
@@ -384,8 +440,8 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:270
 msgid ""
-"The *name* parameter contains the name of the element type, just as with "
-"the :meth:`startElement` event."
+"The *name* parameter contains the name of the element type, just as with the"
+" :meth:`startElement` event."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:276
@@ -395,15 +451,14 @@ msgstr ""
 #: ../../library/xml.sax.handler.rst:278
 msgid ""
 "The *name* parameter contains the name of the element type as a ``(uri, "
-"localname)`` tuple, the *qname* parameter contains the raw XML 1.0 name "
-"used in the source document, and the *attrs* parameter holds an instance "
-"of the :ref:`AttributesNS <attributes-ns-objects>` interface containing "
-"the attributes of the element.  If no namespace is associated with the "
-"element, the *uri* component of *name* will be ``None``.  The object "
-"passed as *attrs* may be re-used by the parser; holding on to a reference"
-" to it is not a reliable way to keep a copy of the attributes.  To keep a"
-" copy of the attributes, use the :meth:`copy` method of the *attrs* "
-"object."
+"localname)`` tuple, the *qname* parameter contains the raw XML 1.0 name used"
+" in the source document, and the *attrs* parameter holds an instance of the "
+":ref:`AttributesNS <attributes-ns-objects>` interface containing the "
+"attributes of the element.  If no namespace is associated with the element, "
+"the *uri* component of *name* will be ``None``.  The object passed as "
+"*attrs* may be re-used by the parser; holding on to a reference to it is not"
+" a reliable way to keep a copy of the attributes.  To keep a copy of the "
+"attributes, use the :meth:`copy` method of the *attrs* object."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:288
@@ -418,8 +473,8 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:296
 msgid ""
-"The *name* parameter contains the name of the element type, just as with "
-"the :meth:`startElementNS` method, likewise the *qname* parameter."
+"The *name* parameter contains the name of the element type, just as with the"
+" :meth:`startElementNS` method, likewise the *qname* parameter."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:302
@@ -428,11 +483,11 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:304
 msgid ""
-"The Parser will call this method to report each chunk of character data. "
-"SAX parsers may return all contiguous character data in a single chunk, "
-"or they may split it into several chunks; however, all of the characters "
-"in any single event must come from the same external entity so that the "
-"Locator provides useful information."
+"The Parser will call this method to report each chunk of character data. SAX"
+" parsers may return all contiguous character data in a single chunk, or they"
+" may split it into several chunks; however, all of the characters in any "
+"single event must come from the same external entity so that the Locator "
+"provides useful information."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:310
@@ -444,11 +499,11 @@ msgstr ""
 #: ../../library/xml.sax.handler.rst:315
 msgid ""
 "The earlier SAX 1 interface provided by the Python XML Special Interest "
-"Group used a more Java-like interface for this method.  Since most "
-"parsers used from Python did not take advantage of the older interface, "
-"the simpler signature was chosen to replace it.  To convert old code to "
-"the new interface, use *content* instead of slicing content with the old "
-"*offset* and *length* parameters."
+"Group used a more Java-like interface for this method.  Since most parsers "
+"used from Python did not take advantage of the older interface, the simpler "
+"signature was chosen to replace it.  To convert old code to the new "
+"interface, use *content* instead of slicing content with the old *offset* "
+"and *length* parameters."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:324
@@ -457,18 +512,18 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:326
 msgid ""
-"Validating Parsers must use this method to report each chunk of ignorable"
-" whitespace (see the W3C XML 1.0 recommendation, section 2.10): non-"
-"validating parsers may also use this method if they are capable of "
-"parsing and using content models."
+"Validating Parsers must use this method to report each chunk of ignorable "
+"whitespace (see the W3C XML 1.0 recommendation, section 2.10): non-"
+"validating parsers may also use this method if they are capable of parsing "
+"and using content models."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:331
 msgid ""
-"SAX parsers may return all contiguous whitespace in a single chunk, or "
-"they may split it into several chunks; however, all of the characters in "
-"any single event must come from the same external entity, so that the "
-"Locator provides useful information."
+"SAX parsers may return all contiguous whitespace in a single chunk, or they "
+"may split it into several chunks; however, all of the characters in any "
+"single event must come from the same external entity, so that the Locator "
+"provides useful information."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:339
@@ -478,14 +533,14 @@ msgstr ""
 #: ../../library/xml.sax.handler.rst:341
 msgid ""
 "The Parser will invoke this method once for each processing instruction "
-"found: note that processing instructions may occur before or after the "
-"main document element."
+"found: note that processing instructions may occur before or after the main "
+"document element."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:345
 msgid ""
-"A SAX parser should never report an XML declaration (XML 1.0, section "
-"2.8) or a text declaration (XML 1.0, section 4.3.1) using this method."
+"A SAX parser should never report an XML declaration (XML 1.0, section 2.8) "
+"or a text declaration (XML 1.0, section 4.3.1) using this method."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:351
@@ -496,10 +551,10 @@ msgstr ""
 msgid ""
 "The Parser will invoke this method once for each entity skipped. Non-"
 "validating processors may skip entities if they have not seen the "
-"declarations (because, for example, the entity was declared in an "
-"external DTD subset). All processors may skip external entities, "
-"depending on the values of the ``feature_external_ges`` and the "
-"``feature_external_pes`` properties."
+"declarations (because, for example, the entity was declared in an external "
+"DTD subset). All processors may skip external entities, depending on the "
+"values of the ``feature_external_ges`` and the ``feature_external_pes`` "
+"properties."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:363
@@ -536,38 +591,37 @@ msgstr ""
 #: ../../library/xml.sax.handler.rst:396
 msgid ""
 "Objects with this interface are used to receive error and warning "
-"information from the :class:`~xml.sax.xmlreader.XMLReader`.  If you "
-"create an object that implements this interface, then register the object"
-" with your :class:`~xml.sax.xmlreader.XMLReader`, the parser will call "
-"the methods in your object to report all warnings and errors. There are "
-"three levels of errors available: warnings, (possibly) recoverable "
-"errors, and unrecoverable errors.  All methods take a "
-":exc:`~xml.sax.SAXParseException` as the only parameter.  Errors and "
-"warnings may be converted to an exception by raising the passed-in "
-"exception object."
+"information from the :class:`~xml.sax.xmlreader.XMLReader`.  If you create "
+"an object that implements this interface, then register the object with your"
+" :class:`~xml.sax.xmlreader.XMLReader`, the parser will call the methods in "
+"your object to report all warnings and errors. There are three levels of "
+"errors available: warnings, (possibly) recoverable errors, and unrecoverable"
+" errors.  All methods take a :exc:`~xml.sax.SAXParseException` as the only "
+"parameter.  Errors and warnings may be converted to an exception by raising "
+"the passed-in exception object."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:409
 msgid ""
-"Called when the parser encounters a recoverable error.  If this method "
-"does not raise an exception, parsing may continue, but further document "
-"information should not be expected by the application.  Allowing the "
-"parser to continue may allow additional errors to be discovered in the "
-"input document."
+"Called when the parser encounters a recoverable error.  If this method does "
+"not raise an exception, parsing may continue, but further document "
+"information should not be expected by the application.  Allowing the parser "
+"to continue may allow additional errors to be discovered in the input "
+"document."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:417
 msgid ""
-"Called when the parser encounters an error it cannot recover from; "
-"parsing is expected to terminate when this method returns."
+"Called when the parser encounters an error it cannot recover from; parsing "
+"is expected to terminate when this method returns."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:423
 msgid ""
 "Called when the parser presents minor warning information to the "
-"application. Parsing is expected to continue when this method returns, "
-"and document information will continue to be passed to the application. "
-"Raising an exception in this method will cause parsing to end."
+"application. Parsing is expected to continue when this method returns, and "
+"document information will continue to be passed to the application. Raising "
+"an exception in this method will cause parsing to end."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:432
@@ -580,30 +634,29 @@ msgstr ""
 
 #: ../../library/xml.sax.handler.rst:435
 msgid ""
-"This handler is used to obtain lexical information about an XML document."
-" Lexical information includes information describing the document "
-"encoding used and XML comments embedded in the document, as well as "
-"section boundaries for the DTD and for any CDATA sections. The lexical "
-"handlers are used in the same manner as content handlers."
+"This handler is used to obtain lexical information about an XML document. "
+"Lexical information includes information describing the document encoding "
+"used and XML comments embedded in the document, as well as section "
+"boundaries for the DTD and for any CDATA sections. The lexical handlers are "
+"used in the same manner as content handlers."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:441
 msgid ""
-"Set the LexicalHandler of an XMLReader by using the setProperty method "
-"with the property identifier ``'http://xml.org/sax/properties/lexical-"
-"handler'``."
+"Set the LexicalHandler of an XMLReader by using the setProperty method with "
+"the property identifier ``'http://xml.org/sax/properties/lexical-handler'``."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:448
 msgid ""
-"Reports a comment anywhere in the document (including the DTD and outside"
-" the document element)."
+"Reports a comment anywhere in the document (including the DTD and outside "
+"the document element)."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:453
 msgid ""
-"Reports the start of the DTD declarations if the document has an "
-"associated DTD."
+"Reports the start of the DTD declarations if the document has an associated "
+"DTD."
 msgstr ""
 
 #: ../../library/xml.sax.handler.rst:458
@@ -623,4 +676,3 @@ msgstr ""
 #: ../../library/xml.sax.handler.rst:469
 msgid "Reports the end of a CDATA marked section."
 msgstr ""
-

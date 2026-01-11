@@ -11,75 +11,94 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/locale.rst:2
 msgid ":mod:`!locale` --- Internationalization services"
-msgstr ""
+msgstr ":mod:`!locale` --- Služby internacionalizace"
 
 #: ../../library/locale.rst:10
 msgid "**Source code:** :source:`Lib/locale.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/locale.py`"
 
 #: ../../library/locale.rst:14
 msgid ""
 "The :mod:`locale` module opens access to the POSIX locale database and "
-"functionality. The POSIX locale mechanism allows programmers to deal with"
-" certain cultural issues in an application, without requiring the "
-"programmer to know all the specifics of each country where the software "
-"is executed."
+"functionality. The POSIX locale mechanism allows programmers to deal with "
+"certain cultural issues in an application, without requiring the programmer "
+"to know all the specifics of each country where the software is executed."
 msgstr ""
+"Modul :mod:`locale` poskytuje přístup k databázi locale POSIX a její "
+"funkcionalitě. Mechanismus locale POSIX umožňuje programátorům řešit určité "
+"kulturní otázky v aplikaci bez potřeby znát všechny specifiky jednotlivých "
+"zemí, kde je software spuštěn."
 
 #: ../../library/locale.rst:21
 msgid ""
 "The :mod:`locale` module is implemented on top of the :mod:`!_locale` "
 "module, which in turn uses an ANSI C locale implementation if available."
 msgstr ""
+"Modul :mod:`locale` je implementován na bázi modulu :mod:`!_locale`, který "
+"zase využívá implementaci locale ANSI C, je-li dostupná."
 
 #: ../../library/locale.rst:24
-msgid "The :mod:`locale` module defines the following exception and functions:"
-msgstr ""
+msgid ""
+"The :mod:`locale` module defines the following exception and functions:"
+msgstr "Modul :mod:`locale` definuje následující výjimku a funkce:"
 
 #: ../../library/locale.rst:29
 msgid ""
 "Exception raised when the locale passed to :func:`setlocale` is not "
 "recognized."
 msgstr ""
+"Výjimka vyvolana, pokud je locale předána funkčnímu :func:`setlocale` a není"
+" rozpoznána."
 
 #: ../../library/locale.rst:35
 msgid ""
-"If *locale* is given and not ``None``, :func:`setlocale` modifies the "
-"locale setting for the *category*. The available categories are listed in"
-" the data description below. *locale* may be a :ref:`string "
-"<locale_name>`, or a pair, language code and encoding. An empty string "
-"specifies the user's default settings. If the modification of the locale "
-"fails, the exception :exc:`Error` is raised. If successful, the new "
-"locale setting is returned."
+"If *locale* is given and not ``None``, :func:`setlocale` modifies the locale"
+" setting for the *category*. The available categories are listed in the data"
+" description below. *locale* may be a :ref:`string <locale_name>`, or a "
+"pair, language code and encoding. An empty string specifies the user's "
+"default settings. If the modification of the locale fails, the exception "
+":exc:`Error` is raised. If successful, the new locale setting is returned."
 msgstr ""
+"Je-li předán *locale* a není ``None``, funkce :func:`setlocale` modifikuje "
+"nastavení locale pro *category*. Dostupné kategorie jsou uvedeny v popisu "
+"dat níže. *locale* může být :ref:`řetězec <locale_name>` nebo pár, kód "
+"jazyka a kódování. Prázdný řetězec značí výchozí nastavení uživatele. "
+"Selíha-li modifikace locale, je vyvolána výjimka :exc:`Error`. Pokud je "
+"úspěšná, je vráceno nové nastavení locale."
 
 #: ../../library/locale.rst:42
 msgid ""
 "If *locale* is a pair, it is converted to a locale name using the locale "
 "aliasing engine. The language code has the same format as a :ref:`locale "
-"name <locale_name>`, but without encoding and ``@``-modifier. The "
-"language code and encoding can be ``None``."
+"name <locale_name>`, but without encoding and ``@``-modifier. The language "
+"code and encoding can be ``None``."
 msgstr ""
+"Je-li *locale* pár, je převeden na název locale použitím modulu locale "
+"aliasing. Kód jazyka má stejný formát jako :ref:`název locale "
+"<locale_name>`, ale bez kódování a modifikátoru ``@``. Kód jazyka a kódování"
+" mohou být ``None``."
 
 #: ../../library/locale.rst:48
 msgid ""
-"If *locale* is omitted or ``None``, the current setting for *category* is"
-" returned."
+"If *locale* is omitted or ``None``, the current setting for *category* is "
+"returned."
 msgstr ""
+"Je-li *locale* vynecháno nebo je ``None``, je vráceno současné nastavení pro"
+" *category*."
 
 #: ../../library/locale.rst:51
 msgid "Example::"
-msgstr ""
+msgstr "Příklad::"
 
 #: ../../library/locale.rst:53
 msgid ""
@@ -87,66 +106,82 @@ msgid ""
 ">>> loc = locale.setlocale(locale.LC_ALL)  # get current locale\n"
 "# use German locale; name and availability varies with platform\n"
 ">>> locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')\n"
-">>> locale.strcoll('f\\xe4n', 'foo')  # compare a string containing an "
-"umlaut\n"
+">>> locale.strcoll('f\\xe4n', 'foo')  # compare a string containing an umlaut\n"
 ">>> locale.setlocale(locale.LC_ALL, '')   # use user's preferred locale\n"
 ">>> locale.setlocale(locale.LC_ALL, 'C')  # use default (C) locale\n"
 ">>> locale.setlocale(locale.LC_ALL, loc)  # restore saved locale"
 msgstr ""
+">>> import locale\n"
+">>> loc = locale.setlocale(locale.LC_ALL)  # získání současného locale\n"
+"# použití německého locale; název a dostupnost se liší dle platformy\n"
+">>> locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')\n"
+">>> locale.strcoll('fän', 'foo')  # porovnání řetězce obsahujícího dialektický znak\n"
+">>> locale.setlocale(locale.LC_ALL, '')   # použití preferovaného locale uživatele\n"
+">>> locale.setlocale(locale.LC_ALL, 'C')  # použití výchozího (C) locale\n"
+">>> locale.setlocale(locale.LC_ALL, loc)  # obnovení uloženého locale"
 
 #: ../../library/locale.rst:62
 msgid ""
-":func:`setlocale` is not thread-safe on most systems. Applications "
-"typically start with a call of::"
+":func:`setlocale` is not thread-safe on most systems. Applications typically"
+" start with a call of::"
 msgstr ""
+":func:`setlocale` není bezpečná pro vlákna na většině systémů. Aplikace "
+"obvykle začínají voláním::"
 
 #: ../../library/locale.rst:65
 msgid ""
 "import locale\n"
 "locale.setlocale(locale.LC_ALL, '')"
 msgstr ""
+"import locale\n"
+"locale.setlocale(locale.LC_ALL, '')"
 
 #: ../../library/locale.rst:68
 msgid ""
 "This sets the locale for all categories to the user's default setting "
-"(typically specified in the :envvar:`LANG` environment variable).  If the"
-" locale is not changed thereafter, using multithreading should not cause "
+"(typically specified in the :envvar:`LANG` environment variable).  If the "
+"locale is not changed thereafter, using multithreading should not cause "
 "problems."
 msgstr ""
+"Toto nastaví locale pro všechny kategorie na výchozí nastavení uživatele "
+"(obvykle zadané v proměnné prostředí :envvar:`LANG`). Pokud se locale dále "
+"nemění, použití multithreadů by nemělo způsobit problémy."
 
 #: ../../library/locale.rst:75
 msgid ""
 "Returns the database of the local conventions as a dictionary. This "
 "dictionary has the following strings as keys:"
 msgstr ""
+"Vrací databázi lokálních konvencí jako slovník. Tento slovník má následující"
+" řetězce jako klíče:"
 
 #: ../../library/locale.rst:81
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: ../../library/locale.rst:81
 msgid "Key"
-msgstr ""
+msgstr "Klíč"
 
 #: ../../library/locale.rst:81
 msgid "Meaning"
-msgstr ""
+msgstr "Význam"
 
 #: ../../library/locale.rst:83
 msgid ":const:`LC_NUMERIC`"
-msgstr ""
+msgstr ":const:`LC_NUMERIC`"
 
 #: ../../library/locale.rst:83
 msgid "``'decimal_point'``"
-msgstr ""
+msgstr "``'decimal_point'``"
 
 #: ../../library/locale.rst:83
 msgid "Decimal point character."
-msgstr ""
+msgstr "Znak desetinného bodu."
 
 #: ../../library/locale.rst:85
 msgid "``'grouping'``"
-msgstr ""
+msgstr "``'grouping'``"
 
 #: ../../library/locale.rst:85
 msgid ""
@@ -155,252 +190,288 @@ msgid ""
 ":const:`CHAR_MAX`, no further grouping is performed. If the sequence "
 "terminates with a ``0``,  the last group size is repeatedly used."
 msgstr ""
+"Posloupnost čísel určující, na kterých relativích pozících se očekává "
+"``'thousands_sep'``. Je-li posloupnost ukončena :const:`CHAR_MAX`, ne "
+"provede se další seskupování. Je-li posloupnost ukončena ``0``, je velikost "
+"poslední skupiny opštována."
 
 #: ../../library/locale.rst:96
 msgid "``'thousands_sep'``"
-msgstr ""
+msgstr "``'thousands_sep'``"
 
 #: ../../library/locale.rst:96
 msgid "Character used between groups."
-msgstr ""
+msgstr "Znak používaný mezi skupinami."
 
 #: ../../library/locale.rst:98
 msgid ":const:`LC_MONETARY`"
-msgstr ""
+msgstr ":const:`LC_MONETARY`"
 
 #: ../../library/locale.rst:98
 msgid "``'int_curr_symbol'``"
-msgstr ""
+msgstr "``'int_curr_symbol'``"
 
 #: ../../library/locale.rst:98
 msgid "International currency symbol."
-msgstr ""
+msgstr "Mezinárodní symbol měny."
 
 #: ../../library/locale.rst:100
 msgid "``'currency_symbol'``"
-msgstr ""
+msgstr "``'currency_symbol'``"
 
 #: ../../library/locale.rst:100
 msgid "Local currency symbol."
-msgstr ""
+msgstr "Lokální symbol měny."
 
 #: ../../library/locale.rst:102
 msgid "``'p_cs_precedes/n_cs_precedes'``"
-msgstr ""
+msgstr "``'p_cs_precedes/n_cs_precedes'``"
 
 #: ../../library/locale.rst:102
 msgid ""
-"Whether the currency symbol precedes the value (for positive resp. "
-"negative values)."
-msgstr ""
+"Whether the currency symbol precedes the value (for positive resp. negative "
+"values)."
+msgstr "Zda symbol měny předchází hodnom (pro kladné resp. záporné hodnoty)."
 
 #: ../../library/locale.rst:107
 msgid "``'p_sep_by_space/n_sep_by_space'``"
-msgstr ""
+msgstr "``'p_sep_by_space/n_sep_by_space'``"
 
 #: ../../library/locale.rst:107
 msgid ""
 "Whether the currency symbol is separated from the value  by a space (for "
 "positive resp. negative values)."
 msgstr ""
+"Zda je symbol měny oddělen od hodnoty mezerou (pro kladné resp. záporné "
+"hodnoty)."
 
 #: ../../library/locale.rst:112
 msgid "``'mon_decimal_point'``"
-msgstr ""
+msgstr "``'mon_decimal_point'``"
 
 #: ../../library/locale.rst:112
 msgid "Decimal point used for monetary values."
-msgstr ""
+msgstr "Desetinný bod používaný pro penitní hodnoty."
 
 #: ../../library/locale.rst:115
 msgid "``'frac_digits'``"
-msgstr ""
+msgstr "``'frac_digits'``"
 
 #: ../../library/locale.rst:115
-msgid "Number of fractional digits used in local formatting of monetary values."
+msgid ""
+"Number of fractional digits used in local formatting of monetary values."
 msgstr ""
+"Počet zlomkových čísel používaných při lokálním formátování penitních "
+"hodnot."
 
 #: ../../library/locale.rst:119
 msgid "``'int_frac_digits'``"
-msgstr ""
+msgstr "``'int_frac_digits'``"
 
 #: ../../library/locale.rst:119
 msgid ""
 "Number of fractional digits used in international formatting of monetary "
 "values."
 msgstr ""
+"Počet zlomkových čísel používaných při mezinárodním formátování penitních "
+"hodnot."
 
 #: ../../library/locale.rst:123
 msgid "``'mon_thousands_sep'``"
-msgstr ""
+msgstr "``'mon_thousands_sep'``"
 
 #: ../../library/locale.rst:123
 msgid "Group separator used for monetary values."
-msgstr ""
+msgstr "Oddělovač skupin používaný pro penitní hodnoty."
 
 #: ../../library/locale.rst:126
 msgid "``'mon_grouping'``"
-msgstr ""
+msgstr "``'mon_grouping'``"
 
 #: ../../library/locale.rst:126
 msgid "Equivalent to ``'grouping'``, used for monetary values."
-msgstr ""
+msgstr "Ekvivalentní ``'grouping'``, použíaný pro penitní hodnoty."
 
 #: ../../library/locale.rst:129
 msgid "``'positive_sign'``"
-msgstr ""
+msgstr "``'positive_sign'``"
 
 #: ../../library/locale.rst:129
 msgid "Symbol used to annotate a positive monetary value."
-msgstr ""
+msgstr "Symbol používaný k anotaci kladné penitní hodnoty."
 
 #: ../../library/locale.rst:132
 msgid "``'negative_sign'``"
-msgstr ""
+msgstr "``'negative_sign'``"
 
 #: ../../library/locale.rst:132
 msgid "Symbol used to annotate a negative monetary value."
-msgstr ""
+msgstr "Symbol používaný k anotaci záporné penitní hodnoty."
 
 #: ../../library/locale.rst:135
 msgid "``'p_sign_posn/n_sign_posn'``"
-msgstr ""
+msgstr "``'p_sign_posn/n_sign_posn'``"
 
 #: ../../library/locale.rst:135
-msgid "The position of the sign (for positive resp. negative values), see below."
-msgstr ""
+msgid ""
+"The position of the sign (for positive resp. negative values), see below."
+msgstr "Pozice znaménka (pro kladné resp. záporné hodnoty), viz níže."
 
 #: ../../library/locale.rst:140
 msgid ""
-"All numeric values can be set to :const:`CHAR_MAX` to indicate that there"
-" is no value specified in this locale."
+"All numeric values can be set to :const:`CHAR_MAX` to indicate that there is"
+" no value specified in this locale."
 msgstr ""
+"Všechny numerické hodnoty mohou být nastaveny na :const:`CHAR_MAX`, aby "
+"indikovat, že v tomto locale není určena žádná hodnota."
 
 #: ../../library/locale.rst:143
 msgid ""
-"The possible values for ``'p_sign_posn'`` and ``'n_sign_posn'`` are given"
-" below."
+"The possible values for ``'p_sign_posn'`` and ``'n_sign_posn'`` are given "
+"below."
 msgstr ""
+"Možné hodnoty pro ``'p_sign_posn'`` a ``'n_sign_posn'`` jsou uvedeny níže."
 
 #: ../../library/locale.rst:146
 msgid "Value"
-msgstr ""
+msgstr "Hodnota"
 
 #: ../../library/locale.rst:146
 msgid "Explanation"
-msgstr ""
+msgstr "Vysvětlení"
 
 #: ../../library/locale.rst:148
 msgid "``0``"
-msgstr ""
+msgstr "``0``"
 
 #: ../../library/locale.rst:148
 msgid "Currency and value are surrounded by parentheses."
-msgstr ""
+msgstr "Měna a hodnota jsou obklopeny závorkami."
 
 #: ../../library/locale.rst:151
 msgid "``1``"
-msgstr ""
+msgstr "``1``"
 
 #: ../../library/locale.rst:151
 msgid "The sign should precede the value and currency symbol."
-msgstr ""
+msgstr "Znaménko by mělo předcházet hodnotou a symbolem měny."
 
 #: ../../library/locale.rst:154
 msgid "``2``"
-msgstr ""
+msgstr "``2``"
 
 #: ../../library/locale.rst:154
 msgid "The sign should follow the value and currency symbol."
-msgstr ""
+msgstr "Znaménko by mělo následovat hodnotu a symbol měny."
 
 #: ../../library/locale.rst:157
 msgid "``3``"
-msgstr ""
+msgstr "``3``"
 
 #: ../../library/locale.rst:157
 msgid "The sign should immediately precede the value."
-msgstr ""
+msgstr "Znaménko by mělo okamžitě předcházet hodnotu."
 
 #: ../../library/locale.rst:160
 msgid "``4``"
-msgstr ""
+msgstr "``4``"
 
 #: ../../library/locale.rst:160
 msgid "The sign should immediately follow the value."
-msgstr ""
+msgstr "Znaménko by mělo okamžitě následovat hodnotu."
 
 #: ../../library/locale.rst:163
 msgid "``CHAR_MAX``"
-msgstr ""
+msgstr "``CHAR_MAX``"
 
 #: ../../library/locale.rst:163
 msgid "Nothing is specified in this locale."
-msgstr ""
+msgstr "V tomto locale není nic určeno."
 
 #: ../../library/locale.rst:166
 msgid ""
-"The function temporarily sets the ``LC_CTYPE`` locale to the "
-"``LC_NUMERIC`` locale or the ``LC_MONETARY`` locale if locales are "
-"different and numeric or monetary strings are non-ASCII. This temporary "
-"change affects other threads."
+"The function temporarily sets the ``LC_CTYPE`` locale to the ``LC_NUMERIC`` "
+"locale or the ``LC_MONETARY`` locale if locales are different and numeric or"
+" monetary strings are non-ASCII. This temporary change affects other "
+"threads."
 msgstr ""
+"Funkce dočasně nastaví locale ``LC_CTYPE`` na locale ``LC_NUMERIC`` nebo "
+"``LC_MONETARY``, pokud se locales liší a numerické nebo penitní řetězce "
+"nejsou ASCII. Tato dočasná změna ovlivňuje další vlákna."
 
 #: ../../library/locale.rst:170
 msgid ""
 "The function now temporarily sets the ``LC_CTYPE`` locale to the "
 "``LC_NUMERIC`` locale in some cases."
 msgstr ""
+"Funkce nyní dočasně nastaví locale ``LC_CTYPE`` na locale ``LC_NUMERIC`` v "
+"některých případech."
 
 #: ../../library/locale.rst:177
 msgid ""
-"Return some locale-specific information as a string.  This function is "
-"not available on all systems, and the set of possible options might also "
-"vary across platforms.  The possible argument values are numbers, for "
-"which symbolic constants are available in the locale module."
+"Return some locale-specific information as a string.  This function is not "
+"available on all systems, and the set of possible options might also vary "
+"across platforms.  The possible argument values are numbers, for which "
+"symbolic constants are available in the locale module."
 msgstr ""
+"Vrací některé informace specifické pro locale jako řetězec. Tato funkce není"
+" dostupná na všech systémech a sada možných voleb se také může lišit mezi "
+"platformámi. Možné hodnoty argumentů jsou čísla, pro která jsou dostupné "
+"symbolické konstanty v modulu locale."
 
 #: ../../library/locale.rst:182
 msgid ""
-"The :func:`nl_langinfo` function accepts one of the following keys.  Most"
-" descriptions are taken from the corresponding description in the GNU C "
+"The :func:`nl_langinfo` function accepts one of the following keys.  Most "
+"descriptions are taken from the corresponding description in the GNU C "
 "library."
 msgstr ""
+"Funkce :func:`nl_langinfo` přijmá jeden z následujících klíčů. Většina "
+"popisů je převzata z odpovídajícího popisu v knihovně GNU C."
 
 #: ../../library/locale.rst:188
 msgid ""
-"Get a string with the name of the character encoding used in the selected"
-" locale."
-msgstr ""
+"Get a string with the name of the character encoding used in the selected "
+"locale."
+msgstr "Získá řetězec s názvem kódování znaků používaného ve vybraném locale."
 
 #: ../../library/locale.rst:193
 msgid ""
-"Get a string that can be used as a format string for "
-":func:`time.strftime` to represent date and time in a locale-specific "
-"way."
+"Get a string that can be used as a format string for :func:`time.strftime` "
+"to represent date and time in a locale-specific way."
 msgstr ""
+"Získá řetězec, který lze použít jako řetězec formátu pro "
+":func:`time.strftime`, aby reprezentoval datum a čas způsobem specifickým "
+"pro locale."
 
 #: ../../library/locale.rst:198
 msgid ""
-"Get a string that can be used as a format string for "
-":func:`time.strftime` to represent a date in a locale-specific way."
+"Get a string that can be used as a format string for :func:`time.strftime` "
+"to represent a date in a locale-specific way."
 msgstr ""
+"Získá řetězec, který lze použít jako řetězec formátu pro "
+":func:`time.strftime`, aby reprezentoval datum způsobem specifickým pro "
+"locale."
 
 #: ../../library/locale.rst:203
 msgid ""
-"Get a string that can be used as a format string for "
-":func:`time.strftime` to represent a time in a locale-specific way."
+"Get a string that can be used as a format string for :func:`time.strftime` "
+"to represent a time in a locale-specific way."
 msgstr ""
+"Získá řetězec, který lze použít jako řetězec formátu pro "
+":func:`time.strftime`, aby reprezentoval čas způsobem specifickým pro "
+"locale."
 
 #: ../../library/locale.rst:208
 msgid ""
-"Get a format string for :func:`time.strftime` to represent time in the "
-"am/pm format."
+"Get a format string for :func:`time.strftime` to represent time in the am/pm"
+" format."
 msgstr ""
+"Získá řetězec formátu pro :func:`time.strftime`, aby reprezentoval čas ve "
+"formátu dop./odp."
 
 #: ../../library/locale.rst:219
 msgid "Get the name of the n-th day of the week."
-msgstr ""
+msgstr "Získá název n-tého dne v týdnu."
 
 #: ../../library/locale.rst:223
 msgid ""
@@ -408,45 +479,54 @@ msgid ""
 "international convention (ISO 8601) that Monday is the first day of the "
 "week."
 msgstr ""
+"Toto sluje konvenci USA, kde :const:`DAY_1` je neděle, ne mezinárodní "
+"konvenci (ISO 8601), kde je pondělí prvním dnem týdnů."
 
 #: ../../library/locale.rst:235
 msgid "Get the abbreviated name of the n-th day of the week."
-msgstr ""
+msgstr "Získá zkrácený název n-tého dne v týnu."
 
 #: ../../library/locale.rst:250
 msgid "Get the name of the n-th month."
-msgstr ""
+msgstr "Získá název n-tého měsíce."
 
 #: ../../library/locale.rst:265
 msgid "Get the abbreviated name of the n-th month."
-msgstr ""
+msgstr "Získá zkrácený název n-tého měsíce."
 
 #: ../../library/locale.rst:269
 msgid "Get the radix character (decimal dot, decimal comma, etc.)."
-msgstr ""
+msgstr "Získá radixový znak (desetinná tečka, desetinná čárka, atd.)."
 
 #: ../../library/locale.rst:273
 msgid "Get the separator character for thousands (groups of three digits)."
-msgstr ""
+msgstr "Získá znak oddělovatele pro tisící (skupiny tří čísel)."
 
 #: ../../library/locale.rst:277
 msgid ""
 "Get a regular expression that can be used with the regex function to "
 "recognize a positive response to a yes/no question."
 msgstr ""
+"Získá regulární výraz, který lze použít s funkcí regex, aby rozpoznal kladné"
+" odpovědi na ano/ne otázku."
 
 #: ../../library/locale.rst:282
 msgid ""
-"Get a regular expression that can be used with the ``regex(3)`` function "
-"to recognize a negative response to a yes/no question."
+"Get a regular expression that can be used with the ``regex(3)`` function to "
+"recognize a negative response to a yes/no question."
 msgstr ""
+"Získá regulární výraz, který lze použít s funkcí ``regex(3)`` z knihovny C, "
+"aby rozpoznal zápornou odpověď na ano/ne otázku."
 
 #: ../../library/locale.rst:287
 msgid ""
-"The regular expressions for :const:`YESEXPR` and :const:`NOEXPR` use "
-"syntax suitable for the ``regex`` function from the C library, which "
-"might differ from the syntax used in :mod:`re`."
+"The regular expressions for :const:`YESEXPR` and :const:`NOEXPR` use syntax "
+"suitable for the ``regex`` function from the C library, which might differ "
+"from the syntax used in :mod:`re`."
 msgstr ""
+"Regulární výrazy pro :const:`YESEXPR` a :const:`NOEXPR` používají syntaxi "
+"vhodnou pro funkci ``regex`` z knihovny C, která se může lišit od syntaxe "
+"používané v :mod:`re`."
 
 #: ../../library/locale.rst:294
 msgid ""
@@ -454,102 +534,128 @@ msgid ""
 "before the value, \"+\" if the symbol should appear after the value, or "
 "\".\" if the symbol should replace the radix character."
 msgstr ""
+"Získá symbol měny, předéděn\"-\" pokud se symbol má zobrazit před hodnotou, "
+"\"+\" pokud se symbol má zobrazit za hodnotou, nebo \".\" pokud má symbol "
+"nahradit radixový znak."
 
 #: ../../library/locale.rst:300
 msgid ""
-"Get a string which describes how years are counted and displayed for each"
-" era in a locale."
+"Get a string which describes how years are counted and displayed for each "
+"era in a locale."
 msgstr ""
+"Získá řetězec, který popisuje, jak jsou roky počítány a zobrazovány pro "
+"každou eru v locale."
 
 #: ../../library/locale.rst:303
 msgid ""
-"Most locales do not define this value.  An example of a locale which does"
-" define this value is the Japanese one.  In Japan, the traditional "
-"representation of dates includes the name of the era corresponding to the"
-" then-emperor's reign."
+"Most locales do not define this value.  An example of a locale which does "
+"define this value is the Japanese one.  In Japan, the traditional "
+"representation of dates includes the name of the era corresponding to the "
+"then-emperor's reign."
 msgstr ""
+"Většina locale tuto hodnotu nedefinuje. Příklademunicipium locale, které "
+"tuto hodnotu definuje, je japonštína. V Japonsku tradice reprezentace dat "
+"obsahuje název ery odpovídající vládě tešedajjů imperatora."
 
 #: ../../library/locale.rst:308
 msgid ""
-"Normally it should not be necessary to use this value directly. "
-"Specifying the ``E`` modifier in their format strings causes the "
-":func:`time.strftime` function to use this information. The format of the"
-" returned string is specified in *The Open Group Base Specifications "
-"Issue 8*, paragraph `7.3.5.2 LC_TIME C-Language Access "
+"Normally it should not be necessary to use this value directly. Specifying "
+"the ``E`` modifier in their format strings causes the :func:`time.strftime` "
+"function to use this information. The format of the returned string is "
+"specified in *The Open Group Base Specifications Issue 8*, paragraph "
+"`7.3.5.2 LC_TIME C-Language Access "
 "<https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap07.html#tag_07_03_05_02>`_."
 msgstr ""
+"Za normálních okolností by nebylo nutné používat tuto hodnotu přímo. Zadání "
+"modifikátoru ``E`` v jejich řetězcích formátu způsobuje, že funkce "
+":func:`time.strftime` použíjeme tyto informace. Formát vráceného řetězce je "
+"stanoven v *The Open Group Base Specifications Issue 8*, odstavec `7.3.5.2 "
+"LC_TIME C-Language Access "
+"<https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap07.html#tag_07_03_05_02>`_."
 
 #: ../../library/locale.rst:317
 msgid ""
-"Get a format string for :func:`time.strftime` to represent date and time "
-"in a locale-specific era-based way."
+"Get a format string for :func:`time.strftime` to represent date and time in "
+"a locale-specific era-based way."
 msgstr ""
+"Získá řetězec formátu pro :func:`time.strftime`, aby reprezentoval datum a "
+"čas způsobem specifickým pro locale založeném na ere."
 
 #: ../../library/locale.rst:322
 msgid ""
 "Get a format string for :func:`time.strftime` to represent a date in a "
 "locale-specific era-based way."
 msgstr ""
+"Získá řetězec formátu pro :func:`time.strftime`, aby reprezentoval datum "
+"způsobem specifickým pro locale založeném na ere."
 
 #: ../../library/locale.rst:327
 msgid ""
 "Get a format string for :func:`time.strftime` to represent a time in a "
 "locale-specific era-based way."
 msgstr ""
+"Získá řetězec formátu pro :func:`time.strftime`, aby reprezentoval čas "
+"způsobem specifickým pro locale založeném na ere."
 
 #: ../../library/locale.rst:332
 msgid ""
 "Get a string consisting of up to 100 semicolon-separated symbols used to "
-"represent the values 0 to 99 in a locale-specific way. In most locales "
-"this is an empty string."
+"represent the values 0 to 99 in a locale-specific way. In most locales this "
+"is an empty string."
 msgstr ""
+"Získá řetězec skládající se z až 100 symboly oddělenými středníků "
+"používaných k reprezentaci hodnot 0 až 99 způsobem specifickým pro locale. "
+"Ve většině locale je to prázdný řetězec."
 
 #: ../../library/locale.rst:336
 msgid ""
-"The function temporarily sets the ``LC_CTYPE`` locale to the locale of "
-"the category that determines the requested value (``LC_TIME``, "
-"``LC_NUMERIC``, ``LC_MONETARY`` or ``LC_MESSAGES``) if locales are "
-"different and the resulting string is non-ASCII. This temporary change "
-"affects other threads."
+"The function temporarily sets the ``LC_CTYPE`` locale to the locale of the "
+"category that determines the requested value (``LC_TIME``, ``LC_NUMERIC``, "
+"``LC_MONETARY`` or ``LC_MESSAGES``) if locales are different and the "
+"resulting string is non-ASCII. This temporary change affects other threads."
 msgstr ""
+"Funkce dočasně nastaví locale ``LC_CTYPE`` na locale kategorie, která určuje"
+" žádanou hodnotu (``LC_TIME``, ``LC_NUMERIC``, ``LC_MONETARY`` nebo "
+"``LC_MESSAGES``), pokud se locales liší a výsledný řetězec není ASCII. Tato "
+"dočasná změna ovlivňuje další vlákna."
 
 #: ../../library/locale.rst:342
-msgid "The function now temporarily sets the ``LC_CTYPE`` locale in some cases."
+msgid ""
+"The function now temporarily sets the ``LC_CTYPE`` locale in some cases."
 msgstr ""
+"Funkce nyní dočasně nastaví locale ``LC_CTYPE`` v některých případech."
 
 #: ../../library/locale.rst:348
 msgid ""
-"Tries to determine the default locale settings and returns them as a "
-"tuple of the form ``(language code, encoding)``."
+"Tries to determine the default locale settings and returns them as a tuple "
+"of the form ``(language code, encoding)``."
 msgstr ""
 
 #: ../../library/locale.rst:351
 msgid ""
-"According to POSIX, a program which has not called ``setlocale(LC_ALL, "
-"'')`` runs using the portable ``'C'`` locale.  Calling "
-"``setlocale(LC_ALL, '')`` lets it use the default locale as defined by "
-"the :envvar:`LANG` variable.  Since we do not want to interfere with the "
-"current locale setting we thus emulate the behavior in the way described "
-"above."
+"According to POSIX, a program which has not called ``setlocale(LC_ALL, '')``"
+" runs using the portable ``'C'`` locale.  Calling ``setlocale(LC_ALL, '')`` "
+"lets it use the default locale as defined by the :envvar:`LANG` variable.  "
+"Since we do not want to interfere with the current locale setting we thus "
+"emulate the behavior in the way described above."
 msgstr ""
 
 #: ../../library/locale.rst:357
 msgid ""
-"To maintain compatibility with other platforms, not only the "
-":envvar:`LANG` variable is tested, but a list of variables given as "
-"envvars parameter.  The first found to be defined will be used.  "
-"*envvars* defaults to the search path used in GNU gettext; it must always"
-" contain the variable name ``'LANG'``.  The GNU gettext search path "
-"contains ``'LC_ALL'``, ``'LC_CTYPE'``, ``'LANG'`` and ``'LANGUAGE'``, in "
-"that order."
+"To maintain compatibility with other platforms, not only the :envvar:`LANG` "
+"variable is tested, but a list of variables given as envvars parameter.  The"
+" first found to be defined will be used.  *envvars* defaults to the search "
+"path used in GNU gettext; it must always contain the variable name "
+"``'LANG'``.  The GNU gettext search path contains ``'LC_ALL'``, "
+"``'LC_CTYPE'``, ``'LANG'`` and ``'LANGUAGE'``, in that order."
 msgstr ""
 
 #: ../../library/locale.rst:364 ../../library/locale.rst:379
 msgid ""
-"The language code has the same format as a :ref:`locale name "
-"<locale_name>`, but without encoding and ``@``-modifier. The language "
-"code and encoding may be ``None`` if their values cannot be determined. "
-"The \"C\" locale is represented as ``(None, None)``."
+"The language code has the same format as a :ref:`locale name <locale_name>`,"
+" but without encoding and ``@``-modifier. The language code and encoding may"
+" be ``None`` if their values cannot be determined. The \"C\" locale is "
+"represented as ``(None, None)``."
 msgstr ""
 
 #: ../../library/locale.rst:375
@@ -570,17 +676,16 @@ msgstr ""
 
 #: ../../library/locale.rst:393
 msgid ""
-"On some systems, it is necessary to invoke :func:`setlocale` to obtain "
-"the user preferences, so this function is not thread-safe. If invoking "
-"setlocale is not necessary or desired, *do_setlocale* should be set to "
-"``False``."
+"On some systems, it is necessary to invoke :func:`setlocale` to obtain the "
+"user preferences, so this function is not thread-safe. If invoking setlocale"
+" is not necessary or desired, *do_setlocale* should be set to ``False``."
 msgstr ""
 
 #: ../../library/locale.rst:397
 msgid ""
-"On Android or if the :ref:`Python UTF-8 Mode <utf8-mode>` is enabled, "
-"always return ``'utf-8'``, the :term:`locale encoding` and the "
-"*do_setlocale* argument are ignored."
+"On Android or if the :ref:`Python UTF-8 Mode <utf8-mode>` is enabled, always"
+" return ``'utf-8'``, the :term:`locale encoding` and the *do_setlocale* "
+"argument are ignored."
 msgstr ""
 
 #: ../../library/locale.rst:401 ../../library/locale.rst:419
@@ -605,9 +710,9 @@ msgstr ""
 
 #: ../../library/locale.rst:414
 msgid ""
-"On Unix, return the encoding of the current :data:`LC_CTYPE` locale. "
-"Return ``\"utf-8\"`` if ``nl_langinfo(CODESET)`` returns an empty string:"
-" for example, if the current LC_CTYPE locale is not supported."
+"On Unix, return the encoding of the current :data:`LC_CTYPE` locale. Return "
+"``\"utf-8\"`` if ``nl_langinfo(CODESET)`` returns an empty string: for "
+"example, if the current LC_CTYPE locale is not supported."
 msgstr ""
 
 #: ../../library/locale.rst:417
@@ -617,15 +722,15 @@ msgstr ""
 #: ../../library/locale.rst:422
 msgid ""
 "This function is similar to :func:`getpreferredencoding(False) "
-"<getpreferredencoding>` except this function ignores the :ref:`Python "
-"UTF-8 Mode <utf8-mode>`."
+"<getpreferredencoding>` except this function ignores the :ref:`Python UTF-8 "
+"Mode <utf8-mode>`."
 msgstr ""
 
 #: ../../library/locale.rst:431
 msgid ""
-"Returns a normalized locale code for the given locale name.  The returned"
-" locale code is formatted for use with :func:`setlocale`.  If "
-"normalization fails, the original name is returned unchanged."
+"Returns a normalized locale code for the given locale name.  The returned "
+"locale code is formatted for use with :func:`setlocale`.  If normalization "
+"fails, the original name is returned unchanged."
 msgstr ""
 
 #: ../../library/locale.rst:435
@@ -636,32 +741,32 @@ msgstr ""
 
 #: ../../library/locale.rst:441
 msgid ""
-"Compares two strings according to the current :const:`LC_COLLATE` "
-"setting. As any other compare function, returns a negative, or a positive"
-" value, or ``0``, depending on whether *string1* collates before or after"
-" *string2* or is equal to it."
+"Compares two strings according to the current :const:`LC_COLLATE` setting. "
+"As any other compare function, returns a negative, or a positive value, or "
+"``0``, depending on whether *string1* collates before or after *string2* or "
+"is equal to it."
 msgstr ""
 
 #: ../../library/locale.rst:449
 msgid ""
-"Transforms a string to one that can be used in locale-aware comparisons."
-"  For example, ``strxfrm(s1) < strxfrm(s2)`` is equivalent to "
-"``strcoll(s1, s2) < 0``.  This function can be used when the same string "
-"is compared repeatedly, e.g. when collating a sequence of strings."
+"Transforms a string to one that can be used in locale-aware comparisons.  "
+"For example, ``strxfrm(s1) < strxfrm(s2)`` is equivalent to ``strcoll(s1, "
+"s2) < 0``.  This function can be used when the same string is compared "
+"repeatedly, e.g. when collating a sequence of strings."
 msgstr ""
 
 #: ../../library/locale.rst:458
 msgid ""
-"Formats a number *val* according to the current :const:`LC_NUMERIC` "
-"setting. The format follows the conventions of the ``%`` operator.  For "
-"floating-point values, the decimal point is modified if appropriate.  If "
-"*grouping* is ``True``, also takes the grouping into account."
+"Formats a number *val* according to the current :const:`LC_NUMERIC` setting."
+" The format follows the conventions of the ``%`` operator.  For floating-"
+"point values, the decimal point is modified if appropriate.  If *grouping* "
+"is ``True``, also takes the grouping into account."
 msgstr ""
 
 #: ../../library/locale.rst:463
 msgid ""
-"If *monetary* is true, the conversion uses monetary thousands separator "
-"and grouping strings."
+"If *monetary* is true, the conversion uses monetary thousands separator and "
+"grouping strings."
 msgstr ""
 
 #: ../../library/locale.rst:466
@@ -682,16 +787,16 @@ msgstr ""
 
 #: ../../library/locale.rst:477
 msgid ""
-"The returned string includes the currency symbol if *symbol* is true, "
-"which is the default. If *grouping* is ``True`` (which is not the "
-"default), grouping is done with the value. If *international* is ``True``"
-" (which is not the default), the international currency symbol is used."
+"The returned string includes the currency symbol if *symbol* is true, which "
+"is the default. If *grouping* is ``True`` (which is not the default), "
+"grouping is done with the value. If *international* is ``True`` (which is "
+"not the default), the international currency symbol is used."
 msgstr ""
 
 #: ../../library/locale.rst:484
 msgid ""
-"This function will not work with the 'C' locale, so you have to set a "
-"locale via :func:`setlocale` first."
+"This function will not work with the 'C' locale, so you have to set a locale"
+" via :func:`setlocale` first."
 msgstr ""
 
 #: ../../library/locale.rst:490
@@ -708,15 +813,14 @@ msgstr ""
 
 #: ../../library/locale.rst:504
 msgid ""
-"Converts a normalized number string into a formatted string following the"
-" :const:`LC_NUMERIC` settings."
+"Converts a normalized number string into a formatted string following the "
+":const:`LC_NUMERIC` settings."
 msgstr ""
 
 #: ../../library/locale.rst:512
 msgid ""
-"Converts a string to a number, following the :const:`LC_NUMERIC` "
-"settings, by calling *func* on the result of calling :func:`delocalize` "
-"on *string*."
+"Converts a string to a number, following the :const:`LC_NUMERIC` settings, "
+"by calling *func* on the result of calling :func:`delocalize` on *string*."
 msgstr ""
 
 #: ../../library/locale.rst:518
@@ -727,12 +831,12 @@ msgstr ""
 
 #: ../../library/locale.rst:523
 msgid ""
-"Locale category for the character type functions.  Most importantly, this"
-" category defines the text encoding, i.e. how bytes are interpreted as "
+"Locale category for the character type functions.  Most importantly, this "
+"category defines the text encoding, i.e. how bytes are interpreted as "
 "Unicode codepoints.  See :pep:`538` and :pep:`540` for how this variable "
 "might be automatically coerced to ``C.UTF-8`` to avoid issues created by "
-"invalid settings in containers or incompatible settings passed over "
-"remote SSH connections."
+"invalid settings in containers or incompatible settings passed over remote "
+"SSH connections."
 msgstr ""
 
 #: ../../library/locale.rst:530
@@ -756,8 +860,8 @@ msgstr ""
 
 #: ../../library/locale.rst:549
 msgid ""
-"Locale category for formatting of monetary values.  The available options"
-" are available from the :func:`localeconv` function."
+"Locale category for formatting of monetary values.  The available options "
+"are available from the :func:`localeconv` function."
 msgstr ""
 
 #: ../../library/locale.rst:555
@@ -770,24 +874,24 @@ msgstr ""
 
 #: ../../library/locale.rst:560
 msgid ""
-"This value may not be available on operating systems not conforming to "
-"the POSIX standard, most notably Windows."
+"This value may not be available on operating systems not conforming to the "
+"POSIX standard, most notably Windows."
 msgstr ""
 
 #: ../../library/locale.rst:566
 msgid ""
 "Locale category for formatting numbers.  The functions "
-":func:`format_string`, :func:`atoi`, :func:`atof` and :func:`.str` of the"
-" :mod:`locale` module are affected by that category.  All other numeric "
+":func:`format_string`, :func:`atoi`, :func:`atof` and :func:`.str` of the "
+":mod:`locale` module are affected by that category.  All other numeric "
 "formatting operations are not affected."
 msgstr ""
 
 #: ../../library/locale.rst:574
 msgid ""
-"Combination of all locale settings.  If this flag is used when the locale"
-" is changed, setting the locale for all categories is attempted. If that "
-"fails for any category, no category is changed at all.  When the locale "
-"is retrieved using this flag, a string indicating the setting for all "
+"Combination of all locale settings.  If this flag is used when the locale is"
+" changed, setting the locale for all categories is attempted. If that fails "
+"for any category, no category is changed at all.  When the locale is "
+"retrieved using this flag, a string indicating the setting for all "
 "categories is returned. This string can be later used to restore the "
 "settings."
 msgstr ""
@@ -805,56 +909,56 @@ msgstr ""
 #: ../../library/locale.rst:590
 msgid ""
 "The C standard defines the locale as a program-wide property that may be "
-"relatively expensive to change.  On top of that, some implementations are"
-" broken in such a way that frequent locale changes may cause core dumps."
-"  This makes the locale somewhat painful to use correctly."
+"relatively expensive to change.  On top of that, some implementations are "
+"broken in such a way that frequent locale changes may cause core dumps.  "
+"This makes the locale somewhat painful to use correctly."
 msgstr ""
 
 #: ../../library/locale.rst:595
 msgid ""
 "Initially, when a program is started, the locale is the ``C`` locale, no "
 "matter what the user's preferred locale is.  There is one exception: the "
-":data:`LC_CTYPE` category is changed at startup to set the current locale"
-" encoding to the user's preferred locale encoding. The program must "
-"explicitly say that it wants the user's preferred locale settings for "
-"other categories by calling ``setlocale(LC_ALL, '')``."
+":data:`LC_CTYPE` category is changed at startup to set the current locale "
+"encoding to the user's preferred locale encoding. The program must "
+"explicitly say that it wants the user's preferred locale settings for other "
+"categories by calling ``setlocale(LC_ALL, '')``."
 msgstr ""
 
 #: ../../library/locale.rst:602
 msgid ""
 "It is generally a bad idea to call :func:`setlocale` in some library "
-"routine, since as a side effect it affects the entire program.  Saving "
-"and restoring it is almost as bad: it is expensive and affects other "
-"threads that happen to run before the settings have been restored."
+"routine, since as a side effect it affects the entire program.  Saving and "
+"restoring it is almost as bad: it is expensive and affects other threads "
+"that happen to run before the settings have been restored."
 msgstr ""
 
 #: ../../library/locale.rst:607
 msgid ""
 "If, when coding a module for general use, you need a locale independent "
 "version of an operation that is affected by the locale (such as certain "
-"formats used with :func:`time.strftime`), you will have to find a way to "
-"do it without using the standard library routine.  Even better is "
-"convincing yourself that using locale settings is okay.  Only as a last "
-"resort should you document that your module is not compatible with non-\\"
-" ``C`` locale settings."
+"formats used with :func:`time.strftime`), you will have to find a way to do "
+"it without using the standard library routine.  Even better is convincing "
+"yourself that using locale settings is okay.  Only as a last resort should "
+"you document that your module is not compatible with non-\\ ``C`` locale "
+"settings."
 msgstr ""
 
 #: ../../library/locale.rst:614
 msgid ""
-"The only way to perform numeric operations according to the locale is to "
-"use the special functions defined by this module: :func:`atof`, "
-":func:`atoi`, :func:`format_string`, :func:`.str`."
+"The only way to perform numeric operations according to the locale is to use"
+" the special functions defined by this module: :func:`atof`, :func:`atoi`, "
+":func:`format_string`, :func:`.str`."
 msgstr ""
 
 #: ../../library/locale.rst:618
 msgid ""
-"There is no way to perform case conversions and character classifications"
-" according to the locale.  For (Unicode) text strings these are done "
+"There is no way to perform case conversions and character classifications "
+"according to the locale.  For (Unicode) text strings these are done "
 "according to the character value only, while for byte strings, the "
-"conversions and classifications are done according to the ASCII value of "
-"the byte, and bytes whose high bit is set (i.e., non-ASCII bytes) are "
-"never converted or considered part of a character class such as letter or"
-" whitespace."
+"conversions and classifications are done according to the ASCII value of the"
+" byte, and bytes whose high bit is set (i.e., non-ASCII bytes) are never "
+"converted or considered part of a character class such as letter or "
+"whitespace."
 msgstr ""
 
 #: ../../library/locale.rst:629
@@ -873,27 +977,27 @@ msgstr ""
 
 #: ../../library/locale.rst:639
 msgid ""
-"where *language* is a two- or three-letter language code from `ISO 639`_,"
-" *territory* is a two-letter country or region code from `ISO 3166`_, "
-"*charset* is a locale encoding, and *modifier* is a script name, a "
-"language subtag, a sort order identifier, or other locale modifier (for "
-"example, \"latin\", \"valencia\", \"stroke\" and \"euro\")."
+"where *language* is a two- or three-letter language code from `ISO 639`_, "
+"*territory* is a two-letter country or region code from `ISO 3166`_, "
+"*charset* is a locale encoding, and *modifier* is a script name, a language "
+"subtag, a sort order identifier, or other locale modifier (for example, "
+"\"latin\", \"valencia\", \"stroke\" and \"euro\")."
 msgstr ""
 
 #: ../../library/locale.rst:645
 msgid ""
-"On Windows, several formats are supported. [2]_ [3]_ A subset of `IETF "
-"BCP 47`_ tags:"
+"On Windows, several formats are supported. [2]_ [3]_ A subset of `IETF BCP "
+"47`_ tags:"
 msgstr ""
 
 #: ../../library/locale.rst:652
 msgid ""
-"where *language* and *territory* have the same meaning as in Posix, "
-"*script* is a four-letter script code from `ISO 15924`_, and *modifier* "
-"is a language subtag, a sort order identifier or custom modifier (for "
-"example, \"valencia\", \"stroke\" or \"x-python\"). Both hyphen (``'-'``)"
-" and underscore (``'_'``) separators are supported. Only UTF-8 encoding "
-"is allowed for BCP 47 tags."
+"where *language* and *territory* have the same meaning as in Posix, *script*"
+" is a four-letter script code from `ISO 15924`_, and *modifier* is a "
+"language subtag, a sort order identifier or custom modifier (for example, "
+"\"valencia\", \"stroke\" or \"x-python\"). Both hyphen (``'-'``) and "
+"underscore (``'_'``) separators are supported. Only UTF-8 encoding is "
+"allowed for BCP 47 tags."
 msgstr ""
 
 #: ../../library/locale.rst:659
@@ -903,9 +1007,9 @@ msgstr ""
 #: ../../library/locale.rst:664
 msgid ""
 "where *language* and *territory* are full names, such as \"English\" and "
-"\"United States\", and *charset* is either a code page number (for "
-"example, \"1252\") or UTF-8. Only the underscore separator is supported "
-"in this format."
+"\"United States\", and *charset* is either a code page number (for example, "
+"\"1252\") or UTF-8. Only the underscore separator is supported in this "
+"format."
 msgstr ""
 
 #: ../../library/locale.rst:669
@@ -927,8 +1031,8 @@ msgstr ""
 
 #: ../../library/locale.rst:678
 msgid ""
-"`Locale Names <https://learn.microsoft.com/en-us/windows/win32/intl"
-"/locale-names>`_"
+"`Locale Names <https://learn.microsoft.com/en-us/windows/win32/intl/locale-"
+"names>`_"
 msgstr ""
 
 #: ../../library/locale.rst:684
@@ -937,20 +1041,20 @@ msgstr ""
 
 #: ../../library/locale.rst:686
 msgid ""
-"Extension modules should never call :func:`setlocale`, except to find out"
-" what the current locale is.  But since the return value can only be used"
-" portably to restore it, that is not very useful (except perhaps to find "
-"out whether or not the locale is ``C``)."
+"Extension modules should never call :func:`setlocale`, except to find out "
+"what the current locale is.  But since the return value can only be used "
+"portably to restore it, that is not very useful (except perhaps to find out "
+"whether or not the locale is ``C``)."
 msgstr ""
 
 #: ../../library/locale.rst:691
 msgid ""
-"When Python code uses the :mod:`locale` module to change the locale, this"
-" also affects the embedding application.  If the embedding application "
-"doesn't want this to happen, it should remove the :mod:`!_locale` "
-"extension module (which does all the work) from the table of built-in "
-"modules in the :file:`config.c` file, and make sure that the "
-":mod:`!_locale` module is not accessible as a shared library."
+"When Python code uses the :mod:`locale` module to change the locale, this "
+"also affects the embedding application.  If the embedding application "
+"doesn't want this to happen, it should remove the :mod:`!_locale` extension "
+"module (which does all the work) from the table of built-in modules in the "
+":file:`config.c` file, and make sure that the :mod:`!_locale` module is not "
+"accessible as a shared library."
 msgstr ""
 
 #: ../../library/locale.rst:702
@@ -959,23 +1063,23 @@ msgstr ""
 
 #: ../../library/locale.rst:711
 msgid ""
-"The locale module exposes the C library's gettext interface on systems "
-"that provide this interface.  It consists of the functions "
-":func:`gettext`, :func:`dgettext`, :func:`dcgettext`, :func:`textdomain`,"
-" :func:`bindtextdomain`, and :func:`bind_textdomain_codeset`.  These are "
-"similar to the same functions in the :mod:`gettext` module, but use the C"
-" library's binary format for message catalogs, and the C library's search"
-" algorithms for locating message catalogs."
+"The locale module exposes the C library's gettext interface on systems that "
+"provide this interface.  It consists of the functions :func:`gettext`, "
+":func:`dgettext`, :func:`dcgettext`, :func:`textdomain`, "
+":func:`bindtextdomain`, and :func:`bind_textdomain_codeset`.  These are "
+"similar to the same functions in the :mod:`gettext` module, but use the C "
+"library's binary format for message catalogs, and the C library's search "
+"algorithms for locating message catalogs."
 msgstr ""
 
 #: ../../library/locale.rst:718
 msgid ""
-"Python applications should normally find no need to invoke these "
-"functions, and should use :mod:`gettext` instead.  A known exception to "
-"this rule are applications that link with additional C libraries which "
-"internally invoke C functions ``gettext`` or ``dcgettext``.  For these "
-"applications, it may be necessary to bind the text domain, so that the "
-"libraries can properly locate their message catalogs."
+"Python applications should normally find no need to invoke these functions, "
+"and should use :mod:`gettext` instead.  A known exception to this rule are "
+"applications that link with additional C libraries which internally invoke C"
+" functions ``gettext`` or ``dcgettext``.  For these applications, it may be "
+"necessary to bind the text domain, so that the libraries can properly locate"
+" their message catalogs."
 msgstr ""
 
 #: ../../library/locale.rst:19
@@ -987,31 +1091,23 @@ msgid "_locale"
 msgstr ""
 
 #~ msgid ""
-#~ "If *locale* is a pair, it is "
-#~ "converted to a locale name using "
-#~ "the locale aliasing engine. The language"
-#~ " code has the same format as a"
-#~ " :ref:`locale name <locale_name>`, but "
-#~ "without encoding. The language code and"
-#~ " encoding can be ``None``."
+#~ "If *locale* is a pair, it is converted to a locale name using the locale "
+#~ "aliasing engine. The language code has the same format as a :ref:`locale "
+#~ "name <locale_name>`, but without encoding. The language code and encoding "
+#~ "can be ``None``."
 #~ msgstr ""
 
 #~ msgid "Support language codes with ``@``-modifiers."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The language code has the same "
-#~ "format as a :ref:`locale name "
-#~ "<locale_name>`, but without encoding. The "
-#~ "language code and encoding may be "
-#~ "``None`` if their values cannot be "
-#~ "determined. The \"C\" locale is "
-#~ "represented as ``(None, None)``."
+#~ "The language code has the same format as a :ref:`locale name <locale_name>`,"
+#~ " but without encoding. The language code and encoding may be ``None`` if "
+#~ "their values cannot be determined. The \"C\" locale is represented as "
+#~ "``(None, None)``."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "``@``-modifier are no longer silently "
-#~ "removed, but included in the language"
-#~ " code."
+#~ "``@``-modifier are no longer silently removed, but included in the language "
+#~ "code."
 #~ msgstr ""
-

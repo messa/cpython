@@ -11,85 +11,103 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-runner.rst:6
 msgid "Runners"
-msgstr ""
+msgstr "Spouštěče (Runners)"
 
 #: ../../library/asyncio-runner.rst:8
 msgid "**Source code:** :source:`Lib/asyncio/runners.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/asyncio/runners.py`"
 
 #: ../../library/asyncio-runner.rst:11
-msgid "This section outlines high-level asyncio primitives to run asyncio code."
+msgid ""
+"This section outlines high-level asyncio primitives to run asyncio code."
 msgstr ""
+"Tato sekce popisuje vysokoúrovňové asyncio primitiva pro spouštění asyncio "
+"kódu."
 
 #: ../../library/asyncio-runner.rst:13
 msgid ""
-"They are built on top of an :ref:`event loop <asyncio-event-loop>` with "
-"the aim to simplify async code usage for common wide-spread scenarios."
+"They are built on top of an :ref:`event loop <asyncio-event-loop>` with the "
+"aim to simplify async code usage for common wide-spread scenarios."
 msgstr ""
+"Jsou postaveny na :ref:`event loop <asyncio-event-loop>` s cílem zjednodušit"
+" použití async kódu v běžných a rozšířených scénářích."
 
 #: ../../library/asyncio-runner.rst:23
 msgid "Running an asyncio Program"
-msgstr ""
+msgstr "Spouštění asyncio programu"
 
 #: ../../library/asyncio-runner.rst:27
 msgid "Execute *coro* in an asyncio event loop and return the result."
-msgstr ""
+msgstr "Spustí *coro* v asyncio event loop a vrátí výsledek."
 
 #: ../../library/asyncio-runner.rst:29 ../../library/asyncio-runner.rst:121
 msgid "The argument can be any awaitable object."
-msgstr ""
+msgstr "Argument může být jakýkoli awaitable objekt."
 
 #: ../../library/asyncio-runner.rst:31
 msgid ""
-"This function runs the awaitable, taking care of managing the asyncio "
-"event loop, *finalizing asynchronous generators*, and closing the "
-"executor."
+"This function runs the awaitable, taking care of managing the asyncio event "
+"loop, *finalizing asynchronous generators*, and closing the executor."
 msgstr ""
+"Tato funkce spustí awaitable, přičemž se stará o správu asyncio event loop, "
+"*finalizaci asynchronních generátorů* a zavření executoru."
 
 #: ../../library/asyncio-runner.rst:35 ../../library/asyncio-runner.rst:131
 msgid ""
-"This function cannot be called when another asyncio event loop is running"
-" in the same thread."
+"This function cannot be called when another asyncio event loop is running in"
+" the same thread."
 msgstr ""
+"Tuto funkci nelze volat, pokud je v témže vlákně spuštěna jiná asyncio event"
+" loop."
 
 #: ../../library/asyncio-runner.rst:38 ../../library/asyncio-runner.rst:97
 msgid ""
-"If *debug* is ``True``, the event loop will be run in debug mode. "
-"``False`` disables debug mode explicitly. ``None`` is used to respect the"
-" global :ref:`asyncio-debug-mode` settings."
+"If *debug* is ``True``, the event loop will be run in debug mode. ``False`` "
+"disables debug mode explicitly. ``None`` is used to respect the global "
+":ref:`asyncio-debug-mode` settings."
 msgstr ""
+"Pokud je *debug* ``True``, event loop se spustí v debug režimu. ``False`` "
+"explicitně vypne debug režim. ``None`` se používá k respektování globálních "
+":ref:`asyncio-debug-mode` nastavení."
 
 #: ../../library/asyncio-runner.rst:42
 msgid ""
-"If *loop_factory* is not ``None``, it is used to create a new event loop;"
-" otherwise :func:`asyncio.new_event_loop` is used. The loop is closed at "
-"the end. This function should be used as a main entry point for asyncio "
-"programs, and should ideally only be called once. It is recommended to "
-"use *loop_factory* to configure the event loop instead of policies. "
-"Passing :class:`asyncio.EventLoop` allows running asyncio without the "
-"policy system."
+"If *loop_factory* is not ``None``, it is used to create a new event loop; "
+"otherwise :func:`asyncio.new_event_loop` is used. The loop is closed at the "
+"end. This function should be used as a main entry point for asyncio "
+"programs, and should ideally only be called once. It is recommended to use "
+"*loop_factory* to configure the event loop instead of policies. Passing "
+":class:`asyncio.EventLoop` allows running asyncio without the policy system."
 msgstr ""
+"Pokud je *loop_factory* ``None``, je použita :func:`asyncio.new_event_loop`."
+" Smyčka je na konci zavřena. Tato funkce by měla být použita jako hlavní "
+"vstupní bod asyncio programů a měla by být ideálně volána pouze jednou. "
+"Doporučuje se použít *loop_factory* ke konfiguraci event loop místo politik."
+" Předání :class:`asyncio.EventLoop` umožňuje spouštění asyncio bez systému "
+"politik."
 
 #: ../../library/asyncio-runner.rst:50
 msgid ""
-"The executor is given a timeout duration of 5 minutes to shutdown. If the"
-" executor hasn't finished within that duration, a warning is emitted and "
-"the executor is closed."
+"The executor is given a timeout duration of 5 minutes to shutdown. If the "
+"executor hasn't finished within that duration, a warning is emitted and the "
+"executor is closed."
 msgstr ""
+"Executoru je dán timeout 5 minut na vypnutí. Pokud executor není vypnut "
+"během této doby, je издáno upozornění a executor je zavřen."
 
 #: ../../library/asyncio-runner.rst:54
 msgid "Example::"
-msgstr ""
+msgstr "Příklad::"
 
 #: ../../library/asyncio-runner.rst:56
 msgid ""
@@ -99,22 +117,30 @@ msgid ""
 "\n"
 "asyncio.run(main())"
 msgstr ""
+"async def main():\n"
+"    await asyncio.sleep(1)\n"
+"    print('hello')\n"
+"\n"
+"asyncio.run(main())"
 
 #: ../../library/asyncio-runner.rst:64
 msgid "Updated to use :meth:`loop.shutdown_default_executor`."
-msgstr ""
+msgstr "Aktualizováno na použití :meth:`loop.shutdown_default_executor`."
 
 #: ../../library/asyncio-runner.rst:69
-msgid "*debug* is ``None`` by default to respect the global debug mode settings."
+msgid ""
+"*debug* is ``None`` by default to respect the global debug mode settings."
 msgstr ""
+"*debug* je ve výchozím nastavení ``None`` aby se respektovaly nastavení "
+"globálního debug režimu."
 
 #: ../../library/asyncio-runner.rst:73
 msgid "Added *loop_factory* parameter."
-msgstr ""
+msgstr "Přidán parametr *loop_factory*."
 
 #: ../../library/asyncio-runner.rst:77 ../../library/asyncio-runner.rst:136
 msgid "*coro* can be any awaitable object."
-msgstr ""
+msgstr "*coro* může být jakýkoli awaitable objekt."
 
 #: ../../library/asyncio-runner.rst:81
 msgid ""
@@ -122,37 +148,49 @@ msgid ""
 "Python 3.16; from there on, an explicit *loop_factory* is needed to "
 "configure the event loop."
 msgstr ""
+"Systém politik :mod:`!asyncio` je zastaralý a bude odstraněn v Pythonu 3.16;"
+" od té doby je potřeba explicitní *loop_factory* pro konfiguraci event loop."
 
 #: ../../library/asyncio-runner.rst:87
 msgid "Runner context manager"
-msgstr ""
+msgstr "Context manager pro spouštěče"
 
 #: ../../library/asyncio-runner.rst:91
 msgid ""
 "A context manager that simplifies *multiple* async function calls in the "
 "same context."
 msgstr ""
+"Context manager, který zjednodušuje *více* volání async funkcí ve stejném "
+"kontextu."
 
 #: ../../library/asyncio-runner.rst:94
 msgid ""
 "Sometimes several top-level async functions should be called in the same "
 ":ref:`event loop <asyncio-event-loop>` and :class:`contextvars.Context`."
 msgstr ""
+"Někdy by mělo být více top-level async funkcí volano ve stejné :ref:`event "
+"loop <asyncio-event-loop>` a :class:`contextvars.Context`."
 
 #: ../../library/asyncio-runner.rst:101
 msgid ""
 "*loop_factory* could be used for overriding the loop creation. It is the "
-"responsibility of the *loop_factory* to set the created loop as the "
-"current one. By default :func:`asyncio.new_event_loop` is used and set as"
-" current event loop with :func:`asyncio.set_event_loop` if *loop_factory*"
-" is ``None``."
+"responsibility of the *loop_factory* to set the created loop as the current "
+"one. By default :func:`asyncio.new_event_loop` is used and set as current "
+"event loop with :func:`asyncio.set_event_loop` if *loop_factory* is "
+"``None``."
 msgstr ""
+"*loop_factory* by mohla být použita k přepsání vytvoření smyčky. Je to "
+"odpovědnost *loop_factory* nastavit vytvořenou smyčku jako aktuální. Ve "
+"výchozím nastavení je použita :func:`asyncio.new_event_loop` a nastavena "
+"jako aktuální event loop pomocí :func:`asyncio.set_event_loop`, pokud je "
+"*loop_factory* ``None``."
 
 #: ../../library/asyncio-runner.rst:106
 msgid ""
 "Basically, :func:`asyncio.run` example can be rewritten with the runner "
 "usage::"
 msgstr ""
+"V podstatě lze příklad :func:`asyncio.run` přepsat s použitím runner::"
 
 #: ../../library/asyncio-runner.rst:108
 msgid ""
@@ -163,92 +201,124 @@ msgid ""
 "with asyncio.Runner() as runner:\n"
 "    runner.run(main())"
 msgstr ""
+"async def main():\n"
+"    await asyncio.sleep(1)\n"
+"    print('hello')\n"
+"\n"
+"with asyncio.Runner() as runner:\n"
+"    runner.run(main())"
 
 #: ../../library/asyncio-runner.rst:119
 msgid "Execute *coro* in the embedded event loop."
-msgstr ""
+msgstr "Spustí *coro* v vestavěné event loop."
 
 #: ../../library/asyncio-runner.rst:123
 msgid "If the argument is a coroutine, it is wrapped in a Task."
-msgstr ""
+msgstr "Pokud je argument coroutine, je zabalen v Task."
 
 #: ../../library/asyncio-runner.rst:125
 msgid ""
 "An optional keyword-only *context* argument allows specifying a custom "
-":class:`contextvars.Context` for the code to run in. The runner's default"
-" context is used if context is ``None``."
+":class:`contextvars.Context` for the code to run in. The runner's default "
+"context is used if context is ``None``."
 msgstr ""
+"Nepovinný keyword-only argument *context* umožňuje zadat vlastní "
+":class:`contextvars.Context` pro spouštění kódu. Pokud je context ``None``, "
+"je použit výchozí context runner."
 
 #: ../../library/asyncio-runner.rst:129
 msgid "Returns the awaitable's result or raises an exception."
-msgstr ""
+msgstr "Vrací výsledek awaitable nebo vyvolá výjimku."
 
 #: ../../library/asyncio-runner.rst:140
 msgid "Close the runner."
-msgstr ""
+msgstr "Zavře runner."
 
 #: ../../library/asyncio-runner.rst:142
 msgid ""
-"Finalize asynchronous generators, shutdown default executor, close the "
-"event loop and release embedded :class:`contextvars.Context`."
+"Finalize asynchronous generators, shutdown default executor, close the event"
+" loop and release embedded :class:`contextvars.Context`."
 msgstr ""
+"Finalizuje asynchronní generátory, vypne výchozí executor, zavře event loop "
+"a uvolní vnitřený :class:`contextvars.Context`."
 
 #: ../../library/asyncio-runner.rst:147
 msgid "Return the event loop associated with the runner instance."
-msgstr ""
+msgstr "Vrátí event loop povázanou s instancecí runner."
 
 #: ../../library/asyncio-runner.rst:151
 msgid ""
 ":class:`Runner` uses the lazy initialization strategy, its constructor "
 "doesn't initialize underlying low-level structures."
 msgstr ""
+":class:`Runner` používá strategii line letví inicializace, její konstruktor "
+"neinicializuje podléhající nízkoúrovňové struktury."
 
 #: ../../library/asyncio-runner.rst:154
 msgid ""
 "Embedded *loop* and *context* are created at the :keyword:`with` body "
 "entering or the first call of :meth:`run` or :meth:`get_loop`."
 msgstr ""
+"Vnitření *loop* a *context* jsou vytvořeny při vstupu do :keyword:`with` "
+"těla nebo při prvním volání :meth:`run` nebo :meth:`get_loop`."
 
 #: ../../library/asyncio-runner.rst:159
 msgid "Handling Keyboard Interruption"
-msgstr ""
+msgstr "Zpracování přerušení klavésy"
 
 #: ../../library/asyncio-runner.rst:163
 msgid ""
 "When :const:`signal.SIGINT` is raised by :kbd:`Ctrl-C`, "
-":exc:`KeyboardInterrupt` exception is raised in the main thread by "
-"default. However this doesn't work with :mod:`asyncio` because it can "
-"interrupt asyncio internals and can hang the program from exiting."
+":exc:`KeyboardInterrupt` exception is raised in the main thread by default. "
+"However this doesn't work with :mod:`asyncio` because it can interrupt "
+"asyncio internals and can hang the program from exiting."
 msgstr ""
+"Když je :const:`signal.SIGINT` vyvolán pomocí :kbd:`Ctrl-C`, je standardně v"
+" hlavním vlákně vyvolána výjimka :exc:`KeyboardInterrupt`. Avšak to "
+"nefunguje s :mod:`asyncio`, protože to může přerušit asyncio internals a "
+"může zabránit programu v ukončení."
 
 #: ../../library/asyncio-runner.rst:168
 msgid ""
 "To mitigate this issue, :mod:`asyncio` handles :const:`signal.SIGINT` as "
 "follows:"
 msgstr ""
+"Aby se tomuto problému zabránilo, :mod:`asyncio` zpracovává "
+":const:`signal.SIGINT` následovně:"
 
 #: ../../library/asyncio-runner.rst:170
 msgid ""
-":meth:`asyncio.Runner.run` installs a custom :const:`signal.SIGINT` "
-"handler before any user code is executed and removes it when exiting from"
-" the function."
+":meth:`asyncio.Runner.run` installs a custom :const:`signal.SIGINT` handler "
+"before any user code is executed and removes it when exiting from the "
+"function."
 msgstr ""
+":meth:`asyncio.Runner.run` nainstaluuje vlastní handler "
+":const:`signal.SIGINT` před spoustením jakéhokoli uživatelského kódu a "
+"odebere jej při ukončení funkce."
 
 #: ../../library/asyncio-runner.rst:172
 msgid ""
-"The :class:`~asyncio.Runner` creates the main task for the passed "
-"coroutine for its execution."
+"The :class:`~asyncio.Runner` creates the main task for the passed coroutine "
+"for its execution."
 msgstr ""
+":class:`~asyncio.Runner` vytvoří hlavní úlohu pro předaný coroutine pro její"
+" spoustení."
 
 #: ../../library/asyncio-runner.rst:174
 msgid ""
-"When :const:`signal.SIGINT` is raised by :kbd:`Ctrl-C`, the custom signal"
-" handler cancels the main task by calling :meth:`asyncio.Task.cancel` "
-"which raises :exc:`asyncio.CancelledError` inside the main task.  This "
-"causes the Python stack to unwind, ``try/except`` and ``try/finally`` "
-"blocks can be used for resource cleanup.  After the main task is "
-"cancelled, :meth:`asyncio.Runner.run` raises :exc:`KeyboardInterrupt`."
+"When :const:`signal.SIGINT` is raised by :kbd:`Ctrl-C`, the custom signal "
+"handler cancels the main task by calling :meth:`asyncio.Task.cancel` which "
+"raises :exc:`asyncio.CancelledError` inside the main task.  This causes the "
+"Python stack to unwind, ``try/except`` and ``try/finally`` blocks can be "
+"used for resource cleanup.  After the main task is cancelled, "
+":meth:`asyncio.Runner.run` raises :exc:`KeyboardInterrupt`."
 msgstr ""
+"Když je :const:`signal.SIGINT` vyvolán pomocí :kbd:`Ctrl-C`, vlastní signal "
+"handler zruší hlavní úlohu voláním :meth:`asyncio.Task.cancel`, což vyvolá "
+":exc:`asyncio.CancelledError` uvnitř hlavní úlohy. To způsobuje, že se "
+"Python stack odvine, bloky ``try/except`` a ``try/finally`` mohou být "
+"použity pro čištění zdrojů. Po zrušení hlavní úlohy "
+":meth:`asyncio.Runner.run` vyvolá :exc:`KeyboardInterrupt`."
 
 #: ../../library/asyncio-runner.rst:180
 msgid ""
@@ -257,4 +327,6 @@ msgid ""
 ":kbd:`Ctrl-C` immediately raises the :exc:`KeyboardInterrupt` without "
 "cancelling the main task."
 msgstr ""
-
+"Uživatel může napsat těsné smyčky, které nemohou být přerušeny "
+":meth:`asyncio.Task.cancel`, v případě čehož druhé následující :kbd:`Ctrl-C`"
+" okamžitě vyvolá :exc:`KeyboardInterrupt` bez zrušení hlavní úlohy."

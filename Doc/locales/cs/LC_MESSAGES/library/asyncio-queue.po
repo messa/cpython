@@ -11,179 +11,221 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-queue.rst:7
 msgid "Queues"
-msgstr ""
+msgstr "Fronty"
 
 #: ../../library/asyncio-queue.rst:9
 msgid "**Source code:** :source:`Lib/asyncio/queues.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/asyncio/queues.py`"
 
 #: ../../library/asyncio-queue.rst:13
 msgid ""
 "asyncio queues are designed to be similar to classes of the :mod:`queue` "
-"module.  Although asyncio queues are not thread-safe, they are designed "
-"to be used specifically in async/await code."
+"module.  Although asyncio queues are not thread-safe, they are designed to "
+"be used specifically in async/await code."
 msgstr ""
+"Fronty asyncio jsou navrženy tak, aby byly podobné třídám modulu "
+":mod:`queue`. Ačkoli fronty asyncio nejsou bezpečné pro vlákna, jsou "
+"navrženy tak, aby byly používány konkrétně v kódu async/await."
 
 #: ../../library/asyncio-queue.rst:17
 msgid ""
-"Note that methods of asyncio queues don't have a *timeout* parameter; use"
-" :func:`asyncio.wait_for` function to do queue operations with a timeout."
+"Note that methods of asyncio queues don't have a *timeout* parameter; use "
+":func:`asyncio.wait_for` function to do queue operations with a timeout."
 msgstr ""
+"Poznámka: metody front asyncio nemají parametr *timeout*; k provedení "
+"operací s frontou se vypršením času použijte funkci "
+":func:`asyncio.wait_for`."
 
 #: ../../library/asyncio-queue.rst:21
 msgid "See also the `Examples`_ section below."
-msgstr ""
+msgstr "Viz také sekci `Příklady`_ níže."
 
 #: ../../library/asyncio-queue.rst:24
 msgid "Queue"
-msgstr ""
+msgstr "Queue"
 
 #: ../../library/asyncio-queue.rst:28
 msgid "A first in, first out (FIFO) queue."
-msgstr ""
+msgstr "Fronta FIFO (first in, first out)."
 
 #: ../../library/asyncio-queue.rst:30
 msgid ""
-"If *maxsize* is less than or equal to zero, the queue size is infinite.  "
-"If it is an integer greater than ``0``, then ``await put()`` blocks when "
-"the queue reaches *maxsize* until an item is removed by :meth:`get`."
+"If *maxsize* is less than or equal to zero, the queue size is infinite.  If "
+"it is an integer greater than ``0``, then ``await put()`` blocks when the "
+"queue reaches *maxsize* until an item is removed by :meth:`get`."
 msgstr ""
+"Pokud je *maxsize* menší nebo rovno nule, velikost fronty je neomezená. "
+"Pokud je to celé číslo větší než ``0``, pak ``await put()`` blokuje, když "
+"fronta dosáhne *maxsize*, dokud není položka odstraněna metodou :meth:`get`."
 
 #: ../../library/asyncio-queue.rst:35
 msgid ""
-"Unlike the standard library threading :mod:`queue`, the size of the queue"
-" is always known and can be returned by calling the :meth:`qsize` method."
+"Unlike the standard library threading :mod:`queue`, the size of the queue is"
+" always known and can be returned by calling the :meth:`qsize` method."
 msgstr ""
+"Na rozdíl od modulů threading :mod:`queue` ze standardní knihovny je "
+"velikost fronty vždy známá a lze ji vrátit voláním metody :meth:`qsize`."
 
 #: ../../library/asyncio-queue.rst:39
 msgid "Removed the *loop* parameter."
-msgstr ""
+msgstr "Odstraněn parametr *loop*."
 
 #: ../../library/asyncio-queue.rst:43
 msgid "This class is :ref:`not thread safe <asyncio-multithreading>`."
-msgstr ""
+msgstr "Tato třída není :ref:`bezpečná pro vlákna <asyncio-multithreading>`."
 
 #: ../../library/asyncio-queue.rst:47
 msgid "Number of items allowed in the queue."
-msgstr ""
+msgstr "Počet položek dovolených ve frontě."
 
 #: ../../library/asyncio-queue.rst:51
 msgid "Return ``True`` if the queue is empty, ``False`` otherwise."
-msgstr ""
+msgstr "Vrací ``True``, pokud je fronta prázdná, jinak ``False``."
 
 #: ../../library/asyncio-queue.rst:55
 msgid "Return ``True`` if there are :attr:`maxsize` items in the queue."
-msgstr ""
+msgstr "Vrací ``True``, pokud jsou ve frontě položky :attr:`maxsize`."
 
 #: ../../library/asyncio-queue.rst:57
 msgid ""
 "If the queue was initialized with ``maxsize=0`` (the default), then "
 ":meth:`full` never returns ``True``."
 msgstr ""
+"Pokud byla fronta inicializána s ``maxsize=0`` (výchozí), pak :meth:`full` "
+"nikdy nevrátí ``True``."
 
 #: ../../library/asyncio-queue.rst:63
 msgid ""
-"Remove and return an item from the queue. If queue is empty, wait until "
-"an item is available."
+"Remove and return an item from the queue. If queue is empty, wait until an "
+"item is available."
 msgstr ""
+"Odstraní a vrátí položku z fronty. Pokud je fronta prázdná, čeká dokud není "
+"dostupná položka."
 
 #: ../../library/asyncio-queue.rst:66
 msgid ""
-"Raises :exc:`QueueShutDown` if the queue has been shut down and is empty,"
-" or if the queue has been shut down immediately."
+"Raises :exc:`QueueShutDown` if the queue has been shut down and is empty, or"
+" if the queue has been shut down immediately."
 msgstr ""
+"Vyvolá :exc:`QueueShutDown`, pokud byla fronta vypnuta a je prázdná, nebo "
+"pokud byla fronta vypnuta okamžitě."
 
 #: ../../library/asyncio-queue.rst:71
 msgid ""
 "Return an item if one is immediately available, else raise "
 ":exc:`QueueEmpty`."
 msgstr ""
+"Vrátí položku, pokud je okamžitě dostupná, jinak vyvolá :exc:`QueueEmpty`."
 
 #: ../../library/asyncio-queue.rst:77
 msgid "Block until all items in the queue have been received and processed."
-msgstr ""
+msgstr "Blokuje, dokud nebudou všechny položky z fronty přijaty a zpracovány."
 
 #: ../../library/asyncio-queue.rst:79
 msgid ""
 "The count of unfinished tasks goes up whenever an item is added to the "
 "queue. The count goes down whenever a consumer coroutine calls "
-":meth:`task_done` to indicate that the item was retrieved and all work on"
-" it is complete.  When the count of unfinished tasks drops to zero, "
+":meth:`task_done` to indicate that the item was retrieved and all work on it"
+" is complete.  When the count of unfinished tasks drops to zero, "
 ":meth:`join` unblocks."
 msgstr ""
+"Počet neuzavřených úloh se zvyšuje vždy, když je položka přidána do fronty. "
+"Počet se sníží vždy, když spotná korutina zavolá :meth:`task_done`, aby "
+"indikovala, že byla položka zjištěna a všechna na ní spojená pracz jsou "
+"dokončena. Když počet neuzavřených úloh klesne na nulu, :meth:`join` se "
+"odblokuje."
 
 #: ../../library/asyncio-queue.rst:88
 msgid ""
-"Put an item into the queue. If the queue is full, wait until a free slot "
-"is available before adding the item."
+"Put an item into the queue. If the queue is full, wait until a free slot is "
+"available before adding the item."
 msgstr ""
+"Přidá položku do fronty. Pokud je fronta plná, čeká dokud není dostupné "
+"volné místo, než položka přidá."
 
 #: ../../library/asyncio-queue.rst:91
 msgid "Raises :exc:`QueueShutDown` if the queue has been shut down."
-msgstr ""
+msgstr "Vyvolá :exc:`QueueShutDown`, pokud byla fronta vypnuta."
 
 #: ../../library/asyncio-queue.rst:95
 msgid "Put an item into the queue without blocking."
-msgstr ""
+msgstr "Přidá položku do fronty bez blokování."
 
 #: ../../library/asyncio-queue.rst:97
 msgid "If no free slot is immediately available, raise :exc:`QueueFull`."
-msgstr ""
+msgstr "Pokud není okamžitě dostupné volné místo, vyvolá :exc:`QueueFull`."
 
 #: ../../library/asyncio-queue.rst:101
 msgid "Return the number of items in the queue."
-msgstr ""
+msgstr "Vrátí počet položek v frontě."
 
 #: ../../library/asyncio-queue.rst:105
 msgid "Put a :class:`Queue` instance into a shutdown mode."
-msgstr ""
+msgstr "Převédé instanci :class:`Queue` do režimu vypnutí."
 
 #: ../../library/asyncio-queue.rst:107
 msgid ""
 "The queue can no longer grow. Future calls to :meth:`~Queue.put` raise "
-":exc:`QueueShutDown`. Currently blocked callers of :meth:`~Queue.put` "
-"will be unblocked and will raise :exc:`QueueShutDown` in the formerly "
-"awaiting task."
+":exc:`QueueShutDown`. Currently blocked callers of :meth:`~Queue.put` will "
+"be unblocked and will raise :exc:`QueueShutDown` in the formerly awaiting "
+"task."
 msgstr ""
+"Fronta již nepřibývá. Budoucí volání :meth:`~Queue.put` vyvolájí "
+":exc:`QueueShutDown`. V současné době blokování volájící :meth:`~Queue.put` "
+"budou odblokováni a v dřívějším awešeném úkolu budou vyvolávat "
+":exc:`QueueShutDown`."
 
 #: ../../library/asyncio-queue.rst:112
 msgid ""
-"If *immediate* is false (the default), the queue can be wound down "
-"normally with :meth:`~Queue.get` calls to extract tasks that have already"
-" been loaded."
+"If *immediate* is false (the default), the queue can be wound down normally "
+"with :meth:`~Queue.get` calls to extract tasks that have already been "
+"loaded."
 msgstr ""
+"Pokud je *immediate* nepravda (výchozí), fronta se může náležitě vypnout "
+"pomocí volání :meth:`~Queue.get` pro extrahování úloh, které juž byly "
+"naloženy."
 
 #: ../../library/asyncio-queue.rst:116
 msgid ""
-"And if :meth:`~Queue.task_done` is called for each remaining task, a "
-"pending :meth:`~Queue.join` will be unblocked normally."
+"And if :meth:`~Queue.task_done` is called for each remaining task, a pending"
+" :meth:`~Queue.join` will be unblocked normally."
 msgstr ""
+"A pokud je pro každou zbývající úlohu vyvolána :meth:`~Queue.task_done`, "
+"budou odblokovány čekající volání :meth:`~Queue.join` běžně."
 
 #: ../../library/asyncio-queue.rst:119
 msgid ""
 "Once the queue is empty, future calls to :meth:`~Queue.get` will raise "
 ":exc:`QueueShutDown`."
 msgstr ""
+"Jakmile je fronta prázdná, budoucí volání :meth:`~Queue.get` vyvolájí "
+":exc:`QueueShutDown`."
 
 #: ../../library/asyncio-queue.rst:122
 msgid ""
-"If *immediate* is true, the queue is terminated immediately. The queue is"
-" drained to be completely empty and the count of unfinished tasks is "
-"reduced by the number of tasks drained. If unfinished tasks is zero, "
-"callers of :meth:`~Queue.join` are unblocked.  Also, blocked callers of "
-":meth:`~Queue.get` are unblocked and will raise :exc:`QueueShutDown` "
-"because the queue is empty."
+"If *immediate* is true, the queue is terminated immediately. The queue is "
+"drained to be completely empty and the count of unfinished tasks is reduced "
+"by the number of tasks drained. If unfinished tasks is zero, callers of "
+":meth:`~Queue.join` are unblocked.  Also, blocked callers of "
+":meth:`~Queue.get` are unblocked and will raise :exc:`QueueShutDown` because"
+" the queue is empty."
 msgstr ""
+"Pokud je *immediate* pravda, fronta se okamžitě ukončí. Fronta se vyprazdí a"
+" stáne se zcela prázdná a počet neuzavřených úloh se sníží o počet "
+"vyčerpaných úloh. Pokud jsou neuzavřené úlohy nula, volájící "
+":meth:`~Queue.join` jsou odblokováni. Také jsou odblokováni blokování "
+"volájící :meth:`~Queue.get` a vyvolájí :exc:`QueueShutDown`, protože je "
+"fronta prázdná."
 
 #: ../../library/asyncio-queue.rst:130
 msgid ""
@@ -191,86 +233,106 @@ msgid ""
 "This unblocks the join even when no work has been done on the tasks, "
 "violating the usual invariant for joining a queue."
 msgstr ""
+"Buďte opatrní při používání :meth:`~Queue.join` s *immediate* nastaveným na "
+"pravda. To odblokuje spojení i když nebylo provedeno žádné práce na úlohách,"
+" čímž se poruší obvyklé výstupy pro spojení fronty."
 
 #: ../../library/asyncio-queue.rst:138
 msgid "Indicate that a formerly enqueued work item is complete."
-msgstr ""
+msgstr "Indikuje, že dřívější zřazená pracovní položka je dokončena."
 
 #: ../../library/asyncio-queue.rst:140
 msgid ""
-"Used by queue consumers. For each :meth:`~Queue.get` used to fetch a work"
-" item, a subsequent call to :meth:`task_done` tells the queue that the "
+"Used by queue consumers. For each :meth:`~Queue.get` used to fetch a work "
+"item, a subsequent call to :meth:`task_done` tells the queue that the "
 "processing on the work item is complete."
 msgstr ""
+"Použídváno spotnebnými fronty. Pro každé :meth:`~Queue.get` použité k "
+"načtení pracovní položky říka následující volání :meth:`task_done` frontě, "
+"že zpracování pracovní položky je dokončeno."
 
 #: ../../library/asyncio-queue.rst:144
 msgid ""
-"If a :meth:`join` is currently blocking, it will resume when all items "
-"have been processed (meaning that a :meth:`task_done` call was received "
-"for every item that had been :meth:`~Queue.put` into the queue)."
+"If a :meth:`join` is currently blocking, it will resume when all items have "
+"been processed (meaning that a :meth:`task_done` call was received for every"
+" item that had been :meth:`~Queue.put` into the queue)."
 msgstr ""
+"Pokud :meth:`join` aktuálně blokuje, objeví se zpět, když všechny položky "
+"byly zpracovány (což znamná, že pro každou položku, která byla "
+":meth:`~Queue.put` do fronty, bylo přijato volání :meth:`task_done`)."
 
 #: ../../library/asyncio-queue.rst:149
 msgid ""
-"Raises :exc:`ValueError` if called more times than there were items "
-"placed in the queue."
+"Raises :exc:`ValueError` if called more times than there were items placed "
+"in the queue."
 msgstr ""
+"Vyvolá :exc:`ValueError`, pokud je vyvolána více některákřát než bylo "
+"položek umístěno do fronty."
 
 #: ../../library/asyncio-queue.rst:154
 msgid "Priority Queue"
-msgstr ""
+msgstr "Prioritní fronta"
 
 #: ../../library/asyncio-queue.rst:158
 msgid ""
 "A variant of :class:`Queue`; retrieves entries in priority order (lowest "
 "first)."
 msgstr ""
+"Varianta :class:`Queue`; získává položky v pořadí priority (nejmenší jako "
+"první)."
 
 #: ../../library/asyncio-queue.rst:161
 msgid "Entries are typically tuples of the form ``(priority_number, data)``."
-msgstr ""
+msgstr "Položky jsou obvykle tuple ve formě ``(priority_number, data)``."
 
 #: ../../library/asyncio-queue.rst:166
 msgid "LIFO Queue"
-msgstr ""
+msgstr "LIFO fronta"
 
 #: ../../library/asyncio-queue.rst:170
 msgid ""
-"A variant of :class:`Queue` that retrieves most recently added entries "
-"first (last in, first out)."
+"A variant of :class:`Queue` that retrieves most recently added entries first"
+" (last in, first out)."
 msgstr ""
+"Varianta :class:`Queue`, která získává napřed naposledy přidané položky "
+"(poslední dovnitř, první ven)."
 
 #: ../../library/asyncio-queue.rst:175
 msgid "Exceptions"
-msgstr ""
+msgstr "Výújimky"
 
 #: ../../library/asyncio-queue.rst:179
 msgid ""
-"This exception is raised when the :meth:`~Queue.get_nowait` method is "
-"called on an empty queue."
+"This exception is raised when the :meth:`~Queue.get_nowait` method is called"
+" on an empty queue."
 msgstr ""
+"Tato výújimka se vyvolá, když je metoda :meth:`~Queue.get_nowait` vyvolána "
+"na prázdné frontě."
 
 #: ../../library/asyncio-queue.rst:185
 msgid ""
-"Exception raised when the :meth:`~Queue.put_nowait` method is called on a"
-" queue that has reached its *maxsize*."
+"Exception raised when the :meth:`~Queue.put_nowait` method is called on a "
+"queue that has reached its *maxsize*."
 msgstr ""
+"Výújimka vyvolaná, když je metoda :meth:`~Queue.put_nowait` vyvolána na "
+"frontě, která dosáhla svého *maxsize*."
 
 #: ../../library/asyncio-queue.rst:191
 msgid ""
-"Exception raised when :meth:`~Queue.put` or :meth:`~Queue.get` is called "
-"on a queue which has been shut down."
+"Exception raised when :meth:`~Queue.put` or :meth:`~Queue.get` is called on "
+"a queue which has been shut down."
 msgstr ""
+"Výújimka vyvolaná, když je :meth:`~Queue.put` nebo :meth:`~Queue.get` "
+"vyvolána na frontě, která byla vypnuta."
 
 #: ../../library/asyncio-queue.rst:198
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/asyncio-queue.rst:202
 msgid ""
-"Queues can be used to distribute workload between several concurrent "
-"tasks::"
-msgstr ""
+"Queues can be used to distribute workload between several concurrent tasks::"
+msgstr "Fronty lze použít k distribuci zátěže mezi několik soubuěžných úloh::"
 
 #: ../../library/asyncio-queue.rst:205
 #, python-brace-format
@@ -323,11 +385,62 @@ msgid ""
 "    await asyncio.gather(*tasks, return_exceptions=True)\n"
 "\n"
 "    print('====')\n"
-"    print(f'3 workers slept in parallel for {total_slept_for:.2f} "
-"seconds')\n"
+"    print(f'3 workers slept in parallel for {total_slept_for:.2f} seconds')\n"
 "    print(f'total expected sleep time: {total_sleep_time:.2f} seconds')\n"
 "\n"
 "\n"
 "asyncio.run(main())"
 msgstr ""
-
+"import asyncio\n"
+"import random\n"
+"import time\n"
+"\n"
+"\n"
+"async def worker(name, queue):\n"
+"    while True:\n"
+"        # Získá \"pracovní položku\" z fronty.\n"
+"        sleep_for = await queue.get()\n"
+"\n"
+"        # Spá po dobu \"sleep_for\" sekund.\n"
+"        await asyncio.sleep(sleep_for)\n"
+"\n"
+"        # Upozorní frontu, že \"pracovní položka\" byla zpracována.\n"
+"        queue.task_done()\n"
+"\n"
+"        print(f'{name} has slept for {sleep_for:.2f} seconds')\n"
+"\n"
+"\n"
+"async def main():\n"
+"    # Vytvoří frontu, kterou použijeme pro uložení naší \"pracovní zátěže\".\n"
+"    queue = asyncio.Queue()\n"
+"\n"
+"    # Generuje náhodné časování a dává je do fronty.\n"
+"    total_sleep_time = 0\n"
+"    for _ in range(20):\n"
+"        sleep_for = random.uniform(0.05, 1.0)\n"
+"        total_sleep_time += sleep_for\n"
+"        queue.put_nowait(sleep_for)\n"
+"\n"
+"    # Vytvoří tři pracovní úlohy ke zpracování fronty soubuěžně.\n"
+"    tasks = []\n"
+"    for i in range(3):\n"
+"        task = asyncio.create_task(worker(f'worker-{i}', queue))\n"
+"        tasks.append(task)\n"
+"\n"
+"    # Čeká, dokud není fronta zcela zpracována.\n"
+"    started_at = time.monotonic()\n"
+"    await queue.join()\n"
+"    total_slept_for = time.monotonic() - started_at\n"
+"\n"
+"    # Zruší naše pracovní úlohy.\n"
+"    for task in tasks:\n"
+"        task.cancel()\n"
+"    # Čeká, dokud nebudou zrušeny všechny pracovní úlohy.\n"
+"    await asyncio.gather(*tasks, return_exceptions=True)\n"
+"\n"
+"    print('====')\n"
+"    print(f'3 workers slept in parallel for {total_slept_for:.2f} seconds')\n"
+"    print(f'total expected sleep time: {total_sleep_time:.2f} seconds')\n"
+"\n"
+"\n"
+"asyncio.run(main())"

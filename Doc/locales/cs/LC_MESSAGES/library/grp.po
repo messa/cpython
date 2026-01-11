@@ -11,137 +11,152 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/grp.rst:2
 msgid ":mod:`!grp` --- The group database"
-msgstr ""
+msgstr ":mod:`!grp` --- Databáze skupin"
 
 #: ../../library/grp.rst:10
 msgid ""
-"This module provides access to the Unix group database. It is available "
-"on all Unix versions."
+"This module provides access to the Unix group database. It is available on "
+"all Unix versions."
 msgstr ""
+"Tento modul poskytuje přístup k databázi skupin Unix. Je dostupný ve všech "
+"verzích Unixu."
 
 #: ../../library/grp.rst:13
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/grp.rst:15
 msgid ""
-"Group database entries are reported as a tuple-like object, whose "
-"attributes correspond to the members of the ``group`` structure "
-"(Attribute field below, see ``<grp.h>``):"
+"Group database entries are reported as a tuple-like object, whose attributes"
+" correspond to the members of the ``group`` structure (Attribute field "
+"below, see ``<grp.h>``):"
 msgstr ""
+"Záznamy databáze skupin jsou hlášeny jako objekt podobný tuple, jehož "
+"atributy odpovídají členům struktury ``group`` (pole Atribut níže, viz "
+"``<grp.h>``):"
 
 #: ../../library/grp.rst:20
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: ../../library/grp.rst:20
 msgid "Attribute"
-msgstr ""
+msgstr "Atribut"
 
 #: ../../library/grp.rst:20
 msgid "Meaning"
-msgstr ""
+msgstr "Značení"
 
 #: ../../library/grp.rst:22
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../../library/grp.rst:22
 msgid "gr_name"
-msgstr ""
+msgstr "gr_name"
 
 #: ../../library/grp.rst:22
 msgid "the name of the group"
-msgstr ""
+msgstr "jméno skupiny"
 
 #: ../../library/grp.rst:24
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../library/grp.rst:24
 msgid "gr_passwd"
-msgstr ""
+msgstr "gr_passwd"
 
 #: ../../library/grp.rst:24
 msgid "the (encrypted) group password; often empty"
-msgstr ""
+msgstr "heslo skupiny (zašifrované); často prázdné"
 
 #: ../../library/grp.rst:27
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../library/grp.rst:27
 msgid "gr_gid"
-msgstr ""
+msgstr "gr_gid"
 
 #: ../../library/grp.rst:27
 msgid "the numerical group ID"
-msgstr ""
+msgstr "numerické ID skupiny"
 
 #: ../../library/grp.rst:29
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../library/grp.rst:29
 msgid "gr_mem"
-msgstr ""
+msgstr "gr_mem"
 
 #: ../../library/grp.rst:29
 msgid "all the group member's  user names"
-msgstr ""
+msgstr "všechna uživatelská jména členů skupiny"
 
 #: ../../library/grp.rst:33
 msgid ""
-"The gid is an integer, name and password are strings, and the member list"
-" is a list of strings. (Note that most users are not explicitly listed as"
-" members of the group they are in according to the password database.  "
-"Check both databases to get complete membership information.  Also note "
-"that a ``gr_name`` that starts with a ``+`` or ``-`` is likely to be a "
-"YP/NIS reference and may not be accessible via :func:`getgrnam` or "
+"The gid is an integer, name and password are strings, and the member list is"
+" a list of strings. (Note that most users are not explicitly listed as "
+"members of the group they are in according to the password database.  Check "
+"both databases to get complete membership information.  Also note that a "
+"``gr_name`` that starts with a ``+`` or ``-`` is likely to be a YP/NIS "
+"reference and may not be accessible via :func:`getgrnam` or "
 ":func:`getgrgid`.)"
 msgstr ""
+"gid je celé číslo, jméno a heslo jsou řetězce a seznam členů je seznam "
+"řetězců. (Poznámka: většina uživatelů není explicitně uvedená jako člené "
+"skupiny, ve které se nacházejí podle databáze hesel. Zkontrolujte obě "
+"databáze, abyste získali úplné informace o přísluušnosti. Také si všimněte, "
+"že ``gr_name`` začínájící znakem ``+`` nebo ``-`` je pravděpodobně odkaz na "
+"YP/NIS a nebý přístupný přes :func:`getgrnam` nebo :func:`getgrgid`."
 
 #: ../../library/grp.rst:40
 msgid "It defines the following items:"
-msgstr ""
+msgstr "Definuje následující položku:"
 
 #: ../../library/grp.rst:45
 msgid ""
 "Return the group database entry for the given numeric group ID. "
 ":exc:`KeyError` is raised if the entry asked for cannot be found."
 msgstr ""
+"Vrátí záznam databáze skupin pro dané numerické ID skupiny. :exc:`KeyError` "
+"je vyvolána, pokud nelze nalézt požadovaný záznam."
 
 #: ../../library/grp.rst:48
 msgid ""
-":exc:`TypeError` is raised for non-integer arguments like floats or "
-"strings."
+":exc:`TypeError` is raised for non-integer arguments like floats or strings."
 msgstr ""
+":exc:`TypeError` je vyvolána pro nečíselborné argumenty jako plovoucí čísla "
+"nebo řetězce."
 
 #: ../../library/grp.rst:53
 msgid ""
-"Return the group database entry for the given group name. :exc:`KeyError`"
-" is raised if the entry asked for cannot be found."
+"Return the group database entry for the given group name. :exc:`KeyError` is"
+" raised if the entry asked for cannot be found."
 msgstr ""
+"Vrátí záznam databáze skupin pro dané jméno skupiny. :exc:`KeyError` je "
+"vyvolána, pokud nelze nalézt požadovaný záznam."
 
 #: ../../library/grp.rst:59
 msgid "Return a list of all available group entries, in arbitrary order."
-msgstr ""
+msgstr "Vrátí seznam všech dostupných záznamů skupin v libovolném pořadí."
 
 #: ../../library/grp.rst:64
 msgid "Module :mod:`pwd`"
-msgstr ""
+msgstr "Modul :mod:`pwd`"
 
 #: ../../library/grp.rst:65
 msgid "An interface to the user database, similar to this."
-msgstr ""
-
+msgstr "Rozhraní k databázi uživatelů, podobné tomuto."

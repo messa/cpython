@@ -11,81 +11,105 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/venv.rst:2
 msgid ":mod:`!venv` --- Creation of virtual environments"
-msgstr ""
+msgstr ":mod:`!venv` --- Vytváření virtuálních prostředí"
 
 #: ../../library/venv.rst:12
 msgid "**Source code:** :source:`Lib/venv/`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/venv/`"
 
 #: ../../library/venv.rst:21
 msgid ""
 "The :mod:`!venv` module supports creating lightweight \"virtual "
 "environments\", each with their own independent set of Python packages "
-"installed in their :mod:`site` directories. A virtual environment is "
-"created on top of an existing Python installation, known as the virtual "
-"environment's \"base\" Python, and by default is isolated from the "
-"packages in the base environment, so that only those explicitly installed"
-" in the virtual environment are available. See :ref:`sys-path-init-"
-"virtual-environments` and :mod:`site`'s :ref:`virtual environments "
-"documentation <site-virtual-environments-configuration>` for more "
-"information."
+"installed in their :mod:`site` directories. A virtual environment is created"
+" on top of an existing Python installation, known as the virtual "
+"environment's \"base\" Python, and by default is isolated from the packages "
+"in the base environment, so that only those explicitly installed in the "
+"virtual environment are available. See :ref:`sys-path-init-virtual-"
+"environments` and :mod:`site`'s :ref:`virtual environments documentation "
+"<site-virtual-environments-configuration>` for more information."
 msgstr ""
+"Modul :mod:`!venv` podporuje vytváření lehkých \"virtuálních prostředí\", "
+"každé se svou vlastní nezávislou sadou nainstalovaných balíčků Python v "
+"jejich adresářích :mod:`site`. Virtuální prostředí se vytváří na základě "
+"stávající instalace Pythonu, známé jako \"základní\" Python virtuálního "
+"prostředí, a ve výchozím nastavení je izolováno od balíčků v základním "
+"prostředí, takže jsou dostupné pouze ty, které jsou explicitně nainstalované"
+" ve virtuálním prostředí. Další informace viz :ref:`sys-path-init-virtual-"
+"environments` a dokumentace :mod:`site` o :ref:`virtuálních prostředích "
+"<site-virtual-environments-configuration>`."
 
 #: ../../library/venv.rst:32
 msgid ""
-"When used from within a virtual environment, common installation tools "
-"such as :pypi:`pip` will install Python packages into a virtual "
-"environment without needing to be told to do so explicitly."
+"When used from within a virtual environment, common installation tools such "
+"as :pypi:`pip` will install Python packages into a virtual environment "
+"without needing to be told to do so explicitly."
 msgstr ""
+"Při použití z virtuálního prostředí budou běžné instalační nástroje, jako je"
+" :pypi:`pip`, instalovat balíčky Python do virtuálního prostředí bez "
+"nutnosti to explicitně říci."
 
 #: ../../library/venv.rst:36
 msgid "A virtual environment is (amongst other things):"
-msgstr ""
+msgstr "Virtuální prostředí je (mimo jiné):"
 
 #: ../../library/venv.rst:38
 msgid ""
 "Used to contain a specific Python interpreter and software libraries and "
 "binaries which are needed to support a project (library or application). "
-"These are by default isolated from software in other virtual environments"
-" and Python interpreters and libraries installed in the operating system."
+"These are by default isolated from software in other virtual environments "
+"and Python interpreters and libraries installed in the operating system."
 msgstr ""
+"Obsahuje specifický interpret Pythonu a softwarové knihovny a binární "
+"soubory, které jsou potřebné pro podporu projektu (knihovny nebo aplikace). "
+"Ty jsou ve výchozím nastavení izolovány od softwaru v jiných virtuálních "
+"prostředích a interpretů Pythonu a knihoven nainstalovaných v operačním "
+"systému."
 
 #: ../../library/venv.rst:43
 msgid ""
-"Contained in a directory, conventionally named ``.venv`` or ``venv`` in "
-"the project directory, or under a container directory for lots of virtual"
-" environments, such as ``~/.virtualenvs``."
+"Contained in a directory, conventionally named ``.venv`` or ``venv`` in the "
+"project directory, or under a container directory for lots of virtual "
+"environments, such as ``~/.virtualenvs``."
 msgstr ""
+"Obsaženo v adresáři, obvykle pojmenovaném ``.venv`` nebo ``venv`` v adresáři"
+" projektu, nebo pod nadraženým adresářem pro velký počet virtuálních "
+"prostředí, jako ``~/.virtualenvs``."
 
 #: ../../library/venv.rst:47
 msgid "Not checked into source control systems such as Git."
-msgstr ""
+msgstr "Není zavřeno do systémů správy verzí, jako je Git."
 
 #: ../../library/venv.rst:49
 msgid ""
-"Considered as disposable -- it should be simple to delete and recreate it"
-" from scratch. You don't place any project code in the environment."
+"Considered as disposable -- it should be simple to delete and recreate it "
+"from scratch. You don't place any project code in the environment."
 msgstr ""
+"Pokládáno za jednorazé -- mělo by být jednoduché jej jej úplně smazat a "
+"znovu vytvořit. Do prostředí neulumíštěť žádný kód projektu."
 
 #: ../../library/venv.rst:52
 msgid ""
 "Not considered as movable or copyable -- you just recreate the same "
 "environment in the target location."
 msgstr ""
+"Není pokládáno za přenosítelne nebo kopirovatelné -- jednoduchu znovu "
+"vytvoříte stejné prostředí na cílovém místě."
 
 #: ../../library/venv.rst:55
 msgid "See :pep:`405` for more background on Python virtual environments."
 msgstr ""
+"Další informáce o virtuálních prostředích Pythonu naleznete v :pep:`405`."
 
 #: ../../library/venv.rst:59
 msgid ""
@@ -93,54 +117,73 @@ msgid ""
 "<https://packaging.python.org/guides/installing-using-pip-and-virtual-"
 "environments/#create-and-use-virtual-environments>`__"
 msgstr ""
+"`Prúdce uživatele balíků Python: Vytváření a používání virtuálních prostředí"
+" <https://packaging.python.org/guides/installing-using-pip-and-virtual-"
+"environments/#create-and-use-virtual-environments>`__"
 
 #: ../../includes/wasm-mobile-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-mobile-notavail.rst:5
 msgid ""
 "This module is not supported on :ref:`mobile platforms <mobile-"
 "availability>` or :ref:`WebAssembly platforms <wasm-availability>`."
 msgstr ""
+"Tento modul není podporován na :ref:`mobilních platformách <mobile-"
+"availability>` nebo :ref:`platformách WebAssembly <wasm-availability>`."
 
 #: ../../library/venv.rst:65
 msgid "Creating virtual environments"
-msgstr ""
+msgstr "Vytváření virtuálních prostředí"
 
 #: ../../library/venv.rst:67
 msgid ""
-":ref:`Virtual environments <venv-def>` are created by executing the "
-"``venv`` module:"
+":ref:`Virtual environments <venv-def>` are created by executing the ``venv``"
+" module:"
 msgstr ""
+":ref:`Virtuální prostředí <venv-def>` se vytváří spuštěním modulu ``venv``:"
 
 #: ../../library/venv.rst:70
 msgid "python -m venv /path/to/new/virtual/environment"
-msgstr ""
+msgstr "python -m venv /cesta/k/novému/virtuálnímu/prostředí"
 
 #: ../../library/venv.rst:74
 msgid ""
-"This creates the target directory (including parent directories as "
-"needed) and places a :file:`pyvenv.cfg` file in it with a ``home`` key "
-"pointing to the Python installation from which the command was run. It "
-"also creates a :file:`bin` (or :file:`Scripts` on Windows) subdirectory "
-"containing a copy or symlink of the Python executable (as appropriate for"
-" the platform or arguments used at environment creation time). It also "
-"creates a :file:`lib/pythonX.Y/site-packages` subdirectory (on Windows, "
-"this is :file:`Lib\\\\site-packages`). If an existing directory is "
-"specified, it will be re-used."
+"This creates the target directory (including parent directories as needed) "
+"and places a :file:`pyvenv.cfg` file in it with a ``home`` key pointing to "
+"the Python installation from which the command was run. It also creates a "
+":file:`bin` (or :file:`Scripts` on Windows) subdirectory containing a copy "
+"or symlink of the Python executable (as appropriate for the platform or "
+"arguments used at environment creation time). It also creates a "
+":file:`lib/pythonX.Y/site-packages` subdirectory (on Windows, this is "
+":file:`Lib\\\\site-packages`). If an existing directory is specified, it "
+"will be re-used."
 msgstr ""
+"Toto vytvoří cílový adresář (včetně nadřezených adresářů podle potřeby) a "
+"umístí do něj soubor :file:`pyvenv.cfg` s klíčem ``home`` ukazujícím na "
+"instalaci Pythonu, ze které byl příkaz spouštěn. Vytvoří také podadresář "
+":file:`bin` (nebo :file:`Scripts` v Pythonu na Windows) obsahující kopii "
+"nebo symbolický odkaz na spustitelný soubor Pythonu (podle potřeby pro "
+"platformu nebo argumenty použité při vytváření prostředí). Vytvoří také "
+"podadresář :file:`lib/pythonX.Y/site-packages` (na Windows je to "
+":file:`Lib\\\\site-packages`). Pokud je zadán existující adresář, bude znovu"
+" použit."
 
 #: ../../library/venv.rst:84
-msgid "The use of ``venv`` is now recommended for creating virtual environments."
+msgid ""
+"The use of ``venv`` is now recommended for creating virtual environments."
 msgstr ""
+"Použití ``venv`` je nyní doporučeno pro vytváření virtuálních prostředí."
 
 #: ../../library/venv.rst:87
 msgid ""
-":program:`pyvenv` was the recommended tool for creating virtual "
-"environments for Python 3.3 and 3.4, and replaced in 3.5 by executing "
-"``venv`` directly."
+":program:`pyvenv` was the recommended tool for creating virtual environments"
+" for Python 3.3 and 3.4, and replaced in 3.5 by executing ``venv`` directly."
 msgstr ""
+":program:`pyvenv` byl doporučeným nástrojem pro vytváření virtuálních "
+"prostředí pro Python 3.3 a 3.4 a byl nahrazen ve verzi 3.5 přímou spouštěním"
+" ``venv``."
 
 #: ../../library/venv.rst:93
 msgid "On Windows, invoke the ``venv`` command as follows:"
@@ -156,38 +199,37 @@ msgstr ""
 
 #: ../../library/venv.rst:101
 msgid ""
-"usage: venv [-h] [--system-site-packages] [--symlinks | --copies] "
-"[--clear]\n"
-"            [--upgrade] [--without-pip] [--prompt PROMPT] [--upgrade-"
-"deps]\n"
+"usage: venv [-h] [--system-site-packages] [--symlinks | --copies] [--clear]\n"
+"            [--upgrade] [--without-pip] [--prompt PROMPT] [--upgrade-deps]\n"
 "            [--without-scm-ignore-files]\n"
 "            ENV_DIR [ENV_DIR ...]\n"
 "\n"
 "Creates virtual Python environments in one or more target directories.\n"
 "\n"
-"Once an environment has been created, you may wish to activate it, e.g. "
-"by\n"
+"Once an environment has been created, you may wish to activate it, e.g. by\n"
 "sourcing an activate script in its bin directory."
 msgstr ""
 
 #: ../../library/venv.rst:116
-msgid "A required argument specifying the directory to create the environment in."
+msgid ""
+"A required argument specifying the directory to create the environment in."
 msgstr ""
 
 #: ../../library/venv.rst:120
-msgid "Give the virtual environment access to the system site-packages directory."
+msgid ""
+"Give the virtual environment access to the system site-packages directory."
 msgstr ""
 
 #: ../../library/venv.rst:124
 msgid ""
-"Try to use symlinks rather than copies, when symlinks are not the default"
-" for the platform."
+"Try to use symlinks rather than copies, when symlinks are not the default "
+"for the platform."
 msgstr ""
 
 #: ../../library/venv.rst:128
 msgid ""
-"Try to use copies rather than symlinks, even when symlinks are the "
-"default for the platform."
+"Try to use copies rather than symlinks, even when symlinks are the default "
+"for the platform."
 msgstr ""
 
 #: ../../library/venv.rst:132
@@ -198,8 +240,8 @@ msgstr ""
 
 #: ../../library/venv.rst:136
 msgid ""
-"Upgrade the environment directory to use this version of Python, assuming"
-" Python has been upgraded in-place."
+"Upgrade the environment directory to use this version of Python, assuming "
+"Python has been upgraded in-place."
 msgstr ""
 
 #: ../../library/venv.rst:140
@@ -218,8 +260,8 @@ msgstr ""
 
 #: ../../library/venv.rst:152
 msgid ""
-"Skips adding SCM ignore files to the environment directory (Git is "
-"supported by default)."
+"Skips adding SCM ignore files to the environment directory (Git is supported"
+" by default)."
 msgstr ""
 
 #: ../../library/venv.rst:155
@@ -230,14 +272,14 @@ msgstr ""
 
 #: ../../library/venv.rst:159
 msgid ""
-"In earlier versions, if the target directory already existed, an error "
-"was raised, unless the ``--clear`` or ``--upgrade`` option was provided."
+"In earlier versions, if the target directory already existed, an error was "
+"raised, unless the ``--clear`` or ``--upgrade`` option was provided."
 msgstr ""
 
 #: ../../library/venv.rst:163
 msgid ""
-"Add ``--upgrade-deps`` option to upgrade pip + setuptools to the latest "
-"on PyPI."
+"Add ``--upgrade-deps`` option to upgrade pip + setuptools to the latest on "
+"PyPI."
 msgstr ""
 
 #: ../../library/venv.rst:168
@@ -255,8 +297,8 @@ msgstr ""
 #: ../../library/venv.rst:177
 msgid ""
 "While symlinks are supported on Windows, they are not recommended. Of "
-"particular note is that double-clicking ``python.exe`` in File Explorer "
-"will resolve the symlink eagerly and ignore the virtual environment."
+"particular note is that double-clicking ``python.exe`` in File Explorer will"
+" resolve the symlink eagerly and ignore the virtual environment."
 msgstr ""
 
 #: ../../library/venv.rst:182
@@ -280,9 +322,9 @@ msgstr ""
 
 #: ../../library/venv.rst:194
 msgid ""
-"The created :file:`pyvenv.cfg` file also includes the ``include-system-"
-"site-packages`` key, set to ``true`` if ``venv`` is run with the "
-"``--system-site-packages`` option, ``false`` otherwise."
+"The created :file:`pyvenv.cfg` file also includes the ``include-system-site-"
+"packages`` key, set to ``true`` if ``venv`` is run with the ``--system-site-"
+"packages`` option, ``false`` otherwise."
 msgstr ""
 
 #: ../../library/venv.rst:198
@@ -293,9 +335,9 @@ msgstr ""
 
 #: ../../library/venv.rst:201
 msgid ""
-"Multiple paths can be given to ``venv``, in which case an identical "
-"virtual environment will be created, according to the given options, at "
-"each provided path."
+"Multiple paths can be given to ``venv``, in which case an identical virtual "
+"environment will be created, according to the given options, at each "
+"provided path."
 msgstr ""
 
 #: ../../library/venv.rst:208
@@ -305,25 +347,24 @@ msgstr ""
 #: ../../library/venv.rst:210
 msgid ""
 "When a Python interpreter is running from a virtual environment, "
-":data:`sys.prefix` and :data:`sys.exec_prefix` point to the directories "
-"of the virtual environment, whereas :data:`sys.base_prefix` and "
+":data:`sys.prefix` and :data:`sys.exec_prefix` point to the directories of "
+"the virtual environment, whereas :data:`sys.base_prefix` and "
 ":data:`sys.base_exec_prefix` point to those of the base Python used to "
 "create the environment. It is sufficient to check ``sys.prefix != "
-"sys.base_prefix`` to determine if the current interpreter is running from"
-" a virtual environment."
+"sys.base_prefix`` to determine if the current interpreter is running from a "
+"virtual environment."
 msgstr ""
 
 #: ../../library/venv.rst:219
 #, python-brace-format
 msgid ""
 "A virtual environment may be \"activated\" using a script in its binary "
-"directory (``bin`` on POSIX; ``Scripts`` on Windows). This will prepend "
-"that directory to your :envvar:`PATH`, so that running :program:`python` "
-"will invoke the environment's Python interpreter and you can run "
-"installed scripts without having to use their full path. The invocation "
-"of the activation script is platform-specific (:samp:`{<venv>}` must be "
-"replaced by the path to the directory containing the virtual "
-"environment):"
+"directory (``bin`` on POSIX; ``Scripts`` on Windows). This will prepend that"
+" directory to your :envvar:`PATH`, so that running :program:`python` will "
+"invoke the environment's Python interpreter and you can run installed "
+"scripts without having to use their full path. The invocation of the "
+"activation script is platform-specific (:samp:`{<venv>}` must be replaced by"
+" the path to the directory containing the virtual environment):"
 msgstr ""
 
 #: ../../library/venv.rst:229
@@ -412,58 +453,55 @@ msgstr ""
 
 #: ../../library/venv.rst:251
 msgid ""
-"You don't specifically *need* to activate a virtual environment, as you "
-"can just specify the full path to that environment's Python interpreter "
-"when invoking Python. Furthermore, all scripts installed in the "
-"environment should be runnable without activating it."
+"You don't specifically *need* to activate a virtual environment, as you can "
+"just specify the full path to that environment's Python interpreter when "
+"invoking Python. Furthermore, all scripts installed in the environment "
+"should be runnable without activating it."
 msgstr ""
 
 #: ../../library/venv.rst:257
 #, python-brace-format
 msgid ""
-"In order to achieve this, scripts installed into virtual environments "
-"have a \"shebang\" line which points to the environment's Python "
-"interpreter, :samp:`#!/{<path-to-venv>}/bin/python`. This means that the "
-"script will run with that interpreter regardless of the value of "
-":envvar:`PATH`. On Windows, \"shebang\" line processing is supported if "
-"you have the :ref:`launcher` installed. Thus, double-clicking an "
-"installed script in a Windows Explorer window should run it with the "
-"correct interpreter without the environment needing to be activated or on"
-" the :envvar:`PATH`."
+"In order to achieve this, scripts installed into virtual environments have a"
+" \"shebang\" line which points to the environment's Python interpreter, "
+":samp:`#!/{<path-to-venv>}/bin/python`. This means that the script will run "
+"with that interpreter regardless of the value of :envvar:`PATH`. On Windows,"
+" \"shebang\" line processing is supported if you have the :ref:`launcher` "
+"installed. Thus, double-clicking an installed script in a Windows Explorer "
+"window should run it with the correct interpreter without the environment "
+"needing to be activated or on the :envvar:`PATH`."
 msgstr ""
 
 #: ../../library/venv.rst:266
 msgid ""
-"When a virtual environment has been activated, the :envvar:`!VIRTUAL_ENV`"
-" environment variable is set to the path of the environment. Since "
-"explicitly activating a virtual environment is not required to use it, "
-":envvar:`!VIRTUAL_ENV` cannot be relied upon to determine whether a "
-"virtual environment is being used."
+"When a virtual environment has been activated, the :envvar:`!VIRTUAL_ENV` "
+"environment variable is set to the path of the environment. Since explicitly"
+" activating a virtual environment is not required to use it, "
+":envvar:`!VIRTUAL_ENV` cannot be relied upon to determine whether a virtual "
+"environment is being used."
 msgstr ""
 
 #: ../../library/venv.rst:272
 msgid ""
-"Because scripts installed in environments should not expect the "
-"environment to be activated, their shebang lines contain the absolute "
-"paths to their environment's interpreters. Because of this, environments "
-"are inherently non-portable, in the general case. You should always have "
-"a simple means of recreating an environment (for example, if you have a "
-"requirements file ``requirements.txt``, you can invoke ``pip install -r "
-"requirements.txt`` using the environment's ``pip`` to install all of the "
-"packages needed by the environment). If for any reason you need to move "
-"the environment to a new location, you should recreate it at the desired "
-"location and delete the one at the old location. If you move an "
-"environment because you moved a parent directory of it, you should "
-"recreate the environment in its new location. Otherwise, software "
-"installed into the environment may not work as expected."
+"Because scripts installed in environments should not expect the environment "
+"to be activated, their shebang lines contain the absolute paths to their "
+"environment's interpreters. Because of this, environments are inherently "
+"non-portable, in the general case. You should always have a simple means of "
+"recreating an environment (for example, if you have a requirements file "
+"``requirements.txt``, you can invoke ``pip install -r requirements.txt`` "
+"using the environment's ``pip`` to install all of the packages needed by the"
+" environment). If for any reason you need to move the environment to a new "
+"location, you should recreate it at the desired location and delete the one "
+"at the old location. If you move an environment because you moved a parent "
+"directory of it, you should recreate the environment in its new location. "
+"Otherwise, software installed into the environment may not work as expected."
 msgstr ""
 
 #: ../../library/venv.rst:286
 msgid ""
-"You can deactivate a virtual environment by typing ``deactivate`` in your"
-" shell. The exact mechanism is platform-specific and is an internal "
-"implementation detail (typically, a script or shell function will be "
-"used)."
+"You can deactivate a virtual environment by typing ``deactivate`` in your "
+"shell. The exact mechanism is platform-specific and is an internal "
+"implementation detail (typically, a script or shell function will be used)."
 msgstr ""
 
 #: ../../library/venv.rst:294
@@ -486,21 +524,21 @@ msgstr ""
 
 #: ../../library/venv.rst:310
 msgid ""
-"*system_site_packages* -- a boolean value indicating that the system "
-"Python site-packages should be available to the environment (defaults to "
+"*system_site_packages* -- a boolean value indicating that the system Python "
+"site-packages should be available to the environment (defaults to "
 "``False``)."
 msgstr ""
 
 #: ../../library/venv.rst:313
 msgid ""
-"*clear* -- a boolean value which, if true, will delete the contents of "
-"any existing target directory, before creating the environment."
+"*clear* -- a boolean value which, if true, will delete the contents of any "
+"existing target directory, before creating the environment."
 msgstr ""
 
 #: ../../library/venv.rst:316
 msgid ""
-"*symlinks* -- a boolean value indicating whether to attempt to symlink "
-"the Python binary rather than copying."
+"*symlinks* -- a boolean value indicating whether to attempt to symlink the "
+"Python binary rather than copying."
 msgstr ""
 
 #: ../../library/venv.rst:319
@@ -512,17 +550,17 @@ msgstr ""
 
 #: ../../library/venv.rst:323
 msgid ""
-"*with_pip* -- a boolean value which, if true, ensures pip is installed in"
-" the virtual environment. This uses :mod:`ensurepip` with the "
-"``--default-pip`` option."
+"*with_pip* -- a boolean value which, if true, ensures pip is installed in "
+"the virtual environment. This uses :mod:`ensurepip` with the ``--default-"
+"pip`` option."
 msgstr ""
 
 #: ../../library/venv.rst:327
 msgid ""
 "*prompt* -- a string to be used after virtual environment is activated "
-"(defaults to ``None`` which means directory name of the environment would"
-" be used). If the special string ``\".\"`` is provided, the basename of "
-"the current directory is used as the prompt."
+"(defaults to ``None`` which means directory name of the environment would be"
+" used). If the special string ``\".\"`` is provided, the basename of the "
+"current directory is used as the prompt."
 msgstr ""
 
 #: ../../library/venv.rst:332
@@ -560,16 +598,16 @@ msgstr ""
 
 #: ../../library/venv.rst:356
 msgid ""
-"Create a virtual environment by specifying the target directory (absolute"
-" or relative to the current directory) which is to contain the virtual "
-"environment.  The ``create`` method will either create the environment in"
-" the specified directory, or raise an appropriate exception."
+"Create a virtual environment by specifying the target directory (absolute or"
+" relative to the current directory) which is to contain the virtual "
+"environment.  The ``create`` method will either create the environment in "
+"the specified directory, or raise an appropriate exception."
 msgstr ""
 
 #: ../../library/venv.rst:362
 msgid ""
-"The ``create`` method of the :class:`EnvBuilder` class illustrates the "
-"hooks available for subclass customization::"
+"The ``create`` method of the :class:`EnvBuilder` class illustrates the hooks"
+" available for subclass customization::"
 msgstr ""
 
 #: ../../library/venv.rst:365
@@ -590,18 +628,18 @@ msgstr ""
 #: ../../library/venv.rst:377
 msgid ""
 "Each of the methods :meth:`ensure_directories`, "
-":meth:`create_configuration`, :meth:`setup_python`, :meth:`setup_scripts`"
-" and :meth:`post_setup` can be overridden."
+":meth:`create_configuration`, :meth:`setup_python`, :meth:`setup_scripts` "
+"and :meth:`post_setup` can be overridden."
 msgstr ""
 
 #: ../../library/venv.rst:383
 msgid ""
 "Creates the environment directory and all necessary subdirectories that "
-"don't already exist, and returns a context object.  This context object "
-"is just a holder for attributes (such as paths) for use by the other "
-"methods.  If the :class:`EnvBuilder` is created with the arg "
-"``clear=True``, contents of the environment directory will be cleared and"
-" then all necessary subdirectories will be recreated."
+"don't already exist, and returns a context object.  This context object is "
+"just a holder for attributes (such as paths) for use by the other methods.  "
+"If the :class:`EnvBuilder` is created with the arg ``clear=True``, contents "
+"of the environment directory will be cleared and then all necessary "
+"subdirectories will be recreated."
 msgstr ""
 
 #: ../../library/venv.rst:390
@@ -631,8 +669,8 @@ msgstr ""
 #: ../../library/venv.rst:402
 msgid ""
 "``executable`` - The underlying Python executable used by the virtual "
-"environment. This takes into account the case where a virtual environment"
-" is created from another virtual environment."
+"environment. This takes into account the case where a virtual environment is"
+" created from another virtual environment."
 msgstr ""
 
 #: ../../library/venv.rst:406
@@ -650,34 +688,34 @@ msgstr ""
 #: ../../library/venv.rst:412
 msgid ""
 "``bin_name`` - The name of the script path relative to the virtual "
-"environment location. Used for ``__VENV_BIN_NAME__`` in activation "
-"scripts (see :meth:`install_scripts`)."
+"environment location. Used for ``__VENV_BIN_NAME__`` in activation scripts "
+"(see :meth:`install_scripts`)."
 msgstr ""
 
 #: ../../library/venv.rst:416
 msgid ""
-"``env_exe`` - The name of the Python interpreter in the virtual "
-"environment. Used for ``__VENV_PYTHON__`` in activation scripts (see "
+"``env_exe`` - The name of the Python interpreter in the virtual environment."
+" Used for ``__VENV_PYTHON__`` in activation scripts (see "
 ":meth:`install_scripts`)."
 msgstr ""
 
 #: ../../library/venv.rst:420
 msgid ""
-"``env_exec_cmd`` - The name of the Python interpreter, taking into "
-"account filesystem redirections. This can be used to run Python in the "
-"virtual environment."
+"``env_exec_cmd`` - The name of the Python interpreter, taking into account "
+"filesystem redirections. This can be used to run Python in the virtual "
+"environment."
 msgstr ""
 
 #: ../../library/venv.rst:425
 msgid ""
-"The *venv* :ref:`sysconfig installation scheme <installation_paths>` is "
-"used to construct the paths of the created directories."
+"The *venv* :ref:`sysconfig installation scheme <installation_paths>` is used"
+" to construct the paths of the created directories."
 msgstr ""
 
 #: ../../library/venv.rst:430
 msgid ""
-"The attribute ``lib_path`` was added to the context, and the context "
-"object was documented."
+"The attribute ``lib_path`` was added to the context, and the context object "
+"was documented."
 msgstr ""
 
 #: ../../library/venv.rst:436
@@ -686,10 +724,10 @@ msgstr ""
 
 #: ../../library/venv.rst:440
 msgid ""
-"Creates a copy or symlink to the Python executable in the environment. On"
-" POSIX systems, if a specific executable ``python3.x`` was used, symlinks"
-" to ``python`` and ``python3`` will be created pointing to that "
-"executable, unless files with those names already exist."
+"Creates a copy or symlink to the Python executable in the environment. On "
+"POSIX systems, if a specific executable ``python3.x`` was used, symlinks to "
+"``python`` and ``python3`` will be created pointing to that executable, "
+"unless files with those names already exist."
 msgstr ""
 
 #: ../../library/venv.rst:447
@@ -700,9 +738,9 @@ msgstr ""
 
 #: ../../library/venv.rst:452
 msgid ""
-"Upgrades the core venv dependency packages (currently :pypi:`pip`) in the"
-" environment. This is done by shelling out to the ``pip`` executable in "
-"the environment."
+"Upgrades the core venv dependency packages (currently :pypi:`pip`) in the "
+"environment. This is done by shelling out to the ``pip`` executable in the "
+"environment."
 msgstr ""
 
 #: ../../library/venv.rst:459
@@ -711,24 +749,24 @@ msgstr ""
 
 #: ../../library/venv.rst:463
 msgid ""
-"A placeholder method which can be overridden in third party "
-"implementations to pre-install packages in the virtual environment or "
-"perform other post-creation steps."
+"A placeholder method which can be overridden in third party implementations "
+"to pre-install packages in the virtual environment or perform other post-"
+"creation steps."
 msgstr ""
 
 #: ../../library/venv.rst:469
 msgid ""
-"This method can be called from :meth:`setup_scripts` or "
-":meth:`post_setup` in subclasses to assist in installing custom scripts "
-"into the virtual environment."
+"This method can be called from :meth:`setup_scripts` or :meth:`post_setup` "
+"in subclasses to assist in installing custom scripts into the virtual "
+"environment."
 msgstr ""
 
 #: ../../library/venv.rst:473
 msgid ""
 "*path* is the path to a directory that should contain subdirectories "
 "``common``, ``posix``, ``nt``; each containing scripts destined for the "
-"``bin`` directory in the environment.  The contents of ``common`` and the"
-" directory corresponding to :data:`os.name` are copied after some text "
+"``bin`` directory in the environment.  The contents of ``common`` and the "
+"directory corresponding to :data:`os.name` are copied after some text "
 "replacement of placeholders:"
 msgstr ""
 
@@ -740,8 +778,8 @@ msgstr ""
 
 #: ../../library/venv.rst:482
 msgid ""
-"``__VENV_NAME__`` is replaced with the environment name (final path "
-"segment of environment directory)."
+"``__VENV_NAME__`` is replaced with the environment name (final path segment "
+"of environment directory)."
 msgstr ""
 
 #: ../../library/venv.rst:485
@@ -752,40 +790,40 @@ msgstr ""
 
 #: ../../library/venv.rst:488
 msgid ""
-"``__VENV_BIN_NAME__`` is replaced with the name of the bin directory "
-"(either ``bin`` or ``Scripts``)."
+"``__VENV_BIN_NAME__`` is replaced with the name of the bin directory (either"
+" ``bin`` or ``Scripts``)."
 msgstr ""
 
 #: ../../library/venv.rst:491
 msgid ""
-"``__VENV_PYTHON__`` is replaced with the absolute path of the "
-"environment's executable."
+"``__VENV_PYTHON__`` is replaced with the absolute path of the environment's "
+"executable."
 msgstr ""
 
 #: ../../library/venv.rst:494
 msgid ""
-"The directories are allowed to exist (for when an existing environment is"
-" being upgraded)."
+"The directories are allowed to exist (for when an existing environment is "
+"being upgraded)."
 msgstr ""
 
 #: ../../library/venv.rst:499
 msgid ""
-"Creates a ``.gitignore`` file within the virtual environment that causes "
-"the entire directory to be ignored by the Git source control manager."
+"Creates a ``.gitignore`` file within the virtual environment that causes the"
+" entire directory to be ignored by the Git source control manager."
 msgstr ""
 
 #: ../../library/venv.rst:504
 msgid ""
-"Windows now uses redirector scripts for ``python[w].exe`` instead of "
-"copying the actual binaries. In 3.7.2 only :meth:`setup_python` does "
-"nothing unless running from a build in the source tree."
+"Windows now uses redirector scripts for ``python[w].exe`` instead of copying"
+" the actual binaries. In 3.7.2 only :meth:`setup_python` does nothing unless"
+" running from a build in the source tree."
 msgstr ""
 
 #: ../../library/venv.rst:509
 msgid ""
 "Windows copies the redirector scripts as part of :meth:`setup_python` "
-"instead of :meth:`setup_scripts`. This was not the case in 3.7.2. When "
-"using symlinks, the original executables will be linked."
+"instead of :meth:`setup_scripts`. This was not the case in 3.7.2. When using"
+" symlinks, the original executables will be linked."
 msgstr ""
 
 #: ../../library/venv.rst:514
@@ -794,8 +832,8 @@ msgstr ""
 
 #: ../../library/venv.rst:520
 msgid ""
-"Create an :class:`EnvBuilder` with the given keyword arguments, and call "
-"its :meth:`~EnvBuilder.create` method with the *env_dir* argument."
+"Create an :class:`EnvBuilder` with the given keyword arguments, and call its"
+" :meth:`~EnvBuilder.create` method with the *env_dir* argument."
 msgstr ""
 
 #: ../../library/venv.rst:525
@@ -820,9 +858,9 @@ msgstr ""
 
 #: ../../library/venv.rst:540
 msgid ""
-"The following script shows how to extend :class:`EnvBuilder` by "
-"implementing a subclass which installs setuptools and pip into a created "
-"virtual environment::"
+"The following script shows how to extend :class:`EnvBuilder` by implementing"
+" a subclass which installs setuptools and pip into a created virtual "
+"environment::"
 msgstr ""
 
 #: ../../library/venv.rst:543
@@ -842,24 +880,19 @@ msgid ""
 "    This builder installs setuptools and pip so that you can pip or\n"
 "    easy_install other packages into the created virtual environment.\n"
 "\n"
-"    :param nodist: If true, setuptools and pip are not installed into the"
-"\n"
+"    :param nodist: If true, setuptools and pip are not installed into the\n"
 "                   created virtual environment.\n"
 "    :param nopip: If true, pip is not installed into the created\n"
 "                  virtual environment.\n"
-"    :param progress: If setuptools or pip are installed, the progress of "
-"the\n"
+"    :param progress: If setuptools or pip are installed, the progress of the\n"
 "                     installation can be monitored by passing a progress\n"
 "                     callable. If specified, it is called with two\n"
 "                     arguments: a string indicating some progress, and a\n"
 "                     context indicating where the string is coming from.\n"
 "                     The context argument can have one of three values:\n"
-"                     'main', indicating that it is called from "
-"virtualize()\n"
-"                     itself, and 'stdout' and 'stderr', which are "
-"obtained\n"
-"                     by reading lines from the output streams of a "
-"subprocess\n"
+"                     'main', indicating that it is called from virtualize()\n"
+"                     itself, and 'stdout' and 'stderr', which are obtained\n"
+"                     by reading lines from the output streams of a subprocess\n"
 "                     which is used to install the app.\n"
 "\n"
 "                     If a callable is not specified, default progress\n"
@@ -890,10 +923,8 @@ msgid ""
 "\n"
 "    def reader(self, stream, context):\n"
 "        \"\"\"\n"
-"        Read lines from a subprocess' output stream and either pass to a "
-"progress\n"
-"        callable (if specified) or write progress information to "
-"sys.stderr.\n"
+"        Read lines from a subprocess' output stream and either pass to a progress\n"
+"        callable (if specified) or write progress information to sys.stderr.\n"
 "        \"\"\"\n"
 "        progress = self.progress\n"
 "        while True:\n"
@@ -954,8 +985,7 @@ msgid ""
 "        url = \"https://bootstrap.pypa.io/ez_setup.py\"\n"
 "        self.install_script(context, 'setuptools', url)\n"
 "        # clear up the setuptools archive which gets downloaded\n"
-"        pred = lambda o: o.startswith('setuptools-') and "
-"o.endswith('.tar.gz')\n"
+"        pred = lambda o: o.startswith('setuptools-') and o.endswith('.tar.gz')\n"
 "        files = filter(pred, os.listdir(context.bin_path))\n"
 "        for f in files:\n"
 "            f = os.path.join(context.bin_path, f)\n"
@@ -976,10 +1006,8 @@ msgid ""
 "    import argparse\n"
 "\n"
 "    parser = argparse.ArgumentParser(prog=__name__,\n"
-"                                     description='Creates virtual Python "
-"'\n"
-"                                                 'environments in one or "
-"'\n"
+"                                     description='Creates virtual Python '\n"
+"                                                 'environments in one or '\n"
 "                                                 'more target '\n"
 "                                                 'directories.')\n"
 "    parser.add_argument('dirs', metavar='ENV_DIR', nargs='+',\n"
@@ -995,8 +1023,7 @@ msgid ""
 "                             \"environment.\")\n"
 "    parser.add_argument('--system-site-packages', default=False,\n"
 "                        action='store_true', dest='system_site',\n"
-"                        help='Give the virtual environment access to the "
-"'\n"
+"                        help='Give the virtual environment access to the '\n"
 "                             'system site-packages dir.')\n"
 "    if os.name == 'nt':\n"
 "        use_symlinks = False\n"
@@ -1023,14 +1050,11 @@ msgid ""
 "    parser.add_argument('--verbose', default=False, action='store_true',\n"
 "                        dest='verbose', help='Display the output '\n"
 "                                             'from the scripts which '\n"
-"                                             'install setuptools and "
-"pip.')\n"
+"                                             'install setuptools and pip.')\n"
 "    options = parser.parse_args(args)\n"
 "    if options.upgrade and options.clear:\n"
-"        raise ValueError('you cannot supply --upgrade and --clear "
-"together.')\n"
-"    builder = "
-"ExtendedEnvBuilder(system_site_packages=options.system_site,\n"
+"        raise ValueError('you cannot supply --upgrade and --clear together.')\n"
+"    builder = ExtendedEnvBuilder(system_site_packages=options.system_site,\n"
 "                                   clear=options.clear,\n"
 "                                   symlinks=options.symlinks,\n"
 "                                   upgrade=options.upgrade,\n"
@@ -1069,4 +1093,3 @@ msgstr ""
 
 #~ msgid "The attribute ``platlib_path`` was added to the context."
 #~ msgstr ""
-

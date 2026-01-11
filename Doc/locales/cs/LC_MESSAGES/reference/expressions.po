@@ -2609,12 +2609,15 @@ msgstr ""
 msgid ""
 "Order comparisons (``<``, ``>``, ``<=``, and ``>=``) raise :exc:`TypeError`."
 msgstr ""
+"Porovnávání pořadí (``<``, ``>``, ``<=`` a ``>=``) vyvolá :exc:`TypeError`."
 
 #: ../../reference/expressions.rst:1706
 msgid ""
 "Sets (instances of :class:`set` or :class:`frozenset`) can be compared "
 "within and across their types."
 msgstr ""
+"Množiny (instance třídy :class:`set` nebo :class:`frozenset`) lze porovnávat"
+" v rámci jejich typů a mezi nimi."
 
 #: ../../reference/expressions.rst:1709
 #, python-brace-format
@@ -2627,86 +2630,105 @@ msgid ""
 ":func:`max`, and :func:`sorted` produce undefined results given a list of "
 "sets as inputs)."
 msgstr ""
+"Definují operátory porovnávání pořadí jako test podmnožiny a nadmnožiny. "
+"Tyto vztahy nedefinují úplné uspořádání (například dvě množiny ``{1,2}`` a "
+"``{2,3}`` nejsou si rovny, nejsou podmnožinami jedné druhé, ani nejsou "
+"nadmnožinami jedné druhé). Proto nejsou množiny vhodné argumenty pro funkce,"
+" které závisí na úplném uspořádání (například :func:`min`, :func:`max` a "
+":func:`sorted` dávají nedefinované výsledky, pokud dostanou seznam množin "
+"jako vstup)."
 
 #: ../../reference/expressions.rst:1717
 msgid "Comparison of sets enforces reflexivity of its elements."
-msgstr ""
+msgstr "Porovnávání množin vynucuje reflexivitu jejich prvků."
 
 #: ../../reference/expressions.rst:1719
 msgid ""
 "Most other built-in types have no comparison methods implemented, so they "
 "inherit the default comparison behavior."
 msgstr ""
+"Většina ostatních vestavěných typů nemá implementované metody porovnávání, "
+"takže dědí výchozí chování porovnávání."
 
 #: ../../reference/expressions.rst:1722
 msgid ""
 "User-defined classes that customize their comparison behavior should follow "
 "some consistency rules, if possible:"
 msgstr ""
+"Uživatelsky definované třídy, které si přizpůsobují své chování porovnávání,"
+" by měly pokud možné dodržovat některá pravidla konzistence:"
 
 #: ../../reference/expressions.rst:1725
 msgid ""
 "Equality comparison should be reflexive. In other words, identical objects "
 "should compare equal:"
 msgstr ""
+"Porovnávání rovnosti by mělo být reflexivní. Jinými slovy, identické objekty"
+" by se měly porovnávat jako stejné:"
 
 #: ../../reference/expressions.rst:1728
 msgid "``x is y`` implies ``x == y``"
-msgstr ""
+msgstr "``x is y`` implikuje ``x == y``"
 
 #: ../../reference/expressions.rst:1730
 msgid ""
 "Comparison should be symmetric. In other words, the following expressions "
 "should have the same result:"
 msgstr ""
+"Porovnávání by mělo být symetrické. Jinými slovy, následující výrazy by měly"
+" mít stejný výsledek:"
 
 #: ../../reference/expressions.rst:1733
 msgid "``x == y`` and ``y == x``"
-msgstr ""
+msgstr "``x == y`` a ``y == x``"
 
 #: ../../reference/expressions.rst:1735
 msgid "``x != y`` and ``y != x``"
-msgstr ""
+msgstr "``x != y`` a ``y != x``"
 
 #: ../../reference/expressions.rst:1737
 msgid "``x < y`` and ``y > x``"
-msgstr ""
+msgstr "``x < y`` a ``y > x``"
 
 #: ../../reference/expressions.rst:1739
 msgid "``x <= y`` and ``y >= x``"
-msgstr ""
+msgstr "``x <= y`` a ``y >= x``"
 
 #: ../../reference/expressions.rst:1741
 msgid ""
 "Comparison should be transitive. The following (non-exhaustive) examples "
 "illustrate that:"
 msgstr ""
+"Porovnávání by mělo být tranzitivní. Následující (nevyčerpvavající) příklady"
+" to ilustrují:"
 
 #: ../../reference/expressions.rst:1744
 msgid "``x > y and y > z`` implies ``x > z``"
-msgstr ""
+msgstr "``x > y a y > z`` implikuje ``x > z``"
 
 #: ../../reference/expressions.rst:1746
 msgid "``x < y and y <= z`` implies ``x < z``"
-msgstr ""
+msgstr "``x < y a y <= z`` implikuje ``x < z``"
 
 #: ../../reference/expressions.rst:1748
 msgid ""
 "Inverse comparison should result in the boolean negation. In other words, "
 "the following expressions should have the same result:"
 msgstr ""
+"Inverzní porovnání by mělo vést k booleovské negaci. Jinými slovy, "
+"následující výrazy by měly mít stejný výsledek:"
 
 #: ../../reference/expressions.rst:1751
 msgid "``x == y`` and ``not x != y``"
-msgstr ""
+msgstr "``x == y`` a ``not x != y``"
 
 #: ../../reference/expressions.rst:1753
 msgid "``x < y`` and ``not x >= y`` (for total ordering)"
-msgstr ""
+msgstr "``x < y`` a ``not x >= y`` (pro úplné uspořádání)"
 
 #: ../../reference/expressions.rst:1755
 msgid "``x > y`` and ``not x <= y`` (for total ordering)"
-msgstr ""
+msgstr "``x > y`` a ``not x <= y`` (pro úplné uspořádání)"
 
 #: ../../reference/expressions.rst:1757
 msgid ""
@@ -2714,22 +2736,30 @@ msgid ""
 "sequences, but not to sets or mappings). See also the "
 ":func:`~functools.total_ordering` decorator."
 msgstr ""
+"Poslední dva výrazy se vztahují na úplně uspořádané sbírky (např. na "
+"sekvence, ale ne na množiny nebo mapování). Viz také dekorátor "
+":func:`~functools.total_ordering`."
 
 #: ../../reference/expressions.rst:1761
 msgid ""
 "The :func:`hash` result should be consistent with equality. Objects that are"
 " equal should either have the same hash value, or be marked as unhashable."
 msgstr ""
+"Výsledek :func:`hash` by měl být konzistentní s rovností. Objekty, které se "
+"rovnají, by měly mít buď stejnou hodnotu hashe, nebo by měly být označeny "
+"jako nehashovačné."
 
 #: ../../reference/expressions.rst:1765
 msgid ""
 "Python does not enforce these consistency rules. In fact, the not-a-number "
 "values are an example for not following these rules."
 msgstr ""
+"Python tyto pravidla konzistence nevynucuje. Ve skutečnosti jsou hodnoty "
+"not-a-number příkladem nedožadování těchto pravidel."
 
 #: ../../reference/expressions.rst:1774
 msgid "Membership test operations"
-msgstr ""
+msgstr "Operace testu členství"
 
 #: ../../reference/expressions.rst:1776
 msgid ""
@@ -2741,6 +2771,13 @@ msgid ""
 "types such as list, tuple, set, frozenset, dict, or collections.deque, the "
 "expression ``x in y`` is equivalent to ``any(x is e or x == e for e in y)``."
 msgstr ""
+"Operátory :keyword:`in` a :keyword:`not in` testují členství. ``x in s`` se "
+"vyhodnotí na ``True``, pokud je *x* členom *s*, a ``False`` jinak. ``x not "
+"in s`` vrátí negaci ``x in s``. Všechny vestaené sekvence a typy sad "
+"podporují toto, stejně jako slovník, pro který :keyword:`!in` testuje, zda "
+"má slovník daný klíč. Pro typy kontejnerů, jako je list, tuple, set, "
+"frozenset, dict nebo collections.deque, je výraz ``x in y`` ekvivalentní "
+"``any(x is e or x == e for e in y)``."
 
 #: ../../reference/expressions.rst:1784
 msgid ""
@@ -2749,6 +2786,10 @@ msgid ""
 "strings are always considered to be a substring of any other string, so "
 "``\"\" in \"abc\"`` will return ``True``."
 msgstr ""
+"Pro typy string a bytes je ``x in y`` ``True`` tehdy a jen tehdy, pokud je "
+"*x* podretruberzem *y*. Ekvivalentníní test je ``y.find(x) != -1``. Prázdné "
+"řetězce jsou vždy povaovány jako podretruberzec jakéhokoli jiného řetězce, "
+"takže ``\"\" in \"abc\"`` vrátí ``True``."
 
 #: ../../reference/expressions.rst:1789
 msgid ""
@@ -2756,6 +2797,9 @@ msgid ""
 "method, ``x in y`` returns ``True`` if ``y.__contains__(x)`` returns a true "
 "value, and ``False`` otherwise."
 msgstr ""
+"Pro uživatelsky definované třídy, které definují metodu "
+":meth:`~object.__contains__`, ``x in y`` vrátí ``True``, pokud "
+"``y.__contains__(x)`` vrátí pravdivou hodnotu, a ``False`` jinak."
 
 #: ../../reference/expressions.rst:1793
 msgid ""
@@ -2765,6 +2809,12 @@ msgid ""
 "while iterating over ``y``. If an exception is raised during the iteration, "
 "it is as if :keyword:`in` raised that exception."
 msgstr ""
+"Pro uživatelsky definované třídy, které nedefinují "
+":meth:`~object.__contains__`, ale definují :meth:`~object.__iter__`, je ``x "
+"in y`` ``True``, pokud je během iterace hl. *y* vyprodukována nějaká hodnota"
+" ``z``, pro kterou je výraz ``x is z or x == z`` pravdivý. Pokud je během "
+"iterace vyvolana výjimka, je to tak, jako by :keyword:`in` vyvolal tuto "
+"výjimku."
 
 #: ../../reference/expressions.rst:1799
 msgid ""
@@ -2774,16 +2824,24 @@ msgid ""
 "no lower integer index raises the :exc:`IndexError` exception.  (If any "
 "other exception is raised, it is as if :keyword:`in` raised that exception)."
 msgstr ""
+"Nač se pokusí starý proto protokol iterace: pokud třída definuje "
+":meth:`~object.__getitem__`, ``x in y`` je ``True`` tehdy a jen tehdy, pokud"
+" existuje nezáporný celok index *i* takový, že ``x is y[i] or x == y[i]``, a"
+" žádný nižší index neebytně nevyválí výjimku :exc:`IndexError`. (Pokud je "
+"vyvolana jakákoli jiná výjimka, je to tak, jako by :keyword:`in` vyvolal "
+"tuto výjimku)."
 
 #: ../../reference/expressions.rst:1811
 msgid ""
 "The operator :keyword:`not in` is defined to have the inverse truth value of"
 " :keyword:`in`."
 msgstr ""
+"Operátor :keyword:`not in` je definován tak, aby měl obracenou pravdivostní "
+"hodnotu :keyword:`in`."
 
 #: ../../reference/expressions.rst:1824
 msgid "Identity comparisons"
-msgstr ""
+msgstr "Porovnání identity"
 
 #: ../../reference/expressions.rst:1826
 msgid ""
@@ -2792,10 +2850,14 @@ msgid ""
 "  An Object's identity is determined using the :meth:`id` function.  ``x is "
 "not y`` yields the inverse truth value. [#]_"
 msgstr ""
+"Operátory :keyword:`is` a :keyword:`is not` testují identitu objektu: ``x is"
+" y`` je pravdivé tehdy a jen tehdy, pokud jsou *x* a *y* stejným objektem. "
+"Identita objektu je určena pomocí funkce :meth:`id`. ``x is not y`` vydává "
+"obracenou pravdivostní hodnotu. [#]_"
 
 #: ../../reference/expressions.rst:1838
 msgid "Boolean operations"
-msgstr ""
+msgstr "Booleovské operace"
 
 #: ../../reference/expressions.rst:1849
 msgid ""
@@ -2807,12 +2869,21 @@ msgid ""
 "objects can customize their truth value by providing a "
 ":meth:`~object.__bool__` method."
 msgstr ""
+"V kontextu booleovských operací a také když jsou výrazy používány vřízenímí "
+"toku řídicích příkazů, jsou následující hodnoty interpretovány jako "
+"nepravdivé: ``False``, ``None``, numerická nula všech typů a prázdné řetězce"
+" a kontejnery (četně řetězců, tuple, seznamů, slovníků, množin a "
+"frozensetů). Všechny ostatní hodnoty jsou interpretovány jako pravdivé. "
+"Uživatelsky definované objekty mohou přizpůsobit svou pravdivostní hodnotu "
+"poskytnutím metody :meth:`~object.__bool__`."
 
 #: ../../reference/expressions.rst:1858
 msgid ""
 "The operator :keyword:`not` yields ``True`` if its argument is false, "
 "``False`` otherwise."
 msgstr ""
+"Operátor :keyword:`not` vydává ``True``, pokud je jeho argument nepravdivý, "
+"``False`` jinak."
 
 #: ../../reference/expressions.rst:1863
 msgid ""
@@ -2820,12 +2891,16 @@ msgid ""
 "is returned; otherwise, *y* is evaluated and the resulting value is "
 "returned."
 msgstr ""
+"Výraz ``x and y`` nejprve vyhodnotí *x*; pokud je *x* nepravdivý, je vrácena"
+" jeho hodnota; jinak je vyhodnotøen *y* a je vrácena výsledná hodnota."
 
 #: ../../reference/expressions.rst:1868
 msgid ""
 "The expression ``x or y`` first evaluates *x*; if *x* is true, its value is "
 "returned; otherwise, *y* is evaluated and the resulting value is returned."
 msgstr ""
+"Výraz ``x or y`` nejprve vyhodnotí *x*; pokud je *x* pravdivý, je vrácena "
+"jeho hodnota; jinak je vyhodnotøen *y* a je vrácena výsledná hodnota."
 
 #: ../../reference/expressions.rst:1871
 msgid ""
@@ -2838,10 +2913,17 @@ msgid ""
 " argument (for example, ``not 'foo'`` produces ``False`` rather than "
 "``''``.)"
 msgstr ""
+"Všimněte si, že ani :keyword:`and` ani :keyword:`or` neomezují hodnotu a "
+"typ, který vracejí, na ``False`` a ``True``, ale spíše vracejí poslední "
+"vyhodnocenoarguent. To je někdy užitečné, např. pokud je ``s`` řetězec, "
+"který by měl být nahrazen výchozí hodnotou, pokud je prázdný, výraz ``s or "
+"'foo'`` poskytuje požadovanou hodnotu. Protože :keyword:`not` musí vytvořit "
+"novou hodnotu, vrací logickou hodnotu bez ohledu na typ jeho argumentu "
+"(například ``not 'foo'`` vrací ``False`` spíše než ``''``.)"
 
 #: ../../reference/expressions.rst:1890
 msgid "Assignment expressions"
-msgstr ""
+msgstr "Výrazy přiřazení"
 
 #: ../../reference/expressions.rst:1895
 msgid ""
@@ -2850,26 +2932,36 @@ msgid ""
 ":token:`~python-grammar:identifier`, while also returning the value of the "
 ":token:`~python-grammar:expression`."
 msgstr ""
+"Výraz přiřazení (někdy také nazývaný \"pojmenovaný výraz\" nebo \"walrus\") "
+"přiřazuje :token:`~python-grammar:expression` k :token:`~python-"
+"grammar:identifier`, přičemž zároveň vrací hodnotu :token:`~python-"
+"grammar:expression`."
 
 #: ../../reference/expressions.rst:1900
 msgid "One common use case is when handling matched regular expressions:"
 msgstr ""
+"Jeden běžný případ použití je při manipulaci se splněnými regulárními "
+"výrazy:"
 
 #: ../../reference/expressions.rst:1902
 msgid ""
 "if matching := pattern.search(data):\n"
 "    do_something(matching)"
 msgstr ""
+"if matching := pattern.search(data):\n"
+"    do_something(matching)"
 
 #: ../../reference/expressions.rst:1907
 msgid "Or, when processing a file stream in chunks:"
-msgstr ""
+msgstr "Nebo při zprácování souboru v chunks:"
 
 #: ../../reference/expressions.rst:1909
 msgid ""
 "while chunk := file.read(9000):\n"
 "    process(chunk)"
 msgstr ""
+"while chunk := file.read(9000):\n"
+"    process(chunk)"
 
 #: ../../reference/expressions.rst:1914
 msgid ""
@@ -2880,14 +2972,20 @@ msgid ""
 "where they can be used, parentheses are not required, including in ``if`` "
 "and ``while`` statements."
 msgstr ""
+"Výrazy přiřazení musí být obklopeny závorkami, když jsou používány jako "
+"výrazy příkazů a když jsou používány jako sub-výrazy v stříhování, "
+"podmínkovém, lambda, klíčovém argumentu a výrazech chytrého cyklusů a v "
+"``assert``, ``with`` a ``assignment`` přík azéch. Ve všech ostatních "
+"místech, kde je mohou být používány, nejsou závorky nutné, vkladaje v ``if``"
+" a ``while`` příkazech."
 
 #: ../../reference/expressions.rst:1922
 msgid "See :pep:`572` for more details about assignment expressions."
-msgstr ""
+msgstr "Viz :pep:`572` pro více detailů o výrazech přiřazení."
 
 #: ../../reference/expressions.rst:1929
 msgid "Conditional expressions"
-msgstr ""
+msgstr "Podmínkové výrazy"
 
 #: ../../reference/expressions.rst:1941
 msgid ""
@@ -2895,6 +2993,9 @@ msgid ""
 "alternative to the if-else statement. As it is an expression, it returns a "
 "value and can appear as a sub-expression."
 msgstr ""
+"Podmínkový výraz (někdy nazvaný \"ternární operátor\") je alternativou k "
+"příkazu if-else. Protože je to výraz, vrací hodnotu a může se objevit jako "
+"sub-výraz."
 
 #: ../../reference/expressions.rst:1945
 msgid ""
@@ -2902,14 +3003,17 @@ msgid ""
 "than *x*. If *C* is true, *x* is evaluated and its value is returned; "
 "otherwise, *y* is evaluated and its value is returned."
 msgstr ""
+"Výraz ``x if C else y`` nejprve vyhodnotí podmínku *C* spolu s *x*. Pokud je"
+" *C* pravdivý, je vyhodnocen *x* a je vrácena jeho hodnota; jinak je "
+"vyhodnocen *y* a je vrácena jeho hodnota."
 
 #: ../../reference/expressions.rst:1949
 msgid "See :pep:`308` for more details about conditional expressions."
-msgstr ""
+msgstr "Viz :pep:`308` pro více detailů o podmínkových výrazech."
 
 #: ../../reference/expressions.rst:1956
 msgid "Lambdas"
-msgstr ""
+msgstr "Lambda výrazy"
 
 #: ../../reference/expressions.rst:1967
 msgid ""
@@ -2918,12 +3022,17 @@ msgid ""
 " a function object.  The unnamed object behaves like a function object "
 "defined with:"
 msgstr ""
+"Lambda výrazy (někdy nazývané lambda formy) se používají k vytváření "
+"anonymních funkcí. Výraz ``lambda parameters: expression`` vydává "
+"objektfunkce. Nepojmenovaný objekt se chová jako objektfunkce definovaná s:"
 
 #: ../../reference/expressions.rst:1971
 msgid ""
 "def <lambda>(parameters):\n"
 "    return expression"
 msgstr ""
+"def <lambda>(parameters):\n"
+"    return expression"
 
 #: ../../reference/expressions.rst:1976
 msgid ""
@@ -2931,10 +3040,12 @@ msgid ""
 "functions created with lambda expressions cannot contain statements or "
 "annotations."
 msgstr ""
+"Viz šękce :ref:`function` pro syntaxi seznamů parametrů. Všimněte si, že "
+"funkce vytvořené s lambda výrazy nemohou obsahovat příkazy nebo anotace."
 
 #: ../../reference/expressions.rst:1984
 msgid "Expression lists"
-msgstr ""
+msgstr "Seznamy výrazů"
 
 #: ../../reference/expressions.rst:2000
 msgid ""
@@ -2942,6 +3053,9 @@ msgid ""
 "least one comma yields a tuple.  The length of the tuple is the number of "
 "expressions in the list.  The expressions are evaluated from left to right."
 msgstr ""
+"Kromě případů, které jsou součástí displeje seznamu nebo sady, seznam výrazů"
+" obsahující alespoň jednu čárku vydává tuple. Délka tuple je počet výrazů v "
+"seznamu. Výrazy jsou vyhodnocovány zleva doprava."
 
 #: ../../reference/expressions.rst:2009
 msgid ""
@@ -2949,15 +3063,18 @@ msgid ""
 " :term:`iterable`.  The iterable is expanded into a sequence of items, which"
 " are included in the new tuple, list, or set, at the site of the unpacking."
 msgstr ""
+"Hvezdička ``*`` označuje :dfn:`unpacking iterable`. Její operand musí být "
+":term:`iterable`. Iterable se rozšíří na posloupnost prvků, které jsou "
+"začleny v nové tuple, seznamu nebo sadě na místě unpackingu."
 
 #: ../../reference/expressions.rst:2014
 msgid ""
 "Iterable unpacking in expression lists, originally proposed by :pep:`448`."
-msgstr ""
+msgstr "Unpacking iterable v seznamech výrazů, původně navržený :pep:`448`."
 
 #: ../../reference/expressions.rst:2017
 msgid "Any item in an expression list may be starred. See :pep:`646`."
-msgstr ""
+msgstr "Kterýkoli prvek v seznamu výrazů může být hvezdička. Viz :pep:`646`."
 
 #: ../../reference/expressions.rst:2022
 msgid ""
@@ -2967,10 +3084,15 @@ msgid ""
 "expression. (To create an empty tuple, use an empty pair of parentheses: "
 "``()``.)"
 msgstr ""
+"Zavřšující čárka je vyžadována pouze k vytvoření jednopolodké tuple, jako je"
+" ``1,``; je volitelná ve všech ostatních případech. Jeden výraz bez "
+"zavřšující čárky nevytvaru00edké tuple, ale spolučø vyráží hodnotu daného "
+"výrazu. (Chcete-li vytvořit prázdnou tuple, použíjte prázdný pár závorek: "
+"``()``..)"
 
 #: ../../reference/expressions.rst:2033
 msgid "Evaluation order"
-msgstr ""
+msgstr "Pořadí vyhodnocování"
 
 #: ../../reference/expressions.rst:2037
 msgid ""
@@ -2978,12 +3100,16 @@ msgid ""
 "evaluating an assignment, the right-hand side is evaluated before the left-"
 "hand side."
 msgstr ""
+"Python vyhodnocuje výrazy zleva doprava. Všimněte si, že během vyhodnocování"
+" přiřazení je pravá strana vyhodnocena před levou stranou."
 
 #: ../../reference/expressions.rst:2040
 msgid ""
 "In the following lines, expressions will be evaluated in the arithmetic "
 "order of their suffixes::"
 msgstr ""
+"V následujících řádcích budou výrazy vyhodnoceny v aritmetickém pořadí "
+"jejich přípon::"
 
 #: ../../reference/expressions.rst:2043
 #, python-brace-format
@@ -2995,10 +3121,16 @@ msgid ""
 "expr1(expr2, expr3, *expr4, **expr5)\n"
 "expr3, expr4 = expr1, expr2"
 msgstr ""
+"expr1, expr2, expr3, expr4\n"
+"(expr1, expr2, expr3, expr4)\n"
+"{expr1: expr2, expr3: expr4}\n"
+"expr1 + expr2 * (expr3 - expr4)\n"
+"expr1(expr2, expr3, *expr4, **expr5)\n"
+"expr3, expr4 = expr1, expr2"
 
 #: ../../reference/expressions.rst:2054
 msgid "Operator precedence"
-msgstr ""
+msgstr "Priorita operátorů"
 
 #: ../../reference/expressions.rst:2059
 msgid ""
@@ -3009,6 +3141,12 @@ msgid ""
 "left to right (except for exponentiation and conditional expressions, which "
 "group from right to left)."
 msgstr ""
+"Následující tabulka shrnuje prioritu operátorů v Pythonu, od nejvtší "
+"priority (nejvíce vázící) k nejnižší prioritě (nejméně vázící). Operátory ve"
+" stejném poli mají stejnou prioritu. Pokud není syntaxe explicitně dána, "
+"jsou operátory binární. Operátory ve stejném poli se sdružují zleva doprava "
+"(s výjimkou umocnění a podmínkových výrazů, které se sdružují zprava "
+"doleva)."
 
 #: ../../reference/expressions.rst:2065
 msgid ""
@@ -3016,169 +3154,177 @@ msgid ""
 "same precedence and have a left-to-right chaining feature as described in "
 "the :ref:`comparisons` section."
 msgstr ""
+"Všimněte si, že porovnání, testy členství a testy identity mají stejnou "
+"prioritu a mají funkci řetězení zleva doprava, jak je popsáno v šękci "
+":ref:`comparisons`."
 
 #: ../../reference/expressions.rst:2071
 msgid "Operator"
-msgstr ""
+msgstr "Operátor"
 
 #: ../../reference/expressions.rst:2071
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: ../../reference/expressions.rst:2073
 msgid "``(expressions...)``,"
-msgstr ""
+msgstr "``(expressions...)``,"
 
 #: ../../reference/expressions.rst:2075
 #, python-brace-format
 msgid "``[expressions...]``, ``{key: value...}``, ``{expressions...}``"
-msgstr ""
+msgstr "``[expressions...]``, ``{key: value...}``, ``{expressions...}``"
 
 #: ../../reference/expressions.rst:2073
 msgid ""
 "Binding or parenthesized expression, list display, dictionary display, set "
 "display"
 msgstr ""
+"Vázání nebo parenthezovaný výraz, displej seznamu, displej slovníku, displej"
+" sady"
 
 #: ../../reference/expressions.rst:2079
 msgid "``x[index]``, ``x[index:index]``, ``x(arguments...)``, ``x.attribute``"
 msgstr ""
+"``x[index]``, ``x[index:index]``, ``x(arguments...)``, ``x.attribute``"
 
 #: ../../reference/expressions.rst:2079
 msgid "Subscription, slicing, call, attribute reference"
-msgstr ""
+msgstr "Subscript, slice, volání, odkaz na atribut"
 
 #: ../../reference/expressions.rst:2082
 msgid ":keyword:`await x <await>`"
-msgstr ""
+msgstr ":keyword:`await x <await>`"
 
 #: ../../reference/expressions.rst:2084
 msgid "``**``"
-msgstr ""
+msgstr "``**``"
 
 #: ../../reference/expressions.rst:2084
 msgid "Exponentiation [#]_"
-msgstr ""
+msgstr "Umocnění [#]_"
 
 #: ../../reference/expressions.rst:2086
 msgid "``+x``, ``-x``, ``~x``"
-msgstr ""
+msgstr "``+x``, ``-x``, ``~x``"
 
 #: ../../reference/expressions.rst:2086
 msgid "Positive, negative, bitwise NOT"
-msgstr ""
+msgstr "Kladný, záporný, bitový NOT"
 
 #: ../../reference/expressions.rst:2088
 msgid "``*``, ``@``, ``/``, ``//``, ``%``"
-msgstr ""
+msgstr "``*``, ``@``, ``/``, ``//``, ``%``"
 
 #: ../../reference/expressions.rst:2088
 msgid ""
 "Multiplication, matrix multiplication, division, floor division, remainder "
 "[#]_"
-msgstr ""
+msgstr "Násobení, maticové násobení, dělení, celočíselné dělení, zbytek [#]_"
 
 #: ../../reference/expressions.rst:2092
 msgid "``+``, ``-``"
-msgstr ""
+msgstr "``+``, ``-``"
 
 #: ../../reference/expressions.rst:2092
 msgid "Addition and subtraction"
-msgstr ""
+msgstr "Sčítání a odebcíní"
 
 #: ../../reference/expressions.rst:2094
 msgid "``<<``, ``>>``"
-msgstr ""
+msgstr "``<<``, ``>>``"
 
 #: ../../reference/expressions.rst:2094
 msgid "Shifts"
-msgstr ""
+msgstr "Posun"
 
 #: ../../reference/expressions.rst:2096
 msgid "``&``"
-msgstr ""
+msgstr "``&``"
 
 #: ../../reference/expressions.rst:2096
 msgid "Bitwise AND"
-msgstr ""
+msgstr "Bitové AND"
 
 #: ../../reference/expressions.rst:2098
 msgid "``^``"
-msgstr ""
+msgstr "``^``"
 
 #: ../../reference/expressions.rst:2098
 msgid "Bitwise XOR"
-msgstr ""
+msgstr "Bitové XOR"
 
 #: ../../reference/expressions.rst:2100
 msgid "``|``"
-msgstr ""
+msgstr "``|``"
 
 #: ../../reference/expressions.rst:2100
 msgid "Bitwise OR"
-msgstr ""
+msgstr "Bitové OR"
 
 #: ../../reference/expressions.rst:2102
 msgid ""
 ":keyword:`in`, :keyword:`not in`, :keyword:`is`, :keyword:`is not`, ``<``, "
 "``<=``, ``>``, ``>=``, ``!=``, ``==``"
 msgstr ""
+":keyword:`in`, :keyword:`not in`, :keyword:`is`, :keyword:`is not`, ``<``, "
+"``<=``, ``>``, ``>=``, ``!=``, ``==``"
 
 #: ../../reference/expressions.rst:2102
 msgid "Comparisons, including membership tests and identity tests"
-msgstr ""
+msgstr "Porovnání, vkladání testů členství a testů identity"
 
 #: ../../reference/expressions.rst:2106
 msgid ":keyword:`not x <not>`"
-msgstr ""
+msgstr ":keyword:`not x <not>`"
 
 #: ../../reference/expressions.rst:2106
 msgid "Boolean NOT"
-msgstr ""
+msgstr "Booleovské NOT"
 
 #: ../../reference/expressions.rst:2108
 msgid ":keyword:`and`"
-msgstr ""
+msgstr ":keyword:`and`"
 
 #: ../../reference/expressions.rst:2108
 msgid "Boolean AND"
-msgstr ""
+msgstr "Booleovské AND"
 
 #: ../../reference/expressions.rst:2110
 msgid ":keyword:`or`"
-msgstr ""
+msgstr ":keyword:`or`"
 
 #: ../../reference/expressions.rst:2110
 msgid "Boolean OR"
-msgstr ""
+msgstr "Booleovské OR"
 
 #: ../../reference/expressions.rst:2112
 msgid ":keyword:`if <if_expr>` -- :keyword:`!else`"
-msgstr ""
+msgstr ":keyword:`if <if_expr>` -- :keyword:`!else`"
 
 #: ../../reference/expressions.rst:2112
 msgid "Conditional expression"
-msgstr ""
+msgstr "Podmínkový výraz"
 
 #: ../../reference/expressions.rst:2114
 msgid ":keyword:`lambda`"
-msgstr ""
+msgstr ":keyword:`lambda`"
 
 #: ../../reference/expressions.rst:2114
 msgid "Lambda expression"
-msgstr ""
+msgstr "Lambda výraz"
 
 #: ../../reference/expressions.rst:2116
 msgid "``:=``"
-msgstr ""
+msgstr "``:=``"
 
 #: ../../reference/expressions.rst:2116
 msgid "Assignment expression"
-msgstr ""
+msgstr "Výraz přiřazení"
 
 #: ../../reference/expressions.rst:2121
 msgid "Footnotes"
-msgstr ""
+msgstr "Poznámky pod čarou"
 
 #: ../../reference/expressions.rst:2122
 #, python-format
@@ -3192,6 +3338,14 @@ msgid ""
 "the first argument instead, and so returns ``-1e-100`` in this case. Which "
 "approach is more appropriate depends on the application."
 msgstr ""
+"Zatímco ``abs(x%y) < abs(y)`` je matematicky pravdivé, pro floatų to nemusí "
+"být numerický pravdivé kvůli zaokrouhlování. Například na platformě, kde je "
+"Python float IEEE 754 double-precision číslem, aby ``-1e-100 % 1e100`` měl "
+"stejné znaménko jako ``1e100``, vypočítaný výsledek je ``-1e-100 + 1e100``, "
+"který je numerický přesně roven ``1e100``. Funkce :func:`math.fmod` místem "
+"vrací výsledek, jehož znaménko odpovídá znaménku prvního argumentu, a proto "
+"v tomto případě vrací ``-1e-100``. Který přístup je vhodnější, závisí na "
+"aplikaci."
 
 #: ../../reference/expressions.rst:2131
 msgid ""
@@ -3200,6 +3354,10 @@ msgid ""
 "cases, Python returns the latter result, in order to preserve that "
 "``divmod(x,y)[0] * y + x % y`` be very close to ``x``."
 msgstr ""
+"Pokud je x velmi blízko přesnému celockém násobku y, je možné, že ``x//y`` "
+"bude o jednu větší než ``(x-x%y)//y`` kvůli zaokrouhlování. V takových "
+"případech Python vrací poslední výsledek, aby si zachoval, že "
+"``divmod(x,y)[0] * y + x % y`` je velmi blízko ``x``."
 
 #: ../../reference/expressions.rst:2136
 msgid ""
@@ -3214,6 +3372,16 @@ msgid ""
 "LETTER C), followed by a :dfn:`combining character` at code position U+0327 "
 "(COMBINING CEDILLA)."
 msgstr ""
+"Standard Unicode rozlišuje mezi :dfn:`code points` (např. U+0041) a "
+":dfn:`abstract characters` (např. \"LATIN CAPITAL LETTER A\"). Zatímco "
+"většina abstratkních znaků v Unicode je reprezentována pouze jedním code "
+"point, existuje řada abstratkních znaků, které mohou být navnav "
+"reprezentovány sekvencí více než jednoho code point. Například abstratkní "
+"znak \"LATIN CAPITAL LETTER C WITH CEDILLA\" může být reprezentován jako "
+"jediné :dfn:`precomposed character` na pozici code U+00C7, nebo jako "
+"sekvence :dfn:`base character` na pozici code U+0043 (LATIN CAPITAL LETTER "
+"C) následováno :dfn:`combining character` na pozici code U+0327 (COMBINING "
+"CEDILLA)."
 
 #: ../../reference/expressions.rst:2147
 msgid ""
@@ -3222,12 +3390,19 @@ msgid ""
 " == \"\\u0043\\u0327\"`` is ``False``, even though both strings represent "
 "the same abstract character \"LATIN CAPITAL LETTER C WITH CEDILLA\"."
 msgstr ""
+"Operátory porovnání na řetězcích se porovnávají na úroveore bodů kódu "
+"Unicode. To může být kontraintuitivní pro člvěka. Například ``\"\\u00C7\" =="
+" \"\\u0043\\u0327\"`` je ``False``, i když oba řetězce reprezentují stejný "
+"abstratkní znak \"LATIN CAPITAL LETTER C WITH CEDILLA\"."
 
 #: ../../reference/expressions.rst:2152
 msgid ""
 "To compare strings at the level of abstract characters (that is, in a way "
 "intuitive to humans), use :func:`unicodedata.normalize`."
 msgstr ""
+"Chcete-li porovnat řetězce na úroveore abstratkních znaků (to jest, "
+"způsobem, který je intuitivní pro člvěka), použíjte "
+":func:`unicodedata.normalize`."
 
 #: ../../reference/expressions.rst:2155
 msgid ""
@@ -3236,50 +3411,58 @@ msgid ""
 "the :keyword:`is` operator, like those involving comparisons between "
 "instance methods, or constants.  Check their documentation for more info."
 msgstr ""
+"Kvůli automatickému trashů, seznamů zdarma a dynamické povaze deskriptorů, "
+"můžete si všimnout pozdělavého chování v určitých použitích :keyword:`is` "
+"operátoru, např. těch, které zahrnují porovnání mezi metodami instancí nebo "
+"konstantami. Viz jejich dokumnetace pro více informací."
 
 #: ../../reference/expressions.rst:2160
 msgid ""
 "The power operator ``**`` binds less tightly than an arithmetic or bitwise "
 "unary operator on its right, that is, ``2**-1`` is ``0.5``."
 msgstr ""
+"Mocnitělský operátor ``**`` váže se méně široko než aritmetický nebo bitový "
+"unární operátor na jeho pravé straně, to jest ``2**-1`` je ``0.5``."
 
 #: ../../reference/expressions.rst:2163
 msgid ""
 "The ``%`` operator is also used for string formatting; the same precedence "
 "applies."
 msgstr ""
+"Operátor ``%`` se také používá pro formálování řetězců; vztahuje se na "
+"stejnou prioritu."
 
 #: ../../reference/expressions.rst:8 ../../reference/expressions.rst:448
 #: ../../reference/expressions.rst:504 ../../reference/expressions.rst:1840
 #: ../../reference/expressions.rst:1880 ../../reference/expressions.rst:1931
 #: ../../reference/expressions.rst:1958 ../../reference/expressions.rst:1986
 msgid "expression"
-msgstr ""
+msgstr "výraz"
 
 #: ../../reference/expressions.rst:8
 msgid "BNF"
-msgstr ""
+msgstr "BNF"
 
 #: ../../reference/expressions.rst:28 ../../reference/expressions.rst:1320
 #: ../../reference/expressions.rst:1368
 msgid "arithmetic"
-msgstr ""
+msgstr "aritmetické"
 
 #: ../../reference/expressions.rst:28
 msgid "conversion"
-msgstr ""
+msgstr "konverze"
 
 #: ../../reference/expressions.rst:50
 msgid "atom"
-msgstr ""
+msgstr "atom"
 
 #: ../../reference/expressions.rst:67 ../../reference/expressions.rst:81
 msgid "name"
-msgstr ""
+msgstr "jméno"
 
 #: ../../reference/expressions.rst:67
 msgid "identifier"
-msgstr ""
+msgstr "identifikátor"
 
 #: ../../reference/expressions.rst:73 ../../reference/expressions.rst:625
 #: ../../reference/expressions.rst:680 ../../reference/expressions.rst:811
@@ -3287,39 +3470,39 @@ msgstr ""
 #: ../../reference/expressions.rst:1357 ../../reference/expressions.rst:1410
 #: ../../reference/expressions.rst:1514
 msgid "exception"
-msgstr ""
+msgstr "výjimka"
 
 #: ../../reference/expressions.rst:73
 msgid "NameError"
-msgstr ""
+msgstr "NameError"
 
 #: ../../reference/expressions.rst:81
 msgid "mangling"
-msgstr ""
+msgstr "maskování"
 
 #: ../../reference/expressions.rst:81
 msgid "private"
-msgstr ""
+msgstr "soukromé"
 
 #: ../../reference/expressions.rst:81
 msgid "names"
-msgstr ""
+msgstr "jména"
 
 #: ../../reference/expressions.rst:132
 msgid "literal"
-msgstr ""
+msgstr "literál"
 
 #: ../../reference/expressions.rst:149 ../../reference/expressions.rst:427
 msgid "immutable"
-msgstr ""
+msgstr "nezmnitelné"
 
 #: ../../reference/expressions.rst:149
 msgid "data"
-msgstr ""
+msgstr "data"
 
 #: ../../reference/expressions.rst:149
 msgid "type"
-msgstr ""
+msgstr "typ"
 
 #: ../../reference/expressions.rst:149 ../../reference/expressions.rst:330
 #: ../../reference/expressions.rst:356 ../../reference/expressions.rst:384
@@ -3331,368 +3514,368 @@ msgstr ""
 #: ../../reference/expressions.rst:1239 ../../reference/expressions.rst:1246
 #: ../../reference/expressions.rst:1805 ../../reference/expressions.rst:1998
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../reference/expressions.rst:217
 msgid "parenthesized form"
-msgstr ""
+msgstr "parenthezovaná forma"
 
 #: ../../reference/expressions.rst:217 ../../reference/expressions.rst:448
 #: ../../reference/expressions.rst:1063
 msgid "() (parentheses)"
-msgstr ""
+msgstr "() (závorky)"
 
 #: ../../reference/expressions.rst:217
 msgid "tuple display"
-msgstr ""
+msgstr "displej tuple"
 
 #: ../../reference/expressions.rst:230 ../../reference/expressions.rst:330
 msgid "empty"
-msgstr ""
+msgstr "prázdné"
 
 #: ../../reference/expressions.rst:230 ../../reference/expressions.rst:942
 #: ../../reference/expressions.rst:1019 ../../reference/expressions.rst:1998
 msgid "tuple"
-msgstr ""
+msgstr "tuple"
 
 #: ../../reference/expressions.rst:236 ../../reference/expressions.rst:2020
 msgid "comma"
-msgstr ""
+msgstr "čárka"
 
 #: ../../reference/expressions.rst:236 ../../reference/expressions.rst:330
 #: ../../reference/expressions.rst:356 ../../reference/expressions.rst:384
 #: ../../reference/expressions.rst:1013 ../../reference/expressions.rst:1063
 #: ../../reference/expressions.rst:1986
 msgid ", (comma)"
-msgstr ""
+msgstr ", (čárka)"
 
 #: ../../reference/expressions.rst:251 ../../reference/expressions.rst:330
 #: ../../reference/expressions.rst:356 ../../reference/expressions.rst:384
 msgid "comprehensions"
-msgstr ""
+msgstr "pochopení"
 
 #: ../../reference/expressions.rst:261
 msgid "for"
-msgstr ""
+msgstr "for"
 
 #: ../../reference/expressions.rst:261 ../../reference/expressions.rst:296
 msgid "in comprehensions"
-msgstr ""
+msgstr "v pochodech"
 
 #: ../../reference/expressions.rst:261 ../../reference/expressions.rst:1931
 msgid "if"
-msgstr ""
+msgstr "if"
 
 #: ../../reference/expressions.rst:261
 msgid "async for"
-msgstr ""
+msgstr "async for"
 
 #: ../../reference/expressions.rst:296 ../../reference/expressions.rst:1264
 msgid "await"
-msgstr ""
+msgstr "await"
 
 #: ../../reference/expressions.rst:330 ../../reference/expressions.rst:913
 #: ../../reference/expressions.rst:942 ../../reference/expressions.rst:1019
 #: ../../reference/expressions.rst:1986
 msgid "list"
-msgstr ""
+msgstr "seznam"
 
 #: ../../reference/expressions.rst:330 ../../reference/expressions.rst:356
 #: ../../reference/expressions.rst:384
 msgid "display"
-msgstr ""
+msgstr "displej"
 
 #: ../../reference/expressions.rst:330 ../../reference/expressions.rst:938
 msgid "[] (square brackets)"
-msgstr ""
+msgstr "[] (hranatné závorky)"
 
 #: ../../reference/expressions.rst:330
 msgid "list expression"
-msgstr ""
+msgstr "výraz seznamu"
 
 #: ../../reference/expressions.rst:330 ../../reference/expressions.rst:356
 #: ../../reference/expressions.rst:1986
 msgid "expression list"
-msgstr ""
+msgstr "seznam výrazů"
 
 #: ../../reference/expressions.rst:356
 msgid "set"
-msgstr ""
+msgstr "sada"
 
 #: ../../reference/expressions.rst:356 ../../reference/expressions.rst:384
 #, python-brace-format
 msgid "{} (curly brackets)"
-msgstr ""
+msgstr "{} (složené závorky)"
 
 #: ../../reference/expressions.rst:356
 msgid "set expression"
-msgstr ""
+msgstr "výraz sady"
 
 #: ../../reference/expressions.rst:384 ../../reference/expressions.rst:410
 #: ../../reference/expressions.rst:942
 msgid "dictionary"
-msgstr ""
+msgstr "slovník"
 
 #: ../../reference/expressions.rst:384
 msgid "key"
-msgstr ""
+msgstr "klíč"
 
 #: ../../reference/expressions.rst:384
 msgid "value"
-msgstr ""
+msgstr "hodnota"
 
 #: ../../reference/expressions.rst:384
 msgid "key/value pair"
-msgstr ""
+msgstr "pár klíč/hodnota"
 
 #: ../../reference/expressions.rst:384
 msgid "dictionary expression"
-msgstr ""
+msgstr "výraz slovníku"
 
 #: ../../reference/expressions.rst:384 ../../reference/expressions.rst:1013
 #: ../../reference/expressions.rst:1958
 msgid ": (colon)"
-msgstr ""
+msgstr ": (dvojtečka)"
 
 #: ../../reference/expressions.rst:384
 msgid "in dictionary expressions"
-msgstr ""
+msgstr "ve výrazech slovníku"
 
 #: ../../reference/expressions.rst:384 ../../reference/expressions.rst:410
 msgid "in dictionary displays"
-msgstr ""
+msgstr "v displejích slovníku"
 
 #: ../../reference/expressions.rst:410 ../../reference/expressions.rst:1146
 #: ../../reference/expressions.rst:2005
 msgid "unpacking"
-msgstr ""
+msgstr "rozbalování"
 
 #: ../../reference/expressions.rst:410 ../../reference/expressions.rst:1176
 #: ../../reference/expressions.rst:1284
 msgid "**"
-msgstr ""
+msgstr "**"
 
 #: ../../reference/expressions.rst:427
 msgid "hashable"
-msgstr ""
+msgstr "hashabilní"
 
 #: ../../reference/expressions.rst:448 ../../reference/expressions.rst:504
 #: ../../reference/expressions.rst:613
 msgid "generator"
-msgstr ""
+msgstr "generátor"
 
 #: ../../reference/expressions.rst:448
 msgid "generator expression"
-msgstr ""
+msgstr "výraz generátoru"
 
 #: ../../reference/expressions.rst:504 ../../reference/expressions.rst:1264
 msgid "keyword"
-msgstr ""
+msgstr "klíčové slovo"
 
 #: ../../reference/expressions.rst:504 ../../reference/expressions.rst:702
 msgid "yield"
-msgstr ""
+msgstr "yield"
 
 #: ../../reference/expressions.rst:504 ../../reference/expressions.rst:572
 msgid "from"
-msgstr ""
+msgstr "from"
 
 #: ../../reference/expressions.rst:504 ../../reference/expressions.rst:1211
 #: ../../reference/expressions.rst:1225 ../../reference/expressions.rst:1958
 msgid "function"
-msgstr ""
+msgstr "funkce"
 
 #: ../../reference/expressions.rst:558
 msgid "coroutine"
-msgstr ""
+msgstr "coroutine"
 
 #: ../../reference/expressions.rst:572
 msgid "yield from expression"
-msgstr ""
+msgstr "výraz yield from"
 
 #: ../../reference/expressions.rst:625
 msgid "StopIteration"
-msgstr ""
+msgstr "StopIteration"
 
 #: ../../reference/expressions.rst:680 ../../reference/expressions.rst:866
 msgid "GeneratorExit"
-msgstr ""
+msgstr "GeneratorExit"
 
 #: ../../reference/expressions.rst:702
 msgid "examples"
-msgstr ""
+msgstr "příklady"
 
 #: ../../reference/expressions.rst:801
 msgid "asynchronous-generator"
-msgstr ""
+msgstr "asynchronous-generator"
 
 #: ../../reference/expressions.rst:811
 msgid "StopAsyncIteration"
-msgstr ""
+msgstr "StopAsyncIteration"
 
 #: ../../reference/expressions.rst:890
 msgid "primary"
-msgstr ""
+msgstr "primární"
 
 #: ../../reference/expressions.rst:904
 msgid "attribute"
-msgstr ""
+msgstr "atribut"
 
 #: ../../reference/expressions.rst:904
 msgid "reference"
-msgstr ""
+msgstr "odkaz"
 
 #: ../../reference/expressions.rst:904
 msgid ". (dot)"
-msgstr ""
+msgstr ". (tečka)"
 
 #: ../../reference/expressions.rst:904
 msgid "attribute reference"
-msgstr ""
+msgstr "odkaz na atribut"
 
 #: ../../reference/expressions.rst:913
 msgid "AttributeError"
-msgstr ""
+msgstr "AttributeError"
 
 #: ../../reference/expressions.rst:913
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../reference/expressions.rst:938
 msgid "subscription"
-msgstr ""
+msgstr "subscript"
 
 #: ../../reference/expressions.rst:942 ../../reference/expressions.rst:1019
 #: ../../reference/expressions.rst:1805
 msgid "sequence"
-msgstr ""
+msgstr "sekvence"
 
 #: ../../reference/expressions.rst:942
 msgid "mapping"
-msgstr ""
+msgstr "mapování"
 
 #: ../../reference/expressions.rst:942 ../../reference/expressions.rst:999
 #: ../../reference/expressions.rst:1019
 msgid "string"
-msgstr ""
+msgstr "řetězec"
 
 #: ../../reference/expressions.rst:942 ../../reference/expressions.rst:999
 msgid "item"
-msgstr ""
+msgstr "prvek"
 
 #: ../../reference/expressions.rst:999
 msgid "character"
-msgstr ""
+msgstr "znak"
 
 #: ../../reference/expressions.rst:1013
 msgid "slicing"
-msgstr ""
+msgstr "stříhování"
 
 #: ../../reference/expressions.rst:1013
 msgid "slice"
-msgstr ""
+msgstr "stříhování"
 
 #: ../../reference/expressions.rst:1045
 msgid "start (slice object attribute)"
-msgstr ""
+msgstr "start (atribut objektu slice)"
 
 #: ../../reference/expressions.rst:1045
 msgid "stop (slice object attribute)"
-msgstr ""
+msgstr "stop (atribut objektu slice)"
 
 #: ../../reference/expressions.rst:1045
 msgid "step (slice object attribute)"
-msgstr ""
+msgstr "step (atribut objektu slice)"
 
 #: ../../reference/expressions.rst:1063
 msgid "callable"
-msgstr ""
+msgstr "vollné"
 
 #: ../../reference/expressions.rst:1063 ../../reference/expressions.rst:1211
 #: ../../reference/expressions.rst:1225 ../../reference/expressions.rst:1239
 #: ../../reference/expressions.rst:1246 ../../reference/expressions.rst:1256
 msgid "call"
-msgstr ""
+msgstr "volání"
 
 #: ../../reference/expressions.rst:1063
 msgid "argument"
-msgstr ""
+msgstr "argument"
 
 #: ../../reference/expressions.rst:1063 ../../reference/expressions.rst:1096
 msgid "call semantics"
-msgstr ""
+msgstr "sémantika volání"
 
 #: ../../reference/expressions.rst:1063
 msgid "argument list"
-msgstr ""
+msgstr "seznam argumentů"
 
 #: ../../reference/expressions.rst:1063
 msgid "= (equals)"
-msgstr ""
+msgstr "= (rovné se)"
 
 #: ../../reference/expressions.rst:1063 ../../reference/expressions.rst:1146
 #: ../../reference/expressions.rst:1176
 msgid "in function calls"
-msgstr ""
+msgstr "ve voláních funkcí"
 
 #: ../../reference/expressions.rst:1096
 msgid "parameter"
-msgstr ""
+msgstr "parametr"
 
 #: ../../reference/expressions.rst:1146 ../../reference/expressions.rst:1381
 #: ../../reference/expressions.rst:2005
 msgid "* (asterisk)"
-msgstr ""
+msgstr "* (hvězdička)"
 
 #: ../../reference/expressions.rst:1211
 msgid "user-defined"
-msgstr ""
+msgstr "uživatelsky definované"
 
 #: ../../reference/expressions.rst:1211
 msgid "user-defined function"
-msgstr ""
+msgstr "uživatelsky definovaná funkce"
 
 #: ../../reference/expressions.rst:1225
 msgid "built-in function"
-msgstr ""
+msgstr "vestavbná funkce"
 
 #: ../../reference/expressions.rst:1225
 msgid "method"
-msgstr ""
+msgstr "metoda"
 
 #: ../../reference/expressions.rst:1225
 msgid "built-in method"
-msgstr ""
+msgstr "vestavbná metoda"
 
 #: ../../reference/expressions.rst:1239
 msgid "class"
-msgstr ""
+msgstr "třída"
 
 #: ../../reference/expressions.rst:1239
 msgid "class object"
-msgstr ""
+msgstr "objekt třídy"
 
 #: ../../reference/expressions.rst:1246
 msgid "class instance"
-msgstr ""
+msgstr "instance třídy"
 
 #: ../../reference/expressions.rst:1246 ../../reference/expressions.rst:1256
 msgid "instance"
-msgstr ""
+msgstr "instance"
 
 #: ../../reference/expressions.rst:1256
 msgid "__call__() (object method)"
-msgstr ""
+msgstr "__call__() (objektová metoda)"
 
 #: ../../reference/expressions.rst:1284
 msgid "power"
-msgstr ""
+msgstr "mocnina"
 
 #: ../../reference/expressions.rst:1284 ../../reference/expressions.rst:1320
 #: ../../reference/expressions.rst:1368 ../../reference/expressions.rst:1496
 #: ../../reference/expressions.rst:1525 ../../reference/expressions.rst:1840
 msgid "operation"
-msgstr ""
+msgstr "operace"
 
 #: ../../reference/expressions.rst:1284 ../../reference/expressions.rst:1329
 #: ../../reference/expressions.rst:1338 ../../reference/expressions.rst:1346

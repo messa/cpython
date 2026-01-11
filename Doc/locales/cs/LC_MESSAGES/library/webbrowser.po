@@ -11,29 +11,31 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/webbrowser.rst:2
 msgid ":mod:`!webbrowser` --- Convenient web-browser controller"
-msgstr ""
+msgstr ":mod:`!webbrowser` --- Pohodlný ovladač webového prohlížeče"
 
 #: ../../library/webbrowser.rst:10
 msgid "**Source code:** :source:`Lib/webbrowser.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/webbrowser.py`"
 
 #: ../../library/webbrowser.rst:14
 msgid ""
 "The :mod:`webbrowser` module provides a high-level interface to allow "
-"displaying web-based documents to users. Under most circumstances, simply"
-" calling the :func:`.open` function from this module will do the right "
-"thing."
+"displaying web-based documents to users. Under most circumstances, simply "
+"calling the :func:`.open` function from this module will do the right thing."
 msgstr ""
+"Modul :mod:`webbrowser` poskytuje vysokoúrovňové rozhraní pro zobrazování "
+"webových dokumentů uživatelům. Ve většině případů bude stačit jednoduše "
+"zavolat funkci :func:`.open` z tohoto modulu."
 
 #: ../../library/webbrowser.rst:18
 msgid ""
@@ -42,132 +44,176 @@ msgid ""
 "display isn't available.  If text-mode browsers are used, the calling "
 "process will block until the user exits the browser."
 msgstr ""
+"Na Unixu jsou grafické prohlížeče preferovány na X11, ale textové prohlížeče"
+" budou použity, pokud grafické prohlížeče nejsou dostupné nebo není dostupný"
+" X11 displej. Pokud jsou použity textové prohlížeče, volající proces se "
+"zablokuje, dokud uživatel neukončí prohlížeč."
 
 #: ../../library/webbrowser.rst:23
 #, python-format
 msgid ""
-"If the environment variable :envvar:`BROWSER` exists, it is interpreted "
-"as the :data:`os.pathsep`-separated list of browsers to try ahead of the "
+"If the environment variable :envvar:`BROWSER` exists, it is interpreted as "
+"the :data:`os.pathsep`-separated list of browsers to try ahead of the "
 "platform defaults.  When the value of a list part contains the string "
-"``%s``, then it is interpreted as a literal browser command line to be "
-"used with the argument URL substituted for ``%s``; if the value is a "
-"single word that refers to one of the already registered browsers this "
-"browser is added to the front of the search list; if the part does not "
-"contain ``%s``, it is simply interpreted as the name of the browser to "
-"launch. [1]_"
+"``%s``, then it is interpreted as a literal browser command line to be used "
+"with the argument URL substituted for ``%s``; if the value is a single word "
+"that refers to one of the already registered browsers this browser is added "
+"to the front of the search list; if the part does not contain ``%s``, it is "
+"simply interpreted as the name of the browser to launch. [1]_"
 msgstr ""
+"Pokud existuje proměnná prostředí :envvar:`BROWSER`, je interpretována jako "
+"seznam prohlížečů oddělených :data:`os.pathsep`, které se mají vyzkoušet "
+"před výchozími hodnotami platformy. Pokud hodnota jedné části seznamu "
+"obsahuje řetězec ``%s``, je interpretován jako řádka příkazů prohlížeče, "
+"která bude použita s argumentem URL nahrazeným za ``%s``; pokud je hodnota "
+"jediným slovem, které odkazuje na jeden z již zaregistrovaných prohlížečů, "
+"tento prohlížeč se přidá na začátek seznamu hledání; pokud část neobsahuje "
+"``%s``, je jednoduše interpretována jako název prohlížeče, který se má "
+"spustit. [1]_"
 
 #: ../../library/webbrowser.rst:34
 msgid ""
-"The :envvar:`BROWSER` variable can now also be used to reorder the list "
-"of platform defaults. This is particularly useful on macOS where the "
-"platform defaults do not refer to command-line tools on :envvar:`PATH`."
+"The :envvar:`BROWSER` variable can now also be used to reorder the list of "
+"platform defaults. This is particularly useful on macOS where the platform "
+"defaults do not refer to command-line tools on :envvar:`PATH`."
 msgstr ""
+"Proměnná :envvar:`BROWSER` nyní může být také použita k přeuspořádání "
+"seznamu výchozích hodnot platformy. To je obzvláště užitečné na macOS, kde "
+"výchozí hodnoty platformy neodkazují na nástroje příkazového řádku v "
+":envvar:`PATH`."
 
 #: ../../library/webbrowser.rst:39
 msgid ""
-"For non-Unix platforms, or when a remote browser is available on Unix, "
-"the controlling process will not wait for the user to finish with the "
-"browser, but allow the remote browser to maintain its own windows on the "
-"display.  If remote browsers are not available on Unix, the controlling "
-"process will launch a new browser and wait."
+"For non-Unix platforms, or when a remote browser is available on Unix, the "
+"controlling process will not wait for the user to finish with the browser, "
+"but allow the remote browser to maintain its own windows on the display.  If"
+" remote browsers are not available on Unix, the controlling process will "
+"launch a new browser and wait."
 msgstr ""
+"Pro mimo-Unixové platformy nebo když je na Unixu dostupný vzdálený "
+"prohlížeč, kontrolující proces nebude čekat, až se uživatel skončí s "
+"prohlížečem, ale umožní vzdálenému prohlížeči udržovat si vlastní okna na "
+"displeji. Pokud vzdálené prohlížeče nejsou na Unixu dostupné, kontrolující "
+"proces spustí nový prohlížeč a bude čekat."
 
 #: ../../library/webbrowser.rst:45
 msgid ""
-"On iOS, the :envvar:`BROWSER` environment variable, as well as any "
-"arguments controlling autoraise, browser preference, and new tab/window "
-"creation will be ignored. Web pages will *always* be opened in the user's"
-" preferred browser, in a new tab, with the browser being brought to the "
-"foreground. The use of the :mod:`webbrowser` module on iOS requires the "
-":mod:`ctypes` module. If :mod:`ctypes` isn't available, calls to "
-":func:`.open` will fail."
+"On iOS, the :envvar:`BROWSER` environment variable, as well as any arguments"
+" controlling autoraise, browser preference, and new tab/window creation will"
+" be ignored. Web pages will *always* be opened in the user's preferred "
+"browser, in a new tab, with the browser being brought to the foreground. The"
+" use of the :mod:`webbrowser` module on iOS requires the :mod:`ctypes` "
+"module. If :mod:`ctypes` isn't available, calls to :func:`.open` will fail."
 msgstr ""
+"Na iOS je proměnná prostředí :envvar:`BROWSER` a také jakékoliv argumenty "
+"kontrolující autoraise, preferenci prohlížeče a vytváření nové karty/okna "
+"ignorovány. Webové stránky budou *vždy* otevřeny v preferovaném prohlížeči "
+"uživatele, na nové kartě, s prohlížečem přivedeným do popředí. Použití "
+"modulu :mod:`webbrowser` na iOS vyžaduje modul :mod:`ctypes`. Pokud "
+":mod:`ctypes` není dostupný, volání :func:`.open` se nezdaří."
 
 #: ../../library/webbrowser.rst:55
 msgid "Command-line interface"
-msgstr ""
+msgstr "Rozhraní příkazového řádku"
 
 #: ../../library/webbrowser.rst:59
 msgid ""
-"The script :program:`webbrowser` can be used as a command-line interface "
-"for the module. It accepts a URL as the argument. It accepts the "
-"following optional parameters:"
+"The script :program:`webbrowser` can be used as a command-line interface for"
+" the module. It accepts a URL as the argument. It accepts the following "
+"optional parameters:"
 msgstr ""
+"Skript :program:`webbrowser` lze použít jako rozhraní příkazového řádku pro "
+"modul. Jako argument přijímá URL. Přijímá následující volitelné parametry:"
 
 #: ../../library/webbrowser.rst:65
 msgid "Opens the URL in a new browser window, if possible."
-msgstr ""
+msgstr "Otevře URL v novém okně prohlížeče, pokud je to možné."
 
 #: ../../library/webbrowser.rst:69
 msgid "Opens the URL in a new browser tab."
-msgstr ""
+msgstr "Otevře URL v nové kartě prohlížeče."
 
 #: ../../library/webbrowser.rst:71
 msgid "The options are, naturally, mutually exclusive.  Usage example:"
-msgstr ""
+msgstr "Volby jsou samozřejmě navzájem se vylučující. Příkład použití:"
 
 #: ../../library/webbrowser.rst:73
 msgid "python -m webbrowser -t \"https://www.python.org\""
-msgstr ""
+msgstr "python -m webbrowser -t \"https://www.python.org\""
 
 #: ../../library/webbrowser.rst:77
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/webbrowser.rst:79
 msgid "The following exception is defined:"
-msgstr ""
+msgstr "Je definována následující výjimka:"
 
 #: ../../library/webbrowser.rst:84
 msgid "Exception raised when a browser control error occurs."
-msgstr ""
+msgstr "Výjimka vyvolaná, když dojde k chybě při ovládání prohlížeče."
 
 #: ../../library/webbrowser.rst:86
 msgid "The following functions are defined:"
-msgstr ""
+msgstr "Jsou definovány následující funkce:"
 
 #: ../../library/webbrowser.rst:91
 msgid ""
-"Display *url* using the default browser. If *new* is 0, the *url* is "
-"opened in the same browser window if possible.  If *new* is 1, a new "
-"browser window is opened if possible.  If *new* is 2, a new browser page "
-"(\"tab\") is opened if possible.  If *autoraise* is ``True``, the window "
-"is raised if possible (note that under many window managers this will "
-"occur regardless of the setting of this variable)."
+"Display *url* using the default browser. If *new* is 0, the *url* is opened "
+"in the same browser window if possible.  If *new* is 1, a new browser window"
+" is opened if possible.  If *new* is 2, a new browser page (\"tab\") is "
+"opened if possible.  If *autoraise* is ``True``, the window is raised if "
+"possible (note that under many window managers this will occur regardless of"
+" the setting of this variable)."
 msgstr ""
+"Zobrazí *url* pomocí výchozího prohlížeče. Pokud je *new* rovno 0, je *url* "
+"otevřen ve stejném okně prohlížeče, pokud je to možné. Pokud je *new* rovno "
+"1, je otevřeno nové okno prohlížeče, pokud je to možné. Pokud je *new* rovno"
+" 2, je otevřena nová stránka prohlížeče (\"karta\"), pokud je to možné. "
+"Pokud je *autoraise* rovno ``True``, je okno zvéšeno, pokud je to možné "
+"(vezměte na vědomí, že v mnoha správcích oken k tomu dojde bez ohledu na "
+"nastavení této proměnné)."
 
 #: ../../library/webbrowser.rst:98 ../../library/webbrowser.rst:112
 #: ../../library/webbrowser.rst:120
 msgid ""
 "Returns ``True`` if a browser was successfully launched, ``False`` "
 "otherwise."
-msgstr ""
+msgstr "Vrací ``True``, pokud byl prohlížeč úspěšně spuštěn, jinak ``False``."
 
 #: ../../library/webbrowser.rst:100
 msgid ""
-"Note that on some platforms, trying to open a filename using this "
-"function, may work and start the operating system's associated program.  "
-"However, this is neither supported nor portable."
+"Note that on some platforms, trying to open a filename using this function, "
+"may work and start the operating system's associated program.  However, this"
+" is neither supported nor portable."
 msgstr ""
+"Vezměte na vědomí, že na některých platformách může pokus otevřít soubor "
+"pomocí této funkce pracovat a spustit program přidružený operačnímu systému."
+" Avšak to není podporováno ani přenošitelné."
 
 #: ../../library/webbrowser.rst:104
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``webbrowser.open`` with "
-"argument ``url``."
+"Raises an :ref:`auditing event <auditing>` ``webbrowser.open`` with argument"
+" ``url``."
 msgstr ""
+"Vyvolvá :ref:`audit event <auditing>` ``webbrowser.open`` s argumentem "
+"``url``."
 
 #: ../../library/webbrowser.rst:109
 msgid ""
-"Open *url* in a new window of the default browser, if possible, "
-"otherwise, open *url* in the only browser window."
+"Open *url* in a new window of the default browser, if possible, otherwise, "
+"open *url* in the only browser window."
 msgstr ""
+"Otevře *url* v novém okně výchozího prohlížeče, pokud je to možné, jinak "
+"otevře *url* v jediném okně prohlížeče."
 
 #: ../../library/webbrowser.rst:117
 msgid ""
 "Open *url* in a new page (\"tab\") of the default browser, if possible, "
 "otherwise equivalent to :func:`open_new`."
 msgstr ""
+"Otevře *url* na nové stránce (\"kartě\") výchozího prohlížeče, pokud je to "
+"možné, jinak ekvivalentní :func:`open_new`."
 
 #: ../../library/webbrowser.rst:125
 msgid ""
@@ -175,40 +221,55 @@ msgid ""
 "``None``, return a controller for a default browser appropriate to the "
 "caller's environment."
 msgstr ""
+"Vrátí ovladačov objekt pro typ prohlížeče *using*. Pokud je *using* rovno "
+"``None``, vrátí ovladač pro výchozí prohlížeč vhodný pro prostředí "
+"volájícího."
 
 #: ../../library/webbrowser.rst:132
 msgid ""
-"Register the browser type *name*.  Once a browser type is registered, the"
-" :func:`get` function can return a controller for that browser type.  If "
+"Register the browser type *name*.  Once a browser type is registered, the "
+":func:`get` function can return a controller for that browser type.  If "
 "*instance* is not provided, or is ``None``, *constructor* will be called "
 "without parameters to create an instance when needed.  If *instance* is "
 "provided, *constructor* will never be called, and may be ``None``."
 msgstr ""
+"Registruje typ prohlížeče *name*. Jakmile je typ prohlížeče registrován, "
+"funkce :func:`get` může vrátit ovladač pro tento typ prohlížeče. Pokud "
+"*instance* není poskytnut nebo je ``None``, *constructor* bude volán bez "
+"parametrů, aby vytvořil instanci při potřebě. Pokud je *instance* "
+"poskytnuta, *constructor* nikdy nebude volán a může být ``None``."
 
 #: ../../library/webbrowser.rst:138
 msgid ""
-"Setting *preferred* to ``True`` makes this browser a preferred result for"
-" a :func:`get` call with no argument.  Otherwise, this entry point is "
-"only useful if you plan to either set the :envvar:`BROWSER` variable or "
-"call :func:`get` with a nonempty argument matching the name of a handler "
-"you declare."
+"Setting *preferred* to ``True`` makes this browser a preferred result for a "
+":func:`get` call with no argument.  Otherwise, this entry point is only "
+"useful if you plan to either set the :envvar:`BROWSER` variable or call "
+":func:`get` with a nonempty argument matching the name of a handler you "
+"declare."
 msgstr ""
+"Nastavení *preferred* na ``True`` činí tento prohlížeč preferovaným "
+"výsledkem volání :func:`get` bez argumentu. Jinak je tento vstupní bod "
+"užitečný pouze v případě, že planušte buď nastavit proměnnou "
+":envvar:`BROWSER` nebo zavolat :func:`get` s ne-prázdným argumentem "
+"odpovídajícím názvu obsluhujícího prvku, který deklarujete."
 
 #: ../../library/webbrowser.rst:144
 msgid "*preferred* keyword-only parameter was added."
-msgstr ""
+msgstr "Byl přidán parametr *preferred* pouze s klíčovým slovem."
 
 #: ../../library/webbrowser.rst:147
 msgid ""
-"A number of browser types are predefined.  This table gives the type "
-"names that may be passed to the :func:`get` function and the "
-"corresponding instantiations for the controller classes, all defined in "
-"this module."
+"A number of browser types are predefined.  This table gives the type names "
+"that may be passed to the :func:`get` function and the corresponding "
+"instantiations for the controller classes, all defined in this module."
 msgstr ""
+"Je předdefinóváno mnoho typů prohlížečů. Tato tabulka udává názvy typů, "
+"které mohou být předány funkci :func:`get` a odpovídající instanční zásady "
+"pro třídy ovladačů, všechny definovány v tomto modulu."
 
 #: ../../library/webbrowser.rst:152
 msgid "Type Name"
-msgstr ""
+msgstr "Jméno typu"
 
 #: ../../library/webbrowser.rst:152
 msgid "Class Name"
@@ -382,12 +443,12 @@ msgstr ""
 
 #: ../../library/webbrowser.rst:196
 msgid ""
-"\"Konqueror\" is the file manager for the KDE desktop environment for "
-"Unix, and only makes sense to use if KDE is running.  Some way of "
-"reliably detecting KDE would be nice; the :envvar:`!KDEDIR` variable is "
-"not sufficient.  Note also that the name \"kfm\" is used even when using "
-"the :program:`konqueror` command with KDE 2 --- the implementation "
-"selects the best strategy for running Konqueror."
+"\"Konqueror\" is the file manager for the KDE desktop environment for Unix, "
+"and only makes sense to use if KDE is running.  Some way of reliably "
+"detecting KDE would be nice; the :envvar:`!KDEDIR` variable is not "
+"sufficient.  Note also that the name \"kfm\" is used even when using the "
+":program:`konqueror` command with KDE 2 --- the implementation selects the "
+"best strategy for running Konqueror."
 msgstr ""
 
 #: ../../library/webbrowser.rst:203
@@ -445,9 +506,8 @@ msgstr ""
 
 #: ../../library/webbrowser.rst:243
 msgid ""
-"Browser controllers provide the :attr:`~controller.name` attribute, and "
-"the following three methods which parallel module-level convenience "
-"functions:"
+"Browser controllers provide the :attr:`~controller.name` attribute, and the "
+"following three methods which parallel module-level convenience functions:"
 msgstr ""
 
 #: ../../library/webbrowser.rst:249
@@ -456,9 +516,9 @@ msgstr ""
 
 #: ../../library/webbrowser.rst:254
 msgid ""
-"Display *url* using the browser handled by this controller. If *new* is "
-"1, a new browser window is opened if possible. If *new* is 2, a new "
-"browser page (\"tab\") is opened if possible."
+"Display *url* using the browser handled by this controller. If *new* is 1, a"
+" new browser window is opened if possible. If *new* is 2, a new browser page"
+" (\"tab\") is opened if possible."
 msgstr ""
 
 #: ../../library/webbrowser.rst:261
@@ -483,4 +543,3 @@ msgid ""
 "Executables named here without a full path will be searched in the "
 "directories given in the :envvar:`PATH` environment variable."
 msgstr ""
-

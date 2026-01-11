@@ -11,226 +11,282 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/devmode.rst:4
 msgid "Python Development Mode"
-msgstr ""
+msgstr "Vývojový režim Pythonu"
 
 #: ../../library/devmode.rst:8
 msgid ""
-"The Python Development Mode introduces additional runtime checks that are"
-" too expensive to be enabled by default. It should not be more verbose "
-"than the default if the code is correct; new warnings are only emitted "
-"when an issue is detected."
+"The Python Development Mode introduces additional runtime checks that are "
+"too expensive to be enabled by default. It should not be more verbose than "
+"the default if the code is correct; new warnings are only emitted when an "
+"issue is detected."
 msgstr ""
+"Vývojový režim Pythonu zavádí další kontroly běhu, které jsou příliš "
+"nákladné na to, aby byly povoleny ve výchozím nastavení. Neměl by být více "
+"podrobný než výchozí, pokud je kód správný; nová varování jsou vydávána "
+"pouze v případě, že je zjištěn problém."
 
 #: ../../library/devmode.rst:13
 msgid ""
-"It can be enabled using the :option:`-X dev <-X>` command line option or "
-"by setting the :envvar:`PYTHONDEVMODE` environment variable to ``1``."
+"It can be enabled using the :option:`-X dev <-X>` command line option or by "
+"setting the :envvar:`PYTHONDEVMODE` environment variable to ``1``."
 msgstr ""
+"Lze jej povolit pomocí volby příkazového řádku :option:`-X dev <-X>` nebo "
+"nastavením proměnné prostředí :envvar:`PYTHONDEVMODE` na ``1``."
 
 #: ../../library/devmode.rst:16
 msgid "See also :ref:`Python debug build <debug-build>`."
-msgstr ""
+msgstr "Viz také :ref:`Ladící build Pythonu <debug-build>`."
 
 #: ../../library/devmode.rst:19
 msgid "Effects of the Python Development Mode"
-msgstr ""
+msgstr "Účinky vývojového režimu Pythonu"
 
 #: ../../library/devmode.rst:21
 msgid ""
-"Enabling the Python Development Mode is similar to the following command,"
-" but with additional effects described below::"
+"Enabling the Python Development Mode is similar to the following command, "
+"but with additional effects described below::"
 msgstr ""
+"Povolení vývojového režimu Pythonu je podobné následujícímu příkazu, ale se "
+"zustalími efekty popsanými níže::"
 
 #: ../../library/devmode.rst:24
-msgid "PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 python -W default -X faulthandler"
+msgid ""
+"PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 python -W default -X faulthandler"
 msgstr ""
+"PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 python -W default -X faulthandler"
 
 #: ../../library/devmode.rst:26
 msgid "Effects of the Python Development Mode:"
-msgstr ""
+msgstr "Účinky vývojového režimu Pythonu:"
 
 #: ../../library/devmode.rst:28
 msgid ""
 "Add ``default`` :ref:`warning filter <describing-warning-filters>`. The "
 "following warnings are shown:"
 msgstr ""
+"Přidat ``default`` :ref:`filtr varování <describing-warning-filters>`. Jsou "
+"zobrazena následující varování:"
 
 #: ../../library/devmode.rst:31
 msgid ":exc:`DeprecationWarning`"
-msgstr ""
+msgstr ":exc:`DeprecationWarning`"
 
 #: ../../library/devmode.rst:32
 msgid ":exc:`ImportWarning`"
-msgstr ""
+msgstr ":exc:`ImportWarning`"
 
 #: ../../library/devmode.rst:33
 msgid ":exc:`PendingDeprecationWarning`"
-msgstr ""
+msgstr ":exc:`PendingDeprecationWarning`"
 
 #: ../../library/devmode.rst:34
 msgid ":exc:`ResourceWarning`"
-msgstr ""
+msgstr ":exc:`ResourceWarning`"
 
 #: ../../library/devmode.rst:36
 msgid ""
 "Normally, the above warnings are filtered by the default :ref:`warning "
 "filters <describing-warning-filters>`."
 msgstr ""
+"Obvykle jsou výše uvedená varování filtrována výchozími :ref:`filtry "
+"varování <describing-warning-filters>`."
 
 #: ../../library/devmode.rst:39
 msgid ""
-"It behaves as if the :option:`-W default <-W>` command line option is "
-"used."
+"It behaves as if the :option:`-W default <-W>` command line option is used."
 msgstr ""
+"Chová se tak, jako by byla použita volba příkazového řádku :option:`-W "
+"default <-W>`."
 
 #: ../../library/devmode.rst:41
 msgid ""
 "Use the :option:`-W error <-W>` command line option or set the "
-":envvar:`PYTHONWARNINGS` environment variable to ``error`` to treat "
-"warnings as errors."
+":envvar:`PYTHONWARNINGS` environment variable to ``error`` to treat warnings"
+" as errors."
 msgstr ""
+"Použíte volbu příkazového řádku :option:`-W error <-W>` nebo nastavte "
+"proměnné prostředí :envvar:`PYTHONWARNINGS` na ``error`` pro zacházení s "
+"varováními jako s chybami."
 
 #: ../../library/devmode.rst:45
 msgid "Install debug hooks on memory allocators to check for:"
-msgstr ""
+msgstr "Instalace ladících haků na alokátory paměti pro kontrolu:"
 
 #: ../../library/devmode.rst:47
 msgid "Buffer underflow"
-msgstr ""
+msgstr "Podrunů bufferu"
 
 #: ../../library/devmode.rst:48
 msgid "Buffer overflow"
-msgstr ""
+msgstr "Přetečení bufferu"
 
 #: ../../library/devmode.rst:49
 msgid "Memory allocator API violation"
-msgstr ""
+msgstr "Poruení API alokátoru paměti"
 
 #: ../../library/devmode.rst:50
 msgid "Unsafe usage of the GIL"
-msgstr ""
+msgstr "Nebezpečné použítí GIL"
 
 #: ../../library/devmode.rst:52
 msgid "See the :c:func:`PyMem_SetupDebugHooks` C function."
-msgstr ""
+msgstr "Viz funkce C :c:func:`PyMem_SetupDebugHooks`."
 
 #: ../../library/devmode.rst:54
 msgid ""
-"It behaves as if the :envvar:`PYTHONMALLOC` environment variable is set "
-"to ``debug``."
+"It behaves as if the :envvar:`PYTHONMALLOC` environment variable is set to "
+"``debug``."
 msgstr ""
+"Chová se tak, jako by byla proměnná prostředí :envvar:`PYTHONMALLOC` "
+"nastavena na ``debug``."
 
 #: ../../library/devmode.rst:57
 msgid ""
 "To enable the Python Development Mode without installing debug hooks on "
-"memory allocators, set the :envvar:`PYTHONMALLOC` environment variable to"
-" ``default``."
+"memory allocators, set the :envvar:`PYTHONMALLOC` environment variable to "
+"``default``."
 msgstr ""
+"Chcete-li povolit vývojový režim Pythonu bez instalace ladících haků na "
+"alokátory paměti, nastavte proměnné prostředí :envvar:`PYTHONMALLOC` na "
+"``default``."
 
 #: ../../library/devmode.rst:61
 msgid ""
-"Call :func:`faulthandler.enable` at Python startup to install handlers "
-"for the :const:`~signal.SIGSEGV`, :const:`~signal.SIGFPE`, "
+"Call :func:`faulthandler.enable` at Python startup to install handlers for "
+"the :const:`~signal.SIGSEGV`, :const:`~signal.SIGFPE`, "
 ":const:`~signal.SIGABRT`, :const:`~signal.SIGBUS` and "
 ":const:`~signal.SIGILL` signals to dump the Python traceback on a crash."
 msgstr ""
+"Zavolej :func:`faulthandler.enable` při spustení Pythonu pro instalaci "
+"obsluhy pro signály :const:`~signal.SIGSEGV`, :const:`~signal.SIGFPE`, "
+":const:`~signal.SIGABRT`, :const:`~signal.SIGBUS` a :const:`~signal.SIGILL` "
+"pro výpis trasování Pythonu při selhání."
 
 #: ../../library/devmode.rst:66
 msgid ""
-"It behaves as if the :option:`-X faulthandler <-X>` command line option "
-"is used or if the :envvar:`PYTHONFAULTHANDLER` environment variable is "
-"set to ``1``."
+"It behaves as if the :option:`-X faulthandler <-X>` command line option is "
+"used or if the :envvar:`PYTHONFAULTHANDLER` environment variable is set to "
+"``1``."
 msgstr ""
+"Chová se tak, jako by byla použita volba příkazového řádku :option:`-X "
+"faulthandler <-X>` nebo jako by byla proměnná prostředí "
+":envvar:`PYTHONFAULTHANDLER` nastavena na ``1``."
 
 #: ../../library/devmode.rst:70
 msgid ""
 "Enable :ref:`asyncio debug mode <asyncio-debug-mode>`. For example, "
 ":mod:`asyncio` checks for coroutines that were not awaited and logs them."
 msgstr ""
+"Povolit :ref:`režim ladění asyncio <asyncio-debug-mode>`. Například "
+":mod:`asyncio` kontroluje koroutiny, které nebyly čekané, a zaznamenává je."
 
 #: ../../library/devmode.rst:73
 msgid ""
-"It behaves as if the :envvar:`PYTHONASYNCIODEBUG` environment variable is"
-" set to ``1``."
+"It behaves as if the :envvar:`PYTHONASYNCIODEBUG` environment variable is "
+"set to ``1``."
 msgstr ""
+"Chová se tak, jako by byla proměnná prostředí :envvar:`PYTHONASYNCIODEBUG` "
+"nastavena na ``1``."
 
 #: ../../library/devmode.rst:76
 msgid ""
-"Check the *encoding* and *errors* arguments for string encoding and "
-"decoding operations. Examples: :func:`open`, :meth:`str.encode` and "
+"Check the *encoding* and *errors* arguments for string encoding and decoding"
+" operations. Examples: :func:`open`, :meth:`str.encode` and "
 ":meth:`bytes.decode`."
 msgstr ""
+"Zkontrolovat argumenty *encoding* a *errors* pro operace kódování a "
+"dekodování řetězců. Příklady: :func:`open`, :meth:`str.encode` a "
+":meth:`bytes.decode`."
 
 #: ../../library/devmode.rst:80
 msgid ""
-"By default, for best performance, the *errors* argument is only checked "
-"at the first encoding/decoding error and the *encoding* argument is "
-"sometimes ignored for empty strings."
+"By default, for best performance, the *errors* argument is only checked at "
+"the first encoding/decoding error and the *encoding* argument is sometimes "
+"ignored for empty strings."
 msgstr ""
+"Ve výchozím nastavení se argument *errors* pro nejlepší výkon kontroluje "
+"pouze při první chybě kódování/dekodování a argument *encoding* se někdy "
+"ignoruje pro prázdné řetězce."
 
 #: ../../library/devmode.rst:84
 msgid "The :class:`io.IOBase` destructor logs ``close()`` exceptions."
-msgstr ""
+msgstr "Destruktor třídy :class:`io.IOBase` zaznamenává výjimky ``close()``."
 
 #: ../../library/devmode.rst:85
 msgid ""
 "Set the :attr:`~sys.flags.dev_mode` attribute of :data:`sys.flags` to "
 "``True``."
 msgstr ""
+"Nastavit atribut :attr:`~sys.flags.dev_mode` :data:`sys.flags` na ``True``."
 
 #: ../../library/devmode.rst:88
 msgid ""
-"The Python Development Mode does not enable the :mod:`tracemalloc` module"
-" by default, because the overhead cost (to performance and memory) would "
-"be too large. Enabling the :mod:`tracemalloc` module provides additional "
+"The Python Development Mode does not enable the :mod:`tracemalloc` module by"
+" default, because the overhead cost (to performance and memory) would be too"
+" large. Enabling the :mod:`tracemalloc` module provides additional "
 "information on the origin of some errors. For example, "
-":exc:`ResourceWarning` logs the traceback where the resource was "
-"allocated, and a buffer overflow error logs the traceback where the "
-"memory block was allocated."
+":exc:`ResourceWarning` logs the traceback where the resource was allocated, "
+"and a buffer overflow error logs the traceback where the memory block was "
+"allocated."
 msgstr ""
+"Vývojový režim Pythonu nepovoluje modul :mod:`tracemalloc` ve výchozím "
+"nastavení, protože náklady (na výkon a paměť) by byly příliš velké. Povolení"
+" modulu :mod:`tracemalloc` poskytuje další informace o původu některých "
+"chyb. Například :exc:`ResourceWarning` zaznamenává zpolan výpisu, kde byl "
+"zdroj přidělen, a chyba přetečení bufferu zaznamenává stopa výpisu, kde byl "
+"blok paměti přidělen."
 
 #: ../../library/devmode.rst:95
 msgid ""
-"The Python Development Mode does not prevent the :option:`-O` command "
-"line option from removing :keyword:`assert` statements nor from setting "
+"The Python Development Mode does not prevent the :option:`-O` command line "
+"option from removing :keyword:`assert` statements nor from setting "
 ":const:`__debug__` to ``False``."
 msgstr ""
+"Vývojový režim Pythonu nebrvý volbě příkazového řádku :option:`-O` v odebrní"
+" příkazů :keyword:`assert` ani v nastavení :const:`__debug__` na ``False``."
 
 #: ../../library/devmode.rst:99
 msgid ""
-"The Python Development Mode can only be enabled at the Python startup. "
-"Its value can be read from :data:`sys.flags.dev_mode <sys.flags>`."
+"The Python Development Mode can only be enabled at the Python startup. Its "
+"value can be read from :data:`sys.flags.dev_mode <sys.flags>`."
 msgstr ""
+"Vývojový režim Pythonu lze povolit pouze při spustení Pythonu. Jeho hodnotu "
+"lze číst z :data:`sys.flags.dev_mode <sys.flags>`."
 
 #: ../../library/devmode.rst:102
 msgid "The :class:`io.IOBase` destructor now logs ``close()`` exceptions."
 msgstr ""
+"Destruktor třídy :class:`io.IOBase` nyní zaznamenává výjimky ``close()``."
 
 #: ../../library/devmode.rst:105
 msgid ""
-"The *encoding* and *errors* arguments are now checked for string encoding"
-" and decoding operations."
+"The *encoding* and *errors* arguments are now checked for string encoding "
+"and decoding operations."
 msgstr ""
+"Argumenty *encoding* a *errors* jsou nyní kontrolovány pro operace kódování "
+"a dekodování řetězců."
 
 #: ../../library/devmode.rst:111
 msgid "ResourceWarning Example"
-msgstr ""
+msgstr "Příklad ResourceWarning"
 
 #: ../../library/devmode.rst:113
 msgid ""
-"Example of a script counting the number of lines of the text file "
-"specified in the command line::"
+"Example of a script counting the number of lines of the text file specified "
+"in the command line::"
 msgstr ""
+"Příklad skriptu, který počïtá počet řádků textového souboru zadaného na "
+"příkazovém řádku::"
 
 #: ../../library/devmode.rst:116
 msgid ""
@@ -245,47 +301,67 @@ msgid ""
 "if __name__ == \"__main__\":\n"
 "    main()"
 msgstr ""
+"import sys\n"
+"\n"
+"def main():\n"
+"    fp = open(sys.argv[1])\n"
+"    nlines = len(fp.readlines())\n"
+"    print(nlines)\n"
+"    # Soubor je zavřen implicitně\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    main()"
 
 #: ../../library/devmode.rst:127
 msgid ""
-"The script does not close the file explicitly. By default, Python does "
-"not emit any warning. Example using README.txt, which has 269 lines:"
+"The script does not close the file explicitly. By default, Python does not "
+"emit any warning. Example using README.txt, which has 269 lines:"
 msgstr ""
+"Skript neuzívá soubor explicitně. Ve výchozím nastavení Python nevydává "
+"žádné varování. Příklad s použitím README.txt, který má 269 řádků:"
 
 #: ../../library/devmode.rst:130
 msgid ""
 "$ python script.py README.txt\n"
 "269"
 msgstr ""
+"$ python script.py README.txt\n"
+"269"
 
 #: ../../library/devmode.rst:135
 msgid ""
 "Enabling the Python Development Mode displays a :exc:`ResourceWarning` "
 "warning:"
 msgstr ""
+"Povolení vývojového režimu Pythonu zobrazuje varování "
+":exc:`ResourceWarning`:"
 
 #: ../../library/devmode.rst:137
 msgid ""
 "$ python -X dev script.py README.txt\n"
 "269\n"
-"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper "
-"name='README.rst' mode='r' encoding='UTF-8'>\n"
+"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper name='README.rst' mode='r' encoding='UTF-8'>\n"
 "  main()\n"
 "ResourceWarning: Enable tracemalloc to get the object allocation traceback"
 msgstr ""
+"$ python -X dev script.py README.txt\n"
+"269\n"
+"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper name='README.rst' mode='r' encoding='UTF-8'>\n"
+"  main()\n"
+"ResourceWarning: Enable tracemalloc to get the object allocation traceback"
 
 #: ../../library/devmode.rst:145
 msgid ""
-"In addition, enabling :mod:`tracemalloc` shows the line where the file "
-"was opened:"
+"In addition, enabling :mod:`tracemalloc` shows the line where the file was "
+"opened:"
 msgstr ""
+"Navíc, povolení :mod:`tracemalloc` ukazuje řádek, kde byl soubor otevřen:"
 
 #: ../../library/devmode.rst:148
 msgid ""
 "$ python -X dev -X tracemalloc=5 script.py README.rst\n"
 "269\n"
-"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper "
-"name='README.rst' mode='r' encoding='UTF-8'>\n"
+"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper name='README.rst' mode='r' encoding='UTF-8'>\n"
 "  main()\n"
 "Object allocated at (most recent call last):\n"
 "  File \"script.py\", lineno 10\n"
@@ -293,10 +369,22 @@ msgid ""
 "  File \"script.py\", lineno 4\n"
 "    fp = open(sys.argv[1])"
 msgstr ""
+"$ python -X dev -X tracemalloc=5 script.py README.rst\n"
+"269\n"
+"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper name='README.rst' mode='r' encoding='UTF-8'>\n"
+"  main()\n"
+"Object allocated at (most recent call last):\n"
+"  File \"script.py\", lineno 10\n"
+"    main()\n"
+"  File \"script.py\", lineno 4\n"
+"    fp = open(sys.argv[1])"
 
 #: ../../library/devmode.rst:160
-msgid "The fix is to close explicitly the file. Example using a context manager::"
+msgid ""
+"The fix is to close explicitly the file. Example using a context manager::"
 msgstr ""
+"Opravou je explicitně zavřít soubor. Příklad s použitím kontextového "
+"správce::"
 
 #: ../../library/devmode.rst:162
 msgid ""
@@ -306,22 +394,31 @@ msgid ""
 "        nlines = len(fp.readlines())\n"
 "    print(nlines)"
 msgstr ""
+"def main():\n"
+"    # Explicitně zavřete soubor při výstupũ z bloku with\n"
+"    with open(sys.argv[1]) as fp:\n"
+"        nlines = len(fp.readlines())\n"
+"    print(nlines)"
 
 #: ../../library/devmode.rst:168
 msgid ""
-"Not closing a resource explicitly can leave a resource open for way "
-"longer than expected; it can cause severe issues upon exiting Python. It "
-"is bad in CPython, but it is even worse in PyPy. Closing resources "
-"explicitly makes an application more deterministic and more reliable."
+"Not closing a resource explicitly can leave a resource open for way longer "
+"than expected; it can cause severe issues upon exiting Python. It is bad in "
+"CPython, but it is even worse in PyPy. Closing resources explicitly makes an"
+" application more deterministic and more reliable."
 msgstr ""
+"Nezavření zdroje explicitně může ponechat zdroj otevřený mnohem déle než se "
+"očekává; může způsobit vážné problémy při ukončení Pythonu. Je špatné v "
+"CPythonu, ale je to ještě horší v PyPy. Explicitní uzávěr zdrojů dělá "
+"aplikaci předvídatelnější a spolehlivější."
 
 #: ../../library/devmode.rst:175
 msgid "Bad file descriptor error example"
-msgstr ""
+msgstr "Příklad chyby chybného deskriptoru souboru"
 
 #: ../../library/devmode.rst:177
 msgid "Script displaying the first line of itself::"
-msgstr ""
+msgstr "Skript zobrazující první řádek sébe::"
 
 #: ../../library/devmode.rst:179
 msgid ""
@@ -336,52 +433,80 @@ msgid ""
 "\n"
 "main()"
 msgstr ""
+"import os\n"
+"\n"
+"def main():\n"
+"    fp = open(__file__)\n"
+"    firstline = fp.readline()\n"
+"    print(firstline.rstrip())\n"
+"    os.close(fp.fileno())\n"
+"    # Soubor je zavřen implicitně\n"
+"\n"
+"main()"
 
 #: ../../library/devmode.rst:190
 msgid "By default, Python does not emit any warning:"
-msgstr ""
+msgstr "Ve výchozím nastavení Python nevydává žádné varování:"
 
 #: ../../library/devmode.rst:192
 msgid ""
 "$ python script.py\n"
 "import os"
 msgstr ""
+"$ python script.py\n"
+"import os"
 
 #: ../../library/devmode.rst:197
 msgid ""
-"The Python Development Mode shows a :exc:`ResourceWarning` and logs a "
-"\"Bad file descriptor\" error when finalizing the file object:"
+"The Python Development Mode shows a :exc:`ResourceWarning` and logs a \"Bad "
+"file descriptor\" error when finalizing the file object:"
 msgstr ""
+"Vývojový režim Pythonu zobrazuje :exc:`ResourceWarning` a zaznamenává chybu "
+"\"Bad file descriptor\" (neplatný deskriptor souboru) při finalizaci objektu"
+" souboru:"
 
 #: ../../library/devmode.rst:200
 msgid ""
 "$ python -X dev script.py\n"
 "import os\n"
-"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper "
-"name='script.py' mode='r' encoding='UTF-8'>\n"
+"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper name='script.py' mode='r' encoding='UTF-8'>\n"
 "  main()\n"
-"ResourceWarning: Enable tracemalloc to get the object allocation "
-"traceback\n"
-"Exception ignored in: <_io.TextIOWrapper name='script.py' mode='r' "
-"encoding='UTF-8'>\n"
+"ResourceWarning: Enable tracemalloc to get the object allocation traceback\n"
+"Exception ignored in: <_io.TextIOWrapper name='script.py' mode='r' encoding='UTF-8'>\n"
 "Traceback (most recent call last):\n"
 "  File \"script.py\", line 10, in <module>\n"
 "    main()\n"
 "OSError: [Errno 9] Bad file descriptor"
 msgstr ""
+"$ python -X dev script.py\n"
+"import os\n"
+"script.py:10: ResourceWarning: unclosed file <_io.TextIOWrapper name='script.py' mode='r' encoding='UTF-8'>\n"
+"  main()\n"
+"ResourceWarning: Enable tracemalloc to get the object allocation traceback\n"
+"Exception ignored in: <_io.TextIOWrapper name='script.py' mode='r' encoding='UTF-8'>\n"
+"Traceback (most recent call last):\n"
+"  File \"script.py\", line 10, in <module>\n"
+"    main()\n"
+"OSError: [Errno 9] Bad file descriptor"
 
 #: ../../library/devmode.rst:213
 msgid ""
-"``os.close(fp.fileno())`` closes the file descriptor. When the file "
-"object finalizer tries to close the file descriptor again, it fails with "
-"the ``Bad file descriptor`` error. A file descriptor must be closed only "
-"once. In the worst case scenario, closing it twice can lead to a crash "
-"(see :issue:`18748` for an example)."
+"``os.close(fp.fileno())`` closes the file descriptor. When the file object "
+"finalizer tries to close the file descriptor again, it fails with the ``Bad "
+"file descriptor`` error. A file descriptor must be closed only once. In the "
+"worst case scenario, closing it twice can lead to a crash (see "
+":issue:`18748` for an example)."
 msgstr ""
+"``os.close(fp.fileno())`` uzávřá deskriptor souboru. Když se finalize "
+"objektu souboru pokusí zavřít deskriptor souboru znovu, selhá s chybou ``Bad"
+" file descriptor``. Deskriptor souboru musí být uzavřen pouze jednou. V "
+"nejhorším případě může jeho uzavření dvakrát vést k padání (viz "
+":issue:`18748` pro příklad)."
 
 #: ../../library/devmode.rst:219
 msgid ""
-"The fix is to remove the ``os.close(fp.fileno())`` line, or open the file"
-" with ``closefd=False``."
+"The fix is to remove the ``os.close(fp.fileno())`` line, or open the file "
+"with ``closefd=False``."
 msgstr ""
-
+"Opravou je odstranit řádek ``os.close(fp.fileno())`` nebo otevřít soubor s "
+"``closefd=False``."

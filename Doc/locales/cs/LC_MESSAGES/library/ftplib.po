@@ -11,49 +11,58 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/ftplib.rst:2
 msgid ":mod:`!ftplib` --- FTP protocol client"
-msgstr ""
+msgstr ":mod:`!ftplib` --- Klient protokolu FTP"
 
 #: ../../library/ftplib.rst:7
 msgid "**Source code:** :source:`Lib/ftplib.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/ftplib.py`"
 
 #: ../../library/ftplib.rst:15
 msgid ""
 "This module defines the class :class:`FTP` and a few related items. The "
-":class:`FTP` class implements the client side of the FTP protocol.  You "
-"can use this to write Python programs that perform a variety of automated"
-" FTP jobs, such as mirroring other FTP servers.  It is also used by the "
-"module :mod:`urllib.request` to handle URLs that use FTP.  For more "
-"information on FTP (File Transfer Protocol), see internet :rfc:`959`."
+":class:`FTP` class implements the client side of the FTP protocol.  You can "
+"use this to write Python programs that perform a variety of automated FTP "
+"jobs, such as mirroring other FTP servers.  It is also used by the module "
+":mod:`urllib.request` to handle URLs that use FTP.  For more information on "
+"FTP (File Transfer Protocol), see internet :rfc:`959`."
 msgstr ""
+"Tento modul definuje třídu :class:`FTP` a několik souvisejících položek. "
+"Třída :class:`FTP` implementuje klientskou stranu protokolu FTP. Můžete jej "
+"používat k psaní programů v Pythonu, které provádějí různé automatizované "
+"úlohy FTP, jako je zrcadlování jiných serverů FTP. Používá jej také modul "
+":mod:`urllib.request` pro zpracování adres URL, které používají FTP. Další "
+"informace o FTP (File Transfer Protocol) naleznete v internetovém "
+":rfc:`959`."
 
 #: ../../library/ftplib.rst:22
 msgid "The default encoding is UTF-8, following :rfc:`2640`."
-msgstr ""
+msgstr "Výchozím kódováním je UTF-8, podle :rfc:`2640`."
 
 #: ../../includes/wasm-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-notavail.rst:5
 msgid ""
-"This module does not work or is not available on WebAssembly. See :ref"
-":`wasm-availability` for more information."
+"This module does not work or is not available on WebAssembly. See "
+":ref:`wasm-availability` for more information."
 msgstr ""
+"Tento modul nefunguje nebo není dostupný na WebAssembly. Viz :ref:`wasm-"
+"availability` pro další informace."
 
 #: ../../library/ftplib.rst:26
 msgid "Here's a sample session using the :mod:`ftplib` module::"
-msgstr ""
+msgstr "Zde je příklad relace používající modul :mod:`ftplib`::"
 
 #: ../../library/ftplib.rst:28
 msgid ""
@@ -76,126 +85,167 @@ msgid ""
 ">>> ftp.quit()\n"
 "'221 Goodbye.'"
 msgstr ""
+">>> from ftplib import FTP\n"
+">>> ftp = FTP('ftp.us.debian.org')  # připojit se na hostitele, výchozí port\n"
+">>> ftp.login()                     # uživatel anonymous, heslo anonymous@\n"
+"'230 Login successful.'\n"
+">>> ftp.cwd('debian')               # změnit na adresář \"debian\"\n"
+"'250 Directory successfully changed.'\n"
+">>> ftp.retrlines('LIST')           # vypsat obsah adresáře\n"
+"-rw-rw-r--    1 1176     1176         1063 Jun 15 10:18 README\n"
+"...\n"
+"drwxr-sr-x    5 1176     1176         4096 Dec 19  2000 pool\n"
+"drwxr-sr-x    4 1176     1176         4096 Nov 17  2008 project\n"
+"drwxr-xr-x    3 1176     1176         4096 Oct 10  2012 tools\n"
+"'226 Directory send OK.'\n"
+">>> with open('README', 'wb') as fp:\n"
+">>>     ftp.retrbinary('RETR README', fp.write)\n"
+"'226 Transfer complete.'\n"
+">>> ftp.quit()\n"
+"'221 Goodbye.'"
 
 #: ../../library/ftplib.rst:51
 msgid "Reference"
-msgstr ""
+msgstr "Odkaz"
 
 #: ../../library/ftplib.rst:56
 msgid "FTP objects"
-msgstr ""
+msgstr "Objekty FTP"
 
 #: ../../library/ftplib.rst:87
 msgid "Return a new instance of the :class:`FTP` class."
-msgstr ""
+msgstr "Vrací novou instanci třídy :class:`FTP`."
 
 #: ../../library/ftplib.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Parametry"
 
 #: ../../library/ftplib.rst:89 ../../library/ftplib.rst:461
 msgid ""
-"The hostname to connect to. If given, :code:`connect(host)` is implicitly"
-" called by the constructor."
+"The hostname to connect to. If given, :code:`connect(host)` is implicitly "
+"called by the constructor."
 msgstr ""
+"Jméno hostitele, ke kterému se má připojit. Je-li poskytnuto, je "
+"konstruktorem implicitně volán :code:`connect(host)`."
 
 #: ../../library/ftplib.rst:93 ../../library/ftplib.rst:465
 msgid ""
-"|param_doc_user| If given, :code:`login(host, passwd, acct)` is "
-"implicitly called by the constructor."
+"|param_doc_user| If given, :code:`login(host, passwd, acct)` is implicitly "
+"called by the constructor."
 msgstr ""
+"|param_doc_user| Je-li poskytnuto, je konstruktorem implicitně volán "
+":code:`login(host, passwd, acct)`."
 
 #: ../../library/ftplib.rst:98 ../../library/ftplib.rst:212
 #: ../../library/ftplib.rst:470
 msgid "|param_doc_passwd|"
-msgstr ""
+msgstr "|param_doc_passwd|"
 
 #: ../../library/ftplib.rst:101 ../../library/ftplib.rst:215
 #: ../../library/ftplib.rst:473
 msgid "|param_doc_acct|"
-msgstr ""
+msgstr "|param_doc_acct|"
 
 #: ../../library/ftplib.rst:104
 msgid ""
-"A timeout in seconds for blocking operations like :meth:`connect` "
-"(default: the global default timeout setting)."
+"A timeout in seconds for blocking operations like :meth:`connect` (default: "
+"the global default timeout setting)."
 msgstr ""
+"Timeout v sekundách pro blokující operace jako :meth:`connect` (výchozí: "
+"globální výchozí nastavení timeout)."
 
 #: ../../library/ftplib.rst:109 ../../library/ftplib.rst:183
 #: ../../library/ftplib.rst:488
 msgid "|param_doc_source_address|"
-msgstr ""
+msgstr "|param_doc_source_address|"
 
 #: ../../library/ftplib.rst:113 ../../library/ftplib.rst:492
 msgid "|param_doc_encoding|"
-msgstr ""
+msgstr "|param_doc_encoding|"
 
 #: ../../library/ftplib.rst:116
 msgid "The :class:`FTP` class supports the :keyword:`with` statement, e.g.:"
-msgstr ""
+msgstr "Třída :class:`FTP` podporuje příkaz :keyword:`with`, např.:"
 
 #: ../../library/ftplib.rst:130
 msgid "Support for the :keyword:`with` statement was added."
-msgstr ""
+msgstr "Podpora pro příkaz :keyword:`with` byla přidána."
 
 #: ../../library/ftplib.rst:133 ../../library/ftplib.rst:189
 msgid "*source_address* parameter was added."
-msgstr ""
+msgstr "Parametr *source_address* byl přidán."
 
 #: ../../library/ftplib.rst:136 ../../library/ftplib.rst:505
 msgid ""
 "If the *timeout* parameter is set to be zero, it will raise a "
-":class:`ValueError` to prevent the creation of a non-blocking socket. The"
-" *encoding* parameter was added, and the default was changed from Latin-1"
-" to UTF-8 to follow :rfc:`2640`."
+":class:`ValueError` to prevent the creation of a non-blocking socket. The "
+"*encoding* parameter was added, and the default was changed from Latin-1 to "
+"UTF-8 to follow :rfc:`2640`."
 msgstr ""
+"Pokud je parametr *timeout* nastaven na nulu, vyvolá :class:`ValueError`, "
+"aby se zabránilo vytvoření neblokujícího socketu. Parametr *encoding* byl "
+"přidán a výchozí hodnota byla změněna z Latin-1 na UTF-8 v souladu s "
+":rfc:`2640`."
 
 #: ../../library/ftplib.rst:142
 msgid ""
-"Several :class:`!FTP` methods are available in two flavors: one for "
-"handling text files and another for binary files. The methods are named "
-"for the command which is used followed by ``lines`` for the text version "
-"or ``binary`` for the binary version."
+"Several :class:`!FTP` methods are available in two flavors: one for handling"
+" text files and another for binary files. The methods are named for the "
+"command which is used followed by ``lines`` for the text version or "
+"``binary`` for the binary version."
 msgstr ""
+"Některé metody :class:`!FTP` jsou dostupné ve dvou variantch: jedná pro "
+"zpracování textových souborů a druhá pro binární soubory. Metody jsou "
+"pojmenovány podle příkazu, který se používá, následováno ``lines`` pro "
+"textovou verzi nebo ``binary`` pro binární verzi."
 
 #: ../../library/ftplib.rst:147
 msgid ":class:`FTP` instances have the following methods:"
-msgstr ""
+msgstr "Instance :class:`FTP` mají následující metody:"
 
 #: ../../library/ftplib.rst:151
 msgid ""
 "Set the instance's debugging level as an :class:`int`. This controls the "
 "amount of debugging output printed. The debug levels are:"
 msgstr ""
+"Nastaví úroveň ladění instance jako :class:`int`. Toto ovládá množství "
+"výstepu ladění. Úrovně ladění jsou:"
 
 #: ../../library/ftplib.rst:155
 msgid "``0`` (default): No debug output."
-msgstr ""
+msgstr "``0`` (výchozí): Žádný výsystup ladění."
 
 #: ../../library/ftplib.rst:156
 msgid ""
-"``1``: Produce a moderate amount of debug output, generally a single line"
-" per request."
+"``1``: Produce a moderate amount of debug output, generally a single line "
+"per request."
 msgstr ""
+"``1``: Vytvoří mírné množství výsystup ladění, obecně jeden řádek na "
+"požadavek."
 
 #: ../../library/ftplib.rst:158
 msgid ""
 "``2`` or higher: Produce the maximum amount of debugging output, logging "
 "each line sent and received on the control connection."
 msgstr ""
+"``2`` nebo vyšší: Vytvoří maximální množství výsystup ladění, zaznamenává "
+"každý řádek odslaný a přijatý na řídicím spojení."
 
 #: ../../library/ftplib.rst:163
 msgid ""
-"Connect to the given host and port. This function should be called only "
-"once for each instance; it should not be called if a *host* argument was "
-"given when the :class:`FTP` instance was created. All other :class:`!FTP`"
-" methods can only be called after a connection has successfully been "
-"made."
+"Connect to the given host and port. This function should be called only once"
+" for each instance; it should not be called if a *host* argument was given "
+"when the :class:`FTP` instance was created. All other :class:`!FTP` methods "
+"can only be called after a connection has successfully been made."
 msgstr ""
+"Připoj se k danému hostiteli a portu. Tato funkce by měla být volána pouze "
+"jednou pro každou instanci; neměla by být volána, pokud byl argumentem "
+"*host* zadán při vytvoření instance :class:`FTP`. Všechny ostatní metody "
+":class:`!FTP` lze volat pouze po úspěšném navzorání spojení."
 
 #: ../../library/ftplib.rst:170
 msgid "The host to connect to."
-msgstr ""
+msgstr "Hostitel, ke kterému se má připojit."
 
 #: ../../library/ftplib.rst:173
 msgid ""
@@ -203,18 +253,24 @@ msgid ""
 "protocol specification). It is rarely needed to specify a different port "
 "number."
 msgstr ""
+"TCP port pro připojení (výchozí: ``21``, jak je určeno specifikací protokolu"
+" FTP). Je zříka nutné zadat jiné číslo portu."
 
 #: ../../library/ftplib.rst:178
 msgid ""
-"A timeout in seconds for the connection attempt (default: the global "
-"default timeout setting)."
+"A timeout in seconds for the connection attempt (default: the global default"
+" timeout setting)."
 msgstr ""
+"Timeout v sekundách pro pokus o připojení (výchozí: globální výchozí "
+"nastavení timeout)."
 
 #: ../../library/ftplib.rst:187
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``ftplib.connect`` with "
-"arguments ``self``, ``host``, ``port``."
+"Raises an :ref:`auditing event <auditing>` ``ftplib.connect`` with arguments"
+" ``self``, ``host``, ``port``."
 msgstr ""
+"Vyvolává :ref:`auditční událost <auditing>` ``ftplib.connect`` s argumenty "
+"``self``, ``host``, ``port``."
 
 #: ../../library/ftplib.rst:195
 msgid ""
@@ -222,57 +278,74 @@ msgid ""
 "connection.  (This message sometimes contains disclaimers or help "
 "information that may be relevant to the user.)"
 msgstr ""
+"Vrací uvítací zprávu odeslanou serverem v odpovědi na počáteční připojení. "
+"(Tato zpráva někdy obsahuje vyloučení odpovědnosti nebo inčení, které mohou "
+"být rele vantí pro uživatele.)"
 
 #: ../../library/ftplib.rst:202
 msgid ""
-"Log on to the connected FTP server. This function should be called only "
-"once for each instance, after a connection has been established; it "
-"should not be called if the *host* and *user* arguments were given when "
-"the :class:`FTP` instance was created. Most FTP commands are only allowed"
-" after the client has logged in."
+"Log on to the connected FTP server. This function should be called only once"
+" for each instance, after a connection has been established; it should not "
+"be called if the *host* and *user* arguments were given when the "
+":class:`FTP` instance was created. Most FTP commands are only allowed after "
+"the client has logged in."
 msgstr ""
+"Přihlásit se na připojený FTP server. Tato funkce by měla být volána pouze "
+"jednou pro každou instanci, po navzorání spojení; neměla by být volána, "
+"pokud byly argumenty *host* a *user* zadány při vytvoření instance "
+":class:`FTP`. Vétšina příkazů FTP je povolena pouze po přihlášení klienta."
 
 #: ../../library/ftplib.rst:209
 msgid "|param_doc_user|"
-msgstr ""
+msgstr "|param_doc_user|"
 
 #: ../../library/ftplib.rst:221
 msgid ""
-"Abort a file transfer that is in progress.  Using this does not always "
-"work, but it's worth a try."
+"Abort a file transfer that is in progress.  Using this does not always work,"
+" but it's worth a try."
 msgstr ""
+"Zrušit přenos souboru, který probíhá. Použití tohoto ne vždy funguje, ale je"
+" warté mí zkusit."
 
 #: ../../library/ftplib.rst:227
-msgid "Send a simple command string to the server and return the response string."
-msgstr ""
+msgid ""
+"Send a simple command string to the server and return the response string."
+msgstr "Odeslát jednoduchý řetězec příkazu serveru a vrátit řetězec odpovědi."
 
 #: ../../library/ftplib.rst:229 ../../library/ftplib.rst:238
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``ftplib.sendcmd`` with "
-"arguments ``self``, ``cmd``."
+"Raises an :ref:`auditing event <auditing>` ``ftplib.sendcmd`` with arguments"
+" ``self``, ``cmd``."
 msgstr ""
+"Vyvolává :ref:`auditční událost <auditing>` ``ftplib.sendcmd`` s argumenty "
+"``self``, ``cmd``."
 
 #: ../../library/ftplib.rst:234
 msgid ""
-"Send a simple command string to the server and handle the response.  "
-"Return the response string if the response code corresponds to success "
-"(codes in the range 200--299).  Raise :exc:`error_reply` otherwise."
+"Send a simple command string to the server and handle the response.  Return "
+"the response string if the response code corresponds to success (codes in "
+"the range 200--299).  Raise :exc:`error_reply` otherwise."
 msgstr ""
+"Odeslát jednoduchý řetězec příkazu serveru a zpracovat odpověč. Vrátit "
+"řetězec odpovědi, pokud kód odpovědi odpovídá úsпěšu (kódy v rozsahu 200--"
+"299). Jinak vyvolat :exc:`error_reply`."
 
 #: ../../library/ftplib.rst:243
 msgid "Retrieve a file in binary transfer mode."
-msgstr ""
+msgstr "Načíat soubor v režimu binárního přenosu."
 
 #: ../../library/ftplib.rst:245
 #, python-brace-format
 msgid "An appropriate ``RETR`` command: :samp:`\"RETR {filename}\"`."
-msgstr ""
+msgstr "Vášený příkaz ``RETR``: :samp:`\"RETR {filename}\"`."
 
 #: ../../library/ftplib.rst:248
 msgid ""
-"A single parameter callable that is called for each block of data "
-"received, with its single argument being the data as :class:`bytes`."
+"A single parameter callable that is called for each block of data received, "
+"with its single argument being the data as :class:`bytes`."
 msgstr ""
+"Jednoparamétrový callable, který je volán pro každý blok přijatých dat, s "
+"jeho jediným argumentem béhem dat jako :class:`bytes`."
 
 #: ../../library/ftplib.rst:254
 msgid ""
@@ -281,193 +354,267 @@ msgid ""
 "largest size of data that will be passed to *callback*. Defaults to "
 "``8192``."
 msgstr ""
+"Maximální velikost chunks pro čtení na nifzkouronném objektu "
+":class:`~socket.socket` vytvořeném k provedení skutečného přenosu. Toto také"
+" odpovídá nejvjětší velikosti dat, která budou předána *callback*. Výchozí: "
+"``8192``."
 
 #: ../../library/ftplib.rst:261 ../../library/ftplib.rst:308
 msgid ""
-"A ``REST`` command to be sent to the server. See the documentation for "
-"the *rest* parameter of the :meth:`transfercmd` method."
+"A ``REST`` command to be sent to the server. See the documentation for the "
+"*rest* parameter of the :meth:`transfercmd` method."
 msgstr ""
+"Příkaz ``REST``, který má být odeslán serveru. Viz dokumentace parametru "
+"*rest* metody :meth:`transfercmd`."
 
 #: ../../library/ftplib.rst:268
 msgid ""
 "Retrieve a file or directory listing in the encoding specified by the "
 "*encoding* parameter at initialization. *cmd* should be an appropriate "
-"``RETR`` command (see :meth:`retrbinary`) or a command such as ``LIST`` "
-"or ``NLST`` (usually just the string ``'LIST'``). ``LIST`` retrieves a "
-"list of files and information about those files. ``NLST`` retrieves a "
-"list of file names. The *callback* function is called for each line with "
-"a string argument containing the line with the trailing CRLF stripped.  "
-"The default *callback* prints the line to :data:`sys.stdout`."
+"``RETR`` command (see :meth:`retrbinary`) or a command such as ``LIST`` or "
+"``NLST`` (usually just the string ``'LIST'``). ``LIST`` retrieves a list of "
+"files and information about those files. ``NLST`` retrieves a list of file "
+"names. The *callback* function is called for each line with a string "
+"argument containing the line with the trailing CRLF stripped.  The default "
+"*callback* prints the line to :data:`sys.stdout`."
 msgstr ""
+"Načíat soubor nebo výpis adresáře v kódování určeném parametrem *encoding* "
+"při inicializaci. *cmd* by měl být vášený příkaz ``RETR`` (viz "
+":meth:`retrbinary`) nebo příkaz jako ``LIST`` nebo ``NLST`` (obvykle jen "
+"řetězec ``'LIST'``). ``LIST`` načítá seznam souborů a informace o těch "
+"souborech. ``NLST`` načítá seznam jmen souborů. Funkce *callback* je volána "
+"pro každý řádek s řetězcem argumentu obsahujícím řádek bez trasí CRLF. "
+"Výchozí *callback* tiskne řádek na :data:`sys.stdout`."
 
 #: ../../library/ftplib.rst:281
 msgid ""
-"Enable \"passive\" mode if *val* is true, otherwise disable passive mode."
-" Passive mode is on by default."
+"Enable \"passive\" mode if *val* is true, otherwise disable passive mode. "
+"Passive mode is on by default."
 msgstr ""
+"Povolte režim \"pasivní\", pokud je *val* true, jinak zakážete pasivní "
+"režim. Pasivní režim je ve výchozanu zapnut."
 
 #: ../../library/ftplib.rst:287
 msgid "Store a file in binary transfer mode."
-msgstr ""
+msgstr "Uložit soubor v režimu binárního přenosu."
 
 #: ../../library/ftplib.rst:289
 #, python-brace-format
 msgid "An appropriate ``STOR`` command: :samp:`\"STOR {filename}\"`."
-msgstr ""
+msgstr "Vášený příkaz ``STOR``: :samp:`\"STOR {filename}\"`."
 
 #: ../../library/ftplib.rst:292
 msgid ""
 "A file object (opened in binary mode) which is read until EOF, using its "
-":meth:`~io.RawIOBase.read` method in blocks of size *blocksize* to "
-"provide the data to be stored."
+":meth:`~io.RawIOBase.read` method in blocks of size *blocksize* to provide "
+"the data to be stored."
 msgstr ""
+"Objekt souboru (otevřený v binárním režimu), který je čten až do EOF, pomocí"
+" jeho metody :meth:`~io.RawIOBase.read` v blocích velikosti *blocksize* k "
+"poskytnutí dat k uložení."
 
 #: ../../library/ftplib.rst:298
 msgid "The read block size. Defaults to ``8192``."
-msgstr ""
+msgstr "Velikost bloku čtení. Výchozí: ``8192``."
 
 #: ../../library/ftplib.rst:302
 msgid ""
-"A single parameter callable that is called for each block of data sent, "
-"with its single argument being the data as :class:`bytes`."
+"A single parameter callable that is called for each block of data sent, with"
+" its single argument being the data as :class:`bytes`."
 msgstr ""
+"Jednoparamétrový callable, který je volán pro každý blok odesélaných dat, s "
+"jeho jediným argumentem béhem dat jako :class:`bytes`."
 
 #: ../../library/ftplib.rst:312
 msgid "The *rest* parameter was added."
-msgstr ""
+msgstr "Parametr *rest* byl přidán."
 
 #: ../../library/ftplib.rst:318
 msgid ""
-"Store a file in line mode.  *cmd* should be an appropriate ``STOR`` "
-"command (see :meth:`storbinary`).  Lines are read until EOF from the "
-":term:`file object` *fp* (opened in binary mode) using its "
-":meth:`~io.IOBase.readline` method to provide the data to be stored.  "
-"*callback* is an optional single parameter callable that is called on "
-"each line after it is sent."
+"Store a file in line mode.  *cmd* should be an appropriate ``STOR`` command "
+"(see :meth:`storbinary`).  Lines are read until EOF from the :term:`file "
+"object` *fp* (opened in binary mode) using its :meth:`~io.IOBase.readline` "
+"method to provide the data to be stored.  *callback* is an optional single "
+"parameter callable that is called on each line after it is sent."
 msgstr ""
+"Uložit soubor v režimu po řádcích. *cmd* by měl být vášený příkaz ``STOR`` "
+"(viz :meth:`storbinary`). Řádky jsou čteny až do EOF z objektu :term:`file "
+"object` *fp* (otevřeného v binárním režimu) pomocí jeho metody "
+":meth:`~io.IOBase.readline` k poskytnutí dat k uložení. *callback* je "
+"volitelné jednoparamétrové volat, které je voláno na každém řádku po jeho "
+"odeslání."
 
 #: ../../library/ftplib.rst:327
 msgid ""
-"Initiate a transfer over the data connection.  If the transfer is active,"
-" send an ``EPRT`` or  ``PORT`` command and the transfer command specified"
-" by *cmd*, and accept the connection.  If the server is passive, send an "
-"``EPSV`` or ``PASV`` command, connect to it, and start the transfer "
-"command.  Either way, return the socket for the connection."
+"Initiate a transfer over the data connection.  If the transfer is active, "
+"send an ``EPRT`` or  ``PORT`` command and the transfer command specified by "
+"*cmd*, and accept the connection.  If the server is passive, send an "
+"``EPSV`` or ``PASV`` command, connect to it, and start the transfer command."
+"  Either way, return the socket for the connection."
 msgstr ""
+"Zahajte přenos přes datové spojení. Je-li přenos aktivní, odešlete příkaz "
+"``EPRT`` nebo ``PORT`` a příkaz přenosu určený *cmd* a přijměte spojení. "
+"Pokud je server pasivní, odešlete příkaz ``EPSV`` nebo ``PASV``, připojte se"
+" a spusťte příkaz přenosu. V obou případech vraťte socket pro spojení."
 
 #: ../../library/ftplib.rst:333
 msgid ""
 "If optional *rest* is given, a ``REST`` command is sent to the server, "
 "passing *rest* as an argument.  *rest* is usually a byte offset into the "
-"requested file, telling the server to restart sending the file's bytes at"
-" the requested offset, skipping over the initial bytes.  Note however "
-"that the :meth:`transfercmd` method converts *rest* to a string with the "
-"*encoding* parameter specified at initialization, but no check is "
-"performed on the string's contents.  If the server does not recognize the"
-" ``REST`` command, an :exc:`error_reply` exception will be raised.  If "
-"this happens, simply call :meth:`transfercmd` without a *rest* argument."
+"requested file, telling the server to restart sending the file's bytes at "
+"the requested offset, skipping over the initial bytes.  Note however that "
+"the :meth:`transfercmd` method converts *rest* to a string with the "
+"*encoding* parameter specified at initialization, but no check is performed "
+"on the string's contents.  If the server does not recognize the ``REST`` "
+"command, an :exc:`error_reply` exception will be raised.  If this happens, "
+"simply call :meth:`transfercmd` without a *rest* argument."
 msgstr ""
+"Je-li poskytnuto volitelné *rest*, je serveru odeslán příkaz ``REST`` s "
+"*rest* jako argumentem. *rest* je obvykle bajt offset do požadovaného "
+"souboru, který serveru říká, aby restartoval posílání bajtů souboru od "
+"požadovaného offsetu, přeskočením počátečních bajtů. Poznámka je však, že "
+"metoda :meth:`transfercmd` konvertuje *rest* na řetězec s parametrem "
+"*encoding* určeným při inicializaci, ale žádná kontrola se neprovádí na "
+"obsahu řetězce. Pokud server nerozpozná příkaz ``REST``, bude vyvolána "
+"výminka :exc:`error_reply`. Pokud se to stane, jednodusze zavolejte "
+":meth:`transfercmd` bez argumentu *rest*."
 
 #: ../../library/ftplib.rst:346
 msgid ""
-"Like :meth:`transfercmd`, but returns a tuple of the data connection and "
-"the expected size of the data.  If the expected size could not be "
-"computed, ``None`` will be returned as the expected size.  *cmd* and "
-"*rest* means the same thing as in :meth:`transfercmd`."
+"Like :meth:`transfercmd`, but returns a tuple of the data connection and the"
+" expected size of the data.  If the expected size could not be computed, "
+"``None`` will be returned as the expected size.  *cmd* and *rest* means the "
+"same thing as in :meth:`transfercmd`."
 msgstr ""
+"Jako :meth:`transfercmd`, ale vrátí n-tici datového spojení a očekávané "
+"velikosti dat. Pokud by očekávané velikost nemohla být vypočítana, bude "
+"vráceno ``None`` jako očekávaná velikost. *cmd* a *rest* znamenají totéž v "
+":meth:`transfercmd`."
 
 #: ../../library/ftplib.rst:354
 msgid ""
 "List a directory in a standardized format by using ``MLSD`` command "
 "(:rfc:`3659`).  If *path* is omitted the current directory is assumed. "
-"*facts* is a list of strings representing the type of information desired"
-" (e.g. ``[\"type\", \"size\", \"perm\"]``).  Return a generator object "
+"*facts* is a list of strings representing the type of information desired "
+"(e.g. ``[\"type\", \"size\", \"perm\"]``).  Return a generator object "
 "yielding a tuple of two elements for every file found in path.  First "
-"element is the file name, the second one is a dictionary containing facts"
-" about the file name.  Content of this dictionary might be limited by the"
-" *facts* argument but server is not guaranteed to return all requested "
-"facts."
+"element is the file name, the second one is a dictionary containing facts "
+"about the file name.  Content of this dictionary might be limited by the "
+"*facts* argument but server is not guaranteed to return all requested facts."
 msgstr ""
+"Vypsat adresář ve standardizovaném formátu pomocí příkazu ``MLSD`` "
+"(:rfc:`3659`). Pokud je *path* vynechán, je předpokládán aktuální adresář. "
+"*facts* je seznam řetězců reprezentujících typ požadované informace (např. "
+"``[\"type\", \"size\", \"perm\"]``). Vrátí generátor produkující n-tici dvou"
+" prvků pro každý soubor nalezený v cestě. První prvek je název souboru, "
+"druhý je slovník obsahující fakta o názvu souboru. Obsah tohoto slovníku "
+"může být omezen argumentem *facts*, ale server není zaruchu, že vrátí "
+"všechna požadovaná fakta."
 
 #: ../../library/ftplib.rst:368
 msgid ""
 "Return a list of file names as returned by the ``NLST`` command.  The "
-"optional *argument* is a directory to list (default is the current server"
-" directory).  Multiple arguments can be used to pass non-standard options"
-" to the ``NLST`` command."
+"optional *argument* is a directory to list (default is the current server "
+"directory).  Multiple arguments can be used to pass non-standard options to "
+"the ``NLST`` command."
 msgstr ""
+"Vrátí seznam názvů souborů vrácených příkazem ``NLST``. Volitelný *argument*"
+" je adresář k vypsaní (výchozí je aktuální adresář serveru). Více argumentů "
+"lze použít k předání nestandardních voleb příkazu ``NLST``."
 
 #: ../../library/ftplib.rst:373 ../../library/ftplib.rst:385
 msgid "If your server supports the command, :meth:`mlsd` offers a better API."
-msgstr ""
+msgstr "Pokud svůj server podporuje příkaz, :meth:`mlsd` nabízí lepší API."
 
 #: ../../library/ftplib.rst:378
 msgid ""
-"Produce a directory listing as returned by the ``LIST`` command, printing"
-" it to standard output.  The optional *argument* is a directory to list "
-"(default is the current server directory).  Multiple arguments can be "
-"used to pass non-standard options to the ``LIST`` command.  If the last "
-"argument is a function, it is used as a *callback* function as for "
-":meth:`retrlines`; the default prints to :data:`sys.stdout`.  This method"
-" returns ``None``."
+"Produce a directory listing as returned by the ``LIST`` command, printing it"
+" to standard output.  The optional *argument* is a directory to list "
+"(default is the current server directory).  Multiple arguments can be used "
+"to pass non-standard options to the ``LIST`` command.  If the last argument "
+"is a function, it is used as a *callback* function as for :meth:`retrlines`;"
+" the default prints to :data:`sys.stdout`.  This method returns ``None``."
 msgstr ""
+"Vytvořit výpis adresáře, jaký je vrácen příkazem ``LIST``, a vytisknout jej "
+"na standardní výstup. Volitelný *argument* je adresář k vypsaní (výchozí je "
+"aktuální adresář serveru). Více argumentů lze použít k předání "
+"nestandardních voleb příkazu ``LIST``. Pokud je poslední argument funkce, "
+"používá se jako funkce *callback* jako pro :meth:`retrlines`; výchozí tiskne"
+" na :data:`sys.stdout`. Tato metoda vrací ``None``."
 
 #: ../../library/ftplib.rst:390
 msgid "Rename file *fromname* on the server to *toname*."
-msgstr ""
+msgstr "Přejmenovat soubor *fromname* na serveru na *toname*."
 
 #: ../../library/ftplib.rst:395
 msgid ""
-"Remove the file named *filename* from the server.  If successful, returns"
-" the text of the response, otherwise raises :exc:`error_perm` on "
-"permission errors or :exc:`error_reply` on other errors."
+"Remove the file named *filename* from the server.  If successful, returns "
+"the text of the response, otherwise raises :exc:`error_perm` on permission "
+"errors or :exc:`error_reply` on other errors."
 msgstr ""
+"Odebrat soubor pojmenovaný *filename* ze serveru. Pokud je úspešné, vrátí "
+"text odpovědi, jinak vyvolá :exc:`error_perm` na chybách oprávnění nebo "
+":exc:`error_reply` na ostatních chybách."
 
 #: ../../library/ftplib.rst:402
 msgid "Set the current directory on the server."
-msgstr ""
+msgstr "Nastaví aktuální adresář na serveru."
 
 #: ../../library/ftplib.rst:407
 msgid "Create a new directory on the server."
-msgstr ""
+msgstr "Vytvořit nový adresář na serveru."
 
 #: ../../library/ftplib.rst:412
 msgid "Return the pathname of the current directory on the server."
-msgstr ""
+msgstr "Vrátit cestu k aktuálnímu adresáři na serveru."
 
 #: ../../library/ftplib.rst:417
 msgid "Remove the directory named *dirname* on the server."
-msgstr ""
+msgstr "Odebrat adresář pojmenovaný *dirname* na serveru."
 
 #: ../../library/ftplib.rst:422
 msgid ""
-"Request the size of the file named *filename* on the server.  On success,"
-" the size of the file is returned as an integer, otherwise ``None`` is "
+"Request the size of the file named *filename* on the server.  On success, "
+"the size of the file is returned as an integer, otherwise ``None`` is "
 "returned. Note that the ``SIZE`` command is not  standardized, but is "
 "supported by many common server implementations."
 msgstr ""
+"Požádat o velikost souboru pojmenovaného *filename* na serveru. Při úspěchu "
+"je velikost souboru vrácena jako celé číslo, jinak je vráceno ``None``. "
+"Pozn: příkaz ``SIZE`` není standardizován, ale je podporován mnoha běžnými "
+"implementacemi serverů."
 
 #: ../../library/ftplib.rst:430
 msgid ""
-"Send a ``QUIT`` command to the server and close the connection. This is "
-"the \"polite\" way to close a connection, but it may raise an exception "
-"if the server responds with an error to the ``QUIT`` command.  This "
-"implies a call to the :meth:`close` method which renders the :class:`FTP`"
-" instance useless for subsequent calls (see below)."
+"Send a ``QUIT`` command to the server and close the connection. This is the "
+"\"polite\" way to close a connection, but it may raise an exception if the "
+"server responds with an error to the ``QUIT`` command.  This implies a call "
+"to the :meth:`close` method which renders the :class:`FTP` instance useless "
+"for subsequent calls (see below)."
 msgstr ""
+"Odeslat příkaz ``QUIT`` serveru a zavřít spojení. Toto je \"zdvořilý\" "
+"způsob zavření spojení, ale může vyvolat výjimku, pokud server odpoví chybou"
+" na příkaz ``QUIT``. To znamená volání metody :meth:`close`, která "
+"vykresluje instanci :class:`FTP` nepoužitelnou pro následující volání (viz "
+"níže)."
 
 #: ../../library/ftplib.rst:439
 msgid ""
-"Close the connection unilaterally.  This should not be applied to an "
-"already closed connection such as after a successful call to "
-":meth:`~FTP.quit`. After this call the :class:`FTP` instance should not "
-"be used any more (after a call to :meth:`close` or :meth:`~FTP.quit` you "
-"cannot reopen the connection by issuing another :meth:`login` method)."
+"Close the connection unilaterally.  This should not be applied to an already"
+" closed connection such as after a successful call to :meth:`~FTP.quit`. "
+"After this call the :class:`FTP` instance should not be used any more (after"
+" a call to :meth:`close` or :meth:`~FTP.quit` you cannot reopen the "
+"connection by issuing another :meth:`login` method)."
 msgstr ""
+"Zavřít spojení jednostranně. To by se nemělo používat na již uzavřené "
+"spojení, jako je po úspěšném volání :meth:`~FTP.quit`. Po tomto volání by "
+"instance :class:`FTP` neměla být používána dále (po volání :meth:`close` "
+"nebo :meth:`~FTP.quit` nemůžete znovu otevřít spojení vyřaděním dalšího "
+"volání :meth:`login`)."
 
 #: ../../library/ftplib.rst:447
 msgid "FTP_TLS objects"
-msgstr ""
+msgstr "Objekty FTP_TLS"
 
 #: ../../library/ftplib.rst:452
 msgid ""
@@ -475,12 +622,17 @@ msgid ""
 ":rfc:`4217`. Connect to port 21 implicitly securing the FTP control "
 "connection before authenticating."
 msgstr ""
+"Podmíněné třídy :class:`FTP`, které přidávají podporu TLS do FTP, jak je "
+"popsáno v :rfc:`4217`. Připojit se k portu 21 implicitně zabezpečením řídicí"
+" spojení FTP před ověřením."
 
 #: ../../library/ftplib.rst:458
 msgid ""
 "The user must explicitly secure the data connection by calling the "
 ":meth:`prot_p` method."
 msgstr ""
+"Uživatel musí explicitně zabezpečit datové spojení voláním metody "
+":meth:`prot_p`."
 
 #: ../../library/ftplib.rst:476
 msgid ""
@@ -488,16 +640,21 @@ msgid ""
 "certificates and private keys into a single, potentially long-lived, "
 "structure. Please read :ref:`ssl-security` for best practices."
 msgstr ""
+"Objekt kontextu SSL, který umožń skupín konfiguračních voleb SSL, "
+"certifikátů a soukromých klíčů do jedné, potenciálně dlouhodobou strukturu. "
+"Prosím přečtěte si :ref:`ssl-security` pro nejlepší praktiky."
 
 #: ../../library/ftplib.rst:483
 msgid ""
 "A timeout in seconds for blocking operations like :meth:`~FTP.connect` "
 "(default: the global default timeout setting)."
 msgstr ""
+"Timeout v sekundách pro blokující operace jako :meth:`~FTP.connect` "
+"(výchozí: globální výchozí nastavení timeout)."
 
 #: ../../library/ftplib.rst:497
 msgid "Added the *source_address* parameter."
-msgstr ""
+msgstr "Byly přidány parametr *source_address*."
 
 #: ../../library/ftplib.rst:500
 msgid ""
@@ -505,14 +662,17 @@ msgid ""
 ":attr:`ssl.SSLContext.check_hostname` and *Server Name Indication* (see "
 ":const:`ssl.HAS_SNI`)."
 msgstr ""
+"Třída nyní podporuje kontrolu jména hostitele s "
+":attr:`ssl.SSLContext.check_hostname` a *Server Name Indication* (viz "
+":const:`ssl.HAS_SNI`)."
 
 #: ../../library/ftplib.rst:511
 msgid "The deprecated *keyfile* and *certfile* parameters have been removed."
-msgstr ""
+msgstr "Zastaralé parametry *keyfile* a *certfile* byly odstra něny."
 
 #: ../../library/ftplib.rst:514
 msgid "Here's a sample session using the :class:`FTP_TLS` class::"
-msgstr ""
+msgstr "Zde je příklad relace používající třídu :class:`FTP_TLS`::"
 
 #: ../../library/ftplib.rst:516
 msgid ""
@@ -522,13 +682,7 @@ msgid ""
 ">>> ftps.prot_p()\n"
 "'200 Data protection level set to \"private\"'\n"
 ">>> ftps.nlst()\n"
-"['6jack', 'OpenBSD', 'antilink', 'blogbench', 'bsdcam', 'clockspeed', "
-"'djbdns-jedi', 'docs', 'eaccelerator-jedi', 'favicon.ico', 'francotone', "
-"'fugu', 'ignore', 'libpuzzle', 'metalog', 'minidentd', 'misc', 'mysql-"
-"udf-global-user-variables', 'php-jenkins-hash', 'php-skein-hash', 'php-"
-"webdav', 'phpaudit', 'phpbench', 'pincaster', 'ping', 'posto', 'pub', "
-"'public', 'public_keys', 'pure-ftpd', 'qscan', 'qtc', 'sharedance', "
-"'skycache', 'sound', 'tmp', 'ucarp']"
+"['6jack', 'OpenBSD', 'antilink', 'blogbench', 'bsdcam', 'clockspeed', 'djbdns-jedi', 'docs', 'eaccelerator-jedi', 'favicon.ico', 'francotone', 'fugu', 'ignore', 'libpuzzle', 'metalog', 'minidentd', 'misc', 'mysql-udf-global-user-variables', 'php-jenkins-hash', 'php-skein-hash', 'php-webdav', 'phpaudit', 'phpbench', 'pincaster', 'ping', 'posto', 'pub', 'public', 'public_keys', 'pure-ftpd', 'qscan', 'qtc', 'sharedance', 'skycache', 'sound', 'tmp', 'ucarp']"
 msgstr ""
 
 #: ../../library/ftplib.rst:524
@@ -543,8 +697,8 @@ msgstr ""
 
 #: ../../library/ftplib.rst:533
 msgid ""
-"Set up a secure control connection by using TLS or SSL, depending on what"
-" is specified in the :attr:`ssl_version` attribute."
+"Set up a secure control connection by using TLS or SSL, depending on what is"
+" specified in the :attr:`ssl_version` attribute."
 msgstr ""
 
 #: ../../library/ftplib.rst:536
@@ -579,30 +733,29 @@ msgstr ""
 
 #: ../../library/ftplib.rst:568
 msgid ""
-"Exception raised when an error code signifying a temporary error "
-"(response codes in the range 400--499) is received."
+"Exception raised when an error code signifying a temporary error (response "
+"codes in the range 400--499) is received."
 msgstr ""
 
 #: ../../library/ftplib.rst:574
 msgid ""
-"Exception raised when an error code signifying a permanent error "
-"(response codes in the range 500--599) is received."
+"Exception raised when an error code signifying a permanent error (response "
+"codes in the range 500--599) is received."
 msgstr ""
 
 #: ../../library/ftplib.rst:580
 msgid ""
-"Exception raised when a reply is received from the server that does not "
-"fit the response specifications of the File Transfer Protocol, i.e. begin"
-" with a digit in the range 1--5."
+"Exception raised when a reply is received from the server that does not fit "
+"the response specifications of the File Transfer Protocol, i.e. begin with a"
+" digit in the range 1--5."
 msgstr ""
 
 #: ../../library/ftplib.rst:587
 msgid ""
 "The set of all exceptions (as a tuple) that methods of :class:`FTP` "
 "instances may raise as a result of problems with the FTP connection (as "
-"opposed to programming errors made by the caller).  This set includes the"
-" four exceptions listed above as well as :exc:`OSError` and "
-":exc:`EOFError`."
+"opposed to programming errors made by the caller).  This set includes the "
+"four exceptions listed above as well as :exc:`OSError` and :exc:`EOFError`."
 msgstr ""
 
 #: ../../library/ftplib.rst:595
@@ -612,8 +765,8 @@ msgstr ""
 #: ../../library/ftplib.rst:596
 msgid ""
 "Parser for the :file:`.netrc` file format.  The file :file:`.netrc` is "
-"typically used by FTP clients to load user authentication information "
-"before prompting the user."
+"typically used by FTP clients to load user authentication information before"
+" prompting the user."
 msgstr ""
 
 #: ../../library/ftplib.rst:9
@@ -627,4 +780,3 @@ msgstr ""
 #: ../../library/ftplib.rst:9
 msgid "ftplib (standard module)"
 msgstr ""
-

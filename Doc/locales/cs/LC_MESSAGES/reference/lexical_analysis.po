@@ -644,7 +644,7 @@ msgstr ""
 
 #: ../../reference/lexical_analysis.rst:344
 msgid "Whitespace between tokens"
-msgstr ""
+msgstr "Bílé znaky mezi tokeny"
 
 #: ../../reference/lexical_analysis.rst:346
 msgid ""
@@ -652,6 +652,9 @@ msgid ""
 "whitespace characters space, tab and formfeed can be used interchangeably to"
 " separate tokens:"
 msgstr ""
+"Kromě začátku logického řádku nebo v řetězcových literálech lze znaky "
+"mezery, tabulátor a formfeed používat vzájemně zaměnitelně k oddělování "
+"tokenů:"
 
 #: ../../reference/lexical_analysis.rst:356
 msgid ""
@@ -660,20 +663,26 @@ msgid ""
 "token, but ``a b`` is two tokens. However, ``+a`` and ``+ a`` both produce "
 "two tokens, ``+`` and ``a``, as ``+a`` is not a valid token."
 msgstr ""
+"Bílé znaky mezi dvěma tokeny jsou potřebné pouze pokud by jejich zřetězení "
+"mohlo být interpretováno jako jiný token. Například ``ab`` je jeden token, "
+"ale ``a b`` jsou dva tokeny. Nicméně ``+a`` a ``+ a`` produkují oba dva "
+"tokeny, ``+`` a ``a``, protože ``+a`` není platný token."
 
 #: ../../reference/lexical_analysis.rst:365
 msgid "End marker"
-msgstr ""
+msgstr "Koncový marker"
 
 #: ../../reference/lexical_analysis.rst:367
 msgid ""
 "At the end of non-interactive input, the lexical analyzer generates an "
 ":data:`~token.ENDMARKER` token."
 msgstr ""
+"Na konci neinteraktivního vstupu generuje lexikální analyzátor token "
+":data:`~token.ENDMARKER`."
 
 #: ../../reference/lexical_analysis.rst:374
 msgid "Other tokens"
-msgstr ""
+msgstr "Ostatní tokeny"
 
 #: ../../reference/lexical_analysis.rst:376
 msgid ""
@@ -687,46 +696,61 @@ msgid ""
 "longest possible string that forms a legal token, when read from left to "
 "right."
 msgstr ""
+"Kromě :data:`~token.NEWLINE`, :data:`~token.INDENT` a :data:`~token.DEDENT` "
+"existují následující kategórie tokenů: *identifikátory* a *klíčová slova* "
+"(:data:`~token.NAME`), *literály* (jako :data:`~token.NUMBER` a "
+":data:`~token.STRING`) a další symboly (*operátory* a *oddělovače*, "
+":data:`~token.OP`). Bílé znaky (kromě logických ukončujících řádků, "
+"popisovaných dříve) nejsou tokeny, ale slouží k oddělování tokenů. Pokud "
+"existuje nejednotnost, token tvoří nejdelší možný řetězec, který vytváří "
+"platný token, při čtení zleva doprava."
 
 #: ../../reference/lexical_analysis.rst:390
 msgid "Names (identifiers and keywords)"
-msgstr ""
+msgstr "Jména (identifikátory a klíčová slova)"
 
 #: ../../reference/lexical_analysis.rst:394
 msgid ""
 ":data:`~token.NAME` tokens represent *identifiers*, *keywords*, and *soft "
 "keywords*."
 msgstr ""
+"Tokeny :data:`~token.NAME` representují *identifikátory*, *klíčová slova* a "
+"*soft klíčová slova*."
 
 #: ../../reference/lexical_analysis.rst:397
 msgid "Names are composed of the following characters:"
-msgstr ""
+msgstr "Jména se skládají z následujících znaků:"
 
 #: ../../reference/lexical_analysis.rst:399
 msgid "uppercase and lowercase letters (``A-Z`` and ``a-z``),"
-msgstr ""
+msgstr "velká a malá písmena (``A-Z`` a ``a-z``),"
 
 #: ../../reference/lexical_analysis.rst:400
 msgid "the underscore (``_``),"
-msgstr ""
+msgstr "podtržítko (``_``),"
 
 #: ../../reference/lexical_analysis.rst:401
 msgid ""
 "digits (``0`` through ``9``), which cannot appear as the first character, "
 "and"
-msgstr ""
+msgstr "cifry (``0`` až ``9``), které se nemůžou objevit jako první znak, a"
 
 #: ../../reference/lexical_analysis.rst:402
 msgid ""
 "non-ASCII characters. Valid names may only contain \"letter-like\" and "
 "\"digit-like\" characters; see :ref:`lexical-names-nonascii` for details."
 msgstr ""
+"znaky mimo ASCII. Platná jména mohou obsahovat pouze znaky podobné "
+"\"písmenu\" a \"cifrě\"; podrobnosti naleznete v :ref:`lexical-names-"
+"nonascii`."
 
 #: ../../reference/lexical_analysis.rst:405
 msgid ""
 "Names must contain at least one character, but have no upper length limit. "
 "Case is significant."
 msgstr ""
+"Jména musí obsahovat alespoň jeden znak, ale nemájí horní limit délky. "
+"Rozlišování velikosti písmen je významné."
 
 #: ../../reference/lexical_analysis.rst:408
 msgid "Formally, names are described by the following lexical definitions:"
@@ -2732,7 +2756,7 @@ msgstr ""
 
 #: ../../reference/lexical_analysis.rst:1533
 msgid "Operators and delimiters"
-msgstr ""
+msgstr "Operátory a oddělovače"
 
 #: ../../reference/lexical_analysis.rst:1539
 msgid ""
@@ -2741,6 +2765,10 @@ msgid ""
 "tokens and their names <token_operators_delimiters>` is also available in "
 "the :mod:`!token` module documentation."
 msgstr ""
+"Následující gramatika definuje tokeny :dfn:`operator` a :dfn:`oddělovač`, to"
+" jest obecný typ tokenu :data:`~token.OP`. :ref:`Seznam těchto tokenů a "
+"jejich jmen <token_operators_delimiters>` je k dispozici také v dokumentaci "
+"modulu :mod:`!token`."
 
 #: ../../reference/lexical_analysis.rst:1568
 msgid ""
@@ -2748,6 +2776,9 @@ msgid ""
 " while *delimiters* serve other purposes. However, there is no clear, formal"
 " distinction between the two categories."
 msgstr ""
+"Obecně se *operátory* používají k kombinování :ref:`výrazů <expressions>`, "
+"zatímco *oddělovače* slouží k jiným účelům. Neexistuje však jasné, formální "
+"rozdílení mezi těmito dvěma kategóriemi."
 
 #: ../../reference/lexical_analysis.rst:1572
 msgid ""
@@ -2756,6 +2787,10 @@ msgid ""
 " for sequence unpacking, and ``@`` is both the matrix multiplication and a "
 "delimiter that introduces decorators."
 msgstr ""
+"Některé tokeny mohou sloužit buď jako operátory nebo jako oddělovače, v "
+"závislosti na použití. Například ``*`` je jak multipli kační operátor, tak "
+"oddělovač používaný pro rozbalování sekvencí, a ``@`` je jak operátor "
+"maticového násobení, tak oddělovač, který zavádí dekorátory."
 
 #: ../../reference/lexical_analysis.rst:1577
 msgid ""
@@ -2763,427 +2798,434 @@ msgid ""
 "consider ``.``, ``(``, and ``)`` to be delimiters, while others see the "
 ":py:func:`getattr` operator and the function call operator(s)."
 msgstr ""
+"Pro některé tokeny není rozdělení jasné. Například někteří lidé považují "
+"``.``, ``(`` a ``)`` za oddělovače, zatímco druhí vidí :py:func:`getattr` "
+"operátor a operátor volání funkce."
 
 #: ../../reference/lexical_analysis.rst:1581
 msgid ""
 "Some of Python's operators, like ``and``, ``or``, and ``not in``, use "
 ":ref:`keyword <keywords>` tokens rather than \"symbols\" (operator tokens)."
 msgstr ""
+"Některé Pythonovy operátory, jako ``and``, ``or`` a ``not in``, používají "
+":ref:`klíčové <keywords>` tokeny místo \"symbolů\" (tokenů operátorů)."
 
 #: ../../reference/lexical_analysis.rst:1584
 msgid ""
 "A sequence of three consecutive periods (``...``) has a special meaning as "
 "an :py:data:`Ellipsis` literal."
 msgstr ""
+"Posloupnost tří po sobě jdoucích teček (``...``) má speciální význaam jako "
+":py:data:`Ellipsis` literál."
 
 #: ../../reference/lexical_analysis.rst:8
 msgid "lexical analysis"
-msgstr ""
+msgstr "lexikální analýza"
 
 #: ../../reference/lexical_analysis.rst:8
 msgid "parser"
-msgstr ""
+msgstr "parser"
 
 #: ../../reference/lexical_analysis.rst:8
 msgid "token"
-msgstr ""
+msgstr "token"
 
 #: ../../reference/lexical_analysis.rst:90
 msgid "line structure"
-msgstr ""
+msgstr "struktura řádku"
 
 #: ../../reference/lexical_analysis.rst:100
 msgid "logical line"
-msgstr ""
+msgstr "logický řádek"
 
 #: ../../reference/lexical_analysis.rst:100
 #: ../../reference/lexical_analysis.rst:205
 #: ../../reference/lexical_analysis.rst:763
 msgid "physical line"
-msgstr ""
+msgstr "fyzický řádek"
 
 #: ../../reference/lexical_analysis.rst:100
 #: ../../reference/lexical_analysis.rst:205
 msgid "line joining"
-msgstr ""
+msgstr "spoječení řádků"
 
 #: ../../reference/lexical_analysis.rst:100
 msgid "NEWLINE token"
-msgstr ""
+msgstr "token NEWLINE"
 
 #: ../../reference/lexical_analysis.rst:146
 msgid "comment"
-msgstr ""
+msgstr "komentář"
 
 #: ../../reference/lexical_analysis.rst:146
 msgid "hash character"
-msgstr ""
+msgstr "znak haše (hash)"
 
 #: ../../reference/lexical_analysis.rst:146
 #: ../../reference/lexical_analysis.rst:160
 msgid "# (hash)"
-msgstr ""
+msgstr "# (hash)"
 
 #: ../../reference/lexical_analysis.rst:160
 msgid "source character set"
-msgstr ""
+msgstr "sada znaků zdrojového kódu"
 
 #: ../../reference/lexical_analysis.rst:160
 msgid "encoding declarations (source file)"
-msgstr ""
+msgstr "deklarace kódování (zdrojový soubor)"
 
 #: ../../reference/lexical_analysis.rst:160
 msgid "source encoding declaration"
-msgstr ""
+msgstr "deklarace kódování zdrojového kódu"
 
 #: ../../reference/lexical_analysis.rst:205
 msgid "line continuation"
-msgstr ""
+msgstr "pokračování řádku"
 
 #: ../../reference/lexical_analysis.rst:205
 msgid "backslash character"
-msgstr ""
+msgstr "znak zpětného lomítka"
 
 #: ../../reference/lexical_analysis.rst:250
 msgid "blank line"
-msgstr ""
+msgstr "prázdný řádek"
 
 #: ../../reference/lexical_analysis.rst:266
 msgid "indentation"
-msgstr ""
+msgstr "odsazení"
 
 #: ../../reference/lexical_analysis.rst:266
 msgid "leading whitespace"
-msgstr ""
+msgstr "předchozí bílé znaky"
 
 #: ../../reference/lexical_analysis.rst:266
 msgid "grouping"
-msgstr ""
+msgstr "seskupování"
 
 #: ../../reference/lexical_analysis.rst:266
 msgid "statement grouping"
-msgstr ""
+msgstr "seskupování příkazů"
 
 #: ../../reference/lexical_analysis.rst:294
 msgid "INDENT token"
-msgstr ""
+msgstr "token INDENT"
 
 #: ../../reference/lexical_analysis.rst:294
 msgid "DEDENT token"
-msgstr ""
+msgstr "token DEDENT"
 
 #: ../../reference/lexical_analysis.rst:392
 msgid "identifier"
-msgstr ""
+msgstr "identifikátor"
 
 #: ../../reference/lexical_analysis.rst:392
 msgid "name"
-msgstr ""
+msgstr "jméno"
 
 #: ../../reference/lexical_analysis.rst:427
 #: ../../reference/lexical_analysis.rst:451
 msgid "keyword"
-msgstr ""
+msgstr "klíčové slovo"
 
 #: ../../reference/lexical_analysis.rst:427
 msgid "reserved word"
-msgstr ""
+msgstr "rezervované slovo"
 
 #: ../../reference/lexical_analysis.rst:451
 msgid "soft keyword"
-msgstr ""
+msgstr "soft klíčové slovo"
 
 #: ../../reference/lexical_analysis.rst:471
 msgid "_, identifiers"
-msgstr ""
+msgstr "_, identifikátory"
 
 #: ../../reference/lexical_analysis.rst:471
 msgid "__, identifiers"
-msgstr ""
+msgstr "__, identifikátory"
 
 #: ../../reference/lexical_analysis.rst:616
 msgid "literal"
-msgstr ""
+msgstr "literál"
 
 #: ../../reference/lexical_analysis.rst:616
 msgid "constant"
-msgstr ""
+msgstr "konstanta"
 
 #: ../../reference/lexical_analysis.rst:628
 #: ../../reference/lexical_analysis.rst:671
 #: ../../reference/lexical_analysis.rst:696
 msgid "string literal"
-msgstr ""
+msgstr "řetězcový literál"
 
 #: ../../reference/lexical_analysis.rst:628
 #: ../../reference/lexical_analysis.rst:964
 msgid "bytes literal"
-msgstr ""
+msgstr "bajtů literál"
 
 #: ../../reference/lexical_analysis.rst:628
 msgid "ASCII"
-msgstr ""
+msgstr "ASCII"
 
 #: ../../reference/lexical_analysis.rst:628
 msgid "' (single quote)"
-msgstr ""
+msgstr "' (jedná uvozovka)"
 
 #: ../../reference/lexical_analysis.rst:628
 msgid "\" (double quote)"
-msgstr ""
+msgstr "\" (dvojitá uvozovka)"
 
 #: ../../reference/lexical_analysis.rst:671
 msgid "triple-quoted string"
-msgstr ""
+msgstr "řetězec v trojitém uvozování"
 
 #: ../../reference/lexical_analysis.rst:671
 msgid "\"\"\""
-msgstr ""
+msgstr "\"\"\""
 
 #: ../../reference/lexical_analysis.rst:671
 msgid "'''"
-msgstr ""
+msgstr "'''"
 
 #: ../../reference/lexical_analysis.rst:696
 msgid "u'"
-msgstr ""
+msgstr "u'"
 
 #: ../../reference/lexical_analysis.rst:696
 msgid "u\""
-msgstr ""
+msgstr "u\""
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "escape sequence"
-msgstr ""
+msgstr "sekvence escape"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "Standard C"
-msgstr ""
+msgstr "Standard C"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\ (backslash)"
-msgstr ""
+msgstr "\\ (zpetne lomitko)"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\\\"
-msgstr ""
+msgstr "\\\\"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\a"
-msgstr ""
+msgstr "\\a"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\b"
-msgstr ""
+msgstr "\\b"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\f"
-msgstr ""
+msgstr "\\f"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\n"
-msgstr ""
+msgstr "\\n"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\r"
-msgstr ""
+msgstr "\\r"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\t"
-msgstr ""
+msgstr "\\t"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\v"
-msgstr ""
+msgstr "\\v"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\x"
-msgstr ""
+msgstr "\\x"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\N"
-msgstr ""
+msgstr "\\N"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\u"
-msgstr ""
+msgstr "\\u"
 
 #: ../../reference/lexical_analysis.rst:763
 msgid "\\U"
-msgstr ""
+msgstr "\\U"
 
 #: ../../reference/lexical_analysis.rst:939
 msgid "unrecognized escape sequence"
-msgstr ""
+msgstr "nepoznaná sekvence escape"
 
 #: ../../reference/lexical_analysis.rst:964
 msgid "b'"
-msgstr ""
+msgstr "b'"
 
 #: ../../reference/lexical_analysis.rst:964
 msgid "b\""
-msgstr ""
+msgstr "b\""
 
 #: ../../reference/lexical_analysis.rst:991
 msgid "r'"
-msgstr ""
+msgstr "r'"
 
 #: ../../reference/lexical_analysis.rst:991
 msgid "raw string literal"
-msgstr ""
+msgstr "raw řetězcový literál"
 
 #: ../../reference/lexical_analysis.rst:991
 msgid "r\""
-msgstr ""
+msgstr "r\""
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "formatted string literal"
-msgstr ""
+msgstr "formátovaný řetězcový literál"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "interpolated string literal"
-msgstr ""
+msgstr "interpolaný řetězcový literál"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "string"
-msgstr ""
+msgstr "řetězec"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "formatted literal"
-msgstr ""
+msgstr "formátovaný literál"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "interpolated literal"
-msgstr ""
+msgstr "interpolaný literál"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "f-string"
-msgstr ""
+msgstr "f-string"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "fstring"
-msgstr ""
+msgstr "fstring"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "f'"
-msgstr ""
+msgstr "f'"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "f\""
-msgstr ""
+msgstr "f\""
 
 #: ../../reference/lexical_analysis.rst:1022
 #, python-brace-format
 msgid "{} (curly brackets)"
-msgstr ""
+msgstr "{} (složené závorky)"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "in formatted string literal"
-msgstr ""
+msgstr "v formátovaném řetězcovém literálu"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "! (exclamation)"
-msgstr ""
+msgstr "! (vykřičíník)"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid ": (colon)"
-msgstr ""
+msgstr ": (dvojtečka)"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "= (equals)"
-msgstr ""
+msgstr "= (rovnátko)"
 
 #: ../../reference/lexical_analysis.rst:1022
 msgid "for help in debugging using string literals"
-msgstr ""
+msgstr "pomoc při ladění pomőcí řetězcových literálů"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "number"
-msgstr ""
+msgstr "číslo"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "numeric literal"
-msgstr ""
+msgstr "numerický literál"
 
 #: ../../reference/lexical_analysis.rst:1304
 #: ../../reference/lexical_analysis.rst:1326
 msgid "integer literal"
-msgstr ""
+msgstr "celé číslo"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "floating-point literal"
-msgstr ""
+msgstr "literál s pohyblivou řádovou čárkou"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "hexadecimal literal"
-msgstr ""
+msgstr "hexadecimální literál"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "octal literal"
-msgstr ""
+msgstr "oktalální literál"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "binary literal"
-msgstr ""
+msgstr "binární literál"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "decimal literal"
-msgstr ""
+msgstr "desetičkový literál"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "imaginary literal"
-msgstr ""
+msgstr "imaginární literál"
 
 #: ../../reference/lexical_analysis.rst:1304
 msgid "complex literal"
-msgstr ""
+msgstr "komplexní literál"
 
 #: ../../reference/lexical_analysis.rst:1326
 msgid "0b"
-msgstr ""
+msgstr "0b"
 
 #: ../../reference/lexical_analysis.rst:1326
 msgid "0o"
-msgstr ""
+msgstr "0o"
 
 #: ../../reference/lexical_analysis.rst:1326
 msgid "0x"
-msgstr ""
+msgstr "0x"
 
 #: ../../reference/lexical_analysis.rst:1326
 #: ../../reference/lexical_analysis.rst:1401
 msgid "_ (underscore)"
-msgstr ""
+msgstr "_ (podtržítko)"
 
 #: ../../reference/lexical_analysis.rst:1326
 #: ../../reference/lexical_analysis.rst:1401
 #: ../../reference/lexical_analysis.rst:1465
 msgid "in numeric literal"
-msgstr ""
+msgstr "v numerickém literálu"
 
 #: ../../reference/lexical_analysis.rst:1401
 msgid ". (dot)"
-msgstr ""
+msgstr ". (tečka)"
 
 #: ../../reference/lexical_analysis.rst:1401
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: ../../reference/lexical_analysis.rst:1465
 msgid "j"
-msgstr ""
+msgstr "j"
 
 #: ../../reference/lexical_analysis.rst:1535
 msgid "operators"
-msgstr ""
+msgstr "operátory"
 
 #: ../../reference/lexical_analysis.rst:1535
 msgid "delimiters"
-msgstr ""
+msgstr "oddělovače"
 
 #~ msgid ""
 #~ "Support for `name aliases "

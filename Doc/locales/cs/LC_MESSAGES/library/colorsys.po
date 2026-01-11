@@ -11,33 +11,39 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/colorsys.rst:2
 msgid ":mod:`!colorsys` --- Conversions between color systems"
-msgstr ""
+msgstr ":mod:`!colorsys` --- Konverze mezi barevnými systémy"
 
 #: ../../library/colorsys.rst:9
 msgid "**Source code:** :source:`Lib/colorsys.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/colorsys.py`"
 
 #: ../../library/colorsys.rst:13
 msgid ""
-"The :mod:`colorsys` module defines bidirectional conversions of color "
-"values between colors expressed in the RGB (Red Green Blue) color space "
-"used in computer monitors and three other coordinate systems: YIQ, HLS "
-"(Hue Lightness Saturation) and HSV (Hue Saturation Value).  Coordinates "
-"in all of these color spaces are floating-point values.  In the YIQ "
-"space, the Y coordinate is between 0 and 1, but the I and Q coordinates "
-"can be positive or negative.  In all other spaces, the coordinates are "
-"all between 0 and 1."
+"The :mod:`colorsys` module defines bidirectional conversions of color values"
+" between colors expressed in the RGB (Red Green Blue) color space used in "
+"computer monitors and three other coordinate systems: YIQ, HLS (Hue "
+"Lightness Saturation) and HSV (Hue Saturation Value).  Coordinates in all of"
+" these color spaces are floating-point values.  In the YIQ space, the Y "
+"coordinate is between 0 and 1, but the I and Q coordinates can be positive "
+"or negative.  In all other spaces, the coordinates are all between 0 and 1."
 msgstr ""
+"Modul :mod:`colorsys` definuje obousměrné konverze barevných hodnot mezi "
+"barvami vyjádřenými v RGB (Red Green Blue) barevném prostoru používaném v "
+"počítačových monitorech a třemi dalšími souřadnicovými systémy: YIQ, HLS "
+"(Hue Lightness Saturation) a HSV (Hue Saturation Value). Souřadnice ve všech"
+" těchto barevných prostorech jsou čísla s pohyblivou čárkou. V prostoru YIQ "
+"je souřadnice Y mezi 0 a 1, ale souřadnice I a Q mohou být kladné nebo "
+"záporné. Ve všech ostatních prostorech jsou souřadnice mezi 0 a 1."
 
 #: ../../library/colorsys.rst:23
 msgid ""
@@ -45,38 +51,41 @@ msgid ""
 "https://poynton.ca/ColorFAQ.html and "
 "https://www.cambridgeincolour.com/tutorials/color-spaces.htm."
 msgstr ""
+"Více informací o barevných prostorech lze nalézt na "
+"https://poynton.ca/ColorFAQ.html a "
+"https://www.cambridgeincolour.com/tutorials/color-spaces.htm."
 
 #: ../../library/colorsys.rst:27
 msgid "The :mod:`colorsys` module defines the following functions:"
-msgstr ""
+msgstr "Modul :mod:`colorsys` definuje následující funkce:"
 
 #: ../../library/colorsys.rst:32
 msgid "Convert the color from RGB coordinates to YIQ coordinates."
-msgstr ""
+msgstr "Konvertuje barvu z RGB souřadnic na YIQ souřadnice."
 
 #: ../../library/colorsys.rst:37
 msgid "Convert the color from YIQ coordinates to RGB coordinates."
-msgstr ""
+msgstr "Konvertuje barvu z YIQ souřadnic na RGB souřadnice."
 
 #: ../../library/colorsys.rst:42
 msgid "Convert the color from RGB coordinates to HLS coordinates."
-msgstr ""
+msgstr "Konvertuje barvu z RGB souřadnic na HLS souřadnice."
 
 #: ../../library/colorsys.rst:47
 msgid "Convert the color from HLS coordinates to RGB coordinates."
-msgstr ""
+msgstr "Konvertuje barvu z HLS souřadnic na RGB souřadnice."
 
 #: ../../library/colorsys.rst:52
 msgid "Convert the color from RGB coordinates to HSV coordinates."
-msgstr ""
+msgstr "Konvertuje barvu z RGB souřadnic na HSV souřadnice."
 
 #: ../../library/colorsys.rst:57
 msgid "Convert the color from HSV coordinates to RGB coordinates."
-msgstr ""
+msgstr "Konvertuje barvu z HSV souřadnic na RGB souřadnice."
 
 #: ../../library/colorsys.rst:59
 msgid "Example::"
-msgstr ""
+msgstr "Přík lad:"
 
 #: ../../library/colorsys.rst:61
 msgid ""
@@ -86,4 +95,8 @@ msgid ""
 ">>> colorsys.hsv_to_rgb(0.5, 0.5, 0.4)\n"
 "(0.2, 0.4, 0.4)"
 msgstr ""
-
+">>> import colorsys\n"
+">>> colorsys.rgb_to_hsv(0.2, 0.4, 0.4)\n"
+"(0.5, 0.5, 0.4)\n"
+">>> colorsys.hsv_to_rgb(0.5, 0.5, 0.4)\n"
+"(0.2, 0.4, 0.4)"

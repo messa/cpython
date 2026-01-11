@@ -11,144 +11,180 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/types.rst:2
 msgid ":mod:`!types` --- Dynamic type creation and names for built-in types"
-msgstr ""
+msgstr ":mod:`!types` --- Dynamické vytváření typů a jména vestavěných typů"
 
 #: ../../library/types.rst:7
 msgid "**Source code:** :source:`Lib/types.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/types.py`"
 
 #: ../../library/types.rst:11
 msgid ""
-"This module defines utility functions to assist in dynamic creation of "
-"new types."
+"This module defines utility functions to assist in dynamic creation of new "
+"types."
 msgstr ""
+"Tento modul definuje užitečné funkce pro podporu dynamického vytváření "
+"nových typů."
 
 #: ../../library/types.rst:14
 msgid ""
-"It also defines names for some object types that are used by the standard"
-" Python interpreter, but not exposed as builtins like :class:`int` or "
+"It also defines names for some object types that are used by the standard "
+"Python interpreter, but not exposed as builtins like :class:`int` or "
 ":class:`str` are."
 msgstr ""
+"Definuje také jména pro některé typy objektů, které používá standardní "
+"interpret Pythonu, ale nejsou vystaveny jako vestavěné (builtin) jako "
+":class:`int` nebo :class:`str`."
 
 #: ../../library/types.rst:18
 msgid ""
 "Finally, it provides some additional type-related utility classes and "
 "functions that are not fundamental enough to be builtins."
 msgstr ""
+"Nakonec poskytuje některé další třídy a funkce související s typy, které "
+"nejsou dostatečně základní na to, aby byly vestavěné."
 
 #: ../../library/types.rst:23
 msgid "Dynamic Type Creation"
-msgstr ""
+msgstr "Dynamické vytváření typů"
 
 #: ../../library/types.rst:27
 msgid "Creates a class object dynamically using the appropriate metaclass."
-msgstr ""
+msgstr "Vytváří objekt třídy dynamicky s využitím odpovífající metaklásy."
 
 #: ../../library/types.rst:29
 msgid ""
-"The first three arguments are the components that make up a class "
-"definition header: the class name, the base classes (in order), the "
-"keyword arguments (such as ``metaclass``)."
+"The first three arguments are the components that make up a class definition"
+" header: the class name, the base classes (in order), the keyword arguments "
+"(such as ``metaclass``)."
 msgstr ""
+"První tři argumenty jsou součásti, které tvoří hlavičku definice třídy: "
+"název třídy, bázové třídy (v pořadí), argumenty klíčového slova (jako např. "
+"``metaclass``)."
 
 #: ../../library/types.rst:33
 msgid ""
-"The *exec_body* argument is a callback that is used to populate the "
-"freshly created class namespace. It should accept the class namespace as "
-"its sole argument and update the namespace directly with the class "
-"contents. If no callback is provided, it has the same effect as passing "
-"in ``lambda ns: None``."
+"The *exec_body* argument is a callback that is used to populate the freshly "
+"created class namespace. It should accept the class namespace as its sole "
+"argument and update the namespace directly with the class contents. If no "
+"callback is provided, it has the same effect as passing in ``lambda ns: "
+"None``."
 msgstr ""
+"Argument *exec_body* je callback, který se používá k naplnněí nově "
+"vytvořeného oboru jmen třídy. Má přijmout obor jmen třídy jako svůj jediný "
+"argument a přímo aktualizovat obor jmen obsahem třídy. Pokud není zadán "
+"žádný callback, má to stejný efekt jako zadání ``lambda ns: None``."
 
 #: ../../library/types.rst:43
 msgid "Calculates the appropriate metaclass and creates the class namespace."
-msgstr ""
+msgstr "Vypočítá odpovífající metaklásu a vytváří obor jmen třídy."
 
 #: ../../library/types.rst:45
 msgid ""
-"The arguments are the components that make up a class definition header: "
-"the class name, the base classes (in order) and the keyword arguments "
-"(such as ``metaclass``)."
+"The arguments are the components that make up a class definition header: the"
+" class name, the base classes (in order) and the keyword arguments (such as "
+"``metaclass``)."
 msgstr ""
+"Argumenty jsou součásti, které tvoří hlavičku definice třídy: název třídy, "
+"bázové třídy (v pořadí) a argumenty klíčového slova (jako např. "
+"``metaclass``)."
 
 #: ../../library/types.rst:49
 msgid "The return value is a 3-tuple: ``metaclass, namespace, kwds``"
-msgstr ""
+msgstr "Návratová hodnota je 3-tica: ``metaclass, namespace, kwds``"
 
 #: ../../library/types.rst:51
 msgid ""
-"*metaclass* is the appropriate metaclass, *namespace* is the prepared "
-"class namespace and *kwds* is an updated copy of the passed in *kwds* "
-"argument with any ``'metaclass'`` entry removed. If no *kwds* argument is"
-" passed in, this will be an empty dict."
+"*metaclass* is the appropriate metaclass, *namespace* is the prepared class "
+"namespace and *kwds* is an updated copy of the passed in *kwds* argument "
+"with any ``'metaclass'`` entry removed. If no *kwds* argument is passed in, "
+"this will be an empty dict."
 msgstr ""
+"*metaclass* je odpovífající metaklása, *namespace* je připravemý obor jmen "
+"třídy a *kwds* je aktualizovaná kopie zadaného argumentu *kwds* bez položky "
+"``'metaclass'``. Pokud není zadán argument *kwds*, bude to prázdný slovník."
 
 #: ../../library/types.rst:60
 msgid ""
-"The default value for the ``namespace`` element of the returned tuple has"
-" changed.  Now an insertion-order-preserving mapping is used when the "
+"The default value for the ``namespace`` element of the returned tuple has "
+"changed.  Now an insertion-order-preserving mapping is used when the "
 "metaclass does not have a ``__prepare__`` method."
 msgstr ""
+"Výchozí hodnota prvku ``namespace`` vrácené n-tice se změnila. Nyní se "
+"používá mapování zachovávající pořadí vkládání, když metaklása nemá metodu "
+"``__prepare__``."
 
 #: ../../library/types.rst:66
 msgid ":ref:`metaclasses`"
-msgstr ""
+msgstr ":ref:`metaclasses`"
 
 #: ../../library/types.rst:67
-msgid "Full details of the class creation process supported by these functions"
-msgstr ""
+msgid ""
+"Full details of the class creation process supported by these functions"
+msgstr "Plné podrobnosti procesu vytváření třídy podporované těmito funkcemi"
 
 #: ../../library/types.rst:69
 msgid ":pep:`3115` - Metaclasses in Python 3000"
-msgstr ""
+msgstr ":pep:`3115` - Metaklásy v Pythonu 3000"
 
 #: ../../library/types.rst:70
 msgid "Introduced the ``__prepare__`` namespace hook"
-msgstr ""
+msgstr "Zavéden hook ``__prepare__`` pro obor jmen"
 
 #: ../../library/types.rst:74
 msgid "Resolve MRO entries dynamically as specified by :pep:`560`."
-msgstr ""
+msgstr "Dynamicky řešit položky MRO podle :pep:`560`."
 
 #: ../../library/types.rst:76
 msgid ""
 "This function looks for items in *bases* that are not instances of "
 ":class:`type`, and returns a tuple where each such object that has an "
-":meth:`~object.__mro_entries__` method is replaced with an unpacked "
-"result of calling this method.  If a *bases* item is an instance of "
-":class:`type`, or it doesn't have an :meth:`!__mro_entries__` method, "
-"then it is included in the return tuple unchanged."
+":meth:`~object.__mro_entries__` method is replaced with an unpacked result "
+"of calling this method.  If a *bases* item is an instance of :class:`type`, "
+"or it doesn't have an :meth:`!__mro_entries__` method, then it is included "
+"in the return tuple unchanged."
 msgstr ""
+"Tato funkce vyhledavá položky v *bases*, které nejsou instancemi "
+":class:`type`, a vrací n-tici, kde je každý takový objekt, který má metodu "
+":meth:`~object.__mro_entries__`, nahrazen rozbalém výsledkem volání této "
+"metody. Pokud je položka *bases* instancí :class:`type` nebo nemá metodu "
+":meth:`!__mro_entries__`, je zařazena do vrácené n-tice beze změn."
 
 #: ../../library/types.rst:87
 msgid ""
-"Return the tuple of objects originally given as the bases of *cls* before"
-" the :meth:`~object.__mro_entries__` method has been called on any bases "
+"Return the tuple of objects originally given as the bases of *cls* before "
+"the :meth:`~object.__mro_entries__` method has been called on any bases "
 "(following the mechanisms laid out in :pep:`560`). This is useful for "
 "introspecting :ref:`Generics <user-defined-generics>`."
 msgstr ""
+"Vrací n-tici objektů původně zadaných jako bázové třídy *cls* před tím, než "
+"byla volána metoda :meth:`~object.__mro_entries__` na libovolné bázi (podle "
+"mechanismu?ů uvedených v :pep:`560`). To je užtečné pro introspekci "
+":ref:`Generíků <user-defined-generics>`."
 
 #: ../../library/types.rst:92
 msgid ""
-"For classes that have an ``__orig_bases__`` attribute, this function "
-"returns the value of ``cls.__orig_bases__``. For classes without the "
+"For classes that have an ``__orig_bases__`` attribute, this function returns"
+" the value of ``cls.__orig_bases__``. For classes without the "
 "``__orig_bases__`` attribute, :attr:`cls.__bases__ <type.__bases__>` is "
 "returned."
 msgstr ""
+"Pro třídy, které mají atribut ``__orig_bases__``, vrací tato funkce hodnotu "
+"``cls.__orig_bases__``. Pro třídy bez atributu ``__orig_bases__`` se vrací "
+":attr:`cls.__bases__ <type.__bases__>`."
 
 #: ../../library/types.rst:97
 msgid "Examples::"
-msgstr ""
+msgstr "Příklady::"
 
 #: ../../library/types.rst:99
 #, python-brace-format
@@ -177,38 +213,69 @@ msgid ""
 "assert int.__bases__ == (object,)\n"
 "assert get_original_bases(int) == (object,)"
 msgstr ""
+"from typing import TypeVar, Generic, NamedTuple, TypedDict\n"
+"\n"
+"T = TypeVar(\"T\")\n"
+"class Foo(Generic[T]): ...\n"
+"class Bar(Foo[int], float): ...\n"
+"class Baz(list[str]): ...\n"
+"Eggs = NamedTuple(\"Eggs\", [(\"a\", int), (\"b\", str)])\n"
+"Spam = TypedDict(\"Spam\", {\"a\": int, \"b\": str})\n"
+"\n"
+"assert Bar.__bases__ == (Foo, float)\n"
+"assert get_original_bases(Bar) == (Foo[int], float)\n"
+"\n"
+"assert Baz.__bases__ == (list,)\n"
+"assert get_original_bases(Baz) == (list[str],)\n"
+"\n"
+"assert Eggs.__bases__ == (tuple,)\n"
+"assert get_original_bases(Eggs) == (NamedTuple,)\n"
+"\n"
+"assert Spam.__bases__ == (dict,)\n"
+"assert get_original_bases(Spam) == (TypedDict,)\n"
+"\n"
+"assert int.__bases__ == (object,)\n"
+"assert get_original_bases(int) == (object,)"
 
 #: ../../library/types.rst:127
 msgid ":pep:`560` - Core support for typing module and generic types"
-msgstr ""
+msgstr ":pep:`560` - Základní podpora modulu typing a generíkých typů"
 
 #: ../../library/types.rst:131
 msgid "Standard Interpreter Types"
-msgstr ""
+msgstr "Typy standardního interpretu"
 
 #: ../../library/types.rst:133
 msgid ""
 "This module provides names for many of the types that are required to "
-"implement a Python interpreter. It deliberately avoids including some of "
-"the types that arise only incidentally during processing such as the "
+"implement a Python interpreter. It deliberately avoids including some of the"
+" types that arise only incidentally during processing such as the "
 "``listiterator`` type."
 msgstr ""
+"Tento modul poskytuje jména pro mnoho typů, které jsou potřebné k "
+"implementaci interpretru Pythonu. Záměrně se vychýba zařazení některých "
+"typů, které se objevují pouze náhodně během zpracování, jako je např. typ "
+"``listiterator``."
 
 #: ../../library/types.rst:138
 msgid ""
-"Typical use of these names is for :func:`isinstance` or "
-":func:`issubclass` checks."
+"Typical use of these names is for :func:`isinstance` or :func:`issubclass` "
+"checks."
 msgstr ""
+"Typické použití těchto jmen je pro kontroly :func:`isinstance` nebo "
+":func:`issubclass`."
 
 #: ../../library/types.rst:142
 msgid ""
-"If you instantiate any of these types, note that signatures may vary "
-"between Python versions."
+"If you instantiate any of these types, note that signatures may vary between"
+" Python versions."
 msgstr ""
+"Pokud vytvoříte instanci libovolného z těchto typů, vezměte v úvahu, že se "
+"signatury mohou lišit mezi verzemi Pythonu."
 
 #: ../../library/types.rst:144
 msgid "Standard names are defined for the following types:"
-msgstr ""
+msgstr "Standardní jména jsou definována pro následující typy:"
 
 #: ../../library/types.rst:148
 msgid "The type of :data:`None`."
@@ -228,8 +295,8 @@ msgstr ""
 
 #: ../../library/types.rst:161
 msgid ""
-"The audit event only occurs for direct instantiation of function objects,"
-" and is not raised for normal compilation."
+"The audit event only occurs for direct instantiation of function objects, "
+"and is not raised for normal compilation."
 msgstr ""
 
 #: ../../library/types.rst:167
@@ -258,10 +325,9 @@ msgstr ""
 
 #: ../../library/types.rst:193
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``code.__new__`` with "
-"arguments ``code``, ``filename``, ``name``, ``argcount``, "
-"``posonlyargcount``, ``kwonlyargcount``, ``nlocals``, ``stacksize``, "
-"``flags``."
+"Raises an :ref:`auditing event <auditing>` ``code.__new__`` with arguments "
+"``code``, ``filename``, ``name``, ``argcount``, ``posonlyargcount``, "
+"``kwonlyargcount``, ``nlocals``, ``stacksize``, ``flags``."
 msgstr ""
 
 #: ../../library/types.rst:195
@@ -284,8 +350,8 @@ msgstr ""
 #: ../../library/types.rst:215
 msgid ""
 "The type of built-in functions like :func:`len` or :func:`sys.exit`, and "
-"methods of built-in classes.  (Here, the term \"built-in\" means "
-"\"written in C\".)"
+"methods of built-in classes.  (Here, the term \"built-in\" means \"written "
+"in C\".)"
 msgstr ""
 
 #: ../../library/types.rst:222
@@ -296,8 +362,8 @@ msgstr ""
 
 #: ../../library/types.rst:230
 msgid ""
-"The type of *bound* methods of some built-in data types and base classes."
-" For example it is the type of :code:`object().__str__`."
+"The type of *bound* methods of some built-in data types and base classes. "
+"For example it is the type of :code:`object().__str__`."
 msgstr ""
 
 #: ../../library/types.rst:238
@@ -305,7 +371,8 @@ msgid "The type of :data:`NotImplemented`."
 msgstr ""
 
 #: ../../library/types.rst:245
-msgid "The type of methods of some built-in data types such as :meth:`str.join`."
+msgid ""
+"The type of methods of some built-in data types such as :meth:`str.join`."
 msgstr ""
 
 #: ../../library/types.rst:252
@@ -316,8 +383,8 @@ msgstr ""
 
 #: ../../library/types.rst:260
 msgid ""
-"The type of :term:`modules <module>`. The constructor takes the name of "
-"the module to be created and optionally its :term:`docstring`."
+"The type of :term:`modules <module>`. The constructor takes the name of the "
+"module to be created and optionally its :term:`docstring`."
 msgstr ""
 
 #: ../../library/types.rst:265
@@ -326,8 +393,8 @@ msgstr ""
 
 #: ../../library/types.rst:266
 msgid ""
-"Provides details on the special attributes that can be found on instances"
-" of :class:`!ModuleType`."
+"Provides details on the special attributes that can be found on instances of"
+" :class:`!ModuleType`."
 msgstr ""
 
 #: ../../library/types.rst:269
@@ -336,11 +403,11 @@ msgstr ""
 
 #: ../../library/types.rst:270
 msgid ""
-"Modules created using the :class:`!ModuleType` constructor are created "
-"with many of their special attributes unset or set to default values. "
+"Modules created using the :class:`!ModuleType` constructor are created with "
+"many of their special attributes unset or set to default values. "
 ":func:`!module_from_spec` provides a more robust way of creating "
-":class:`!ModuleType` instances which ensures the various attributes are "
-"set appropriately."
+":class:`!ModuleType` instances which ensures the various attributes are set "
+"appropriately."
 msgstr ""
 
 #: ../../library/types.rst:278
@@ -355,9 +422,9 @@ msgstr ""
 
 #: ../../library/types.rst:287
 msgid ""
-"``t_origin`` should be a non-parameterized generic class, such as "
-"``list``, ``tuple`` or ``dict``.  ``t_args`` should be a :class:`tuple` "
-"(possibly of length 1) of types which parameterize ``t_origin``::"
+"``t_origin`` should be a non-parameterized generic class, such as ``list``, "
+"``tuple`` or ``dict``.  ``t_args`` should be a :class:`tuple` (possibly of "
+"length 1) of types which parameterize ``t_origin``::"
 msgstr ""
 
 #: ../../library/types.rst:291
@@ -419,29 +486,28 @@ msgstr ""
 
 #: ../../library/types.rst:338
 msgid ""
-"The type of objects defined in extension modules with ``PyGetSetDef``, "
-"such as :attr:`FrameType.f_locals <frame.f_locals>` or "
-"``array.array.typecode``. This type is used as descriptor for object "
-"attributes; it has the same purpose as the :class:`property` type, but "
-"for classes defined in extension modules."
+"The type of objects defined in extension modules with ``PyGetSetDef``, such "
+"as :attr:`FrameType.f_locals <frame.f_locals>` or ``array.array.typecode``. "
+"This type is used as descriptor for object attributes; it has the same "
+"purpose as the :class:`property` type, but for classes defined in extension "
+"modules."
 msgstr ""
 
 #: ../../library/types.rst:347
 msgid ""
-"The type of objects defined in extension modules with ``PyMemberDef``, "
-"such as ``datetime.timedelta.days``.  This type is used as descriptor for"
-" simple C data members which use standard conversion functions; it has "
-"the same purpose as the :class:`property` type, but for classes defined "
-"in extension modules."
+"The type of objects defined in extension modules with ``PyMemberDef``, such "
+"as ``datetime.timedelta.days``.  This type is used as descriptor for simple "
+"C data members which use standard conversion functions; it has the same "
+"purpose as the :class:`property` type, but for classes defined in extension "
+"modules."
 msgstr ""
 
 #: ../../library/types.rst:352
 msgid ""
 "In addition, when a class is defined with a :attr:`~object.__slots__` "
-"attribute, then for each slot, an instance of "
-":class:`!MemberDescriptorType` will be added as an attribute on the "
-"class. This allows the slot to appear in the class's "
-":attr:`~type.__dict__`."
+"attribute, then for each slot, an instance of :class:`!MemberDescriptorType`"
+" will be added as an attribute on the class. This allows the slot to appear "
+"in the class's :attr:`~type.__dict__`."
 msgstr ""
 
 #: ../../library/types.rst:358
@@ -452,9 +518,9 @@ msgstr ""
 
 #: ../../library/types.rst:363
 msgid ""
-"Read-only proxy of a mapping. It provides a dynamic view on the mapping's"
-" entries, which means that when the mapping changes, the view reflects "
-"these changes."
+"Read-only proxy of a mapping. It provides a dynamic view on the mapping's "
+"entries, which means that when the mapping changes, the view reflects these "
+"changes."
 msgstr ""
 
 #: ../../library/types.rst:371
@@ -464,7 +530,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/types.rst:376
-msgid "Return ``True`` if the underlying mapping has a key *key*, else ``False``."
+msgid ""
+"Return ``True`` if the underlying mapping has a key *key*, else ``False``."
 msgstr ""
 
 #: ../../library/types.rst:381
@@ -490,8 +557,8 @@ msgstr ""
 #: ../../library/types.rst:399
 msgid ""
 "Return the value for *key* if *key* is in the underlying mapping, else "
-"*default*.  If *default* is not given, it defaults to ``None``, so that "
-"this method never raises a :exc:`KeyError`."
+"*default*.  If *default* is not given, it defaults to ``None``, so that this"
+" method never raises a :exc:`KeyError`."
 msgstr ""
 
 #: ../../library/types.rst:405
@@ -538,14 +605,14 @@ msgstr ""
 
 #: ../../library/types.rst:446
 msgid ""
-":py:class:`SimpleNamespace` objects may be initialized in the same way as"
-" :class:`dict`: either with keyword arguments, with a single positional "
-"argument, or with both. When initialized with keyword arguments, those "
-"are directly added to the underlying namespace. Alternatively, when "
-"initialized with a positional argument, the underlying namespace will be "
-"updated with key-value pairs from that argument (either a mapping object "
-"or an :term:`iterable` object producing key-value pairs). All such keys "
-"must be strings."
+":py:class:`SimpleNamespace` objects may be initialized in the same way as "
+":class:`dict`: either with keyword arguments, with a single positional "
+"argument, or with both. When initialized with keyword arguments, those are "
+"directly added to the underlying namespace. Alternatively, when initialized "
+"with a positional argument, the underlying namespace will be updated with "
+"key-value pairs from that argument (either a mapping object or an "
+":term:`iterable` object producing key-value pairs). All such keys must be "
+"strings."
 msgstr ""
 
 #: ../../library/types.rst:457
@@ -562,25 +629,24 @@ msgid ""
 "\n"
 "    def __repr__(self):\n"
 "        items = (f\"{k}={v!r}\" for k, v in self.__dict__.items())\n"
-"        return \"{}({})\".format(type(self).__name__, \", \".join(items))"
-"\n"
+"        return \"{}({})\".format(type(self).__name__, \", \".join(items))\n"
 "\n"
 "    def __eq__(self, other):\n"
-"        if isinstance(self, SimpleNamespace) and isinstance(other, "
-"SimpleNamespace):\n"
+"        if isinstance(self, SimpleNamespace) and isinstance(other, SimpleNamespace):\n"
 "           return self.__dict__ == other.__dict__\n"
 "        return NotImplemented"
 msgstr ""
 
 #: ../../library/types.rst:473
 msgid ""
-"``SimpleNamespace`` may be useful as a replacement for ``class NS: "
-"pass``. However, for a structured record type use "
-":func:`~collections.namedtuple` instead."
+"``SimpleNamespace`` may be useful as a replacement for ``class NS: pass``. "
+"However, for a structured record type use :func:`~collections.namedtuple` "
+"instead."
 msgstr ""
 
 #: ../../library/types.rst:477
-msgid ":class:`!SimpleNamespace` objects are supported by :func:`copy.replace`."
+msgid ""
+":class:`!SimpleNamespace` objects are supported by :func:`copy.replace`."
 msgstr ""
 
 #: ../../library/types.rst:481
@@ -599,18 +665,17 @@ msgstr ""
 
 #: ../../library/types.rst:492
 msgid ""
-"This is a descriptor, used to define attributes that act differently when"
-" accessed through an instance and through a class.  Instance access "
-"remains normal, but access to an attribute through a class will be routed"
-" to the class's __getattr__ method; this is done by raising "
-"AttributeError."
+"This is a descriptor, used to define attributes that act differently when "
+"accessed through an instance and through a class.  Instance access remains "
+"normal, but access to an attribute through a class will be routed to the "
+"class's __getattr__ method; this is done by raising AttributeError."
 msgstr ""
 
 #: ../../library/types.rst:497
 msgid ""
-"This allows one to have properties active on an instance, and have "
-"virtual attributes on the class with the same name (see "
-":class:`enum.Enum` for an example)."
+"This allows one to have properties active on an instance, and have virtual "
+"attributes on the class with the same name (see :class:`enum.Enum` for an "
+"example)."
 msgstr ""
 
 #: ../../library/types.rst:504
@@ -620,11 +685,11 @@ msgstr ""
 #: ../../library/types.rst:508
 msgid ""
 "This function transforms a :term:`generator` function into a "
-":term:`coroutine function` which returns a generator-based coroutine. The"
-" generator-based coroutine is still a :term:`generator iterator`, but is "
-"also considered to be a :term:`coroutine` object and is "
-":term:`awaitable`.  However, it may not necessarily implement the "
-":meth:`~object.__await__` method."
+":term:`coroutine function` which returns a generator-based coroutine. The "
+"generator-based coroutine is still a :term:`generator iterator`, but is also"
+" considered to be a :term:`coroutine` object and is :term:`awaitable`.  "
+"However, it may not necessarily implement the :meth:`~object.__await__` "
+"method."
 msgstr ""
 
 #: ../../library/types.rst:515
@@ -633,10 +698,10 @@ msgstr ""
 
 #: ../../library/types.rst:517
 msgid ""
-"If *gen_func* is not a generator function, it will be wrapped. If it "
-"returns an instance of :class:`collections.abc.Generator`, the instance "
-"will be wrapped in an *awaitable* proxy object.  All other types of "
-"objects will be returned as is."
+"If *gen_func* is not a generator function, it will be wrapped. If it returns"
+" an instance of :class:`collections.abc.Generator`, the instance will be "
+"wrapped in an *awaitable* proxy object.  All other types of objects will be "
+"returned as is."
 msgstr ""
 
 #: ../../library/types.rst:189
@@ -648,11 +713,9 @@ msgid "compile"
 msgstr ""
 
 #~ msgid ""
-#~ "The type of frame locals proxy "
-#~ "objects, as found on the "
+#~ "The type of frame locals proxy objects, as found on the "
 #~ ":attr:`frame.f_locals` attribute."
 #~ msgstr ""
 
 #~ msgid ":pep:`667`"
 #~ msgstr ""
-

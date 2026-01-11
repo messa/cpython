@@ -112,7 +112,7 @@ def compute_msgidhash(msgid: str) -> str:
     if len(msgid) < 10:
         return msgid
     hash_bytes = sha1(msgid.encode("utf-8")).digest()
-    return b64encode(hash_bytes).decode("ascii")[:9]
+    return b64encode(hash_bytes).decode("ascii").replace('+', 'x').replace('/', 'X')[:9]
 
 
 class PathSecurityError(Exception):

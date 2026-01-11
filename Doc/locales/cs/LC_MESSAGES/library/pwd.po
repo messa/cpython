@@ -11,171 +11,185 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/pwd.rst:2
 msgid ":mod:`!pwd` --- The password database"
-msgstr ""
+msgstr ":mod:`!pwd` --- Databáze hesel"
 
 #: ../../library/pwd.rst:10
 msgid ""
-"This module provides access to the Unix user account and password "
-"database.  It is available on all Unix versions."
+"This module provides access to the Unix user account and password database."
+"  It is available on all Unix versions."
 msgstr ""
+"Tento modul poskytuje přístup k databázi uživatelských účtů a hesel systému "
+"Unix. Je dostupný na všech verzích Unixu."
 
 #: ../../library/pwd.rst:13
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/pwd.rst:15
 msgid ""
 "Password database entries are reported as a tuple-like object, whose "
-"attributes correspond to the members of the ``passwd`` structure "
-"(Attribute field below, see ``<pwd.h>``):"
+"attributes correspond to the members of the ``passwd`` structure (Attribute "
+"field below, see ``<pwd.h>``):"
 msgstr ""
+"Záznamy databáze hesel jsou hlášeny jako objekty podobné n-tici, jejichž "
+"atributy odpovídají členům struktury ``passwd`` (pole Atribut níže, viz "
+"``<pwd.h>``):"
 
 #: ../../library/pwd.rst:20
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: ../../library/pwd.rst:20
 msgid "Attribute"
-msgstr ""
+msgstr "Atribut"
 
 #: ../../library/pwd.rst:20
 msgid "Meaning"
-msgstr ""
+msgstr "Výžnum"
 
 #: ../../library/pwd.rst:22
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../../library/pwd.rst:22
 msgid "``pw_name``"
-msgstr ""
+msgstr "``pw_name``"
 
 #: ../../library/pwd.rst:22
 msgid "Login name"
-msgstr ""
+msgstr "Název přihlašování"
 
 #: ../../library/pwd.rst:24
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../library/pwd.rst:24
 msgid "``pw_passwd``"
-msgstr ""
+msgstr "``pw_passwd``"
 
 #: ../../library/pwd.rst:24
 msgid "Optional encrypted password"
-msgstr ""
+msgstr "Volitelné šifrované heslo"
 
 #: ../../library/pwd.rst:26
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../library/pwd.rst:26
 msgid "``pw_uid``"
-msgstr ""
+msgstr "``pw_uid``"
 
 #: ../../library/pwd.rst:26
 msgid "Numerical user ID"
-msgstr ""
+msgstr "Numer Alický identifikátor uživatele"
 
 #: ../../library/pwd.rst:28
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../library/pwd.rst:28
 msgid "``pw_gid``"
-msgstr ""
+msgstr "``pw_gid``"
 
 #: ../../library/pwd.rst:28
 msgid "Numerical group ID"
-msgstr ""
+msgstr "Numerický identifikátor skupiny"
 
 #: ../../library/pwd.rst:30
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ../../library/pwd.rst:30
 msgid "``pw_gecos``"
-msgstr ""
+msgstr "``pw_gecos``"
 
 #: ../../library/pwd.rst:30
 msgid "User name or comment field"
-msgstr ""
+msgstr "Název uživatele nebo pole komentáře"
 
 #: ../../library/pwd.rst:32
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ../../library/pwd.rst:32
 msgid "``pw_dir``"
-msgstr ""
+msgstr "``pw_dir``"
 
 #: ../../library/pwd.rst:32
 msgid "User home directory"
-msgstr ""
+msgstr "Domovský adresář uživatele"
 
 #: ../../library/pwd.rst:34
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: ../../library/pwd.rst:34
 msgid "``pw_shell``"
-msgstr ""
+msgstr "``pw_shell``"
 
 #: ../../library/pwd.rst:34
 msgid "User command interpreter"
-msgstr ""
+msgstr "Příkazový interpret uživatele"
 
 #: ../../library/pwd.rst:37
 msgid ""
-"The uid and gid items are integers, all others are strings. "
-":exc:`KeyError` is raised if the entry asked for cannot be found."
+"The uid and gid items are integers, all others are strings. :exc:`KeyError` "
+"is raised if the entry asked for cannot be found."
 msgstr ""
+"Položky uid a gid jsou plochy, všechny ostatní jsou řetězce. Výjimka "
+":exc:`KeyError` je vyvolána, pokud hledaný záznam nelze nalézt."
 
 #: ../../library/pwd.rst:42
 msgid ""
 "In traditional Unix the field ``pw_passwd`` usually contains a password "
-"encrypted with a DES derived algorithm.  However most modern unices  use "
-"a so-called *shadow password* system.  On those unices the *pw_passwd* "
-"field only contains an asterisk (``'*'``) or the  letter ``'x'`` where "
-"the encrypted password is stored in a file :file:`/etc/shadow` which is "
-"not world readable.  Whether the *pw_passwd* field contains anything "
-"useful is system-dependent."
+"encrypted with a DES derived algorithm.  However most modern unices  use a "
+"so-called *shadow password* system.  On those unices the *pw_passwd* field "
+"only contains an asterisk (``'*'``) or the  letter ``'x'`` where the "
+"encrypted password is stored in a file :file:`/etc/shadow` which is not "
+"world readable.  Whether the *pw_passwd* field contains anything useful is "
+"system-dependent."
 msgstr ""
+"V tradičním Unixu pole ``pw_passwd`` obvykle obsahuje heslo šifrované "
+"algoritmem založeným na DES. Však většina moderních unixových systémů "
+"použíká tzv. *stínové heslo* systém. Na těch systémech pole *pw_passwd* "
+"obsahuje pouze hvězd ičku (``'*'``) nebo pímeno ``'x'``, kde je šifrované "
+"heslo uloženo v souboru :file:`/etc/shadow`, který není čitelný pro všechny."
+" Zda pole *pw_passwd* obsahuje nĜco užitečného, je závislé na systému."
 
 #: ../../library/pwd.rst:50
 msgid "It defines the following items:"
-msgstr ""
+msgstr "Definuje následující prvky:"
 
 #: ../../library/pwd.rst:55
 msgid "Return the password database entry for the given numeric user ID."
 msgstr ""
+"Vrátí záznam databáze hesel pro daný numerický identifikátor uživatele."
 
 #: ../../library/pwd.rst:60
 msgid "Return the password database entry for the given user name."
-msgstr ""
+msgstr "Vrátí záznam databáze hesel pro dané jméno uživatele."
 
 #: ../../library/pwd.rst:65
 msgid ""
 "Return a list of all available password database entries, in arbitrary "
 "order."
 msgstr ""
+"Vrátí seznam všech dostupných záznamů databáze hesel v libovolném pořadí."
 
 #: ../../library/pwd.rst:70
 msgid "Module :mod:`grp`"
-msgstr ""
+msgstr "Modul :mod:`grp`"
 
 #: ../../library/pwd.rst:71
 msgid "An interface to the group database, similar to this."
-msgstr ""
-
+msgstr "Rozhraní pro databázi skupiny, podobné tomuto."

@@ -11,136 +11,172 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/zipimport.rst:2
 msgid ":mod:`!zipimport` --- Import modules from Zip archives"
-msgstr ""
+msgstr ":mod:`!zipimport` --- Import modulů ze ZIP archivů"
 
 #: ../../library/zipimport.rst:9
 msgid "**Source code:** :source:`Lib/zipimport.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/zipimport.py`"
 
 #: ../../library/zipimport.rst:13
 msgid ""
 "This module adds the ability to import Python modules (:file:`\\*.py`, "
-":file:`\\*.pyc`) and packages from ZIP-format archives. It is usually not"
-" needed to use the :mod:`zipimport` module explicitly; it is "
-"automatically used by the built-in :keyword:`import` mechanism for "
-":data:`sys.path` items that are paths to ZIP archives."
+":file:`\\*.pyc`) and packages from ZIP-format archives. It is usually not "
+"needed to use the :mod:`zipimport` module explicitly; it is automatically "
+"used by the built-in :keyword:`import` mechanism for :data:`sys.path` items "
+"that are paths to ZIP archives."
 msgstr ""
+"Tento modul přidává schopnost importovat Python moduly (:file:`\\*.py`, "
+":file:`\\*.pyc`) a balíčky ze ZIP archivů. Obvykle není nutné používat modul"
+" :mod:`zipimport` explicitně; je automaticky používán vestavěným mechanismem"
+" :keyword:`import` pro položky :data:`sys.path`, které jsou cestami k ZIP "
+"archivům."
 
 #: ../../library/zipimport.rst:19
 msgid ""
-"Typically, :data:`sys.path` is a list of directory names as strings.  "
-"This module also allows an item of :data:`sys.path` to be a string naming"
-" a ZIP file archive. The ZIP archive can contain a subdirectory structure"
-" to support package imports, and a path within the archive can be "
-"specified to only import from a subdirectory.  For example, the path "
+"Typically, :data:`sys.path` is a list of directory names as strings.  This "
+"module also allows an item of :data:`sys.path` to be a string naming a ZIP "
+"file archive. The ZIP archive can contain a subdirectory structure to "
+"support package imports, and a path within the archive can be specified to "
+"only import from a subdirectory.  For example, the path "
 ":file:`example.zip/lib/` would only import from the :file:`lib/` "
 "subdirectory within the archive."
 msgstr ""
+"Typicky je :data:`sys.path` seznam názvů adresářů jako řetězce. Tento modul "
+"také umožňuje, aby položka :data:`sys.path` byla řetězcem pojmenujícím ZIP "
+"soubor archiv. ZIP archiv může obsahovat strukturu podadresářů pro podporu "
+"importu balíčků a cesta v archívu může být specifikována pro import pouze z "
+"podadresáře. Například cesta :file:`example.zip/lib/` by importovala pouze z"
+" podadresáře :file:`lib/` v rámci archívu."
 
 #: ../../library/zipimport.rst:26
 msgid ""
-"Any files may be present in the ZIP archive, but importers are only "
-"invoked for :file:`.py` and :file:`.pyc` files.  ZIP import of dynamic "
-"modules (:file:`.pyd`, :file:`.so`) is disallowed. Note that if an "
-"archive only contains :file:`.py` files, Python will not attempt to "
-"modify the archive by adding the corresponding :file:`.pyc` file, meaning"
-" that if a ZIP archive doesn't contain :file:`.pyc` files, importing may "
-"be rather slow."
+"Any files may be present in the ZIP archive, but importers are only invoked "
+"for :file:`.py` and :file:`.pyc` files.  ZIP import of dynamic modules "
+"(:file:`.pyd`, :file:`.so`) is disallowed. Note that if an archive only "
+"contains :file:`.py` files, Python will not attempt to modify the archive by"
+" adding the corresponding :file:`.pyc` file, meaning that if a ZIP archive "
+"doesn't contain :file:`.pyc` files, importing may be rather slow."
 msgstr ""
+"V ZIP archívu mohou být jakékoli soubory, ale importéři jsou vyvolávání "
+"pouze pro soubory :file:`.py` a :file:`.pyc`. Import dynamických modulů "
+"(:file:`.pyd`, :file:`.so`) není povolen. Mějte na vědomí, že pokud archiv "
+"obsahuje pouze soubory :file:`.py`, Python se nepokusí archiv upravovat "
+"přidáním odpovídajícího souboru :file:`.pyc`, což znamená, že pokud ZIP "
+"archiv neobsahuje soubory :file:`.pyc`, import může být poměrně pomalý."
 
 #: ../../library/zipimport.rst:33
 msgid "ZIP64 is supported"
-msgstr ""
+msgstr "ZIP64 je podporován"
 
 #: ../../library/zipimport.rst:36
 msgid "Previously, ZIP archives with an archive comment were not supported."
-msgstr ""
+msgstr "Dříve nebyly podporovány ZIP archivy s komentářem archivů."
 
 #: ../../library/zipimport.rst:41
 msgid ""
 "`PKZIP Application Note "
 "<https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT>`_"
 msgstr ""
+"`PKZIP Poznámka k aplikaci "
+"<https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT>`_"
 
 #: ../../library/zipimport.rst:42
 msgid ""
-"Documentation on the ZIP file format by Phil Katz, the creator of the "
-"format and algorithms used."
+"Documentation on the ZIP file format by Phil Katz, the creator of the format"
+" and algorithms used."
 msgstr ""
+"Dokumentace k formátu souboru ZIP od Phila Katze, tvůrce formátu a "
+"používaných algoritmů."
 
 #: ../../library/zipimport.rst:45
 msgid ":pep:`273` - Import Modules from Zip Archives"
-msgstr ""
+msgstr ":pep:`273` - Import modulů ze ZIP archivů"
 
 #: ../../library/zipimport.rst:46
 msgid ""
-"Written by James C. Ahlstrom, who also provided an implementation. Python"
-" 2.3 follows the specification in :pep:`273`, but uses an implementation "
+"Written by James C. Ahlstrom, who also provided an implementation. Python "
+"2.3 follows the specification in :pep:`273`, but uses an implementation "
 "written by Just van Rossum that uses the import hooks described in "
 ":pep:`302`."
 msgstr ""
+"Napsáno Jamesem C. Ahlstromem, který také poskytl implementaci. Python 2.3 "
+"se řídí specifikací v :pep:`273`, ale používá implementaci napsanou Justem "
+"van Rossumem, která používá importovací háky popsané v :pep:`302`."
 
 #: ../../library/zipimport.rst:50
 msgid ":mod:`importlib` - The implementation of the import machinery"
-msgstr ""
+msgstr ":mod:`importlib` - Implementace import mechanismu"
 
 #: ../../library/zipimport.rst:51
-msgid "Package providing the relevant protocols for all importers to implement."
+msgid ""
+"Package providing the relevant protocols for all importers to implement."
 msgstr ""
+"Balíček poskytující příslušné protokoly pro všechny importéry k "
+"implementaci."
 
 #: ../../library/zipimport.rst:55
 msgid "This module defines an exception:"
-msgstr ""
+msgstr "Tento modul definuje výjimku:"
 
 #: ../../library/zipimport.rst:59
 msgid ""
 "Exception raised by zipimporter objects. It's a subclass of "
 ":exc:`ImportError`, so it can be caught as :exc:`ImportError`, too."
 msgstr ""
+"Výjimka vyvolaná objekty zipimporter. Jedná se o podtřídu "
+":exc:`ImportError`, takže ji lze chytit také jako :exc:`ImportError`."
 
 #: ../../library/zipimport.rst:66
 msgid "zipimporter Objects"
-msgstr ""
+msgstr "zipimporter objekty"
 
 #: ../../library/zipimport.rst:68
 msgid ":class:`zipimporter` is the class for importing ZIP files."
-msgstr ""
+msgstr ":class:`zipimporter` je třída pro import ZIP souborů."
 
 #: ../../library/zipimport.rst:72
 msgid ""
 "Create a new zipimporter instance. *archivepath* must be a path to a ZIP "
 "file, or to a specific path within a ZIP file.  For example, an "
 "*archivepath* of :file:`foo/bar.zip/lib` will look for modules in the "
-":file:`lib` directory inside the ZIP file :file:`foo/bar.zip` (provided "
-"that it exists)."
+":file:`lib` directory inside the ZIP file :file:`foo/bar.zip` (provided that"
+" it exists)."
 msgstr ""
+"Vytvoří novou instanci zipimporter. *archivepath* musí být cesta k ZIP "
+"souboru nebo cesta v rámci ZIP souboru. Například *archivepath* "
+":file:`foo/bar.zip/lib` bude hledat moduly v adresáři :file:`lib` v ZIP "
+"souboru :file:`foo/bar.zip` (pokud existuje)."
 
 #: ../../library/zipimport.rst:77
 msgid ""
-":exc:`ZipImportError` is raised if *archivepath* doesn't point to a valid"
-" ZIP archive."
+":exc:`ZipImportError` is raised if *archivepath* doesn't point to a valid "
+"ZIP archive."
 msgstr ""
+":exc:`ZipImportError` je vyvolana, pokud se *archivepath* nepřípadá na "
+"platný ZIP archiv."
 
 #: ../../library/zipimport.rst:82
 msgid ""
-"Methods ``find_loader()`` and ``find_module()``, deprecated in 3.10 are "
-"now removed.  Use :meth:`find_spec` instead."
+"Methods ``find_loader()`` and ``find_module()``, deprecated in 3.10 are now "
+"removed.  Use :meth:`find_spec` instead."
 msgstr ""
+"Metody ``find_loader()`` a ``find_module()``, zastaralé ve verzi 3.10, jsou "
+"nyní odebrány. Místem nich použijte :meth:`find_spec`."
 
 #: ../../library/zipimport.rst:87
 msgid ""
-"Implementation of :meth:`importlib.abc.Loader.create_module` that returns"
-" :const:`None` to explicitly request the default semantics."
+"Implementation of :meth:`importlib.abc.Loader.create_module` that returns "
+":const:`None` to explicitly request the default semantics."
 msgstr ""
 
 #: ../../library/zipimport.rst:95
@@ -153,39 +189,38 @@ msgstr ""
 
 #: ../../library/zipimport.rst:109
 msgid ""
-"Return the code object for the specified module. Raise "
-":exc:`ZipImportError` if the module couldn't be imported."
+"Return the code object for the specified module. Raise :exc:`ZipImportError`"
+" if the module couldn't be imported."
 msgstr ""
 
 #: ../../library/zipimport.rst:115
 msgid ""
-"Return the data associated with *pathname*. Raise :exc:`OSError` if the "
-"file wasn't found."
+"Return the data associated with *pathname*. Raise :exc:`OSError` if the file"
+" wasn't found."
 msgstr ""
 
 #: ../../library/zipimport.rst:118
-msgid ":exc:`IOError` used to be raised, it is now an alias of :exc:`OSError`."
+msgid ""
+":exc:`IOError` used to be raised, it is now an alias of :exc:`OSError`."
 msgstr ""
 
 #: ../../library/zipimport.rst:124
 msgid ""
-"Return the value ``__file__`` would be set to if the specified module was"
-" imported. Raise :exc:`ZipImportError` if the module couldn't be "
-"imported."
+"Return the value ``__file__`` would be set to if the specified module was "
+"imported. Raise :exc:`ZipImportError` if the module couldn't be imported."
 msgstr ""
 
 #: ../../library/zipimport.rst:133
 msgid ""
-"Return the source code for the specified module. Raise "
-":exc:`ZipImportError` if the module couldn't be found, return "
-":const:`None` if the archive does contain the module, but has no source "
-"for it."
+"Return the source code for the specified module. Raise :exc:`ZipImportError`"
+" if the module couldn't be found, return :const:`None` if the archive does "
+"contain the module, but has no source for it."
 msgstr ""
 
 #: ../../library/zipimport.rst:141
 msgid ""
-"Return ``True`` if the module specified by *fullname* is a package. Raise"
-" :exc:`ZipImportError` if the module couldn't be found."
+"Return ``True`` if the module specified by *fullname* is a package. Raise "
+":exc:`ZipImportError` if the module couldn't be found."
 msgstr ""
 
 #: ../../library/zipimport.rst:147
@@ -201,8 +236,8 @@ msgstr ""
 
 #: ../../library/zipimport.rst:158
 msgid ""
-"Clear out the internal cache of information about files found within the "
-"ZIP archive."
+"Clear out the internal cache of information about files found within the ZIP"
+" archive."
 msgstr ""
 
 #: ../../library/zipimport.rst:166
@@ -231,8 +266,8 @@ msgstr ""
 
 #: ../../library/zipimport.rst:186
 msgid ""
-"Here is an example that imports a module from a ZIP archive - note that "
-"the :mod:`zipimport` module is not explicitly used."
+"Here is an example that imports a module from a ZIP archive - note that the "
+":mod:`zipimport` module is not explicitly used."
 msgstr ""
 
 #: ../../library/zipimport.rst:189
@@ -258,4 +293,3 @@ msgstr ""
 
 #~ msgid "Zstandard (*zstd*) compressed zip file entries are supported."
 #~ msgstr ""
-

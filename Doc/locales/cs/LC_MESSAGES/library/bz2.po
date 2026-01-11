@@ -11,49 +11,56 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/bz2.rst:2
 msgid ":mod:`!bz2` --- Support for :program:`bzip2` compression"
-msgstr ""
+msgstr ":mod:`!bz2` --- Podpora komprese :program:`bzip2`"
 
 #: ../../library/bz2.rst:12
 msgid "**Source code:** :source:`Lib/bz2.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/bz2.py`"
 
 #: ../../library/bz2.rst:16
 msgid ""
 "This module provides a comprehensive interface for compressing and "
 "decompressing data using the bzip2 compression algorithm."
 msgstr ""
+"Tento modul poskytuje komplexní rozhraní pro kompresi a dekompresi dat "
+"pomocí kompresního algoritmu bzip2."
 
 #: ../../library/bz2.rst:19
 msgid "The :mod:`bz2` module contains:"
-msgstr ""
+msgstr "Modul :mod:`bz2` obsahuje:"
 
 #: ../../library/bz2.rst:21
 msgid ""
 "The :func:`.open` function and :class:`BZ2File` class for reading and "
 "writing compressed files."
 msgstr ""
+"Funkci :func:`.open` a třídu :class:`BZ2File` pro čtení a zápis "
+"komprimovaných souborů."
 
 #: ../../library/bz2.rst:23
 msgid ""
 "The :class:`BZ2Compressor` and :class:`BZ2Decompressor` classes for "
 "incremental (de)compression."
 msgstr ""
+"Třídy :class:`BZ2Compressor` a :class:`BZ2Decompressor` pro postupné "
+"(de)kompresi."
 
 #: ../../library/bz2.rst:25
 msgid ""
 "The :func:`compress` and :func:`decompress` functions for one-shot "
 "(de)compression."
 msgstr ""
+"Funkce :func:`compress` a :func:`decompress` pro jednorázové (de)kompresi."
 
 #: ../../includes/optional-module.rst:1
 msgid ""
@@ -62,23 +69,32 @@ msgid ""
 "provided Python to you). If you are the distributor, see :ref:`optional-"
 "module-requirements`."
 msgstr ""
+"Jedná se o :term:`volitelný modul`. Pokud však vřašé kopii CPythonu chybí, "
+"podívejte se na dokumentaci vašeho distribućního partnera (tedy koho vam "
+"poskytnul Python). Jste-li sami distribućním partnerem, podívejte se na "
+":ref:`optional-module-requirements`."
 
 #: ../../library/bz2.rst:32
 msgid "(De)compression of files"
-msgstr ""
+msgstr "(De)kompresi souborů"
 
 #: ../../library/bz2.rst:36
 msgid ""
-"Open a bzip2-compressed file in binary or text mode, returning a "
-":term:`file object`."
+"Open a bzip2-compressed file in binary or text mode, returning a :term:`file"
+" object`."
 msgstr ""
+"Otevře bzip2-komprimovaný soubor v binárním nebo textovém módu a vrátí "
+":term:`file object` (soubor)."
 
 #: ../../library/bz2.rst:39
 msgid ""
-"As with the constructor for :class:`BZ2File`, the *filename* argument can"
-" be an actual filename (a :class:`str` or :class:`bytes` object), or an "
+"As with the constructor for :class:`BZ2File`, the *filename* argument can be"
+" an actual filename (a :class:`str` or :class:`bytes` object), or an "
 "existing file object to read from or write to."
 msgstr ""
+"Stejně jako u konstruktoru třídy :class:`BZ2File`, parametr *filename* může "
+"být skutečným názvem souboru (objekt :class:`str` nebo :class:`bytes`) nebo "
+"existujícím objektem souboru pro čtení nebo zápis."
 
 #: ../../library/bz2.rst:43
 msgid ""
@@ -86,20 +102,29 @@ msgid ""
 "``'x'``, ``'xb'``, ``'a'`` or ``'ab'`` for binary mode, or ``'rt'``, "
 "``'wt'``, ``'xt'``, or ``'at'`` for text mode. The default is ``'rb'``."
 msgstr ""
+"Parametr *mode* může být jeden z ``'r'``, ``'rb'``, ``'w'``, ``'wb'``, "
+"``'x'``, ``'xb'``, ``'a'`` nebo ``'ab'`` pro binární mód, nebo ``'rt'``, "
+"``'wt'``, ``'xt'``, nebo ``'at'`` pro textový mód. Výchozí hodnota je "
+"``'rb'``."
 
 #: ../../library/bz2.rst:47
 msgid ""
 "The *compresslevel* argument is an integer from 1 to 9, as for the "
 ":class:`BZ2File` constructor."
 msgstr ""
+"Parametr *compresslevel* je celé číslo od 1 do 9, stejně jako u konstruktoru"
+" :class:`BZ2File`."
 
 #: ../../library/bz2.rst:50
 msgid ""
 "For binary mode, this function is equivalent to the :class:`BZ2File` "
-"constructor: ``BZ2File(filename, mode, compresslevel=compresslevel)``. In"
-" this case, the *encoding*, *errors* and *newline* arguments must not be "
+"constructor: ``BZ2File(filename, mode, compresslevel=compresslevel)``. In "
+"this case, the *encoding*, *errors* and *newline* arguments must not be "
 "provided."
 msgstr ""
+"V binárním módu je tato funkce ekvivalentní konstruktoru :class:`BZ2File`: "
+"``BZ2File(filename, mode, compresslevel=compresslevel)``. V tomto případě "
+"nesmají být poskytnuty parametry *encoding*, *errors* a *newline*."
 
 #: ../../library/bz2.rst:55
 msgid ""
@@ -107,333 +132,420 @@ msgid ""
 ":class:`io.TextIOWrapper` instance with the specified encoding, error "
 "handling behavior, and line ending(s)."
 msgstr ""
+"V textovém módu je vytvořen objekt :class:`BZ2File` a zabalený v instanci "
+":class:`io.TextIOWrapper` se zadaným kódím, chováním při zpracování chyb a "
+"koncem řádku."
 
 #: ../../library/bz2.rst:61 ../../library/bz2.rst:177
 msgid "The ``'x'`` (exclusive creation) mode was added."
-msgstr ""
+msgstr "Přidán mód ``'x'`` (exklusivné vytvoření)."
 
 #: ../../library/bz2.rst:64 ../../library/bz2.rst:184
 msgid "Accepts a :term:`path-like object`."
-msgstr ""
+msgstr "Přijímá :term:`path-like object` (objekt podobný cestě)."
 
 #: ../../library/bz2.rst:70
 msgid "Open a bzip2-compressed file in binary mode."
-msgstr ""
+msgstr "Otevře bzip2-komprimovaný soubor v binárním módu."
 
 #: ../../library/bz2.rst:72
 msgid ""
 "If *filename* is a :class:`str` or :class:`bytes` object, open the named "
-"file directly. Otherwise, *filename* should be a :term:`file object`, "
-"which will be used to read or write the compressed data."
+"file directly. Otherwise, *filename* should be a :term:`file object`, which "
+"will be used to read or write the compressed data."
 msgstr ""
+"Je-li *filename* objekt :class:`str` nebo :class:`bytes`, otevře pojmenovaný"
+" soubor přímo. V opačném případě by *filename* měl být :term:`file object` "
+"(soubor), který bude použit pro čtení nebo zápis komprimovaných dat."
 
 #: ../../library/bz2.rst:76
 msgid ""
-"The *mode* argument can be either ``'r'`` for reading (default), ``'w'`` "
-"for overwriting, ``'x'`` for exclusive creation, or ``'a'`` for "
-"appending. These can equivalently be given as ``'rb'``, ``'wb'``, "
-"``'xb'`` and ``'ab'`` respectively."
+"The *mode* argument can be either ``'r'`` for reading (default), ``'w'`` for"
+" overwriting, ``'x'`` for exclusive creation, or ``'a'`` for appending. "
+"These can equivalently be given as ``'rb'``, ``'wb'``, ``'xb'`` and ``'ab'``"
+" respectively."
 msgstr ""
+"Parametr *mode* může být ``'r'`` pro čtení (výchozí), ``'w'`` pro přepsání, "
+"``'x'`` pro exklusivné vytvoření, nebo ``'a'`` pro přidávání. Ty mohou být "
+"ekvivalentně zadány jako ``'rb'``, ``'wb'``, ``'xb'`` a ``'ab'``."
 
 #: ../../library/bz2.rst:81
 msgid ""
-"If *filename* is a file object (rather than an actual file name), a mode "
-"of ``'w'`` does not truncate the file, and is instead equivalent to "
-"``'a'``."
+"If *filename* is a file object (rather than an actual file name), a mode of "
+"``'w'`` does not truncate the file, and is instead equivalent to ``'a'``."
 msgstr ""
+"Je-li *filename* objekt souboru (spoluš s skutečným názvem souboru), mód "
+"``'w'`` neobsahuje zkrácení souboru a je místo toho ekvivalentní ``'a'``."
 
 #: ../../library/bz2.rst:84
 msgid ""
-"If *mode* is ``'w'`` or ``'a'``, *compresslevel* can be an integer "
-"between ``1`` and ``9`` specifying the level of compression: ``1`` "
-"produces the least compression, and ``9`` (default) produces the most "
-"compression."
+"If *mode* is ``'w'`` or ``'a'``, *compresslevel* can be an integer between "
+"``1`` and ``9`` specifying the level of compression: ``1`` produces the "
+"least compression, and ``9`` (default) produces the most compression."
 msgstr ""
+"Je-li *mode* ``'w'`` nebo ``'a'``, *compresslevel* může být celé číslo mezi "
+"``1`` a ``9`` určující úroveň komprese: ``1`` vytváří nejmenší kompresi a "
+"``9`` (výchozí) vytváří nejvyvčtejší kompresi."
 
 #: ../../library/bz2.rst:88
 msgid ""
-"If *mode* is ``'r'``, the input file may be the concatenation of multiple"
-" compressed streams."
+"If *mode* is ``'r'``, the input file may be the concatenation of multiple "
+"compressed streams."
 msgstr ""
+"Je-li *mode* ``'r'``, vstupní soubor má být zetětěním několika "
+"komprimovaných toků."
 
 #: ../../library/bz2.rst:91
 msgid ""
 ":class:`BZ2File` provides all of the members specified by the "
-":class:`io.BufferedIOBase`, except for :meth:`~io.BufferedIOBase.detach` "
-"and :meth:`~io.IOBase.truncate`. Iteration and the :keyword:`with` "
-"statement are supported."
+":class:`io.BufferedIOBase`, except for :meth:`~io.BufferedIOBase.detach` and"
+" :meth:`~io.IOBase.truncate`. Iteration and the :keyword:`with` statement "
+"are supported."
 msgstr ""
+"Třída :class:`BZ2File` poskytuje všechny členy určené třídou "
+":class:`io.BufferedIOBase`, kromě metod :meth:`~io.BufferedIOBase.detach` a "
+":meth:`~io.IOBase.truncate`. Podporovány jsou iterace a příkáz "
+":keyword:`with`."
 
 #: ../../library/bz2.rst:96
 msgid ":class:`BZ2File` also provides the following methods and attributes:"
-msgstr ""
+msgstr "Třída :class:`BZ2File` nabízí také následující metody a atributy:"
 
 #: ../../library/bz2.rst:100
 msgid ""
-"Return buffered data without advancing the file position. At least one "
-"byte of data will be returned (unless at EOF). The exact number of bytes "
-"returned is unspecified."
+"Return buffered data without advancing the file position. At least one byte "
+"of data will be returned (unless at EOF). The exact number of bytes returned"
+" is unspecified."
 msgstr ""
+"Vrátí bufferovaná data bez změny pozice v souboru. Budou vrácena alespoň "
+"jednom bajty dat (pokud není na konci souboru). Přesný počet vrácených bajtů"
+" není stanoven."
 
 #: ../../library/bz2.rst:104
 msgid ""
 "While calling :meth:`peek` does not change the file position of the "
-":class:`BZ2File`, it may change the position of the underlying file "
-"object (e.g. if the :class:`BZ2File` was constructed by passing a file "
-"object for *filename*)."
+":class:`BZ2File`, it may change the position of the underlying file object "
+"(e.g. if the :class:`BZ2File` was constructed by passing a file object for "
+"*filename*)."
 msgstr ""
+"Zatímco volání metody :meth:`peek` nezmění pozici souboru ve třídě "
+":class:`BZ2File`, může zmOnit pozici v podstatném objektu souboru (například"
+" pokud byla třída :class:`BZ2File` vytvořena předáním objektu souboru pro "
+"*filename*)."
 
 #: ../../library/bz2.rst:113
 msgid "Return the file descriptor for the underlying file."
-msgstr ""
+msgstr "Vrátí deskriptor souboru pro podstatný soubor."
 
 #: ../../library/bz2.rst:119
 msgid "Return whether the file was opened for reading."
-msgstr ""
+msgstr "Vrátí, zda byl soubor otevřen pro čtení."
 
 #: ../../library/bz2.rst:125
 msgid "Return whether the file supports seeking."
-msgstr ""
+msgstr "Vrátí, zda soubor podporuje vyhledávání."
 
 #: ../../library/bz2.rst:131
 msgid "Return whether the file was opened for writing."
-msgstr ""
+msgstr "Vrátí, zda byl soubor otevřen pro zápis."
 
 #: ../../library/bz2.rst:137
 msgid ""
-"Read up to *size* uncompressed bytes, while trying to avoid making "
-"multiple reads from the underlying stream. Reads up to a buffer's worth "
-"of data if size is negative."
+"Read up to *size* uncompressed bytes, while trying to avoid making multiple "
+"reads from the underlying stream. Reads up to a buffer's worth of data if "
+"size is negative."
 msgstr ""
+"Přečte nejvýše *size* nekomprimovaných bajtů a zkoušejte se vyhnout více "
+"čtením z podstatného toku. Přečte data o velikosti bufferu, pokud je "
+"velikost záporná."
 
 #: ../../library/bz2.rst:141
 msgid "Returns ``b''`` if the file is at EOF."
-msgstr ""
+msgstr "Vrátí ``b''`` pokud je soubor na konci."
 
 #: ../../library/bz2.rst:147
 msgid "Read bytes into *b*."
-msgstr ""
+msgstr "Přečte bajty do *b*."
 
 #: ../../library/bz2.rst:149
 msgid "Returns the number of bytes read (0 for EOF)."
-msgstr ""
+msgstr "Vrátí počet přečtených bajtů (0 pro konec souboru)."
 
 #: ../../library/bz2.rst:155
 msgid "``'rb'`` for reading and ``'wb'`` for writing."
-msgstr ""
+msgstr "``'rb'`` pro čtení a ``'wb'`` pro zápis."
 
 #: ../../library/bz2.rst:161
 msgid ""
-"The bzip2 file name.  Equivalent to the :attr:`~io.FileIO.name` attribute"
-" of the underlying :term:`file object`."
+"The bzip2 file name.  Equivalent to the :attr:`~io.FileIO.name` attribute of"
+" the underlying :term:`file object`."
 msgstr ""
+"Název souboru bzip2. Ekvivalentní atributu :attr:`~io.FileIO.name` "
+"podstatného objektu :term:`file object`."
 
 #: ../../library/bz2.rst:167
 msgid "Support for the :keyword:`with` statement was added."
-msgstr ""
+msgstr "Přidána podpora pro příkáz :keyword:`with`."
 
 #: ../../library/bz2.rst:170
 msgid ""
-"Support was added for *filename* being a :term:`file object` instead of "
-"an actual filename."
+"Support was added for *filename* being a :term:`file object` instead of an "
+"actual filename."
 msgstr ""
+"Byla přidána podpora pro *filename* jako objekt :term:`file object` místo "
+"skutečného názvu souboru."
 
 #: ../../library/bz2.rst:174
 msgid ""
-"The ``'a'`` (append) mode was added, along with support for reading "
-"multi-stream files."
+"The ``'a'`` (append) mode was added, along with support for reading multi-"
+"stream files."
 msgstr ""
+"Přidán mód ``'a'`` (přidávání) spolu s podporou pro čtení souborů s více "
+"proudy."
 
 #: ../../library/bz2.rst:180
 msgid ""
 "The :meth:`~io.BufferedIOBase.read` method now accepts an argument of "
 "``None``."
 msgstr ""
+"Metoda :meth:`~io.BufferedIOBase.read` nyní přijímá argument ``None``."
 
 #: ../../library/bz2.rst:187
 msgid ""
-"The *buffering* parameter has been removed. It was ignored and deprecated"
-" since Python 3.0. Pass an open file object to control how the file is "
+"The *buffering* parameter has been removed. It was ignored and deprecated "
+"since Python 3.0. Pass an open file object to control how the file is "
 "opened."
 msgstr ""
+"Parametr *buffering* byl odebrán. Byl ignorován a zastaral od Pythonu 3.0. "
+"Aby jste kontrolovali, jak se soubor otevře, předéjte otevřený objekt "
+"souboru."
 
 #: ../../library/bz2.rst:192
 msgid "The *compresslevel* parameter became keyword-only."
-msgstr ""
+msgstr "Parametr *compresslevel* se stal klíčovým argumentem."
 
 #: ../../library/bz2.rst:194
 msgid ""
-"This class is thread unsafe in the face of multiple simultaneous readers "
-"or writers, just like its equivalent classes in :mod:`gzip` and "
-":mod:`lzma` have always been."
+"This class is thread unsafe in the face of multiple simultaneous readers or "
+"writers, just like its equivalent classes in :mod:`gzip` and :mod:`lzma` "
+"have always been."
 msgstr ""
+"Tato třída není bezpečná vůunm vláken (thread unsafe) v případě několika "
+"soudobyć čtenářů nebo zápisovatelů, stejně jako její ekvivalentní třídy v "
+"modulech :mod:`gzip` a :mod:`lzma`."
 
 #: ../../library/bz2.rst:201
 msgid "Incremental (de)compression"
-msgstr ""
+msgstr "Postupná (de)kompresi"
 
 #: ../../library/bz2.rst:205
 msgid ""
 "Create a new compressor object. This object may be used to compress data "
-"incrementally. For one-shot compression, use the :func:`compress` "
-"function instead."
+"incrementally. For one-shot compression, use the :func:`compress` function "
+"instead."
 msgstr ""
+"Vytvoř nový objekt kompresoru. Tento objekt se může použít k postupné "
+"kompresi dat. Pro jednorázovou kompresi použitě místo toho funkci "
+":func:`compress`."
 
 #: ../../library/bz2.rst:209 ../../library/bz2.rst:297
 msgid ""
-"*compresslevel*, if given, must be an integer between ``1`` and ``9``. "
-"The default is ``9``."
+"*compresslevel*, if given, must be an integer between ``1`` and ``9``. The "
+"default is ``9``."
 msgstr ""
+"Pokud je *compresslevel* zadán, musí být celé číslo mezi ``1`` a ``9``. "
+"Výchozí hodnota je ``9``."
 
 #: ../../library/bz2.rst:214
 msgid ""
-"Provide data to the compressor object. Returns a chunk of compressed data"
-" if possible, or an empty byte string otherwise."
+"Provide data to the compressor object. Returns a chunk of compressed data if"
+" possible, or an empty byte string otherwise."
 msgstr ""
+"Poskytni data objektu kompresoru. Vrátí kósek komprimovaných dat, pokud je "
+"to možné, nebo jinak prázdný bájt string."
 
 #: ../../library/bz2.rst:217
 msgid ""
 "When you have finished providing data to the compressor, call the "
 ":meth:`flush` method to finish the compression process."
 msgstr ""
+"Jakmile jste skončili s poskytováním dat kompresoru, zavolájte metodu "
+":meth:`flush`, aby jste skončili proces komprese."
 
 #: ../../library/bz2.rst:223
 msgid ""
-"Finish the compression process. Returns the compressed data left in "
-"internal buffers."
+"Finish the compression process. Returns the compressed data left in internal"
+" buffers."
 msgstr ""
+"Dokonč proces komprese. Vrátí komprimovaná data zbývající v interních "
+"bufferech."
 
 #: ../../library/bz2.rst:226
-msgid "The compressor object may not be used after this method has been called."
-msgstr ""
+msgid ""
+"The compressor object may not be used after this method has been called."
+msgstr "Objekt kompresoru se nepříslušně používá po volání této metody."
 
 #: ../../library/bz2.rst:231
 msgid ""
-"Create a new decompressor object. This object may be used to decompress "
-"data incrementally. For one-shot compression, use the :func:`decompress` "
+"Create a new decompressor object. This object may be used to decompress data"
+" incrementally. For one-shot compression, use the :func:`decompress` "
 "function instead."
 msgstr ""
+"Vytvoř nový objekt dekompresoru. Tento objekt se může použít k postupné "
+"dekompresi dat. Pro jednorázovou kompresi použitě míste toho funkci "
+":func:`decompress`."
 
 #: ../../library/bz2.rst:236
 msgid ""
 "This class does not transparently handle inputs containing multiple "
-"compressed streams, unlike :func:`decompress` and :class:`BZ2File`. If "
-"you need to decompress a multi-stream input with "
-":class:`BZ2Decompressor`, you must use a new decompressor for each "
-"stream."
+"compressed streams, unlike :func:`decompress` and :class:`BZ2File`. If you "
+"need to decompress a multi-stream input with :class:`BZ2Decompressor`, you "
+"must use a new decompressor for each stream."
 msgstr ""
+"Tato třída nehandjuje transparentně vstupy obsahující více komprimovaných "
+"toků, na rozdíl od funkcí :func:`decompress` a třídy :class:`BZ2File`. Pokud"
+" potřebujete dekomprimovat vstup s více proudy pomocí "
+":class:`BZ2Decompressor`, musíte použít nový dekompresor pro každý proud."
 
 #: ../../library/bz2.rst:243
 msgid ""
-"Decompress *data* (a :term:`bytes-like object`), returning uncompressed "
-"data as bytes. Some of *data* may be buffered internally, for use in "
-"later calls to :meth:`decompress`. The returned data should be "
-"concatenated with the output of any previous calls to :meth:`decompress`."
+"Decompress *data* (a :term:`bytes-like object`), returning uncompressed data"
+" as bytes. Some of *data* may be buffered internally, for use in later calls"
+" to :meth:`decompress`. The returned data should be concatenated with the "
+"output of any previous calls to :meth:`decompress`."
 msgstr ""
+"Dekomprimuje *data* (objekt :term:`bytes-like object`), vrátí nekomprimovaná"
+" data jako bajty. Část *data* může být bufferovaná interně pro použití v "
+"pozdějších voláních metody :meth:`decompress`. Vrácená data by měla být "
+"sloučena s výstupem jakehokoli předchozího volání metody :meth:`decompress`."
 
 #: ../../library/bz2.rst:249
 msgid ""
 "If *max_length* is nonnegative, returns at most *max_length* bytes of "
 "decompressed data. If this limit is reached and further output can be "
-"produced, the :attr:`~.needs_input` attribute will be set to ``False``. "
-"In this case, the next call to :meth:`~.decompress` may provide *data* as"
-" ``b''`` to obtain more of the output."
+"produced, the :attr:`~.needs_input` attribute will be set to ``False``. In "
+"this case, the next call to :meth:`~.decompress` may provide *data* as "
+"``b''`` to obtain more of the output."
 msgstr ""
+"Je-li *max_length* nezbornó, vrátí nejvýše *max_length* bajtů "
+"dekomprimovaných dat. Pokud je dosahována tento limit a lze vytvořit další "
+"výstup, atribut :attr:`~.needs_input` bude nastaven na ``False``. V tomto "
+"případě může následující volání metody :meth:`~.decompress` poskytnout "
+"*data* jako ``b''`` k získání více výstupu."
 
 #: ../../library/bz2.rst:256
 msgid ""
-"If all of the input data was decompressed and returned (either because "
-"this was less than *max_length* bytes, or because *max_length* was "
-"negative), the :attr:`~.needs_input` attribute will be set to ``True``."
+"If all of the input data was decompressed and returned (either because this "
+"was less than *max_length* bytes, or because *max_length* was negative), the"
+" :attr:`~.needs_input` attribute will be set to ``True``."
 msgstr ""
+"Pokud všechna vstupní data byla dekomprimována a vrácena (buď protože to "
+"bylo méně než *max_length* bajtů, nebo protože *max_length* byla záporná), "
+"atribut :attr:`~.needs_input` bude nastaven na ``True``."
 
 #: ../../library/bz2.rst:261
 msgid ""
-"Attempting to decompress data after the end of stream is reached raises "
-"an :exc:`EOFError`.  Any data found after the end of the stream is "
-"ignored and saved in the :attr:`~.unused_data` attribute."
+"Attempting to decompress data after the end of stream is reached raises an "
+":exc:`EOFError`.  Any data found after the end of the stream is ignored and "
+"saved in the :attr:`~.unused_data` attribute."
 msgstr ""
+"Pokus dekomprimovat data po dosažení konce toku vyvolá výjimku "
+":exc:`EOFError`. Vré data nalezená za koncem toku jsou ignorována a uložena "
+"v atributu :attr:`~.unused_data`."
 
 #: ../../library/bz2.rst:265
 msgid "Added the *max_length* parameter."
-msgstr ""
+msgstr "Přidán parametr *max_length*."
 
 #: ../../library/bz2.rst:270
 msgid "``True`` if the end-of-stream marker has been reached."
-msgstr ""
+msgstr "``True`` pokud byl dosažen značka konce toku."
 
 #: ../../library/bz2.rst:277
 msgid "Data found after the end of the compressed stream."
-msgstr ""
+msgstr "Data nalezená za koncem komprimovaného toku."
 
 #: ../../library/bz2.rst:279
 msgid ""
-"If this attribute is accessed before the end of the stream has been "
-"reached, its value will be ``b''``."
+"If this attribute is accessed before the end of the stream has been reached,"
+" its value will be ``b''``."
 msgstr ""
+"Pokud je přístupný tento atribut před tím, než je dosažen konec toku, jeho "
+"hodnota bude ``b''``."
 
 #: ../../library/bz2.rst:284
 msgid ""
-"``False`` if the :meth:`.decompress` method can provide more decompressed"
-" data before requiring new uncompressed input."
+"``False`` if the :meth:`.decompress` method can provide more decompressed "
+"data before requiring new uncompressed input."
 msgstr ""
+"``False`` pokud metoda :meth:`.decompress` může poskytnout více "
+"dekomprimovaných dat před požadavkem nových nekomprimovaných vstupů."
 
 #: ../../library/bz2.rst:291
 msgid "One-shot (de)compression"
-msgstr ""
+msgstr "Jednorázová (de)kompresi"
 
 #: ../../library/bz2.rst:295
 msgid "Compress *data*, a :term:`bytes-like object <bytes-like object>`."
 msgstr ""
+"Komprimuje *data*, objekt :term:`bytes-like object <bytes-like object>`."
 
 #: ../../library/bz2.rst:300
 msgid "For incremental compression, use a :class:`BZ2Compressor` instead."
-msgstr ""
+msgstr "Pro postupnou kompresi použitě míste třídu :class:`BZ2Compressor`."
 
 #: ../../library/bz2.rst:305
 msgid "Decompress *data*, a :term:`bytes-like object <bytes-like object>`."
 msgstr ""
+"Dekomprimuje *data*, objekt :term:`bytes-like object <bytes-like object>`."
 
 #: ../../library/bz2.rst:307
 msgid ""
-"If *data* is the concatenation of multiple compressed streams, decompress"
-" all of the streams."
+"If *data* is the concatenation of multiple compressed streams, decompress "
+"all of the streams."
 msgstr ""
+"Je-li *data* zetětěním několika komprimovaných toků, dekomprimuje všechny "
+"toky."
 
 #: ../../library/bz2.rst:310
 msgid "For incremental decompression, use a :class:`BZ2Decompressor` instead."
 msgstr ""
+"Pro postupnou dekompresi použitě mísite třídu :class:`BZ2Decompressor`."
 
 #: ../../library/bz2.rst:312
 msgid "Support for multi-stream inputs was added."
-msgstr ""
+msgstr "Přidána podpora pro vstupy s více proudy."
 
 #: ../../library/bz2.rst:318
 msgid "Examples of usage"
-msgstr ""
+msgstr "Příklady použití"
 
 #: ../../library/bz2.rst:320
 msgid "Below are some examples of typical usage of the :mod:`bz2` module."
-msgstr ""
+msgstr "Níže je několik příkladů typického použití modulu :mod:`bz2`."
 
 #: ../../library/bz2.rst:322
 msgid ""
 "Using :func:`compress` and :func:`decompress` to demonstrate round-trip "
 "compression:"
 msgstr ""
+"Použití :func:`compress` a :func:`decompress` k demonstraci roundtrip "
+"komprese:"
 
 #: ../../library/bz2.rst:340
 msgid "Using :class:`BZ2Compressor` for incremental compression:"
-msgstr ""
+msgstr "Použití :class:`BZ2Compressor` pro postupnou kompresi:"
 
 #: ../../library/bz2.rst:358
 msgid ""
 "The example above uses a very \"nonrandom\" stream of data (a stream of "
-"``b\"z\"`` chunks).  Random data tends to compress poorly, while ordered,"
-" repetitive data usually yields a high compression ratio."
+"``b\"z\"`` chunks).  Random data tends to compress poorly, while ordered, "
+"repetitive data usually yields a high compression ratio."
 msgstr ""
+"Výše uvedený příklad používá velmi \"nénáhodný\" proud dat (proud ``b\"z\"``"
+" kusků). Náhodná data se komprimují zle, zatímco uspořádaná, opakovaná data "
+"obvykle poskytují vysoký poměr komprese."
 
 #: ../../library/bz2.rst:362
 msgid "Writing and reading a bzip2-compressed file in binary mode:"
-msgstr ""
-
+msgstr "Zápis a čtení bzip2-komprimovaného souboru v binárním módu:"

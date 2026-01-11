@@ -11,123 +11,136 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/curses.panel.rst:2
 msgid ":mod:`!curses.panel` --- A panel stack extension for curses"
-msgstr ""
+msgstr ":mod:`!curses.panel` --- Rozšíření curses o panel stack"
 
 #: ../../library/curses.panel.rst:11
 msgid ""
-"Panels are windows with the added feature of depth, so they can be "
-"stacked on top of each other, and only the visible portions of each "
-"window will be displayed.  Panels can be added, moved up or down in the "
-"stack, and removed."
+"Panels are windows with the added feature of depth, so they can be stacked "
+"on top of each other, and only the visible portions of each window will be "
+"displayed.  Panels can be added, moved up or down in the stack, and removed."
 msgstr ""
+"Panely jsou okna s přidanou funkcí hloubky, takže mohou být skládány na "
+"sobě, a budou zobrazeny pouze viditelné části každého okna. Panely mohou být"
+" přidány, pohybovány nahoru nebo dolů v stacku a odstraněny."
 
 #: ../../library/curses.panel.rst:19
 msgid "Functions"
-msgstr ""
+msgstr "Funkce"
 
 #: ../../library/curses.panel.rst:21
 msgid "The module :mod:`curses.panel` defines the following functions:"
-msgstr ""
+msgstr "Modul :mod:`curses.panel` definuje následující funkce:"
 
 #: ../../library/curses.panel.rst:26
 msgid "Returns the bottom panel in the panel stack."
-msgstr ""
+msgstr "Vrací dolní panel v stacku panelů."
 
 #: ../../library/curses.panel.rst:31
 msgid ""
-"Returns a panel object, associating it with the given window *win*. Be "
-"aware that you need to keep the returned panel object referenced "
-"explicitly.  If you don't, the panel object is garbage collected and "
-"removed from the panel stack."
+"Returns a panel object, associating it with the given window *win*. Be aware"
+" that you need to keep the returned panel object referenced explicitly.  If "
+"you don't, the panel object is garbage collected and removed from the panel "
+"stack."
 msgstr ""
+"Vrací objekt panelu a přidřužuje ho danému oknu *win*. Uvdomte si, že musíte"
+" mít vrácený objekt panelu explicitně referenován. Pokud ne, je objekt "
+"panelu sbírán garbageq collector a odstraněn ze stacku panelů."
 
 #: ../../library/curses.panel.rst:38
 msgid "Returns the top panel in the panel stack."
-msgstr ""
+msgstr "Vrací horní panel v stacku panelů."
 
 #: ../../library/curses.panel.rst:43
 msgid ""
-"Updates the virtual screen after changes in the panel stack. This does "
-"not call :func:`curses.doupdate`, so you'll have to do this yourself."
+"Updates the virtual screen after changes in the panel stack. This does not "
+"call :func:`curses.doupdate`, so you'll have to do this yourself."
 msgstr ""
+"Aktualizuje virtuální obrazovku po změnách v stacku panelů. Nevolá "
+":func:`curses.doupdate`, takže to musíte udělat sami."
 
 #: ../../library/curses.panel.rst:50
 msgid "Panel Objects"
-msgstr ""
+msgstr "Objekty Panelů"
 
 #: ../../library/curses.panel.rst:52
 msgid ""
-"Panel objects, as returned by :func:`new_panel` above, are windows with a"
-" stacking order. There's always a window associated with a panel which "
+"Panel objects, as returned by :func:`new_panel` above, are windows with a "
+"stacking order. There's always a window associated with a panel which "
 "determines the content, while the panel methods are responsible for the "
 "window's depth in the panel stack."
 msgstr ""
+"Objekty panelů, jak jsou vraceny funkcí :func:`new_panel` výše, jsou okna se"
+" stacking order. Vždy je přidřuzeno okno panelu, které určuje obsah, zatímco"
+" metody panelu jsou odpovědné za hloubku okna v stacku panelů."
 
 #: ../../library/curses.panel.rst:57
 msgid "Panel objects have the following methods:"
-msgstr ""
+msgstr "Objekty panelu mají následující metody:"
 
 #: ../../library/curses.panel.rst:62
 msgid "Returns the panel above the current panel."
-msgstr ""
+msgstr "Vrací panel nad aktuálním panelem."
 
 #: ../../library/curses.panel.rst:67
 msgid "Returns the panel below the current panel."
-msgstr ""
+msgstr "Vrací panel pod aktuálním panelem."
 
 #: ../../library/curses.panel.rst:72
 msgid "Push the panel to the bottom of the stack."
-msgstr ""
+msgstr "Posune panel na dól stacku."
 
 #: ../../library/curses.panel.rst:77
 msgid ""
-"Returns ``True`` if the panel is hidden (not visible), ``False`` "
-"otherwise."
+"Returns ``True`` if the panel is hidden (not visible), ``False`` otherwise."
 msgstr ""
+"Vrací ``True``, pokud je panel skrytý (není viditelný), jinak ``False``."
 
 #: ../../library/curses.panel.rst:82
 msgid ""
-"Hide the panel. This does not delete the object, it just makes the window"
-" on screen invisible."
-msgstr ""
+"Hide the panel. This does not delete the object, it just makes the window on"
+" screen invisible."
+msgstr "Skryje panel. Neodstraní objekt, pouze znávidí okno na obrazovce."
 
 #: ../../library/curses.panel.rst:88
 msgid "Move the panel to the screen coordinates ``(y, x)``."
-msgstr ""
+msgstr "Posune panel na soustavyč obrazovky ``(y, x)``."
 
 #: ../../library/curses.panel.rst:93
 msgid "Change the window associated with the panel to the window *win*."
-msgstr ""
+msgstr "Změní okno přidřuzované panelu na okno *win*."
 
 #: ../../library/curses.panel.rst:98
 msgid ""
 "Set the panel's user pointer to *obj*. This is used to associate an "
 "arbitrary piece of data with the panel, and can be any Python object."
 msgstr ""
+"Nastaví uživatelský ukazatel panelu na *obj*. To se používá k přidřužení "
+"libovolného kusú dat panelu a může to být jakýkoli Python objekt."
 
 #: ../../library/curses.panel.rst:104
 msgid "Display the panel (which might have been hidden)."
-msgstr ""
+msgstr "Zobrazí panel (který má být skryt)."
 
 #: ../../library/curses.panel.rst:109
 msgid "Push panel to the top of the stack."
-msgstr ""
+msgstr "Posune panel na vrch stacku."
 
 #: ../../library/curses.panel.rst:114
-msgid "Returns the user pointer for the panel.  This might be any Python object."
+msgid ""
+"Returns the user pointer for the panel.  This might be any Python object."
 msgstr ""
+"Vrací uživatelský ukazatel panelu. To může být jakýkoli Python objekt."
 
 #: ../../library/curses.panel.rst:119
 msgid "Returns the window object associated with the panel."
-msgstr ""
-
+msgstr "Vrací objekt okna přidřuzovaný panelu."

@@ -11,97 +11,117 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/_thread.rst:2
 msgid ":mod:`!_thread` --- Low-level threading API"
-msgstr ""
+msgstr ":mod:`!_thread` --- Nízkoúrovňové API pro práci s vlákny"
 
 #: ../../library/_thread.rst:15
 msgid ""
-"This module provides low-level primitives for working with multiple "
-"threads (also called :dfn:`light-weight processes` or :dfn:`tasks`) --- "
-"multiple threads of control sharing their global data space.  For "
-"synchronization, simple locks (also called :dfn:`mutexes` or :dfn:`binary"
-" semaphores`) are provided. The :mod:`threading` module provides an "
-"easier to use and higher-level threading API built on top of this module."
+"This module provides low-level primitives for working with multiple threads "
+"(also called :dfn:`light-weight processes` or :dfn:`tasks`) --- multiple "
+"threads of control sharing their global data space.  For synchronization, "
+"simple locks (also called :dfn:`mutexes` or :dfn:`binary semaphores`) are "
+"provided. The :mod:`threading` module provides an easier to use and higher-"
+"level threading API built on top of this module."
 msgstr ""
+"Tento modul poskytuje nízkoúrovňové primitiva pro práci s více vlákny (také "
+"nazývanými :dfn:`lehký procesy` nebo :dfn:`úkoly`) --- více vláken kontroly "
+"sdílející jejich prostor globálních dat. Pro synchronizaci jsou poskytovány "
+"jednoduché zámky (také nazývané :dfn:`mutexes` nebo :dfn:`binární "
+"semafory`). Modul :mod:`threading` poskytuje snáze použitelné a vyšší "
+"úrovňové API pro práci s vlákny postavené na základě tohoto modulu."
 
 #: ../../library/_thread.rst:26
 msgid "This module used to be optional, it is now always available."
-msgstr ""
+msgstr "Tento modul byl dříve nepovinný, nyní je vždy dostupný."
 
 #: ../../library/_thread.rst:29
 msgid "This module defines the following constants and functions:"
-msgstr ""
+msgstr "Tento modul definuje následující konstanty a funkce:"
 
 #: ../../library/_thread.rst:33
 msgid "Raised on thread-specific errors."
-msgstr ""
+msgstr "Vyvolána při chybách specifických pro vlákna."
 
 #: ../../library/_thread.rst:35
 msgid "This is now a synonym of the built-in :exc:`RuntimeError`."
-msgstr ""
+msgstr "Toto je nyní synonymem vestavěné výjimky :exc:`RuntimeError`."
 
 #: ../../library/_thread.rst:41
 msgid "This is the type of lock objects."
-msgstr ""
+msgstr "Toto je typ objektů zámku."
 
 #: ../../library/_thread.rst:46
 msgid ""
 "Start a new thread and return its identifier.  The thread executes the "
-"function *function* with the argument list *args* (which must be a "
-"tuple). The optional *kwargs* argument specifies a dictionary of keyword "
-"arguments."
+"function *function* with the argument list *args* (which must be a tuple). "
+"The optional *kwargs* argument specifies a dictionary of keyword arguments."
 msgstr ""
+"Spustí nové vlákno a vrátí jeho identifikátor. Vlákno provede funkci "
+"*function* se seznamem argumentů *args* (který musí být tuple). Nepovinný "
+"argument *kwargs* určuje slovník argumentů klíčového slova."
 
 #: ../../library/_thread.rst:50
 msgid "When the function returns, the thread silently exits."
-msgstr ""
+msgstr "Když se funkce vrátí, vlákno tiše skončí."
 
 #: ../../library/_thread.rst:52
 msgid ""
 "When the function terminates with an unhandled exception, "
-":func:`sys.unraisablehook` is called to handle the exception. The "
-"*object* attribute of the hook argument is *function*. By default, a "
-"stack trace is printed and then the thread exits (but other threads "
-"continue to run)."
+":func:`sys.unraisablehook` is called to handle the exception. The *object* "
+"attribute of the hook argument is *function*. By default, a stack trace is "
+"printed and then the thread exits (but other threads continue to run)."
 msgstr ""
+"Když se funkce ukončí s neošetřenou výjimkou, je volána "
+":func:`sys.unraisablehook` pro zpracování výjimky. Atribut *object* "
+"argumentu háku je *function*. Ve výchozím nastavení je vytištěn zásobník "
+"(stack trace) a pak vlákno skončí (ale ostatní vlákna pokračují v běhu)."
 
 #: ../../library/_thread.rst:57
 msgid ""
 "When the function raises a :exc:`SystemExit` exception, it is silently "
 "ignored."
-msgstr ""
+msgstr "Když funkce vyvolá výjimku :exc:`SystemExit`, je tiše ignorována."
 
 #: ../../library/_thread.rst:60
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``_thread.start_new_thread`` "
-"with arguments ``function``, ``args``, ``kwargs``."
+"Raises an :ref:`auditing event <auditing>` ``_thread.start_new_thread`` with"
+" arguments ``function``, ``args``, ``kwargs``."
 msgstr ""
+"Vyvolá :ref:`audit event <auditing>` ``_thread.start_new_thread`` s "
+"argumenty ``function``, ``args``, ``kwargs``."
 
 #: ../../library/_thread.rst:62
 msgid ":func:`sys.unraisablehook` is now used to handle unhandled exceptions."
 msgstr ""
+":func:`sys.unraisablehook` se nyní používá pro zpracování neošetřených "
+"výjimek."
 
 #: ../../library/_thread.rst:68
 msgid ""
-"Simulate the effect of a signal arriving in the main thread. A thread can"
-" use this function to interrupt the main thread, though there is no "
-"guarantee that the interruption will happen immediately."
+"Simulate the effect of a signal arriving in the main thread. A thread can "
+"use this function to interrupt the main thread, though there is no guarantee"
+" that the interruption will happen immediately."
 msgstr ""
+"Simuluje efekt příchodu signálu v hlavním vláknu. Vlákno může použít tuto "
+"funkci k přeruvení hlavního vlákna, vyše není zaručeno, že k přeruvení dojde"
+" okamžitě."
 
 #: ../../library/_thread.rst:72
 msgid ""
-"If given, *signum* is the number of the signal to simulate. If *signum* "
-"is not given, :const:`signal.SIGINT` is simulated."
+"If given, *signum* is the number of the signal to simulate. If *signum* is "
+"not given, :const:`signal.SIGINT` is simulated."
 msgstr ""
+"Pokud je zadán, *signum* je číslo signálu, který se má simulovat. Pokud "
+"*signum* není zadán, je simulován :const:`signal.SIGINT`."
 
 #: ../../library/_thread.rst:75
 msgid ""
@@ -109,104 +129,147 @@ msgid ""
 ":const:`signal.SIG_DFL` or :const:`signal.SIG_IGN`), this function does "
 "nothing."
 msgstr ""
+"Pokud daný signál není Pythonem zpracován (byl nastaven na "
+":const:`signal.SIG_DFL` nebo :const:`signal.SIG_IGN`), tato funkce nedělá "
+"nic."
 
 #: ../../library/_thread.rst:79
 msgid "The *signum* argument is added to customize the signal number."
-msgstr ""
+msgstr "Argument *signum* je přidán pro kustomizaci čísla signálu."
 
 #: ../../library/_thread.rst:83
 msgid ""
 "This does not emit the corresponding signal but schedules a call to the "
-"associated handler (if it exists). If you want to truly emit the signal, "
-"use :func:`signal.raise_signal`."
+"associated handler (if it exists). If you want to truly emit the signal, use"
+" :func:`signal.raise_signal`."
 msgstr ""
+"Toto nevypustí odpovídající signál, ale naplní volání přidružené obslužné "
+"rutiny (pokud existuje). Pokud chcete opravdu vypustit signál, použijte "
+":func:`signal.raise_signal`."
 
 #: ../../library/_thread.rst:90
 msgid ""
-"Raise the :exc:`SystemExit` exception.  When not caught, this will cause "
-"the thread to exit silently."
+"Raise the :exc:`SystemExit` exception.  When not caught, this will cause the"
+" thread to exit silently."
 msgstr ""
+"Vyvolá výjimku :exc:`SystemExit`. Pokud není zachycena, způsobí tiché "
+"ukončení vlákna."
 
 #: ../../library/_thread.rst:104
 msgid ""
-"Return a new lock object.  Methods of locks are described below.  The "
-"lock is initially unlocked."
+"Return a new lock object.  Methods of locks are described below.  The lock "
+"is initially unlocked."
 msgstr ""
+"Vrátí nový objekt zámku. Metody zámků jsou popsány níže. Zámek je původně "
+"odemknutý."
 
 #: ../../library/_thread.rst:110
 msgid ""
 "Return the 'thread identifier' of the current thread.  This is a nonzero "
-"integer.  Its value has no direct meaning; it is intended as a magic "
-"cookie to be used e.g. to index a dictionary of thread-specific data.  "
-"Thread identifiers may be recycled when a thread exits and another thread"
-" is created."
+"integer.  Its value has no direct meaning; it is intended as a magic cookie "
+"to be used e.g. to index a dictionary of thread-specific data.  Thread "
+"identifiers may be recycled when a thread exits and another thread is "
+"created."
 msgstr ""
+"Vrátí 'identifikátor vlákna' současného vlákna. Toto je nenulové celé číslo."
+" Její hodnota nemá přímý význm; je určena jako magické soubor cookie, který "
+"se má použít např. k indexování slovníku dat specifických pro vlákno. "
+"Identifikátory vláken mohou být znovu použity, když se vlákno ukončí a je "
+"vytvořeno další vlákno."
 
 #: ../../library/_thread.rst:118
 msgid ""
-"Return the native integral Thread ID of the current thread assigned by "
-"the kernel. This is a non-negative integer. Its value may be used to "
-"uniquely identify this particular thread system-wide (until the thread "
-"terminates, after which the value may be recycled by the OS)."
+"Return the native integral Thread ID of the current thread assigned by the "
+"kernel. This is a non-negative integer. Its value may be used to uniquely "
+"identify this particular thread system-wide (until the thread terminates, "
+"after which the value may be recycled by the OS)."
 msgstr ""
+"Vrátí nativní integrální ID vlákna současného vlákna přidlené jádrem. Toto "
+"je záporné celé číslo. Jeho hodnota může být použita k jednoznačnému "
+"identifikování tohoto konkrétního vlákna v rrámci systému (až se vlákno "
+"ukončí, poté může být hodnota znovu použita operáčním systémem)."
 
 #: ../../library/_thread.rst:123 ../../library/_thread.rst:148
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/_thread.rst:127
 msgid "Added support for GNU/kFreeBSD."
-msgstr ""
+msgstr "Přidána podpora GNU/kFreeBSD."
 
 #: ../../library/_thread.rst:133
 msgid ""
-"Return the thread stack size used when creating new threads.  The "
-"optional *size* argument specifies the stack size to be used for "
-"subsequently created threads, and must be 0 (use platform or configured "
-"default) or a positive integer value of at least 32,768 (32 KiB). If "
-"*size* is not specified, 0 is used.  If changing the thread stack size is"
-" unsupported, a :exc:`RuntimeError` is raised.  If the specified stack "
-"size is invalid, a :exc:`ValueError` is raised and the stack size is "
-"unmodified.  32 KiB is currently the minimum supported stack size value "
-"to guarantee sufficient stack space for the interpreter itself.  Note "
-"that some platforms may have particular restrictions on values for the "
-"stack size, such as requiring a minimum stack size > 32 KiB or requiring "
-"allocation in multiples of the system memory page size - platform "
-"documentation should be referred to for more information (4 KiB pages are"
-" common; using multiples of 4096 for the stack size is the suggested "
-"approach in the absence of more specific information)."
+"Return the thread stack size used when creating new threads.  The optional "
+"*size* argument specifies the stack size to be used for subsequently created"
+" threads, and must be 0 (use platform or configured default) or a positive "
+"integer value of at least 32,768 (32 KiB). If *size* is not specified, 0 is "
+"used.  If changing the thread stack size is unsupported, a "
+":exc:`RuntimeError` is raised.  If the specified stack size is invalid, a "
+":exc:`ValueError` is raised and the stack size is unmodified.  32 KiB is "
+"currently the minimum supported stack size value to guarantee sufficient "
+"stack space for the interpreter itself.  Note that some platforms may have "
+"particular restrictions on values for the stack size, such as requiring a "
+"minimum stack size > 32 KiB or requiring allocation in multiples of the "
+"system memory page size - platform documentation should be referred to for "
+"more information (4 KiB pages are common; using multiples of 4096 for the "
+"stack size is the suggested approach in the absence of more specific "
+"information)."
 msgstr ""
+"Vrátí velikost zásobníku vlákna používánou při vytváření nových vláken. "
+"Nepovinný argument *size* určuje velikost zásobníku, kterou se má použít pro"
+" následující vytvořená vlákna, a musí být 0 (použít výchozí nastavení "
+"platformy nebo nakonfigurované) nebo kladné celé číslo alespoň 32 768 (32 "
+"KiB). Pokud *size* není zadán, použije se 0. Pokud se změna velikosti "
+"zásobníku vlákna nepodporuče, je vyvolána :exc:`RuntimeError`. Pokud je "
+"určená velikost zásobníku neplatná, je vyvolána :exc:`ValueError` a velikost"
+" zásobníku zůstává nezměněna. 32 KiB je v současnosti minimální podporovaná "
+"velikost zásobníku, aby se zaručil dostatečný prostor zásobníku pro samotný "
+"interpret. Upozornořujeme, že některé platformy mohou mít konkrétní omezení "
+"na hodnoty velikosti zásobníku, jako je vymagoš minimální velikosti "
+"zásobníku > 32 KiB nebo vymogané přidělování v násobmcích systémové pámeti "
+"stran - dokumentace platformy by měla být konzultována pro další informace "
+"(4 KiB stránky jsou časté; použití násobků 4096 pro velikost zásobníku je "
+"navrhovaným přístupem v případě absence speciőfičtějších informací)."
 
 #: ../../library/_thread.rst:150
 msgid "Unix platforms with POSIX threads support."
-msgstr ""
+msgstr "Unixové platformy s podporou POSIX vláken."
 
 #: ../../library/_thread.rst:155
 msgid ""
-"The maximum value allowed for the *timeout* parameter of "
-":meth:`Lock.acquire <threading.Lock.acquire>`. Specifying a timeout "
-"greater than this value will raise an :exc:`OverflowError`."
+"The maximum value allowed for the *timeout* parameter of :meth:`Lock.acquire"
+" <threading.Lock.acquire>`. Specifying a timeout greater than this value "
+"will raise an :exc:`OverflowError`."
 msgstr ""
+"Maximální hodnota povolená pro parametr *timeout* :meth:`Lock.acquire "
+"<threading.Lock.acquire>`. Zadání timeout vyšší než tato hodnota vyvolá "
+":exc:`OverflowError`."
 
 #: ../../library/_thread.rst:162
 msgid "Lock objects have the following methods:"
-msgstr ""
+msgstr "Objekty zámku mají následující metody:"
 
 #: ../../library/_thread.rst:167
 msgid ""
 "Without any optional argument, this method acquires the lock "
-"unconditionally, if necessary waiting until it is released by another "
-"thread (only one thread at a time can acquire a lock --- that's their "
-"reason for existence)."
+"unconditionally, if necessary waiting until it is released by another thread"
+" (only one thread at a time can acquire a lock --- that's their reason for "
+"existence)."
 msgstr ""
+"Bez jakéhokoli volitelného argumentu se tato metoda bez podmíník pouýć "
+"zámek, v případě potřeby čeká až jej druhé vlákno uvolní (v každém okamžiku "
+"může zámek poučít jen jedno vlákno --- to je důvod jejich existence)."
 
 #: ../../library/_thread.rst:171
 msgid ""
-"If the *blocking* argument is present, the action depends on its value: "
-"if it is false, the lock is only acquired if it can be acquired "
-"immediately without waiting, while if it is true, the lock is acquired "
-"unconditionally as above."
+"If the *blocking* argument is present, the action depends on its value: if "
+"it is false, the lock is only acquired if it can be acquired immediately "
+"without waiting, while if it is true, the lock is acquired unconditionally "
+"as above."
 msgstr ""
+"Pokud je přítomen argument *blocking*, akce závisí na jeho hodnotě: pokud je"
+" nepravda, zámek se poučá pouze v případě, že jej lze okamžitě poučít bez "
+"čekání, zatímco pokud je pravda, zámek se poučá bez podmíník jako výše."
 
 #: ../../library/_thread.rst:176
 msgid ""
@@ -215,42 +278,53 @@ msgid ""
 "*timeout* argument specifies an unbounded wait.  You cannot specify a "
 "*timeout* if *blocking* is false."
 msgstr ""
+"Pokud je přítomen argument *timeout* s plovoucí čárkou a kladný, určuje "
+"maximální časový limit v sekundách před vrácením. Záporný argument *timeout*"
+" určuje nešítíné čekání. Nemůžete zadat *timeout*, pokud je *blocking* "
+"nepravda."
 
 #: ../../library/_thread.rst:181
 msgid ""
-"The return value is ``True`` if the lock is acquired successfully, "
-"``False`` if not."
+"The return value is ``True`` if the lock is acquired successfully, ``False``"
+" if not."
 msgstr ""
+"Návraté hodnota je ``True``, pokud je zámek úspěšně poučet, ``False``, pokud"
+" ne."
 
 #: ../../library/_thread.rst:184
 msgid "The *timeout* parameter is new."
-msgstr ""
+msgstr "Parametr *timeout* je nový."
 
 #: ../../library/_thread.rst:187
 msgid "Lock acquires can now be interrupted by signals on POSIX."
-msgstr ""
+msgstr "Poučení zámku mohou být nyní přerušena signály na POSIX."
 
 #: ../../library/_thread.rst:190
 msgid "Lock acquires can now be interrupted by signals on Windows."
-msgstr ""
+msgstr "Poučení zámku mohou být nyní přerušena signály na Windows."
 
 #: ../../library/_thread.rst:196
 msgid ""
 "Releases the lock.  The lock must have been acquired earlier, but not "
 "necessarily by the same thread."
 msgstr ""
+"Uvolní zámek. Zámek musí být dříve poučet, ale ne nutně stejným vláknem."
 
 #: ../../library/_thread.rst:202
 msgid ""
 "Return the status of the lock: ``True`` if it has been acquired by some "
 "thread, ``False`` if not."
 msgstr ""
+"Vrátí stav zámku: ``True``, pokud byl poučet některým vláknem, ``False``, "
+"pokud ne."
 
 #: ../../library/_thread.rst:205
 msgid ""
 "In addition to these methods, lock objects can also be used via the "
 ":keyword:`with` statement, e.g.::"
 msgstr ""
+"Kromě téchto metod mohou být objekty zámku také použity pomocí "
+":keyword:`with` příkazu, např.:"
 
 #: ../../library/_thread.rst:208
 msgid ""
@@ -261,10 +335,16 @@ msgid ""
 "with a_lock:\n"
 "    print(\"a_lock is locked while this executes\")"
 msgstr ""
+"import _thread\n"
+"\n"
+"a_lock = _thread.allocate_lock()\n"
+"\n"
+"with a_lock:\n"
+"    print(\"zámek je činnost má zámek během jejího provedení\")"
 
 #: ../../library/_thread.rst:215
 msgid "**Caveats:**"
-msgstr ""
+msgstr "**Varování:**"
 
 #: ../../library/_thread.rst:219
 msgid ""
@@ -280,10 +360,9 @@ msgstr ""
 
 #: ../../library/_thread.rst:225
 msgid ""
-"When the main thread exits, it is system defined whether the other "
-"threads survive.  On most systems, they are killed without executing "
-":keyword:`try` ... :keyword:`finally` clauses or executing object "
-"destructors."
+"When the main thread exits, it is system defined whether the other threads "
+"survive.  On most systems, they are killed without executing :keyword:`try` "
+"... :keyword:`finally` clauses or executing object destructors."
 msgstr ""
 
 #: ../../library/_thread.rst:7
@@ -324,4 +403,3 @@ msgstr ""
 
 #~ msgid "Added support for Solaris."
 #~ msgstr ""
-

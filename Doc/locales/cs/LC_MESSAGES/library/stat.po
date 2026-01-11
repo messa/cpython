@@ -11,114 +11,132 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 18:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/stat.rst:2
 msgid ":mod:`!stat` --- Interpreting :func:`~os.stat` results"
-msgstr ""
+msgstr ":mod:`!stat` --- Interpretace výsledků :func:`~os.stat`"
 
 #: ../../library/stat.rst:10
 msgid "**Source code:** :source:`Lib/stat.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/stat.py`"
 
 #: ../../library/stat.rst:14
 msgid ""
-"The :mod:`stat` module defines constants and functions for interpreting "
-"the results of :func:`os.stat`, :func:`os.fstat` and :func:`os.lstat` (if"
-" they exist).  For complete details about the :c:func:`stat`, "
-":c:func:`!fstat` and :c:func:`!lstat` calls, consult the documentation "
-"for your system."
+"The :mod:`stat` module defines constants and functions for interpreting the "
+"results of :func:`os.stat`, :func:`os.fstat` and :func:`os.lstat` (if they "
+"exist).  For complete details about the :c:func:`stat`, :c:func:`!fstat` and"
+" :c:func:`!lstat` calls, consult the documentation for your system."
 msgstr ""
+"Modul :mod:`stat` definuje konstanty a funkce pro interpretaci výsledků "
+":func:`os.stat`, :func:`os.fstat` a :func:`os.lstat` (pokud existují). Úplné"
+" podrobnosti o voláních :c:func:`stat`, :c:func:`!fstat` a :c:func:`!lstat` "
+"najdete v dokumentaci vašeho systému."
 
 #: ../../library/stat.rst:19
 msgid "The stat module is backed by a C implementation."
-msgstr ""
+msgstr "Modul stat je podporován implementací v jazyce C."
 
 #: ../../library/stat.rst:22
 msgid ""
-"The :mod:`stat` module defines the following functions to test for "
-"specific file types:"
+"The :mod:`stat` module defines the following functions to test for specific "
+"file types:"
 msgstr ""
+"Modul :mod:`stat` definuje následující funkce pro testování specifických "
+"typů souborů:"
 
 #: ../../library/stat.rst:28
 msgid "Return non-zero if the mode is from a directory."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z adresáře."
 
 #: ../../library/stat.rst:33
 msgid "Return non-zero if the mode is from a character special device file."
 msgstr ""
+"Vrací nenulovou hodnotu, pokud je režim ze speciálního znakového zařízení."
 
 #: ../../library/stat.rst:38
 msgid "Return non-zero if the mode is from a block special device file."
 msgstr ""
+"Vrací nenulovou hodnotu, pokud je režim ze speciálního blokového zařízení."
 
 #: ../../library/stat.rst:43
 msgid "Return non-zero if the mode is from a regular file."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z běžného souboru."
 
 #: ../../library/stat.rst:48
 msgid "Return non-zero if the mode is from a FIFO (named pipe)."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z FIFO (pojmenovaná roura)."
 
 #: ../../library/stat.rst:53
 msgid "Return non-zero if the mode is from a symbolic link."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim ze symbolického odkazu."
 
 #: ../../library/stat.rst:58
 msgid "Return non-zero if the mode is from a socket."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z socketu."
 
 #: ../../library/stat.rst:62
 msgid "Return non-zero if the mode is from a door."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z door."
 
 #: ../../library/stat.rst:68
 msgid "Return non-zero if the mode is from an event port."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z portu událostí."
 
 #: ../../library/stat.rst:74
 msgid "Return non-zero if the mode is from a whiteout."
-msgstr ""
+msgstr "Vrací nenulovou hodnotu, pokud je režim z whiteout."
 
 #: ../../library/stat.rst:78
 msgid ""
-"Two additional functions are defined for more general manipulation of the"
-" file's mode:"
+"Two additional functions are defined for more general manipulation of the "
+"file's mode:"
 msgstr ""
+"Dvě další funkce jsou definovány pro obecnější manipulaci s režimem souboru:"
 
 #: ../../library/stat.rst:84
 msgid ""
-"Return the portion of the file's mode that can be set by "
-":func:`os.chmod`\\ ---that is, the file's permission bits, plus the "
-"sticky bit, set-group-id, and set-user-id bits (on systems that support "
-"them)."
+"Return the portion of the file's mode that can be set by :func:`os.chmod`\\ "
+"---that is, the file's permission bits, plus the sticky bit, set-group-id, "
+"and set-user-id bits (on systems that support them)."
 msgstr ""
+"Vrací část režimu souboru, kterou lze nastavit poméčí :func:`os.chmod`\\ "
+"---tedy bity práv přístupu souboru, plus sticky bit, set-group-id a set-"
+"user-id bity (na systémech, které je podporují)."
 
 #: ../../library/stat.rst:91
 msgid ""
-"Return the portion of the file's mode that describes the file type (used "
-"by the :func:`!S_IS\\*` functions above)."
+"Return the portion of the file's mode that describes the file type (used by "
+"the :func:`!S_IS\\*` functions above)."
 msgstr ""
+"Vrací část režimu souboru, která popisuje typ souboru (která je používána "
+"funkcemí :func:`!S_IS\\*` výše)."
 
 #: ../../library/stat.rst:94
 msgid ""
-"Normally, you would use the :func:`!os.path.is\\*` functions for testing "
-"the type of a file; the functions here are useful when you are doing "
-"multiple tests of the same file and wish to avoid the overhead of the "
-":c:func:`stat` system call for each test.  These are also useful when "
-"checking for information about a file that isn't handled by "
-":mod:`os.path`, like the tests for block and character devices."
+"Normally, you would use the :func:`!os.path.is\\*` functions for testing the"
+" type of a file; the functions here are useful when you are doing multiple "
+"tests of the same file and wish to avoid the overhead of the :c:func:`stat` "
+"system call for each test.  These are also useful when checking for "
+"information about a file that isn't handled by :mod:`os.path`, like the "
+"tests for block and character devices."
 msgstr ""
+"Normálně byste používali funkce :func:`!os.path.is\\*` pro testování typu "
+"souboru; funkce zde jsou užtečné, když provádíte více testů stého souboru a "
+"chcete se vyhnout režií volání :c:func:`stat` pro každý test. Jsou také "
+"užtečné při kontrole informací o souboru, které nejsou zpřístupněny "
+"prostřednictvím :mod:`os.path`, jako jsou testy pro bloková a znaková "
+"zařízení."
 
 #: ../../library/stat.rst:101
 msgid "Example::"
-msgstr ""
+msgstr "Příklad::"
 
 #: ../../library/stat.rst:103
 #, python-format
@@ -149,104 +167,149 @@ msgid ""
 "if __name__ == '__main__':\n"
 "    walktree(sys.argv[1], visitfile)"
 msgstr ""
+"import os, sys\n"
+"from stat import *\n"
+"\n"
+"def walktree(top, callback):\n"
+"    '''rekurzivně sestoup do stromu adresářů s kořenem v top,\n"
+"       volané callback funkce pro každý běžný soubor'''\n"
+"\n"
+"    for f in os.listdir(top):\n"
+"        pathname = os.path.join(top, f)\n"
+"        mode = os.lstat(pathname).st_mode\n"
+"        if S_ISDIR(mode):\n"
+"            # Je to adresář, sestoup do něj\n"
+"            walktree(pathname, callback)\n"
+"        elif S_ISREG(mode):\n"
+"            # Je to soubor, volaš callback funkci\n"
+"            callback(pathname)\n"
+"        else:\n"
+"            # Neznámý typ souboru, vytiskni zprávu\n"
+"            print('Skipping %s' % pathname)\n"
+"\n"
+"def visitfile(file):\n"
+"    print('visiting', file)\n"
+"\n"
+"if __name__ == '__main__':\n"
+"    walktree(sys.argv[1], visitfile)"
 
 #: ../../library/stat.rst:129
 msgid ""
 "An additional utility function is provided to convert a file's mode in a "
 "human readable string:"
 msgstr ""
+"Poskytuje se další pomocná funkce pro konverzi režimu souboru na čitelný "
+"řetězec:"
 
 #: ../../library/stat.rst:134
 msgid "Convert a file's mode to a string of the form '-rwxrwxrwx'."
-msgstr ""
+msgstr "Konvertuje režim souboru na řetězec ve tvaru '-rwxrwxrwx'."
 
 #: ../../library/stat.rst:138
 msgid ""
 "The function supports :data:`S_IFDOOR`, :data:`S_IFPORT` and "
 ":data:`S_IFWHT`."
 msgstr ""
+"Funkce podporuje :data:`S_IFDOOR`, :data:`S_IFPORT` a :data:`S_IFWHT`."
 
 #: ../../library/stat.rst:143
 msgid ""
 "All the variables below are simply symbolic indexes into the 10-tuple "
 "returned by :func:`os.stat`, :func:`os.fstat` or :func:`os.lstat`."
 msgstr ""
+"Všechny proměnné níže jsou pouze symbolické indexy do 10-tuple vrácených "
+"poměrcí :func:`os.stat`, :func:`os.fstat` nebo :func:`os.lstat`."
 
 #: ../../library/stat.rst:149
 msgid "Inode protection mode."
-msgstr ""
+msgstr "Režim ochrany inode."
 
 #: ../../library/stat.rst:154
 msgid "Inode number."
-msgstr ""
+msgstr "Číslo inode."
 
 #: ../../library/stat.rst:159
 msgid "Device inode resides on."
-msgstr ""
+msgstr "Zařízení, na kterém se inode nachází."
 
 #: ../../library/stat.rst:164
 msgid "Number of links to the inode."
-msgstr ""
+msgstr "Počet odkazů na inode."
 
 #: ../../library/stat.rst:169
 msgid "User id of the owner."
-msgstr ""
+msgstr "ID uživatele vlastníkŁka."
 
 #: ../../library/stat.rst:174
 msgid "Group id of the owner."
-msgstr ""
+msgstr "ID skupiny vlastníkŁka."
 
 #: ../../library/stat.rst:179
 msgid ""
-"Size in bytes of a plain file; amount of data waiting on some special "
-"files."
+"Size in bytes of a plain file; amount of data waiting on some special files."
 msgstr ""
+"Velikost v bajtech běžného souboru; množství újdajů čekájících na některých "
+"speciálních souborech."
 
 #: ../../library/stat.rst:184
 msgid "Time of last access."
-msgstr ""
+msgstr "Čas posledního přístupu."
 
 #: ../../library/stat.rst:189
 msgid "Time of last modification."
-msgstr ""
+msgstr "Čas poslední úpravy."
 
 #: ../../library/stat.rst:194
 msgid ""
-"The \"ctime\" as reported by the operating system.  On some systems (like"
-" Unix) is the time of the last metadata change, and, on others (like "
+"The \"ctime\" as reported by the operating system.  On some systems (like "
+"Unix) is the time of the last metadata change, and, on others (like "
 "Windows), is the creation time (see platform documentation for details)."
 msgstr ""
+"\"ctime\" jaký je vykaz ován operačním systémem. Na některých systémech "
+"(jako Unix) je to čas poslední změny metadat, a na jiných (jako Windows) je "
+"to čas vytvoření (podrobnosti viz dokumentace platformy)."
 
 #: ../../library/stat.rst:198
 msgid ""
-"The interpretation of \"file size\" changes according to the file type.  "
-"For plain files this is the size of the file in bytes.  For FIFOs and "
-"sockets under most flavors of Unix (including Linux in particular), the "
-"\"size\" is the number of bytes waiting to be read at the time of the "
-"call to :func:`os.stat`, :func:`os.fstat`, or :func:`os.lstat`; this can "
-"sometimes be useful, especially for polling one of these special files "
-"after a non-blocking open.  The meaning of the size field for other "
-"character and block devices varies more, depending on the implementation "
-"of the underlying system call."
+"The interpretation of \"file size\" changes according to the file type.  For"
+" plain files this is the size of the file in bytes.  For FIFOs and sockets "
+"under most flavors of Unix (including Linux in particular), the \"size\" is "
+"the number of bytes waiting to be read at the time of the call to "
+":func:`os.stat`, :func:`os.fstat`, or :func:`os.lstat`; this can sometimes "
+"be useful, especially for polling one of these special files after a non-"
+"blocking open.  The meaning of the size field for other character and block "
+"devices varies more, depending on the implementation of the underlying "
+"system call."
 msgstr ""
+"Interpretace \"velikosti souboru\" se mění podle typu souboru. Pro běžné "
+"soubory je to velikost souboru v bajtech. Pro FIFO a sockety pod většinou "
+"Unix (vkladaně Linux), je \"velikost\" počet bajť čekájících na čtení v čase"
+" volání :func:`os.stat`, :func:`os.fstat` nebo :func:`os.lstat`; to může být"
+" někdy užitečné, zejména pro zprávu jednoho z těchto speciálních souborů po "
+"neúdajném otevření. Význam pole velikosti pro ostatní znaková a bloková "
+"zařízení se líší více, v závislosti na implementaci odležícího volání "
+"systému."
 
 #: ../../library/stat.rst:207
-msgid "The variables below define the flags used in the :data:`ST_MODE` field."
-msgstr ""
+msgid ""
+"The variables below define the flags used in the :data:`ST_MODE` field."
+msgstr "Proměnné níže definují příznaků použitých v poli :data:`ST_MODE`."
 
 #: ../../library/stat.rst:209
 msgid ""
 "Use of the functions above is more portable than use of the first set of "
 "flags:"
 msgstr ""
+"Použití výše uvedených funkcí je portabilnější než použití první sady "
+"příznaků:"
 
 #: ../../library/stat.rst:213
 msgid "Socket."
-msgstr ""
+msgstr "Socket."
 
 #: ../../library/stat.rst:217
 msgid "Symbolic link."
-msgstr ""
+msgstr "Symbolický odkaz."
 
 #: ../../library/stat.rst:221
 msgid "Regular file."
@@ -282,8 +345,8 @@ msgstr ""
 
 #: ../../library/stat.rst:259
 msgid ""
-":data:`S_IFDOOR`, :data:`S_IFPORT` or :data:`S_IFWHT` are defined as 0 "
-"when the platform does not have support for the file types."
+":data:`S_IFDOOR`, :data:`S_IFPORT` or :data:`S_IFWHT` are defined as 0 when "
+"the platform does not have support for the file types."
 msgstr ""
 
 #: ../../library/stat.rst:262
@@ -298,20 +361,20 @@ msgstr ""
 
 #: ../../library/stat.rst:270
 msgid ""
-"Set-group-ID bit.  This bit has several special uses.  For a directory it"
-" indicates that BSD semantics is to be used for that directory: files "
-"created there inherit their group ID from the directory, not from the "
-"effective group ID of the creating process, and directories created there"
-" will also get the :data:`S_ISGID` bit set.  For a file that does not "
-"have the group execution bit (:data:`S_IXGRP`) set, the set-group-ID bit "
-"indicates mandatory file/record locking (see also :data:`S_ENFMT`)."
+"Set-group-ID bit.  This bit has several special uses.  For a directory it "
+"indicates that BSD semantics is to be used for that directory: files created"
+" there inherit their group ID from the directory, not from the effective "
+"group ID of the creating process, and directories created there will also "
+"get the :data:`S_ISGID` bit set.  For a file that does not have the group "
+"execution bit (:data:`S_IXGRP`) set, the set-group-ID bit indicates "
+"mandatory file/record locking (see also :data:`S_ENFMT`)."
 msgstr ""
 
 #: ../../library/stat.rst:281
 msgid ""
 "Sticky bit.  When this bit is set on a directory it means that a file in "
-"that directory can be renamed or deleted only by the owner of the file, "
-"by the owner of the directory, or by a privileged process."
+"that directory can be renamed or deleted only by the owner of the file, by "
+"the owner of the directory, or by a privileged process."
 msgstr ""
 
 #: ../../library/stat.rst:287
@@ -365,8 +428,8 @@ msgstr ""
 #: ../../library/stat.rst:335
 msgid ""
 "System V file locking enforcement.  This flag is shared with "
-":data:`S_ISGID`: file/record locking is enforced on files that do not "
-"have the group execution bit (:data:`S_IXGRP`) set."
+":data:`S_ISGID`: file/record locking is enforced on files that do not have "
+"the group execution bit (:data:`S_IXGRP`) set."
 msgstr ""
 
 #: ../../library/stat.rst:341
@@ -474,27 +537,21 @@ msgid ""
 "On Windows, the following file attribute constants are available for use "
 "when testing bits in the ``st_file_attributes`` member returned by "
 ":func:`os.stat`. See the `Windows API documentation "
-"<https://msdn.microsoft.com/en-"
-"us/library/windows/desktop/gg258117.aspx>`_ for more detail on the "
-"meaning of these constants."
+"<https://msdn.microsoft.com/en-us/library/windows/desktop/gg258117.aspx>`_ "
+"for more detail on the meaning of these constants."
 msgstr ""
 
 #: ../../library/stat.rst:487
 msgid ""
-"On Windows, the following constants are available for comparing against "
-"the ``st_reparse_tag`` member returned by :func:`os.lstat`. These are "
-"well-known constants, but are not an exhaustive list."
+"On Windows, the following constants are available for comparing against the "
+"``st_reparse_tag`` member returned by :func:`os.lstat`. These are well-known"
+" constants, but are not an exhaustive list."
 msgstr ""
 
 #~ msgid ""
-#~ "On Linux, the following file attribute"
-#~ " constants are available for use when"
-#~ " testing bits in the "
-#~ ":attr:`~os.statx_result.stx_attributes` and "
-#~ ":attr:`~os.statx_result.stx_attributes_mask` members "
-#~ "returned by :func:`os.statx`.  See the "
-#~ ":manpage:`statx(2)` man page for more "
-#~ "detail on the meaning of these "
-#~ "constants."
+#~ "On Linux, the following file attribute constants are available for use when "
+#~ "testing bits in the :attr:`~os.statx_result.stx_attributes` and "
+#~ ":attr:`~os.statx_result.stx_attributes_mask` members returned by "
+#~ ":func:`os.statx`.  See the :manpage:`statx(2)` man page for more detail on "
+#~ "the meaning of these constants."
 #~ msgstr ""
-

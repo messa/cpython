@@ -11,21 +11,21 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/asyncio-stream.rst:7
 msgid "Streams"
-msgstr ""
+msgstr "Streamy"
 
 #: ../../library/asyncio-stream.rst:9
 msgid "**Source code:** :source:`Lib/asyncio/streams.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/asyncio/streams.py`"
 
 #: ../../library/asyncio-stream.rst:13
 msgid ""
@@ -33,10 +33,14 @@ msgid ""
 "connections.  Streams allow sending and receiving data without using "
 "callbacks or low-level protocols and transports."
 msgstr ""
+"Streamy jsou vysokoúrovňové async/await-ready primitiva pro práci se "
+"síťovými spojením. Streamy umožňují odesílání a přijímání dat bez použití "
+"callback funkcí nebo niskoúrovňových protokolů a transportů."
 
 #: ../../library/asyncio-stream.rst:19
-msgid "Here is an example of a TCP echo client written using asyncio streams::"
-msgstr ""
+msgid ""
+"Here is an example of a TCP echo client written using asyncio streams::"
+msgstr "Zde je příklad TCP echo klienta napsaného pomocí asyncio streamů::"
 
 #: ../../library/asyncio-stream.rst:22 ../../library/asyncio-stream.rst:441
 #, python-brace-format
@@ -60,44 +64,69 @@ msgid ""
 "\n"
 "asyncio.run(tcp_echo_client('Hello World!'))"
 msgstr ""
+"import asyncio\n"
+"\n"
+"async def tcp_echo_client(message):\n"
+"    reader, writer = await asyncio.open_connection(\n"
+"        '127.0.0.1', 8888)\n"
+"\n"
+"    print(f'Send: {message!r}')\n"
+"    writer.write(message.encode())\n"
+"    await writer.drain()\n"
+"\n"
+"    data = await reader.read(100)\n"
+"    print(f'Received: {data.decode()!r}')\n"
+"\n"
+"    print('Close the connection')\n"
+"    writer.close()\n"
+"    await writer.wait_closed()\n"
+"\n"
+"asyncio.run(tcp_echo_client('Hello World!'))"
 
 #: ../../library/asyncio-stream.rst:42
 msgid "See also the `Examples`_ section below."
-msgstr ""
+msgstr "Viz také sekce `Příklady`_ níže."
 
 #: ../../library/asyncio-stream.rst:46
 msgid "Stream Functions"
-msgstr ""
+msgstr "Funkce Streamů"
 
 #: ../../library/asyncio-stream.rst:47
 msgid ""
 "The following top-level asyncio functions can be used to create and work "
 "with streams:"
 msgstr ""
+"Následující top-level asyncio funkce lze použít k vytvoření a práci se "
+"streamy:"
 
 #: ../../library/asyncio-stream.rst:59
 msgid ""
 "Establish a network connection and return a pair of ``(reader, writer)`` "
 "objects."
-msgstr ""
+msgstr "Navažuje síťové spojení a vrací pár ``(reader, writer)`` objektů."
 
 #: ../../library/asyncio-stream.rst:62
 msgid ""
 "The returned *reader* and *writer* objects are instances of "
 ":class:`StreamReader` and :class:`StreamWriter` classes."
 msgstr ""
+"Vrácené objekty *reader* a *writer* jsou instancemi tříd "
+":class:`StreamReader` a :class:`StreamWriter`."
 
 #: ../../library/asyncio-stream.rst:65 ../../library/asyncio-stream.rst:112
 msgid ""
 "*limit* determines the buffer size limit used by the returned "
 ":class:`StreamReader` instance.  By default the *limit* is set to 64 KiB."
 msgstr ""
+"*limit* určuje limit velikosti vyrovnávací paměti použité vrácenou instancí "
+":class:`StreamReader`. Ve výchozím nastavení je *limit* nastaven na 64 KiB."
 
 #: ../../library/asyncio-stream.rst:69
 msgid ""
 "The rest of the arguments are passed directly to "
 ":meth:`loop.create_connection`."
 msgstr ""
+"Zbývající argumenty jsou předány přímo na :meth:`loop.create_connection`."
 
 #: ../../library/asyncio-stream.rst:74 ../../library/asyncio-stream.rst:154
 msgid ""
@@ -105,126 +134,143 @@ msgid ""
 ":class:`StreamWriter` created. To close the socket, call its "
 ":meth:`~asyncio.StreamWriter.close` method."
 msgstr ""
+"Argument *sock* překázá vlastnictví socketu na :class:`StreamWriter`, který "
+"je vytvořen. Chcete-li zavrít socket, zavolejte jeho metodu "
+":meth:`~asyncio.StreamWriter.close`."
 
 #: ../../library/asyncio-stream.rst:78
 msgid "Added the *ssl_handshake_timeout* parameter."
-msgstr ""
+msgstr "Přidán parametr *ssl_handshake_timeout*."
 
 #: ../../library/asyncio-stream.rst:81
 msgid "Added the *happy_eyeballs_delay* and *interleave* parameters."
-msgstr ""
+msgstr "Přidány parametry *happy_eyeballs_delay* a *interleave*."
 
 #: ../../library/asyncio-stream.rst:84 ../../library/asyncio-stream.rst:128
 #: ../../library/asyncio-stream.rst:164 ../../library/asyncio-stream.rst:199
 msgid "Removed the *loop* parameter."
-msgstr ""
+msgstr "Odstraněn parametr *loop*."
 
 #: ../../library/asyncio-stream.rst:87 ../../library/asyncio-stream.rst:131
 #: ../../library/asyncio-stream.rst:167 ../../library/asyncio-stream.rst:202
 #: ../../library/asyncio-stream.rst:408
 msgid "Added the *ssl_shutdown_timeout* parameter."
-msgstr ""
+msgstr "Přidán parametr *ssl_shutdown_timeout*."
 
 #: ../../library/asyncio-stream.rst:101
 msgid "Start a socket server."
-msgstr ""
+msgstr "Spustí socket server."
 
 #: ../../library/asyncio-stream.rst:103
 msgid ""
 "The *client_connected_cb* callback is called whenever a new client "
-"connection is established.  It receives a ``(reader, writer)`` pair as "
-"two arguments, instances of the :class:`StreamReader` and "
-":class:`StreamWriter` classes."
+"connection is established.  It receives a ``(reader, writer)`` pair as two "
+"arguments, instances of the :class:`StreamReader` and :class:`StreamWriter` "
+"classes."
 msgstr ""
+"Callback *client_connected_cb* je vyvolán pokaždé, když je navázáno nové "
+"klientské spojení. Přijímá pár ``(reader, writer)`` jako dva argumenty, "
+"instance tříd :class:`StreamReader` a :class:`StreamWriter`."
 
 #: ../../library/asyncio-stream.rst:108
 msgid ""
-"*client_connected_cb* can be a plain callable or a :ref:`coroutine "
-"function <coroutine>`; if it is a coroutine function, it will be "
-"automatically scheduled as a :class:`Task`."
+"*client_connected_cb* can be a plain callable or a :ref:`coroutine function "
+"<coroutine>`; if it is a coroutine function, it will be automatically "
+"scheduled as a :class:`Task`."
 msgstr ""
+"*client_connected_cb* může být běžný callable nebo :ref:`coroutine funkce "
+"<coroutine>`; je-li to coroutine funkce, bude automaticky naplánována jako "
+":class:`Task`."
 
 #: ../../library/asyncio-stream.rst:116
 msgid ""
-"The rest of the arguments are passed directly to "
-":meth:`loop.create_server`."
-msgstr ""
+"The rest of the arguments are passed directly to :meth:`loop.create_server`."
+msgstr "Zbývající argumenty jsou předány přímo na :meth:`loop.create_server`."
 
 #: ../../library/asyncio-stream.rst:121 ../../library/asyncio-stream.rst:189
 msgid ""
-"The *sock* argument transfers ownership of the socket to the server "
-"created. To close the socket, call the server's "
-":meth:`~asyncio.Server.close` method."
+"The *sock* argument transfers ownership of the socket to the server created."
+" To close the socket, call the server's :meth:`~asyncio.Server.close` "
+"method."
 msgstr ""
+"Argument *sock* překázá vlastnictví socketu na vytvořený server. Chcete-li "
+"zavrít socket, zavolejte metodu :meth:`~asyncio.Server.close` serveru."
 
 #: ../../library/asyncio-stream.rst:125
 msgid "Added the *ssl_handshake_timeout* and *start_serving* parameters."
-msgstr ""
+msgstr "Přidány parametry *ssl_handshake_timeout* a *start_serving*."
 
 #: ../../library/asyncio-stream.rst:134
 msgid "Added the *keep_alive* parameter."
-msgstr ""
+msgstr "Přidán parametr *keep_alive*."
 
 #: ../../library/asyncio-stream.rst:139
 msgid "Unix Sockets"
-msgstr ""
+msgstr "Unix Sockety"
 
 #: ../../library/asyncio-stream.rst:145
 msgid ""
 "Establish a Unix socket connection and return a pair of ``(reader, "
 "writer)``."
-msgstr ""
+msgstr "Navaže Unix socket spojení a vrací pár ``(reader, writer)``."
 
 #: ../../library/asyncio-stream.rst:148
 msgid "Similar to :func:`open_connection` but operates on Unix sockets."
-msgstr ""
+msgstr "Podobné jako :func:`open_connection`, ale pracuje na Unix socketech."
 
 #: ../../library/asyncio-stream.rst:150
 msgid "See also the documentation of :meth:`loop.create_unix_connection`."
-msgstr ""
+msgstr "Viz také dokumentace :meth:`loop.create_unix_connection`."
 
 #: ../../library/asyncio-stream.rst:158 ../../library/asyncio-stream.rst:193
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../library/asyncio-stream.rst:160
 msgid ""
-"Added the *ssl_handshake_timeout* parameter. The *path* parameter can now"
-" be a :term:`path-like object`"
+"Added the *ssl_handshake_timeout* parameter. The *path* parameter can now be"
+" a :term:`path-like object`"
 msgstr ""
+"Přidán parametr *ssl_handshake_timeout*. Parametr *path* může být "
+":term:`path-like object`"
 
 #: ../../library/asyncio-stream.rst:177
 msgid "Start a Unix socket server."
-msgstr ""
+msgstr "Spustí Unix socket server."
 
 #: ../../library/asyncio-stream.rst:179
 msgid "Similar to :func:`start_server` but works with Unix sockets."
-msgstr ""
+msgstr "Podobné jako :func:`start_server`, ale pracuje s Unix sockety."
 
 #: ../../library/asyncio-stream.rst:181
 msgid ""
 "If *cleanup_socket* is true then the Unix socket will automatically be "
-"removed from the filesystem when the server is closed, unless the socket "
-"has been replaced after the server has been created."
+"removed from the filesystem when the server is closed, unless the socket has"
+" been replaced after the server has been created."
 msgstr ""
+"Pokud je *cleanup_socket* pravda, pak bude Unix socket automaticky odstraněn"
+" ze systému souborů, když je server uzavřen, pokud socket nebyl zaměněn po "
+"vytvoření serveru."
 
 #: ../../library/asyncio-stream.rst:185
 msgid "See also the documentation of :meth:`loop.create_unix_server`."
-msgstr ""
+msgstr "Viz také dokumentace :meth:`loop.create_unix_server`."
 
 #: ../../library/asyncio-stream.rst:195
 msgid ""
-"Added the *ssl_handshake_timeout* and *start_serving* parameters. The "
-"*path* parameter can now be a :term:`path-like object`."
+"Added the *ssl_handshake_timeout* and *start_serving* parameters. The *path*"
+" parameter can now be a :term:`path-like object`."
 msgstr ""
+"Přidány parametry *ssl_handshake_timeout* a *start_serving*. Parametr *path*"
+" může být :term:`path-like object`."
 
 #: ../../library/asyncio-stream.rst:205
 msgid "Added the *cleanup_socket* parameter."
-msgstr ""
+msgstr "Přidán parametr *cleanup_socket*."
 
 #: ../../library/asyncio-stream.rst:210
 msgid "StreamReader"
-msgstr ""
+msgstr "StreamReader"
 
 #: ../../library/asyncio-stream.rst:214
 msgid ""
@@ -232,58 +278,73 @@ msgid ""
 "stream. As an :term:`asynchronous iterable`, the object supports the "
 ":keyword:`async for` statement."
 msgstr ""
+"Reprezentuje objektem četnář, který poskytuje API pro čtení dat z IO "
+"streamu. Jako :term:`asynchronous iterable` podporuje objekt přík az "
+":keyword:`async for` příkaz."
 
 #: ../../library/asyncio-stream.rst:218
 msgid ""
-"It is not recommended to instantiate *StreamReader* objects directly; use"
-" :func:`open_connection` and :func:`start_server` instead."
+"It is not recommended to instantiate *StreamReader* objects directly; use "
+":func:`open_connection` and :func:`start_server` instead."
 msgstr ""
+"Není doporučeno přímo vytvářet objekty *StreamReader*; místem toho použijte "
+":func:`open_connection` a :func:`start_server`."
 
 #: ../../library/asyncio-stream.rst:224
 msgid "Acknowledge the EOF."
-msgstr ""
+msgstr "Uznaj EOF."
 
 #: ../../library/asyncio-stream.rst:229
 msgid "Read up to *n* bytes from the stream."
-msgstr ""
+msgstr "Nahráděte až *n* bytů ze streamu."
 
 #: ../../library/asyncio-stream.rst:231
 msgid ""
 "If *n* is not provided or set to ``-1``, read until EOF, then return all "
-"read :class:`bytes`. If EOF was received and the internal buffer is "
-"empty, return an empty ``bytes`` object."
+"read :class:`bytes`. If EOF was received and the internal buffer is empty, "
+"return an empty ``bytes`` object."
 msgstr ""
+"Pokud *n* není zadáno nebo je nastaven na ``-1``, čte až do EOF a poté "
+"vraťte všechna nahráná :class:`bytes`. Pokud byl EOF přijat a vnitřní "
+"vyrovnávací paměť je prázdná, vraťte prázdný objekt ``bytes``."
 
 #: ../../library/asyncio-stream.rst:236
 msgid "If *n* is ``0``, return an empty ``bytes`` object immediately."
-msgstr ""
+msgstr "Pokud je *n* ``0``, vraťte okamžitě prázdný objekt ``bytes``."
 
 #: ../../library/asyncio-stream.rst:238
 msgid ""
 "If *n* is positive, return at most *n* available ``bytes`` as soon as at "
-"least 1 byte is available in the internal buffer. If EOF is received "
-"before any byte is read, return an empty ``bytes`` object."
+"least 1 byte is available in the internal buffer. If EOF is received before "
+"any byte is read, return an empty ``bytes`` object."
 msgstr ""
+"Pokud je *n* kladné, vraťte nejvýše *n* dostupných ``bytes`` jakmile je "
+"všichni pršt 1 byte dostupný ve vnitřní vyrovnávací paměti. Pokud je EOF "
+"přijat dříve než je přečten libovolný byte, vraťte prázdný objekt ``bytes``."
 
 #: ../../library/asyncio-stream.rst:246
 msgid "Read one line, where \"line\" is a sequence of bytes ending with ``\\n``."
-msgstr ""
+msgstr "Přečte jednu linku, kde \"line\" je sekvence bytů končící se ``\\n``."
 
 #: ../../library/asyncio-stream.rst:249
 msgid ""
-"If EOF is received and ``\\n`` was not found, the method returns "
-"partially read data."
+"If EOF is received and ``\\n`` was not found, the method returns partially "
+"read data."
 msgstr ""
+"Pokud je EOF přijat a ``\\n`` nebyl nalezen, metoda vrací částečně načtená "
+"data."
 
 #: ../../library/asyncio-stream.rst:252
 msgid ""
 "If EOF is received and the internal buffer is empty, return an empty "
 "``bytes`` object."
 msgstr ""
+"Pokud je EOF přijat a vnitřní vyrovnávací paměť je prázdná, vraťte prázdný "
+"objekt ``bytes``."
 
 #: ../../library/asyncio-stream.rst:258
 msgid "Read exactly *n* bytes."
-msgstr ""
+msgstr "Načtení přesně *n* bytů."
 
 #: ../../library/asyncio-stream.rst:260
 msgid ""
@@ -291,215 +352,279 @@ msgid ""
 "read.  Use the :attr:`IncompleteReadError.partial` attribute to get the "
 "partially read data."
 msgstr ""
+"Vyvolej :exc:`IncompleteReadError`, pokud je EOF dosahovat dříve než lze "
+"načíst *n*. Použij atribut :attr:`IncompleteReadError.partial` k získání "
+"částečně nahráných dat."
 
 #: ../../library/asyncio-stream.rst:267
 msgid "Read data from the stream until *separator* is found."
-msgstr ""
+msgstr "Načtete data ze streamu, dokud nenajdete *separator*."
 
 #: ../../library/asyncio-stream.rst:269
 msgid ""
-"On success, the data and separator will be removed from the internal "
-"buffer (consumed). Returned data will include the separator at the end."
+"On success, the data and separator will be removed from the internal buffer "
+"(consumed). Returned data will include the separator at the end."
 msgstr ""
+"Při Úspěšném případě budou data a oddělovač odebrány z vnitřní vyrovnávací "
+"paměti (spotřebovné). Vrácená data budou obsahovat oddělovač na konci."
 
 #: ../../library/asyncio-stream.rst:273
 msgid ""
 "If the amount of data read exceeds the configured stream limit, a "
-":exc:`LimitOverrunError` exception is raised, and the data is left in the"
-" internal buffer and can be read again."
+":exc:`LimitOverrunError` exception is raised, and the data is left in the "
+"internal buffer and can be read again."
 msgstr ""
+"Pokud množství nahráných dat překročí nakonfigurovaný limit streamu, je "
+"vyvolána výjimka :exc:`LimitOverrunError` a data zůstanou ve vnitřní "
+"vyrovnávací paměti a mohou být znovu nahrády."
 
 #: ../../library/asyncio-stream.rst:277
 msgid ""
 "If EOF is reached before the complete separator is found, an "
-":exc:`IncompleteReadError` exception is raised, and the internal buffer "
-"is reset.  The :attr:`IncompleteReadError.partial` attribute may contain "
-"a portion of the separator."
+":exc:`IncompleteReadError` exception is raised, and the internal buffer is "
+"reset.  The :attr:`IncompleteReadError.partial` attribute may contain a "
+"portion of the separator."
 msgstr ""
+"Pokud je EOF dosahován dříve než je nalezen kompletní oddělovač, je vyvolána"
+" výjimka :exc:`IncompleteReadError` a vnitřní vyrovnávací paměť je "
+"resetována. Atribut :attr:`IncompleteReadError.partial` může obsahovat část "
+"oddělovače."
 
 #: ../../library/asyncio-stream.rst:282
 msgid ""
-"The *separator* may also be a tuple of separators. In this case the "
-"return value will be the shortest possible that has any separator as the "
-"suffix. For the purposes of :exc:`LimitOverrunError`, the shortest "
-"possible separator is considered to be the one that matched."
+"The *separator* may also be a tuple of separators. In this case the return "
+"value will be the shortest possible that has any separator as the suffix. "
+"For the purposes of :exc:`LimitOverrunError`, the shortest possible "
+"separator is considered to be the one that matched."
 msgstr ""
+"Parametr *separator* může být také tuple oddělovačů. V tomto případě bude "
+"návratná hodnota tá nejkratší s libovolným oddělovačem jako suffix. Pro "
+"účely :exc:`LimitOverrunError` se nejkratší možný oddělovač považuje za ten,"
+" který odpovídal."
 
 #: ../../library/asyncio-stream.rst:292
 msgid "The *separator* parameter may now be a :class:`tuple` of separators."
-msgstr ""
+msgstr "Parametr *separator* může být nyní :class:`tuple` oddělovačů."
 
 #: ../../library/asyncio-stream.rst:297
-msgid "Return ``True`` if the buffer is empty and :meth:`feed_eof` was called."
+msgid ""
+"Return ``True`` if the buffer is empty and :meth:`feed_eof` was called."
 msgstr ""
+"Vrať ``True``, pokud je vyrovnávací paměť prázdná a byla vyvolána "
+":meth:`feed_eof`."
 
 #: ../../library/asyncio-stream.rst:302
 msgid "StreamWriter"
-msgstr ""
+msgstr "StreamWriter"
 
 #: ../../library/asyncio-stream.rst:306
 msgid ""
 "Represents a writer object that provides APIs to write data to the IO "
 "stream."
 msgstr ""
+"Reprezentuje objektem zapísovače, který poskytuje API pro zápis dat do IO "
+"streamu."
 
 #: ../../library/asyncio-stream.rst:309
 msgid ""
-"It is not recommended to instantiate *StreamWriter* objects directly; use"
-" :func:`open_connection` and :func:`start_server` instead."
+"It is not recommended to instantiate *StreamWriter* objects directly; use "
+":func:`open_connection` and :func:`start_server` instead."
 msgstr ""
+"Není doporučeno přímo vytvářet objekty *StreamWriter*; místem toho použijte "
+":func:`open_connection` a :func:`start_server`."
 
 #: ../../library/asyncio-stream.rst:315
 msgid ""
 "The method attempts to write the *data* to the underlying socket "
-"immediately. If that fails, the data is queued in an internal write "
-"buffer until it can be sent."
+"immediately. If that fails, the data is queued in an internal write buffer "
+"until it can be sent."
 msgstr ""
+"Metoda se pokusí okamžitě zapsat *data* do vnitřního socketu. Pokud se to "
+"nepodaří, data jsou zařazena do vnitřníc vnšt (write bufferu), dokud nebudou"
+" moci být odeslána."
 
 #: ../../library/asyncio-stream.rst:319
 msgid ""
 "The *data* buffer should be a bytes, bytearray, or C-contiguous one-"
 "dimensional memoryview object."
 msgstr ""
+"Vyrovnávací paměť *data* by měla být bytes, bytearray, nebo C-contiguous "
+"jedno-rozměrný memoryview objekt."
 
 #: ../../library/asyncio-stream.rst:322 ../../library/asyncio-stream.rst:335
 msgid "The method should be used along with the ``drain()`` method::"
-msgstr ""
+msgstr "Metoda by měla být použita spolu s metodou ``drain()``:"
 
 #: ../../library/asyncio-stream.rst:324
 msgid ""
 "stream.write(data)\n"
 "await stream.drain()"
 msgstr ""
+"stream.write(data)\n"
+"await stream.drain()"
 
 #: ../../library/asyncio-stream.rst:330
 msgid ""
-"The method writes a list (or any iterable) of bytes to the underlying "
-"socket immediately. If that fails, the data is queued in an internal "
-"write buffer until it can be sent."
+"The method writes a list (or any iterable) of bytes to the underlying socket"
+" immediately. If that fails, the data is queued in an internal write buffer "
+"until it can be sent."
 msgstr ""
+"Metoda zapisuje seznam (nebo libovolnitéralné) bytů do vnitřního socketu "
+"okamžitě. Pokud se to nepodaří, data jsou zařazena do vnitřního zapísovačoš "
+"vyrovnávací paměti, dokud nebudou moci být odeslána."
 
 #: ../../library/asyncio-stream.rst:337
 msgid ""
 "stream.writelines(lines)\n"
 "await stream.drain()"
 msgstr ""
+"stream.writelines(lines)\n"
+"await stream.drain()"
 
 #: ../../library/asyncio-stream.rst:342
 msgid "The method closes the stream and the underlying socket."
-msgstr ""
+msgstr "Metoda uzavře stream a vnitřní socket."
 
 #: ../../library/asyncio-stream.rst:344
 msgid ""
 "The method should be used, though not mandatory, along with the "
 "``wait_closed()`` method::"
 msgstr ""
+"Metoda by měla být použita, není-li povinná, spolu s metodou "
+"``wait_closed()``:"
 
 #: ../../library/asyncio-stream.rst:347
 msgid ""
 "stream.close()\n"
 "await stream.wait_closed()"
 msgstr ""
+"stream.close()\n"
+"await stream.wait_closed()"
 
 #: ../../library/asyncio-stream.rst:352
 msgid ""
-"Return ``True`` if the underlying transport supports the "
-":meth:`write_eof` method, ``False`` otherwise."
+"Return ``True`` if the underlying transport supports the :meth:`write_eof` "
+"method, ``False`` otherwise."
 msgstr ""
+"Vrať ``True``, pokud vnitřní transport podporuje metodu :meth:`write_eof`, "
+"jinak ``False``."
 
 #: ../../library/asyncio-stream.rst:357
 msgid ""
-"Close the write end of the stream after the buffered write data is "
-"flushed."
+"Close the write end of the stream after the buffered write data is flushed."
 msgstr ""
+"Uzavře zápisový konec streamu poté, co jsou vyřazena data vyrovnávací "
+"paměti."
 
 #: ../../library/asyncio-stream.rst:362
 msgid "Return the underlying asyncio transport."
-msgstr ""
+msgstr "Vrať vnitřní asyncio transport."
 
 #: ../../library/asyncio-stream.rst:366
 msgid ""
 "Access optional transport information; see "
 ":meth:`BaseTransport.get_extra_info` for details."
 msgstr ""
+"Přistupte k volitelným informacím o transportu; podrobnosti viz "
+":meth:`BaseTransport.get_extra_info`."
 
 #: ../../library/asyncio-stream.rst:372
-msgid "Wait until it is appropriate to resume writing to the stream. Example::"
-msgstr ""
+msgid ""
+"Wait until it is appropriate to resume writing to the stream. Example::"
+msgstr "Počkejte, dokud není vhodné obnovit zápis do streamu. Příklad::"
 
 #: ../../library/asyncio-stream.rst:375
 msgid ""
 "writer.write(data)\n"
 "await writer.drain()"
 msgstr ""
+"writer.write(data)\n"
+"await writer.drain()"
 
 #: ../../library/asyncio-stream.rst:378
 msgid ""
-"This is a flow control method that interacts with the underlying IO write"
-" buffer.  When the size of the buffer reaches the high watermark, "
-"*drain()* blocks until the size of the buffer is drained down to the low "
-"watermark and writing can be resumed.  When there is nothing to wait for,"
-" the :meth:`drain` returns immediately."
+"This is a flow control method that interacts with the underlying IO write "
+"buffer.  When the size of the buffer reaches the high watermark, *drain()* "
+"blocks until the size of the buffer is drained down to the low watermark and"
+" writing can be resumed.  When there is nothing to wait for, the "
+":meth:`drain` returns immediately."
 msgstr ""
+"Toto je metoda řízení toku, která interaguje s vnitřní vyrovnávací pamětí "
+"zápisu IO. Když velikost vyrovnávací paměti dosáhne horním značka, *drain()*"
+" se zablokuje, dokud není velikost vyrovnávací paměti snížena na dolní "
+"značku a zápis může být obnoven. Pokud není na čém čekat, :meth:`drain` se "
+"vrátí okamžitě."
 
 #: ../../library/asyncio-stream.rst:389
 msgid "Upgrade an existing stream-based connection to TLS."
-msgstr ""
+msgstr "Upgradujte existující streamové spojení na TLS."
 
 #: ../../library/asyncio-stream.rst:391
 msgid "Parameters:"
-msgstr ""
+msgstr "Parametry:"
 
 #: ../../library/asyncio-stream.rst:393
 msgid "*sslcontext*: a configured instance of :class:`~ssl.SSLContext`."
-msgstr ""
+msgstr "*sslcontext*: nakonfigurovaná instance :class:`~ssl.SSLContext`."
 
 #: ../../library/asyncio-stream.rst:395
 msgid ""
-"*server_hostname*: sets or overrides the host name that the target "
-"server's certificate will be matched against."
+"*server_hostname*: sets or overrides the host name that the target server's "
+"certificate will be matched against."
 msgstr ""
+"*server_hostname*: nastavuje nebo přebírá název hostitele, který bude "
+"srovnáván s certifikátem cílového serveru."
 
 #: ../../library/asyncio-stream.rst:398
 msgid ""
-"*ssl_handshake_timeout* is the time in seconds to wait for the TLS "
-"handshake to complete before aborting the connection.  ``60.0`` seconds "
-"if ``None`` (default)."
+"*ssl_handshake_timeout* is the time in seconds to wait for the TLS handshake"
+" to complete before aborting the connection.  ``60.0`` seconds if ``None`` "
+"(default)."
 msgstr ""
+"*ssl_handshake_timeout* je čas v sekundách, který se čeká na dokončení TLS "
+"handshake dříve než se spojení přeruší. ``60.0`` sekund, pokud ``None`` "
+"(výchozí)."
 
 #: ../../library/asyncio-stream.rst:402
 msgid ""
-"*ssl_shutdown_timeout* is the time in seconds to wait for the SSL "
-"shutdown to complete before aborting the connection. ``30.0`` seconds if "
-"``None`` (default)."
+"*ssl_shutdown_timeout* is the time in seconds to wait for the SSL shutdown "
+"to complete before aborting the connection. ``30.0`` seconds if ``None`` "
+"(default)."
 msgstr ""
+"*ssl_shutdown_timeout* je čas v sekundách, který se čeká na dokončení SSL "
+"shutdown dříve než se spojení přeruší. ``30.0`` sekund, pokud ``None`` "
+"(výchozí)."
 
 #: ../../library/asyncio-stream.rst:414
-msgid "Return ``True`` if the stream is closed or in the process of being closed."
-msgstr ""
+msgid ""
+"Return ``True`` if the stream is closed or in the process of being closed."
+msgstr "Vrať ``True``, pokud je stream uzavřen nebo v procesu uzavření."
 
 #: ../../library/asyncio-stream.rst:422
 msgid "Wait until the stream is closed."
-msgstr ""
+msgstr "Počkejte, dokud není stream uzavřen."
 
 #: ../../library/asyncio-stream.rst:424
 msgid ""
-"Should be called after :meth:`close` to wait until the underlying "
-"connection is closed, ensuring that all data has been flushed before e.g."
-" exiting the program."
+"Should be called after :meth:`close` to wait until the underlying connection"
+" is closed, ensuring that all data has been flushed before e.g. exiting the "
+"program."
 msgstr ""
+"Mělo by být vyvoláno po :meth:`close` čekat, dokud není vnitřní spojení "
+"uzavřeno, zajišťující, že všechna data byla vyprázdněna dříve než např. "
+"ukončení programu."
 
 #: ../../library/asyncio-stream.rst:432
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: ../../library/asyncio-stream.rst:437
 msgid "TCP echo client using streams"
-msgstr ""
+msgstr "TCP echo klient používající streamy"
 
 #: ../../library/asyncio-stream.rst:439
 msgid "TCP echo client using the :func:`asyncio.open_connection` function::"
-msgstr ""
+msgstr "TCP echo klient používající funkci :func:`asyncio.open_connection`:"
 
 #: ../../library/asyncio-stream.rst:463
 msgid ""
@@ -507,14 +632,17 @@ msgid ""
 "<asyncio_example_tcp_echo_client_protocol>` example uses the low-level "
 ":meth:`loop.create_connection` method."
 msgstr ""
+"Příklad :ref:`TCP echo client protocol "
+"<asyncio_example_tcp_echo_client_protocol>` používá niskoúrovňovou metodu "
+":meth:`loop.create_connection`."
 
 #: ../../library/asyncio-stream.rst:470
 msgid "TCP echo server using streams"
-msgstr ""
+msgstr "TCP echo server používající streamy"
 
 #: ../../library/asyncio-stream.rst:472
 msgid "TCP echo server using the :func:`asyncio.start_server` function::"
-msgstr ""
+msgstr "TCP echo server používající funkci :func:`asyncio.start_server`:"
 
 #: ../../library/asyncio-stream.rst:474
 #, python-brace-format
@@ -540,8 +668,7 @@ msgid ""
 "    server = await asyncio.start_server(\n"
 "        handle_echo, '127.0.0.1', 8888)\n"
 "\n"
-"    addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)"
-"\n"
+"    addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)\n"
 "    print(f'Serving on {addrs}')\n"
 "\n"
 "    async with server:\n"
@@ -549,6 +676,34 @@ msgid ""
 "\n"
 "asyncio.run(main())"
 msgstr ""
+"import asyncio\n"
+"\n"
+"async def handle_echo(reader, writer):\n"
+"    data = await reader.read(100)\n"
+"    message = data.decode()\n"
+"    addr = writer.get_extra_info('peername')\n"
+"\n"
+"    print(f\"Received {message!r} from {addr!r}\")\n"
+"\n"
+"    print(f\"Send: {message!r}\")\n"
+"    writer.write(data)\n"
+"    await writer.drain()\n"
+"\n"
+"    print(\"Close the connection\")\n"
+"    writer.close()\n"
+"    await writer.wait_closed()\n"
+"\n"
+"async def main():\n"
+"    server = await asyncio.start_server(\n"
+"        handle_echo, '127.0.0.1', 8888)\n"
+"\n"
+"    addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)\n"
+"    print(f'Serving on {addrs}')\n"
+"\n"
+"    async with server:\n"
+"        await server.serve_forever()\n"
+"\n"
+"asyncio.run(main())"
 
 #: ../../library/asyncio-stream.rst:506
 msgid ""
@@ -556,16 +711,20 @@ msgid ""
 "<asyncio_example_tcp_echo_server_protocol>` example uses the "
 ":meth:`loop.create_server` method."
 msgstr ""
+"Příklad :ref:`TCP echo server protocol "
+"<asyncio_example_tcp_echo_server_protocol>` používá metodu "
+":meth:`loop.create_server`."
 
 #: ../../library/asyncio-stream.rst:511
 msgid "Get HTTP headers"
-msgstr ""
+msgstr "Získání HTTP hlaviček"
 
 #: ../../library/asyncio-stream.rst:513
 msgid ""
-"Simple example querying HTTP headers of the URL passed on the command "
-"line::"
+"Simple example querying HTTP headers of the URL passed on the command line::"
 msgstr ""
+"Jednoduchý příklad na dotazování HTTP hlaviček URL předané na příkazové "
+"řádce::"
 
 #: ../../library/asyncio-stream.rst:515
 #, python-brace-format
@@ -606,26 +765,61 @@ msgid ""
 "url = sys.argv[1]\n"
 "asyncio.run(print_http_headers(url))"
 msgstr ""
+"import asyncio\n"
+"import urllib.parse\n"
+"import sys\n"
+"\n"
+"async def print_http_headers(url):\n"
+"    url = urllib.parse.urlsplit(url)\n"
+"    if url.scheme == 'https':\n"
+"        reader, writer = await asyncio.open_connection(\n"
+"            url.hostname, 443, ssl=True)\n"
+"    else:\n"
+"        reader, writer = await asyncio.open_connection(\n"
+"            url.hostname, 80)\n"
+"\n"
+"    query = (\n"
+"        f\"HEAD {url.path or '/'} HTTP/1.0\\r\\n\"\n"
+"        f\"Host: {url.hostname}\\r\\n\"\n"
+"        f\"\\r\\n\"\n"
+"    )\n"
+"\n"
+"    writer.write(query.encode('latin-1'))\n"
+"    while True:\n"
+"        line = await reader.readline()\n"
+"        if not line:\n"
+"            break\n"
+"\n"
+"        line = line.decode('latin1').rstrip()\n"
+"        if line:\n"
+"            print(f'HTTP header> {line}')\n"
+"\n"
+"    # Ignore the body, close the socket\n"
+"    writer.close()\n"
+"    await writer.wait_closed()\n"
+"\n"
+"url = sys.argv[1]\n"
+"asyncio.run(print_http_headers(url))"
 
 #: ../../library/asyncio-stream.rst:552
 msgid "Usage::"
-msgstr ""
+msgstr "Použití::"
 
 #: ../../library/asyncio-stream.rst:554
 msgid "python example.py http://example.com/path/page.html"
-msgstr ""
+msgstr "python example.py http://example.com/path/page.html"
 
 #: ../../library/asyncio-stream.rst:556
 msgid "or with HTTPS::"
-msgstr ""
+msgstr "nebo s HTTPS::"
 
 #: ../../library/asyncio-stream.rst:558
 msgid "python example.py https://example.com/path/page.html"
-msgstr ""
+msgstr "python example.py https://example.com/path/page.html"
 
 #: ../../library/asyncio-stream.rst:564
 msgid "Register an open socket to wait for data using streams"
-msgstr ""
+msgstr "Registrujte otevřený socket pro čekání na data pomocí streamů"
 
 #: ../../library/asyncio-stream.rst:566
 msgid ""
@@ -669,8 +863,8 @@ msgstr ""
 #: ../../library/asyncio-stream.rst:601
 msgid ""
 "The :ref:`register an open socket to wait for data using a protocol "
-"<asyncio_example_create_connection>` example uses a low-level protocol "
-"and the :meth:`loop.create_connection` method."
+"<asyncio_example_create_connection>` example uses a low-level protocol and "
+"the :meth:`loop.create_connection` method."
 msgstr ""
 
 #: ../../library/asyncio-stream.rst:605
@@ -679,4 +873,3 @@ msgid ""
 "<asyncio_example_watch_fd>` example uses the low-level "
 ":meth:`loop.add_reader` method to watch a file descriptor."
 msgstr ""
-

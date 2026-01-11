@@ -11,55 +11,69 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/tokenize.rst:2
 msgid ":mod:`!tokenize` --- Tokenizer for Python source"
-msgstr ""
+msgstr ":mod:`!tokenize` --- Tokenizér pro zdrojový kód Pythonu"
 
 #: ../../library/tokenize.rst:10
 msgid "**Source code:** :source:`Lib/tokenize.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/tokenize.py`"
 
 #: ../../library/tokenize.rst:14
 msgid ""
 "The :mod:`tokenize` module provides a lexical scanner for Python source "
-"code, implemented in Python.  The scanner in this module returns comments"
-" as tokens as well, making it useful for implementing \"pretty-"
-"printers\", including colorizers for on-screen displays."
+"code, implemented in Python.  The scanner in this module returns comments as"
+" tokens as well, making it useful for implementing \"pretty-printers\", "
+"including colorizers for on-screen displays."
 msgstr ""
+"Modul :mod:`tokenize` poskytuje lexikální skener pro zdrojový kód Pythonu, "
+"implementovaný v Pythonu. Skener v tomto modulu vrací také komentáře jako "
+"tokeny, což jej činí užitečným pro implementaci \"pretty-printerů\", včetně "
+"vizuálních zvýrazňovačů pro zobrazení na obrazovce."
 
 #: ../../library/tokenize.rst:19
 msgid ""
 "To simplify token stream handling, all :ref:`operator <operators>` and "
-":ref:`delimiter <delimiters>` tokens and :data:`Ellipsis` are returned "
-"using the generic :data:`~token.OP` token type.  The exact type can be "
-"determined by checking the ``exact_type`` property on the :term:`named "
-"tuple` returned from :func:`tokenize.tokenize`."
+":ref:`delimiter <delimiters>` tokens and :data:`Ellipsis` are returned using"
+" the generic :data:`~token.OP` token type.  The exact type can be determined"
+" by checking the ``exact_type`` property on the :term:`named tuple` returned"
+" from :func:`tokenize.tokenize`."
 msgstr ""
+"Pro zjednodušení zpracování toku tokenů jsou všechny tokeny :ref:`operátorů "
+"<operators>` a :ref:`oddělovačů <delimiters>` a :data:`Ellipsis` vráceny "
+"pomocí generického typu tokenu :data:`~token.OP`. Přesný typ lze určit "
+"kontrolou vlastnosti ``exact_type`` v :term:`pojmenované n-tici <named "
+"tuple>` vrácené funkcí :func:`tokenize.tokenize`."
 
 #: ../../library/tokenize.rst:28
 msgid ""
 "Note that the functions in this module are only designed to parse "
-"syntactically valid Python code (code that does not raise when parsed "
-"using :func:`ast.parse`).  The behavior of the functions in this module "
-"is **undefined** when providing invalid Python code and it can change at "
-"any point."
+"syntactically valid Python code (code that does not raise when parsed using "
+":func:`ast.parse`).  The behavior of the functions in this module is "
+"**undefined** when providing invalid Python code and it can change at any "
+"point."
 msgstr ""
+"Poznámka: funkce v tomto modulu jsou navrženy pouze pro parsování "
+"syntakticky platného kódu Pythonu (kód, který nevyvolá výjimku při parsování"
+" pomocí :func:`ast.parse`). Chování funkcí v tomto modulu je "
+"**nedefinované** při poskytnutí neplatného kódu Pythonu a může se v "
+"kterémkoli okamžiku změnit."
 
 #: ../../library/tokenize.rst:35
 msgid "Tokenizing Input"
-msgstr ""
+msgstr "Tokenizáce vstupu"
 
 #: ../../library/tokenize.rst:37
 msgid "The primary entry point is a :term:`generator`:"
-msgstr ""
+msgstr "Hlavním vstupním bodem je :term:`generátor`:"
 
 #: ../../library/tokenize.rst:41
 msgid ""
@@ -68,96 +82,130 @@ msgid ""
 ":meth:`io.IOBase.readline` method of file objects.  Each call to the "
 "function should return one line of input as bytes."
 msgstr ""
+"Generátor :func:`.tokenize` vyžaduje jeden argument, *readline*, který musí "
+"být volatelným objektem, který poskytuje stejné rozhraní jako metoda "
+":meth:`io.IOBase.readline` objektů souborů. Každé volaní funkce by mělo "
+"vrátit jeden řádek vstupních dat jako bajty."
 
 #: ../../library/tokenize.rst:46
 msgid ""
 "The generator produces 5-tuples with these members: the token type; the "
 "token string; a 2-tuple ``(srow, scol)`` of ints specifying the row and "
-"column where the token begins in the source; a 2-tuple ``(erow, ecol)`` "
-"of ints specifying the row and column where the token ends in the source;"
-" and the line on which the token was found. The line passed (the last "
-"tuple item) is the *physical* line.  The 5 tuple is returned as a "
-":term:`named tuple` with the field names: ``type string start end line``."
+"column where the token begins in the source; a 2-tuple ``(erow, ecol)`` of "
+"ints specifying the row and column where the token ends in the source; and "
+"the line on which the token was found. The line passed (the last tuple item)"
+" is the *physical* line.  The 5 tuple is returned as a :term:`named tuple` "
+"with the field names: ``type string start end line``."
 msgstr ""
+"Generátor produkuje 5-tice s těmito prvky: typ tokenu; řetězec tokenu; "
+"2-tice ``(srow, scol)`` celých čísel určující řádek a sloupec, kde se token "
+"začíná ve zdroji; 2-tice ``(erow, ecol)`` celých čísel určující řádek a "
+"sloupec, kde se token končí ve zdroji; a řádek, ve kterém byl token nalezen."
+" Proslovaný řádek (poslední prvek n-tice) je *fyzický* řádek. 5-tice je "
+"vrácena jako :term:`pojmenovaná n-tice <named tuple>` s názvy polí: ``type "
+"string start end line``."
 
 #: ../../library/tokenize.rst:55
 msgid ""
 "The returned :term:`named tuple` has an additional property named "
-"``exact_type`` that contains the exact operator type for "
-":data:`~token.OP` tokens.  For all other token types ``exact_type`` "
-"equals the named tuple ``type`` field."
+"``exact_type`` that contains the exact operator type for :data:`~token.OP` "
+"tokens.  For all other token types ``exact_type`` equals the named tuple "
+"``type`` field."
 msgstr ""
+"Vrácená :term:`pojmenovaná n-tice <named tuple>` má další vlastnost nazvanou"
+" ``exact_type``, která obsahuje přesný typ operátoru pro tokeny "
+":data:`~token.OP`. Pro všechny ostatní typy tokenů se ``exact_type`` rovná "
+"poli ``type`` pojmenované n-tice."
 
 #: ../../library/tokenize.rst:60
 msgid "Added support for named tuples."
-msgstr ""
+msgstr "Přidána podpora pro pojmenované n-tice."
 
 #: ../../library/tokenize.rst:63
 msgid "Added support for ``exact_type``."
-msgstr ""
+msgstr "Přidána podpora pro ``exact_type``."
 
 #: ../../library/tokenize.rst:66
 msgid ""
-":func:`.tokenize` determines the source encoding of the file by looking "
-"for a UTF-8 BOM or encoding cookie, according to :pep:`263`."
+":func:`.tokenize` determines the source encoding of the file by looking for "
+"a UTF-8 BOM or encoding cookie, according to :pep:`263`."
 msgstr ""
+":func:`.tokenize` určuje zdrojové kódování souboru vyhledáním UTF-8 BOM nebo"
+" kódovacího souboru cookie, podle :pep:`263`."
 
 #: ../../library/tokenize.rst:71
 msgid "Tokenize a source reading unicode strings instead of bytes."
-msgstr ""
+msgstr "Tokenizáce zdroje s čtením unicode řetězců místo bajtů."
 
 #: ../../library/tokenize.rst:73
 msgid ""
-"Like :func:`.tokenize`, the *readline* argument is a callable returning a"
-" single line of input. However, :func:`generate_tokens` expects "
-"*readline* to return a str object rather than bytes."
+"Like :func:`.tokenize`, the *readline* argument is a callable returning a "
+"single line of input. However, :func:`generate_tokens` expects *readline* to"
+" return a str object rather than bytes."
 msgstr ""
+"Jako :func:`.tokenize`, argument *readline* je volatelný objektem vraceným "
+"jeden řádek vstupu. Nicméně :func:`generate_tokens` očekává, že *readline* "
+"vrátí objekt typu str spolené s bajty."
 
 #: ../../library/tokenize.rst:77
 msgid ""
 "The result is an iterator yielding named tuples, exactly like "
 ":func:`.tokenize`. It does not yield an :data:`~token.ENCODING` token."
 msgstr ""
+"Výsledkem je itérátor vracící pojmenované n-tice, přesně jako "
+":func:`.tokenize`. Nevrací token :data:`~token.ENCODING`."
 
 #: ../../library/tokenize.rst:80
 msgid ""
 "All constants from the :mod:`token` module are also exported from "
 ":mod:`tokenize`."
 msgstr ""
+"Všechny konstanty z modulu :mod:`token` jsou také exportovány z "
+":mod:`tokenize`."
 
 #: ../../library/tokenize.rst:83
 msgid ""
-"Another function is provided to reverse the tokenization process. This is"
-" useful for creating tools that tokenize a script, modify the token "
-"stream, and write back the modified script."
+"Another function is provided to reverse the tokenization process. This is "
+"useful for creating tools that tokenize a script, modify the token stream, "
+"and write back the modified script."
 msgstr ""
+"Je poskytnuta další funkce k otočení procesu tokenizace. To je užitečné pro "
+"vytváření nástrojů, které tokenizují skript, mění tok tokenů a zapisují zpět"
+" upravenSkript."
 
 #: ../../library/tokenize.rst:90
 msgid ""
-"Converts tokens back into Python source code.  The *iterable* must return"
-" sequences with at least two elements, the token type and the token "
-"string. Any additional sequence elements are ignored."
+"Converts tokens back into Python source code.  The *iterable* must return "
+"sequences with at least two elements, the token type and the token string. "
+"Any additional sequence elements are ignored."
 msgstr ""
+"Konvertuje tokeny zpět na zdrojový kód Pythonu. *iterable* musí vracet "
+"sekvence s alespoň dvěma prvky, typem tokenu a řetězcem tokenu. Jakékoli "
+"další prvky sekvence jsou ignorovány."
 
 #: ../../library/tokenize.rst:94
 msgid ""
 "The result is guaranteed to tokenize back to match the input so that the "
-"conversion is lossless and round-trips are assured.  The guarantee "
-"applies only to the token type and token string as the spacing between "
-"tokens (column positions) may change."
+"conversion is lossless and round-trips are assured.  The guarantee applies "
+"only to the token type and token string as the spacing between tokens "
+"(column positions) may change."
 msgstr ""
+"Výsledek je zajišťován, aby se tokenizoval zpět na shodu se vstupem takže "
+"konverze je bezeztrátová a kruhókat kem. Zajištění platí pouze pro typ "
+"tokenu a řetězec tokenu, kterého rozestupy mezi tokeny (pozice sloupce) se "
+"mohou změnit."
 
 #: ../../library/tokenize.rst:99
 msgid ""
-"It returns bytes, encoded using the :data:`~token.ENCODING` token, which "
-"is the first token sequence output by :func:`.tokenize`. If there is no "
+"It returns bytes, encoded using the :data:`~token.ENCODING` token, which is "
+"the first token sequence output by :func:`.tokenize`. If there is no "
 "encoding token in the input, it returns a str instead."
 msgstr ""
 
 #: ../../library/tokenize.rst:104
 msgid ""
-":func:`.tokenize` needs to detect the encoding of source files it "
-"tokenizes. The function it uses to do this is available:"
+":func:`.tokenize` needs to detect the encoding of source files it tokenizes."
+" The function it uses to do this is available:"
 msgstr ""
 
 #: ../../library/tokenize.rst:109
@@ -169,17 +217,16 @@ msgstr ""
 
 #: ../../library/tokenize.rst:113
 msgid ""
-"It will call readline a maximum of twice, and return the encoding used "
-"(as a string) and a list of any lines (not decoded from bytes) it has "
-"read in."
+"It will call readline a maximum of twice, and return the encoding used (as a"
+" string) and a list of any lines (not decoded from bytes) it has read in."
 msgstr ""
 
 #: ../../library/tokenize.rst:117
 msgid ""
 "It detects the encoding from the presence of a UTF-8 BOM or an encoding "
-"cookie as specified in :pep:`263`. If both a BOM and a cookie are "
-"present, but disagree, a :exc:`SyntaxError` will be raised. Note that if "
-"the BOM is found, ``'utf-8-sig'`` will be returned as an encoding."
+"cookie as specified in :pep:`263`. If both a BOM and a cookie are present, "
+"but disagree, a :exc:`SyntaxError` will be raised. Note that if the BOM is "
+"found, ``'utf-8-sig'`` will be returned as an encoding."
 msgstr ""
 
 #: ../../library/tokenize.rst:122
@@ -202,8 +249,8 @@ msgstr ""
 
 #: ../../library/tokenize.rst:138
 msgid ""
-"Raised when either a docstring or expression that may be split over "
-"several lines is not completed anywhere in the file, for example::"
+"Raised when either a docstring or expression that may be split over several "
+"lines is not completed anywhere in the file, for example::"
 msgstr ""
 
 #: ../../library/tokenize.rst:141
@@ -251,8 +298,8 @@ msgstr ""
 
 #: ../../library/tokenize.rst:176
 msgid ""
-"If :file:`filename.py` is specified its contents are tokenized to stdout."
-" Otherwise, tokenization is performed on stdin."
+"If :file:`filename.py` is specified its contents are tokenized to stdout. "
+"Otherwise, tokenization is performed on stdin."
 msgstr ""
 
 #: ../../library/tokenize.rst:180
@@ -279,8 +326,7 @@ msgid ""
 "    \"print (+Decimal ('21.3e-5')*-Decimal ('.1234')/Decimal ('81.7'))\"\n"
 "\n"
 "    The format of the exponent is inherited from the platform C library.\n"
-"    Known cases are \"e-007\" (Windows) and \"e-07\" (not Windows).  "
-"Since\n"
+"    Known cases are \"e-007\" (Windows) and \"e-07\" (not Windows).  Since\n"
 "    we're only showing 12 digits, and the 13th isn't close to 5, the\n"
 "    rest of the output should be platform-independent.\n"
 "\n"
@@ -294,8 +340,7 @@ msgid ""
 "    -3.217160342717258261933904529E-7\n"
 "    \"\"\"\n"
 "    result = []\n"
-"    g = tokenize(BytesIO(s.encode('utf-8')).readline)  # tokenize the "
-"string\n"
+"    g = tokenize(BytesIO(s.encode('utf-8')).readline)  # tokenize the string\n"
 "    for toknum, tokval, _, _, _ in g:\n"
 "        if toknum == NUMBER and '.' in tokval:  # replace NUMBER tokens\n"
 "            result.extend([\n"
@@ -324,9 +369,9 @@ msgstr ""
 #: ../../library/tokenize.rst:231
 msgid ""
 "will be tokenized to the following output where the first column is the "
-"range of the line/column coordinates where the token is found, the second"
-" column is the name of the token, and the final column is the value of "
-"the token (if any)"
+"range of the line/column coordinates where the token is found, the second "
+"column is the name of the token, and the final column is the value of the "
+"token (if any)"
 msgstr ""
 
 #: ../../library/tokenize.rst:235
@@ -355,7 +400,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/tokenize.rst:259
-msgid "The exact token type names can be displayed using the :option:`-e` option:"
+msgid ""
+"The exact token type names can be displayed using the :option:`-e` option:"
 msgstr ""
 
 #: ../../library/tokenize.rst:261
@@ -412,4 +458,3 @@ msgid ""
 "    for token in tokens:\n"
 "        print(token)"
 msgstr ""
-

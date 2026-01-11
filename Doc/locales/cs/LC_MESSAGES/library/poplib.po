@@ -11,105 +11,137 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/poplib.rst:2
 msgid ":mod:`!poplib` --- POP3 protocol client"
-msgstr ""
+msgstr ":mod:`!poplib` --- klient protokolu POP3"
 
 #: ../../library/poplib.rst:10
 msgid "**Source code:** :source:`Lib/poplib.py`"
-msgstr ""
+msgstr "**Zdrojový kód:** :source:`Lib/poplib.py`"
 
 #: ../../library/poplib.rst:16
 msgid ""
-"This module defines a class, :class:`POP3`, which encapsulates a "
-"connection to a POP3 server and implements the protocol as defined in "
-":rfc:`1939`. The :class:`POP3` class supports both the minimal and "
-"optional command sets from :rfc:`1939`. The :class:`POP3` class also "
-"supports the ``STLS`` command introduced in :rfc:`2595` to enable "
-"encrypted communication on an already established connection."
+"This module defines a class, :class:`POP3`, which encapsulates a connection "
+"to a POP3 server and implements the protocol as defined in :rfc:`1939`. The "
+":class:`POP3` class supports both the minimal and optional command sets from"
+" :rfc:`1939`. The :class:`POP3` class also supports the ``STLS`` command "
+"introduced in :rfc:`2595` to enable encrypted communication on an already "
+"established connection."
 msgstr ""
+"Tento modul definuje třídu :class:`POP3`, která zapouzdřuje připojení k "
+"serveru POP3 a implementuje protokol definovaný v :rfc:`1939`. Třída "
+":class:`POP3` podporuje minimální i volitelné sady příkazů z :rfc:`1939`. "
+"Třída :class:`POP3` také podporuje příkaz ``STLS`` zavedený v :rfc:`2595` "
+"pro povolení šifrované komunikace na již navázaném připojení."
 
 #: ../../library/poplib.rst:22
 msgid ""
-"Additionally, this module provides a class :class:`POP3_SSL`, which "
-"provides support for connecting to POP3 servers that use SSL as an "
-"underlying protocol layer."
+"Additionally, this module provides a class :class:`POP3_SSL`, which provides"
+" support for connecting to POP3 servers that use SSL as an underlying "
+"protocol layer."
 msgstr ""
+"Navíc tento modul poskytuje třídu :class:`POP3_SSL`, která podporuje "
+"připojování na servery POP3 používající SSL jako základní vrstvu protokolu."
 
 #: ../../library/poplib.rst:26
 msgid ""
-"Note that POP3, though widely supported, is obsolescent.  The "
-"implementation quality of POP3 servers varies widely, and too many are "
-"quite poor. If your mailserver supports IMAP, you would be better off "
-"using the :class:`imaplib.IMAP4` class, as IMAP servers tend to be better"
-" implemented."
+"Note that POP3, though widely supported, is obsolescent.  The implementation"
+" quality of POP3 servers varies widely, and too many are quite poor. If your"
+" mailserver supports IMAP, you would be better off using the "
+":class:`imaplib.IMAP4` class, as IMAP servers tend to be better implemented."
 msgstr ""
+"Poznámka: Ačkoli je POP3 široko podporován, je zastaralý. Kvalita "
+"implementace serverů POP3 se velmi liší a mnoho z nich je poměrně chybné. "
+"Pokud váš poštovní server podporuje IMAP, měli byste raději použít třídu "
+":class:`imaplib.IMAP4`, protože servery IMAP mají tendenci být lépe "
+"implementovány."
 
 #: ../../includes/wasm-notavail.rst:3
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: ../../includes/wasm-notavail.rst:5
 msgid ""
-"This module does not work or is not available on WebAssembly. See :ref"
-":`wasm-availability` for more information."
+"This module does not work or is not available on WebAssembly. See "
+":ref:`wasm-availability` for more information."
 msgstr ""
+"Tento modul neběží a není dostupný na WebAssembly. Více informací naleznete "
+"v :ref:`wasm-availability`."
 
 #: ../../library/poplib.rst:33
 msgid "The :mod:`poplib` module provides two classes:"
-msgstr ""
+msgstr "Modul :mod:`poplib` poskytuje dvě třídy:"
 
 #: ../../library/poplib.rst:38
 msgid ""
-"This class implements the actual POP3 protocol.  The connection is "
-"created when the instance is initialized. If *port* is omitted, the "
-"standard POP3 port (110) is used. The optional *timeout* parameter "
-"specifies a timeout in seconds for the connection attempt (if not "
-"specified, the global default timeout setting will be used)."
+"This class implements the actual POP3 protocol.  The connection is created "
+"when the instance is initialized. If *port* is omitted, the standard POP3 "
+"port (110) is used. The optional *timeout* parameter specifies a timeout in "
+"seconds for the connection attempt (if not specified, the global default "
+"timeout setting will be used)."
 msgstr ""
+"Tato třída implementuje vlastní protokol POP3. Připojení se vytvoří při "
+"inicializaci instance. Pokud je *port* vynechán, používá se standardní port "
+"POP3 (110). Volitelný parametr *timeout* specifikuje vypršení času v "
+"sekundách pro pokus o připojení (pokud není zadán, použije se globální "
+"výchozí nastavení časového limitu)."
 
 #: ../../library/poplib.rst:44 ../../library/poplib.rst:66
 msgid ""
-"Raises an :ref:`auditing event <auditing>` ``poplib.connect`` with "
-"arguments ``self``, ``host``, ``port``."
+"Raises an :ref:`auditing event <auditing>` ``poplib.connect`` with arguments"
+" ``self``, ``host``, ``port``."
 msgstr ""
+"Vyvolá event auditování :ref:`auditing event <auditing>` ``poplib.connect`` "
+"s argumenty ``self``, ``host``, ``port``."
 
 #: ../../library/poplib.rst:46 ../../library/poplib.rst:48
 #: ../../library/poplib.rst:68 ../../library/poplib.rst:70
 msgid ""
 "All commands will raise an :ref:`auditing event <auditing>` "
-"``poplib.putline`` with arguments ``self`` and ``line``, where ``line`` "
-"is the bytes about to be sent to the remote host."
+"``poplib.putline`` with arguments ``self`` and ``line``, where ``line`` is "
+"the bytes about to be sent to the remote host."
 msgstr ""
+"Všechny příkazy vyvolají event auditování :ref:`auditing event <auditing>` "
+"``poplib.putline`` s argumenty ``self`` a ``line``, kde ``line`` jsou bajty,"
+" které mají být odeslány na vzdálený hostitel."
 
 #: ../../library/poplib.rst:52 ../../library/poplib.rst:82
 msgid ""
 "If the *timeout* parameter is set to be zero, it will raise a "
 ":class:`ValueError` to prevent the creation of a non-blocking socket."
 msgstr ""
+"Pokud je parametr *timeout* nastaven na nulu, vyvolá se :class:`ValueError`,"
+" aby se zabránilo vytvoření soketu bez blokování."
 
 #: ../../library/poplib.rst:58
 msgid ""
-"This is a subclass of :class:`POP3` that connects to the server over an "
-"SSL encrypted socket.  If *port* is not specified, 995, the standard POP3"
-"-over-SSL port is used.  *timeout* works as in the :class:`POP3` "
-"constructor. *context* is an optional :class:`ssl.SSLContext` object "
-"which allows bundling SSL configuration options, certificates and private"
-" keys into a single (potentially long-lived) structure.  Please read :ref"
-":`ssl-security` for best practices."
+"This is a subclass of :class:`POP3` that connects to the server over an SSL "
+"encrypted socket.  If *port* is not specified, 995, the standard POP3-over-"
+"SSL port is used.  *timeout* works as in the :class:`POP3` constructor. "
+"*context* is an optional :class:`ssl.SSLContext` object which allows "
+"bundling SSL configuration options, certificates and private keys into a "
+"single (potentially long-lived) structure.  Please read :ref:`ssl-security` "
+"for best practices."
 msgstr ""
+"Toto je podtřída :class:`POP3`, která se připojuje k serveru přes šifrovaný "
+"soket SSL. Pokud *port* není specifikován, používá se standardní port "
+"POP3-over-SSL 995. *timeout* funguje stejně jako v konstruktoru "
+":class:`POP3`. *context* je volitelný objekt :class:`ssl.SSLContext`, který "
+"umožňuje kombinovat konfigurační možnosti SSL, certifikáty a privátní klíče "
+"do jediné (potenciálně dlouhodobě existující) struktury. Přečtěte si prosím "
+":ref:`ssl-security` pro nejlepší postupy."
 
 #: ../../library/poplib.rst:74
 msgid "*context* parameter added."
-msgstr ""
+msgstr "Parametr *context* přidán."
 
 #: ../../library/poplib.rst:77
 msgid ""
@@ -117,70 +149,88 @@ msgid ""
 ":attr:`ssl.SSLContext.check_hostname` and *Server Name Indication* (see "
 ":const:`ssl.HAS_SNI`)."
 msgstr ""
+"Třída nyní podporuje ověřování hostname pomocí "
+":attr:`ssl.SSLContext.check_hostname` a *Server Name Indication* (viz "
+":const:`ssl.HAS_SNI`)."
 
 #: ../../library/poplib.rst:86
 msgid "The deprecated *keyfile* and *certfile* parameters have been removed."
-msgstr ""
+msgstr "Zastaralé parametry *keyfile* a *certfile* byly odstraněny."
 
 #: ../../library/poplib.rst:89
 msgid "One exception is defined as an attribute of the :mod:`poplib` module:"
-msgstr ""
+msgstr "Jedna výjimka je definována jako atribut modulu :mod:`poplib`:"
 
 #: ../../library/poplib.rst:94
 msgid ""
-"Exception raised on any errors from this module (errors from "
-":mod:`socket` module are not caught). The reason for the exception is "
-"passed to the constructor as a string."
+"Exception raised on any errors from this module (errors from :mod:`socket` "
+"module are not caught). The reason for the exception is passed to the "
+"constructor as a string."
 msgstr ""
+"Výjimka vyvolána pro jakékoliv chyby z tohoto modulu (chyby z modulu "
+":mod:`socket` se neobsahují). Důvod výjimky je předán konstruktoru jako "
+"řetězec."
 
 #: ../../library/poplib.rst:101
 msgid "Module :mod:`imaplib`"
-msgstr ""
+msgstr "Modul :mod:`imaplib`"
 
 #: ../../library/poplib.rst:102
 msgid "The standard Python IMAP module."
-msgstr ""
+msgstr "Standardní modul Python IMAP."
 
 #: ../../library/poplib.rst:104
 msgid ""
 "`Frequently Asked Questions About Fetchmail "
 "<http://www.catb.org/~esr/fetchmail/fetchmail-FAQ.html>`_"
 msgstr ""
+"`Často kladené otázky o Fetchmailu "
+"<http://www.catb.org/~esr/fetchmail/fetchmail-FAQ.html>`_"
 
 #: ../../library/poplib.rst:105
 msgid ""
-"The FAQ for the :program:`fetchmail` POP/IMAP client collects information"
-" on POP3 server variations and RFC noncompliance that may be useful if "
-"you need to write an application based on the POP protocol."
+"The FAQ for the :program:`fetchmail` POP/IMAP client collects information on"
+" POP3 server variations and RFC noncompliance that may be useful if you need"
+" to write an application based on the POP protocol."
 msgstr ""
+"FAQ pro klienta :program:`fetchmail` POP/IMAP shromažďuje informace o "
+"variacích serveru POP3 a neshodách s RFC, které mohou být užitečné, pokud "
+"potřebujete vytvořit aplikaci založenou na protokolu POP."
 
 #: ../../library/poplib.rst:113
 msgid "POP3 Objects"
-msgstr ""
+msgstr "Objekty POP3"
 
 #: ../../library/poplib.rst:115
 msgid ""
-"All POP3 commands are represented by methods of the same name, in "
-"lowercase; most return the response text sent by the server."
+"All POP3 commands are represented by methods of the same name, in lowercase;"
+" most return the response text sent by the server."
 msgstr ""
+"Všechny příkazy POP3 jsou reprezentovány metodami se stejným názvem, v "
+"malých písmenech; nejvíce vrací text odpovědi poslané serverem."
 
 #: ../../library/poplib.rst:118
 msgid "A :class:`POP3` instance has the following methods:"
-msgstr ""
+msgstr "Instance :class:`POP3` má následující metody:"
 
 #: ../../library/poplib.rst:123
 msgid ""
-"Set the instance's debugging level.  This controls the amount of "
-"debugging output printed.  The default, ``0``, produces no debugging "
-"output.  A value of ``1`` produces a moderate amount of debugging output,"
-" generally a single line per request.  A value of ``2`` or higher "
-"produces the maximum amount of debugging output, logging each line sent "
-"and received on the control connection."
+"Set the instance's debugging level.  This controls the amount of debugging "
+"output printed.  The default, ``0``, produces no debugging output.  A value "
+"of ``1`` produces a moderate amount of debugging output, generally a single "
+"line per request.  A value of ``2`` or higher produces the maximum amount of"
+" debugging output, logging each line sent and received on the control "
+"connection."
 msgstr ""
+"Nastavení úrovně ladění instance. To řídí množství vytiskaného výstupu "
+"ladění. Výchozí hodnota ``0`` nevytváří výstup ladění. Hodnota ``1`` "
+"produkuje mírné množství výstupu ladění, obecně jeden řádek na požadavek. "
+"Hodnota ``2`` nebo vyšší produkuje maximální množství výstupu ladění, "
+"logování každého řádku odeslaného a přijatého na řídící spojení."
 
 #: ../../library/poplib.rst:132
 msgid "Returns the greeting string sent by the POP3 server."
-msgstr ""
+msgstr "Vrací uvítací řetězec poslany serverem POP3."
 
 #: ../../library/poplib.rst:137
 #, python-brace-format
@@ -188,79 +238,105 @@ msgid ""
 "Query the server's capabilities as specified in :rfc:`2449`. Returns a "
 "dictionary in the form ``{'name': ['param'...]}``."
 msgstr ""
+"Zjistit možnosti serveru podle :rfc:`2449`. Vrací slovník ve formě "
+"``{'name': ['param'...]}``."
 
 #: ../../library/poplib.rst:145
-msgid "Send user command, response should indicate that a password is required."
+msgid ""
+"Send user command, response should indicate that a password is required."
 msgstr ""
+"Odeslat příkaz uživatele, odpověď by měla indikovat, že je vyžadováno heslo."
 
 #: ../../library/poplib.rst:150
 msgid ""
-"Send password, response includes message count and mailbox size. Note: "
-"the mailbox on the server is locked until :meth:`~POP3.quit` is called."
+"Send password, response includes message count and mailbox size. Note: the "
+"mailbox on the server is locked until :meth:`~POP3.quit` is called."
 msgstr ""
+"Odeslat heslo, odpověď obsahuje počet zpráv a velikost poštovní schránky. "
+"Poznámka: poštovní schránka na serveru je uzamčena do doby, než je zavolána "
+":meth:`~POP3.quit`."
 
 #: ../../library/poplib.rst:156
 msgid "Use the more secure APOP authentication to log into the POP3 server."
-msgstr ""
+msgstr "Použít bezpečnější ověření APOP pro přihlášení na server POP3."
 
 #: ../../library/poplib.rst:161
 msgid ""
 "Use RPOP authentication (similar to UNIX r-commands) to log into POP3 "
 "server."
 msgstr ""
+"Použít ověření RPOP (podobné unixovským příkazům r-commands) pro přihlášení "
+"na server POP3."
 
 #: ../../library/poplib.rst:166
 msgid ""
-"Get mailbox status.  The result is a tuple of 2 integers: ``(message "
-"count, mailbox size)``."
+"Get mailbox status.  The result is a tuple of 2 integers: ``(message count, "
+"mailbox size)``."
 msgstr ""
+"Získat stav poštovní schránky. Výsledek je tuple ze 2 celých čísel: ``(počet"
+" zpráv, velikost poštovní schránky)``."
 
 #: ../../library/poplib.rst:172
 msgid ""
-"Request message list, result is in the form ``(response, ['mesg_num "
-"octets', ...], octets)``. If *which* is set, it is the message to list."
+"Request message list, result is in the form ``(response, ['mesg_num octets',"
+" ...], octets)``. If *which* is set, it is the message to list."
 msgstr ""
+"Žádat seznam zpráv, výsledek je ve formě ``(response, ['mesg_num octets', "
+"...], octets)``. Pokud je *which* nastaveno, jedná se o zprávu, kterou "
+"chcete vypsat."
 
 #: ../../library/poplib.rst:178
 msgid ""
-"Retrieve whole message number *which*, and set its seen flag. Result is "
-"in form ``(response, ['line', ...], octets)``."
+"Retrieve whole message number *which*, and set its seen flag. Result is in "
+"form ``(response, ['line', ...], octets)``."
 msgstr ""
+"Získat celou zprávu číslo *which* a nastavit její příznak viděno. Výsledek "
+"je ve formě ``(response, ['line', ...], octets)``."
 
 #: ../../library/poplib.rst:184
 msgid ""
-"Flag message number *which* for deletion.  On most servers deletions are "
-"not actually performed until QUIT (the major exception is Eudora QPOP, "
-"which deliberately violates the RFCs by doing pending deletes on any "
-"disconnect)."
+"Flag message number *which* for deletion.  On most servers deletions are not"
+" actually performed until QUIT (the major exception is Eudora QPOP, which "
+"deliberately violates the RFCs by doing pending deletes on any disconnect)."
 msgstr ""
+"Označit zprávu číslo *which* k smazání. Na většině serverů se smazání ve "
+"skutečnosti neprovede až do QUIT (hlavní výjimkou je Eudora QPOP, která "
+"záměrně porušuje RFC tím, že provádí čekající smazání při jakémkoliv "
+"odpojení)."
 
 #: ../../library/poplib.rst:191
 msgid "Remove any deletion marks for the mailbox."
-msgstr ""
+msgstr "Odstranit všechny značky smazání pro poštovní schránku."
 
 #: ../../library/poplib.rst:196
 msgid "Do nothing.  Might be used as a keep-alive."
-msgstr ""
+msgstr "Nedělat nic. Může být použito jako keep-alive."
 
 #: ../../library/poplib.rst:201
 msgid "Signoff:  commit changes, unlock mailbox, drop connection."
 msgstr ""
+"Odhlášení: potvrdit změny, odemknout poštovní schránku, zrušit připojení."
 
 #: ../../library/poplib.rst:206
 msgid ""
-"Retrieves the message header plus *howmuch* lines of the message after "
-"the header of message number *which*. Result is in form ``(response, "
-"['line', ...], octets)``."
+"Retrieves the message header plus *howmuch* lines of the message after the "
+"header of message number *which*. Result is in form ``(response, ['line', "
+"...], octets)``."
 msgstr ""
+"Získá záhlaví zprávy plus *howmuch* řádků zprávy za záhlavím zprávy číslo "
+"*which*. Výsledek je ve formě ``(response, ['line', ...], octets)``."
 
 #: ../../library/poplib.rst:210
 msgid ""
-"The POP3 TOP command this method uses, unlike the RETR command, doesn't "
-"set the message's seen flag; unfortunately, TOP is poorly specified in "
-"the RFCs and is frequently broken in off-brand servers. Test this method "
-"by hand against the POP3 servers you will use before trusting it."
+"The POP3 TOP command this method uses, unlike the RETR command, doesn't set "
+"the message's seen flag; unfortunately, TOP is poorly specified in the RFCs "
+"and is frequently broken in off-brand servers. Test this method by hand "
+"against the POP3 servers you will use before trusting it."
 msgstr ""
+"Příkaz POP3 TOP, který tato metoda používá, na rozdíl od příkazu RETR, "
+"nenastavuje příznak viděno zprávy; bohužel je TOP v RFC špatně specifikován "
+"a často je porušován v serverech mimo značku. Otestujte tuto metodu ručně "
+"proti serverům POP3, které budete používat, předtím než jí budete věřit."
 
 #: ../../library/poplib.rst:218
 msgid ""
@@ -269,26 +345,38 @@ msgid ""
 "uid``, otherwise result is list ``(response, ['mesgnum uid', ...], "
 "octets)``."
 msgstr ""
+"Vrátit seznam digest zprávy (jedinečné id). Pokud je *which* specifikováno, "
+"výsledek obsahuje jedinečné id pro tuto zprávu ve formě ``'response mesgnum "
+"uid``, jinak je výsledek seznam ``(response, ['mesgnum uid', ...], "
+"octets)``."
 
 #: ../../library/poplib.rst:225
 msgid ""
 "Try to switch to UTF-8 mode. Returns the server response if successful, "
 "raises :class:`error_proto` if not. Specified in :RFC:`6856`."
 msgstr ""
+"Pokusit se přepnout na režim UTF-8. Vrátí odpověď serveru, pokud je úspěšná,"
+" vyvolá :class:`error_proto` pokud ne. Specifikováno v :RFC:`6856`."
 
 #: ../../library/poplib.rst:233
 msgid ""
-"Start a TLS session on the active connection as specified in :rfc:`2595`."
-" This is only allowed before user authentication"
+"Start a TLS session on the active connection as specified in :rfc:`2595`. "
+"This is only allowed before user authentication"
 msgstr ""
+"Spustit relaci TLS na aktivním připojení podle :rfc:`2595`. To je povoleno "
+"pouze před ověřením uživatele"
 
 #: ../../library/poplib.rst:236
 msgid ""
 "*context* parameter is a :class:`ssl.SSLContext` object which allows "
 "bundling SSL configuration options, certificates and private keys into a "
-"single (potentially long-lived) structure.  Please read :ref:`ssl-"
-"security` for best practices."
+"single (potentially long-lived) structure.  Please read :ref:`ssl-security` "
+"for best practices."
 msgstr ""
+"Parametr *context* je objekt :class:`ssl.SSLContext`, který umožňuje "
+"kombinovat konfigurační možnosti SSL, certifikáty a privátní klíče do jediné"
+" (potenciálně dlouhodobě existující) struktury. Přečtěte si prosím "
+":ref:`ssl-security` pro nejlepší postupy."
 
 #: ../../library/poplib.rst:241
 msgid ""
@@ -296,22 +384,29 @@ msgid ""
 ":attr:`ssl.SSLContext.check_hostname` and *Server Name Indication* (see "
 ":const:`ssl.HAS_SNI`)."
 msgstr ""
+"Tato metoda podporuje ověřování hostname pomocí "
+":attr:`ssl.SSLContext.check_hostname` a *Server Name Indication* (viz "
+":const:`ssl.HAS_SNI`)."
 
 #: ../../library/poplib.rst:248
 msgid ""
-"Instances of :class:`POP3_SSL` have no additional methods. The interface "
-"of this subclass is identical to its parent."
+"Instances of :class:`POP3_SSL` have no additional methods. The interface of "
+"this subclass is identical to its parent."
 msgstr ""
+"Instance :class:`POP3_SSL` nemají žádné další metody. Rozhraní této podtřídy"
+" je totožné s jeho nadřazenou třídou."
 
 #: ../../library/poplib.rst:255
 msgid "POP3 Example"
-msgstr ""
+msgstr "Příklad POP3"
 
 #: ../../library/poplib.rst:257
 msgid ""
-"Here is a minimal example (without error checking) that opens a mailbox "
-"and retrieves and prints all messages::"
+"Here is a minimal example (without error checking) that opens a mailbox and "
+"retrieves and prints all messages::"
 msgstr ""
+"Zde je minimální příklad (bez kontroly chyb), který otevře poštovní schránku"
+" a načte a vytiskne všechny zprávy::"
 
 #: ../../library/poplib.rst:260
 msgid ""
@@ -325,18 +420,28 @@ msgid ""
 "    for j in M.retr(i+1)[1]:\n"
 "        print(j)"
 msgstr ""
+"import getpass, poplib\n"
+"\n"
+"M = poplib.POP3('localhost')\n"
+"M.user(getpass.getuser())\n"
+"M.pass_(getpass.getpass())\n"
+"numMessages = len(M.list()[1])\n"
+"for i in range(numMessages):\n"
+"    for j in M.retr(i+1)[1]:\n"
+"        print(j)"
 
 #: ../../library/poplib.rst:270
 msgid ""
 "At the end of the module, there is a test section that contains a more "
 "extensive example of usage."
 msgstr ""
+"Na konci modulu existuje teštovací sekce, která obsahuje rozsahlejší příklad"
+" použití."
 
 #: ../../library/poplib.rst:12
 msgid "POP3"
-msgstr ""
+msgstr "POP3"
 
 #: ../../library/poplib.rst:12
 msgid "protocol"
-msgstr ""
-
+msgstr "protokol"

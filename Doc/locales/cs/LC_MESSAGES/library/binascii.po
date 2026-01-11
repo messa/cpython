@@ -11,111 +11,137 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/binascii.rst:2
 msgid ":mod:`!binascii` --- Convert between binary and ASCII"
-msgstr ""
+msgstr ":mod:`!binascii` --- Převod mezi binárními a ASCII daty"
 
 #: ../../library/binascii.rst:13
 msgid ""
-"The :mod:`binascii` module contains a number of methods to convert "
-"between binary and various ASCII-encoded binary representations. "
-"Normally, you will not use these functions directly but use wrapper "
-"modules like :mod:`base64` instead. The :mod:`binascii` module contains "
-"low-level functions written in C for greater speed that are used by the "
-"higher-level modules."
+"The :mod:`binascii` module contains a number of methods to convert between "
+"binary and various ASCII-encoded binary representations. Normally, you will "
+"not use these functions directly but use wrapper modules like :mod:`base64` "
+"instead. The :mod:`binascii` module contains low-level functions written in "
+"C for greater speed that are used by the higher-level modules."
 msgstr ""
+"Modul :mod:`binascii` obsahuje řadu metod pro převod mezi binárními daty a "
+"různými reprezentacemi v ASCII. Normálně tyto funkce nebudete používat "
+"přímo, ale budete používat obálkové moduly jako :mod:`base64`. Modul "
+":mod:`binascii` obsahuje nízkoúrovňové funkce napsané v C pro větší "
+"rychlost, které jsou používány vyššími moduly."
 
 #: ../../library/binascii.rst:22
 msgid ""
-"``a2b_*`` functions accept Unicode strings containing only ASCII "
-"characters. Other functions only accept :term:`bytes-like objects <bytes-"
-"like object>` (such as :class:`bytes`, :class:`bytearray` and other "
-"objects that support the buffer protocol)."
+"``a2b_*`` functions accept Unicode strings containing only ASCII characters."
+" Other functions only accept :term:`bytes-like objects <bytes-like object>` "
+"(such as :class:`bytes`, :class:`bytearray` and other objects that support "
+"the buffer protocol)."
 msgstr ""
+"Funkce ``a2b_*`` přijímají znakové řetězce Unicode obsahující pouze znaky "
+"ASCII. Ostatní funkce přijímají pouze :term:`objekty jako bajtová pole "
+"<bytes-like object>` (např. :class:`bytes`, :class:`bytearray` a další "
+"objekty podporující protokol buffer)."
 
 #: ../../library/binascii.rst:27
-msgid "ASCII-only unicode strings are now accepted by the ``a2b_*`` functions."
+msgid ""
+"ASCII-only unicode strings are now accepted by the ``a2b_*`` functions."
 msgstr ""
+"Znakové řetězce Unicode obsahující pouze ASCII jsou nyní akceptovány "
+"funkcemi ``a2b_*``."
 
 #: ../../library/binascii.rst:31
 msgid "The :mod:`binascii` module defines the following functions:"
-msgstr ""
+msgstr "Modul :mod:`binascii` definuje následující funkce:"
 
 #: ../../library/binascii.rst:36
 msgid ""
-"Convert a single line of uuencoded data back to binary and return the "
-"binary data. Lines normally contain 45 (binary) bytes, except for the "
-"last line. Line data may be followed by whitespace."
+"Convert a single line of uuencoded data back to binary and return the binary"
+" data. Lines normally contain 45 (binary) bytes, except for the last line. "
+"Line data may be followed by whitespace."
 msgstr ""
+"Převedě jeden řádek kódovaných dat uuencode zpět na binární data a vrať "
+"binární data. Řádky obvykle obsahují 45 (binárních) bajtů, kromě posledního "
+"řádku. Řádku mohou následovat mezery."
 
 #: ../../library/binascii.rst:43
 msgid ""
-"Convert binary data to a line of ASCII characters, the return value is "
-"the converted line, including a newline char. The length of *data* should"
-" be at most 45. If *backtick* is true, zeros are represented by ``'`'`` "
-"instead of spaces."
+"Convert binary data to a line of ASCII characters, the return value is the "
+"converted line, including a newline char. The length of *data* should be at "
+"most 45. If *backtick* is true, zeros are represented by ``'`'`` instead of "
+"spaces."
 msgstr ""
+"Převedě binární data na řádek znaků ASCII, vrácená hodnota je převedlý "
+"řádek, včetně znaku nového řádku. Délka *data* by neměla být větší než 45. "
+"Pokud je *backtick* pravda, nuly jsou reprezentovány ``'`'`` místo mezer."
 
 #: ../../library/binascii.rst:47
 msgid "Added the *backtick* parameter."
-msgstr ""
+msgstr "Přidán parametr *backtick*."
 
 #: ../../library/binascii.rst:53
 msgid ""
-"Convert a block of base64 data back to binary and return the binary data."
-" More than one line may be passed at a time."
+"Convert a block of base64 data back to binary and return the binary data. "
+"More than one line may be passed at a time."
 msgstr ""
+"Převedě blok dat base64 zpět na binární data a vrať binární data. Může být "
+"předáno více než jeden řádek."
 
 #: ../../library/binascii.rst:56
 msgid ""
-"If *strict_mode* is true, only valid base64 data will be converted. "
-"Invalid base64 data will raise :exc:`binascii.Error`."
+"If *strict_mode* is true, only valid base64 data will be converted. Invalid "
+"base64 data will raise :exc:`binascii.Error`."
 msgstr ""
+"Pokud je *strict_mode* pravda, pouze platná data base64 budou převáděna. "
+"Neplatná data base64 vyvolají :exc:`binascii.Error`."
 
 #: ../../library/binascii.rst:59
 msgid "Valid base64:"
-msgstr ""
+msgstr "Platná data base64:"
 
 #: ../../library/binascii.rst:61
 msgid "Conforms to :rfc:`3548`."
-msgstr ""
+msgstr "Odpovídá :rfc:`3548`."
 
 #: ../../library/binascii.rst:62
 msgid "Contains only characters from the base64 alphabet."
-msgstr ""
+msgstr "Obsahuje pouze znaky z abecedy base64."
 
 #: ../../library/binascii.rst:63
 msgid ""
-"Contains no excess data after padding (including excess padding, "
-"newlines, etc.)."
+"Contains no excess data after padding (including excess padding, newlines, "
+"etc.)."
 msgstr ""
+"Neobsahuje šádkyčné data za vyplňováním (včetně nadělujícího vyplňování, "
+"zalomení, atd.)."
 
 #: ../../library/binascii.rst:64
 msgid "Does not start with a padding."
-msgstr ""
+msgstr "Nezačíná vyplňováním."
 
 #: ../../library/binascii.rst:66
 msgid "Added the *strict_mode* parameter."
-msgstr ""
+msgstr "Přidán parametr *strict_mode*."
 
 #: ../../library/binascii.rst:72
 msgid ""
 "Convert binary data to a line of ASCII characters in base64 coding. The "
-"return value is the converted line, including a newline char if *newline*"
-" is true.  The output of this function conforms to :rfc:`3548`."
+"return value is the converted line, including a newline char if *newline* is"
+" true.  The output of this function conforms to :rfc:`3548`."
 msgstr ""
+"Převedě binární data na řádek znaků ASCII v kódování base64. Vrácená hodnota"
+" je převedlý řádek, včetně znaku nového řádku, pokud je *newline* pravda. "
+"Výstup této funkce odpovídá :rfc:`3548`."
 
 #: ../../library/binascii.rst:76
 msgid "Added the *newline* parameter."
-msgstr ""
+msgstr "Přidán parametr *newline*."
 
 #: ../../library/binascii.rst:82
 msgid ""
@@ -124,36 +150,57 @@ msgid ""
 "argument *header* is present and true, underscores will be decoded as "
 "spaces."
 msgstr ""
+"Převedě blok dat quoted-printable zpět na binární data a vrať binární data. "
+"Může být předáno více než jeden řádek. Pokud je přítomen volitelný argument "
+"*header* a je pravda, podtržítka budou dekodována jako mezery."
 
 #: ../../library/binascii.rst:89
 msgid ""
 "Convert binary data to a line(s) of ASCII characters in quoted-printable "
 "encoding.  The return value is the converted line(s). If the optional "
 "argument *quotetabs* is present and true, all tabs and spaces will be "
-"encoded.   If the optional argument *istext* is present and true, "
-"newlines are not encoded but trailing whitespace will be encoded. If the "
-"optional argument *header* is present and true, spaces will be encoded as"
-" underscores per :rfc:`1522`. If the optional argument *header* is "
-"present and false, newline characters will be encoded as well; otherwise "
-"linefeed conversion might corrupt the binary data stream."
+"encoded.   If the optional argument *istext* is present and true, newlines "
+"are not encoded but trailing whitespace will be encoded. If the optional "
+"argument *header* is present and true, spaces will be encoded as underscores"
+" per :rfc:`1522`. If the optional argument *header* is present and false, "
+"newline characters will be encoded as well; otherwise linefeed conversion "
+"might corrupt the binary data stream."
 msgstr ""
+"Převedě binární data na řádek(y) znaků ASCII v kódování quoted-printable. "
+"Vrácená hodnota jsou převedené řádky. Pokud je přítomen volitelný argument "
+"*quotetabs* a je pravda, všechny tabulátory a mezery budou kódovány. Pokud "
+"je přítomen volitelný argument *istext* a je pravda, znaky nového řádku "
+"nejsou kódovány, ale konečné mezery budou kódovány. Pokud je přítomen "
+"volitelný argument *header* a je pravda, mezery budou kódovány jako "
+"podtržítka podle :rfc:`1522`. Pokud je přítomen volitelný argument *header* "
+"a je nepravda, znaky zalomení budou také kódovány; jinak převod zalomení "
+"může poškodit proud binárních dat."
 
 #: ../../library/binascii.rst:102
 msgid ""
-"Compute a 16-bit CRC value of *data*, starting with *value* as the "
-"initial CRC, and return the result.  This uses the CRC-CCITT polynomial "
-"*x*:sup:`16` + *x*:sup:`12` + *x*:sup:`5` + 1, often represented as "
-"0x1021.  This CRC is used in the binhex4 format."
+"Compute a 16-bit CRC value of *data*, starting with *value* as the initial "
+"CRC, and return the result.  This uses the CRC-CCITT polynomial *x*:sup:`16`"
+" + *x*:sup:`12` + *x*:sup:`5` + 1, often represented as 0x1021.  This CRC is"
+" used in the binhex4 format."
 msgstr ""
+"Vypočítá 16bitové CRC hodnotu *data*, začínaje s *value* jako počátečním "
+"CRC, a vrátí výsledek. Používá polynom CRC-CCITT *x*:sup:`16` + *x*:sup:`12`"
+" + *x*:sup:`5` + 1, často reprezentován jako 0x1021. Toto CRC se používá ve "
+"formátu binhex4."
 
 #: ../../library/binascii.rst:110
 msgid ""
 "Compute CRC-32, the unsigned 32-bit checksum of *data*, starting with an "
-"initial CRC of *value*.  The default initial CRC is zero.  The algorithm "
-"is consistent with the ZIP file checksum.  Since the algorithm is "
-"designed for use as a checksum algorithm, it is not suitable for use as a"
-" general hash algorithm.  Use as follows::"
+"initial CRC of *value*.  The default initial CRC is zero.  The algorithm is "
+"consistent with the ZIP file checksum.  Since the algorithm is designed for "
+"use as a checksum algorithm, it is not suitable for use as a general hash "
+"algorithm.  Use as follows::"
 msgstr ""
+"Vypočítá CRC-32, nežádaé 32bitový kontrolní součet *data*, začínaje s "
+"počátečním CRC *value*. Výchozí počáteční CRC je nula. Algoritmus je "
+"konzistentní s kontrolním součtem souborů ZIP. Vzhledem k tomu, že je "
+"algoritmus navržen pro použití jako algoritmus kontrolního součtu, není "
+"vhodný pro použití jako obecné hashi. Použíté takto::"
 
 #: ../../library/binascii.rst:116
 #, python-brace-format
@@ -164,45 +211,61 @@ msgid ""
 "crc = binascii.crc32(b\" world\", crc)\n"
 "print('crc32 = {:#010x}'.format(crc))"
 msgstr ""
+"print(binascii.crc32(b\"hello world\"))\n"
+"# Nebo, ve dvou částech:\n"
+"crc = binascii.crc32(b\"hello\")\n"
+"crc = binascii.crc32(b\" world\", crc)\n"
+"print('crc32 = {:#010x}'.format(crc))"
 
 #: ../../library/binascii.rst:122
 msgid "The result is always unsigned."
-msgstr ""
+msgstr "Výsledek je vždycky nežádaný."
 
 #: ../../library/binascii.rst:128
 msgid ""
-"Return the hexadecimal representation of the binary *data*.  Every byte "
-"of *data* is converted into the corresponding 2-digit hex representation."
-"  The returned bytes object is therefore twice as long as the length of "
-"*data*."
+"Return the hexadecimal representation of the binary *data*.  Every byte of "
+"*data* is converted into the corresponding 2-digit hex representation.  The "
+"returned bytes object is therefore twice as long as the length of *data*."
 msgstr ""
+"Vrať heksadecimální reprezentaci binárních *data*. Každý bajt *data* je "
+"převeden na odpovídající 2místné heksadecimální reprezentaci. Vrácený objekt"
+" bytes je proto dvakrát delší než délka *data*."
 
 #: ../../library/binascii.rst:132
 msgid ""
 "Similar functionality (but returning a text string) is also conveniently "
 "accessible using the :meth:`bytes.hex` method."
 msgstr ""
+"Podobná funkce (ale vracející textový řetězec) je také pohodlně přístupná "
+"prostřednictvím metody :meth:`bytes.hex`."
 
 #: ../../library/binascii.rst:135
 msgid ""
-"If *sep* is specified, it must be a single character str or bytes object."
-" It will be inserted in the output after every *bytes_per_sep* input "
-"bytes. Separator placement is counted from the right end of the output by"
-" default, if you wish to count from the left, supply a negative "
-"*bytes_per_sep* value."
+"If *sep* is specified, it must be a single character str or bytes object. It"
+" will be inserted in the output after every *bytes_per_sep* input bytes. "
+"Separator placement is counted from the right end of the output by default, "
+"if you wish to count from the left, supply a negative *bytes_per_sep* value."
 msgstr ""
+"Pokud je *sep* určen, musí to být jeden znakový řetězec str nebo objekt "
+"bytes. Bude vložen do výstupu po každých *bytes_per_sep* bajtech vstupu. "
+"Umístění oddělovacího prvku se standardně počítá od pravého konce výstupu, "
+"pokud chcete počítat zleva, zadejte zápornou hodnotu *bytes_per_sep*."
 
 #: ../../library/binascii.rst:150
 msgid "The *sep* and *bytes_per_sep* parameters were added."
-msgstr ""
+msgstr "Parametry *sep* a *bytes_per_sep* byly přidány."
 
 #: ../../library/binascii.rst:156
 msgid ""
-"Return the binary data represented by the hexadecimal string *hexstr*.  "
-"This function is the inverse of :func:`b2a_hex`. *hexstr* must contain an"
-" even number of hexadecimal digits (which can be upper or lower case), "
-"otherwise an :exc:`Error` exception is raised."
+"Return the binary data represented by the hexadecimal string *hexstr*.  This"
+" function is the inverse of :func:`b2a_hex`. *hexstr* must contain an even "
+"number of hexadecimal digits (which can be upper or lower case), otherwise "
+"an :exc:`Error` exception is raised."
 msgstr ""
+"Vrať binární data reprezentovaná heksadecimálním řetězcem *hexstr*. Tato "
+"funkce je inverzní k :func:`b2a_hex`. *hexstr* musí obsahovat sudý počet "
+"heksadecimálních číslic (které mohou být velké nebo malé písmeno), jinak je "
+"vyvolána výjimka :exc:`Error`."
 
 #: ../../library/binascii.rst:161
 msgid ""
@@ -210,41 +273,43 @@ msgid ""
 "liberal towards whitespace) is also accessible using the "
 ":meth:`bytes.fromhex` class method."
 msgstr ""
+"Podobná funkce (přijímající pouze argumenty textového řetězce, ale více "
+"shovívavá k bílému prostoru) je také přístupná prostřednictvím metody třídy "
+":meth:`bytes.fromhex`."
 
 #: ../../library/binascii.rst:167
 msgid "Exception raised on errors. These are usually programming errors."
-msgstr ""
+msgstr "Výjimka vyvolana v případě chyb. Obvykle se jedná o chyby programu."
 
 #: ../../library/binascii.rst:172
 msgid ""
 "Exception raised on incomplete data. These are usually not programming "
-"errors, but may be handled by reading a little more data and trying "
-"again."
+"errors, but may be handled by reading a little more data and trying again."
 msgstr ""
+"Výjimka vyvolana při nekompletlích datech. Obvykle se nejedná o chyby "
+"programu, ale mohou být zasškrtnuty počáním více dat a novým pokusu."
 
 #: ../../library/binascii.rst:178
 msgid "Module :mod:`base64`"
-msgstr ""
+msgstr "Modul :mod:`base64`"
 
 #: ../../library/binascii.rst:179
 msgid ""
-"Support for RFC compliant base64-style encoding in base 16, 32, 64, and "
-"85."
-msgstr ""
+"Support for RFC compliant base64-style encoding in base 16, 32, 64, and 85."
+msgstr "Podpora kódování v souladu s RFC v základu 16, 32, 64 a 85."
 
 #: ../../library/binascii.rst:182
 msgid "Module :mod:`quopri`"
-msgstr ""
+msgstr "Modul :mod:`quopri`"
 
 #: ../../library/binascii.rst:183
 msgid "Support for quoted-printable encoding used in MIME email messages."
-msgstr ""
+msgstr "Podpora kódování quoted-printable používaného v e-mail zprávách MIME."
 
 #: ../../library/binascii.rst:8
 msgid "module"
-msgstr ""
+msgstr "modul"
 
 #: ../../library/binascii.rst:8
 msgid "base64"
-msgstr ""
-
+msgstr "base64"
