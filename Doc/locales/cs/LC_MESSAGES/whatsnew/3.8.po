@@ -130,7 +130,7 @@ msgid ""
 "Another motivating use case arises in list comprehensions where a value "
 "computed in a filtering condition is also needed in the expression body::"
 msgstr ""
-"Další motivující případ se objevuje v seznamových komprehenzích, kde je "
+"Další motivující případ se objevuje v list comprehensions, kde je "
 "hodnota vypočítaná v podmínce filtrování též potřebná v těle výrazu::"
 
 #: ../../whatsnew/3.8.rst:108
@@ -1030,8 +1030,8 @@ msgid ""
 "Dict comprehensions have been synced-up with dict literals so that the key "
 "is computed first and the value second::"
 msgstr ""
-"Komprehenzen slovníků byly synchronizovány s doslovnými slovníky tak, aby "
-"byl klíč vypočítan nejdříve a hodnota za druhé::"
+"Dictionary comprehensions byly synchronizovány s literály slovníků tak, aby "
+"byl klíč vypočítán nejdříve a hodnota za druhé::"
 
 #: ../../whatsnew/3.8.rst:510
 #, python-brace-format
@@ -3801,9 +3801,9 @@ msgid ""
 "iterable expression in the leftmost :keyword:`!for` clause). (Contributed by"
 " Serhiy Storchaka in :issue:`10544`.)"
 msgstr ""
-"Yield vyrazy (jak ``yield``, tak ``yield from`` klauze) jsou nyn zakazany v "
-"komprehenzi a v generatorovych vyrazech (mimo vyraz iterable v leviste "
-":keyword:`!for` klauzi). (Prispela Serhiy Storchaka v :issue:`10544`.)"
+"Výrazy yield (jak ``yield``, tak ``yield from`` klauzule) jsou nyní zakázány "
+"v comprehensions a v generátorových výrazech (mimo výraz iterable v nejlevější "
+":keyword:`!for` klauzuli). (Přispěl Serhiy Storchaka v :issue:`10544`.)"
 
 #: ../../whatsnew/3.8.rst:1823
 msgid ""
@@ -4522,10 +4522,10 @@ msgid ""
 "always evaluated before the value in dictionary comprehensions, as proposed "
 "by :pep:`572`. (Contributed by Jörn Heissler in :issue:`35224`.)"
 msgstr ""
-":opcode:`MAP_ADD` nyn ocekava hodnotu jako prvni prvek v zasobniku a klic "
-"jako druhy prvek. Tato zmena byla provedena tak, aby byl klic vzdy "
-"vyhodnocen pred hodnotou v komprehenzi slovniku, jak je navrhnuto "
-":pep:`572`. (Prispela Jorn Heissler v :issue:`35224`.)"
+":opcode:`MAP_ADD` nyní očekává hodnotu jako první prvek v zásobníku a klíč "
+"jako druhý prvek. Tato změna byla provedena tak, aby byl klíč vždy "
+"vyhodnocen před hodnotou v dictionary comprehension, jak je navrženo "
+":pep:`572`. (Přispěl Jörn Heissler v :issue:`35224`.)"
 
 #: ../../whatsnew/3.8.rst:2178
 msgid "Demos and Tools"
