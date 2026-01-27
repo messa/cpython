@@ -11,21 +11,21 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:2
 msgid "Pending removal in Python 3.16"
-msgstr ""
+msgstr "Bude odstraněno v Pythonu 3.16"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:4
 msgid "The import system:"
-msgstr ""
+msgstr "Systém importování:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:6
 msgid ""
@@ -34,10 +34,14 @@ msgid ""
 "deprecated. In Python 3.16, :attr:`!__loader__` will cease to be set or "
 "taken into consideration by the import system or the standard library."
 msgstr ""
+"Nastavení :attr:`~module.__loader__` na modulu při současném neúspěchu "
+"nastavení :attr:`__spec__.loader <importlib.machinery.ModuleSpec.loader>` je"
+" zastaralé. V Pythonu 3.16 nebude :attr:`!__loader__` nastavován ani brán v "
+"úvahu systémem importování či standardní knihovnou."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:11
 msgid ":mod:`array`:"
-msgstr ""
+msgstr ":mod:`array`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:13
 msgid ""
@@ -45,57 +49,67 @@ msgid ""
 "documentation since Python 3.3 and at runtime since Python 3.13. Use the "
 "``'w'`` format code (:c:type:`Py_UCS4`) for Unicode characters instead."
 msgstr ""
+"Formátovací kód ``'u'`` (:c:type:`wchar_t`) je v dokumentaci zastaralý od "
+"Pythonu 3.3 a za běhu od Pythonu 3.13. Místo něj používejte pro znaky "
+"Unicode formátovací kód ``'w'`` (:c:type:`Py_UCS4`)."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:19
 msgid ":mod:`asyncio`:"
-msgstr ""
+msgstr ":mod:`asyncio`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:21
 msgid ""
-":func:`!asyncio.iscoroutinefunction` is deprecated and will be removed in"
-" Python 3.16; use :func:`inspect.iscoroutinefunction` instead. "
-"(Contributed by Jiahao Li and Kumar Aditya in :gh:`122875`.)"
+":func:`!asyncio.iscoroutinefunction` is deprecated and will be removed in "
+"Python 3.16; use :func:`inspect.iscoroutinefunction` instead. (Contributed "
+"by Jiahao Li and Kumar Aditya in :gh:`122875`.)"
 msgstr ""
+":func:`!asyncio.iscoroutinefunction` je zastaralá a bude odstraněna v "
+"Pythonu 3.16; místo ní používejte :func:`inspect.iscoroutinefunction`. "
+"(Přispěli Jiahao Li a Kumar Aditya v :gh:`122875`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:26
 msgid ""
 ":mod:`asyncio` policy system is deprecated and will be removed in Python "
 "3.16. In particular, the following classes and functions are deprecated:"
 msgstr ""
+"Systém politik :mod:`asyncio` je zastaralý a bude odstraněn v Pythonu 3.16. "
+"Zejména jsou zastaralé následující třídy a funkce:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:29
 msgid ":class:`asyncio.AbstractEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.AbstractEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:30
 msgid ":class:`asyncio.DefaultEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.DefaultEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:31
 msgid ":class:`asyncio.WindowsSelectorEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.WindowsSelectorEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:32
 msgid ":class:`asyncio.WindowsProactorEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`asyncio.WindowsProactorEventLoopPolicy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:33
 msgid ":func:`asyncio.get_event_loop_policy`"
-msgstr ""
+msgstr ":func:`asyncio.get_event_loop_policy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:34
 msgid ":func:`asyncio.set_event_loop_policy`"
-msgstr ""
+msgstr ":func:`asyncio.set_event_loop_policy`"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:36
 msgid ""
 "Users should use :func:`asyncio.run` or :class:`asyncio.Runner` with "
 "*loop_factory* to use the desired event loop implementation."
 msgstr ""
+"Uživatelé by měli používat :func:`asyncio.run` nebo :class:`asyncio.Runner` "
+"s parametrem *loop_factory* pro použití požadované implementace event loop."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:39
 msgid "For example, to use :class:`asyncio.SelectorEventLoop` on Windows::"
-msgstr ""
+msgstr "Například pro použití :class:`asyncio.SelectorEventLoop` na Windows::"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:41
 msgid ""
@@ -106,28 +120,39 @@ msgid ""
 "\n"
 "asyncio.run(main(), loop_factory=asyncio.SelectorEventLoop)"
 msgstr ""
+"import asyncio\n"
+"\n"
+"async def main():\n"
+"    ...\n"
+"\n"
+"asyncio.run(main(), loop_factory=asyncio.SelectorEventLoop)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:48
 msgid "(Contributed by Kumar Aditya in :gh:`127949`.)"
-msgstr ""
+msgstr "(Přispěl Kumar Aditya v :gh:`127949`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:50
 msgid ":mod:`builtins`:"
-msgstr ""
+msgstr ":mod:`builtins`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:52
 msgid ""
 "Bitwise inversion on boolean types, ``~True`` or ``~False`` has been "
 "deprecated since Python 3.12, as it produces surprising and unintuitive "
-"results (``-2`` and ``-1``). Use ``not x`` instead for the logical "
-"negation of a Boolean. In the rare case that you need the bitwise "
-"inversion of the underlying integer, convert to ``int`` explicitly "
-"(``~int(x)``)."
+"results (``-2`` and ``-1``). Use ``not x`` instead for the logical negation "
+"of a Boolean. In the rare case that you need the bitwise inversion of the "
+"underlying integer, convert to ``int`` explicitly (``~int(x)``)."
 msgstr ""
+"Bitová inverze na booleovských typech, ``~True`` nebo ``~False`` je "
+"zastaralá od Pythonu 3.12, protože vytváří překvapivé a neintuitivní "
+"výsledky (``-2`` a ``-1``). Místo toho použijte ``not x`` pro logickou "
+"negaci booleovské hodnoty. Ve vzácných případech, kdy potřebujete bitovou "
+"inverzi podkladového celého čísla, převeďte explicitně na ``int`` "
+"(``~int(x)``)."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:59
 msgid ":mod:`functools`:"
-msgstr ""
+msgstr ":mod:`functools`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:61
 msgid ""
@@ -135,81 +160,100 @@ msgid ""
 "*function* or *sequence* as keyword arguments has been deprecated since "
 "Python 3.14."
 msgstr ""
+"Volání Pythonovské implementace :func:`functools.reduce` s *function* nebo "
+"*sequence* jako pojmenovanými argumenty je zastaralé od Pythonu 3.14."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:64
 msgid ":mod:`logging`:"
-msgstr ""
+msgstr ":mod:`logging`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:66
 msgid ""
-"Support for custom logging handlers with the *strm* argument is "
-"deprecated and scheduled for removal in Python 3.16. Define handlers with"
-" the *stream* argument instead. (Contributed by Mariusz Felisiak in "
-":gh:`115032`.)"
+"Support for custom logging handlers with the *strm* argument is deprecated "
+"and scheduled for removal in Python 3.16. Define handlers with the *stream* "
+"argument instead. (Contributed by Mariusz Felisiak in :gh:`115032`.)"
 msgstr ""
+"Podpora vlastních logovacích handlerů s argumentem *strm* je zastaralá a "
+"plánuje se její odstranění v Pythonu 3.16. Místo toho definujte handlery s "
+"argumentem *stream*. (Přispěl Mariusz Felisiak v :gh:`115032`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:70
 msgid ":mod:`mimetypes`:"
-msgstr ""
+msgstr ":mod:`mimetypes`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:72
 msgid ""
 "Valid extensions start with a '.' or are empty for "
-":meth:`mimetypes.MimeTypes.add_type`. Undotted extensions are deprecated "
-"and will raise a :exc:`ValueError` in Python 3.16. (Contributed by Hugo "
-"van Kemenade in :gh:`75223`.)"
+":meth:`mimetypes.MimeTypes.add_type`. Undotted extensions are deprecated and"
+" will raise a :exc:`ValueError` in Python 3.16. (Contributed by Hugo van "
+"Kemenade in :gh:`75223`.)"
 msgstr ""
+"Platné přípony začínají na '.' nebo jsou prázdné pro "
+":meth:`mimetypes.MimeTypes.add_type`. Přípony bez tečky jsou zastaralé a v "
+"Pythonu 3.16 vyvolá :exc:`ValueError`. (Přispěl Hugo van Kemenade v "
+":gh:`75223`.)"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:78
 msgid ":mod:`shutil`:"
-msgstr ""
+msgstr ":mod:`shutil`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:80
 msgid ""
-"The :class:`!ExecError` exception has been deprecated since Python 3.14. "
-"It has not been used by any function in :mod:`!shutil` since Python 3.4, "
-"and is now an alias of :exc:`RuntimeError`."
+"The :class:`!ExecError` exception has been deprecated since Python 3.14. It "
+"has not been used by any function in :mod:`!shutil` since Python 3.4, and is"
+" now an alias of :exc:`RuntimeError`."
 msgstr ""
+"Výjimka :class:`!ExecError` je zastaralá od Pythonu 3.14. Není používána "
+"žádnou funkcí v :mod:`!shutil` od Pythonu 3.4 a nyní je to alias "
+":exc:`RuntimeError`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:85
 msgid ":mod:`symtable`:"
-msgstr ""
+msgstr ":mod:`symtable`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:87
 msgid ""
-"The :meth:`Class.get_methods <symtable.Class.get_methods>` method has "
-"been deprecated since Python 3.14."
+"The :meth:`Class.get_methods <symtable.Class.get_methods>` method has been "
+"deprecated since Python 3.14."
 msgstr ""
+"Metoda :meth:`Class.get_methods <symtable.Class.get_methods>` je zastaralá "
+"od Pythonu 3.14."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:90
 msgid ":mod:`sys`:"
-msgstr ""
+msgstr ":mod:`sys`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:92
 msgid ""
-"The :func:`~sys._enablelegacywindowsfsencoding` function has been "
-"deprecated since Python 3.13. Use the "
-":envvar:`PYTHONLEGACYWINDOWSFSENCODING` environment variable instead."
+"The :func:`~sys._enablelegacywindowsfsencoding` function has been deprecated"
+" since Python 3.13. Use the :envvar:`PYTHONLEGACYWINDOWSFSENCODING` "
+"environment variable instead."
 msgstr ""
+"Funkce :func:`~sys._enablelegacywindowsfsencoding` je zastaralá od Pythonu "
+"3.13. Místo ní použijte proměnnou prostředí "
+":envvar:`PYTHONLEGACYWINDOWSFSENCODING`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:96
 msgid ":mod:`sysconfig`:"
-msgstr ""
+msgstr ":mod:`sysconfig`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:98
 msgid ""
 "The :func:`!sysconfig.expand_makefile_vars` function has been deprecated "
-"since Python 3.14. Use the ``vars`` argument of "
-":func:`sysconfig.get_paths` instead."
+"since Python 3.14. Use the ``vars`` argument of :func:`sysconfig.get_paths` "
+"instead."
 msgstr ""
+"Funkce :func:`!sysconfig.expand_makefile_vars` je zastaralá od Pythonu 3.14."
+" Místo ní použijte argument ``vars`` funkce :func:`sysconfig.get_paths`."
 
 #: ../../deprecations/pending-removal-in-3.16.rst:102
 msgid ":mod:`tarfile`:"
-msgstr ""
+msgstr ":mod:`tarfile`:"
 
 #: ../../deprecations/pending-removal-in-3.16.rst:104
 msgid ""
 "The undocumented and unused :attr:`!TarFile.tarfile` attribute has been "
 "deprecated since Python 3.13."
 msgstr ""
-
+"Nedokumentovaný a nepoužívaný atribut :attr:`!TarFile.tarfile` je zastaralý "
+"od Pythonu 3.13."

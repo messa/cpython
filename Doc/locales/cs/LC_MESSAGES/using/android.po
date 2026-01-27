@@ -11,17 +11,17 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../using/android.rst:5
 msgid "Using Python on Android"
-msgstr ""
+msgstr "Používání Pythonu na Androidu"
 
 #: ../../using/android.rst:7
 msgid ""
@@ -31,74 +31,99 @@ msgid ""
 "running a :program:`python` executable and entering commands at an "
 "interactive prompt, or by running a Python script."
 msgstr ""
+"Python na Androidu se liší od Pythonu na desktopových platformách. Na "
+"desktopové platformě je Python obecně nainstalovaný jako systémový zdroj, "
+"který může používat každý uživatel daného počítače. Uživatelé pak s Pythonem"
+" pracují spuštěním spustitelného souboru :program:`python` a zadáváním "
+"příkazů na interaktivní příkazové řádce, nebo spuštěním Python skriptu."
 
 #: ../../using/android.rst:13
 msgid ""
-"On Android, there is no concept of installing as a system resource. The "
-"only unit of software distribution is an \"app\". There is also no "
-"console where you could run a :program:`python` executable, or interact "
-"with a Python REPL."
+"On Android, there is no concept of installing as a system resource. The only"
+" unit of software distribution is an \"app\". There is also no console where"
+" you could run a :program:`python` executable, or interact with a Python "
+"REPL."
 msgstr ""
+"Na Androidu neexistuje koncept instalace jako systémový zdroj. Jedinou "
+"jednotkou distribuce softwaru je „aplikace“. Neexistuje zde ani konzole, kde"
+" byste mohli spustit spustitelný soubor :program:`python` nebo pracovat s "
+"Python REPL."
 
 #: ../../using/android.rst:17
 msgid ""
-"As a result, the only way you can use Python on Android is in embedded "
-"mode – that is, by writing a native Android application, embedding a "
-"Python interpreter using ``libpython``, and invoking Python code using "
-"the :ref:`Python embedding API <embedding>`. The full Python interpreter,"
-" the standard library, and all your Python code is then packaged into "
-"your app for its own private use."
+"As a result, the only way you can use Python on Android is in embedded mode "
+"– that is, by writing a native Android application, embedding a Python "
+"interpreter using ``libpython``, and invoking Python code using the "
+":ref:`Python embedding API <embedding>`. The full Python interpreter, the "
+"standard library, and all your Python code is then packaged into your app "
+"for its own private use."
 msgstr ""
+"V důsledku toho je jediný způsob, jak můžete používat Python na Androidu, "
+"vestavěný režim – to znamená napsaním nativní Android aplikace, vestavením "
+"Python interpreteru pomocí ``libpython`` a vyvoláním Python kódu pomocí "
+":ref:`Python embedding API <embedding>`. Kompletní Python interpret, "
+"standardní knihovna a celý váš Python kód je pak zabalen do vaší aplikace "
+"pro její vlastní soukromé použití."
 
 #: ../../using/android.rst:23
 msgid ""
-"The Python standard library has some notable omissions and restrictions "
-"on Android. See the :ref:`API availability guide <mobile-availability>` "
-"for details."
+"The Python standard library has some notable omissions and restrictions on "
+"Android. See the :ref:`API availability guide <mobile-availability>` for "
+"details."
 msgstr ""
+"Standardní knihovna Pythonu má na Androidu některá významná vynechání a "
+"omezení. Podrobnosti viz :ref:`průvodce dostupností API <mobile-"
+"availability>`."
 
 #: ../../using/android.rst:28
 msgid "Adding Python to an Android app"
-msgstr ""
+msgstr "Přidání Pythonu do Android aplikace"
 
 #: ../../using/android.rst:30
 msgid ""
 "Most app developers should use one of the following tools, which will "
 "provide a much easier experience:"
 msgstr ""
+"Většina vývojářů aplikací by měla použít jeden z následujících nástrojů, "
+"které poskytnou mnohem jednodušší zážitek:"
 
 #: ../../using/android.rst:33
-msgid "`Briefcase <https://briefcase.readthedocs.io>`__, from the BeeWare project"
-msgstr ""
+msgid ""
+"`Briefcase <https://briefcase.readthedocs.io>`__, from the BeeWare project"
+msgstr "`Briefcase <https://briefcase.readthedocs.io>`__ z projektu BeeWare"
 
 #: ../../using/android.rst:34
-msgid "`Buildozer <https://buildozer.readthedocs.io>`__, from the Kivy project"
-msgstr ""
+msgid ""
+"`Buildozer <https://buildozer.readthedocs.io>`__, from the Kivy project"
+msgstr "`Buildozer <https://buildozer.readthedocs.io>`__ z projektu Kivy"
 
 #: ../../using/android.rst:35
 msgid "`Chaquopy <https://chaquo.com/chaquopy>`__"
-msgstr ""
+msgstr "`Chaquopy <https://chaquo.com/chaquopy>`__"
 
 #: ../../using/android.rst:36
 msgid ""
-"`pyqtdeploy "
-"<https://www.riverbankcomputing.com/static/Docs/pyqtdeploy/>`__"
+"`pyqtdeploy <https://www.riverbankcomputing.com/static/Docs/pyqtdeploy/>`__"
 msgstr ""
+"`pyqtdeploy <https://www.riverbankcomputing.com/static/Docs/pyqtdeploy/>`__"
 
 #: ../../using/android.rst:37
 msgid "`Termux <https://termux.dev/en/>`__"
-msgstr ""
+msgstr "`Termux <https://termux.dev/en/>`__"
 
 #: ../../using/android.rst:39
 msgid ""
-"If you're sure you want to do all of this manually, read on. You can use "
-"the :source:`testbed app <Android/testbed>` as a guide; each step below "
+"If you're sure you want to do all of this manually, read on. You can use the"
+" :source:`testbed app <Android/testbed>` as a guide; each step below "
 "contains a link to the relevant file."
 msgstr ""
+"Pokud si jste jistí, že chcete všechno dělat ručně, čtěte dál. Můžete použít"
+" :source:`testbed aplikaci <Android/testbed>` jako průvodce; každý krok níže"
+" obsahuje odkaz na příslušný soubor."
 
 #: ../../using/android.rst:43
 msgid "First, acquire a build of Python for Android:"
-msgstr ""
+msgstr "Nejprve získejte sestavení Pythonu pro Android:"
 
 #: ../../using/android.rst:45
 msgid ""
@@ -106,14 +131,20 @@ msgid ""
 "<https://www.python.org/downloads/android/>`__. The ``prefix`` directory "
 "mentioned below is at the top level of the package."
 msgstr ""
+"Nejjednodušší způsob je stáhnout Android release z `python.org "
+"<https://www.python.org/downloads/android/>`__. Adresář ``prefix`` zmíněný "
+"níže se nachází na nejvyšší úrovni balíčku."
 
 #: ../../using/android.rst:49
 #, python-brace-format
 msgid ""
 "Or if you want to build it yourself, follow the instructions in "
-":source:`Android/README.md`. The ``prefix`` directory will be created "
-"under :samp:`cross-build/{HOST}`."
+":source:`Android/README.md`. The ``prefix`` directory will be created under "
+":samp:`cross-build/{HOST}`."
 msgstr ""
+"Nebo pokud to chcete sestavit sami, postupujte podle pokynů v "
+":source:`Android/README.md`. Adresář ``prefix`` bude vytvořen v "
+":samp:`cross-build/{HOST}`."
 
 #: ../../using/android.rst:53
 msgid ""
@@ -156,8 +187,8 @@ msgstr ""
 #: ../../using/android.rst:70
 msgid ""
 "Add code to your app to :source:`start Python in embedded mode "
-"<Android/testbed/app/src/main/c/main_activity.c>`. This will need to be C"
-" code called via JNI."
+"<Android/testbed/app/src/main/c/main_activity.c>`. This will need to be C "
+"code called via JNI."
 msgstr ""
 
 #: ../../using/android.rst:75
@@ -166,10 +197,9 @@ msgstr ""
 
 #: ../../using/android.rst:77
 msgid ""
-"Python packages can be built for Android as wheels and released on PyPI. "
-"The recommended tool for doing this is `cibuildwheel "
+"Python packages can be built for Android as wheels and released on PyPI. The"
+" recommended tool for doing this is `cibuildwheel "
 "<https://cibuildwheel.pypa.io/en/stable/platforms/#android>`__, which "
 "automates all the details of setting up a cross-compilation environment, "
 "building the wheel, and testing it on an emulator."
 msgstr ""
-

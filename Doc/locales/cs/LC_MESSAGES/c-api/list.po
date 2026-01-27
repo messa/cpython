@@ -11,102 +11,130 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/list.rst:6
 msgid "List Objects"
-msgstr ""
+msgstr "Objekty seznamu"
 
 #: ../../c-api/list.rst:13
 msgid "This subtype of :c:type:`PyObject` represents a Python list object."
 msgstr ""
+"Tento podtyp :c:type:`PyObject` reprezentuje objekt seznamu v Pythonu."
 
 #: ../../c-api/list.rst:18
 msgid ""
 "This instance of :c:type:`PyTypeObject` represents the Python list type. "
 "This is the same object as :class:`list` in the Python layer."
 msgstr ""
+"Tato instance :c:type:`PyTypeObject` reprezentuje typ seznamu v Pythonu. Je "
+"to stejný objekt jako :class:`list` v Python vrstvě."
 
 #: ../../c-api/list.rst:24
 msgid ""
-"Return true if *p* is a list object or an instance of a subtype of the "
-"list type.  This function always succeeds."
+"Return true if *p* is a list object or an instance of a subtype of the list "
+"type.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud *p* je objekt seznamu nebo instance podtypu typu seznamu. "
+"Tato funkce vždy uspěje."
 
 #: ../../c-api/list.rst:30
 msgid ""
-"Return true if *p* is a list object, but not an instance of a subtype of "
-"the list type.  This function always succeeds."
+"Return true if *p* is a list object, but not an instance of a subtype of the"
+" list type.  This function always succeeds."
 msgstr ""
+"Vrací true, pokud *p* je objekt seznamu, ale není instancí podtypu typu "
+"seznamu. Tato funkce vždy uspěje."
 
 #: ../../c-api/list.rst:36
 msgid "Return a new list of length *len* on success, or ``NULL`` on failure."
-msgstr ""
+msgstr "Vrací nový seznam délky *len* při úspěchu, nebo ``NULL`` při selhání."
 
 #: ../../c-api/list.rst:40
 msgid ""
-"If *len* is greater than zero, the returned list object's items are set "
-"to ``NULL``. Thus you cannot use abstract API functions such as "
+"If *len* is greater than zero, the returned list object's items are set to "
+"``NULL``. Thus you cannot use abstract API functions such as "
 ":c:func:`PySequence_SetItem` or expose the object to Python code before "
 "setting all items to a real object with :c:func:`PyList_SetItem` or "
 ":c:func:`PyList_SET_ITEM()`. The following APIs are safe APIs before the "
 "list is fully initialized: :c:func:`PyList_SetItem()` and "
 ":c:func:`PyList_SET_ITEM()`."
 msgstr ""
+"Pokud je *len* větší než nula, prvky vráceného objektu seznamu jsou "
+"nastaveny na ``NULL``. Proto nemůžete použít funkce abstraktního API jako "
+":c:func:`PySequence_SetItem` nebo vystavit objekt kódu Pythonu předtím, než "
+"nastavíte všechny prvky na skutečný objekt pomocí :c:func:`PyList_SetItem` "
+"nebo :c:func:`PyList_SET_ITEM()`. Následující API jsou bezpečná před úplným "
+"inicializováním seznamu: :c:func:`PyList_SetItem()` a "
+":c:func:`PyList_SET_ITEM()`."
 
 #: ../../c-api/list.rst:53
 msgid ""
 "Return the length of the list object in *list*; this is equivalent to "
 "``len(list)`` on a list object."
 msgstr ""
+"Vrací délku objektu seznamu v *list*; je to ekvivalent ``len(list)`` na "
+"objektu seznamu."
 
 #: ../../c-api/list.rst:59
 msgid "Similar to :c:func:`PyList_Size`, but without error checking."
-msgstr ""
+msgstr "Podobné jako :c:func:`PyList_Size`, ale bez kontroly chyb."
 
 #: ../../c-api/list.rst:64
 msgid ""
-"Return the object at position *index* in the list pointed to by *list*.  "
-"The position must be non-negative; indexing from the end of the list is "
-"not supported.  If *index* is out of bounds (:code:`<0 or >=len(list)`), "
-"return ``NULL`` and set an :exc:`IndexError` exception."
+"Return the object at position *index* in the list pointed to by *list*.  The"
+" position must be non-negative; indexing from the end of the list is not "
+"supported.  If *index* is out of bounds (:code:`<0 or >=len(list)`), return "
+"``NULL`` and set an :exc:`IndexError` exception."
 msgstr ""
+"Vrací objekt na pozici *index* v seznamu, na který ukazuje *list*. Pozice "
+"musí být nezáporná; indexování od konce seznamu není podporováno. Pokud je "
+"*index* mimo meze (:code:`<0 or >=len(list)`), vrací ``NULL`` a nastavuje "
+"výjimku :exc:`IndexError`."
 
 #: ../../c-api/list.rst:74
 msgid ""
-"Like :c:func:`PyList_GetItemRef`, but returns a :term:`borrowed "
-"reference` instead of a :term:`strong reference`."
+"Like :c:func:`PyList_GetItemRef`, but returns a :term:`borrowed reference` "
+"instead of a :term:`strong reference`."
 msgstr ""
+"Podobné jako :c:func:`PyList_GetItemRef`, ale vrací :term:`borrowed "
+"reference` místo :term:`strong reference`."
 
 #: ../../c-api/list.rst:80
 msgid "Similar to :c:func:`PyList_GetItem`, but without error checking."
-msgstr ""
+msgstr "Podobné jako :c:func:`PyList_GetItem`, ale bez kontroly chyb."
 
 #: ../../c-api/list.rst:85
 msgid ""
-"Set the item at index *index* in list to *item*.  Return ``0`` on "
-"success. If *index* is out of bounds, return ``-1`` and set an "
-":exc:`IndexError` exception."
+"Set the item at index *index* in list to *item*.  Return ``0`` on success. "
+"If *index* is out of bounds, return ``-1`` and set an :exc:`IndexError` "
+"exception."
 msgstr ""
+"Nastaví prvek na indexu *index* v seznamu na *item*. Vrací ``0`` při "
+"úspěchu. Pokud je *index* mimo meze, vrací ``-1`` a nastavuje výjimku "
+":exc:`IndexError`."
 
 #: ../../c-api/list.rst:91
 msgid ""
-"This function \"steals\" a reference to *item* and discards a reference "
-"to an item already in the list at the affected position."
+"This function \"steals\" a reference to *item* and discards a reference to "
+"an item already in the list at the affected position."
 msgstr ""
+"Tato funkce „odcizí“ referenci na *item* a zahoď prvek již v seznamu na "
+"příslušné pozici."
 
 #: ../../c-api/list.rst:97
 msgid ""
 "Macro form of :c:func:`PyList_SetItem` without error checking. This is "
-"normally only used to fill in new lists where there is no previous "
-"content."
+"normally only used to fill in new lists where there is no previous content."
 msgstr ""
+"Makro verze :c:func:`PyList_SetItem` bez kontroly chyb. Normálně se používá "
+"pouze k vyplnění nových seznamů, kde není žádný předchozí obsah."
 
 #: ../../c-api/list.rst:100
 msgid ""
@@ -114,45 +142,62 @@ msgid ""
 ":ref:`debug mode <debug-build>` or :option:`with assertions <--with-"
 "assertions>`."
 msgstr ""
+"Kontrola mezi se provádí jako assert, pokud je Python sestaven v :ref:`debug"
+" režimu <debug-build>` nebo :option:`s asserty <--with-assertions>`."
 
 #: ../../c-api/list.rst:106
 msgid ""
 "This macro \"steals\" a reference to *item*, and, unlike "
-":c:func:`PyList_SetItem`, does *not* discard a reference to any item that"
-" is being replaced; any reference in *list* at position *i* will be "
-"leaked."
+":c:func:`PyList_SetItem`, does *not* discard a reference to any item that is"
+" being replaced; any reference in *list* at position *i* will be leaked."
 msgstr ""
+"Toto makro „odcizí“ referenci na *item*, a na rozdíl od "
+":c:func:`PyList_SetItem` *nezahazuje* referenci na žádný prvek, který je "
+"nahrazován; jakákoliv reference v *list* na pozici *i* bude uniknutá."
 
 #: ../../c-api/list.rst:114
 msgid ""
-"Insert the item *item* into list *list* in front of index *index*.  "
-"Return ``0`` if successful; return ``-1`` and set an exception if "
-"unsuccessful. Analogous to ``list.insert(index, item)``."
+"Insert the item *item* into list *list* in front of index *index*.  Return "
+"``0`` if successful; return ``-1`` and set an exception if unsuccessful. "
+"Analogous to ``list.insert(index, item)``."
 msgstr ""
+"Vloží prvek *item* do seznamu *list* před index *index*. Vrací ``0`` při "
+"úspěchu; vrací ``-1`` a nastavuje výjimku při neúspěchu. Analogické k "
+"``list.insert(index, item)``."
 
 #: ../../c-api/list.rst:121
 msgid ""
 "Append the object *item* at the end of list *list*. Return ``0`` if "
-"successful; return ``-1`` and set an exception if unsuccessful.  "
-"Analogous to ``list.append(item)``."
+"successful; return ``-1`` and set an exception if unsuccessful.  Analogous "
+"to ``list.append(item)``."
 msgstr ""
+"Přidá objekt *item* na konec seznamu *list*. Vrací ``0`` při úspěchu; vrací "
+"``-1`` a nastavuje výjimku při neúspěchu. Analogické k "
+"``list.append(item)``."
 
 #: ../../c-api/list.rst:128
 msgid ""
 "Return a list of the objects in *list* containing the objects *between* "
-"*low* and *high*.  Return ``NULL`` and set an exception if unsuccessful."
-"  Analogous to ``list[low:high]``.  Indexing from the end of the list is "
-"not supported."
+"*low* and *high*.  Return ``NULL`` and set an exception if unsuccessful.  "
+"Analogous to ``list[low:high]``.  Indexing from the end of the list is not "
+"supported."
 msgstr ""
+"Vrací seznam objektů v *list* obsahujících objekty *mezi* *low* a *high*. "
+"Vrací ``NULL`` a nastavuje výjimku při neúspěchu. Analogické k "
+"``list[low:high]``. Indexování od konce seznamu není podporováno."
 
 #: ../../c-api/list.rst:135
 msgid ""
 "Set the slice of *list* between *low* and *high* to the contents of "
-"*itemlist*.  Analogous to ``list[low:high] = itemlist``. The *itemlist* "
-"may be ``NULL``, indicating the assignment of an empty list (slice "
-"deletion). Return ``0`` on success, ``-1`` on failure.  Indexing from the"
-" end of the list is not supported."
+"*itemlist*.  Analogous to ``list[low:high] = itemlist``. The *itemlist* may "
+"be ``NULL``, indicating the assignment of an empty list (slice deletion). "
+"Return ``0`` on success, ``-1`` on failure.  Indexing from the end of the "
+"list is not supported."
 msgstr ""
+"Nastavuje řez *list* mezi *low* a *high* na obsah *itemlist*. Analogické k "
+"``list[low:high] = itemlist``. *itemlist* může být ``NULL``, což znamená "
+"přiřazení prázdného seznamu (smazání řezu). Vrací ``0`` při úspěchu, ``-1`` "
+"při selhání. Indexování od konce seznamu není podporováno."
 
 #: ../../c-api/list.rst:144
 msgid ""
@@ -160,61 +205,75 @@ msgid ""
 "``PyList_SetSlice(list, PY_SSIZE_T_MAX, PY_SSIZE_T_MAX, iterable)`` and "
 "analogous to ``list.extend(iterable)`` or ``list += iterable``."
 msgstr ""
+"Rozšiřuje *list* o obsah *iterable*. Je to stejné jako "
+"``PyList_SetSlice(list, PY_SSIZE_T_MAX, PY_SSIZE_T_MAX, iterable)`` a "
+"analogické k ``list.extend(iterable)`` nebo ``list += iterable``."
 
 #: ../../c-api/list.rst:148
 msgid ""
 "Raise an exception and return ``-1`` if *list* is not a :class:`list` "
 "object. Return 0 on success."
 msgstr ""
+"Vyvoluje výjimku a vrací ``-1``, pokud *list* není objekt :class:`list`. "
+"Vrací 0 při úspěchu."
 
 #: ../../c-api/list.rst:156
 msgid ""
-"Remove all items from *list*.  This is the same as "
-"``PyList_SetSlice(list, 0, PY_SSIZE_T_MAX, NULL)`` and analogous to "
-"``list.clear()`` or ``del list[:]``."
+"Remove all items from *list*.  This is the same as ``PyList_SetSlice(list, "
+"0, PY_SSIZE_T_MAX, NULL)`` and analogous to ``list.clear()`` or ``del "
+"list[:]``."
 msgstr ""
+"Odstraní všechny prvky z *list*. Je to stejné jako ``PyList_SetSlice(list, "
+"0, PY_SSIZE_T_MAX, NULL)`` a analogické k ``list.clear()`` nebo ``del "
+"list[:]``."
 
 #: ../../c-api/list.rst:160
 msgid ""
 "Raise an exception and return ``-1`` if *list* is not a :class:`list` "
 "object.  Return 0 on success."
 msgstr ""
+"Vyvoluje výjimku a vrací ``-1``, pokud *list* není objekt :class:`list`. "
+"Vrací 0 při úspěchu."
 
 #: ../../c-api/list.rst:168
 msgid ""
 "Sort the items of *list* in place.  Return ``0`` on success, ``-1`` on "
 "failure.  This is equivalent to ``list.sort()``."
 msgstr ""
+"Setřídí prvky *list* na místě. Vrací ``0`` při úspěchu, ``-1`` při selhání. "
+"Je to ekvivalent ``list.sort()``."
 
 #: ../../c-api/list.rst:174
 msgid ""
-"Reverse the items of *list* in place.  Return ``0`` on success, ``-1`` on"
-" failure.  This is the equivalent of ``list.reverse()``."
+"Reverse the items of *list* in place.  Return ``0`` on success, ``-1`` on "
+"failure.  This is the equivalent of ``list.reverse()``."
 msgstr ""
+"Obrátí prvky *list* na místě. Vrací ``0`` při úspěchu, ``-1`` při selhání. "
+"Je to ekvivalent ``list.reverse()``."
 
 #: ../../c-api/list.rst:182
 msgid ""
-"Return a new tuple object containing the contents of *list*; equivalent "
-"to ``tuple(list)``."
+"Return a new tuple object containing the contents of *list*; equivalent to "
+"``tuple(list)``."
 msgstr ""
+"Vrací nový objekt tuple obsahující obsah *list*; ekvivalent ``tuple(list)``."
 
 #: ../../c-api/list.rst:8
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ../../c-api/list.rst:8
 msgid "list"
-msgstr ""
+msgstr "seznam"
 
 #: ../../c-api/list.rst:51 ../../c-api/list.rst:180
 msgid "built-in function"
-msgstr ""
+msgstr "vestavná funkce"
 
 #: ../../c-api/list.rst:51
 msgid "len"
-msgstr ""
+msgstr "len"
 
 #: ../../c-api/list.rst:180
 msgid "tuple"
-msgstr ""
-
+msgstr "tuple"

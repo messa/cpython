@@ -11,48 +11,57 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../c-api/curses.rst:4
 msgid "Curses C API"
-msgstr ""
+msgstr "Curses C API"
 
 #: ../../c-api/curses.rst:6
 msgid ""
-":mod:`curses` exposes a small C interface for extension modules. "
-"Consumers must include the header file :file:`py_curses.h` (which is not "
-"included by default by :file:`Python.h`) and :c:func:`import_curses` must"
-" be invoked, usually as part of the module initialisation function, to "
-"populate :c:var:`PyCurses_API`."
+":mod:`curses` exposes a small C interface for extension modules. Consumers "
+"must include the header file :file:`py_curses.h` (which is not included by "
+"default by :file:`Python.h`) and :c:func:`import_curses` must be invoked, "
+"usually as part of the module initialisation function, to populate "
+":c:var:`PyCurses_API`."
 msgstr ""
+":mod:`curses` poskytuje malé C rozhraní pro rozšiřující moduly. Uživatelé "
+"musí zahrnout hlavičkový soubor :file:`py_curses.h` (který není standardně "
+"zahrnut v :file:`Python.h`) a :c:func:`import_curses` musí být vyvolána, "
+"obvykle jako část inicializační funkce modulu, aby se naplnil "
+":c:var:`PyCurses_API`."
 
 #: ../../c-api/curses.rst:14
 msgid ""
-"Neither the C API nor the pure Python :mod:`curses` module are compatible"
-" with subinterpreters."
+"Neither the C API nor the pure Python :mod:`curses` module are compatible "
+"with subinterpreters."
 msgstr ""
+"Ani C API ani čistě pythonový modul :mod:`curses` nejsou kompatibilní se "
+"subinterpretry."
 
 #: ../../c-api/curses.rst:19
 msgid ""
-"Import the curses C API. The macro does not need a semi-colon to be "
-"called."
-msgstr ""
+"Import the curses C API. The macro does not need a semi-colon to be called."
+msgstr "Importuje curses C API. Makro nepotřebuje středník pro své zavolání."
 
 #: ../../c-api/curses.rst:21
 msgid "On success, populate the :c:var:`PyCurses_API` pointer."
-msgstr ""
+msgstr "Při úspěchu naplní ukazatel :c:var:`PyCurses_API`."
 
 #: ../../c-api/curses.rst:23
 msgid ""
 "On failure, set :c:var:`PyCurses_API` to NULL and set an exception. The "
 "caller must check if an error occurred via :c:func:`PyErr_Occurred`:"
 msgstr ""
+"Při selhání nastaví :c:var:`PyCurses_API` na NULL a nastaví výjimku. "
+"Volající musí zkontrolovat, zda došlo k chybě pomocí "
+":c:func:`PyErr_Occurred`:"
 
 #: ../../c-api/curses.rst:26
 #, python-brace-format
@@ -60,22 +69,28 @@ msgid ""
 "import_curses();  // semi-colon is optional but recommended\n"
 "if (PyErr_Occurred()) { /* cleanup */ }"
 msgstr ""
+"import_curses();  // středník je volitelný, ale doporučený\n"
+"if (PyErr_Occurred()) { /* cleanup */ }"
 
 #: ../../c-api/curses.rst:34
 msgid ""
-"Dynamically allocated object containing the curses C API. This variable "
-"is only available once :c:macro:`import_curses` succeeds."
+"Dynamically allocated object containing the curses C API. This variable is "
+"only available once :c:macro:`import_curses` succeeds."
 msgstr ""
+"Dynamicky alokovaný objekt obsahující curses C API. Tato proměnná je "
+"dostupná pouze po úspěšném zavolání :c:macro:`import_curses`."
 
 #: ../../c-api/curses.rst:37
 msgid "``PyCurses_API[0]`` corresponds to :c:data:`PyCursesWindow_Type`."
-msgstr ""
+msgstr "``PyCurses_API[0]`` odpovídá :c:data:`PyCursesWindow_Type`."
 
 #: ../../c-api/curses.rst:39
 msgid ""
 "``PyCurses_API[1]``, ``PyCurses_API[2]``, and ``PyCurses_API[3]`` are "
 "pointers to predicate functions of type ``int (*)(void)``."
 msgstr ""
+"``PyCurses_API[1]``, ``PyCurses_API[2]`` a ``PyCurses_API[3]`` jsou "
+"ukazatele na predikátové funkce typu ``int (*)(void)``."
 
 #: ../../c-api/curses.rst:42
 msgid ""
@@ -83,49 +98,64 @@ msgid ""
 ":func:`curses.initscr`, and :func:`curses.start_color` have been called "
 "respectively."
 msgstr ""
+"Při zavolání tyto predikáty vrací, zda byly zavolány "
+":func:`curses.setupterm`, :func:`curses.initscr` a "
+":func:`curses.start_color`."
 
 #: ../../c-api/curses.rst:46
 msgid ""
 "See also the convenience macros :c:macro:`PyCursesSetupTermCalled`, "
 ":c:macro:`PyCursesInitialised`, and :c:macro:`PyCursesInitialisedColor`."
 msgstr ""
+"Viz také užitečná makra :c:macro:`PyCursesSetupTermCalled`, "
+":c:macro:`PyCursesInitialised` a :c:macro:`PyCursesInitialisedColor`."
 
 #: ../../c-api/curses.rst:51
 msgid ""
 "The number of entries in this structure is subject to changes. Consider "
-"using :c:macro:`PyCurses_API_pointers` to check if new fields are "
-"available or not."
+"using :c:macro:`PyCurses_API_pointers` to check if new fields are available "
+"or not."
 msgstr ""
+"Počet položek v této struktuře se může měnit. Zvažte použití "
+":c:macro:`PyCurses_API_pointers` ke kontrole, zda jsou dostupná nová pole."
 
 #: ../../c-api/curses.rst:58
 msgid ""
 "The number of accessible fields (``4``) in :c:var:`PyCurses_API`. This "
 "number is incremented whenever new fields are added."
 msgstr ""
+"Počet přístupných polí (``4``) v :c:var:`PyCurses_API`. Toto číslo se "
+"zvyšuje, když jsou přidána nová pole."
 
 #: ../../c-api/curses.rst:64
-msgid "The :ref:`heap type <heap-types>` corresponding to :class:`curses.window`."
-msgstr ""
+msgid ""
+"The :ref:`heap type <heap-types>` corresponding to :class:`curses.window`."
+msgstr ":ref:`Heap typ <heap-types>` odpovídající :class:`curses.window`."
 
 #: ../../c-api/curses.rst:69
-msgid "Return true if *op* is a :class:`curses.window` instance, false otherwise."
+msgid ""
+"Return true if *op* is a :class:`curses.window` instance, false otherwise."
 msgstr ""
+"Vrátí true, pokud *op* je instance :class:`curses.window`, jinak false."
 
 #: ../../c-api/curses.rst:72
 msgid ""
-"The following macros are convenience macros expanding into C statements. "
-"In particular, they can only be used as ``macro;`` or ``macro``, but not "
+"The following macros are convenience macros expanding into C statements. In "
+"particular, they can only be used as ``macro;`` or ``macro``, but not "
 "``macro()`` or ``macro();``."
 msgstr ""
+"Následující makra jsou užitečná makra expandující se do C příkazů. Zejména "
+"je lze použít pouze jako ``macro;`` nebo ``macro``, ale ne ``macro()`` nebo "
+"``macro();``."
 
 #: ../../c-api/curses.rst:78
 msgid "Macro checking if :func:`curses.setupterm` has been called."
-msgstr ""
+msgstr "Makro kontrolující, zda bylo zavoláno :func:`curses.setupterm`."
 
 #: ../../c-api/curses.rst:80 ../../c-api/curses.rst:97
 #: ../../c-api/curses.rst:114
 msgid "The macro expansion is roughly equivalent to:"
-msgstr ""
+msgstr "Expanze makra je přibližně ekvivalentní:"
 
 #: ../../c-api/curses.rst:82
 msgid ""
@@ -137,10 +167,17 @@ msgid ""
 "    }\n"
 "}"
 msgstr ""
+"{\n"
+"    typedef int (*predicate_t)(void);\n"
+"    predicate_t was_setupterm_called = (predicate_t)PyCurses_API[1];\n"
+"    if (!was_setupterm_called()) {\n"
+"        return NULL;\n"
+"    }\n"
+"}"
 
 #: ../../c-api/curses.rst:95
 msgid "Macro checking if :func:`curses.initscr` has been called."
-msgstr ""
+msgstr "Makro kontrolující, zda bylo zavoláno :func:`curses.initscr`."
 
 #: ../../c-api/curses.rst:99
 msgid ""
@@ -152,10 +189,17 @@ msgid ""
 "    }\n"
 "}"
 msgstr ""
+"{\n"
+"    typedef int (*predicate_t)(void);\n"
+"    predicate_t was_initscr_called = (predicate_t)PyCurses_API[2];\n"
+"    if (!was_initscr_called()) {\n"
+"        return NULL;\n"
+"    }\n"
+"}"
 
 #: ../../c-api/curses.rst:112
 msgid "Macro checking if :func:`curses.start_color` has been called."
-msgstr ""
+msgstr "Makro kontrolující, zda bylo zavoláno :func:`curses.start_color`."
 
 #: ../../c-api/curses.rst:116
 msgid ""
@@ -167,22 +211,31 @@ msgid ""
 "    }\n"
 "}"
 msgstr ""
+"{\n"
+"    typedef int (*predicate_t)(void);\n"
+"    predicate_t was_start_color_called = (predicate_t)PyCurses_API[3];\n"
+"    if (!was_start_color_called()) {\n"
+"        return NULL;\n"
+"    }\n"
+"}"
 
 #: ../../c-api/curses.rst:128
 msgid "Internal data"
-msgstr ""
+msgstr "Interní data"
 
 #: ../../c-api/curses.rst:130
 msgid ""
 "The following objects are exposed by the C API but should be considered "
 "internal-only."
 msgstr ""
+"Následující objekty jsou poskytovány C API, ale měly by být považovány pouze"
+" za interní."
 
 #: ../../c-api/curses.rst:135
 msgid "Name of the curses capsule to pass to :c:func:`PyCapsule_Import`."
-msgstr ""
+msgstr "Název curses capsule pro předání do :c:func:`PyCapsule_Import`."
 
 #: ../../c-api/curses.rst:137
 msgid "Internal usage only. Use :c:macro:`import_curses` instead."
 msgstr ""
-
+"Pouze pro interní použití. Místo toho použijte :c:macro:`import_curses`."

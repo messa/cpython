@@ -11,88 +11,107 @@ msgstr ""
 "POT-Creation-Date: 2026-01-02 17:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
 "Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:2
 msgid "Pending removal in Python 3.14"
-msgstr ""
+msgstr "Bude odstraněno v Pythonu 3.14"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:4
 msgid ""
 ":mod:`argparse`: The *type*, *choices*, and *metavar* parameters of "
-":class:`!argparse.BooleanOptionalAction` are deprecated and will be "
-"removed in 3.14. (Contributed by Nikita Sobolev in :gh:`92248`.)"
+":class:`!argparse.BooleanOptionalAction` are deprecated and will be removed "
+"in 3.14. (Contributed by Nikita Sobolev in :gh:`92248`.)"
 msgstr ""
+":mod:`argparse`: Parametry *type*, *choices* a *metavar* třídy "
+":class:`!argparse.BooleanOptionalAction` jsou zastaralé a budou odstraněny "
+"ve verzi 3.14. (Přispěl Nikita Sobolev v :gh:`92248`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:9
 msgid ""
 ":mod:`ast`: The following features have been deprecated in documentation "
 "since Python 3.8, now cause a :exc:`DeprecationWarning` to be emitted at "
-"runtime when they are accessed or used, and will be removed in Python "
-"3.14:"
+"runtime when they are accessed or used, and will be removed in Python 3.14:"
 msgstr ""
+":mod:`ast`: Následující funkce jsou od Pythonu 3.8 označeny v dokumentaci "
+"jako zastaralé, nyní při přístupu nebo použití vyvolávají "
+":exc:`DeprecationWarning` a budou odstraněny v Pythonu 3.14:"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:13
 msgid ":class:`!ast.Num`"
-msgstr ""
+msgstr ":class:`!ast.Num`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:14
 msgid ":class:`!ast.Str`"
-msgstr ""
+msgstr ":class:`!ast.Str`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:15
 msgid ":class:`!ast.Bytes`"
-msgstr ""
+msgstr ":class:`!ast.Bytes`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:16
 msgid ":class:`!ast.NameConstant`"
-msgstr ""
+msgstr ":class:`!ast.NameConstant`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:17
 msgid ":class:`!ast.Ellipsis`"
-msgstr ""
+msgstr ":class:`!ast.Ellipsis`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:19
 msgid ""
 "Use :class:`ast.Constant` instead. (Contributed by Serhiy Storchaka in "
 ":gh:`90953`.)"
 msgstr ""
+"Místo toho použijte :class:`ast.Constant`. (Přispěl Serhiy Storchaka v "
+":gh:`90953`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:22
 msgid ":mod:`asyncio`:"
-msgstr ""
+msgstr ":mod:`asyncio`:"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:24
 msgid ""
 "The child watcher classes :class:`!asyncio.MultiLoopChildWatcher`, "
-":class:`!asyncio.FastChildWatcher`, "
-":class:`!asyncio.AbstractChildWatcher` and "
-":class:`!asyncio.SafeChildWatcher` are deprecated and will be removed in "
-"Python 3.14. (Contributed by Kumar Aditya in :gh:`94597`.)"
+":class:`!asyncio.FastChildWatcher`, :class:`!asyncio.AbstractChildWatcher` "
+"and :class:`!asyncio.SafeChildWatcher` are deprecated and will be removed in"
+" Python 3.14. (Contributed by Kumar Aditya in :gh:`94597`.)"
 msgstr ""
+"Třídy pozorovatelů potomků :class:`!asyncio.MultiLoopChildWatcher`, "
+":class:`!asyncio.FastChildWatcher`, :class:`!asyncio.AbstractChildWatcher` a"
+" :class:`!asyncio.SafeChildWatcher` jsou zastaralé a budou odstraněny v "
+"Pythonu 3.14. (Přispěl Kumar Aditya v :gh:`94597`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:30
 msgid ""
 ":func:`!asyncio.set_child_watcher`, :func:`!asyncio.get_child_watcher`, "
 ":meth:`!asyncio.AbstractEventLoopPolicy.set_child_watcher` and "
-":meth:`!asyncio.AbstractEventLoopPolicy.get_child_watcher` are deprecated"
-" and will be removed in Python 3.14. (Contributed by Kumar Aditya in "
+":meth:`!asyncio.AbstractEventLoopPolicy.get_child_watcher` are deprecated "
+"and will be removed in Python 3.14. (Contributed by Kumar Aditya in "
 ":gh:`94597`.)"
 msgstr ""
+"Funkce :func:`!asyncio.set_child_watcher`, "
+":func:`!asyncio.get_child_watcher`, "
+":meth:`!asyncio.AbstractEventLoopPolicy.set_child_watcher` a "
+":meth:`!asyncio.AbstractEventLoopPolicy.get_child_watcher` jsou zastaralé a "
+"budou odstraněny v Pythonu 3.14. (Přispěl Kumar Aditya v :gh:`94597`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:36
 msgid ""
-"The :meth:`~asyncio.get_event_loop` method of the default event loop "
-"policy now emits a :exc:`DeprecationWarning` if there is no current event"
-" loop set and it decides to create one. (Contributed by Serhiy Storchaka "
-"and Guido van Rossum in :gh:`100160`.)"
+"The :meth:`~asyncio.get_event_loop` method of the default event loop policy "
+"now emits a :exc:`DeprecationWarning` if there is no current event loop set "
+"and it decides to create one. (Contributed by Serhiy Storchaka and Guido van"
+" Rossum in :gh:`100160`.)"
 msgstr ""
+"Metoda :meth:`~asyncio.get_event_loop` výchozí politiky event loop nyní "
+"vyvolává :exc:`DeprecationWarning`, pokud není nastavena aktuální event loop"
+" a rozhodne se ji vytvořit. (Přispěli Serhiy Storchaka a Guido van Rossum v "
+":gh:`100160`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:41
 msgid ""
@@ -100,58 +119,70 @@ msgid ""
 ":func:`email.utils.localtime`. (Contributed by Alan Williams in "
 ":gh:`72346`.)"
 msgstr ""
+":mod:`email`: Parametr *isdst* ve funkci :func:`email.utils.localtime` je "
+"zastaralý. (Přispěl Alan Williams v :gh:`72346`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:44
 msgid ":mod:`importlib.abc` deprecated classes:"
-msgstr ""
+msgstr ":mod:`importlib.abc` zastaralé třídy:"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:46
 msgid ":class:`!importlib.abc.ResourceReader`"
-msgstr ""
+msgstr ":class:`!importlib.abc.ResourceReader`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:47
 msgid ":class:`!importlib.abc.Traversable`"
-msgstr ""
+msgstr ":class:`!importlib.abc.Traversable`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:48
 msgid ":class:`!importlib.abc.TraversableResources`"
-msgstr ""
+msgstr ":class:`!importlib.abc.TraversableResources`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:50
 msgid "Use :mod:`importlib.resources.abc` classes instead:"
-msgstr ""
+msgstr "Místo toho použijte třídy z :mod:`importlib.resources.abc`:"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:52
 msgid ":class:`importlib.resources.abc.Traversable`"
-msgstr ""
+msgstr ":class:`importlib.resources.abc.Traversable`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:53
 msgid ":class:`importlib.resources.abc.TraversableResources`"
-msgstr ""
+msgstr ":class:`importlib.resources.abc.TraversableResources`"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:55
 msgid "(Contributed by Jason R. Coombs and Hugo van Kemenade in :gh:`93963`.)"
-msgstr ""
+msgstr "(Přispěli Jason R. Coombs a Hugo van Kemenade v :gh:`93963`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:57
 msgid ""
 ":mod:`itertools` had undocumented, inefficient, historically buggy, and "
-"inconsistent support for copy, deepcopy, and pickle operations. This will"
-" be removed in 3.14 for a significant reduction in code volume and "
-"maintenance burden. (Contributed by Raymond Hettinger in :gh:`101588`.)"
+"inconsistent support for copy, deepcopy, and pickle operations. This will be"
+" removed in 3.14 for a significant reduction in code volume and maintenance "
+"burden. (Contributed by Raymond Hettinger in :gh:`101588`.)"
 msgstr ""
+":mod:`itertools` měl nedokumentovanou, neefektivní, historicky chybnou a "
+"nekonzistentní podporu pro operace copy, deepcopy a pickle. Ta bude ve verzi"
+" 3.14 odstraněna, což významně sníží objem kódu a nároky na údržbu. (Přispěl"
+" Raymond Hettinger v :gh:`101588`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:63
 msgid ""
-":mod:`multiprocessing`: The default start method will change to a safer "
-"one on Linux, BSDs, and other non-macOS POSIX platforms where ``'fork'`` "
-"is currently the default (:gh:`84559`). Adding a runtime warning about "
-"this was deemed too disruptive as the majority of code is not expected to"
-" care. Use the :func:`~multiprocessing.get_context` or "
-":func:`~multiprocessing.set_start_method` APIs to explicitly specify when"
-" your code *requires* ``'fork'``.  See :ref:`multiprocessing-start-"
-"methods`."
+":mod:`multiprocessing`: The default start method will change to a safer one "
+"on Linux, BSDs, and other non-macOS POSIX platforms where ``'fork'`` is "
+"currently the default (:gh:`84559`). Adding a runtime warning about this was"
+" deemed too disruptive as the majority of code is not expected to care. Use "
+"the :func:`~multiprocessing.get_context` or "
+":func:`~multiprocessing.set_start_method` APIs to explicitly specify when "
+"your code *requires* ``'fork'``.  See :ref:`multiprocessing-start-methods`."
 msgstr ""
+":mod:`multiprocessing`: Výchozí způsob spuštění se na Linuxu, BSD a dalších "
+"ne-macOS POSIX platformách změní na bezpečnější, kde je aktuálně výchozí "
+"``'fork'`` (:gh:`84559`). Přidání varování za běhu bylo považováno za příliš"
+" rušivé, protože se očekává, že většině kódu to bude jedno. Použijte API "
+":func:`~multiprocessing.get_context` nebo "
+":func:`~multiprocessing.set_start_method` k explicitnímu zadání, kdy váš kód"
+" *vyžaduje* ``'fork'``. Viz :ref:`multiprocessing-start-methods`."
 
 #: ../../deprecations/pending-removal-in-3.14.rst:71
 msgid ""
@@ -159,41 +190,49 @@ msgid ""
 ":meth:`~pathlib.PurePath.relative_to`: passing additional arguments is "
 "deprecated."
 msgstr ""
+":mod:`pathlib`: :meth:`~pathlib.PurePath.is_relative_to` a "
+":meth:`~pathlib.PurePath.relative_to`: předávání dalších argumentů je "
+"zastaralé."
 
 #: ../../deprecations/pending-removal-in-3.14.rst:75
 msgid ""
-":mod:`pkgutil`: :func:`!pkgutil.find_loader` and "
-":func:`!pkgutil.get_loader` now raise :exc:`DeprecationWarning`; use "
-":func:`importlib.util.find_spec` instead. (Contributed by Nikita Sobolev "
-"in :gh:`97850`.)"
+":mod:`pkgutil`: :func:`!pkgutil.find_loader` and :func:`!pkgutil.get_loader`"
+" now raise :exc:`DeprecationWarning`; use :func:`importlib.util.find_spec` "
+"instead. (Contributed by Nikita Sobolev in :gh:`97850`.)"
 msgstr ""
+":mod:`pkgutil`: :func:`!pkgutil.find_loader` a :func:`!pkgutil.get_loader` "
+"nyní vyvolávají :exc:`DeprecationWarning`; místo toho použijte "
+":func:`importlib.util.find_spec`. (Přispěl Nikita Sobolev v :gh:`97850`.)"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:80
 msgid ":mod:`pty`:"
-msgstr ""
+msgstr ":mod:`pty`:"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:82
 msgid "``master_open()``: use :func:`pty.openpty`."
-msgstr ""
+msgstr "``master_open()``: použijte :func:`pty.openpty`."
 
 #: ../../deprecations/pending-removal-in-3.14.rst:83
 msgid "``slave_open()``: use :func:`pty.openpty`."
-msgstr ""
+msgstr "``slave_open()``: použijte :func:`pty.openpty`."
 
 #: ../../deprecations/pending-removal-in-3.14.rst:85
 msgid ":mod:`sqlite3`:"
-msgstr ""
+msgstr ":mod:`sqlite3`:"
 
 #: ../../deprecations/pending-removal-in-3.14.rst:87
 msgid ":data:`!version` and :data:`!version_info`."
-msgstr ""
+msgstr ":data:`!version` a :data:`!version_info`."
 
 #: ../../deprecations/pending-removal-in-3.14.rst:89
 msgid ""
-":meth:`~sqlite3.Cursor.execute` and :meth:`~sqlite3.Cursor.executemany` "
-"if :ref:`named placeholders <sqlite3-placeholders>` are used and "
-"*parameters* is a sequence instead of a :class:`dict`."
+":meth:`~sqlite3.Cursor.execute` and :meth:`~sqlite3.Cursor.executemany` if "
+":ref:`named placeholders <sqlite3-placeholders>` are used and *parameters* "
+"is a sequence instead of a :class:`dict`."
 msgstr ""
+":meth:`~sqlite3.Cursor.execute` a :meth:`~sqlite3.Cursor.executemany`, pokud"
+" jsou použity :ref:`pojmenované zástupné symboly <sqlite3-placeholders>` a "
+"*parameters* je sekvence místo :class:`dict`."
 
 #: ../../deprecations/pending-removal-in-3.14.rst:93
 msgid ""
@@ -201,4 +240,5 @@ msgid ""
 "intended to be a public API. (Contributed by Gregory P. Smith in "
 ":gh:`88168`.)"
 msgstr ""
-
+":mod:`urllib`: :class:`!urllib.parse.Quoter` je zastaralá: nebyla zamýšlena "
+"jako veřejné API. (Přispěl Gregory P. Smith v :gh:`88168`.)"
